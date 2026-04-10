@@ -1,0 +1,388 @@
+\documentclass[11pt,a4paper]{article}
+
+\setlength{\textwidth}{16.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\font\mainfont="[/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc]" at 10pt
+\font\titlefont="[/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc]" at 18pt
+\font\sectionfont="[/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc]" at 13pt
+\font\smallmono="[/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc]" at 9pt
+
+\newcommand{\sect}[1]{\vspace{8pt}{\sectionfont #1}\par}
+\newcommand{\code}[1]{{\smallmono #1}}
+
+\begin{document}
+\mainfont
+
+\begin{center}
+{\titlefont Agora-mini 当前链路结构与 JSON 接口示例}\par
+基于本地代码与运行产物整理\par
+2026-04-09
+\end{center}
+
+\sect{1. 说明}
+本文基于当前本地仓库 \code{/home/yz\_wang/yz\_main/agora-mini} 整理，主要参考：
+
+\begin{itemize}
+\item \code{README.md}
+\item \code{flex\_api.py}
+\item \code{flex\_providers.py}
+\item \code{flex\_client.py}
+\item \code{run\_scenario\_launcher.py}
+\item \code{run\_universal\_adjudicator.py}
+\item \code{Scenarios/Art\_Exhibition/manifest.json}
+\item 真实运行目录：\code{output/scenario\_launcher/20260409\_084659\_964727}
+\end{itemize}
+
+说明：
+
+\begin{itemize}
+\item 场景配置、compiled control、adjudicator output 来自真实文件。
+\item Flex 请求体与 Chat Completions 示例按当前代码的真实字段整理，属于基于代码的接口模板。
+\end{itemize}
+
+\sect{2. 当前链路结构}
+
+\begin{verbatim}
+Scenario Manifest
+  -> run_scenario_launcher.py
+  -> load world_rules / map_grid / agent profiles / intents
+  -> build compiled_control
+  -> choose backend
+       - Local -> local adjudicator
+       - Flex  -> FlexClient -> /v1/flex/execute
+  -> Flex Server (FastAPI)
+       - GET  /healthz
+       - GET  /v1/models
+       - POST /v1/flex/execute
+       - POST /v1/chat/completions
+  -> Provider.execute(...)
+       - Gemini_Studio
+       - Vertex_AI
+       - GPT
+       - Generic
+  -> unified FlexExecuteResponse
+  -> apply State_Mutations / Rule_Appendices
+  -> timestep outputs + final_manifest.json
+\end{verbatim}
+
+按代码路径拆开后，主流程是：
+
+\begin{enumerate}
+\item \code{run\_scenario\_launcher.py} 读取 \code{manifest.json}。
+\item 依据 \code{asset\_bindings} 加载 world rules、map grid、active agents、intent batch。
+\item 依据 \code{engine\_config.adjudicator\_api.provider} 选择 \code{local} 或 \code{flex}。
+\item 若选择 \code{flex}，由 \code{run\_universal\_adjudicator.py} 组装 prompt JSON。
+\item \code{FlexClient} 调用统一接口 \code{/v1/flex/execute}。
+\item \code{flex\_api.py} 中的 FastAPI 服务进行参数校验、并发/RPM 限流、provider 调度。
+\item provider 层把统一请求转成 Vertex、Gemini、GPT 或 Generic HTTP 调用。
+\item 返回统一结构：\code{provider / model / output\_text / output\_json / meta}。
+\item 裁决器把 \code{Global\_Event\_Broadcast}、\code{State\_Mutations}、\code{Rule\_Appendices} 应用回世界状态。
+\item 结果写入 \code{timestep\_001/*} 和 \code{final\_manifest.json}。
+\end{enumerate}
+
+Provider 与 server script 对应关系：
+
+\begin{verbatim}
+Local          -> local adjudication, no Flex server
+Gemini_Studio  -> gemini_flex_server.py
+Vertex_AI      -> vertex_flex_server.py
+GPT            -> gpt_flex_server.py
+Generic        -> generic_flex_server.py
+\end{verbatim}
+
+\sect{3. 场景 Manifest 示例}
+下面是当前内置样例 \code{Scenarios/Art\_Exhibition/manifest.json} 的核心结构：
+
+\begin{verbatim}
+{
+  "scenario_meta": {
+    "world_id": "art_exhibition_01",
+    "world_name": "Modern Art Gallery Conflict",
+    "version": "1.0",
+    "description": "A compact modern art gallery ...",
+    "simulation_objective": "Validate Scenario Manifest ..."
+  },
+  "engine_config": {
+    "world_mode": "LLM_Wrap",
+    "allow_local_fallback": true,
+    "adjudicator_api": {
+      "provider": "Vertex_AI",
+      "model": "gemini-2.5-flash",
+      "temperature": 0.2,
+      "flex_api_url": "http://127.0.0.1:8000/v1",
+      "server_script": "vertex_flex_server.py"
+    },
+    "agent_default_api": {
+      "provider": "GPT",
+      "model": "gpt-4o",
+      "temperature": 0.8,
+      "flex_api_url": "http://127.0.0.1:8000/v1",
+      "server_script": "gpt_flex_server.py"
+    },
+    "simulation_params": {
+      "max_timesteps": 1,
+      "parallel_execution": true,
+      "tick_rate_ms": 0,
+      "concurrency_limit": 10
+    }
+  },
+  "asset_bindings": {
+    "world_rules_path": "./world_rules.json",
+    "map_grid_path": "./map_grid.json",
+    "active_agents": [
+      "./Agents/agent_picasso.json",
+      "./Agents/agent_dali.json"
+    ],
+    "intents_path": "./agent_intents.json",
+    "prompt_path":
+      "../../data/templates/foundation/universal_adjudicator_prompt.jsonc"
+  }
+}
+\end{verbatim}
+
+\sect{4. 统一 Flex API}
+当前统一接口一共四个：
+
+\begin{verbatim}
+GET  /healthz
+GET  /v1/models
+POST /v1/flex/execute
+POST /v1/chat/completions
+\end{verbatim}
+
+\sect{4.1 /v1/flex/execute 请求示例}
+下面的字段与 \code{FlexExecuteRequest} 一致，示例按
+\code{run\_universal\_adjudicator.py} 当前调用方式整理：
+
+\begin{verbatim}
+POST /v1/flex/execute
+Content-Type: application/json
+
+{
+  "task_type": "json",
+  "model": "gemini-3.1-flash-lite-preview",
+  "system_instruction": "You are the Universal Core Adjudicator ...",
+  "prompt": "{ ... adjudicator payload JSON string ... }",
+  "messages": [],
+  "temperature": 0.2,
+  "max_output_tokens": 2048,
+  "thinking_level": "medium",
+  "response_schema": {
+    "Global_Event_Broadcast": [],
+    "State_Mutations": {},
+    "Rule_Appendices": []
+  },
+  "metadata": {}
+}
+\end{verbatim}
+
+其中 \code{prompt} 内层 JSON 的关键骨架是：
+
+\begin{verbatim}
+{
+  "timestep_index": 1,
+  "world_mode": "LLM_Wrap",
+  "priority_order": ["Move", "Custom", "Item", "Image"],
+  "World_Rules": { ... },
+  "Agent_Profiles": { ... },
+  "Intent_Batch": { ... },
+  "required_output_keys": [
+    "Global_Event_Broadcast",
+    "State_Mutations",
+    "Rule_Appendices"
+  ]
+}
+\end{verbatim}
+
+\sect{4.2 /v1/flex/execute 返回示例}
+统一返回体来自 \code{FlexExecuteResponse}。下面的
+\code{output\_json} 结构与 2026-04-09 本地真实运行样例一致，
+\code{meta} 按 Vertex provider 当前代码结构整理：
+
+\begin{verbatim}
+{
+  "provider": "vertex_ai",
+  "model": "gemini-3.1-flash-lite-preview",
+  "output_text": "{...JSON text from model...}",
+  "output_json": {
+    "Global_Event_Broadcast": [
+      "Picasso moved to the center.",
+      "Dali applied SurrealVarnish to Picasso.",
+      "Dali handed gold leaf to Picasso.",
+      "Picasso created a cubist mural."
+    ],
+    "State_Mutations": {
+      "agent_picasso": {
+        "coordinates": { "x": 1, "y": 0, "z": 0 },
+        "room_id": "gallery_center",
+        "inventory": [
+          { "item_id": "charcoal_stick", "quantity": 1, "mass": 0.1 },
+          { "item_id": "gold_leaf", "quantity": 1, "mass": 0.05 }
+        ],
+        "status_effects": [
+          { "effect": "surreal_varnish_attuned", "duration_steps": 3 }
+        ]
+      },
+      "agent_dali": {
+        "inventory": []
+      },
+      "relationship_tensor": {
+        "agent_picasso": {
+          "agent_dali": {
+            "trust": 55,
+            "affection": 55,
+            "influence_fear": 0
+          }
+        },
+        "agent_dali": {
+          "agent_picasso": {
+            "trust": 55,
+            "affection": 55,
+            "influence_fear": 0
+          }
+        }
+      }
+    },
+    "Rule_Appendices": [
+      {
+        "rule_type": "custom_action",
+        "action_name": "SurrealVarnish",
+        "description": "Applies a transformative layer ...",
+        "status": "active"
+      }
+    ]
+  },
+  "meta": {
+    "project": "YOUR_VERTEX_PROJECT",
+    "location": "global",
+    "task_type": "json"
+  }
+}
+\end{verbatim}
+
+\sect{4.3 /v1/chat/completions 请求示例}
+这是 OpenAI 兼容别名接口。如果 \code{response\_format.type} 是
+\code{json\_object} 或 \code{json\_schema}，内部会切到
+\code{task\_type=json}。
+
+\begin{verbatim}
+POST /v1/chat/completions
+Content-Type: application/json
+
+{
+  "model": "gpt-4o-mini",
+  "messages": [
+    { "role": "system", "content": "Return concise JSON only." },
+    { "role": "user", "content": "Summarize the gallery state." }
+  ],
+  "temperature": 0.3,
+  "max_tokens": 512,
+  "think": false,
+  "enable_visual_generation": false,
+  "response_format": {
+    "type": "json_object"
+  }
+}
+\end{verbatim}
+
+\sect{4.4 /v1/chat/completions 返回示例}
+\begin{verbatim}
+{
+  "id": "chatcmpl-7f4a0c2d9c654e1ab3d7f218",
+  "object": "chat.completion",
+  "created": 1775692800,
+  "model": "gpt-4o-mini",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"summary\":\"Picasso moved to center.\"}"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "flex_meta": {
+    "provider": "gpt_api",
+    "task_type": "json"
+  },
+  "bagel_meta": {
+    "provider": "gpt_api",
+    "task_type": "json"
+  }
+}
+\end{verbatim}
+
+\sect{5. 当前真实运行样例}
+本地真实目录：
+\code{output/scenario\_launcher/20260409\_084659\_964727}
+
+其中编译后的 adjudicator control 为：
+
+\begin{verbatim}
+{
+  "run_name": "scenario_launcher_art_exhibition_01",
+  "adjudication_backend": "flex",
+  "allow_local_fallback": false,
+  "timestep_index": 1,
+  "priority_order": ["Move", "Custom", "Item", "Image"],
+  "prompt_file":
+    "/home/yz_wang/yz_main/agora-mini/data/templates/foundation/..."
+  ,
+  "flex": {
+    "flex_api_url": "http://127.0.0.1:8017/v1",
+    "model": "gemini-3.1-flash-lite-preview",
+    "temperature": 0.2,
+    "thinking_level": "medium",
+    "max_output_tokens": 2048,
+    "timeout_seconds": 60.0
+  }
+}
+\end{verbatim}
+
+最终 manifest 里的 provider route 为：
+
+\begin{verbatim}
+{
+  "provider_route": {
+    "provider": "Vertex_AI",
+    "backend": "flex",
+    "server_script": "vertex_flex_server.py",
+    "flex_api_url": "http://127.0.0.1:8017/v1",
+    "model": "gemini-3.1-flash-lite-preview",
+    "temperature": 0.2,
+    "agent_default_provider": "GPT",
+    "agent_default_model": "gpt-4o",
+    "parallel_execution": true,
+    "concurrency_limit": 10
+  },
+  "backend_counts": {
+    "flex": 1
+  }
+}
+\end{verbatim}
+
+\sect{6. 关键结论}
+
+\begin{enumerate}
+\item 当前 agora-mini 的统一入口是 \code{run\_scenario\_launcher.py}。
+\item 当前统一模型网关是 \code{flex\_api.py}。
+\item 主接口是 \code{POST /v1/flex/execute}。
+\item \code{POST /v1/chat/completions} 是兼容层。
+\item provider 已抽象为 Gemini Studio、Vertex AI、GPT、Generic 四类。
+\item 裁决输出固定围绕三块：
+\code{Global\_Event\_Broadcast}、
+\code{State\_Mutations}、
+\code{Rule\_Appendices}。
+\item 2026-04-09 本地最新可见真实样例表明：
+\code{Art\_Exhibition -> Vertex\_AI -> Flex -> Adjudicator Apply}
+这条链路已经成功跑通。
+\end{enumerate}
+
+\end{document}

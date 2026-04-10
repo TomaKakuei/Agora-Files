@@ -1,6 +1,7 @@
 # Agora-Files
 File Collaboration Space for Project Agora
 
+- docs/agora_mini_chain_and_api_20260409.pdf
 - canvas_echoes_aistudio_40x100_20260408_0819_seed1201_openclip_fullraw.zip
 - legacy_canvas_echoes_rpap_1000agent_80round_20260402_063934_latex_package.zip
 - legacy_canvas_echoes_rpap_1000agent_80round_20260402_063934_full_package.zip
