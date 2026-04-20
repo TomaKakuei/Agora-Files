@@ -1,0 +1,75 @@
+{
+  "video_job": {
+    "job_id": "r024_0001_guild_004_guild_074",
+    "status": "ok",
+    "prompts_jsonl_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r024_0001_guild_004_guild_074/prompts/prompts.jsonl",
+    "config_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r024_0001_guild_004_guild_074/configs/longlive_config.yaml",
+    "command_log_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r024_0001_guild_004_guild_074/logs/longlive.log",
+    "video_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r024_0001_guild_004_guild_074/videos/cinematic_interaction.mp4",
+    "snapshot_path": "",
+    "num_output_frames": 81,
+    "total_rgb_frames": 321,
+    "switch_frame_indices": [
+      41
+    ],
+    "output_video_fps": 16.05,
+    "round_index": 24,
+    "actor_id": "guild_004",
+    "target_id": "guild_074",
+    "actor_prompt": "Japanese fantasy RPG guild hall, warm wood textures, lively guild background. Kaelen Ironheart, a young adult in a guild cloak and leather armor, presents a sealed quest parcel to Sora Oakspire, a quartermaster in a vest and sash, using both hands. Clear, fluid handoff motion, cinematic lighting, no text, no watermark.",
+    "target_continuation_prompt": "Same continuous guild hall shot, same characters. Sora Oakspire accepts the sealed parcel from Kaelen Ironheart, both characters bow slightly in mutual respect, the handoff completes clearly, warm anime RPG lighting, no text, no watermark.",
+    "prompt_source": "vertex_api",
+    "safety_notes": "The interaction is a professional, non-sexual, cooperative quest item handoff between two male-presenting characters in a fantasy setting.",
+    "prompt_schedule_seconds": [
+      0,
+      10
+    ]
+  },
+  "timeline_story": {
+    "round_index": 24,
+    "actor_id": "guild_004",
+    "actor_name": "Kaelen Ironheart",
+    "actor_room_id": "warehouse",
+    "actor_coordinate": {
+      "x": 3,
+      "y": 0,
+      "z": 0
+    },
+    "target_id": "guild_074",
+    "target_name": "Sora Oakspire",
+    "target_room_id": "warehouse",
+    "target_coordinate": {
+      "x": 3,
+      "y": 0,
+      "z": 0
+    },
+    "same_room": true,
+    "distance": 0,
+    "route_id": "quest_item_handoff",
+    "kind": "cinematic",
+    "story_verb": "completed a visible quest handoff with",
+    "longlive_status": "ok",
+    "image_status": "",
+    "selection_reason": "Kaelen is delivering the final specialized gear for the vault expedition, ensuring the party is fully equipped for departure.",
+    "relationship_adjustments": [
+      {
+        "source_agent_id": "guild_004",
+        "target_agent_id": "guild_074",
+        "trust_delta": 5,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Professional cooperation during a critical expedition departure.",
+        "source": "vertex_api"
+      },
+      {
+        "source_agent_id": "guild_074",
+        "target_agent_id": "guild_004",
+        "trust_delta": 5,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Reliability in handling essential guild supplies.",
+        "source": "vertex_api"
+      }
+    ]
+  }
+}

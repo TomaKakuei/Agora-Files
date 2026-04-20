@@ -1,0 +1,75 @@
+{
+  "video_job": {
+    "job_id": "r001_0010_guild_065_guild_095",
+    "status": "ok",
+    "prompts_jsonl_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r001_0010_guild_065_guild_095/prompts/prompts.jsonl",
+    "config_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r001_0010_guild_065_guild_095/configs/longlive_config.yaml",
+    "command_log_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r001_0010_guild_065_guild_095/logs/longlive.log",
+    "video_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r001_0010_guild_065_guild_095/videos/cinematic_interaction.mp4",
+    "snapshot_path": "",
+    "num_output_frames": 81,
+    "total_rgb_frames": 321,
+    "switch_frame_indices": [
+      41
+    ],
+    "output_video_fps": 16.05,
+    "round_index": 1,
+    "actor_id": "guild_065",
+    "target_id": "guild_095",
+    "actor_prompt": "Japanese fantasy RPG guild forge, warm wood interior. Yuna Brightford, a masculine quartermaster in a neat vest and guild sash, stands at a workbench holding a shield steady. Yuna Silverbrook, an androgynous guild coordinator in a formal cloak, stands beside them, carefully guiding a safe repair tool along the shield's edge. Warm forge light, cooperative teamwork, clear body language, no text, no watermark, anime fantasy style.",
+    "target_continuation_prompt": "Same continuous forge shot, consistent lighting and characters. Yuna Silverbrook taps the final harmless repair mark on the shield while Yuna Brightford maintains a steady grip. Friendly interaction, clear tool motion, warm atmosphere, no text, no watermark, high-quality anime fantasy RPG aesthetic.",
+    "prompt_source": "vertex_api",
+    "safety_notes": "The prompts depict professional, non-sexual cooperation between two characters in a fantasy setting. No harmful, violent, or inappropriate content is included.",
+    "prompt_schedule_seconds": [
+      0,
+      10
+    ]
+  },
+  "timeline_story": {
+    "round_index": 1,
+    "actor_id": "guild_065",
+    "actor_name": "Yuna Brightford",
+    "actor_room_id": "forge",
+    "actor_coordinate": {
+      "x": 4,
+      "y": 0,
+      "z": 0
+    },
+    "target_id": "guild_095",
+    "target_name": "Yuna Silverbrook",
+    "target_room_id": "forge",
+    "target_coordinate": {
+      "x": 4,
+      "y": 0,
+      "z": 0
+    },
+    "same_room": true,
+    "distance": 0,
+    "route_id": "assisted_forge_repair",
+    "kind": "cinematic",
+    "story_verb": "assisted a forge repair with",
+    "longlive_status": "ok",
+    "image_status": "",
+    "selection_reason": "The Quartermaster and Coordinator are both present in the forge, providing an opportunity to cooperatively maintain guild equipment.",
+    "relationship_adjustments": [
+      {
+        "source_agent_id": "guild_065",
+        "target_agent_id": "guild_095",
+        "trust_delta": 2,
+        "affection_delta": 1,
+        "influence_fear_delta": 0,
+        "reason": "Professional cooperation in forge maintenance.",
+        "source": "vertex_api"
+      },
+      {
+        "source_agent_id": "guild_095",
+        "target_agent_id": "guild_065",
+        "trust_delta": 2,
+        "affection_delta": 1,
+        "influence_fear_delta": 0,
+        "reason": "Professional cooperation in forge maintenance.",
+        "source": "vertex_api"
+      }
+    ]
+  }
+}

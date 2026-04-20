@@ -1,0 +1,75 @@
+{
+  "video_job": {
+    "job_id": "r017_0006_guild_035_guild_015",
+    "status": "ok",
+    "prompts_jsonl_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r017_0006_guild_035_guild_015/prompts/prompts.jsonl",
+    "config_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r017_0006_guild_035_guild_015/configs/longlive_config.yaml",
+    "command_log_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r017_0006_guild_035_guild_015/logs/longlive.log",
+    "video_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r017_0006_guild_035_guild_015/videos/cinematic_interaction.mp4",
+    "snapshot_path": "",
+    "num_output_frames": 81,
+    "total_rgb_frames": 321,
+    "switch_frame_indices": [
+      41
+    ],
+    "output_video_fps": 16.05,
+    "round_index": 17,
+    "actor_id": "guild_035",
+    "target_id": "guild_015",
+    "actor_prompt": "Cinematic medium shot in a warm Japanese fantasy RPG guild forge with wooden textures. Yuna Starling, an androgynous healer in cream and mint robes, and Yuna Moonvale, an androgynous ranger in a green half-cape with a leaf brooch, work together at a workbench. Starling firmly steadies a metal shield while Moonvale carefully guides a repair tool across the surface. Soft forge lighting, focused expressions, cooperative hands, no text, no watermark.",
+    "target_continuation_prompt": "Same continuous forge shot, consistent camera angle and lighting. Yuna Moonvale taps the final harmless repair mark on the shield with the tool while Yuna Starling maintains a steady, supportive grip. Friendly teamwork, clear tool motion, warm ambient forge glow, no text, no watermark.",
+    "prompt_source": "vertex_api",
+    "safety_notes": "The interaction is strictly professional and cooperative, focused on a fantasy crafting task. No sexual, violent, or inappropriate content is depicted. All visual elements adhere to the requested guild aesthetic.",
+    "prompt_schedule_seconds": [
+      0,
+      10
+    ]
+  },
+  "timeline_story": {
+    "round_index": 17,
+    "actor_id": "guild_035",
+    "actor_name": "Yuna Starling",
+    "actor_room_id": "forge",
+    "actor_coordinate": {
+      "x": 4,
+      "y": 0,
+      "z": 0
+    },
+    "target_id": "guild_015",
+    "target_name": "Yuna Moonvale",
+    "target_room_id": "forge",
+    "target_coordinate": {
+      "x": 4,
+      "y": 0,
+      "z": 0
+    },
+    "same_room": true,
+    "distance": 0,
+    "route_id": "assisted_forge_repair",
+    "kind": "cinematic",
+    "story_verb": "assisted a forge repair with",
+    "longlive_status": "ok",
+    "image_status": "",
+    "selection_reason": "The forge is experiencing a bottleneck due to the influx of gear needing repair for the vanguard patrol; Yuna Starling and Yuna Moonvale coordinate to stabilize and repair the equipment efficiently.",
+    "relationship_adjustments": [
+      {
+        "source_agent_id": "guild_035",
+        "target_agent_id": "guild_015",
+        "trust_delta": 3,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Collaborative repair effort during a guild bottleneck.",
+        "source": "vertex_api"
+      },
+      {
+        "source_agent_id": "guild_015",
+        "target_agent_id": "guild_035",
+        "trust_delta": 3,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Grateful for assistance during high-pressure forge repairs.",
+        "source": "vertex_api"
+      }
+    ]
+  }
+}

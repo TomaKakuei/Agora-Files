@@ -1,0 +1,254 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1.8cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{longtable}
+\title{RPG Guild 100-Agent Story Summary}
+\author{Agora Mini Interaction Runner}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Run Overview}
+\textbf{Run Dir}: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771}\\
+\textbf{World}: RPG Guild 100-Agent Interaction Test\\
+\textbf{Objective}: Run a 103-agent, 25-round guild interaction simulation with three always-active protagonists, JSON-driven per-round task/event generation, ordinary JSON actions first, optional LongLive only for visible body-cooperation interactions, and JSON-driven image generation when applicable.\\
+\textbf{Target Legality Failures}: 0\\
+
+\section{Route Mix}
+\begin{longtable}{lr}
+\textbf{Route} & \textbf{Count}\\
+trade\_supplies & 115 \\
+coordinate\_party & 77 \\
+quest\_item\_handoff\_image\_fallback & 41 \\
+research\_spellwork & 28 \\
+assisted\_forge\_repair\_image\_fallback & 26 \\
+mediate\_party\_dispute & 22 \\
+assisted\_forge\_repair & 21 \\
+inspect\_quest\_map & 20 \\
+quest\_item\_handoff & 16 \\
+celebrate\_clearance & 12 \\
+scout\_report & 12 \\
+repair\_gear & 9 \\
+chat\_at\_guild & 8 \\
+spell\_duet\_cast & 8 \\
+heal\_after\_training & 6 \\
+spell\_duet\_cast\_image\_fallback & 5 \\
+train\_sparring\_notes & 5 \\
+buff\_for\_commission & 4 \\
+discover\_treasure & 3 \\
+rescue\_balance\_after\_drill & 2 \\
+supportive\_carry & 2 \\
+rescue\_balance\_after\_drill\_image\_fallback & 1 \\
+supportive\_carry\_image\_fallback & 1 \\
+training\_pair\_form & 1 \\
+\end{longtable}
+
+\section{LongLive Status}
+\begin{longtable}{lr}
+\textbf{Status} & \textbf{Count}\\
+ok & 50 \\
+\end{longtable}
+
+\section{Image Artifact Status}
+\begin{longtable}{lr}
+\textbf{Status} & \textbf{Count}\\
+ok & 52 \\
+failed & 25 \\
+\end{longtable}
+
+\section{API Story Summary}
+The 25-round simulation of the RPG Guild 100-Agent Interaction Test successfully managed 103 agents navigating a dynamic quest economy. Two major story arcs dominated the simulation: a high-stakes Goblin Raid retaliation and the discovery and unsealing of a mysterious Twin Relic. Agents actively engaged in a robust trading economy, party coordination, and gear repair to support these ongoing expeditions.
+
+\subsection{Quest and Trade}
+The guild economy was highly active, driven by 115 supply trades and 77 party coordinations. Major quest chains like the Goblin Boss Retaliation and Twin Relic Expedition dictated the flow of resources, requiring constant gear repairs, scouting reports, and medical triage.
+
+\subsection{Video Prompt Chain}
+LongLive video generation successfully captured 50 visible body-cooperation interactions, such as assisted forge repairs and quest item handoffs, utilizing a 10-second continuation prompt schedule to ensure fluid, cinematic teamwork.
+
+\subsection{Image Artifacts}
+Image generation served as a fallback for interactions like treasure discovery and forge repairs, producing 52 successful artifacts and 25 failures due to resource exhaustion limits.
+
+\section{Round-by-Round Story}
+\subsection{API Round 1}
+Initial goblin raid commission posted and a strange relic discovered, prompting immediate party coordination and spellwork research.
+\newline \textbf{Trade or task thread}: coordinate\_party
+\newline \textbf{Representative interaction}: Ren Ashbell coordinated with Ren Moonvale
+
+\subsection{API Round 5}
+Goblin boss retaliation posted and relic twin map search begins. Agents actively repair gear and trade supplies.
+\newline \textbf{Trade or task thread}: repair\_gear
+\newline \textbf{Representative interaction}: Kiri Ashbell repaired gear for Kiri Mistfell
+
+\subsection{API Round 10}
+The goblin boss is defeated, bringing wounded adventurers back to the infirmary, while the first relic is secured in the warehouse.
+\newline \textbf{Trade or task thread}: quest\_item\_handoff\_image\_fallback
+\newline \textbf{Representative interaction}: Ari Moonvale handed over goblin boss loot to Mira Ledgerfall
+
+\subsection{API Round 15}
+Vanguard patrol deploys while the relic expedition prepares for final crystal handoff.
+\newline \textbf{Trade or task thread}: coordinate\_party
+\newline \textbf{Representative interaction}: Renji Dawnblade coordinated with Mika Starling
+
+\subsection{API Round 20}
+The vanguard patrol reports victory and the relic expedition successfully returns with the ancient artifact.
+\newline \textbf{Trade or task thread}: trade\_supplies
+\newline \textbf{Representative interaction}: Ari Ironleaf presented a sealed quest parcel to Ari Silverbrook
+
+\subsection{API Round 25}
+A strike team is formed to dismantle the goblin camp, and the newly delivered vault artifact undergoes arcane analysis.
+\newline \textbf{Trade or task thread}: coordinate\_party
+\newline \textbf{Representative interaction}: Mira Ledgerfall forms the vanguard strike team
+
+\subsection{Round 1}
+Activated agents: 17; intents: 18; video jobs: 2; image jobs: 0; action successes: 18.
+
+Ren Ashbell coordinated with Ren Moonvale in tavern\_corner. Kiri Ashbell mediated a party dispute with Kiri Ironleaf in training\_yard. Aiko Mura coordinated with Haru Silverbrook in dormitory. Eri Moonvale coordinated with Eri Silverbrook in strategy\_table. Ren Starling traded supplies with Ren Oakspire in tavern\_corner as part of the supply economy. Toma Starling healed Toma Ashbell in infirmary. Haru Starling researched spellwork with Haru Dawncrest in dormitory. Mika Dawncrest coordinated with Mika Ironleaf in quest\_board. 9 additional interactions continued in the background.
+
+\subsection{Round 2}
+Activated agents: 17; intents: 20; video jobs: 2; image jobs: 2; action successes: 20.
+
+Ari Ironleaf coordinated with Ari Silverbrook in guild\_hall. Yuna Ironleaf assisted a forge repair with Yuna Dawncrest in forge in a cinematic body-cooperation action (ok). Kiri Starling 037 mediated a party dispute with Kiri Moonvale in training\_yard. Kiri Dawncrest mediated a party dispute with Kiri Ashbell in training\_yard. Toma Mistfell traded supplies with Toma Ashbell in infirmary as part of the supply economy. Ren Brightford spoke with Ren Dawncrest 043 in tavern\_corner. Sora Brightford traded supplies with Sora Dawncrest in warehouse as part of the supply economy. Yuna Oakspire assisted a forge repair with Yuna Brightford in forge in a cinematic body-cooperation action (ok). 9 additional interactions continued in the background.
+
+\subsection{Round 3}
+Activated agents: 17; intents: 24; video jobs: 2; image jobs: 3; action successes: 24.
+
+Natsu Ashbell completed a visible quest handoff with Natsu Ironleaf 028 in arcane\_library in a cinematic body-cooperation action (ok). Kiri Moonvale helped recover balance after a drill with Kiri Starling 037 in training\_yard in a cinematic body-cooperation action (ok). Eri Moonvale created a still image fallback with Eri Silverbrook in strategy\_table in a still-image artifact action (ok). Ren Ironleaf documented a discovered treasure with Ren Mistfell in tavern\_corner in a still-image artifact action (ok). Yuna Ironleaf traded supplies with Yuna Brightford in forge as part of the supply economy. Kiri Ironleaf healed Kiri Mistfell in training\_yard. Yuna Dawncrest traded supplies with Yuna Emberlane in forge as part of the supply economy. Ari Mistfell spoke with Ari Silverbrook in guild\_hall. 9 additional interactions continued in the background.
+
+\subsection{Round 4}
+Activated agents: 14; intents: 18; video jobs: 2; image jobs: 5; action successes: 18.
+
+Kiri Ashbell helped recover balance after a drill with Kiri Emberlane in training\_yard in a cinematic body-cooperation action (ok). Kiri Starling 037 traded supplies with Kiri Moonvale in training\_yard as part of the supply economy. Natsu Dawncrest synchronized a duet spell with Natsu Moonvale in arcane\_library in a cinematic body-cooperation action (ok). Eri Dawncrest coordinated with Eri Oakspire in strategy\_table. Eri Mistfell created a still image fallback with Eri Oakspire in strategy\_table in a still-image artifact action (ok). Sora Brightford traded supplies with Sora Dawncrest in warehouse as part of the supply economy. Natsu Brightford created a still image fallback with Natsu Starling in arcane\_library in a still-image artifact action (ok). Toma Oakspire traded supplies with Toma Emberlane in infirmary as part of the supply economy. 6 additional interactions continued in the background.
+
+\subsection{Round 5}
+Activated agents: 17; intents: 18; video jobs: 2; image jobs: 4; action successes: 18.
+
+Kiri Ashbell repaired gear for Kiri Mistfell in training\_yard. Natsu Ashbell synchronized a duet spell with Natsu Dawncrest in arcane\_library in a cinematic body-cooperation action (ok). Eri Ashbell checked a quest map with Eri Mistfell in strategy\_table. Mika Moonvale mediated a party dispute with Mika Emberlane in quest\_board. Kiri Ironleaf coordinated with Kiri Moonvale in training\_yard. Toma Starling physically supported Toma Mistfell in infirmary in a cinematic body-cooperation action (ok). Eri Starling checked a quest map with Eri Oakspire in strategy\_table. Mika Mistfell mediated a party dispute with Mika Ashbell in quest\_board. 9 additional interactions continued in the background.
+
+\subsection{Round 6}
+Activated agents: 17; intents: 22; video jobs: 2; image jobs: 4; action successes: 22.
+
+Ren Ashbell completed a visible quest handoff with Celestia Vale in tavern\_corner in a cinematic body-cooperation action (ok). Eri Ashbell traded supplies with Eri Brightford in strategy\_table as part of the supply economy. Ren Moonvale coordinated with Celestia Vale in tavern\_corner. Sora Moonvale traded supplies with Kaelen Ironheart in warehouse as part of the supply economy. Kaelen Swift physically supported Toma Emberlane in infirmary in a cinematic body-cooperation action (ok). Haru Ironleaf traded supplies with Haru Brightford 070 in dormitory as part of the supply economy. Mika Dawncrest coordinated with Mika Ashbell in quest\_board. Sora Dawncrest traded supplies with Sora Brightford in warehouse as part of the supply economy. 9 additional interactions continued in the background.
+
+\subsection{Round 7}
+Activated agents: 16; intents: 21; video jobs: 2; image jobs: 4; action successes: 20.
+
+Aiko Mura traded supplies with Haru Brightford 070 in dormitory as part of the supply economy. Elara Softstep traded supplies with Haru Brightford 070 in dormitory as part of the supply economy. Ari Ironleaf delivered a scout report to Mira Ledgerfall in guild\_hall. Ren Ironleaf coordinated with Ren Silverbrook in tavern\_corner. Yuna Starling assisted a forge repair with Yuna Silverbrook in forge in a cinematic body-cooperation action (ok). Ari Dawncrest synchronized a duet spell with Ari Silverbrook in guild\_hall in a cinematic body-cooperation action (ok). Kiri Mistfell created a still image fallback with Kiri Oakspire in training\_yard in a still-image artifact action (ok). Natsu Mistfell created a still image fallback with Natsu Ashbell in arcane\_library in a still-image artifact action (ok). 8 additional interactions continued in the background.
+
+\subsection{Round 8}
+Activated agents: 20; intents: 24; video jobs: 2; image jobs: 4; action successes: 24.
+
+Ren Ashbell completed a visible quest handoff with Ren Ironleaf in tavern\_corner in a cinematic body-cooperation action (ok). Ren Moonvale repaired gear for Ren Mistfell in tavern\_corner. Ren Ironleaf traded supplies with Ren Oakspire in tavern\_corner as part of the supply economy. Eri Starling coordinated with Eri Mistfell in strategy\_table. Ren Dawncrest 043 completed a visible quest handoff with Ren Mistfell in tavern\_corner in a cinematic body-cooperation action (ok). Sora Mistfell mediated a party dispute with Sora Ironleaf in warehouse. Yuna Mistfell created a still image fallback with Yuna Oakspire in forge in a still-image artifact action (ok). Haru Mistfell researched spellwork with Haru Starling in dormitory. 12 additional interactions continued in the background.
+
+\subsection{Round 9}
+Activated agents: 18; intents: 21; video jobs: 2; image jobs: 4; action successes: 21.
+
+Ren Ashbell mediated a party dispute with Ren Brightford in tavern\_corner. Mika Ironleaf completed a visible quest handoff with Mika Silverbrook in quest\_board in a cinematic body-cooperation action (ok). Yuna Ironleaf assisted a forge repair with Yuna Ashbell in forge in a cinematic body-cooperation action (ok). Eri Ironleaf coordinated with Eri Silverbrook in strategy\_table. Kiri Starling 037 repaired gear for Kiri Silverbrook in training\_yard. Haru Dawncrest coordinated with Haru Oakspire in dormitory. Mika Mistfell traded supplies with Mika Oakspire in quest\_board as part of the supply economy. Yuna Mistfell coordinated with Yuna Silverbrook in forge. 10 additional interactions continued in the background.
+
+\subsection{Round 10}
+Activated agents: 19; intents: 21; video jobs: 2; image jobs: 10; action successes: 21.
+
+Kiri Ashbell repaired gear for Kiri Oakspire in training\_yard. Natsu Ashbell synchronized a duet spell with Natsu Silverbrook in arcane\_library in a cinematic body-cooperation action (ok). Eri Ashbell completed a visible quest handoff with Eri Silverbrook in strategy\_table in a cinematic body-cooperation action (ok). Ari Moonvale created a still image fallback with Mira Ledgerfall in guild\_hall in a still-image artifact action (ok). Yuna Moonvale created a still image fallback with Yuna Brightford in forge in a still-image artifact action (ok). Eri Moonvale created a still image fallback with Eri Mistfell in strategy\_table in a still-image artifact action (failed). Sora Ironleaf created a still image fallback with Sora Starling in warehouse in a still-image artifact action (failed). Natsu Starling created a still image fallback with Natsu Dawncrest in arcane\_library in a still-image artifact action (ok). 11 additional interactions continued in the background.
+
+\subsection{Round 11}
+Activated agents: 18; intents: 21; video jobs: 2; image jobs: 1; action successes: 21.
+
+Mika Ashbell assisted a forge repair with Mika Brightford in quest\_board in a cinematic body-cooperation action (ok). Kaelen Ironheart completed a visible quest handoff with Sora Mistfell in warehouse in a cinematic body-cooperation action (ok). Ari Moonvale celebrated a quest clearance with Ari Dawncrest in guild\_hall. Ari Ironleaf celebrated a quest clearance with Ari Emberlane in guild\_hall. Sora Starling researched spellwork with Sora Dawncrest in warehouse. Kiri Starling 037 coordinated with Kiri Emberlane in training\_yard. Natsu Starling coordinated with Natsu Silverbrook in arcane\_library. Haru Starling coordinated with Haru Silverbrook in dormitory. 10 additional interactions continued in the background.
+
+\subsection{Round 12}
+Activated agents: 14; intents: 19; video jobs: 2; image jobs: 3; action successes: 19.
+
+Ari Ashbell assisted a forge repair with Ari Emberlane in guild\_hall in a cinematic body-cooperation action (ok). Natsu Ashbell synchronized a duet spell with Natsu Starling in arcane\_library in a cinematic body-cooperation action (ok). Kiri Moonvale delivered a scout report to Kiri Silverbrook in training\_yard. Natsu Moonvale researched spellwork with Natsu Emberlane in arcane\_library. Elara Softstep coordinated with Haru Emberlane in dormitory. Ren Dawncrest 043 traded supplies with Ren Oakspire in tavern\_corner as part of the supply economy. Kiri Dawncrest researched spellwork with Kiri Starling 037 in training\_yard. Sora Mistfell traded supplies with Sora Oakspire in warehouse as part of the supply economy. 6 additional interactions continued in the background.
+
+\subsection{Round 13}
+Activated agents: 17; intents: 23; video jobs: 2; image jobs: 3; action successes: 23.
+
+Kaelen Ironheart traded supplies with Sora Brightford in warehouse as part of the supply economy. Yuna Moonvale assisted a forge repair with Yuna Starling in forge in a cinematic body-cooperation action (ok). Kaelen Swift traded supplies with Toma Mistfell in infirmary as part of the supply economy. Ari Starling completed a visible quest handoff with Ari Ironleaf in guild\_hall in a cinematic body-cooperation action (ok). Eri Starling checked a quest map with Eri Silverbrook in strategy\_table. Toma Dawncrest traded supplies with Toma Silverbrook 096 in infirmary as part of the supply economy. Toma Mistfell traded supplies with Toma Silverbrook 096 in infirmary as part of the supply economy. Kiri Mistfell traded supplies with Kiri Dawncrest in training\_yard as part of the supply economy. 9 additional interactions continued in the background.
+
+\subsection{Round 14}
+Activated agents: 19; intents: 24; video jobs: 2; image jobs: 4; action successes: 23.
+
+Sora Moonvale traded supplies with Sora Mistfell in warehouse as part of the supply economy. Yuna Moonvale assisted a forge repair with Yuna Silverbrook in forge in a cinematic body-cooperation action (ok). Kiri Moonvale reviewed sparring notes with Kiri Emberlane in training\_yard. Natsu Moonvale completed a visible quest handoff with Natsu Ashbell in arcane\_library in a cinematic body-cooperation action (ok). Sora Ironleaf traded supplies with Sora Dawncrest in warehouse as part of the supply economy. Kiri Ironleaf reviewed sparring notes with Kiri Moonvale in training\_yard. Kiri Starling 037 researched spellwork with Kiri Dawncrest in training\_yard. Sora Dawncrest traded supplies with Sora Emberlane in warehouse as part of the supply economy. 11 additional interactions continued in the background.
+
+\subsection{Round 15}
+Activated agents: 23; intents: 27; video jobs: 2; image jobs: 8; action successes: 27.
+
+Natsu Ashbell synchronized a duet spell with Natsu Dawncrest in arcane\_library in a cinematic body-cooperation action (ok). Eri Ashbell completed a visible quest handoff with Eri Oakspire in strategy\_table in a cinematic body-cooperation action (ok). Sora Moonvale mediated a party dispute with Sora Ironleaf in warehouse. Yuna Moonvale coordinated with Yuna Starling in forge. Toma Moonvale traded supplies with Toma Brightford in infirmary as part of the supply economy. Sora Ironleaf traded supplies with Sora Mistfell in warehouse as part of the supply economy. Haru Ironleaf coordinated with Haru Silverbrook in dormitory. Mika Starling coordinated with Mika Brightford in quest\_board. 15 additional interactions continued in the background.
+
+\subsection{Round 16}
+Activated agents: 17; intents: 22; video jobs: 2; image jobs: 4; action successes: 22.
+
+Natsu Ashbell researched spellwork with Natsu Moonvale in arcane\_library. Sora Moonvale traded supplies with Sora Silverbrook in warehouse as part of the supply economy. Eri Moonvale completed a visible quest handoff with Eri Emberlane in strategy\_table in a cinematic body-cooperation action (ok). Haru Ironleaf researched spellwork with Haru Starling in dormitory. Yuna Starling assisted a forge repair with Yuna Oakspire in forge in a cinematic body-cooperation action (ok). Natsu Starling created a still image fallback with Natsu Ironleaf 028 in arcane\_library in a still-image artifact action (ok). Sora Dawncrest traded supplies with Sora Brightford in warehouse as part of the supply economy. Kiri Dawncrest coordinated with Kiri Ironleaf in training\_yard. 9 additional interactions continued in the background.
+
+\subsection{Round 17}
+Activated agents: 21; intents: 27; video jobs: 2; image jobs: 1; action successes: 27.
+
+Kiri Ashbell coordinated with Kiri Moonvale in training\_yard. Ren Moonvale spoke with Ren Ironleaf in tavern\_corner. Natsu Moonvale coordinated with Natsu Ashbell in arcane\_library. Natsu Ironleaf 028 synchronized a duet spell with Natsu Starling in arcane\_library in a cinematic body-cooperation action (ok). Mika Starling traded supplies with Mika Oakspire in quest\_board as part of the supply economy. Yuna Starling assisted a forge repair with Yuna Moonvale in forge in a cinematic body-cooperation action (ok). Eri Starling checked a quest map with Eri Moonvale in strategy\_table. Haru Starling repaired gear for Haru Mistfell in dormitory. 13 additional interactions continued in the background.
+
+\subsection{Round 18}
+Activated agents: 17; intents: 22; video jobs: 2; image jobs: 0; action successes: 22.
+
+Mika Ashbell checked a quest map with Mika Silverbrook in quest\_board. Kaelen Ironheart traded supplies with Sora Moonvale in warehouse as part of the supply economy. Natsu Ashbell researched spellwork with Natsu Oakspire in arcane\_library. Eri Ashbell coordinated with Eri Oakspire in strategy\_table. Natsu Moonvale researched spellwork with Natsu Ashbell in arcane\_library. Kiri Ironleaf coordinated with Kiri Silverbrook in training\_yard. Natsu Starling researched spellwork with Natsu Brightford in arcane\_library. Yuna Dawncrest assisted a forge repair with Yuna Emberlane in forge in a cinematic body-cooperation action (ok). 9 additional interactions continued in the background.
+
+\subsection{Round 19}
+Activated agents: 19; intents: 25; video jobs: 2; image jobs: 0; action successes: 25.
+
+Ari Ashbell traded supplies with Ari Oakspire in guild\_hall as part of the supply economy. Mika Ashbell repaired gear for Mika Mistfell in quest\_board. Mika Ironleaf traded supplies with Mika Oakspire in quest\_board as part of the supply economy. Ren Ironleaf checked a quest map with Ren Brightford in tavern\_corner. Sora Ironleaf traded supplies with Sora Dawncrest in warehouse as part of the supply economy. Natsu Starling researched spellwork with Natsu Oakspire in arcane\_library. Sora Dawncrest traded supplies with Sora Oakspire in warehouse as part of the supply economy. Haru Dawncrest coordinated with Haru Oakspire in dormitory. 11 additional interactions continued in the background.
+
+\subsection{Round 20}
+Activated agents: 18; intents: 26; video jobs: 2; image jobs: 5; action successes: 26.
+
+Ari Ironleaf completed a visible quest handoff with Ari Silverbrook in guild\_hall in a cinematic body-cooperation action (ok). Kaelen Swift traded supplies with Toma Brightford in infirmary as part of the supply economy. Mika Starling traded supplies with Renji Dawnblade in quest\_board as part of the supply economy. Ari Dawncrest completed a visible quest handoff with Ari Silverbrook in guild\_hall in a cinematic body-cooperation action (ok). Ren Dawncrest 043 created a still image fallback with Ren Starling in tavern\_corner in a still-image artifact action (ok). Yuna Dawncrest created a still image fallback with Yuna Ashbell in forge in a still-image artifact action (ok). Ari Mistfell created a still image fallback with Ari Emberlane in guild\_hall in a still-image artifact action (failed). Toma Brightford traded supplies with Toma Ashbell in infirmary as part of the supply economy. 10 additional interactions continued in the background.
+
+\subsection{Round 21}
+Activated agents: 17; intents: 23; video jobs: 2; image jobs: 0; action successes: 23.
+
+Ren Ashbell celebrated a quest clearance with Celestia Vale in tavern\_corner. Eri Ashbell traded supplies with Eri Mistfell in strategy\_table as part of the supply economy. Ren Moonvale celebrated a quest clearance with Ren Silverbrook in tavern\_corner. Eri Ironleaf synchronized a duet spell with Eri Dawncrest in strategy\_table in a cinematic body-cooperation action (ok). Haru Ironleaf traded supplies with Elara Softstep in dormitory as part of the supply economy. Ari Starling celebrated a quest clearance with Ari Ironleaf in guild\_hall. Ren Starling celebrated a quest clearance with Ren Moonvale in tavern\_corner. Ari Dawncrest researched spellwork with Ari Emberlane in guild\_hall. 9 additional interactions continued in the background.
+
+\subsection{Round 22}
+Activated agents: 22; intents: 30; video jobs: 2; image jobs: 3; action successes: 30.
+
+Kiri Ashbell performed paired training with Kiri Dawncrest in training\_yard in a cinematic body-cooperation action (ok). Sora Moonvale traded supplies with Sora Starling in warehouse as part of the supply economy. Toma Moonvale traded supplies with Toma Emberlane in infirmary as part of the supply economy. Ari Ironleaf assisted a forge repair with Ari Mistfell in guild\_hall in a cinematic body-cooperation action (ok). Eri Ironleaf checked a quest map with Eri Silverbrook in strategy\_table. Haru Ironleaf coordinated with Haru Silverbrook in dormitory. Mika Starling traded supplies with Renji Dawnblade in quest\_board as part of the supply economy. Ari Dawncrest checked a quest map with Ari Ironleaf in guild\_hall. 14 additional interactions continued in the background.
+
+\subsection{Round 23}
+Activated agents: 25; intents: 36; video jobs: 2; image jobs: 0; action successes: 36.
+
+Ren Ashbell coordinated with Ren Starling in tavern\_corner. Kaelen Ironheart traded supplies with Sora Emberlane in warehouse as part of the supply economy. Ari Moonvale assisted a forge repair with Ari Brightford in guild\_hall in a cinematic body-cooperation action (ok). Natsu Moonvale researched spellwork with Natsu Dawncrest in arcane\_library. Ren Ironleaf traded supplies with Ren Oakspire in tavern\_corner as part of the supply economy. Yuna Ironleaf assisted a forge repair with Yuna Brightford in forge in a cinematic body-cooperation action (ok). Kiri Ironleaf traded supplies with Kiri Starling 037 in training\_yard as part of the supply economy. Ren Starling coordinated with Ren Moonvale in tavern\_corner. 17 additional interactions continued in the background.
+
+\subsection{Round 24}
+Activated agents: 14; intents: 14; video jobs: 2; image jobs: 4; action successes: 14.
+
+Kaelen Ironheart completed a visible quest handoff with Sora Oakspire in warehouse in a cinematic body-cooperation action (ok). Sora Moonvale completed a visible quest handoff with Sora Starling in warehouse in a cinematic body-cooperation action (ok). Haru Ironleaf coordinated with Aiko Mura in dormitory. Toma Starling mediated a party dispute with Kaelen Swift in infirmary. Haru Starling created a still image fallback with Haru Silverbrook in dormitory in a still-image artifact action (ok). Haru Dawncrest healed Aiko Mura in dormitory. Eri Brightford delivered a scout report to Eri Ashbell in strategy\_table. Sora Oakspire created a still image fallback with Kaelen Ironheart in warehouse in a still-image artifact action (ok). 6 additional interactions continued in the background.
+
+\subsection{Round 25}
+Activated agents: 12; intents: 14; video jobs: 2; image jobs: 1; action successes: 14.
+
+Mika Ashbell traded supplies with Mika Oakspire in quest\_board as part of the supply economy. Elara Softstep prepared Aiko Mura in dormitory. Mika Starling coordinated with Mika Dawncrest in quest\_board. Ren Starling completed a visible quest handoff with Ren Emberlane in tavern\_corner in a cinematic body-cooperation action (ok). Sora Mistfell assisted a forge repair with Sora Emberlane in warehouse in a cinematic body-cooperation action (ok). Sora Oakspire traded supplies with Sora Silverbrook in warehouse as part of the supply economy. Toma Emberlane mediated a party dispute with Toma Silverbrook 096 in infirmary. Haru Emberlane coordinated with Haru Starling in dormitory. 4 additional interactions continued in the background.
+
+\section{Representative Video Prompts}
+\begin{enumerate}
+\item \textbf{guild\_065 -> guild\_095} status=ok\\\newline Actor prompt: Japanese fantasy RPG guild forge, warm wood interior. Yuna Brightford, a masculine quartermaster in a neat vest and guild sash, stands at a workbench holding a shield steady. Yuna Silverbrook, an androgynous guild coordinator in a formal cloak, stands beside them, carefully guiding a safe repair tool along the shield's edge. Warm forge light, cooperative teamwork, clear body language, no text, no watermark, anime fantasy style.\\\newline Target continuation: Same continuous forge shot, consistent lighting and characters. Yuna Silverbrook taps the final harmless repair mark on the shield while Yuna Brightford maintains a steady grip. Friendly interaction, clear tool motion, warm atmosphere, no text, no watermark, high-quality anime fantasy RPG aesthetic.\\\newline Config: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/longlive\_jobs/r001\_0010\_guild\_065\_guild\_095/configs/longlive\_config.yaml}\\\newline Video: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/longlive\_jobs/r001\_0010\_guild\_065\_guild\_095/videos/cinematic\_interaction.mp4}
+\item \textbf{guild\_095 -> guild\_055} status=ok\\\newline Actor prompt: Cinematic Japanese fantasy RPG guild forge, Yuna Silverbrook (androgynous guild coordinator in formal cloak) and Yuna Mistfell (masculine guild crafter in rolled-sleeve apron); Yuna Silverbrook steadies a shield on the workbench while Yuna Mistfell guides a safe repair tool, cooperative hands, warm forge light, no sparks hitting skin, no text, no watermark.\\\newline Target continuation: Same continuous forge shot; Yuna Mistfell taps the final harmless repair mark while Yuna Silverbrook holds the shield steady, friendly teamwork, clear tool motion, warm wood textures, consistent lighting, no text, no watermark.\\\newline Config: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/longlive\_jobs/r001\_0014\_guild\_095\_guild\_055/configs/longlive\_config.yaml}\\\newline Video: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/longlive\_jobs/r001\_0014\_guild\_095\_guild\_055/videos/cinematic\_interaction.mp4}
+\item \textbf{guild\_025 -> guild\_045} status=ok\\\newline Actor prompt: Japanese fantasy RPG guild forge, Yuna Ironleaf (feminine ranger with green half-cape and leaf brooch) and Yuna Dawncrest (masculine mage in layered blue robes with neat gloves); Yuna Ironleaf steadies a damaged metal shield on the wooden workbench while Yuna Dawncrest carefully guides a repair tool over the surface, cooperative hands, warm forge light, no sparks hitting skin, no text, no watermark.\\\newline Target continuation: Same continuous forge shot, consistent lighting and character positions; after ten seconds Yuna Dawncrest taps the final harmless repair mark on the shield while Yuna Ironleaf holds the shield steady, friendly teamwork, clear tool motion, no text, no watermark.\\\newline Config: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/longlive\_jobs/r002\_0002\_guild\_025\_guild\_045/configs/longlive\_config.yaml}\\\newline Video: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/longlive\_jobs/r002\_0002\_guild\_025\_guild\_045/videos/cinematic\_interaction.mp4}
+\item \textbf{guild\_075 -> guild\_065} status=ok\\\newline Actor prompt: Japanese fantasy RPG guild forge, warm wood interior. Yuna Oakspire (androgynous, guild sash) steadies a damaged metal shield on a workbench while Yuna Brightford (masculine, guild sash) carefully guides a repair tool along the surface. Cooperative teamwork, warm lighting, no sparks, no text, no watermark, cinematic medium shot.\\\newline Target continuation: Same continuous forge shot, consistent lighting and characters. Yuna Brightford taps the final repair mark on the shield with the tool while Yuna Oakspire holds the shield steady with both hands. Friendly collaborative atmosphere, clear tool motion, no text, no watermark, cinematic medium shot.\\\newline Config: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/longlive\_jobs/r002\_0008\_guild\_075\_guild\_065/configs/longlive\_config.yaml}\\\newline Video: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/longlive\_jobs/r002\_0008\_guild\_075\_guild\_065/videos/cinematic\_interaction.mp4}
+\item \textbf{guild\_008 -> guild\_028} status=ok\\\newline Actor prompt: Japanese fantasy RPG guild hall, warm wood interior, Natsu Ashbell, a feminine frontline adventurer in a short guild cloak and reinforced leather armor, stands opposite Natsu Ironleaf, a feminine healer in cream and mint robes. Natsu Ashbell presents a sealed quest parcel to Natsu Ironleaf with both hands, visible handoff motion, lively guild background, warm lighting, no text, no watermark.\\\newline Target continuation: Same continuous guild hall shot, Natsu Ironleaf accepts the sealed parcel from Natsu Ashbell, both characters bow slightly to complete the handoff, consistent warm anime RPG lighting, no text, no watermark.\\\newline Config: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/longlive\_jobs/r003\_0001\_guild\_008\_guild\_028/configs/longlive\_config.yaml}\\\newline Video: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/longlive\_jobs/r003\_0001\_guild\_008\_guild\_028/videos/cinematic\_interaction.mp4}
+\end{enumerate}
+
+\section{Representative Image Artifacts}
+\begin{enumerate}
+\item \textbf{guild\_095 -> guild\_085} status=ok\\\newline Prompt: Polished anime concept art of a fantasy forge interior. Yuna Silverbrook, an androgynous coordinator in a formal cloak, and Yuna Emberlane, an androgynous scout in a cropped travel jacket, are working together at an anvil to repair a large, dented metal shield. Sparks fly, tools are scattered on the workbench, warm ambient lighting, high fantasy aesthetic, clear subject, no text, no watermark.\\\newline Image: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/image\_jobs/r002\_0014\_guild\_095\_guild\_085\_image/artifact.png}
+\item \textbf{guild\_main\_princess -> guild\_093} status=ok\\\newline Prompt: Polished anime concept art, close-up of a weathered, glowing fragment of an ancient parchment map resting on a dark wooden guild table, subtle magical particles, Japanese fantasy RPG aesthetic, soft lighting, high detail, no text, no watermark.\\\newline Image: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/image\_jobs/r002\_0017\_guild\_main\_princess\_guild\_093\_image/artifact.png}
+\item \textbf{guild\_019 -> guild\_099} status=ok\\\newline Prompt: Polished anime concept art of a Japanese fantasy RPG guild hall. Eri Moonvale, a ranger in a green half-cape with a leaf-shaped brooch, hands a stack of official, wax-sealed raid documents to Eri Silverbrook, a composed guild coordinator in a formal cloak. They stand at a wooden strategy table with maps and a brass guild seal stamp. Warm interior lighting, high quality, clean lines, no text, no watermark.\\\newline Image: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/image\_jobs/r003\_0003\_guild\_019\_guild\_099\_image/artifact.png}
+\item \textbf{guild\_023 -> guild\_053} status=ok\\\newline Prompt: Polished anime concept art of a weathered, glowing parchment fragment of a treasure map resting on a dark wooden tavern table, soft ambient tavern lighting, magical particles, detailed textures, no text, no watermark.\\\newline Image: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/image\_jobs/r003\_0004\_guild\_023\_guild\_053\_image/artifact.png}
+\item \textbf{guild\_main\_cadre -> guild\_051} status=ok\\\newline Prompt: Polished anime concept art of Mira Ledgerfall and Ari Mistfell in a cozy, dimly lit fantasy forge. Mira, in a formal guild cadre cloak, assists Ari, who wears a soot-stained apron and leather tool belt, as they work together on a large, dented metal shield resting on an anvil. Sparks fly from the shield, warm ambient lighting, highly detailed workshop background, no text, no watermark.\\\newline Image: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/image\_jobs/r003\_0017\_guild\_main\_cadre\_guild\_051\_image/artifact.png}
+\item \textbf{guild\_059 -> guild\_079} status=ok\\\newline Prompt: Polished anime concept art of a cozy fantasy guild workshop. Eri Mistfell, a feminine crafter in a rolled-sleeve apron and ash-stained gloves, stands at a cluttered workbench. She is receiving a bundle of goblin-raid loot, including glowing mana crystals and a weathered map, from Eri Oakspire, an androgynous scout in a cropped travel jacket and messenger straps. Warm ambient lighting, detailed tools and materials on the table, vibrant Japanese fantasy RPG style, no text, no watermark.\\\newline Image: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/image\_jobs/r004\_0005\_guild\_059\_guild\_079\_image/artifact.png}
+\item \textbf{guild\_068 -> guild\_038} status=ok\\\newline Prompt: Polished anime concept art of a masculine quartermaster in a neat vest and sash handing a glowing, ancient relic to a feminine mage in layered blue robes within a dimly lit, magical arcane library filled with floating spell tags and leather-bound books. Soft, ethereal lighting, high detail, Japanese fantasy RPG style, no text, no watermark.\\\newline Image: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/image\_jobs/r004\_0007\_guild\_068\_guild\_038\_image/artifact.png}
+\item \textbf{guild\_091 -> guild\_011} status=failed\\\newline Prompt: Polished anime-style concept art of a formal quest handoff in a Japanese fantasy guild hall. Ari Silverbrook, a composed guild coordinator in a formal cloak, receives a glowing, ornate relic and a mission scroll from Ari Moonvale, a confident frontline adventurer in reinforced leather armor with a bright scarf. Warm, professional lighting, detailed guild interior background, no text, no watermark.\\\newline Image: \url{}
+\end{enumerate}
+
+\section{Artifacts}
+Story JSON: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/guild\_story.json}\\
+Timeline JSONL: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/timeline.jsonl}\\
+Video Jobs JSONL: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/video\_prompt\_jobs.jsonl}\\
+Image Jobs JSONL: \url{/home/yz\_wang/yz\_main/agora-mini/output/guild\_interaction\_simulation/20260420\_081142\_024771/image\_jobs.jsonl}\\
+\end{document}

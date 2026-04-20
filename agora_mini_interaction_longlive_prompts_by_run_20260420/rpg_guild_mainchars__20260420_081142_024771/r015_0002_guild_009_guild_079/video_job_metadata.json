@@ -1,0 +1,75 @@
+{
+  "video_job": {
+    "job_id": "r015_0002_guild_009_guild_079",
+    "status": "ok",
+    "prompts_jsonl_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r015_0002_guild_009_guild_079/prompts/prompts.jsonl",
+    "config_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r015_0002_guild_009_guild_079/configs/longlive_config.yaml",
+    "command_log_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r015_0002_guild_009_guild_079/logs/longlive.log",
+    "video_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r015_0002_guild_009_guild_079/videos/cinematic_interaction.mp4",
+    "snapshot_path": "",
+    "num_output_frames": 81,
+    "total_rgb_frames": 321,
+    "switch_frame_indices": [
+      41
+    ],
+    "output_video_fps": 16.05,
+    "round_index": 15,
+    "actor_id": "guild_009",
+    "target_id": "guild_079",
+    "actor_prompt": "Japanese fantasy RPG guild hall near the quest board, Eri Ashbell (androgynous, short guild cloak, reinforced leather armor, bright scarf, training scratches) and Eri Oakspire (androgynous, cropped travel jacket, messenger straps, wind-tossed hair) stand together; Ashbell presents a sealed quest parcel to Oakspire with both hands, visible handoff motion, lively guild background, warm wood, cinematic lighting, no text, no watermark.",
+    "target_continuation_prompt": "Same continuous guild hall shot; after ten seconds Eri Oakspire accepts the sealed parcel from Eri Ashbell with both hands, both characters bow slightly, the handoff completes clearly, warm anime RPG lighting, consistent character appearance, background guild activity, no text, no watermark.",
+    "prompt_source": "vertex_api",
+    "safety_notes": "The prompt depicts a professional, non-sexual interaction between two fantasy characters. Content is safe, adheres to guild-themed RPG aesthetics, and avoids restricted elements like text or watermarks.",
+    "prompt_schedule_seconds": [
+      0,
+      10
+    ]
+  },
+  "timeline_story": {
+    "round_index": 15,
+    "actor_id": "guild_009",
+    "actor_name": "Eri Ashbell",
+    "actor_room_id": "strategy_table",
+    "actor_coordinate": {
+      "x": 3,
+      "y": 1,
+      "z": 0
+    },
+    "target_id": "guild_079",
+    "target_name": "Eri Oakspire",
+    "target_room_id": "strategy_table",
+    "target_coordinate": {
+      "x": 3,
+      "y": 1,
+      "z": 0
+    },
+    "same_room": true,
+    "distance": 0,
+    "route_id": "quest_item_handoff",
+    "kind": "cinematic",
+    "story_verb": "completed a visible quest handoff with",
+    "longlive_status": "ok",
+    "image_status": "",
+    "selection_reason": "The expedition requires the charged mana crystal to be handed over at the strategy table to proceed with the relic mission.",
+    "relationship_adjustments": [
+      {
+        "source_agent_id": "guild_009",
+        "target_agent_id": "guild_079",
+        "trust_delta": 5,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Successful handoff of critical expedition supplies.",
+        "source": "vertex_api"
+      },
+      {
+        "source_agent_id": "guild_079",
+        "target_agent_id": "guild_009",
+        "trust_delta": 5,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Reliable coordination during the relic expedition.",
+        "source": "vertex_api"
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "video_job": {
+    "job_id": "r020_0001_guild_021_guild_091",
+    "status": "ok",
+    "prompts_jsonl_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r020_0001_guild_021_guild_091/prompts/prompts.jsonl",
+    "config_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r020_0001_guild_021_guild_091/configs/longlive_config.yaml",
+    "command_log_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r020_0001_guild_021_guild_091/logs/longlive.log",
+    "video_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r020_0001_guild_021_guild_091/videos/cinematic_interaction.mp4",
+    "snapshot_path": "",
+    "num_output_frames": 81,
+    "total_rgb_frames": 321,
+    "switch_frame_indices": [
+      41
+    ],
+    "output_video_fps": 16.05,
+    "round_index": 20,
+    "actor_id": "guild_021",
+    "target_id": "guild_091",
+    "actor_prompt": "Cinematic shot in a warm, wood-paneled Japanese fantasy RPG guild hall. Ari Ironleaf, an androgynous ranger with a green half-cape and leaf-shaped brooch, stands before the quest board. Ari Ironleaf presents a sealed quest parcel to Ari Silverbrook, a feminine guild coordinator in a formal cloak with a Silverbrook brooch. Both characters are in focus, handoff motion is clear, lively guild activity in the background, no text, no watermark, warm anime lighting.",
+    "target_continuation_prompt": "Continuation of the same scene in the Japanese fantasy RPG guild hall. Ari Silverbrook accepts the sealed parcel from Ari Ironleaf. Both characters perform a polite, slight bow to each other to complete the handoff. The lighting remains warm and consistent with the previous shot, characters maintain their positions and appearances, no text, no watermark, cinematic anime style.",
+    "prompt_source": "vertex_api",
+    "safety_notes": "The interaction is a professional, non-sexual exchange of items between two characters in a fantasy setting, adhering to safety guidelines regarding respectful and appropriate content.",
+    "prompt_schedule_seconds": [
+      0,
+      10
+    ]
+  },
+  "timeline_story": {
+    "round_index": 20,
+    "actor_id": "guild_021",
+    "actor_name": "Ari Ironleaf",
+    "actor_room_id": "guild_hall",
+    "actor_coordinate": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "target_id": "guild_091",
+    "target_name": "Ari Silverbrook",
+    "target_room_id": "guild_hall",
+    "target_coordinate": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "same_room": true,
+    "distance": 0,
+    "route_id": "quest_item_handoff",
+    "kind": "cinematic",
+    "story_verb": "completed a visible quest handoff with",
+    "longlive_status": "ok",
+    "image_status": "",
+    "selection_reason": "The expedition team has returned with the ancient artifact; Ari Ironleaf is handing it over to the coordinator for official inspection.",
+    "relationship_adjustments": [
+      {
+        "source_agent_id": "guild_021",
+        "target_agent_id": "guild_091",
+        "trust_delta": 3,
+        "affection_delta": 1,
+        "influence_fear_delta": 0,
+        "reason": "Successful completion of a high-stakes relic retrieval mission.",
+        "source": "vertex_api"
+      },
+      {
+        "source_agent_id": "guild_091",
+        "target_agent_id": "guild_021",
+        "trust_delta": 3,
+        "affection_delta": 1,
+        "influence_fear_delta": 0,
+        "reason": "Professional appreciation for the ranger's reliable and timely artifact delivery.",
+        "source": "vertex_api"
+      }
+    ]
+  }
+}

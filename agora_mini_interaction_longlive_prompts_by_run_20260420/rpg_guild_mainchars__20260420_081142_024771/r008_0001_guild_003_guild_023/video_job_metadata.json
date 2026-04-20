@@ -1,0 +1,75 @@
+{
+  "video_job": {
+    "job_id": "r008_0001_guild_003_guild_023",
+    "status": "ok",
+    "prompts_jsonl_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r008_0001_guild_003_guild_023/prompts/prompts.jsonl",
+    "config_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r008_0001_guild_003_guild_023/configs/longlive_config.yaml",
+    "command_log_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r008_0001_guild_003_guild_023/logs/longlive.log",
+    "video_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r008_0001_guild_003_guild_023/videos/cinematic_interaction.mp4",
+    "snapshot_path": "",
+    "num_output_frames": 81,
+    "total_rgb_frames": 321,
+    "switch_frame_indices": [
+      41
+    ],
+    "output_video_fps": 16.05,
+    "round_index": 8,
+    "actor_id": "guild_003",
+    "target_id": "guild_023",
+    "actor_prompt": "Cinematic wide shot in a warm, wood-paneled Japanese fantasy RPG guild hall. Ren Ashbell, an androgynous adventurer with a short guild cloak, reinforced leather armor, and a bright scarf, stands near the quest board. Ren Ashbell presents a sealed quest parcel with both hands, extending it towards Ren Ironleaf, a masculine ranger with a green half-cape and a leaf-shaped brooch. Soft, warm lighting, lively guild activity in the background, no text, no watermark.",
+    "target_continuation_prompt": "Same continuous guild hall shot; Ren Ironleaf, the masculine ranger with a green half-cape and compact bow case, accepts the sealed parcel from Ren Ashbell. Upon completion of the handoff, both characters perform a slight, respectful bow to each other. Consistent warm anime RPG lighting, stable camera, no text, no watermark.",
+    "prompt_source": "vertex_api",
+    "safety_notes": "The content depicts a non-sexual, professional fantasy interaction. No sensitive content, text, or watermarks are present.",
+    "prompt_schedule_seconds": [
+      0,
+      10
+    ]
+  },
+  "timeline_story": {
+    "round_index": 8,
+    "actor_id": "guild_003",
+    "actor_name": "Ren Ashbell",
+    "actor_room_id": "tavern_corner",
+    "actor_coordinate": {
+      "x": 2,
+      "y": 0,
+      "z": 0
+    },
+    "target_id": "guild_023",
+    "target_name": "Ren Ironleaf",
+    "target_room_id": "tavern_corner",
+    "target_coordinate": {
+      "x": 2,
+      "y": 0,
+      "z": 0
+    },
+    "same_room": true,
+    "distance": 0,
+    "route_id": "quest_item_handoff",
+    "kind": "cinematic",
+    "story_verb": "completed a visible quest handoff with",
+    "longlive_status": "ok",
+    "image_status": "",
+    "selection_reason": "Resolving the misplaced reward box event found in the tavern corner.",
+    "relationship_adjustments": [
+      {
+        "source_agent_id": "guild_003",
+        "target_agent_id": "guild_023",
+        "trust_delta": 5,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Collaborated on securing misplaced guild loot.",
+        "source": "vertex_api"
+      },
+      {
+        "source_agent_id": "guild_023",
+        "target_agent_id": "guild_003",
+        "trust_delta": 5,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Appreciated the frontline adventurer's help with the reward box.",
+        "source": "vertex_api"
+      }
+    ]
+  }
+}

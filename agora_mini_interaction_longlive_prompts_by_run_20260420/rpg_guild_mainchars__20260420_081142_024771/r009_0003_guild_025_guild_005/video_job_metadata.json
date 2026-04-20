@@ -1,0 +1,75 @@
+{
+  "video_job": {
+    "job_id": "r009_0003_guild_025_guild_005",
+    "status": "ok",
+    "prompts_jsonl_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r009_0003_guild_025_guild_005/prompts/prompts.jsonl",
+    "config_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r009_0003_guild_025_guild_005/configs/longlive_config.yaml",
+    "command_log_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r009_0003_guild_025_guild_005/logs/longlive.log",
+    "video_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r009_0003_guild_025_guild_005/videos/cinematic_interaction.mp4",
+    "snapshot_path": "",
+    "num_output_frames": 81,
+    "total_rgb_frames": 321,
+    "switch_frame_indices": [
+      41
+    ],
+    "output_video_fps": 16.05,
+    "round_index": 9,
+    "actor_id": "guild_025",
+    "target_id": "guild_005",
+    "actor_prompt": "Cinematic, Japanese fantasy RPG guild forge, warm wood aesthetic. Yuna Ironleaf, a feminine ranger with a green half-cape and silver leaf brooch, and Yuna Ashbell, a feminine frontline adventurer in reinforced leather armor and a bright scarf, stand at a workbench. Ironleaf steadies a damaged shield while Ashbell carefully guides a repair tool across the metal surface. Warm, soft forge lighting, cooperative body language, no sparks, no text, no watermark, high quality.",
+    "target_continuation_prompt": "Same continuous shot, Japanese fantasy RPG guild forge. Yuna Ashbell taps the final repair mark on the shield with her tool while Yuna Ironleaf continues to hold the shield steady with both hands. Friendly, focused teamwork between the two adventurers, clear tool motion, consistent lighting and character appearance, no text, no watermark, high quality.",
+    "prompt_source": "vertex_api",
+    "safety_notes": "The prompt depicts non-sexual, cooperative professional interaction in a fantasy setting. No hazardous materials or unsafe behaviors are shown; sparks are explicitly excluded to ensure safety.",
+    "prompt_schedule_seconds": [
+      0,
+      10
+    ]
+  },
+  "timeline_story": {
+    "round_index": 9,
+    "actor_id": "guild_025",
+    "actor_name": "Yuna Ironleaf",
+    "actor_room_id": "forge",
+    "actor_coordinate": {
+      "x": 4,
+      "y": 0,
+      "z": 0
+    },
+    "target_id": "guild_005",
+    "target_name": "Yuna Ashbell",
+    "target_room_id": "forge",
+    "target_coordinate": {
+      "x": 4,
+      "y": 0,
+      "z": 0
+    },
+    "same_room": true,
+    "distance": 0,
+    "route_id": "assisted_forge_repair",
+    "kind": "cinematic",
+    "story_verb": "assisted a forge repair with",
+    "longlive_status": "ok",
+    "image_status": "",
+    "selection_reason": "The forge is currently experiencing a hazard due to runaway sparks; both agents are present and can cooperate to stabilize the equipment.",
+    "relationship_adjustments": [
+      {
+        "source_agent_id": "guild_025",
+        "target_agent_id": "guild_005",
+        "trust_delta": 5,
+        "affection_delta": 5,
+        "influence_fear_delta": 0,
+        "reason": "Cooperative effort to resolve the forge hazard builds camaraderie.",
+        "source": "vertex_api"
+      },
+      {
+        "source_agent_id": "guild_005",
+        "target_agent_id": "guild_025",
+        "trust_delta": 5,
+        "affection_delta": 5,
+        "influence_fear_delta": 0,
+        "reason": "Valued the ranger's support during a stressful equipment maintenance task.",
+        "source": "vertex_api"
+      }
+    ]
+  }
+}

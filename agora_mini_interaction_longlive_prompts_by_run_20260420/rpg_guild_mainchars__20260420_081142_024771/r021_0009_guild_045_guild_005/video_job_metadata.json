@@ -1,0 +1,75 @@
+{
+  "video_job": {
+    "job_id": "r021_0009_guild_045_guild_005",
+    "status": "ok",
+    "prompts_jsonl_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r021_0009_guild_045_guild_005/prompts/prompts.jsonl",
+    "config_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r021_0009_guild_045_guild_005/configs/longlive_config.yaml",
+    "command_log_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r021_0009_guild_045_guild_005/logs/longlive.log",
+    "video_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r021_0009_guild_045_guild_005/videos/cinematic_interaction.mp4",
+    "snapshot_path": "",
+    "num_output_frames": 81,
+    "total_rgb_frames": 321,
+    "switch_frame_indices": [
+      41
+    ],
+    "output_video_fps": 16.05,
+    "round_index": 21,
+    "actor_id": "guild_045",
+    "target_id": "guild_005",
+    "actor_prompt": "Cinematic wide shot in a warm Japanese fantasy RPG guild forge. Yuna Dawncrest, a masculine mage in layered blue robes, steadies a dented metal shield on a wooden workbench. Yuna Ashbell, a feminine frontline adventurer in reinforced leather armor and a bright scarf, uses a small repair tool to carefully smooth the metal. Focused, cooperative atmosphere, warm ambient lighting, no text, no watermark.",
+    "target_continuation_prompt": "Continuous shot from the same angle in the forge. Yuna Ashbell taps the final repair mark on the shield with her tool, signaling completion, while Yuna Dawncrest maintains a steady grip on the shield. Both characters share a brief, friendly nod of successful teamwork. Warm forge light, high detail, consistent character appearance, no text, no watermark.",
+    "prompt_source": "vertex_api",
+    "safety_notes": "The content depicts non-sexual, professional cooperation between two fantasy characters in a workshop setting. No sparks, no dangerous contact, and no inappropriate imagery. Strictly adheres to RPG guild aesthetic.",
+    "prompt_schedule_seconds": [
+      0,
+      10
+    ]
+  },
+  "timeline_story": {
+    "round_index": 21,
+    "actor_id": "guild_045",
+    "actor_name": "Yuna Dawncrest",
+    "actor_room_id": "forge",
+    "actor_coordinate": {
+      "x": 4,
+      "y": 0,
+      "z": 0
+    },
+    "target_id": "guild_005",
+    "target_name": "Yuna Ashbell",
+    "target_room_id": "forge",
+    "target_coordinate": {
+      "x": 4,
+      "y": 0,
+      "z": 0
+    },
+    "same_room": true,
+    "distance": 0,
+    "route_id": "assisted_forge_repair",
+    "kind": "cinematic",
+    "story_verb": "assisted a forge repair with",
+    "longlive_status": "ok",
+    "image_status": "",
+    "selection_reason": "The forge is experiencing a repair bottleneck; the mage and frontline adventurer continue their cooperative work to clear the equipment backlog.",
+    "relationship_adjustments": [
+      {
+        "source_agent_id": "guild_045",
+        "target_agent_id": "guild_005",
+        "trust_delta": 5,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Successful collaborative repair of gear in a high-pressure environment.",
+        "source": "vertex_api"
+      },
+      {
+        "source_agent_id": "guild_005",
+        "target_agent_id": "guild_045",
+        "trust_delta": 5,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Appreciation for the mage's precise support during critical equipment maintenance.",
+        "source": "vertex_api"
+      }
+    ]
+  }
+}

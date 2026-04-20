@@ -1,0 +1,75 @@
+{
+  "video_job": {
+    "job_id": "r001_0014_guild_095_guild_055",
+    "status": "ok",
+    "prompts_jsonl_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r001_0014_guild_095_guild_055/prompts/prompts.jsonl",
+    "config_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r001_0014_guild_095_guild_055/configs/longlive_config.yaml",
+    "command_log_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r001_0014_guild_095_guild_055/logs/longlive.log",
+    "video_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r001_0014_guild_095_guild_055/videos/cinematic_interaction.mp4",
+    "snapshot_path": "",
+    "num_output_frames": 81,
+    "total_rgb_frames": 321,
+    "switch_frame_indices": [
+      41
+    ],
+    "output_video_fps": 16.05,
+    "round_index": 1,
+    "actor_id": "guild_095",
+    "target_id": "guild_055",
+    "actor_prompt": "Cinematic Japanese fantasy RPG guild forge, Yuna Silverbrook (androgynous guild coordinator in formal cloak) and Yuna Mistfell (masculine guild crafter in rolled-sleeve apron); Yuna Silverbrook steadies a shield on the workbench while Yuna Mistfell guides a safe repair tool, cooperative hands, warm forge light, no sparks hitting skin, no text, no watermark.",
+    "target_continuation_prompt": "Same continuous forge shot; Yuna Mistfell taps the final harmless repair mark while Yuna Silverbrook holds the shield steady, friendly teamwork, clear tool motion, warm wood textures, consistent lighting, no text, no watermark.",
+    "prompt_source": "vertex_api",
+    "safety_notes": "The scene depicts professional cooperation in a fantasy setting. No sexual or violent content. No text or watermarks included.",
+    "prompt_schedule_seconds": [
+      0,
+      10
+    ]
+  },
+  "timeline_story": {
+    "round_index": 1,
+    "actor_id": "guild_095",
+    "actor_name": "Yuna Silverbrook",
+    "actor_room_id": "forge",
+    "actor_coordinate": {
+      "x": 4,
+      "y": 0,
+      "z": 0
+    },
+    "target_id": "guild_055",
+    "target_name": "Yuna Mistfell",
+    "target_room_id": "forge",
+    "target_coordinate": {
+      "x": 4,
+      "y": 0,
+      "z": 0
+    },
+    "same_room": true,
+    "distance": 0,
+    "route_id": "assisted_forge_repair",
+    "kind": "cinematic",
+    "story_verb": "assisted a forge repair with",
+    "longlive_status": "ok",
+    "image_status": "",
+    "selection_reason": "Yuna Silverbrook assists Yuna Mistfell with a forge repair task to maintain guild gear efficiency.",
+    "relationship_adjustments": [
+      {
+        "source_agent_id": "guild_095",
+        "target_agent_id": "guild_055",
+        "trust_delta": 5,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Professional collaboration in the forge builds mutual trust.",
+        "source": "vertex_api"
+      },
+      {
+        "source_agent_id": "guild_055",
+        "target_agent_id": "guild_095",
+        "trust_delta": 5,
+        "affection_delta": 3,
+        "influence_fear_delta": 0,
+        "reason": "Appreciation for coordinator's hands-on support.",
+        "source": "vertex_api"
+      }
+    ]
+  }
+}

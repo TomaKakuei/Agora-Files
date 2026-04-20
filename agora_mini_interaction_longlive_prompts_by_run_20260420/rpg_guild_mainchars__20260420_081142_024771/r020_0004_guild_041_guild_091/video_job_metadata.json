@@ -1,0 +1,75 @@
+{
+  "video_job": {
+    "job_id": "r020_0004_guild_041_guild_091",
+    "status": "ok",
+    "prompts_jsonl_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r020_0004_guild_041_guild_091/prompts/prompts.jsonl",
+    "config_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r020_0004_guild_041_guild_091/configs/longlive_config.yaml",
+    "command_log_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r020_0004_guild_041_guild_091/logs/longlive.log",
+    "video_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r020_0004_guild_041_guild_091/videos/cinematic_interaction.mp4",
+    "snapshot_path": "",
+    "num_output_frames": 81,
+    "total_rgb_frames": 321,
+    "switch_frame_indices": [
+      41
+    ],
+    "output_video_fps": 16.05,
+    "round_index": 20,
+    "actor_id": "guild_041",
+    "target_id": "guild_091",
+    "actor_prompt": "Cinematic shot in a warm, wood-paneled Japanese fantasy RPG guild hall. Ari Dawncrest, a mage in layered blue robes with floating spell tags and neat gloves, holds a sealed quest parcel with both hands, extending it towards Ari Silverbrook, a guild coordinator in a formal cloak. The camera is steady, capturing the focused expressions and the start of the handoff. No text, no watermarks, warm anime lighting.",
+    "target_continuation_prompt": "Continuing the same cinematic shot in the guild hall. Ari Silverbrook, the guild coordinator, carefully accepts the sealed quest parcel from Ari Dawncrest. Both characters perform a slight, respectful bow to each other to complete the handoff. The background remains a lively, warm-lit RPG guild. Consistent character appearances, no text, no watermarks, high-quality anime art style.",
+    "prompt_source": "vertex_api",
+    "safety_notes": "The interaction is a professional, non-sexual quest item handoff between two fantasy characters, adhering to safety guidelines regarding appropriate social behavior.",
+    "prompt_schedule_seconds": [
+      0,
+      10
+    ]
+  },
+  "timeline_story": {
+    "round_index": 20,
+    "actor_id": "guild_041",
+    "actor_name": "Ari Dawncrest",
+    "actor_room_id": "guild_hall",
+    "actor_coordinate": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "target_id": "guild_091",
+    "target_name": "Ari Silverbrook",
+    "target_room_id": "guild_hall",
+    "target_coordinate": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "same_room": true,
+    "distance": 0,
+    "route_id": "quest_item_handoff",
+    "kind": "cinematic",
+    "story_verb": "completed a visible quest handoff with",
+    "longlive_status": "ok",
+    "image_status": "",
+    "selection_reason": "Ari Dawncrest hands over the recovered artifact to the coordinator for official inspection.",
+    "relationship_adjustments": [
+      {
+        "source_agent_id": "guild_041",
+        "target_agent_id": "guild_091",
+        "trust_delta": 3,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Successful artifact handoff and professional collaboration.",
+        "source": "vertex_api"
+      },
+      {
+        "source_agent_id": "guild_091",
+        "target_agent_id": "guild_041",
+        "trust_delta": 3,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Reliable mission completion and contribution to guild goals.",
+        "source": "vertex_api"
+      }
+    ]
+  }
+}

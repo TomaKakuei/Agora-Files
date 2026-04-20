@@ -1,0 +1,75 @@
+{
+  "video_job": {
+    "job_id": "r014_0004_guild_018_guild_008",
+    "status": "ok",
+    "prompts_jsonl_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r014_0004_guild_018_guild_008/prompts/prompts.jsonl",
+    "config_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r014_0004_guild_018_guild_008/configs/longlive_config.yaml",
+    "command_log_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r014_0004_guild_018_guild_008/logs/longlive.log",
+    "video_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r014_0004_guild_018_guild_008/videos/cinematic_interaction.mp4",
+    "snapshot_path": "",
+    "num_output_frames": 81,
+    "total_rgb_frames": 321,
+    "switch_frame_indices": [
+      41
+    ],
+    "output_video_fps": 16.05,
+    "round_index": 14,
+    "actor_id": "guild_018",
+    "target_id": "guild_008",
+    "actor_prompt": "Japanese fantasy RPG guild hall, warm wooden interior, lively background. Natsu Moonvale, an androgynous ranger with a green half-cape and leaf-shaped brooch, stands facing Natsu Ashbell, a feminine frontline adventurer in reinforced leather armor with a bright scarf. Moonvale holds a sealed quest parcel with both hands, extending it toward Ashbell in a clear, deliberate handoff motion. Cinematic lighting, soft focus, no text, no watermark.",
+    "target_continuation_prompt": "Same continuous guild hall shot. Natsu Ashbell accepts the sealed quest parcel from Natsu Moonvale. Both characters perform a slight, respectful bow to each other as the handoff completes. Warm anime RPG lighting, consistent character appearance and attire, fluid motion, no text, no watermark.",
+    "prompt_source": "vertex_api",
+    "safety_notes": "The prompts depict a professional, non-sexual interaction between two fantasy characters. No text, watermarks, or inappropriate content are included.",
+    "prompt_schedule_seconds": [
+      0,
+      10
+    ]
+  },
+  "timeline_story": {
+    "round_index": 14,
+    "actor_id": "guild_018",
+    "actor_name": "Natsu Moonvale",
+    "actor_room_id": "arcane_library",
+    "actor_coordinate": {
+      "x": 2,
+      "y": 1,
+      "z": 0
+    },
+    "target_id": "guild_008",
+    "target_name": "Natsu Ashbell",
+    "target_room_id": "arcane_library",
+    "target_coordinate": {
+      "x": 2,
+      "y": 1,
+      "z": 0
+    },
+    "same_room": true,
+    "distance": 0,
+    "route_id": "quest_item_handoff",
+    "kind": "cinematic",
+    "story_verb": "completed a visible quest handoff with",
+    "longlive_status": "ok",
+    "image_status": "",
+    "selection_reason": "Natsu Moonvale hands the charged mana crystal to Natsu Ashbell to ensure the expedition party receives it for the sealed gate.",
+    "relationship_adjustments": [
+      {
+        "source_agent_id": "guild_018",
+        "target_agent_id": "guild_008",
+        "trust_delta": 5,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Successful coordination on a critical expedition task builds mutual professional trust.",
+        "source": "vertex_api"
+      },
+      {
+        "source_agent_id": "guild_008",
+        "target_agent_id": "guild_018",
+        "trust_delta": 5,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Reliable handoff of essential gear strengthens the bond between frontline and support roles.",
+        "source": "vertex_api"
+      }
+    ]
+  }
+}

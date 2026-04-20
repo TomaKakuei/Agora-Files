@@ -1,0 +1,75 @@
+{
+  "video_job": {
+    "job_id": "r009_0002_guild_022_guild_092",
+    "status": "ok",
+    "prompts_jsonl_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r009_0002_guild_022_guild_092/prompts/prompts.jsonl",
+    "config_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r009_0002_guild_022_guild_092/configs/longlive_config.yaml",
+    "command_log_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r009_0002_guild_022_guild_092/logs/longlive.log",
+    "video_path": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation/20260420_081142_024771/longlive_jobs/r009_0002_guild_022_guild_092/videos/cinematic_interaction.mp4",
+    "snapshot_path": "",
+    "num_output_frames": 81,
+    "total_rgb_frames": 321,
+    "switch_frame_indices": [
+      41
+    ],
+    "output_video_fps": 16.05,
+    "round_index": 9,
+    "actor_id": "guild_022",
+    "target_id": "guild_092",
+    "actor_prompt": "Japanese fantasy RPG guild hall with warm wood textures and quest board background; Mika Ironleaf, a feminine ranger in a green half-cape with a leaf brooch, presents a sealed quest parcel to Mika Silverbrook, an androgynous coordinator in a formal cloak, using a clear two-handed delivery motion. The lighting is soft and golden, cinematic anime style, no text, no watermark.",
+    "target_continuation_prompt": "Same continuous guild hall shot; Mika Silverbrook accepts the sealed parcel from Mika Ironleaf, both characters perform a slight, respectful bow to finalize the handoff. The camera remains steady, maintaining the professional and warm atmosphere of the RPG guild. Consistent character appearances, lighting, and background, no text, no watermark.",
+    "prompt_source": "vertex_api",
+    "safety_notes": "The interaction is strictly professional and task-oriented, depicting a quest handoff in a fantasy setting. No sexual, violent, or inappropriate content is included.",
+    "prompt_schedule_seconds": [
+      0,
+      10
+    ]
+  },
+  "timeline_story": {
+    "round_index": 9,
+    "actor_id": "guild_022",
+    "actor_name": "Mika Ironleaf",
+    "actor_room_id": "quest_board",
+    "actor_coordinate": {
+      "x": 1,
+      "y": 0,
+      "z": 0
+    },
+    "target_id": "guild_092",
+    "target_name": "Mika Silverbrook",
+    "target_room_id": "quest_board",
+    "target_coordinate": {
+      "x": 1,
+      "y": 0,
+      "z": 0
+    },
+    "same_room": true,
+    "distance": 0,
+    "route_id": "quest_item_handoff",
+    "kind": "cinematic",
+    "story_verb": "completed a visible quest handoff with",
+    "longlive_status": "ok",
+    "image_status": "",
+    "selection_reason": "Completing the urgent courier commission for the Twin Relic Cipher delivery at the quest board.",
+    "relationship_adjustments": [
+      {
+        "source_agent_id": "guild_022",
+        "target_agent_id": "guild_092",
+        "trust_delta": 5,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Successful completion of an urgent guild commission builds professional trust.",
+        "source": "vertex_api"
+      },
+      {
+        "source_agent_id": "guild_092",
+        "target_agent_id": "guild_022",
+        "trust_delta": 5,
+        "affection_delta": 2,
+        "influence_fear_delta": 0,
+        "reason": "Reliability in high-priority tasks increases professional respect and trust.",
+        "source": "vertex_api"
+      }
+    ]
+  }
+}
