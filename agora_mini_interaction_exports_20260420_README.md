@@ -11,3 +11,6 @@ Runs included:
 - demon_castle / 20260417_045420_879452
 - luxury_cruise_storm / 20260418_232745_653042
 - black_market_auction / 20260419_082828_312620
+
+Video export added:
+- `agora_mini_interaction_longlive_videos_by_run_20260420/`: final LongLive mp4 files grouped by run and job id. These files are stored through Git LFS.
