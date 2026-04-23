@@ -1,0 +1,207 @@
+{
+  "run_id": "20260422_224015_995854",
+  "created_at": "2026-04-22T22:51:51",
+  "config_path": "/home/yz_wang/yz_main/agora-mini/Scenarios/RPG_Guild_100/guild_atwill_mainchars_world_config.json",
+  "scenario_dir": "/home/yz_wang/yz_main/agora-mini/Scenarios/RPG_Guild_100_atwill_mainchars",
+  "scenario_files": {
+    "manifest": "/home/yz_wang/yz_main/agora-mini/Scenarios/RPG_Guild_100_atwill_mainchars/manifest.json",
+    "world_rules": "/home/yz_wang/yz_main/agora-mini/Scenarios/RPG_Guild_100_atwill_mainchars/world_rules.json",
+    "map_grid": "/home/yz_wang/yz_main/agora-mini/Scenarios/RPG_Guild_100_atwill_mainchars/map_grid.json",
+    "agents_dir": "/home/yz_wang/yz_main/agora-mini/Scenarios/RPG_Guild_100_atwill_mainchars/Agents"
+  },
+  "agent_profile_cache_dir": "/home/yz_wang/yz_main/agora-mini/output/guild_interaction_simulation_atwill_mainchars/20260422_224015_995854/agent_profile_api_cache",
+  "reused_agent_profile_cache": "",
+  "rounds": 25,
+  "activation_probability": 0.15,
+  "seed": 42617,
+  "mock_llm": false,
+  "agent_profile_source": "vertex_api",
+  "disable_longlive": false,
+  "longlive_dry_run": false,
+  "disable_image_generation": false,
+  "image_dry_run": false,
+  "max_images_per_round": 10,
+  "image_generation": {
+    "enabled": true,
+    "backend": "vertex_sdk",
+    "model": "gemini-3.1-flash-image-preview",
+    "vertex_cred_file": "/home/yz_wang/yz_main/BAGEL/VertexSDK.json",
+    "vertex_project_id": "gen-lang-client-0687399333",
+    "vertex_location": "global",
+    "max_images_per_round": 10,
+    "temperature": 0.35,
+    "thinking_budget": 0,
+    "max_output_tokens": 1024,
+    "response_modalities": [
+      "TEXT",
+      "IMAGE"
+    ],
+    "output_subdir": "image_jobs",
+    "cinematic_overflow_fallback": false,
+    "conditions": [
+      "Still images remain allowed only for ordinary image routes such as treasure discovery.",
+      "Do not use images as fallback for protagonist LongLive routes in this at-will cinematic run."
+    ],
+    "prompt_policy": "Japanese fantasy RPG object or scene illustration, polished anime concept art, clear subject, no visible text, no watermark.",
+    "default_prompt_template": "{domain_label}. Create one polished still image of {image_subject} for {actor_name} and {target_name}. Include their visual context only if relevant. No visible text, no watermark."
+  },
+  "inventory_generation": {
+    "enabled": true,
+    "stage": "initial_inventory_generation",
+    "preserve_existing_inventory": true,
+    "max_distinct_items_per_agent": 3,
+    "max_quantity_per_item": 3,
+    "allowed_item_ids": [
+      "healing_potion",
+      "mana_crystal",
+      "iron_ingot",
+      "quest_map",
+      "rations",
+      "repair_kit",
+      "herb_bundle",
+      "signed_commission"
+    ],
+    "policy": "Generate compact role-appropriate actionable inventory only from the item catalog. Use property_library for non-actionable treasures, titles, clues, personal tools, debts, or keepsakes. Do not create images here; image generation is a later system step when a route requests it."
+  },
+  "extra_world_functions": {
+    "enabled": true,
+    "stage": "extra_world_functions",
+    "activation_probability": 1.0,
+    "max_events_per_function": 2,
+    "max_events_per_round": 4,
+    "functions": [
+      {
+        "function_id": "guild_task_chain_generator",
+        "enabled": true,
+        "activation_probability": 1.0,
+        "max_events": 2,
+        "purpose": "Create or advance small parallel guild task chains every round. Use prior global events to continue, branch, or close existing threads instead of restarting them.",
+        "event_policy": "Prefer concrete quest-step events: new commission posted, party formed, map checked, supplies short, healer needed, forged tool ready, scouting lead returned, reward handoff due, completion celebration. Include at least one actionable next step when possible.",
+        "main_character_policy": "Hook the hero to quest acceptance/progress/completion, the guild cadre to coordination/resource bottlenecks, and the fallen princess to exploration or social discovery when appropriate.",
+        "continuity_policy": "Use titles and status_tags to show next-phase progress such as posted, recruited, equipped, departed, returned, verified, paid, archived."
+      },
+      {
+        "function_id": "guild_random_event_generator",
+        "enabled": true,
+        "activation_probability": 0.85,
+        "max_events": 2,
+        "purpose": "Generate light guild incidents that create interaction opportunities without overriding agent autonomy.",
+        "event_policy": "Examples are allowed as style references only: spilled potion crate, nervous rookie, damaged practice dummy, loud tavern rumor, missing quest stamp, strange mana flicker, injured familiar, misplaced reward box. The model should choose what fits the current world memory.",
+        "main_character_policy": "Hook protagonists only when the event naturally matches their directive; otherwise let ordinary members respond.",
+        "continuity_policy": "Prefer events that can be resolved or followed up through existing routes and status effects over one-off flavor."
+      }
+    ]
+  },
+  "always_activate_agent_ids": [
+    "guild_main_hero",
+    "guild_main_princess",
+    "guild_main_cadre"
+  ],
+  "force_cinematic_agent_ids": [
+    "guild_main_hero",
+    "guild_main_princess",
+    "guild_main_cadre"
+  ],
+  "story_filename": "guild_atwill_mainchars_story.json",
+  "run_name": "rpg_guild_atwill_mainchars_longlive",
+  "vertex_api": {
+    "api_key_env": "AGORA_VERTEX_API_KEY",
+    "endpoint_base": "https://aiplatform.googleapis.com/v1",
+    "method": "streamGenerateContent",
+    "default_model": "gemini-3.1-flash-lite-preview",
+    "backup_models": [
+      "gemini-3.1-pro-preview"
+    ],
+    "thinking_level": "medium",
+    "thinking_budget": 1024,
+    "max_output_tokens": 1024,
+    "temperature": 0.45,
+    "retry": {
+      "max_attempts": 8,
+      "initial_sleep_seconds": 5.0,
+      "max_sleep_seconds": 120.0,
+      "backoff_multiplier": 2.0,
+      "status_codes": [
+        408,
+        429,
+        500,
+        502,
+        503,
+        504
+      ]
+    },
+    "stages": {
+      "agent_profile_generation": {
+        "model": "gemini-3.1-flash-lite-preview",
+        "backup_models": [],
+        "max_output_tokens": 1024,
+        "temperature": 0.45
+      },
+      "interaction_routing": {
+        "model": "gemini-3.1-flash-lite-preview",
+        "backup_models": [],
+        "max_output_tokens": 4096,
+        "temperature": 0.45
+      },
+      "relationship_adjustment": {
+        "model": "gemini-3.1-flash-lite-preview",
+        "backup_models": [],
+        "max_output_tokens": 1024,
+        "temperature": 0.45
+      },
+      "video_prompt_generation": {
+        "model": "gemini-3.1-flash-lite-preview",
+        "backup_models": [],
+        "max_output_tokens": 4096,
+        "temperature": 0.45
+      },
+      "image_prompt_generation": {
+        "model": "gemini-3.1-flash-lite-preview",
+        "backup_models": [],
+        "max_output_tokens": 2048,
+        "temperature": 0.45
+      },
+      "story_report_generation": {
+        "model": "gemini-3.1-pro-preview",
+        "backup_models": [],
+        "max_output_tokens": 20000,
+        "temperature": 0.45
+      },
+      "main_character_generation": {
+        "model": "gemini-3.1-pro-preview",
+        "backup_models": [],
+        "max_output_tokens": 10000,
+        "temperature": 0.55
+      },
+      "initial_inventory_generation": {
+        "model": "gemini-3.1-flash-lite-preview",
+        "backup_models": [],
+        "max_output_tokens": 4096,
+        "temperature": 0.45
+      },
+      "extra_world_functions": {
+        "model": "gemini-3.1-pro-preview",
+        "backup_models": [],
+        "max_output_tokens": 10000,
+        "temperature": 0.5
+      }
+    }
+  },
+  "vertex_image_sdk": {
+    "backend": "vertex_sdk",
+    "model": "gemini-3.1-flash-image-preview",
+    "project_id": "gen-lang-client-0687399333",
+    "location": "global",
+    "has_credential_file": true,
+    "max_output_tokens": 1024,
+    "response_modalities": [
+      "TEXT",
+      "IMAGE"
+    ]
+  },
+  "resume": {
+    "source_run_dir": "",
+    "completed_round": 0,
+    "start_round": 1
+  }
+}
