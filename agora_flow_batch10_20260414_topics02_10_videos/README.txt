@@ -56,3 +56,11 @@ This folder contains the renamed final videos for topics 2-10 from:
    run: /home/yz_wang/yz_main/RPAP/agora-mini/output/agora_flow/20260414_134556
    source: /home/yz_wang/yz_main/RPAP/agora-mini/output/agora_flow/20260414_134556/processes/scene_001/videos/scene_live.mp4
    exit_code: 1
+
+Docs:
+- story_summary_10topics.tex
+- story_summary_10topics.pdf
+- prompt_categories.json
+
+Note:
+- `exit_code: 1` means the batch topic stopped early, but the video source was still preserved and copied here.
