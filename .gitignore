@@ -1,0 +1,35 @@
+.agora_ui_live.local.env
+.env
+.env.local
+*.local.env
+
+# Python / JS caches and dependencies
+__pycache__/
+.pytest_cache/
+node_modules/
+*.py[cod]
+
+# Runtime outputs, logs, generated package data, and local databases.
+output/
+export_artifact/
+scratch/
+deploy/cloudflared/bin/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.zip
+*.tmp
+*.bak
+
+# Generated frontend/runtime assets can be rebuilt from the pipeline.
+frontend/assets/generated/
+frontend/assets/runtime_state/
+macro_ui/generated/
+
+# TeX build side files. Keep the report source and PDF, ignore auxiliaries.
+docs/*.aux
+docs/*.log
+docs/*.out
+docs/*.toc
+!docs/agora_one_sentence_one_world_feature_scope_report.pdf

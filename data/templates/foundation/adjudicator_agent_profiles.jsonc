@@ -1,0 +1,74 @@
+// Runtime agent profile state for Universal Adjudicator.
+// 这里包含坐标、库存、状态效果，以及隐藏 relationship tensor。
+{
+  "agents": [
+    {
+      "agent_id": "agent_001",
+      "display_name": "Archivist Lin",
+      "core_values": [
+        "continuity",
+        "careful observation"
+      ],
+      "inventory": [
+        {
+          "item_id": "glass_lens",
+          "quantity": 1,
+          "mass": 0.2,
+          "description": "A clean lens recovered from the archive kit."
+        }
+      ],
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "room_id": "room_entry",
+      "status_effects": [],
+      "public_state": {},
+      "private_notes": "Prefers careful verification before accepting new rules."
+    },
+    {
+      "agent_id": "agent_002",
+      "display_name": "Scout Rivera",
+      "core_values": [
+        "initiative",
+        "mobility"
+      ],
+      "inventory": [
+        {
+          "item_id": "copper_wire",
+          "quantity": 1,
+          "mass": 0.2,
+          "description": "A coil of copper wire."
+        }
+      ],
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "room_id": "room_lab",
+      "status_effects": [],
+      "public_state": {},
+      "private_notes": "Prefers direct action and quick experiments."
+    }
+  ],
+  "relationship_tensor": {
+    "agent_001": {
+      "agent_002": {
+        "trust": 55,
+        "affection": 48,
+        "influence_fear": 10
+      }
+    },
+    "agent_002": {
+      "agent_001": {
+        "trust": 52,
+        "affection": 50,
+        "influence_fear": 8
+      }
+    }
+  },
+  "localized_visual_state": {}
+}
+

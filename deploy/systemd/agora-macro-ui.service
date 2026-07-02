@@ -1,0 +1,14 @@
+[Unit]
+Description=Agora Macro UI static server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/yz_wang/yz_main/Agora_UI_Run
+ExecStart=/home/yz_wang/.conda/envs/new_py310/bin/python /home/yz_wang/yz_main/Agora_UI_Run/macro_ui/serve_macro_ui.py --bind 127.0.0.1 --port 8125 --directory /home/yz_wang/yz_main/Agora_UI_Run
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,142 @@
+{
+  "antique_market_items_v1": {
+    "item_taxonomy": [
+      {"taxonomy_id": "currency", "label": "Currency", "description": "Spendable settlement medium.", "tags": ["money", "settlement"]},
+      {"taxonomy_id": "artifact", "label": "Artifact", "description": "Valuable or notable trade good.", "tags": ["valuable", "trade"]},
+      {"taxonomy_id": "replica", "label": "Replica", "description": "Copy, forgery, or imitation item.", "tags": ["copy", "risk"]},
+      {"taxonomy_id": "document", "label": "Document", "description": "Paper trail, permit, ledger, contract, or formal note.", "tags": ["records", "proof"]},
+      {"taxonomy_id": "tool", "label": "Tool", "description": "Inspection, handling, route, or repair equipment.", "tags": ["equipment", "work"]},
+      {"taxonomy_id": "consumable", "label": "Consumable", "description": "Finite use hospitality or maintenance item.", "tags": ["daily", "use"]},
+      {"taxonomy_id": "contact_token", "label": "Contact Token", "description": "A marker of social access to a person or network.", "tags": ["network", "access"]},
+      {"taxonomy_id": "storage_claim", "label": "Storage Claim", "description": "Claim, tag, or retrieval right bound to stored goods.", "tags": ["storage", "claim"]},
+      {"taxonomy_id": "personal_effect", "label": "Personal Effect", "description": "Portable day-to-day carry item.", "tags": ["carry", "personal"]}
+    ],
+    "item_catalog": [
+      {
+        "item_id": "cny_cash",
+        "name": "RMB Cash",
+        "taxonomy_id": "currency",
+        "price_minor": 1,
+        "description": "Cash in renminbi tracked in fen for settlement.",
+        "tradeable": true,
+        "needs_image": false,
+        "metadata": {"currency": true, "currency_code": "CNY", "currency_symbol": "yuan", "minor_unit": "fen", "name": "renminbi cash"}
+      },
+      {"item_id": "porcelain_shard_set", "name": "Porcelain Shard Set", "taxonomy_id": "artifact", "price_minor": 16800, "description": "Wrapped porcelain fragments waiting for comparison.", "tradeable": true, "needs_image": true, "metadata": {"category": "artifact", "authenticity_risk": "medium", "name": "porcelain shards"}},
+      {"item_id": "jade_pendant", "name": "Jade Pendant", "taxonomy_id": "artifact", "price_minor": 38800, "description": "A jade pendant with disputed age and origin.", "tradeable": true, "needs_image": true, "metadata": {"category": "artifact", "authenticity_risk": "high", "name": "jade pendant"}},
+      {"item_id": "old_photo_bundle", "name": "Old Photo Bundle", "taxonomy_id": "artifact", "price_minor": 7600, "description": "A tied stack of old photos with provenance clues.", "tradeable": true, "needs_image": true, "metadata": {"category": "artifact", "authenticity_risk": "low", "name": "old photos"}},
+      {"item_id": "high_copy_bracelet", "name": "High-Copy Bracelet", "taxonomy_id": "replica", "price_minor": 12400, "description": "A convincing reproduction bracelet.", "tradeable": true, "needs_image": true, "metadata": {"category": "replica", "authenticity_risk": "extreme", "name": "high-copy bracelet"}},
+      {"item_id": "consignment_note", "name": "Consignment Note", "taxonomy_id": "document", "price_minor": 0, "description": "A note linking goods to a seller and a split.", "tradeable": false, "needs_image": false, "metadata": {"category": "document", "name": "consignment note"}},
+      {"item_id": "appraisal_slip", "name": "Appraisal Slip", "taxonomy_id": "document", "price_minor": 0, "description": "A short appraisal opinion with caveats.", "tradeable": false, "needs_image": false, "metadata": {"category": "document", "name": "appraisal slip"}},
+      {"item_id": "stall_ledger_copy", "name": "Stall Ledger Copy", "taxonomy_id": "document", "price_minor": 2800, "description": "A copied ledger page with suspicious edits.", "tradeable": true, "needs_image": false, "metadata": {"category": "document", "name": "stall ledger"}},
+      {"item_id": "loupe", "name": "Loupe", "taxonomy_id": "tool", "price_minor": 6800, "description": "A pocket loupe for close inspection.", "tradeable": true, "needs_image": false, "metadata": {"category": "tool", "name": "loupe"}},
+      {"item_id": "uv_flashlight", "name": "UV Flashlight", "taxonomy_id": "tool", "price_minor": 5200, "description": "A compact UV flashlight for repair checks.", "tradeable": true, "needs_image": false, "metadata": {"category": "tool", "name": "uv flashlight"}},
+      {"item_id": "packing_cloth", "name": "Packing Cloth", "taxonomy_id": "tool", "price_minor": 1600, "description": "Soft cloth for wrapping fragile goods.", "tradeable": true, "needs_image": false, "metadata": {"category": "tool", "name": "packing cloth"}},
+      {"item_id": "tea_flask", "name": "Tea Flask", "taxonomy_id": "consumable", "price_minor": 1800, "description": "A flask of tea for long negotiations.", "tradeable": true, "needs_image": false, "metadata": {"category": "consumable", "name": "tea flask"}},
+      {"item_id": "cigarette_pack", "name": "Cigarette Pack", "taxonomy_id": "consumable", "price_minor": 2400, "description": "A cigarette pack carried for social work.", "tradeable": true, "needs_image": false, "metadata": {"category": "consumable", "name": "cigarette pack"}},
+      {"item_id": "buyer_card", "name": "Buyer Contact Card", "taxonomy_id": "contact_token", "price_minor": 0, "description": "A direct line to a repeat buyer.", "tradeable": false, "needs_image": false, "metadata": {"category": "contact_token", "name": "buyer card"}},
+      {"item_id": "storage_ticket", "name": "Storage Ticket", "taxonomy_id": "storage_claim", "price_minor": 0, "description": "A claim ticket for back-room goods.", "tradeable": false, "needs_image": false, "metadata": {"category": "storage_claim", "name": "storage ticket"}},
+      {"item_id": "cloth_gloves", "name": "Cloth Gloves", "taxonomy_id": "personal_effect", "price_minor": 900, "description": "Simple gloves for handling dusty objects.", "tradeable": true, "needs_image": false, "metadata": {"category": "personal_effect", "name": "cloth gloves"}}
+    ]
+  },
+  "harbor_trade_items_v1": {
+    "item_taxonomy": [
+      {"taxonomy_id": "currency", "label": "Currency", "description": "Spendable settlement medium.", "tags": ["money", "settlement"]},
+      {"taxonomy_id": "artifact", "label": "Artifact", "description": "Valuable or notable trade good.", "tags": ["valuable", "trade"]},
+      {"taxonomy_id": "replica", "label": "Replica", "description": "Copy, forgery, or imitation item.", "tags": ["copy", "risk"]},
+      {"taxonomy_id": "document", "label": "Document", "description": "Paper trail, permit, ledger, contract, or formal note.", "tags": ["records", "proof"]},
+      {"taxonomy_id": "tool", "label": "Tool", "description": "Inspection, handling, route, or repair equipment.", "tags": ["equipment", "work"]},
+      {"taxonomy_id": "consumable", "label": "Consumable", "description": "Finite use hospitality or maintenance item.", "tags": ["daily", "use"]},
+      {"taxonomy_id": "contact_token", "label": "Contact Token", "description": "A marker of social access to a person or network.", "tags": ["network", "access"]},
+      {"taxonomy_id": "storage_claim", "label": "Storage Claim", "description": "Claim, tag, or retrieval right bound to stored goods.", "tags": ["storage", "claim"]},
+      {"taxonomy_id": "personal_effect", "label": "Personal Effect", "description": "Portable day-to-day carry item.", "tags": ["carry", "personal"]}
+    ],
+    "item_catalog": [
+      {
+        "item_id": "harbor_chit",
+        "name": "Harbor Chit",
+        "taxonomy_id": "currency",
+        "price_minor": 1,
+        "description": "Local trade paper used for dock settlement.",
+        "tradeable": true,
+        "needs_image": false,
+        "metadata": {"currency": true, "currency_code": "HBR", "currency_symbol": "hc", "minor_unit": "mark", "name": "harbor chit"}
+      },
+      {"item_id": "route_ledger", "name": "Route Ledger", "taxonomy_id": "document", "price_minor": 2400, "description": "A ledger of departures, tides, and commitments.", "tradeable": true, "needs_image": false, "metadata": {"category": "document", "name": "route ledger"}},
+      {"item_id": "dock_contract", "name": "Dock Contract", "taxonomy_id": "document", "price_minor": 0, "description": "A contract for labor, cargo, and delivery.", "tradeable": false, "needs_image": false, "metadata": {"category": "document", "name": "dock contract"}},
+      {"item_id": "tide_chart", "name": "Tide Chart", "taxonomy_id": "document", "price_minor": 1800, "description": "A tide chart marked with safe passage windows.", "tradeable": true, "needs_image": false, "metadata": {"category": "document", "name": "tide chart"}},
+      {"item_id": "signal_flag_roll", "name": "Signal Flag Roll", "taxonomy_id": "tool", "price_minor": 4200, "description": "A roll of coded signal flags for harbor traffic.", "tradeable": true, "needs_image": false, "metadata": {"category": "tool", "name": "signal flags"}},
+      {"item_id": "brass_compass", "name": "Brass Compass", "taxonomy_id": "tool", "price_minor": 7600, "description": "A worn compass used for route work.", "tradeable": true, "needs_image": false, "metadata": {"category": "tool", "name": "brass compass"}},
+      {"item_id": "repair_parts_crate", "name": "Repair Parts Crate", "taxonomy_id": "tool", "price_minor": 11500, "description": "Packed repair parts for rigging and dock work.", "tradeable": true, "needs_image": true, "metadata": {"category": "tool", "name": "repair parts"}},
+      {"item_id": "broker_token", "name": "Broker Token", "taxonomy_id": "contact_token", "price_minor": 0, "description": "A token that grants access to a broker network.", "tradeable": false, "needs_image": false, "metadata": {"category": "contact_token", "name": "broker token"}},
+      {"item_id": "cargo_tag", "name": "Cargo Tag", "taxonomy_id": "storage_claim", "price_minor": 0, "description": "A claim tag tied to a crate stack or berth.", "tradeable": false, "needs_image": false, "metadata": {"category": "storage_claim", "name": "cargo tag"}},
+      {"item_id": "rope_bundle", "name": "Rope Bundle", "taxonomy_id": "personal_effect", "price_minor": 2300, "description": "A portable rope bundle carried by dock workers.", "tradeable": true, "needs_image": false, "metadata": {"category": "personal_effect", "name": "rope bundle"}},
+      {"item_id": "tea_tin", "name": "Tea Tin", "taxonomy_id": "consumable", "price_minor": 1600, "description": "A small tin of tea used during night shifts.", "tradeable": true, "needs_image": false, "metadata": {"category": "consumable", "name": "tea tin"}}
+    ]
+  },
+  "civic_social_items_v1": {
+    "item_taxonomy": [
+      {"taxonomy_id": "currency", "label": "Currency", "description": "Spendable settlement medium.", "tags": ["money", "settlement"]},
+      {"taxonomy_id": "artifact", "label": "Artifact", "description": "Valuable or notable trade good.", "tags": ["valuable", "trade"]},
+      {"taxonomy_id": "replica", "label": "Replica", "description": "Copy, forgery, or imitation item.", "tags": ["copy", "risk"]},
+      {"taxonomy_id": "document", "label": "Document", "description": "Paper trail, permit, ledger, contract, or formal note.", "tags": ["records", "proof"]},
+      {"taxonomy_id": "tool", "label": "Tool", "description": "Inspection, handling, route, or repair equipment.", "tags": ["equipment", "work"]},
+      {"taxonomy_id": "consumable", "label": "Consumable", "description": "Finite use hospitality or maintenance item.", "tags": ["daily", "use"]},
+      {"taxonomy_id": "contact_token", "label": "Contact Token", "description": "A marker of social access to a person or network.", "tags": ["network", "access"]},
+      {"taxonomy_id": "storage_claim", "label": "Storage Claim", "description": "Claim, tag, or retrieval right bound to stored goods.", "tags": ["storage", "claim"]},
+      {"taxonomy_id": "personal_effect", "label": "Personal Effect", "description": "Portable day-to-day carry item.", "tags": ["carry", "personal"]}
+    ],
+    "item_catalog": [
+      {
+        "item_id": "civic_credit",
+        "name": "Civic Credit",
+        "taxonomy_id": "currency",
+        "price_minor": 1,
+        "description": "Portable civic settlement credits.",
+        "tradeable": true,
+        "needs_image": false,
+        "metadata": {"currency": true, "currency_code": "CRD", "currency_symbol": "cr", "minor_unit": "point", "name": "civic credit"}
+      },
+      {"item_id": "task_ledger", "name": "Task Ledger", "taxonomy_id": "document", "price_minor": 1200, "description": "A notebook tracking obligations and favors.", "tradeable": true, "needs_image": false, "metadata": {"category": "document", "name": "task ledger"}},
+      {"item_id": "access_badge", "name": "Access Badge", "taxonomy_id": "contact_token", "price_minor": 0, "description": "A badge that opens restricted civic spaces.", "tradeable": false, "needs_image": false, "metadata": {"category": "contact_token", "name": "access badge"}},
+      {"item_id": "meeting_notice", "name": "Meeting Notice", "taxonomy_id": "document", "price_minor": 0, "description": "A posted notice calling people into a room.", "tradeable": false, "needs_image": false, "metadata": {"category": "document", "name": "meeting notice"}},
+      {"item_id": "tool_roll", "name": "Tool Roll", "taxonomy_id": "tool", "price_minor": 3400, "description": "A compact tool roll for routine maintenance.", "tradeable": true, "needs_image": false, "metadata": {"category": "tool", "name": "tool roll"}},
+      {"item_id": "tea_coupon", "name": "Tea Coupon", "taxonomy_id": "consumable", "price_minor": 600, "description": "A voucher used to keep long discussions moving.", "tradeable": true, "needs_image": false, "metadata": {"category": "consumable", "name": "tea coupon"}},
+      {"item_id": "archive_key", "name": "Archive Key", "taxonomy_id": "storage_claim", "price_minor": 0, "description": "A key for a shared archive cabinet.", "tradeable": false, "needs_image": false, "metadata": {"category": "storage_claim", "name": "archive key"}},
+      {"item_id": "stamped_pass", "name": "Stamped Pass", "taxonomy_id": "personal_effect", "price_minor": 800, "description": "A stamped pass authorizing temporary access.", "tradeable": true, "needs_image": false, "metadata": {"category": "personal_effect", "name": "stamped pass"}}
+    ]
+  },
+  "fantasy_guild_items_v1": {
+    "item_taxonomy": [
+      {"taxonomy_id": "currency", "label": "Currency", "description": "Spendable settlement medium.", "tags": ["money", "settlement"]},
+      {"taxonomy_id": "artifact", "label": "Artifact", "description": "Valuable or notable trade good.", "tags": ["valuable", "trade"]},
+      {"taxonomy_id": "replica", "label": "Replica", "description": "Copy, forgery, or imitation item.", "tags": ["copy", "risk"]},
+      {"taxonomy_id": "document", "label": "Document", "description": "Paper trail, permit, ledger, contract, or formal note.", "tags": ["records", "proof"]},
+      {"taxonomy_id": "tool", "label": "Tool", "description": "Inspection, handling, route, or repair equipment.", "tags": ["equipment", "work"]},
+      {"taxonomy_id": "consumable", "label": "Consumable", "description": "Finite use hospitality or maintenance item.", "tags": ["daily", "use"]},
+      {"taxonomy_id": "contact_token", "label": "Contact Token", "description": "A marker of social access to a person or network.", "tags": ["network", "access"]},
+      {"taxonomy_id": "storage_claim", "label": "Storage Claim", "description": "Claim, tag, or retrieval right bound to stored goods.", "tags": ["storage", "claim"]},
+      {"taxonomy_id": "personal_effect", "label": "Personal Effect", "description": "Portable day-to-day carry item.", "tags": ["carry", "personal"]}
+    ],
+    "item_catalog": [
+      {
+        "item_id": "gold",
+        "name": "Guild Gold",
+        "taxonomy_id": "currency",
+        "price_minor": 1,
+        "description": "Stamped gold pieces used for guild settlement.",
+        "tradeable": true,
+        "needs_image": false,
+        "metadata": {"currency": true, "currency_code": "GLD", "currency_symbol": "g", "minor_unit": "coin", "name": "guild gold"}
+      },
+      {"item_id": "quest_contract", "name": "Quest Contract", "taxonomy_id": "document", "price_minor": 0, "description": "A formal contract assigning a quest and reward split.", "tradeable": false, "needs_image": false, "metadata": {"category": "document", "name": "quest contract"}},
+      {"item_id": "healing_potion", "name": "Healing Potion", "taxonomy_id": "consumable", "price_minor": 1400, "description": "A standard field potion issued by the quartermaster.", "tradeable": true, "needs_image": true, "metadata": {"category": "consumable", "name": "healing potion"}},
+      {"item_id": "mana_crystal", "name": "Mana Crystal", "taxonomy_id": "artifact", "price_minor": 2100, "description": "A charged crystal used by mages and enchanters.", "tradeable": true, "needs_image": true, "metadata": {"category": "artifact", "name": "mana crystal"}},
+      {"item_id": "repair_kit", "name": "Repair Kit", "taxonomy_id": "tool", "price_minor": 1200, "description": "Portable tools and oils for field repairs.", "tradeable": true, "needs_image": false, "metadata": {"category": "tool", "name": "repair kit"}},
+      {"item_id": "trail_rations", "name": "Trail Rations", "taxonomy_id": "consumable", "price_minor": 600, "description": "Compact rations issued before patrols and quests.", "tradeable": true, "needs_image": false, "metadata": {"category": "consumable", "name": "trail rations"}},
+      {"item_id": "guild_badge", "name": "Guild Badge", "taxonomy_id": "contact_token", "price_minor": 0, "description": "A badge proving standing and access inside the guild.", "tradeable": false, "needs_image": false, "metadata": {"category": "contact_token", "name": "guild badge"}},
+      {"item_id": "vault_claim", "name": "Vault Claim", "taxonomy_id": "storage_claim", "price_minor": 0, "description": "A claim ticket for guild storage or recovery.", "tradeable": false, "needs_image": false, "metadata": {"category": "storage_claim", "name": "vault claim"}},
+      {"item_id": "adventurer_pack", "name": "Adventurer Pack", "taxonomy_id": "personal_effect", "price_minor": 900, "description": "A small personal pack for routine travel and patrol.", "tradeable": true, "needs_image": false, "metadata": {"category": "personal_effect", "name": "adventurer pack"}}
+    ]
+  }
+}

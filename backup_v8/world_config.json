@@ -1,0 +1,3856 @@
+{
+  "scenario_meta": {
+    "world_id": "rpg_guild_100_mainchars_atwill_longlive",
+    "world_name": "RPG Guild Main Character At-Will LongLive Test",
+    "version": "1.0",
+    "description": "A Japanese fantasy RPG guild with 100 regular members and three always-active protagonists. This run removes predefined video task routes and forces protagonist activities to use freeform model-selected LongLive cinematic interactions.",
+    "simulation_objective": "Run 103 agents for 25 rounds at activation 0.15. The three protagonists activate every round and each protagonist activity must open LongLive; other activated agents may also use freeform at-will LongLive, with a 10-video-per-round cap. No predefined video task routes are available."
+  },
+  "runtime": {
+    "agent_count": 103,
+    "rounds": 25,
+    "activation_probability": 0.15,
+    "seed": 42617,
+    "world_mode": "Fixed",
+    "provider": "Local",
+    "vertex_model": "gemini-3.1-flash-lite-preview",
+    "vertex_cred_file": "/home/yz_wang/yz_main/BAGEL/VertexSDK.json",
+    "vertex_project_id": "gen-lang-client-0687399333",
+    "vertex_location": "global"
+  },
+  "runner": {
+    "run_name": "rpg_guild_atwill_mainchars_longlive",
+    "world_label": "RPG Guild",
+    "domain_label": "Japanese fantasy RPG guild",
+    "agent_id_prefix": "guild",
+    "scenario_dir": "sample_json/scenario"
+  },
+  "orchestration": {
+    "version": "agora_c_1",
+    "mode": "json_declared_runtime",
+    "components": [
+      {
+        "component_id": "phase_trace",
+        "kind": "phase_trace"
+      }
+    ],
+    "policies": {
+      "activation_policy": {
+        "policy_id": "human_visible_decay_activation"
+      },
+      "target_selection_policy": {
+        "policy_id": "human_priority_target_selection"
+      },
+      "route_request_policy": {
+        "policy_id": "vertex_json_route_request"
+      },
+      "route_quota_policy": {
+        "policy_id": "quota_fallback"
+      },
+      "intent_builder_policy": {
+        "policy_id": "legacy_intent_builder"
+      },
+      "adjudication_policy": {
+        "policy_id": "local_universal_adjudicator"
+      },
+      "finalization_policy": {
+        "policy_id": "legacy_manifest_writer"
+      }
+    }
+  },
+  "human_interaction": {
+    "enabled": true,
+    "runtime_human_agent_id": "human_interactor",
+    "display_name": "Human Interactor",
+    "default_room_id": "guild_hall",
+    "visible_radius_steps": 2,
+    "non_visible_activation_decay": 0.12,
+    "non_visible_min_activation": 0.05
+  },
+  "output": {
+    "default_output_dir": "output/guild_interaction_simulation_atwill_mainchars",
+    "story_filename": "guild_atwill_mainchars_story.json"
+  },
+  "vertex_api": {
+    "api_key_env": "AGORA_VERTEX_API_KEY",
+    "endpoint_base": "https://aiplatform.googleapis.com/v1",
+    "method": "streamGenerateContent",
+    "model": "gemini-3.1-flash-lite-preview",
+    "thinking_level": "medium",
+    "thinking_budget": 1024,
+    "max_output_tokens": 1024,
+    "temperature": 0.45,
+    "timeout_seconds": 120,
+    "retry": {
+      "max_attempts": 8,
+      "initial_sleep_seconds": 5.0,
+      "max_sleep_seconds": 120.0,
+      "backoff_multiplier": 2.0,
+      "status_codes": [
+        408,
+        429,
+        500,
+        502,
+        503,
+        504
+      ]
+    },
+    "stages": {
+      "agent_profile_generation": {
+        "model": "gemini-3.1-flash-lite-preview"
+      },
+      "interaction_routing": {
+        "model": "gemini-3.1-flash-lite-preview",
+        "max_output_tokens": 4096
+      },
+      "relationship_adjustment": {
+        "model": "gemini-3.1-flash-lite-preview"
+      },
+      "video_prompt_generation": {
+        "model": "gemini-3.1-flash-lite-preview",
+        "max_output_tokens": 4096
+      },
+      "image_prompt_generation": {
+        "model": "gemini-3.1-flash-lite-preview",
+        "max_output_tokens": 2048
+      },
+      "story_report_generation": {
+        "model": "gemini-3.1-pro-preview",
+        "max_output_tokens": 20000
+      },
+      "main_character_generation": {
+        "model": "gemini-3.1-pro-preview",
+        "max_output_tokens": 10000,
+        "thinking_budget": 2048,
+        "temperature": 0.55
+      },
+      "initial_inventory_generation": {
+        "model": "gemini-3.1-flash-lite-preview",
+        "max_output_tokens": 4096,
+        "thinking_budget": 1024,
+        "temperature": 0.45
+      },
+      "extra_world_functions": {
+        "model": "gemini-3.1-pro-preview",
+        "max_output_tokens": 10000,
+        "thinking_budget": 2048,
+        "temperature": 0.5
+      }
+    }
+  },
+  "image_generation": {
+    "enabled": true,
+    "backend": "vertex_sdk",
+    "model": "gemini-3.1-flash-image-preview",
+    "vertex_cred_file": "/home/yz_wang/yz_main/BAGEL/VertexSDK.json",
+    "vertex_project_id": "gen-lang-client-0687399333",
+    "vertex_location": "global",
+    "max_images_per_round": 10,
+    "temperature": 0.35,
+    "thinking_budget": 0,
+    "max_output_tokens": 1024,
+    "response_modalities": [
+      "TEXT",
+      "IMAGE"
+    ],
+    "output_subdir": "image_jobs",
+    "conditions": [
+      "Still images remain allowed only for ordinary image routes such as treasure discovery.",
+      "Do not substitute images for protagonist LongLive routes in this at-will cinematic run."
+    ],
+    "prompt_policy": "Japanese fantasy RPG object or scene illustration, polished anime concept art, clear subject, no visible text, no watermark.",
+    "default_prompt_template": "{domain_label}. Create one polished still image of {image_subject} for {actor_name} and {target_name}. Include their visual context only if relevant. No visible text, no watermark."
+  },
+  "space": {
+    "grid_shape": {
+      "x": 34,
+      "y": 24,
+      "z": 1
+    },
+    "movement": {
+      "max_steps_per_timestep": 2,
+      "capacity_per_coordinate": 3,
+      "line_of_sight_required": false,
+      "allow_diagonal": false
+    },
+    "targeting": {
+      "prefer_same_room": true,
+      "max_range_steps": 10
+    },
+    "map_visual": {
+      "projection": "orthographic_grid",
+      "style": "pixel_art",
+      "tile_width": 32,
+      "tile_height": 32,
+      "room_width_tiles": 6,
+      "room_height_tiles": 4,
+      "agent_sprite_size": 24,
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "layers": [
+        "floor",
+        "objects",
+        "agents",
+        "effects",
+        "ui"
+      ],
+      "camera": {
+        "start_room_id": "guild_hall",
+        "zoom": 2.0,
+        "follow_main_character": "guild_main_hero"
+      },
+      "tileset": {
+        "key": "fantasy_guild_pixel_tiles",
+        "image_path": "",
+        "tile_margin": 0,
+        "tile_spacing": 0
+      }
+    },
+    "rooms": [
+      {
+        "room_id": "guild_hall",
+        "name": "Guild Hall",
+        "x": 8,
+        "y": 6,
+        "z": 0,
+        "width_tiles": 10,
+        "height_tiles": 7,
+        "doorways": [
+          {
+            "doorway_id": "guild_to_quest",
+            "position": {
+              "x": 11,
+              "y": 6,
+              "z": 0
+            },
+            "connects_to_room_id": "quest_board",
+            "label": "north notice arch"
+          },
+          {
+            "doorway_id": "guild_to_tavern",
+            "position": {
+              "x": 8,
+              "y": 9,
+              "z": 0
+            },
+            "connects_to_room_id": "tavern_corner",
+            "label": "west tavern opening"
+          },
+          {
+            "doorway_id": "guild_to_warehouse",
+            "position": {
+              "x": 17,
+              "y": 9,
+              "z": 0
+            },
+            "connects_to_room_id": "warehouse",
+            "label": "east supply doors"
+          },
+          {
+            "doorway_id": "guild_to_training",
+            "position": {
+              "x": 12,
+              "y": 12,
+              "z": 0
+            },
+            "connects_to_room_id": "training_yard",
+            "label": "south yard gate"
+          }
+        ],
+        "visual": {
+          "biome": "guild_interior",
+          "floor_tile": "stone_hall",
+          "wall_tile": "wood_beam_wall",
+          "decor_tags": [
+            "notice_table",
+            "guild_banner"
+          ],
+          "ambient_palette": "warm_lantern"
+        },
+        "footprint_tiles": [
+          {
+            "x": 10,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 13,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 14,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 15,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 8,
+            "y": 7,
+            "z": 0
+          },
+          {
+            "x": 9,
+            "y": 7,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 7,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 7,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 7,
+            "z": 0
+          },
+          {
+            "x": 13,
+            "y": 7,
+            "z": 0
+          },
+          {
+            "x": 14,
+            "y": 7,
+            "z": 0
+          },
+          {
+            "x": 15,
+            "y": 7,
+            "z": 0
+          },
+          {
+            "x": 16,
+            "y": 7,
+            "z": 0
+          },
+          {
+            "x": 17,
+            "y": 7,
+            "z": 0
+          },
+          {
+            "x": 8,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 9,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 13,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 14,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 15,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 16,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 17,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 8,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 9,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 13,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 14,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 15,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 16,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 17,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 8,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 9,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 13,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 14,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 15,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 16,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 17,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 8,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 9,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 13,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 14,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 15,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 16,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 17,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 9,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 13,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 14,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 15,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 16,
+            "y": 12,
+            "z": 0
+          }
+        ]
+      },
+      {
+        "room_id": "quest_board",
+        "name": "Quest Board",
+        "x": 9,
+        "y": 2,
+        "z": 0,
+        "width_tiles": 5,
+        "height_tiles": 4,
+        "doorways": [
+          {
+            "doorway_id": "quest_to_library",
+            "position": {
+              "x": 9,
+              "y": 4,
+              "z": 0
+            },
+            "connects_to_room_id": "arcane_library",
+            "label": "catalog arch"
+          },
+          {
+            "doorway_id": "quest_to_guild",
+            "position": {
+              "x": 11,
+              "y": 5,
+              "z": 0
+            },
+            "connects_to_room_id": "guild_hall",
+            "label": "briefing stairs"
+          }
+        ],
+        "visual": {
+          "biome": "guild_interior",
+          "floor_tile": "worn_planks",
+          "wall_tile": "paper_notice_wall",
+          "decor_tags": [
+            "quest_board",
+            "sealed_requests"
+          ],
+          "ambient_palette": "gold_paper"
+        },
+        "footprint_tiles": [
+          {
+            "x": 10,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 9,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 13,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 9,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 13,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 9,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 5,
+            "z": 0
+          }
+        ]
+      },
+      {
+        "room_id": "tavern_corner",
+        "name": "Tavern Corner",
+        "x": 2,
+        "y": 8,
+        "z": 0,
+        "width_tiles": 6,
+        "height_tiles": 5,
+        "doorways": [
+          {
+            "doorway_id": "tavern_to_guild",
+            "position": {
+              "x": 7,
+              "y": 9,
+              "z": 0
+            },
+            "connects_to_room_id": "guild_hall",
+            "label": "service arch"
+          }
+        ],
+        "visual": {
+          "biome": "tavern",
+          "floor_tile": "dark_planks",
+          "wall_tile": "barrel_wall",
+          "decor_tags": [
+            "round_table",
+            "mug_shelf"
+          ],
+          "ambient_palette": "amber_tavern"
+        },
+        "footprint_tiles": [
+          {
+            "x": 3,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 4,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 5,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 6,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 7,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 2,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 4,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 5,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 6,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 7,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 2,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 3,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 4,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 5,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 6,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 7,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 2,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 3,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 4,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 5,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 2,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 3,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 4,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 5,
+            "y": 12,
+            "z": 0
+          }
+        ]
+      },
+      {
+        "room_id": "warehouse",
+        "name": "Supply Warehouse",
+        "x": 18,
+        "y": 8,
+        "z": 0,
+        "width_tiles": 6,
+        "height_tiles": 5,
+        "doorways": [
+          {
+            "doorway_id": "warehouse_to_guild",
+            "position": {
+              "x": 18,
+              "y": 9,
+              "z": 0
+            },
+            "connects_to_room_id": "guild_hall",
+            "label": "main loading doors"
+          },
+          {
+            "doorway_id": "warehouse_to_forge",
+            "position": {
+              "x": 23,
+              "y": 10,
+              "z": 0
+            },
+            "connects_to_room_id": "forge",
+            "label": "metalwork passage"
+          },
+          {
+            "doorway_id": "warehouse_to_infirmary",
+            "position": {
+              "x": 20,
+              "y": 8,
+              "z": 0
+            },
+            "connects_to_room_id": "infirmary",
+            "label": "north service door"
+          },
+          {
+            "doorway_id": "warehouse_to_strategy",
+            "position": {
+              "x": 21,
+              "y": 12,
+              "z": 0
+            },
+            "connects_to_room_id": "strategy_table",
+            "label": "command staircase"
+          }
+        ],
+        "visual": {
+          "biome": "storage",
+          "floor_tile": "packed_dirt",
+          "wall_tile": "crate_stack",
+          "decor_tags": [
+            "supply_crates",
+            "rope_coils"
+          ],
+          "ambient_palette": "dusty_brown"
+        },
+        "footprint_tiles": [
+          {
+            "x": 19,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 18,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 19,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 23,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 18,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 19,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 23,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 18,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 19,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 23,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 19,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 12,
+            "z": 0
+          }
+        ]
+      },
+      {
+        "room_id": "forge",
+        "name": "Forge Workshop",
+        "x": 24,
+        "y": 8,
+        "z": 0,
+        "width_tiles": 5,
+        "height_tiles": 5,
+        "doorways": [
+          {
+            "doorway_id": "forge_to_warehouse",
+            "position": {
+              "x": 24,
+              "y": 10,
+              "z": 0
+            },
+            "connects_to_room_id": "warehouse",
+            "label": "tool runner lane"
+          },
+          {
+            "doorway_id": "forge_to_dormitory",
+            "position": {
+              "x": 26,
+              "y": 12,
+              "z": 0
+            },
+            "connects_to_room_id": "dormitory",
+            "label": "rear barracks stair"
+          }
+        ],
+        "visual": {
+          "biome": "forge",
+          "floor_tile": "charred_stone",
+          "wall_tile": "iron_tool_wall",
+          "decor_tags": [
+            "anvil",
+            "glowing_furnace"
+          ],
+          "ambient_palette": "ember_orange"
+        },
+        "footprint_tiles": [
+          {
+            "x": 24,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 25,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 26,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 27,
+            "y": 8,
+            "z": 0
+          },
+          {
+            "x": 24,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 25,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 26,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 27,
+            "y": 9,
+            "z": 0
+          },
+          {
+            "x": 24,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 25,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 26,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 27,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 28,
+            "y": 10,
+            "z": 0
+          },
+          {
+            "x": 24,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 25,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 26,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 27,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 28,
+            "y": 11,
+            "z": 0
+          },
+          {
+            "x": 25,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 26,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 27,
+            "y": 12,
+            "z": 0
+          },
+          {
+            "x": 28,
+            "y": 12,
+            "z": 0
+          }
+        ]
+      },
+      {
+        "room_id": "infirmary",
+        "name": "Infirmary",
+        "x": 18,
+        "y": 2,
+        "z": 0,
+        "width_tiles": 7,
+        "height_tiles": 6,
+        "doorways": [
+          {
+            "doorway_id": "infirmary_to_warehouse",
+            "position": {
+              "x": 20,
+              "y": 6,
+              "z": 0
+            },
+            "connects_to_room_id": "warehouse",
+            "label": "supply descent"
+          }
+        ],
+        "visual": {
+          "biome": "healing_room",
+          "floor_tile": "clean_stone",
+          "wall_tile": "curtain_wall",
+          "decor_tags": [
+            "medicine_shelf",
+            "rest_bed"
+          ],
+          "ambient_palette": "soft_mint"
+        },
+        "footprint_tiles": [
+          {
+            "x": 19,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 23,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 18,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 19,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 23,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 24,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 18,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 19,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 23,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 24,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 18,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 19,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 23,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 24,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 19,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 23,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 7,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 7,
+            "z": 0
+          }
+        ]
+      },
+      {
+        "room_id": "training_yard",
+        "name": "Training Yard",
+        "x": 9,
+        "y": 14,
+        "z": 0,
+        "width_tiles": 9,
+        "height_tiles": 6,
+        "doorways": [
+          {
+            "doorway_id": "training_to_guild",
+            "position": {
+              "x": 12,
+              "y": 14,
+              "z": 0
+            },
+            "connects_to_room_id": "guild_hall",
+            "label": "yard gate"
+          },
+          {
+            "doorway_id": "training_to_strategy",
+            "position": {
+              "x": 17,
+              "y": 16,
+              "z": 0
+            },
+            "connects_to_room_id": "strategy_table",
+            "label": "marshal arch"
+          }
+        ],
+        "visual": {
+          "biome": "training_yard",
+          "floor_tile": "packed_sand",
+          "wall_tile": "fence_edge",
+          "decor_tags": [
+            "practice_dummy",
+            "weapon_rack"
+          ],
+          "ambient_palette": "clear_day"
+        },
+        "footprint_tiles": [
+          {
+            "x": 10,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 13,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 14,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 15,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 16,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 9,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 13,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 14,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 15,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 16,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 17,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 9,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 15,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 16,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 17,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 9,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 15,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 16,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 17,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 9,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 13,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 14,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 15,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 16,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 17,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 10,
+            "y": 19,
+            "z": 0
+          },
+          {
+            "x": 11,
+            "y": 19,
+            "z": 0
+          },
+          {
+            "x": 12,
+            "y": 19,
+            "z": 0
+          },
+          {
+            "x": 13,
+            "y": 19,
+            "z": 0
+          },
+          {
+            "x": 14,
+            "y": 19,
+            "z": 0
+          },
+          {
+            "x": 15,
+            "y": 19,
+            "z": 0
+          },
+          {
+            "x": 16,
+            "y": 19,
+            "z": 0
+          }
+        ]
+      },
+      {
+        "room_id": "arcane_library",
+        "name": "Arcane Library",
+        "x": 2,
+        "y": 2,
+        "z": 0,
+        "width_tiles": 7,
+        "height_tiles": 5,
+        "doorways": [
+          {
+            "doorway_id": "library_to_quest",
+            "position": {
+              "x": 8,
+              "y": 4,
+              "z": 0
+            },
+            "connects_to_room_id": "quest_board",
+            "label": "index corridor"
+          }
+        ],
+        "visual": {
+          "biome": "library",
+          "floor_tile": "blue_carpet",
+          "wall_tile": "bookcase_wall",
+          "decor_tags": [
+            "floating_runes",
+            "scroll_table"
+          ],
+          "ambient_palette": "violet_arcane"
+        },
+        "footprint_tiles": [
+          {
+            "x": 3,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 4,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 5,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 6,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 7,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 8,
+            "y": 2,
+            "z": 0
+          },
+          {
+            "x": 2,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 4,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 5,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 6,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 7,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 8,
+            "y": 3,
+            "z": 0
+          },
+          {
+            "x": 2,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 7,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 8,
+            "y": 4,
+            "z": 0
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 7,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 8,
+            "y": 5,
+            "z": 0
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 5,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 7,
+            "y": 6,
+            "z": 0
+          },
+          {
+            "x": 8,
+            "y": 6,
+            "z": 0
+          }
+        ]
+      },
+      {
+        "room_id": "strategy_table",
+        "name": "Strategy Table",
+        "x": 18,
+        "y": 13,
+        "z": 0,
+        "width_tiles": 6,
+        "height_tiles": 6,
+        "doorways": [
+          {
+            "doorway_id": "strategy_to_training",
+            "position": {
+              "x": 18,
+              "y": 16,
+              "z": 0
+            },
+            "connects_to_room_id": "training_yard",
+            "label": "drill entrance"
+          },
+          {
+            "doorway_id": "strategy_to_warehouse",
+            "position": {
+              "x": 21,
+              "y": 14,
+              "z": 0
+            },
+            "connects_to_room_id": "warehouse",
+            "label": "supply stairs"
+          },
+          {
+            "doorway_id": "strategy_to_dorm",
+            "position": {
+              "x": 23,
+              "y": 16,
+              "z": 0
+            },
+            "connects_to_room_id": "dormitory",
+            "label": "night watch hall"
+          }
+        ],
+        "visual": {
+          "biome": "war_room",
+          "floor_tile": "polished_stone",
+          "wall_tile": "map_wall",
+          "decor_tags": [
+            "strategy_table",
+            "region_map"
+          ],
+          "ambient_palette": "focused_blue"
+        },
+        "footprint_tiles": [
+          {
+            "x": 21,
+            "y": 13,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 13,
+            "z": 0
+          },
+          {
+            "x": 19,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 18,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 19,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 23,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 18,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 19,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 23,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 18,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 19,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 23,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 19,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 20,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 21,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 22,
+            "y": 18,
+            "z": 0
+          }
+        ]
+      },
+      {
+        "room_id": "dormitory",
+        "name": "Dormitory",
+        "x": 24,
+        "y": 13,
+        "z": 0,
+        "width_tiles": 6,
+        "height_tiles": 7,
+        "doorways": [
+          {
+            "doorway_id": "dorm_to_strategy",
+            "position": {
+              "x": 24,
+              "y": 16,
+              "z": 0
+            },
+            "connects_to_room_id": "strategy_table",
+            "label": "watch hall"
+          },
+          {
+            "doorway_id": "dorm_to_forge",
+            "position": {
+              "x": 26,
+              "y": 13,
+              "z": 0
+            },
+            "connects_to_room_id": "forge",
+            "label": "smith stair"
+          }
+        ],
+        "visual": {
+          "biome": "rest_area",
+          "floor_tile": "quiet_planks",
+          "wall_tile": "linen_wall",
+          "decor_tags": [
+            "bunk_beds",
+            "travel_packs"
+          ],
+          "ambient_palette": "low_lantern"
+        },
+        "footprint_tiles": [
+          {
+            "x": 25,
+            "y": 13,
+            "z": 0
+          },
+          {
+            "x": 26,
+            "y": 13,
+            "z": 0
+          },
+          {
+            "x": 27,
+            "y": 13,
+            "z": 0
+          },
+          {
+            "x": 28,
+            "y": 13,
+            "z": 0
+          },
+          {
+            "x": 24,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 25,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 26,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 27,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 28,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 29,
+            "y": 14,
+            "z": 0
+          },
+          {
+            "x": 24,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 25,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 26,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 27,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 28,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 29,
+            "y": 15,
+            "z": 0
+          },
+          {
+            "x": 24,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 25,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 26,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 27,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 28,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 29,
+            "y": 16,
+            "z": 0
+          },
+          {
+            "x": 24,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 25,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 26,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 27,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 28,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 29,
+            "y": 17,
+            "z": 0
+          },
+          {
+            "x": 24,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 25,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 26,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 27,
+            "y": 18,
+            "z": 0
+          },
+          {
+            "x": 25,
+            "y": 19,
+            "z": 0
+          },
+          {
+            "x": 26,
+            "y": 19,
+            "z": 0
+          },
+          {
+            "x": 27,
+            "y": 19,
+            "z": 0
+          },
+          {
+            "x": 28,
+            "y": 19,
+            "z": 0
+          }
+        ]
+      }
+    ]
+  },
+  "economy": {
+    "currency_item_id": "gold",
+    "currency_name": "Gold",
+    "starting_gold": {
+      "min": 35,
+      "max": 140
+    },
+    "item_catalog": [
+      {
+        "item_id": "healing_potion",
+        "name": "Healing Potion",
+        "price": 18,
+        "mass": 0.2,
+        "description": "A red potion used after training or dungeon injuries.",
+        "image_path": "assets/items/healing_potion.png",
+        "image_prompt": "A small red healing potion in a glass vial with a cork stopper, Japanese fantasy RPG item icon, transparent background style, no text."
+      },
+      {
+        "item_id": "mana_crystal",
+        "name": "Mana Crystal",
+        "price": 28,
+        "mass": 0.15,
+        "description": "A small crystal used to stabilize spellwork.",
+        "image_path": "assets/items/mana_crystal.png",
+        "image_prompt": "A glowing blue mana crystal with subtle arcane facets, Japanese fantasy RPG item icon, no text."
+      },
+      {
+        "item_id": "iron_ingot",
+        "name": "Iron Ingot",
+        "price": 16,
+        "mass": 1.0,
+        "description": "A forge material for armor and weapon repair.",
+        "image_path": "assets/items/iron_ingot.png",
+        "image_prompt": "A clean iron ingot with faint forge marks, fantasy RPG crafting material icon, no text."
+      },
+      {
+        "item_id": "quest_map",
+        "name": "Quest Map",
+        "price": 22,
+        "mass": 0.05,
+        "description": "A marked map copied from the quest board.",
+        "image_path": "assets/items/quest_map.png",
+        "image_prompt": "A folded parchment quest map with tiny route marks and a guild seal shape, no readable text, fantasy RPG item icon."
+      },
+      {
+        "item_id": "rations",
+        "name": "Travel Rations",
+        "price": 8,
+        "mass": 0.4,
+        "description": "Packed food for short guild commissions.",
+        "image_path": "assets/items/rations.png",
+        "image_prompt": "Packed travel rations tied in cloth with a small wooden spoon, cozy Japanese fantasy RPG item icon, no text."
+      },
+      {
+        "item_id": "repair_kit",
+        "name": "Repair Kit",
+        "price": 24,
+        "mass": 0.6,
+        "description": "Tools for field repairs after combat.",
+        "image_path": "assets/items/repair_kit.png",
+        "image_prompt": "A compact fantasy repair kit with tiny hammer, cloth roll, and brass tools, Japanese RPG item icon, no text."
+      },
+      {
+        "item_id": "herb_bundle",
+        "name": "Herb Bundle",
+        "price": 12,
+        "mass": 0.2,
+        "description": "Medicinal herbs gathered near the town wall.",
+        "image_path": "assets/items/herb_bundle.png",
+        "image_prompt": "A tied bundle of medicinal green herbs with small white flowers, fantasy RPG item icon, no text."
+      },
+      {
+        "item_id": "signed_commission",
+        "name": "Signed Commission",
+        "price": 0,
+        "mass": 0.02,
+        "description": "A quest paper that records a small party objective.",
+        "image_path": "assets/items/signed_commission.png",
+        "image_prompt": "A sealed fantasy guild commission paper with a ribbon and stamp shape, no readable text, RPG item icon."
+      }
+    ]
+  },
+  "world_rules": {
+    "item_rules": {
+      "mass_conservation": true,
+      "require_same_coordinate_for_transfer": true,
+      "combinations": []
+    },
+    "image_rules": {
+      "enabled": true,
+      "allowed_operations": [
+        "create"
+      ]
+    },
+    "custom_action_rules": {
+      "default_duration_steps": 2
+    },
+    "social_rules": [
+      "The guild world is fixed by JSON; do not append discovered world rules.",
+      "Ordinary Move, Item, and Custom actions are preferred before cinematic video actions.",
+      "Trade actions use explicit JSON item prices and currency inventory.",
+      "CinematicInteraction is reserved for body-cooperation interactions that ordinary JSON cannot express.",
+      "Relationship changes are judged per interaction by the API relationship_adjustment stage and written as tensor deltas.",
+      "Per-round task chains and random guild events are generated only by the JSON-selected extra_world_functions program and stored as world memory, not as discovered world rules.",
+      "The three main characters are JSON-defined protagonists and activate every round; their directives should influence routing without bypassing normal action legality.",
+      "This at-will run removes predefined video task routes; cinematic video must use the single generic model_cinematic_interaction route.",
+      "The three main characters must use LongLive for every successful activation while obeying same-room or range target legality.",
+      "Non-main characters should use ordinary JSON actions only in this run."
+    ]
+  },
+  "agent_generation": {
+    "agent_id_prefix": "guild",
+    "distribution": "even_by_room",
+    "name_prefixes": [
+      "Ari",
+      "Mika",
+      "Ren",
+      "Sora",
+      "Yuna",
+      "Toma",
+      "Kiri",
+      "Natsu",
+      "Eri",
+      "Haru"
+    ],
+    "name_suffixes": [
+      "Ashbell",
+      "Moonvale",
+      "Ironleaf",
+      "Starling",
+      "Dawncrest",
+      "Mistfell",
+      "Brightford",
+      "Oakspire",
+      "Emberlane",
+      "Silverbrook"
+    ],
+    "role_groups": [
+      {
+        "role_id": "frontline",
+        "role_name": "Frontline Adventurer",
+        "count": 13,
+        "core_values": [
+          "courage",
+          "party protection",
+          "clear commitments"
+        ],
+        "gender_options": [
+          "masculine",
+          "feminine",
+          "androgynous"
+        ],
+        "appearance_template": "A {gender_presentation} young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+        "inventory": [
+          {
+            "item_id": "repair_kit",
+            "quantity": 1
+          },
+          {
+            "item_id": "rations",
+            "quantity": 2
+          }
+        ]
+      },
+      {
+        "role_id": "ranger",
+        "role_name": "Ranger",
+        "count": 12,
+        "core_values": [
+          "field awareness",
+          "quiet teamwork",
+          "safe routes"
+        ],
+        "gender_options": [
+          "feminine",
+          "masculine",
+          "androgynous"
+        ],
+        "appearance_template": "A {gender_presentation} ranger with a green half-cape, compact bow case, light boots, alert eyes, leaf-shaped brooch, warm Japanese fantasy guild aesthetic.",
+        "inventory": [
+          {
+            "item_id": "quest_map",
+            "quantity": 1
+          },
+          {
+            "item_id": "rations",
+            "quantity": 2
+          }
+        ]
+      },
+      {
+        "role_id": "healer",
+        "role_name": "Healer",
+        "count": 12,
+        "core_values": [
+          "care",
+          "stability",
+          "team recovery"
+        ],
+        "gender_options": [
+          "feminine",
+          "androgynous",
+          "masculine"
+        ],
+        "appearance_template": "A {gender_presentation} guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+        "inventory": [
+          {
+            "item_id": "healing_potion",
+            "quantity": 3
+          },
+          {
+            "item_id": "herb_bundle",
+            "quantity": 2
+          }
+        ]
+      },
+      {
+        "role_id": "mage",
+        "role_name": "Mage",
+        "count": 13,
+        "core_values": [
+          "curiosity",
+          "controlled risk",
+          "arcane precision"
+        ],
+        "gender_options": [
+          "androgynous",
+          "feminine",
+          "masculine"
+        ],
+        "appearance_template": "A {gender_presentation} mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+        "inventory": [
+          {
+            "item_id": "mana_crystal",
+            "quantity": 2
+          },
+          {
+            "item_id": "quest_map",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "role_id": "crafter",
+        "role_name": "Crafter",
+        "count": 13,
+        "core_values": [
+          "craft reliability",
+          "fair repair",
+          "practical help"
+        ],
+        "gender_options": [
+          "masculine",
+          "feminine",
+          "androgynous"
+        ],
+        "appearance_template": "A {gender_presentation} guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy fantasy workshop look.",
+        "inventory": [
+          {
+            "item_id": "iron_ingot",
+            "quantity": 3
+          },
+          {
+            "item_id": "repair_kit",
+            "quantity": 2
+          }
+        ]
+      },
+      {
+        "role_id": "trader",
+        "role_name": "Quartermaster Trader",
+        "count": 12,
+        "core_values": [
+          "fair price",
+          "inventory flow",
+          "guild prosperity"
+        ],
+        "gender_options": [
+          "feminine",
+          "masculine",
+          "androgynous"
+        ],
+        "appearance_template": "A {gender_presentation} quartermaster trader in a neat vest and guild sash, coin pouch, ledger tablet, welcoming smile, bright market-stall RPG styling.",
+        "inventory": [
+          {
+            "item_id": "healing_potion",
+            "quantity": 2
+          },
+          {
+            "item_id": "mana_crystal",
+            "quantity": 2
+          },
+          {
+            "item_id": "rations",
+            "quantity": 4
+          }
+        ]
+      },
+      {
+        "role_id": "scout",
+        "role_name": "Scout",
+        "count": 12,
+        "core_values": [
+          "speed",
+          "accurate reports",
+          "low drama"
+        ],
+        "gender_options": [
+          "androgynous",
+          "masculine",
+          "feminine"
+        ],
+        "appearance_template": "A {gender_presentation} scout in a cropped travel jacket, messenger straps, wind-tossed hair, quick balanced stance, cheerful Japanese fantasy RPG design.",
+        "inventory": [
+          {
+            "item_id": "quest_map",
+            "quantity": 2
+          },
+          {
+            "item_id": "rations",
+            "quantity": 2
+          }
+        ]
+      },
+      {
+        "role_id": "coordinator",
+        "role_name": "Guild Coordinator",
+        "count": 13,
+        "core_values": [
+          "coordination",
+          "conflict mediation",
+          "quest completion"
+        ],
+        "gender_options": [
+          "feminine",
+          "androgynous",
+          "masculine"
+        ],
+        "appearance_template": "A {gender_presentation} guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.",
+        "inventory": [
+          {
+            "item_id": "signed_commission",
+            "quantity": 2
+          },
+          {
+            "item_id": "quest_map",
+            "quantity": 1
+          }
+        ]
+      }
+    ]
+  },
+  "actions": {
+    "allowed_custom_actions": [
+      "Chat",
+      "QuestInvite",
+      "Heal",
+      "Buff",
+      "Train",
+      "Inspect",
+      "Coordinate",
+      "Celebrate",
+      "Warn",
+      "Repair",
+      "Research",
+      "ScoutReport",
+      "Mediate",
+      "Cook",
+      "CinematicInteraction"
+    ],
+    "ordinary_routes": [
+      {
+        "route_id": "trade_supplies",
+        "kind": "item_trade",
+        "weight": 25,
+        "story_verb": "traded supplies with"
+      },
+      {
+        "route_id": "quest_invite",
+        "kind": "custom",
+        "action": "QuestInvite",
+        "status_effect": "invited_to_small_quest",
+        "duration_steps": 2,
+        "weight": 18,
+        "story_verb": "invited"
+      },
+      {
+        "route_id": "discover_treasure",
+        "kind": "image",
+        "weight": 2,
+        "story_verb": "documented a discovered treasure with",
+        "image_subject": "a newly discovered minor guild treasure such as a glowing charm, tiny relic, or sealed reward box",
+        "image_reason": "treasure discovery route",
+        "image_prompt_template": "{domain_label}. Create one polished still image of {image_subject} found during a routine guild interaction involving {actor_name} and {target_name}. Make the treasure visually distinct and safe to inspect, no visible text, no watermark."
+      },
+      {
+        "route_id": "heal_after_training",
+        "kind": "custom",
+        "action": "Heal",
+        "status_effect": "recovered_after_training",
+        "duration_steps": 2,
+        "weight": 14,
+        "story_verb": "healed"
+      },
+      {
+        "route_id": "repair_gear",
+        "kind": "custom",
+        "action": "Repair",
+        "status_effect": "gear_repaired_for_next_commission",
+        "duration_steps": 2,
+        "weight": 12,
+        "story_verb": "repaired gear for"
+      },
+      {
+        "route_id": "buff_for_commission",
+        "kind": "custom",
+        "action": "Buff",
+        "status_effect": "buffed_for_commission",
+        "duration_steps": 2,
+        "weight": 12,
+        "story_verb": "prepared"
+      },
+      {
+        "route_id": "train_sparring_notes",
+        "kind": "custom",
+        "action": "Train",
+        "status_effect": "sparring_notes_absorbed",
+        "duration_steps": 2,
+        "weight": 11,
+        "story_verb": "reviewed sparring notes with"
+      },
+      {
+        "route_id": "coordinate_party",
+        "kind": "custom",
+        "action": "Coordinate",
+        "status_effect": "party_plan_aligned",
+        "duration_steps": 2,
+        "weight": 13,
+        "story_verb": "coordinated with"
+      },
+      {
+        "route_id": "inspect_quest_map",
+        "kind": "custom",
+        "action": "Inspect",
+        "status_effect": "quest_route_checked",
+        "duration_steps": 2,
+        "weight": 10,
+        "story_verb": "checked a quest map with"
+      },
+      {
+        "route_id": "research_spellwork",
+        "kind": "custom",
+        "action": "Research",
+        "status_effect": "spellwork_notes_aligned",
+        "duration_steps": 2,
+        "weight": 9,
+        "story_verb": "researched spellwork with"
+      },
+      {
+        "route_id": "scout_report",
+        "kind": "custom",
+        "action": "ScoutReport",
+        "status_effect": "field_report_received",
+        "duration_steps": 2,
+        "weight": 9,
+        "story_verb": "delivered a scout report to"
+      },
+      {
+        "route_id": "mediate_party_dispute",
+        "kind": "custom",
+        "action": "Mediate",
+        "status_effect": "party_dispute_deescalated",
+        "duration_steps": 2,
+        "weight": 7,
+        "story_verb": "mediated a party dispute with"
+      },
+      {
+        "route_id": "cook_rations",
+        "kind": "custom",
+        "action": "Cook",
+        "status_effect": "shared_warm_rations",
+        "duration_steps": 1,
+        "weight": 6,
+        "story_verb": "shared warm rations with"
+      },
+      {
+        "route_id": "celebrate_clearance",
+        "kind": "custom",
+        "action": "Celebrate",
+        "status_effect": "quest_clearance_celebrated",
+        "duration_steps": 1,
+        "weight": 6,
+        "story_verb": "celebrated a quest clearance with"
+      },
+      {
+        "route_id": "chat_at_guild",
+        "kind": "custom",
+        "action": "Chat",
+        "status_effect": "shared_guild_rumor",
+        "duration_steps": 1,
+        "weight": 10,
+        "story_verb": "spoke with"
+      },
+      {
+        "route_id": "move_to_task",
+        "kind": "move",
+        "weight": 8,
+        "story_verb": "moved toward a task station"
+      }
+    ],
+    "cinematic_routes": [
+      {
+        "route_id": "model_cinematic_interaction",
+        "kind": "cinematic",
+        "action": "CinematicInteraction",
+        "status_effect": "freeform_atwill_cinematic_moment",
+        "duration_steps": 2,
+        "weight": 100,
+        "model_selected_action": true,
+        "story_verb": "performed a freeform LongLive interaction with",
+        "selection_guidance": "Mandatory freeform at-will video route. Do not imitate the removed predefined video tasks. Invent a safe, non-sexual, context-specific two-person physical interaction from current world memory, protagonist directive, room context, and target relationship. The action must be visible in video and not expressible as a simple listed ordinary JSON route.",
+        "freeform_required": true
+      }
+    ],
+    "routing_policy": {
+      "ordinary_first": true,
+      "world_memory_use": "Use recent_global_world_events and local_visual_state as active context. Prefer follow-up or next-phase interactions when an event/status says a prior need was already handled.",
+      "main_character_use": "The always-active protagonists must choose context-specific freeform cinematic interactions aligned with their activity_directive and nearby feasible targets.",
+      "video_recommendation": "Video is strongly supported up to 10 jobs per round, but every video must use the single generic model_cinematic_interaction route and invent the action from current context. There are no predefined video task options in this run.",
+      "forced_cinematic_policy": "For force_cinematic_agent_ids, choose model_cinematic_interaction whenever video_quota_left is positive. Other activated agents may also choose model_cinematic_interaction freely when the interaction benefits from visible two-person motion; all cinematic choices must use freeform at-will action, never predefined video tasks.",
+      "repeat_avoidance": "Avoid repeating a resolved heal/repair/rescue/coordination on the same target unless status or event memory indicates a new phase."
+    },
+    "target_selection": {
+      "prefer_same_room": true,
+      "max_range_steps": 10,
+      "main_character_note": "Main characters still obey walkable map legality and approach targets through real rooms and corridors; they do not teleport or bypass blocked paths.",
+      "same_room_weight": 1.45,
+      "other_room_weight": 1.1,
+      "distance_penalty_per_step": 0.05,
+      "recent_interaction_bonus": 0.55,
+      "repeat_interaction_soft_cap": 4,
+      "cohort_weight": 1.45,
+      "shared_task_weight": 1.35,
+      "related_presence_weight": 1.18,
+      "relationship_trust_threshold": 60,
+      "relationship_affection_threshold": 60
+    }
+  },
+  "memory": {
+    "keep_recent_rounds": 10,
+    "max_active_long_tasks": 5,
+    "max_cohort_ids": 4,
+    "max_nearby_agents": 6,
+    "max_related_agents": 6,
+    "max_prompt_inventory_items": 4,
+    "max_prompt_property_items": 3
+  },
+  "longlive": {
+    "enabled": true,
+    "max_videos_per_round": 10,
+    "candidate_probability": 0.55,
+    "segment_seconds": 10,
+    "output_video_fps": 16.0,
+    "longlive_root": "/home/yz_wang/yz_main/LongLive",
+    "template_config": "/home/yz_wang/yz_main/LongLive/configs/longlive_interactive_inference.yaml",
+    "timeout_seconds": 7200,
+    "visual_style": "Japanese fantasy RPG guild, protagonist-centered freeform body action, current story context, no predefined video task choreography, no visible text, no watermark",
+    "force_cinematic_for_main_characters": true,
+    "force_cinematic_only_for_forced_agents": false,
+    "force_cinematic_agent_ids": [
+      "guild_main_hero",
+      "guild_main_princess",
+      "guild_main_cadre"
+    ]
+  },
+  "pixel_asset_pipeline": {
+    "enabled": true,
+    "framework_version": "pixel_sprite_framework_v2",
+    "concept_generation": {
+      "adapter": "gemini_image_prompt",
+      "endpoint_base": "https://generativelanguage.googleapis.com/v1beta",
+      "model": "gemini-2.5-flash-image-preview",
+      "api_key_env": "AGORA_VERTEX_API_KEY",
+      "response_modalities": [
+        "TEXT"
+      ],
+      "temperature": 0.4,
+      "timeout_seconds": 120
+    },
+  "sprite_generation": {
+    "adapter": "flux_local_service",
+    "endpoint": "http://127.0.0.1:8135",
+      "negative_prompt": "blurry, anti-aliased, soft gradients, realistic skin texture, cinematic depth of field, text, watermark, captions, title text, logo, character name, character lineup, concept sheet, reference sheet, white background, studio backdrop, floor shadow, floor reflection, cropped limbs, extra limbs, cropped head, cropped feet, boundary crossing, frame overlap, split body, detached legs, detached head",
+      "width": 512,
+      "height": 512,
+      "steps": 8,
+      "guidance_scale": 0.0,
+    "timeout_seconds": 600
+  },
+  "map_generation": {
+    "adapter": "room_part_compositor",
+    "tile_px": 32,
+    "margin_px": 56,
+    "background_hex": "#efe1c4",
+    "world_terrain": {
+      "default_ground": "meadow_grass",
+      "grass_base_hex": "#739d59",
+      "grass_alt_hex": "#86ad65",
+      "grass_shadow_hex": "#4d6d39",
+      "grass_flower_hex": "#f6d885",
+      "grass_leaf_hex": "#9ecb75",
+      "path_base_hex": "#a78d61",
+      "path_highlight_hex": "#ccb487",
+      "path_shadow_hex": "#6f5739",
+      "courtyard_base_hex": "#8e8163",
+      "courtyard_highlight_hex": "#bca883",
+      "courtyard_shadow_hex": "#5a4733",
+      "edge_band_tiles": 1,
+      "doorstep_length_tiles": 3,
+      "courtyard_radius_tiles": 2,
+      "flower_density": 0.16,
+      "shrub_density": 0.08,
+      "pebble_density": 0.12
+    },
+    "component_generation": {
+      "enabled": false,
+      "backend": "ai_studio",
+      "api_key_env": "AGORA_VERTEX_API_KEY",
+      "model": "gemini-3.1-flash-image-preview",
+      "response_modalities": [
+        "TEXT",
+        "IMAGE"
+      ],
+      "icon_px": 96,
+      "timeout_seconds": 300
+    },
+    "component_library": {
+      "floor_tiles": {
+        "stone_hall": {
+          "pattern": "stone_checker"
+        },
+        "quest_parchment": {
+          "pattern": "paper_grid"
+        },
+        "tavern_planks": {
+          "pattern": "wood_planks"
+        },
+        "storage_stone": {
+          "pattern": "stone_slabs"
+        },
+        "forge_slate": {
+          "pattern": "forge_slate"
+        },
+        "infirmary_tile": {
+          "pattern": "clean_tile"
+        },
+        "yard_pavers": {
+          "pattern": "yard_pavers"
+        },
+        "library_wood": {
+          "pattern": "library_planks"
+        },
+        "war_room_inlay": {
+          "pattern": "war_room_inlay"
+        },
+        "dormitory_planks": {
+          "pattern": "dorm_planks"
+        }
+      },
+      "wall_tiles": {
+        "wood_beam_wall": {
+          "trim": "wood_beam"
+        },
+        "board_trim_wall": {
+          "trim": "notice_trim"
+        },
+        "tavern_wall": {
+          "trim": "tavern_trim"
+        },
+        "storage_wall": {
+          "trim": "storage_trim"
+        },
+        "forge_wall": {
+          "trim": "forge_trim"
+        },
+        "healer_wall": {
+          "trim": "clean_trim"
+        },
+        "yard_fence": {
+          "trim": "yard_trim"
+        },
+        "library_shelf_wall": {
+          "trim": "library_trim"
+        },
+        "war_room_wall": {
+          "trim": "war_trim"
+        },
+        "dorm_wall": {
+          "trim": "dorm_trim"
+        }
+      },
+      "props": {
+        "guild_banner": {
+          "render": "banner",
+          "anchor": "east_mid",
+          "size_tiles": {
+            "w": 1,
+            "h": 2
+          },
+          "label": "Guild Banner"
+        },
+        "notice_table": {
+          "render": "table_notice",
+          "anchor": "west_mid",
+          "size_tiles": {
+            "w": 2,
+            "h": 2
+          },
+          "label": "Notice Table"
+        },
+        "quest_board": {
+          "render": "board",
+          "anchor": "north_mid",
+          "size_tiles": {
+            "w": 2,
+            "h": 2
+          },
+          "label": "Quest Board"
+        },
+        "sealed_requests": {
+          "render": "scroll_stack",
+          "anchor": "south_mid",
+          "size_tiles": {
+            "w": 1,
+            "h": 1
+          },
+          "label": "Sealed Requests"
+        },
+        "round_table": {
+          "render": "round_table",
+          "anchor": "center",
+          "size_tiles": {
+            "w": 2,
+            "h": 2
+          },
+          "label": "Round Table"
+        },
+        "mug_shelf": {
+          "render": "shelf",
+          "anchor": "north_east",
+          "size_tiles": {
+            "w": 2,
+            "h": 1
+          },
+          "label": "Mug Shelf"
+        },
+        "supply_crates": {
+          "render": "crate_stack",
+          "anchor": "west_mid",
+          "size_tiles": {
+            "w": 2,
+            "h": 2
+          },
+          "label": "Supply Crates"
+        },
+        "rope_coils": {
+          "render": "coil",
+          "anchor": "south_mid",
+          "size_tiles": {
+            "w": 1,
+            "h": 1
+          },
+          "label": "Rope Coils"
+        },
+        "anvil": {
+          "render": "anvil",
+          "anchor": "west_mid",
+          "size_tiles": {
+            "w": 2,
+            "h": 1
+          },
+          "label": "Anvil"
+        },
+        "glowing_furnace": {
+          "render": "furnace",
+          "anchor": "east_mid",
+          "size_tiles": {
+            "w": 2,
+            "h": 2
+          },
+          "label": "Glowing Furnace"
+        },
+        "medicine_shelf": {
+          "render": "shelf",
+          "anchor": "north_mid",
+          "size_tiles": {
+            "w": 2,
+            "h": 1
+          },
+          "label": "Medicine Shelf"
+        },
+        "rest_bed": {
+          "render": "bed",
+          "anchor": "south_mid",
+          "size_tiles": {
+            "w": 2,
+            "h": 2
+          },
+          "label": "Rest Bed"
+        },
+        "practice_dummy": {
+          "render": "dummy",
+          "anchor": "center",
+          "size_tiles": {
+            "w": 1,
+            "h": 2
+          },
+          "label": "Practice Dummy"
+        },
+        "weapon_rack": {
+          "render": "rack",
+          "anchor": "east_mid",
+          "size_tiles": {
+            "w": 2,
+            "h": 1
+          },
+          "label": "Weapon Rack"
+        },
+        "floating_runes": {
+          "render": "runes",
+          "anchor": "center",
+          "size_tiles": {
+            "w": 2,
+            "h": 2
+          },
+          "label": "Floating Runes"
+        },
+        "scroll_table": {
+          "render": "table_scroll",
+          "anchor": "south_mid",
+          "size_tiles": {
+            "w": 2,
+            "h": 2
+          },
+          "label": "Scroll Table"
+        },
+        "strategy_table": {
+          "render": "table_map",
+          "anchor": "center",
+          "size_tiles": {
+            "w": 2,
+            "h": 2
+          },
+          "label": "Strategy Table"
+        },
+        "region_map": {
+          "render": "map_stand",
+          "anchor": "north_mid",
+          "size_tiles": {
+            "w": 2,
+            "h": 1
+          },
+          "label": "Region Map"
+        },
+        "bunk_beds": {
+          "render": "bunks",
+          "anchor": "west_mid",
+          "size_tiles": {
+            "w": 2,
+            "h": 2
+          },
+          "label": "Bunk Beds"
+        },
+        "nightstand_cluster": {
+          "render": "nightstand",
+          "anchor": "east_mid",
+          "size_tiles": {
+            "w": 1,
+            "h": 1
+          },
+          "label": "Nightstand Cluster"
+        },
+        "travel_packs": {
+          "render": "travel_pack",
+          "anchor": "south_west",
+          "size_tiles": {
+            "w": 2,
+            "h": 1
+          },
+          "label": "Travel Packs"
+        }
+      },
+      "pickup_items": {
+        "healing_potion": {
+          "render": "potion_red",
+          "label": "Healing Potion"
+        },
+        "quest_map": {
+          "render": "map_scroll",
+          "label": "Quest Map"
+        },
+        "signed_commission": {
+          "render": "quest_notice",
+          "label": "Signed Commission"
+        },
+        "repair_kit": {
+          "render": "toolkit",
+          "label": "Repair Kit"
+        },
+        "rations": {
+          "render": "food_pack",
+          "label": "Rations"
+        },
+        "herb_bundle": {
+          "render": "herb_bundle",
+          "label": "Herb Bundle"
+        },
+        "iron_ingot": {
+          "render": "iron_ingot",
+          "label": "Iron Ingot"
+        }
+      },
+      "room_layout_presets": {
+        "guild_hall": {
+          "supplemental_props": [
+            {
+              "component_id": "guild_banner",
+              "anchor": "north_east"
+            }
+          ]
+        },
+        "quest_board": {
+          "supplemental_props": [
+            {
+              "component_id": "sealed_requests",
+              "anchor": "south_west"
+            }
+          ]
+        },
+        "tavern_corner": {
+          "supplemental_props": [
+            {
+              "component_id": "round_table",
+              "anchor": "south_mid"
+            }
+          ]
+        },
+        "warehouse": {
+          "supplemental_props": [
+            {
+              "component_id": "rope_coils",
+              "anchor": "south_west"
+            }
+          ]
+        },
+        "forge": {
+          "supplemental_props": [
+            {
+              "component_id": "anvil",
+              "anchor": "south_west"
+            }
+          ]
+        },
+        "infirmary": {
+          "supplemental_props": [
+            {
+              "component_id": "rest_bed",
+              "anchor": "south_west"
+            }
+          ]
+        },
+        "training_yard": {
+          "supplemental_props": [
+            {
+              "component_id": "practice_dummy",
+              "anchor": "center"
+            }
+          ]
+        },
+        "arcane_library": {
+          "supplemental_props": [
+            {
+              "component_id": "floating_runes",
+              "anchor": "center"
+            }
+          ]
+        },
+        "strategy_table": {
+          "supplemental_props": [
+            {
+              "component_id": "strategy_table",
+              "anchor": "center"
+            }
+          ]
+        },
+        "dormitory": {
+          "supplemental_props": [
+            {
+              "component_id": "nightstand_cluster",
+              "anchor": "south_east"
+            },
+            {
+              "component_id": "travel_packs",
+              "anchor": "south_west"
+            }
+          ]
+        }
+      }
+    },
+    "notes": [
+      "Guild map display should prioritize readable structured layout from map_grid over dark generative key art.",
+      "Room-part composition should stay JSON-driven: floors, walls, props, and pickups come from a component library and room presets.",
+      "Vertex can generate isolated prop source art for component slots, but the runtime map still composes from the JSON room contract."
+    ]
+  },
+  "sheet_layout": {
+      "columns": 4,
+      "rows": 4,
+      "raw_frame_width": 128,
+      "raw_frame_height": 128,
+      "animation_states": [
+        {
+          "name": "idle_down",
+          "row": 0,
+          "frame_count": 4,
+          "frame_rate": 4,
+          "repeat": 0,
+          "static_frame_index": 0
+        },
+        {
+          "name": "walk_down",
+          "row": 1,
+          "frame_count": 4,
+          "frame_rate": 7,
+          "repeat": -1
+        },
+        {
+          "name": "walk_left",
+          "row": 2,
+          "frame_count": 4,
+          "frame_rate": 7,
+          "repeat": -1
+        },
+        {
+          "name": "walk_right",
+          "row": 3,
+          "frame_count": 4,
+          "frame_rate": 7,
+          "repeat": -1
+        }
+      ]
+    },
+  "processing": {
+    "procedural_fallback_on_quality_failure": false,
+    "palette_size": 24,
+    "alpha_threshold": 8,
+    "remove_near_white_background": true,
+    "near_white_threshold": 246,
+    "neutral_tolerance": 12,
+    "qa_atlas_max_near_white_opaque_ratio": 0.012,
+    "target_frame_width": 32,
+    "target_frame_height": 32,
+    "atlas_format": "phaser_hash",
+    "alignment_policy": {
+      "mode": "foot_anchor_center",
+      "anchor_bottom_px": 30,
+      "center_horizontally": true,
+      "max_bottom_jitter_px": 3,
+      "max_horizontal_jitter_px": 3,
+      "min_body_height_ratio": 0.68,
+      "max_body_height_ratio": 0.95,
+      "max_body_width_ratio": 0.82,
+      "target_body_height_ratio": 0.88,
+      "target_body_width_ratio": 0.64,
+      "max_scale_up": 1.85,
+      "pad_source_to_square": true
+    },
+    "idle_policy": {
+      "mode": "static_first_frame",
+      "notes": [
+        "Idle rows are authored as four source cells for compatibility, but the runtime consumes a single stable first frame.",
+        "Walk rows remain animated and should preserve a consistent body anchor across frames."
+      ]
+    }
+  },
+    "frontend": {
+      "event_name": "new_asset_ready",
+      "asset_root": "frontend/assets/generated",
+      "asset_base_url": "./assets/generated",
+      "asset_set_manifest_path": "./assets/generated/guild_asset_sets/current_guild_pixel_set.json",
+      "event_feed_path": "./assets/generated/events/latest.json",
+      "bootstrap_feed_path": "./assets/generated/events/bootstrap_assets.json",
+      "default_animation": "idle_down",
+      "poll_interval_ms": 3000,
+      "pov_local_modules": {
+        "enabled": true,
+        "protagonist_agent_id": "guild_main_hero",
+        "visible_radius_tiles": 4,
+        "recent_log_limit": 14,
+        "movement": {
+          "enabled": true,
+          "step_cooldown_ms": 180,
+          "allow_room_transitions": true,
+          "doorway_snap_distance_tiles": 1,
+          "keys": {
+            "up": [
+              "W",
+              "UP"
+            ],
+            "down": [
+              "S",
+              "DOWN"
+            ],
+            "left": [
+              "A",
+              "LEFT"
+            ],
+            "right": [
+              "D",
+              "RIGHT"
+            ]
+          },
+          "animations": {
+            "idle": "idle_down",
+            "up": "walk_right",
+            "down": "walk_down",
+            "left": "walk_left",
+            "right": "walk_right"
+          },
+          "helper_text": "Move the POV hero with WASD or arrow keys. Doorways defined in JSON permit room changes."
+        },
+        "dialogue": {
+          "enabled": true,
+          "interaction_radius_tiles": 3,
+          "bubble_duration_ms": 2600,
+          "response_animation_ms": 480,
+          "actions": [
+            {
+              "action_id": "greet",
+              "label": "Greet",
+              "speaker_line": "{self} greets {target} and opens a quick guild-side conversation.",
+              "target_reply": "{target} returns the greeting and settles into the room's current mood."
+            },
+            {
+              "action_id": "ask_focus",
+              "label": "Ask Focus",
+              "speaker_line": "{self} asks {target} what is pressing right now.",
+              "target_reply": "{target} answers: {target_focus}"
+            },
+            {
+              "action_id": "offer_help",
+              "label": "Offer Help",
+              "speaker_line": "{self} offers concrete help on the next task chain.",
+              "target_reply": "{target} weighs the offer and points back to {room} as the immediate scene."
+            },
+            {
+              "action_id": "ask_room",
+              "label": "Ask Room",
+              "speaker_line": "{self} asks what matters most about {room}.",
+              "target_reply": "{target} gestures around {room} and points out {decor}."
+            }
+          ]
+        },
+        "item_use": {
+          "enabled": true,
+          "interaction_radius_tiles": 2,
+          "quick_slots": 4,
+          "effects": {
+            "healing_potion": {
+              "consume_quantity": 1,
+              "self_outcome": "{self} drinks a healing potion and steadies for the next push.",
+              "target_outcome": "{self} gives a healing potion to {target}, easing visible strain."
+            },
+            "mana_crystal": {
+              "consume_quantity": 1,
+              "self_outcome": "{self} centers a mana crystal and sharpens magical focus.",
+              "target_outcome": "{self} shares a mana crystal with {target}, helping stabilize spellwork."
+            },
+            "quest_map": {
+              "consume_quantity": 0,
+              "self_outcome": "{self} studies the quest map and reorients around the guild's next route.",
+              "target_outcome": "{self} unfolds the quest map for {target}, comparing routes and risks."
+            },
+            "signed_commission": {
+              "consume_quantity": 0,
+              "self_outcome": "{self} rereads the signed commission and recommits to the objective.",
+              "target_outcome": "{self} shows the signed commission to {target}, clarifying the active objective."
+            },
+            "repair_kit": {
+              "consume_quantity": 0,
+              "self_outcome": "{self} checks the repair kit and tightens gear for the next move.",
+              "target_outcome": "{self} uses the repair kit to help {target} tighten gear and field straps."
+            },
+            "herb_bundle": {
+              "consume_quantity": 1,
+              "self_outcome": "{self} sorts through a herb bundle and calms down.",
+              "target_outcome": "{self} shares a herb bundle with {target}, softening the room's tension."
+            },
+            "rations": {
+              "consume_quantity": 1,
+              "self_outcome": "{self} takes quick rations and keeps moving.",
+              "target_outcome": "{self} hands rations to {target}, buying a little breathing room."
+            },
+            "iron_ingot": {
+              "consume_quantity": 0,
+              "self_outcome": "{self} checks the iron ingot and thinks ahead to forge work.",
+              "target_outcome": "{self} shows the iron ingot to {target}, turning the talk toward equipment needs."
+            }
+          }
+        },
+        "inventory_exchange": {
+          "enabled": true,
+          "pickup_radius_tiles": 1,
+          "drop_enabled": true,
+          "trade_radius_tiles": 2,
+          "item_icon_styles": {
+            "healing_potion": {
+              "shape": "potion",
+              "primary": "#d85b64",
+              "secondary": "#f7d5da",
+              "accent": "#7f2431"
+            },
+            "mana_crystal": {
+              "shape": "crystal",
+              "primary": "#59b9f6",
+              "secondary": "#d7f5ff",
+              "accent": "#2c5f8f"
+            },
+            "iron_ingot": {
+              "shape": "ingot",
+              "primary": "#9ca4b2",
+              "secondary": "#e7edf5",
+              "accent": "#555f70"
+            },
+            "quest_map": {
+              "shape": "map",
+              "primary": "#d8bf7a",
+              "secondary": "#fff5cb",
+              "accent": "#8a6a2f"
+            },
+            "rations": {
+              "shape": "satchel",
+              "primary": "#ae7a48",
+              "secondary": "#f1d7b6",
+              "accent": "#6a4325"
+            },
+            "repair_kit": {
+              "shape": "toolkit",
+              "primary": "#8a6847",
+              "secondary": "#eadcc8",
+              "accent": "#4c3624"
+            },
+            "herb_bundle": {
+              "shape": "herbs",
+              "primary": "#5ea56a",
+              "secondary": "#e4f6d8",
+              "accent": "#2f6b37"
+            },
+            "signed_commission": {
+              "shape": "scroll",
+              "primary": "#e7d6aa",
+              "secondary": "#fff6dd",
+              "accent": "#8f6a2a"
+            }
+          },
+          "negotiation": {
+            "enabled": true,
+            "counteroffer_enabled": true,
+            "gift_accept_ratio": 0.15,
+            "trade_accept_ratio": 0.8,
+            "fallback_requested_items": [
+              "signed_commission",
+              "healing_potion",
+              "quest_map",
+              "repair_kit"
+            ],
+            "room_return_preferences": {
+              "quest_board": [
+                "quest_map",
+                "signed_commission"
+              ],
+              "guild_hall": [
+                "signed_commission",
+                "healing_potion"
+              ],
+              "tavern_corner": [
+                "rations",
+                "herb_bundle"
+              ],
+              "warehouse": [
+                "repair_kit",
+                "rations"
+              ],
+              "forge": [
+                "iron_ingot",
+                "repair_kit"
+              ],
+              "infirmary": [
+                "herb_bundle",
+                "healing_potion"
+              ],
+              "training_yard": [
+                "repair_kit",
+                "rations"
+              ],
+              "arcane_library": [
+                "mana_crystal",
+                "quest_map"
+              ],
+              "strategy_table": [
+                "quest_map",
+                "signed_commission"
+              ],
+              "dormitory": [
+                "rations",
+                "herb_bundle"
+              ]
+            },
+            "response_templates": {
+              "gift_accept": "{target} accepts the offer from {self} and treats it as goodwill.",
+              "gift_reject": "{target} politely refuses the item and says it would be wasted right now.",
+              "trade_accept": "{target} accepts the deal and offers {return_item}.",
+              "trade_reject": "{target} refuses the deal and asks for something more relevant.",
+              "trade_counter": "{target} counters: bring {requested_item} and they will return {return_item}.",
+              "counter_accept": "{self} accepts the counteroffer and closes the trade with {target}.",
+              "counter_reject": "{self} declines the counteroffer and keeps the current loadout."
+            }
+          },
+          "room_loot": [
+            {
+              "loot_id": "quest_board_route_copy",
+              "room_id": "quest_board",
+              "item_id": "quest_map",
+              "quantity": 1,
+              "label": "Route Copy",
+              "coordinates": {
+                "x": 12,
+                "y": 2,
+                "z": 0
+              }
+            },
+            {
+              "loot_id": "guild_hall_notice_potion",
+              "room_id": "guild_hall",
+              "item_id": "healing_potion",
+              "quantity": 1,
+              "label": "Emergency Potion",
+              "coordinates": {
+                "x": 13,
+                "y": 8,
+                "z": 0
+              }
+            },
+            {
+              "loot_id": "tavern_corner_rations",
+              "room_id": "tavern_corner",
+              "item_id": "rations",
+              "quantity": 1,
+              "label": "Spare Rations",
+              "coordinates": {
+                "x": 4,
+                "y": 8,
+                "z": 0
+              }
+            },
+            {
+              "loot_id": "warehouse_repair_kit",
+              "room_id": "warehouse",
+              "item_id": "repair_kit",
+              "quantity": 1,
+              "label": "Field Repair Kit",
+              "coordinates": {
+                "x": 23,
+                "y": 8,
+                "z": 0
+              }
+            },
+            {
+              "loot_id": "infirmary_herbs",
+              "room_id": "infirmary",
+              "item_id": "herb_bundle",
+              "quantity": 1,
+              "label": "Fresh Herbs",
+              "coordinates": {
+                "x": 17,
+                "y": 3,
+                "z": 0
+              }
+            },
+            {
+              "loot_id": "forge_ingot",
+              "room_id": "forge",
+              "item_id": "iron_ingot",
+              "quantity": 1,
+              "label": "Hot Ingot",
+              "coordinates": {
+                "x": 25,
+                "y": 9,
+                "z": 0
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "report": {
+    "title": "RPG Guild At-Will Main Character LongLive Story Summary",
+    "author": "Agora Mini Interaction Runner",
+    "tex_filename": "guild_atwill_mainchars_story_report.tex",
+    "pdf_filename": "guild_atwill_mainchars_story_report.pdf",
+    "focus": "story_summary",
+    "language": "English"
+  },
+  "inventory_generation": {
+    "enabled": true,
+    "stage": "initial_inventory_generation",
+    "preserve_existing_inventory": true,
+    "max_distinct_items_per_agent": 3,
+    "max_quantity_per_item": 3,
+    "allowed_item_ids": [
+      "healing_potion",
+      "mana_crystal",
+      "iron_ingot",
+      "quest_map",
+      "rations",
+      "repair_kit",
+      "herb_bundle",
+      "signed_commission"
+    ],
+    "policy": "Generate compact role-appropriate actionable inventory only from the item catalog. Use property_library for non-actionable treasures, titles, clues, personal tools, debts, or keepsakes. Do not create images here; image generation is a later system step when a route requests it."
+  },
+  "main_characters": [
+    {
+      "enabled": true,
+      "agent_id": "guild_main_hero",
+      "display_name": "Renji Dawnblade",
+      "role_id": "hero_adventurer",
+      "role_name": "Hero Adventurer",
+      "archetype": "勇者 / Hero",
+      "home_room_id": "quest_board",
+      "gender_presentation": "masculine",
+      "currency_quantity": 160,
+      "core_values": [
+        "quest momentum",
+        "protecting companions",
+        "direct action"
+      ],
+      "inventory": [
+        {
+          "item_id": "signed_commission",
+          "quantity": 2
+        },
+        {
+          "item_id": "quest_map",
+          "quantity": 1
+        },
+        {
+          "item_id": "healing_potion",
+          "quantity": 2
+        }
+      ],
+      "activity_directive": "Every round, actively seek, accept, advance, or close a guild quest. Prefer interactions that create concrete task progress, recruit helpers, exchange quest items, inspect maps, coordinate parties, or report results.",
+      "private_notes": "A protagonist hero who treats the guild as a living quest hub and pushes story threads forward without waiting to be invited.",
+      "always_activate": true
+    },
+    {
+      "enabled": true,
+      "agent_id": "guild_main_princess",
+      "display_name": "Celestia Vale",
+      "role_id": "fallen_princess",
+      "role_name": "Fallen Princess Explorer",
+      "archetype": "落难公主 / Fallen Princess",
+      "home_room_id": "tavern_corner",
+      "gender_presentation": "feminine",
+      "currency_quantity": 90,
+      "core_values": [
+        "curious exploration",
+        "quiet dignity",
+        "learning ordinary life"
+      ],
+      "inventory": [
+        {
+          "item_id": "quest_map",
+          "quantity": 1
+        },
+        {
+          "item_id": "rations",
+          "quantity": 2
+        },
+        {
+          "item_id": "herb_bundle",
+          "quantity": 1
+        }
+      ],
+      "activity_directive": "Every round, freely explore the guild, ask questions, observe conflicts, form opinions, discover small mysteries, and interact with whoever reveals a new part of the world.",
+      "private_notes": "A displaced noble protagonist who is not passive: she learns how the guild works by following clues, kindness, mistakes, and rumors.",
+      "always_activate": true
+    },
+    {
+      "enabled": true,
+      "agent_id": "guild_main_cadre",
+      "display_name": "Mira Ledgerfall",
+      "role_id": "guild_cadre",
+      "role_name": "Senior Guild Cadre",
+      "archetype": "工会干部 / Guild Cadre",
+      "home_room_id": "guild_hall",
+      "gender_presentation": "androgynous",
+      "currency_quantity": 220,
+      "core_values": [
+        "member support",
+        "fair coordination",
+        "operational clarity"
+      ],
+      "inventory": [
+        {
+          "item_id": "signed_commission",
+          "quantity": 3
+        },
+        {
+          "item_id": "repair_kit",
+          "quantity": 1
+        },
+        {
+          "item_id": "healing_potion",
+          "quantity": 2
+        }
+      ],
+      "activity_directive": "Every round, actively help guild members: assign resources, resolve bottlenecks, mediate disputes, support novices, connect specialists, and turn scattered events into organized guild response.",
+      "private_notes": "A protagonist guild official who keeps the building functioning and turns ordinary interactions into visible institutional support.",
+      "always_activate": true
+    }
+  ],
+  "extra_world_functions": {
+    "enabled": true,
+    "stage": "extra_world_functions",
+    "activation_probability": 1.0,
+    "max_events_per_function": 2,
+    "max_events_per_round": 4,
+    "functions": [
+      {
+        "function_id": "guild_task_chain_generator",
+        "enabled": true,
+        "activation_probability": 1.0,
+        "max_events": 2,
+        "purpose": "Create or advance small parallel guild task chains every round. Use prior global events to continue, branch, or close existing threads instead of restarting them.",
+        "event_policy": "Prefer concrete quest-step events: new commission posted, party formed, map checked, supplies short, healer needed, forged tool ready, scouting lead returned, reward handoff due, completion celebration. Include at least one actionable next step when possible.",
+        "main_character_policy": "Hook the hero to quest acceptance/progress/completion, the guild cadre to coordination/resource bottlenecks, and the fallen princess to exploration or social discovery when appropriate.",
+        "continuity_policy": "Use titles and status_tags to show next-phase progress such as posted, recruited, equipped, departed, returned, verified, paid, archived."
+      },
+      {
+        "function_id": "guild_random_event_generator",
+        "enabled": true,
+        "activation_probability": 0.85,
+        "max_events": 2,
+        "purpose": "Generate light guild incidents that create interaction opportunities without overriding agent autonomy.",
+        "event_policy": "Examples are allowed as style references only: spilled potion crate, nervous rookie, damaged practice dummy, loud tavern rumor, missing quest stamp, strange mana flicker, injured familiar, misplaced reward box. The model should choose what fits the current world memory.",
+        "main_character_policy": "Hook protagonists only when the event naturally matches their directive; otherwise let ordinary members respond.",
+        "continuity_policy": "Prefer events that can be resolved or followed up through existing routes and status effects over one-off flavor."
+      }
+    ]
+  },
+  "world_progress": {
+    "enabled": true,
+    "source": "JSON extra_world_functions plus status effects and localized visual state",
+    "routing_instruction": "Treat generated task/random events as soft world memory. Route agents toward advancing, resolving, or referencing them when compatible with role, room, target legality, and current status.",
+    "status_follow_up_examples": [
+      "invited_to_small_quest can lead to coordinate_party, inspect_quest_map, trade_supplies, buff_for_commission, or move_to_task rather than another identical invite.",
+      "recovered_after_training can lead to training notes, celebration, return-to-duty coordination, or ordinary chat rather than repeated healing.",
+      "gear_repaired_for_next_commission can lead to quest invite, supplies trade, or scout report rather than another repair."
+    ]
+  }
+}

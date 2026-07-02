@@ -1,0 +1,61 @@
+// World template.
+// 世界模板：支持 grid 或 rooms，两者都保留在一个结构里，按 topology_mode 选择。
+{
+  "world_id": "debug_world_alpha",
+  "world_description": "A modular indoor facility with stacked rooms and controlled movement rules for debugging.",
+  "world_summary": "Three-dimensional debug world for validating room placement and movement policy.",
+  // movement_mode:
+  // - "single": one active agent moves per round, state updates immediately
+  // - "multi": all active agents decide from the same round-start snapshot, then settle together
+  // movement_mode:
+  // - "single"：单轮单动，单个 agent 行动后立刻更新世界
+  // - "multi"：并发决策，所有 active agent 基于同一回合初快照决策，再统一结算
+  "movement_mode": "multi",
+  // turn_order only matters in single mode.
+  // turn_order 目前主要用于 single 模式。
+  "turn_order": "round_robin",
+  // conflict_resolution is used in multi mode when multiple agents want the same exclusive target.
+  // conflict_resolution 用于 multi 模式下多个 agent 抢占同一互斥目标时的结算规则。
+  "conflict_resolution": "agent_id_order",
+  "world_rules": [
+    "Movement is rule-driven and deterministic under a fixed seed.",
+    "Interaction rules and item rules are placeholders in phase 1.",
+    "Room occupancy is limited by occupancy_policy."
+  ],
+  "topology": {
+    "topology_mode": "rooms",
+    "grid_shape": {
+      "x": 3,
+      "y": 2,
+      "z": 2
+    },
+    "rooms": [
+      {
+        "room_id": "room_entry",
+        "name": "Entry Hall",
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      {
+        "room_id": "room_archive",
+        "name": "Archive Room",
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      {
+        "room_id": "room_rooftop",
+        "name": "Roof Deck",
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    ]
+  },
+  "occupancy_policy": {
+    "max_agents_per_room": 2
+  },
+  "interaction_rules": [],
+  "item_rules": {}
+}

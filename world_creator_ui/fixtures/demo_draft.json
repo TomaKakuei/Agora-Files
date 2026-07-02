@@ -1,0 +1,280 @@
+{
+  "draft_id": "creator_demo_fixture",
+  "created_at": "2026-05-26T12:00:00+00:00",
+  "updated_at": "2026-05-26T12:18:00+00:00",
+  "current_revision": "r002",
+  "status": "publish_ready",
+  "art_status": "publish_ready",
+  "publish_status": "draft_ready",
+  "published_access_code": "",
+  "world_name": "Clockharbor Exchange",
+  "world_id": "clockharbor_exchange",
+  "world_summary_markdown": "Clockharbor Exchange is a harbor city shaped by customs friction, route intelligence, and ritual astronomy. Its social life runs on contracts, rumor traffic, inspection bottlenecks, and the civic need to keep cargo moving even when trust is strained. Players enter a world where every useful fact can become leverage, every delay can become a public problem, and every room offers a different angle on the same living trade system.",
+  "package_download_url": "#",
+  "current_revision_data": {
+    "revision_id": "r002",
+    "created_at": "2026-05-26T12:18:00+00:00",
+    "status": "draft_ready",
+    "world_name": "Clockharbor Exchange",
+    "world_id": "clockharbor_exchange",
+    "summary_path": "output/world_creator_drafts/creator_demo_fixture/revisions/r002/world_summary.md",
+    "package_path": "output/world_creator_drafts/creator_demo_fixture/revisions/r002/world_package.db",
+    "package_validation": {
+      "materialize_ok": true,
+      "package_kind": "world_package",
+      "package_version": "1",
+      "pixel_read": false,
+      "compiler_critique_applied": true
+    },
+    "structured_summary": {
+      "room_count": 6,
+      "agent_count": 36,
+      "main_character_count": 3,
+      "role_group_count": 3,
+      "ordinary_route_count": 6,
+      "cinematic_route_count": 1,
+      "custom_action_count": 8,
+      "gameplay_loop_count": 4,
+      "player_entry_point_count": 3,
+      "economy_focus": "tidal trade city with ritual astronomy · A harbor city where logistics guilds, shrine keepers, and tide pilots bargain over routes, omens, and civic survival.",
+      "exploration_focus": "Support a social-economy world with discovery and faction pressure.",
+      "longlive_enabled": true,
+      "image_generation_enabled": true,
+      "item_image_mode": "important_only"
+    },
+    "compiler_critique": {
+      "should_repair": true,
+      "diagnosis": [
+        "Player onboarding needed a more explicit customs-pressure entry point.",
+        "The harbor tension needed one more concrete persistent event loop."
+      ]
+    },
+    "compiled_preview": {
+      "focus_tags": [
+        "economy",
+        "exploration",
+        "story",
+        "conflict"
+      ],
+      "gameplay_loops": [
+        {
+          "label": "Exchange Loop",
+          "summary": "Agents circulate contracts and route access through bargains, assignments, and price pressure so each agreement creates a follow-up obligation.",
+          "roles": ["Dock Broker", "Route Pilot", "Shrine Archivist"],
+          "rooms": ["Tide Market", "Guild Quay", "Signal Tower"],
+          "pressure": "supply bottlenecks and shifting leverage"
+        },
+        {
+          "label": "Discovery Loop",
+          "summary": "Agents bring back route knowledge, rumors, and partial findings, then trade that information for access, safety, or support.",
+          "roles": ["Route Pilot", "Shrine Archivist"],
+          "rooms": ["Signal Tower", "Archive Annex"],
+          "pressure": "uncertain information and contested interpretation"
+        },
+        {
+          "label": "Inspection Loop",
+          "summary": "Agents respond to customs checks by rerouting cargo, negotiating permits, and trading information.",
+          "roles": ["Dock Broker", "Route Pilot", "Shrine Archivist"],
+          "rooms": ["Tide Market", "Guild Quay", "Signal Tower"],
+          "pressure": "inspection delays and selective enforcement"
+        },
+        {
+          "label": "Tension Loop",
+          "summary": "Rival priorities create suspicion, negotiation, and reversals, but the pressure should always return as a playable choice.",
+          "roles": ["Dock Broker", "Shrine Archivist"],
+          "rooms": ["Guild Quay", "Signal Tower"],
+          "pressure": "faction distrust and contested decisions"
+        }
+      ],
+      "player_entry_points": [
+        "Arrive during a customs dispute and learn the harbor through competing explanations.",
+        "Use rumor, inspection, and small trade favors to discover who can actually move cargo.",
+        "Step into a live bottleneck where route knowledge is already changing who trusts whom."
+      ],
+      "conflict_hooks": [
+        "A customs inspection wave makes ordinary trade feel politically risky.",
+        "Two groups want the same cargo window for incompatible reasons."
+      ],
+      "event_functions": [
+        {
+          "function_id": "exchange_loop_progressor",
+          "purpose": "Create or advance event threads for the Exchange Loop so the world keeps generating concrete next steps in Tide Market, Guild Quay, Signal Tower.",
+          "event_policy": "Prefer compact progress events that deepen Exchange Loop and keep obligations visible to players.",
+          "continuity_policy": "Use titles and status_tags to show next-phase progress such as posted, negotiated, rerouted, verified, escalated, or resolved.",
+          "activation_probability": 1,
+          "max_events": 2
+        },
+        {
+          "function_id": "inspection_loop_progressor",
+          "purpose": "Create or advance event threads for the Inspection Loop so customs pressure remains a real recurring system instead of flavor.",
+          "event_policy": "Prefer events that make inspection delays, permit checks, and selective enforcement create fresh routing decisions.",
+          "continuity_policy": "Carry thread state across rounds through blocked, inspected, contested, exposed, rerouted, or settled tags.",
+          "activation_probability": 1,
+          "max_events": 2
+        },
+        {
+          "function_id": "clockharbor_exchange_tension_generator",
+          "purpose": "Generate light-to-moderate persistent tension incidents that sharpen negotiation, routing, alliances, and local stakes without overriding agent autonomy.",
+          "event_policy": "Use the compiled conflict hooks when they fit current world memory and prefer incidents that create follow-up routes.",
+          "continuity_policy": "Let tension incidents branch or cool down over multiple rounds through delayed, inspected, contested, exposed, rerouted, softened, or settled states.",
+          "activation_probability": 0.88,
+          "max_events": 2
+        },
+        {
+          "function_id": "clockharbor_exchange_player_entry_generator",
+          "purpose": "Generate newcomer-readable incidents that expose what the world is about and give human players an immediate way to participate.",
+          "event_policy": "Prefer events that clearly tell a player where to go, who to ask, or which pressure is already live.",
+          "continuity_policy": "Entry incidents should hand off into a larger loop or conflict thread within 1-3 rounds.",
+          "activation_probability": 0.72,
+          "max_events": 1
+        }
+      ]
+    },
+    "error": ""
+  },
+  "history": [
+    {
+      "revision_id": "r001",
+      "created_at": "2026-05-26T12:04:00+00:00",
+      "status": "draft_ready",
+      "world_name": "Clockharbor Exchange",
+      "world_id": "clockharbor_exchange",
+      "summary_path": "",
+      "package_path": "",
+      "package_validation": {
+        "materialize_ok": true,
+        "pixel_read": false,
+        "compiler_critique_applied": false
+      },
+      "structured_summary": {
+        "room_count": 6,
+        "agent_count": 36,
+        "main_character_count": 3,
+        "role_group_count": 3,
+        "ordinary_route_count": 5,
+        "cinematic_route_count": 1,
+        "custom_action_count": 7,
+        "gameplay_loop_count": 3,
+        "player_entry_point_count": 2,
+        "economy_focus": "",
+        "exploration_focus": "",
+        "longlive_enabled": true,
+        "image_generation_enabled": true,
+        "item_image_mode": "important_only"
+      },
+      "compiler_critique": {},
+      "compiled_preview": {
+        "gameplay_loops": [
+          { "label": "Exchange Loop" },
+          { "label": "Discovery Loop" },
+          { "label": "Tension Loop" }
+        ],
+        "player_entry_points": [
+          "Use rumor, inspection, and small trade favors to discover who can actually move cargo.",
+          "Step into a live bottleneck where route knowledge is already changing who trusts whom."
+        ],
+        "event_functions": [
+          { "function_id": "exchange_loop_progressor" },
+          { "function_id": "clockharbor_exchange_tension_generator" },
+          { "function_id": "clockharbor_exchange_player_entry_generator" }
+        ]
+      },
+      "error": ""
+    },
+    {
+      "revision_id": "r002",
+      "created_at": "2026-05-26T12:18:00+00:00",
+      "status": "draft_ready",
+      "world_name": "Clockharbor Exchange",
+      "world_id": "clockharbor_exchange",
+      "summary_path": "",
+      "package_path": "",
+      "package_validation": {
+        "materialize_ok": true,
+        "pixel_read": false,
+        "compiler_critique_applied": true
+      },
+      "structured_summary": {
+        "room_count": 6,
+        "agent_count": 36,
+        "main_character_count": 3,
+        "role_group_count": 3,
+        "ordinary_route_count": 6,
+        "cinematic_route_count": 1,
+        "custom_action_count": 8,
+        "gameplay_loop_count": 4,
+        "player_entry_point_count": 3,
+        "economy_focus": "",
+        "exploration_focus": "",
+        "longlive_enabled": true,
+        "image_generation_enabled": true,
+        "item_image_mode": "important_only"
+      },
+      "compiler_critique": {
+        "diagnosis": [
+          "Player onboarding needed a more explicit customs-pressure entry point."
+        ]
+      },
+      "compiled_preview": {
+        "gameplay_loops": [
+          { "label": "Exchange Loop" },
+          { "label": "Discovery Loop" },
+          { "label": "Inspection Loop" },
+          { "label": "Tension Loop" }
+        ],
+        "player_entry_points": [
+          "Arrive during a customs dispute and learn the harbor through competing explanations.",
+          "Use rumor, inspection, and small trade favors to discover who can actually move cargo.",
+          "Step into a live bottleneck where route knowledge is already changing who trusts whom."
+        ],
+        "event_functions": [
+          { "function_id": "exchange_loop_progressor" },
+          { "function_id": "inspection_loop_progressor" },
+          { "function_id": "clockharbor_exchange_tension_generator" },
+          { "function_id": "clockharbor_exchange_player_entry_generator" }
+        ]
+      },
+      "error": ""
+    }
+  ],
+  "art": {
+    "status": "publish_ready",
+    "unit_name": "agora-world-creator-demo",
+    "run_dir": "output/world_creator_drafts/creator_demo_fixture/revisions/r002/art_runtime",
+    "stdout_path": "output/world_creator_drafts/creator_demo_fixture/revisions/r002/art_runtime/art_pipeline.log",
+    "updated_at": "2026-05-26T12:28:00+00:00",
+    "detail": "Art pipeline and readiness checks passed. This draft can now be published.",
+    "logs": [
+      {
+        "command": ["python", "-m", "macro_ui.build_macro_ui", "--run-dir", "art_runtime", "--wait-for-scenario-seconds", "0", "--force-refresh-images"],
+        "returncode": 0,
+        "stdout": "macro package refreshed",
+        "stderr": ""
+      },
+      {
+        "command": ["python", "asset_pipeline/generate_world_asset_set.py", "--config", "world_config.json"],
+        "returncode": 0,
+        "stdout": "asset set generated",
+        "stderr": ""
+      },
+      {
+        "command": ["python", "asset_pipeline/build_live_ready_feed.py", "--config", "world_config.json"],
+        "returncode": 0,
+        "stdout": "live ready feed built",
+        "stderr": ""
+      }
+    ],
+    "qa_summary": {
+      "pixel_read": true,
+      "missing_resources": []
+    }
+  },
+  "publish": {
+    "status": "draft_ready",
+    "access_code": "",
+    "pixel_read": false,
+    "world_url": "",
+    "package_db_url": "",
+    "detail": "World has not been published yet."
+  }
+}

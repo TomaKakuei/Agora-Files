@@ -1,0 +1,14 @@
+[Unit]
+Description=Agora local FLUX asset service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/yz_wang/yz_main/Agora_UI_Run
+Environment=PYTHONPATH=/home/yz_wang/yz_main/Agora_UI_Run
+ExecStart=/home/yz_wang/yz_main/Agora_UI_Run/scripts/launch_flux_asset_service.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

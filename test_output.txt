@@ -1,0 +1,360 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.19, pytest-8.2.0, pluggy-1.6.0
+rootdir: /home/yz_wang/yz_main/Agora_UI_Run
+plugins: asyncio-0.23.6, anyio-4.12.1
+asyncio: mode=strict
+collected 1 item
+
+tests/test_world_builder.py [PROFILE_API] generating 1/39
+[PROFILE_FALLBACK] agent=agent_001 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_002 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_003 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_004 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_005 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_006 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_007 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_008 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_009 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_API] generating 10/39
+[PROFILE_FALLBACK] agent=agent_010 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_011 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_012 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_013 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_014 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_015 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_016 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_017 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_018 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_019 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_API] generating 20/39
+[PROFILE_FALLBACK] agent=agent_020 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_021 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_022 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_023 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_024 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_025 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_026 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_027 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_028 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_029 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_API] generating 30/39
+[PROFILE_FALLBACK] agent=agent_030 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_031 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_032 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_033 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_034 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_035 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_036 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=clockharbor_exchange_main_01 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=clockharbor_exchange_main_02 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_API] generating 39/39
+[PROFILE_FALLBACK] agent=clockharbor_exchange_main_03 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+Traceback (most recent call last):
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/generation.py", line 1334, in _generate_revision
+    builder_spec, config, world_summary, temp_package_db, package_validation, compiler_critique, pipeline_artifacts, agent_payloads = _build_revision_payload(
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/generation.py", line 1275, in _build_revision_payload
+    package_db, package_validation, agent_payloads = _validation_workspace(package_root, config, finalize_agents=True, provider=provider)
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/validation.py", line 260, in _validation_workspace
+    startup_validation = _startup_validation_for_package_db(
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/validation.py", line 142, in _startup_validation_for_package_db
+    return mocked(package_root, package_db, display_name=display_name)
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/validation.py", line 142, in _startup_validation_for_package_db
+    return mocked(package_root, package_db, display_name=display_name)
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/validation.py", line 142, in _startup_validation_for_package_db
+    return mocked(package_root, package_db, display_name=display_name)
+  [Previous line repeated 952 more times]
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/validation.py", line 140, in _startup_validation_for_package_db
+    mocked = _get_mocked_fallback("_startup_validation_for_package_db", None)
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/io_utils.py", line 129, in _get_mocked_fallback
+    world_builder = sys.modules.get("agora_ui.world_builder")
+RecursionError: maximum recursion depth exceeded while calling a Python object
+[PROFILE_API] generating 1/39
+[PROFILE_FALLBACK] agent=agent_001 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_002 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_003 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_004 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_005 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_006 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_007 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_008 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_009 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_API] generating 10/39
+[PROFILE_FALLBACK] agent=agent_010 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_011 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_012 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_013 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_014 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_015 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_016 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_017 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_018 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_019 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_API] generating 20/39
+[PROFILE_FALLBACK] agent=agent_020 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_021 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_022 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_023 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_024 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_025 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_026 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_027 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_028 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_029 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_API] generating 30/39
+[PROFILE_FALLBACK] agent=agent_030 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_031 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_032 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_033 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_034 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_035 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=agent_036 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=clockharbor_exchange_main_01 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_FALLBACK] agent=clockharbor_exchange_main_02 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+[PROFILE_API] generating 39/39
+[PROFILE_FALLBACK] agent=clockharbor_exchange_main_03 error='_CreatorProvider' object has no attribute 'generate_compact_json'. Falling back to default profile.
+Traceback (most recent call last):
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/generation.py", line 1334, in _generate_revision
+    builder_spec, config, world_summary, temp_package_db, package_validation, compiler_critique, pipeline_artifacts, agent_payloads = _build_revision_payload(
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/generation.py", line 1275, in _build_revision_payload
+    package_db, package_validation, agent_payloads = _validation_workspace(package_root, config, finalize_agents=True, provider=provider)
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/validation.py", line 260, in _validation_workspace
+    startup_validation = _startup_validation_for_package_db(
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/validation.py", line 142, in _startup_validation_for_package_db
+    return mocked(package_root, package_db, display_name=display_name)
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/validation.py", line 142, in _startup_validation_for_package_db
+    return mocked(package_root, package_db, display_name=display_name)
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/validation.py", line 142, in _startup_validation_for_package_db
+    return mocked(package_root, package_db, display_name=display_name)
+  [Previous line repeated 952 more times]
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/validation.py", line 140, in _startup_validation_for_package_db
+    mocked = _get_mocked_fallback("_startup_validation_for_package_db", None)
+  File "/home/yz_wang/yz_main/Agora_UI_Run/agora_ui/world_builder/io_utils.py", line 129, in _get_mocked_fallback
+    world_builder = sys.modules.get("agora_ui.world_builder")
+RecursionError: maximum recursion depth exceeded while calling a Python object
+DEBUG DRAFT: {
+  "draft_id": "creator_20260601_052910_2b4217e9",
+  "created_at": "2026-06-01T05:29:10+00:00",
+  "updated_at": "2026-06-01T05:29:11+00:00",
+  "current_revision": "r001",
+  "status": "draft_failed",
+  "art_status": "draft_ready",
+  "publish_status": "draft_ready",
+  "published_access_code": "",
+  "world_name": "Clockharbor Exchange",
+  "world_id": "clockharbor_exchange",
+  "current_revision_data": {
+    "revision_id": "r001",
+    "created_at": "2026-06-01T05:29:11+00:00",
+    "status": "draft_failed",
+    "world_name": "Clockharbor Exchange",
+    "world_id": "clockharbor_exchange",
+    "summary_path": "",
+    "package_path": "",
+    "package_validation": {},
+    "startup_validation": {},
+    "structured_summary": {
+      "room_count": 0,
+      "agent_count": 0,
+      "main_character_count": 0,
+      "role_group_count": 0,
+      "ordinary_route_count": 0,
+      "cinematic_route_count": 0,
+      "custom_action_count": 0,
+      "gameplay_loop_count": 0,
+      "player_entry_point_count": 0,
+      "economy_focus": "",
+      "exploration_focus": "",
+      "longlive_enabled": true,
+      "image_generation_enabled": true,
+      "item_image_mode": ""
+    },
+    "compiler_critique": {},
+    "compiled_preview": {},
+    "error": "maximum recursion depth exceeded while calling a Python object"
+  },
+  "history": [
+    {
+      "revision_id": "r001",
+      "created_at": "2026-06-01T05:29:11+00:00",
+      "status": "draft_failed",
+      "world_name": "Clockharbor Exchange",
+      "world_id": "clockharbor_exchange",
+      "summary_path": "",
+      "package_path": "",
+      "package_validation": {},
+      "startup_validation": {},
+      "structured_summary": {
+        "room_count": 0,
+        "agent_count": 0,
+        "main_character_count": 0,
+        "role_group_count": 0,
+        "ordinary_route_count": 0,
+        "cinematic_route_count": 0,
+        "custom_action_count": 0,
+        "gameplay_loop_count": 0,
+        "player_entry_point_count": 0,
+        "economy_focus": "",
+        "exploration_focus": "",
+        "longlive_enabled": true,
+        "image_generation_enabled": true,
+        "item_image_mode": ""
+      },
+      "compiler_critique": {},
+      "compiled_preview": {},
+      "error": "maximum recursion depth exceeded while calling a Python object"
+    }
+  ],
+  "world_summary_markdown": "",
+  "package_download_url": "/api/world-builder/drafts/creator_20260601_052910_2b4217e9/package",
+  "art": {
+    "status": "draft_ready",
+    "unit_name": "",
+    "run_dir": "",
+    "stdout_path": "",
+    "updated_at": "2026-06-01T05:29:11+00:00",
+    "detail": "Art pipeline has not started yet.",
+    "logs": [],
+    "qa_summary": {},
+    "backend_startup_validation": {},
+    "pixel_launch_validation": {},
+    "startup_validation": {}
+  },
+  "publish": {
+    "status": "draft_ready",
+    "access_code": "",
+    "pixel_read": false,
+    "world_url": "",
+    "package_db_url": "",
+    "detail": "World has not been published yet.",
+    "package_validation": {},
+    "backend_startup_validation": {},
+    "pixel_launch_validation": {},
+    "startup_validation": {}
+  }
+}
+F
+
+=================================== FAILURES ===================================
+_ WorldBuilderApiTest.test_publish_does_not_update_manifest_when_pixel_launch_validation_fails _
+
+self = <test_world_builder.WorldBuilderApiTest testMethod=test_publish_does_not_update_manifest_when_pixel_launch_validation_fails>
+
+    def test_publish_does_not_update_manifest_when_pixel_launch_validation_fails(self) -> None:
+        with TemporaryDirectory() as tmp_dir:
+            temp_root = Path(tmp_dir)
+            _prepare_creator_root(temp_root)
+            provider = _CreatorProvider()
+            with (
+                patch.object(serve_macro_ui, "MACRO_PACKAGE_ROOT", temp_root),
+                patch.object(world_builder, "_world_creator_provider", return_value=provider),
+                patch.object(world_builder, "_run_worker_command", return_value={"command": ["fake"], "returncode": 0, "stdout": "", "stderr": ""}),
+                patch.object(
+                    world_builder,
+                    "_repack_revision_package_with_current_assets",
+                    return_value={"package_db": temp_root / "world_package.db", "pixel_report": {"pixel_read": True, "details": []}, "asset_count": 1},
+                ),
+                patch.object(world_builder, "validate_pixel_ui_launch", return_value={
+                    "startup_ok": True,
+                    "stage": "ok",
+                    "expected_access_code": "launch_test_access",
+                    "selected_access_code": "launch_test_access",
+                    "startup_status_text": "Pixel UI ready",
+                    "session_endpoint": "/api/pixel/worlds/launch_test_access/live/sessions",
+                    "screenshot_path": "/tmp/pixel.png",
+                    "error": "",
+                }),
+            ):
+                draft = serve_macro_ui.api_world_builder_create_draft(
+                    serve_macro_ui.WorldBuilderDraftCreateRequest(
+                        world_name="Clockharbor Exchange",
+                        genre="tidal trade city",
+                        player_count_target=4,
+                        agent_count_target=36,
+                        focus="economy",
+                        seed=42627,
+                        brief="A harbor city where route brokers, tide pilots, and shrine archivists create a living economy.",
+                    )
+                )
+                print("DEBUG DRAFT:", json.dumps(draft, indent=2))
+>               world_builder.run_art_pipeline(temp_root, draft["draft_id"], draft["current_revision"])
+
+tests/test_world_builder.py:1000: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+agora_ui/world_builder/art.py:352: in run_art_pipeline
+    runtime_dir = _prepare_art_runtime(package_root, draft_id, revision_id)
+agora_ui/world_builder/art.py:108: in _prepare_art_runtime
+    shutil.copy2(_revision_world_config_path(package_root, draft_id, revision_id), run_inputs_dir / "world_config.json")
+../../.conda/envs/new_py310/lib/python3.10/shutil.py:434: in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+src = PosixPath('/tmp/tmprko38nhy/output/world_creator_drafts/creator_20260601_052910_2b4217e9/revisions/r001/world_config.json')
+dst = PosixPath('/tmp/tmprko38nhy/output/world_creator_drafts/creator_20260601_052910_2b4217e9/revisions/r001/art_runtime/run_inputs/world_config.json')
+
+    def copyfile(src, dst, *, follow_symlinks=True):
+        """Copy data from src to dst in the most efficient way possible.
+    
+        If follow_symlinks is not set and src is a symbolic link, a new
+        symlink will be created instead of copying the file it points to.
+    
+        """
+        sys.audit("shutil.copyfile", src, dst)
+    
+        if _samefile(src, dst):
+            raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+    
+        file_size = 0
+        for i, fn in enumerate([src, dst]):
+            try:
+                st = _stat(fn)
+            except OSError:
+                # File most likely does not exist
+                pass
+            else:
+                # XXX What about other special files? (sockets, devices...)
+                if stat.S_ISFIFO(st.st_mode):
+                    fn = fn.path if isinstance(fn, os.DirEntry) else fn
+                    raise SpecialFileError("`%s` is a named pipe" % fn)
+                if _WINDOWS and i == 0:
+                    file_size = st.st_size
+    
+        if not follow_symlinks and _islink(src):
+            os.symlink(os.readlink(src), dst)
+        else:
+>           with open(src, 'rb') as fsrc:
+E           FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmprko38nhy/output/world_creator_drafts/creator_20260601_052910_2b4217e9/revisions/r001/world_config.json'
+
+../../.conda/envs/new_py310/lib/python3.10/shutil.py:254: FileNotFoundError
+=============================== warnings summary ===============================
+macro_ui/serve_macro_ui.py:1727
+  /home/yz_wang/yz_main/Agora_UI_Run/macro_ui/serve_macro_ui.py:1727: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    @app.on_event("startup")
+
+../../.conda/envs/new_py310/lib/python3.10/site-packages/fastapi/applications.py:4579
+../../.conda/envs/new_py310/lib/python3.10/site-packages/fastapi/applications.py:4579
+  /home/yz_wang/.conda/envs/new_py310/lib/python3.10/site-packages/fastapi/applications.py:4579: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    return self.router.on_event(event_type)
+
+macro_ui/serve_macro_ui.py:1734
+  /home/yz_wang/yz_main/Agora_UI_Run/macro_ui/serve_macro_ui.py:1734: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    @app.on_event("shutdown")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_world_builder.py::WorldBuilderApiTest::test_publish_does_not_update_manifest_when_pixel_launch_validation_fails
+======================== 1 failed, 4 warnings in 1.39s =========================

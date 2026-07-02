@@ -1,0 +1,27 @@
+// Generic Flex provider config.
+// 通用 API Call 模板：通过占位符映射 request 字段，无需改代码。
+{
+  "base_url": "https://example.com",
+  "path": "/v1/chat/completions",
+  "method": "POST",
+  "model": "example-model",
+  "models": [
+    "example-model"
+  ],
+  "auth_env": "GENERIC_API_KEY",
+  "auth_header_name": "Authorization",
+  "auth_scheme": "Bearer",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "request_template": {
+    "model": "${request.model}",
+    "messages": "${request.messages}",
+    "temperature": "${request.temperature}",
+    "max_tokens": "${request.max_output_tokens}"
+  },
+  "response_text_path": "choices.0.message.content",
+  "response_json_path": "",
+  "timeout_seconds": 120.0,
+  "max_retries": 2
+}

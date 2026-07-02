@@ -1,0 +1,252 @@
+{
+  "grounded_antique_market_v1": {
+    "component_library": {
+      "floor_tiles": {
+        "market_stone": {"pattern": "stone_checker"},
+        "aged_planks": {"pattern": "wood_planks"},
+        "courtyard_brick": {"pattern": "yard_pavers"},
+        "archive_tile": {"pattern": "library_planks"}
+      },
+      "wall_tiles": {
+        "stall_canvas_wall": {"trim": "notice_trim"},
+        "quiet_lane_wall": {"trim": "library_trim"},
+        "courtyard_brick_wall": {"trim": "yard_trim"},
+        "glass_case_wall": {"trim": "clean_trim"}
+      },
+      "props": {
+        "display_table": {"render": "table_notice", "anchor": "center", "size_tiles": {"w": 2, "h": 2}, "label": "Display Table"},
+        "glass_case": {"render": "shelf", "anchor": "north_mid", "size_tiles": {"w": 2, "h": 1}, "label": "Glass Case"},
+        "paper_stack": {"render": "scroll_stack", "anchor": "south_mid", "size_tiles": {"w": 1, "h": 1}, "label": "Paper Stack"},
+        "packing_crate": {"render": "crate_stack", "anchor": "west_mid", "size_tiles": {"w": 2, "h": 2}, "label": "Packing Crate"},
+        "inspection_lamp": {"render": "nightstand", "anchor": "east_mid", "size_tiles": {"w": 1, "h": 1}, "label": "Inspection Lamp"},
+        "ledger_desk": {"render": "table_map", "anchor": "center", "size_tiles": {"w": 2, "h": 2}, "label": "Ledger Desk"},
+        "handcart": {"render": "crate_stack", "anchor": "south_west", "size_tiles": {"w": 2, "h": 2}, "label": "Handcart"},
+        "repair_bench": {"render": "table_scroll", "anchor": "center", "size_tiles": {"w": 2, "h": 2}, "label": "Repair Bench"},
+        "cloth_wraps": {"render": "travel_pack", "anchor": "south_mid", "size_tiles": {"w": 2, "h": 1}, "label": "Cloth Wraps"},
+        "tea_stool": {"render": "nightstand", "anchor": "center", "size_tiles": {"w": 1, "h": 1}, "label": "Tea Stool"},
+        "tea_shelf": {"render": "shelf", "anchor": "north_east", "size_tiles": {"w": 2, "h": 1}, "label": "Tea Shelf"},
+        "rope_coils": {"render": "coil", "anchor": "south_mid", "size_tiles": {"w": 1, "h": 1}, "label": "Rope Coils"}
+      },
+      "pickup_items": {},
+      "room_layout_presets": {},
+      "room_archetype_presets": {
+        "market_exchange": {"supplemental_props": [{"component_id": "paper_stack", "anchor": "south_west"}]},
+        "checkpoint": {"supplemental_props": [{"component_id": "inspection_lamp", "anchor": "north_mid"}]},
+        "logistics_yard": {"supplemental_props": [{"component_id": "handcart", "anchor": "south_west"}]},
+        "lookout": {"supplemental_props": [{"component_id": "ledger_desk", "anchor": "north_mid"}]},
+        "workshop": {"supplemental_props": [{"component_id": "repair_bench", "anchor": "south_west"}]},
+        "archive_ritual": {"supplemental_props": [{"component_id": "glass_case", "anchor": "center"}]},
+        "rest_social": {"supplemental_props": [{"component_id": "tea_stool", "anchor": "south_mid"}]},
+        "training": {"supplemental_props": [{"component_id": "cloth_wraps", "anchor": "center"}]},
+        "council": {"supplemental_props": [{"component_id": "ledger_desk", "anchor": "center"}]},
+        "commons": {"supplemental_props": [{"component_id": "display_table", "anchor": "west_mid"}]}
+      }
+    },
+    "surface_by_archetype": {
+      "market_exchange": ["market_stone", "stall_canvas_wall"],
+      "checkpoint": ["market_stone", "quiet_lane_wall"],
+      "logistics_yard": ["courtyard_brick", "courtyard_brick_wall"],
+      "lookout": ["aged_planks", "quiet_lane_wall"],
+      "workshop": ["courtyard_brick", "courtyard_brick_wall"],
+      "archive_ritual": ["archive_tile", "glass_case_wall"],
+      "rest_social": ["aged_planks", "stall_canvas_wall"],
+      "training": ["courtyard_brick", "courtyard_brick_wall"],
+      "council": ["archive_tile", "glass_case_wall"],
+      "commons": ["market_stone", "stall_canvas_wall"]
+    },
+    "decor_by_archetype": {
+      "market_exchange": ["display_table", "glass_case", "paper_stack", "packing_crate"],
+      "checkpoint": ["inspection_lamp", "ledger_desk", "glass_case"],
+      "logistics_yard": ["packing_crate", "rope_coils", "handcart"],
+      "lookout": ["ledger_desk", "inspection_lamp"],
+      "workshop": ["repair_bench", "packing_crate", "cloth_wraps"],
+      "archive_ritual": ["paper_stack", "ledger_desk", "glass_case"],
+      "rest_social": ["tea_stool", "tea_shelf", "cloth_wraps"],
+      "training": ["focused_blue", "cloth_wraps", "packing_crate"],
+      "council": ["ledger_desk", "tea_stool", "glass_case"],
+      "commons": ["display_table", "tea_stool"]
+    }
+  },
+  "coastal_trade_city_v1": {
+    "component_library": {
+      "floor_tiles": {
+        "storage_stone": {"pattern": "stone_slabs"},
+        "yard_pavers": {"pattern": "yard_pavers"},
+        "stone_hall": {"pattern": "stone_checker"}
+      },
+      "wall_tiles": {
+        "storage_wall": {"trim": "storage_trim"},
+        "board_trim_wall": {"trim": "notice_trim"},
+        "wood_beam_wall": {"trim": "wood_beam"},
+        "yard_fence": {"trim": "yard_trim"}
+      },
+      "props": {
+        "supply_crates": {"render": "crate_stack", "anchor": "west_mid", "size_tiles": {"w": 2, "h": 2}, "label": "Supply Crates"},
+        "rope_coils": {"render": "coil", "anchor": "south_mid", "size_tiles": {"w": 1, "h": 1}, "label": "Rope Coils"},
+        "region_map": {"render": "map_stand", "anchor": "north_mid", "size_tiles": {"w": 2, "h": 1}, "label": "Route Map"},
+        "scroll_table": {"render": "table_scroll", "anchor": "south_mid", "size_tiles": {"w": 2, "h": 2}, "label": "Manifest Table"},
+        "notice_table": {"render": "table_notice", "anchor": "west_mid", "size_tiles": {"w": 2, "h": 2}, "label": "Notice Table"},
+        "round_table": {"render": "round_table", "anchor": "center", "size_tiles": {"w": 2, "h": 2}, "label": "Round Table"}
+      },
+      "pickup_items": {},
+      "room_layout_presets": {},
+      "room_archetype_presets": {
+        "market_exchange": {"supplemental_props": [{"component_id": "notice_table", "anchor": "west_mid"}]},
+        "checkpoint": {"supplemental_props": [{"component_id": "region_map", "anchor": "north_mid"}]},
+        "logistics_yard": {"supplemental_props": [{"component_id": "rope_coils", "anchor": "south_west"}]},
+        "lookout": {"supplemental_props": [{"component_id": "region_map", "anchor": "north_mid"}]},
+        "workshop": {"supplemental_props": [{"component_id": "supply_crates", "anchor": "south_west"}]},
+        "archive_ritual": {"supplemental_props": [{"component_id": "scroll_table", "anchor": "center"}]},
+        "rest_social": {"supplemental_props": [{"component_id": "round_table", "anchor": "south_mid"}]},
+        "training": {"supplemental_props": [{"component_id": "rope_coils", "anchor": "center"}]},
+        "council": {"supplemental_props": [{"component_id": "round_table", "anchor": "center"}]},
+        "commons": {"supplemental_props": [{"component_id": "notice_table", "anchor": "west_mid"}]}
+      }
+    },
+    "surface_by_archetype": {
+      "market_exchange": ["stone_hall", "board_trim_wall"],
+      "checkpoint": ["stone_hall", "board_trim_wall"],
+      "logistics_yard": ["storage_stone", "storage_wall"],
+      "lookout": ["yard_pavers", "wood_beam_wall"],
+      "workshop": ["storage_stone", "storage_wall"],
+      "archive_ritual": ["stone_hall", "board_trim_wall"],
+      "rest_social": ["yard_pavers", "wood_beam_wall"],
+      "training": ["yard_pavers", "yard_fence"],
+      "council": ["stone_hall", "board_trim_wall"],
+      "commons": ["stone_hall", "wood_beam_wall"]
+    },
+    "decor_by_archetype": {
+      "market_exchange": ["notice_table", "supply_crates", "round_table"],
+      "checkpoint": ["notice_table", "region_map", "rope_coils"],
+      "logistics_yard": ["supply_crates", "rope_coils", "region_map"],
+      "lookout": ["region_map", "scroll_table"],
+      "workshop": ["supply_crates", "rope_coils", "scroll_table"],
+      "archive_ritual": ["scroll_table", "region_map", "notice_table"],
+      "rest_social": ["round_table", "notice_table"],
+      "training": ["rope_coils", "supply_crates"],
+      "council": ["round_table", "region_map", "notice_table"],
+      "commons": ["notice_table", "round_table"]
+    }
+  },
+  "civic_social_world_v1": {
+    "component_library": {
+      "floor_tiles": {
+        "stone_hall": {"pattern": "stone_checker"},
+        "library_wood": {"pattern": "library_planks"},
+        "tavern_planks": {"pattern": "wood_planks"}
+      },
+      "wall_tiles": {
+        "wood_beam_wall": {"trim": "wood_beam"},
+        "board_trim_wall": {"trim": "notice_trim"},
+        "library_shelf_wall": {"trim": "library_trim"},
+        "tavern_wall": {"trim": "tavern_trim"}
+      },
+      "props": {
+        "notice_table": {"render": "table_notice", "anchor": "west_mid", "size_tiles": {"w": 2, "h": 2}, "label": "Notice Table"},
+        "round_table": {"render": "round_table", "anchor": "center", "size_tiles": {"w": 2, "h": 2}, "label": "Round Table"},
+        "scroll_table": {"render": "table_scroll", "anchor": "south_mid", "size_tiles": {"w": 2, "h": 2}, "label": "Scroll Table"},
+        "region_map": {"render": "map_stand", "anchor": "north_mid", "size_tiles": {"w": 2, "h": 1}, "label": "Map Stand"},
+        "mug_shelf": {"render": "shelf", "anchor": "north_east", "size_tiles": {"w": 2, "h": 1}, "label": "Mug Shelf"}
+      },
+      "pickup_items": {},
+      "room_layout_presets": {},
+      "room_archetype_presets": {
+        "market_exchange": {"supplemental_props": [{"component_id": "notice_table", "anchor": "west_mid"}]},
+        "checkpoint": {"supplemental_props": [{"component_id": "notice_table", "anchor": "north_mid"}]},
+        "logistics_yard": {"supplemental_props": [{"component_id": "notice_table", "anchor": "south_west"}]},
+        "lookout": {"supplemental_props": [{"component_id": "region_map", "anchor": "north_mid"}]},
+        "workshop": {"supplemental_props": [{"component_id": "scroll_table", "anchor": "center"}]},
+        "archive_ritual": {"supplemental_props": [{"component_id": "scroll_table", "anchor": "center"}]},
+        "rest_social": {"supplemental_props": [{"component_id": "mug_shelf", "anchor": "north_east"}]},
+        "training": {"supplemental_props": [{"component_id": "round_table", "anchor": "center"}]},
+        "council": {"supplemental_props": [{"component_id": "round_table", "anchor": "center"}]},
+        "commons": {"supplemental_props": [{"component_id": "notice_table", "anchor": "west_mid"}]}
+      }
+    },
+    "surface_by_archetype": {
+      "market_exchange": ["stone_hall", "board_trim_wall"],
+      "checkpoint": ["stone_hall", "board_trim_wall"],
+      "logistics_yard": ["stone_hall", "wood_beam_wall"],
+      "lookout": ["library_wood", "library_shelf_wall"],
+      "workshop": ["library_wood", "wood_beam_wall"],
+      "archive_ritual": ["library_wood", "library_shelf_wall"],
+      "rest_social": ["tavern_planks", "tavern_wall"],
+      "training": ["stone_hall", "wood_beam_wall"],
+      "council": ["stone_hall", "board_trim_wall"],
+      "commons": ["stone_hall", "wood_beam_wall"]
+    },
+    "decor_by_archetype": {
+      "market_exchange": ["notice_table", "round_table"],
+      "checkpoint": ["notice_table", "region_map"],
+      "logistics_yard": ["notice_table", "scroll_table"],
+      "lookout": ["region_map", "scroll_table"],
+      "workshop": ["scroll_table", "notice_table"],
+      "archive_ritual": ["scroll_table", "region_map"],
+      "rest_social": ["round_table", "mug_shelf"],
+      "training": ["round_table", "notice_table"],
+      "council": ["round_table", "region_map", "notice_table"],
+      "commons": ["notice_table", "round_table"]
+    }
+  },
+  "fantasy_guild_world_v1": {
+    "component_library": {
+      "floor_tiles": {
+        "guild_stone": {"pattern": "stone_checker"},
+        "warm_planks": {"pattern": "wood_planks"},
+        "forge_flagstone": {"pattern": "stone_slabs"}
+      },
+      "wall_tiles": {
+        "banner_wall": {"trim": "notice_trim"},
+        "tavern_wall": {"trim": "tavern_trim"},
+        "forge_wall": {"trim": "wood_beam"},
+        "archive_wall": {"trim": "library_trim"}
+      },
+      "props": {
+        "quest_board": {"render": "table_notice", "anchor": "west_mid", "size_tiles": {"w": 2, "h": 2}, "label": "Quest Board"},
+        "long_table": {"render": "round_table", "anchor": "center", "size_tiles": {"w": 2, "h": 2}, "label": "Guild Table"},
+        "supply_crates": {"render": "crate_stack", "anchor": "south_west", "size_tiles": {"w": 2, "h": 2}, "label": "Supply Crates"},
+        "forge_bench": {"render": "table_scroll", "anchor": "center", "size_tiles": {"w": 2, "h": 2}, "label": "Forge Bench"},
+        "map_stand": {"render": "map_stand", "anchor": "north_mid", "size_tiles": {"w": 2, "h": 1}, "label": "Route Map"},
+        "mug_shelf": {"render": "shelf", "anchor": "north_east", "size_tiles": {"w": 2, "h": 1}, "label": "Mug Shelf"}
+      },
+      "pickup_items": {},
+      "room_layout_presets": {},
+      "room_archetype_presets": {
+        "market_exchange": {"supplemental_props": [{"component_id": "quest_board", "anchor": "west_mid"}]},
+        "checkpoint": {"supplemental_props": [{"component_id": "map_stand", "anchor": "north_mid"}]},
+        "logistics_yard": {"supplemental_props": [{"component_id": "supply_crates", "anchor": "south_west"}]},
+        "lookout": {"supplemental_props": [{"component_id": "map_stand", "anchor": "north_mid"}]},
+        "workshop": {"supplemental_props": [{"component_id": "forge_bench", "anchor": "center"}]},
+        "archive_ritual": {"supplemental_props": [{"component_id": "quest_board", "anchor": "north_mid"}]},
+        "rest_social": {"supplemental_props": [{"component_id": "mug_shelf", "anchor": "north_east"}]},
+        "training": {"supplemental_props": [{"component_id": "long_table", "anchor": "center"}]},
+        "council": {"supplemental_props": [{"component_id": "long_table", "anchor": "center"}]},
+        "commons": {"supplemental_props": [{"component_id": "quest_board", "anchor": "west_mid"}]}
+      }
+    },
+    "surface_by_archetype": {
+      "market_exchange": ["guild_stone", "banner_wall"],
+      "checkpoint": ["guild_stone", "banner_wall"],
+      "logistics_yard": ["forge_flagstone", "forge_wall"],
+      "lookout": ["warm_planks", "archive_wall"],
+      "workshop": ["forge_flagstone", "forge_wall"],
+      "archive_ritual": ["warm_planks", "archive_wall"],
+      "rest_social": ["warm_planks", "tavern_wall"],
+      "training": ["guild_stone", "banner_wall"],
+      "council": ["guild_stone", "banner_wall"],
+      "commons": ["guild_stone", "banner_wall"]
+    },
+    "decor_by_archetype": {
+      "market_exchange": ["quest_board", "long_table"],
+      "checkpoint": ["quest_board", "map_stand"],
+      "logistics_yard": ["supply_crates", "map_stand"],
+      "lookout": ["map_stand", "quest_board"],
+      "workshop": ["forge_bench", "supply_crates"],
+      "archive_ritual": ["quest_board", "map_stand"],
+      "rest_social": ["long_table", "mug_shelf"],
+      "training": ["long_table", "quest_board"],
+      "council": ["long_table", "quest_board", "map_stand"],
+      "commons": ["quest_board", "long_table"]
+    }
+  }
+}

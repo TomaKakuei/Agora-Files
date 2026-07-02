@@ -1,0 +1,55 @@
+// World agents template.
+// 世界 Agent 模板：active/inactive 列表必须互斥，坐标或 room_id 二选一即可。
+{
+  "active_agent_ids": [
+    "agent_001",
+    "agent_002"
+  ],
+  "inactive_agent_ids": [
+    "agent_003"
+  ],
+  "agents": [
+    {
+      "agent_id": "agent_001",
+      "display_name": "Archivist Lin",
+      "initial_room_id": "room_entry",
+      "movement_policy": {
+        "basis": "room",
+        "min_steps": 1,
+        "max_steps": 2,
+        "axis_step_budget": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        }
+      },
+      "notes": "Uses room-to-room transitions."
+    },
+    {
+      "agent_id": "agent_002",
+      "display_name": "Scout Rivera",
+      "initial_coordinate": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "movement_policy": {
+        "basis": "grid",
+        "min_steps": 1,
+        "max_steps": 3,
+        "axis_step_budget": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        }
+      },
+      "notes": "Uses coordinate/grid movement."
+    },
+    {
+      "agent_id": "agent_003",
+      "display_name": "Sleeper Node",
+      "initial_room_id": "room_rooftop",
+      "notes": "Inactive in phase 1 debug."
+    }
+  ]
+}

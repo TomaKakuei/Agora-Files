@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agora_UI Pixel World</title>
+    <link rel="stylesheet" href="./styles.css?v=__AGORA_PIXEL_BUNDLE_VERSION__" />
+  </head>
+  <body>
+    <div id="app-shell">
+      <header class="topbar">
+        <div class="topbar-brand">
+          <div class="eyebrow">Agora_UI</div>
+          <h1>Agentic Pixel World</h1>
+        </div>
+        <div class="topbar-meta">
+          <a id="open-macro-link" class="topbar-link" href="/macro/" target="_blank" rel="noreferrer">Open Macro UI</a>
+          <a id="open-creator-link" class="topbar-link" href="/creator/" target="_blank" rel="noreferrer">Open Creator UI</a>
+          <label class="world-select-wrap" for="world-select">
+            <span class="world-select-label">World</span>
+            <select id="world-select" class="world-select" aria-label="Choose pixel world">
+              <option value="">Loading worlds...</option>
+            </select>
+          </label>
+          <span id="world-name">Loading world...</span>
+          <span id="view-mode-badge">POV Mode</span>
+          <span id="event-status">Waiting for assets</span>
+        </div>
+      </header>
+      <main class="pixel-layout">
+        <section class="map-stage">
+          <aside id="selected-target-bubble" class="selected-target-bubble is-hidden" aria-live="polite">
+            <div id="selected-target-card" class="selected-target-card">
+              <div class="muted">Choose an object agent to inspect.</div>
+            </div>
+          </aside>
+          <div id="game-root"></div>
+        </section>
+        <aside class="control-rail control-rail-scroll">
+          <section class="glass-panel hero-panel">
+            <div class="panel-label">Speak</div>
+            <div id="pov-dialogue" class="panel-stack">
+              <div class="muted">Choose someone nearby to start speaking.</div>
+            </div>
+          </section>
+          <section class="glass-panel compact-panel">
+            <div class="panel-label">View</div>
+            <div class="control-grid control-grid-dual">
+              <button id="pov-mode-button" class="ui-button ui-button-primary" type="button">POV Follow</button>
+              <button id="atlas-mode-button" class="ui-button" type="button">Atlas View</button>
+            </div>
+            <div class="control-grid control-grid-triple">
+              <button id="recenter-agent-button" class="ui-button" type="button">Recenter</button>
+              <button id="fit-world-button" class="ui-button" type="button">Fit World</button>
+              <button id="home-room-button" class="ui-button" type="button">Home Room</button>
+            </div>
+          </section>
+          <section class="glass-panel compact-panel">
+            <div class="panel-label">Agent Selector</div>
+            <div id="agent-selector" class="panel-stack">
+              <div class="muted">Loading controllable room targets...</div>
+            </div>
+          </section>
+          <section class="glass-panel scroll-panel">
+            <div class="panel-label">Trade</div>
+            <div id="pov-trade" class="panel-stack">
+              <div class="muted">Choose a nearby target to start negotiating.</div>
+            </div>
+          </section>
+          <section class="glass-panel compact-panel">
+            <div class="panel-label">Controlled Agent</div>
+            <div id="pov-hud" class="pov-hud">
+              <div class="muted">Selecting a guild member...</div>
+            </div>
+          </section>
+          <section class="glass-panel scroll-panel">
+            <div class="panel-label">Interaction Actions</div>
+            <div id="movement-module" class="panel-stack">
+              <div class="muted">Loading local movement contract...</div>
+            </div>
+          </section>
+          <section class="glass-panel scroll-panel">
+            <div class="panel-label">Claimed Backpack</div>
+            <div id="pov-items" class="panel-stack">
+              <div class="muted">Waiting for inventory...</div>
+            </div>
+          </section>
+          <section class="glass-panel scroll-panel">
+            <div class="panel-label">Pending Actions</div>
+            <div id="pending-actions" class="panel-stack">
+              <div class="muted">Pending live actions will appear here.</div>
+            </div>
+          </section>
+          <section class="glass-panel scroll-panel">
+            <div class="panel-label">Dialogue History</div>
+            <div id="pov-log" class="feed-list">
+              <div class="muted">Recent dialogue will appear here.</div>
+            </div>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <div id="image-modal" class="image-modal hidden" aria-hidden="true">
+      <div class="image-modal-dialog">
+        <button id="image-modal-close" class="image-modal-close" type="button" aria-label="Close image viewer">Close</button>
+        <img id="image-modal-image" class="image-modal-image" alt="" />
+        <div id="image-modal-caption" class="image-modal-caption"></div>
+      </div>
+    </div>
+    <script src="./vendor/phaser-3.90.0.min.js"></script>
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search || "");
+        if (params.get("bundle") !== "__AGORA_PIXEL_BUNDLE_VERSION__") {
+          params.set("bundle", "__AGORA_PIXEL_BUNDLE_VERSION__");
+          var nextQuery = params.toString();
+          var nextUrl = window.location.pathname + (nextQuery ? "?" + nextQuery : "") + (window.location.hash || "");
+          window.history.replaceState(null, "", nextUrl);
+        }
+      })();
+    </script>
+    <script>
+      (function () {
+        var statusNode = document.getElementById("event-status");
+        var worldNode = document.getElementById("world-name");
+        if (statusNode) {
+          statusNode.textContent = window.Phaser ? "Phaser present before module boot" : "Phaser missing before module boot";
+        }
+        if (worldNode && !window.Phaser) {
+          worldNode.textContent = "Pixel UI blocked before module boot";
+        }
+      })();
+    </script>
+    <script>
+      (function () {
+        var statusNode = document.getElementById("event-status");
+        var worldNode = document.getElementById("world-name");
+        import("./src/main.js?v=__AGORA_PIXEL_BUNDLE_VERSION__").catch(function (error) {
+          if (worldNode) {
+            worldNode.textContent = "Pixel UI module import failed";
+          }
+          if (statusNode) {
+            statusNode.textContent = "Module import failed: " + (error && error.message ? error.message : String(error));
+          }
+        });
+      })();
+    </script>
+    <script>
+      (function() {
+        var host = window.location.hostname;
+        if (host !== 'localhost' && host !== '127.0.0.1' && host !== '0.0.0.0') return;
+        var ws = new WebSocket((window.location.protocol === 'https:' ? 'wss://' : 'ws://') + window.location.host + '/_hot_reload');
+        ws.onclose = function() {
+          console.log("Hot reload: Server disconnected. Waiting to reconnect...");
+          var iv = setInterval(function() {
+            fetch('/').then(function(r) {
+              if (r.ok) { clearInterval(iv); window.location.reload(); }
+            }).catch(function() {});
+          }, 500);
+        };
+      })();
+    </script>
+  </body>
+</html>

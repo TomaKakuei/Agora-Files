@@ -1,0 +1,49 @@
+// Timestep intent batch for Universal Adjudicator.
+// 优先级由 adjudicator_control.jsonc 的 priority_order 控制，默认 Move > Custom > Item > Image。
+{
+  "timestep_index": 1,
+  "intents": [
+    {
+      "intent_id": "intent_move_001",
+      "agent_id": "agent_001",
+      "call": "Move",
+      "intent_text": "Move from Entry Hall into the Signal Lab.",
+      "target_coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "intent_id": "intent_custom_001",
+      "agent_id": "agent_002",
+      "call": "Custom",
+      "intent_text": "Tune Archivist Lin's lens with a resonance pulse.",
+      "target_agent_id": "agent_001",
+      "action": "ResonanceTune",
+      "metadata": {
+        "status_effect": "resonance_tuned",
+        "duration_steps": 3
+      }
+    },
+    {
+      "intent_id": "intent_item_001",
+      "agent_id": "agent_002",
+      "call": "Item",
+      "intent_text": "Give copper wire to Archivist Lin after the movement phase.",
+      "target_agent_id": "agent_001",
+      "operation": "Give",
+      "item_id": "copper_wire",
+      "quantity": 1
+    },
+    {
+      "intent_id": "intent_image_001",
+      "agent_id": "agent_001",
+      "call": "Image",
+      "intent_text": "Create a glowing chalk map on the wall at the current coordinate.",
+      "operation": "create",
+      "api_prompt": "A small glowing chalk map appears on a metal lab wall, annotated by two agents."
+    }
+  ]
+}
+

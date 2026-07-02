@@ -1,0 +1,34 @@
+// Universal Adjudicator control template.
+// 通用裁决器控制模板：不改代码即可切换 local/flex、世界目标、社会规范和输出位置。
+{
+  "run_name": "universal_adjudicator",
+  "adjudication_backend": "local",
+  "world_description": "A compact three-room research facility where agents can move, exchange items, modify local visual state, and discover new custom action rules.",
+  "simulation_objective": "Validate coherent timestep adjudication, conflict resolution, and LLM_Wrap rule discovery without forcing a fixed narrative.",
+  "social_norms": [
+    "Agents should only observe public events in their current room or coordinate.",
+    "Trust rises when agents help each other and falls when agents attack, hack, steal, or deceive.",
+    "Undefined but plausible actions may become persistent rules only in LLM_Wrap mode."
+  ],
+  "clock": {
+    "initial_time": "08:00",
+    "step_minutes": 5
+  },
+  "timestep_index": 1,
+  "priority_order": [
+    "Move",
+    "Custom",
+    "Item",
+    "Image"
+  ],
+  "prompt_file": "data/templates/foundation/universal_adjudicator_prompt.jsonc",
+  "output_subdir": "output/universal_adjudicator",
+  "flex": {
+    "flex_api_url": "http://127.0.0.1:8000/v1",
+    "model": "",
+    "temperature": 0.1,
+    "thinking_level": "medium",
+    "max_output_tokens": 2048,
+    "timeout_seconds": 60
+  }
+}

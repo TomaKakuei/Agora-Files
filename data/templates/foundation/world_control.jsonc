@@ -1,0 +1,45 @@
+// World control template.
+// 世界控制模板：一期只做规则调试，不触发真实对话。
+{
+  "run_name": "world_rule_debug",
+  "rounds": 5,
+  "seed": 42,
+  "log_level": "round",
+  "validate_only": false,
+  "clock": {
+    // The world clock advances after each round settlement.
+    // 每轮结算完成后，世界时钟向前推进一次。
+    "initial_time": "08:00",
+    "step_minutes": 5
+  },
+  "decision": {
+    // "heuristic" uses local rule-based movement choice.
+    // "flex" sends movement planning to the unified Flex API.
+    // "heuristic" 使用本地规则决策。
+    // "flex" 通过统一 Flex API 做 movement planning。
+    "backend": "heuristic",
+    "flex_api_url": "http://127.0.0.1:8000/v1",
+    "model": "",
+    "thinking_level": "low",
+    "temperature": 0.2,
+    // Concurrency limit only matters in multi+flex mode.
+    // 并发上限仅在 multi + flex 模式下生效。
+    "concurrency_limit": 10,
+    // Timeout or planner errors are recorded as run failures and stop the world loop.
+    // 单轮超时或 planner 错误会记录为运行失败并停止世界循环。
+    "request_timeout_seconds": 30,
+    "max_output_tokens": 512
+  },
+  "default_room_name_prefix": "room",
+  "default_movement_policy": {
+    "basis": "grid",
+    "min_steps": 0,
+    "max_steps": 1,
+    "axis_step_budget": {
+      "x": 1,
+      "y": 1,
+      "z": 0
+    }
+  },
+  "output_subdir": "output/world_rule_debug"
+}

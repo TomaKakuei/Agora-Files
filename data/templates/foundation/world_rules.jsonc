@@ -1,0 +1,82 @@
+// World_Rules template for Universal Adjudicator.
+// world_mode:
+// - Fixed: strictly enforce JSON boundaries.
+// - LLM_Wrap: allow plausible undefined actions and append rule_update payloads.
+{
+  "world_mode": "LLM_Wrap",
+  "topology": {
+    "grid_shape": {
+      "x": 3,
+      "y": 2,
+      "z": 1
+    },
+    "rooms": [
+      {
+        "room_id": "room_entry",
+        "name": "Entry Hall",
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      {
+        "room_id": "room_lab",
+        "name": "Signal Lab",
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      {
+        "room_id": "room_archive",
+        "name": "Archive Room",
+        "x": 2,
+        "y": 0,
+        "z": 0
+      }
+    ]
+  },
+  "movement": {
+    "max_steps_per_timestep": 1,
+    "capacity_per_coordinate": 2,
+    "line_of_sight_required": false,
+    "allow_diagonal": false
+  },
+  "item_rules": {
+    "mass_conservation": true,
+    "require_same_coordinate_for_transfer": true,
+    "combinations": [
+      {
+        "input_item_ids": [
+          "copper_wire",
+          "glass_lens"
+        ],
+        "output_item": {
+          "item_id": "signal_focus",
+          "quantity": 1,
+          "mass": 0.4,
+          "description": "A small focus used to concentrate visual signal patterns."
+        }
+      }
+    ]
+  },
+  "image_rules": {
+    "enabled": true,
+    "allowed_operations": [
+      "create",
+      "modify",
+      "analyze"
+    ]
+  },
+  "custom_action_rules": {
+    "default_duration_steps": 2,
+    "max_range_steps": 1,
+    "allowed_actions": [
+      "Repair",
+      "Signal"
+    ]
+  },
+  "social_rules": [
+    "Helpful Custom actions increase trust.",
+    "Aggressive Custom actions increase influence/fear and reduce trust."
+  ],
+  "discovered_rules": []
+}
