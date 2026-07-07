@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Agora 2.0 10-User E2E Live Runtime and World Generation Technical Report</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+    }
+    body {
+      font-family: "DejaVu Sans", Arial, Helvetica, sans-serif;
+      color: #17201d;
+      line-height: 1.42;
+      font-size: 10.5pt;
+      background: #ffffff;
+    }
+    h1, h2, h3 {
+      color: #10251f;
+      page-break-after: avoid;
+    }
+    h1 {
+      font-size: 26pt;
+      line-height: 1.08;
+      margin: 0 0 8pt 0;
+    }
+    h2 {
+      font-size: 16pt;
+      margin: 22pt 0 8pt 0;
+      padding-bottom: 4pt;
+      border-bottom: 1.2pt solid #d6ddd7;
+    }
+    h3 {
+      font-size: 12.5pt;
+      margin: 14pt 0 6pt 0;
+    }
+    p {
+      margin: 5pt 0;
+    }
+    code {
+      font-family: "DejaVu Sans Mono", Consolas, monospace;
+      font-size: 9pt;
+      color: #19362d;
+      background: #eef5f1;
+      padding: 1pt 3pt;
+      border-radius: 3pt;
+    }
+    .cover {
+      min-height: 92vh;
+      padding-top: 18mm;
+      page-break-after: always;
+    }
+    .eyebrow {
+      color: #65756e;
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10pt;
+    }
+    .subtitle {
+      font-size: 14pt;
+      color: #4a5c54;
+      max-width: 150mm;
+      margin-bottom: 22pt;
+    }
+    .meta-grid {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16pt;
+    }
+    .meta-row {
+      display: table-row;
+    }
+    .meta-label, .meta-value {
+      display: table-cell;
+      border-bottom: 0.8pt solid #dde5df;
+      padding: 6pt 8pt;
+      vertical-align: top;
+    }
+    .meta-label {
+      width: 35%;
+      color: #5a6d65;
+      background: #f4f8f5;
+      font-weight: 700;
+    }
+    .meta-value {
+      color: #17201d;
+    }
+    .callout {
+      border-left: 5pt solid #118056;
+      background: #eef8f3;
+      padding: 10pt 12pt;
+      margin: 12pt 0;
+      page-break-inside: avoid;
+    }
+    .callout.warning {
+      border-left-color: #a05b00;
+      background: #fff6e8;
+    }
+    .callout.danger {
+      border-left-color: #a33a3a;
+      background: #fff0f0;
+    }
+    .status-grid {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 6pt;
+      margin: 8pt 0 12pt 0;
+    }
+    .status-card {
+      border: 1pt solid #d7e2db;
+      background: #f8fbf9;
+      padding: 10pt;
+      width: 25%;
+      vertical-align: top;
+      page-break-inside: avoid;
+    }
+    .status-card .label {
+      color: #62756d;
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 5pt;
+    }
+    .status-card .value {
+      font-size: 15pt;
+      font-weight: 800;
+      color: #0f4d38;
+    }
+    .status-card .note {
+      margin-top: 4pt;
+      color: #52635c;
+      font-size: 9pt;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8pt 0 12pt 0;
+      page-break-inside: avoid;
+    }
+    th {
+      background: #18382f;
+      color: #ffffff;
+      font-weight: 700;
+      text-align: left;
+      padding: 6pt 7pt;
+      border: 0.6pt solid #18382f;
+    }
+    td {
+      padding: 5pt 7pt;
+      border: 0.6pt solid #d5ded8;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #f7faf8;
+    }
+    .ok {
+      color: #0d6848;
+      font-weight: 800;
+    }
+    .bad {
+      color: #9c3434;
+      font-weight: 800;
+    }
+    .muted {
+      color: #62756d;
+    }
+    .mono {
+      font-family: "DejaVu Sans Mono", Consolas, monospace;
+      font-size: 8.7pt;
+    }
+    ul {
+      margin-top: 4pt;
+      padding-left: 18pt;
+    }
+    li {
+      margin: 3pt 0;
+    }
+    .footer-note {
+      color: #64756e;
+      font-size: 9pt;
+      margin-top: 18pt;
+      border-top: 0.8pt solid #d9e1dc;
+      padding-top: 7pt;
+    }
+  </style>
+</head>
+<body>
+  <section class="cover">
+    <div class="eyebrow">Agora 2.0 Technical Report</div>
+    <h1>10-User E2E Live Runtime<br>and World Generation Report</h1>
+    <p class="subtitle">
+      Final English report based on the repaired July 7, 2026 stress-test results for Clockwork Rain Conservatory,
+      covering world generation, art readiness, REST live runtime, WebSocket movement runtime, and the root-cause fix.
+    </p>
+
+    <div class="callout">
+      <strong>Final conclusion:</strong>
+      world generation, FLUX art, and publish readiness are stable. The 10-user REST and 10-user WebSocket live runtime
+      paths have returned to low-latency behavior. The earlier 16-90 second latency was not caused by the live store,
+      AI model changes, or artificial sleeps; it was caused by a route guard that triggered full catalog/latest-revision
+      scanning on every live request.
+    </div>
+
+    <div class="meta-grid">
+      <div class="meta-row"><div class="meta-label">Date</div><div class="meta-value">2026-07-07 UTC</div></div>
+      <div class="meta-row"><div class="meta-label">Target world</div><div class="meta-value">Clockwork Rain Conservatory</div></div>
+      <div class="meta-row"><div class="meta-label">Draft / Revision</div><div class="meta-value"><code>creator_20260706_053251_1ad0b086 / r001</code></div></div>
+      <div class="meta-row"><div class="meta-label">Validation access code</div><div class="meta-value"><code>70c1c22446644136</code></div></div>
+      <div class="meta-row"><div class="meta-label">Final REST artifact</div><div class="meta-value mono">export_artifact/live_load_tests/20260707_10user_rest_clockwork_rain_live_route_fix/</div></div>
+      <div class="meta-row"><div class="meta-label">Final WS artifact</div><div class="meta-value mono">export_artifact/live_load_tests/20260707_10user_ws_clockwork_rain_final/</div></div>
+    </div>
+  </section>
+
+  <h2>1. Executive Summary</h2>
+  <table class="status-grid">
+    <tr>
+      <td class="status-card">
+        <div class="label">World Draft</div>
+        <div class="value">Ready</div>
+        <div class="note">Draft manifest is publish-ready.</div>
+      </td>
+      <td class="status-card">
+        <div class="label">Art Pipeline</div>
+        <div class="value">Ready</div>
+        <div class="note">FLUX, pixel-read, and map QA passed.</div>
+      </td>
+      <td class="status-card">
+        <div class="label">10-user REST</div>
+        <div class="value">Pass</div>
+        <div class="note">Zero errors; stress signal false.</div>
+      </td>
+      <td class="status-card">
+        <div class="label">10-user WS</div>
+        <div class="value">Pass</div>
+        <div class="note">10/10 connected; 898 deltas.</div>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    The final test results confirm that Agora 2.0's world generation and live runtime architecture are intact.
+    The initial timeout pattern came from route-layer validation, not from the live runtime itself. After the fix,
+    REST live action p50 returned to 15ms, and WebSocket movement delta p50 returned to 28ms.
+  </p>
+
+  <h2>2. Root Cause</h2>
+  <div class="callout danger">
+    <strong>Faulty hot-path call chain:</strong>
+    high-frequency live endpoint -> <code>_require_latest_pixel_world_access_code()</code> ->
+    <code>_canonical_pixel_world_record()</code> -> <code>_latest_pixel_world_records()</code> ->
+    scan/materialize public package catalog.
+  </div>
+
+  <table>
+    <tr>
+      <th>Observation</th>
+      <th>Evidence</th>
+      <th>Interpretation</th>
+    </tr>
+    <tr>
+      <td>Direct store profiling was fast</td>
+      <td><code>create_session ~70ms</code>; heartbeat, state, and action roughly <code>1-2ms</code></td>
+      <td>The core live store was not the bottleneck.</td>
+    </tr>
+    <tr>
+      <td>Route validation was slow</td>
+      <td><code>_require_latest_pixel_world_access_code()</code> cost roughly <code>7.4-8.0s</code> per call</td>
+      <td>Every live request paid full catalog validation cost.</td>
+    </tr>
+    <tr>
+      <td>WebSocket handshake timed out</td>
+      <td>Before the fix, 10/10 WS handshakes exceeded timeout</td>
+      <td>The WS route used the same slow canonical-world guard before accepting.</td>
+    </tr>
+    <tr>
+      <td>No artificial delay matched the symptom</td>
+      <td>No business-path sleep explained the repeated 16-90s pattern</td>
+      <td>The regression was validation architecture, not pacing logic.</td>
+    </tr>
+  </table>
+
+  <h2>3. Fixes Applied</h2>
+  <table>
+    <tr>
+      <th>File</th>
+      <th>Change</th>
+      <th>Runtime effect</th>
+    </tr>
+    <tr>
+      <td class="mono">macro_ui/routes/pixel_api.py</td>
+      <td>Added <code>_require_pixel_live_access_code()</code> and switched live session, state, action, heartbeat, release, and file routes to it.</td>
+      <td>REST live endpoints no longer scan the full catalog.</td>
+    </tr>
+    <tr>
+      <td class="mono">macro_ui/routes/websocket.py</td>
+      <td>Switched WebSocket route validation to the lightweight live access-code check.</td>
+      <td>WebSocket handshakes can accept promptly.</td>
+    </tr>
+    <tr>
+      <td class="mono">macro_ui/serve_macro_ui.py</td>
+      <td>Made uvicorn reload opt-in via <code>--reload</code> or <code>AGORA_MACRO_UI_RELOAD=1</code>, and narrowed reload directories when enabled.</td>
+      <td>Load tests avoid dev reloader overhead and package-tree watching.</td>
+    </tr>
+    <tr>
+      <td class="mono">scripts/pixel_live_load_test.py</td>
+      <td>WebSocket <code>state_delta</code> is treated as transport success; movement rejection remains recorded as <code>accepted=false</code>.</td>
+      <td>The stress summary no longer misclassifies collision or rule rejection as backend failure.</td>
+    </tr>
+  </table>
+
+  <h2>4. Post-Fix REST 10-User Result</h2>
+  <p>
+    Transport: <code>rest-mixed</code>. Users created: <strong>10/10</strong>.
+    Duration: 45 seconds. Backend stress signal: <span class="ok">false</span>.
+  </p>
+  <table>
+    <tr>
+      <th>Endpoint</th>
+      <th>Count</th>
+      <th>Error rate</th>
+      <th>p50 ms</th>
+      <th>p95 ms</th>
+      <th>p99 ms</th>
+      <th>Max ms</th>
+    </tr>
+    <tr><td>create_session</td><td>10</td><td>0.0</td><td>81.239</td><td>228.508</td><td>303.974</td><td>322.841</td></tr>
+    <tr><td>heartbeat</td><td>120</td><td>0.0</td><td>43.837</td><td>147.796</td><td>161.311</td><td>202.189</td></tr>
+    <tr><td>live_state</td><td>352</td><td>0.0</td><td>56.901</td><td>167.830</td><td>256.580</td><td>332.663</td></tr>
+    <tr><td>live_action</td><td>60</td><td>0.0</td><td>14.776</td><td>108.593</td><td>111.508</td><td>112.306</td></tr>
+  </table>
+
+  <div class="callout">
+    REST conclusion: state, action, and heartbeat endpoints all returned to the expected low-latency envelope.
+    The earlier 90-second timeouts were resolved by removing full catalog validation from live paths.
+  </div>
+
+  <h2>5. Post-Fix WebSocket 10-User Result</h2>
+  <p>
+    Transport: <code>ws-movement</code>. Users created: <strong>10/10</strong>.
+    Duration: 25 seconds. Backend stress signal: <span class="ok">false</span>.
+  </p>
+  <table>
+    <tr>
+      <th>Endpoint</th>
+      <th>Count</th>
+      <th>Error rate</th>
+      <th>p50 ms</th>
+      <th>p95 ms</th>
+      <th>p99 ms</th>
+      <th>Max ms</th>
+    </tr>
+    <tr><td>create_session</td><td>10</td><td>0.0</td><td>81.598</td><td>230.464</td><td>306.222</td><td>325.162</td></tr>
+    <tr><td>ws_connect</td><td>10</td><td>0.0</td><td>520.231</td><td>630.014</td><td>644.895</td><td>648.615</td></tr>
+    <tr><td>ws_move_delta</td><td>898</td><td>0.0</td><td>28.369</td><td>51.555</td><td>54.887</td><td>211.130</td></tr>
+    <tr><td>ws_error</td><td>0</td><td>0.0</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr>
+  </table>
+
+  <div class="callout">
+    WebSocket conclusion: handshake and realtime movement are stable at 10 concurrent users.
+    The p50 movement delta is 28ms and the p95 movement delta is 52ms.
+  </div>
+
+  <h2>6. World Generation And Art Pipeline Status</h2>
+  <table>
+    <tr>
+      <th>Area</th>
+      <th>Status</th>
+      <th>Evidence</th>
+    </tr>
+    <tr>
+      <td>Draft generation</td>
+      <td class="ok">publish_ready</td>
+      <td>Planner, rooms, items, roles, profiles, inventory, compiler report, and package were generated successfully.</td>
+    </tr>
+    <tr>
+      <td>Generated world shape</td>
+      <td class="ok">valid</td>
+      <td>8 rooms, 25 agents, 25 main characters, 8 ordinary routes, 1 cinematic route, and 3 gameplay loops.</td>
+    </tr>
+    <tr>
+      <td>Inventory and profile generation</td>
+      <td class="ok">recovered</td>
+      <td>One invalid JSON retry in profile/inventory stages recovered; fallback-only inventory was not accepted.</td>
+    </tr>
+    <tr>
+      <td>Art pipeline</td>
+      <td class="ok">publish_ready</td>
+      <td>FLUX world asset generation, live-ready feed, Firefox pixel launch, and map QA all passed.</td>
+    </tr>
+    <tr>
+      <td>Package runtime</td>
+      <td class="ok">valid</td>
+      <td><code>pixel_read=true</code>, backend startup ok, <code>agent_count=25</code>, <code>live_ready_count=25</code>.</td>
+    </tr>
+  </table>
+
+  <h2>7. Before/After Summary</h2>
+  <table>
+    <tr>
+      <th>Path</th>
+      <th>Before fix</th>
+      <th>After fix</th>
+    </tr>
+    <tr>
+      <td>REST create_session</td>
+      <td class="bad">p50 about 4.5s</td>
+      <td class="ok">p50 81ms</td>
+    </tr>
+    <tr>
+      <td>REST live_state/action/heartbeat</td>
+      <td class="bad">single-user calls around 16-19s; 10-user run timed out</td>
+      <td class="ok">p50 15-57ms; zero errors</td>
+    </tr>
+    <tr>
+      <td>WebSocket connect</td>
+      <td class="bad">10/10 handshakes timed out or failed</td>
+      <td class="ok">10/10 connected; p50 520ms</td>
+    </tr>
+    <tr>
+      <td>WebSocket movement</td>
+      <td class="bad">No valid movement stream</td>
+      <td class="ok">898 deltas; p50 28ms</td>
+    </tr>
+    <tr>
+      <td>Active test-session cleanup</td>
+      <td class="warning">Failed HTTP release could leave active Load Tester sessions</td>
+      <td class="ok">Active Load Tester count verified as 0</td>
+    </tr>
+  </table>
+
+  <h2>8. Current Readiness</h2>
+  <p>- <strong>World creator:</strong> ready for the publish flow.</p>
+  <p>- <strong>Art:</strong> ready; the current FLUX-based pipeline passed map QA and pixel-read validation.</p>
+  <p>- <strong>REST live runtime:</strong> ready for the 10-user API/interaction E2E harness.</p>
+  <p>- <strong>WebSocket movement:</strong> ready for the 10-user movement harness.</p>
+  <p>- <strong>Not yet covered:</strong> 10 simultaneous full Firefox canvas clients rendering Pixel UI.</p>
+
+  <h2>9. Recommendations</h2>
+  <table>
+    <tr>
+      <th>Priority</th>
+      <th>Recommendation</th>
+      <th>Reason</th>
+    </tr>
+    <tr>
+      <td>P0</td>
+      <td>Keep full latest/public catalog validation off live hot paths.</td>
+      <td>This was the direct root cause of the latency regression.</td>
+    </tr>
+    <tr>
+      <td>P1</td>
+      <td>Run a 10-browser Firefox canvas E2E test next.</td>
+      <td>API and WebSocket latency are healthy again; browser rendering and asset hydration are the remaining realistic concurrency surface.</td>
+    </tr>
+    <tr>
+      <td>P1</td>
+      <td>Consider compact session-create and WebSocket hello payloads later.</td>
+      <td>The initial payload is still around 600KB. It no longer breaks latency, but it is worth optimizing.</td>
+    </tr>
+    <tr>
+      <td>P2</td>
+      <td>Add a local-mode cleanup fallback to the load harness.</td>
+      <td>If HTTP release times out, use <code>PixelLiveStore.release_session()</code> to avoid active test users.</td>
+    </tr>
+  </table>
+
+  <h2>10. Artifact Index</h2>
+  <table>
+    <tr>
+      <th>Artifact</th>
+      <th>Path</th>
+    </tr>
+    <tr>
+      <td>Markdown technical report</td>
+      <td class="mono">docs/technical_report_20260707_e2e10_world_generation.md</td>
+    </tr>
+    <tr>
+      <td>REST final summary</td>
+      <td class="mono">export_artifact/live_load_tests/20260707_10user_rest_clockwork_rain_live_route_fix/summary.json</td>
+    </tr>
+    <tr>
+      <td>WebSocket final summary</td>
+      <td class="mono">export_artifact/live_load_tests/20260707_10user_ws_clockwork_rain_final/summary.json</td>
+    </tr>
+    <tr>
+      <td>Draft manifest</td>
+      <td class="mono">output/world_creator_drafts/creator_20260706_053251_1ad0b086/draft_manifest.json</td>
+    </tr>
+    <tr>
+      <td>Art status</td>
+      <td class="mono">output/world_creator_drafts/creator_20260706_053251_1ad0b086/revisions/r001/art_status.json</td>
+    </tr>
+  </table>
+
+  <p class="footer-note">
+    Report generated for Agora 2.0 on 2026-07-07. This English PDF reflects the repaired route-layer validation
+    architecture and the final clean 10-user REST/WebSocket stress summaries, not the earlier pre-fix timeout runs.
+  </p>
+</body>
+</html>
