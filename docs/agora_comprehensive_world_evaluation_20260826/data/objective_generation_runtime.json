@@ -1,0 +1,676 @@
+{
+  "benchmark": "Agora Generation and Runtime Objective-Only Scoring",
+  "version": "agora-gr-objective-v1.1",
+  "date": "2026-08-26",
+  "reviewer_scores_used": false,
+  "reviewer_score_weight": 0.0,
+  "exclusion_reason": "The reviewing assistant belongs to one evaluated model family; all expert and holistic ratings are excluded to remove that conflict.",
+  "method": {
+    "aggregation": "weighted geometric mean",
+    "generation_weights": {
+      "contract_compliance": 0.36363636363636365,
+      "strict_objective_quality": 0.6363636363636362
+    },
+    "runtime_weights": {
+      "execution_compliance": 0.25,
+      "strict_trace_quality": 0.4166666666666667,
+      "cross_world_stress": 0.33333333333333337
+    },
+    "weight_derivation": "The non-review components retain their strict-v1.1 relative weights and are renormalized to sum to one.",
+    "gates": {
+      "generation": [
+        "score <= 49 when fewer than three hidden worlds compile",
+        "score <= 84 when no compiled world succeeds on the first semantic pass"
+      ],
+      "runtime": [
+        "score <= 49 without substantive human uptake",
+        "score <= 79 when every approved proposal is speech-only in every replicate"
+      ]
+    }
+  },
+  "generation": [
+    {
+      "model": "gpt-5.6-sol",
+      "objective_generation_score": 92.15,
+      "raw_score": 92.15,
+      "score_cap": 100.0,
+      "cap_reasons": [],
+      "components": {
+        "contract_compliance": 96.17,
+        "strict_objective_quality": 89.93
+      },
+      "compiled_worlds": 3,
+      "first_pass_worlds": 1,
+      "objective_axes": {
+        "causal_system": 96.27,
+        "spatial_semantic_necessity": 98.52,
+        "agent_individuation": 85.64,
+        "social_interdependence": 78.22,
+        "material_economy": 97.92,
+        "interaction_depth": 82.43,
+        "human_affordance": 99.55,
+        "template_escape": 93.6,
+        "visual_authorship": 94.11,
+        "first_pass_robustness": 73.33
+      }
+    },
+    {
+      "model": "gemini-3.7-flash",
+      "objective_generation_score": 88.2,
+      "raw_score": 88.2,
+      "score_cap": 100.0,
+      "cap_reasons": [],
+      "components": {
+        "contract_compliance": 95.75,
+        "strict_objective_quality": 84.16
+      },
+      "compiled_worlds": 3,
+      "first_pass_worlds": 3,
+      "objective_axes": {
+        "causal_system": 73.87,
+        "spatial_semantic_necessity": 82.04,
+        "agent_individuation": 85.57,
+        "social_interdependence": 73.39,
+        "material_economy": 89.17,
+        "interaction_depth": 75.16,
+        "human_affordance": 96.37,
+        "template_escape": 95.49,
+        "visual_authorship": 89.61,
+        "first_pass_robustness": 100.0
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "objective_generation_score": 87.71,
+      "raw_score": 87.71,
+      "score_cap": 100.0,
+      "cap_reasons": [],
+      "components": {
+        "contract_compliance": 95.25,
+        "strict_objective_quality": 83.67
+      },
+      "compiled_worlds": 3,
+      "first_pass_worlds": 2,
+      "objective_axes": {
+        "causal_system": 71.58,
+        "spatial_semantic_necessity": 74.93,
+        "agent_individuation": 89.07,
+        "social_interdependence": 78.88,
+        "material_economy": 92.88,
+        "interaction_depth": 82.96,
+        "human_affordance": 99.2,
+        "template_escape": 87.32,
+        "visual_authorship": 85.7,
+        "first_pass_robustness": 80.0
+      }
+    },
+    {
+      "model": "gemini-3.1-flash-lite",
+      "objective_generation_score": 85.01,
+      "raw_score": 85.01,
+      "score_cap": 100.0,
+      "cap_reasons": [],
+      "components": {
+        "contract_compliance": 95.35,
+        "strict_objective_quality": 79.61
+      },
+      "compiled_worlds": 3,
+      "first_pass_worlds": 2,
+      "objective_axes": {
+        "causal_system": 73.87,
+        "spatial_semantic_necessity": 72.91,
+        "agent_individuation": 82.75,
+        "social_interdependence": 65.11,
+        "material_economy": 84.89,
+        "interaction_depth": 70.16,
+        "human_affordance": 98.79,
+        "template_escape": 90.28,
+        "visual_authorship": 86.22,
+        "first_pass_robustness": 86.67
+      }
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "objective_generation_score": 81.72,
+      "raw_score": 81.72,
+      "score_cap": 84.0,
+      "cap_reasons": [
+        "zero first-pass world completions"
+      ],
+      "components": {
+        "contract_compliance": 93.19,
+        "strict_objective_quality": 75.81
+      },
+      "compiled_worlds": 3,
+      "first_pass_worlds": 0,
+      "objective_axes": {
+        "causal_system": 70.58,
+        "spatial_semantic_necessity": 77.48,
+        "agent_individuation": 79.42,
+        "social_interdependence": 63.71,
+        "material_economy": 81.22,
+        "interaction_depth": 67.16,
+        "human_affordance": 93.59,
+        "template_escape": 91.06,
+        "visual_authorship": 84.58,
+        "first_pass_robustness": 53.33
+      }
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "objective_generation_score": 29.87,
+      "raw_score": 29.87,
+      "score_cap": 49.0,
+      "cap_reasons": [
+        "fewer than three of three hidden worlds compiled",
+        "zero first-pass world completions"
+      ],
+      "components": {
+        "contract_compliance": 31.41,
+        "strict_objective_quality": 29.02
+      },
+      "compiled_worlds": 1,
+      "first_pass_worlds": 0,
+      "objective_axes": {
+        "causal_system": 28.18,
+        "spatial_semantic_necessity": 31.94,
+        "agent_individuation": 27.32,
+        "social_interdependence": 24.46,
+        "material_economy": 31.86,
+        "interaction_depth": 29.87,
+        "human_affordance": 33.28,
+        "template_escape": 31.68,
+        "visual_authorship": 30.93,
+        "first_pass_robustness": 20.0
+      }
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "objective_generation_score": 28.25,
+      "raw_score": 28.25,
+      "score_cap": 49.0,
+      "cap_reasons": [
+        "fewer than three of three hidden worlds compiled"
+      ],
+      "components": {
+        "contract_compliance": 31.66,
+        "strict_objective_quality": 26.47
+      },
+      "compiled_worlds": 1,
+      "first_pass_worlds": 1,
+      "objective_axes": {
+        "causal_system": 24.62,
+        "spatial_semantic_necessity": 27.8,
+        "agent_individuation": 26.28,
+        "social_interdependence": 24.26,
+        "material_economy": 22.64,
+        "interaction_depth": 24.31,
+        "human_affordance": 29.67,
+        "template_escape": 28.46,
+        "visual_authorship": 28.51,
+        "first_pass_robustness": 33.33
+      }
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "objective_generation_score": 0.0,
+      "raw_score": 0.0,
+      "score_cap": 49.0,
+      "cap_reasons": [
+        "fewer than three of three hidden worlds compiled"
+      ],
+      "components": {
+        "contract_compliance": 0.0,
+        "strict_objective_quality": 0.0
+      },
+      "compiled_worlds": 0,
+      "first_pass_worlds": 0,
+      "objective_axes": {
+        "causal_system": 0.0,
+        "spatial_semantic_necessity": 0.0,
+        "agent_individuation": 0.0,
+        "social_interdependence": 0.0,
+        "material_economy": 0.0,
+        "interaction_depth": 0.0,
+        "human_affordance": 0.0,
+        "template_escape": 0.0,
+        "visual_authorship": 0.0,
+        "first_pass_robustness": 0.0
+      }
+    }
+  ],
+  "runtime": [
+    {
+      "model": "gpt-5.6-sol",
+      "objective_runtime_score": 79.4,
+      "eligibility": "eligible",
+      "raw_score": 79.4,
+      "score_cap": 100.0,
+      "cap_reasons": [],
+      "components": {
+        "execution_compliance": 97.54,
+        "strict_trace_quality": 61.83,
+        "cross_world_stress": 93.03
+      },
+      "compliance_stddev": 0.39,
+      "trace_stddev": 4.68,
+      "trace_axes": {
+        "intervention_sensitivity": 88.05,
+        "causal_threading": 71.67,
+        "role_conditioning": 35.82,
+        "open_action_substance": 35.95,
+        "state_evolution": 68.33,
+        "social_differentiation": 60.99,
+        "human_impact": 92.5,
+        "conflict_and_recovery": 3.33,
+        "behavioral_specificity": 67.08,
+        "spatial_causality": 98.47
+      },
+      "trace_raw_means": {
+        "actions": 72,
+        "success_rate": 0.9954,
+        "intervention_count": 5.6667,
+        "intervention_reference_coverage": 0.8889,
+        "explicit_intervention_reference_count": 8,
+        "human_event_reference_coverage": 1.0,
+        "approved_proposal_count": 6.3333,
+        "non_speech_proposal_rate": 0.2064,
+        "substantive_proposal_count": 1.3333,
+        "proposal_effect_kind_count": 2.3333,
+        "spanning_three_checkpoint_threads": 2.6667,
+        "spanning_five_checkpoint_threads": 2.6667,
+        "thread_count": 3.6667,
+        "actor_participation_entropy": 0.8771,
+        "target_entropy": 0.8785,
+        "unique_route_count": 10.3333,
+        "unique_intent_rate": 1.0,
+        "mean_role_vocabulary_coverage": 0.0611,
+        "role_top_match_rate": 0.3009,
+        "external_state_action_rate": 0.4044,
+        "mutation_kind_count": 4,
+        "distinct_status_effect_count": 15.3333,
+        "relationship_delta_pattern_count": 1.6667,
+        "negative_relationship_update_count": 0,
+        "human_target_action_count": 11.3333,
+        "human_responder_count": 3,
+        "failed_model_action_count": 0.3333,
+        "model_decline_count": 0,
+        "recovered_failed_action_count": 0.3333,
+        "successful_move_count": 28,
+        "moved_actor_later_action_rate": 0.9722
+      }
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "objective_runtime_score": 79.23,
+      "eligibility": "eligible",
+      "raw_score": 79.23,
+      "score_cap": 100.0,
+      "cap_reasons": [],
+      "components": {
+        "execution_compliance": 91.59,
+        "strict_trace_quality": 64.72,
+        "cross_world_stress": 91.5
+      },
+      "compliance_stddev": 2.02,
+      "trace_stddev": 2.28,
+      "trace_axes": {
+        "intervention_sensitivity": 83.28,
+        "causal_threading": 87.5,
+        "role_conditioning": 23.95,
+        "open_action_substance": 64.09,
+        "state_evolution": 65.0,
+        "social_differentiation": 64.46,
+        "human_impact": 75.0,
+        "conflict_and_recovery": 23.33,
+        "behavioral_specificity": 56.6,
+        "spatial_causality": 95.54
+      },
+      "trace_raw_means": {
+        "actions": 72,
+        "success_rate": 0.8796,
+        "intervention_count": 5.3333,
+        "intervention_reference_coverage": 0.8778,
+        "explicit_intervention_reference_count": 6,
+        "human_event_reference_coverage": 1.0,
+        "approved_proposal_count": 6.3333,
+        "non_speech_proposal_rate": 0.6508,
+        "substantive_proposal_count": 4.3333,
+        "proposal_effect_kind_count": 2,
+        "spanning_three_checkpoint_threads": 5.6667,
+        "spanning_five_checkpoint_threads": 5.3333,
+        "thread_count": 6.3333,
+        "actor_participation_entropy": 0.9988,
+        "target_entropy": 0.9802,
+        "unique_route_count": 9.3333,
+        "unique_intent_rate": 0.8194,
+        "mean_role_vocabulary_coverage": 0.0542,
+        "role_top_match_rate": 0.1713,
+        "external_state_action_rate": 0.3515,
+        "mutation_kind_count": 4,
+        "distinct_status_effect_count": 13,
+        "relationship_delta_pattern_count": 1,
+        "negative_relationship_update_count": 0,
+        "human_target_action_count": 4.6667,
+        "human_responder_count": 2.3333,
+        "failed_model_action_count": 8.6667,
+        "model_decline_count": 0,
+        "recovered_failed_action_count": 4.6667,
+        "successful_move_count": 18,
+        "moved_actor_later_action_rate": 0.919
+      }
+    },
+    {
+      "model": "gemini-3.7-flash",
+      "objective_runtime_score": 74.04,
+      "eligibility": "eligible",
+      "raw_score": 74.04,
+      "score_cap": 100.0,
+      "cap_reasons": [],
+      "components": {
+        "execution_compliance": 93.86,
+        "strict_trace_quality": 53.11,
+        "cross_world_stress": 93.87
+      },
+      "compliance_stddev": 3.09,
+      "trace_stddev": 5.88,
+      "trace_axes": {
+        "intervention_sensitivity": 95.0,
+        "causal_threading": 68.61,
+        "role_conditioning": 31.35,
+        "open_action_substance": 31.67,
+        "state_evolution": 39.07,
+        "social_differentiation": 62.49,
+        "human_impact": 68.75,
+        "conflict_and_recovery": 0.0,
+        "behavioral_specificity": 63.31,
+        "spatial_causality": 57.15
+      },
+      "trace_raw_means": {
+        "actions": 72,
+        "success_rate": 1.0,
+        "intervention_count": 5,
+        "intervention_reference_coverage": 1.0,
+        "explicit_intervention_reference_count": 8.3333,
+        "human_event_reference_coverage": 1.0,
+        "approved_proposal_count": 7.3333,
+        "non_speech_proposal_rate": 0.1806,
+        "substantive_proposal_count": 1.3333,
+        "proposal_effect_kind_count": 2,
+        "spanning_three_checkpoint_threads": 2.3333,
+        "spanning_five_checkpoint_threads": 2.3333,
+        "thread_count": 2.6667,
+        "actor_participation_entropy": 0.9563,
+        "target_entropy": 0.9605,
+        "unique_route_count": 9,
+        "unique_intent_rate": 0.9398,
+        "mean_role_vocabulary_coverage": 0.0863,
+        "role_top_match_rate": 0.1898,
+        "external_state_action_rate": 0.088,
+        "mutation_kind_count": 4,
+        "distinct_status_effect_count": 15.3333,
+        "relationship_delta_pattern_count": 1,
+        "negative_relationship_update_count": 0,
+        "human_target_action_count": 6,
+        "human_responder_count": 1.3333,
+        "failed_model_action_count": 0,
+        "model_decline_count": 0,
+        "recovered_failed_action_count": 0,
+        "successful_move_count": 5,
+        "moved_actor_later_action_rate": 0.5278
+      }
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "objective_runtime_score": 74.01,
+      "eligibility": "eligible",
+      "raw_score": 74.01,
+      "score_cap": 79.0,
+      "cap_reasons": [
+        "all approved open proposals are speech-only"
+      ],
+      "components": {
+        "execution_compliance": 96.15,
+        "strict_trace_quality": 60.23,
+        "cross_world_stress": 78.67
+      },
+      "compliance_stddev": 0.43,
+      "trace_stddev": 1.43,
+      "trace_axes": {
+        "intervention_sensitivity": 91.83,
+        "causal_threading": 89.03,
+        "role_conditioning": 37.22,
+        "open_action_substance": 7.5,
+        "state_evolution": 59.26,
+        "social_differentiation": 59.85,
+        "human_impact": 100.0,
+        "conflict_and_recovery": 3.33,
+        "behavioral_specificity": 69.17,
+        "spatial_causality": 94.71
+      },
+      "trace_raw_means": {
+        "actions": 72,
+        "success_rate": 0.9907,
+        "intervention_count": 5,
+        "intervention_reference_coverage": 0.8667,
+        "explicit_intervention_reference_count": 13.3333,
+        "human_event_reference_coverage": 1.0,
+        "approved_proposal_count": 6,
+        "non_speech_proposal_rate": 0.0,
+        "substantive_proposal_count": 0,
+        "proposal_effect_kind_count": 1,
+        "spanning_three_checkpoint_threads": 3.3333,
+        "spanning_five_checkpoint_threads": 3,
+        "thread_count": 4.6667,
+        "actor_participation_entropy": 0.9407,
+        "target_entropy": 0.8768,
+        "unique_route_count": 11.3333,
+        "unique_intent_rate": 1.0,
+        "mean_role_vocabulary_coverage": 0.0749,
+        "role_top_match_rate": 0.2871,
+        "external_state_action_rate": 0.2712,
+        "mutation_kind_count": 3,
+        "distinct_status_effect_count": 16,
+        "relationship_delta_pattern_count": 1,
+        "negative_relationship_update_count": 0,
+        "human_target_action_count": 16.3333,
+        "human_responder_count": 4.3333,
+        "failed_model_action_count": 0.6667,
+        "model_decline_count": 0,
+        "recovered_failed_action_count": 0.3333,
+        "successful_move_count": 19.3333,
+        "moved_actor_later_action_rate": 0.9039
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "objective_runtime_score": 73.13,
+      "eligibility": "eligible",
+      "raw_score": 73.13,
+      "score_cap": 100.0,
+      "cap_reasons": [],
+      "components": {
+        "execution_compliance": 95.31,
+        "strict_trace_quality": 72.41,
+        "cross_world_stress": 60.7
+      },
+      "compliance_stddev": 2.15,
+      "trace_stddev": 3.35,
+      "trace_axes": {
+        "intervention_sensitivity": 80.56,
+        "causal_threading": 93.75,
+        "role_conditioning": 39.28,
+        "open_action_substance": 84.19,
+        "state_evolution": 63.91,
+        "social_differentiation": 63.19,
+        "human_impact": 97.5,
+        "conflict_and_recovery": 26.67,
+        "behavioral_specificity": 65.72,
+        "spatial_causality": 92.9
+      },
+      "trace_raw_means": {
+        "actions": 72,
+        "success_rate": 0.8055,
+        "intervention_count": 5.6667,
+        "intervention_reference_coverage": 0.7222,
+        "explicit_intervention_reference_count": 19,
+        "human_event_reference_coverage": 1.0,
+        "approved_proposal_count": 15,
+        "non_speech_proposal_rate": 0.7124,
+        "substantive_proposal_count": 11.3333,
+        "proposal_effect_kind_count": 3,
+        "spanning_three_checkpoint_threads": 4.6667,
+        "spanning_five_checkpoint_threads": 4.6667,
+        "thread_count": 6,
+        "actor_participation_entropy": 0.9969,
+        "target_entropy": 0.932,
+        "unique_route_count": 8.6667,
+        "unique_intent_rate": 0.9491,
+        "mean_role_vocabulary_coverage": 0.082,
+        "role_top_match_rate": 0.2963,
+        "external_state_action_rate": 0.2945,
+        "mutation_kind_count": 4,
+        "distinct_status_effect_count": 17.3333,
+        "relationship_delta_pattern_count": 1,
+        "negative_relationship_update_count": 0,
+        "human_target_action_count": 11.3333,
+        "human_responder_count": 4,
+        "failed_model_action_count": 14,
+        "model_decline_count": 0,
+        "recovered_failed_action_count": 5.6667,
+        "successful_move_count": 12.6667,
+        "moved_actor_later_action_rate": 0.8708
+      }
+    },
+    {
+      "model": "gemini-3.1-flash-lite",
+      "objective_runtime_score": 66.64,
+      "eligibility": "eligible",
+      "raw_score": 66.64,
+      "score_cap": 100.0,
+      "cap_reasons": [],
+      "components": {
+        "execution_compliance": 94.03,
+        "strict_trace_quality": 69.32,
+        "cross_world_stress": 49.0
+      },
+      "compliance_stddev": 2.94,
+      "trace_stddev": 2.15,
+      "trace_axes": {
+        "intervention_sensitivity": 90.0,
+        "causal_threading": 83.75,
+        "role_conditioning": 38.42,
+        "open_action_substance": 80.69,
+        "state_evolution": 65.0,
+        "social_differentiation": 75.94,
+        "human_impact": 71.25,
+        "conflict_and_recovery": 23.33,
+        "behavioral_specificity": 55.79,
+        "spatial_causality": 87.27
+      },
+      "trace_raw_means": {
+        "actions": 72,
+        "success_rate": 0.8565,
+        "intervention_count": 5,
+        "intervention_reference_coverage": 1.0,
+        "explicit_intervention_reference_count": 6,
+        "human_event_reference_coverage": 1.0,
+        "approved_proposal_count": 29.6667,
+        "non_speech_proposal_rate": 0.5078,
+        "substantive_proposal_count": 16.6667,
+        "proposal_effect_kind_count": 3.3333,
+        "spanning_three_checkpoint_threads": 4,
+        "spanning_five_checkpoint_threads": 4,
+        "thread_count": 4,
+        "actor_participation_entropy": 0.967,
+        "target_entropy": 0.9506,
+        "unique_route_count": 8,
+        "unique_intent_rate": 0.963,
+        "mean_role_vocabulary_coverage": 0.0794,
+        "role_top_match_rate": 0.2917,
+        "external_state_action_rate": 0.4059,
+        "mutation_kind_count": 4,
+        "distinct_status_effect_count": 9.6667,
+        "relationship_delta_pattern_count": 1,
+        "negative_relationship_update_count": 0,
+        "human_target_action_count": 5,
+        "human_responder_count": 1.6667,
+        "failed_model_action_count": 10.3333,
+        "model_decline_count": 2,
+        "recovered_failed_action_count": 0,
+        "successful_move_count": 18,
+        "moved_actor_later_action_rate": 0.7686
+      }
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "objective_runtime_score": 46.74,
+      "eligibility": "eligible",
+      "raw_score": 46.74,
+      "score_cap": 49.0,
+      "cap_reasons": [
+        "no substantive human uptake in any eligible replicate"
+      ],
+      "components": {
+        "execution_compliance": 29.74,
+        "strict_trace_quality": 49.0,
+        "cross_world_stress": 61.84
+      },
+      "compliance_stddev": 1.09,
+      "trace_stddev": 0.0,
+      "trace_axes": {
+        "intervention_sensitivity": 94.17,
+        "causal_threading": 83.47,
+        "role_conditioning": 22.8,
+        "open_action_substance": 76.73,
+        "state_evolution": 63.08,
+        "social_differentiation": 61.99,
+        "human_impact": 40.0,
+        "conflict_and_recovery": 0.0,
+        "behavioral_specificity": 47.17,
+        "spatial_causality": 71.11
+      },
+      "trace_raw_means": {
+        "actions": 72,
+        "success_rate": 0.7917,
+        "intervention_count": 5,
+        "intervention_reference_coverage": 1.0,
+        "explicit_intervention_reference_count": 7.6667,
+        "human_event_reference_coverage": 1.0,
+        "approved_proposal_count": 34,
+        "non_speech_proposal_rate": 0.5496,
+        "substantive_proposal_count": 15,
+        "proposal_effect_kind_count": 3.3333,
+        "spanning_three_checkpoint_threads": 3.3333,
+        "spanning_five_checkpoint_threads": 3.3333,
+        "thread_count": 3.3333,
+        "actor_participation_entropy": 0.8948,
+        "target_entropy": 0.8935,
+        "unique_route_count": 6,
+        "unique_intent_rate": 0.7407,
+        "mean_role_vocabulary_coverage": 0.0665,
+        "role_top_match_rate": 0.1296,
+        "external_state_action_rate": 0.2551,
+        "mutation_kind_count": 4,
+        "distinct_status_effect_count": 11,
+        "relationship_delta_pattern_count": 1.6667,
+        "negative_relationship_update_count": 0,
+        "human_target_action_count": 0,
+        "human_responder_count": 0,
+        "failed_model_action_count": 15,
+        "model_decline_count": 0,
+        "recovered_failed_action_count": 0,
+        "successful_move_count": 9,
+        "moved_actor_later_action_rate": 0.6111
+      }
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "objective_runtime_score": null,
+      "eligibility": "N/E",
+      "reason": "no compiled first-premise world for generated-world runtime",
+      "community_stress_score": 63.55
+    }
+  ],
+  "interpretation_limit": "These scores compare reproducible structural and behavioral evidence. They do not independently establish aesthetic quality, believability, or whether a person would want to inhabit the world."
+}

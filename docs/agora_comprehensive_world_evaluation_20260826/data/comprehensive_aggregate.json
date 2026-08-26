@@ -1,0 +1,421 @@
+{
+  "benchmark": "Agora Comprehensive World Quality and Performance",
+  "version": "agora-comprehensive-world-evaluation-v1",
+  "score_scale": [
+    0,
+    100
+  ],
+  "weights": {
+    "blind_world_quality": 0.4,
+    "objective_generation": 0.35,
+    "objective_runtime": 0.25
+  },
+  "score_bands": {
+    "S": "85-100",
+    "A": "80-84.99",
+    "B": "70-79.99",
+    "C": "60-69.99",
+    "D": "40-59.99",
+    "E": "0-39.99"
+  },
+  "blind_review_agreement": {
+    "paired_items": 255,
+    "exact_tier_agreement": 0.604,
+    "within_one_tier_agreement": 0.988,
+    "mean_absolute_tier_gap": 0.408,
+    "ordinal_krippendorff_alpha": 0.801,
+    "quadratic_weighted_kappa": 0.792,
+    "tier_score_pearson": 0.78
+  },
+  "models": [
+    {
+      "model": "gemini-2.5-flash",
+      "blind_world_quality": 62.04,
+      "objective_generation": 87.71,
+      "objective_runtime": 73.13,
+      "comprehensive_score": 73.8,
+      "band": "B",
+      "compiled_worlds": 3,
+      "first_pass_worlds": 2,
+      "blind_quality_axes": {
+        "premise_causality": 60.0,
+        "society_personhood": 55.0,
+        "space_materiality": 60.0,
+        "interaction_open_endedness": 70.0,
+        "holistic_coherence": 60.0
+      },
+      "generation_components": {
+        "contract_compliance": 95.25,
+        "strict_objective_quality": 83.67
+      },
+      "generation_objective_axes": {
+        "causal_system": 71.58,
+        "spatial_semantic_necessity": 74.93,
+        "agent_individuation": 89.07,
+        "social_interdependence": 78.88,
+        "material_economy": 92.88,
+        "interaction_depth": 82.96,
+        "human_affordance": 99.2,
+        "template_escape": 87.32,
+        "visual_authorship": 85.7,
+        "first_pass_robustness": 80.0
+      },
+      "runtime_components": {
+        "execution_compliance": 95.31,
+        "strict_trace_quality": 72.41,
+        "cross_world_stress": 60.7
+      },
+      "runtime_trace_axes": {
+        "intervention_sensitivity": 80.56,
+        "causal_threading": 93.75,
+        "role_conditioning": 39.28,
+        "open_action_substance": 84.19,
+        "state_evolution": 63.91,
+        "social_differentiation": 63.19,
+        "human_impact": 97.5,
+        "conflict_and_recovery": 26.67,
+        "behavioral_specificity": 65.72,
+        "spatial_causality": 92.9
+      }
+    },
+    {
+      "model": "gemini-3.1-flash-lite",
+      "blind_world_quality": 57.53,
+      "objective_generation": 85.01,
+      "objective_runtime": 66.64,
+      "comprehensive_score": 69.43,
+      "band": "C",
+      "compiled_worlds": 3,
+      "first_pass_worlds": 2,
+      "blind_quality_axes": {
+        "premise_causality": 57.5,
+        "society_personhood": 50.0,
+        "space_materiality": 65.0,
+        "interaction_open_endedness": 60.0,
+        "holistic_coherence": 60.0
+      },
+      "generation_components": {
+        "contract_compliance": 95.35,
+        "strict_objective_quality": 79.61
+      },
+      "generation_objective_axes": {
+        "causal_system": 73.87,
+        "spatial_semantic_necessity": 72.91,
+        "agent_individuation": 82.75,
+        "social_interdependence": 65.11,
+        "material_economy": 84.89,
+        "interaction_depth": 70.16,
+        "human_affordance": 98.79,
+        "template_escape": 90.28,
+        "visual_authorship": 86.22,
+        "first_pass_robustness": 86.67
+      },
+      "runtime_components": {
+        "execution_compliance": 94.03,
+        "strict_trace_quality": 69.32,
+        "cross_world_stress": 49.0
+      },
+      "runtime_trace_axes": {
+        "intervention_sensitivity": 90.0,
+        "causal_threading": 83.75,
+        "role_conditioning": 38.42,
+        "open_action_substance": 80.69,
+        "state_evolution": 65.0,
+        "social_differentiation": 75.94,
+        "human_impact": 71.25,
+        "conflict_and_recovery": 23.33,
+        "behavioral_specificity": 55.79,
+        "spatial_causality": 87.27
+      }
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "blind_world_quality": 64.95,
+      "objective_generation": 81.72,
+      "objective_runtime": 79.23,
+      "comprehensive_score": 74.39,
+      "band": "B",
+      "compiled_worlds": 3,
+      "first_pass_worlds": 0,
+      "blind_quality_axes": {
+        "premise_causality": 67.5,
+        "society_personhood": 62.5,
+        "space_materiality": 60.0,
+        "interaction_open_endedness": 67.5,
+        "holistic_coherence": 60.0
+      },
+      "generation_components": {
+        "contract_compliance": 93.19,
+        "strict_objective_quality": 75.81
+      },
+      "generation_objective_axes": {
+        "causal_system": 70.58,
+        "spatial_semantic_necessity": 77.48,
+        "agent_individuation": 79.42,
+        "social_interdependence": 63.71,
+        "material_economy": 81.22,
+        "interaction_depth": 67.16,
+        "human_affordance": 93.59,
+        "template_escape": 91.06,
+        "visual_authorship": 84.58,
+        "first_pass_robustness": 53.33
+      },
+      "runtime_components": {
+        "execution_compliance": 91.59,
+        "strict_trace_quality": 64.72,
+        "cross_world_stress": 91.5
+      },
+      "runtime_trace_axes": {
+        "intervention_sensitivity": 83.28,
+        "causal_threading": 87.5,
+        "role_conditioning": 23.95,
+        "open_action_substance": 64.09,
+        "state_evolution": 65.0,
+        "social_differentiation": 64.46,
+        "human_impact": 75.0,
+        "conflict_and_recovery": 23.33,
+        "behavioral_specificity": 56.6,
+        "spatial_causality": 95.54
+      }
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "blind_world_quality": 20.91,
+      "objective_generation": 28.25,
+      "objective_runtime": 46.74,
+      "comprehensive_score": 29.94,
+      "band": "E",
+      "compiled_worlds": 1,
+      "first_pass_worlds": 1,
+      "blind_quality_axes": {
+        "premise_causality": 22.5,
+        "society_personhood": 20.0,
+        "space_materiality": 22.5,
+        "interaction_open_endedness": 20.0,
+        "holistic_coherence": 20.0
+      },
+      "generation_components": {
+        "contract_compliance": 31.66,
+        "strict_objective_quality": 26.47
+      },
+      "generation_objective_axes": {
+        "causal_system": 24.62,
+        "spatial_semantic_necessity": 27.8,
+        "agent_individuation": 26.28,
+        "social_interdependence": 24.26,
+        "material_economy": 22.64,
+        "interaction_depth": 24.31,
+        "human_affordance": 29.67,
+        "template_escape": 28.46,
+        "visual_authorship": 28.51,
+        "first_pass_robustness": 33.33
+      },
+      "runtime_components": {
+        "execution_compliance": 29.74,
+        "strict_trace_quality": 49.0,
+        "cross_world_stress": 61.84
+      },
+      "runtime_trace_axes": {
+        "intervention_sensitivity": 94.17,
+        "causal_threading": 83.47,
+        "role_conditioning": 22.8,
+        "open_action_substance": 76.73,
+        "state_evolution": 63.08,
+        "social_differentiation": 61.99,
+        "human_impact": 40.0,
+        "conflict_and_recovery": 0.0,
+        "behavioral_specificity": 47.17,
+        "spatial_causality": 71.11
+      }
+    },
+    {
+      "model": "gemini-3.7-flash",
+      "blind_world_quality": 78.96,
+      "objective_generation": 88.2,
+      "objective_runtime": 74.04,
+      "comprehensive_score": 80.96,
+      "band": "A",
+      "compiled_worlds": 3,
+      "first_pass_worlds": 3,
+      "blind_quality_axes": {
+        "premise_causality": 85.0,
+        "society_personhood": 75.0,
+        "space_materiality": 81.67,
+        "interaction_open_endedness": 76.67,
+        "holistic_coherence": 76.67
+      },
+      "generation_components": {
+        "contract_compliance": 95.75,
+        "strict_objective_quality": 84.16
+      },
+      "generation_objective_axes": {
+        "causal_system": 73.87,
+        "spatial_semantic_necessity": 82.04,
+        "agent_individuation": 85.57,
+        "social_interdependence": 73.39,
+        "material_economy": 89.17,
+        "interaction_depth": 75.16,
+        "human_affordance": 96.37,
+        "template_escape": 95.49,
+        "visual_authorship": 89.61,
+        "first_pass_robustness": 100.0
+      },
+      "runtime_components": {
+        "execution_compliance": 93.86,
+        "strict_trace_quality": 53.11,
+        "cross_world_stress": 93.87
+      },
+      "runtime_trace_axes": {
+        "intervention_sensitivity": 95.0,
+        "causal_threading": 68.61,
+        "role_conditioning": 31.35,
+        "open_action_substance": 31.67,
+        "state_evolution": 39.07,
+        "social_differentiation": 62.49,
+        "human_impact": 68.75,
+        "conflict_and_recovery": 0.0,
+        "behavioral_specificity": 63.31,
+        "spatial_causality": 57.15
+      }
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "blind_world_quality": 0.0,
+      "objective_generation": 0.0,
+      "objective_runtime": 0.0,
+      "comprehensive_score": 0.0,
+      "band": "E",
+      "compiled_worlds": 0,
+      "first_pass_worlds": 0,
+      "blind_quality_axes": {
+        "premise_causality": 0.0,
+        "society_personhood": 0.0,
+        "space_materiality": 0.0,
+        "interaction_open_endedness": 0.0,
+        "holistic_coherence": 0.0
+      },
+      "generation_components": {
+        "contract_compliance": 0.0,
+        "strict_objective_quality": 0.0
+      },
+      "generation_objective_axes": {
+        "causal_system": 0.0,
+        "spatial_semantic_necessity": 0.0,
+        "agent_individuation": 0.0,
+        "social_interdependence": 0.0,
+        "material_economy": 0.0,
+        "interaction_depth": 0.0,
+        "human_affordance": 0.0,
+        "template_escape": 0.0,
+        "visual_authorship": 0.0,
+        "first_pass_robustness": 0.0
+      },
+      "runtime_components": {},
+      "runtime_trace_axes": {}
+    },
+    {
+      "model": "gpt-5.6-sol",
+      "blind_world_quality": 85.0,
+      "objective_generation": 92.15,
+      "objective_runtime": 79.4,
+      "comprehensive_score": 86.1,
+      "band": "S",
+      "compiled_worlds": 3,
+      "first_pass_worlds": 1,
+      "blind_quality_axes": {
+        "premise_causality": 85.0,
+        "society_personhood": 85.0,
+        "space_materiality": 85.0,
+        "interaction_open_endedness": 85.0,
+        "holistic_coherence": 85.0
+      },
+      "generation_components": {
+        "contract_compliance": 96.17,
+        "strict_objective_quality": 89.93
+      },
+      "generation_objective_axes": {
+        "causal_system": 96.27,
+        "spatial_semantic_necessity": 98.52,
+        "agent_individuation": 85.64,
+        "social_interdependence": 78.22,
+        "material_economy": 97.92,
+        "interaction_depth": 82.43,
+        "human_affordance": 99.55,
+        "template_escape": 93.6,
+        "visual_authorship": 94.11,
+        "first_pass_robustness": 73.33
+      },
+      "runtime_components": {
+        "execution_compliance": 97.54,
+        "strict_trace_quality": 61.83,
+        "cross_world_stress": 93.03
+      },
+      "runtime_trace_axes": {
+        "intervention_sensitivity": 88.05,
+        "causal_threading": 71.67,
+        "role_conditioning": 35.82,
+        "open_action_substance": 35.95,
+        "state_evolution": 68.33,
+        "social_differentiation": 60.99,
+        "human_impact": 92.5,
+        "conflict_and_recovery": 3.33,
+        "behavioral_specificity": 67.08,
+        "spatial_causality": 98.47
+      }
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "blind_world_quality": 27.47,
+      "objective_generation": 29.87,
+      "objective_runtime": 74.01,
+      "comprehensive_score": 39.95,
+      "band": "E",
+      "compiled_worlds": 1,
+      "first_pass_worlds": 0,
+      "blind_quality_axes": {
+        "premise_causality": 25.0,
+        "society_personhood": 28.33,
+        "space_materiality": 28.33,
+        "interaction_open_endedness": 28.33,
+        "holistic_coherence": 28.33
+      },
+      "generation_components": {
+        "contract_compliance": 31.41,
+        "strict_objective_quality": 29.02
+      },
+      "generation_objective_axes": {
+        "causal_system": 28.18,
+        "spatial_semantic_necessity": 31.94,
+        "agent_individuation": 27.32,
+        "social_interdependence": 24.46,
+        "material_economy": 31.86,
+        "interaction_depth": 29.87,
+        "human_affordance": 33.28,
+        "template_escape": 31.68,
+        "visual_authorship": 30.93,
+        "first_pass_robustness": 20.0
+      },
+      "runtime_components": {
+        "execution_compliance": 96.15,
+        "strict_trace_quality": 60.23,
+        "cross_world_stress": 78.67
+      },
+      "runtime_trace_axes": {
+        "intervention_sensitivity": 91.83,
+        "causal_threading": 89.03,
+        "role_conditioning": 37.22,
+        "open_action_substance": 7.5,
+        "state_evolution": 59.26,
+        "social_differentiation": 59.85,
+        "human_impact": 100.0,
+        "conflict_and_recovery": 3.33,
+        "behavioral_specificity": 69.17,
+        "spatial_causality": 94.71
+      }
+    }
+  ],
+  "sources": {
+    "blind_world_quality": "docs/living_world_benchmark_20260825_hidden/dual_judge_blind_review_v0_1/aggregate.json",
+    "objective_generation_runtime": "docs/living_world_benchmark_20260825_hidden/objective_only_generation_runtime_results_v1_1.json"
+  }
+}
