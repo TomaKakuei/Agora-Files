@@ -1,0 +1,306 @@
+\documentclass[10pt]{article}
+\usepackage{fontspec}
+\setmainfont{Noto Sans CJK SC}
+\setsansfont{Noto Sans CJK SC}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\input{questionnaire_style.tex}
+\usepackage{amssymb}
+
+\begin{document}
+\agoratitle{生成世界人类评估问卷}{中文版 · 自包含世界成品评审}
+
+\textbf{评估目的。}本问卷用于评价从五条一句话设定生成的五个世界。评估所需信息全部包含在本文档中，请勿打开或运行 Agora。只评价文档展示的生成世界，不评价智能体行为、运行稳定性或生成模型。
+
+\textbf{评审者编号：}\rule{42mm}{0.4pt}\hfill
+\textbf{指定起始编号（A--E）：}\rule{20mm}{0.4pt}
+
+\sectionlabel{填写方法}
+从指定编号的世界开始，按字母顺序填写，E 之后回到 A。先阅读原始一句话设定，再查看每个世界相同规模的证据：一张地图、一套代表性人物图、规则、地点、角色、物件和玩家可能采取的行动。完成该世界的评分页后再继续。对所有世界使用同一标准，不要求也不进行世界间排序。
+
+\sectionlabel{评分量表}
+\begin{tabularx}{\linewidth}{>{\bfseries}p{0.06\linewidth}X}
+1 & 非常不同意：证据与描述相悖，或几乎不能支持该描述。\\
+2 & 不同意：重要内容较通用、缺失，或彼此缺少联系。\\
+3 & 一般：世界基本成立，但证据不均衡，部分内容展开不足。\\
+4 & 同意：证据具体、连贯，能够较好地支持该描述。\\
+5 & 非常同意：世界高度具体，各部分相互强化，并且很有吸引力。\\
+\end{tabularx}
+
+\sectionlabel{七项评分的含义}
+前六项依次评价：设定实现、系统连贯性、社会与人物、空间与物质细节、有意义的互动可能性、视觉一致性。六项等权平均构成主要的“世界质量”得分，第七项为单独报告的总体判断。“互动可能性”只评价文档中的世界看起来允许玩家尝试什么，不评价这些行动在运行时是否成功。
+
+\vfill
+\textcolor{AgoraMuted}{文档不展示模型名称、系统轨迹、运行截图或性能分数。每个世界的证据字段与评分问题完全相同。}
+
+% -----------------------------------------------------------------------------
+\clearpage
+\worldtitle{世界 A}{发条雨温室城（Clockwork Rain Conservatory）}
+\premisebox{一句话设定}{在一座依靠机械降雨运转、规模如城市般巨大的玻璃温室中，贵族家族与植物公会为了控制专利种子、天气调控权和社会地位，通过贸易、破坏与复杂的法律斗争彼此竞争。}
+
+\vspace{7pt}
+\worldvisuals
+  {\evidencepath/world_asset_sets/creator_20260706_053251_1ad0b086_r001/world_map_source.png}
+  {生成的世界地图}
+  {\evidencepath/clockwork_rain_conservatory_main_01/creator_20260706_053251_1ad0b086_r001/raw_character_128.png}
+  {代表性人物图组}
+
+\begin{minipage}[t]{0.48\linewidth}
+\sectionlabel{规则与制度}
+\begin{itemize}
+\item 声誉可以充当货币；公开指控若没有证据，指控者可能身败名裂。
+\item 公会之间的争端必须交由裁决庭处理，不能直接冲突。
+\item “大机械”的知识受到保护，未经许可接触即构成叛国。
+\end{itemize}
+\sectionlabel{活动循环}
+工业破坏；声誉博弈；专利诉讼；种子与天气装置交易。
+\sectionlabel{地点}
+大中庭交易所；瓦莱里乌斯精品植物展厅；水律天气系统摊位；温室中央种子库。
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\sectionlabel{人物与动机}
+\begin{itemize}
+\item 莉珊德拉·瓦莱里乌斯，失势继承人与植物走私者，想夺回家族的“永生花”专利。
+\item 塞拉斯·维恩，专利执法官，追查失踪的种子专利及走私者。
+\item 埃拉拉·索恩，天气乐师兼讨债人，希望恢复自己的“雨歌”专利。
+\item 布拉姆韦尔·洛里卡图斯，公证人与雨债仲裁者，计划查封瓦莱里乌斯展厅。
+\end{itemize}
+\sectionlabel{物件与可能行动}
+时序花种子；伪造花粉许可证；瓶装季风齿轮；时间晶格藤插条；雨债账页。玩家可以破坏机械、揭露秘密或提出正式申诉。
+\end{minipage}
+
+\clearpage
+\worldtitle{世界 A}{评分页}
+\small
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X*{5}{>{\centering\arraybackslash}p{8mm}}p{24mm}}
+\ratingheader{陈述}{可选备注}\hline
+\ratingrow{A1. 设定实现。}{生成内容把一句话发展成了独特世界，而不只是换一种说法复述。}
+\ratingrow{A2. 系统连贯性。}{规则、制度、资源、冲突和活动循环之间具有清晰的因果联系。}
+\ratingrow{A3. 社会与人物。}{角色、动机和矛盾呈现出可信的共同体，而非可随意互换的人物。}
+\ratingrow{A4. 空间与物质细节。}{地点和物件具体、易于辨认，并且与世界的运作方式有关。}
+\ratingrow{A5. 互动可能性。}{除普通对话外，这个世界还能让玩家设想多种有意义的行动。}
+\ratingrow{A6. 视觉一致性。}{地图和人物资产清楚可读，并与文字描述属于同一个世界。}
+\ratingrow{A7. 总体判断。}{总体而言，这是一个高质量的生成世界，我愿意进一步探索。}
+\end{tabularx}
+\normalsize
+\responseblock{第一个行动}{进入这个世界后，你首先想尝试哪项会产生后果的行动？}
+\responseblock{最有辨识度的元素}{哪一项生成细节最能赋予这个世界独特身份？}
+\responseblock{一项改进}{哪一个生成元素最需要改进？}
+
+% -----------------------------------------------------------------------------
+\clearpage
+\worldtitle{世界 B}{极光迁徙城邦议庭（Aurora Court of Migrating Cities）}
+\premisebox{一句话设定}{一支由游牧式生物机械城市组成的车队穿越冰封荒原；它们能否生存取决于紧张的外交、资源交易以及对复杂迁徙后勤的管理。}
+
+\vspace{7pt}
+\worldvisuals
+  {\evidencepath/world_asset_sets/creator_20260724_203817_f86ae13e_r001/world_map_source.png}
+  {生成的世界地图}
+  {\evidencepath/aurora_court_of_migrating_cities_main_01/creator_20260724_203817_f86ae13e_r001/raw_character_128.png}
+  {代表性人物图组}
+
+\begin{minipage}[t]{0.48\linewidth}
+\sectionlabel{规则与制度}
+\begin{itemize}
+\item 待客承诺具有契约效力；违约会招致迁徙联盟的制裁。
+\item 一座城市的地位取决于其贸易协定的实力与财富。
+\item 正式争端由极光议庭调停，未经许可的冲突会被视为海盗行为。
+\end{itemize}
+\sectionlabel{活动循环}
+制裁循环；资源争夺；迁徙规划；结成协定。
+\sectionlabel{地点}
+地热管线枢纽；地衣缸水培区；制图师尖塔；废金属交易所。
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\sectionlabel{人物与动机}
+\begin{itemize}
+\item 凯伦·沃斯，交易所仲裁人，需要稀土磁体修建悬浮轨道。
+\item 埃拉拉·索恩，首席制图师，绘制“寂静区”并寻找遗失的黑匣子。
+\item 西斯尔·维恩，地衣缸主管，想证明生物燃料足以维持车队。
+\item 奥莱丝“油渍”杰克斯，首席虹吸师，一边寻找稳定器，一边隐瞒核心裂缝。
+\end{itemize}
+\sectionlabel{物件与可能行动}
+冷冻纤毛执行器；共振陀螺稳定器；日藻口粮；地热核心碎片；冰下制图板。玩家可以提议制裁、缔结迁徙协定或资助远征。
+\end{minipage}
+
+\clearpage
+\worldtitle{世界 B}{评分页}
+\small
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X*{5}{>{\centering\arraybackslash}p{8mm}}p{24mm}}
+\ratingheader{陈述}{可选备注}\hline
+\ratingrow{B1. 设定实现。}{生成内容把一句话发展成了独特世界，而不只是换一种说法复述。}
+\ratingrow{B2. 系统连贯性。}{规则、制度、资源、冲突和活动循环之间具有清晰的因果联系。}
+\ratingrow{B3. 社会与人物。}{角色、动机和矛盾呈现出可信的共同体，而非可随意互换的人物。}
+\ratingrow{B4. 空间与物质细节。}{地点和物件具体、易于辨认，并且与世界的运作方式有关。}
+\ratingrow{B5. 互动可能性。}{除普通对话外，这个世界还能让玩家设想多种有意义的行动。}
+\ratingrow{B6. 视觉一致性。}{地图和人物资产清楚可读，并与文字描述属于同一个世界。}
+\ratingrow{B7. 总体判断。}{总体而言，这是一个高质量的生成世界，我愿意进一步探索。}
+\end{tabularx}
+\normalsize
+\responseblock{第一个行动}{进入这个世界后，你首先想尝试哪项会产生后果的行动？}
+\responseblock{最有辨识度的元素}{哪一项生成细节最能赋予这个世界独特身份？}
+\responseblock{一项改进}{哪一个生成元素最需要改进？}
+
+% -----------------------------------------------------------------------------
+\clearpage
+\worldtitle{世界 C}{菌丝专利市集（Mycelium Patent Bazaar）}
+\premisebox{一句话设定}{在一座由工程菌丝构成的巨大地下城里，敌对公会与家族交易活体技术，从真菌桥梁到加密孢子数据应有尽有。市场依靠创新、知识产权和商业间谍活动繁荣。}
+
+\vspace{7pt}
+\worldvisuals
+  {\evidencepath/world_asset_sets/creator_20260724_211037_1c17ca96_r001/world_map_source.png}
+  {生成的世界地图}
+  {\evidencepath/mycelium_patent_bazaar_main_01/creator_20260724_211037_1c17ca96_r001/raw_character_128.png}
+  {代表性人物图组}
+
+\begin{minipage}[t]{0.48\linewidth}
+\sectionlabel{规则与制度}
+\begin{itemize}
+\item 争端通过仲裁与破坏解决；人身暴力会导致驱逐和资产没收。
+\item 声誉可充当货币，合同具有约束力，违约记录会被公开。
+\item 商人使用身份面具；暴露真名会产生法律与财务责任。
+\end{itemize}
+\sectionlabel{活动循环}
+专利竞赛；间谍与收购；生物嫁接；禁令诉讼。
+\sectionlabel{地点}
+孢子锁保管库；嫁接师摊位；专利文书办公室；菌丝谈判厅。
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\sectionlabel{人物与动机}
+\begin{itemize}
+\item 维斯佩拉·索恩，高级专利仲裁人，寻找“永生花”序列。
+\item 凯伦·沃斯，地下花种经纪人，想注册被禁止的神经连接专利。
+\item 埃拉拉·维恩，嫁接大师，希望让专利办公室失去存在价值。
+\item 贾克森·克雷尔，甲壳物流工头，计划截获原始孢子菌株专利。
+\end{itemize}
+\sectionlabel{物件与可能行动}
+菌密孢子钥匙；甲壳开锁菌；噬日藻专利；再生菌丝贴；微光菌盖瓶。玩家可以核验专利、发起破坏或申请禁令。
+\end{minipage}
+
+\clearpage
+\worldtitle{世界 C}{评分页}
+\small
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X*{5}{>{\centering\arraybackslash}p{8mm}}p{24mm}}
+\ratingheader{陈述}{可选备注}\hline
+\ratingrow{C1. 设定实现。}{生成内容把一句话发展成了独特世界，而不只是换一种说法复述。}
+\ratingrow{C2. 系统连贯性。}{规则、制度、资源、冲突和活动循环之间具有清晰的因果联系。}
+\ratingrow{C3. 社会与人物。}{角色、动机和矛盾呈现出可信的共同体，而非可随意互换的人物。}
+\ratingrow{C4. 空间与物质细节。}{地点和物件具体、易于辨认，并且与世界的运作方式有关。}
+\ratingrow{C5. 互动可能性。}{除普通对话外，这个世界还能让玩家设想多种有意义的行动。}
+\ratingrow{C6. 视觉一致性。}{地图和人物资产清楚可读，并与文字描述属于同一个世界。}
+\ratingrow{C7. 总体判断。}{总体而言，这是一个高质量的生成世界，我愿意进一步探索。}
+\end{tabularx}
+\normalsize
+\responseblock{第一个行动}{进入这个世界后，你首先想尝试哪项会产生后果的行动？}
+\responseblock{最有辨识度的元素}{哪一项生成细节最能赋予这个世界独特身份？}
+\responseblock{一项改进}{哪一个生成元素最需要改进？}
+
+% -----------------------------------------------------------------------------
+\clearpage
+\worldtitle{世界 D}{沉没卫星修道院（Sunken Satellite Monastery）}
+\premisebox{一句话设定}{一个修道团体打捞了一颗坠毁的深空卫星，并由此建立起独特的水下社会；信息、带宽和回收技术是这里最重要的货币。}
+
+\vspace{7pt}
+\worldvisuals
+  {\evidencepath/world_asset_sets/creator_20260724_224121_43ca9360_r001/world_map_source.png}
+  {生成的世界地图}
+  {\evidencepath/sunken_satellite_monastery_main_01/creator_20260724_224121_43ca9360_r001/raw_character_128.png}
+  {代表性人物图组}
+
+\begin{minipage}[t]{0.48\linewidth}
+\sectionlabel{规则与制度}
+\begin{itemize}
+\item 打捞权必须先在档案官处登记，之后才能进行交易。
+\item 打断与卫星数据核心的“共融”仪式是一项严重罪行。
+\item 写入数据晶片的合同对信息与机器的使用权具有约束力。
+\end{itemize}
+\sectionlabel{活动循环}
+打捞循环；信息交易；信号释读；受水压限制的远征。
+\sectionlabel{地点}
+数据圣所；带宽交易所；废件抄写师工坊；静默食堂。
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\sectionlabel{人物与动机}
+\begin{itemize}
+\item 大抄写师瓦伦，虚空频率吟唱者，希望解密“第一信号”。
+\item 凯利斯-9，深压拾荒者与遗物调谐师，寻找“起源钥匙”。
+\item 塔拉萨-柔修女，培育能够抵御信号的生物过滤器。
+\item 泽菲林-缪督主，信号走私者与带宽经纪人，计划出售截获频率。
+\end{itemize}
+\sectionlabel{物件与可能行动}
+陀螺祈祷轮；捕获星光碎片；加密《天主经》；声呐圣歌发射器；深渊眼珍珠。玩家可以解密数据碎片、连接核心或谈判打捞合同。
+\end{minipage}
+
+\clearpage
+\worldtitle{世界 D}{评分页}
+\small
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X*{5}{>{\centering\arraybackslash}p{8mm}}p{24mm}}
+\ratingheader{陈述}{可选备注}\hline
+\ratingrow{D1. 设定实现。}{生成内容把一句话发展成了独特世界，而不只是换一种说法复述。}
+\ratingrow{D2. 系统连贯性。}{规则、制度、资源、冲突和活动循环之间具有清晰的因果联系。}
+\ratingrow{D3. 社会与人物。}{角色、动机和矛盾呈现出可信的共同体，而非可随意互换的人物。}
+\ratingrow{D4. 空间与物质细节。}{地点和物件具体、易于辨认，并且与世界的运作方式有关。}
+\ratingrow{D5. 互动可能性。}{除普通对话外，这个世界还能让玩家设想多种有意义的行动。}
+\ratingrow{D6. 视觉一致性。}{地图和人物资产清楚可读，并与文字描述属于同一个世界。}
+\ratingrow{D7. 总体判断。}{总体而言，这是一个高质量的生成世界，我愿意进一步探索。}
+\end{tabularx}
+\normalsize
+\responseblock{第一个行动}{进入这个世界后，你首先想尝试哪项会产生后果的行动？}
+\responseblock{最有辨识度的元素}{哪一项生成细节最能赋予这个世界独特身份？}
+\responseblock{一项改进}{哪一个生成元素最需要改进？}
+
+% -----------------------------------------------------------------------------
+\clearpage
+\worldtitle{世界 E}{失落语言潮汐使馆（Tidal Embassy of Lost Languages）}
+\premisebox{一句话设定}{一座漂浮使馆是濒危语言交易的唯一枢纽，这些语言被视为政治资产。语言学家、间谍与外交官争夺翻译权和文化记忆的控制权。}
+
+\vspace{7pt}
+\worldvisuals
+  {\evidencepath/world_asset_sets/creator_20260724_215709_f5f54ceb_r001/world_map_source.png}
+  {生成的世界地图}
+  {\evidencepath/tidal_embassy_of_lost_languages_main_01/creator_20260724_215709_f5f54ceb_r001/raw_character_128.png}
+  {代表性人物图组}
+
+\begin{minipage}[t]{0.48\linewidth}
+\sectionlabel{规则与制度}
+\begin{itemize}
+\item 在使馆中公开表达情绪属于严重的外交失礼。
+\item 语言知识同时充当货币、谈判筹码与政治权力。
+\item 错误使用一种语言会被视为会产生后果的政治行为。
+\end{itemize}
+\sectionlabel{活动循环}
+低语叛乱；协议幽灵；翻译权拍卖；来源证明争端。
+\sectionlabel{地点}
+音素交易所；低语缮写室；静默拍卖厅；制图师角落。
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\sectionlabel{人物与动机}
+\begin{itemize}
+\item 埃拉拉·维恩，语音走私者与词汇复原师，寻找“塞壬句法”。
+\item 瓦莱里乌斯·索恩，词汇经纪人，企图垄断“第一语言”。
+\item 凯伦·沃斯督察，调查“寂静瘟疫”的传播。
+\item 莱瑞恩“墨肺”桑德，制图师与记忆地图伪造者，试图恢复家族方言。
+\end{itemize}
+\sectionlabel{物件与可能行动}
+低语海螺；合唱共生体；静默法庭印章；幽灵转录石板；回声墨水。玩家可以解码残留回声、植入模因短语或伪造语言来源。
+\end{minipage}
+
+\clearpage
+\worldtitle{世界 E}{评分页}
+\small
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X*{5}{>{\centering\arraybackslash}p{8mm}}p{24mm}}
+\ratingheader{陈述}{可选备注}\hline
+\ratingrow{E1. 设定实现。}{生成内容把一句话发展成了独特世界，而不只是换一种说法复述。}
+\ratingrow{E2. 系统连贯性。}{规则、制度、资源、冲突和活动循环之间具有清晰的因果联系。}
+\ratingrow{E3. 社会与人物。}{角色、动机和矛盾呈现出可信的共同体，而非可随意互换的人物。}
+\ratingrow{E4. 空间与物质细节。}{地点和物件具体、易于辨认，并且与世界的运作方式有关。}
+\ratingrow{E5. 互动可能性。}{除普通对话外，这个世界还能让玩家设想多种有意义的行动。}
+\ratingrow{E6. 视觉一致性。}{地图和人物资产清楚可读，并与文字描述属于同一个世界。}
+\ratingrow{E7. 总体判断。}{总体而言，这是一个高质量的生成世界，我愿意进一步探索。}
+\end{tabularx}
+\normalsize
+\responseblock{第一个行动}{进入这个世界后，你首先想尝试哪项会产生后果的行动？}
+\responseblock{最有辨识度的元素}{哪一项生成细节最能赋予这个世界独特身份？}
+\responseblock{一项改进}{哪一个生成元素最需要改进？}
+
+\end{document}

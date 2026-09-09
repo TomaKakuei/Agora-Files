@@ -1,0 +1,82 @@
+\usepackage[a4paper,margin=14mm,headheight=15pt]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{AgoraInk}{HTML}{17202A}
+\definecolor{AgoraMuted}{HTML}{5D6D7E}
+\definecolor{AgoraTeal}{HTML}{168A8A}
+\definecolor{AgoraGold}{HTML}{D4A72C}
+\definecolor{AgoraRed}{HTML}{C44E52}
+\definecolor{AgoraPale}{HTML}{F1F5F5}
+\definecolor{AgoraLine}{HTML}{CAD3D8}
+
+\color{AgoraInk}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\leftmargini}{4mm}
+\makeatletter
+\def\@listi{\leftmargin\leftmargini\parsep0pt\topsep2pt\itemsep1.5pt}
+\makeatother
+\renewcommand{\arraystretch}{1.28}
+\pagestyle{myheadings}
+\markright{Agora Human World Evaluation \hfill Version 2026-09-09\qquad}
+\setlength{\fboxsep}{7pt}
+\setlength{\fboxrule}{0.8pt}
+
+\newcommand{\agoratitle}[2]{%
+  {\fontsize{24}{27}\selectfont\bfseries #1\par}
+  \vspace{2pt}
+  {\large\color{AgoraTeal}\bfseries #2\par}
+  \vspace{7pt}\textcolor{AgoraGold}{\rule{\linewidth}{2.2pt}}\vspace{4pt}
+}
+
+\newcommand{\worldtitle}[2]{%
+  {\fontsize{17}{20}\selectfont\bfseries\textcolor{AgoraTeal}{#1}\quad #2\par}
+  \vspace{3pt}\textcolor{AgoraGold}{\rule{\linewidth}{1.8pt}}\vspace{3pt}
+}
+
+\newcommand{\premisebox}[2]{%
+  \noindent\fcolorbox{AgoraGold}{AgoraPale}{%
+    \begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+      \textbf{#1}\quad #2
+    \end{minipage}}
+}
+
+\newcommand{\sectionlabel}[1]{%
+  \par\vspace{3pt}{\large\bfseries\textcolor{AgoraTeal}{#1}}\par\vspace{-2pt}
+}
+
+\newcommand{\worldvisuals}[4]{%
+  \begin{minipage}[t]{0.64\linewidth}
+    \centering
+    \includegraphics[width=\linewidth,height=0.34\textheight,keepaspectratio]{#1}\\[-1pt]
+    {\small\color{AgoraMuted}#2}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.32\linewidth}
+    \centering
+    \includegraphics[width=\linewidth,height=0.28\textheight,keepaspectratio]{#3}\\[-1pt]
+    {\small\color{AgoraMuted}#4}
+  \end{minipage}
+}
+
+\newcommand{\ratingheader}[2]{%
+  \textbf{#1} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{#2}\\
+}
+
+\newcommand{\ratingrow}[2]{%
+  \textbf{#1} #2 & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & \\\hline
+}
+
+\newcommand{\shortline}{\par\vspace{4pt}\textcolor{AgoraLine}{\rule{\linewidth}{0.45pt}}}
+
+\newcommand{\responseblock}[2]{%
+  \vspace{4pt}\textbf{#1}\par
+  {\small\color{AgoraMuted}#2}\par
+  \shortline\shortline\shortline
+}
+
+\newcommand{\evidencepath}{../figure_sources/input_snapshot/frontend/assets/generated}
