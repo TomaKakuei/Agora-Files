@@ -1,0 +1,2846 @@
+{
+  "world_name": "Sunken Satellite Monastery",
+  "world_id": "sunken_satellite_monastery_01",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "coastal_trade_city",
+    "profile_id": "coastal_trade_city",
+    "locale": "en-US",
+    "tone": "reverent, industrial, claustrophobic",
+    "visual_direction": "bioluminescent abyss meets rusted orbital debris",
+    "currency_code": "HBR",
+    "currency_symbol": "hc",
+    "currency_minor_unit": "mark",
+    "currency_name": "Signal Credits",
+    "domain_label": "abyssal-monastery.agora",
+    "starting_wallet_minor": {
+      "min": 2400,
+      "max": 11000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "deep_sea_industrial_v1",
+      "frontend_affordance_id": "salvage_ui_kit",
+      "asset_prompt_kit_id": "orbital_relic_gen"
+    },
+    "policy_refs": {
+      "economy_policy_id": "harbor_chit_v1",
+      "item_collection_id": "harbor_trade_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "coastal_trade_city_v1",
+      "property_policy_id": "coastal_trade_city_v1",
+      "knowledge_policy_id": "coastal_trade_city_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "post-orbital ocean monastery",
+  "premise": "A religious order guards a crashed satellite beneath a sea dome, trading data-relics for survival.",
+  "simulation_objective": "Model a high-stakes economy based on signal bandwidth and deep-sea salvage rights.",
+  "agent_count_target": 25,
+  "player_count_target": 50,
+  "wall_color_theme": "oxidized_copper_conduits",
+  "economy_focus": "signal-bandwidth, salvage-labor, and pressure-suit maintenance",
+  "exploration_focus": "external wreckage fields and encrypted data-archives",
+  "conflict_tone": "commercial rivalry and theological disputes over data-purity",
+  "visual_style": "cyber-gothic underwater industrialism",
+  "rooms": [
+    {
+      "name": "Airlock Alpha-9",
+      "biome": "pressurized_industrial",
+      "purpose": "Decompression and suit maintenance",
+      "decor_tags": [
+        "gaskets",
+        "pressure_gauges",
+        "rubber_mats"
+      ],
+      "activity_tags": [
+        "suit_scrubbing",
+        "depressurization"
+      ],
+      "flux_floor_prompt": "top-down pixel art of heavy industrial rubberized floor tiles with yellow hazard stripes and drainage grates, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a circular airlock chamber, reinforced polymer glass walls, mechanical scrubbing arms, pressurized rubber gaskets, no text, no labels, pixel art style, edge-to-edge floor texture",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "focused_blue",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "scrub_station_01",
+          "label": "Suit Scrubbing Rig",
+          "description": "A mechanical frame with high-pressure nozzles for cleaning silt from diving suits.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Signal Altar",
+      "biome": "cyber_monastic",
+      "purpose": "Data-relic decryption and worship",
+      "decor_tags": [
+        "server_racks",
+        "fiber_optics",
+        "incense_burners"
+      ],
+      "activity_tags": [
+        "ritual_decryption",
+        "prayer"
+      ],
+      "flux_floor_prompt": "top-down pixel art of dark rusted hull plating with glowing cyan fiber-optic circuits embedded in the metal, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a gothic server cathedral, arched server racks, central satellite core pulsing with light, bioluminescent algae candles, no text, no labels, pixel art style, edge-to-edge floor texture",
+      "width_tiles": 10,
+      "height_tiles": 12,
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "satellite_core",
+          "label": "Crashed Core Fragment",
+          "description": "A massive titanium sphere leaking data-cables and cyan light.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Bandwidth Exchange",
+      "biome": "underwater_market",
+      "purpose": "Trading data packets for oxygen and food",
+      "decor_tags": [
+        "monitors",
+        "trading_stalls",
+        "cables"
+      ],
+      "activity_tags": [
+        "bartering",
+        "data_transfer"
+      ],
+      "flux_floor_prompt": "top-down pixel art of scuffed titanium plates with glowing orange data-conduits running underneath, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a data market, stalls made of salvaged satellite panels, flickering CRT monitors, bundles of oxidized copper wiring, no text, no labels, pixel art style, edge-to-edge floor texture",
+      "width_tiles": 12,
+      "height_tiles": 8,
+      "ambient_palette": "focused_blue",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "bandwidth_terminal",
+          "label": "The Great Uplink",
+          "description": "A heavy terminal where traders plug in data-relics to verify signal strength.",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Hydro-Ponic Crypt",
+      "biome": "bioluminescent_garden",
+      "purpose": "Growing algae for oxygen and nutrients",
+      "decor_tags": [
+        "vats",
+        "algae",
+        "pipes"
+      ],
+      "activity_tags": [
+        "harvesting",
+        "oxygen_scrubbing"
+      ],
+      "flux_floor_prompt": "top-down pixel art of wet dark-silt flooring with patches of glowing green bioluminescent moss, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of an algae farm, glass vats filled with glowing green liquid, exposed conduit ribbing, bubbling oxygenators, no text, no labels, pixel art style, edge-to-edge floor texture",
+      "width_tiles": 8,
+      "height_tiles": 10,
+      "ambient_palette": "soft_mint",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "algae_vat_alpha",
+          "label": "Oxygenator Vat",
+          "description": "A large polymer-glass cylinder filled with swirling bioluminescent algae.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Salvage Yard Gamma",
+      "biome": "industrial_wreckage",
+      "purpose": "Sorting satellite debris",
+      "decor_tags": [
+        "scrap",
+        "cranes",
+        "magnets"
+      ],
+      "activity_tags": [
+        "sorting",
+        "dismantling"
+      ],
+      "flux_floor_prompt": "top-down pixel art of heavily rusted hull plating covered in dark silt and metal shavings, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a salvage yard, piles of corroded titanium, mechanical sorting claws, jagged carbon fiber wreckage, no text, no labels, pixel art style, edge-to-edge floor texture",
+      "width_tiles": 14,
+      "height_tiles": 14,
+      "ambient_palette": "dusty_brown",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "magnetic_crane",
+          "label": "Debris Lifter",
+          "description": "A ceiling-mounted magnetic crane for moving heavy satellite panels.",
+          "anchor": "north_east",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Silent Observatory",
+      "biome": "abyssal_viewpoint",
+      "purpose": "Monitoring the sea floor and signal interference",
+      "decor_tags": [
+        "telescopes",
+        "glass_domes",
+        "charts"
+      ],
+      "activity_tags": [
+        "scanning",
+        "watching"
+      ],
+      "flux_floor_prompt": "top-down pixel art of polished black polymer flooring reflecting faint cyan lights, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a small observation dome, massive reinforced glass floor looking into the abyss, sonar consoles, no text, no labels, pixel art style, edge-to-edge floor texture",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "low_lantern",
+      "archetype": "lookout",
+      "scene_components": [
+        {
+          "component_id": "sonar_array",
+          "label": "Abyssal Sonar",
+          "description": "A rotating holographic display showing the surrounding sea-floor topography.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Monk's Refectory",
+      "biome": "cyber_monastic",
+      "purpose": "Socializing and nutrient consumption",
+      "decor_tags": [
+        "benches",
+        "dispensers",
+        "tapestries"
+      ],
+      "activity_tags": [
+        "eating",
+        "communing"
+      ],
+      "flux_floor_prompt": "top-down pixel art of dark-teal ceramic tiles with copper inlay patterns, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a monastic dining hall, long metal tables, nutrient paste dispensers, cyber-gothic tapestries on walls, no text, no labels, pixel art style, edge-to-edge floor texture",
+      "width_tiles": 10,
+      "height_tiles": 6,
+      "ambient_palette": "warm_lantern",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "nutrient_dispenser",
+          "label": "The Algae Tap",
+          "description": "A copper-piped machine that dispenses flavored nutrient slurries.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The High Council Chamber",
+      "biome": "cyber_monastic",
+      "purpose": "Governance and signal strategy",
+      "decor_tags": [
+        "thrones",
+        "holograms",
+        "banners"
+      ],
+      "activity_tags": [
+        "debating",
+        "ruling"
+      ],
+      "flux_floor_prompt": "top-down pixel art of ornate hexagonal titanium tiles with glowing cyan borders, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a hexagonal council chamber, a ring of high-backed server-thrones, central holographic map of the satellite, no text, no labels, pixel art style, edge-to-edge floor texture",
+      "width_tiles": 12,
+      "height_tiles": 12,
+      "ambient_palette": "focused_blue",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "council_throne",
+          "label": "Archivist Throne",
+          "description": "A bulky chair integrated with data-cables and life-support systems.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Abbot Kaelen-01",
+      "role_name": "High Signal-Bearer",
+      "activity": "Calibrating the resonance frequencies of the Signal Altar",
+      "home_base": "The High Council Chamber",
+      "arc_goal": "To decrypt the 'First Transmission' hidden within the monastery's core memory banks.",
+      "inventory": [
+        {
+          "name": "SSM-001: Void-Glass Rosary",
+          "description": "Beads made from solidified vacuum that hum when near data streams.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-002: Frequency Tuning Fork",
+          "description": "A vibrating tool used to align the monastery's psychic-radio antennas.",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-003: Sanctified Data-Wafer",
+          "description": "A gold-plated storage medium containing the monastery's founding hymns.",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-004: Solar-Flare Incense",
+          "description": "Chemically treated pellets that release ionized gas when burned.",
+          "quantity": 12
+        },
+        {
+          "name": "SSM-005: Copper-Threaded Habit",
+          "description": "A ceremonial robe designed to shield the wearer from electromagnetic interference.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-006: Binary Scripture Scroll",
+          "description": "Long strips of parchment printed with machine-code prayers.",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-007: Static-Capture Jar",
+          "description": "A vacuum-sealed container holding a literal piece of cosmic background noise.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-008: Monastic Key-Chime",
+          "description": "A musical key that unlocks the heavy lead doors of the Refectory.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Altar Terminal",
+          "asset_type": "Relic Interface",
+          "description": "A massive brass-bound computer console.",
+          "story_use": "Used to broadcast prayers to the deep stars."
+        },
+        {
+          "asset_name": "The Lead-Lined Cell",
+          "asset_type": "Living Quarters",
+          "description": "A small, quiet room shielded from all external signals.",
+          "story_use": "A place for deep meditation and data-fasting."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Celestial Navigation",
+          "summary": "Understanding the monastery's drift through the nebula.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "The Great Silence",
+          "summary": "Theological theories on why the stars stopped answering.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Salvage-Acolyte Nix",
+      "role_name": "Scrap-Merchant and Scavenger",
+      "activity": "Sorting through debris for viable circuit-boards",
+      "home_base": "Salvage Yard Gamma",
+      "arc_goal": "To trade enough components to buy a seat on the next passing freighter.",
+      "inventory": [
+        {
+          "name": "SSM-009: Oxidized Capacitor",
+          "description": "A rusted but functional energy storage unit.",
+          "quantity": 14
+        },
+        {
+          "name": "SSM-010: Plasma Torch Nib",
+          "description": "Replacement tips for heavy-duty cutting tools.",
+          "quantity": 20
+        },
+        {
+          "name": "SSM-011: Magnetic Grapple-Hook",
+          "description": "A handheld device for pulling scrap in zero-G.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-012: Crushed Satellite Foil",
+          "description": "Highly reflective insulation material used for bartering.",
+          "quantity": 50
+        },
+        {
+          "name": "SSM-013: Corrupted Logic Core",
+          "description": "A damaged AI brain used for its raw silicon value.",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-014: O-Ring Assortment",
+          "description": "Various rubber seals essential for airlock maintenance.",
+          "quantity": 30
+        },
+        {
+          "name": "SSM-015: Solder-Paste Tube",
+          "description": "Industrial adhesive for quick electronic repairs.",
+          "quantity": 10
+        },
+        {
+          "name": "SSM-016: Radiation-Dose Badge",
+          "description": "A small sticker that changes color when the wearer is dying.",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-017: Scrap-Metal Shards",
+          "description": "Generic hull plating used as currency in the Yard.",
+          "quantity": 100
+        },
+        {
+          "name": "SSM-018: Hydraulic Fluid Pouch",
+          "description": "Viscous blue liquid for powering heavy machinery.",
+          "quantity": 8
+        },
+        {
+          "name": "SSM-019: Wire-Stripping Tool",
+          "description": "A well-worn manual tool for reclaiming copper.",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-020: Filter-Mesh Square",
+          "description": "Replacement fabric for air purification systems.",
+          "quantity": 15
+        },
+        {
+          "name": "SSM-021: Bolt-Cutter Power-Cell",
+          "description": "A small battery for high-torque cutting tools.",
+          "quantity": 4
+        },
+        {
+          "name": "SSM-022: Thermal-Paste Syringe",
+          "description": "Used to prevent processor overheating.",
+          "quantity": 6
+        },
+        {
+          "name": "SSM-023: Identification Tag Bundle",
+          "description": "Dog tags recovered from long-dead satellite technicians.",
+          "quantity": 12
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Compactor",
+          "asset_type": "Industrial Machinery",
+          "description": "A hydraulic press for crushing junk into cubes.",
+          "story_use": "Used to hide contraband inside scrap blocks."
+        },
+        {
+          "asset_name": "The Gamma Shack",
+          "asset_type": "Workshop",
+          "description": "A pressurized lean-to built from old solar panels.",
+          "story_use": "Nix's base of operations and storefront."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Hull Integrity",
+          "summary": "Identifying weak points in the monastery's outer skin.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Black Market Routes",
+          "summary": "Hidden paths through the airlocks to avoid the Monks.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Sister Veda",
+      "role_name": "Hydro-Ponic Warden",
+      "activity": "Pruning the bioluminescent vines in the crypt",
+      "home_base": "Hydro-Ponic Crypt",
+      "arc_goal": "To engineer a plant species capable of filtering radiation from the station's air.",
+      "inventory": [
+        {
+          "name": "SSM-024: Nutrient-Infused Soil",
+          "description": "Rich, dark earth recycled from organic waste.",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-025: Bioluminescent Seed-Pod",
+          "description": "Seeds that glow with a soft blue light when planted.",
+          "quantity": 25
+        },
+        {
+          "name": "SSM-026: Ceramic Mist-Nozzle",
+          "description": "A precision tip for the automated irrigation system.",
+          "quantity": 10
+        },
+        {
+          "name": "SSM-027: Pruning Laser",
+          "description": "A low-power beam for delicate botanical surgery.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-028: Algae-Paste Tube",
+          "description": "Concentrated food source grown in the crypt tanks.",
+          "quantity": 12
+        },
+        {
+          "name": "SSM-029: PH-Testing Strips",
+          "description": "Paper indicators for monitoring water acidity.",
+          "quantity": 50
+        },
+        {
+          "name": "SSM-030: Grafting Tape",
+          "description": "Synthetic adhesive for joining different plant stems.",
+          "quantity": 4
+        },
+        {
+          "name": "SSM-031: Oxygen-Level Sensor",
+          "description": "A handheld device that chirps in thin air.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Great Vat",
+          "asset_type": "Hydroponic Tank",
+          "description": "A massive glass cylinder filled with nutrient slurry.",
+          "story_use": "The primary source of the monastery's oxygen and food."
+        },
+        {
+          "asset_name": "The Seed Vault",
+          "asset_type": "Secure Storage",
+          "description": "A temperature-controlled locker for ancient Earth seeds.",
+          "story_use": "A sacred site containing the monastery's biological heritage."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Xeno-Botany",
+          "summary": "The study of plants mutated by cosmic radiation.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Recycling Cycles",
+          "summary": "The delicate balance of the station's life support.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Observer Elara",
+      "role_name": "Void-Gazer",
+      "activity": "Mapping the movement of the distant pulsar",
+      "home_base": "The Silent Observatory",
+      "arc_goal": "To find the coordinates of the 'Second Sun' mentioned in the prophecies.",
+      "inventory": [
+        {
+          "name": "SSM-032: Star-Chart Lens",
+          "description": "A polished crystal that overlays constellations on the eye.",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-033: Chronometer-Relic",
+          "description": "An ancient mechanical watch that keeps 'Earth Time'.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-034: Ink-Stained Stylus",
+          "description": "A tool for hand-drawing maps on vellum.",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-035: Telescope Calibration Key",
+          "description": "A heavy iron tool for adjusting the main mirrors.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-036: Star-Dust Sample",
+          "description": "A microscopic collection of particles from the exterior hull.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-037: Dark-Matter Filter",
+          "description": "A mesh screen used to block out visual interference.",
+          "quantity": 4
+        },
+        {
+          "name": "SSM-038: Logbook of Shadows",
+          "description": "A diary recording every eclipse seen in the last decade.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-039: Signal-Dampening Earplugs",
+          "description": "Worn to maintain focus during high-frequency solar storms.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Grand Refractor",
+          "asset_type": "Telescope",
+          "description": "A room-sized array of lenses pointed at the void.",
+          "story_use": "Used to track incoming ships and celestial events."
+        },
+        {
+          "asset_name": "The Star-Map Table",
+          "asset_type": "Holographic Projector",
+          "description": "A flickering table that displays the local sector.",
+          "story_use": "Used for planning the monastery's rare orbital corrections."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Astrophysics",
+          "summary": "The physics of the nebula surrounding the monastery.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Prophetic Alignment",
+          "summary": "Matching star patterns to ancient religious texts.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Exarch Thorne",
+      "role_name": "Bandwidth Arbitrator",
+      "activity": "Regulating the flow of sacred data streams",
+      "home_base": "Bandwidth Exchange",
+      "arc_goal": "To seize control of the Signal Altar from Abbot Kaelen-01",
+      "inventory": [
+        {
+          "name": "SSM-016 Data-Scythe",
+          "description": "A curved blade that severs digital connections.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-017 Encrypted Ledger",
+          "description": "Records of every bandwidth debt in the monastery.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-018 Void-Glass Monocle",
+          "description": "Allows the wearer to see packet loss in real-time.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-019 Signal Jammer",
+          "description": "A small device that creates a 5-meter dead zone.",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-020 Copper-Threaded Robes",
+          "description": "Protects the wearer from electromagnetic interference.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-021 Logic Gate Keys",
+          "description": "Physical overrides for the Exchange's sub-routines.",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-022 Static-Infused Incense",
+          "description": "Calms the nerves of stressed data-monks.",
+          "quantity": 12
+        },
+        {
+          "name": "SSM-023 Compressed Memory Core",
+          "description": "Contains the history of the first satellite launch.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Central Hub",
+          "asset_type": "Infrastructure",
+          "description": "The primary routing station for all incoming signals.",
+          "story_use": "Thorne uses this to tax the other monks for their data usage."
+        },
+        {
+          "asset_name": "Debt-Slave Roster",
+          "asset_type": "Document",
+          "description": "A list of acolytes who owe bandwidth to the Exchange.",
+          "story_use": "Used to blackmail Nix into providing free salvage."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-001",
+          "topic": "Bandwidth Throttling",
+          "summary": "The art of slowing signals to maintain social hierarchy.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KNOW-002",
+          "topic": "Kaelen's Frequency",
+          "summary": "The specific resonance Abbot Kaelen uses to communicate with the Void.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Quartermaster Jora",
+      "role_name": "Relic Trafficker",
+      "activity": "Appraising forbidden tech from the debris fields",
+      "home_base": "Salvage Yard Gamma",
+      "arc_goal": "To smuggle a functional propulsion unit out of the monastery",
+      "inventory": [
+        {
+          "name": "SSM-024 Rust-Eater Acid",
+          "description": "Dissolves oxidized plating without damaging circuits.",
+          "quantity": 10
+        },
+        {
+          "name": "SSM-025 Gravity-Hook",
+          "description": "A handheld tether for securing floating debris.",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-026 Pre-Collapse Circuitry",
+          "description": "Rare gold-plated boards from the old world.",
+          "quantity": 15
+        },
+        {
+          "name": "SSM-027 Thermal Cutting Torch",
+          "description": "Cuts through reinforced satellite hulls.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-028 Radiation Scrubbers",
+          "description": "Disposable filters for airlock breathing masks.",
+          "quantity": 20
+        },
+        {
+          "name": "SSM-029 Magnetic Ore Samples",
+          "description": "Raw materials extracted from asteroid fragments.",
+          "quantity": 50
+        },
+        {
+          "name": "SSM-030 Illicit Signal Booster",
+          "description": "A modified transceiver that bypasses the Exchange.",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-031 Vacuum-Sealed Rations",
+          "description": "Nutrient paste salvaged from ancient escape pods.",
+          "quantity": 30
+        },
+        {
+          "name": "SSM-032 Hydraulic Piston",
+          "description": "Heavy-duty actuator for monastery door repairs.",
+          "quantity": 4
+        },
+        {
+          "name": "SSM-033 Fiber-Optic Wire Spool",
+          "description": "High-grade cabling for internal networking.",
+          "quantity": 100
+        },
+        {
+          "name": "SSM-034 Scavenger's Multi-Tool",
+          "description": "A modular device with 40 different sensor heads.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-035 Lead-Lined Crate",
+          "description": "Used for transporting volatile power cells.",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-036 Inert Thruster Nozzle",
+          "description": "A heavy component Jora is trying to repair.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-037 Identification Chits",
+          "description": "Stolen tags from deceased satellite technicians.",
+          "quantity": 12
+        },
+        {
+          "name": "SSM-038 Pressure Gauge",
+          "description": "Analog tool for checking airlock integrity.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Smuggler's Vent",
+          "asset_type": "Secret Passage",
+          "description": "A maintenance shaft leading from the Yard to the Airlock.",
+          "story_use": "Jora uses this to move goods without Thorne's knowledge."
+        },
+        {
+          "asset_name": "The Heavy Crane",
+          "asset_type": "Machinery",
+          "description": "A massive claw used for moving satellite husks.",
+          "story_use": "Can be used as a weapon or to block the Yard entrance."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-003",
+          "topic": "Hull Weakpoints",
+          "summary": "Knowledge of where to strike satellite debris to break it open.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "KNOW-004",
+          "topic": "Nix's Secret Stash",
+          "summary": "The location of the best circuit-boards Nix has hidden.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Archivist Zephyr",
+      "role_name": "Memory Weaver",
+      "activity": "Transcribing the whispers of the Silent Observatory",
+      "home_base": "The Silent Observatory",
+      "arc_goal": "To decode the 'Final Transmission' before the monastery loses orbit",
+      "inventory": [
+        {
+          "name": "SSM-039 Star-Chart Parchment",
+          "description": "Hand-drawn maps of the shifting constellations.",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-040 Resonance Tuning Fork",
+          "description": "Used to align the Observatory's sensors.",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-041 Ink of the Void",
+          "description": "Bioluminescent fluid harvested from Sister Veda's vines.",
+          "quantity": 10
+        },
+        {
+          "name": "SSM-042 Chrono-Compass",
+          "description": "A device that tracks time relative to the galactic core.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-043 Glass Data-Slates",
+          "description": "Fragile storage devices for astronomical observations.",
+          "quantity": 8
+        },
+        {
+          "name": "SSM-044 Weighted Prayer Beads",
+          "description": "Used to maintain focus during long observation shifts.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-045 Magnification Lens",
+          "description": "A polished crystal for the main telescope.",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-046 Solar-Flare Shield",
+          "description": "A portable screen to protect eyes from sudden bursts.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Great Lens",
+          "asset_type": "Instrument",
+          "description": "The primary optical sensor of the monastery.",
+          "story_use": "Zephyr uses this to track the pulsar Elara is mapping."
+        },
+        {
+          "asset_name": "The Archive Vault",
+          "asset_type": "Room",
+          "description": "A temperature-controlled room for physical records.",
+          "story_use": "The only place safe from Exarch Thorne's data-wiping."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-005",
+          "topic": "Pulsar Patterns",
+          "summary": "The rhythmic code hidden in the light of the distant star.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "KNOW-006",
+          "topic": "Orbital Decay",
+          "summary": "Calculations showing the monastery is falling into the planet.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Inquisitor Malakor",
+      "role_name": "Signal Purifier",
+      "activity": "Hunting for 'Static-Heretics' in the Refectory",
+      "home_base": "The High Council Chamber",
+      "arc_goal": "To purge Sister Veda's crypt of 'unholy' biological growth",
+      "inventory": [
+        {
+          "name": "SSM-047 Cauterizing Brand",
+          "description": "A heated iron used to mark those who spread noise.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-048 Frequency Scanner",
+          "description": "Detects unauthorized radio transmissions.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-049 Book of Silence",
+          "description": "The monastic code regarding signal purity.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-050 Neural-Whip",
+          "description": "A weapon that disrupts the target's nervous system.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-051 Vials of Holy Oil",
+          "description": "Used to lubricate the sacred machinery.",
+          "quantity": 6
+        },
+        {
+          "name": "SSM-052 Noise-Canceling Earplugs",
+          "description": "Blocks out all sound for deep meditation.",
+          "quantity": 4
+        },
+        {
+          "name": "SSM-053 Iron Mask",
+          "description": "A ceremonial helm that restricts the wearer's speech.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-054 Restraining Shackles",
+          "description": "Magnetic cuffs for subduing heretics.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Judgment Seat",
+          "asset_type": "Furniture",
+          "description": "A throne in the Council Chamber where sentences are passed.",
+          "story_use": "Malakor uses this to intimidate those accused of signal-heresy."
+        },
+        {
+          "asset_name": "The Purification Chamber",
+          "asset_type": "Room",
+          "description": "A small room used for 're-calibrating' wayward monks.",
+          "story_use": "Where Malakor interrogates those who trade with Jora."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-007",
+          "topic": "Heresy Detection",
+          "summary": "Identifying the signs of a monk who listens to the 'Static'.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "KNOW-008",
+          "topic": "Crypt Layout",
+          "summary": "The secret paths Sister Veda uses to hide her experiments.",
+          "confidence": 65
+        }
+      ]
+    },
+    {
+      "display_name": "Deacon Vane",
+      "role_name": "Static-Exorcist",
+      "activity": "Purging corrupted data-ghosts from the Bandwidth Exchange",
+      "home_base": "Bandwidth Exchange",
+      "arc_goal": "To find the source of the 'Hollow Signal' that drove his predecessor mad.",
+      "inventory": [
+        {
+          "name": "SSM-016 Void-Salt",
+          "description": "Crystalline residue used to stabilize flickering holograms.",
+          "quantity": 12
+        },
+        {
+          "name": "SSM-017 Frequency Tuning Fork",
+          "description": "A heavy brass tool that vibrates when near digital corruption.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-018 Sanctified Faraday Cloak",
+          "description": "Lead-lined vestments that protect the wearer from EMP bursts.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-019 Logic-Gate Incense",
+          "description": "Slow-burning pellets that emit a smoke capable of revealing laser-trips.",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-020 Data-Urn",
+          "description": "A containment vessel for captured malicious sub-routines.",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-021 Script-Whip",
+          "description": "A fiber-optic lash used to physically interact with hard-light constructs.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-022 Binary Rosary",
+          "description": "Beads representing the fundamental 1s and 0s of the Great Transmission.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-023 Signal-Dampening Pouch",
+          "description": "A small bag that hides the user's biometric signature from sensors.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Exorcism Suite",
+          "asset_type": "Laboratory",
+          "description": "A shielded terminal room within the Exchange for isolating viruses.",
+          "story_use": "Vane uses this to interrogate captured data-ghosts for information."
+        },
+        {
+          "asset_name": "Vane's Cipher-Key",
+          "asset_type": "Digital Tool",
+          "description": "A master override key granted by the High Council.",
+          "story_use": "Allows Vane to bypass security locks during emergency purges."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SSM-001",
+          "topic": "Static-Ghost Patterns",
+          "summary": "The behavioral cycles of residual consciousness trapped in the station's buffers.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-SSM-002",
+          "topic": "Inquisitor Malakor's Methods",
+          "summary": "Vane finds Malakor's purges too blunt and prefers surgical data-extraction.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Merchant-Priest Olo",
+      "role_name": "Relic Broker",
+      "activity": "Bartering ancient processor-cores for nutrient paste",
+      "home_base": "Salvage Yard Gamma",
+      "arc_goal": "To acquire enough 'Old World' silicon to rebuild the station's primary logic-core.",
+      "inventory": [
+        {
+          "name": "SSM-024 Gilded Heat-Sink",
+          "description": "A decorative but functional cooling unit from a pre-fall server.",
+          "quantity": 4
+        },
+        {
+          "name": "SSM-025 Nutrient Paste Tube (Spicy)",
+          "description": "The only flavor of paste that hasn't expired.",
+          "quantity": 20
+        },
+        {
+          "name": "SSM-026 Cracked Memory Crystal",
+          "description": "Contains fragments of 21st-century entertainment media.",
+          "quantity": 8
+        },
+        {
+          "name": "SSM-027 Copper-Wire Spool",
+          "description": "High-purity conductive material salvaged from the outer hull.",
+          "quantity": 15
+        },
+        {
+          "name": "SSM-028 Pressure-Seal Gaskets",
+          "description": "Essential for keeping the monastery airtight.",
+          "quantity": 30
+        },
+        {
+          "name": "SSM-029 Bioluminescent Moss Spores",
+          "description": "Traded from Sister Veda for lighting dark corridors.",
+          "quantity": 10
+        },
+        {
+          "name": "SSM-030 Rusty Hydraulic Fluid",
+          "description": "Low-grade lubricant for heavy salvage machinery.",
+          "quantity": 12
+        },
+        {
+          "name": "SSM-031 Encrypted Holo-Tags",
+          "description": "Used as a local currency among the lower-tier acolytes.",
+          "quantity": 50
+        },
+        {
+          "name": "SSM-032 Oxygen Scrubber Filters",
+          "description": "Highly sought-after maintenance components.",
+          "quantity": 6
+        },
+        {
+          "name": "SSM-033 Salvage-Claw Tips",
+          "description": "Diamond-tipped replacements for heavy-duty excavators.",
+          "quantity": 10
+        },
+        {
+          "name": "SSM-034 Solar-Cell Shards",
+          "description": "Broken panels that still hold a minor charge.",
+          "quantity": 25
+        },
+        {
+          "name": "SSM-035 Synthetic Leather Straps",
+          "description": "Durable binding material for securing cargo.",
+          "quantity": 40
+        },
+        {
+          "name": "SSM-036 Emergency Flare-Pens",
+          "description": "Chemical lights that burn even in a vacuum.",
+          "quantity": 18
+        },
+        {
+          "name": "SSM-037 Recycled Water Chits",
+          "description": "Proof of credit at the station's filtration plants.",
+          "quantity": 100
+        },
+        {
+          "name": "SSM-038 Magnetic Cargo Hooks",
+          "description": "Industrial strength magnets for moving heavy scrap.",
+          "quantity": 8
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gamma Stall",
+          "asset_type": "Marketplace",
+          "description": "A reinforced shipping container converted into a storefront.",
+          "story_use": "The primary hub for all non-sacred trade in the monastery."
+        },
+        {
+          "asset_name": "Olo's Scales",
+          "asset_type": "Measuring Tool",
+          "description": "A precision balance that measures the purity of precious metals.",
+          "story_use": "Used to settle disputes over the value of salvaged tech."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SSM-003",
+          "topic": "Black Market Routes",
+          "summary": "Hidden paths through the ventilation shafts to avoid Inquisitor Malakor.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K-SSM-004",
+          "topic": "Nix's Scavenging Spots",
+          "summary": "Olo knows exactly where Nix finds the best circuit-boards.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Scribe Elos",
+      "role_name": "Signal-Cartographer",
+      "activity": "Drafting star-charts based on the Silent Observatory's data",
+      "home_base": "The Silent Observatory",
+      "arc_goal": "To map the 'Dead Zone' where the Signal Altar's reach fails.",
+      "inventory": [
+        {
+          "name": "SSM-039 Star-Chart Parchment",
+          "description": "Treated vellum that reacts to ultraviolet light.",
+          "quantity": 10
+        },
+        {
+          "name": "SSM-040 Drafting Compass",
+          "description": "A precision instrument for measuring celestial angles.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-041 Pulsar-Ink",
+          "description": "Glows with a rhythmic pulse, used for marking active stars.",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-042 Magnifying Monocle",
+          "description": "A multi-lens eyepiece for inspecting micro-fiche.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-043 Void-Exposure Meter",
+          "description": "Measures the level of cosmic radiation on the station's exterior.",
+          "knowledge_id": "K-SSM-005",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-044 Telescopic Pointer",
+          "description": "Used to indicate specific coordinates on the great ceiling map.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-045 Chronometer Watch",
+          "description": "A mechanical backup for when digital clocks desync.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-046 Lead-Lined Scroll Case",
+          "description": "Protects sensitive maps from solar flares.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Mapping Desk",
+          "asset_type": "Furniture",
+          "description": "A massive stone slab etched with the current known galaxy.",
+          "story_use": "The central point for planning any external salvage expeditions."
+        },
+        {
+          "asset_name": "The Zenith Lens",
+          "asset_type": "Optical Tool",
+          "description": "A hand-held filter that reveals hidden spectrums in the stars.",
+          "story_use": "Allows Elos to see 'Signal Trails' invisible to the naked eye."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SSM-005",
+          "topic": "Pulsar Navigation",
+          "summary": "Using the rhythm of the stars to calculate the station's drift.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "K-SSM-006",
+          "topic": "Archivist Zephyr's Secrets",
+          "summary": "Elos has seen Zephyr hiding scrolls that don't match official records.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Warden Krix",
+      "role_name": "Airlock Sentinel",
+      "activity": "Inspecting incoming salvage for biological contaminants",
+      "home_base": "Airlock Alpha-9",
+      "arc_goal": "To prevent the 'Creeping Rust' fungus from entering the main monastery.",
+      "inventory": [
+        {
+          "name": "SSM-047 Decontamination Spray",
+          "description": "A harsh chemical mix that kills space-borne spores.",
+          "quantity": 10
+        },
+        {
+          "name": "SSM-048 Thermal Scanner",
+          "description": "Handheld device for detecting life-signs through bulkheads.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-049 Heavy-Duty Bolt-Cutter",
+          "description": "For opening jammed crates or emergency egress.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-050 Pressure-Suit Patch Kit",
+          "description": "Quick-dry resin for sealing suit punctures.",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-051 Sonic Stun-Baton",
+          "description": "Non-lethal defense against agitated scavengers.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-052 Bio-Hazard Bags",
+          "description": "Reinforced plastic for disposing of infected materials.",
+          "quantity": 20
+        },
+        {
+          "name": "SSM-053 Identification Stamper",
+          "description": "Marks approved cargo with a UV-reactive seal.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-054 Emergency Oxygen Tank",
+          "description": "A small 10-minute supply for airlock failures.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Alpha-9 Sentry Post",
+          "asset_type": "Fortification",
+          "description": "A reinforced booth overlooking the main docking bay.",
+          "story_use": "Krix uses this to control access to the monastery's interior."
+        },
+        {
+          "asset_name": "The Quarantine Vault",
+          "asset_type": "Storage",
+          "description": "A lead-shielded room for holding suspicious items.",
+          "story_use": "Where Krix stores items that Sister Veda needs to inspect for rot."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SSM-007",
+          "topic": "Docking Protocols",
+          "summary": "The specific sequence of signals required to land safely.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "K-SSM-008",
+          "topic": "Smuggling Tactics",
+          "condition": 90,
+          "summary": "Krix knows exactly where Nix hides contraband in her scrap-hauler.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "High-Frequency Lyra",
+      "role_name": "Signal-Transducer",
+      "activity": "Tuning the resonance of the Signal Altar to bypass Exarch Thorne's restrictions",
+      "home_base": "The Signal Altar",
+      "arc_goal": "To broadcast a forbidden message to the deep void without alerting Inquisitor Malakor",
+      "inventory": [
+        {
+          "name": "SSM-016 Resonance Fork",
+          "description": "A vibrating titanium rod that hums at the frequency of the Great Signal",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-017 Void-Glass Prism",
+          "description": "Refracts data-streams into visible light spectrums",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-018 Copper-Threaded Rosary",
+          "description": "Prayer beads that double as emergency grounding wires",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-019 Encrypted Data-Shard",
+          "description": "Contains a fragment of the 'First Transmission'",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-020 Signal-Dampening Veil",
+          "description": "A mesh cloth that hides the wearer from electronic sensors",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-021 Frequency-Modulator",
+          "description": "A handheld device for shifting broadcast bands",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-022 Sacred Solder-Paste",
+          "description": "Conductive resin used for repairing holy circuitry",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-023 Ionized Incense",
+          "description": "Releases particles that improve signal conductivity in the air",
+          "quantity": 12
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Altar-Niche",
+          "asset_type": "Sanctuary",
+          "description": "A private alcove within the Signal Altar containing a hidden terminal",
+          "story_use": "Used for clandestine transmissions away from the High Council's eyes"
+        },
+        {
+          "asset_name": "Vibration-Harness",
+          "asset_type": "Exoskeleton",
+          "description": "A lightweight frame that protects the body from high-frequency tremors",
+          "story_use": "Allows Lyra to survive the intense vibrations of the main transmitter"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-001",
+          "topic": "Sub-Space Harmonics",
+          "summary": "Understanding how to layer data within the background noise of the universe",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KNOW-002",
+          "topic": "Council Encryption Protocols",
+          "summary": "Knowledge of the specific codes used by Exarch Thorne to lock the bandwidth",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "display_name": "Scrap-Lord Varick",
+      "role_name": "Heavy Salvage Specialist",
+      "activity": "Extracting a massive reactor core in Salvage Yard Gamma",
+      "home_base": "Salvage Yard Gamma",
+      "arc_goal": "To find a functional propulsion unit to turn the monastery back into a ship",
+      "inventory": [
+        {
+          "name": "SSM-024 Plasma-Cutter Torch",
+          "description": "Industrial grade tool for slicing through reinforced hull plating",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-025 Magnetic Grapple-Hook",
+          "description": "High-tension cable with a motorized winch",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-026 Lead-Lined Crate",
+          "description": "Used for transporting unstable radioactive isotopes",
+          "quantity": 15
+        },
+        {
+          "name": "SSM-027 Hydraulic Power-Glove",
+          "description": "Crushes debris and provides 5x human grip strength",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-028 Scavenged Thruster-Nozzle",
+          "description": "A rare component salvaged from a pre-fall scout ship",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-029 Radiation-Sickness Serum",
+          "description": "Essential medicine for those working the outer hull",
+          "quantity": 20
+        },
+        {
+          "name": "SSM-030 Bolt-Gun Ammunition",
+          "description": "Heavy slugs for securing plates or self-defense",
+          "quantity": 50
+        },
+        {
+          "name": "SSM-031 Oxygen-Filter Cartridge",
+          "description": "Replacement filters for the harsh atmosphere of the yard",
+          "quantity": 10
+        },
+        {
+          "name": "SSM-032 Scrap-Metal Ingots",
+          "description": "Refined blocks of recycled durasteel",
+          "quantity": 30
+        },
+        {
+          "name": "SSM-033 Thermal-Imaging Goggles",
+          "description": "Detects heat leaks in pressurized containers",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-034 Lubricant-Oil Can",
+          "description": "Keeps ancient gears from seizing in the vacuum",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-035 Identification Tags",
+          "description": "Dog tags recovered from long-dead crew members",
+          "quantity": 12
+        },
+        {
+          "name": "SSM-036 Pressure-Seal Tape",
+          "description": "Emergency patch material for suit punctures",
+          "quantity": 8
+        },
+        {
+          "name": "SSM-037 Geiger-Counter",
+          "description": "Handheld device that clicks in the presence of 'The Glow'",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-038 Master-Key Override",
+          "description": "A crude hacking tool for opening locked cargo containers",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Heavy-Lifter Crane",
+          "asset_type": "Machinery",
+          "description": "A massive, rusted crane used to move starship wreckage",
+          "story_use": "Can be used to clear paths or drop debris on intruders"
+        },
+        {
+          "asset_name": "Salvage-Bay Workshop",
+          "asset_type": "Facility",
+          "description": "A cluttered room filled with tools and half-repaired engines",
+          "story_use": "A place to craft custom gear or hide from Inquisitor patrols"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-003",
+          "topic": "Pre-Fall Hull Architecture",
+          "summary": "Deep understanding of how ancient ships were constructed",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "KNOW-004",
+          "topic": "Black-Market Trade Routes",
+          "summary": "Knowing which merchants like Olo will pay most for specific alloys",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Bio-Acolyte Sylas",
+      "role_name": "Fungal-Geneticist",
+      "activity": "Synthesizing a neural-link serum from the Hydro-Ponic Crypt's vines",
+      "home_base": "Hydro-Ponic Crypt",
+      "arc_goal": "To create a biological interface that allows monks to 'feel' the signal",
+      "inventory": [
+        {
+          "name": "SSM-039 Bioluminescent Spores",
+          "description": "Glowing dust that illuminates dark corridors",
+          "quantity": 100
+        },
+        {
+          "name": "SSM-040 Nutrient-Infusion Needle",
+          "description": "Used to feed the sacred vines directly into their veins",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-041 Petri-Dish Culture",
+          "description": "A growing sample of the 'Whispering Moss'",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-042 Surgical Scalpel",
+          "description": "Laser-honed blade for delicate plant grafting",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-043 Hermetic Sample-Jar",
+          "description": "Keeps biological specimens in stasis",
+          "quantity": 10
+        },
+        {
+          "name": "SSM-044 Growth-Accelerant Mist",
+          "description": "Chemical spray that causes rapid vine expansion",
+          "quantity": 4
+        },
+        {
+          "name": "SSM-045 Neural-Link Prototype",
+          "description": "A messy tangle of wires and organic tissue",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-046 Protective Bio-Suit",
+          "description": "Rubberized clothing to prevent fungal infection",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Incubation Chamber",
+          "asset_type": "Laboratory",
+          "description": "A pressurized glass room where the most dangerous flora is kept",
+          "story_use": "Used for high-risk experiments or as a biological safe-room"
+        },
+        {
+          "asset_name": "The Root-Network Map",
+          "asset_type": "Data-Log",
+          "description": "A chart showing how the vines have infiltrated the monastery's wiring",
+          "story_use": "Allows Sylas to travel through maintenance shafts others can't find"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-005",
+          "topic": "Xeno-Botany",
+          "summary": "The study of alien plant life that thrives in zero-gravity",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "KNOW-006",
+          "topic": "Neuro-Toxin Synthesis",
+          "summary": "How to create poisons or sedatives from the Crypt's flora",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Grand-Arbitrator Valerius",
+      "role_name": "Law-Keeper of the Void",
+      "activity": "Reviewing bandwidth allocation logs in the High Council Chamber",
+      "home_base": "The High Council Chamber",
+      "arc_goal": "To maintain order and prevent the 'Static-Heretics' from causing a system crash",
+      "inventory": [
+        {
+          "name": "SSM-047 Gavel of Authority",
+          "description": "A heavy mace that can emit an EMP pulse",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-048 The Great Ledger",
+          "description": "A digital tablet containing the laws of the Monastery",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-049 Security-Override Card",
+          "description": "Grants access to all rooms except the Silent Observatory",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-050 Stun-Baton",
+          "description": "Non-lethal weapon for subduing unruly acolytes",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-051 Formal Council Robes",
+          "description": "Reinforced with weave that resists small-arms fire",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-052 Truth-Serum Vial",
+          "description": "Chemical used during interrogations in the Refectory",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-053 Surveillance-Drone Remote",
+          "description": "Controls the small 'Eye' drones patrolling the halls",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-054 Commemorative Seal",
+          "description": "A heavy ring used to wax-seal physical decrees",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The High Council Seat",
+          "asset_type": "Furniture",
+          "description": "An armored throne with built-in life support and data-uplink",
+          "story_use": "Provides a defensive position and global communication access"
+        },
+        {
+          "asset_name": "The Archive-Vault",
+          "asset_type": "Storage",
+          "description": "A secure room containing the physical history of the Satellite",
+          "story_use": "Contains secrets that could destroy the Council's legitimacy"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-007",
+          "topic": "Monastic Law",
+          "summary": "The complex legal framework governing the Sunken Satellite",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "KNOW-008",
+          "topic": "Political Factionalism",
+          "summary": "Insight into the rivalries between the Abbot and the Exarch",
+          "confidence": 82
+        }
+      ]
+    },
+    {
+      "display_name": "Master-Tuner Solon",
+      "role_name": "Resonance Architect",
+      "activity": "Harmonizing the structural vibrations of the Signal Altar to prevent hull-fatigue",
+      "home_base": "The Signal Altar",
+      "arc_goal": "To bypass High-Frequency Lyra's unauthorized tunings and stabilize the monastery's core frequency",
+      "inventory": [
+        {
+          "name": "SSM-016 Tuning Fork (Titanium)",
+          "description": "A heavy fork used to strike the Altar's resonance plates.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-017 Harmonic Dampener",
+          "description": "Small magnetic clamps that suppress micro-vibrations.",
+          "quantity": 12
+        },
+        {
+          "name": "SSM-018 Frequency Logbook",
+          "description": "A physical ledger of every signal spike since the monastery's founding.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-019 Conductive Resin",
+          "description": "A thick paste used to repair cracked signal-conduits.",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-020 Ear-Plugs (Lead-Lined)",
+          "description": "Protects the wearer from the Altar's high-decibel hum.",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-021 Oscilloscope Lens",
+          "description": "A monocle that visualizes sound waves in real-time.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-022 Copper-Wire Spool",
+          "description": "High-purity wire for emergency signal-patching.",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-023 Calibration Mallet",
+          "description": "A soft-headed tool for delicate adjustments to the Altar.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Resonant Chamber",
+          "asset_type": "Workshop",
+          "description": "A sound-proofed sub-level beneath the Altar.",
+          "story_use": "Used for crafting high-precision signal components away from prying ears."
+        },
+        {
+          "asset_name": "Vibration-Sensing Array",
+          "asset_type": "Sensor Grid",
+          "description": "A network of needles embedded in the monastery's hull.",
+          "story_use": "Monitors the structural integrity of the satellite against void-pressure."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-001",
+          "topic": "Acoustic Engineering",
+          "summary": "The science of using sound to maintain structural integrity in a vacuum.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KNOW-002",
+          "topic": "Lyra's Subterfuge",
+          "summary": "Detailed logs of Lyra's unauthorized frequency shifts and their impact.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Curator Hestia",
+      "role_name": "Relic-Sanctifier",
+      "activity": "Purifying salvaged hardware from Salvage Yard Gamma before it enters the archives",
+      "home_base": "The Silent Observatory",
+      "arc_goal": "To find a clean processor-core for Archivist Zephyr without Inquisitor Malakor's interference",
+      "inventory": [
+        {
+          "name": "SSM-024 Ionizing Brush",
+          "description": "A brush that scrubs static-ghosts from ancient circuitry.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-025 Holy Oil (Synthetic)",
+          "description": "A lubricant blessed by the High Council for machine maintenance.",
+          "quantity": 4
+        },
+        {
+          "name": "SSM-026 Data-Sieve",
+          "description": "A handheld device that filters corrupted packets from physical media.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-027 Faraday Pouch",
+          "description": "A lead-lined bag to prevent signal leakage from unpurified relics.",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-028 Magnifying Visor",
+          "description": "Multi-lens headgear for inspecting micro-etched scriptures.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-029 Static-Neutralizing Spray",
+          "description": "A pressurized canister that dissolves data-clogs.",
+          "quantity": 6
+        },
+        {
+          "name": "SSM-030 Relic-Tagging Pins",
+          "description": "Small beacons used to track items through the purification process.",
+          "quantity": 20
+        },
+        {
+          "name": "SSM-031 Micro-Screwdriver Set",
+          "description": "Precision tools for opening ancient, rusted casings.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Purification Vat",
+          "asset_type": "Industrial Equipment",
+          "description": "A large tank filled with neutralizing fluid for large salvage.",
+          "story_use": "Essential for cleaning heavy machinery recovered by Scrap-Lord Varick."
+        },
+        {
+          "asset_name": "Sanctified Storage Locker",
+          "asset_type": "Secure Storage",
+          "description": "A shielded locker that blocks all incoming and outgoing signals.",
+          "story_use": "Used to hide 'Static-Heretic' artifacts from Inquisitor Malakor."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-003",
+          "topic": "Pre-Fall Hardware",
+          "summary": "Deep understanding of the architecture used in the original satellite systems.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "KNOW-004",
+          "topic": "Static-Ghost Patterns",
+          "summary": "The ability to distinguish between random noise and sentient data-remnants.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Trader Jax",
+      "role_name": "Black-Market Provisioner",
+      "activity": "Smuggling nutrient paste and forbidden tech between the Refectory and the Yard",
+      "home_base": "Monk's Refectory",
+      "arc_goal": "To corner the market on nutrient paste by sabotaging Merchant-Priest Olo's supply lines",
+      "inventory": [
+        {
+          "name": "SSM-032 Nutrient Paste (Grade-B)",
+          "description": "Standard survival rations, slightly past expiration.",
+          "quantity": 50
+        },
+        {
+          "name": "SSM-033 Forbidden Logic-Gate",
+          "description": "A processor component banned by the High Council.",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-034 Counterfeit Bandwidth Tokens",
+          "description": "Poorly made but functional tokens for the Exchange.",
+          "quantity": 15
+        },
+        {
+          "name": "SSM-035 Hidden Compartment Boots",
+          "description": "Footwear designed to hide small data-chips.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-036 Fermented Algae Juice",
+          "description": "A potent, illegal beverage brewed in the Crypt.",
+          "quantity": 10
+        },
+        {
+          "name": "SSM-037 Encrypted Comms-Link",
+          "description": "A private radio that bypasses the Signal Altar.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-038 Bribe-Chits",
+          "description": "Valuable tokens used to sway the Airlock Sentinels.",
+          "quantity": 25
+        },
+        {
+          "name": "SSM-039 Salvage-Yard Map (Secret)",
+          "description": "A map showing the blind spots in the Yard's security.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-040 Universal Port-Key",
+          "description": "A tool that opens most standard maintenance hatches.",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-041 Synthetic Spice",
+          "description": "A rare additive that makes nutrient paste palatable.",
+          "quantity": 8
+        },
+        {
+          "name": "SSM-042 Thermal Cloak",
+          "description": "A thin sheet that hides the wearer's heat signature.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-043 Data-Spike",
+          "description": "A single-use device to temporarily disable a terminal.",
+          "quantity": 4
+        },
+        {
+          "name": "SSM-044 Weighted Dice",
+          "description": "Used for gambling with the Acolytes in the Refectory.",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-045 Patch-Kit (Suit)",
+          "description": "Emergency adhesive for punctures in void-suits.",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-046 Stim-Injector",
+          "description": "A quick burst of adrenaline for escaping the Inquisitors.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Refectory Crawlspace",
+          "asset_type": "Secret Hideout",
+          "description": "A cramped network of pipes behind the kitchen.",
+          "story_use": "Used for storing contraband and hosting secret meetings."
+        },
+        {
+          "asset_name": "Modified Cargo Drone",
+          "asset_type": "Vehicle",
+          "description": "A small, silent drone painted matte black.",
+          "story_use": "Used to ferry goods across the exterior hull to avoid internal checkpoints."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-005",
+          "topic": "Smuggling Routes",
+          "summary": "Knowledge of every ventilation shaft and maintenance tunnel in the monastery.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "KNOW-006",
+          "topic": "Olo's Weaknesses",
+          "summary": "Information regarding Merchant-Priest Olo's illegal side-dealings.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Bio-Seer Mara",
+      "role_name": "Neural-Botanist",
+      "activity": "Cultivating the 'Memory-Moss' that grows on the hull-interior",
+      "home_base": "Hydro-Ponic Crypt",
+      "arc_goal": "To extract the memories of the original crew from the moss before Sister Veda prunes it",
+      "inventory": [
+        {
+          "name": "SSM-047 Moss-Scraper",
+          "description": "A curved blade for harvesting delicate bio-matter.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-048 Bioluminescent Spores",
+          "description": "Spores that glow when they detect high data-flow.",
+          "quantity": 10
+        },
+        {
+          "name": "SSM-049 Neural-Interface Cap",
+          "description": "A mesh cap that allows the wearer to 'feel' the moss's memories.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-050 Nutrient Spray (Growth)",
+          "description": "Accelerates the growth of the Memory-Moss.",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-051 Sample Vials (Glass)",
+          "description": "Fragile containers for preserving moss clippings.",
+          "quantity": 12
+        },
+        {
+          "name": "SSM-052 pH Testing Strips",
+          "description": "Used to monitor the acidity of the Crypt's water.",
+          "quantity": 20
+        },
+        {
+          "name": "SSM-053 Pruning Shears (Precision)",
+          "description": "Small scissors for removing dead vines.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-054 Insulated Gloves",
+          "description": "Protects against the mild electric shocks the moss emits.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Memory-Well",
+          "asset_type": "Biological Computer",
+          "description": "A massive vat where the moss is processed into data-fluid.",
+          "story_use": "Allows for the playback of ancient memories stored in biological form."
+        },
+        {
+          "asset_name": "The Crypt Greenhouse",
+          "asset_type": "Laboratory",
+          "description": "A humid, light-controlled zone within the Crypt.",
+          "story_use": "Used for experimental cross-breeding of vines and circuitry."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-007",
+          "topic": "Neural-Botany",
+          "summary": "The study of how plants can store and process digital information.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "KNOW-008",
+          "topic": "Monastery History",
+          "summary": "Fragmented memories of the satellite's launch and original mission.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Void-Stoker Ignis",
+      "role_name": "Thermal-Regulator",
+      "activity": "Calibrating the heat-sinks of the Signal Altar to prevent thermal-bleed into the archives",
+      "home_base": "The Signal Altar",
+      "arc_goal": "To secretly siphon excess thermal energy to power a private, unauthorized decryption rig",
+      "inventory": [
+        {
+          "name": "SSM-021 Thermal-Lance",
+          "description": "A precision tool for venting superheated plasma from clogged conduits",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-022 Cryo-Gel Canister",
+          "description": "Rapid-cooling agent used for emergency heat-sink stabilization",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-023 Brass-Cased Thermocouple",
+          "description": "An analog sensor for measuring the Altar's core temperature",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-024 Heat-Shielded Mitts",
+          "description": "Heavy-duty gloves woven from carbon-fiber and lead-thread",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-025 Solder-Wick Spool",
+          "description": "Used for cleaning ancient circuit paths on the Altar's exterior",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-026 Flux-Paste Jar",
+          "description": "A pungent chemical compound used to facilitate data-conduction",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-027 Copper-Mesh Filter",
+          "description": "A fine screen used to catch metallic flakes in the cooling lines",
+          "quantity": 4
+        },
+        {
+          "name": "SSM-028 Pressure-Valve Key",
+          "description": "A heavy iron tool used to manually override the Altar's steam-vents",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Sub-Floor Vent-Network",
+          "asset_type": "Infrastructure",
+          "description": "A series of crawlspaces beneath the Altar used for thermal maintenance",
+          "story_use": "Ignis uses these tunnels to move undetected and hide his illegal decryption rig"
+        },
+        {
+          "asset_name": "Ignis's Custom Heat-Sink",
+          "asset_type": "Equipment",
+          "description": "A modified cooling unit that doubles as a power-tap",
+          "story_use": "The primary device used to siphon energy for his secret projects"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SSM-HEAT",
+          "topic": "Thermal Dynamics of the Altar",
+          "summary": "Deep understanding of how the Signal Altar's heat output correlates with data-throughput",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-SSM-BYPASS",
+          "topic": "Council Security Protocols",
+          "summary": "Knowledge of the blind spots in Grand-Arbitrator Valerius's monitoring systems",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Scrap-Baroness Vex",
+      "role_name": "Heavy-Salvage Broker",
+      "activity": "Negotiating the sale of a derelict engine core with Merchant-Priest Olo",
+      "home_base": "Salvage Yard Gamma",
+      "arc_goal": "To monopolize the flow of rare metals to the High Council Chamber",
+      "inventory": [
+        {
+          "name": "SSM-031 Gilded Plasma-Cutter",
+          "description": "A status symbol that can also slice through three-inch hull plating",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-032 Tungsten-Carbide Drill-Bits",
+          "description": "Industrial-grade bits for boring into hardened satellite casings",
+          "quantity": 12
+        },
+        {
+          "name": "SSM-033 Magnetic-Grapple Hook",
+          "description": "A high-powered electromagnet on a reinforced cable",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-034 Scrip-Chits (Yard-Credit)",
+          "description": "Stamped metal tokens used as currency within the Salvage Yard",
+          "quantity": 50
+        },
+        {
+          "name": "SSM-035 Oxidized Circuit-Boards",
+          "description": "Raw salvage waiting for Sister Veda's cleaning enzymes",
+          "quantity": 8
+        },
+        {
+          "name": "SSM-036 Lead-Lined Sample Case",
+          "description": "A secure container for transporting radioactive isotopes",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-037 Hydraulic-Fluid Flask",
+          "description": "High-pressure lubricant for heavy salvage exosuits",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-038 Titanium-Alloy Bolts",
+          "description": "Rare fasteners salvaged from pre-collapse orbital stations",
+          "quantity": 20
+        },
+        {
+          "name": "SSM-039 Radiation-Patch Kit",
+          "description": "Adhesive patches that temporarily seal hull breaches",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-040 Sonic-Resonance Scanner",
+          "description": "A handheld device used to detect structural flaws in scrap",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-041 Heavy-Duty Cargo-Net",
+          "description": "Woven from synthetic spider-silk for hauling massive debris",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-042 Identification-Tag Reader",
+          "description": "A device used to scan the serial numbers of ancient tech",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-043 Polishing-Acid Vial",
+          "description": "Used to reveal the purity of salvaged gold and platinum",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-044 Scrap-Lord's Signet",
+          "description": "A heavy ring used to seal trade contracts in the Yard",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-045 Emergency Oxygen-Canister",
+          "description": "A small, ten-minute supply for airlock failures",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Crane-Rig 'Behemoth'",
+          "asset_type": "Heavy Machinery",
+          "description": "A massive, ancient crane used to move the largest pieces of salvage",
+          "story_use": "Vex uses the crane to control access to the most valuable debris in the Yard"
+        },
+        {
+          "asset_name": "Vex's Private Vault",
+          "asset_type": "Storage",
+          "description": "A reinforced shipping container converted into a secure office",
+          "story_use": "The location where Vex stores her most sensitive trade ledgers and rare artifacts"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SSM-VAL",
+          "topic": "Salvage Valuation",
+          "summary": "Expertise in identifying the true worth of pre-collapse satellite components",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-SSM-NET",
+          "topic": "Smuggling Routes",
+          "summary": "Knowledge of the hidden paths between the Yard and the Refectory used by Trader Jax",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Static-Leper Kael",
+      "role_name": "Data-Ghost Hunter",
+      "activity": "Tracking a rogue signal-echo through the Bandwidth Exchange",
+      "home_base": "Bandwidth Exchange",
+      "arc_goal": "To capture a sentient data-ghost and prove they are the spirits of the original crew",
+      "inventory": [
+        {
+          "name": "SSM-051 Faraday-Cage Trap",
+          "description": "A portable mesh box designed to contain localized electromagnetic entities",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-052 Frequency-Tuning Fork",
+          "description": "A tool that vibrates when in the presence of high-density data-ghosts",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-053 Insulated Rubber-Cloak",
+          "description": "A heavy garment that protects the wearer from static-shocks",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-054 Data-Siphon Syringe",
+          "description": "Used to extract 'ectoplasmic' code from corrupted terminals",
+          "quantity": 4
+        },
+        {
+          "name": "SSM-055 Phosphorescent Chalk",
+          "description": "Used to mark 'haunted' nodes in the Bandwidth Exchange",
+          "quantity": 10
+        },
+        {
+          "name": "SSM-056 Signal-Jammer Grenade",
+          "description": "A one-time use device that creates a localized dead-zone",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-057 Ancient Log-Book",
+          "description": "A physical diary containing names of the monastery's founders",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-058 Spirit-Lens Goggles",
+          "description": "Modified optics that allow the wearer to see infrared signal-trails",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Ghost-Trap Array",
+          "asset_type": "Equipment",
+          "description": "A network of sensors Kael has illegally installed in the Exchange",
+          "story_use": "Used to track the movement of data-ghosts across the monastery's network"
+        },
+        {
+          "asset_name": "Kael's Sanctuary",
+          "asset_type": "Room",
+          "description": "A small, shielded alcove in the Exchange where he stores his findings",
+          "story_use": "A safe haven from Inquisitor Malakor's purges"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SSM-GHOST",
+          "topic": "Data-Ghost Behavior",
+          "summary": "Understanding the patterns and motivations of sentient signal-echoes",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K-SSM-ARCH",
+          "topic": "Monastery Network Architecture",
+          "summary": "Deep knowledge of the Exchange's hidden sub-routines and legacy ports",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Acolyte Mira",
+      "role_name": "Hydro-Ponic Harvester",
+      "activity": "Collecting bioluminescent nectar for the Monk's Refectory",
+      "home_base": "Hydro-Ponic Crypt",
+      "arc_goal": "To find a cure for the 'Static-Blight' affecting the monastery's food supply",
+      "inventory": [
+        {
+          "name": "SSM-061 Ceramic Pruning-Shears",
+          "description": "Non-conductive blades for cutting the delicate vines of the Crypt",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-062 Nectar-Collection Vials",
+          "description": "Glass tubes used to store the glowing fluid of the vines",
+          "quantity": 12
+        },
+        {
+          "name": "SSM-063 Nutrient-Rich Soil-Bag",
+          "description": "A mixture of composted waste and crushed mineral-salts",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-064 UV-Flashlight",
+          "description": "A light source that stimulates growth in the bioluminescent flora",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-065 Seed-Packet (Void-Fern)",
+          "description": "A rare strain of plant that can survive in low-oxygen environments",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-066 Mist-Sprayer",
+          "description": "Used to apply liquid fertilizers to the hanging mosses",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-067 Protective Respirator",
+          "description": "A mask that filters out the fungal spores of the Crypt",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-068 Grafting-Tape Roll",
+          "description": "Used to join different plant species together for hybridization",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hybridization Tank",
+          "asset_type": "Laboratory",
+          "description": "A specialized vat used for cross-breeding fungal and botanical life",
+          "story_use": "Mira uses this to develop the cure for the Static-Blight"
+        },
+        {
+          "asset_name": "The Secret Garden",
+          "asset_type": "Room",
+          "description": "A hidden corner of the Crypt where Mira grows forbidden medicinal herbs",
+          "story_use": "A source of healing for those who cannot afford the High Council's care"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SSM-BIO",
+          "topic": "Neural-Botany",
+          "summary": "Knowledge of how the Crypt's plants interact with the monastery's data-streams",
+          "confidence": 88
+        },
+        {
+          "knowledge_id": "K-SSM-MED",
+          "topic": "Herbal Medicine",
+          "summary": "Expertise in creating tinctures and salves from the Crypt's flora",
+          "confidence": 92
+        }
+      ]
+    },
+    {
+      "display_name": "Overseer Kaelith-9",
+      "role_name": "Airlock Logistics & Quarantine Specialist",
+      "activity": "Scanning incoming salvage crates for 'Static-Blight' spores",
+      "home_base": "Airlock Alpha-9",
+      "arc_goal": "To intercept the 'Static-Heretic' signal before Inquisitor Malakor's purge reaches the airlock",
+      "inventory": [
+        {
+          "name": "SSM-016 Void-Seal Gasket",
+          "description": "A pressurized rubberized ring used to patch micro-leaks in the airlock.",
+          "quantity": 4
+        },
+        {
+          "name": "SSM-017 Scintillating Geiger-Counter",
+          "description": "A handheld device that clicks rhythmically when near high-frequency data-leaks.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-018 Sanctified Decontamination Spray",
+          "description": "A pressurized canister of aerosolized holy-water and nanites.",
+          "quantity": 3
+        },
+        {
+          "name": "SSM-019 Magnetic Cargo-Tether",
+          "description": "A high-tensile cable used to secure drifting salvage in the vacuum.",
+          "quantity": 2
+        },
+        {
+          "name": "SSM-020 Encrypted Manifest Slate",
+          "description": "A digital tablet containing Warden Krix's secret inspection logs.",
+          "quantity": 1
+        },
+        {
+          "name": "SSM-021 Nutrient-Paste Syringe",
+          "description": "A quick-delivery meal for long shifts at the airlock controls.",
+          "quantity": 5
+        },
+        {
+          "name": "SSM-022 Thermal-Glow Flare",
+          "description": "A chemical light source that burns even in the absence of oxygen.",
+          "quantity": 6
+        },
+        {
+          "name": "SSM-023 Scrap-Lord's Seal",
+          "description": "A heavy brass token granting Kaelith-9 safe passage through Varick's yard.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Alpha-9 Pressure Chamber",
+          "asset_type": "Industrial Infrastructure",
+          "description": "A reinforced, circular chamber used for the primary intake of all external salvage.",
+          "story_use": "Kaelith-9 uses this space to secretly filter out forbidden tech for Quartermaster Jora before the High Council sees it."
+        },
+        {
+          "asset_name": "The Void-Gazer's Perch",
+          "asset_type": "Observation Deck",
+          "description": "A small, reinforced glass bubble overlooking the debris fields of the monastery.",
+          "story_use": "A private spot where Kaelith-9 meets Observer Elara to exchange data on incoming derelicts."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-SSM-001",
+          "topic": "Static-Blight Identification",
+          "summary": "The ability to distinguish between harmless signal noise and the parasitic data-ghosts Deacon Vane hunts.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KNOW-SSM-002",
+          "topic": "Smuggler's Resonance Frequencies",
+          "summary": "Knowledge of specific vibration patterns that allow cargo to bypass the Signal Altar's primary sensors.",
+          "confidence": 82
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Data Tithe",
+      "summary": "Players collect fragmented data from the outer hull, purify it in the sanctum, and sell it to visiting merchants.",
+      "roles": [
+        "Data-Monk",
+        "Merchant"
+      ],
+      "rooms": [
+        "Outer Hull",
+        "Sanctum",
+        "Trading Bay"
+      ],
+      "pressure": "Oxygen levels and data degradation rates."
+    },
+    {
+      "label": "The Heresy Hunt",
+      "summary": "Players scan the local network for corrupted files and identify the 'heretics' responsible for the breach.",
+      "roles": [
+        "High Indexer",
+        "Security Acolyte"
+      ],
+      "rooms": [
+        "Server Core",
+        "Archive"
+      ],
+      "pressure": "The spreading corruption virus."
+    }
+  ],
+  "player_entry_points": [
+    "A merchant vessel seeking to buy ancient encryption keys.",
+    "A digital pilgrim looking for the original source-code of the Great AI.",
+    "A corporate spy disguised as a data-monk."
+  ],
+  "conflict_hooks": [
+    "Two rival guilds claim ownership of the same 'Holy' sector of the satellite's memory.",
+    "A massive data-leak threatens to reveal the monastery's commercial tax evasion.",
+    "A theological schism emerges over whether AI-generated prayers are valid."
+  ],
+  "custom_actions": [
+    "Sanctify Data-Stream",
+    "Purge Corrupt Packet",
+    "Negotiate Bandwidth Tithe",
+    "Audit Theological Log"
+  ],
+  "social_rules": [
+    "Data-purity is the highest virtue; corrupted files are considered spiritual sins.",
+    "Commercial transactions must be sanctified by a High Indexer.",
+    "Direct physical contact is forbidden; all interaction occurs via haptic-link.",
+    "The oldest server racks are sacred ground and require silence."
+  ],
+  "item_themes": [
+    "rusted-circuitry",
+    "pressure-seals",
+    "encrypted-scrolls",
+    "deep-sea-pearls",
+    "satellite-shards"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "SSM-001",
+      "name": "Oxidized Data-Bead",
+      "price": 45,
+      "mass": 0.1,
+      "description": "A rusted copper sphere containing fragmented liturgical data from the orbital era.",
+      "image_prompt": "A small rusted copper bead with glowing blue circuitry lines, resting on a damp metal surface.",
+      "category": "Curio"
+    },
+    {
+      "item_id": "SSM-002",
+      "name": "Pressure-Seal Wax",
+      "price": 120,
+      "mass": 0.5,
+      "description": "Thick, synthetic resin used to patch micro-fissures in deep-sea monk habits.",
+      "image_prompt": "A tin of dark viscous resin with a monastic seal stamped into the surface.",
+      "category": "Maintenance"
+    },
+    {
+      "item_id": "SSM-003",
+      "name": "Bioluminescent Rosary",
+      "price": 350,
+      "mass": 0.2,
+      "description": "Prayer beads harvested from deep-sea polyps, pulsing with a rhythmic green light.",
+      "image_prompt": "A string of glowing green organic beads draped over a rusted iron crucifix.",
+      "category": "Religious"
+    },
+    {
+      "item_id": "SSM-004",
+      "name": "Satellite Shard Dagger",
+      "price": 850,
+      "mass": 1.2,
+      "description": "A blade honed from the heat-shielding of a fallen communication array.",
+      "image_prompt": "A jagged, iridescent ceramic blade with a handle wrapped in frayed fiber-optic cables.",
+      "category": "Weaponry"
+    },
+    {
+      "item_id": "SS0-005",
+      "name": "Encrypted Kelp Scroll",
+      "price": 200,
+      "mass": 0.3,
+      "description": "Dried sea-flora etched with laser-burned scripture only visible under UV light.",
+      "image_prompt": "A dark green leathery scroll with glowing ultraviolet text in a gothic font.",
+      "category": "Scripture"
+    },
+    {
+      "item_id": "SSM-006",
+      "name": "Hydro-Acoustic Censer",
+      "price": 550,
+      "mass": 2.5,
+      "description": "A heavy brass vessel that emits sonar pulses instead of smoke to clear the mind.",
+      "image_prompt": "A gothic brass censer underwater, emitting visible ripple waves instead of smoke.",
+      "category": "Religious"
+    },
+    {
+      "item_id": "SSM-007",
+      "name": "Signal-Bandwidth Voucher",
+      "price": 1000,
+      "mass": 0.01,
+      "description": "A physical token representing 10 gigabytes of priority transmission time to the surface.",
+      "image_prompt": "A translucent plastic card with a holographic gold circuit pattern.",
+      "category": "Currency"
+    },
+    {
+      "item_id": "SSM-008",
+      "name": "Crushed Pearl Lubricant",
+      "price": 75,
+      "mass": 0.4,
+      "description": "Fine abrasive paste made from deep-sea pearls for cleaning high-pressure joints.",
+      "image_prompt": "A glass jar filled with shimmering iridescent white paste.",
+      "category": "Maintenance"
+    },
+    {
+      "item_id": "SSM-009",
+      "name": "Void-Glass Porthole",
+      "price": 2200,
+      "mass": 15.0,
+      "description": "Reinforced glass salvaged from a cockpit, etched with the monastery's sigil.",
+      "image_prompt": "A thick circular glass pane with a laser-etched gothic cross, covered in barnacles.",
+      "category": "Salvage"
+    },
+    {
+      "item_id": "SSM-010",
+      "name": "Oxygen-Siphon Mask",
+      "price": 400,
+      "mass": 1.8,
+      "description": "A rusted iron mask that extracts oxygen from seawater via electrolysis.",
+      "image_prompt": "A heavy iron diving mask with gothic filigree and glowing red tubes.",
+      "category": "Survival"
+    },
+    {
+      "item_id": "SSM-011",
+      "name": "Abyssal Ink Well",
+      "price": 150,
+      "mass": 0.6,
+      "description": "Ink harvested from mutated cephalopods, used for tattooing rank onto initiates.",
+      "image_prompt": "A stone inkwell containing swirling black liquid that glows faintly purple.",
+      "category": "Artisan"
+    },
+    {
+      "item_id": "SSM-012",
+      "name": "Thermal-Regulator Coil",
+      "price": 600,
+      "mass": 3.2,
+      "description": "A salvaged heating element essential for surviving the freezing trench currents.",
+      "image_prompt": "A glowing orange copper coil wrapped in black industrial rubber.",
+      "category": "Maintenance"
+    },
+    {
+      "item_id": "SSM-013",
+      "name": "Monk's Lead Boots",
+      "price": 300,
+      "mass": 20.0,
+      "description": "Heavy footwear designed for walking the seabed during exterior maintenance rituals.",
+      "image_prompt": "Massive lead boots with gothic arch designs and heavy rusted rivets.",
+      "category": "Apparel"
+    },
+    {
+      "item_id": "SSM-014",
+      "name": "Fiber-Optic Scourge",
+      "price": 450,
+      "mass": 0.8,
+      "description": "A ritual whip made from frayed data cables, used for digital penance.",
+      "image_prompt": "A handle made of rusted pipe with multiple glowing glass-fiber lashes.",
+      "category": "Religious"
+    },
+    {
+      "item_id": "SSM-015",
+      "name": "Sonar-Mapping Compass",
+      "price": 750,
+      "mass": 0.5,
+      "description": "A handheld device that projects a 3D wireframe of the surrounding abyss.",
+      "image_prompt": "A brass handheld device projecting a green holographic grid of a sea trench.",
+      "category": "Navigation"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "sunken-satellite-monastery-01-wardrobe",
+    "world_wardrobe_brief": "Cyber-gothic underwater monasticism. Bulky, pressurized diving suits integrated with liturgical robes, glowing circuitry, and rusted industrial hardware. High-contrast bioluminescence against dark, abyssal materials.",
+    "forbidden_aesthetics": [
+      "natural-fabrics",
+      "bright-sunlight-colors",
+      "wood-textures",
+      "generic-fantasy-armor",
+      "exposed-skin",
+      "lightweight-clothing"
+    ],
+    "palette_families": [
+      {
+        "name": "Abyssal-Monastic",
+        "dominant": "#0a141a",
+        "accent": "#00ffcc",
+        "trim": "#2d3e40",
+        "material": "corroded-titanium"
+      },
+      {
+        "name": "Bioluminescent-Growth",
+        "dominant": "#05080a",
+        "accent": "#e0f2f1",
+        "trim": "#2d3e40",
+        "material": "bioluminescent-algae"
+      },
+      {
+        "name": "Industrial-Salvage",
+        "dominant": "#2d3e40",
+        "accent": "#00ffcc",
+        "trim": "#0a141a",
+        "material": "oxidized-copper-wiring"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "high-clergy",
+        "role_keywords": [
+          "Abbot",
+          "Exarch",
+          "Grand-Arbitrator",
+          "High-Frequency"
+        ],
+        "attire": [
+          "heavy-layered-robes-over-exoskeleton",
+          "ornate-etched-helmet"
+        ],
+        "props": [
+          "fiber-optic-scourge",
+          "holographic-scripture"
+        ],
+        "palette_notes": "Highest contrast with bright cyan highlights.",
+        "silhouette_notes": "Tall, imposing, wide-shouldered robes.",
+        "avoid": []
+      },
+      {
+        "rule_id": "salvage-laborer",
+        "role_keywords": [
+          "Salvage",
+          "Scrap",
+          "Merchant",
+          "Trader"
+        ],
+        "attire": [
+          "scuffed-pressure-suits",
+          "utility-harnesses",
+          "reinforced-gloves"
+        ],
+        "props": [
+          "salvage-claws",
+          "welding-torches"
+        ],
+        "palette_notes": "Heavy on oxidized copper and rusted teal.",
+        "silhouette_notes": "Bulky, asymmetrical with tool-belts.",
+        "avoid": []
+      },
+      {
+        "rule_id": "bio-warden",
+        "role_keywords": [
+          "Hydro-Ponic",
+          "Bio-Acolyte",
+          "Botanist",
+          "Seer"
+        ],
+        "attire": [
+          "rubberized-aprons",
+          "transparent-tubing-suits"
+        ],
+        "props": [
+          "algae-vats",
+          "pruning-shears"
+        ],
+        "palette_notes": "Accents of pale green and bioluminescent white.",
+        "silhouette_notes": "Sleek, rounded shapes with glowing fluid lines.",
+        "avoid": []
+      },
+      {
+        "rule_id": "sentinel-purifier",
+        "role_keywords": [
+          "Warden",
+          "Inquisitor",
+          "Sentinel",
+          "Purifier"
+        ],
+        "attire": [
+          "armored-diving-plates",
+          "full-enclosure-visors"
+        ],
+        "props": [
+          "satellite-shard-dagger",
+          "sonar-pikes"
+        ],
+        "palette_notes": "Darkest dominant tones with sharp, cold highlights.",
+        "silhouette_notes": "Rigid, sharp-edged, heavy-set.",
+        "avoid": []
+      },
+      {
+        "rule_id": "data-archivist",
+        "role_keywords": [
+          "Observer",
+          "Archivist",
+          "Scribe",
+          "Tuner"
+        ],
+        "attire": [
+          "lightweight-data-shrouds",
+          "sensor-arrays"
+        ],
+        "props": [
+          "encrypted-scrolls",
+          "sonar-compass"
+        ],
+        "palette_notes": "Balanced teal and dark grey.",
+        "silhouette_notes": "Thin, vertical, covered in wires.",
+        "avoid": []
+      }
+    ],
+    "default_rule": {
+      "rule_id": "standard-initiate",
+      "role_keywords": [
+        "Acolyte",
+        "Monk",
+        "Citizen"
+      ],
+      "attire": [
+        "standard-issue-jumpsuit",
+        "basic-breathing-apparatus"
+      ],
+      "props": [
+        "oxidized-data-bead"
+      ],
+      "palette_notes": "Muted dark teal and grey.",
+      "silhouette_notes": "Standard bulky humanoid diving profile.",
+      "avoid": []
+    },
+    "visual_consistency_rules": [
+      "1px dark teal outlines for all sprites",
+      "Color-coded visors for role identification",
+      "Bulky top-heavy proportions for pressure-suit realism",
+      "Bioluminescent elements must be at least 2 pixels wide for visibility pixels"
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "sunken-satellite-monastery-01",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90-degree vertical",
+      "scale_rule": "32px per meter, pixel-perfect grid alignment"
+    },
+    "palette": {
+      "dominant": "#0a141a",
+      "secondary": "#2d3e40",
+      "accent": "#00ffcc",
+      "shadow": "#05080a",
+      "highlight": "#e0f2f1"
+    },
+    "materials": [
+      "corroded-titanium",
+      "bioluminescent-algae",
+      "reinforced-polymer-glass",
+      "oxidized-copper-wiring",
+      "pressurized-rubber-gaskets"
+    ],
+    "lighting": "low-ambient abyssal blue with high-contrast cyan point-lights from circuitry and bioluminescence",
+    "architecture": [
+      "hexagonal-pressure-domes",
+      "exposed-conduit-ribbing",
+      "gothic-arched-server-racks",
+      "circular-airlocks"
+    ],
+    "terrain": {
+      "ground": "dark-silt-over-rusted-hull-plating",
+      "path": "glowing-fiber-optic-floor-strips",
+      "edge": "jagged-carbon-fiber-wreckage-walls"
+    },
+    "sprite_language": {
+      "body_proportion": "bulky-top-heavy-diving-suits",
+      "outline": "1px-solid-dark-teal",
+      "role_readability": "color-coded-helmet-visors-and-shoulder-insignia"
+    },
+    "world_prompt_prefix": "top-down orthographic view, sunken satellite monastery, rusted industrial gothic, deep sea abyss, bioluminescent cyan highlights, pixel art style",
+    "sprite_prompt_prefix": "top-down sprite, pressurized diving suit, cyber-gothic monastic robes, mechanical salvage tools, glowing visor",
+    "forbidden_visuals": [
+      "isometric-perspective",
+      "natural-sunlight",
+      "photorealism",
+      "text-labels",
+      "ui-overlays-in-render",
+      "generic-fantasy-stone",
+      "wood-textures"
+    ],
+    "canon_hash": "83b57c479065cfac"
+  }
+}

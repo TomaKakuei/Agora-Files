@@ -1,0 +1,3059 @@
+{
+  "world_name": "Aurora Court of Migrating Cities",
+  "world_id": "aurora_court_26072401",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "civic_social_world",
+    "profile_id": "civic_social_world",
+    "locale": "Arctic Ice Shelf",
+    "tone": "Diplomatic, Chilly, High-Stakes",
+    "visual_direction": "Aurora-lit industrial arctic",
+    "currency_code": "CRD",
+    "currency_symbol": "Ͼ",
+    "currency_minor_unit": "point",
+    "currency_name": "Civic Credits",
+    "domain_label": "Aurora Court",
+    "starting_wallet_minor": {
+      "min": 5000,
+      "max": 15000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "civic_social_world_v1",
+      "frontend_affordance_id": "civic_social_world_v1",
+      "asset_prompt_kit_id": "civic_social_world_v1"
+    },
+    "policy_refs": {
+      "economy_policy_id": "civic_credit_v1",
+      "item_collection_id": "civic_social_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "civic_social_world_v1",
+      "property_policy_id": "civic_social_world_v1",
+      "knowledge_policy_id": "civic_social_world_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "mobile arctic city-state diplomacy, logistics market, civic intrigue",
+  "premise": "A chain of walking polar cities crosses an aurora-lit ice shelf, trading heat, route rights, and citizenship favors.",
+  "simulation_objective": "Manage the delicate balance of inter-city resources and reputation while navigating the migration route.",
+  "agent_count_target": 25,
+  "player_count_target": 4,
+  "economy_focus": "Resource scarcity and diplomatic leverage",
+  "exploration_focus": "Inter-city connections and hidden engine decks",
+  "conflict_tone": "Bureaucratic and cold",
+  "visual_style": "Neon-aurora industrial with heavy furs and brass machinery",
+  "rooms": [
+    {
+      "name": "The Central Heat Exchange",
+      "biome": "Industrial Arctic",
+      "purpose": "Primary trade of thermal energy units",
+      "decor_tags": [
+        "pipes",
+        "steam",
+        "brass",
+        "gauges"
+      ],
+      "activity_tags": [
+        "trading",
+        "monitoring",
+        "arguing"
+      ],
+      "archetype": "market_exchange",
+      "ambient_palette": "ember_orange",
+      "width_tiles": 40,
+      "height_tiles": 40,
+      "floor_tile": "forge_slate",
+      "wall_tile": "forge_wall",
+      "flux_floor_prompt": "Dark slate tiles with glowing orange heat-pipes running beneath glass panels.",
+      "room_scene_prompt": "A massive hall filled with hissing steam pipes and large brass valves where city representatives haggle over heat credits.",
+      "scene_components": [
+        {
+          "component_id": "main_boiler_tap",
+          "label": "The Master Tap",
+          "description": "A massive brass valve controlling the flow of heat to the residential sectors.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Aurora Observation Deck",
+      "biome": "High Altitude Arctic",
+      "purpose": "Diplomatic meetings and weather prediction",
+      "decor_tags": [
+        "glass",
+        "telescopes",
+        "velvet",
+        "star-charts"
+      ],
+      "activity_tags": [
+        "observing",
+        "whispering",
+        "negotiating"
+      ],
+      "archetype": "council",
+      "ambient_palette": "soft_mint",
+      "width_tiles": 30,
+      "height_tiles": 30,
+      "floor_tile": "jade_tile",
+      "wall_tile": "glass_case_wall",
+      "flux_floor_prompt": "Polished jade tiles reflecting the shimmering green aurora from the ceiling dome.",
+      "room_scene_prompt": "A quiet, high-ceilinged dome with panoramic views of the ice shelf and the dancing lights above.",
+      "scene_components": [
+        {
+          "component_id": "star_chart_table",
+          "label": "Celestial Projection Table",
+          "description": "A holographic table showing the current migration path and upcoming solar storms.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Leg-Works Maintenance Bay",
+      "biome": "Mechanical",
+      "purpose": "Repairing the massive walking legs of the city",
+      "decor_tags": [
+        "grease",
+        "gears",
+        "cranes",
+        "welding"
+      ],
+      "activity_tags": [
+        "repairing",
+        "shouting",
+        "lifting"
+      ],
+      "archetype": "workshop",
+      "ambient_palette": "focused_blue",
+      "width_tiles": 50,
+      "height_tiles": 50,
+      "floor_tile": "stone_slabs",
+      "wall_tile": "storage_wall",
+      "flux_floor_prompt": "Heavy stone slabs stained with industrial lubricants and marked with yellow safety lines.",
+      "room_scene_prompt": "A cavernous bay where massive hydraulic pistons are serviced by swarms of technicians.",
+      "scene_components": [
+        {
+          "component_id": "piston_crane",
+          "label": "Heavy Duty Gantry",
+          "description": "A ceiling-mounted crane used to move multi-ton gear assemblies.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Frozen Customs Gate",
+      "biome": "Arctic Exterior",
+      "purpose": "Processing travelers between cities",
+      "decor_tags": [
+        "stamps",
+        "barriers",
+        "furs",
+        "lanterns"
+      ],
+      "activity_tags": [
+        "inspecting",
+        "waiting",
+        "bribing"
+      ],
+      "archetype": "checkpoint",
+      "ambient_palette": "clear_day",
+      "width_tiles": 35,
+      "height_tiles": 25,
+      "floor_tile": "yard_pavers",
+      "wall_tile": "quiet_lane_wall",
+      "flux_floor_prompt": "Frost-covered stone pavers with etched city emblems at the border line.",
+      "room_scene_prompt": "A fortified bridge connecting two walking cities, manned by stern guards in thick wool coats.",
+      "scene_components": [
+        {
+          "component_id": "visa_booth",
+          "label": "Inspection Kiosk",
+          "description": "A cramped booth where travel permits are scrutinized and stamped.",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Hydroponic Moss Garden",
+      "biome": "Greenhouse",
+      "purpose": "Food production and oxygen recycling",
+      "decor_tags": [
+        "vines",
+        "tanks",
+        "mists",
+        "UV-lights"
+      ],
+      "activity_tags": [
+        "harvesting",
+        "tending",
+        "sampling"
+      ],
+      "archetype": "commons",
+      "ambient_palette": "warm_lantern",
+      "width_tiles": 45,
+      "height_tiles": 45,
+      "floor_tile": "bamboo_planks",
+      "wall_tile": "bamboo_wall",
+      "flux_floor_prompt": "Sustainable bamboo walkways suspended over nutrient-rich mist tanks.",
+      "room_scene_prompt": "A lush, humid sanctuary filled with glowing edible mosses and climbing protein-vines.",
+      "scene_components": [
+        {
+          "component_id": "mist_generator",
+          "label": "Nutrient Atomizer",
+          "description": "A device that sprays a fine mineral mist over the hanging gardens.",
+          "anchor": "south_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Archive of Routes",
+      "biome": "Library",
+      "purpose": "Storing historical migration data",
+      "decor_tags": [
+        "scrolls",
+        "maps",
+        "ink",
+        "dust"
+      ],
+      "activity_tags": [
+        "researching",
+        "copying",
+        "plotting"
+      ],
+      "archetype": "archive_ritual",
+      "ambient_palette": "dusty_brown",
+      "width_tiles": 30,
+      "height_tiles": 40,
+      "floor_tile": "library_planks",
+      "wall_tile": "library_shelf_wall",
+      "flux_floor_prompt": "Dark mahogany planks polished to a mirror finish, partially covered by tattered rugs.",
+      "room_scene_prompt": "A silent hall of towering shelves containing the only records of safe paths across the shifting ice.",
+      "scene_components": [
+        {
+          "component_id": "great_globe",
+          "label": "The Shifting Sphere",
+          "description": "A mechanical globe that tracks the real-time positions of all twelve walking cities.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Engine-Heart Tavern",
+      "biome": "Social Hub",
+      "purpose": "Recreation for the city's engineers",
+      "decor_tags": [
+        "kegs",
+        "pipes",
+        "stools",
+        "darts"
+      ],
+      "activity_tags": [
+        "drinking",
+        "gambling",
+        "singing"
+      ],
+      "archetype": "rest_social",
+      "ambient_palette": "low_lantern",
+      "width_tiles": 35,
+      "height_tiles": 35,
+      "floor_tile": "wood_planks",
+      "wall_tile": "tavern_wall",
+      "flux_floor_prompt": "Scuffed wooden planks smelling of spilled ale and machine oil.",
+      "room_scene_prompt": "A rowdy, warm basement bar built directly into the city's vibration-dampening chassis.",
+      "scene_components": [
+        {
+          "component_id": "ale_tap_manifold",
+          "label": "The Fueling Station",
+          "description": "A complex array of taps serving fermented lichen-brew.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Logistics Yard",
+      "biome": "Industrial",
+      "purpose": "Sorting and shipping bulk goods",
+      "decor_tags": [
+        "crates",
+        "pallets",
+        "labels",
+        "scales"
+      ],
+      "activity_tags": [
+        "weighing",
+        "sorting",
+        "loading"
+      ],
+      "archetype": "logistics_yard",
+      "ambient_palette": "clear_day",
+      "width_tiles": 50,
+      "height_tiles": 40,
+      "floor_tile": "red_brick",
+      "wall_tile": "wood_beam_wall",
+      "flux_floor_prompt": "Durable red bricks laid in a herringbone pattern, worn smooth by heavy carts.",
+      "room_scene_prompt": "A bustling open-air yard where cargo is transferred from the city's elevators to the trade stalls.",
+      "scene_components": [
+        {
+          "component_id": "cargo_scale",
+          "label": "The Grand Balance",
+          "description": "A massive floor scale used to weigh incoming shipments of whale-oil and scrap metal.",
+          "anchor": "south_east",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    }
+  ],
+  "role_groups": [
+    {
+      "role_name": "Heat Broker",
+      "count": 3,
+      "core_values": [
+        "Efficiency",
+        "Profit",
+        "Stability"
+      ],
+      "activity": "Managing the distribution of thermal units between city sectors.",
+      "starting_item_ids": [
+        "thermal_ledger",
+        "brass_valve_key",
+        "insulated_flask"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Exchange Stall",
+          "asset_type": "Commercial",
+          "description": "A booth in the Heat Exchange.",
+          "story_use": "Used to conduct official energy trades."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "boiler_vulnerability",
+          "topic": "Infrastructure",
+          "summary": "The secondary boiler has a leak that could be exploited.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "role_name": "Route Navigator",
+      "count": 3,
+      "core_values": [
+        "Safety",
+        "Tradition",
+        "Precision"
+      ],
+      "activity": "Plotting the city's path across the ice shelf.",
+      "starting_item_ids": [
+        "sextant",
+        "ice_map_scroll",
+        "aurora_goggles"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Chart Room",
+          "asset_type": "Office",
+          "description": "A private room in the Archive.",
+          "story_use": "Used for secret route planning."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "hidden_crevasse",
+          "topic": "Geography",
+          "summary": "A massive crevasse lies 10 miles north, unknown to other cities.",
+          "confidence": 100
+        }
+      ]
+    }
+  ],
+  "main_characters": [
+    {
+      "display_name": "High Broker Vane",
+      "role_name": "Heat Broker",
+      "activity": "Manipulating heat prices to pressure the Navigator's Guild.",
+      "home_base": "The Central Heat Exchange",
+      "arc_goal": "To monopolize thermal credits before the deep winter hits.",
+      "inventory": [
+        {
+          "item_id": "thermal_ledger",
+          "name": "Master Heat Ledger",
+          "description": "Contains the debt records of three cities.",
+          "quantity": 1
+        },
+        {
+          "item_id": "brass_valve_key",
+          "name": "Golden Valve Key",
+          "description": "Opens the emergency bypass in Sector 4.",
+          "quantity": 1
+        },
+        {
+          "item_id": "insulated_flask",
+          "name": "Ever-Warm Flask",
+          "description": "Keeps liquid hot for a week.",
+          "quantity": 1
+        },
+        {
+          "item_id": "seal_ring",
+          "name": "Broker's Seal",
+          "description": "Used to authorize energy transfers.",
+          "quantity": 1
+        },
+        {
+          "item_id": "fine_furs",
+          "name": "Sable Overcoat",
+          "description": "Extremely warm and expensive.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pocket_watch",
+          "name": "Steam-Sync Watch",
+          "description": "Synchronized with the main boiler cycle.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bribe_pouch",
+          "name": "Pouch of Chits",
+          "description": "Small denomination credits for quick favors.",
+          "quantity": 50
+        },
+        {
+          "item_id": "secret_memo",
+          "name": "Crumpled Note",
+          "description": "A message from a rival city's spy.",
+          "quantity": 1
+        },
+        {
+          "item_id": "luxury_tea",
+          "name": "Aurora Leaf Tea",
+          "description": "Rare tea that glows faintly.",
+          "quantity": 5
+        },
+        {
+          "item_id": "hand_warmer",
+          "name": "Chemical Heat Pack",
+          "description": "Emergency warmth.",
+          "quantity": 10
+        },
+        {
+          "item_id": "magnifying_glass",
+          "name": "Jeweler's Loupe",
+          "description": "For inspecting valve seals.",
+          "quantity": 1
+        },
+        {
+          "item_id": "scented_oil",
+          "name": "Peppermint Oil",
+          "description": "To mask the smell of grease.",
+          "quantity": 2
+        },
+        {
+          "item_id": "gold_pen",
+          "name": "Pressure Pen",
+          "description": "Writes even in sub-zero temperatures.",
+          "quantity": 1
+        },
+        {
+          "item_id": "city_map",
+          "name": "Sector Map",
+          "description": "Detailed layout of the heating ducts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "whiskey",
+          "name": "Ice-Aged Malt",
+          "description": "Strong enough to melt frost.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Vane's Vault",
+          "asset_type": "Storage",
+          "description": "A secure locker for physical heat batteries.",
+          "story_use": "Storing illegal energy reserves."
+        },
+        {
+          "asset_name": "Exchange Penthouse",
+          "asset_type": "Residential",
+          "description": "Luxury quarters overlooking the boiler.",
+          "story_use": "Hosting secret negotiations."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "vane_debt_1",
+          "topic": "Finance",
+          "summary": "Navigator Kael owes Vane 50,000 credits.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "vane_secret_1",
+          "topic": "Sabotage",
+          "summary": "The emergency shutoff is actually a manual override.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Chief Navigator Kael",
+      "role_name": "Route Navigator",
+      "activity": "Searching for a path that avoids Vane's toll zones.",
+      "home_base": "The Archive of Routes",
+      "arc_goal": "To find the 'Lost Summer' valley mentioned in ancient scrolls.",
+      "inventory": [
+        {
+          "item_id": "sextant",
+          "name": "Brass Sextant",
+          "description": "Used for celestial navigation.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ice_map_scroll",
+          "name": "Permafrost Map",
+          "description": "A map of the shifting ice shelf.",
+          "quantity": 1
+        },
+        {
+          "item_id": "aurora_goggles",
+          "name": "Polarized Goggles",
+          "description": "Protects against snow blindness and aurora glare.",
+          "quantity": 1
+        },
+        {
+          "item_id": "compass",
+          "name": "Magnetic Gyro-Compass",
+          "description": "Always points to the magnetic pole.",
+          "quantity": 1
+        },
+        {
+          "item_id": "dried_meat",
+          "name": "Whale Jerky",
+          "description": "Tough but nutritious.",
+          "quantity": 20
+        },
+        {
+          "item_id": "signal_flare",
+          "name": "Red Flare",
+          "description": "For emergency signaling on the ice.",
+          "quantity": 3
+        },
+        {
+          "item_id": "climbing_pick",
+          "name": "Ice Axe",
+          "description": "Standard mountaineering tool.",
+          "quantity": 1
+        },
+        {
+          "item_id": "logbook",
+          "name": "Navigator's Log",
+          "description": "Daily records of city movement.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Observation Tower",
+          "asset_type": "Utility",
+          "description": "The highest point on the city.",
+          "story_use": "Spotting incoming storms."
+        },
+        {
+          "asset_name": "Private Library",
+          "asset_type": "Archive",
+          "description": "A collection of forbidden maps.",
+          "story_use": "Researching the Lost Summer."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kael_secret_1",
+          "topic": "Geography",
+          "summary": "The ice shelf is thinning faster than reported.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "kael_rival_1",
+          "topic": "Politics",
+          "summary": "Vane is planning to block the northern pass.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Leg-Smith Grog",
+      "role_name": "Engineer",
+      "activity": "Repairing a cracked hydraulic joint in secret.",
+      "home_base": "Leg-Works Maintenance Bay",
+      "arc_goal": "To replace the city's legs with a more efficient tread system.",
+      "inventory": [
+        {
+          "item_id": "wrench",
+          "name": "Heavy Pipe Wrench",
+          "description": "A massive tool for massive bolts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "oil_can",
+          "name": "Lubricant Dispenser",
+          "description": "High-grade synthetic oil.",
+          "quantity": 2
+        },
+        {
+          "item_id": "welding_mask",
+          "name": "Tinted Visor",
+          "description": "Protects eyes from arc welding.",
+          "quantity": 1
+        },
+        {
+          "item_id": "scrap_metal",
+          "name": "Steel Plates",
+          "description": "Raw material for repairs.",
+          "quantity": 10
+        },
+        {
+          "item_id": "rivet_gun",
+          "name": "Pneumatic Riveter",
+          "description": "Loud and effective.",
+          "quantity": 1
+        },
+        {
+          "item_id": "blueprints",
+          "name": "Leg Schematics",
+          "description": "Detailed drawings of the walking mechanism.",
+          "quantity": 1
+        },
+        {
+          "item_id": "tobacco",
+          "name": "Strong Pipe Weed",
+          "description": "The only thing that keeps him sane.",
+          "quantity": 1
+        },
+        {
+          "item_id": "heavy_gloves",
+          "name": "Asbestos Gloves",
+          "description": "Heat resistant hand protection.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Workshop Bench",
+          "asset_type": "Industrial",
+          "description": "A cluttered workbench in the bay.",
+          "story_use": "Crafting custom engine parts."
+        },
+        {
+          "asset_name": "Storage Locker 42",
+          "asset_type": "Storage",
+          "description": "Hidden locker behind a steam pipe.",
+          "story_use": "Hiding stolen fuel."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "grog_secret_1",
+          "topic": "Engineering",
+          "summary": "Leg 3 will fail within 48 hours without a full overhaul.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "grog_debt_1",
+          "topic": "Social",
+          "summary": "Owes the Tavern Keep for a year's worth of ale.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Customs Officer Elara",
+      "role_name": "Border Guard",
+      "activity": "Searching for contraband engine parts from the 'Rust City'.",
+      "home_base": "The Frozen Customs Gate",
+      "arc_goal": "To catch the smuggler who killed her partner.",
+      "inventory": [
+        {
+          "item_id": "stamp",
+          "name": "Official Entry Stamp",
+          "description": "Grants legal passage between cities.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ink_pad",
+          "name": "Permanent Blue Ink",
+          "description": "Hard to wash off.",
+          "quantity": 1
+        },
+        {
+          "item_id": "baton",
+          "name": "Electric Prod",
+          "description": "For crowd control.",
+          "quantity": 1
+        },
+        {
+          "item_id": "handcuffs",
+          "name": "Steel Restraints",
+          "description": "Standard issue.",
+          "quantity": 2
+        },
+        {
+          "item_id": "manifest",
+          "name": "Cargo Manifest",
+          "description": "List of all items on the current convoy.",
+          "quantity": 1
+        },
+        {
+          "item_id": "whistle",
+          "name": "Signal Whistle",
+          "description": "Piercingly loud.",
+          "quantity": 1
+        },
+        {
+          "item_id": "rations",
+          "name": "Standard Bar",
+          "description": "Bland but filling.",
+          "quantity": 5
+        },
+        {
+          "item_id": "badge",
+          "name": "Officer's Badge",
+          "description": "Symbol of authority.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Interrogation Room",
+          "asset_type": "Security",
+          "description": "A cold room with a single light.",
+          "story_use": "Questioning suspects."
+        },
+        {
+          "asset_name": "Guard Barracks",
+          "asset_type": "Residential",
+          "description": "A small bunk in the gatehouse.",
+          "story_use": "Resting between shifts."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "elara_clue_1",
+          "topic": "Crime",
+          "summary": "The smuggler uses the hydroponics vents to move goods.",
+          "confidence": 80
+        },
+        {
+          "knowledge_id": "elara_duty_1",
+          "topic": "Law",
+          "summary": "Vane's latest shipment is missing a tax seal.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Moss-Tender Ivy",
+      "role_name": "Botanist",
+      "activity": "Cross-breeding a new strain of heat-absorbing lichen.",
+      "home_base": "The Hydroponic Moss Garden",
+      "arc_goal": "To make the city self-sufficient in food and oxygen.",
+      "inventory": [
+        {
+          "item_id": "clippers",
+          "name": "Pruning Shears",
+          "description": "For delicate plant work.",
+          "quantity": 1
+        },
+        {
+          "item_id": "seeds",
+          "name": "Glow-Moss Spores",
+          "description": "Highly valuable bio-luminescent seeds.",
+          "quantity": 100
+        },
+        {
+          "item_id": "spray_bottle",
+          "name": "Nutrient Solution",
+          "description": "Speeds up plant growth.",
+          "quantity": 1
+        },
+        {
+          "item_id": "soil_tester",
+          "name": "PH Meter",
+          "description": "Checks the acidity of the moss beds.",
+          "quantity": 1
+        },
+        {
+          "item_id": "gloves",
+          "name": "Rubber Gloves",
+          "description": "Protects against toxic sap.",
+          "quantity": 1
+        },
+        {
+          "item_id": "notebook",
+          "name": "Field Journal",
+          "description": "Observations on plant mutations.",
+          "quantity": 1
+        },
+        {
+          "item_id": "herbal_tea",
+          "name": "Calming Brew",
+          "description": "Made from garden scraps.",
+          "quantity": 10
+        },
+        {
+          "item_id": "trowel",
+          "name": "Hand Shovel",
+          "description": "Small tool for planting.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Greenhouse Lab",
+          "asset_type": "Research",
+          "description": "A private corner of the garden.",
+          "story_use": "Developing illegal bio-weapons."
+        },
+        {
+          "asset_name": "Seed Vault",
+          "asset_type": "Storage",
+          "description": "A temperature-controlled safe.",
+          "story_use": "Protecting rare species."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "ivy_secret_1",
+          "topic": "Biology",
+          "summary": "The moss can be processed into a potent hallucinogen.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "ivy_ally_1",
+          "topic": "Social",
+          "summary": "Grog provides her with scrap metal for planters.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Archivist Thorne",
+      "role_name": "Historian",
+      "activity": "Decoding a map that shows a shortcut through the 'Shattered Coast'.",
+      "home_base": "The Archive of Routes",
+      "arc_goal": "To prove that the cities were once stationary.",
+      "inventory": [
+        {
+          "item_id": "magnifier",
+          "name": "Reading Glass",
+          "description": "For small script.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ink_well",
+          "name": "Black Ink",
+          "description": "High quality archival ink.",
+          "quantity": 1
+        },
+        {
+          "item_id": "quill",
+          "name": "Swan Feather Quill",
+          "description": "A traditional writing tool.",
+          "quantity": 5
+        },
+        {
+          "item_id": "parchment",
+          "name": "Blank Vellum",
+          "description": "For making copies.",
+          "quantity": 20
+        },
+        {
+          "item_id": "old_key",
+          "name": "Rusty Iron Key",
+          "description": "Opens the 'Forbidden Wing'.",
+          "quantity": 1
+        },
+        {
+          "item_id": "gloves_silk",
+          "name": "White Silk Gloves",
+          "description": "For handling delicate documents.",
+          "quantity": 1
+        },
+        {
+          "item_id": "candle",
+          "name": "Beeswax Candle",
+          "description": "Provides soft light.",
+          "quantity": 10
+        },
+        {
+          "item_id": "book_weights",
+          "name": "Lead Weights",
+          "description": "Holds scrolls open.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Deep Stacks",
+          "asset_type": "Archive",
+          "description": "The lowest level of the library.",
+          "story_use": "Hiding from the High Broker."
+        },
+        {
+          "asset_name": "Writing Desk",
+          "asset_type": "Office",
+          "description": "A heavy oak desk.",
+          "story_use": "Forging travel documents."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "thorne_secret_1",
+          "topic": "History",
+          "summary": "The 'Great Migration' was actually a forced exile.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "thorne_debt_1",
+          "topic": "Social",
+          "summary": "Owes Elara for keeping his illegal research quiet.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Tavern Keep Barnaby",
+      "role_name": "Proprietor",
+      "activity": "Watering down the lichen-brew to save on costs.",
+      "home_base": "The Engine-Heart Tavern",
+      "arc_goal": "To retire to a city that doesn't move.",
+      "inventory": [
+        {
+          "item_id": "mug",
+          "name": "Pewter Mug",
+          "description": "Dented and stained.",
+          "quantity": 50
+        },
+        {
+          "item_id": "rag",
+          "name": "Greasy Rag",
+          "description": "For cleaning the bar.",
+          "quantity": 5
+        },
+        {
+          "item_id": "keg_tap",
+          "name": "Spare Tap",
+          "description": "Always good to have a backup.",
+          "quantity": 2
+        },
+        {
+          "item_id": "dice",
+          "name": "Bone Dice",
+          "description": "For gambling games.",
+          "quantity": 6
+        },
+        {
+          "item_id": "ledger_bar",
+          "name": "Tab Ledger",
+          "description": "Who owes what for drinks.",
+          "quantity": 1
+        },
+        {
+          "item_id": "club",
+          "name": "Wooden Bat",
+          "description": "For breaking up fights.",
+          "quantity": 1
+        },
+        {
+          "item_id": "coins_old",
+          "name": "Antique Coins",
+          "description": "Currency from a dead city.",
+          "quantity": 12
+        },
+        {
+          "item_id": "apron",
+          "name": "Leather Apron",
+          "description": "Protects against spills.",
+          "quantity": 1
+        },
+        {
+          "item_id": "matches",
+          "name": "Sulfur Matches",
+          "description": "For lighting lanterns.",
+          "quantity": 100
+        },
+        {
+          "item_id": "salt",
+          "name": "Rock Salt",
+          "description": "For the rim of mugs.",
+          "quantity": 1
+        },
+        {
+          "item_id": "sugar",
+          "name": "Beet Sugar",
+          "description": "A rare luxury sweetener.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pipe",
+          "name": "Briar Pipe",
+          "description": "Barnaby's personal pipe.",
+          "quantity": 1
+        },
+        {
+          "item_id": "cleaning_fluid",
+          "name": "Caustic Soda",
+          "description": "For the pipes.",
+          "quantity": 1
+        },
+        {
+          "item_id": "snack_bowl",
+          "name": "Salted Nuts",
+          "description": "Makes people thirsty.",
+          "quantity": 10
+        },
+        {
+          "item_id": "hidden_bottle",
+          "name": "Top-Shelf Brandy",
+          "description": "The real stuff.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Bar Counter",
+          "asset_type": "Commercial",
+          "description": "The heart of the tavern.",
+          "story_use": "Eavesdropping on engineers."
+        },
+        {
+          "asset_name": "Cellar Room",
+          "asset_type": "Storage",
+          "description": "A cold room for kegs.",
+          "story_use": "Storing black-market engine parts."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "barnaby_gossip_1",
+          "topic": "Rumors",
+          "summary": "The High Broker is terrified of heights.",
+          "confidence": 60
+        },
+        {
+          "knowledge_id": "barnaby_debt_1",
+          "topic": "Finance",
+          "summary": "Grog has a tab of 12,000 credits.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Logistics Clerk Pip",
+      "role_name": "Sorter",
+      "activity": "Mislabeling crates to help a friend smuggle heaters.",
+      "home_base": "The Logistics Yard",
+      "arc_goal": "To earn enough to buy a citizenship favor for his sister.",
+      "inventory": [
+        {
+          "item_id": "clipboard",
+          "name": "Metal Clipboard",
+          "description": "Holds shipping manifests.",
+          "quantity": 1
+        },
+        {
+          "item_id": "chalk",
+          "name": "Marking Chalk",
+          "description": "For labeling crates.",
+          "quantity": 10
+        },
+        {
+          "item_id": "scanner",
+          "name": "Barcode Reader",
+          "description": "Handheld device for tracking inventory.",
+          "quantity": 1
+        },
+        {
+          "item_id": "gloves_work",
+          "name": "Grip Gloves",
+          "description": "Prevents splinters.",
+          "quantity": 1
+        },
+        {
+          "item_id": "lunchbox",
+          "name": "Tin Pail",
+          "description": "Contains a cold sandwich.",
+          "quantity": 1
+        },
+        {
+          "item_id": "tape",
+          "name": "Packing Tape",
+          "description": "Industrial strength.",
+          "quantity": 3
+        },
+        {
+          "item_id": "knife",
+          "name": "Box Cutter",
+          "description": "Sharp and retractable.",
+          "quantity": 1
+        },
+        {
+          "item_id": "id_card",
+          "name": "Employee ID",
+          "description": "Allows access to the yard.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Sorting Station 5",
+          "asset_type": "Industrial",
+          "description": "Pip's assigned work area.",
+          "story_use": "Swapping labels on crates."
+        },
+        {
+          "asset_name": "Small Locker",
+          "asset_type": "Storage",
+          "description": "A tiny metal box.",
+          "story_use": "Hiding stolen citizenship papers."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "pip_secret_1",
+          "topic": "Logistics",
+          "summary": "The 3:00 PM elevator is never inspected.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "pip_rival_1",
+          "topic": "Social",
+          "summary": "Barnaby is overcharging for the lichen-brew.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Elder Mara",
+      "role_name": "Councilor",
+      "activity": "Drafting a new law to tax heat consumption.",
+      "home_base": "The Aurora Observation Deck",
+      "arc_goal": "To maintain peace between the cities at any cost.",
+      "inventory": [
+        {
+          "item_id": "gavel",
+          "name": "Ivory Gavel",
+          "description": "Used to call meetings to order.",
+          "quantity": 1
+        },
+        {
+          "item_id": "scroll_law",
+          "name": "The City Charter",
+          "description": "The founding document of the migration.",
+          "quantity": 1
+        },
+        {
+          "item_id": "spectacles",
+          "name": "Gold-Rimmed Glasses",
+          "description": "For reading fine print.",
+          "quantity": 1
+        },
+        {
+          "item_id": "seal_wax",
+          "name": "Red Sealing Wax",
+          "description": "For official decrees.",
+          "quantity": 5
+        },
+        {
+          "item_id": "signet_ring",
+          "name": "Council Signet",
+          "description": "Proves her rank.",
+          "quantity": 1
+        },
+        {
+          "item_id": "handkerchief",
+          "name": "Lace Hanky",
+          "description": "Smells of lavender.",
+          "quantity": 1
+        },
+        {
+          "item_id": "tea_set",
+          "name": "Porcelain Cup",
+          "description": "A fragile relic of the old world.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pills",
+          "name": "Heart Medication",
+          "description": "Keeps her going.",
+          "quantity": 30
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Council Chamber",
+          "asset_type": "Office",
+          "description": "A grand room with a view.",
+          "story_use": "Passing controversial laws."
+        },
+        {
+          "asset_name": "Private Garden",
+          "asset_type": "Residential",
+          "description": "A small balcony with one hardy plant.",
+          "story_use": "Reflecting on the city's future."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "mara_secret_1",
+          "topic": "Politics",
+          "summary": "The High Broker is funding a rebellion in the next city.",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "mara_ally_1",
+          "topic": "Social",
+          "summary": "Thorne has information that could ruin Vane.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Scrapper Jax",
+      "role_name": "Salvager",
+      "activity": "Trading a stolen engine valve for a warm coat.",
+      "home_base": "Leg-Works Maintenance Bay",
+      "arc_goal": "To build his own mini-crawler and leave the city.",
+      "inventory": [
+        {
+          "item_id": "magnet",
+          "name": "Industrial Magnet",
+          "description": "For finding metal in the snow.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bag_burlap",
+          "name": "Heavy Sack",
+          "description": "For carrying scrap.",
+          "quantity": 2
+        },
+        {
+          "item_id": "pliers",
+          "name": "Wire Cutters",
+          "description": "For stripping cables.",
+          "quantity": 1
+        },
+        {
+          "item_id": "flashlight",
+          "name": "Crank Flashlight",
+          "description": "No batteries required.",
+          "quantity": 1
+        },
+        {
+          "item_id": "mask",
+          "name": "Filter Mask",
+          "description": "Protects against metal dust.",
+          "quantity": 1
+        },
+        {
+          "item_id": "rope",
+          "name": "Nylon Cord",
+          "description": "50 feet of strong rope.",
+          "quantity": 1
+        },
+        {
+          "item_id": "gears",
+          "name": "Assorted Cogs",
+          "description": "Useful for small repairs.",
+          "quantity": 20
+        },
+        {
+          "item_id": "energy_bar",
+          "name": "Chewy Protein",
+          "description": "Tastes like cardboard.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scrap Pile",
+          "asset_type": "Storage",
+          "description": "A mountain of junk in the bay.",
+          "story_use": "Hiding from the guards."
+        },
+        {
+          "asset_name": "Shack",
+          "asset_type": "Residential",
+          "description": "A lean-to made of corrugated metal.",
+          "story_use": "Sleeping near the heat pipes."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "jax_secret_1",
+          "topic": "Engineering",
+          "summary": "The city's fuel efficiency is dropping by 2% weekly.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "jax_debt_1",
+          "topic": "Social",
+          "summary": "Owes Pip for letting him into the yard at night.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Weather-Witch Sola",
+      "role_name": "Meteorologist",
+      "activity": "Predicting a massive blizzard that will stall the migration.",
+      "home_base": "The Aurora Observation Deck",
+      "arc_goal": "To warn the cities before they walk into a death trap.",
+      "inventory": [
+        {
+          "item_id": "barometer",
+          "name": "Glass Barometer",
+          "description": "Measures air pressure.",
+          "quantity": 1
+        },
+        {
+          "item_id": "anemometer",
+          "name": "Wind Gauge",
+          "description": "Handheld device for wind speed.",
+          "quantity": 1
+        },
+        {
+          "item_id": "crystals",
+          "name": "Storm Glass",
+          "description": "Crystals that change shape with the weather.",
+          "quantity": 1
+        },
+        {
+          "item_id": "cloak",
+          "name": "Weather-Proof Cape",
+          "description": "Repels water and wind.",
+          "quantity": 1
+        },
+        {
+          "item_id": "radio",
+          "name": "Shortwave Receiver",
+          "description": "Picks up signals from other cities.",
+          "quantity": 1
+        },
+        {
+          "item_id": "thermometer",
+          "name": "Mercury Tube",
+          "description": "Measures extreme cold.",
+          "quantity": 1
+        },
+        {
+          "item_id": "dried_berries",
+          "name": "Tundra Berries",
+          "description": "A rare treat.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pouch",
+          "name": "Herb Pouch",
+          "description": "Smells like pine.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Weather Station",
+          "asset_type": "Research",
+          "description": "A small hut on the roof.",
+          "story_use": "Sending emergency signals."
+        },
+        {
+          "asset_name": "Bunk",
+          "asset_type": "Residential",
+          "description": "A simple bed in the deck house.",
+          "story_use": "Watching the sky all night."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "sola_secret_1",
+          "topic": "Weather",
+          "summary": "The 'Great Storm' is actually a permanent climate shift.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "sola_ally_1",
+          "topic": "Social",
+          "summary": "Kael relies on her for all his route decisions.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Smuggler Rix",
+      "role_name": "Trader",
+      "activity": "Selling illegal 'Heat-Sinks' to the lower deck residents.",
+      "home_base": "The Engine-Heart Tavern",
+      "arc_goal": "To become the richest person in the migration.",
+      "inventory": [
+        {
+          "item_id": "heat_sink",
+          "name": "Portable Heater",
+          "description": "Illegal device that taps into city power.",
+          "quantity": 5
+        },
+        {
+          "item_id": "fake_id",
+          "name": "Forged Visa",
+          "description": "Looks real enough to fool Elara.",
+          "quantity": 2
+        },
+        {
+          "item_id": "lockpick",
+          "name": "Skeleton Key",
+          "description": "Opens most standard doors.",
+          "quantity": 1
+        },
+        {
+          "item_id": "smoke_bomb",
+          "name": "Fog Canister",
+          "description": "For quick escapes.",
+          "quantity": 3
+        },
+        {
+          "item_id": "gold_teeth",
+          "name": "Spare Gold",
+          "description": "Emergency currency.",
+          "quantity": 4
+        },
+        {
+          "item_id": "dagger",
+          "name": "Hidden Blade",
+          "description": "Tucked into a boot.",
+          "quantity": 1
+        },
+        {
+          "item_id": "perfume",
+          "name": "Strong Musk",
+          "description": "To hide the smell of the vents.",
+          "quantity": 1
+        },
+        {
+          "item_id": "map_vents",
+          "name": "Ventilation Map",
+          "description": "Shows the secret paths through the city.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bribe_gold",
+          "name": "Gold Chits",
+          "description": "High value currency.",
+          "quantity": 10
+        },
+        {
+          "item_id": "whiskey_flask",
+          "name": "Silver Flask",
+          "description": "Filled with cheap rotgut.",
+          "quantity": 1
+        },
+        {
+          "item_id": "playing_cards",
+          "name": "Marked Deck",
+          "description": "For winning at the tavern.",
+          "quantity": 1
+        },
+        {
+          "item_id": "wire",
+          "name": "Copper Wire",
+          "description": "For bypassing security sensors.",
+          "quantity": 1
+        },
+        {
+          "item_id": "gloves_thin",
+          "name": "Latex Gloves",
+          "description": "Leaves no fingerprints.",
+          "quantity": 5
+        },
+        {
+          "item_id": "watch_broken",
+          "name": "Antique Watch",
+          "description": "Used as a dead drop container.",
+          "quantity": 1
+        },
+        {
+          "item_id": "note_coded",
+          "name": "Cipher Sheet",
+          "description": "For reading smuggler messages.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Cache",
+          "asset_type": "Storage",
+          "description": "A loose floorboard in the tavern.",
+          "story_use": "Storing contraband."
+        },
+        {
+          "asset_name": "Safe House",
+          "asset_type": "Residential",
+          "description": "A small room in the slums.",
+          "story_use": "Hiding from the guards."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "rix_secret_1",
+          "topic": "Crime",
+          "summary": "The High Broker is his biggest customer.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "rix_debt_1",
+          "topic": "Social",
+          "summary": "Owes Jax for the latest batch of scrap.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Inspector Graves",
+      "role_name": "Detective",
+      "activity": "Investigating a series of 'Heat-Thefts' in the residential sector.",
+      "home_base": "The Frozen Customs Gate",
+      "arc_goal": "To expose the corruption at the heart of the Heat Exchange.",
+      "inventory": [
+        {
+          "item_id": "notebook_case",
+          "name": "Evidence Kit",
+          "description": "Contains bags and labels.",
+          "quantity": 1
+        },
+        {
+          "item_id": "camera",
+          "name": "Flash Camera",
+          "description": "For documenting crime scenes.",
+          "quantity": 1
+        },
+        {
+          "item_id": "fingerprint_powder",
+          "name": "Dusting Kit",
+          "description": "For finding prints.",
+          "quantity": 1
+        },
+        {
+          "item_id": "magnifying_lens",
+          "name": "High-Power Lens",
+          "description": "For close inspection.",
+          "quantity": 1
+        },
+        {
+          "item_id": "revolver",
+          "name": "Service Pistol",
+          "description": "Rarely used, but necessary.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bullets",
+          "name": "Lead Rounds",
+          "description": "Ammunition for the pistol.",
+          "quantity": 6
+        },
+        {
+          "item_id": "coat_heavy",
+          "name": "Trench Coat",
+          "description": "Classic detective attire.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pipe_tobacco",
+          "name": "Cherry Blend",
+          "description": "Helps him think.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Evidence Locker",
+          "asset_type": "Security",
+          "description": "A locked cabinet in the gatehouse.",
+          "story_use": "Storing stolen heat-sinks."
+        },
+        {
+          "asset_name": "Office Desk",
+          "asset_type": "Office",
+          "description": "A messy desk covered in files.",
+          "story_use": "Connecting the dots."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "graves_secret_1",
+          "topic": "Crime",
+          "summary": "The thefts are being committed by the city's own engineers.",
+          "confidence": 75
+        },
+        {
+          "knowledge_id": "graves_rival_1",
+          "topic": "Social",
+          "summary": "Vane is actively blocking his investigation.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Mechanic Tess",
+      "role_name": "Engineer",
+      "activity": "Tuning the city's gyroscopes to handle the rough terrain.",
+      "home_base": "Leg-Works Maintenance Bay",
+      "arc_goal": "To win the 'Migration Race' by making her city the fastest.",
+      "inventory": [
+        {
+          "item_id": "gyro_tool",
+          "name": "Alignment Tool",
+          "description": "For calibrating gyroscopes.",
+          "quantity": 1
+        },
+        {
+          "item_id": "oil_rag",
+          "name": "Clean Rag",
+          "description": "For wiping down sensors.",
+          "quantity": 10
+        },
+        {
+          "item_id": "multimeter",
+          "name": "Circuit Tester",
+          "description": "Checks electrical flow.",
+          "quantity": 1
+        },
+        {
+          "item_id": "soldering_iron",
+          "name": "Electric Iron",
+          "description": "For small repairs.",
+          "quantity": 1
+        },
+        {
+          "item_id": "solder",
+          "name": "Lead Wire",
+          "description": "Material for soldering.",
+          "quantity": 5
+        },
+        {
+          "item_id": "earmuffs",
+          "name": "Sound Dampeners",
+          "description": "Protects against engine noise.",
+          "quantity": 1
+        },
+        {
+          "item_id": "coffee",
+          "name": "Strong Brew",
+          "description": "Keeps her awake during long shifts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "wrench_small",
+          "name": "Socket Wrench",
+          "description": "For tight spaces.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Gyro Room",
+          "asset_type": "Industrial",
+          "description": "A small, spinning room.",
+          "story_use": "Calibrating the city's balance."
+        },
+        {
+          "asset_name": "Tool Chest",
+          "asset_type": "Storage",
+          "description": "A heavy red chest.",
+          "story_use": "Storing her custom inventions."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "tess_secret_1",
+          "topic": "Engineering",
+          "summary": "The city is leaning 0.5 degrees to the left.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "tess_ally_1",
+          "topic": "Social",
+          "summary": "Grog is her mentor and protector.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Cook Hattie",
+      "role_name": "Chef",
+      "activity": "Preparing a feast for the inter-city marriage ceremony.",
+      "home_base": "The Hydroponic Moss Garden",
+      "arc_goal": "To discover a spice that can grow in the arctic.",
+      "inventory": [
+        {
+          "item_id": "knife_chef",
+          "name": "Cleaver",
+          "description": "For chopping frozen meat.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pot",
+          "name": "Iron Cauldron",
+          "description": "Large enough for a city feast.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ladle",
+          "name": "Wooden Spoon",
+          "description": "For stirring the moss soup.",
+          "quantity": 1
+        },
+        {
+          "item_id": "spices",
+          "name": "Dried Lichen",
+          "description": "The only seasoning available.",
+          "quantity": 10
+        },
+        {
+          "item_id": "meat_whale",
+          "name": "Whale Steak",
+          "description": "A rare and fatty delicacy.",
+          "quantity": 5
+        },
+        {
+          "item_id": "bread",
+          "name": "Hardtack",
+          "description": "Standard city bread.",
+          "quantity": 50
+        },
+        {
+          "item_id": "apron_white",
+          "name": "Stained Apron",
+          "description": "Smells of onions and grease.",
+          "quantity": 1
+        },
+        {
+          "item_id": "recipe_book",
+          "name": "Grandma's Recipes",
+          "description": "Handwritten notes from the old world.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Kitchen",
+          "asset_type": "Commercial",
+          "description": "A hot, crowded room.",
+          "story_use": "Feeding the city's elite."
+        },
+        {
+          "asset_name": "Pantry",
+          "asset_type": "Storage",
+          "description": "A locked room for food.",
+          "story_use": "Hiding extra rations for the poor."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "hattie_secret_1",
+          "topic": "Social",
+          "summary": "The marriage is a sham to cover a resource trade.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "hattie_ally_1",
+          "topic": "Social",
+          "summary": "Ivy gives her the best moss in exchange for soup.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Messenger Flick",
+      "role_name": "Courier",
+      "activity": "Delivering a secret message from Vane to the Smuggler.",
+      "home_base": "The Logistics Yard",
+      "arc_goal": "To run fast enough to escape his past.",
+      "inventory": [
+        {
+          "item_id": "satchel",
+          "name": "Leather Bag",
+          "description": "For carrying letters.",
+          "quantity": 1
+        },
+        {
+          "item_id": "boots",
+          "name": "Spiked Boots",
+          "description": "For running on ice.",
+          "quantity": 1
+        },
+        {
+          "item_id": "whistle_flick",
+          "name": "Signal Whistle",
+          "description": "To clear the way.",
+          "quantity": 1
+        },
+        {
+          "item_id": "water_bottle",
+          "name": "Canteen",
+          "description": "Filled with melted snow.",
+          "quantity": 1
+        },
+        {
+          "item_id": "map_shortcuts",
+          "name": "Shortcut Map",
+          "description": "Shows the fastest routes through the city.",
+          "quantity": 1
+        },
+        {
+          "item_id": "energy_gel",
+          "name": "Sugar Pack",
+          "description": "Quick energy boost.",
+          "quantity": 10
+        },
+        {
+          "item_id": "gloves_flick",
+          "name": "Fingerless Gloves",
+          "description": "For better grip.",
+          "quantity": 1
+        },
+        {
+          "item_id": "letter",
+          "name": "Sealed Envelope",
+          "description": "A message for Rix.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Messenger Hub",
+          "asset_type": "Office",
+          "description": "A small desk in the yard.",
+          "story_use": "Receiving new assignments."
+        },
+        {
+          "asset_name": "Roof Shack",
+          "asset_type": "Residential",
+          "description": "A tiny room with a view.",
+          "story_use": "Watching the city move."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "flick_secret_1",
+          "topic": "Social",
+          "summary": "The message he's carrying is a death warrant.",
+          "confidence": 50
+        },
+        {
+          "knowledge_id": "flick_debt_1",
+          "topic": "Social",
+          "summary": "Owes Rix for a fake ID.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Healer Oryn",
+      "role_name": "Doctor",
+      "activity": "Treating a case of 'Frost-Lung' in the engine deck.",
+      "home_base": "The Hydroponic Moss Garden",
+      "arc_goal": "To find a cure for the sickness caused by the city's exhaust.",
+      "inventory": [
+        {
+          "item_id": "medical_kit",
+          "name": "Doctor's Bag",
+          "description": "Contains bandages and salves.",
+          "quantity": 1
+        },
+        {
+          "item_id": "stethoscope",
+          "name": "Brass Stethoscope",
+          "description": "For listening to lungs.",
+          "quantity": 1
+        },
+        {
+          "item_id": "scalpel",
+          "name": "Sharp Blade",
+          "description": "For surgery.",
+          "quantity": 5
+        },
+        {
+          "item_id": "alcohol",
+          "name": "Sanitizer",
+          "description": "High-proof spirits.",
+          "quantity": 2
+        },
+        {
+          "item_id": "bandages",
+          "name": "Clean Linen",
+          "description": "For wrapping wounds.",
+          "quantity": 20
+        },
+        {
+          "item_id": "herbs_healing",
+          "name": "Lung-Root",
+          "description": "A plant that helps breathing.",
+          "quantity": 10
+        },
+        {
+          "item_id": "syringe",
+          "name": "Glass Needle",
+          "description": "For injections.",
+          "quantity": 3
+        },
+        {
+          "item_id": "mask_medical",
+          "name": "Gauze Mask",
+          "description": "To prevent infection.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Infirmary",
+          "asset_type": "Medical",
+          "description": "A clean, quiet room.",
+          "story_use": "Treating the sick and injured."
+        },
+        {
+          "asset_name": "Medicine Cabinet",
+          "asset_type": "Storage",
+          "description": "A locked cabinet for drugs.",
+          "story_use": "Hiding illegal painkillers."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "oryn_secret_1",
+          "topic": "Medicine",
+          "summary": "The 'Frost-Lung' is actually caused by Vane's cheap fuel.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "oryn_ally_1",
+          "topic": "Social",
+          "summary": "Ivy provides him with the herbs he needs.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Broker's Guard Kross",
+      "role_name": "Mercenary",
+      "activity": "Intimidating a merchant who refused to pay Vane's heat tax.",
+      "home_base": "The Central Heat Exchange",
+      "arc_goal": "To save enough money to buy his own city sector.",
+      "inventory": [
+        {
+          "item_id": "mace",
+          "name": "Spiked Club",
+          "description": "A brutal weapon.",
+          "quantity": 1
+        },
+        {
+          "item_id": "shield",
+          "name": "Riot Shield",
+          "description": "Made of reinforced plastic.",
+          "quantity": 1
+        },
+        {
+          "item_id": "armor",
+          "name": "Padded Vest",
+          "description": "Protects against knives.",
+          "quantity": 1
+        },
+        {
+          "item_id": "helmet",
+          "name": "Steel Helm",
+          "description": "Covers the whole face.",
+          "quantity": 1
+        },
+        {
+          "item_id": "cuffs_heavy",
+          "name": "Iron Shackles",
+          "description": "For difficult prisoners.",
+          "quantity": 1
+        },
+        {
+          "item_id": "rations_meat",
+          "name": "Dried Beef",
+          "description": "High protein.",
+          "quantity": 10
+        },
+        {
+          "item_id": "money_pouch",
+          "name": "Heavy Purse",
+          "description": "Filled with Vane's credits.",
+          "quantity": 1
+        },
+        {
+          "item_id": "knife_kross",
+          "name": "Combat Knife",
+          "description": "Sharp and reliable.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guard Post",
+          "asset_type": "Security",
+          "description": "A small booth outside Vane's office.",
+          "story_use": "Blocking access to the Broker."
+        },
+        {
+          "asset_name": "Training Room",
+          "asset_type": "Industrial",
+          "description": "A room with a punching bag.",
+          "story_use": "Keeping in shape."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kross_secret_1",
+          "topic": "Crime",
+          "summary": "Vane is planning to assassinate the Councilor.",
+          "confidence": 60
+        },
+        {
+          "knowledge_id": "kross_debt_1",
+          "topic": "Social",
+          "summary": "Owes Barnaby for a broken table.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Map-Maker Lyra",
+      "role_name": "Cartographer",
+      "activity": "Drawing a new map of the ice shelf based on Kael's data.",
+      "home_base": "The Archive of Routes",
+      "arc_goal": "To create a map so accurate it becomes the new law.",
+      "inventory": [
+        {
+          "item_id": "compass_lyra",
+          "name": "Drafting Compass",
+          "description": "For drawing perfect circles.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ruler",
+          "name": "Steel Rule",
+          "description": "For straight lines.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ink_colors",
+          "name": "Colored Inks",
+          "description": "Red for danger, blue for ice.",
+          "quantity": 5
+        },
+        {
+          "item_id": "brushes",
+          "name": "Fine Brushes",
+          "description": "For detailed work.",
+          "quantity": 3
+        },
+        {
+          "item_id": "paper_roll",
+          "name": "Large Scroll",
+          "description": "A blank canvas for a new map.",
+          "quantity": 1
+        },
+        {
+          "item_id": "eraser",
+          "name": "Gum Eraser",
+          "description": "For fixing mistakes.",
+          "quantity": 1
+        },
+        {
+          "item_id": "weights_paper",
+          "name": "Brass Weights",
+          "description": "Holds the paper flat.",
+          "quantity": 4
+        },
+        {
+          "item_id": "lamp",
+          "name": "Desk Lamp",
+          "description": "Provides bright, focused light.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Map Room",
+          "asset_type": "Office",
+          "description": "A room with a giant drafting table.",
+          "story_use": "Creating the master map."
+        },
+        {
+          "asset_name": "Storage Tube",
+          "asset_type": "Storage",
+          "description": "A waterproof tube for maps.",
+          "story_use": "Protecting her work from the snow."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "lyra_secret_1",
+          "topic": "Geography",
+          "summary": "The old maps are intentionally misleading.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "lyra_ally_1",
+          "topic": "Social",
+          "summary": "Thorne provides her with the historical data she needs.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Fuel-Master Silas",
+      "role_name": "Engineer",
+      "activity": "Measuring the remaining whale-oil in the city's tanks.",
+      "home_base": "The Central Heat Exchange",
+      "arc_goal": "To find a way to run the city on aurora energy.",
+      "inventory": [
+        {
+          "item_id": "dipstick",
+          "name": "Fuel Gauge",
+          "description": "A long rod for measuring oil levels.",
+          "quantity": 1
+        },
+        {
+          "item_id": "sample_jar",
+          "name": "Glass Jar",
+          "description": "For testing fuel quality.",
+          "quantity": 5
+        },
+        {
+          "item_id": "funnel",
+          "name": "Brass Funnel",
+          "description": "For pouring oil.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pump",
+          "name": "Hand Pump",
+          "description": "For moving small amounts of fuel.",
+          "quantity": 1
+        },
+        {
+          "item_id": "goggles_silas",
+          "name": "Safety Goggles",
+          "description": "Protects against oil splashes.",
+          "quantity": 1
+        },
+        {
+          "item_id": "rag_silas",
+          "name": "Oily Rag",
+          "description": "For cleaning up spills.",
+          "quantity": 10
+        },
+        {
+          "item_id": "wrench_silas",
+          "name": "Adjustable Wrench",
+          "description": "A versatile tool.",
+          "quantity": 1
+        },
+        {
+          "item_id": "matches_silas",
+          "name": "Safety Matches",
+          "description": "For lighting the pilot light.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Fuel Tank 1",
+          "asset_type": "Industrial",
+          "description": "A massive underground tank.",
+          "story_use": "Monitoring the city's lifeblood."
+        },
+        {
+          "asset_name": "Control Room",
+          "asset_type": "Office",
+          "description": "A room filled with dials and levers.",
+          "story_use": "Managing the fuel flow."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "silas_secret_1",
+          "topic": "Engineering",
+          "summary": "The fuel is being contaminated with water.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "silas_rival_1",
+          "topic": "Social",
+          "summary": "Vane is selling the high-grade fuel to other cities.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Trader Miri",
+      "role_name": "Merchant",
+      "activity": "Selling 'Spare Legs' (mechanical parts) to the highest bidder.",
+      "home_base": "The Logistics Yard",
+      "arc_goal": "To own her own trade convoy.",
+      "inventory": [
+        {
+          "item_id": "gear_large",
+          "name": "Drive Gear",
+          "description": "A massive steel gear.",
+          "quantity": 1
+        },
+        {
+          "item_id": "piston_small",
+          "name": "Hydraulic Piston",
+          "description": "For small leg adjustments.",
+          "quantity": 2
+        },
+        {
+          "item_id": "bearing",
+          "name": "Ball Bearing",
+          "description": "High-precision part.",
+          "quantity": 50
+        },
+        {
+          "item_id": "seal_rubber",
+          "name": "Gasket Set",
+          "description": "Prevents leaks.",
+          "quantity": 10
+        },
+        {
+          "item_id": "spring",
+          "name": "Heavy Spring",
+          "description": "For shock absorption.",
+          "quantity": 5
+        },
+        {
+          "item_id": "bolt",
+          "name": "Titanium Bolt",
+          "description": "Extremely strong.",
+          "quantity": 100
+        },
+        {
+          "item_id": "nut",
+          "name": "Matching Nut",
+          "description": "For the titanium bolts.",
+          "quantity": 100
+        },
+        {
+          "item_id": "catalog",
+          "name": "Parts Catalog",
+          "description": "A list of everything she sells.",
+          "quantity": 1
+        },
+        {
+          "item_id": "scale_miri",
+          "name": "Small Scale",
+          "description": "For weighing precious metals.",
+          "quantity": 1
+        },
+        {
+          "item_id": "calculator",
+          "name": "Mechanical Adder",
+          "description": "For totaling up sales.",
+          "quantity": 1
+        },
+        {
+          "item_id": "receipt_book",
+          "name": "Carbon Paper",
+          "description": "For making copies of sales.",
+          "quantity": 1
+        },
+        {
+          "item_id": "display_case",
+          "name": "Glass Box",
+          "description": "For showing off rare parts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "sign_miri",
+          "name": "Open Sign",
+          "description": "A neon-lit sign.",
+          "quantity": 1
+        },
+        {
+          "item_id": "stool_miri",
+          "name": "Folding Stool",
+          "description": "For sitting at her stall.",
+          "quantity": 1
+        },
+        {
+          "item_id": "lock_miri",
+          "name": "Heavy Padlock",
+          "description": "For her storage crate.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Trade Stall",
+          "asset_type": "Commercial",
+          "description": "A busy stall in the yard.",
+          "story_use": "Selling engine parts."
+        },
+        {
+          "asset_name": "Warehouse Crate",
+          "asset_type": "Storage",
+          "description": "A large metal shipping container.",
+          "story_use": "Storing her inventory."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "miri_secret_1",
+          "topic": "Trade",
+          "summary": "The next city is desperate for drive gears.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "miri_ally_1",
+          "topic": "Social",
+          "summary": "Pip helps her move goods without paying taxes.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Priestess Luna",
+      "role_name": "Spiritualist",
+      "activity": "Leading a ceremony to thank the Aurora for its light.",
+      "home_base": "The Aurora Observation Deck",
+      "arc_goal": "To convert the city to the 'Church of the Shimmer'.",
+      "inventory": [
+        {
+          "item_id": "censer",
+          "name": "Brass Censer",
+          "description": "For burning incense.",
+          "quantity": 1
+        },
+        {
+          "item_id": "incense",
+          "name": "Aurora Dust",
+          "description": "Smells like ozone.",
+          "quantity": 20
+        },
+        {
+          "item_id": "robe",
+          "name": "Shimmering Robe",
+          "description": "Changes color in the light.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bell",
+          "name": "Silver Bell",
+          "description": "Used to mark the start of prayer.",
+          "quantity": 1
+        },
+        {
+          "item_id": "book_prayer",
+          "name": "The Book of Light",
+          "description": "Contains the church's teachings.",
+          "quantity": 1
+        },
+        {
+          "item_id": "candle_luna",
+          "name": "Tall Candle",
+          "description": "Burns with a green flame.",
+          "quantity": 5
+        },
+        {
+          "item_id": "pendant",
+          "name": "Sun Stone",
+          "description": "A warm, glowing gem.",
+          "quantity": 1
+        },
+        {
+          "item_id": "water_holy",
+          "name": "Melted Glacier Water",
+          "description": "Considered sacred.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Shrine",
+          "asset_type": "Religious",
+          "description": "A small altar on the deck.",
+          "story_use": "Performing rituals."
+        },
+        {
+          "asset_name": "Meditation Room",
+          "asset_type": "Residential",
+          "description": "A quiet, dark room.",
+          "story_use": "Praying for the city's safety."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "luna_secret_1",
+          "topic": "Religion",
+          "summary": "The Aurora is actually a sign of a coming solar flare.",
+          "confidence": 80
+        },
+        {
+          "knowledge_id": "luna_ally_1",
+          "topic": "Social",
+          "summary": "Mara is a secret member of her church.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Scout Jace",
+      "role_name": "Explorer",
+      "activity": "Returning from a solo mission to the 'Ice Wastes'.",
+      "home_base": "The Frozen Customs Gate",
+      "arc_goal": "To find a way to stop the migration and settle down.",
+      "inventory": [
+        {
+          "item_id": "snowshoes",
+          "name": "Spiked Shoes",
+          "description": "For walking on deep snow.",
+          "quantity": 1
+        },
+        {
+          "item_id": "binoculars",
+          "name": "Long-Range Glass",
+          "description": "For spotting other cities.",
+          "quantity": 1
+        },
+        {
+          "item_id": "flare_gun",
+          "name": "Signal Pistol",
+          "description": "For calling for help.",
+          "quantity": 1
+        },
+        {
+          "item_id": "flares",
+          "name": "Green Flares",
+          "description": "Signals 'All Clear'.",
+          "quantity": 5
+        },
+        {
+          "item_id": "tent",
+          "name": "Thermal Tent",
+          "description": "A small, insulated shelter.",
+          "quantity": 1
+        },
+        {
+          "item_id": "stove",
+          "name": "Pocket Stove",
+          "description": "For melting snow for water.",
+          "quantity": 1
+        },
+        {
+          "item_id": "fuel_can",
+          "name": "Small Fuel Tank",
+          "description": "For the stove.",
+          "quantity": 1
+        },
+        {
+          "item_id": "knife_jace",
+          "name": "Survival Knife",
+          "description": "A multi-tool for the wastes.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scout Hut",
+          "asset_type": "Residential",
+          "description": "A small shack near the gate.",
+          "story_use": "Storing his gear."
+        },
+        {
+          "asset_name": "Lookout Post",
+          "asset_type": "Security",
+          "description": "A high platform on the city wall.",
+          "story_use": "Watching for danger."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "jace_secret_1",
+          "topic": "Geography",
+          "summary": "There is a forest growing 50 miles to the south.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "jace_ally_1",
+          "topic": "Social",
+          "summary": "Kael is the only one who believes his stories.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Clerk Bix",
+      "role_name": "Bureaucrat",
+      "activity": "Filing citizenship applications for the 'New Arrivals'.",
+      "home_base": "The Aurora Observation Deck",
+      "arc_goal": "To become the head of the Civil Service.",
+      "inventory": [
+        {
+          "item_id": "pen_bix",
+          "name": "Fountain Pen",
+          "description": "A symbol of his status.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ink_bix",
+          "name": "Blue Ink",
+          "description": "Standard bureaucratic ink.",
+          "quantity": 1
+        },
+        {
+          "item_id": "paper_bix",
+          "name": "Official Forms",
+          "description": "For citizenship and taxes.",
+          "quantity": 100
+        },
+        {
+          "item_id": "folder",
+          "name": "File Folder",
+          "description": "For organizing documents.",
+          "quantity": 10
+        },
+        {
+          "item_id": "stapler",
+          "name": "Manual Stapler",
+          "description": "A rare mechanical device.",
+          "quantity": 1
+        },
+        {
+          "item_id": "staples",
+          "name": "Metal Staples",
+          "description": "For the stapler.",
+          "quantity": 100
+        },
+        {
+          "item_id": "ruler_bix",
+          "name": "Wooden Ruler",
+          "description": "For measuring margins.",
+          "quantity": 1
+        },
+        {
+          "item_id": "tea_bix",
+          "name": "Mint Tea",
+          "description": "To soothe his nerves.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Clerk's Desk",
+          "asset_type": "Office",
+          "description": "A small, tidy desk.",
+          "story_use": "Processing paperwork."
+        },
+        {
+          "asset_name": "Archive Box",
+          "asset_type": "Storage",
+          "description": "A box filled with old records.",
+          "story_use": "Finding dirt on his rivals."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "bix_secret_1",
+          "topic": "Politics",
+          "summary": "The citizenship favors are being sold for heat credits.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "bix_rival_1",
+          "topic": "Social",
+          "summary": "Pip is forging travel permits.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Guard Captain Rex",
+      "role_name": "Border Guard",
+      "activity": "Organizing a patrol to search for the 'Heat-Thief'.",
+      "home_base": "The Frozen Customs Gate",
+      "arc_goal": "To maintain order and discipline in the city.",
+      "inventory": [
+        {
+          "item_id": "sword",
+          "name": "Officer's Saber",
+          "description": "A ceremonial but sharp blade.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pistol_rex",
+          "name": "Heavy Revolver",
+          "description": "A powerful sidearm.",
+          "quantity": 1
+        },
+        {
+          "item_id": "holster",
+          "name": "Leather Holster",
+          "description": "For the revolver.",
+          "quantity": 1
+        },
+        {
+          "item_id": "radio_rex",
+          "name": "Handheld Radio",
+          "description": "For communicating with his team.",
+          "quantity": 1
+        },
+        {
+          "item_id": "map_patrol",
+          "name": "Patrol Map",
+          "description": "Shows the guard's routes.",
+          "quantity": 1
+        },
+        {
+          "item_id": "keys_rex",
+          "name": "Master Keyring",
+          "description": "Opens all public doors.",
+          "quantity": 1
+        },
+        {
+          "item_id": "whistle_rex",
+          "name": "Command Whistle",
+          "description": "For giving orders.",
+          "quantity": 1
+        },
+        {
+          "item_id": "gloves_rex",
+          "name": "White Gloves",
+          "description": "For formal occasions.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Captain's Office",
+          "asset_type": "Security",
+          "description": "A large, imposing room.",
+          "story_use": "Planning city defense."
+        },
+        {
+          "asset_name": "Armory",
+          "asset_type": "Storage",
+          "description": "A locked room for weapons.",
+          "story_use": "Protecting the city's arsenal."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "rex_secret_1",
+          "topic": "Security",
+          "summary": "The city's defenses are vulnerable to a coordinated attack.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "rex_ally_1",
+          "topic": "Social",
+          "summary": "Elara is his most trusted officer.",
+          "confidence": 100
+        }
+      ]
+    }
+  ],
+  "social_rules": [
+    "Heat is the only true currency; all debts are ultimately settled in thermal units.",
+    "Citizenship is a privilege, not a right, and can be revoked for wasting resources.",
+    "Inter-city marriages must be approved by the High Broker and the Council.",
+    "Sabotaging the city's legs is considered an act of treason punishable by exile.",
+    "The Aurora is sacred; no work is to be done during a 'Great Shimmer' event."
+  ],
+  "item_themes": [
+    "Arctic Survival",
+    "Steam-Industrial",
+    "Diplomatic Bureaucracy",
+    "Aurora Mysticism"
+  ],
+  "custom_actions": [
+    "Trade Thermal Units",
+    "Inspect Travel Permit",
+    "Calibrate Engine Valve",
+    "Plot Migration Route"
+  ],
+  "player_entry_points": [
+    "Arriving as a refugee from a fallen city.",
+    "Being hired as a temporary maintenance worker.",
+    "Attending a high-stakes diplomatic summit.",
+    "Smuggling goods through the engine deck."
+  ],
+  "conflict_hooks": [
+    "A major boiler failure threatens to freeze the residential sector.",
+    "A rival city is attempting to block the only safe path through the ice.",
+    "A prominent citizen is accused of stealing heat to sell on the black market.",
+    "The Aurora is behaving strangely, causing the city's navigation systems to fail."
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Heat Management",
+      "summary": "Players must balance the city's heat production with the needs of the citizens and the demands of trade.",
+      "roles": [
+        "Heat Broker",
+        "Engineer",
+        "Councilor"
+      ],
+      "rooms": [
+        "The Central Heat Exchange",
+        "The Engine-Heart Tavern"
+      ],
+      "pressure": "The temperature is dropping as the city moves further north."
+    },
+    {
+      "label": "Diplomatic Intrigue",
+      "summary": "Players navigate the complex relationships between the walking cities to secure resources and route rights.",
+      "roles": [
+        "Councilor",
+        "Route Navigator",
+        "Border Guard"
+      ],
+      "rooms": [
+        "The Aurora Observation Deck",
+        "The Frozen Customs Gate"
+      ],
+      "pressure": "A rival city is gaining influence in the Council."
+    }
+  ],
+  "item_catalog": [
+    {
+      "item_id": "thermal_unit",
+      "name": "Thermal Energy Unit",
+      "price": 100,
+      "mass": 0.1,
+      "description": "A small, glowing canister containing pressurized steam.",
+      "image_prompt": "A small, glowing brass canister with steam escaping from a valve.",
+      "category": "Resource"
+    },
+    {
+      "item_id": "ice_map",
+      "name": "Shifting Ice Map",
+      "price": 500,
+      "mass": 0.5,
+      "description": "A map that updates in real-time to show the movement of the ice shelf.",
+      "image_prompt": "A holographic scroll showing a blue and white map of an arctic landscape.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "aurora_goggles",
+      "name": "Aurora Goggles",
+      "price": 250,
+      "mass": 0.2,
+      "description": "Protective eyewear that filters out the intense glare of the aurora.",
+      "image_prompt": "Steampunk-style goggles with green-tinted lenses and brass frames.",
+      "category": "Equipment"
+    },
+    {
+      "item_id": "whale_oil",
+      "name": "Refined Whale Oil",
+      "price": 150,
+      "mass": 1.0,
+      "description": "High-grade fuel used to power the city's engines.",
+      "image_prompt": "A clear glass bottle filled with a thick, amber-colored liquid.",
+      "category": "Resource"
+    },
+    {
+      "item_id": "citizenship_favor",
+      "name": "Citizenship Favor",
+      "price": 1000,
+      "mass": 0.0,
+      "description": "A legal document granting the holder special rights within the city.",
+      "image_prompt": "A heavy parchment scroll with a large red wax seal.",
+      "category": "Document"
+    },
+    {
+      "item_id": "glow_moss",
+      "name": "Edible Glow-Moss",
+      "price": 50,
+      "mass": 0.1,
+      "description": "A nutritious, bioluminescent moss grown in the hydroponic gardens.",
+      "image_prompt": "A handful of bright green, glowing moss in a small wooden bowl.",
+      "category": "Food"
+    },
+    {
+      "item_id": "brass_valve",
+      "name": "Replacement Brass Valve",
+      "price": 300,
+      "mass": 2.0,
+      "description": "A critical part for maintaining the city's heating system.",
+      "image_prompt": "A shiny brass valve with multiple handles and gauges.",
+      "category": "Part"
+    },
+    {
+      "item_id": "sextant",
+      "name": "Navigator's Sextant",
+      "price": 400,
+      "mass": 0.8,
+      "description": "A precision instrument used for celestial navigation.",
+      "image_prompt": "A complex brass instrument with multiple lenses and mirrors.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "furs",
+      "name": "Heavy Sable Furs",
+      "price": 600,
+      "mass": 3.0,
+      "description": "Extremely warm clothing made from the pelts of arctic animals.",
+      "image_prompt": "A thick, dark brown fur coat with a large hood.",
+      "category": "Clothing"
+    },
+    {
+      "item_id": "heat_sink",
+      "name": "Illegal Heat-Sink",
+      "price": 800,
+      "mass": 1.5,
+      "description": "A device used to siphon heat from the city's main pipes.",
+      "image_prompt": "A crude, black metal device with multiple wires and a glowing core.",
+      "category": "Contraband"
+    },
+    {
+      "item_id": "visa",
+      "name": "Inter-City Travel Visa",
+      "price": 200,
+      "mass": 0.0,
+      "description": "A permit allowing the holder to travel between walking cities.",
+      "image_prompt": "A small, stamped card with the city's emblem and a photo.",
+      "category": "Document"
+    },
+    {
+      "item_id": "lichen_brew",
+      "name": "Fermented Lichen-Brew",
+      "price": 20,
+      "mass": 0.5,
+      "description": "A strong, bitter alcoholic beverage made from fermented moss.",
+      "image_prompt": "A frothy mug of dark green liquid.",
+      "category": "Food"
+    },
+    {
+      "item_id": "ice_axe",
+      "name": "Climbing Ice Axe",
+      "price": 150,
+      "mass": 1.2,
+      "description": "A tool used for climbing and traversing the ice shelf.",
+      "image_prompt": "A sharp steel axe with a serrated edge and a rubber grip.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "flare",
+      "name": "Emergency Signal Flare",
+      "price": 30,
+      "mass": 0.3,
+      "description": "A handheld device that emits a bright red light when activated.",
+      "image_prompt": "A small, cylindrical tube with a pull-string at one end.",
+      "category": "Equipment"
+    },
+    {
+      "item_id": "blueprint",
+      "name": "Engine Schematic",
+      "price": 1000,
+      "mass": 0.1,
+      "description": "A detailed drawing of the city's propulsion system.",
+      "image_prompt": "A large blue scroll with white lines and technical annotations.",
+      "category": "Document"
+    }
+  ],
+  "visual_canon": {
+    "canon_id": "aurora_court_v1",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90 degrees",
+      "scale_rule": "1 unit = 1 meter"
+    },
+    "palette": {
+      "dominant": "#1a1a2e",
+      "secondary": "#16213e",
+      "accent": "#0f3460",
+      "shadow": "#000000",
+      "highlight": "#e94560"
+    },
+    "materials": [
+      "Brass",
+      "Steel",
+      "Frosted Glass",
+      "Heavy Wool",
+      "Polished Mahogany"
+    ],
+    "lighting": "Dimly lit with glowing neon-aurora accents and warm lantern light.",
+    "architecture": [
+      "Industrial Gothic",
+      "Steampunk",
+      "Arctic Brutalism"
+    ],
+    "terrain": {
+      "ground": "Ice and Snow",
+      "path": "Metal Walkways",
+      "edge": "City Walls"
+    },
+    "sprite_language": {
+      "body_proportion": "Realistic",
+      "outline": "Thin, dark",
+      "role_readability": "High, based on clothing and tools"
+    },
+    "world_prompt_prefix": "A top-down view of a walking arctic city, lit by a shimmering green aurora.",
+    "sprite_prompt_prefix": "A character in thick arctic clothing, seen from directly above.",
+    "forbidden_visuals": [
+      "Modern technology",
+      "Bright sunlight",
+      "Tropical plants",
+      "Cars"
+    ]
+  },
+  "agent_visual_policy": {
+    "policy_id": "aurora_agents_v1",
+    "world_wardrobe_brief": "Characters wear heavy, layered clothing designed for extreme cold, with industrial and diplomatic accents.",
+    "forbidden_aesthetics": [
+      "Short sleeves",
+      "Bright, cheerful colors",
+      "Lightweight fabrics"
+    ],
+    "palette_families": [
+      {
+        "name": "Industrial",
+        "dominant": "#4a4e69",
+        "accent": "#9a8c98",
+        "trim": "#22223b",
+        "material": "Heavy Canvas"
+      },
+      {
+        "name": "Diplomatic",
+        "dominant": "#1d3557",
+        "accent": "#e63946",
+        "trim": "#f1faee",
+        "material": "Velvet and Silk"
+      },
+      {
+        "name": "Survivalist",
+        "dominant": "#2f3e46",
+        "accent": "#cad2c5",
+        "trim": "#52796f",
+        "material": "Animal Furs"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "engineer_style",
+        "role_keywords": [
+          "Engineer",
+          "Mechanic",
+          "Salvager"
+        ],
+        "attire": [
+          "Grease-stained overalls",
+          "Heavy boots",
+          "Tool belts"
+        ],
+        "props": [
+          "Wrenches",
+          "Oil cans",
+          "Welding masks"
+        ],
+        "palette_notes": "Dark, industrial colors with metallic accents.",
+        "silhouette_notes": "Bulky and practical.",
+        "avoid": [
+          "Fine silks",
+          "Jewelry"
+        ]
+      },
+      {
+        "rule_id": "diplomat_style",
+        "role_keywords": [
+          "Councilor",
+          "Broker",
+          "Bureaucrat"
+        ],
+        "attire": [
+          "Long fur-lined coats",
+          "Formal waistcoats",
+          "Silk scarves"
+        ],
+        "props": [
+          "Ledgers",
+          "Signet rings",
+          "Spectacles"
+        ],
+        "palette_notes": "Rich, deep colors with gold and silver trim.",
+        "silhouette_notes": "Elegant and imposing.",
+        "avoid": [
+          "Grease",
+          "Tools"
+        ]
+      },
+      {
+        "rule_id": "guard_style",
+        "role_keywords": [
+          "Guard",
+          "Officer",
+          "Mercenary"
+        ],
+        "attire": [
+          "Padded armor",
+          "Steel helmets",
+          "Heavy wool coats"
+        ],
+        "props": [
+          "Sabers",
+          "Pistols",
+          "Radios"
+        ],
+        "palette_notes": "Uniform colors with bright accent stripes.",
+        "silhouette_notes": "Rigid and intimidating.",
+        "avoid": [
+          "Loose fabrics",
+          "Bright patterns"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "citizen_style",
+      "role_keywords": [
+        "Citizen",
+        "Worker"
+      ],
+      "attire": [
+        "Layered wool clothing",
+        "Thick boots",
+        "Gloves"
+      ],
+      "props": [
+        "Lanterns",
+        "Rations"
+      ],
+      "palette_notes": "Muted, practical colors.",
+      "silhouette_notes": "Functional and warm.",
+      "avoid": [
+        "Luxury items",
+        "Heavy armor"
+      ]
+    },
+    "visual_consistency_rules": [
+      "All characters must wear some form of head covering.",
+      "All clothing must appear worn and weathered.",
+      "Every character must carry at least one light source."
+    ]
+  }
+}

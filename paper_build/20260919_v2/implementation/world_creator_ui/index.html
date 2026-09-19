@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agora World Creator</title>
+    <link rel="stylesheet" href="./styles.css?v=__AGORA_CREATOR_BUNDLE_VERSION__" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">Agora Creator</div>
+          <h1>World Creator UI</h1>
+          <p>Describe a persistent world, review the generated DB and setting summary, revise in natural language, then send it through art, QA, and publish.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="ghost-button" href="/macro/" target="_blank" rel="noreferrer">Open Macro UI</a>
+          <a class="ghost-button" href="/pixel/" target="_blank" rel="noreferrer">Open Pixel UI</a>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="main-column">
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Resume</h2>
+              <p>Load an existing world creator draft by world name, world ID, or draft ID before making more revisions.</p>
+            </div>
+            <div class="creator-form">
+              <label class="full-span">
+                <span>World Name Or ID</span>
+                <input id="resume-identifier" type="text" placeholder="Clockharbor Exchange or clockharbor_exchange" />
+              </label>
+              <div class="button-row full-span">
+                <button id="resume-draft" type="button" class="primary-button">Resume World</button>
+                <button id="clear-current-draft" type="button" class="secondary-button">Clear Current Draft</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Describe</h2>
+              <p>Start with a unique world name, plain language, and a few high-value constraints.</p>
+            </div>
+            <form id="create-form" class="creator-form">
+              <label>
+                <span>World Name</span>
+                <input type="text" name="world_name" placeholder="Harbor of Broken Constellations" required />
+              </label>
+              <label>
+                <span>Genre / Theme</span>
+                <input type="text" name="genre" placeholder="solar-punk trading city with ritual mystery" />
+              </label>
+              <label>
+                <span>Human Players</span>
+                <input type="number" name="player_count_target" min="1" max="50" value="4" />
+              </label>
+              <label>
+                <span>Boutique Agent Count</span>
+                <input type="number" name="agent_count_target" min="5" max="50" value="25" />
+              </label>
+              <label>
+                <span>Focus</span>
+                <select name="focus">
+                  <option value="balanced social world">Balanced</option>
+                  <option value="economy and trade-heavy world">Economy</option>
+                  <option value="story and faction conflict-heavy world">Story</option>
+                  <option value="exploration and discovery-heavy world">Exploration</option>
+                </select>
+              </label>
+              <label>
+                <span>Seed</span>
+                <input type="number" name="seed" min="1" max="999999999" value="42627" />
+              </label>
+              <div class="model-routing-info full-span">
+                <div class="info-title">⚡ Multi-Model Dual Routing Engine</div>
+                <div class="info-grid">
+                  <div class="info-item">
+                    <span>Strategic Planner & Critique:</span>
+                    <span class="model-badge pro">gemini-3.1-pro</span>
+                  </div>
+                  <div class="info-item">
+                    <span>Boutique Entity Generator:</span>
+                    <span class="model-badge lite">gemini-3.1-flash-lite</span>
+                  </div>
+                </div>
+              </div>
+              <label class="full-span">
+                <span>Natural Language Brief</span>
+                <textarea name="brief" rows="8" placeholder="Describe the world, who lives there, what people do, what tensions or loops should make it feel alive, and what kinds of multiplayer interactions should emerge."></textarea>
+              </label>
+              <div class="button-row full-span">
+                <button type="submit" class="primary-button">Generate Draft DB</button>
+                <button id="reload-current-draft" type="button" class="secondary-button">Reload Current Draft</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Draft Review</h2>
+              <p>Review the generated world package, summary, and structural checks before you revise or approve.</p>
+            </div>
+            <div id="draft-empty" class="empty-state">No draft loaded yet. Generate one above or reload the current draft from local storage.</div>
+            <div id="draft-review" class="hidden">
+              <div class="status-strip">
+                <span id="draft-status-pill" class="status-pill">draft_ready</span>
+                <span id="draft-title" class="status-title"></span>
+              </div>
+              <div id="draft-error-banner" class="draft-alert hidden"></div>
+              <div class="subsection">
+                <h3>Generation Status</h3>
+                <pre id="generation-status-box" class="summary-box compact">Generation worker has not started yet.</pre>
+              </div>
+              <div id="summary-cards" class="summary-grid"></div>
+              <div class="button-row">
+                <a id="download-db-link" class="secondary-button link-button" href="#" target="_blank" rel="noreferrer">Download Draft DB</a>
+                <button id="refresh-draft" type="button" class="secondary-button">Refresh Draft</button>
+              </div>
+              <div class="subsection">
+                <div class="subsection-head">
+                  <h3>Compiler Review</h3>
+                  <div class="button-row">
+                    <button id="adopt-critique" type="button" class="secondary-button" disabled>Adopt Critique</button>
+                    <button id="generate-from-critique" type="button" class="ghost-button" disabled>Generate From Critique</button>
+                  </div>
+                </div>
+                <div class="subsection-note">Adopting critique will prefill the revision request below so you can edit it before generating the next revision.</div>
+                <div id="compiler-review" class="insight-panel"></div>
+              </div>
+              <div class="subsection">
+                <h3>Revision Delta</h3>
+                <div id="revision-delta" class="insight-panel"></div>
+              </div>
+              <div class="subsection">
+                <h3>Gameplay Loops</h3>
+                <div id="gameplay-loops" class="insight-grid"></div>
+              </div>
+              <div class="subsection">
+                <h3>Player Entry Points</h3>
+                <div id="player-entry-points" class="bullet-list-panel"></div>
+              </div>
+              <div class="subsection">
+                <h3>Persistent Event Generators</h3>
+                <div id="event-functions" class="insight-grid"></div>
+              </div>
+              <div class="subsection">
+                <h3>Validation Checklist</h3>
+                <div id="validation-checklist" class="checklist-panel"></div>
+              </div>
+              <div class="subsection">
+                <h3>World Summary</h3>
+                <pre id="world-summary" class="summary-box"></pre>
+              </div>
+              <div class="subsection">
+                <h3>Package Validation</h3>
+                <pre id="package-validation" class="summary-box compact"></pre>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Revise</h2>
+              <p>Give natural-language revision feedback. Each request creates one new linear draft revision.</p>
+            </div>
+            <form id="revise-form" class="creator-form">
+              <label class="full-span">
+                <span>Revision Request</span>
+                <textarea id="revise-feedback" rows="5" placeholder="Example: make the world less heroic and more trade-driven, add a tense customs checkpoint, and make one main character a conflicted logistics broker."></textarea>
+              </label>
+              <div class="button-row full-span">
+                <button type="submit" class="primary-button">Generate Next Revision</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Build Art</h2>
+              <p>Run the art and readiness pipeline. This uses the current approved draft revision.</p>
+            </div>
+            <div class="button-row">
+              <button id="start-art" type="button" class="primary-button">Start Art + QA</button>
+              <button id="refresh-art" type="button" class="secondary-button">Refresh Art Status</button>
+            </div>
+            <div class="subsection">
+              <h3>Art Timeline</h3>
+              <div id="art-timeline" class="timeline-panel"></div>
+            </div>
+            <pre id="art-status-box" class="summary-box compact">Art pipeline has not started yet.</pre>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Publish</h2>
+              <p>Once art and QA pass, publish the world into the public catalog.</p>
+            </div>
+            <div class="button-row">
+              <button id="publish-world" type="button" class="primary-button">Publish World</button>
+            </div>
+            <div id="publish-actions" class="publish-actions hidden">
+              <div class="publish-pill-row">
+                <span class="publish-pill-label">Access Code</span>
+                <span id="publish-access-code" class="publish-pill-value">-</span>
+              </div>
+              <div class="button-row">
+                <a id="open-published-world" class="secondary-button link-button" href="#" target="_blank" rel="noreferrer">Open Pixel World</a>
+                <a id="open-world-record" class="secondary-button link-button" href="#" target="_blank" rel="noreferrer">Open World Record</a>
+                <a id="download-published-db" class="secondary-button link-button" href="#" target="_blank" rel="noreferrer">Download Published DB</a>
+              </div>
+            </div>
+            <pre id="publish-status-box" class="summary-box compact">World has not been published yet.</pre>
+          </section>
+        </section>
+
+        <aside class="side-column">
+          <section class="panel sticky-panel">
+            <div class="panel-head">
+              <h2>Revision History</h2>
+              <p>One active linear history. Older revisions stay visible for review.</p>
+            </div>
+            <div id="history-list" class="history-list">
+              <div class="empty-state small">No revisions yet.</div>
+            </div>
+          </section>
+        </aside>
+      </main>
+
+      <div id="global-status" class="global-status"></div>
+    </div>
+    <script src="./fixtures/demo_draft.js?v=__AGORA_CREATOR_BUNDLE_VERSION__"></script>
+    <script type="module" src="./app.js?v=__AGORA_CREATOR_BUNDLE_VERSION__"></script>
+    <script>
+      (function() {
+        var host = window.location.hostname;
+        if (host !== 'localhost' && host !== '127.0.0.1' && host !== '0.0.0.0') return;
+        var ws = new WebSocket((window.location.protocol === 'https:' ? 'wss://' : 'ws://') + window.location.host + '/_hot_reload');
+        ws.onclose = function() {
+          console.log("Hot reload: Server disconnected. Waiting to reconnect...");
+          var iv = setInterval(function() {
+            fetch('/').then(function(r) {
+              if (r.ok) { clearInterval(iv); window.location.reload(); }
+            }).catch(function() {});
+          }, 500);
+        };
+      })();
+    </script>
+  </body>
+</html>

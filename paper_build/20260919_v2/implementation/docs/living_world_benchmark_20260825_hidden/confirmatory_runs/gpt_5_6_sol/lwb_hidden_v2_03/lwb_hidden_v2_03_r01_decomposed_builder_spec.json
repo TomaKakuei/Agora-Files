@@ -1,0 +1,2468 @@
+{
+  "world_name": "The Forfeit Shore",
+  "world_id": "the_forfeit_shore",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "Marrowkey Island",
+    "tone": "Civic, morally tense, and materially inventive",
+    "visual_direction": "A weathered courthouse overlooking seawalls assembled from tagged boats, furniture, vehicles, and illicit cargo",
+    "currency_code": "MRK",
+    "currency_symbol": "₥",
+    "currency_minor_unit": "shard",
+    "currency_name": "mark",
+    "domain_label": "island forfeiture and shoreline access",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "forfeiture_court",
+        "name": "Marrowkey Forfeiture Court",
+        "mandate": "Determine whether seized objects are contraband, returnable property, or lawful material for coastal works.",
+        "decision_rule": "A judge weighs documented ownership, public danger, and shoreline necessity after adversarial hearings.",
+        "enforced_by": "Court bailiffs, evidence clerks, and seizure warrants.",
+        "visible_output": "Stamped judgments assigning each object to return, auction, destruction, or reclamation."
+      },
+      {
+        "institution_id": "shoreline_works_board",
+        "name": "Shoreline Works Board",
+        "mandate": "Design and maintain coastal defenses and public sea approaches using court-released objects.",
+        "decision_rule": "Projects require an engineering safety score and majority approval weighted by residents protected.",
+        "enforced_by": "Licensed salvage crews, inspectors, and control of construction permits.",
+        "visible_output": "Changing seawalls, ramps, breakwaters, work barges, and posted project maps."
+      },
+      {
+        "institution_id": "tide_access_commission",
+        "name": "Tide Access Commission",
+        "mandate": "Preserve practical, equitable routes from every neighborhood to the sea.",
+        "decision_rule": "No project is certified unless measured travel time and safe tidal access remain within published thresholds.",
+        "enforced_by": "Access injunctions, route closures, and withheld occupancy certificates.",
+        "visible_output": "Color-coded access maps, tide gates, marked paths, and compliance notices."
+      },
+      {
+        "institution_id": "island_customs_service",
+        "name": "Island Customs Service",
+        "mandate": "Intercept prohibited cargo and secure objects awaiting judicial disposition.",
+        "decision_rule": "Officers seize items on probable cause, with mandatory inventory review after seven days.",
+        "enforced_by": "Harbor patrols, bonded warehouses, and vessel holds.",
+        "visible_output": "Seizure tags, warehouse manifests, impounded craft, and public auction calendars."
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "usable_forfeit_stock",
+        "label": "Usable Confiscated Material Stock",
+        "initial_tension": "Warehouses are crowded, but ownership disputes make much of the stock unavailable.",
+        "changed_by": [
+          "Customs seizures",
+          "Court judgments",
+          "Successful ownership claims",
+          "Construction withdrawals",
+          "Weather damage in storage"
+        ],
+        "affects": [
+          "Available shoreline designs",
+          "Warehouse pressure",
+          "Claimant hostility",
+          "Project cost"
+        ]
+      },
+      {
+        "state_id": "shoreline_configuration",
+        "label": "Shoreline Configuration",
+        "initial_tension": "An eroding coast is defended by fragmented structures that redirect currents and foot traffic.",
+        "changed_by": [
+          "Works Board construction",
+          "Storm failure",
+          "Court-ordered removal",
+          "Community sabotage",
+          "Repair campaigns"
+        ],
+        "affects": [
+          "Flood exposure",
+          "Sea routes",
+          "Fishing grounds",
+          "Sediment movement"
+        ]
+      },
+      {
+        "state_id": "neighborhood_sea_access",
+        "label": "Neighborhood Sea Access",
+        "initial_tension": "Upland wards rely on two narrow lanes, while wealthy harbor blocks control the safest landings.",
+        "changed_by": [
+          "New ramps and paths",
+          "Seawall placement",
+          "Tide-gate schedules",
+          "Private obstruction",
+          "Access injunctions"
+        ],
+        "affects": [
+          "Livelihoods",
+          "Evacuation capacity",
+          "Public legitimacy",
+          "Property demand"
+        ]
+      },
+      {
+        "state_id": "coastal_hazard_exposure",
+        "label": "Coastal Hazard Exposure",
+        "initial_tension": "Several low wards face immediate storm risk, while protective works may transfer erosion down-current.",
+        "changed_by": [
+          "Breakwater geometry",
+          "Storm seasons",
+          "Wetland restoration",
+          "Sediment trapping",
+          "Maintenance failures"
+        ],
+        "affects": [
+          "Rebuilding urgency",
+          "Insurance costs",
+          "Displacement",
+          "Political support"
+        ]
+      },
+      {
+        "state_id": "forfeiture_legitimacy",
+        "label": "Forfeiture System Legitimacy",
+        "initial_tension": "Residents support action against smugglers but distrust the conversion of disputed possessions into public infrastructure.",
+        "changed_by": [
+          "Transparent hearings",
+          "Wrongful seizures",
+          "Visible public benefit",
+          "Unequal project placement",
+          "Restitution payments"
+        ],
+        "affects": [
+          "Witness cooperation",
+          "Compliance",
+          "Protests",
+          "Judicial authority"
+        ]
+      },
+      {
+        "state_id": "claimant_case_pressure",
+        "label": "Unresolved Claimant Case Pressure",
+        "initial_tension": "Owners, families, and creditors are filing claims faster than the courthouse can hear them.",
+        "changed_by": [
+          "New seizures",
+          "Case settlements",
+          "Missing records",
+          "Legal aid campaigns",
+          "Objects built into permanent works"
+        ],
+        "affects": [
+          "Court delay",
+          "Material availability",
+          "Compensation liabilities",
+          "Risk of injunction"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "usable_forfeit_stock",
+        "trigger": "The court releases durable vehicles, hulls, or masonry for a named coastal project.",
+        "target_state": "shoreline_configuration",
+        "effect": "Designers gain new structural options and can extend or reshape defenses.",
+        "delay": "One to three construction cycles."
+      },
+      {
+        "source_state": "shoreline_configuration",
+        "trigger": "A new barrier blocks waves but also occupies an established landing or redirects a tidal channel.",
+        "target_state": "neighborhood_sea_access",
+        "effect": "Some routes become safer while another neighborhood loses direct or low-tide passage.",
+        "delay": "Immediate for paths; several tides for channel changes."
+      },
+      {
+        "source_state": "shoreline_configuration",
+        "trigger": "Breakwaters trap sediment on their protected side and accelerate scouring down-current.",
+        "target_state": "coastal_hazard_exposure",
+        "effect": "Protected blocks face less flooding while distant blocks inherit greater erosion risk.",
+        "delay": "Emerges over one storm season."
+      },
+      {
+        "source_state": "neighborhood_sea_access",
+        "trigger": "Access maps show repeated gains for courthouse and harbor districts but losses for outer wards.",
+        "target_state": "forfeiture_legitimacy",
+        "effect": "Residents withdraw cooperation, challenge projects, and treat confiscated-object construction as dispossession.",
+        "delay": "After two published access assessments."
+      },
+      {
+        "source_state": "forfeiture_legitimacy",
+        "trigger": "Public trust falls and witnesses stop helping Customs establish ownership and contraband chains.",
+        "target_state": "claimant_case_pressure",
+        "effect": "Hearings require more investigation, unresolved claims accumulate, and injunctions become likelier.",
+        "delay": "Several court sessions."
+      },
+      {
+        "source_state": "claimant_case_pressure",
+        "trigger": "Claimants obtain temporary orders preventing alteration of disputed objects.",
+        "target_state": "usable_forfeit_stock",
+        "effect": "Material is frozen in storage or removed from active work sites.",
+        "delay": "Immediate upon injunction, potentially lasting months."
+      },
+      {
+        "source_state": "coastal_hazard_exposure",
+        "trigger": "A newly exposed ward demands emergency protection before the next major storm.",
+        "target_state": "usable_forfeit_stock",
+        "effect": "Officials accelerate releases and consume reserve materials, leaving fewer options for later projects.",
+        "delay": "Within one emergency budget cycle."
+      },
+      {
+        "source_state": "neighborhood_sea_access",
+        "trigger": "Improved landings expand fishing income and evacuation capacity in previously isolated wards.",
+        "target_state": "forfeiture_legitimacy",
+        "effect": "Residents become more willing to report smuggling and accept carefully reviewed public reuse.",
+        "delay": "One fishing season."
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "outer_ward_coalition",
+        "name": "Outer Ward Shore Coalition",
+        "goal": "Secure permanent, all-tide public routes and protection without inheriting redirected erosion.",
+        "leverage": "Mass hearings, path occupations, local tide records, and votes on municipal bonds.",
+        "dependency": "Depends on safe landings, affordable transport, and access certification."
+      },
+      {
+        "group_id": "dispossessed_claimants",
+        "name": "Dispossessed Owners and Claimants",
+        "goal": "Recover seized objects intact or receive compensation before they become irreversible infrastructure.",
+        "leverage": "Title evidence, injunction requests, creditor liens, and testimony exposing wrongful seizure.",
+        "dependency": "Depends on court access, traceable inventories, legal aid, and objects remaining identifiable."
+      },
+      {
+        "group_id": "salvage_builders_guild",
+        "name": "Salvage Builders Guild",
+        "goal": "Maintain a predictable flow of unusual materials and win long-term shoreline contracts.",
+        "leverage": "Engineering expertise, cranes, work barges, and the ability to certify or refuse hazardous builds.",
+        "dependency": "Depends on court releases, safe designs, permit continuity, and prompt payment."
+      },
+      {
+        "group_id": "harbor_merchants",
+        "name": "Harbor Merchants Compact",
+        "goal": "Keep commercial berths and customs channels unobstructed while concentrating defenses around the trading harbor.",
+        "leverage": "Tax revenue, shipping schedules, warehouse capacity, and threatened diversion of trade.",
+        "dependency": "Depends on navigable channels, rapid customs clearance, and reliable storm protection."
+      }
+    ]
+  },
+  "genre": "Civic maritime simulation with legal drama and adaptive construction",
+  "premise": "On Marrowkey Island, confiscated objects become seawalls, ramps, and breakwaters under court order, causing each judgment and construction choice to redistribute access to the sea, storm risk, and public trust.",
+  "simulation_objective": "Balance lawful forfeiture, coastal survival, ownership claims, and equitable sea access while anticipating how each structure redirects tides, cases, materials, and political power.",
+  "agent_count_target": 12,
+  "player_count_target": 8,
+  "wall_color_theme": "salt_stained_limestone_with_oxidized_steel_notches",
+  "economy_focus": "A circular civic economy of seizures, claims, storage, salvage contracts, restitution, maintenance, fishing access, and harbor trade.",
+  "exploration_focus": "Survey changing coastlines, evidence warehouses, tidal routes, disputed landings, construction sites, and down-current consequences.",
+  "conflict_tone": "Procedural but high-stakes, favoring negotiation, injunctions, protest, sabotage, and environmental tradeoffs over open warfare.",
+  "visual_style": "Salt-stained legal realism: black robes and red evidence tags amid improvised seawalls of boats, buses, safes, stone, and cargo cages.",
+  "rooms": [
+    {
+      "name": "Dark Slate Hearing Court",
+      "biome": "coastal courthouse interior",
+      "purpose": "Marrowkey Forfeiture Court hearings determine return, auction, destruction, or reclamation. Resolving claimant_case_pressure here releases usable_forfeit_stock to the Seized Materials Yard; injunctions instead freeze tagged objects there.",
+      "decor_tags": [
+        "wet court slate",
+        "limestone hearing bays",
+        "red evidence tokens",
+        "claimant queue",
+        "bailiff rail"
+      ],
+      "activity_tags": [
+        "adversarial hearings",
+        "ownership claims",
+        "judgment issuance",
+        "injunction requests"
+      ],
+      "flux_floor_prompt": "Seamless crunchy 16-bit strict top-down pixel art floor, dark wet court-slate rectangles framed by salt-stained limestone bands, pale access notches, narrow drainage seams, compact northwest contact shadows, five-color Marrowkey palette, no text, edge-to-edge tileable surface.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular room plate for the Dark Slate Hearing Court, an active forfeiture hearing chamber with a black-slate central court, ordered limestone rectangles, claimant lanes, bailiff rail, pale ledger blocks, and small abstract red evidence tokens. Salt-stained civic legal realism, five-color Marrowkey palette, overcast light from map-northwest, clean crunchy pixel art readable at 32x32 per tile. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Wall and floor transitions plus usable floor texture reach all four image edges for direct world-map placement.",
+      "width_tiles": 18,
+      "height_tiles": 14,
+      "ambient_palette": "clear_day",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "judgment_dais",
+          "label": "Judgment Dais",
+          "description": "Low limestone bench with black robe wedge, ledger blocks, and red-tag evidence recess.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "claimant_token_rail",
+          "label": "Claimant Token Rail",
+          "description": "Dark rail holding disputed-object silhouettes and removable red claim tokens.",
+          "anchor": "south_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Bonded Seizure Warehouse",
+      "biome": "secured harbor storage",
+      "purpose": "Island Customs Service inventories impounded cargo while claimants verify traceable objects. New seizures raise claimant_case_pressure in the Hearing Court and crowd usable_forfeit_stock before any release to construction.",
+      "decor_tags": [
+        "wire cargo cages",
+        "impounded hull sections",
+        "vehicle shells",
+        "red evidence tags",
+        "customs lanes"
+      ],
+      "activity_tags": [
+        "seizure inventory",
+        "seven-day review",
+        "vessel holds",
+        "claim inspection"
+      ],
+      "flux_floor_prompt": "Crunchy 16-bit strict top-down pixel art of patched asphalt warehouse flooring, oxidized steel cage-footprints, pale inventory aisles, dark drainage seams, salt bloom and wet edge highlights, five-color Marrowkey palette, seamless edge-to-edge, no writing.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular room plate for the Bonded Seizure Warehouse, a Customs-controlled storage hall containing grid-aligned wire cargo cages, nested impounded boat sections, vehicle shells, safes, masonry stacks, inspection lanes, and abstract red evidence tags. Patched asphalt, oxidized marine steel, tarred timber, compact shadows, crunchy five-color pixel art readable at 32x32 per tile. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Wall and floor transitions plus usable floor texture reach all four image edges for direct world-map placement.",
+      "width_tiles": 22,
+      "height_tiles": 18,
+      "ambient_palette": "dusty_brown",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "seven_day_review_cage",
+          "label": "Review Cage",
+          "description": "Wire cage with a hinged inspection lane and separately tagged hull, safe, and engine silhouettes.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        },
+        {
+          "component_id": "impounded_hull_rack",
+          "label": "Hull Rack",
+          "description": "Tarred timber cradle securing faded fiberglass boat halves with red tag junctions.",
+          "anchor": "east_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Shoreline Works Design Bay",
+      "biome": "marine engineering workshop",
+      "purpose": "The Shoreline Works Board and Salvage Builders Guild turn court-released objects into scored coastal designs. Approved withdrawals reduce usable_forfeit_stock in the warehouse, reshape shoreline_configuration at the Assembly Slip, and later alter hazard exposure at Downcurrent Watch.",
+      "decor_tags": [
+        "modular test basin",
+        "hull templates",
+        "steel measuring arms",
+        "permit notches",
+        "builder helmets"
+      ],
+      "activity_tags": [
+        "engineering scoring",
+        "breakwater design",
+        "permit voting",
+        "salvage certification"
+      ],
+      "flux_floor_prompt": "Seamless crunchy 16-bit strict top-down workshop floor, salt-gray concrete slabs with pale grid lines, oxidized steel mounting sockets, wet test-basin edges, red geometric decision marks without characters, five-color palette, edge-to-edge, no text.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular room plate for the Shoreline Works Design Bay, a marine engineering workshop with a shallow modular test basin, grid-aligned hull and vehicle-shell templates, steel measuring arms, safety-score voting sockets, builder tool stations, and pale public circulation bands. Salt-stained limestone, oxidized steel, tarred timber, overcast northwest lighting, crisp five-color pixel art readable at 32x32 per tile. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Wall and floor transitions plus usable floor texture reach all four image edges for direct world-map placement.",
+      "width_tiles": 20,
+      "height_tiles": 16,
+      "ambient_palette": "focused_blue",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "current_test_basin",
+          "label": "Current Test Basin",
+          "description": "Shallow gridded basin holding miniature tagged hulls and movable breakwater blocks.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        },
+        {
+          "component_id": "safety_score_rig",
+          "label": "Safety Score Rig",
+          "description": "Mechanical balance of wave paddles and weighted resident tokens, entirely abstract and unwritten.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Access Measurement Chamber",
+      "biome": "civic route compliance office",
+      "purpose": "The Tide Access Commission compares travel time and safe tidal passage from every ward. Failed certification closes the Assembly Slip or Tide Gate; repeated outer-ward losses reduce forfeiture_legitimacy in the Public Claims Concourse.",
+      "decor_tags": [
+        "pale route bands",
+        "tide clock",
+        "walking-distance grid",
+        "red closure bars",
+        "access notches"
+      ],
+      "activity_tags": [
+        "route testing",
+        "tide scheduling",
+        "access certification",
+        "injunction review"
+      ],
+      "flux_floor_prompt": "Crunchy 16-bit strict top-down civic floor texture, cool salt-gray slabs crossed by continuous pale shell-limestone route bands, repeated abstract notch markers, dark drainage seams and occasional red stop bars, five-color palette, seamless to every edge, no symbols or writing.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular room plate for the Access Measurement Chamber, a Tide Access Commission testing room with continuous pale walking routes, a mechanical tide dial, movable red closure bars, distance-measure wheels, and route branches aligned to neighboring wards. Wet court slate and shell-limestone paving, compact northwest shadows, clean five-color pixel art readable at 32x32 per tile. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Wall and floor transitions plus usable floor texture reach all four image edges for direct world-map placement.",
+      "width_tiles": 16,
+      "height_tiles": 14,
+      "ambient_palette": "clear_day",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "tidal_route_clock",
+          "label": "Tidal Route Clock",
+          "description": "Circular mechanical dial with water-level wedges linked to four pale path branches, no numerals.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        },
+        {
+          "component_id": "injunction_bar_rack",
+          "label": "Closure Bar Rack",
+          "description": "Rack of chunky red bars sized to block unsafe public route notches.",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Confiscated Works Assembly Slip",
+      "biome": "active coastal construction yard",
+      "purpose": "Licensed salvage crews assemble released hulls, vehicles, safes, cages, masonry, and timber into ramps and seawalls. Construction changes shoreline_configuration immediately; Outer Ward Landing gains or loses passage while Downcurrent Watch experiences delayed scouring.",
+      "decor_tags": [
+        "crawler crane",
+        "nested hull seawall",
+        "timber cribbing",
+        "work barge",
+        "red-tag joints"
+      ],
+      "activity_tags": [
+        "salvage construction",
+        "material withdrawal",
+        "ramp assembly",
+        "inspection"
+      ],
+      "flux_floor_prompt": "Crunchy 16-bit strict top-down industrial shore floor, patched asphalt merging into wet salt-gray slipway slabs, heavy crane tracks, pale safe-walking bands, dark drainage channels, salt highlights and red-tag junction pixels, seamless edge-to-edge, five-color palette, no text.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular room plate for the Confiscated Works Assembly Slip, an active salvage construction yard contiguous with the shore, featuring a chunky crawler crane, work-barge berth, timber cribbing, and a half-assembled seawall of nested faded hulls, vehicle shells, safes, masonry, and wire cages, each retaining a tiny abstract red evidence tag. Pale safe routes cross patched asphalt to the waterworks. Overcast maritime five-color pixel art readable at 32x32 per tile. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Wall and floor transitions plus usable floor texture reach all four image edges for direct world-map placement.",
+      "width_tiles": 24,
+      "height_tiles": 18,
+      "ambient_palette": "clear_day",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "tagged_seawall_jig",
+          "label": "Seawall Assembly Jig",
+          "description": "Steel alignment frame gripping a hull, vehicle shell, safe, and cage into one red-tagged wall segment.",
+          "anchor": "east_mid",
+          "width_tiles": 3,
+          "height_tiles": 3
+        },
+        {
+          "component_id": "salvage_crawler_crane",
+          "label": "Salvage Crawler Crane",
+          "description": "Chunky grid-aligned marine crane with broad tracks and a suspended masonry block.",
+          "anchor": "north_west",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Outer Ward All-Tide Landing",
+      "biome": "exposed public shoreline access",
+      "purpose": "The Outer Ward Shore Coalition occupies and monitors this narrow public sea route. A certified ramp improves neighborhood_sea_access and fishing income, raising forfeiture_legitimacy in the Claims Concourse; a blocked gate forces residents back to upland lanes.",
+      "decor_tags": [
+        "shell-limestone ramp",
+        "public path notches",
+        "small fishing skiffs",
+        "tide gate",
+        "path occupation"
+      ],
+      "activity_tags": [
+        "fishing launch",
+        "evacuation practice",
+        "tide recording",
+        "access protest"
+      ],
+      "flux_floor_prompt": "Seamless crunchy 16-bit strict top-down coastal paving, pale shell-limestone access ramp over cool salt-gray slabs, dark drainage seams, wet edge highlights, sparse marsh joints, abstract red obstruction bars, fixed grid and five-color palette, no text.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular room plate for the Outer Ward All-Tide Landing, a practical public sea approach with a continuous pale notched route, shallow shell-limestone ramp, chunky tide gate, hand-launched fishing skiffs, resident tide-record stakes, and a confiscated-hull edge reinforcing the surf boundary. The route visibly remains usable or can be blocked by red bars. Contiguous coast, overcast five-color crunchy pixel art readable at 32x32 per tile. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Wall and floor transitions plus usable floor texture reach all four image edges for direct world-map placement.",
+      "width_tiles": 18,
+      "height_tiles": 16,
+      "ambient_palette": "clear_day",
+      "archetype": "commons",
+      "scene_components": [
+        {
+          "component_id": "all_tide_ramp",
+          "label": "All-Tide Ramp",
+          "description": "Pale notched ramp descending through a tagged hull-and-masonry shoreline reinforcement.",
+          "anchor": "south_mid",
+          "width_tiles": 3,
+          "height_tiles": 3
+        },
+        {
+          "component_id": "ward_tide_staff",
+          "label": "Ward Tide Staff",
+          "description": "Mechanical float staff with stacked color blocks but no numbers or writing.",
+          "anchor": "east_mid",
+          "width_tiles": 1,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Downcurrent Scour Watch",
+      "biome": "eroding marsh-edge lookout",
+      "purpose": "Inspectors and residents observe coastal_hazard_exposure transferred from new breakwaters. Recorded scour sends emergency demands to the Works Design Bay, accelerating withdrawals from the Bonded Seizure Warehouse and consuming reserve usable_forfeit_stock.",
+      "decor_tags": [
+        "eroded asphalt edge",
+        "marsh slabs",
+        "sediment traps",
+        "wave gauge",
+        "failed cribbing"
+      ],
+      "activity_tags": [
+        "erosion monitoring",
+        "storm inspection",
+        "sediment sampling",
+        "emergency petition"
+      ],
+      "flux_floor_prompt": "Crunchy 16-bit strict top-down eroding coast texture, broken salt-gray slabs, sparse marsh plates, dark scoured channels, pale sediment fans, wet ivory edge highlights, fragments of tarred timber and red-tag joints, seamless rectangular fill, five-color palette, no text.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular room plate for the Downcurrent Scour Watch, an exposed monitoring station where patched asphalt and marsh slabs meet a visibly scoured shoreline. Include a mechanical wave gauge, sediment-catching combs, displaced tarred cribbing, tagged seawall fragments, and a narrow pale inspection route ending safely before the eroded edge. Overcast maritime five-color pixel art readable at 32x32 per tile. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Wall and floor transitions plus usable floor texture reach all four image edges for direct world-map placement.",
+      "width_tiles": 16,
+      "height_tiles": 15,
+      "ambient_palette": "soft_mint",
+      "archetype": "lookout",
+      "scene_components": [
+        {
+          "component_id": "scour_depth_gauge",
+          "label": "Scour Gauge",
+          "description": "Steel float-and-arm instrument spanning a dark eroded channel with unwritten color blocks.",
+          "anchor": "south_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "sediment_catch_comb",
+          "label": "Sediment Catch Comb",
+          "description": "Row of removable steel teeth trapping pale sand against damaged red-tag cribbing.",
+          "anchor": "south_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Harbor Compact Berth Exchange",
+      "biome": "commercial harbor quay",
+      "purpose": "The Harbor Merchants Compact coordinates berths, customs clearance, and trade leverage while resisting works that obstruct shipping channels. Its protected landing demonstrates who benefits from shoreline_configuration and contrasts with Outer Ward access.",
+      "decor_tags": [
+        "commercial berth lanes",
+        "cargo cages",
+        "mooring grid",
+        "customs hold pockets",
+        "protected quay"
+      ],
+      "activity_tags": [
+        "berth allocation",
+        "harbor trade",
+        "clearance waiting",
+        "merchant bargaining"
+      ],
+      "flux_floor_prompt": "Seamless crunchy 16-bit strict top-down harbor-quay floor, salt-stained limestone berth strips over patched asphalt, oxidized mooring sockets, pale cargo paths, dark drainage seams and wet edge highlights, five-color Marrowkey palette, no logos, no writing.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular room plate for the Harbor Compact Berth Exchange, a busy protected commercial quay with grid-aligned mooring lanes, cargo-cage transfer pockets, small held craft, a mechanical berth allocator, and an open navigation channel bounded by confiscated-object defenses. Harbor merchants and Customs routes remain visually distinct through props rather than labels. Crisp overcast five-color pixel art readable at 32x32 per tile. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Wall and floor transitions plus usable floor texture reach all four image edges for direct world-map placement.",
+      "width_tiles": 22,
+      "height_tiles": 16,
+      "ambient_palette": "clear_day",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "berth_allocator_drum",
+          "label": "Berth Allocator",
+          "description": "Rotating steel drum mechanically linked to mooring gates, using abstract colored slots without characters.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "channel_clearance_gate",
+          "label": "Channel Clearance Gate",
+          "description": "Chunky boom and cage scanner controlling movement between held craft and open berths.",
+          "anchor": "east_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Public Claims Concourse",
+      "biome": "courthouse civic commons",
+      "purpose": "Dispossessed claimants, legal-aid volunteers, and outer-ward residents compare returned objects, compensation, and visible public benefits. Unequal access outcomes arriving from the Access Chamber lower forfeiture_legitimacy here, reducing witness cooperation and increasing claimant_case_pressure in the Hearing Court.",
+      "decor_tags": [
+        "claim token sockets",
+        "returned-object alcoves",
+        "legal aid queue",
+        "public route spine",
+        "red restitution markers"
+      ],
+      "activity_tags": [
+        "claim preparation",
+        "legal aid",
+        "restitution collection",
+        "public deliberation"
+      ],
+      "flux_floor_prompt": "Crunchy 16-bit strict top-down civic concourse floor, pale shell-limestone route spine through cool salt-gray slabs, dark drainage seams, wet slate waiting bays, small red geometric token sockets, seamless to all edges, restrained five-color palette, no readable marks.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular room plate for the Public Claims Concourse, a courthouse commons where dispossessed owners queue with red claim tokens, inspect intact returned-object alcoves, consult pale ledger blocks, and debate beside a continuous public access spine. Include a restitution balance apparatus and clearly traceable seized-object silhouettes without written notices. Salt-stained limestone, wet slate, compact northwest shadows, clean five-color pixel art readable at 32x32 per tile. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Wall and floor transitions plus usable floor texture reach all four image edges for direct world-map placement.",
+      "width_tiles": 20,
+      "height_tiles": 15,
+      "ambient_palette": "clear_day",
+      "archetype": "commons",
+      "scene_components": [
+        {
+          "component_id": "restitution_balance",
+          "label": "Restitution Balance",
+          "description": "Large civic balance comparing an intact tagged object against abstract compensation tokens.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "returned_object_niche",
+          "label": "Returned Object Niche",
+          "description": "Limestone recess displaying a removable boat motor with its red evidence tag still attached.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Ilyra Venn-of-Seven-Tides",
+      "role_name": "Claim-Chain Advocate and Object Genealogist",
+      "activity": "At the Marrowkey Forfeiture Court, Ilyra reconstructs ownership chains from salt-damaged evidence, reducing claimant_case_pressure and protecting the Dispossessed Owners and Claimants' dependency on traceable inventories.",
+      "home_base": "Dark Slate Hearing Court",
+      "arc_goal": "Force the Marrowkey Forfeiture Court to create a pre-construction restitution docket, improving forfeiture_legitimacy without freezing usable_forfeit_stock needed for emergency works.",
+      "inventory": [
+        {
+          "name": "Seven-Tide Deposition Fan",
+          "description": "Whalebone leaves record contradictory testimony in waterproof shorthand.",
+          "quantity": 1
+        },
+        {
+          "name": "Widow Senn's Knot Archive",
+          "description": "Cord bundle encoding vessel mortgages from three drowned registries.",
+          "quantity": 1
+        },
+        {
+          "name": "Blue Brine Fingerpowder",
+          "description": "Mineral powder reveals erased handling marks on seizure tags.",
+          "quantity": 3
+        },
+        {
+          "name": "Claimant Mourning Veil",
+          "description": "Indigo court veil whose shell fringe denotes pro bono representation.",
+          "quantity": 1
+        },
+        {
+          "name": "Portable Seal-Warmth Lamp",
+          "description": "Low flame used to distinguish fresh wax impressions from aged seals.",
+          "quantity": 1
+        },
+        {
+          "name": "Basalt Rubbing Folio",
+          "description": "Casebook of hull scars, mason marks, and cargo-cage signatures.",
+          "quantity": 2
+        },
+        {
+          "name": "Reversible Evidence Sleeves",
+          "description": "Eel-skin envelopes preserve rust flakes without mixing provenance.",
+          "quantity": 12
+        },
+        {
+          "name": "Tern-Bone Deadline Counter",
+          "description": "Carved tally tracks seven-day inventory reviews and appeal windows.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Venn Claim-Chain Cabinet",
+          "asset_type": "legal archive fixture",
+          "description": "A saltwood cabinet of indexed liens, family marks, and disputed-object rubbings.",
+          "story_use": "Can prove wrongful seizure or expose a claimant's fabricated title."
+        },
+        {
+          "asset_name": "Unaltered Object Escrow Stall",
+          "asset_type": "secured evidence berth",
+          "description": "A barred court annex keeping contested objects identifiable before judgment.",
+          "story_use": "Prevents irreversible construction but raises warehouse pressure."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_ilyra_missing_registry",
+          "topic": "The missing Gullwake title registry",
+          "summary": "Ilyra knows which customs clerk salvaged pages omitted from several current claims.",
+          "confidence": 88
+        },
+        {
+          "knowledge_id": "know_ilyra_restitution_precedent",
+          "topic": "Restitution before reclamation",
+          "summary": "She knows an obscure judgment requiring compensation before a unique family object is altered.",
+          "confidence": 96
+        }
+      ]
+    },
+    {
+      "display_name": "Bram Coilhand",
+      "role_name": "Forfeit-Hull Structural Surgeon",
+      "activity": "For the Shoreline Works Board, Bram converts court-released hulls and chassis into reversible defenses, increasing usable_forfeit_stock value while serving the Salvage Builders Guild's dependency on safe designs and permit continuity.",
+      "home_base": "Confiscated Works Assembly Slip",
+      "arc_goal": "Prove that modular, identity-preserving construction can lower coastal_hazard_exposure without destroying claimant evidence or worsening neighborhood_sea_access.",
+      "inventory": [
+        {
+          "name": "Coilhand Resonance Mallet",
+          "description": "Copper-faced hammer sounds hidden corrosion inside seized hull ribs.",
+          "quantity": 1
+        },
+        {
+          "name": "Reversible Rivet Roll",
+          "description": "Numbered soft-iron fasteners can be removed without erasing object identity.",
+          "quantity": 40
+        },
+        {
+          "name": "Gull-Blood Flux Flask",
+          "description": "Red algae flux used for low-heat repairs near evidentiary markings.",
+          "quantity": 2
+        },
+        {
+          "name": "Scour-Listening Sandals",
+          "description": "Hollow-soled boots amplify sediment movement around submerged footings.",
+          "quantity": 1
+        },
+        {
+          "name": "Hull-Memory Calipers",
+          "description": "Curved brass gauge records deformation before structural conversion.",
+          "quantity": 1
+        },
+        {
+          "name": "Black Kelp Burn Wrap",
+          "description": "Medicinal kelp cloth treats steam and brine-metal burns.",
+          "quantity": 4
+        },
+        {
+          "name": "Three-Current Plumb",
+          "description": "Weighted instrument aligns structures against tide, wind, and undertow.",
+          "quantity": 1
+        },
+        {
+          "name": "Guild Refusal Chits",
+          "description": "Ceramic tokens authorizing Bram to halt an unsafe politically ordered build.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Coilhand Reversal Gantry",
+          "asset_type": "mobile salvage workshop",
+          "description": "A low crane rig designed to assemble defenses without cutting original frames.",
+          "story_use": "Allows disputed materials to be recovered intact after an injunction."
+        },
+        {
+          "asset_name": "Mournful Rib Test Section",
+          "asset_type": "prototype breakwater module",
+          "description": "A tagged hull-rib lattice packed with coir and oyster lime.",
+          "story_use": "Demonstrates wave reduction but may reveal unexpected downcurrent scour."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_bram_hinge_fatigue",
+          "topic": "Modular tide-gate fatigue",
+          "summary": "Bram knows which hinge batch will seize after repeated silty tides.",
+          "confidence": 93
+        },
+        {
+          "knowledge_id": "know_bram_scour_geometry",
+          "topic": "Hidden scour from harbor defenses",
+          "summary": "His private calculations show a merchant-backed breakwater transfers erosion toward the outer ward.",
+          "confidence": 84
+        }
+      ]
+    },
+    {
+      "display_name": "Sava Orrel",
+      "role_name": "Barefoot Tide-Route Examiner",
+      "activity": "For the Tide Access Commission, Sava times real journeys through surf and gates, directly improving neighborhood_sea_access and the Outer Ward Shore Coalition's dependency on safe landings and evacuation routes.",
+      "home_base": "Access Measurement Chamber",
+      "arc_goal": "Win a binding Tide Access Commission rule that counts children's, elders', and fish-haulers' travel times, raising forfeiture_legitimacy by preventing access gains from favoring harbor districts.",
+      "inventory": [
+        {
+          "name": "Orrel Heel-Tide Anklets",
+          "description": "Shell-bead anklets mark safe water depth by sound and buoyancy.",
+          "quantity": 2
+        },
+        {
+          "name": "Grandmother Pace Cords",
+          "description": "Knotted cords convert steep-route distance into elder travel time.",
+          "quantity": 6
+        },
+        {
+          "name": "Glow-Salt Route Chalk",
+          "description": "Luminous chalk remains visible through one night tide.",
+          "quantity": 9
+        },
+        {
+          "name": "Mudlung Reed Whistle",
+          "description": "Distinct calls signal gate closure, undertow, or blocked evacuation.",
+          "quantity": 1
+        },
+        {
+          "name": "Child-Stride Measuring Sash",
+          "description": "Dyed sash calibrates maps against short and uneven walking strides.",
+          "quantity": 1
+        },
+        {
+          "name": "Barnacle-Cut Salve Pots",
+          "description": "Pepper-kelp ointment for route-test injuries.",
+          "quantity": 3
+        },
+        {
+          "name": "Tide Witness Pebbles",
+          "description": "Numbered beach stones distributed to residents verifying timed passages.",
+          "quantity": 24
+        },
+        {
+          "name": "Rainproof Footfall Ledger",
+          "description": "Waxed accordion book recording delays by age, burden, and tide height.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "People's Route Loom",
+          "asset_type": "participatory mapping apparatus",
+          "description": "A wall loom where colored cords represent actual neighborhood journeys to the sea.",
+          "story_use": "Makes unequal access visible during certification hearings."
+        },
+        {
+          "asset_name": "Outer Ward Trial Landing",
+          "asset_type": "temporary public landing",
+          "description": "A removable coir-and-basalt ramp tested across spring tides.",
+          "story_use": "Can establish demand for permanent access or fail under redirected scour."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_sava_private_gate",
+          "topic": "Illegal harbor gate schedule",
+          "summary": "Sava knows merchants close a nominally public gate during profitable unloading tides.",
+          "confidence": 97
+        },
+        {
+          "knowledge_id": "know_sava_old_channel",
+          "topic": "Buried all-tide approach",
+          "summary": "Resident testimony and measurements indicate a recoverable route beneath a recent rubble apron.",
+          "confidence": 79
+        }
+      ]
+    },
+    {
+      "display_name": "Neris Vale",
+      "role_name": "Seven-Day Manifest Custodian",
+      "activity": "Within the Island Customs Service, Neris audits seized objects before review deadlines, changing usable_forfeit_stock and claimant_case_pressure while safeguarding Customs' dependency on traceable inventories and rapid clearance.",
+      "home_base": "Bonded Seizure Warehouse",
+      "arc_goal": "Expose selective manifest alterations inside the Island Customs Service, restoring forfeiture_legitimacy while keeping dangerous cargo available for lawful Shoreline Works Board reclamation.",
+      "inventory": [
+        {
+          "name": "Vale Double-Entry Shellboard",
+          "description": "Matched mother-of-pearl tablets reveal discrepancies between quay and warehouse counts.",
+          "quantity": 1
+        },
+        {
+          "name": "Red-Tide Tag Needle",
+          "description": "Barbed bronze stylus threads tamper-evident cord through seizure labels.",
+          "quantity": 1
+        },
+        {
+          "name": "Contraband Scent Vials",
+          "description": "Sealed references of tar narcotic, grave spice, and false bilge oil.",
+          "quantity": 5
+        },
+        {
+          "name": "Warehouse Echo Bell",
+          "description": "Palm bell tests whether stacked cages conceal hollow compartments.",
+          "quantity": 1
+        },
+        {
+          "name": "Salt-Iron Key Rosary",
+          "description": "A coded chain of keys for segregated claimant and hazard bays.",
+          "quantity": 1
+        },
+        {
+          "name": "Manifest Moth Traps",
+          "description": "Camphor-clay boxes protect paper records from brine moths.",
+          "quantity": 8
+        },
+        {
+          "name": "Quayman's False-Bottom Probe",
+          "description": "Jointed reed rod detects concealed deck and crate cavities.",
+          "quantity": 1
+        },
+        {
+          "name": "Seven-Day Burn Candle",
+          "description": "Calibrated wax pillar marks the mandatory inventory-review period.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Vale Provenance Cage",
+          "asset_type": "segregated bonded enclosure",
+          "description": "A mesh bay where every detachable component receives a linked identity tag.",
+          "story_use": "Preserves claimant evidence and uncovers substituted parts."
+        },
+        {
+          "asset_name": "Blind-Aisle Audit Desk",
+          "asset_type": "concealed records station",
+          "description": "A foldaway desk holding duplicate manifests beyond supervisors' routine searches.",
+          "story_use": "Contains proof of corruption but places Neris at personal risk."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_neris_manifest_swap",
+          "topic": "Harbor manifest substitutions",
+          "summary": "Neris knows a customs supervisor exchanges valuable seized copper for corroded warehouse stock.",
+          "confidence": 91
+        },
+        {
+          "knowledge_id": "know_neris_cage_origin",
+          "topic": "Basalt cage provenance",
+          "summary": "She can link a notorious smuggled cage to a claimant family that reported it stolen first.",
+          "confidence": 87
+        }
+      ]
+    },
+    {
+      "display_name": "Tamsin Rakewake",
+      "role_name": "Downcurrent Scour Listener",
+      "activity": "For the Shoreline Works Board, Tamsin reads stake-song, seabed vibration, and sediment loss to change coastal_hazard_exposure while protecting the Outer Ward Shore Coalition's dependency on defenses that do not redirect erosion.",
+      "home_base": "Downcurrent Scour Watch",
+      "arc_goal": "Force the Shoreline Works Board to recognize transferred scour in its safety scores, reducing coastal_hazard_exposure without sacrificing neighborhood_sea_access.",
+      "inventory": [
+        {
+          "name": "Nine-Note Scour Fork",
+          "description": "A salt-bronze tuning fork whose tones correspond to measured cavities beneath revetments.",
+          "quantity": 1
+        },
+        {
+          "name": "Widow Shoal Listening Bowl",
+          "description": "A tarred copper basin pressed to wet stone to amplify shifting rubble.",
+          "quantity": 1
+        },
+        {
+          "name": "Downcurrent Stake Ribbons",
+          "description": "Eel-silk ribbons dyed in depth bands for marking overnight sediment loss.",
+          "quantity": 18
+        },
+        {
+          "name": "Storm-Season Transect Cord",
+          "description": "A knotted coir line recording the historic width of three Outer Ward beaches.",
+          "quantity": 1
+        },
+        {
+          "name": "Silt-Grain Reliquary",
+          "description": "A compartmented whalebone case holding dated sediment samples from threatened landings.",
+          "quantity": 1
+        },
+        {
+          "name": "Barnacle Datum Knife",
+          "description": "A blunt shell-steel blade used to expose old growth lines without damaging masonry.",
+          "quantity": 1
+        },
+        {
+          "name": "Black-Tide Ear Hood",
+          "description": "A waxed felt hood that blocks wind while preserving sounds conducted through stakes.",
+          "quantity": 1
+        },
+        {
+          "name": "Rakewake Family Flood Nails",
+          "description": "Square iron markers recovered from successive drowned family thresholds.",
+          "quantity": 7
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scour-Song Archive Loft",
+          "asset_type": "monitoring archive",
+          "description": "A wind-braced loft of vibration cylinders, sediment drawers, and storm annotations.",
+          "story_use": "Can prove that a celebrated harbor defense quietly transfers danger down-current."
+        },
+        {
+          "asset_name": "Mobile Bed-Sound Raft",
+          "asset_type": "survey platform",
+          "description": "A shallow tethered raft fitted with listening spars and luminous depth knots.",
+          "story_use": "Lets crews gather evidence inside channels that merchants want declared stable."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "tamsin_hidden_scour",
+          "topic": "Subsurface scour beneath confiscated-hull defenses",
+          "summary": "Knows which reused hulls are standing over cavities likely to collapse during the next spring storm.",
+          "confidence": 88
+        },
+        {
+          "knowledge_id": "tamsin_stake_tampering",
+          "topic": "Altered Outer Ward monitoring marks",
+          "summary": "Can identify three survey stakes moved landward before a Works Board inspection.",
+          "confidence": 76
+        }
+      ]
+    },
+    {
+      "display_name": "Mara Vey, Bell-of-Balance",
+      "role_name": "Restitution Weight Auditor",
+      "activity": "At the Marrowkey Forfeiture Court, Mara prices irreversible public reuse against wrongful loss, changing forfeiture_legitimacy and the Dispossessed Owners and Claimants' dependency on compensation before objects enter permanent works.",
+      "home_base": "Public Claims Concourse",
+      "arc_goal": "Make restitution notes mature before construction begins, lowering claimant_case_pressure and restoring the forfeiture_court's legitimacy without freezing urgent coastal material.",
+      "inventory": [
+        {
+          "name": "Mourning-Weight Balance",
+          "description": "A folding brass scale calibrated for heirloom, livelihood, and salvage values rather than raw mass alone.",
+          "quantity": 1
+        },
+        {
+          "name": "Claimant's Breath Bell",
+          "description": "A thumb-sized silver bell rung when an owner must pause testimony without forfeiting speaking time.",
+          "quantity": 1
+        },
+        {
+          "name": "Salt-Rubbed Valuation Tiles",
+          "description": "Ceramic tiles bearing depreciation tables for immersion, seizure, dismantling, and public incorporation.",
+          "quantity": 12
+        },
+        {
+          "name": "Three-Witness Purse Cord",
+          "description": "A blue cord knotted only when claimant, clerk, and engineer agree on an object's condition.",
+          "quantity": 1
+        },
+        {
+          "name": "Vey Family Debt Shells",
+          "description": "Notched limpet shells tracking unpaid compensation inherited from an old wrongful seizure.",
+          "quantity": 9
+        },
+        {
+          "name": "Irreversibility Gauge",
+          "description": "A hinged ivory rule estimating how much identity an object loses when cut, poured over, or submerged.",
+          "quantity": 1
+        },
+        {
+          "name": "Ash-Ink Thumb Ledger",
+          "description": "A pocket folio preserving claimant marks when formal title papers have dissolved.",
+          "quantity": 1
+        },
+        {
+          "name": "Quiet-Hearing Veil",
+          "description": "A gray kelp-fiber veil traditionally worn while valuing possessions taken from the dead.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Public Restitution Bellboard",
+          "asset_type": "claims display",
+          "description": "A civic board pairing each reused object with its valuation, payment status, and surviving claim.",
+          "story_use": "Makes delayed or selectively paid restitution visible enough to trigger public action."
+        },
+        {
+          "asset_name": "Reversible Value Booth",
+          "asset_type": "assessment chamber",
+          "description": "A screened kiosk where claimants demonstrate an object's livelihood or ceremonial use.",
+          "story_use": "Can transform an apparently ordinary seized object into decisive ownership evidence."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "mara_unfunded_notes",
+          "topic": "Unfunded restitution liabilities",
+          "summary": "Knows which celebrated shoreline projects were built against notes the treasury cannot presently honor.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "mara_value_substitution",
+          "topic": "Manipulated seizure valuations",
+          "summary": "Recognizes the appraisal pattern used to undervalue useful objects before court release.",
+          "confidence": 82
+        }
+      ]
+    },
+    {
+      "display_name": "Orren Quaylock",
+      "role_name": "Berth-Tide Compact Broker",
+      "activity": "For the Harbor Merchants Compact, Orren trades berth windows and channel concessions to change neighborhood_sea_access while maintaining the merchants' dependency on navigable channels and reliable storm protection.",
+      "home_base": "Harbor Compact Berth Exchange",
+      "arc_goal": "Cede profitable all-tide landing windows to Outer Ward boats before unequal access further damages forfeiture_legitimacy, while keeping the harbor channel commercially viable.",
+      "inventory": [
+        {
+          "name": "Quaylock Tide-Chit Fan",
+          "description": "A riveted fan of bone chits recording personal promises of berth time across six tidal heights.",
+          "quantity": 1
+        },
+        {
+          "name": "Bluewater Queue Chain",
+          "description": "A miniature silver chain whose numbered links model vessel priority during storm closures.",
+          "quantity": 1
+        },
+        {
+          "name": "Merchant Wake Compass",
+          "description": "A double-needle compass comparing legal channel heading with the safest actual wake corridor.",
+          "quantity": 1
+        },
+        {
+          "name": "Drowned Tariff Book",
+          "description": "A swollen but legible tariff volume from the year the old public quay vanished.",
+          "quantity": 1
+        },
+        {
+          "name": "Harbor Oath Cuffs",
+          "description": "Paired copper wrist rings worn when negotiating access terms that cannot be privately amended.",
+          "quantity": 2
+        },
+        {
+          "name": "Red-Kelp Delay Beads",
+          "description": "Carved beads used to tally lost cargo value without interrupting spoken auctions.",
+          "quantity": 30
+        },
+        {
+          "name": "Pilot's Throat Whistle",
+          "description": "A low brass whistle audible beneath crane noise but distinct from Customs signals.",
+          "quantity": 1
+        },
+        {
+          "name": "Quay Nine Foundation Shard",
+          "description": "A basalt fragment proving a supposedly private berth was built over an older public landing.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Rotating Public Berth Covenant",
+          "asset_type": "access concession",
+          "description": "A tide-indexed agreement that converts selected commercial berths into public landings during safe windows.",
+          "story_use": "Can relieve Outer Ward access pressure or collapse under merchant resistance."
+        },
+        {
+          "asset_name": "Wake-Debt Exchange Rail",
+          "asset_type": "scheduling apparatus",
+          "description": "A brass rail where delay chits, pilot duties, and landing windows are physically traded.",
+          "story_use": "Turns shipping congestion into bargaining leverage for public access."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "orren_ghost_berths",
+          "topic": "Dormant public rights beneath merchant leases",
+          "summary": "Knows which premium berths retain enforceable public-landing clauses omitted from modern maps.",
+          "confidence": 91
+        },
+        {
+          "knowledge_id": "orren_diversion_threshold",
+          "topic": "Merchant trade-diversion plans",
+          "summary": "Knows the exact delay threshold at which three major shippers will abandon Marrowkey.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Kes Reefmother",
+      "role_name": "Claim-Mark Preservation Forewoman",
+      "activity": "For the Shoreline Works Board, Kes supervises reversible assembly so usable_forfeit_stock can enter urgent defenses without destroying the Dispossessed Owners and Claimants' dependency on identifiable, returnable objects.",
+      "home_base": "Confiscated Works Assembly Slip",
+      "arc_goal": "Establish a Board-wide claim-mark preservation standard that reduces claimant_case_pressure while keeping emergency shoreline_configuration work reversible.",
+      "inventory": [
+        {
+          "name": "Reefmother Seam Chisels",
+          "description": "Eight shallow-edged chisels for opening salvage seams without cutting maker marks.",
+          "quantity": 8
+        },
+        {
+          "name": "Ghost-Mark Lamp",
+          "description": "A violet stormglass lamp revealing scraped serials, household sigils, and old customs paint.",
+          "quantity": 1
+        },
+        {
+          "name": "Claimant-Fiber Envelopes",
+          "description": "Waterproof fishskin packets for preserving rope, upholstery, and paint samples from dismantled objects.",
+          "quantity": 24
+        },
+        {
+          "name": "Returnable Joint Pins",
+          "description": "Numbered bronze pins used in place of permanent welds on disputed structural members.",
+          "quantity": 16
+        },
+        {
+          "name": "Kes's Assembly Scar Map",
+          "description": "A sealskin roll charting every cut she authorized on court-released objects.",
+          "quantity": 1
+        },
+        {
+          "name": "Oyster-Chalk Alignment Plumb",
+          "description": "A shell-weighted line leaving removable marks on metal, stone, and hull timber.",
+          "quantity": 1
+        },
+        {
+          "name": "Ancestral Rivet Cup",
+          "description": "A lidded horn cup holding fasteners from the seized ferry where Kes first learned salvage work.",
+          "quantity": 1
+        },
+        {
+          "name": "Slip-Forewoman's Tide Apron",
+          "description": "A waxed apron stitched with pockets sized for seals, fragments, and contested fittings.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Identifiable Assembly Cradle",
+          "asset_type": "reversible fabrication rig",
+          "description": "A modular cradle that supports whole vehicles and hull sections without erasing ownership marks.",
+          "story_use": "Allows emergency construction to proceed while preserving the possibility of court-ordered return."
+        },
+        {
+          "asset_name": "Claim-Trace Mosaic Wall",
+          "asset_type": "provenance index",
+          "description": "A tiled wall matching removed fragments and fasteners to their source objects and court dockets.",
+          "story_use": "Exposes substitutions, missing pieces, or a foreman's unauthorized dismantling."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kes_erased_marks",
+          "topic": "Deliberately erased provenance marks",
+          "summary": "Can distinguish storm abrasion from tool work used to hide an object's claimant history.",
+          "confidence": 96
+        },
+        {
+          "knowledge_id": "kes_reversible_breakwater",
+          "topic": "Rapidly demountable defense joints",
+          "summary": "Knows a pin-and-cradle method that can free disputed hull sections within a single low tide.",
+          "confidence": 89
+        }
+      ]
+    },
+    {
+      "display_name": "Edda Knucklebell",
+      "role_name": "Object-Order Hearing Choreographer",
+      "activity": "At the Marrowkey Forfeiture Court, Edda sequences linked-object hearings so claimant_case_pressure falls without sacrificing the Dispossessed Owners and Claimants' dependency on court access.",
+      "home_base": "Dark Slate Hearing Court",
+      "arc_goal": "Change claimant_case_pressure by proving that clustered hearings can clear claims while preserving forfeiture_legitimacy and traceable claimant notice.",
+      "inventory": [
+        {
+          "name": "Knucklebell Docket Chime",
+          "description": "Seven brass knuckles sound different deadlines without interrupting testimony.",
+          "quantity": 1
+        },
+        {
+          "name": "Eelhide Continuance Fan",
+          "description": "Saltproof leaves display every lawful reason a hearing may be delayed.",
+          "quantity": 1
+        },
+        {
+          "name": "Graywax Witness Pebbles",
+          "description": "Stamped stones track witnesses shared across linked seizure cases.",
+          "quantity": 24
+        },
+        {
+          "name": "Tide-Paired Sandglass",
+          "description": "Twin chambers measure argument time against the returning tide.",
+          "quantity": 1
+        },
+        {
+          "name": "Claim-Kin Ribbon Spool",
+          "description": "Blue-black ribbon binds dockets involving one family or creditor chain.",
+          "quantity": 3
+        },
+        {
+          "name": "Slate-Milk Stylus Set",
+          "description": "Pale styluses leave erasable scheduling marks on dark court boards.",
+          "quantity": 6
+        },
+        {
+          "name": "Absent-Owner Shell Mask",
+          "description": "A carved shell marks the seat of a claimant notified but not present.",
+          "quantity": 1
+        },
+        {
+          "name": "Seven-Session Pressure Book",
+          "description": "Accordion ledger forecasts when unresolved claims will trigger injunctions.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Linked-Object Hearing Rail",
+          "asset_type": "court scheduling fixture",
+          "description": "A movable slate rail groups dockets by shared owners, witnesses, and cargo chains.",
+          "story_use": "Lets Edda accelerate cases, but a mistaken linkage can taint several judgments."
+        },
+        {
+          "asset_name": "Public Continuance Bellboard",
+          "asset_type": "notice installation",
+          "description": "A bell-coded board announces delays in forms readable from the concourse.",
+          "story_use": "Raises legitimacy when maintained and sparks protests when notices disappear."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "knuckle_shared_chain_map",
+          "topic": "Shared evidentiary chains",
+          "summary": "Identifies which seizures can be heard together without merging distinct ownership claims.",
+          "confidence": 88
+        },
+        {
+          "knowledge_id": "knuckle_injunction_horizon",
+          "topic": "Injunction timing",
+          "summary": "Predicts which neglected docket will freeze material already promised to shoreline works.",
+          "confidence": 81
+        }
+      ]
+    },
+    {
+      "display_name": "Jory Ashkelp",
+      "role_name": "Reclamation Exit Bailiff",
+      "activity": "For the Marrowkey Forfeiture Court, Jory enforces reversible release and removal orders, changing usable_forfeit_stock while protecting claimants' dependency on objects remaining identifiable.",
+      "home_base": "Confiscated Works Assembly Slip",
+      "arc_goal": "Change forfeiture_legitimacy by recovering a wrongly incorporated object intact, without collapsing the Shoreline Works Board defense built around it.",
+      "inventory": [
+        {
+          "name": "Ashkelp Object Chains",
+          "description": "Numbered soft-link chains secure evidence without scoring hulls or masonry.",
+          "quantity": 4
+        },
+        {
+          "name": "Reversal Wedge Choir",
+          "description": "Graduated bronze wedges ring when a loaded joint begins to bind.",
+          "quantity": 12
+        },
+        {
+          "name": "Judgment-Skin Apron",
+          "description": "Sealhide apron bears washable pockets for removal-order fragments.",
+          "quantity": 1
+        },
+        {
+          "name": "Redress Lantern",
+          "description": "Red lens reveals court wax embedded in dark assembly seams.",
+          "quantity": 1
+        },
+        {
+          "name": "Quiet Hook Pair",
+          "description": "Coir-wrapped hooks lift claimant property without leaving bailiff marks.",
+          "quantity": 2
+        },
+        {
+          "name": "Salt-Oath Rivet Jar",
+          "description": "Holds rivets extracted under witnessed chain-of-custody procedure.",
+          "quantity": 1
+        },
+        {
+          "name": "Return-Bearing Sled Shoes",
+          "description": "Basalt runners carry released objects across the slip at low tide.",
+          "quantity": 4
+        },
+        {
+          "name": "Three-Key Chain Casket",
+          "description": "Evidence box requiring bailiff, builder, and claimant keys to open.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Court-Ordered Disassembly Cradle",
+          "asset_type": "recovery apparatus",
+          "description": "An adjustable cradle supports structures while a disputed component is extracted.",
+          "story_use": "Makes returns physically possible, though emergency use can weaken active defenses."
+        },
+        {
+          "asset_name": "Witnessed Parts Mooring",
+          "asset_type": "secured quay berth",
+          "description": "A striped berth isolates removed components under public observation.",
+          "story_use": "Preserves custody and becomes a flashpoint when storms demand immediate reuse."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "ashkelp_reversible_joint_index",
+          "topic": "Reversible salvage joints",
+          "summary": "Recognizes builders' hidden release points and the load order needed for safe extraction.",
+          "confidence": 93
+        },
+        {
+          "knowledge_id": "ashkelp_bailiff_chain_law",
+          "topic": "Custodial continuity",
+          "summary": "Knows when altered objects remain legally returnable and when restitution is mandatory.",
+          "confidence": 86
+        }
+      ]
+    },
+    {
+      "display_name": "Vaska Rain-in-Copper",
+      "role_name": "Storm-Provenance Conservator",
+      "activity": "For the Island Customs Service, Vaska separates seizure damage from storm damage, changing usable_forfeit_stock and preserving claimants' dependency on defensible inventories.",
+      "home_base": "Bonded Seizure Warehouse",
+      "arc_goal": "Change forfeiture_legitimacy by exposing warehouse neglect concealed as storm loss while keeping Customs able to clear genuinely unsafe stock.",
+      "inventory": [
+        {
+          "name": "Copper-Rain Coupon Tree",
+          "description": "Thin copper leaves record salt, rain, and corrosive vapor exposure by color.",
+          "quantity": 1
+        },
+        {
+          "name": "Warehouse Drip Constellation",
+          "description": "Waxed cord map pins each roof leak to the objects beneath it.",
+          "quantity": 1
+        },
+        {
+          "name": "Barnacle-Age Loupe",
+          "description": "Layered lens distinguishes marine growth before and after seizure.",
+          "quantity": 1
+        },
+        {
+          "name": "Storm-Taste Vials",
+          "description": "Sealed samples compare floodwater minerals across warehouse bays.",
+          "quantity": 18
+        },
+        {
+          "name": "Tarp-Bite Clamps",
+          "description": "Toothed clamps preserve torn tarp edges as evidence of fastening failure.",
+          "quantity": 8
+        },
+        {
+          "name": "Dry-Tide Charcoal Cards",
+          "description": "Humidity cards bloom with gray tide-lines when storage air turns dangerous.",
+          "quantity": 30
+        },
+        {
+          "name": "Custody Corrosion Knife",
+          "description": "Silvered probe lifts rust scales without erasing tool marks beneath.",
+          "quantity": 1
+        },
+        {
+          "name": "Rain Witness Hood",
+          "description": "Clear oilskin hood carries dated droplets from disputed weather events.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Seizure Weather Spine",
+          "asset_type": "warehouse evidence archive",
+          "description": "A vertical archive aligns storm gauges, roof failures, and object-condition records.",
+          "story_use": "Can prove wrongful storage damage or vindicate Customs after a catastrophic tide."
+        },
+        {
+          "asset_name": "Copper Coupon Exposure Rack",
+          "asset_type": "environmental monitoring fixture",
+          "description": "Standardized metal leaves age beside bonded cargo in every warehouse zone.",
+          "story_use": "Warns of hidden decay and can freeze construction withdrawals pending inspection."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "raincopper_damage_clock",
+          "topic": "Post-seizure damage dating",
+          "summary": "Dates corrosion and biological growth closely enough to assign responsibility for loss.",
+          "confidence": 91
+        },
+        {
+          "knowledge_id": "raincopper_roof_fraud",
+          "topic": "Warehouse weather manipulation",
+          "summary": "Recognizes falsified storm entries, moved cargo, and tarps cut after the recorded event.",
+          "confidence": 84
+        }
+      ]
+    },
+    {
+      "display_name": "Pell Nine-Rungs",
+      "role_name": "All-Tide Gate Covenant Keeper",
+      "activity": "For the Tide Access Commission, Pell publishes and physically enforces gate-opening covenants, changing neighborhood_sea_access and the Outer Ward Shore Coalition's dependency on safe landings and evacuation capacity.",
+      "home_base": "Outer Ward All-Tide Landing",
+      "arc_goal": "Change neighborhood_sea_access by wresting a storm-safe gate schedule from harbor interests without increasing coastal_hazard_exposure at the landing.",
+      "inventory": [
+        {
+          "name": "Nine-Rung Flood Staff",
+          "description": "Notched mangrove staff marks depths passable by children, carts, and litters.",
+          "quantity": 1
+        },
+        {
+          "name": "Gate-Covenant Key Crown",
+          "description": "Publicly numbered iron keys fit emergency overrides on three tide gates.",
+          "quantity": 1
+        },
+        {
+          "name": "Barefoot Alarm Tiles",
+          "description": "Ridged ceramic tiles click under unsafe backwash before water hides them.",
+          "quantity": 9
+        },
+        {
+          "name": "Moon-Brine Schedule Wheel",
+          "description": "Rotating shell disc converts lunar tides into posted opening hours.",
+          "quantity": 1
+        },
+        {
+          "name": "Evacuation Rope of Names",
+          "description": "Knotted coir line records households requiring assisted passage.",
+          "quantity": 1
+        },
+        {
+          "name": "Landing-Silt Glasses",
+          "description": "Flat sample jars show when gate timing is choking the approach with sediment.",
+          "quantity": 12
+        },
+        {
+          "name": "Merchant Closure Seals",
+          "description": "Breakable orange seals document unauthorized locking of public gates.",
+          "quantity": 20
+        },
+        {
+          "name": "Rungkeeper's Kelp Cape",
+          "description": "Weighted kelp-fiber cape keeps Pell visible and upright in gate wash.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Covenant Tide Gate",
+          "asset_type": "public access infrastructure",
+          "description": "A manually overridable gate records every closure on a salt-paper drum.",
+          "story_use": "Creates reliable passage but yields evidence when officials or merchants restrict it."
+        },
+        {
+          "asset_name": "Nine-Rung Refuge Post",
+          "asset_type": "landing safety marker",
+          "description": "A tall public post combines depth marks, handholds, lamps, and household muster hooks.",
+          "story_use": "Supports evacuation scenes and reveals whether changed currents exceed safe thresholds."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "ninerungs_gate_harmonics",
+          "topic": "Gate timing and current transfer",
+          "summary": "Predicts when opening for access will create dangerous crosswash or move silt downcurrent.",
+          "confidence": 87
+        },
+        {
+          "knowledge_id": "ninerungs_closure_customs",
+          "topic": "Informal access obstruction",
+          "summary": "Tracks merchant, patrol, and maintenance pretexts used to close nominally public routes.",
+          "confidence": 94
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Manifest, Claim, and Release",
+      "summary": "At Bonded Seizure Warehouse, players reconcile the seven-day inventory, preserve identifying marks, build claim-chains, and argue release or injunction in Dark Slate Hearing Court. Judgments reduce or increase Unresolved Claimant Case Pressure and immediately alter Usable Confiscated Material Stock.",
+      "roles": [
+        "Seven-Day Manifest Custodian",
+        "Claim-Mark Preservation Forewoman",
+        "Claim-Chain Advocate and Object Genealogist",
+        "Object-Order Hearing Choreographer"
+      ],
+      "rooms": [
+        "Bonded Seizure Warehouse",
+        "Dark Slate Hearing Court",
+        "Public Claims Concourse"
+      ],
+      "pressure": "Weather damage and approaching construction deadlines make delay costly, while premature release risks wrongful dispossession."
+    },
+    {
+      "label": "Design, Measure, and Enjoin",
+      "summary": "At Shoreline Works Design Bay, a defense is scored, then tested in Access Measurement Chamber and Outer Ward All-Tide Landing. Certification changes Neighborhood Sea Access; a failed threshold activates the link from Shoreline Configuration to Neighborhood Sea Access and invites an injunction.",
+      "roles": [
+        "Forfeit-Hull Structural Surgeon",
+        "Barefoot Tide-Route Examiner",
+        "All-Tide Gate Covenant Keeper"
+      ],
+      "rooms": [
+        "Shoreline Works Design Bay",
+        "Access Measurement Chamber",
+        "Outer Ward All-Tide Landing"
+      ],
+      "pressure": "Every route improvement competes with structural safety, berth clearance, and the need to finish before dangerous tides."
+    },
+    {
+      "label": "Build, Listen, and Redesign",
+      "summary": "Court-released stock is assembled at Confiscated Works Assembly Slip, then monitored at Downcurrent Scour Watch. Detected sediment trapping changes Shoreline Configuration and activates the causal link increasing Coastal Hazard Exposure downcurrent, forcing redesign, wetland measures, or removal.",
+      "roles": [
+        "Forfeit-Hull Structural Surgeon",
+        "Downcurrent Scour Listener",
+        "Storm-Provenance Conservator",
+        "Reclamation Exit Bailiff"
+      ],
+      "rooms": [
+        "Confiscated Works Assembly Slip",
+        "Downcurrent Scour Watch",
+        "Shoreline Works Design Bay"
+      ],
+      "pressure": "Protecting one ward quickly may expose another over the storm season, while removal consumes scarce stock."
+    },
+    {
+      "label": "Covenant, Access, and Legitimacy",
+      "summary": "At Harbor Compact Berth Exchange, players negotiate berth schedules and public overrides, then verify them at Outer Ward All-Tide Landing and publish results at Public Claims Concourse. Repeated equitable gains improve Neighborhood Sea Access and activate its causal link raising Forfeiture System Legitimacy.",
+      "roles": [
+        "Berth-Tide Compact Broker",
+        "All-Tide Gate Covenant Keeper",
+        "Barefoot Tide-Route Examiner"
+      ],
+      "rooms": [
+        "Harbor Compact Berth Exchange",
+        "Outer Ward All-Tide Landing",
+        "Public Claims Concourse"
+      ],
+      "pressure": "Merchant schedules offer funding and maintenance, but unequal exceptions can turn certification into evidence of institutional favoritism."
+    },
+    {
+      "label": "Restitution Before Irreversibility",
+      "summary": "Before disputed material leaves Confiscated Works Assembly Slip, players audit value, separability, and provenance, then seek terms in Dark Slate Hearing Court. Settlements lower Unresolved Claimant Case Pressure and can free Usable Confiscated Material Stock; failed talks trigger immediate injunction freezes.",
+      "roles": [
+        "Restitution Weight Auditor",
+        "Storm-Provenance Conservator",
+        "Claim-Chain Advocate and Object Genealogist",
+        "Reclamation Exit Bailiff"
+      ],
+      "rooms": [
+        "Confiscated Works Assembly Slip",
+        "Dark Slate Hearing Court",
+        "Bonded Seizure Warehouse"
+      ],
+      "pressure": "Storm urgency rewards irreversible construction, while each embedded object raises compensation liability and distrust."
+    }
+  ],
+  "player_entry_points": [
+    "A seven-day review at Bonded Seizure Warehouse reveals a hull component absent from the public manifest.",
+    "A disputed vehicle is scheduled for irreversible incorporation at Confiscated Works Assembly Slip before its ownership hearing.",
+    "Outer Ward All-Tide Landing passes at low tide but fails the published safe-travel threshold at high tide.",
+    "Fresh measurements at Downcurrent Scour Watch suggest harbor protection is transferring erosion toward the outer wards."
+  ],
+  "conflict_hooks": [
+    "A stamped reclamation judgment names a hull whose preserved repair marks support a family's ownership claim; an injunction could halt a nearly complete access ramp before storm arrival.",
+    "Harbor protection passes its engineering score but blocks an established landing, forcing a choice between commercial continuity and immediate access certification.",
+    "The seven-day manifest lists intact masonry, while the warehouse contains weather-split pieces already promised to a shoreline design.",
+    "Downcurrent scour measurements contradict the posted project map, and releasing the data could trigger removal orders during peak storm exposure."
+  ],
+  "custom_actions": [
+    "Trace a claim-chain through marks, liens, manifests, and testimony",
+    "Petition an alteration injunction against a disputed object",
+    "Score a forfeit hull for reversible shoreline use",
+    "Walk a route barefoot across a full tide interval",
+    "Publish the seven-day manifest discrepancy ledger",
+    "Listen for downcurrent scour beneath an installed defense",
+    "Audit restitution weight before irreversible incorporation",
+    "Broker berth protection against an all-tide access covenant",
+    "Preserve a claim mark through dismantling and assembly",
+    "Choreograph the object order for an adversarial hearing",
+    "Seal a reclamation exit after judgment",
+    "Conserve storm provenance on weather-damaged evidence"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "Offer berth priority for a public gate covenant",
+      "initiating_role": "Berth-Tide Compact Broker",
+      "target_role": "All-Tide Gate Covenant Keeper",
+      "situation": "Commercial berth users offer scheduled priority and maintenance funds in exchange for accepting an enforceable all-tide public override at Outer Ward All-Tide Landing.",
+      "proposed_effects": [
+        "speech",
+        "transfer",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Confirm the initiating party controls the offered berth priority or has authority from the Harbor Merchants Compact.",
+        "Confirm funds and scheduling rights are transferable and not already pledged.",
+        "Verify both parties are present or represented with recorded consent; do not infer neighborhood consent from either role.",
+        "Check that the covenant cannot waive published access thresholds or bind nonconsenting route users.",
+        "Apply no status until the terms, duration, breach remedy, and public override are recorded."
+      ]
+    },
+    {
+      "action_name": "Dedicate removable hull ribs to a claimant",
+      "initiating_role": "Forfeit-Hull Structural Surgeon",
+      "target_role": "Claim-Chain Advocate and Object Genealogist",
+      "situation": "At Confiscated Works Assembly Slip, selected ribs would remain removable and reserved for return while the rest of a released hull supports a temporary ramp.",
+      "proposed_effects": [
+        "transfer",
+        "create_item",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Verify the judgment permits separation and reversible use of the hull.",
+        "Confirm ownership of each rib through matching inventory numbers and preserved claim marks.",
+        "Require consent from the lawful custodian and recipient before assigning reserved possession.",
+        "Confirm both roles are at the object or have authorized handlers within the work boundary.",
+        "Limit creation to a tagged, finite rib set; prohibit creating extra material or duplicating title.",
+        "Do not grant reserved status if removal would violate the engineering safety score."
+      ]
+    },
+    {
+      "action_name": "Declare a witness a protected tide-route reporter",
+      "initiating_role": "Barefoot Tide-Route Examiner",
+      "target_role": "Downcurrent Scour Listener",
+      "situation": "After targeted testimony about concealed route closures and scour at Downcurrent Scour Watch, the examiner asks that the witness receive a limited public-interest status.",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Check that the initiating role may request but not unilaterally confer formal protection.",
+        "Verify the testimony concerns personally observed tides, routes, or scour and is not fabricated by coordinator fiat.",
+        "Obtain the target's consent before publicly attaching the status.",
+        "Confirm the relevant testimony was delivered in proximity to an authorized record keeper or entered into a hearing record.",
+        "Bound the status by duration, protections, duties, and revocation process; do not imply immunity from unrelated violations."
+      ]
+    },
+    {
+      "action_name": "Exchange restitution credit for early component release",
+      "initiating_role": "Restitution Weight Auditor",
+      "target_role": "Seven-Day Manifest Custodian",
+      "situation": "A claimant proposes accepting a larger recorded restitution credit in exchange for releasing non-heirloom components from a disputed seizure before final disposition.",
+      "proposed_effects": [
+        "speech",
+        "transfer",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Confirm the claimant owns or controls the specific compensation claim and may settle it.",
+        "Verify the custodian has no unilateral power to release property absent a court order or valid settlement authority.",
+        "Identify each component in the seven-day manifest and preserve excluded heirloom components intact.",
+        "Require informed claimant consent without treating storm urgency as automatic consent.",
+        "Check liens, creditor interests, and injunctions before any transfer.",
+        "Cap restitution credit to an auditable valuation and do not create currency, title, or components beyond the recorded settlement."
+      ]
+    }
+  ],
+  "social_rules": [
+    "A seized object remains identifiable and unaltered until a stamped judgment permits return, auction, destruction, or reclamation.",
+    "Every seizure inventory must receive a public review after seven days; missing entries weaken both custody and contraband claims.",
+    "Access certification requires measured travel time and safe passage across published tide thresholds, not merely a drawn route.",
+    "Emergency shoreline necessity may accelerate a hearing but does not extinguish ownership, lien, or restitution claims.",
+    "Anyone proposing a coastal defense must disclose which ward gains protection, which route is occupied, and where downcurrent scour may increase.",
+    "Claim marks, serial plates, family modifications, and storm damage are preserved as ownership evidence until judicial release.",
+    "No tide gate serving a public route may be privately scheduled without a recorded covenant and an enforceable override.",
+    "Objects incorporated into reversible works retain separate identities; irreversible incorporation requires explicit judgment and restitution review.",
+    "Hearing order is procedural leverage: claimants, engineers, access witnesses, and hazard evidence must all receive a recorded opportunity to answer.",
+    "Sabotage that creates immediate flood or navigation danger is prohibited, while peaceful path occupation and petitioned work stoppages remain contestable civic acts."
+  ],
+  "item_themes": [
+    "Numbered confiscation tags",
+    "Disputed boats and vehicles",
+    "Smuggled masonry and metal",
+    "Court orders and title ledgers",
+    "Modular tide gates",
+    "Salvage cranes and barges"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "mk_tag_red_7day",
+      "name": "Seven-Day Red Seizure Tag",
+      "price": 14,
+      "mass": 0.04,
+      "description": "Numbered oilcloth tag recording seizure cause, officer, warehouse bay, and mandatory review date.",
+      "image_prompt": "Salt-stained red evidence tag, black serial numbers, brass eyelet, tarred cord, gray courthouse desk, legal realism",
+      "category": "Evidence"
+    },
+    {
+      "item_id": "mk_bonded_manifest",
+      "name": "Bonded Warehouse Manifest",
+      "price": 38,
+      "mass": 0.22,
+      "description": "Customs-recognized ledger leaf tracing an impounded object through storage, claims, and release.",
+      "image_prompt": "Creased harbor manifest with blue customs stamps, red annotations, salt crystals and cargo cage shadows",
+      "category": "Evidence"
+    },
+    {
+      "item_id": "mk_chain_seal_kit",
+      "name": "Custody Seal Kit",
+      "price": 72,
+      "mass": 1.4,
+      "description": "Lead seals, wire, wax, and numbered punches used to preserve an object's evidentiary chain.",
+      "image_prompt": "Wooden evidence kit containing lead seals, steel punches, red wax and coiled wire, austere dock office",
+      "category": "Legal Supply"
+    },
+    {
+      "item_id": "mk_salt_title_ledger",
+      "name": "Saltproof Title Ledger",
+      "price": 165,
+      "mass": 2.8,
+      "description": "Waxed-cloth registry accepted by the court as evidence of hull, vehicle, and machinery ownership.",
+      "image_prompt": "Thick waxed ledger with marbled edges, black ink titles, iron clasp, salt-stained courtroom realism",
+      "category": "Credential"
+    },
+    {
+      "item_id": "mk_return_order",
+      "name": "Stamped Order of Return",
+      "price": 25,
+      "mass": 0.03,
+      "description": "Certified judgment requiring bailiffs to release a named object intact to its proven owner.",
+      "image_prompt": "Cream court order with embossed seal, RETURN stamp, black-robed sleeve and red evidence tag",
+      "category": "Court Order"
+    },
+    {
+      "item_id": "mk_reclamation_writ",
+      "name": "Reclamation Writ",
+      "price": 45,
+      "mass": 0.04,
+      "description": "Project-specific judgment authorizing a seized object to be altered for public coastal works.",
+      "image_prompt": "Legal writ stamped RECLAMATION, project map margin, wet seal, boat hull visible through courthouse window",
+      "category": "Court Order"
+    },
+    {
+      "item_id": "mk_access_injunction",
+      "name": "Sea-Lane Access Injunction",
+      "price": 60,
+      "mass": 0.05,
+      "description": "Commission order halting barriers or gate schedules that breach published access thresholds.",
+      "image_prompt": "Rain-speckled injunction pinned to a modular tide gate, vermilion seal, public path beyond",
+      "category": "Court Order"
+    },
+    {
+      "item_id": "mk_claimant_docket_token",
+      "name": "Claimant Docket Token",
+      "price": 9,
+      "mass": 0.08,
+      "description": "Numbered brass token securing a claimant's hearing place and linking submitted title evidence.",
+      "image_prompt": "Worn brass courthouse token engraved with docket number, black felt tray, salt-white fingerprints",
+      "category": "Credential"
+    },
+    {
+      "item_id": "mk_tide_route_clock",
+      "name": "Ward Route Tide Clock",
+      "price": 240,
+      "mass": 4.6,
+      "description": "Commission-calibrated clock pairing tide height with measured walking time to the nearest safe landing.",
+      "image_prompt": "Enamel civic tide clock, colored route bands, brass hands, mounted on a damp stone lane wall",
+      "category": "Measurement"
+    },
+    {
+      "item_id": "mk_access_survey_wheel",
+      "name": "Access Survey Wheel",
+      "price": 118,
+      "mass": 3.2,
+      "description": "Sealed measuring wheel used to certify route distance, slope, and obstruction from ward to sea.",
+      "image_prompt": "Salt-scarred survey wheel with brass counter and commission seal, chalk-marked harbor ramp",
+      "category": "Measurement"
+    },
+    {
+      "item_id": "mk_scour_stake_set",
+      "name": "Down-Current Scour Stakes",
+      "price": 84,
+      "mass": 12.5,
+      "description": "Graduated ironwood stakes reveal sediment loss caused by breakwaters over successive tides.",
+      "image_prompt": "Numbered ironwood stakes in dark tidal sand, measurement bands, improvised seawall in distance",
+      "category": "Measurement"
+    },
+    {
+      "item_id": "mk_storm_gauge_case",
+      "name": "Ward Storm Gauge Case",
+      "price": 310,
+      "mass": 9.8,
+      "description": "Tamper-sealed pressure and flood-height recorder documenting neighborhood hazard exposure.",
+      "image_prompt": "Rugged brass flood gauge in a red-tagged glass case, spray-soaked outer ward houses",
+      "category": "Measurement"
+    },
+    {
+      "item_id": "mk_forfeit_stock_board",
+      "name": "Forfeit Stock Counting Board",
+      "price": 190,
+      "mass": 7.4,
+      "description": "Peg-and-slate register showing which seized materials are usable, disputed, damaged, or committed.",
+      "image_prompt": "Black slate inventory board with colored pegs, chalk hull numbers, crowded bonded warehouse",
+      "category": "Measurement"
+    },
+    {
+      "item_id": "mk_case_pressure_abacus",
+      "name": "Clerk's Docket Abacus",
+      "price": 95,
+      "mass": 2.1,
+      "description": "Six-rail counter tracking new claims, continuances, injunctions, settlements, and overdue reviews.",
+      "image_prompt": "Dark wood legal abacus with red and ivory beads, docket stacks, ink-stained clerk hands",
+      "category": "Measurement"
+    },
+    {
+      "item_id": "mk_access_map_panel",
+      "name": "Tri-Color Sea Access Map",
+      "price": 76,
+      "mass": 1.9,
+      "description": "Public panel marking all-tide green routes, conditional amber ways, and closed red approaches.",
+      "image_prompt": "Weatherproof harbor district map in green amber and red, riveted frame, citizens reading notices",
+      "category": "Public Notice"
+    },
+    {
+      "item_id": "mk_public_landing_post",
+      "name": "Blue-Cap Landing Post",
+      "price": 48,
+      "mass": 18.0,
+      "description": "Commission marker declaring a shore approach public and displaying safe tidal hours.",
+      "image_prompt": "Blue-capped iron post with white civic lettering, tidal mud, fishing baskets and narrow lane",
+      "category": "Access Infrastructure"
+    },
+    {
+      "item_id": "mk_modular_tide_gate",
+      "name": "Marrowkey Modular Tide Gate",
+      "price": 1850,
+      "mass": 640.0,
+      "description": "Pin-jointed steel gate section configurable for flood control while preserving scheduled passage.",
+      "image_prompt": "Riveted modular tide gate, painted schedule marks, red inspection tags, improvised seawall of vehicles",
+      "category": "Coastal Works"
+    },
+    {
+      "item_id": "mk_gate_hinge_cartridge",
+      "name": "Tide-Gate Hinge Cartridge",
+      "price": 290,
+      "mass": 42.0,
+      "description": "Replaceable bronze-and-rubber pivot pack essential for reliable gate opening in silty water.",
+      "image_prompt": "Heavy bronze hinge cartridge with black rubber seals, grease, salt patina, salvage workshop bench",
+      "category": "Maintenance"
+    },
+    {
+      "item_id": "mk_bus_chassis_14",
+      "name": "Disputed Route-Fourteen Bus",
+      "price": 4200,
+      "mass": 7280.0,
+      "description": "Impounded diesel bus whose boxed chassis can anchor a seawall if its creditor lien is defeated.",
+      "image_prompt": "Faded municipal bus with red seizure tags, windows boarded, half-set into a boat-and-stone seawall",
+      "category": "Disputed Vehicle"
+    },
+    {
+      "item_id": "mk_cutter_mournful_gull",
+      "name": "Cutter Mournful Gull",
+      "price": 6800,
+      "mass": 11800.0,
+      "description": "Seized fishing cutter with competing family claims; usable as a workboat, reef core, or restitution asset.",
+      "image_prompt": "Weathered fishing cutter named Mournful Gull, customs chains, red tags, grieving claimants on wet quay",
+      "category": "Disputed Vessel"
+    },
+    {
+      "item_id": "mk_smuggled_basalt_cage",
+      "name": "Caged Smuggler's Basalt",
+      "price": 740,
+      "mass": 2400.0,
+      "description": "Wire cargo cage of unmanifested dressed basalt suited to ramps, revetments, and scour aprons.",
+      "image_prompt": "Rusting cargo cage packed with dark dressed basalt, customs seals, crane hook and sea spray",
+      "category": "Construction Material"
+    },
+    {
+      "item_id": "mk_copper_sheet_bundle",
+      "name": "Confiscated Copper Sheeting",
+      "price": 980,
+      "mass": 360.0,
+      "description": "Salt-spotted roofing copper reusable for gate skins, flashing, or auction after assay.",
+      "image_prompt": "Bound green-flecked copper sheets with numbered seizure tags, dim bonded warehouse",
+      "category": "Construction Material"
+    },
+    {
+      "item_id": "mk_oyster_lime_barrel",
+      "name": "Oyster-Lime Mortar Barrel",
+      "price": 135,
+      "mass": 180.0,
+      "description": "Local hydraulic lime consumed in stone ramps and seawalls that must cure under brackish spray.",
+      "image_prompt": "Hooped barrel marked OYSTER LIME, white powder, shell fragments, wet masonry works",
+      "category": "Consumable"
+    },
+    {
+      "item_id": "mk_coir_silt_roll",
+      "name": "Coir Silt Roll",
+      "price": 64,
+      "mass": 32.0,
+      "description": "Biodegradable fiber roll for trapping sediment and protecting young wetland margins.",
+      "image_prompt": "Brown coir rolls staked along a marsh edge, trapped sand, survey stakes and gray tidal sky",
+      "category": "Consumable"
+    },
+    {
+      "item_id": "mk_salvage_barge_share",
+      "name": "One-Cycle Salvage Barge Charter",
+      "price": 1250,
+      "mass": 0.1,
+      "description": "Transferable guild certificate reserving a shallow-draft barge and crew for one construction cycle.",
+      "image_prompt": "Stamped charter certificate beside a flat work barge carrying stone cages and a compact crane",
+      "category": "Contract"
+    },
+    {
+      "item_id": "mk_crane_lift_warrant",
+      "name": "Guild Heavy-Lift Warrant",
+      "price": 520,
+      "mass": 0.06,
+      "description": "Prepaid warrant for one certified crane lift of a hull, vehicle, safe, or tide-gate section.",
+      "image_prompt": "Red-edged lift warrant, embossed guild crane emblem, massive hook over an impounded bus",
+      "category": "Contract"
+    },
+    {
+      "item_id": "mk_safety_score_plate",
+      "name": "Works Safety Score Plate",
+      "price": 88,
+      "mass": 0.9,
+      "description": "Tamper-resistant plate displaying an engineer's load, scour, access, and maintenance ratings.",
+      "image_prompt": "Enameled score plate with punched ratings, bolted to a seawall of safes, stone and hulls",
+      "category": "Credential"
+    },
+    {
+      "item_id": "mk_bailiff_object_chains",
+      "name": "Bailiff's Object Chains",
+      "price": 210,
+      "mass": 28.0,
+      "description": "Stamped locking chains that impose a vessel or vehicle hold without moving the evidence.",
+      "image_prompt": "Black iron chains with court seal and numbered lock, wrapped around a salt-streaked truck axle",
+      "category": "Enforcement"
+    },
+    {
+      "item_id": "mk_storm_evidence_tarp",
+      "name": "Storm-Evidence Shroud",
+      "price": 105,
+      "mass": 16.5,
+      "description": "Vented tarred canvas protecting damaged evidence while leaving serial plates and tags visible.",
+      "image_prompt": "Black tarred shroud tied over storm-crushed machinery, viewing flap exposing serial plate and red tag",
+      "category": "Storage Supply"
+    },
+    {
+      "item_id": "mk_restitution_note",
+      "name": "Restitution Treasury Note",
+      "price": 500,
+      "mass": 0.02,
+      "description": "Court-backed note payable to a successful claimant when returned property cannot be recovered intact.",
+      "image_prompt": "Engraved civic treasury note with wave watermark, restitution stamp, courthouse seal and ink signatures",
+      "category": "Financial Instrument"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "the_forfeit_shore_wardrobe_v1",
+    "world_wardrobe_brief": "Salt-stained civic-maritime workwear for a forfeiture court, bonded harbor, tidal-access commission, and salvage-built coast. Black legal wedges, waxed utility layers, marine PPE, dark customs caps, pale ledgers, measuring tools, and small abstract red evidence tags distinguish roles. Clothing is practical, weathered, compact, and non-militarized.",
+    "forbidden_aesthetics": [
+      "antique-market clothing, vintage dealer aprons, curio-shop finery, or antiquarian costume",
+      "medieval fantasy robes, heraldry, armor, capes, or ornate weapons",
+      "pirate costume, tricorn hats, eyepatches, striped buccaneer wear, or treasure motifs",
+      "cyberpunk streetwear, neon trim, holographic accessories, or futuristic pressure suits",
+      "military combat uniforms, tactical assault rigs, camouflage, or battlefield armor",
+      "luxury yacht fashion, resort wear, tropical tourist clothing, or nautical novelty stripes",
+      "Victorian courtroom costume, powdered wigs, frock coats, or steampunk gearwork",
+      "modern branded uniforms, readable badges, national insignia, logos, or text",
+      "bright superhero silhouettes, ceremonial regalia, ball gowns, or high-fashion tailoring",
+      "photoreal fabric effects, glossy 3D materials, gradients, glow, or excessive ornament"
+    ],
+    "palette_families": [
+      {
+        "name": "Court Slate",
+        "dominant": "#242b2d charcoal-black",
+        "accent": "#c53b32 evidence red",
+        "trim": "#d6c8a8 limestone beige",
+        "material": "matte robe cloth, wet slate-toned wool"
+      },
+      {
+        "name": "Customs Marine",
+        "dominant": "#3f5354 deep blue-gray",
+        "accent": "#c53b32 seizure red",
+        "trim": "#e8e2cf salt-white",
+        "material": "waxed canvas, oxidized fasteners"
+      },
+      {
+        "name": "Works Crew",
+        "dominant": "#667a78 salt teal-gray",
+        "accent": "#d6c8a8 helmet beige",
+        "trim": "#c53b32 tagged joints",
+        "material": "heavy canvas, tarred leather, marine steel"
+      },
+      {
+        "name": "Access Commission",
+        "dominant": "#d6c8a8 shell limestone",
+        "accent": "#667a78 tide gray-green",
+        "trim": "#c53b32 closure red",
+        "material": "weatherproof civic cloth, rubberized hems"
+      },
+      {
+        "name": "Outer Ward",
+        "dominant": "#667a78 faded sea-gray",
+        "accent": "#e8e2cf pale salt cloth",
+        "trim": "#c53b32 claim token red",
+        "material": "patched oilskin, knit wool, coir cord"
+      },
+      {
+        "name": "Harbor Compact",
+        "dominant": "#242b2d quay charcoal",
+        "accent": "#667a78 marine gray-green",
+        "trim": "#d6c8a8 restrained brass-beige",
+        "material": "structured waxed coat cloth, dull metal clasps"
+      },
+      {
+        "name": "Scour Watch",
+        "dominant": "#526765 marsh gray-green",
+        "accent": "#e8e2cf gauge white",
+        "trim": "#c53b32 warning red",
+        "material": "hooded oilskin, rubber boots, ironwood tools"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "legal_court_officers",
+        "role_keywords": [
+          "judge",
+          "hearing",
+          "bailiff",
+          "court",
+          "choreographer",
+          "object-order",
+          "reclamation exit"
+        ],
+        "attire": [
+          "black wedge-shaped robe over salt-gray civic workwear",
+          "short weatherproof shoulder mantle",
+          "dark practical shoes or boots"
+        ],
+        "props": [
+          "pale order block or docket baton",
+          "small red evidence token",
+          "dull custody-ring clasp"
+        ],
+        "palette_notes": "Charcoal dominates; one pale document shape and one red tag provide recognition.",
+        "silhouette_notes": "Broad triangular robe wedge with compact shoulders; bailiffs add a squared belt and short mantle.",
+        "avoid": [
+          "powdered wigs",
+          "ornate judicial regalia",
+          "gavels with oversized silhouettes",
+          "military police styling"
+        ]
+      },
+      {
+        "rule_id": "advocates_auditors_legal_aid",
+        "role_keywords": [
+          "advocate",
+          "genealogist",
+          "auditor",
+          "restitution",
+          "claim-chain",
+          "legal aid",
+          "clerk"
+        ],
+        "attire": [
+          "slate coat or sleeveless ledger vest",
+          "pale salt-cloth collar panel",
+          "waxed document satchel strap"
+        ],
+        "props": [
+          "pale ledger block",
+          "claim-chain seal pouch",
+          "red claimant token"
+        ],
+        "palette_notes": "Slate and limestone with tightly limited red evidence accents.",
+        "silhouette_notes": "Rectangular torso with a clear side satchel or ledger held forward.",
+        "avoid": [
+          "business suits",
+          "academic gowns",
+          "antique bookseller attire",
+          "readable paperwork"
+        ]
+      },
+      {
+        "rule_id": "customs_manifest_conservators",
+        "role_keywords": [
+          "customs",
+          "manifest",
+          "custodian",
+          "conservator",
+          "provenance",
+          "inventory",
+          "seizure"
+        ],
+        "attire": [
+          "dark marine cap",
+          "blue-gray waxed utility jumpsuit",
+          "salt-white inspection cuffs",
+          "short cage-safe coat"
+        ],
+        "props": [
+          "manifest slate block",
+          "seal-wire pouch",
+          "inspection hook or hand lens silhouette"
+        ],
+        "palette_notes": "Deep blue-gray base, pale cuffs, and a single red seizure tag.",
+        "silhouette_notes": "Squared cap and compact utility pockets; no dangling gear near cargo cages.",
+        "avoid": [
+          "naval dress uniforms",
+          "combat webbing",
+          "border-police styling",
+          "readable badges"
+        ]
+      },
+      {
+        "rule_id": "salvage_builders_engineers",
+        "role_keywords": [
+          "builder",
+          "structural",
+          "surgeon",
+          "forewoman",
+          "works",
+          "salvage",
+          "engineering",
+          "construction",
+          "assembly"
+        ],
+        "attire": [
+          "light shell-beige hard helmet",
+          "salt-teal heavy utility coveralls",
+          "tarred knee and forearm patches",
+          "compact flotation-work vest"
+        ],
+        "props": [
+          "steel measuring arm or hull caliper",
+          "short tether coil",
+          "red-tag inspection clamp"
+        ],
+        "palette_notes": "Teal-gray coveralls and beige helmet; red appears only on tags or safety joints.",
+        "silhouette_notes": "Helmet, broad vest, and one large engineering tool make the role readable.",
+        "avoid": [
+          "orange construction stereotypes",
+          "power armor",
+          "oversized tool belts",
+          "clean futuristic engineering suits"
+        ]
+      },
+      {
+        "rule_id": "tide_access_examiners",
+        "role_keywords": [
+          "tide-route",
+          "examiner",
+          "access",
+          "commission",
+          "gate",
+          "covenant",
+          "route",
+          "measurement"
+        ],
+        "attire": [
+          "pale shell-cloth survey smock",
+          "gray-green cropped weather trousers",
+          "rolled sleeves or rubberized cuffs",
+          "optional bare feet for route examiners"
+        ],
+        "props": [
+          "access survey wheel",
+          "tide clock case",
+          "gate key lever",
+          "red closure token"
+        ],
+        "palette_notes": "Pale attire separates access staff from dark court and customs roles.",
+        "silhouette_notes": "Long slim measuring tool or circular survey wheel; feet remain simple and non-detailed.",
+        "avoid": [
+          "lifeguard uniforms",
+          "sporting swimwear",
+          "wizard staffs",
+          "bright traffic-safety colors"
+        ]
+      },
+      {
+        "rule_id": "scour_storm_inspectors",
+        "role_keywords": [
+          "scour",
+          "storm",
+          "sediment",
+          "erosion",
+          "hazard",
+          "listener",
+          "watch",
+          "inspector"
+        ],
+        "attire": [
+          "hooded marsh-gray oilskin",
+          "salt-white gauge patches",
+          "dark rubber boots",
+          "short storm capelet"
+        ],
+        "props": [
+          "ironwood scour stake",
+          "sealed storm gauge case",
+          "coir sample roll"
+        ],
+        "palette_notes": "Muted marsh gray with pale instrument faces and tiny red warning seals.",
+        "silhouette_notes": "Pointed hood, narrow stake, and box gauge form a distinct monitoring profile.",
+        "avoid": [
+          "mystic shaman styling",
+          "fisherman caricature",
+          "gas masks",
+          "hazmat neon"
+        ]
+      },
+      {
+        "rule_id": "claimants_outer_ward_residents",
+        "role_keywords": [
+          "claimant",
+          "dispossessed",
+          "owner",
+          "outer ward",
+          "resident",
+          "coalition",
+          "protester",
+          "fisher"
+        ],
+        "attire": [
+          "patched salt-gray oilskin or knit overshirt",
+          "simple pale route sash or shoulder wrap",
+          "weathered trousers and shore boots"
+        ],
+        "props": [
+          "red claim token held visibly",
+          "small title-ledger bundle",
+          "coiled handline or tide-record stick"
+        ],
+        "palette_notes": "Faded gray-green and pale cloth; red claimant token is the strongest accent.",
+        "silhouette_notes": "Layered civilian shape with one clearly presented token; varied hats are low and practical.",
+        "avoid": [
+          "ragged refugee stereotype",
+          "pirate or sailor costume",
+          "placard text",
+          "uniformed protest clothing"
+        ]
+      },
+      {
+        "rule_id": "harbor_merchants_brokers",
+        "role_keywords": [
+          "merchant",
+          "broker",
+          "compact",
+          "berth",
+          "trade",
+          "quay",
+          "harbor"
+        ],
+        "attire": [
+          "structured charcoal waxed quay coat",
+          "gray-green vest panel",
+          "low dark harbor cap",
+          "restrained beige clasp or cuff"
+        ],
+        "props": [
+          "berth-slot token board",
+          "mooring tally ring",
+          "compact tide ledger"
+        ],
+        "palette_notes": "Dark, orderly clothing with dull beige hardware; red only if handling held cargo.",
+        "silhouette_notes": "Boxier and cleaner than work crews, with a low cap and small token board.",
+        "avoid": [
+          "luxury captain uniforms",
+          "gold braid",
+          "top hats",
+          "modern corporate suits",
+          "merchant-prince finery"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "marrowkey_civic_maritime_default",
+      "role_keywords": [
+        "unmatched",
+        "civic worker",
+        "visitor"
+      ],
+      "attire": [
+        "salt-gray waxed overshirt or short utility coat",
+        "dark practical trousers",
+        "weatherproof shore boots",
+        "simple role-colored collar or cap"
+      ],
+      "props": [
+        "one occupation tool or pale civic token",
+        "optional small abstract red evidence tag when handling seized property"
+      ],
+      "palette_notes": "Use charcoal, salt teal-gray, limestone beige, and salt-white; reserve red for legal, claim, closure, or evidence cues.",
+      "silhouette_notes": "Compact broad-shouldered 1:2 figure with one unmistakable garment cue and one carried prop.",
+      "avoid": [
+        "unrelated period costume",
+        "antique-market attire",
+        "fantasy, cyberpunk, military, or resort styling",
+        "readable insignia or excessive accessories"
+      ]
+    },
+    "visual_consistency_rules": [
+      "Render strict top-down compact 1:2 figures with broad shoulders and simple hands.",
+      "Use a one-pixel #242b2d contour and minimal internal lines; no soft antialias haze.",
+      "Limit each sprite to one dominant garment family, one role cue, and one primary prop.",
+      "Keep the world palette centered on #667a78, #d6c8a8, #c53b32, #242b2d, and #e8e2cf.",
+      "Reserve #c53b32 for evidence tags, claim tokens, closure cues, and small legal accents.",
+      "Never place readable text, numerals, logos, or detailed badge faces on clothing or props.",
+      "Use matte salt-worn cloth, waxed canvas, dull rubber, and oxidized metal; avoid gloss and gradients.",
+      "Differentiate roles through helmet, cap, robe wedge, hood, ledger, survey wheel, or stake rather than facial detail.",
+      "Keep carried tools chunky and visible within the 64x64 silhouette; avoid clusters of tiny accessories.",
+      "Apply compact map-northwest lighting and a small #242b2d contact shadow only."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "the_forfeit_shore_canon_v1",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90-degree orthographic; no visible facades or horizon",
+      "scale_rule": "Collision-aligned square grid; fixed texel density; people occupy one tile, vehicles two to four, structures modular multiples"
+    },
+    "palette": {
+      "dominant": "#667a78",
+      "secondary": "#d6c8a8",
+      "accent": "#c53b32",
+      "shadow": "#242b2d",
+      "highlight": "#e8e2cf"
+    },
+    "materials": [
+      "salt-stained limestone",
+      "oxidized marine steel",
+      "tarred timber",
+      "faded boat fiberglass",
+      "wire cargo cage",
+      "wet court slate",
+      "patched asphalt"
+    ],
+    "lighting": "Overcast maritime daylight from map-northwest; compact #242B2D contact shadows only; wet edges use #E8E2CF highlights; no colored glow, bloom, or night neon.",
+    "architecture": [
+      "Courthouse built as ordered limestone rectangles around a dark slate hearing court",
+      "Seawalls visibly assembled from nested hulls, vehicle shells, safes, masonry, cages, and timber cribbing",
+      "Every seized component retains a small red geometric evidence tag without readable characters",
+      "Public routes use continuous pale paving and repeated notch markers; blocked routes terminate with red bars",
+      "Tide gates, ramps, cranes, warehouses, and barges use chunky grid-aligned modular geometry",
+      "Coastal works remain contiguous with shoreline and adjacent districts, never isolated dioramas"
+    ],
+    "terrain": {
+      "ground": "Cool salt-gray civic paving, patched asphalt, and sparse marsh slabs in large readable tile fields",
+      "path": "Pale shell-limestone bands with dark drainage seams and abstract access notches",
+      "edge": "Irregular surf boundary reinforced by recognizable confiscated-object silhouettes and red-tag junctions"
+    },
+    "sprite_language": {
+      "body_proportion": "Compact 1:2 head-to-body top-down figures with broad shoulders, simple hands, and occupation-shaped silhouettes",
+      "outline": "One-pixel #242B2D contour with minimal internal lines and no soft antialias haze",
+      "role_readability": "Judges use black robe wedges, clerks carry pale ledger blocks, customs wear dark caps, builders wear light helmets, claimants display red tag tokens; no written badges"
+    },
+    "world_prompt_prefix": "Strict orthographic top-down Marrowkey Island, salt-stained civic legal realism, five-color palette, grid-aligned courthouse coast, seawalls built from red-tagged seized boats vehicles safes masonry and cargo cages, overcast maritime light, contiguous playable map.",
+    "sprite_prompt_prefix": "Strict top-down grid sprite, compact civic-maritime silhouette, five-color Marrowkey palette, dark one-pixel outline, role readable by garment and carried tool, small abstract red evidence tag, no text.",
+    "forbidden_visuals": [
+      "visible labels or readable writing",
+      "title text, logos, numerals, or legible signage",
+      "poster, card, infographic, or framed presentation layouts",
+      "disconnected room dioramas or floating map islands",
+      "perspective, isometric, oblique, side-view, horizon, or visible facades",
+      "photorealism, painterly rendering, or 3D-render gloss",
+      "generic medieval fantasy, magic, castles, heraldry, monsters, or ornate weapons",
+      "generic cyberpunk, neon glow, holograms, circuitry, or futuristic megacity motifs",
+      "generic beige procedural terrain or undifferentiated brown ruins",
+      "unrelated real-world landmarks, national symbols, or contemporary brand designs",
+      "unbounded colors, gradients, bloom, atmospheric fog, or colored lighting",
+      "combat gore or militarized battlefield aesthetics"
+    ],
+    "canon_hash": "ce3d7e1e3c59d3f4"
+  }
+}

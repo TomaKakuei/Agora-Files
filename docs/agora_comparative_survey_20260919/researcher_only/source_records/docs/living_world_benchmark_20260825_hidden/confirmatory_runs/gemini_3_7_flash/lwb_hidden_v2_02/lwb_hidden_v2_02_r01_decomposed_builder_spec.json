@@ -1,0 +1,1853 @@
+{
+  "world_name": "Verdant Rail Concourse",
+  "world_id": "verdant_rail_concourse",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "en-US",
+    "tone": "bureaucratic solarpunk intrigue",
+    "visual_direction": "brass turnstiles, humid vaulted glass, steam-misted hydro-trenches, color-coded soil badges",
+    "currency_code": "GRN",
+    "currency_symbol": "🌱",
+    "currency_minor_unit": "seedlet",
+    "currency_name": "Sprout Scrip",
+    "domain_label": "orbital-commuter-agri-transit",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "inst_concourse_guild",
+        "name": "Platform Dispatch Syndicate",
+        "mandate": "Balance transit boarding throughput against train oxygen-biomass deficits",
+        "decision_rule": "Allocate premium express platform slots exclusively to passengers binding labor contracts to high-demand critical crops",
+        "enforced_by": "Automated pneumatic turnstiles and botanic compliance wardens",
+        "visible_output": "Digital platform boarding clearance boards and gate lockout shutters"
+      },
+      {
+        "institution_id": "inst_crop_tribunal",
+        "name": "Arboretum Oversight Board",
+        "mandate": "Prevent monoculture blight and enforce crop diversity quotas aboard active carriages",
+        "decision_rule": "Revoke platform clearance if high-maintenance canopy crops drop below 30 percent labor coverage",
+        "enforced_by": "Agronomic sensor arrays and quarantine airlocks",
+        "visible_output": "Daily carriage nutrition logs and seed ration dispersal rosters"
+      },
+      {
+        "institution_id": "inst_labor_exchange",
+        "name": "Transit Planters Union",
+        "mandate": "Defend passenger cultivators against over-demanding carriage contracts and dangerous agrochemical exposures",
+        "decision_rule": "Call strike slow-downs on platform gates when passenger crop-care shifts exceed scheduled transit intervals",
+        "enforced_by": "Turnstile picket cordons and moisture valve lockdowns",
+        "visible_output": "Union grievance notices pasted to glass passenger terminals"
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "state_canopy_crop_health",
+        "label": "Canopy Crop Vitality",
+        "initial_tension": "Declining due to shortage of specialized passenger tenders willing to climb high trellises",
+        "changed_by": [
+          "passenger pruning shifts",
+          "automated fertilizer bursts",
+          "parasite infestations"
+        ],
+        "affects": [
+          "express train departures",
+          "carriage oxygen levels"
+        ]
+      },
+      {
+        "state_id": "state_platform_congestion",
+        "label": "Platform Queue Density",
+        "initial_tension": "Critical overcrowding at lower-tier root-vegetable boarding gates",
+        "changed_by": [
+          "turnstile throughput rate",
+          "passenger contract sign-up velocity",
+          "strike actions"
+        ],
+        "affects": [
+          "departure punctuality",
+          "passenger civil unrest"
+        ]
+      },
+      {
+        "state_id": "state_oxygen_reserve_rate",
+        "label": "Train En Route Oxygen Generation",
+        "initial_tension": "Borderline deficit across long-haul sleeper carriages",
+        "changed_by": [
+          "tended foliage surface area",
+          "passenger respiratory load",
+          "spore ventilation cycles"
+        ],
+        "affects": [
+          "long-range route authorizations",
+          "ticket subsidy ratios"
+        ]
+      },
+      {
+        "state_id": "state_rare_seed_stock",
+        "label": "High-Yield Germplasm Reserves",
+        "initial_tension": "Depleted in public dispensers, hoarded by express-tier commuters",
+        "changed_by": [
+          "concourse harvest payouts",
+          "black market seed swapping",
+          "arboretum restock shipments"
+        ],
+        "affects": [
+          "crop labor difficulty",
+          "platform priority assignment"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "state_canopy_crop_health",
+        "trigger": "drops below critical threshold of 40 percent",
+        "target_state": "state_oxygen_reserve_rate",
+        "effect": "forces environmental dampeners to reduce long-haul carriage boarding permissions",
+        "delay": "2 transit cycles"
+      },
+      {
+        "source_state": "state_oxygen_reserve_rate",
+        "trigger": "falls into mandatory emergency rationing",
+        "target_state": "state_platform_congestion",
+        "effect": "shuts express boarding gates, trapping lower-tier passengers in concourse foyers",
+        "delay": "immediate"
+      },
+      {
+        "source_state": "state_platform_congestion",
+        "trigger": "exceeds safety threshold for three consecutive hours",
+        "target_state": "state_rare_seed_stock",
+        "effect": "triggers emergency arboretum disbursement of high-yield seeds to incentivize urgent labor sign-ups",
+        "delay": "1 transit cycle"
+      },
+      {
+        "source_state": "state_rare_seed_stock",
+        "trigger": "is broadly distributed to general ticket holders",
+        "target_state": "state_canopy_crop_health",
+        "effect": "rapidly restores canopy coverage as novice passengers deploy resilient hybrids",
+        "delay": "3 transit cycles"
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "group_express_commuters",
+        "name": "Fast-Track Commuters",
+        "goal": "Secure immediate first-class express boarding by taking high-stakes, fast-growth crop contracts",
+        "leverage": "Hold surplus high-yield germplasm and express tier scrip",
+        "dependency": "Rely on concourse stability and clear transit tracks"
+      },
+      {
+        "group_id": "group_tillage_drifters",
+        "name": "Root-Tender Migrants",
+        "goal": "Travel long distances affordably by accepting labor-intensive tuber and fungal trough maintenance",
+        "leverage": "Provide the bulk biomass baseline keeping carriage life support functioning",
+        "dependency": "Require fair seed rations and open low-tier boarding turnstiles"
+      },
+      {
+        "group_id": "group_arboreal_technicians",
+        "name": "Carriage Agronomists",
+        "goal": "Maintain ecological equilibrium and prevent catastrophic crop failures in transit",
+        "leverage": "Control environmental sensor calibration and gate clearance authorization codes",
+        "dependency": "Depend on reliable passenger labor volume to service manual trellis zones"
+      }
+    ]
+  },
+  "genre": "Solarpunk Transit Sim",
+  "premise": "In a colossal glass rail interchange, platform boarding passes are granted only to travelers who contract to cultivate and maintain the train life-support gardens during their journey.",
+  "simulation_objective": "Manage personal boarding priority, negotiate carriage crop tenders, and balance station-wide ecological transit demands to reach distant terminals.",
+  "agent_count_target": 12,
+  "player_count_target": 32,
+  "wall_color_theme": "glass_and_oxidized_brass",
+  "economy_focus": "Labor-for-transit bartering driven by crop yield, seed rarity, and life-support requirements.",
+  "exploration_focus": "Navigating shifting platform layouts, hydroponic nursery carriages, and hidden arboretum vaults.",
+  "conflict_tone": "Civic tension, resource friction, and ideological disputes over transit labor equity.",
+  "visual_style": "Art Nouveau ironwork interwoven with lush hydroponic greenery, luminescent mist, and vintage steam gauges.",
+  "rooms": [
+    {
+      "name": "Central Concourse Labor Bureau",
+      "biome": "solarpunk_rail_interchange",
+      "purpose": "Processes passenger transit labor contracts, directly modifying state_platform_congestion by binding commuters to carriage crop shifts before passing them to the boarding airlocks.",
+      "decor_tags": [
+        "brass_counters",
+        "pneumatic_tubes",
+        "contract_slates",
+        "luminescent_signage",
+        "potted_saplings"
+      ],
+      "activity_tags": [
+        "contract_signing",
+        "badge_dispensing",
+        "crowd_filtering",
+        "biometric_scanning"
+      ],
+      "flux_floor_prompt": "top-down pixel art seamless tile of polished green marble concourse flooring with embedded brass gridlines and clean edge drainage vents, crisp 32-bit aesthetic",
+      "room_scene_prompt": "top-down orthographic pixel art plate of a busy transit contract bureau, curved oxidized brass teller desks, pneumatic brass message cylinders, glowing contract consoles, lush moss accents, map-embedded rectangular room plate edge to edge, no labels, no text, no margins",
+      "width_tiles": 10,
+      "height_tiles": 8,
+      "ambient_palette": "clear_day",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "contract_dispenser_kiosk",
+          "label": "Pneumatic Contract Kiosk",
+          "description": "A polished brass pillar connected to ceiling glass conduits, dispensing luminescent parchment transit contracts.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Canopy Seed Reserve Bank",
+      "biome": "solarpunk_rail_interchange",
+      "purpose": "Manages and rations state_rare_seed_stock, where stock depletion triggers emergency allotments to lower gates during peak transit hours.",
+      "decor_tags": [
+        "germplasm_vaults",
+        "climate_glass_jars",
+        "brass_scales",
+        "spore_filters",
+        "copper_pipes"
+      ],
+      "activity_tags": [
+        "seed_weighing",
+        "vault_auditing",
+        "germplasm_grading",
+        "ration_dispersal"
+      ],
+      "flux_floor_prompt": "top-down pixel art seamless floor of geometric hexagonal basalt tiles with thin polished copper inlay borders, clean 32-bit pixel art",
+      "room_scene_prompt": "top-down orthographic pixel art plate of a high-security seed reserve bank, reinforced glass climate pods containing rare vines, brass cataloguing desks, copper vacuum conduits, rectangular room plate reaching all four edges, no labels, no text, no margins",
+      "width_tiles": 8,
+      "height_tiles": 8,
+      "ambient_palette": "focused_blue",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "cryo_seed_carousel",
+          "label": "Cryogenic Germplasm Carousel",
+          "description": "A rotating glass and brass cylinder containing categorized, glowing seed vials under frost mist.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Express Platform Turnstile Gate 1",
+      "biome": "solarpunk_rail_interchange",
+      "purpose": "Platform Dispatch Syndicate checkpoint that locks boarding gates whenever state_canopy_crop_health falls below safe life-support quotas.",
+      "decor_tags": [
+        "pneumatic_turnstiles",
+        "oxygen_gauges",
+        "bronze_railings",
+        "indicator_lamps",
+        "glass_canopy"
+      ],
+      "activity_tags": [
+        "badge_scanning",
+        "ticket_validation",
+        "queue_marshalling",
+        "gate_enforcement"
+      ],
+      "flux_floor_prompt": "top-down pixel art seamless floor of copper-banded transit walkway plates mortared with vibrant green micro-moss, crisp clean pixel art",
+      "room_scene_prompt": "top-down orthographic pixel art plate of an express train boarding turnstile gate, heavy brass barrier arms, glowing overhead amber pressure dials, pristine steel floor guides, fills the entire rectangular image, no labels, no text, no margins",
+      "width_tiles": 9,
+      "height_tiles": 6,
+      "ambient_palette": "clear_day",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "syndicate_turnstile_array",
+          "label": "Hydraulic Gate Lockout Array",
+          "description": "Heavy brass pneumatic rotary gates integrated with glowing biometric badges and oxygen pressure monitors.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Hydroponic Trough Staging Bay",
+      "biome": "solarpunk_rail_interchange",
+      "purpose": "Prepares and loads nutrient-rich carriage planter troughs, directly elevating state_oxygen_reserve_rate for upcoming trans-continental routes.",
+      "decor_tags": [
+        "basalt_troughs",
+        "nutrient_hoses",
+        "fertilizer_vats",
+        "drainage_grates",
+        "trough_cranes"
+      ],
+      "activity_tags": [
+        "soil_mixing",
+        "trough_rigging",
+        "nutrient_balancing",
+        "carriage_loading"
+      ],
+      "flux_floor_prompt": "top-down pixel art seamless floor of porous basalt hydro-troughs and wet recessed drainage grates with moss fringes, 32-bit pixel art",
+      "room_scene_prompt": "top-down orthographic pixel art plate of a trough staging workshop, deep irrigation channels, overhead brass gantry cranes hoisting lush garden beds, copper drip manifolds, map-embedded full plate edge to edge, no text, no labels, no margins",
+      "width_tiles": 11,
+      "height_tiles": 9,
+      "ambient_palette": "focused_blue",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "hydro_mix_manifold",
+          "label": "Pneumatic Fertilizer Manifold",
+          "description": "An intricate copper vat assembly with transparent sight tubes bubbling with enriched green liquid nutrients.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Transit Planters Union Hall",
+      "biome": "solarpunk_rail_interchange",
+      "purpose": "Where passenger cultivators gather to debate shift quotas and organize strike slowdowns that amplify state_platform_congestion.",
+      "decor_tags": [
+        "bulletin_slates",
+        "wooden_benches",
+        "steam_samovars",
+        "protest_leaflets",
+        "brass_lanterns"
+      ],
+      "activity_tags": [
+        "contract_negotiation",
+        "grievance_filing",
+        "worker_rest",
+        "tea_brewing"
+      ],
+      "flux_floor_prompt": "top-down pixel art seamless floor of polished parquet wood tiles edged by slim brass reinforcement strips, clean top-down pixel art",
+      "room_scene_prompt": "top-down orthographic pixel art plate of a railway union commons, round mahogany tables, brass notice stands pinned with grievance sheets, glass-enclosed steam tea station, full edge-to-edge floor plate, no labels, no text, no margins",
+      "width_tiles": 8,
+      "height_tiles": 7,
+      "ambient_palette": "warm_lantern",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "union_grievance_board",
+          "label": "Illuminated Grievance Board",
+          "description": "A freestanding brass frame holding back-lit glass slides detailing passenger labor strikes and carriage hazard notices.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Carriage Agronomy Oversight Lab",
+      "biome": "solarpunk_rail_interchange",
+      "purpose": "Monitors systemic state_canopy_crop_health via telemetry to dictate carriage oxygen limits and issue mandatory seed replanting orders.",
+      "decor_tags": [
+        "glass_spectrometers",
+        "telemetry_dials",
+        "terrarium_chambers",
+        "herbarium_cabinets",
+        "brass_microscopes"
+      ],
+      "activity_tags": [
+        "spore_testing",
+        "telemetry_logging",
+        "blight_quarantine",
+        "microscopy"
+      ],
+      "flux_floor_prompt": "top-down pixel art seamless floor of pristine white ceramic tiles bordered with dark oxidized brass conduit runners, 32-bit clean pixel art",
+      "room_scene_prompt": "top-down orthographic pixel art plate of an agronomic monitoring laboratory, circular diagnostic desks with glowing green holographic crop readouts, specimen jars, copper pneumatic sample drops, seamless room image touching all borders, no text, no labels, no margins",
+      "width_tiles": 9,
+      "height_tiles": 8,
+      "ambient_palette": "focused_blue",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "canopy_telemetry_console",
+          "label": "Biomass Telemetry Console",
+          "description": "A massive brass dashboard with glowing neon-green dial gauges and illuminated route maps showing carriage oxygen output.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Vaelen Cruz",
+      "role_name": "Chief Turnstile Arbiter",
+      "activity": "Calibrating automated pneumatic turnstiles and managing passenger contract assignments to resolve state_platform_congestion",
+      "home_base": "Express Platform Turnstile Gate 1",
+      "arc_goal": "Enforce Platform Dispatch Syndicate boarding mandates to prevent train oxygen deficits while limiting union-backed gate shutdowns",
+      "inventory": [
+        {
+          "name": "Gold Dispatch Badge",
+          "description": "Engraved brass token conferring pneumatic gate override authority",
+          "quantity": 1
+        },
+        {
+          "name": "Pneumatic Flow Meter",
+          "description": "Handheld dial measuring turnstile pressure and transit air lock seals",
+          "quantity": 1
+        },
+        {
+          "name": "Lichen Filter Cartridge",
+          "description": "Standard issue breathing insert infused with living desiccant lichen",
+          "quantity": 3
+        },
+        {
+          "name": "Gate Override Key",
+          "description": "Heavy notched iron cylinder for manual platform track lockout",
+          "quantity": 1
+        },
+        {
+          "name": "Foliar Ration Voucher",
+          "description": "Syndicate-backed voucher redeemable for high-grade nutrient solutions",
+          "quantity": 5
+        },
+        {
+          "name": "Emergency Oxygen Ampoule",
+          "description": "Pressurized glass capsule for immediate hypoxia recovery",
+          "quantity": 2
+        },
+        {
+          "name": "Digital Manifest Slate",
+          "description": "Monochrome tablet tracking carriage crop yields and passenger rosters",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Whistle Spindle",
+          "description": "Acoustic alert device used to signal concourse wardens during overcrowding",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Turnstile Control Console 1A",
+          "asset_type": "Infrastructure Terminal",
+          "description": "Hardwired dispatch console regulating boarding flow to express trains",
+          "story_use": "Can lock down lower-tier boarding or prioritize express canopy tenders"
+        },
+        {
+          "asset_name": "Platform Clearance Ledger",
+          "asset_type": "Syndicate Register",
+          "description": "Archival register tracking fulfilled crop labor hours against passenger tickets",
+          "story_use": "Used to verify or revoke passenger transit clearances"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_dispatch_quotas",
+          "topic": "Carriage Oxygen Ratios",
+          "summary": "Understands minimum canopy biomass required to authorize express departures",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "know_gate_vulnerabilities",
+          "topic": "Turnstile Override Protocols",
+          "summary": "Knows how union pickets manipulate moisture lines to disable gate mechanisms",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Mirela Vance",
+      "role_name": "Union Deck Steward",
+      "activity": "Organizing platform gate slow-downs to protect lower-tier tillage drifters from hazardous agrochemical exposures",
+      "home_base": "Transit Planters Union Hall",
+      "arc_goal": "Empower the Transit Planters Union to enforce mandatory rest intervals and fair seed rations against the Platform Dispatch Syndicate",
+      "inventory": [
+        {
+          "name": "Tillage Copper Insignia",
+          "description": "Hammered copper emblem showing solidarity with root-trough laborers",
+          "quantity": 1
+        },
+        {
+          "name": "Union Charter Manifesto",
+          "description": "Pocket-sized booklet containing safety codes and passenger strike protocols",
+          "quantity": 2
+        },
+        {
+          "name": "Moisture Valve Spanner",
+          "description": "Reinforced brass spanner tailored for concourse misting pipe fittings",
+          "quantity": 1
+        },
+        {
+          "name": "Spore-Resistant Trowel",
+          "description": "Heavy iron root spade etched with union registry marks",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Picket Beacon",
+          "description": "Chemical flare signalling illegal turnstile speedups to nearby workers",
+          "quantity": 4
+        },
+        {
+          "name": "Compressed Algae Biscuit",
+          "description": "Nutrient-dense shelf-stable ration block stamped with union seal",
+          "quantity": 6
+        },
+        {
+          "name": "Grievance Chalk Slate",
+          "description": "Handheld slate recording concourse labor violations and shift overages",
+          "quantity": 1
+        },
+        {
+          "name": "Lead Tally Stylus",
+          "description": "Heavy lead pencil used to register migrant worker boarding hours",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Union Moisture Bypass Valve",
+          "asset_type": "Hydraulic Station",
+          "description": "Concealed valve in the Union Hall regulating nutrient misting lines",
+          "story_use": "Allows temporary cutoff of concourse misting to disrupt boarding schedules"
+        },
+        {
+          "asset_name": "Migrant Aid Dispenser",
+          "asset_type": "Supply Locker",
+          "description": "Stockpile of baseline tuber seeds and filters for unsponsored migrants",
+          "story_use": "Provides emergency sustenance and tools to undocumented platform workers"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_labor_laws",
+          "topic": "Concourse Transit Charters",
+          "summary": "Expert in legal strike rights and carriage labor-contract limits",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "know_pipe_networks",
+          "topic": "Pneumatic Mist Infrastructure",
+          "summary": "Knows the concourse hydraulic layout and pressure points for targeted shutdowns",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Dr. Kaelen Thorne",
+      "role_name": "Chief Carriage Agronomist",
+      "activity": "Auditing canopy crop diversity in the lab to prevent monoculture collapse and regulate state_canopy_crop_health",
+      "home_base": "Carriage Agronomy Oversight Lab",
+      "arc_goal": "Enforce Arboretum Oversight Board diversity quotas to stabilize oxygen generation aboard long-haul carriages",
+      "inventory": [
+        {
+          "name": "Arboreal Oversight Crest",
+          "description": "Enamelled silver badge identifying certified carriage agronomists",
+          "quantity": 1
+        },
+        {
+          "name": "Electronic Spore Sniffer",
+          "description": "Handheld sensor registering airborne pathogen concentrations and mold counts",
+          "quantity": 1
+        },
+        {
+          "name": "Stabilized Foliar Spray",
+          "description": "Glass spray flask filled with micronutrient hormone mix for canopy vines",
+          "quantity": 3
+        },
+        {
+          "name": "Sterile Grafting Scalpel",
+          "description": "Surgical steel blade used to excise diseased plant tissue from trellises",
+          "quantity": 2
+        },
+        {
+          "name": "Culture Agar Petri Pack",
+          "description": "Sealed stack of agar plates for concourse pathogen testing",
+          "quantity": 4
+        },
+        {
+          "name": "Calibrated Lux Meter",
+          "description": "Optical device measuring light levels across hydroponic tiers",
+          "quantity": 1
+        },
+        {
+          "name": "Plant Tissue Staining Dye",
+          "description": "Vial of iodine solution highlighting cellulose cell degradation",
+          "quantity": 2
+        },
+        {
+          "name": "Agronomy Audit Log",
+          "description": "Leather-bound journal recording daily carriage oxygen and biomass metrics",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Germplasm Analysis Centrifuge",
+          "asset_type": "Laboratory Apparatus",
+          "description": "Precision device isolating viral blights in carriage seed stocks",
+          "story_use": "Analyzes rare seeds before clearance for passenger cultivation"
+        },
+        {
+          "asset_name": "Quarantine Growth Incubator",
+          "asset_type": "Cultivation Chamber",
+          "description": "Pressurized climate chamber for fast-tracking resilient canopy hybrids",
+          "story_use": "Produces high-yield rootstocks to replenish depleted carriage life support"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_blight_patterns",
+          "topic": "Carriage Crop Pathogens",
+          "summary": "Understands transmission vectors of aero-fungal blights in sealed carriages",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "know_oxygen_metabolism",
+          "topic": "Biomass Gas Exchange",
+          "summary": "Knows exact photosynthetic output equations for all concourse crop varieties",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Jorah Brand",
+      "role_name": "High-Trellis Forager",
+      "activity": "Climbing upper concourse hydroponics to salvage rare germplasm and manipulate state_rare_seed_stock",
+      "home_base": "Hydroponic Trough Staging Bay",
+      "arc_goal": "Break the monopoly of express commuters on high-yield seeds by dispersing stolen germplasm to root-tillage migrants",
+      "inventory": [
+        {
+          "name": "Aero-Canopy Vine Seeds",
+          "description": "Pouch of fast-growing nitrogen-fixing canopy seeds",
+          "quantity": 8
+        },
+        {
+          "name": "Baseline Tuber Seeds",
+          "description": "Resilient root crop seeds suited for deep trough cultivation",
+          "quantity": 12
+        },
+        {
+          "name": "Air-Kelp Spore Pods",
+          "description": "Encapsulated marine algae spores adapted for high-humidity carriages",
+          "quantity": 6
+        },
+        {
+          "name": "Titanium Canopy Snips",
+          "description": "Lightweight sprung snips for precision pruning on high trellises",
+          "quantity": 1
+        },
+        {
+          "name": "Algal Membrane Respirator",
+          "description": "Breathable face mask filtering concentrated canopy aerosols",
+          "quantity": 1
+        },
+        {
+          "name": "Trellis Climbing Harness",
+          "description": "Webbing harness fitted with locking carabiners for high-concourse access",
+          "quantity": 1
+        },
+        {
+          "name": "Resin-Grip Work Gloves",
+          "description": "Textured gloves coated in tacky sap for climbing moist metal framework",
+          "quantity": 1
+        },
+        {
+          "name": "Cured Kelp Jerky",
+          "description": "Chewy preserved algae ration used during long overhead pruning shifts",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Concealed Trellis Seed Cache",
+          "asset_type": "Hidden Storage",
+          "description": "Secret moisture-sealed compartment hidden in upper canopy framework",
+          "story_use": "Stores illicit high-yield germplasm away from syndicate inspectors"
+        },
+        {
+          "asset_name": "Hydroponic Siphon Rig",
+          "asset_type": "Trough Modulator",
+          "description": "Makeshift plumbing tap diverting nutrient water into hidden growth beds",
+          "story_use": "Nurtures bootleg crop cuttings before distribution to migrant passengers"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_canopy_routes",
+          "topic": "High-Concourse Navigation",
+          "summary": "Knows unmonitored catwalks and high-tension trellis lines throughout the concourse",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "know_seed_curing",
+          "topic": "Germplasm Viability",
+          "summary": "Expert in preserving rare seeds against rot in high-humidity transit bays",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Sylas Krome",
+      "role_name": "Reserve Vault Custodian",
+      "activity": "Auditing seed dispersal logs at the Canopy Seed Reserve Bank to prevent illegal extraction and stabilize state_rare_seed_stock",
+      "home_base": "Canopy Seed Reserve Bank",
+      "arc_goal": "Expose illicit germplasm withdrawals made by express commuters and force inst_crop_tribunal to disburse rare seeds to lower-tier drifters",
+      "inventory": [
+        {
+          "name": "vault_access_keycard",
+          "description": "An electro-magnetic pass calibrated for the cryogenic seed vaults.",
+          "quantity": 1
+        },
+        {
+          "name": "seed_aero_canopy",
+          "description": "Hermetically sealed vial of rapid-growth canopy vine seeds.",
+          "quantity": 3
+        },
+        {
+          "name": "tool_pneumatic_meter",
+          "description": "Handheld pressure gauge for monitoring vault atmospheric seals.",
+          "quantity": 1
+        },
+        {
+          "name": "filter_algal_membrane",
+          "description": "High-density membrane cartridge used in seed chamber humidifiers.",
+          "quantity": 2
+        },
+        {
+          "name": "device_spore_sniff",
+          "description": "Sniffer unit detecting fungal drift before it contaminates elite stock.",
+          "quantity": 1
+        },
+        {
+          "name": "badge_arboreal_insignia",
+          "description": "Official brass badge signifying certified arboretum vault clearance.",
+          "quantity": 1
+        },
+        {
+          "name": "vial_dormancy_fluid",
+          "description": "Chemical preserving agent used to keep germplasm dormant during transit.",
+          "quantity": 4
+        },
+        {
+          "name": "logbook_seed_requisition",
+          "description": "Stained ledger listing off-record germplasm allocations to express patrons.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Cryogenic Germplasm Locker",
+          "asset_type": "Storage Installation",
+          "description": "A reinforced vault unit containing reserve stocks of high-demand vine and kelp genetics.",
+          "story_use": "Can be locked down or raided to directly sway state_rare_seed_stock."
+        },
+        {
+          "asset_name": "Vault Inspection Desk",
+          "asset_type": "Workstation",
+          "description": "Terminal equipped with optical microscopes and pneumatic transfer chutes.",
+          "story_use": "Serves as the focal point for signing off on official seed transfers."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_vault_deficit_records",
+          "topic": "Discrepancies in High-Yield Seed Reserves",
+          "summary": "Sylas knows that over twenty percent of elite aero-canopy stock was diverted off-manifest to first-class commuters.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "know_canopy_germination_tricks",
+          "topic": "Fast-Strike Canopy Germination",
+          "summary": "Knowledge of rapid nutrient dipping techniques that cut germination intervals by half.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Nesta Pell",
+      "role_name": "Hydro-Nutrient Pipe Fitter",
+      "activity": "Repairing ruptured irrigation lines in the Hydroponic Trough Staging Bay to defend state_oxygen_reserve_rate against trough failures",
+      "home_base": "Hydroponic Trough Staging Bay",
+      "arc_goal": "Force inst_labor_exchange and platform administrators to repair toxic root-wash systems without cutting passenger biomass scrip",
+      "inventory": [
+        {
+          "name": "tool_root_trowel",
+          "description": "Heavy brass-bladed hand tool for clearing blocked aeration roots.",
+          "quantity": 1
+        },
+        {
+          "name": "chem_foliar_spray",
+          "description": "Pressurized canister of anti-scum foliar feed.",
+          "quantity": 2
+        },
+        {
+          "name": "filter_lichen_cartridge",
+          "description": "Porous filter core clogged with black slime and active root-rot spores.",
+          "quantity": 3
+        },
+        {
+          "name": "tool_pipe_spanner",
+          "description": "Adjustable iron spanner sized for high-pressure nutrient manifolds.",
+          "quantity": 1
+        },
+        {
+          "name": "sealant_root_putty",
+          "description": "Pliable, waterproof compound that cures instantly on wet pipe joints.",
+          "quantity": 5
+        },
+        {
+          "name": "consumable_algae_ration",
+          "description": "Standardized dense brick of salted concourse algae paste.",
+          "quantity": 3
+        },
+        {
+          "name": "badge_tillage_copper",
+          "description": "Worn copper tag issued to baseline hydroponic pipe tenders.",
+          "quantity": 1
+        },
+        {
+          "name": "gloves_nitrile_reinforced",
+          "description": "Thick rubberized gauntlets protecting hands from caustic fertilizer burns.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hydro-Nutrient Mixing Station",
+          "asset_type": "Industrial Rig",
+          "description": "A bank of large brass valves and dosing tanks regulating trough salinity.",
+          "story_use": "Allows direct manipulation of root-vegetable vigor across the entire staging bay."
+        },
+        {
+          "asset_name": "Trough Maintenance Locker",
+          "asset_type": "Tool Locker",
+          "description": "A reinforced zinc locker storing heavy plumbing tools and spare filtration cores.",
+          "story_use": "Provides emergency repair gear during life-support plumbing crises."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_trough_plumbing_weakpoints",
+          "topic": "Hydroponic Plumbing Vulnerabilities",
+          "summary": "Nesta understands how back-siphoning a single staging bay pipe can foul oxygen production for entire train sets.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "know_union_picket_lines",
+          "topic": "Platform Gate Lockdown Tactics",
+          "summary": "Familiar with how to cut water feed valves to reinforce union turnstile blockades.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Orlaith Chen",
+      "role_name": "Transit Labor Scrip Broker",
+      "activity": "Matching high-tier commuters with critical canopy tending duties at the Central Concourse Labor Bureau to reduce state_platform_congestion",
+      "home_base": "Central Concourse Labor Bureau",
+      "arc_goal": "Monopolize the allocation of express-tier boarding scrip and manipulate inst_concourse_guild turnstile access rules",
+      "inventory": [
+        {
+          "name": "badge_express_gold",
+          "description": "Polished gold-plated transit medallion granting expedited concourse passage.",
+          "quantity": 1
+        },
+        {
+          "name": "doc_carriage_contract",
+          "description": "Blank binding passenger labor agreement with high-yield harvest riders.",
+          "quantity": 4
+        },
+        {
+          "name": "ledger_scrip_balances",
+          "description": "Encrypted datapad keeping tally of commuter labor debt and boarding clearances.",
+          "quantity": 1
+        },
+        {
+          "name": "seed_tuber_baseline",
+          "description": "Pack of common, rugged baseline potato eyes used as trade tender.",
+          "quantity": 10
+        },
+        {
+          "name": "voucher_priority_boarding",
+          "description": "Numbered queue token authorizing immediate passage through Gate 1.",
+          "quantity": 2
+        },
+        {
+          "name": "stylus_contract_stamp",
+          "description": "Mechanical stylus that embosses union and syndicate approvals onto parchment.",
+          "quantity": 1
+        },
+        {
+          "name": "consumable_stimulant_lozenge",
+          "description": "Bitter caffeine-algae lozenges used during multi-shift labor signups.",
+          "quantity": 6
+        },
+        {
+          "name": "chits_labor_scrip",
+          "description": "Brass tokens representing certified man-hours in high-trellis carriage zones.",
+          "quantity": 12
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scrip Exchange Kiosk",
+          "asset_type": "Commercial Stall",
+          "description": "A secure brass-grated counter inside the labor bureau equipped with scale and contract printers.",
+          "story_use": "Acts as the nexus for buying, selling, and forging carriage labor clearances."
+        },
+        {
+          "asset_name": "Commuter Contract Archive",
+          "asset_type": "Secure Filing Unit",
+          "description": "Filing cabinet storing binding passenger labor oaths and biometric signatures.",
+          "story_use": "Can be manipulated to alter passenger boarding tiers and trigger gate delays."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_turnstile_scrip_arbitrage",
+          "topic": "Labor Scrip Value Fluctuations",
+          "summary": "Orlaith tracks how platform congestion spikes the black market value of high-trellis labor contracts.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "know_express_patron_identities",
+          "topic": "Wealthy Commuter Secrets",
+          "summary": "Keeps records of wealthy travelers desperate enough to buy fraudulent canopy maintenance credits.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Tavish Ren",
+      "role_name": "Canopy Blight Assayer",
+      "activity": "Analyzing leaf tissue and fungal spore drifts in Carriage Agronomy Oversight Lab to defend state_canopy_crop_health",
+      "home_base": "Carriage Agronomy Oversight Lab",
+      "arc_goal": "Implement mandatory carriage quarantine protocols through inst_crop_tribunal before runaway root-rot destroys long-range transit viability",
+      "inventory": [
+        {
+          "name": "tool_canopy_snips",
+          "description": "Sterilized precision shears designed for selective diseased-node pruning.",
+          "quantity": 1
+        },
+        {
+          "name": "device_spore_sniff",
+          "description": "Calibrated biosensor sniffing for parasitic molds in passenger trellises.",
+          "quantity": 1
+        },
+        {
+          "name": "vial_antifungal_wash",
+          "description": "Concentrated copper-sulfate suspension lethal to concourse mildew.",
+          "quantity": 3
+        },
+        {
+          "name": "seed_air_kelp",
+          "description": "Sample packet of genetically resilient air-kelp sprigs.",
+          "quantity": 2
+        },
+        {
+          "name": "slide_specimen_kit",
+          "description": "Glass slide case carrying stained mold spores and diseased leaf cross-sections.",
+          "quantity": 1
+        },
+        {
+          "name": "doc_quarantine_notice",
+          "description": "Official board document authorizing carriage airlock sealing.",
+          "quantity": 2
+        },
+        {
+          "name": "badge_arboreal_insignia",
+          "description": "Enamelled agronomist pin conferring authority to halt boarding for biosecurity.",
+          "quantity": 1
+        },
+        {
+          "name": "protective_respirator_mask",
+          "description": "Lichen-filtered face mask preventing lung inhalation of active agro-spores.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Agronomy Centrifuge Bench",
+          "asset_type": "Laboratory Rig",
+          "description": "A motorized centrifuge used for rapid sap and parasite assay extraction.",
+          "story_use": "Enables testing of crop samples to discover blight outbreaks before carriages depart."
+        },
+        {
+          "asset_name": "Quarantine Sample Incubator",
+          "asset_type": "Containment Chamber",
+          "description": "A glass-fronted, climate-controlled cabinet holding live parasitic cultures.",
+          "story_use": "Can be used to engineer targeted foliar treatments or accidentally release blights."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_parasite_vectors",
+          "topic": "Carriage Blight Transmission",
+          "summary": "Tavish knows that unchecked lichen mold spreads along the overhead express pneumatic lines.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "know_quarantine_authority_codes",
+          "topic": "Agronomic Airlock Override Protocols",
+          "summary": "Holds emergency clearance codes capable of shutting down boarding at Gate 1 instantly.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Maren Sol",
+      "role_name": "Foliar Mist Technician",
+      "activity": "Spraying high-pressure nutrient foggers across staging troughs to stabilize state_canopy_crop_health before carriage loading",
+      "home_base": "Hydroponic Trough Staging Bay",
+      "arc_goal": "Secure an emergency chemical requisition from inst_crop_tribunal to prevent widespread foliar rot from crashing state_oxygen_reserve_rate",
+      "inventory": [
+        {
+          "name": "chem_foliar_spray",
+          "description": "Pressurized canister of zinc-chelated foliar feed",
+          "quantity": 3
+        },
+        {
+          "name": "filter_lichen_cartridge",
+          "description": "Dense fibrous filter packed with bio-receptive moss",
+          "quantity": 2
+        },
+        {
+          "name": "tool_pneumatic_meter",
+          "description": "Handheld brass gauge measuring aerosol dispersion pressure",
+          "quantity": 1
+        },
+        {
+          "name": "consumable_algae_ration",
+          "description": "Compressed cake of salted spirulina paste",
+          "quantity": 4
+        },
+        {
+          "name": "nozzle_brass_mister",
+          "description": "Fine-aperture spray tip resistant to mineral scaling",
+          "quantity": 2
+        },
+        {
+          "name": "salvaged_tubing_harness",
+          "description": "Reinforced neoprene line for tethering to high misting bars",
+          "quantity": 1
+        },
+        {
+          "name": "vial_surfactant_agent",
+          "description": "Concentrated soap solution to lower water surface tension on waxy leaves",
+          "quantity": 2
+        },
+        {
+          "name": "badge_tillage_copper",
+          "description": "Tarnished work token stamped with tier-three maintenance privileges",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Decontamination Mist Rig",
+          "asset_type": "Machinery",
+          "description": "Portable dual-chamber chemical atomizer mounted on rail casters",
+          "story_use": "Can rapidly treat infected crops or deploy irritants to disperse gate disturbances"
+        },
+        {
+          "asset_name": "Hydro-Bay Pressure Locker",
+          "asset_type": "Storage",
+          "description": "Sealed containment locker near the staging pump manifold",
+          "story_use": "Stores restricted nutrient concentrates and illicit fungal samples away from wardens"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_misting_efficiency",
+          "topic": "Micro-Mist Hydration Protocols",
+          "summary": "Specific aerosol droplet sizes maximize oxygen output while halving carriage water ballast requirements",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "know_pipe_vulnerabilities",
+          "topic": "Hydro-Staging Flaw Locations",
+          "summary": "Sub-floor copper junctions that can be drained quietly to disrupt carriage departure schedules",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Beric Holt",
+      "role_name": "Gate Compliance Warden",
+      "activity": "Operating pneumatic lockout shutters at Express Platform Turnstile Gate 1 to enforce inst_concourse_guild throughput quotas",
+      "home_base": "Express Platform Turnstile Gate 1",
+      "arc_goal": "Contain state_platform_congestion by diverting low-tier labor drifters away from express boarding gantries",
+      "inventory": [
+        {
+          "name": "badge_express_gold",
+          "description": "Heavy gilded turnstile clearance badge issued by the Dispatch Syndicate",
+          "quantity": 1
+        },
+        {
+          "name": "device_spore_sniff",
+          "description": "Handheld electronic detector calibrated for illegal airborne pathogens",
+          "quantity": 1
+        },
+        {
+          "name": "keycard_turnstile_override",
+          "description": "Magnetic pass that forcibly resets jammed boarding gates",
+          "quantity": 1
+        },
+        {
+          "name": "baton_pneumatic_prodding",
+          "description": "Telescoping crowd control stave powered by concourse air lines",
+          "quantity": 1
+        },
+        {
+          "name": "consumable_algae_ration",
+          "description": "Nutrient bar flavored with synthetic wood-smoke",
+          "quantity": 2
+        },
+        {
+          "name": "dossier_contract_infractions",
+          "description": "Waxed ledger recording passenger contract abandonments",
+          "quantity": 1
+        },
+        {
+          "name": "cuff_restraint_ties",
+          "description": "Industrial zip-cuffs used for securing disorderly commuters",
+          "quantity": 6
+        },
+        {
+          "name": "filter_algal_membrane",
+          "description": "Replacement breather disc for gate warden gas masks",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Turnstile Override Console",
+          "asset_type": "Control Terminal",
+          "description": "Armored pneumatic control podium commanding Gate 1 turnstiles",
+          "story_use": "Enables manual override of platform boarding gates during severe crowding emergencies"
+        },
+        {
+          "asset_name": "Gate Security Sentry Post",
+          "asset_type": "Checkpoint",
+          "description": "Elevated bullet-glass observation booth overlooking the concourse turnstiles",
+          "story_use": "Provides high vantage point for monitoring passenger queue density and spotting contraband"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_turnstile_thresholds",
+          "topic": "Gate Pressure Metrics",
+          "summary": "Exact passenger flow rates required to trigger automatic pneumatic gate seal locks",
+          "confidence": 10
+        },
+        {
+          "knowledge_id": "know_syndicate_blacklists",
+          "topic": "Blacklisted Drifter Identities",
+          "summary": "Manifest records of union agitators barred from express departure access",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Elyse Vane",
+      "role_name": "Tillage Grievance Scribe",
+      "activity": "Filing hazardous exposure complaints at the Transit Planters Union Hall to alter inst_labor_exchange strike thresholds",
+      "home_base": "Transit Planters Union Hall",
+      "arc_goal": "Force the Arboretum Oversight Board to reallocate state_rare_seed_stock directly to underpaid root-tillage migrants",
+      "inventory": [
+        {
+          "name": "doc_union_manifesto",
+          "description": "Bound copy of passenger labor rights and chemical exposure ceiling guidelines",
+          "quantity": 2
+        },
+        {
+          "name": "tool_root_trowel",
+          "description": "Notched steel hand tool used for root division and sample collection",
+          "quantity": 1
+        },
+        {
+          "name": "seed_tuber_baseline",
+          "description": "Hardy, low-maintenance root cutting distributed to lower-tier migrants",
+          "quantity": 5
+        },
+        {
+          "name": "inkpot_iron_gall",
+          "description": "Spill-proof traveling inkwell with synthetic quill pens",
+          "quantity": 1
+        },
+        {
+          "name": "ledger_passenger_shifts",
+          "description": "Record of undocumented extra-shift hours logged in long-haul train cars",
+          "quantity": 1
+        },
+        {
+          "name": "badge_tillage_copper",
+          "description": "Polished union-embossed steward badge indicating representative rank",
+          "quantity": 1
+        },
+        {
+          "name": "filter_lichen_cartridge",
+          "description": "Used breather core caked with dry sulfur residue",
+          "quantity": 1
+        },
+        {
+          "name": "consumable_algae_ration",
+          "description": "Dense brick of fermented protein meal",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Union Grievance Printing Press",
+          "asset_type": "Machinery",
+          "description": "Manual hand-cranked stencil duplicator in the union basement",
+          "story_use": "Produces pamphlets and emergency strike calls during platform lockouts"
+        },
+        {
+          "asset_name": "Root-Tender Rest Desk",
+          "asset_type": "Workstation",
+          "description": "Sturdy oak desk covered with petition rosters and soil-stained affidavits",
+          "story_use": "Central hub for gathering migrant signatures to petition the concourse labor board"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_labor_contract_loopholes",
+          "topic": "Agronomic Carriage Contract Law",
+          "summary": "Clauses that allow passengers to strike legally if carriage oxygen falls below safe working minimums",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "know_trough_chemical_leaks",
+          "topic": "Unreported Agrochemical Runoff",
+          "summary": "Documented instances where canopy fertilizers poisoned low-tier passenger root troughs",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Corin Dax",
+      "role_name": "Germplasm Courier",
+      "activity": "Auditing climate-sealed canisters in the Canopy Seed Reserve Bank to divert stock and manipulate state_rare_seed_stock",
+      "home_base": "Canopy Seed Reserve Bank",
+      "arc_goal": "Circumvent inst_crop_tribunal germplasm quarantines to smuggle high-yield air-kelp strains to black market commuters",
+      "inventory": [
+        {
+          "name": "seed_aero_canopy",
+          "description": "High-yield climbing vine pod capable of doubling carriage oxygen output",
+          "quantity": 2
+        },
+        {
+          "name": "seed_air_kelp",
+          "description": "Suspended atmospheric macro-alga spore case",
+          "quantity": 3
+        },
+        {
+          "name": "tool_canopy_snips",
+          "description": "Precision spring-loaded shears with tungsten carbide blades",
+          "quantity": 1
+        },
+        {
+          "name": "canister_cryo_insulated",
+          "description": "Pressurized vacuum flask designed for viable seed dormancy",
+          "quantity": 1
+        },
+        {
+          "name": "badge_arboreal_insignia",
+          "description": "Forged technical pass granting access to reserve bank vaults",
+          "quantity": 1
+        },
+        {
+          "name": "device_spore_sniff",
+          "description": "Pocket microbial purity tester",
+          "quantity": 1
+        },
+        {
+          "name": "consumable_algae_ration",
+          "description": "Sweetened spirulina wafer with honey glaze",
+          "quantity": 3
+        },
+        {
+          "name": "filter_algal_membrane",
+          "description": "Pore-sealed bio-membrane for airlock passage",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Sub-Level Cold Vault Nook",
+          "asset_type": "Storage",
+          "description": "Unmapped refrigerated alcove behind the reserve bank ventilation ducts",
+          "story_use": "Hides uncataloged heirloom seeds and smuggled germplasm shipments"
+        },
+        {
+          "asset_name": "Cryogenic Seed Centrifuge",
+          "asset_type": "Machinery",
+          "description": "Benchtop separator used to isolate viable germ embryos from chaff",
+          "story_use": "Prepares high-purity seed vials for illicit high-value transit contracts"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_vault_cycling_schedule",
+          "topic": "Reserve Bank Security Shifts",
+          "summary": "The exact fifteen-minute window when automated vault cryo-chillers cycle off for maintenance",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "know_canopy_yield_genetics",
+          "topic": "Fast-Growth Hybrid Phenotypes",
+          "summary": "Genetic pairings that allow canopy crops to reach full foliage in under half a transit run",
+          "confidence": 8
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Labor Contract Clearance Loop",
+      "summary": "Players audit passenger crop vitality logs and issue boarding scrip at turnstiles to regulate platform queue density and keep oxygen reserves stable.",
+      "roles": [
+        "Chief Turnstile Arbiter",
+        "Transit Labor Scrip Broker",
+        "Gate Compliance Warden"
+      ],
+      "rooms": [
+        "Central Concourse Labor Bureau",
+        "Express Platform Turnstile Gate 1"
+      ],
+      "pressure": "High platform queue density risks concourse unrest and automated gate lockouts."
+    },
+    {
+      "label": "Blight Containment and Seed Requisition Loop",
+      "summary": "Agronomists identify canopy rot, requisition high-yield germplasm from the reserve bank, and treat affected foliage to restore canopy crop health.",
+      "roles": [
+        "Chief Carriage Agronomist",
+        "Reserve Vault Custodian",
+        "Canopy Blight Assayer"
+      ],
+      "rooms": [
+        "Canopy Seed Reserve Bank",
+        "Carriage Agronomy Oversight Lab"
+      ],
+      "pressure": "Declining canopy crop vitality forces environmental dampeners to reduce long-haul departures."
+    },
+    {
+      "label": "Hydro-Trough Maintenance and Grievance Mediation Loop",
+      "summary": "Technicians and union stewards adjust nutrient lines and settle labor disputes in staging bays to prevent strikes from halting biomass production.",
+      "roles": [
+        "Union Deck Steward",
+        "Hydro-Nutrient Pipe Fitter",
+        "Tillage Grievance Scribe"
+      ],
+      "rooms": [
+        "Hydroponic Trough Staging Bay",
+        "Transit Planters Union Hall"
+      ],
+      "pressure": "Unresolved tillage grievances trigger valve lockdowns, cutting oxygen generation en route."
+    }
+  ],
+  "player_entry_points": [
+    "Arrive at Central Concourse Labor Bureau holding expired hydroponic transit scrip.",
+    "Report to Carriage Agronomy Oversight Lab following a canopy blight alert.",
+    "Detained at Express Platform Turnstile Gate 1 for carrying unregistered seed pods."
+  ],
+  "conflict_hooks": [
+    "The union threatens to seal the Hydroponic Trough Staging Bay valves unless root-vegetable laborers receive high-yield seed allocations.",
+    "A sudden drop in canopy crop vitality triggers automated locks at Express Platform Turnstile Gate 1, trapping commuters in the concourse.",
+    "Contraband germplasm discovered in the Canopy Seed Reserve Bank points to high-level tampering by express-tier brokers."
+  ],
+  "custom_actions": [
+    "Pneumatic_Stamp_Contract",
+    "Inoculate_Hydro_Trough",
+    "Audit_Spore_Load",
+    "Dispense_Seed_Packet",
+    "File_Tillage_Grievance",
+    "Vent_Canopy_Mist"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "Counterfeit Canopy Clearance Pass",
+      "initiating_role": "Transit Labor Scrip Broker",
+      "target_role": "High-Trellis Forager",
+      "situation": "The Broker seeks to bypass turnstiles by issuing an unauthorized canopy maintenance pass in exchange for illicit germplasm.",
+      "proposed_effects": [
+        "create_item",
+        "transfer"
+      ],
+      "coordinator_checks": [
+        "Verify initiator possesses blank registry tokens.",
+        "Confirm target holds viable germplasm in inventory.",
+        "Ensure both roles are co-located in Central Concourse Labor Bureau.",
+        "Enforce that created forged pass lacks official seal state tag."
+      ]
+    },
+    {
+      "action_name": "Declare Emergency Picket Sanction",
+      "initiating_role": "Union Deck Steward",
+      "target_role": "Gate Compliance Warden",
+      "situation": "The Steward attempts to freeze boarding at Express Platform Turnstile Gate 1 due to oxygen deficit hazards.",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Check that initiating role holds active union steward authorization.",
+        "Verify platform queue density exceeds critical threshold.",
+        "Ensure proximity within Express Platform Turnstile Gate 1.",
+        "Confirm target warden receives enforceable grievance status."
+      ]
+    },
+    {
+      "action_name": "Emergency Seed Vault Requisition",
+      "initiating_role": "Chief Carriage Agronomist",
+      "target_role": "Reserve Vault Custodian",
+      "situation": "The Agronomist demands an immediate transfer of rare germplasm to prevent canopy blight collapse.",
+      "proposed_effects": [
+        "speech",
+        "transfer"
+      ],
+      "coordinator_checks": [
+        "Confirm initiator has documented blight assay records.",
+        "Verify target custodian is within Canopy Seed Reserve Bank.",
+        "Validate high-yield seed stock quantity in vault ledger.",
+        "Check for absence of active vault lockdown state."
+      ]
+    },
+    {
+      "action_name": "Conscript Idle Commuter for High-Trellis Pruning",
+      "initiating_role": "Tillage Grievance Scribe",
+      "target_role": "Germplasm Courier",
+      "situation": "The Scribe attempts to reassign a courier into manual foliage pruning to clear concourse congestion.",
+      "proposed_effects": [
+        "status",
+        "transfer"
+      ],
+      "coordinator_checks": [
+        "Verify target role has unassigned carriage labor hours.",
+        "Ensure both actors are in Central Concourse Labor Bureau.",
+        "Confirm initiator holds valid labor registry documentation.",
+        "Check that target consents or platform congestion mandates draft."
+      ]
+    }
+  ],
+  "social_rules": [
+    "Passengers must maintain active crop maintenance contracts to traverse express turnstiles.",
+    "Uncertified germplasm transfers outside the Canopy Seed Reserve Bank constitute botanical contraband.",
+    "Union picket cordons at Hydroponic Trough Staging Bay require formal mediation before forceful clearance.",
+    "Carriage life-support biomass quotas supersede personal transit departures during oxygen deficit alerts."
+  ],
+  "item_themes": [
+    "Hydroponic hand tools",
+    "Germplasm seed packets",
+    "Pneumatic moisture meters",
+    "Color-coded transit badges",
+    "Biological carriage filters"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "tool_pneumatic_meter",
+      "name": "Brass Pneumatic Moisture Gauge",
+      "price": 140,
+      "mass": 1.2,
+      "description": "Vintage steam-valve pressure dial with a brass probe, designed to measure hydroponic moisture and nutrient density.",
+      "image_prompt": "Art Nouveau brass moisture meter with glass dials, intricate filigree steam gauges, and a polished copper root probe resting against green moss.",
+      "category": "Hydroponic hand tools"
+    },
+    {
+      "item_id": "tool_canopy_snips",
+      "name": "Titanium Vine-Pruning Shears",
+      "price": 95,
+      "mass": 0.6,
+      "description": "Ergonomic bypass pruning shears with self-oiling joints, essential for high-canopy trellis maintenance shifts.",
+      "image_prompt": "Sleek curved botanical hand pruners with polished titanium blades and etched floral brass handles, glowing hydroponic nutrient residue.",
+      "category": "Hydroponic hand tools"
+    },
+    {
+      "item_id": "tool_root_trowel",
+      "name": "Aerated Tillage Trowel",
+      "price": 45,
+      "mass": 0.8,
+      "description": "Perforated bronze hand trowel used by Root-Tender migrants to loosen submerged aggregate without slicing delicate roots.",
+      "image_prompt": "Artistic bronze hand spade with decorative leafy perforations, resting on dark nutrient-rich substrate under soft teal mist.",
+      "category": "Hydroponic hand tools"
+    },
+    {
+      "item_id": "seed_aero_canopy",
+      "name": "High-Yield Sky-Spire Vine Germplasm",
+      "price": 320,
+      "mass": 0.1,
+      "description": "Hermetically sealed glass ampoule holding engineered fast-growing vines capable of rapid canopy oxygen generation.",
+      "image_prompt": "Glass ampoule filled with glowing emerald seeds, secured inside an embossed brass protective casing with solarpunk filigree.",
+      "category": "Germplasm seed packets"
+    },
+    {
+      "item_id": "seed_tuber_baseline",
+      "name": "Carriage Tuber Spore Pack",
+      "price": 30,
+      "mass": 0.4,
+      "description": "Dense fungal and tuber spore mixture yielding steady biomass in dark sleeper carriage sub-floor troughs.",
+      "image_prompt": "Woven burlap packet sealed with green wax, dusted with golden mycorrhizal spores on polished iron train flooring.",
+      "category": "Germplasm seed packets"
+    },
+    {
+      "item_id": "seed_air_kelp",
+      "name": "Luminescent Mist-Kelp Inoculant",
+      "price": 210,
+      "mass": 0.2,
+      "description": "High-transpiration kelp spores that scrub atmospheric carbon and generate luminescent vapor in carriage ducts.",
+      "image_prompt": "Bioluminescent cyan spores suspended inside a delicate crystal phial with brass steam-release caps.",
+      "category": "Germplasm seed packets"
+    },
+    {
+      "item_id": "badge_express_gold",
+      "name": "Gilded Express Commuter Token",
+      "price": 500,
+      "mass": 0.05,
+      "description": "Color-coded brass and enameled token authorizing priority turnstile access for verified canopy contract holders.",
+      "image_prompt": "Art Nouveau enameled brass medallion featuring an embossed train silhouette interwoven with ivy, gleaming under sunlit glass concourse arches.",
+      "category": "Color-coded transit badges"
+    },
+    {
+      "item_id": "badge_tillage_copper",
+      "name": "Root-Tender Labor Pass",
+      "price": 20,
+      "mass": 0.05,
+      "description": "Standard stamped copper medallion proving active shift registration in lower-tier root biomass troughs.",
+      "image_prompt": "Circular weathered copper badge with stamped botanical icons and a mechanical punch-hole, tied with waxed green hemp cord.",
+      "category": "Color-coded transit badges"
+    },
+    {
+      "item_id": "badge_arboreal_insignia",
+      "name": "Arboretum Agronomist Seal",
+      "price": 450,
+      "mass": 0.1,
+      "description": "Enamelled silver badge recognized by turnstiles and compliance wardens to bypass platform lockouts.",
+      "image_prompt": "Polished silver and emerald badge depicting a stylized tree wrapping around a train wheel, intricate Art Nouveau styling.",
+      "category": "Color-coded transit badges"
+    },
+    {
+      "item_id": "filter_lichen_cartridge",
+      "name": "Mycelial Carriage Filter",
+      "price": 180,
+      "mass": 2.5,
+      "description": "Porous ceramic canister packed with activated charcoal and living lichen, used to scrub spore build-up in transit ventilation.",
+      "image_prompt": "Art Nouveau cylindrical ceramic filter cartridge adorned with iron scrollwork, glowing faintly with green living moss inside.",
+      "category": "Biological carriage filters"
+    },
+    {
+      "item_id": "filter_algal_membrane",
+      "name": "Algal Oxygenation Screen",
+      "price": 260,
+      "mass": 1.8,
+      "description": "Flexible membrane woven with microalgae that supplements emergency oxygen when slotted into train wall conduits.",
+      "image_prompt": "Translucent hexagonal membrane glowing with rich green microalgae, bordered by flexible brass reinforcement frames.",
+      "category": "Biological carriage filters"
+    },
+    {
+      "item_id": "device_spore_sniff",
+      "name": "Pneumatic Spore Sensor",
+      "price": 290,
+      "mass": 1.4,
+      "description": "Handheld air sampling bellows that detects early monoculture blight strains before train departure clearance.",
+      "image_prompt": "Handheld ribbed leather bellows with brass intake nozzles, miniature vacuum glass vials, and ornate copper pressure needles.",
+      "category": "Hydroponic hand tools"
+    },
+    {
+      "item_id": "chem_foliar_spray",
+      "name": "Nutrient Mist Spritzer",
+      "price": 60,
+      "mass": 1.1,
+      "description": "Pressurized brass pump bottle delivering micro-nutrients directly to failing trellis leaves during transit shifts.",
+      "image_prompt": "Antique-styled brass spray bottle with decorative vine engravings, misting a fine luminescent green vapor into soft ambient light.",
+      "category": "Hydroponic hand tools"
+    },
+    {
+      "item_id": "doc_union_manifesto",
+      "name": "Planters Union Shift Ledger",
+      "price": 15,
+      "mass": 0.3,
+      "description": "Bound logbook containing verified passenger labor hours, used to contest over-extended carriage labor contracts.",
+      "image_prompt": "Leather-bound ledger filled with handwritten carbon graphs and stamped green wax transit seals, resting on an iron turnstile rail.",
+      "category": "Color-coded transit badges"
+    },
+    {
+      "item_id": "consumable_algae_ration",
+      "name": "Concourse Spirulina Wafer Tin",
+      "price": 25,
+      "mass": 0.5,
+      "description": "Dense nutritional wafers produced from surplus carriage biomass, favored by commuters enduring long platform queues.",
+      "image_prompt": "Vintage embossed tin box open to reveal neat emerald-green hexagonal wafers, surrounded by solarpunk concourse mist.",
+      "category": "Biological carriage filters"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "wardrobe_policy_verdant_rail_concourse",
+    "world_wardrobe_brief": "Solarpunk transit agronomist attire combining Art Nouveau curvilinear tailoring, heavy utilitarian canvas, brass pneumatic fittings, and wearable hydroponic gear for rail-bound crop tenders.",
+    "forbidden_aesthetics": [
+      "cyberpunk_neon_spikes",
+      "futuristic_hard_scifi_spacesuits",
+      "medieval_chainmail_and_plate",
+      "modern_casual_streetwear",
+      "high_fantasy_wizard_robes",
+      "militaristic_digital_camo",
+      "post_apocalyptic_ragged_wasteland"
+    ],
+    "palette_families": [
+      {
+        "name": "Transit Administration & Arbiters",
+        "dominant": "#224b3c",
+        "accent": "#b58750",
+        "trim": "#e9f7eb",
+        "material": "structured wool twill with polished brass filigree fittings"
+      },
+      {
+        "name": "Agronomy & Laboratory Specialists",
+        "dominant": "#e9f7eb",
+        "accent": "#7ae582",
+        "trim": "#224b3c",
+        "material": "waxed linen lab coats with enameled copper closures"
+      },
+      {
+        "name": "Hydroponic Riggers & Pipe Fitters",
+        "dominant": "#121d18",
+        "accent": "#b58750",
+        "trim": "#7ae582",
+        "material": "heavy waterproof oilcloth and riveted bronze harness leather"
+      },
+      {
+        "name": "Union Stewards & Platform Commuters",
+        "dominant": "#2e3b32",
+        "accent": "#d4a373",
+        "trim": "#b58750",
+        "material": "patched hemp work-smocks and reinforced canvas aprons"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "rule_turnstile_arbiters_wardens",
+        "role_keywords": [
+          "arbiter",
+          "warden",
+          "compliance",
+          "gatekeeper",
+          "dispatcher"
+        ],
+        "attire": [
+          "high-collared deep spruce frock coat with Art Nouveau brass piping",
+          "stiffened shoulder epaulets supporting token clips",
+          "creased transit trousers tucked into polished brass-buckled boots"
+        ],
+        "props": [
+          "chest-mounted glowing brass turnstile key-spindle",
+          "pneumatic ticket punch wand",
+          "enamelled priority access gorget"
+        ],
+        "palette_notes": "Deep spruce dominant (#224b3c) with sharp brass (#b58750) accents.",
+        "silhouette_notes": "Broad, upright overhead profile with crisp angular shoulders and a distinct chest badge highlight.",
+        "avoid": [
+          "loose trailing shawls",
+          "hydroponic mud spatters",
+          "bulky backpack tanks"
+        ]
+      },
+      {
+        "rule_id": "rule_agronomists_and_assayers",
+        "role_keywords": [
+          "agronomist",
+          "assayer",
+          "scientist",
+          "botanist",
+          "doctor"
+        ],
+        "attire": [
+          "pale celadon linen lab smock with curved hem trim",
+          "protective copper-banded arm gauntlets",
+          "utility belt with glass ampoule holsters"
+        ],
+        "props": [
+          "luminescent spore-sensor bellows in hand",
+          "magnifying head-loupe perched on collar",
+          "back-slung brass specimen canister"
+        ],
+        "palette_notes": "Clean pale green-white (#e9f7eb) highlighted by vibrant mist-green (#7ae582).",
+        "silhouette_notes": "Sleek elongated torso with distinct cylindrical canister profile strapped diagonally across back.",
+        "avoid": [
+          "heavy iron armor",
+          "greasy work aprons",
+          "dark muddy tones"
+        ]
+      },
+      {
+        "rule_id": "rule_tillage_mechanics_and_pipefitters",
+        "role_keywords": [
+          "fitter",
+          "technician",
+          "mechanic",
+          "tiller",
+          "mist technician"
+        ],
+        "attire": [
+          "heavy oilskin apron layered over dark durable dungarees",
+          "reinforced leather shoulder yokes with hose clasps",
+          "thick vulcanized wading gaiters"
+        ],
+        "props": [
+          "back-mounted twin brass nutrient tanks with curved copper tubing",
+          "handheld pressurized misting lance",
+          "aerated bronze root trowel at hip"
+        ],
+        "palette_notes": "Charcoal shadow tones (#121d18) contrasted with raw ochre (#b58750) and bright lime mist tubes (#7ae582).",
+        "silhouette_notes": "Wide, weighted profile with bulky dual-tank backpack footprint visible from top-down angle.",
+        "avoid": [
+          "fragile glass apparatus",
+          "delicate formal capes",
+          "unprotected fabric coats"
+        ]
+      },
+      {
+        "rule_id": "rule_foragers_and_couriers",
+        "role_keywords": [
+          "forager",
+          "courier",
+          "climber",
+          "scout",
+          "custodian"
+        ],
+        "attire": [
+          "flexible ribbed canvas tunic with articulated shoulder joints",
+          "harness of climbing carabiners and coiled hemp cords",
+          "reinforced climbing moccasins with brass cleat rims"
+        ],
+        "props": [
+          "lightweight willow germplasm basket across shoulders",
+          "bypass vine-pruning shears in leather scabbard",
+          "luminescent kelp seed vial cluster at belt"
+        ],
+        "palette_notes": "Earthy moss tones with vivid green glowing seed ampoules.",
+        "silhouette_notes": "Compact, nimble silhouette with rounded woven basket protruding at back.",
+        "avoid": [
+          "long flapping coat-tails",
+          "heavy rigid plate",
+          "wide brim hats that occlude gear"
+        ]
+      },
+      {
+        "rule_id": "rule_union_stewards_and_brokers",
+        "role_keywords": [
+          "steward",
+          "broker",
+          "scribe",
+          "organizer",
+          "clerk"
+        ],
+        "attire": [
+          "double-breasted green serge vest over rolled-sleeve linen",
+          "copper-trimmed sashes displaying union shift tallies",
+          "pleated work trousers with reinforced tool loops"
+        ],
+        "props": [
+          "brass-bound shift registry ledger under arm",
+          "stamped copper token neck-chain",
+          "stylus holster with inkwell vials"
+        ],
+        "palette_notes": "Subdued spruce and warm amber-brass with glowing white contract parchment accents.",
+        "silhouette_notes": "Rectangular overhead footprint accentuated by ledger folio carried at hip or back.",
+        "avoid": [
+          "soiled grease stains",
+          "hazardous dangling hoses",
+          "heavy industrial rigs"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "default_commuter_contract_tender",
+      "role_keywords": [
+        "passenger",
+        "commuter",
+        "traveler",
+        "citizen",
+        "tender"
+      ],
+      "attire": [
+        "fitted Art Nouveau patterned transit tunic",
+        "reinforced canvas gardening apron with shift tally patch",
+        "durable travel trousers with brass ankle seals"
+      ],
+      "props": [
+        "luminescent passenger contract medallion on breast",
+        "compact handheld seed-sprouting kit",
+        "small brass water spritzer"
+      ],
+      "palette_notes": "Balanced blend of spruce green (#224b3c), warm canvas beige (#b58750), and glowing mint trim (#7ae582).",
+      "silhouette_notes": "Standard 2-head top-down proportion with identifiable glowing chest badge and modest belt pouches.",
+      "avoid": [
+        "hyper-specialized heavy machinery",
+        "high-ranking military regalia",
+        "modern synthetic garments"
+      ]
+    },
+    "visual_consistency_rules": [
+      "Maintain strict 90-degree orthographic top-down view: head, broad shoulders, and back-mounted gear dominate the 64x64 frame.",
+      "Outline all character sprites with a crisp 1px solid dark bronze rim (#121d18) for clear contrast against floor tiles.",
+      "Ensure every character carries at least one glowing luminescent element (#7ae582 or #e9f7eb) representing life-support tokens, seed tubes, or gauge dials.",
+      "Keep silhouettes distinctly legible via specific back equipment: tanks for mechanics, canisters for agronomists, baskets for foragers, clean profiles for arbiters.",
+      "Limit color depth to the canonical solarpunk palette: deep spruce, warm brass, sage mist, and rich soil tones."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "canon_verdant_rail_concourse",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degree_orthographic_overhead",
+      "scale_rule": "32px_per_tile_standard_human_1x1_footprint"
+    },
+    "palette": {
+      "dominant": "#224b3c",
+      "secondary": "#b58750",
+      "accent": "#7ae582",
+      "shadow": "#121d18",
+      "highlight": "#e9f7eb"
+    },
+    "materials": [
+      "oxidized_brass_filigree",
+      "condensation_coated_vault_glass",
+      "porous_basalt_hydro_troughs",
+      "fibrous_enriched_humus",
+      "polished_copper_pneumatic_conduits"
+    ],
+    "lighting": "diffuse_translucent_canopy_daylight_intersected_by_amber_meter_glow_and_cool_steam_diffusions",
+    "architecture": [
+      "art_nouveau_curvilinear_iron_frameworks",
+      "vaulted_glass_ribbed_ceilings",
+      "sunken_hydroponic_track_trenches",
+      "pneumatic_brass_rotary_turnstiles"
+    ],
+    "terrain": {
+      "ground": "geometric_moss_mortared_concourse_tiles",
+      "path": "copper_banded_transit_guide_plates",
+      "edge": "recessed_drainage_grilles_and_raised_trough_curbs"
+    },
+    "sprite_language": {
+      "body_proportion": "2_head_overhead_silhouette_broad_shoulders",
+      "outline": "1px_solid_dark_bronze_rim",
+      "role_readability": "distinct_silhouette_via_back_mounted_planter_rigs_and_luminescent_apron_badges"
+    },
+    "world_prompt_prefix": "strict orthographic top-down view, 2d tilemap, solarpunk rail concourse, art nouveau ironwork, lush hydroponics, brass and vaulted glass",
+    "sprite_prompt_prefix": "strict orthographic top-down sprite, overhead planar view, solarpunk commuter botanist, brass tools and luminous badge",
+    "forbidden_visuals": [
+      "isometric_projection",
+      "axonometric_pitch",
+      "oblique_angle",
+      "visible_text_labels",
+      "card_frames",
+      "floating_island_dioramas",
+      "photorealism",
+      "cyberpunk_neon_city",
+      "medieval_stone_castles",
+      "barren_procedural_dirt"
+    ],
+    "canon_hash": "0a4f8aee4f9d00c9"
+  }
+}

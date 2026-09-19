@@ -1,0 +1,1255 @@
+{
+  "generated_at": "2026-07-25T17:03:59.636063+00:00",
+  "manifest_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/benchmark_manifest.json",
+  "summary": {
+    "world_count": 10,
+    "agent_count": 250,
+    "published_worlds": 10,
+    "pixel_read_worlds": 10,
+    "pixel_launch_worlds": 10,
+    "total_inventory_items": 5433,
+    "total_generated_inventory_items": 1920,
+    "total_fallback_inventory_items": 124,
+    "generated_inventory_item_rate": 0.3534,
+    "fallback_inventory_item_rate": 0.0228,
+    "agents_with_generated_inventory": 175,
+    "agents_with_fallback_inventory": 51,
+    "total_wardrobe_policy_units": 96,
+    "floor_qa_rejections": 16,
+    "compiler_repairs_requested": 0,
+    "compiler_repairs_applied": 0,
+    "mean_quality_proxy": 0.8237,
+    "world_coherence_proxy_mean": 1.0,
+    "agent_specificity_proxy_mean": 0.85,
+    "inventory_usefulness_proxy_mean": 0.2936,
+    "visual_policy_proxy_mean": 0.975,
+    "playability_gate_proxy_mean": 1.0
+  },
+  "strict_inventory_subset": {
+    "selection_rule": "latest five completed worlds used for strict inventory reporting; legacy fallback-allowed artifacts remain in the 10-world completion/runtime benchmark",
+    "draft_ids": [
+      "creator_20260706_053251_1ad0b086",
+      "creator_20260724_203817_f86ae13e",
+      "creator_20260724_211037_1c17ca96",
+      "creator_20260724_215709_f5f54ceb",
+      "creator_20260724_224121_43ca9360"
+    ],
+    "summary": {
+      "world_count": 5,
+      "agent_count": 125,
+      "published_worlds": 5,
+      "pixel_read_worlds": 5,
+      "pixel_launch_worlds": 5,
+      "total_inventory_items": 2974,
+      "total_generated_inventory_items": 1311,
+      "total_fallback_inventory_items": 0,
+      "generated_inventory_item_rate": 0.4408,
+      "fallback_inventory_item_rate": 0.0,
+      "agents_with_generated_inventory": 125,
+      "agents_with_fallback_inventory": 0,
+      "total_wardrobe_policy_units": 63,
+      "floor_qa_rejections": 12,
+      "compiler_repairs_requested": 0,
+      "compiler_repairs_applied": 0,
+      "mean_quality_proxy": 0.9331,
+      "world_coherence_proxy_mean": 1.0,
+      "agent_specificity_proxy_mean": 1.0,
+      "inventory_usefulness_proxy_mean": 0.4405,
+      "visual_policy_proxy_mean": 1.225,
+      "playability_gate_proxy_mean": 1.0
+    },
+    "worlds": [
+      {
+        "world_name": "Aurora Court of Migrating Cities",
+        "draft_id": "creator_20260724_203817_f86ae13e",
+        "revision_id": "r001",
+        "access_code": "cfa9e1aa1ed06a38",
+        "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260724_203817_f86ae13e/revisions/r001",
+        "counts": {
+          "rooms": 8,
+          "agents": 25,
+          "main_characters": 25,
+          "gameplay_loops": 2,
+          "player_entry_points": 4,
+          "conflict_hooks": 3,
+          "non_currency_inventory_items": 547,
+          "generated_inventory_items": 251,
+          "fallback_inventory_items": 0,
+          "agents_with_generated_inventory": 25,
+          "agents_with_fallback_inventory": 0,
+          "property_templates": 91,
+          "knowledge_assets": 68,
+          "wardrobe_role_rules": 5,
+          "wardrobe_palette_families": 5,
+          "wardrobe_visual_rules": 4,
+          "floor_qa_rejections": 0
+        },
+        "stage_results": {
+          "published": true,
+          "pixel_read": true,
+          "startup_ok": true,
+          "pixel_launch_ok": true,
+          "compiler_ok": true,
+          "compiler_critique_applied": false,
+          "compiler_critique_should_repair": false,
+          "art_duration_seconds": 210.746
+        },
+        "quality_proxies": {
+          "world_coherence_proxy": 1.0,
+          "agent_specificity_proxy": 1.0,
+          "inventory_usefulness_proxy": 0.4589,
+          "visual_policy_proxy": 1.3125,
+          "playability_gate_proxy": 1.0
+        },
+        "ablation_evidence": {
+          "no_wardrobe_policy": {
+            "stage": "visual_prompt_policy",
+            "full_pipeline_coverage_units": 15,
+            "ablated_coverage_units": 0,
+            "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+          },
+          "fallback_allowed_inventory": {
+            "stage": "agent_inventory",
+            "full_pipeline_fallback_items": 0,
+            "full_pipeline_agents_with_generated_inventory": 25,
+            "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+          },
+          "no_compiler_critique": {
+            "stage": "compiler_repair",
+            "critique_should_repair": false,
+            "critique_applied": false,
+            "observed_effect": "equivalent on this world"
+          },
+          "no_floor_visual_qa": {
+            "stage": "map_art",
+            "rejected_candidate_floors": 0,
+            "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+          }
+        }
+      },
+      {
+        "world_name": "Clockwork Rain Conservatory",
+        "draft_id": "creator_20260706_053251_1ad0b086",
+        "revision_id": "r001",
+        "access_code": "a0d595161b975dd0",
+        "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260706_053251_1ad0b086/revisions/r001",
+        "counts": {
+          "rooms": 8,
+          "agents": 25,
+          "main_characters": 25,
+          "gameplay_loops": 3,
+          "player_entry_points": 4,
+          "conflict_hooks": 3,
+          "non_currency_inventory_items": 594,
+          "generated_inventory_items": 282,
+          "fallback_inventory_items": 0,
+          "agents_with_generated_inventory": 25,
+          "agents_with_fallback_inventory": 0,
+          "property_templates": 88,
+          "knowledge_assets": 64,
+          "wardrobe_role_rules": 4,
+          "wardrobe_palette_families": 5,
+          "wardrobe_visual_rules": 4,
+          "floor_qa_rejections": 0
+        },
+        "stage_results": {
+          "published": true,
+          "pixel_read": true,
+          "startup_ok": true,
+          "pixel_launch_ok": true,
+          "compiler_ok": true,
+          "compiler_critique_applied": false,
+          "compiler_critique_should_repair": false,
+          "art_duration_seconds": 110.179
+        },
+        "quality_proxies": {
+          "world_coherence_proxy": 1.0,
+          "agent_specificity_proxy": 1.0,
+          "inventory_usefulness_proxy": 0.4747,
+          "visual_policy_proxy": 1.25,
+          "playability_gate_proxy": 1.0
+        },
+        "ablation_evidence": {
+          "no_wardrobe_policy": {
+            "stage": "visual_prompt_policy",
+            "full_pipeline_coverage_units": 14,
+            "ablated_coverage_units": 0,
+            "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+          },
+          "fallback_allowed_inventory": {
+            "stage": "agent_inventory",
+            "full_pipeline_fallback_items": 0,
+            "full_pipeline_agents_with_generated_inventory": 25,
+            "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+          },
+          "no_compiler_critique": {
+            "stage": "compiler_repair",
+            "critique_should_repair": false,
+            "critique_applied": false,
+            "observed_effect": "equivalent on this world"
+          },
+          "no_floor_visual_qa": {
+            "stage": "map_art",
+            "rejected_candidate_floors": 0,
+            "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+          }
+        }
+      },
+      {
+        "world_name": "Mycelium Patent Bazaar",
+        "draft_id": "creator_20260724_211037_1c17ca96",
+        "revision_id": "r001",
+        "access_code": "995cad4cf9d281d9",
+        "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260724_211037_1c17ca96/revisions/r001",
+        "counts": {
+          "rooms": 8,
+          "agents": 25,
+          "main_characters": 25,
+          "gameplay_loops": 2,
+          "player_entry_points": 3,
+          "conflict_hooks": 3,
+          "non_currency_inventory_items": 676,
+          "generated_inventory_items": 298,
+          "fallback_inventory_items": 0,
+          "agents_with_generated_inventory": 25,
+          "agents_with_fallback_inventory": 0,
+          "property_templates": 93,
+          "knowledge_assets": 71,
+          "wardrobe_role_rules": 4,
+          "wardrobe_palette_families": 4,
+          "wardrobe_visual_rules": 4,
+          "floor_qa_rejections": 2
+        },
+        "stage_results": {
+          "published": true,
+          "pixel_read": true,
+          "startup_ok": true,
+          "pixel_launch_ok": true,
+          "compiler_ok": true,
+          "compiler_critique_applied": false,
+          "compiler_critique_should_repair": false,
+          "art_duration_seconds": 76.082
+        },
+        "quality_proxies": {
+          "world_coherence_proxy": 1.0,
+          "agent_specificity_proxy": 1.0,
+          "inventory_usefulness_proxy": 0.4408,
+          "visual_policy_proxy": 1.1875,
+          "playability_gate_proxy": 1.0
+        },
+        "ablation_evidence": {
+          "no_wardrobe_policy": {
+            "stage": "visual_prompt_policy",
+            "full_pipeline_coverage_units": 13,
+            "ablated_coverage_units": 0,
+            "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+          },
+          "fallback_allowed_inventory": {
+            "stage": "agent_inventory",
+            "full_pipeline_fallback_items": 0,
+            "full_pipeline_agents_with_generated_inventory": 25,
+            "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+          },
+          "no_compiler_critique": {
+            "stage": "compiler_repair",
+            "critique_should_repair": false,
+            "critique_applied": false,
+            "observed_effect": "equivalent on this world"
+          },
+          "no_floor_visual_qa": {
+            "stage": "map_art",
+            "rejected_candidate_floors": 2,
+            "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+          }
+        }
+      },
+      {
+        "world_name": "Sunken Satellite Monastery",
+        "draft_id": "creator_20260724_224121_43ca9360",
+        "revision_id": "r001",
+        "access_code": "82f0356e41af144a",
+        "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260724_224121_43ca9360/revisions/r001",
+        "counts": {
+          "rooms": 8,
+          "agents": 25,
+          "main_characters": 25,
+          "gameplay_loops": 2,
+          "player_entry_points": 4,
+          "conflict_hooks": 3,
+          "non_currency_inventory_items": 561,
+          "generated_inventory_items": 219,
+          "fallback_inventory_items": 0,
+          "agents_with_generated_inventory": 25,
+          "agents_with_fallback_inventory": 0,
+          "property_templates": 90,
+          "knowledge_assets": 73,
+          "wardrobe_role_rules": 4,
+          "wardrobe_palette_families": 4,
+          "wardrobe_visual_rules": 4,
+          "floor_qa_rejections": 4
+        },
+        "stage_results": {
+          "published": true,
+          "pixel_read": true,
+          "startup_ok": true,
+          "pixel_launch_ok": true,
+          "compiler_ok": true,
+          "compiler_critique_applied": false,
+          "compiler_critique_should_repair": false,
+          "art_duration_seconds": 226.702
+        },
+        "quality_proxies": {
+          "world_coherence_proxy": 1.0,
+          "agent_specificity_proxy": 1.0,
+          "inventory_usefulness_proxy": 0.3904,
+          "visual_policy_proxy": 1.1875,
+          "playability_gate_proxy": 1.0
+        },
+        "ablation_evidence": {
+          "no_wardrobe_policy": {
+            "stage": "visual_prompt_policy",
+            "full_pipeline_coverage_units": 13,
+            "ablated_coverage_units": 0,
+            "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+          },
+          "fallback_allowed_inventory": {
+            "stage": "agent_inventory",
+            "full_pipeline_fallback_items": 0,
+            "full_pipeline_agents_with_generated_inventory": 25,
+            "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+          },
+          "no_compiler_critique": {
+            "stage": "compiler_repair",
+            "critique_should_repair": false,
+            "critique_applied": false,
+            "observed_effect": "equivalent on this world"
+          },
+          "no_floor_visual_qa": {
+            "stage": "map_art",
+            "rejected_candidate_floors": 4,
+            "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+          }
+        }
+      },
+      {
+        "world_name": "Tidal Embassy of Lost Languages",
+        "draft_id": "creator_20260724_215709_f5f54ceb",
+        "revision_id": "r001",
+        "access_code": "21c6573255c5933f",
+        "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260724_215709_f5f54ceb/revisions/r001",
+        "counts": {
+          "rooms": 8,
+          "agents": 25,
+          "main_characters": 25,
+          "gameplay_loops": 2,
+          "player_entry_points": 4,
+          "conflict_hooks": 3,
+          "non_currency_inventory_items": 596,
+          "generated_inventory_items": 261,
+          "fallback_inventory_items": 0,
+          "agents_with_generated_inventory": 25,
+          "agents_with_fallback_inventory": 0,
+          "property_templates": 86,
+          "knowledge_assets": 72,
+          "wardrobe_role_rules": 4,
+          "wardrobe_palette_families": 4,
+          "wardrobe_visual_rules": 4,
+          "floor_qa_rejections": 6
+        },
+        "stage_results": {
+          "published": true,
+          "pixel_read": true,
+          "startup_ok": true,
+          "pixel_launch_ok": true,
+          "compiler_ok": true,
+          "compiler_critique_applied": false,
+          "compiler_critique_should_repair": false,
+          "art_duration_seconds": 242.531
+        },
+        "quality_proxies": {
+          "world_coherence_proxy": 1.0,
+          "agent_specificity_proxy": 1.0,
+          "inventory_usefulness_proxy": 0.4379,
+          "visual_policy_proxy": 1.1875,
+          "playability_gate_proxy": 1.0
+        },
+        "ablation_evidence": {
+          "no_wardrobe_policy": {
+            "stage": "visual_prompt_policy",
+            "full_pipeline_coverage_units": 13,
+            "ablated_coverage_units": 0,
+            "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+          },
+          "fallback_allowed_inventory": {
+            "stage": "agent_inventory",
+            "full_pipeline_fallback_items": 0,
+            "full_pipeline_agents_with_generated_inventory": 25,
+            "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+          },
+          "no_compiler_critique": {
+            "stage": "compiler_repair",
+            "critique_should_repair": false,
+            "critique_applied": false,
+            "observed_effect": "equivalent on this world"
+          },
+          "no_floor_visual_qa": {
+            "stage": "map_art",
+            "rejected_candidate_floors": 6,
+            "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+          }
+        }
+      }
+    ]
+  },
+  "fallback_allowed_baseline": {
+    "selection_rule": "completed legacy worlds where generic fallback inventory was accepted before the strict hardfail policy",
+    "draft_ids": [
+      "creator_20260704_074735_a680c064",
+      "creator_20260705_042509_f26a61c1"
+    ],
+    "summary": {
+      "world_count": 2,
+      "agent_count": 50,
+      "published_worlds": 2,
+      "pixel_read_worlds": 2,
+      "pixel_launch_worlds": 2,
+      "total_inventory_items": 914,
+      "total_generated_inventory_items": 0,
+      "total_fallback_inventory_items": 123,
+      "generated_inventory_item_rate": 0.0,
+      "fallback_inventory_item_rate": 0.1346,
+      "agents_with_generated_inventory": 0,
+      "agents_with_fallback_inventory": 50,
+      "total_wardrobe_policy_units": 10,
+      "floor_qa_rejections": 0,
+      "compiler_repairs_requested": 0,
+      "compiler_repairs_applied": 0,
+      "mean_quality_proxy": 0.578,
+      "world_coherence_proxy_mean": 1.0,
+      "agent_specificity_proxy_mean": 0.5,
+      "inventory_usefulness_proxy_mean": -0.1411,
+      "visual_policy_proxy_mean": 0.5312,
+      "playability_gate_proxy_mean": 1.0
+    },
+    "worlds": [
+      {
+        "world_name": "Clockwork Renaissance",
+        "draft_id": "creator_20260705_042509_f26a61c1",
+        "revision_id": "r001",
+        "access_code": "197bb42f896502ff",
+        "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260705_042509_f26a61c1/revisions/r001",
+        "counts": {
+          "rooms": 8,
+          "agents": 25,
+          "main_characters": 25,
+          "gameplay_loops": 2,
+          "player_entry_points": 3,
+          "conflict_hooks": 3,
+          "non_currency_inventory_items": 518,
+          "generated_inventory_items": 0,
+          "fallback_inventory_items": 48,
+          "agents_with_generated_inventory": 0,
+          "agents_with_fallback_inventory": 25,
+          "property_templates": 76,
+          "knowledge_assets": 50,
+          "wardrobe_role_rules": 3,
+          "wardrobe_palette_families": 3,
+          "wardrobe_visual_rules": 4,
+          "floor_qa_rejections": 0
+        },
+        "stage_results": {
+          "published": true,
+          "pixel_read": true,
+          "startup_ok": true,
+          "pixel_launch_ok": true,
+          "compiler_ok": true,
+          "compiler_critique_applied": false,
+          "compiler_critique_should_repair": false,
+          "art_duration_seconds": 210.035
+        },
+        "quality_proxies": {
+          "world_coherence_proxy": 1.0,
+          "agent_specificity_proxy": 0.5,
+          "inventory_usefulness_proxy": -0.0927,
+          "visual_policy_proxy": 1.0625,
+          "playability_gate_proxy": 1.0
+        },
+        "ablation_evidence": {
+          "no_wardrobe_policy": {
+            "stage": "visual_prompt_policy",
+            "full_pipeline_coverage_units": 11,
+            "ablated_coverage_units": 0,
+            "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+          },
+          "fallback_allowed_inventory": {
+            "stage": "agent_inventory",
+            "full_pipeline_fallback_items": 48,
+            "full_pipeline_agents_with_generated_inventory": 0,
+            "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+          },
+          "no_compiler_critique": {
+            "stage": "compiler_repair",
+            "critique_should_repair": false,
+            "critique_applied": false,
+            "observed_effect": "equivalent on this world"
+          },
+          "no_floor_visual_qa": {
+            "stage": "map_art",
+            "rejected_candidate_floors": 0,
+            "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+          }
+        }
+      },
+      {
+        "world_name": "Orbital Trade Station 42670",
+        "draft_id": "creator_20260704_074735_a680c064",
+        "revision_id": "r001",
+        "access_code": "45be24acdedff899",
+        "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260704_074735_a680c064/revisions/r001",
+        "counts": {
+          "rooms": 12,
+          "agents": 25,
+          "main_characters": 25,
+          "gameplay_loops": 2,
+          "player_entry_points": 4,
+          "conflict_hooks": 3,
+          "non_currency_inventory_items": 396,
+          "generated_inventory_items": 0,
+          "fallback_inventory_items": 75,
+          "agents_with_generated_inventory": 0,
+          "agents_with_fallback_inventory": 25,
+          "property_templates": 98,
+          "knowledge_assets": 75,
+          "wardrobe_role_rules": 0,
+          "wardrobe_palette_families": 0,
+          "wardrobe_visual_rules": 0,
+          "floor_qa_rejections": 0
+        },
+        "stage_results": {
+          "published": true,
+          "pixel_read": true,
+          "startup_ok": true,
+          "pixel_launch_ok": true,
+          "compiler_ok": true,
+          "compiler_critique_applied": false,
+          "compiler_critique_should_repair": false,
+          "art_duration_seconds": 418.857
+        },
+        "quality_proxies": {
+          "world_coherence_proxy": 1.0,
+          "agent_specificity_proxy": 0.5,
+          "inventory_usefulness_proxy": -0.1894,
+          "visual_policy_proxy": 0.0,
+          "playability_gate_proxy": 1.0
+        },
+        "ablation_evidence": {
+          "no_wardrobe_policy": {
+            "stage": "visual_prompt_policy",
+            "full_pipeline_coverage_units": 0,
+            "ablated_coverage_units": 0,
+            "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+          },
+          "fallback_allowed_inventory": {
+            "stage": "agent_inventory",
+            "full_pipeline_fallback_items": 75,
+            "full_pipeline_agents_with_generated_inventory": 0,
+            "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+          },
+          "no_compiler_critique": {
+            "stage": "compiler_repair",
+            "critique_should_repair": false,
+            "critique_applied": false,
+            "observed_effect": "equivalent on this world"
+          },
+          "no_floor_visual_qa": {
+            "stage": "map_art",
+            "rejected_candidate_floors": 0,
+            "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+          }
+        }
+      }
+    ]
+  },
+  "worlds": [
+    {
+      "world_name": "Aurora Court of Migrating Cities",
+      "draft_id": "creator_20260724_203817_f86ae13e",
+      "revision_id": "r001",
+      "access_code": "cfa9e1aa1ed06a38",
+      "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260724_203817_f86ae13e/revisions/r001",
+      "counts": {
+        "rooms": 8,
+        "agents": 25,
+        "main_characters": 25,
+        "gameplay_loops": 2,
+        "player_entry_points": 4,
+        "conflict_hooks": 3,
+        "non_currency_inventory_items": 547,
+        "generated_inventory_items": 251,
+        "fallback_inventory_items": 0,
+        "agents_with_generated_inventory": 25,
+        "agents_with_fallback_inventory": 0,
+        "property_templates": 91,
+        "knowledge_assets": 68,
+        "wardrobe_role_rules": 5,
+        "wardrobe_palette_families": 5,
+        "wardrobe_visual_rules": 4,
+        "floor_qa_rejections": 0
+      },
+      "stage_results": {
+        "published": true,
+        "pixel_read": true,
+        "startup_ok": true,
+        "pixel_launch_ok": true,
+        "compiler_ok": true,
+        "compiler_critique_applied": false,
+        "compiler_critique_should_repair": false,
+        "art_duration_seconds": 210.746
+      },
+      "quality_proxies": {
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 0.4589,
+        "visual_policy_proxy": 1.3125,
+        "playability_gate_proxy": 1.0
+      },
+      "ablation_evidence": {
+        "no_wardrobe_policy": {
+          "stage": "visual_prompt_policy",
+          "full_pipeline_coverage_units": 15,
+          "ablated_coverage_units": 0,
+          "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+        },
+        "fallback_allowed_inventory": {
+          "stage": "agent_inventory",
+          "full_pipeline_fallback_items": 0,
+          "full_pipeline_agents_with_generated_inventory": 25,
+          "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+        },
+        "no_compiler_critique": {
+          "stage": "compiler_repair",
+          "critique_should_repair": false,
+          "critique_applied": false,
+          "observed_effect": "equivalent on this world"
+        },
+        "no_floor_visual_qa": {
+          "stage": "map_art",
+          "rejected_candidate_floors": 0,
+          "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+        }
+      }
+    },
+    {
+      "world_name": "Bioluminescent Library Reef",
+      "draft_id": "creator_20260706_034815_dc4c2a53",
+      "revision_id": "r001",
+      "access_code": "b4b94ba6a4576151",
+      "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260706_034815_dc4c2a53/revisions/r001",
+      "counts": {
+        "rooms": 9,
+        "agents": 25,
+        "main_characters": 25,
+        "gameplay_loops": 2,
+        "player_entry_points": 4,
+        "conflict_hooks": 2,
+        "non_currency_inventory_items": 493,
+        "generated_inventory_items": 249,
+        "fallback_inventory_items": 1,
+        "agents_with_generated_inventory": 25,
+        "agents_with_fallback_inventory": 1,
+        "property_templates": 82,
+        "knowledge_assets": 52,
+        "wardrobe_role_rules": 4,
+        "wardrobe_palette_families": 3,
+        "wardrobe_visual_rules": 5,
+        "floor_qa_rejections": 0
+      },
+      "stage_results": {
+        "published": true,
+        "pixel_read": true,
+        "startup_ok": true,
+        "pixel_launch_ok": true,
+        "compiler_ok": true,
+        "compiler_critique_applied": false,
+        "compiler_critique_should_repair": false,
+        "art_duration_seconds": 218.624
+      },
+      "quality_proxies": {
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 0.503,
+        "visual_policy_proxy": 1.3125,
+        "playability_gate_proxy": 1.0
+      },
+      "ablation_evidence": {
+        "no_wardrobe_policy": {
+          "stage": "visual_prompt_policy",
+          "full_pipeline_coverage_units": 13,
+          "ablated_coverage_units": 0,
+          "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+        },
+        "fallback_allowed_inventory": {
+          "stage": "agent_inventory",
+          "full_pipeline_fallback_items": 1,
+          "full_pipeline_agents_with_generated_inventory": 25,
+          "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+        },
+        "no_compiler_critique": {
+          "stage": "compiler_repair",
+          "critique_should_repair": false,
+          "critique_applied": false,
+          "observed_effect": "equivalent on this world"
+        },
+        "no_floor_visual_qa": {
+          "stage": "map_art",
+          "rejected_candidate_floors": 0,
+          "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+        }
+      }
+    },
+    {
+      "world_name": "Clockwork Rain Conservatory",
+      "draft_id": "creator_20260706_053251_1ad0b086",
+      "revision_id": "r001",
+      "access_code": "a0d595161b975dd0",
+      "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260706_053251_1ad0b086/revisions/r001",
+      "counts": {
+        "rooms": 8,
+        "agents": 25,
+        "main_characters": 25,
+        "gameplay_loops": 3,
+        "player_entry_points": 4,
+        "conflict_hooks": 3,
+        "non_currency_inventory_items": 594,
+        "generated_inventory_items": 282,
+        "fallback_inventory_items": 0,
+        "agents_with_generated_inventory": 25,
+        "agents_with_fallback_inventory": 0,
+        "property_templates": 88,
+        "knowledge_assets": 64,
+        "wardrobe_role_rules": 4,
+        "wardrobe_palette_families": 5,
+        "wardrobe_visual_rules": 4,
+        "floor_qa_rejections": 0
+      },
+      "stage_results": {
+        "published": true,
+        "pixel_read": true,
+        "startup_ok": true,
+        "pixel_launch_ok": true,
+        "compiler_ok": true,
+        "compiler_critique_applied": false,
+        "compiler_critique_should_repair": false,
+        "art_duration_seconds": 110.179
+      },
+      "quality_proxies": {
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 0.4747,
+        "visual_policy_proxy": 1.25,
+        "playability_gate_proxy": 1.0
+      },
+      "ablation_evidence": {
+        "no_wardrobe_policy": {
+          "stage": "visual_prompt_policy",
+          "full_pipeline_coverage_units": 14,
+          "ablated_coverage_units": 0,
+          "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+        },
+        "fallback_allowed_inventory": {
+          "stage": "agent_inventory",
+          "full_pipeline_fallback_items": 0,
+          "full_pipeline_agents_with_generated_inventory": 25,
+          "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+        },
+        "no_compiler_critique": {
+          "stage": "compiler_repair",
+          "critique_should_repair": false,
+          "critique_applied": false,
+          "observed_effect": "equivalent on this world"
+        },
+        "no_floor_visual_qa": {
+          "stage": "map_art",
+          "rejected_candidate_floors": 0,
+          "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+        }
+      }
+    },
+    {
+      "world_name": "Clockwork Renaissance",
+      "draft_id": "creator_20260705_042509_f26a61c1",
+      "revision_id": "r001",
+      "access_code": "197bb42f896502ff",
+      "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260705_042509_f26a61c1/revisions/r001",
+      "counts": {
+        "rooms": 8,
+        "agents": 25,
+        "main_characters": 25,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "non_currency_inventory_items": 518,
+        "generated_inventory_items": 0,
+        "fallback_inventory_items": 48,
+        "agents_with_generated_inventory": 0,
+        "agents_with_fallback_inventory": 25,
+        "property_templates": 76,
+        "knowledge_assets": 50,
+        "wardrobe_role_rules": 3,
+        "wardrobe_palette_families": 3,
+        "wardrobe_visual_rules": 4,
+        "floor_qa_rejections": 0
+      },
+      "stage_results": {
+        "published": true,
+        "pixel_read": true,
+        "startup_ok": true,
+        "pixel_launch_ok": true,
+        "compiler_ok": true,
+        "compiler_critique_applied": false,
+        "compiler_critique_should_repair": false,
+        "art_duration_seconds": 210.035
+      },
+      "quality_proxies": {
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 0.5,
+        "inventory_usefulness_proxy": -0.0927,
+        "visual_policy_proxy": 1.0625,
+        "playability_gate_proxy": 1.0
+      },
+      "ablation_evidence": {
+        "no_wardrobe_policy": {
+          "stage": "visual_prompt_policy",
+          "full_pipeline_coverage_units": 11,
+          "ablated_coverage_units": 0,
+          "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+        },
+        "fallback_allowed_inventory": {
+          "stage": "agent_inventory",
+          "full_pipeline_fallback_items": 48,
+          "full_pipeline_agents_with_generated_inventory": 0,
+          "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+        },
+        "no_compiler_critique": {
+          "stage": "compiler_repair",
+          "critique_should_repair": false,
+          "critique_applied": false,
+          "observed_effect": "equivalent on this world"
+        },
+        "no_floor_visual_qa": {
+          "stage": "map_art",
+          "rejected_candidate_floors": 0,
+          "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+        }
+      }
+    },
+    {
+      "world_name": "Lunar Salvage Bazaar",
+      "draft_id": "creator_20260706_034119_0aef17e2",
+      "revision_id": "r001",
+      "access_code": "9b267c7108754d45",
+      "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260706_034119_0aef17e2/revisions/r001",
+      "counts": {
+        "rooms": 8,
+        "agents": 25,
+        "main_characters": 25,
+        "gameplay_loops": 2,
+        "player_entry_points": 4,
+        "conflict_hooks": 3,
+        "non_currency_inventory_items": 702,
+        "generated_inventory_items": 360,
+        "fallback_inventory_items": 0,
+        "agents_with_generated_inventory": 25,
+        "agents_with_fallback_inventory": 0,
+        "property_templates": 76,
+        "knowledge_assets": 50,
+        "wardrobe_role_rules": 3,
+        "wardrobe_palette_families": 3,
+        "wardrobe_visual_rules": 5,
+        "floor_qa_rejections": 4
+      },
+      "stage_results": {
+        "published": true,
+        "pixel_read": true,
+        "startup_ok": true,
+        "pixel_launch_ok": true,
+        "compiler_ok": true,
+        "compiler_critique_applied": false,
+        "compiler_critique_should_repair": false,
+        "art_duration_seconds": 77.266
+      },
+      "quality_proxies": {
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 0.5128,
+        "visual_policy_proxy": 1.25,
+        "playability_gate_proxy": 1.0
+      },
+      "ablation_evidence": {
+        "no_wardrobe_policy": {
+          "stage": "visual_prompt_policy",
+          "full_pipeline_coverage_units": 12,
+          "ablated_coverage_units": 0,
+          "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+        },
+        "fallback_allowed_inventory": {
+          "stage": "agent_inventory",
+          "full_pipeline_fallback_items": 0,
+          "full_pipeline_agents_with_generated_inventory": 25,
+          "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+        },
+        "no_compiler_critique": {
+          "stage": "compiler_repair",
+          "critique_should_repair": false,
+          "critique_applied": false,
+          "observed_effect": "equivalent on this world"
+        },
+        "no_floor_visual_qa": {
+          "stage": "map_art",
+          "rejected_candidate_floors": 4,
+          "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+        }
+      }
+    },
+    {
+      "world_name": "Mycelium Patent Bazaar",
+      "draft_id": "creator_20260724_211037_1c17ca96",
+      "revision_id": "r001",
+      "access_code": "995cad4cf9d281d9",
+      "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260724_211037_1c17ca96/revisions/r001",
+      "counts": {
+        "rooms": 8,
+        "agents": 25,
+        "main_characters": 25,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "non_currency_inventory_items": 676,
+        "generated_inventory_items": 298,
+        "fallback_inventory_items": 0,
+        "agents_with_generated_inventory": 25,
+        "agents_with_fallback_inventory": 0,
+        "property_templates": 93,
+        "knowledge_assets": 71,
+        "wardrobe_role_rules": 4,
+        "wardrobe_palette_families": 4,
+        "wardrobe_visual_rules": 4,
+        "floor_qa_rejections": 2
+      },
+      "stage_results": {
+        "published": true,
+        "pixel_read": true,
+        "startup_ok": true,
+        "pixel_launch_ok": true,
+        "compiler_ok": true,
+        "compiler_critique_applied": false,
+        "compiler_critique_should_repair": false,
+        "art_duration_seconds": 76.082
+      },
+      "quality_proxies": {
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 0.4408,
+        "visual_policy_proxy": 1.1875,
+        "playability_gate_proxy": 1.0
+      },
+      "ablation_evidence": {
+        "no_wardrobe_policy": {
+          "stage": "visual_prompt_policy",
+          "full_pipeline_coverage_units": 13,
+          "ablated_coverage_units": 0,
+          "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+        },
+        "fallback_allowed_inventory": {
+          "stage": "agent_inventory",
+          "full_pipeline_fallback_items": 0,
+          "full_pipeline_agents_with_generated_inventory": 25,
+          "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+        },
+        "no_compiler_critique": {
+          "stage": "compiler_repair",
+          "critique_should_repair": false,
+          "critique_applied": false,
+          "observed_effect": "equivalent on this world"
+        },
+        "no_floor_visual_qa": {
+          "stage": "map_art",
+          "rejected_candidate_floors": 2,
+          "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+        }
+      }
+    },
+    {
+      "world_name": "Orbital Trade Station 42670",
+      "draft_id": "creator_20260704_074735_a680c064",
+      "revision_id": "r001",
+      "access_code": "45be24acdedff899",
+      "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260704_074735_a680c064/revisions/r001",
+      "counts": {
+        "rooms": 12,
+        "agents": 25,
+        "main_characters": 25,
+        "gameplay_loops": 2,
+        "player_entry_points": 4,
+        "conflict_hooks": 3,
+        "non_currency_inventory_items": 396,
+        "generated_inventory_items": 0,
+        "fallback_inventory_items": 75,
+        "agents_with_generated_inventory": 0,
+        "agents_with_fallback_inventory": 25,
+        "property_templates": 98,
+        "knowledge_assets": 75,
+        "wardrobe_role_rules": 0,
+        "wardrobe_palette_families": 0,
+        "wardrobe_visual_rules": 0,
+        "floor_qa_rejections": 0
+      },
+      "stage_results": {
+        "published": true,
+        "pixel_read": true,
+        "startup_ok": true,
+        "pixel_launch_ok": true,
+        "compiler_ok": true,
+        "compiler_critique_applied": false,
+        "compiler_critique_should_repair": false,
+        "art_duration_seconds": 418.857
+      },
+      "quality_proxies": {
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 0.5,
+        "inventory_usefulness_proxy": -0.1894,
+        "visual_policy_proxy": 0.0,
+        "playability_gate_proxy": 1.0
+      },
+      "ablation_evidence": {
+        "no_wardrobe_policy": {
+          "stage": "visual_prompt_policy",
+          "full_pipeline_coverage_units": 0,
+          "ablated_coverage_units": 0,
+          "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+        },
+        "fallback_allowed_inventory": {
+          "stage": "agent_inventory",
+          "full_pipeline_fallback_items": 75,
+          "full_pipeline_agents_with_generated_inventory": 0,
+          "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+        },
+        "no_compiler_critique": {
+          "stage": "compiler_repair",
+          "critique_should_repair": false,
+          "critique_applied": false,
+          "observed_effect": "equivalent on this world"
+        },
+        "no_floor_visual_qa": {
+          "stage": "map_art",
+          "rejected_candidate_floors": 0,
+          "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+        }
+      }
+    },
+    {
+      "world_name": "Qingdao Cold-Chain Seafood Exchange 42653",
+      "draft_id": "creator_20260701_081249_f4c28992",
+      "revision_id": "r001",
+      "access_code": "d3be36e2f3b3d037",
+      "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260701_081249_f4c28992/revisions/r001",
+      "counts": {
+        "rooms": 8,
+        "agents": 25,
+        "main_characters": 25,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "non_currency_inventory_items": 350,
+        "generated_inventory_items": 0,
+        "fallback_inventory_items": 0,
+        "agents_with_generated_inventory": 0,
+        "agents_with_fallback_inventory": 0,
+        "property_templates": 95,
+        "knowledge_assets": 69,
+        "wardrobe_role_rules": 0,
+        "wardrobe_palette_families": 0,
+        "wardrobe_visual_rules": 0,
+        "floor_qa_rejections": 0
+      },
+      "stage_results": {
+        "published": true,
+        "pixel_read": true,
+        "startup_ok": true,
+        "pixel_launch_ok": true,
+        "compiler_ok": true,
+        "compiler_critique_applied": false,
+        "compiler_critique_should_repair": false,
+        "art_duration_seconds": 461.639
+      },
+      "quality_proxies": {
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 0.5,
+        "inventory_usefulness_proxy": 0.0,
+        "visual_policy_proxy": 0.0,
+        "playability_gate_proxy": 1.0
+      },
+      "ablation_evidence": {
+        "no_wardrobe_policy": {
+          "stage": "visual_prompt_policy",
+          "full_pipeline_coverage_units": 0,
+          "ablated_coverage_units": 0,
+          "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+        },
+        "fallback_allowed_inventory": {
+          "stage": "agent_inventory",
+          "full_pipeline_fallback_items": 0,
+          "full_pipeline_agents_with_generated_inventory": 0,
+          "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+        },
+        "no_compiler_critique": {
+          "stage": "compiler_repair",
+          "critique_should_repair": false,
+          "critique_applied": false,
+          "observed_effect": "equivalent on this world"
+        },
+        "no_floor_visual_qa": {
+          "stage": "map_art",
+          "rejected_candidate_floors": 0,
+          "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+        }
+      }
+    },
+    {
+      "world_name": "Sunken Satellite Monastery",
+      "draft_id": "creator_20260724_224121_43ca9360",
+      "revision_id": "r001",
+      "access_code": "82f0356e41af144a",
+      "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260724_224121_43ca9360/revisions/r001",
+      "counts": {
+        "rooms": 8,
+        "agents": 25,
+        "main_characters": 25,
+        "gameplay_loops": 2,
+        "player_entry_points": 4,
+        "conflict_hooks": 3,
+        "non_currency_inventory_items": 561,
+        "generated_inventory_items": 219,
+        "fallback_inventory_items": 0,
+        "agents_with_generated_inventory": 25,
+        "agents_with_fallback_inventory": 0,
+        "property_templates": 90,
+        "knowledge_assets": 73,
+        "wardrobe_role_rules": 4,
+        "wardrobe_palette_families": 4,
+        "wardrobe_visual_rules": 4,
+        "floor_qa_rejections": 4
+      },
+      "stage_results": {
+        "published": true,
+        "pixel_read": true,
+        "startup_ok": true,
+        "pixel_launch_ok": true,
+        "compiler_ok": true,
+        "compiler_critique_applied": false,
+        "compiler_critique_should_repair": false,
+        "art_duration_seconds": 226.702
+      },
+      "quality_proxies": {
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 0.3904,
+        "visual_policy_proxy": 1.1875,
+        "playability_gate_proxy": 1.0
+      },
+      "ablation_evidence": {
+        "no_wardrobe_policy": {
+          "stage": "visual_prompt_policy",
+          "full_pipeline_coverage_units": 13,
+          "ablated_coverage_units": 0,
+          "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+        },
+        "fallback_allowed_inventory": {
+          "stage": "agent_inventory",
+          "full_pipeline_fallback_items": 0,
+          "full_pipeline_agents_with_generated_inventory": 25,
+          "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+        },
+        "no_compiler_critique": {
+          "stage": "compiler_repair",
+          "critique_should_repair": false,
+          "critique_applied": false,
+          "observed_effect": "equivalent on this world"
+        },
+        "no_floor_visual_qa": {
+          "stage": "map_art",
+          "rejected_candidate_floors": 4,
+          "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+        }
+      }
+    },
+    {
+      "world_name": "Tidal Embassy of Lost Languages",
+      "draft_id": "creator_20260724_215709_f5f54ceb",
+      "revision_id": "r001",
+      "access_code": "21c6573255c5933f",
+      "revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260724_215709_f5f54ceb/revisions/r001",
+      "counts": {
+        "rooms": 8,
+        "agents": 25,
+        "main_characters": 25,
+        "gameplay_loops": 2,
+        "player_entry_points": 4,
+        "conflict_hooks": 3,
+        "non_currency_inventory_items": 596,
+        "generated_inventory_items": 261,
+        "fallback_inventory_items": 0,
+        "agents_with_generated_inventory": 25,
+        "agents_with_fallback_inventory": 0,
+        "property_templates": 86,
+        "knowledge_assets": 72,
+        "wardrobe_role_rules": 4,
+        "wardrobe_palette_families": 4,
+        "wardrobe_visual_rules": 4,
+        "floor_qa_rejections": 6
+      },
+      "stage_results": {
+        "published": true,
+        "pixel_read": true,
+        "startup_ok": true,
+        "pixel_launch_ok": true,
+        "compiler_ok": true,
+        "compiler_critique_applied": false,
+        "compiler_critique_should_repair": false,
+        "art_duration_seconds": 242.531
+      },
+      "quality_proxies": {
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 0.4379,
+        "visual_policy_proxy": 1.1875,
+        "playability_gate_proxy": 1.0
+      },
+      "ablation_evidence": {
+        "no_wardrobe_policy": {
+          "stage": "visual_prompt_policy",
+          "full_pipeline_coverage_units": 13,
+          "ablated_coverage_units": 0,
+          "expected_effect": "removes world-specific attire, forbidden-aesthetic, palette, and sprite-readability constraints before FLUX character prompting"
+        },
+        "fallback_allowed_inventory": {
+          "stage": "agent_inventory",
+          "full_pipeline_fallback_items": 0,
+          "full_pipeline_agents_with_generated_inventory": 25,
+          "ablated_risk": "would allow generic Task Ledger / Meeting Notice / Tea Coupon style inventories instead of hardfailing malformed JSON or missing generated items"
+        },
+        "no_compiler_critique": {
+          "stage": "compiler_repair",
+          "critique_should_repair": false,
+          "critique_applied": false,
+          "observed_effect": "equivalent on this world"
+        },
+        "no_floor_visual_qa": {
+          "stage": "map_art",
+          "rejected_candidate_floors": 6,
+          "ablated_risk": "would admit blank-margin, poster-card, or wrong-crop floor candidates into the final map render"
+        }
+      }
+    }
+  ]
+}

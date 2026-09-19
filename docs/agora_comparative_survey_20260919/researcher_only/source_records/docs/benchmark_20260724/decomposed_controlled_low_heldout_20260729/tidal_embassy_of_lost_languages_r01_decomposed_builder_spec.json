@@ -1,0 +1,2837 @@
+{
+  "world_name": "Tidal Embassy of Lost Languages",
+  "world_id": "tidal_embassy_lost_languages",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "coastal_trade_city",
+    "profile_id": "coastal_trade_city",
+    "locale": "en-US",
+    "tone": "melancholic, diplomatic, ritualistic",
+    "visual_direction": "Art Nouveau architecture on floating platforms, bioluminescent ink, shifting tides",
+    "currency_code": "HBR",
+    "currency_symbol": "hc",
+    "currency_minor_unit": "mark",
+    "currency_name": "Etymon",
+    "domain_label": "embassy.archive",
+    "starting_wallet_minor": {
+      "min": 2400,
+      "max": 11000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "coastal_maritime_v1",
+      "frontend_affordance_id": "diplomatic_ui_suite",
+      "asset_prompt_kit_id": "bioluminescent_archive_style"
+    },
+    "policy_refs": {
+      "economy_policy_id": "harbor_chit_v1",
+      "item_collection_id": "harbor_trade_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "coastal_trade_city_v1",
+      "property_policy_id": "coastal_trade_city_v1",
+      "knowledge_policy_id": "coastal_trade_city_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "Floating Diplomatic Archive",
+  "premise": "A shifting embassy where endangered languages are traded as currency and political leverage amidst rising tides.",
+  "simulation_objective": "Facilitate a high-stakes social economy based on translation rights, cultural debt, and linguistic espionage.",
+  "agent_count_target": 25,
+  "player_count_target": 50,
+  "wall_color_theme": "oxidized_brass_filigree",
+  "economy_focus": "Knowledge and translation rights",
+  "exploration_focus": "Submerged archives and ritual protocols",
+  "conflict_tone": "Bureaucratic intrigue and social scandal",
+  "visual_style": "Ethereal coastal architecture with shifting water levels and glowing script",
+  "rooms": [
+    {
+      "name": "The Phonetic Sluice",
+      "biome": "coastal_embassy",
+      "purpose": "Entryway and decontamination of foreign dialects",
+      "decor_tags": [
+        "brass_pipes",
+        "water_curtains",
+        "glowing_runes"
+      ],
+      "activity_tags": [
+        "cleansing",
+        "registration"
+      ],
+      "flux_floor_prompt": "top-down pixel art of dark teal tide pools with brass inlay walkways, shimmering water ripples, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a brass-walled entry chamber, water flowing through floor channels, bioluminescent runes on the walls, no text, no labels, full bleed to edges",
+      "width_tiles": 8,
+      "height_tiles": 10,
+      "ambient_palette": "soft_mint",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "lexical_scrubber",
+          "label": "Lexical Scrubber",
+          "description": "A brass archway emitting blue mist to purify spoken intent.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Archive of Lost Vowels",
+      "biome": "submerged_library",
+      "purpose": "Storage of extinct phonetic sounds",
+      "decor_tags": [
+        "mother_of_pearl_shelves",
+        "glass_vials",
+        "soft_glow"
+      ],
+      "activity_tags": [],
+      "flux_floor_prompt": "top-down pixel art of polished mother-of-pearl tiles with thin brass grout, iridescent sheen, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a circular library, shelves filled with glowing sea-glass vials, central ritual circle, no text, no labels, full bleed to edges",
+      "width_tiles": 12,
+      "height_tiles": 12,
+      "ambient_palette": "focused_blue",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "vowel_stasis_pod",
+          "label": "Vowel Stasis Pod",
+          "description": "A glass cylinder containing a floating, glowing phonetic sigil.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Syntax Exchange",
+      "biome": "underwater_market",
+      "purpose": "Trading grammar structures for leverage",
+      "decor_tags": [
+        "teak_counters",
+        "brass_scales",
+        "ink_wells"
+      ],
+      "activity_tags": [],
+      "flux_floor_prompt": "top-down pixel art of weathered teak planks with inlaid brass linguistic symbols, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a busy market hall, brass-topped counters, diplomats in silks, glowing ink jars, no text, no labels, full bleed to edges",
+      "width_tiles": 15,
+      "height_tiles": 10,
+      "ambient_palette": "warm_lantern",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "grammar_scales",
+          "label": "Grammar Scales",
+          "description": "Ornate brass scales used to weigh the complexity of a sentence.",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Ink-Stained Grotto",
+      "biome": "bioluminescent_workshop",
+      "purpose": "Manufacturing of diplomatic ink",
+      "decor_tags": [
+        "vats",
+        "tubing",
+        "glowing_residue"
+      ],
+      "activity_tags": [],
+      "flux_floor_prompt": "top-down pixel art of dark stone stained with neon cyan bioluminescent ink spills, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a workshop with bubbling vats of glowing ink, brass pipes, and glass stirrers, no text, no labels, full bleed to edges",
+      "width_tiles": 6,
+      "height_tiles": 8,
+      "ambient_palette": "ember_orange",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "ink_distiller",
+          "label": "Ink Distiller",
+          "description": "A complex brass machine condensing spoken words into liquid ink.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Council of the Last Speaker",
+      "biome": "high_embassy",
+      "purpose": "High-level political negotiations",
+      "decor_tags": [
+        "ribbed_vaulting",
+        "silk_banners",
+        "pearl_throne"
+      ],
+      "activity_tags": [],
+      "flux_floor_prompt": "top-down pixel art of a massive circular brass seal embedded in pearl flooring, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a grand council chamber, circular seating, central floating platform, art nouveau curves, no text, no labels, full bleed to edges",
+      "width_tiles": 14,
+      "height_tiles": 14,
+      "ambient_palette": "low_lantern",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "negotiation_sphere",
+          "label": "Negotiation Sphere",
+          "description": "A floating sea-glass orb that pulses when a lie is spoken.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Tide-Watch Tower",
+      "biome": "coastal_lookout",
+      "purpose": "Monitoring rising sea levels",
+      "decor_tags": [
+        "telescopes",
+        "star_charts",
+        "brass_railings"
+      ],
+      "activity_tags": [],
+      "flux_floor_prompt": "top-down pixel art of concentric brass rings on a sea-glass floor, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a small circular tower room, brass railings overlooking frothing white surf, no text, no labels, full bleed to edges",
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "ambient_palette": "clear_day",
+      "archetype": "lookout",
+      "scene_components": [
+        {
+          "component_id": "tide_astrolabe",
+          "label": "Tide Astrolabe",
+          "description": "A rotating brass instrument tracking the lunar pull on the embassy.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Silent Lounge",
+      "biome": "social_commons",
+      "purpose": "Non-verbal relaxation for weary translators",
+      "decor_tags": [
+        "silk_divans",
+        "potted_kelp",
+        "soft_lighting"
+      ],
+      "activity_tags": [],
+      "flux_floor_prompt": "top-down pixel art of plush teal carpets with gold silk embroidery patterns, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a lounge with curved silk sofas, low brass tables, and bioluminescent plants, no text, no labels, full bleed to edges",
+      "width_tiles": 10,
+      "height_tiles": 8,
+      "ambient_palette": "soft_mint",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "kelp_fountain",
+          "label": "Kelp Fountain",
+          "description": "A gentle water feature where bioluminescent kelp sways.",
+          "anchor": "south_west",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Dialect Yard",
+      "biome": "logistics_exterior",
+      "purpose": "Loading and unloading of heavy linguistic artifacts",
+      "decor_tags": [
+        "cranes",
+        "shipping_crates",
+        "brass_chains"
+      ],
+      "activity_tags": [],
+      "flux_floor_prompt": "top-down pixel art of heavy brass-reinforced concrete tiles with salt corrosion, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a loading dock, brass cranes, large mother-of-pearl crates, salt-crusted surfaces, no text, no labels, full bleed to edges",
+      "width_tiles": 12,
+      "height_tiles": 16,
+      "ambient_palette": "dusty_brown",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "heavy_hoist",
+          "label": "Heavy Hoist",
+          "description": "A massive brass crane used to lift stone tablets from the tide.",
+          "anchor": "north_west",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Vaelen the Echo-Catcher",
+      "role_name": "Phonetic Sluice Technician",
+      "activity": "Filtering semantic residue from the incoming tide",
+      "home_base": "The Phonetic Sluice",
+      "arc_goal": "To reconstruct the lost 'Song of the First Shore' from fragmented phonemes",
+      "inventory": [
+        {
+          "name": "Resonance Jar",
+          "description": "A glass vessel that vibrates when near dead languages",
+          "quantity": 3
+        },
+        {
+          "name": "Tuning Fork of Oros",
+          "description": "A silver fork used to stabilize shifting vowels",
+          "quantity": 1
+        },
+        {
+          "name": "Sluice-Glove",
+          "description": "A mesh glove that can physically touch sound waves",
+          "quantity": 2
+        },
+        {
+          "name": "Vowel-Strainer",
+          "description": "A fine silk net used to catch diphthongs in the water",
+          "quantity": 1
+        },
+        {
+          "name": "Echo-Log",
+          "description": "A leather book that records sounds as glowing ink",
+          "quantity": 1
+        },
+        {
+          "name": "Phonetic Salt",
+          "description": "Crystalline salt used to preserve spoken words",
+          "quantity": 5
+        },
+        {
+          "name": "Muffled Pouch",
+          "description": "A bag that prevents any sound from escaping",
+          "quantity": 1
+        },
+        {
+          "name": "Tidal Compass",
+          "description": "Points toward the strongest linguistic current",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Resonant Alcove",
+          "asset_type": "Workshop",
+          "description": "A small, soundproofed chamber within the Sluice",
+          "story_use": "Used for the delicate isolation of rare phonemes"
+        },
+        {
+          "asset_name": "Vaelen's Hydro-Lyre",
+          "asset_type": "Instrument",
+          "description": "A harp played by the movement of water",
+          "story_use": "Translates tidal patterns into audible speech"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Acoustic Filtration",
+          "summary": "The art of separating meaning from noise in high-pressure water",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Pre-Deluge Dialects",
+          "summary": "Understanding of the root languages spoken before the Great Flood",
+          "confidence": 82
+        }
+      ]
+    },
+    {
+      "display_name": "Archivist Elara",
+      "role_name": "Guardian of the Vowels",
+      "activity": "Cataloging the shifting grammar of the deep",
+      "home_base": "Archive of Lost Vowels",
+      "arc_goal": "To find the missing 'Silent A' that stabilizes the Syntax Exchange",
+      "inventory": [
+        {
+          "name": "Ink-Stained Monocle",
+          "description": "Allows the wearer to see invisible footnotes",
+          "quantity": 1
+        },
+        {
+          "name": "Vowel-Vial: 'E'",
+          "description": "A glowing blue liquid representing the essence of the letter E",
+          "quantity": 4
+        },
+        {
+          "name": "Grammar-Chisel",
+          "description": "Used to carve permanent definitions into stone",
+          "quantity": 1
+        },
+        {
+          "name": "Scroll of Infinite Syntax",
+          "description": "A parchment that rearranges its text every hour",
+          "quantity": 1
+        },
+        {
+          "name": "Linguistic Seal",
+          "description": "Wax used to lock dangerous words away",
+          "quantity": 10
+        },
+        {
+          "name": "Feather of a Mute Swan",
+          "description": "The only tool capable of writing in the Archive",
+          "quantity": 3
+        },
+        {
+          "name": "Etymology Map",
+          "description": "A chart showing the evolution of words like tree roots",
+          "quantity": 1
+        },
+        {
+          "name": "Binding Thread",
+          "description": "Silk used to stitch torn pages of reality",
+          "quantity": 12
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Central Lexicon",
+          "asset_type": "Library Wing",
+          "description": "A rotating tower of books that follows the moon",
+          "story_use": "The primary source for all verified definitions in the Embassy"
+        },
+        {
+          "asset_name": "Elara's Ink-Well",
+          "asset_type": "Relic",
+          "description": "An bottomless well of bioluminescent squid ink",
+          "story_use": "Required for signing official linguistic treaties"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Orthographic Preservation",
+          "summary": "Methods for preventing letters from dissolving in saltwater",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "The Silent Script",
+          "summary": "Knowledge of the language spoken only through gestures and pauses",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen the Word-Broker",
+      "role_name": "Syntax Merchant",
+      "activity": "Trading rare adjectives for stable nouns",
+      "home_base": "The Syntax Exchange",
+      "arc_goal": "To monopolize the trade of 'Verbs of Action' before the tide turns",
+      "inventory": [
+        {
+          "name": "Gilded Ledger",
+          "description": "Records every debt in three different languages",
+          "quantity": 1
+        },
+        {
+          "name": "Pouch of Syllable-Coins",
+          "description": "Currency minted from compressed speech",
+          "quantity": 50
+        },
+        {
+          "name": "Contract of Silence",
+          "description": "A magical scroll that prevents the signer from speaking",
+          "quantity": 5
+        },
+        {
+          "name": "Adjective-Infused Tea",
+          "description": "Drink that makes the consumer speak colorfully",
+          "quantity": 10
+        },
+        {
+          "name": "Scale of Truth",
+          "description": "Weights the literal versus metaphorical value of a word",
+          "quantity": 1
+        },
+        {
+          "name": "Crate of Forgotten Nouns",
+          "description": "Heavy boxes containing names of extinct animals",
+          "quantity": 3
+        },
+        {
+          "name": "Trade-Wind Whistle",
+          "description": "Summons a breeze to carry messages to buyers",
+          "quantity": 1
+        },
+        {
+          "name": "Linguistic Insurance Policy",
+          "description": "Protects against the loss of meaning during transit",
+          "quantity": 5
+        },
+        {
+          "name": "Magnifying Glass of Intent",
+          "description": "Reveals the hidden meaning behind a speaker's words",
+          "quantity": 1
+        },
+        {
+          "name": "Jar of Punctuation",
+          "description": "Small beads used to end sentences or create pauses",
+          "quantity": 100
+        },
+        {
+          "name": "Metaphor-Mirror",
+          "description": "Shows the user what they are 'like' rather than what they are",
+          "quantity": 1
+        },
+        {
+          "name": "Box of Rhymes",
+          "description": "Pairs of words that hum when brought together",
+          "quantity": 20
+        },
+        {
+          "name": "The Broker's Cane",
+          "description": "A walking stick that taps out Morse code",
+          "quantity": 1
+        },
+        {
+          "name": "Translation Stone",
+          "description": "A pebble that vibrates when a lie is told in its presence",
+          "quantity": 2
+        },
+        {
+          "name": "Abacus of Logic",
+          "description": "Used to calculate the structural integrity of a sentence",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Syntax Stall",
+          "asset_type": "Commercial Property",
+          "description": "A prime booth located at the heart of the Exchange",
+          "story_use": "The hub for all high-stakes linguistic negotiations"
+        },
+        {
+          "asset_name": "The Vault of Verbs",
+          "asset_type": "Storage",
+          "description": "A reinforced safe containing the world's most powerful action words",
+          "story_use": "Used to store assets that could change the course of history"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Market Fluctuations",
+          "summary": "Predicting which languages will become 'extinct' and rise in value",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Diplomatic Nuance",
+          "summary": "The subtle art of insulting someone in a dead language without them knowing",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Speaker Thalassa",
+      "role_name": "Council Mediator",
+      "activity": "Presiding over the Council of the Last Speaker",
+      "home_base": "Council of the Last Speaker",
+      "arc_goal": "To prevent the 'Great Silence' from consuming the Embassy",
+      "inventory": [
+        {
+          "name": "The Last Gavel",
+          "description": "A hammer made from the wood of the first tree",
+          "quantity": 1
+        },
+        {
+          "name": "Robe of Many Tongues",
+          "description": "A garment embroidered with every known script",
+          "quantity": 1
+        },
+        {
+          "name": "Mediation Stone",
+          "description": "A warm rock held by those speaking in council",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Ancestral Breath",
+          "description": "Contains the last breath of a dying language",
+          "quantity": 1
+        },
+        {
+          "name": "Council Ring",
+          "description": "A signet used to authorize Embassy decrees",
+          "quantity": 1
+        },
+        {
+          "name": "Scroll of the First Law",
+          "description": "The founding document of the Tidal Embassy",
+          "quantity": 1
+        },
+        {
+          "name": "Incense of Clarity",
+          "description": "Smoke that helps listeners understand complex ideas",
+          "quantity": 15
+        },
+        {
+          "name": "The Speaker's Staff",
+          "description": "A tall staff that glows when the truth is spoken",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The High Dais",
+          "asset_type": "Political Seat",
+          "description": "The elevated platform from which the Speaker rules",
+          "story_use": "The focal point of all Embassy law-making"
+        },
+        {
+          "asset_name": "The Garden of Whispers",
+          "asset_type": "Private Estate",
+          "description": "A garden where the plants grow from spoken secrets",
+          "story_use": "A place for private meditation and gathering intelligence"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Linguistic Jurisprudence",
+          "summary": "The laws governing the use and ownership of ancient words",
+          "confidence": 96
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Tidal Cycles",
+          "summary": "How the rising water levels affect the clarity of the Archive",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Silt-Walker Orrin",
+      "role_name": "Grotto Scavenger",
+      "activity": "Dredging the Ink-Stained Grotto for calcified idioms",
+      "home_base": "The Ink-Stained Grotto",
+      "arc_goal": "To recover the lost 'Verb of Creation' before the tide erases it",
+      "inventory": [
+        {
+          "name": "Calcified Adverb",
+          "description": "A jagged, crystalline word-fragment that modifies movement speed",
+          "quantity": 3
+        },
+        {
+          "name": "Ink-Dampened Net",
+          "description": "A mesh woven from kraken-silk used to catch floating phonemes",
+          "quantity": 1
+        },
+        {
+          "name": "Resonance Tuning Fork",
+          "description": "Vibrates when near a dying dialect",
+          "quantity": 1
+        },
+        {
+          "name": "Jar of Liquid Punctuation",
+          "description": "Viscous black fluid used to pause conversations",
+          "quantity": 5
+        },
+        {
+          "name": "Silt-Crusted Monocle",
+          "description": "Allows the wearer to see the etymology of submerged objects",
+          "quantity": 1
+        },
+        {
+          "name": "Mnemonic Sponge",
+          "description": "Soaks up the last words spoken in a room",
+          "quantity": 2
+        },
+        {
+          "name": "Tidal Lantern",
+          "description": "Burns oil made from forgotten poems",
+          "quantity": 1
+        },
+        {
+          "name": "Rusty Syntax Pliers",
+          "description": "Used to extract stubborn prefixes from ruins",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Sunken Script-Hut",
+          "asset_type": "Workshop",
+          "description": "A pressurized shack at the bottom of the Grotto",
+          "story_use": "A safe haven for drying out recovered linguistic artifacts"
+        },
+        {
+          "asset_name": "The Dredge-Sled",
+          "asset_type": "Vehicle",
+          "description": "A flat-bottomed craft for navigating the ink-sludge",
+          "story_use": "Transporting heavy semantic cargo to the Syntax Exchange"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Ink-Flow Patterns",
+          "summary": "Understanding how the black tides deposit rare nouns",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Vaelen's Filter Specs",
+          "summary": "Technical knowledge of the Phonetic Sluice's bypass codes",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Mistress Lyra of the Watch",
+      "role_name": "Tide-Watch Commander",
+      "activity": "Monitoring the horizon for incoming semantic storms",
+      "home_base": "The Tide-Watch Tower",
+      "arc_goal": "To warn the Embassy of the 'Great Silence' approaching from the deep",
+      "inventory": [
+        {
+          "name": "Brass Spyglass of Tense",
+          "description": "Shows the past, present, or future of whatever it views",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Flare of Emphasis",
+          "description": "Bright red flares that make any command undeniable",
+          "quantity": 10
+        },
+        {
+          "name": "Logbook of Lost Ships",
+          "description": "A record of vessels claimed by the Archive of Lost Vowels",
+          "quantity": 1
+        },
+        {
+          "name": "Storm-Glass of Syntax",
+          "description": "Cloudy liquid that swirls when a grammar shift is imminent",
+          "quantity": 1
+        },
+        {
+          "name": "Whistle of the High C",
+          "description": "A silver whistle that clears phonetic fog",
+          "quantity": 1
+        },
+        {
+          "name": "Heavy Woolen Greatcoat",
+          "description": "Lined with pages from a dictionary of warmth",
+          "quantity": 1
+        },
+        {
+          "name": "Compass of True Meaning",
+          "description": "Points toward the most honest person in the room",
+          "quantity": 1
+        },
+        {
+          "name": "Ration of Hard-Tack Rhymes",
+          "description": "Dried biscuits that provide poetic inspiration",
+          "quantity": 12
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Zenith Lens",
+          "asset_type": "Observation Tool",
+          "description": "A massive crystal atop the tower that focuses moonlight into logic",
+          "story_use": "Detecting incoming linguistic anomalies from miles away"
+        },
+        {
+          "asset_name": "The Signal Bell",
+          "asset_type": "Communication Device",
+          "description": "A bell cast from the bronze of a thousand silent tongues",
+          "story_use": "Alerting the Council of the Last Speaker to emergencies"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Meteorological Linguistics",
+          "summary": "Predicting storms based on the frequency of vowel-drifts",
+          "confidence": 88
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Embassy Defense Protocols",
+          "summary": "Strategic knowledge of the Sluice's defensive capabilities",
+          "confidence": 92
+        }
+      ]
+    },
+    {
+      "display_name": "Balthazar the Lexicon-Broker",
+      "role_name": "Master Merchant",
+      "activity": "Negotiating high-stakes trades for forbidden synonyms",
+      "home_base": "The Syntax Exchange",
+      "arc_goal": "To monopolize the trade of 'Absolute Truth' fragments",
+      "inventory": [
+        {
+          "name": "Gilded Ledger of Debts",
+          "description": "A book that magically updates when a favor is owed",
+          "quantity": 1
+        },
+        {
+          "name": "Velvet Pouch of Sibilants",
+          "description": "Contains 'S' sounds used for stealthy negotiations",
+          "quantity": 20
+        },
+        {
+          "name": "Crate of Imported Adjectives",
+          "description": "Rare descriptors from the Far-Syllable Isles",
+          "quantity": 5
+        },
+        {
+          "name": "Scale of Equivalence",
+          "description": "Weighs the value of a secret against a bag of gold",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Persuasive Pheromones",
+          "description": "Extracted from the breath of a master orator",
+          "quantity": 3
+        },
+        {
+          "name": "Contract of Binding Oaths",
+          "description": "Parchment that glows blue when a lie is written on it",
+          "quantity": 10
+        },
+        {
+          "name": "Ring of the Silver Tongue",
+          "description": "Grants the wearer perfect pronunciation in any tongue",
+          "quantity": 1
+        },
+        {
+          "name": "Box of Stolen Whispers",
+          "description": "Small wooden box containing private Council rumors",
+          "quantity": 4
+        },
+        {
+          "name": "Magnifying Glass of Fine Print",
+          "description": "Reveals hidden clauses in any agreement",
+          "quantity": 1
+        },
+        {
+          "name": "Abacus of Infinite Sums",
+          "description": "Used for calculating the compound interest of a legacy",
+          "quantity": 1
+        },
+        {
+          "name": "Bottle of Aged Metaphor",
+          "description": "A drink that makes the consumer feel like a king",
+          "quantity": 6
+        },
+        {
+          "name": "Ivory Letter Opener",
+          "description": "Can slice through even the thickest bureaucratic red tape",
+          "quantity": 1
+        },
+        {
+          "name": "Wax Seal of the Exchange",
+          "description": "Authorizes any trade within the Dialect Yard",
+          "quantity": 1
+        },
+        {
+          "name": "Bag of Polished Conjunctions",
+          "description": "Used to bridge gaps in broken sentences",
+          "quantity": 15
+        },
+        {
+          "name": "Scroll of Market Trends",
+          "description": "Live updates on the value of 'Love' vs 'Power'",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Golden Stall",
+          "asset_type": "Business",
+          "description": "The most prominent trading post in the Syntax Exchange",
+          "story_use": "The hub for all high-level linguistic commerce"
+        },
+        {
+          "asset_name": "The Private Vault",
+          "asset_type": "Storage",
+          "description": "A secure room protected by a riddle-lock",
+          "story_use": "Storing the most dangerous and rare words ever recovered"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Kaelen's Trade Routes",
+          "summary": "Detailed maps of Kaelen's secret supply lines",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Currency Fluctuations",
+          "summary": "Understanding the exchange rate between vowels and consonants",
+          "confidence": 98
+        }
+      ]
+    },
+    {
+      "display_name": "The Silent Acolyte",
+      "role_name": "Monastic Custodian",
+      "activity": "Polishing the echoes in the Silent Lounge",
+      "home_base": "The Silent Lounge",
+      "arc_goal": "To find the one word that can break the vow of silence without ending the world",
+      "inventory": [
+        {
+          "name": "Feather-Duster of Stillness",
+          "description": "Removes noise from any surface it touches",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Concentrated Quiet",
+          "description": "A liquid that mutes a 10-foot radius when spilled",
+          "quantity": 4
+        },
+        {
+          "name": "Tablet of Chalk-Talk",
+          "description": "A slate for communicating without making a sound",
+          "quantity": 1
+        },
+        {
+          "name": "Sandals of Muffled Steps",
+          "description": "Footwear that produces zero acoustic footprint",
+          "quantity": 1
+        },
+        {
+          "name": "Prayer Beads of Punctuation",
+          "description": "Used to count the seconds between breaths",
+          "quantity": 1
+        },
+        {
+          "name": "Blindfold of Inner Sight",
+          "description": "Blocks vision to enhance the hearing of spiritual echoes",
+          "quantity": 1
+        },
+        {
+          "name": "Small Bell of Mindfulness",
+          "description": "Rings only when the wearer thinks a pure thought",
+          "quantity": 1
+        },
+        {
+          "name": "Dried Lotus of Reflection",
+          "description": "A flower that blooms in the presence of deep thought",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Meditation Alcove",
+          "asset_type": "Sanctuary",
+          "description": "A small, soundproof nook in the Silent Lounge",
+          "story_use": "A place for players to recover from 'Linguistic Fatigue'"
+        },
+        {
+          "asset_name": "The Echo-Well",
+          "asset_type": "Artifact",
+          "description": "A deep pit where discarded sounds are kept",
+          "story_use": "A source of ancient, dangerous audio-residue"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "The Last Speaker's Secrets",
+          "summary": "Unspoken truths overheard during Council sessions",
+          "confidence": 65
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Anatomy of a Sigh",
+          "summary": "The scientific and spiritual properties of non-verbal breath",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Caspian the Sluice-Warden",
+      "role_name": "Hydraulic Linguist",
+      "activity": "Calibrating the resonance filters to prevent semantic drift in the Phonetic Sluice",
+      "home_base": "The Phonetic Sluice",
+      "arc_goal": "To isolate the 'Primal Phoneme' before the next high tide dissolves the archive's foundations",
+      "inventory": [
+        {
+          "name": "Tuning Fork of Glottal Stops",
+          "description": "A heavy brass fork that vibrates when it detects unvoiced consonants",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Liquid Syntax",
+          "description": "A shimmering fluid used to lubricate rusted phonetic gears",
+          "quantity": 3
+        },
+        {
+          "name": "Sluice-Gate Key (AG-016)",
+          "description": "A heavy iron key etched with dead runes",
+          "quantity": 1
+        },
+        {
+          "name": "Resonance Goggles",
+          "description": "Lenses that allow the wearer to see sound waves in the water",
+          "quantity": 1
+        },
+        {
+          "name": "Silt-Caked Lexicon",
+          "description": "A book of basic phrases for communicating with tide-wraiths",
+          "quantity": 1
+        },
+        {
+          "name": "Phonetic Filter Mesh",
+          "description": "A fine wire screen used to catch stray syllables",
+          "quantity": 5
+        },
+        {
+          "name": "Damp Parchment Scraps",
+          "description": "Notes on the frequency of the incoming tide",
+          "quantity": 12
+        },
+        {
+          "name": "Warden's Whistle",
+          "description": "Emits a tone that temporarily freezes semantic residue",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The North Sluice Valve",
+          "asset_type": "Infrastructure",
+          "description": "A massive brass valve controlling the flow of phonetic runoff",
+          "story_use": "Can be sabotaged to flood the lower archives with gibberish"
+        },
+        {
+          "asset_name": "Warden's Observation Deck",
+          "asset_type": "Real Estate",
+          "description": "A high perch overlooking the Sluice",
+          "story_use": "Used to spot incoming semantic storms before they hit the Embassy"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-001",
+          "topic": "Hydraulic Phonetics",
+          "summary": "The science of how water pressure affects the pronunciation of dead languages",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KNOW-002",
+          "topic": "Vaelen's Work Ethic",
+          "summary": "Observations on Vaelen's tendency to ignore minor semantic leaks",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Zora the Ink-Steward",
+      "role_name": "Pigment Alchemist",
+      "activity": "Distilling calcified idioms into usable ink for the scribes",
+      "home_base": "The Ink-Stained Grotto",
+      "arc_goal": "To synthesize a permanent ink that can withstand the corrosive salt of the Archive",
+      "inventory": [
+        {
+          "name": "Idiom Crusher",
+          "description": "A mortar and pestle designed to break down hardened metaphors",
+          "quantity": 1
+        },
+        {
+          "name": "Jar of Concentrated Irony",
+          "description": "A dark, pungent ink that changes color based on the reader's intent",
+          "quantity": 4
+        },
+        {
+          "name": "Grotto Moss",
+          "description": "Bioluminescent flora that grows on the walls of the Ink-Stained Grotto",
+          "quantity": 20
+        },
+        {
+          "name": "Stained Apron",
+          "description": "A leather garment impervious to linguistic stains",
+          "quantity": 1
+        },
+        {
+          "name": "Siphon Tube",
+          "description": "Used to extract ink from the Grotto's deep pools",
+          "quantity": 2
+        },
+        {
+          "name": "Vial of Pure Silence",
+          "description": "A vacuum-sealed container used to stabilize volatile adjectives",
+          "quantity": 2
+        },
+        {
+          "name": "Orrin's Lost Chisel",
+          "description": "A tool found in the silt, belonging to the scavenger Orrin",
+          "quantity": 1
+        },
+        {
+          "name": "Alchemical Logbook",
+          "description": "Detailed records of ink stability under various tidal pressures",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Distillation Vat",
+          "asset_type": "Industrial Equipment",
+          "description": "A bubbling cauldron where raw idioms are refined",
+          "story_use": "Can be used to create potent linguistic decoctions or poisons"
+        },
+        {
+          "asset_name": "The Ink-Stained Grotto",
+          "asset_type": "Laboratory",
+          "description": "A damp cavern filled with natural ink deposits",
+          "story_use": "The primary source of all writing materials in the Embassy"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-003",
+          "topic": "Idiom Solubility",
+          "summary": "Knowledge of which metaphors dissolve fastest in salt water",
+          "confidence": 88
+        },
+        {
+          "knowledge_id": "KNOW-004",
+          "topic": "Orrin's Scavenging Routes",
+          "summary": "Familiarity with where Orrin hides his best finds in the Grotto",
+          "confidence": 65
+        }
+      ]
+    },
+    {
+      "display_name": "Master Pavo",
+      "role_name": "Syntax Arbitrator",
+      "activity": "Mediating disputes between merchants over the definition of 'Value'",
+      "home_base": "The Syntax Exchange",
+      "arc_goal": "To standardize the exchange rate between adjectives and nouns before the market crashes",
+      "inventory": [
+        {
+          "name": "Gavel of Grammatical Authority",
+          "description": "A heavy mallet that silences all speakers within ten feet",
+          "quantity": 1
+        },
+        {
+          "name": "Ledger of Fluctuating Definitions",
+          "description": "A book whose text changes to reflect current market values",
+          "quantity": 1
+        },
+        {
+          "name": "Scales of Semantic Weight",
+          "description": "Used to compare the literal and figurative weight of a word",
+          "quantity": 1
+        },
+        {
+          "name": "Official Seal of the Exchange",
+          "description": "A wax seal used to certify legal syntax contracts",
+          "quantity": 1
+        },
+        {
+          "name": "Pouch of Rare Suffixes",
+          "description": "Small tokens used as change in high-value transactions",
+          "quantity": 15
+        },
+        {
+          "name": "Monocle of Truth",
+          "description": "Reveals the hidden subtext in written documents",
+          "quantity": 1
+        },
+        {
+          "name": "Contract of Indenture",
+          "description": "A legal document binding a speaker to the Council",
+          "quantity": 3
+        },
+        {
+          "name": "Ink-Pot of Permanence",
+          "description": "Special ink from Zora that cannot be erased",
+          "quantity": 2
+        },
+        {
+          "name": "Abacus of Logic",
+          "description": "A tool for calculating the structural integrity of a sentence",
+          "quantity": 1
+        },
+        {
+          "name": "Whistle of Order",
+          "description": "Used to summon the Silent Acolytes during a riot",
+          "quantity": 1
+        },
+        {
+          "name": "Scroll of Forbidden Synonyms",
+          "description": "A list of words banned by the Council of the Last Speaker",
+          "quantity": 1
+        },
+        {
+          "name": "Magnifying Glass",
+          "description": "Used to inspect the fine print on syntax bonds",
+          "quantity": 1
+        },
+        {
+          "name": "Bag of Commas",
+          "description": "Small punctuation marks used to pause heated debates",
+          "quantity": 50
+        },
+        {
+          "name": "Trading Bell",
+          "description": "Rung to signal the start of the daily Syntax Exchange",
+          "quantity": 1
+        },
+        {
+          "name": "Letter of Credit",
+          "description": "A document signed by Balthazar the Lexicon-Broker",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Central Trading Floor",
+          "asset_type": "Commercial Space",
+          "description": "The heart of the Syntax Exchange where all deals are struck",
+          "story_use": "A place for high-stakes negotiation and public announcements"
+        },
+        {
+          "asset_name": "The Arbitrator's Private Booth",
+          "asset_type": "Office",
+          "description": "A soundproof room for private mediation",
+          "story_use": "Ideal for secret alliances or bribery attempts"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-005",
+          "topic": "Market Volatility",
+          "summary": "Predicting when a word's meaning will shift due to tidal influence",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "KNOW-006",
+          "topic": "Balthazar's Debt",
+          "summary": "Knowledge of how much the Lexicon-Broker owes the Exchange",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Kiri of the High Watch",
+      "role_name": "Signal Officer",
+      "activity": "Transmitting phonetic warnings to the lower embassy via light signals",
+      "home_base": "The Tide-Watch Tower",
+      "arc_goal": "To warn the Council of a massive 'Semantic Tsunami' approaching from the deep",
+      "inventory": [
+        {
+          "name": "Signal Lantern (AG-017)",
+          "description": "A powerful lamp fueled by bioluminescent ink",
+          "quantity": 1
+        },
+        {
+          "name": "Codebook of the Watch",
+          "description": "A manual for translating light flashes into complex syntax",
+          "quantity": 1
+        },
+        {
+          "name": "Spyglass of Foresight",
+          "description": "Allows the user to see events five minutes into the future",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Flags",
+          "description": "Brightly colored cloths used for daytime communication",
+          "quantity": 6
+        },
+        {
+          "name": "Officer's Log",
+          "description": "A record of every semantic storm for the last decade",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Flare",
+          "description": "Produces a soundless explosion of violet light",
+          "quantity": 3
+        },
+        {
+          "name": "Ration Biscuits",
+          "description": "Hard, tasteless crackers for long shifts",
+          "quantity": 10
+        },
+        {
+          "name": "Compass of Meaning",
+          "description": "A needle that points toward the nearest coherent sentence",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Great Beacon",
+          "asset_type": "Infrastructure",
+          "description": "The primary light source for the Tide-Watch Tower",
+          "story_use": "Can be used to blind enemies or signal distant allies"
+        },
+        {
+          "asset_name": "The Tower Balcony",
+          "asset_type": "Observation Point",
+          "description": "The highest point in the Embassy",
+          "story_use": "Provides a tactical advantage for surveillance and defense"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-007",
+          "topic": "Tidal Patterns",
+          "summary": "Understanding the cyclical nature of the semantic tides",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "KNOW-008",
+          "topic": "Lyra's Command Style",
+          "summary": "Insights into Mistress Lyra's tactical preferences and weaknesses",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Scribe Malakor",
+      "role_name": "Etymological Restorer",
+      "activity": "Reconstituting dissolved syntax from the Ink-Stained Grotto",
+      "home_base": "The Ink-Stained Grotto",
+      "arc_goal": "To reconstruct the 'First Verb' before the tide erases it forever",
+      "inventory": [
+        {
+          "name": "Grotto-Glass Stylus",
+          "description": "A pen made of solidified salt that writes in glowing blue light",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Concentrated Silt-Ink",
+          "description": "Extracted from the Grotto, used to stabilize fading scrolls",
+          "quantity": 3
+        },
+        {
+          "name": "Calcified Idiom Fragment",
+          "description": "A jagged stone that whispers a forgotten metaphor when held",
+          "quantity": 5
+        },
+        {
+          "name": "Linguistic Tongs",
+          "description": "Used to handle volatile adjectives without them bonding to the user",
+          "quantity": 1
+        },
+        {
+          "name": "Parchment of the Deep",
+          "description": "Waterproof skin of a deep-sea leviathan used for permanent records",
+          "quantity": 12
+        },
+        {
+          "name": "Resonance Tuning Fork",
+          "description": "Used to find the correct pitch for dormant vowels",
+          "quantity": 2
+        },
+        {
+          "name": "Silt-Walker's Filter Mask",
+          "description": "Protects the lungs from inhaling airborne semantic dust",
+          "quantity": 1
+        },
+        {
+          "name": "Jar of Preserved Suffixes",
+          "description": "Small, wriggling grammatical endings kept in brine",
+          "quantity": 8
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Restoration Desk",
+          "asset_type": "Furniture",
+          "description": "A heavy stone desk carved with protective runes against semantic drift",
+          "story_use": "Where Malakor performs the delicate surgery of word-binding"
+        },
+        {
+          "asset_name": "The Grotto Lease",
+          "asset_type": "Legal Document",
+          "description": "A deed granting Malakor exclusive rights to the northern silt-beds",
+          "story_use": "A source of conflict with Silt-Walker Orrin over dredging rights"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Ink Distillation",
+          "summary": "The process of turning raw Grotto silt into stable, archival-grade ink",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Pre-Tidal Syntax",
+          "summary": "The structure of languages used before the Great Inundation",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "display_name": "Vespera the Silent",
+      "role_name": "Echo-Lounge Curator",
+      "activity": "Polishing the resonance chambers in the Silent Lounge",
+      "home_base": "The Silent Lounge",
+      "arc_goal": "To capture the echo of a god's whisper rumored to be trapped in the walls",
+      "inventory": [
+        {
+          "name": "Velvet Sound-Dampener",
+          "description": "A cloth that absorbs all noise within a three-foot radius",
+          "quantity": 4
+        },
+        {
+          "name": "Crystal Echo-Jar",
+          "description": "A vacuum-sealed container for storing captured sounds",
+          "quantity": 6
+        },
+        {
+          "name": "Silver Polishing Paste",
+          "description": "Used to keep the resonance chambers reflective and clear",
+          "quantity": 2
+        },
+        {
+          "name": "The Unspoken Key",
+          "description": "A key that makes no sound when turning in a lock",
+          "quantity": 1
+        },
+        {
+          "name": "Felt-Tipped Mallet",
+          "description": "Used to test the acoustic integrity of the Lounge walls",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Liquid Silence",
+          "description": "A substance that, when spilled, creates a zone of absolute quiet",
+          "quantity": 3
+        },
+        {
+          "name": "Ear-Plugs of the Void",
+          "description": "Carved from obsidian, they block even psychic noise",
+          "quantity": 1
+        },
+        {
+          "name": "Scroll of Mute Gestures",
+          "description": "A guide to the complex sign language used in the Lounge",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Resonance Chamber",
+          "asset_type": "Architecture",
+          "description": "A perfectly spherical room designed to trap and amplify echoes",
+          "story_use": "The primary location for Vespera's acoustic experiments"
+        },
+        {
+          "asset_name": "Curator's Signet",
+          "asset_type": "Jewelry",
+          "description": "A ring that allows the wearer to bypass the Lounge's sound-locks",
+          "story_use": "Proof of authority within the Silent Lounge"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Acoustic Trapping",
+          "summary": "Techniques for capturing sound waves without degrading their semantic value",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "The Silent Code",
+          "summary": "A secret language communicated through subtle vibrations and stillness",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Jaxen the Sluice-Runner",
+      "role_name": "Phonetic Courier",
+      "activity": "Delivering high-priority phonemes between the Sluice and the Council",
+      "home_base": "The Phonetic Sluice",
+      "arc_goal": "To pay off a debt to Balthazar by smuggling forbidden synonyms",
+      "inventory": [
+        {
+          "name": "Pneumatic Phoneme Tube",
+          "description": "A pressurized canister for transporting volatile speech sounds",
+          "quantity": 5
+        },
+        {
+          "name": "Sluice-Runner's Boots",
+          "description": "Weighted boots designed for running on slippery, wet stone",
+          "quantity": 1
+        },
+        {
+          "name": "Copper Signal Mirror",
+          "description": "Used to communicate with Kiri of the High Watch via light flashes",
+          "quantity": 1
+        },
+        {
+          "name": "Belt of Many Pouches",
+          "description": "A leather belt reinforced with waterproof seals",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Buoyancy Charm",
+          "description": "A small amulet that inflates if the wearer falls into the Sluice",
+          "quantity": 2
+        },
+        {
+          "name": "Map of the Hidden Pipes",
+          "description": "A secret chart of the Embassy's ventilation and drainage system",
+          "quantity": 1
+        },
+        {
+          "name": "Whistle of the High Frequency",
+          "description": "A whistle only audible to Sluice-Wardens and trained animals",
+          "quantity": 1
+        },
+        {
+          "name": "Small Bag of Bribes",
+          "description": "Assorted low-value nouns used to distract guards",
+          "quantity": 20
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Runner's Locker",
+          "asset_type": "Storage",
+          "description": "A hidden compartment near the Sluice for storing illicit goods",
+          "story_use": "Where Jaxen hides the forbidden synonyms he steals for Balthazar"
+        },
+        {
+          "asset_name": "Embassy Transit Pass",
+          "asset_type": "Document",
+          "description": "A permit allowing the bearer access to restricted sluice-ways",
+          "story_use": "Allows Jaxen to move quickly through the Embassy's infrastructure"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Sluice Navigation",
+          "summary": "Knowledge of the fastest and safest routes through the Phonetic Sluice",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Smuggler's Cant",
+          "summary": "A coded language used by couriers to discuss illegal trades",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Master Elian",
+      "role_name": "High-Stakes Syntax Merchant",
+      "activity": "Trading complex sentence structures for rare semantic artifacts",
+      "home_base": "The Syntax Exchange",
+      "arc_goal": "To monopolize the trade of 'Absolute Truth' adjectives",
+      "inventory": [
+        {
+          "name": "Gilded Ledger of Debts",
+          "description": "A book recording every favor owed to Elian by the Council",
+          "quantity": 1
+        },
+        {
+          "name": "Scale of Semantic Weight",
+          "description": "A device that measures the literal importance of a word",
+          "quantity": 1
+        },
+        {
+          "name": "Crate of Common Nouns",
+          "description": "Bulk storage of everyday words for general trade",
+          "quantity": 50
+        },
+        {
+          "name": "Box of Rare Adjectives",
+          "description": "A velvet-lined case containing words like 'Infinite' and 'Eternal'",
+          "quantity": 10
+        },
+        {
+          "name": "Contract of Binding Agreement",
+          "description": "A magical document that punishes anyone who breaks its terms",
+          "quantity": 15
+        },
+        {
+          "name": "Magnifying Glass of Veracity",
+          "description": "Used to detect counterfeit or 'hollow' words",
+          "quantity": 1
+        },
+        {
+          "name": "Silk Handkerchiefs",
+          "description": "For cleaning the dust off expensive syntax fragments",
+          "quantity": 12
+        },
+        {
+          "name": "Bottle of Fine 'Vintage' Dialect",
+          "description": "A rare liquid containing the speech patterns of a dead civilization",
+          "quantity": 3
+        },
+        {
+          "name": "Abacus of Logic",
+          "description": "A tool for calculating the exchange rate between different languages",
+          "quantity": 1
+        },
+        {
+          "name": "Merchant's Guard-Whistle",
+          "description": "Summons private security in the Dialect Yard",
+          "quantity": 1
+        },
+        {
+          "name": "Bag of Polished Vowels",
+          "description": "High-quality 'A's and 'E's used as currency",
+          "quantity": 100
+        },
+        {
+          "name": "Scroll of Market Trends",
+          "description": "A live-updating document showing the value of various parts of speech",
+          "quantity": 1
+        },
+        {
+          "name": "Wax Seal of the Exchange",
+          "description": "Used to certify the authenticity of a trade",
+          "quantity": 1
+        },
+        {
+          "name": "Portable Ink-Well",
+          "description": "Contains permanent ink for signing high-value contracts",
+          "quantity": 2
+        },
+        {
+          "name": "Case of Punctuation Marks",
+          "description": "Essential for structuring complex trades; includes rare semicolons",
+          "quantity": 25
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Syntax Stall",
+          "asset_type": "Real Estate",
+          "description": "The most prominent trading post in the Syntax Exchange",
+          "story_use": "The center of Elian's commercial empire and influence"
+        },
+        {
+          "asset_name": "The Merchant's Guild Charter",
+          "asset_type": "Legal Document",
+          "description": "A document granting Elian the right to tax smaller traders",
+          "story_use": "A tool for exerting pressure on rivals like Kaelen"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Market Manipulation",
+          "summary": "Techniques for inflating the value of specific linguistic structures",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Diplomatic Protocol",
+          "summary": "The complex rules of engagement when dealing with the Council of the Last Speaker",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Soren the Sluice-Diver",
+      "role_name": "Sub-Phonetic Salvager",
+      "activity": "Diving into the Phonetic Sluice to recover heavy-metal consonants",
+      "home_base": "The Phonetic Sluice",
+      "arc_goal": "To recover the lost 'Guttural Stop' of the First Tongue",
+      "inventory": [
+        {
+          "name": "Lead-Lined Earplugs",
+          "description": "Protects against the deafening roar of unrefined phonemes",
+          "quantity": 2
+        },
+        {
+          "name": "Silt-Crusted Plosive",
+          "description": "A hardened sound-fragment recovered from the deep",
+          "quantity": 5
+        },
+        {
+          "name": "Resonance Hook",
+          "description": "Used to snag floating diphthongs before they dissolve",
+          "quantity": 1
+        },
+        {
+          "name": "Vocal Cord Lubricant",
+          "description": "Prevents throat scarring from harsh consonant exposure",
+          "quantity": 3
+        },
+        {
+          "name": "Weighted Diving Boots",
+          "description": "Keeps the diver grounded against the semantic current",
+          "quantity": 1
+        },
+        {
+          "name": "Phonetic Mesh Bag",
+          "description": "A porous container that holds sounds but lets water through",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Air-Bladder",
+          "description": "Filled with pure, silent oxygen",
+          "quantity": 2
+        },
+        {
+          "name": "Glow-Stone Lantern",
+          "description": "Illuminates the murky depths of the Sluice",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Salvage Rig",
+          "asset_type": "Machinery",
+          "description": "A steam-powered winch used for deep-sluice extraction",
+          "story_use": "Allows the retrieval of heavy linguistic artifacts"
+        },
+        {
+          "asset_name": "Diver's Berth",
+          "asset_type": "Living Quarters",
+          "description": "A damp, soundproofed room near the sluice gates",
+          "story_use": "A safe haven to recover from sensory overload"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SLU-01",
+          "topic": "Sluice Currents",
+          "summary": "Understanding the ebb and flow of phonetic tides to avoid being swept away",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-SLU-02",
+          "topic": "Consonant Hardness",
+          "summary": "Identifying which sounds are durable enough for salvage",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Mistress Vala",
+      "role_name": "Syntax Black-Marketeer",
+      "activity": "Smuggling illegal double-negatives and forbidden metaphors",
+      "home_base": "The Dialect Yard",
+      "arc_goal": "To monopolize the trade of 'Absolute Truth' adjectives",
+      "inventory": [
+        {
+          "name": "Crated Double-Negatives",
+          "description": "Highly volatile grammatical structures used for deception",
+          "quantity": 12
+        },
+        {
+          "name": "Vial of Liquid Metaphor",
+          "description": "Shifting ink that changes meaning when viewed at an angle",
+          "quantity": 8
+        },
+        {
+          "name": "Forged Semantic Passports",
+          "description": "Documents allowing words to bypass the Syntax Exchange",
+          "quantity": 20
+        },
+        {
+          "name": "Hidden Pocket Cloak",
+          "description": "Lined with lead to dampen the sound of clinking phonemes",
+          "quantity": 1
+        },
+        {
+          "name": "Bribery Nouns",
+          "description": "High-value concepts used to pay off the Yard guards",
+          "quantity": 15
+        },
+        {
+          "name": "Compressed Adjective Spray",
+          "description": "Used to temporarily beautify shoddy goods",
+          "quantity": 6
+        },
+        {
+          "name": "Underworld Cipher",
+          "description": "A codebook for communicating with Silt-Walker Orrin",
+          "quantity": 1
+        },
+        {
+          "name": "Stolen Punctuation Marks",
+          "description": "Rare commas and semicolons used to alter contracts",
+          "quantity": 30
+        },
+        {
+          "name": "Counterfeit Verb-Stamps",
+          "description": "Used to authorize illegal actions in the Embassy",
+          "quantity": 5
+        },
+        {
+          "name": "Silencing Dust",
+          "description": "A powder that temporarily mutes any object it touches",
+          "quantity": 10
+        },
+        {
+          "name": "Black-Market Ledger",
+          "description": "A record of debts owed by high-ranking Council members",
+          "quantity": 1
+        },
+        {
+          "name": "Telescopic Ear-Trumpet",
+          "description": "For eavesdropping on private Syntax Exchange deals",
+          "quantity": 1
+        },
+        {
+          "name": "Quick-Dissolve Ink",
+          "description": "Ink that vanishes if exposed to salt water",
+          "quantity": 4
+        },
+        {
+          "name": "Weighted Dice of Probability",
+          "description": "Used to gamble in the Dialect Yard",
+          "quantity": 2
+        },
+        {
+          "name": "Smuggler's Compass",
+          "description": "Points toward the nearest semantic storm",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hollow Pillar",
+          "asset_type": "Storage",
+          "description": "A secret compartment inside a Dialect Yard column",
+          "story_use": "Hiding contraband from the Tide-Watch Commander"
+        },
+        {
+          "asset_name": "Yard Stall",
+          "asset_type": "Business",
+          "description": "A seemingly legitimate front for trading common nouns",
+          "story_use": "A hub for gathering intel and meeting contacts"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-MAR-01",
+          "topic": "Smuggling Routes",
+          "summary": "Secret paths between the Grotto and the Yard",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-MAR-02",
+          "topic": "Guard Rotations",
+          "summary": "The schedule and weaknesses of the Tide-Watch officers",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Elder Karys",
+      "role_name": "Vowel-Steward",
+      "activity": "Polishing the calcified 'O's in the Archive",
+      "home_base": "Archive of Lost Vowels",
+      "arc_goal": "To restore the 'Great A' to its former resonance",
+      "inventory": [
+        {
+          "name": "Vowel Polish",
+          "description": "A fine abrasive made from crushed sea-glass",
+          "quantity": 4
+        },
+        {
+          "name": "Soft Chamois Cloth",
+          "description": "Used for buffing delicate phonetic surfaces",
+          "quantity": 10
+        },
+        {
+          "name": "Tuning Fork of 'E'",
+          "description": "Used to check the pitch of stored vowels",
+          "quantity": 1
+        },
+        {
+          "name": "Archive Key-Ring",
+          "description": "Heavy brass keys to the vowel vaults",
+          "quantity": 1
+        },
+        {
+          "name": "Magnifying Monocle",
+          "description": "For inspecting microscopic cracks in syntax",
+          "quantity": 1
+        },
+        {
+          "name": "Preservation Oil",
+          "description": "Prevents vowels from oxidizing into consonants",
+          "quantity": 3
+        },
+        {
+          "name": "Dusting Brush",
+          "description": "Made from the whiskers of a sea-cat",
+          "quantity": 2
+        },
+        {
+          "name": "Vowel-Steward's Robe",
+          "description": "Heavy wool to dampen ambient noise",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Vowel Vault",
+          "asset_type": "Storage",
+          "description": "A temperature-controlled room for rare phonemes",
+          "story_use": "Securing the most precious linguistic assets"
+        },
+        {
+          "asset_name": "The Resonance Chamber",
+          "asset_type": "Laboratory",
+          "description": "A room designed to amplify the sound of a single letter",
+          "story_use": "Testing the purity of restored vowels"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-ARC-01",
+          "topic": "Etymological Decay",
+          "summary": "The process by which words lose meaning over time",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-ARC-02",
+          "topic": "Vowel Harmony",
+          "summary": "The art of arranging sounds to prevent semantic dissonance",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Nym of the Silent",
+      "role_name": "Echo-Lounge Attendant",
+      "activity": "Serving distilled silence to weary diplomats",
+      "home_base": "The Silent Lounge",
+      "arc_goal": "To record the first word spoken after a century of silence",
+      "inventory": [
+        {
+          "name": "Carafe of Distilled Silence",
+          "description": "A liquid that absorbs all sound in a three-foot radius",
+          "quantity": 6
+        },
+        {
+          "name": "Crystal Goblets",
+          "description": "Perfectly clear vessels that do not clink",
+          "quantity": 12
+        },
+        {
+          "name": "Velvet-Lined Tray",
+          "description": "Muffles the sound of serving",
+          "quantity": 2
+        },
+        {
+          "name": "Sign-Language Manual",
+          "description": "The primary mode of communication in the Lounge",
+          "quantity": 1
+        },
+        {
+          "name": "Scented Vapors",
+          "description": "Used to convey mood without using words",
+          "quantity": 5
+        },
+        {
+          "name": "Writing Slate and Chalk",
+          "description": "For essential communication with guests",
+          "quantity": 1
+        },
+        {
+          "name": "Soft-Soled Slippers",
+          "description": "Footwear that makes no sound on stone floors",
+          "quantity": 1
+        },
+        {
+          "name": "Dampening Curtains",
+          "description": "Heavy fabric used to partition private booths",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Quiet Booth",
+          "asset_type": "Real Estate",
+          "description": "A private alcove in the Silent Lounge",
+          "story_use": "A place for secret, non-verbal negotiations"
+        },
+        {
+          "asset_name": "The Still-Room",
+          "asset_type": "Workshop",
+          "description": "Where silence is distilled from the ambient noise",
+          "story_use": "Producing the Lounge's primary commodity"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SIL-01",
+          "topic": "Non-Verbal Cues",
+          "summary": "Reading body language and micro-expressions",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "K-SIL-02",
+          "topic": "Silence Distillation",
+          "summary": "The chemical process of removing sound from air",
+          "confidence": 87
+        }
+      ]
+    },
+    {
+      "display_name": "Rook the Sluice-Scrapper",
+      "role_name": "Phonetic Scavenger",
+      "activity": "Sifting through the Phonetic Sluice for discarded phonemes",
+      "home_base": "The Phonetic Sluice",
+      "arc_goal": "To assemble a complete sentence from the Sluice's debris to prove his lineage.",
+      "inventory": [
+        {
+          "name": "Serrated Sibilant Hook",
+          "description": "A tool used to snag slippery 'S' sounds from the rushing tide.",
+          "quantity": 1
+        },
+        {
+          "name": "Jar of Muffled Plosives",
+          "description": "A collection of 'P' and 'B' sounds that still vibrate with energy.",
+          "quantity": 3
+        },
+        {
+          "name": "Dull Diphthong Scraper",
+          "description": "Used to peel fused vowels off the sluice gates.",
+          "quantity": 1
+        },
+        {
+          "name": "Mesh Bag of Glottal Stops",
+          "description": "Small, heavy fragments that halt the flow of liquid speech.",
+          "quantity": 12
+        },
+        {
+          "name": "Resonance Tuning Fork",
+          "description": "Used to detect the purity of salvaged phonemes.",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Liquid Consonants",
+          "description": "A thick, metallic fluid recovered from the deep sluice.",
+          "quantity": 2
+        },
+        {
+          "name": "Leather-bound Syllable Ledger",
+          "description": "A tally of every sound Rook has salvaged this season.",
+          "quantity": 1
+        },
+        {
+          "name": "Cracked Phonetic Lens",
+          "description": "Allows the wearer to see the color of sound in the water.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Rust-Bucket Skiff",
+          "asset_type": "Vehicle",
+          "description": "A flat-bottomed boat reinforced against semantic erosion.",
+          "story_use": "Navigating the turbulent currents of the Phonetic Sluice."
+        },
+        {
+          "asset_name": "Scrapper's Shanty",
+          "asset_type": "Dwelling",
+          "description": "A small hut built into the sluice wall, insulated with discarded vowels.",
+          "story_use": "A safe harbor to dry out and sort the day's haul."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SLUICE-01",
+          "topic": "Sluice Hydraulics",
+          "summary": "Understanding the flow patterns of liquid language to predict where rare sounds settle.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-SLUICE-02",
+          "topic": "Phonetic Decay",
+          "summary": "The rate at which spoken words dissolve into raw phonetic energy when submerged.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Sylas the Syntax-Broker",
+      "role_name": "Master Merchant",
+      "activity": "Negotiating high-value trades in the Syntax Exchange",
+      "home_base": "The Syntax Exchange",
+      "arc_goal": "To monopolize the trade of 'Absolute Truth' metaphors.",
+      "inventory": [
+        {
+          "name": "Gilded Clause-Crate",
+          "description": "A secure container for transporting complex dependent clauses.",
+          "quantity": 2
+        },
+        {
+          "name": "Vial of Pure Adverbial Essence",
+          "description": "Used to modify the intensity of any spoken agreement.",
+          "quantity": 5
+        },
+        {
+          "name": "Scroll of Binding Conjunctions",
+          "description": "Legal documents that physically link two disparate ideas.",
+          "quantity": 10
+        },
+        {
+          "name": "Ornate Punctuation Set",
+          "description": "Ivory-carved commas and periods for finalizing contracts.",
+          "quantity": 1
+        },
+        {
+          "name": "Bag of Polished Prepositions",
+          "description": "Small stones that define the relationship between objects.",
+          "quantity": 20
+        },
+        {
+          "name": "Magnifying Glass of Subtext",
+          "description": "Reveals the hidden meanings behind written words.",
+          "quantity": 1
+        },
+        {
+          "name": "Bottle of Ink-Stained Wine",
+          "description": "A vintage from the Grotto, favored by high-end brokers.",
+          "quantity": 3
+        },
+        {
+          "name": "Silver Tongue-Scraper",
+          "description": "Ensures clarity of speech before a major negotiation.",
+          "quantity": 1
+        },
+        {
+          "name": "Ledger of Debts and Dialects",
+          "description": "A record of every merchant who owes Sylas a favor.",
+          "quantity": 1
+        },
+        {
+          "name": "Box of Rare Interjections",
+          "description": "Exclamations used to disrupt an opponent's flow of logic.",
+          "quantity": 8
+        },
+        {
+          "name": "Case of Modal Verbs",
+          "description": "Words of possibility and necessity, highly valued in trade.",
+          "quantity": 4
+        },
+        {
+          "name": "Aromatic Syntax Incense",
+          "description": "Burned to clear the mind of grammatical errors.",
+          "quantity": 6
+        },
+        {
+          "name": "Velvet Pouch of Suffixes",
+          "description": "Small attachments that change the function of a word.",
+          "quantity": 15
+        },
+        {
+          "name": "Golden Paragraph Seal",
+          "description": "Used to certify the completion of a master-work text.",
+          "quantity": 1
+        },
+        {
+          "name": "Bundle of Rhetorical Questions",
+          "description": "Items that provoke thought without requiring an answer.",
+          "quantity": 12
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gilded Stall",
+          "asset_type": "Business",
+          "description": "The most prominent trading post in the Syntax Exchange.",
+          "story_use": "The primary location for high-stakes linguistic commerce."
+        },
+        {
+          "asset_name": "Vault of Forbidden Metaphors",
+          "asset_type": "Storage",
+          "description": "A reinforced safe containing concepts too dangerous for public use.",
+          "story_use": "Storing the broker's most valuable and volatile assets."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SYN-01",
+          "topic": "Market Fluctuations",
+          "summary": "Tracking the rising value of abstract nouns against concrete verbs.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-SYN-02",
+          "topic": "Diplomatic Protocol",
+          "summary": "The intricate rules of engagement between the Embassy and foreign tongues.",
+          "confidence": 92
+        }
+      ]
+    },
+    {
+      "display_name": "Elder Miri",
+      "role_name": "Council Speaker",
+      "activity": "Mediating disputes in the Council of the Last Speaker",
+      "home_base": "Council of the Last Speaker",
+      "arc_goal": "To find a successor capable of holding the 'Final Word'.",
+      "inventory": [
+        {
+          "name": "Staff of the Last Speaker",
+          "description": "A wooden staff that vibrates when a lie is spoken.",
+          "quantity": 1
+        },
+        {
+          "name": "Robes of Woven Silence",
+          "description": "Garments that dampen all ambient noise around the wearer.",
+          "quantity": 1
+        },
+        {
+          "name": "Pouch of Ancestral Vowels",
+          "description": "Ancient, calcified sounds passed down through generations.",
+          "quantity": 5
+        },
+        {
+          "name": "The Unspoken Key",
+          "description": "A key that opens the doors to the Silent Lounge.",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Tears of the Lost",
+          "description": "Liquid collected from those who have forgotten their mother tongue.",
+          "quantity": 2
+        },
+        {
+          "name": "Ceremonial Gavel of Truth",
+          "description": "Used to signal the beginning and end of Council sessions.",
+          "quantity": 1
+        },
+        {
+          "name": "Scroll of the First Lexicon",
+          "description": "A fragment of the original language of the Embassy.",
+          "quantity": 1
+        },
+        {
+          "name": "Dried Herbs of Clarity",
+          "description": "Burned during meditation to sharpen the mind.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Speaker's Dais",
+          "asset_type": "Public Office",
+          "description": "The central seat of power within the Council chamber.",
+          "story_use": "The platform from which Miri delivers her final judgments."
+        },
+        {
+          "asset_name": "The Garden of Whispers",
+          "asset_type": "Land",
+          "description": "A private garden where the plants grow in the shape of letters.",
+          "story_use": "A place for quiet reflection and secret meetings."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-CON-01",
+          "topic": "Linguistic Lineage",
+          "summary": "The history and genealogy of the world's dying languages.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "K-CON-02",
+          "topic": "Conflict Resolution",
+          "summary": "Techniques for de-escalating semantic arguments between factions.",
+          "confidence": 94
+        }
+      ]
+    },
+    {
+      "display_name": "Kael the Ink-Diver",
+      "role_name": "Grotto Scavenger",
+      "activity": "Diving into the Ink-Stained Grotto for lost idioms",
+      "home_base": "The Ink-Stained Grotto",
+      "arc_goal": "To recover the 'Great Metaphor' lost in the deepest ink pool.",
+      "inventory": [
+        {
+          "name": "Ink-Proof Diving Suit",
+          "description": "A heavy suit treated with oils to resist permanent staining.",
+          "quantity": 1
+        },
+        {
+          "name": "Weighted Boots of Gravity",
+          "description": "Used to stay grounded in the thick, buoyant ink.",
+          "quantity": 1
+        },
+        {
+          "name": "Grotto Lantern",
+          "description": "A light that cuts through the darkness of liquid pigment.",
+          "quantity": 1
+        },
+        {
+          "name": "Net of Tangled Idioms",
+          "description": "A specialized net for catching phrases that have lost their meaning.",
+          "quantity": 1
+        },
+        {
+          "name": "Oxygen-Rich Syllable Tank",
+          "description": "Provides breathable air infused with phonetic energy.",
+          "quantity": 2
+        },
+        {
+          "name": "Scraping Knife of Etymology",
+          "description": "Used to remove layers of history from submerged artifacts.",
+          "quantity": 1
+        },
+        {
+          "name": "Jar of Preserved Adjectives",
+          "description": "Colorful fluids that describe the world in vivid detail.",
+          "quantity": 6
+        },
+        {
+          "name": "Compass of True Meaning",
+          "description": "A device that points toward the most significant semantic mass.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Ink-Stained Barge",
+          "asset_type": "Vehicle",
+          "description": "A floating platform used as a base for diving operations.",
+          "story_use": "Transporting salvaged idioms from the Grotto to the Scribes."
+        },
+        {
+          "asset_name": "The Drying Rack",
+          "asset_type": "Equipment",
+          "description": "A series of frames used to hang and dry wet manuscripts.",
+          "story_use": "Preparing recovered texts for the Archive of Lost Vowels."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-GRO-01",
+          "topic": "Ink Composition",
+          "summary": "The chemical and magical properties of the various inks in the Grotto.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K-GRO-02",
+          "topic": "Submerged Geography",
+          "summary": "The layout of the underwater caves and trenches within the Grotto.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Thistle the Dialect-Poacher",
+      "role_name": "Sub-Grammar Smuggler",
+      "activity": "Illicitly harvesting regional accents from the Dialect Yard for the black market",
+      "home_base": "The Dialect Yard",
+      "arc_goal": "To synthesize a 'Universal Key' phoneme that can unlock the Archive of Lost Vowels",
+      "inventory": [
+        {
+          "name": "AG-016: Muffled Diphthong Jar",
+          "description": "A pressurized glass vessel containing the vibrating remnants of a coastal accent.",
+          "quantity": 3
+        },
+        {
+          "name": "AG-017: Syntax-Shears",
+          "description": "Serrated blades used to clip dangling modifiers from living speech.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-018: Pouch of Softened Plosives",
+          "description": "Small, velvet-wrapped sounds used to dampen the noise of illegal extraction.",
+          "quantity": 12
+        },
+        {
+          "name": "AG-019: Counterfeit Noun-Stamp",
+          "description": "A tool for rebranding stolen adjectives as legitimate nouns for the Syntax Exchange.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-020: Vial of Liquid Irony",
+          "description": "A shimmering fluid used to dissolve the literal meaning of security locks.",
+          "quantity": 4
+        },
+        {
+          "name": "AG-021: Echo-Bait",
+          "description": "A synthetic phoneme designed to lure rare dialects out of the Yard's shadows.",
+          "quantity": 6
+        },
+        {
+          "name": "AG-022: Tattered Etymology Map",
+          "description": "A chart showing the hidden drainage pipes between the Grotto and the Yard.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-023: Resonant Tuning Fork",
+          "description": "Used to match the frequency of the Sluice-Warden's patrol signals.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hollowed Lexicon",
+          "asset_type": "Secret Cache",
+          "description": "A massive, hollowed-out dictionary hidden in the Dialect Yard used to store contraband.",
+          "story_use": "Serves as a meeting point for Thistle and Mistress Vala to exchange illegal metaphors."
+        },
+        {
+          "asset_name": "The Whisper-Net",
+          "asset_type": "Surveillance Rig",
+          "description": "A series of fine silver wires stretched across the Yard to catch falling phonemes.",
+          "story_use": "Allows Thistle to intercept private conversations from the Council of the Last Speaker."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-001",
+          "topic": "Sluice-Warden Patrol Patterns",
+          "summary": "Detailed knowledge of Caspian's hydraulic cycles, allowing for undetected entry into the Sluice.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KNOW-002",
+          "topic": "Forbidden Syntax Structures",
+          "summary": "The dangerous art of weaving double-negatives into untraceable verbal cloaks.",
+          "confidence": 88
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Redaction Game",
+      "summary": "Players compete to edit sensitive documents to favor their faction while avoiding detection by the censors.",
+      "roles": [
+        "Censor",
+        "Scribe",
+        "Informant"
+      ],
+      "rooms": [
+        "The Scriptorium",
+        "The Vault of Redacted Truths"
+      ],
+      "pressure": "The approaching deadline for the Grand Proclamation."
+    },
+    {
+      "label": "The Dialect Duel",
+      "summary": "Social combat where players use rare vocabulary to assert dominance and win over the neutral ambassadors.",
+      "roles": [
+        "Ambassador",
+        "Linguist",
+        "Socialite"
+      ],
+      "rooms": [
+        "The Hall of Echoes",
+        "The Floating Gardens"
+      ],
+      "pressure": "The shifting tides of public opinion."
+    }
+  ],
+  "player_entry_points": [
+    "A disgraced scholar seeking to restore their family name.",
+    "A merchant whose trade permits are written in a language they cannot read.",
+    "A spy masquerading as a humble ink-mixer."
+  ],
+  "conflict_hooks": [
+    "The discovery of a scroll that invalidates the current ruling dynasty's lineage.",
+    "A sudden flood in the lower archives threatening to erase the only record of a peace treaty."
+  ],
+  "custom_actions": [
+    "Translate a bribe into an archaic metaphor.",
+    "Forge a linguistic seal of authenticity.",
+    "Eavesdrop on a sound-dampened negotiation."
+  ],
+  "social_rules": [
+    "All official grievances must be filed in triplicate using extinct dialects.",
+    "Direct eye contact with the High Lexicographer is considered a breach of protocol.",
+    "Whispering in the Hall of Echoes is punishable by temporary silence charms."
+  ],
+  "item_themes": [
+    "forged idioms",
+    "memory vials",
+    "ritual seals",
+    "translation scrolls",
+    "cultural debts"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "AG-001",
+      "name": "Vial of Salt-Crusted Syntax",
+      "price": 450,
+      "mass": 0.2,
+      "description": "A glass vial containing the crystallized essence of a forgotten dialect, used to season diplomatic speeches.",
+      "image_prompt": "A small glass vial filled with glowing blue salt crystals and floating translucent letters, ethereal lighting.",
+      "category": "Memory Vials"
+    },
+    {
+      "item_id": "AG-002",
+      "name": "Forged Idiom: 'The Tide Never Lies'",
+      "price": 1200,
+      "mass": 1.5,
+      "description": "A physical manifestation of a cultural truth, forged in silver and coral. Grants the bearer innate trust in maritime negotiations.",
+      "image_prompt": "A silver sculpture of a wave intertwined with a stylized tongue, encrusted with small pearls.",
+      "category": "Forged Idioms"
+    },
+    {
+      "item_id": "AG-003",
+      "name": "Abyssal Translation Scroll",
+      "price": 800,
+      "mass": 0.5,
+      "description": "A scroll made of dried kelp that translates the subsonic vibrations of deep-sea entities into readable script.",
+      "image_prompt": "A dark green kelp scroll with glowing neon runes, dripping with phantom seawater.",
+      "category": "Translation Scrolls"
+    },
+    {
+      "item_id": "AG-004",
+      "name": "Ritual Seal of the Silent Treaty",
+      "price": 2500,
+      "mass": 3.0,
+      "description": "A heavy stone seal that, when pressed, magically prevents any party from speaking of the agreement's terms.",
+      "image_prompt": "A heavy basalt stamp with a finger-to-lips icon carved in glowing sapphire.",
+      "category": "Ritual Seals"
+    },
+    {
+      "item_id": "AG-005",
+      "name": "Cultural Debt Tally Stone",
+      "price": 150,
+      "mass": 0.8,
+      "description": "A porous rock that grows heavier as the owner's social obligations to the Embassy increase.",
+      "image_prompt": "A grey volcanic rock with glowing orange veins that pulse like a heartbeat.",
+      "category": "Cultural Debts"
+    },
+    {
+      "item_id": "AG-006",
+      "name": "Echoing Conch of Lost Greetings",
+      "price": 600,
+      "mass": 0.4,
+      "description": "A shell that plays back the first words ever spoken by a dead civilization when held to the ear.",
+      "image_prompt": "An iridescent spiral conch shell emitting a faint golden mist from its opening.",
+      "category": "Memory Vials"
+    },
+    {
+      "item_id": "AG-007",
+      "name": "Ink of the Inkless Squid",
+      "price": 300,
+      "mass": 0.1,
+      "description": "A rare fluid used to write secrets that can only be read when submerged in seawater.",
+      "image_prompt": "A small ceramic pot containing swirling, invisible liquid that shimmers like oil on water.",
+      "category": "Translation Scrolls"
+    },
+    {
+      "item_id": "AG-008",
+      "name": "Forged Idiom: 'Blood is Brine'",
+      "price": 1800,
+      "mass": 2.2,
+      "description": "A heavy iron anchor charm that binds two families together in a permanent, unbreakable alliance.",
+      "image_prompt": "A rusted iron anchor miniature wrapped in glowing red seaweed.",
+      "category": "Forged Idioms"
+    },
+    {
+      "item_id": "AG-009",
+      "name": "Linguistic Buoyancy Charm",
+      "price": 550,
+      "mass": 0.1,
+      "description": "A small cork talisman that allows the wearer to understand metaphors involving height and depth.",
+      "image_prompt": "A carved cork pendant shaped like a bubble, floating slightly above a wooden table.",
+      "category": "Translation Scrolls"
+    },
+    {
+      "item_id": "AG-010",
+      "name": "Vial of Storm-Tossed Sarcasm",
+      "price": 400,
+      "mass": 0.2,
+      "description": "A volatile liquid used to add a biting, ironic edge to formal declarations.",
+      "image_prompt": "A jagged glass bottle containing a miniature swirling grey thunderstorm.",
+      "category": "Memory Vials"
+    },
+    {
+      "item_id": "AG-011",
+      "name": "Seal of the Rising Tide",
+      "price": 3000,
+      "mass": 5.0,
+      "description": "A massive jade seal used to authorize the flooding of lower archive chambers during emergencies.",
+      "image_prompt": "A large square jade block with a wave motif, glowing with a soft green light.",
+      "category": "Ritual Seals"
+    },
+    {
+      "item_id": "AG-012",
+      "name": "Debt-Bonded Pearl",
+      "price": 5000,
+      "mass": 0.05,
+      "description": "A black pearl representing a life-debt owed to the High Archivist. It glows when the debt is called.",
+      "image_prompt": "A perfectly spherical black pearl resting on a silk cushion, emitting a faint violet aura.",
+      "category": "Cultural Debts"
+    },
+    {
+      "item_id": "AG-013",
+      "name": "Scroll of the Unspoken Vow",
+      "price": 950,
+      "mass": 0.3,
+      "description": "A translucent parchment that records promises made through gestures rather than words.",
+      "image_prompt": "A clear, plastic-like scroll with silver handprints etched into the surface.",
+      "category": "Translation Scrolls"
+    },
+    {
+      "item_id": "AG-014",
+      "name": "Forged Idiom: 'Quiet as the Trench'",
+      "price": 1400,
+      "mass": 1.1,
+      "description": "A leaden weight that grants the user absolute stealth in social gatherings.",
+      "image_prompt": "A smooth, dark lead sphere that seems to absorb the light around it.",
+      "category": "Forged Idioms"
+    },
+    {
+      "item_id": "AG-015",
+      "name": "Vial of First-Light Vocabulary",
+      "price": 750,
+      "mass": 0.2,
+      "description": "Contains the bright, optimistic words used by morning-dwelling coastal tribes.",
+      "image_prompt": "A slender glass tube filled with liquid sunlight and golden floating particles.",
+      "category": "Memory Vials"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "tidal-embassy-wardrobe-v1",
+    "world_wardrobe_brief": "Elegant, elongated silhouettes combining Art Nouveau fluidity with maritime utility. Attire features bioluminescent script, translucent fabrics, and brass hardware to withstand a humid, shifting coastal environment.",
+    "forbidden_aesthetics": [
+      "cyberpunk_neon",
+      "industrial_steampunk",
+      "generic_medieval_fantasy",
+      "modern_tactical_gear",
+      "brutalist_architecture"
+    ],
+    "palette_families": [
+      {
+        "name": "Deep_Archive",
+        "dominant": "#1a2f38",
+        "accent": "#00f5ff",
+        "trim": "#d4af37",
+        "material": "polished_mother_of_pearl"
+      },
+      {
+        "name": "Tide_Watch",
+        "dominant": "#0d161a",
+        "accent": "#fdf5e6",
+        "trim": "#1a2f38",
+        "material": "oxidized_brass"
+      },
+      {
+        "name": "Linguistic_Grotto",
+        "dominant": "#1a2f38",
+        "accent": "#00f5ff",
+        "trim": "#fdf5e6",
+        "material": "bioluminescent_ink"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "diplomat_mediator",
+        "role_keywords": [
+          "Mediator",
+          "Speaker",
+          "Arbitrator",
+          "Council"
+        ],
+        "attire": [
+          "layered_silk_robes",
+          "high_collars",
+          "translucent_capes"
+        ],
+        "props": [
+          "ritual_seals",
+          "translation_scrolls"
+        ],
+        "palette_notes": "Heavy use of gold trim and pearl accents.",
+        "silhouette_notes": "Tall, flowing, and symmetrical.",
+        "avoid": [
+          "heavy_boots",
+          "tools"
+        ]
+      },
+      {
+        "rule_id": "archive_scholar",
+        "role_keywords": [
+          "Archivist",
+          "Guardian",
+          "Steward",
+          "Scribe"
+        ],
+        "attire": [
+          "ink_stained_aprons",
+          "fitted_tunics",
+          "scroll_slings"
+        ],
+        "props": [
+          "ink_vials",
+          "magnifying_glass",
+          "tally_stones"
+        ],
+        "palette_notes": "Dark teal base with glowing rune highlights.",
+        "silhouette_notes": "Slim, practical, with many small pockets.",
+        "avoid": [
+          "bulky_armor"
+        ]
+      },
+      {
+        "rule_id": "sluice_technician",
+        "role_keywords": [
+          "Technician",
+          "Warden",
+          "Diver",
+          "Salvager"
+        ],
+        "attire": [
+          "weathered_teak_harnesses",
+          "brass_diving_weights",
+          "reinforced_jumpsuits"
+        ],
+        "props": [
+          "brass_pipes",
+          "resonance_filters",
+          "salvage_hooks"
+        ],
+        "palette_notes": "Oxidized brass and weathered textures.",
+        "silhouette_notes": "Top-heavy, utilitarian, rugged.",
+        "avoid": [
+          "delicate_silks"
+        ]
+      },
+      {
+        "rule_id": "merchant_broker",
+        "role_keywords": [
+          "Merchant",
+          "Broker",
+          "Smuggler",
+          "Poacher"
+        ],
+        "attire": [
+          "asymmetrical_coats",
+          "multi_layered_sashes",
+          "hidden_pouches"
+        ],
+        "props": [
+          "brass_scales",
+          "forged_idioms",
+          "ink_wells"
+        ],
+        "palette_notes": "Mixed materials with high-contrast accents.",
+        "silhouette_notes": "Dynamic, layered, slightly bulky.",
+        "avoid": [
+          "uniforms"
+        ]
+      },
+      {
+        "rule_id": "silent_monastic",
+        "role_keywords": [
+          "Acolyte",
+          "Custodian",
+          "Curator",
+          "Attendant"
+        ],
+        "attire": [
+          "simple_wraps",
+          "hooded_mantles",
+          "soft_slippers"
+        ],
+        "props": [
+          "polishing_cloths",
+          "conch_shells"
+        ],
+        "palette_notes": "Muted teals and soft highlights.",
+        "silhouette_notes": "Minimalist, rounded, soft edges.",
+        "avoid": [
+          "clinking_metal"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "standard_citizen",
+      "role_keywords": [
+        "citizen",
+        "staff"
+      ],
+      "attire": [
+        "teal_tunics",
+        "brass_fasteners"
+      ],
+      "props": [
+        "identification_badges"
+      ],
+      "palette_notes": "Balanced mix of world palette.",
+      "silhouette_notes": "Elegant but functional.",
+      "avoid": [
+        "extreme_ornamentation"
+      ]
+    },
+    "visual_consistency_rules": [
+      "32x32_readability_via_glowing_sigils",
+      "elongated_9_head_proportions",
+      "thin_ink_outlines_only"
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "tidal-embassy-lost-languages",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees_vertical",
+      "scale_rule": "32px_per_meter_fixed_grid"
+    },
+    "palette": {
+      "dominant": "#1a2f38",
+      "secondary": "#d4af37",
+      "accent": "#00f5ff",
+      "shadow": "#0d161a",
+      "highlight": "#fdf5e6"
+    },
+    "materials": [
+      "oxidized_brass",
+      "bioluminescent_ink",
+      "polished_mother_of_pearl",
+      "weathered_teak",
+      "translucent_sea_glass"
+    ],
+    "lighting": "diffuse_underwater_caustics_with_point_source_glow_from_runes",
+    "architecture": [
+      "art_nouveau_curves",
+      "floating_circular_platforms",
+      "submerged_domes",
+      "ribbed_vaulting"
+    ],
+    "terrain": {
+      "ground": "dark_teal_tide_pools",
+      "path": "brass_inlay_walkways",
+      "edge": "frothing_white_surf_boundaries"
+    },
+    "sprite_language": {
+      "body_proportion": "elongated_9_head_elegant",
+      "outline": "thin_colored_ink_stroke",
+      "role_readability": "glowing_sigils_on_garments"
+    },
+    "world_prompt_prefix": "top-down_orthographic_view, art_nouveau_coastal_embassy, bioluminescent_runes, brass_and_pearl_surfaces, melancholic_atmosphere",
+    "sprite_prompt_prefix": "top-down_sprite, elegant_diplomat, flowing_silks, glowing_ink_tattoos, orthographic_projection",
+    "forbidden_visuals": [
+      "isometric_perspective",
+      "photorealism",
+      "text_labels",
+      "ui_overlays_in_render",
+      "generic_stone_dungeons",
+      "cyberpunk_neon_signs"
+    ],
+    "canon_hash": "09047f725c28ca4f"
+  }
+}

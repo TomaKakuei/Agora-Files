@@ -1,0 +1,1084 @@
+{
+  "generated_at": "2026-07-29T21:26:26.556641+00:00",
+  "manifest_path": "",
+  "paper_cases": true,
+  "model": "gemini-3-flash-preview",
+  "max_output_tokens": 24576,
+  "thinking_level": "low",
+  "thinking_budget": 1024,
+  "temperature": 0.2,
+  "replicates": 3,
+  "protocol": {
+    "same_input_brief": true,
+    "same_model_as_specialist": true,
+    "same_temperature_as_specialist": true,
+    "same_output_cap_across_monolithic_trials": true,
+    "output_cap_matches_specialist_per_call": false,
+    "same_json_schema": true,
+    "schema_contract": "complete_merged_multimodal_builder_spec",
+    "same_deterministic_compiler": true,
+    "same_total_call_count": false,
+    "provider_usage_metadata_recorded": true,
+    "thinking_control": "thinking_level",
+    "treatment": "one_monolithic_call_vs_specialist_decomposition",
+    "analysis_unit": "world",
+    "primary_test": "paired_one_sided_sign_test_on_majority_compile_success"
+  },
+  "dry_run": false,
+  "summary": {
+    "world_count": 5,
+    "trial_count": 15,
+    "generation_ok": 15,
+    "merged_contract_ok": 9,
+    "compile_ok": 15,
+    "worlds_with_any_compile_success": 4,
+    "worlds_with_majority_compile_success": 3,
+    "worlds_with_majority_first_pass_success": 3,
+    "strict_source_compile_worlds": 5,
+    "paired_one_sided_sign_test_p": 0.25,
+    "complete_trial_successes": 9,
+    "complete_trial_success_rate": 0.6,
+    "complete_trial_wilson_95": [
+      0.3575,
+      0.8018
+    ],
+    "truncation_failure_count": 0,
+    "first_pass_complete_successes": 9,
+    "recovered_complete_successes": 0,
+    "provider_attempt_count": 15,
+    "retry_or_failure_attempt_count": 0,
+    "invalid_json_attempt_count": 0,
+    "mean_provider_attempts_per_trial": 1.0,
+    "usage_metadata_attempt_count": 15,
+    "usage_metadata_coverage": 1.0,
+    "token_totals": {
+      "cachedContentTokenCount": 60645,
+      "candidatesTokenCount": 221053,
+      "promptTokenCount": 112695,
+      "totalTokenCount": 333748
+    },
+    "mean_total_tokens_per_trial": 22249.87,
+    "per_world": [
+      {
+        "world_name": "Archive of Borrowed Gravity",
+        "successes": 3,
+        "first_pass_successes": 3,
+        "trials": 3,
+        "success_rate": 1.0,
+        "first_pass_success_rate": 1.0,
+        "wilson_95": [
+          0.4385,
+          1.0
+        ]
+      },
+      {
+        "world_name": "Cartographer Lung Exchange",
+        "successes": 3,
+        "first_pass_successes": 3,
+        "trials": 3,
+        "success_rate": 1.0,
+        "first_pass_success_rate": 1.0,
+        "wilson_95": [
+          0.4385,
+          1.0
+        ]
+      },
+      {
+        "world_name": "Intertidal Embassy for Extinct Rivers",
+        "successes": 2,
+        "first_pass_successes": 2,
+        "trials": 3,
+        "success_rate": 0.6667,
+        "first_pass_success_rate": 0.6667,
+        "wilson_95": [
+          0.2077,
+          0.9385
+        ]
+      },
+      {
+        "world_name": "Museum of Future Debts",
+        "successes": 1,
+        "first_pass_successes": 1,
+        "trials": 3,
+        "success_rate": 0.3333,
+        "first_pass_success_rate": 0.3333,
+        "wilson_95": [
+          0.0615,
+          0.7923
+        ]
+      },
+      {
+        "world_name": "Night Market of Unfinished Weather",
+        "successes": 0,
+        "first_pass_successes": 0,
+        "trials": 3,
+        "success_rate": 0.0,
+        "first_pass_success_rate": 0.0,
+        "wilson_95": [
+          0.0,
+          0.5615
+        ]
+      }
+    ],
+    "mean_elapsed_seconds": 55.6687,
+    "median_elapsed_seconds": 55.752,
+    "mean_success_elapsed_seconds": 55.8594,
+    "mean_failure_elapsed_seconds": 55.3827,
+    "mean_rooms": 6.0,
+    "mean_item_catalog_items": 15.0,
+    "mean_main_characters": 12.0,
+    "mean_inventory_items": 105.8,
+    "total_fallback_inventory_items": 0,
+    "mean_quality_proxy": 0.9875,
+    "mean_agent_specificity_proxy": 1.0,
+    "mean_inventory_usefulness_proxy": 1.0,
+    "successful_mean_rooms": 6.0,
+    "successful_mean_item_catalog_items": 15.0,
+    "successful_mean_main_characters": 12.0,
+    "successful_mean_inventory_items": 106.8889
+  },
+  "worlds": [
+    {
+      "world_name": "Cartographer Lung Exchange",
+      "draft_id": "creator_20260727_233333_efa8235f",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260727_233333_efa8235f/revisions/r001",
+      "replicate": 1,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/cartographer_lung_exchange_rep01_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/cartographer_lung_exchange_rep01_monolithic_builder_spec.json",
+      "elapsed_seconds": 57.535,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "lung_exchange_727102"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 110,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/cartographer_lung_exchange_rep01_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 57.5269,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 15017,
+          "promptTokenCount": 7500,
+          "totalTokenCount": 22517
+        }
+      }
+    },
+    {
+      "world_name": "Archive of Borrowed Gravity",
+      "draft_id": "creator_20260728_002605_dd9ffc0c",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_002605_dd9ffc0c/revisions/r001",
+      "replicate": 1,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/archive_of_borrowed_gravity_rep01_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/archive_of_borrowed_gravity_rep01_monolithic_builder_spec.json",
+      "elapsed_seconds": 53.506,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "gravity_archive_01"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 103,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/archive_of_borrowed_gravity_rep01_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 53.5036,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 13257,
+          "promptTokenCount": 7507,
+          "totalTokenCount": 20764
+        }
+      }
+    },
+    {
+      "world_name": "Intertidal Embassy for Extinct Rivers",
+      "draft_id": "creator_20260728_020032_6f7b670a",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_020032_6f7b670a/revisions/r001",
+      "replicate": 1,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/intertidal_embassy_for_extinct_rivers_rep01_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/intertidal_embassy_for_extinct_rivers_rep01_monolithic_builder_spec.json",
+      "elapsed_seconds": 59.026,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "intertidal_embassy_727104"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 110,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/intertidal_embassy_for_extinct_rivers_rep01_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 59.0231,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 15694,
+          "promptTokenCount": 7526,
+          "totalTokenCount": 23220
+        }
+      }
+    },
+    {
+      "world_name": "Night Market of Unfinished Weather",
+      "draft_id": "creator_20260728_220950_e2278e2f",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_220950_e2278e2f/revisions/r001",
+      "replicate": 1,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/night_market_of_unfinished_weather_rep01_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/night_market_of_unfinished_weather_rep01_monolithic_builder_spec.json",
+      "elapsed_seconds": 58.567,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "night_market_weather_01"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": false,
+        "error_codes": [
+          "merchant_inventory_incomplete"
+        ],
+        "error": "merchant_inventory_incomplete"
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 103,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/night_market_of_unfinished_weather_rep01_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 58.5647,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 15489,
+          "promptTokenCount": 7515,
+          "totalTokenCount": 23004
+        }
+      }
+    },
+    {
+      "world_name": "Museum of Future Debts",
+      "draft_id": "creator_20260728_223205_1924f12f",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_223205_1924f12f/revisions/r001",
+      "replicate": 1,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/museum_of_future_debts_rep01_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/museum_of_future_debts_rep01_monolithic_builder_spec.json",
+      "elapsed_seconds": 55.081,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "museum_future_debts_01"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": false,
+        "error_codes": [
+          "merchant_inventory_incomplete"
+        ],
+        "error": "merchant_inventory_incomplete"
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 103,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/museum_of_future_debts_rep01_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 55.0785,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 15017,
+          "promptTokenCount": 7517,
+          "totalTokenCount": 22534
+        }
+      }
+    },
+    {
+      "world_name": "Cartographer Lung Exchange",
+      "draft_id": "creator_20260727_233333_efa8235f",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260727_233333_efa8235f/revisions/r001",
+      "replicate": 2,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/cartographer_lung_exchange_rep02_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/cartographer_lung_exchange_rep02_monolithic_builder_spec.json",
+      "elapsed_seconds": 51.799,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "lung_exchange_727102"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 110,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/cartographer_lung_exchange_rep02_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 51.7905,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 14065,
+          "promptTokenCount": 7500,
+          "totalTokenCount": 21565
+        }
+      }
+    },
+    {
+      "world_name": "Archive of Borrowed Gravity",
+      "draft_id": "creator_20260728_002605_dd9ffc0c",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_002605_dd9ffc0c/revisions/r001",
+      "replicate": 2,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/archive_of_borrowed_gravity_rep02_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/archive_of_borrowed_gravity_rep02_monolithic_builder_spec.json",
+      "elapsed_seconds": 62.354,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "gravity_archive_01"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 103,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/archive_of_borrowed_gravity_rep02_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 62.351,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 16196,
+          "promptTokenCount": 7507,
+          "totalTokenCount": 23703
+        }
+      }
+    },
+    {
+      "world_name": "Intertidal Embassy for Extinct Rivers",
+      "draft_id": "creator_20260728_020032_6f7b670a",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_020032_6f7b670a/revisions/r001",
+      "replicate": 2,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/intertidal_embassy_for_extinct_rivers_rep02_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/intertidal_embassy_for_extinct_rivers_rep02_monolithic_builder_spec.json",
+      "elapsed_seconds": 54.435,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "intertidal_embassy_01"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": false,
+        "error_codes": [
+          "merchant_inventory_incomplete"
+        ],
+        "error": "merchant_inventory_incomplete"
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 103,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/intertidal_embassy_for_extinct_rivers_rep02_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 54.432,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 14371,
+          "promptTokenCount": 7526,
+          "totalTokenCount": 21897
+        }
+      }
+    },
+    {
+      "world_name": "Night Market of Unfinished Weather",
+      "draft_id": "creator_20260728_220950_e2278e2f",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_220950_e2278e2f/revisions/r001",
+      "replicate": 2,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/night_market_of_unfinished_weather_rep02_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/night_market_of_unfinished_weather_rep02_monolithic_builder_spec.json",
+      "elapsed_seconds": 58.022,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "night_market_unfinished_weather_727105"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": false,
+        "error_codes": [
+          "merchant_inventory_incomplete"
+        ],
+        "error": "merchant_inventory_incomplete"
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 110,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/night_market_of_unfinished_weather_rep02_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 58.019,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 14967,
+          "promptTokenCount": 7515,
+          "totalTokenCount": 22482
+        }
+      }
+    },
+    {
+      "world_name": "Museum of Future Debts",
+      "draft_id": "creator_20260728_223205_1924f12f",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_223205_1924f12f/revisions/r001",
+      "replicate": 2,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/museum_of_future_debts_rep02_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/museum_of_future_debts_rep02_monolithic_builder_spec.json",
+      "elapsed_seconds": 50.439,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "future_debt_museum_01"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": false,
+        "error_codes": [
+          "merchant_inventory_incomplete"
+        ],
+        "error": "merchant_inventory_incomplete"
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 103,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/museum_of_future_debts_rep02_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 50.4361,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 13660,
+          "promptTokenCount": 7517,
+          "totalTokenCount": 21177
+        }
+      }
+    },
+    {
+      "world_name": "Cartographer Lung Exchange",
+      "draft_id": "creator_20260727_233333_efa8235f",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260727_233333_efa8235f/revisions/r001",
+      "replicate": 3,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/cartographer_lung_exchange_rep03_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/cartographer_lung_exchange_rep03_monolithic_builder_spec.json",
+      "elapsed_seconds": 56.129,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "lung_exchange_727102"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 2,
+        "inventory_items": 110,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/cartographer_lung_exchange_rep03_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 56.1262,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 15849,
+          "promptTokenCount": 7500,
+          "totalTokenCount": 23349
+        }
+      }
+    },
+    {
+      "world_name": "Archive of Borrowed Gravity",
+      "draft_id": "creator_20260728_002605_dd9ffc0c",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_002605_dd9ffc0c/revisions/r001",
+      "replicate": 3,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/archive_of_borrowed_gravity_rep03_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/archive_of_borrowed_gravity_rep03_monolithic_builder_spec.json",
+      "elapsed_seconds": 60.102,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "gravity_archive_01"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 110,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/archive_of_borrowed_gravity_rep03_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 60.0994,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 15761,
+          "promptTokenCount": 7507,
+          "totalTokenCount": 23268
+        }
+      }
+    },
+    {
+      "world_name": "Intertidal Embassy for Extinct Rivers",
+      "draft_id": "creator_20260728_020032_6f7b670a",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_020032_6f7b670a/revisions/r001",
+      "replicate": 3,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/intertidal_embassy_for_extinct_rivers_rep03_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/intertidal_embassy_for_extinct_rivers_rep03_monolithic_builder_spec.json",
+      "elapsed_seconds": 52.53,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "intertidal_embassy_01"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 103,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/intertidal_embassy_for_extinct_rivers_rep03_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 52.5279,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 13688,
+          "promptTokenCount": 7526,
+          "totalTokenCount": 21214
+        }
+      }
+    },
+    {
+      "world_name": "Night Market of Unfinished Weather",
+      "draft_id": "creator_20260728_220950_e2278e2f",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_220950_e2278e2f/revisions/r001",
+      "replicate": 3,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/night_market_of_unfinished_weather_rep03_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/night_market_of_unfinished_weather_rep03_monolithic_builder_spec.json",
+      "elapsed_seconds": 55.752,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "weather_market_727105"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": false,
+        "error_codes": [
+          "merchant_inventory_incomplete"
+        ],
+        "error": "merchant_inventory_incomplete"
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 103,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/night_market_of_unfinished_weather_rep03_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 55.7489,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 14220,
+          "promptTokenCount": 7515,
+          "totalTokenCount": 21735
+        }
+      }
+    },
+    {
+      "world_name": "Museum of Future Debts",
+      "draft_id": "creator_20260728_223205_1924f12f",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_223205_1924f12f/revisions/r001",
+      "replicate": 3,
+      "prompt_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/museum_of_future_debts_rep03_monolithic_prompt.txt",
+      "raw_builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/museum_of_future_debts_rep03_monolithic_builder_spec.json",
+      "elapsed_seconds": 49.754,
+      "dry_run": false,
+      "generation_ok": true,
+      "generation_error": "",
+      "normalize_error": "",
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "museum_future_debts_01"
+      },
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 103,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_20260729/museum_of_future_debts_rep03_vertex_calls.jsonl",
+        "provider_attempt_count": 1,
+        "successful_attempt_count": 1,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 1,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 1
+        },
+        "provider_elapsed_seconds_sum": 49.7515,
+        "token_totals": {
+          "cachedContentTokenCount": 4043,
+          "candidatesTokenCount": 13802,
+          "promptTokenCount": 7517,
+          "totalTokenCount": 21319
+        }
+      }
+    }
+  ]
+}

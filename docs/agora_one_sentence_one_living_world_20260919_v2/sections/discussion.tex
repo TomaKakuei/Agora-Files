@@ -1,0 +1,66 @@
+\section{Discussion and Limitations}
+\label{sec:discussion}
+
+\paragraph{A contribution at the connection between authoring and simulation.}
+\agora connects staged world authoring, explicit persistent state, and
+grounded social action. Its closest predecessors already establish
+language-driven game construction \cite{word2world,dreamgarden}, shared
+human--agent play \cite{light}, and Game Master adjudication
+\cite{vezhnevets2023}. The contribution is their integration around a
+premise-conditioned world representation and inspectable trajectories.
+The comparison here is against a single-pass generation baseline, not those
+full systems; no cross-system superiority is established.
+
+\paragraph{Discoverability and expressiveness are separate design needs.}
+A generated repertoire explains what inhabitants can do in a new setting.
+Open proposals let a particular encounter depart from that vocabulary.
+The Sunken and Clockwork traces illustrate both pathways. Their presence
+does not establish the benefit of openness: a matched proposal ablation,
+with equivalent world and agent states, is needed to estimate that effect.
+Likewise, interface access does not establish useful or enjoyable human
+collaboration.
+
+\paragraph{Construction evidence has limited scope.}
+Ten shared briefs provide a small sample, and composition receives more total
+computation. Structural checks and lexical proxies do not establish aesthetic
+preference. The reported statistical evidence remains exploratory. Human
+ratings, uncurated premises, budget-matched comparisons, and naturally
+occurring failure cases would strengthen the construction evaluation.
+
+\paragraph{Execution is not behavioral validation.}
+The five locally observed runs last only two rounds with one seed each. The
+21 longer runs use centralized block planning, scripted human events, and each
+model's own generated world. Their high execution success does not validate
+emergent coordination; identical relationship increments expose a contribution
+from default state-update rules. Historical worlds
+are confounded by prior configurations. Relation deltas are model-mediated
+state variables, and route entropy depends on the action vocabulary.
+Neither measures human trust, fear, affection, or social intelligence directly.
+LLM judging also carries systematic biases \cite{judge}; behavioral fidelity
+would require independent human data and explicit validation targets, as in
+human-grounded agent studies \cite{park1000}.
+
+\paragraph{A prospective intervention is not a completed result.}
+The Tidal protocol varies access to prior social episodes while preserving
+current world state. No completed paired 32-round results or blinded annotations
+are reported in this release. The available record contains a local protocol,
+but no external registration identifier; we therefore describe it as a
+prospective design. Three seed pairs would provide a feasibility estimate with
+substantial uncertainty, not precise population inference.
+
+\paragraph{Reproducibility and human participation.}
+Hosted models may change despite a recorded model name; available settings,
+seeds, exclusions, and frozen evidence are documented in Appendix~\ref{app:repro}.
+Human studies should evaluate refusal, outcome legibility, and collaboration
+under unequal information. Fictional roles do not validate demographic models.
+
+\section{Conclusion}
+\agora turns a short premise into a rendered social environment whose
+inhabitants can act on persistent shared state. The completed studies show
+an observed reliability--cost tradeoff in generation, use of explicit
+world actions and open proposals, and a gap between successful execution and
+material consequences in a separate 21-trajectory audit.
+The central result is an inspectable connection between world authoring and
+consequential interaction. Broader human evaluation and controlled
+interventions are needed to determine how well the generated worlds support
+collaboration and which mechanisms shape their longer social trajectories.

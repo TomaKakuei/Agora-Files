@@ -1,0 +1,66 @@
+\documentclass[10pt,twocolumn]{article}
+\input{paper_style}
+\begin{document}
+\twocolumn[{
+\begin{center}
+{\color{agorateal}\sffamily\bfseries\fontsize{26}{28}\selectfont AGORA}\par
+\vspace{3pt}
+{\bfseries\fontsize{21}{24}\selectfont One Sentence, One Living World}\par
+\vspace{5pt}
+{\large Generating Persistent Worlds for Human--AI Social Interaction}\par
+\vspace{9pt}
+{\normalsize Boxun Xu\qquad Yueze Wang\qquad Peng Li}\par
+\vspace{3pt}
+{\small\color{agoragray}Research preprint\quad\textbullet\quad Evidence revision 2, September 19, 2026}\par
+\end{center}
+\vspace{3pt}
+\begin{minipage}{\textwidth}
+\small
+\noindent\textbf{Abstract.}
+Generating a social world requires more than a coherent scene: inhabitants
+must be able to change shared spatial, material, and social state. We present
+\agora, a system that compiles a one-sentence premise into a persistent
+rendered environment with rooms, roles, institutions, possessions, private
+knowledge, and visual identity. Humans and language agents use a generated
+action repertoire or propose context-specific actions; a World Coordinator
+evaluates their effects before updating shared state. Across ten paired
+world briefs, compositional generation completes 10/10 worlds versus 7/10 for a
+single-pass baseline, at higher token and latency cost. Five two-round
+interaction runs produce 53 events, ten approved open proposals, and thirteen
+events targeting the human interactor; 49/56 adjudicated action results
+succeed. A separate retrospective audit covers 24 one-sentence generation trials and
+21 scripted 24-round trajectories: 1,365/1,512 model actions execute
+successfully, yet only 398 successes change inventory or location. The longer
+harness uses centralized planning, and its relation updates mostly repeat a
+fixed rule. These observations distinguish construction and execution
+reliability from behavioral fidelity or causal social effects. We release
+reproducible figures, bilingual artifact-evaluation materials, and a
+prospective memory-intervention protocol. \agora connects language-based world
+authoring to inspectable trajectories of what inhabitants do together.
+\end{minipage}
+\vspace{10pt}
+\begin{minipage}{\textwidth}
+\centering
+\includegraphics[width=\textwidth]{figures/generated_worlds.pdf}
+\refstepcounter{figure}\label{fig:worlds}
+\par\vspace{4pt}
+{\small\raggedright\textbf{Figure \thefigure.} Five generated settings share a world schema while varying institutions, spaces, and visual identity. Panels show preserved map assets and representative character frames; they are not new experimental outputs.\par}
+\end{minipage}
+\vspace{12pt}
+}]
+\input{sections/introduction}
+\input{sections/method}
+\input{sections/results}
+\input{sections/discussion}
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\clearpage
+\appendix
+\input{sections/appendix_repro}
+\input{sections/appendix_extended}
+\input{sections/appendix_historical}
+\input{sections/appendix_human}
+\input{sections/appendix_intervention}
+\input{sections/appendix_cases}
+\input{sections/appendix_tidal}
+\end{document}

@@ -1,0 +1,1685 @@
+{
+  "world_name": "Museum of Future Debts",
+  "world_id": "museum_future_debts_01",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "civic_social_world",
+    "profile_id": "civic_social_world",
+    "locale": "en-US",
+    "tone": "clinical, speculative, high-stakes, bureaucratic",
+    "visual_direction": "top-down pixel art, black basalt, frosted glass, oxidized silver, signal red accents, pale mint lighting, white ceramic tallies",
+    "currency_code": "CRD",
+    "currency_symbol": "cr",
+    "currency_minor_unit": "point",
+    "currency_name": "Obligation Credits",
+    "domain_label": "The Probabilistic Archive",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "pck_future_brutalist",
+      "frontend_affordance_id": "fa_causal_inspector",
+      "asset_prompt_kit_id": "apk_minimalist_actuary"
+    },
+    "policy_refs": {
+      "economy_policy_id": "civic_credit_v1",
+      "item_collection_id": "civic_social_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "civic_social_world_v1",
+      "property_policy_id": "civic_social_world_v1",
+      "knowledge_policy_id": "civic_social_world_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "Counterfactual Museum / Probability Politics",
+  "premise": "A public archive exhibiting debts not yet incurred, where curators stabilize obligations and visitors can force alternate histories into reality.",
+  "simulation_objective": "Simulate a counterfactual economy where debt ownership alters causal access and social entanglement.",
+  "agent_count_target": 12,
+  "player_count_target": 12,
+  "wall_color_theme": "brushed_steel",
+  "economy_focus": "Obligation auctions and liability swapping",
+  "exploration_focus": "Six galleries of inspectable causal consequences",
+  "conflict_tone": "Bureaucratic tension and actuary rivalry",
+  "visual_style": "Brutalist pixel art with basalt, frosted glass, and signal red highlights",
+  "rooms": [
+    {
+      "name": "Obligation Intake Hub",
+      "biome": "bureaucratic_brutalism",
+      "purpose": "Processing new future debts into the system",
+      "decor_tags": [
+        "white_ceramic",
+        "recessed_channels",
+        "clinical"
+      ],
+      "activity_tags": [
+        "stamping",
+        "filing",
+        "scanning"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of polished black basalt tiles with thin recessed floor channels for data cables, clinical mint lighting",
+      "room_scene_prompt": "top-down pixel art view of a brutalist intake office, black basalt floors, white ceramic desks, modular bureaucratic partitions, signal red accents, no text, no labels, edges flush to frame",
+      "width_tiles": 8,
+      "height_tiles": 10,
+      "ambient_palette": "soft_mint",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "debt_validator_terminal",
+          "label": "Debt Validator",
+          "description": "A geometric pedestal with a glowing frosted glass screen for scanning liability scrolls",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Liability Swap Floor",
+      "biome": "high_stakes_exchange",
+      "purpose": "Trading future obligations between actuaries",
+      "decor_tags": [
+        "oxidized_silver",
+        "frosted_glass",
+        "monoliths"
+      ],
+      "activity_tags": [
+        "bidding",
+        "swapping",
+        "shouting"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of frosted glass walkways over dark basalt pits, geometric patterns, harsh shadows",
+      "room_scene_prompt": "top-down pixel art trading floor, central geometric monoliths, actuary stations with signal red armbands, clinical mint fluorescence, no text, no margins",
+      "width_tiles": 12,
+      "height_tiles": 12,
+      "ambient_palette": "focused_blue",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "auction_monolith",
+          "label": "Auction Monolith",
+          "description": "A massive black basalt pillar displaying shifting red numbers on its surface",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Alternate History Forge",
+      "biome": "industrial_metaphysics",
+      "purpose": "Forcing alternate realities into existence",
+      "decor_tags": [
+        "brushed_steel",
+        "ember_glow",
+        "heavy_machinery"
+      ],
+      "activity_tags": [
+        "welding",
+        "calibrating",
+        "manifesting"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of heavy brushed steel plating with signal red warning stripes and heat vents",
+      "room_scene_prompt": "top-down pixel art workshop, heavy brutalist machinery, glowing red conduits, white ceramic tools, clinical lighting, no text, no labels",
+      "width_tiles": 10,
+      "height_tiles": 8,
+      "ambient_palette": "ember_orange",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "reality_stabilizer",
+          "label": "Reality Stabilizer",
+          "description": "A large machine with rotating silver rings and a core of frosted glass",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Unincurred Archive",
+      "biome": "silent_repository",
+      "purpose": "Storing records of debts not yet realized",
+      "decor_tags": [
+        "oxidized_silver",
+        "monolithic_shelves",
+        "dusty"
+      ],
+      "activity_tags": [
+        "cataloging",
+        "whispering",
+        "retrieving"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of dark basalt tiles with silver trim and recessed floor channels",
+      "room_scene_prompt": "top-down pixel art archive, towering brutalist monoliths used as shelving, oxidized silver trim, clinical mint shadows, no text, no margins",
+      "width_tiles": 15,
+      "height_tiles": 15,
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "tally_shrine",
+          "label": "Tally Shrine",
+          "description": "A white ceramic altar holding thousands of tiny silver tally sticks",
+          "anchor": "south_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Actuary Lounge",
+      "biome": "minimalist_rest",
+      "purpose": "Socializing and mental recalibration",
+      "decor_tags": [
+        "white_ceramic",
+        "frosted_glass",
+        "recessed_seating"
+      ],
+      "activity_tags": [
+        "drinking",
+        "calculating",
+        "resting"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of seamless white ceramic flooring with soft mint highlights",
+      "room_scene_prompt": "top-down pixel art lounge, recessed floor seating, frosted glass tables, minimalist brutalist furniture, signal red accents, no text, no margins",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "soft_mint",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "nutrient_dispenser",
+          "label": "Nutrient Dispenser",
+          "description": "A sleek brushed steel wall unit dispensing clinical fluids into ceramic cups",
+          "anchor": "west_mid",
+          "width_tiles": 1,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Council of Creditors",
+      "biome": "authoritarian_chamber",
+      "purpose": "High-level debt adjudication",
+      "decor_tags": [
+        "black_basalt",
+        "signal_red",
+        "monolithic_throne"
+      ],
+      "activity_tags": [
+        "judging",
+        "decreeing",
+        "signing"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of polished black basalt with a large signal red geometric inlay in the center",
+      "room_scene_prompt": "top-down pixel art council chamber, large central basalt table, high-backed ceramic chairs, harsh top-down shadows, clinical mint lighting, no text, no margins",
+      "width_tiles": 10,
+      "height_tiles": 10,
+      "ambient_palette": "focused_blue",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "grand_ledger",
+          "label": "The Grand Ledger",
+          "description": "A massive oxidized silver book resting on a geometric basalt pedestal",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Vespera Thorne",
+      "role_name": "Senior Liability Sculptor",
+      "activity": "Refining ancestral burdens into aesthetic monuments",
+      "home_base": "Alternate History Forge",
+      "arc_goal": "To manifest a debt so beautiful the Council of Creditors waives it",
+      "inventory": [
+        {
+          "name": "debt-001",
+          "description": "A shimmering vial of unspent potential energy",
+          "quantity": 1
+        },
+        {
+          "name": "debt-002",
+          "description": "Crystalline shard of a broken promise",
+          "quantity": 3
+        },
+        {
+          "name": "debt-003",
+          "description": "Vocal recording of a defaulted oath",
+          "quantity": 1
+        },
+        {
+          "name": "debt-004",
+          "description": "Weightless lead weights representing moral gravity",
+          "quantity": 5
+        },
+        {
+          "name": "debt-005",
+          "description": "A blueprint for a bridge never built",
+          "quantity": 1
+        },
+        {
+          "name": "debt-006",
+          "description": "Petrified ink from a forged treaty",
+          "quantity": 2
+        },
+        {
+          "name": "debt-007",
+          "description": "The echo of a missed opportunity in a jar",
+          "quantity": 1
+        },
+        {
+          "name": "debt-008",
+          "description": "Gilded shackles of a legacy contract",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Refraction Kiln",
+          "asset_type": "Industrial Tool",
+          "description": "A furnace that melts abstract obligations into physical glass",
+          "story_use": "Used to reshape the physical form of a character's debt"
+        },
+        {
+          "asset_name": "Forge-Master's Seal",
+          "asset_type": "Legal Authority",
+          "description": "A heavy signet used to certify the beauty of a liability",
+          "story_use": "Grants the ability to bypass standard intake protocols"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-001",
+          "topic": "Aesthetic Valuation",
+          "summary": "The art of determining a debt's worth based on its poetic tragedy",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "kn-002",
+          "topic": "Forge Safety",
+          "summary": "Procedures for handling volatile alternate timelines",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Silas Vane",
+      "role_name": "High-Frequency Debt Arbitrageur",
+      "activity": "Trading micro-obligations for temporal leverage",
+      "home_base": "Liability Swap Floor",
+      "arc_goal": "To corner the market on 'Regret' futures",
+      "inventory": [
+        {
+          "name": "debt-009",
+          "description": "Ticker tape of real-time guilt fluctuations",
+          "quantity": 100
+        },
+        {
+          "name": "debt-010",
+          "description": "A ledger of favors owed by dead kings",
+          "quantity": 1
+        },
+        {
+          "name": "debt-011",
+          "description": "Compressed air from a failed bank vault",
+          "quantity": 5
+        },
+        {
+          "name": "debt-012",
+          "description": "Digital key to a sub-prime reality",
+          "quantity": 1
+        },
+        {
+          "name": "debt-013",
+          "description": "A pouch of 'Maybe' coins",
+          "quantity": 50
+        },
+        {
+          "name": "debt-014",
+          "description": "Sealed envelope containing a secret tax",
+          "quantity": 1
+        },
+        {
+          "name": "debt-015",
+          "description": "A clock that ticks backwards during losses",
+          "quantity": 1
+        },
+        {
+          "name": "debt-016",
+          "description": "Synthetic empathy tokens for negotiation",
+          "quantity": 20
+        },
+        {
+          "name": "debt-017",
+          "description": "A map of hidden tax havens in the Forge",
+          "quantity": 1
+        },
+        {
+          "name": "debt-018",
+          "description": "Liquidity potion for frozen assets",
+          "quantity": 3
+        },
+        {
+          "name": "debt-019",
+          "description": "A whistle that summons a junior actuary",
+          "quantity": 1
+        },
+        {
+          "name": "debt-020",
+          "description": "Fragment of a hyper-inflated currency",
+          "quantity": 12
+        },
+        {
+          "name": "debt-021",
+          "description": "The shadow of a gold bar",
+          "quantity": 1
+        },
+        {
+          "name": "debt-022",
+          "description": "A contract written in disappearing ink",
+          "quantity": 5
+        },
+        {
+          "name": "debt-023",
+          "description": "A magnifying glass for fine print",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Arbitrage Terminal",
+          "asset_type": "Computing Station",
+          "description": "A workstation that predicts the collapse of moral systems",
+          "story_use": "Allows the user to see the future value of any item"
+        },
+        {
+          "asset_name": "Swap Floor Seat",
+          "asset_type": "Membership",
+          "description": "A literal chair that grants voting rights in the pit",
+          "story_use": "Can be used to halt trading or force a liquidation"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-003",
+          "topic": "Market Manipulation",
+          "summary": "Techniques for inflating the perceived weight of a debt",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "kn-004",
+          "topic": "Temporal Law",
+          "summary": "The legal framework governing debts incurred in the future",
+          "confidence": 82
+        }
+      ]
+    },
+    {
+      "display_name": "Archivist Elara",
+      "role_name": "Guardian of the Unincurred",
+      "activity": "Cataloging sins that have not yet been committed",
+      "home_base": "The Unincurred Archive",
+      "arc_goal": "To prevent a catastrophic debt from ever being born",
+      "inventory": [
+        {
+          "name": "debt-024",
+          "description": "A blank scroll that burns when a lie is told",
+          "quantity": 10
+        },
+        {
+          "name": "debt-025",
+          "description": "Dust from a future that was deleted",
+          "quantity": 1
+        },
+        {
+          "name": "debt-026",
+          "description": "A compass that points toward the greatest risk",
+          "quantity": 1
+        },
+        {
+          "name": "debt-027",
+          "description": "Gloves that can touch intangible thoughts",
+          "quantity": 1
+        },
+        {
+          "name": "debt-028",
+          "description": "A lantern fueled by forgotten apologies",
+          "quantity": 1
+        },
+        {
+          "name": "debt-029",
+          "description": "The first page of an unwritten law",
+          "quantity": 1
+        },
+        {
+          "name": "debt-030",
+          "description": "A key to a door that hasn't been built",
+          "quantity": 1
+        },
+        {
+          "name": "debt-031",
+          "description": "A vial of 'What If' serum",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Silence Chamber",
+          "asset_type": "Room",
+          "description": "A soundproof vault where unmade history is stored",
+          "story_use": "A safe place to discuss secrets without the Council hearing"
+        },
+        {
+          "asset_name": "The Chronos Ledger",
+          "asset_type": "Relic",
+          "description": "A book that lists every debt that will be owed in 100 years",
+          "story_use": "Provides foresight into upcoming character conflicts"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-005",
+          "topic": "Pre-emptive Auditing",
+          "summary": "The process of taxing actions before they occur",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "kn-006",
+          "topic": "Archive Taxonomy",
+          "summary": "The complex filing system of the Unincurred",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Chancellor Mallow",
+      "role_name": "Chief Intake Officer",
+      "activity": "Processing new arrivals and assigning their initial weight",
+      "home_base": "Obligation Intake Hub",
+      "arc_goal": "To maintain the perfect equilibrium of the Museum's balance sheet",
+      "inventory": [
+        {
+          "name": "debt-032",
+          "description": "A heavy iron stamp of 'DENIED'",
+          "quantity": 1
+        },
+        {
+          "name": "debt-033",
+          "description": "Scales that measure soul-weight against gold",
+          "quantity": 1
+        },
+        {
+          "name": "debt-034",
+          "description": "A monocle that reveals a person's credit score",
+          "quantity": 1
+        },
+        {
+          "name": "debt-035",
+          "description": "Official intake forms printed on human skin",
+          "quantity": 50
+        },
+        {
+          "name": "debt-036",
+          "description": "A bell that rings when a debt is forgiven",
+          "quantity": 1
+        },
+        {
+          "name": "debt-037",
+          "description": "A vial of bureaucratic sweat",
+          "quantity": 1
+        },
+        {
+          "name": "debt-038",
+          "description": "A ribbon of red tape that never ends",
+          "quantity": 1
+        },
+        {
+          "name": "debt-039",
+          "description": "The original pen used to sign the First Debt",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Intake Gavel",
+          "asset_type": "Tool of Office",
+          "description": "A hammer that can freeze a person's assets with a strike",
+          "story_use": "Used to enforce order during chaotic intake sessions"
+        },
+        {
+          "asset_name": "The High Desk",
+          "asset_type": "Furniture",
+          "description": "An impossibly tall desk that overlooks the entire Hub",
+          "story_use": "Grants a tactical view of all movement in the Hub"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-007",
+          "topic": "Institutional History",
+          "summary": "The founding myths and legal precedents of the Museum",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "kn-008",
+          "topic": "Conflict Resolution",
+          "summary": "How to settle disputes between creditors and debtors",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen Voss",
+      "role_name": "Alternate History Forger",
+      "activity": "Fabricating collateral from non-existent timelines",
+      "home_base": "Alternate History Forge",
+      "arc_goal": "To erase a personal debt by proving it belongs to a timeline that never occurred",
+      "inventory": [
+        {
+          "name": "debt-001",
+          "description": "A shimmering vial of 'What-If' residue",
+          "quantity": 1
+        },
+        {
+          "name": "debt-002",
+          "description": "Fractured hourglass containing static sand",
+          "quantity": 1
+        },
+        {
+          "name": "debt-003",
+          "description": "Blueprint of a city that fell in a dream",
+          "quantity": 3
+        },
+        {
+          "name": "debt-004",
+          "description": "Tuning fork for resonant frequencies of regret",
+          "quantity": 1
+        },
+        {
+          "name": "debt-005",
+          "description": "Lead-lined ledger of unmade choices",
+          "quantity": 1
+        },
+        {
+          "name": "debt-006",
+          "description": "Magnifying glass that reveals ghost-ink",
+          "quantity": 1
+        },
+        {
+          "name": "debt-007",
+          "description": "A key to a door that was never built",
+          "quantity": 1
+        },
+        {
+          "name": "debt-008",
+          "description": "Compressed air from a pre-war era",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Paradox Anvil",
+          "asset_type": "Industrial Tool",
+          "description": "A heavy workstation used to hammer divergent timelines into stable debt-collateral.",
+          "story_use": "Allows Kaelen to modify the perceived value of liabilities by changing their origin story."
+        },
+        {
+          "asset_name": "Echo-Chamber Vault",
+          "asset_type": "Storage Facility",
+          "description": "A soundproof room where the screams of failed timelines are stored.",
+          "story_use": "Provides a secure location to hide illicitly forged history documents."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "hist-099",
+          "topic": "Timeline Divergence Points",
+          "summary": "Deep understanding of where history could have split to create maximum debt leverage.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "forge-022",
+          "topic": "Sub-atomic Forgery",
+          "summary": "Techniques for making fake historical artifacts pass the Council's carbon-dating.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Blythe Sterling",
+      "role_name": "Liability Swap Broker",
+      "activity": "Aggregating and bundling micro-debts for high-stakes trading",
+      "home_base": "Liability Swap Floor",
+      "arc_goal": "To trigger a market collapse that resets the Museum's balance sheet to zero",
+      "inventory": [
+        {
+          "name": "debt-009",
+          "description": "High-speed ticker tape of real-time misery",
+          "quantity": 50
+        },
+        {
+          "name": "debt-010",
+          "description": "Gold-plated gavel for closing toxic swaps",
+          "quantity": 1
+        },
+        {
+          "name": "debt-011",
+          "description": "Encrypted tablet with Silas Vane's trade logs",
+          "quantity": 1
+        },
+        {
+          "name": "debt-012",
+          "description": "Vial of liquid luck (synthetic)",
+          "quantity": 3
+        },
+        {
+          "name": "debt-013",
+          "description": "Bundle of sub-prime ancestral curses",
+          "quantity": 12
+        },
+        {
+          "name": "debt-014",
+          "description": "A contract signed in disappearing ink",
+          "quantity": 5
+        },
+        {
+          "name": "debt-015",
+          "description": "Brass scales weighted with 'intent'",
+          "quantity": 1
+        },
+        {
+          "name": "debt-016",
+          "description": "A list of Chancellor Mallow's private creditors",
+          "quantity": 1
+        },
+        {
+          "name": "debt-017",
+          "description": "Micro-chip containing 1,000 minor inconveniences",
+          "quantity": 10
+        },
+        {
+          "name": "debt-018",
+          "description": "A pocket watch that ticks backwards",
+          "quantity": 1
+        },
+        {
+          "name": "debt-019",
+          "description": "Scented wax for sealing high-value bonds",
+          "quantity": 20
+        },
+        {
+          "name": "debt-020",
+          "description": "A map of the Actuary Lounge's secret exits",
+          "quantity": 1
+        },
+        {
+          "name": "debt-021",
+          "description": "Polished obsidian business cards",
+          "quantity": 100
+        },
+        {
+          "name": "debt-022",
+          "description": "A small cage containing a 'debt-bird'",
+          "quantity": 1
+        },
+        {
+          "name": "debt-023",
+          "description": "Emergency liquidation whistle",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Sterling Terminal",
+          "asset_type": "Trading Console",
+          "description": "A custom-built interface for monitoring the flow of obligations across the Museum.",
+          "story_use": "Used to manipulate market prices and intercept Silas Vane's trades."
+        },
+        {
+          "asset_name": "Private Booth 4C",
+          "asset_type": "Real Estate",
+          "description": "A soundproofed booth on the Swap Floor for illicit negotiations.",
+          "story_use": "A safe haven for planning the market reset with co-conspirators."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "econ-404",
+          "topic": "Debt Bundling Logic",
+          "summary": "The art of hiding high-risk liabilities inside low-risk aesthetic monuments.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "spy-007",
+          "topic": "Council Internal Politics",
+          "summary": "Knowledge of which Creditors are currently over-leveraged and vulnerable.",
+          "confidence": 82
+        }
+      ]
+    },
+    {
+      "display_name": "Orin the Weightless",
+      "role_name": "Debt-Eater",
+      "activity": "Physically consuming the physical manifestations of small debts",
+      "home_base": "Obligation Intake Hub",
+      "arc_goal": "To consume enough 'weight' to finally feel the gravity of the world again",
+      "inventory": [
+        {
+          "name": "debt-024",
+          "description": "A bib made of woven rejection letters",
+          "quantity": 1
+        },
+        {
+          "name": "debt-025",
+          "description": "Silver spoon for tasting bitter memories",
+          "quantity": 1
+        },
+        {
+          "name": "debt-026",
+          "description": "Jar of pickled 'unpaid favors'",
+          "quantity": 4
+        },
+        {
+          "name": "debt-027",
+          "description": "A heavy iron collar that keeps him grounded",
+          "quantity": 1
+        },
+        {
+          "name": "debt-028",
+          "description": "Digestive salts for processing heavy metals",
+          "quantity": 10
+        },
+        {
+          "name": "debt-029",
+          "description": "A napkin stained with the ink of a broken treaty",
+          "quantity": 1
+        },
+        {
+          "name": "debt-030",
+          "description": "Toothpick carved from a bone of a debtor",
+          "quantity": 5
+        },
+        {
+          "name": "debt-031",
+          "description": "A small bell used to signal 'hunger'",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gastric Pit",
+          "asset_type": "Living Quarters",
+          "description": "A hollowed-out section of the Intake Hub where Orin processes his 'meals'.",
+          "story_use": "A place where characters can bring debts they want physically destroyed."
+        },
+        {
+          "asset_name": "The Iron Tether",
+          "asset_type": "Safety Equipment",
+          "description": "A massive chain connecting Orin to the floor so he doesn't float away.",
+          "story_use": "Can be used as a weapon or a restraint during chaotic events."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "bio-666",
+          "topic": "Metabolic Debt Processing",
+          "summary": "Understanding how the body converts abstract obligation into physical mass.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "hub-101",
+          "topic": "Intake Vulnerabilities",
+          "summary": "Knowing which guards at the Hub can be bribed with 'cleansed' items.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Mistress Hesper",
+      "role_name": "Actuary of the Unspoken",
+      "activity": "Calculating the interest on secrets kept and promises broken",
+      "home_base": "Actuary Lounge",
+      "arc_goal": "To find the one secret that, if revealed, would bankrupt the Council of Creditors",
+      "inventory": [
+        {
+          "name": "debt-032",
+          "description": "A monocle that sees through social facades",
+          "quantity": 1
+        },
+        {
+          "name": "debt-033",
+          "description": "A scroll of 'unspoken' words",
+          "quantity": 1
+        },
+        {
+          "name": "debt-034",
+          "description": "Perfume that smells like old libraries and betrayal",
+          "quantity": 1
+        },
+        {
+          "name": "debt-035",
+          "description": "A set of ivory dice used for probability casting",
+          "quantity": 2
+        },
+        {
+          "name": "debt-036",
+          "description": "A silken fan with the Archive's layout hidden in the ribs",
+          "quantity": 1
+        },
+        {
+          "name": "debt-037",
+          "description": "A small box containing a captured whisper",
+          "quantity": 3
+        },
+        {
+          "name": "debt-038",
+          "description": "A quill that writes in the blood of the user",
+          "quantity": 1
+        },
+        {
+          "name": "debt-039",
+          "description": "A ring that vibrates when a lie is told",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Calculation Divan",
+          "asset_type": "Furniture",
+          "description": "A plush sofa where Hesper entertains guests while subtly extracting their secrets.",
+          "story_use": "The primary location for social engineering and information gathering."
+        },
+        {
+          "asset_name": "The Ledger of Silence",
+          "asset_type": "Relic",
+          "description": "A book that records every secret told within the Actuary Lounge.",
+          "story_use": "A powerful blackmail tool that Hesper uses to control the Lounge's patrons."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "math-777",
+          "topic": "Karmic Calculus",
+          "summary": "The mathematical formula for determining the future cost of a current lie.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "arch-505",
+          "topic": "Archive Backdoors",
+          "summary": "Secret routes into the Unincurred Archive provided by Archivist Elara.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Thalric the Unbound",
+      "role_name": "Void-Collateral Specialist",
+      "activity": "Extracting value from abandoned timelines",
+      "home_base": "Alternate History Forge",
+      "arc_goal": "To find a debt so massive it collapses the Council of Creditors' authority",
+      "inventory": [
+        {
+          "name": "debt-011",
+          "description": "A jar of crystallized 'What-Ifs' from a failed revolution",
+          "quantity": 1
+        },
+        {
+          "name": "debt-012",
+          "description": "Flickering deed to a city that was never built",
+          "quantity": 1
+        },
+        {
+          "name": "Void-Tether",
+          "description": "A cable made of unfulfilled promises used for anchoring ghosts",
+          "quantity": 1
+        },
+        {
+          "name": "Paradox Lens",
+          "description": "Monocle that reveals the interest rates of the deceased",
+          "quantity": 1
+        },
+        {
+          "name": "Echo-Chisel",
+          "description": "Tool for carving signatures out of thin air",
+          "quantity": 1
+        },
+        {
+          "name": "Null-Weight Scale",
+          "description": "Measures the gravity of a debt that has been forgotten",
+          "quantity": 1
+        },
+        {
+          "name": "Sovereign Default Seal",
+          "description": "A wax stamp that temporarily freezes temporal interest",
+          "quantity": 1
+        },
+        {
+          "name": "Glimmer-Ink",
+          "description": "Ink that only appears when the reader owes a favor",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Ghost-Vault",
+          "asset_type": "Storage Facility",
+          "description": "A locker in the Forge containing non-existent assets",
+          "story_use": "Used to hide Kaelen Voss's failed fabrications from the Council"
+        },
+        {
+          "asset_name": "Fractured Chronometer",
+          "asset_type": "Navigation Tool",
+          "description": "A watch that tracks time in debt-cycles rather than hours",
+          "story_use": "Essential for navigating the shifting floors of the Museum"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-001",
+          "topic": "Temporal Arbitrage",
+          "summary": "The art of moving debt between timelines to avoid collection",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "kn-002",
+          "topic": "Vespera's Aesthetic Weakness",
+          "summary": "Knowledge of which sculptures contain structural flaws in their liability",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Sloane the Liquidator",
+      "role_name": "High-Stakes Debt Merchant",
+      "activity": "Trading high-risk obligations for physical essence",
+      "home_base": "Liability Swap Floor",
+      "arc_goal": "To corner the market on 'Unincurred Sins' before Archivist Elara notices",
+      "inventory": [
+        {
+          "name": "debt-001",
+          "description": "A vial of sweat from a king's first lie",
+          "quantity": 5
+        },
+        {
+          "name": "debt-002",
+          "description": "Compressed regret from a thousand minor thefts",
+          "quantity": 12
+        },
+        {
+          "name": "debt-003",
+          "description": "A bundle of uncashed 'I.O.U.'s from the Great Famine",
+          "quantity": 50
+        },
+        {
+          "name": "debt-004",
+          "description": "The shadow of a man who sold his future",
+          "quantity": 1
+        },
+        {
+          "name": "debt-005",
+          "description": "A ledger bound in the skin of a tax collector",
+          "quantity": 1
+        },
+        {
+          "name": "debt-006",
+          "description": "Golden keys to a bankrupt dream-palace",
+          "quantity": 3
+        },
+        {
+          "name": "debt-007",
+          "description": "A jar of 'Almost-Love' interest payments",
+          "quantity": 8
+        },
+        {
+          "name": "debt-008",
+          "description": "The last breath of a debtor who died in the Hub",
+          "quantity": 1
+        },
+        {
+          "name": "debt-009",
+          "description": "A map to the Council's private reserve",
+          "quantity": 1
+        },
+        {
+          "name": "debt-010",
+          "description": "Crystallized tears of a repentant usurer",
+          "quantity": 20
+        },
+        {
+          "name": "debt-013",
+          "description": "A contract signed in invisible blood",
+          "quantity": 15
+        },
+        {
+          "name": "debt-014",
+          "description": "A bag of 'Might-Have-Been' coins",
+          "quantity": 100
+        },
+        {
+          "name": "debt-015",
+          "description": "A whistle that summons a spectral bailiff",
+          "quantity": 1
+        },
+        {
+          "name": "Merchant's Loupe",
+          "description": "Magnifies the hidden clauses in any contract",
+          "quantity": 1
+        },
+        {
+          "name": "Blythe's Favor",
+          "description": "A token representing a massive debt owed by Blythe Sterling",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gilded Stall",
+          "asset_type": "Market Stall",
+          "description": "A mobile trading post that bypasses standard tax zones",
+          "story_use": "Used to facilitate illegal swaps under Silas Vane's nose"
+        },
+        {
+          "asset_name": "The Ledger of Lost Souls",
+          "asset_type": "Account Book",
+          "description": "A record of every debt Sloane has ever liquidated",
+          "story_use": "Can be used to blackmail members of the Actuary Lounge"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-003",
+          "topic": "Market Manipulation",
+          "summary": "Techniques for crashing the value of specific ancestral burdens",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "kn-004",
+          "topic": "Council Loopholes",
+          "summary": "Legal gaps in the Council of Creditors' founding charter",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Pryce the Penitent",
+      "role_name": "Obligation Scavenger",
+      "activity": "Collecting the scraps of discarded liabilities",
+      "home_base": "Obligation Intake Hub",
+      "arc_goal": "To pay off a debt inherited from a past life he cannot remember",
+      "inventory": [
+        {
+          "name": "debt-005",
+          "description": "A rusted chain representing a broken oath",
+          "quantity": 1
+        },
+        {
+          "name": "debt-006",
+          "description": "A bag of heavy, leaden 'Sorry' tokens",
+          "quantity": 40
+        },
+        {
+          "name": "Scavenger's Hook",
+          "description": "A long pole for pulling debts out of the Intake pits",
+          "quantity": 1
+        },
+        {
+          "name": "Mallow's Discarded Memo",
+          "description": "A crumpled note detailing a processing error",
+          "quantity": 1
+        },
+        {
+          "name": "Soul-Sieve",
+          "description": "A mesh used to filter pure intent from messy obligations",
+          "quantity": 1
+        },
+        {
+          "name": "Faded Portrait",
+          "description": "A picture of a family he likely owes his life to",
+          "quantity": 1
+        },
+        {
+          "name": "Cracked Hourglass",
+          "description": "Leaks sand that smells like old parchment",
+          "quantity": 1
+        },
+        {
+          "name": "Intake Pass",
+          "description": "A forged permit to enter the lower Hub levels",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Lean-To",
+          "asset_type": "Shelter",
+          "description": "A small shack built from discarded debt-contracts",
+          "story_use": "A safe house for those hiding from Chancellor Mallow's auditors"
+        },
+        {
+          "asset_name": "The Scrap-Cart",
+          "asset_type": "Vehicle",
+          "description": "A rickety cart used to transport heavy physical debts",
+          "story_use": "Used to smuggle items to Orin the Weightless for consumption"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-005",
+          "topic": "Hub Logistics",
+          "summary": "The secret tunnels used to bypass the Intake queues",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "kn-006",
+          "topic": "Orin's Diet",
+          "summary": "Which types of debt are most palatable to the Debt-Eater",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra the Unspoken",
+      "role_name": "Actuarial Spy",
+      "activity": "Infiltrating the Council to adjust secret interest rates",
+      "home_base": "Actuary Lounge",
+      "arc_goal": "To erase the record of a secret promise kept by Mistress Hesper",
+      "inventory": [
+        {
+          "name": "debt-007",
+          "description": "A silent bell that rings when a secret is told",
+          "quantity": 1
+        },
+        {
+          "name": "debt-008",
+          "description": "A vial of 'Hush-Money' essence",
+          "quantity": 5
+        },
+        {
+          "name": "Cipher-Ring",
+          "description": "A ring that decodes the Actuary's private shorthand",
+          "quantity": 1
+        },
+        {
+          "name": "Invisibility Veil",
+          "description": "A cloth woven from ignored warnings",
+          "quantity": 1
+        },
+        {
+          "name": "Poisoned Quill",
+          "description": "A pen that adds 10% interest to any document it touches",
+          "quantity": 1
+        },
+        {
+          "name": "Council Keycard",
+          "description": "A stolen pass to the inner sanctum",
+          "quantity": 1
+        },
+        {
+          "name": "Whisper-Box",
+          "description": "A device that captures conversations in the Lounge",
+          "quantity": 1
+        },
+        {
+          "name": "Debt-Dampener",
+          "description": "A charm that hides the physical weight of one's own debts",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hidden Alcove",
+          "asset_type": "Observation Post",
+          "description": "A crawlspace behind the Council of Creditors' chamber",
+          "story_use": "Used to spy on Chancellor Mallow's private meetings"
+        },
+        {
+          "asset_name": "The Master Ledger",
+          "asset_type": "Database",
+          "description": "A digital copy of the Unincurred Archive's index",
+          "story_use": "Allows Lyra to predict which debts will be incurred next"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-007",
+          "topic": "Actuarial Mathematics",
+          "summary": "The complex formulas used to calculate the weight of a soul",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "kn-008",
+          "topic": "Council Rivalries",
+          "summary": "The internal politics between the various Creditor factions",
+          "confidence": 88
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Debt Reconciliation",
+      "summary": "Players identify discrepancies in ledgers to gain leverage over rivals.",
+      "roles": [
+        "Auditor",
+        "Debtor"
+      ],
+      "rooms": [
+        "The Ledger Room",
+        "Archive Alpha"
+      ],
+      "pressure": "The deadline for the fiscal quarter is approaching."
+    },
+    {
+      "label": "Liability Trading",
+      "summary": "Exchanging high-risk debts for political influence within the museum.",
+      "roles": [
+        "Broker",
+        "Collector"
+      ],
+      "rooms": [
+        "The Trading Floor",
+        "The Vault"
+      ],
+      "pressure": "Market volatility threatens to devalue current holdings."
+    }
+  ],
+  "player_entry_points": [
+    "A forgotten invoice from a past life",
+    "Inheritance of a bankrupt estate",
+    "A clerical error in the cosmic balance"
+  ],
+  "conflict_hooks": [
+    "Two actuaries claim ownership of the same generational debt",
+    "A high-value liability has mysteriously vanished from the vault",
+    "The interest rate has exceeded the total value of the known universe"
+  ],
+  "custom_actions": [
+    "Audit Ledger",
+    "File Formal Grievance",
+    "Recalculate Interest",
+    "Seal Record"
+  ],
+  "social_rules": [
+    "All debts must be acknowledged before negotiation",
+    "Silence is mandatory in the Hall of Compounding Interest",
+    "Bureaucratic rank is determined by the volume of archived liabilities"
+  ],
+  "item_themes": [
+    "unborn-liabilities",
+    "causal-anchors",
+    "ceramic-tallies",
+    "oxidized-silver-contracts"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "debt-001",
+      "name": "Unborn Liability Shard",
+      "price": 450,
+      "mass": 0.5,
+      "description": "A jagged fragment of a future default, vibrating with the potential energy of a missed payment.",
+      "image_prompt": "Brutalist pixel art, jagged basalt shard with glowing red core, frosted glass pedestal.",
+      "category": "unborn-liabilities"
+    },
+    {
+      "item_id": "debt-002",
+      "name": "Causal Anchor Bolt",
+      "price": 1200,
+      "mass": 15.0,
+      "description": "Heavy industrial bolt used to pin a specific timeline to the present, preventing probability drift.",
+      "image_prompt": "Heavy basalt bolt, signal red highlights, pixel art, industrial brutalism.",
+      "category": "causal-anchors"
+    },
+    {
+      "item_id": "debt-003",
+      "name": "Oxidized Silver Bond",
+      "price": 800,
+      "mass": 0.2,
+      "description": "A thin wafer of silver tarnished by the atmosphere of a failed state. Valid for one swap.",
+      "image_prompt": "Thin silver wafer, dark oxidation patterns, pixel art, minimalist.",
+      "category": "oxidized-silver-contracts"
+    },
+    {
+      "item_id": "debt-004",
+      "name": "Ceramic Tally Stick",
+      "price": 150,
+      "mass": 0.8,
+      "description": "Traditional debt-tracking rod. Notches indicate the number of generations owed.",
+      "image_prompt": "White ceramic rod, deep black notches, pixel art, basalt background.",
+      "category": "ceramic-tallies"
+    },
+    {
+      "item_id": "debt-005",
+      "name": "Probability Leash",
+      "price": 2500,
+      "mass": 2.5,
+      "description": "A tether made of woven fiber-optics used to constrain high-risk liability assets.",
+      "image_prompt": "Glowing red fiber-optic cable, brutalist metal handle, pixel art.",
+      "category": "causal-anchors"
+    },
+    {
+      "item_id": "debt-006",
+      "name": "Default Echo Chamber",
+      "price": 5000,
+      "mass": 45.0,
+      "description": "A frosted glass cube that captures the sound of a market crash that hasn't happened yet.",
+      "image_prompt": "Frosted glass cube, red light inside, basalt base, brutalist pixel art.",
+      "category": "unborn-liabilities"
+    },
+    {
+      "item_id": "debt-007",
+      "name": "Liability Swap Token",
+      "price": 300,
+      "mass": 0.1,
+      "description": "A small basalt coin used to transfer personal debt to a collective pool.",
+      "image_prompt": "Small basalt coin, engraved red sigil, pixel art.",
+      "category": "oxidized-silver-contracts"
+    },
+    {
+      "item_id": "debt-008",
+      "name": "Shattered Timeline Lens",
+      "price": 1750,
+      "mass": 1.2,
+      "description": "A lens that allows the viewer to see the most expensive version of their future.",
+      "image_prompt": "Cracked glass lens, basalt frame, signal red glow, pixel art.",
+      "category": "unborn-liabilities"
+    },
+    {
+      "item_id": "debt-009",
+      "name": "Ancestral Debt Seal",
+      "price": 950,
+      "mass": 3.0,
+      "description": "A heavy ceramic stamp used to formalize obligations inherited from the deceased.",
+      "image_prompt": "Large ceramic stamp, brutalist design, red ink stains, pixel art.",
+      "category": "ceramic-tallies"
+    },
+    {
+      "item_id": "debt-010",
+      "name": "Risk-Weighted Pendulum",
+      "price": 600,
+      "mass": 5.5,
+      "description": "A basalt weight that swings toward the most likely financial catastrophe.",
+      "image_prompt": "Basalt pendulum, red wire, frosted glass casing, pixel art.",
+      "category": "causal-anchors"
+    },
+    {
+      "item_id": "debt-011",
+      "name": "Voided Contract Ash",
+      "price": 50,
+      "mass": 0.05,
+      "description": "The remains of a debt that was successfully erased through causal manipulation.",
+      "image_prompt": "Grey ash in a small frosted glass vial, pixel art.",
+      "category": "oxidized-silver-contracts"
+    },
+    {
+      "item_id": "debt-012",
+      "name": "Counterfactual Compass",
+      "price": 3200,
+      "mass": 0.9,
+      "description": "Points toward the reality where you are the wealthiest, though you can never reach it.",
+      "image_prompt": "Basalt compass, red needle, frosted glass face, pixel art.",
+      "category": "causal-anchors"
+    },
+    {
+      "item_id": "debt-013",
+      "name": "Glitch-Tally Plate",
+      "price": 400,
+      "mass": 2.2,
+      "description": "A ceramic plate that updates its debt count based on real-time market fluctuations.",
+      "image_prompt": "Ceramic plate, shifting red pixel numbers, basalt border.",
+      "category": "ceramic-tallies"
+    },
+    {
+      "item_id": "debt-014",
+      "name": "Speculative Ghost Bond",
+      "price": 1100,
+      "mass": 0.3,
+      "description": "A contract for a company that was never founded. Highly volatile.",
+      "image_prompt": "Translucent silver paper, red text, pixel art, brutalist.",
+      "category": "oxidized-silver-contracts"
+    },
+    {
+      "item_id": "debt-015",
+      "name": "Obligation Monolith",
+      "price": 15000,
+      "mass": 500.0,
+      "description": "A massive basalt pillar representing the total debt of a city-state.",
+      "image_prompt": "Giant basalt pillar, glowing red lines, brutalist architecture, pixel art.",
+      "category": "unborn-liabilities"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "museum-future-debts-01-wardrobe",
+    "world_wardrobe_brief": "Uniforms for the Museum of Future Debts are brutalist, actuarial, and clinical. Attire emphasizes slender, 7-head-tall silhouettes with sharp geometric lines, utilizing heavy basalt-colored fabrics, frosted glass accessories, and signal red accents to denote rank and liability status. The look is bureaucratic and cold, reflecting a world of probability politics and inescapable obligation.",
+    "forbidden_aesthetics": [
+      "organic_curves",
+      "warm_earth_tones",
+      "fantasy_armor",
+      "steampunk_gears",
+      "casual_wear",
+      "denim",
+      "bright_pastels",
+      "ornate_filigree",
+      "soft_fabrics"
+    ],
+    "palette_families": [
+      {
+        "name": "Basalt Bureaucracy",
+        "dominant": "#1a1a1d",
+        "accent": "#ff0000",
+        "trim": "#0f0f12",
+        "material": "heavy_wool_and_basalt_fiber"
+      },
+      {
+        "name": "Clinical Liability",
+        "dominant": "#e0e0e0",
+        "accent": "#98ffd9",
+        "trim": "#1a1a1d",
+        "material": "white_ceramic_and_stiff_linen"
+      },
+      {
+        "name": "Oxidized Obligation",
+        "dominant": "#4a4a4f",
+        "accent": "#ff0000",
+        "trim": "#e0e0e0",
+        "material": "oxidized_silver_mesh"
+      },
+      {
+        "name": "Frosted Probability",
+        "dominant": "#98ffd9",
+        "accent": "#1a1a1d",
+        "trim": "#ffffff",
+        "material": "frosted_glass_and_synthetic_silk"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "actuary_standard",
+        "role_keywords": [
+          "actuary",
+          "sculptor",
+          "arbitrageur",
+          "broker"
+        ],
+        "attire": [
+          "stiff_high_collar_tunic",
+          "tapered_trousers",
+          "signal_red_armband"
+        ],
+        "props": [
+          "ceramic_tally_stick",
+          "basalt_ledger"
+        ],
+        "palette_notes": "Dominant basalt with sharp red highlights.",
+        "silhouette_notes": "Slender, vertical, sharp shoulders.",
+        "avoid": [
+          "loose_sleeves",
+          "hoods"
+        ]
+      },
+      {
+        "rule_id": "high_council",
+        "role_keywords": [
+          "chancellor",
+          "chief",
+          "council"
+        ],
+        "attire": [
+          "floor_length_basalt_robes",
+          "oxidized_silver_mantle",
+          "ceramic_face_mask"
+        ],
+        "props": [
+          "ancestral_debt_seal",
+          "monolithic_staff"
+        ],
+        "palette_notes": "Deepest blacks with heavy silver trim.",
+        "silhouette_notes": "Monolithic, rectangular, imposing.",
+        "avoid": [
+          "visible_feet",
+          "asymmetry"
+        ]
+      },
+      {
+        "rule_id": "industrial_forger",
+        "role_keywords": [
+          "forger",
+          "specialist",
+          "scavenger"
+        ],
+        "attire": [
+          "heavy_brushed_steel_apron",
+          "reinforced_gloves",
+          "utility_harness"
+        ],
+        "props": [
+          "causal_anchor_bolt",
+          "probability_leash"
+        ],
+        "palette_notes": "Metallic greys with mint fluorescence accents.",
+        "silhouette_notes": "Top-heavy, industrial, utilitarian.",
+        "avoid": [
+          "delicate_glass",
+          "robes"
+        ]
+      },
+      {
+        "rule_id": "debt_eater",
+        "role_keywords": [
+          "debt-eater",
+          "penitent"
+        ],
+        "attire": [
+          "tattered_grey_shrouds",
+          "ceramic_neck_shackles"
+        ],
+        "props": [
+          "basalt_coin",
+          "glitch-tally_plate"
+        ],
+        "palette_notes": "Muted greys and blacks, minimal red.",
+        "silhouette_notes": "Hunched, thin, obscured face.",
+        "avoid": [
+          "clean_lines",
+          "bright_colors"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "visitor_standard",
+      "role_keywords": [
+        "visitor",
+        "citizen"
+      ],
+      "attire": [
+        "minimalist_jumpsuit",
+        "frosted_glass_badge"
+      ],
+      "props": [
+        "liability_swap_token"
+      ],
+      "palette_notes": "Neutral greys with clinical mint highlights.",
+      "silhouette_notes": "Simple, streamlined, non-threatening.",
+      "avoid": [
+        "red_armbands",
+        "heavy_armor"
+      ]
+    },
+    "visual_consistency_rules": [
+      "1px_black_outline_on_all_characters",
+      "signal_red_reserved_for_rank_and_debt_status",
+      "no_curved_patterns_on_fabrics",
+      "all_metal_must_be_oxidized_silver_or_brushed_steel",
+      "32x32_readability_requires_high_contrast_between_torso_and_limbs"
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "museum-future-debts-01",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees_vertical",
+      "scale_rule": "32px_per_meter_grid_aligned"
+    },
+    "palette": {
+      "dominant": "#1a1a1d",
+      "secondary": "#e0e0e0",
+      "accent": "#ff0000",
+      "shadow": "#0f0f12",
+      "highlight": "#98ffd9"
+    },
+    "materials": [
+      "black_basalt",
+      "frosted_glass",
+      "oxidized_silver",
+      "white_ceramic",
+      "brushed_steel"
+    ],
+    "lighting": "clinical_pale_mint_fluorescence_with_harsh_top_down_shadows",
+    "architecture": [
+      "brutalist_monoliths",
+      "recessed_floor_channels",
+      "geometric_pedestals",
+      "modular_bureaucratic_partitions"
+    ],
+    "terrain": {
+      "ground": "polished_basalt_tiles",
+      "path": "frosted_glass_walkways",
+      "edge": "oxidized_silver_trim"
+    },
+    "sprite_language": {
+      "body_proportion": "7_head_tall_slender_actuary",
+      "outline": "1px_selective_black_basalt_outline",
+      "role_readability": "signal_red_armbands_and_ceramic_tally_accessories"
+    },
+    "world_prompt_prefix": "top-down pixel art, brutalist museum interior, black basalt and frosted glass, clinical mint lighting, signal red accents, 16-bit aesthetic",
+    "sprite_prompt_prefix": "top-down pixel art character, actuary uniform, oxidized silver details, holding ceramic tally, minimalist bureaucratic style",
+    "forbidden_visuals": [
+      "isometric_projection",
+      "photorealism",
+      "organic_curves",
+      "text_labels",
+      "ui_overlays_in_world",
+      "diorama_borders",
+      "generic_fantasy_elements",
+      "warm_colors"
+    ],
+    "canon_hash": "e5f3ff1bf8bd84bb"
+  }
+}

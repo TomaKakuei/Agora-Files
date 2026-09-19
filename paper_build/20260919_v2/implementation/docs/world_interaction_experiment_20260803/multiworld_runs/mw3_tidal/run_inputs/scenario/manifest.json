@@ -1,0 +1,79 @@
+{
+  "scenario_meta": {
+    "world_id": "tidal_embassy_lost_languages",
+    "world_name": "Tidal Embassy of Lost Languages",
+    "version": "1.0",
+    "description": "A floating embassy rises and sinks with the tide while linguists, smugglers, ambassadors, and memory divers trade endangered languages as political assets. Build loops around translation rights, ritual protocols, archive access, forged idioms, cultural debts, and diplomatic scandals.",
+    "simulation_objective": "Facilitate a high-stakes social economy based on translation rights, cultural debt, and linguistic espionage.",
+    "visual_canon_hash": "09047f725c28ca4f",
+    "player_entry_points": [
+      "A disgraced scholar seeking to restore their family name.",
+      "A merchant whose trade permits are written in a language they cannot read.",
+      "A spy masquerading as a humble ink-mixer."
+    ],
+    "creator_conflict_hooks": [
+      "The discovery of a scroll that invalidates the current ruling dynasty's lineage.",
+      "A sudden flood in the lower archives threatening to erase the only record of a peace treaty."
+    ],
+    "interaction_study_protocol": "multiworld_open_actions_v1"
+  },
+  "engine_config": {
+    "world_mode": "Fixed",
+    "adjudicator_api": {
+      "provider": "Local",
+      "model": "",
+      "temperature": 0.0,
+      "flex_api_url": "http://127.0.0.1:8000/v1",
+      "server_script": ""
+    },
+    "agent_default_api": {
+      "provider": "Vertex_AI",
+      "model": "gemini-3.1-flash-lite-preview",
+      "temperature": 0.6,
+      "flex_api_url": "http://127.0.0.1:8000/v1",
+      "server_script": "vertex_flex_server.py"
+    },
+    "simulation_params": {
+      "max_timesteps": 32,
+      "parallel_execution": true,
+      "tick_rate_ms": 0,
+      "concurrency_limit": 25
+    }
+  },
+  "asset_bindings": {
+    "world_rules_path": "./world_rules.json",
+    "map_grid_path": "./map_grid.json",
+    "active_agents": [
+      "./Agents/tidal_embassy_lost_languages_main_01.json",
+      "./Agents/tidal_embassy_lost_languages_main_02.json",
+      "./Agents/tidal_embassy_lost_languages_main_03.json",
+      "./Agents/tidal_embassy_lost_languages_main_04.json",
+      "./Agents/tidal_embassy_lost_languages_main_05.json",
+      "./Agents/tidal_embassy_lost_languages_main_06.json",
+      "./Agents/tidal_embassy_lost_languages_main_07.json",
+      "./Agents/tidal_embassy_lost_languages_main_08.json",
+      "./Agents/tidal_embassy_lost_languages_main_09.json",
+      "./Agents/tidal_embassy_lost_languages_main_10.json",
+      "./Agents/tidal_embassy_lost_languages_main_11.json",
+      "./Agents/tidal_embassy_lost_languages_main_12.json",
+      "./Agents/tidal_embassy_lost_languages_main_13.json",
+      "./Agents/tidal_embassy_lost_languages_main_14.json",
+      "./Agents/tidal_embassy_lost_languages_main_15.json",
+      "./Agents/tidal_embassy_lost_languages_main_16.json",
+      "./Agents/tidal_embassy_lost_languages_main_17.json",
+      "./Agents/tidal_embassy_lost_languages_main_18.json",
+      "./Agents/tidal_embassy_lost_languages_main_19.json",
+      "./Agents/tidal_embassy_lost_languages_main_20.json",
+      "./Agents/tidal_embassy_lost_languages_main_21.json",
+      "./Agents/tidal_embassy_lost_languages_main_22.json",
+      "./Agents/tidal_embassy_lost_languages_main_23.json",
+      "./Agents/tidal_embassy_lost_languages_main_24.json",
+      "./Agents/tidal_embassy_lost_languages_main_25.json"
+    ],
+    "relationship_tensor_path": "",
+    "localized_visual_state_path": "",
+    "intents_path": "./agent_intents.json",
+    "intent_batches_path": "./intent_batches",
+    "prompt_path": "../../data/templates/foundation/universal_adjudicator_prompt.jsonc"
+  }
+}

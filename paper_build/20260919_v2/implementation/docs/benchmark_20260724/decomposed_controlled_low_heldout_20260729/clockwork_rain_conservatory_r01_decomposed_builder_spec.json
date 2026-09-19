@@ -1,0 +1,2780 @@
+{
+  "world_name": "Clockwork Rain Conservatory",
+  "world_id": "clockwork_rain_conservatory",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "civic_social_world",
+    "profile_id": "civic_social_world",
+    "locale": "en-US",
+    "tone": "baroque, bureaucratic, humid, mechanical",
+    "visual_direction": "brass clockwork, stained glass, lush botanical overgrowth, steam-powered irrigation",
+    "currency_code": "CRD",
+    "currency_symbol": "cr",
+    "currency_minor_unit": "point",
+    "currency_name": "Rain Credits",
+    "domain_label": "conservatory.agora",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "clockpunk_botanical_v1",
+      "frontend_affordance_id": "civic_theatre_ui",
+      "asset_prompt_kit_id": "brass_glass_greenhouse_assets"
+    },
+    "policy_refs": {
+      "economy_policy_id": "civic_credit_v1",
+      "item_collection_id": "civic_social_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "civic_social_world_v1",
+      "property_policy_id": "civic_social_world_v1",
+      "knowledge_policy_id": "civic_social_world_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "clockpunk botanical intrigue",
+  "premise": "A city-sized greenhouse where mechanical rain and legal botany dictate social standing and survival.",
+  "simulation_objective": "Manage seed debts, navigate weather rituals, and engage in aristocratic sabotage within a glass-enclosed ecosystem.",
+  "agent_count_target": 24,
+  "player_count_target": 50,
+  "wall_color_theme": "polished_brass_and_etched_glass",
+  "economy_focus": "Patent seeds, weather sheet music, and irrigation rights.",
+  "exploration_focus": "Vertical glasshouses, subterranean gutter networks, and high-altitude rain engines.",
+  "conflict_tone": "Sophisticated, litigious, and ritualistic.",
+  "visual_style": "Steampunk-infused Art Nouveau with heavy brass and vibrant flora.",
+  "rooms": [
+    {
+      "name": "Patent Seed Vault",
+      "biome": "humid_tropical",
+      "purpose": "Secure storage of genetically modified botanical intellectual property.",
+      "decor_tags": [
+        "brass_safes",
+        "glass_canisters",
+        "pressure_gauges"
+      ],
+      "activity_tags": [
+        "cataloging",
+        "locking",
+        "inspecting"
+      ],
+      "flux_floor_prompt": "top-down pixel art of hexagonal brass grating over dark swirling water, 32px grid aligned, seamless texture",
+      "room_scene_prompt": "top-down orthographic view of a high-security seed vault, walls lined with brass lockers and glowing glass tubes, central inspection table, art nouveau curves, no text, no labels, full bleed to edges.",
+      "width_tiles": 8,
+      "height_tiles": 10,
+      "ambient_palette": "focused_blue",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "cryo_seed_pedestal",
+          "label": "Cryo-Seed Pedestal",
+          "description": "A brass pedestal venting steam, holding a single glowing blue seed under a glass dome.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Weather Sheet Music Press",
+      "biome": "temperate_mechanical",
+      "purpose": "Printing the perforated rolls that control the mechanical rain cycles.",
+      "decor_tags": [
+        "paper_rolls",
+        "ink_vats",
+        "copper_gears"
+      ],
+      "activity_tags": [
+        "printing",
+        "composing",
+        "stamping"
+      ],
+      "flux_floor_prompt": "top-down pixel art of polished malachite walkways with brass inlay borders, 32px grid aligned",
+      "room_scene_prompt": "top-down orthographic view of a clockwork printing press room, massive brass rollers, stacks of perforated paper, ink-stained mahogany tables, no text, no labels, full bleed to edges.",
+      "width_tiles": 12,
+      "height_tiles": 8,
+      "ambient_palette": "dusty_brown",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "perforation_loom",
+          "label": "Perforation Loom",
+          "description": "A complex machine with many needles for punching holes into weather-control music sheets.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Irrigation Rights Exchange",
+      "biome": "misty_indoor",
+      "purpose": "Trading floor for water pressure credits and pipe access.",
+      "decor_tags": [
+        "pressure_valves",
+        "chalkboards",
+        "brass_railings"
+      ],
+      "activity_tags": [
+        "trading",
+        "shouting",
+        "negotiating"
+      ],
+      "flux_floor_prompt": "top-down pixel art of damp mossy stone tiles with copper drainage slits, 32px grid aligned",
+      "room_scene_prompt": "top-down orthographic view of a bustling trade floor, tiered brass platforms, central fountain with pressure gauges, mahogany kiosks, no text, no labels, full bleed to edges.",
+      "width_tiles": 15,
+      "height_tiles": 15,
+      "ambient_palette": "soft_mint",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "master_pressure_gauge",
+          "label": "Master Pressure Gauge",
+          "description": "A 3-tile tall brass tower displaying the current city-wide water pressure levels.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Hydro-Pneumatic Checkpoint",
+      "biome": "industrial_damp",
+      "purpose": "Security gate monitoring the flow of citizens and pressurized fluids.",
+      "decor_tags": [
+        "steam_vents",
+        "turnstiles",
+        "wrought_iron"
+      ],
+      "activity_tags": [
+        "scanning",
+        "waiting",
+        "venting"
+      ],
+      "flux_floor_prompt": "top-down pixel art of heavy iron floor plates with steam rising from gaps, 32px grid aligned",
+      "room_scene_prompt": "top-down orthographic view of a narrow security corridor, brass turnstiles, steam-hissing pipes on walls, green-tinted glass windows, no text, no labels, full bleed to edges.",
+      "width_tiles": 6,
+      "height_tiles": 10,
+      "ambient_palette": "low_lantern",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "identity_steamer",
+          "label": "Identity Steamer",
+          "description": "A booth that sprays a fine mist to verify botanical pheromones on travelers.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Fern-Gilded Lounge",
+      "biome": "lush_overgrowth",
+      "purpose": "Social club for high-standing botanists and patent holders.",
+      "decor_tags": [
+        "velvet_chairs",
+        "potted_ferns",
+        "gramophones"
+      ],
+      "activity_tags": [
+        "sipping",
+        "whispering",
+        "relaxing"
+      ],
+      "flux_floor_prompt": "top-down pixel art of ornate varnished mahogany parquet with leaf patterns, 32px grid aligned",
+      "room_scene_prompt": "top-down orthographic view of a luxury lounge, circular velvet sofas, massive ferns in brass pots, soft golden lighting, no text, no labels, full bleed to edges.",
+      "width_tiles": 10,
+      "height_tiles": 10,
+      "ambient_palette": "warm_lantern",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "aromatic_mister",
+          "label": "Aromatic Mister",
+          "description": "A brass sculpture that emits scented steam for the comfort of guests.",
+          "anchor": "east_mid",
+          "width_tiles": 1,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Rain-Catcher Lookout",
+      "biome": "high_altitude_mist",
+      "purpose": "Monitoring the mechanical clouds and rain distribution.",
+      "decor_tags": [
+        "telescopes",
+        "wind_vanes",
+        "star_charts"
+      ],
+      "activity_tags": [
+        "observing",
+        "charting",
+        "signaling"
+      ],
+      "flux_floor_prompt": "top-down pixel art of weathered brass plates with circular rivets, 32px grid aligned",
+      "room_scene_prompt": "top-down orthographic view of a circular observation deck, large brass telescopes pointing outward, glass dome ceiling, no text, no labels, full bleed to edges.",
+      "width_tiles": 7,
+      "height_tiles": 7,
+      "ambient_palette": "clear_day",
+      "archetype": "lookout",
+      "scene_components": [
+        {
+          "component_id": "cloud_tracking_lens",
+          "label": "Cloud Tracking Lens",
+          "description": "A massive horizontal lens on a swivel used to track artificial cloud formations.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Root-Grafting Laboratory",
+      "biome": "sterile_botanical",
+      "purpose": "Surgical precision grafting of mechanical parts into rare plants.",
+      "decor_tags": [
+        "scalpels",
+        "microscopes",
+        "petri_dishes"
+      ],
+      "activity_tags": [
+        "splicing",
+        "healing",
+        "experimenting"
+      ],
+      "flux_floor_prompt": "top-down pixel art of white ceramic tiles with copper grout, 32px grid aligned",
+      "room_scene_prompt": "top-down orthographic view of a botanical lab, stainless steel tables with plant specimens, mechanical arms hanging from ceiling, no text, no labels, full bleed to edges.",
+      "width_tiles": 9,
+      "height_tiles": 9,
+      "ambient_palette": "soft_mint",
+      "archetype": "training",
+      "scene_components": [
+        {
+          "component_id": "grafting_stasis_tank",
+          "label": "Grafting Stasis Tank",
+          "description": "A glass cylinder filled with green fluid and a suspended mechanical orchid.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Pipe-Works Commons",
+      "biome": "industrial_overgrowth",
+      "purpose": "Public gathering space where the main irrigation lines intersect.",
+      "decor_tags": [
+        "benches",
+        "fountains",
+        "vines"
+      ],
+      "activity_tags": [
+        "resting",
+        "meeting",
+        "drinking"
+      ],
+      "flux_floor_prompt": "top-down pixel art of mixed malachite and brass grating, 32px grid aligned",
+      "room_scene_prompt": "top-down orthographic view of a public square, massive copper pipes running overhead, central mossy fountain, wrought iron benches, no text, no labels, full bleed to edges.",
+      "width_tiles": 14,
+      "height_tiles": 12,
+      "ambient_palette": "ember_orange",
+      "archetype": "commons",
+      "scene_components": [
+        {
+          "component_id": "communal_hydration_tap",
+          "label": "Communal Hydration Tap",
+          "description": "A public water dispenser made of ornate brass with multiple spigots.",
+          "anchor": "south_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Vespera Thorne",
+      "role_name": "Chief Hydrologist",
+      "activity": "Calibrating the pressure valves in the Pipe-Works Commons",
+      "home_base": "Rain-Catcher Lookout",
+      "arc_goal": "To stabilize the atmospheric pressure before the Great Deluge cycle begins.",
+      "inventory": [
+        {
+          "name": "Brass Pressure Gauge",
+          "description": "A steam-fogged dial used to measure pipe tension.",
+          "quantity": 1
+        },
+        {
+          "name": "Gasket Sealant",
+          "description": "A viscous blue resin for patching micro-leaks.",
+          "quantity": 3
+        },
+        {
+          "name": "Valve Key",
+          "description": "A heavy iron tool for manual override of the main sluice.",
+          "quantity": 1
+        },
+        {
+          "name": "Rain-Water Sample",
+          "description": "A vial of pure, unrefined precipitation.",
+          "quantity": 5
+        },
+        {
+          "name": "Copper Tubing",
+          "description": "Short lengths of flexible pipe for emergency bypasses.",
+          "quantity": 4
+        },
+        {
+          "name": "Hydraulic Fluid",
+          "description": "A glowing amber liquid used in piston maintenance.",
+          "quantity": 2
+        },
+        {
+          "name": "Pneumatic Whistle",
+          "description": "Used to signal workers across the loud commons.",
+          "quantity": 1
+        },
+        {
+          "name": "Leather Tool Belt",
+          "description": "A worn belt stained with oil and mineral deposits.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Zenith Telescope",
+          "asset_type": "Scientific Equipment",
+          "description": "A massive brass lens used to track cloud density.",
+          "story_use": "Used to predict the timing of the next rainfall."
+        },
+        {
+          "asset_name": "Observation Logbook",
+          "asset_type": "Document",
+          "description": "A waterproof ledger containing decades of weather data.",
+          "story_use": "Provides the historical context needed to solve the pressure crisis."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-CRC-001",
+          "topic": "Atmospheric Pressure",
+          "summary": "Deep understanding of how steam and rain interact within the conservatory.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-CRC-002",
+          "topic": "Pipe-Works Layout",
+          "summary": "A mental map of every hidden valve and bypass in the commons.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Silas Vane",
+      "role_name": "Irrigation Arbitrator",
+      "activity": "Negotiating water quotas in the Irrigation Rights Exchange",
+      "home_base": "The Fern-Gilded Lounge",
+      "arc_goal": "To secure enough water credits to save the dying lower-tier ferns.",
+      "inventory": [
+        {
+          "name": "Ledger of Debts",
+          "description": "A thick book bound in sharkskin listing water IOUs.",
+          "quantity": 1
+        },
+        {
+          "name": "Official Seal",
+          "description": "A wax stamper used to authorize water transfers.",
+          "quantity": 1
+        },
+        {
+          "name": "Inkwell of Indelible Blue",
+          "description": "Ink that cannot be washed away by rain.",
+          "quantity": 2
+        },
+        {
+          "name": "Silver Quill",
+          "description": "A sharp writing instrument for legal documents.",
+          "quantity": 1
+        },
+        {
+          "name": "Water Credit Tokens",
+          "description": "Small glass beads representing liters of water.",
+          "quantity": 45
+        },
+        {
+          "name": "Pocket Watch",
+          "description": "A clockwork device that tracks the duration of rain cycles.",
+          "quantity": 1
+        },
+        {
+          "name": "Legal Scroll",
+          "description": "A draft of the new irrigation treaty.",
+          "quantity": 3
+        },
+        {
+          "name": "Magnifying Glass",
+          "description": "Used to inspect the fine print on patent seeds.",
+          "quantity": 1
+        },
+        {
+          "name": "Bribe Pouch",
+          "description": "A small bag of rare minerals used for 'incentives'.",
+          "quantity": 1
+        },
+        {
+          "name": "Letter Opener",
+          "description": "A thin blade shaped like a willow leaf.",
+          "quantity": 1
+        },
+        {
+          "name": "Wax Tapers",
+          "description": "For sealing envelopes in the damp exchange.",
+          "quantity": 10
+        },
+        {
+          "name": "Handkerchief",
+          "description": "Embroidered with the crest of the Exchange.",
+          "quantity": 2
+        },
+        {
+          "name": "Cigar Case",
+          "description": "Contains aromatic leaves from the upper gardens.",
+          "quantity": 1
+        },
+        {
+          "name": "Matchbox",
+          "description": "Water-resistant matches for lighting the lounge lamps.",
+          "quantity": 1
+        },
+        {
+          "name": "Signet Ring",
+          "description": "A heavy gold ring used as a secondary seal.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Exchange Podium",
+          "asset_type": "Furniture",
+          "description": "A high desk from which Silas dictates water prices.",
+          "story_use": "The center of political power in the conservatory."
+        },
+        {
+          "asset_name": "Private Vault Key",
+          "asset_type": "Security",
+          "description": "A complex key to the Exchange's physical reserves.",
+          "story_use": "Can be used to access emergency water supplies."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-CRC-003",
+          "topic": "Water Law",
+          "summary": "Expertise in the complex statutes governing irrigation rights.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-CRC-004",
+          "topic": "Political Leverage",
+          "summary": "Knowledge of the personal secrets of the conservatory's elite.",
+          "confidence": 82
+        }
+      ]
+    },
+    {
+      "display_name": "Elara Moss",
+      "role_name": "Seed Geneticist",
+      "activity": "Grafting bioluminescent spores in the Root-Grafting Laboratory",
+      "home_base": "Patent Seed Vault",
+      "arc_goal": "To engineer a seed that can survive the acidic rain of the outer wastes.",
+      "inventory": [
+        {
+          "name": "Surgical Scalpel",
+          "description": "A precision blade for delicate plant tissue work.",
+          "quantity": 2
+        },
+        {
+          "name": "Nutrient Gel",
+          "description": "A neon-green substance that accelerates root growth.",
+          "quantity": 10
+        },
+        {
+          "name": "Glass Petri Dish",
+          "description": "Used for culturing rare fungal spores.",
+          "quantity": 6
+        },
+        {
+          "name": "Forceps",
+          "description": "Fine-tipped tweezers for handling microscopic seeds.",
+          "quantity": 1
+        },
+        {
+          "name": "Bioluminescent Moss",
+          "description": "A living light source that glows in the dark.",
+          "quantity": 3
+        },
+        {
+          "name": "Grafting Tape",
+          "description": "Sticky mesh used to bind different plant species together.",
+          "quantity": 5
+        },
+        {
+          "name": "Seed Vials",
+          "description": "Small containers holding experimental hybrids.",
+          "quantity": 12
+        },
+        {
+          "name": "Protective Gloves",
+          "description": "Thick rubber gloves to prevent chemical burns.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Incubation Chamber",
+          "asset_type": "Laboratory Equipment",
+          "description": "A temperature-controlled glass box for seedlings.",
+          "story_use": "Essential for growing the experimental drought-resistant crops."
+        },
+        {
+          "asset_name": "The Master Seed Catalog",
+          "asset_type": "Database",
+          "description": "A digital archive of every plant species in the vault.",
+          "story_use": "Used to identify extinct flora for resurrection."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-CRC-005",
+          "topic": "Botanical Grafting",
+          "summary": "The art of merging disparate plant species into a single organism.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "K-CRC-006",
+          "topic": "Genetic Sequencing",
+          "summary": "Understanding the underlying code of the conservatory's flora.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen Reed",
+      "role_name": "Sheet Music Presser",
+      "activity": "Stamping weather patterns onto metal sheets in the Press",
+      "home_base": "Hydro-Pneumatic Checkpoint",
+      "arc_goal": "To compose a symphony that can trigger the automated rain systems.",
+      "inventory": [
+        {
+          "name": "Steel Music Sheet",
+          "description": "A heavy plate etched with rhythmic weather patterns.",
+          "quantity": 4
+        },
+        {
+          "name": "Etching Acid",
+          "description": "Corrosive liquid used to engrave the metal sheets.",
+          "quantity": 2
+        },
+        {
+          "name": "Tuning Fork",
+          "description": "A heavy fork that vibrates at the frequency of falling rain.",
+          "quantity": 1
+        },
+        {
+          "name": "Lubricant Oil",
+          "description": "Keeps the massive press gears turning smoothly.",
+          "quantity": 3
+        },
+        {
+          "name": "Cotton Rags",
+          "description": "Used to wipe excess ink and acid from the plates.",
+          "quantity": 10
+        },
+        {
+          "name": "Stamping Hammer",
+          "description": "A small mallet for fine-tuning the metal indentations.",
+          "quantity": 1
+        },
+        {
+          "name": "Ear Plugs",
+          "description": "Wax plugs to dampen the roar of the machinery.",
+          "quantity": 2
+        },
+        {
+          "name": "Drafting Compass",
+          "description": "Used to measure the arcs of the musical notation.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Great Press",
+          "asset_type": "Industrial Machinery",
+          "description": "A three-story tall machine that prints weather music.",
+          "story_use": "The only way to communicate instructions to the sky."
+        },
+        {
+          "asset_name": "Resonance Chamber",
+          "asset_type": "Room",
+          "description": "A soundproof room used to test the metal sheets.",
+          "story_use": "Where Kaelen discovers the 'Rain Song' frequency."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-CRC-007",
+          "topic": "Acoustic Engineering",
+          "summary": "How sound waves interact with the conservatory's metal structure.",
+          "confidence": 89
+        },
+        {
+          "knowledge_id": "K-CRC-008",
+          "topic": "Weather Composition",
+          "summary": "The language of translating rain cycles into musical notation.",
+          "confidence": 960
+        }
+      ]
+    },
+    {
+      "display_name": "Orion Glass",
+      "role_name": "Vault Custodian",
+      "activity": "Cataloging dormant flora signatures",
+      "home_base": "Patent Seed Vault",
+      "arc_goal": "To recover the lost 'Sun-Drenched' orchid strain stolen by Elara Moss's predecessors.",
+      "inventory": [
+        {
+          "name": "CRC-016: Brass Seed-Sieve",
+          "description": "A fine mesh tool for separating sterile husks from viable clockwork seeds.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-017: Cryo-Vial of Blue-Mist",
+          "description": "A pressurized container holding the essence of a localized fog bank.",
+          "quantity": 3
+        },
+        {
+          "name": "CRC-018: Ledger of Dormant Genes",
+          "description": "A heavy book bound in damp leather tracking the lineage of every seed in the vault.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-019: Magnetic Tweezers",
+          "description": "Precision instruments for handling metallic-coated spores.",
+          "quantity": 2
+        },
+        {
+          "name": "CRC-020: Vault-Key Cog",
+          "description": "A complex, multi-toothed gear used to unlock the primary containment doors.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-021: Desiccant Packets",
+          "description": "Small pouches of silica designed to prevent premature germination in the vault.",
+          "quantity": 20
+        },
+        {
+          "name": "CRC-022: Germination Sensor",
+          "description": "A handheld device that pings when a seed detects moisture.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-023: Wax Sealant",
+          "description": "A specialized resin for airtight preservation of seed canisters.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Primary Sorter",
+          "asset_type": "Industrial Machinery",
+          "description": "A massive, steam-driven machine that categorizes seeds by weight and metallic content.",
+          "story_use": "Orion uses this to detect counterfeit seeds smuggled into the vault."
+        },
+        {
+          "asset_name": "Vault Sub-Level 4",
+          "asset_type": "Real Estate",
+          "description": "A restricted, sub-zero storage area for extinct weather-dependent flora.",
+          "story_use": "The location where Orion hides his secret research on sun-based growth."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Seed Dormancy Cycles",
+          "summary": "Deep understanding of how long clockwork seeds can survive without hydraulic stimulation.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Vault Security Protocols",
+          "summary": "Intimate knowledge of the pneumatic traps and gear-locks protecting the Conservatory's assets.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra Cinder",
+      "role_name": "Weather-Sheet Broker",
+      "activity": "Trading atmospheric compositions",
+      "home_base": "The Fern-Gilded Lounge",
+      "arc_goal": "To monopolize the distribution of 'Thunderstorm' sheets, putting pressure on Kaelen Reed's production.",
+      "inventory": [
+        {
+          "name": "CRC-024: Embossed Copper Contract",
+          "description": "A legal document etched into copper, binding the user to a specific rainfall quota.",
+          "quantity": 5
+        },
+        {
+          "name": "CRC-025: Sample Tin of 'Drizzle'",
+          "description": "A small canister containing a three-minute loop of light rain audio and moisture.",
+          "quantity": 10
+        },
+        {
+          "name": "CRC-026: Gilded Magnifying Lens",
+          "description": "A jeweler's tool used to inspect the precision of weather-sheet stampings.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-027: Velvet-Lined Portfolio",
+          "description": "A protective case for transporting high-value weather sheets without scratching.",
+          "quantity": 2
+        },
+        {
+          "name": "CRC-028: Scent of Ozone Vial",
+          "description": "A concentrated fragrance used to authenticate 'Storm' grade sheets.",
+          "quantity": 12
+        },
+        {
+          "name": "CRC-029: Broker's Signet Ring",
+          "description": "A heavy gold ring used to press wax seals onto trade agreements.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-030: Miniature Barometer",
+          "description": "A pocket-sized device for checking the local pressure before a trade.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-031: Bribe-Grade Silver Cogs",
+          "description": "Small, high-purity silver gears used as currency in high-stakes negotiations.",
+          "quantity": 50
+        },
+        {
+          "name": "CRC-032: Encrypted Ledger",
+          "description": "A book containing the private debts of the Conservatory's elite.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-033: Silk Polishing Cloth",
+          "description": "Used to keep weather sheets reflective and free of oxidation.",
+          "quantity": 15
+        },
+        {
+          "name": "CRC-034: Ink-Pot of Liquid Tin",
+          "description": "Specialized ink for marking metal sheets during trade.",
+          "quantity": 3
+        },
+        {
+          "name": "CRC-035: Portable Humidifier",
+          "description": "A small device to keep the air around the broker comfortable.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-036: Letter of Credit",
+          "description": "A document backed by the Irrigation Rights Exchange.",
+          "quantity": 4
+        },
+        {
+          "name": "CRC-037: Brass Calling Cards",
+          "description": "Thin metal cards with Lyra's contact information etched in acid.",
+          "quantity": 25
+        },
+        {
+          "name": "CRC-038: Aromatic Fern Fronds",
+          "description": "Rare plants used to mask the smell of industrial grease in the lounge.",
+          "quantity": 8
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gilded Booth",
+          "asset_type": "Private Space",
+          "description": "A sound-proofed corner of the lounge reserved for high-value transactions.",
+          "story_use": "Where Lyra meets with Silas Vane to discuss illegal water diversions."
+        },
+        {
+          "asset_name": "The Sheet Archive",
+          "asset_type": "Storage",
+          "description": "A private safe containing master copies of rare weather patterns.",
+          "story_use": "Lyra uses these as leverage against the Weather Sheet Music Press."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Market Fluctuations",
+          "summary": "Expertise in predicting the value of rain based on the current reservoir levels.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Lounge Etiquette",
+          "summary": "The subtle social cues and power dynamics of the Conservatory's upper crust.",
+          "confidence": 98
+        }
+      ]
+    },
+    {
+      "display_name": "Bram Tallow",
+      "role_name": "Pipe-Works Foreman",
+      "activity": "Monitoring steam-pressure differentials",
+      "home_base": "The Pipe-Works Commons",
+      "arc_goal": "To sabotage Vespera Thorne's new calibration system which he believes is over-stressing the old pipes.",
+      "inventory": [
+        {
+          "name": "CRC-039: Heavy Iron Wrench",
+          "description": "A massive tool for tightening the primary steam-valves.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-040: Oil-Stained Rag",
+          "description": "A cloth saturated with industrial lubricant, used for cleaning joints.",
+          "quantity": 5
+        },
+        {
+          "name": "CRC-041: Pressure Gauge Calibrator",
+          "description": "A delicate instrument used to ensure all wall-mounted gauges are accurate.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-042: Tin of Pipe-Grease",
+          "description": "Thick, foul-smelling tallow used to prevent gear friction.",
+          "quantity": 3
+        },
+        {
+          "name": "CRC-043: Ear-Plugs of Compressed Wool",
+          "description": "Essential protection against the deafening roar of the steam-works.",
+          "quantity": 2
+        },
+        {
+          "name": "CRC-044: Emergency Steam-Vent Key",
+          "description": "A red-painted handle used to manually release pressure during a surge.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-045: Blueprint of the 'Veins'",
+          "description": "A complex map of the Conservatory's underground piping system.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-046: Chalk Stick",
+          "description": "Used to mark leaking joints for later repair.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Central Hub",
+          "asset_type": "Infrastructure",
+          "description": "The junction where all major steam and water lines intersect.",
+          "story_use": "Bram's primary workstation and the most vulnerable point for sabotage."
+        },
+        {
+          "asset_name": "Foreman's Locker",
+          "asset_type": "Storage",
+          "description": "A heavy steel locker containing personal tools and contraband spirits.",
+          "story_use": "Where Bram hides the evidence of his tampering with Vespera's sensors."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Hydraulic Stress Points",
+          "summary": "Knowing exactly where a pipe will burst under specific pressure loads.",
+          "confidence": 97
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Pipe-Works Slang",
+          "summary": "The unique jargon and hand signals used by the workers in the noisy commons.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Cora Mistral",
+      "role_name": "Checkpoint Inspector",
+      "activity": "Scanning incoming shipments for biological contaminants",
+      "home_base": "Hydro-Pneumatic Checkpoint",
+      "arc_goal": "To intercept a shipment of illegal root-grafts destined for Elara Moss's lab.",
+      "inventory": [
+        {
+          "name": "CRC-047: Spectral Scanner",
+          "description": "A device that uses light to identify the chemical composition of sealed crates.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-048: Official Seal-Breaker",
+          "description": "A specialized crowbar used to open suspicious cargo for inspection.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-049: Quarantine Tape",
+          "description": "Bright yellow adhesive strips used to mark confiscated goods.",
+          "quantity": 5
+        },
+        {
+          "name": "CRC-050: Log of Manifests",
+          "description": "A digital tablet recording every item that enters the Conservatory.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-051: Decontamination Spray",
+          "description": "A chemical mist used to neutralize invasive spores on clothing.",
+          "quantity": 3
+        },
+        {
+          "name": "CRC-052: Inspector's Badge",
+          "description": "A heavy brass emblem granting Cora authority to halt any transport.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-053: Sample Collection Vials",
+          "description": "Small glass tubes for taking evidence from suspicious shipments.",
+          "quantity": 15
+        },
+        {
+          "name": "CRC-054: High-Intensity Lantern",
+          "description": "A clockwork light used to illuminate the dark corners of cargo holds.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Inspection Bay 1",
+          "asset_type": "Infrastructure",
+          "description": "A reinforced chamber where high-risk cargo is examined under vacuum.",
+          "story_use": "Cora uses this bay to trap smugglers and interrogate them."
+        },
+        {
+          "asset_name": "The Confiscation Locker",
+          "asset_type": "Storage",
+          "description": "A secure room filled with illegal seeds, grafts, and unauthorized tech.",
+          "story_use": "Cora occasionally 'borrows' items from here to aid her investigations."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Smuggling Techniques",
+          "summary": "Common methods used to hide organic matter inside clockwork machinery.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Conservatory Import Law",
+          "summary": "The complex legal framework governing what can and cannot enter the city.",
+          "confidence": 99
+        }
+      ]
+    },
+    {
+      "display_name": "Thistle Thorne",
+      "role_name": "Vault Saboteur",
+      "activity": "Etching corrosive glyphs onto the Seed Vault's outer hull",
+      "home_base": "Patent Seed Vault",
+      "arc_goal": "To liberate the genetic blueprints of the 'Old World' flora from corporate patenting.",
+      "inventory": [
+        {
+          "name": "CRC-016: Corrosive Inkwell",
+          "description": "A vial of acid-based ink used to bypass biometric seals.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-017: Brass Lock-Pick Set",
+          "description": "Precision tools designed for clockwork tumblers.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-018: Seed-Shell Shard",
+          "description": "A fragment of a prehistoric oak seed, used as a lucky charm.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-019: Damp-Proof Satchel",
+          "description": "A leather bag treated with wax to protect sensitive documents.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-020: Pressure-Sensitive Detonator",
+          "description": "A small device that triggers when steam pressure drops.",
+          "quantity": 2
+        },
+        {
+          "name": "CRC-021: Forged Access Keycard",
+          "description": "A copper card mimicking the signature of Orion Glass.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-022: Bioluminescent Chalk",
+          "description": "Used for marking escape routes in the dark.",
+          "quantity": 5
+        },
+        {
+          "name": "CRC-023: Silent Piston-Cutter",
+          "description": "A tool for silently severing hydraulic lines.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hollow Pipe-Segment",
+          "asset_type": "Hideout",
+          "description": "A decommissioned steam pipe converted into a cramped living space.",
+          "story_use": "A safe house for planning raids on the Vault."
+        },
+        {
+          "asset_name": "Encrypted Ledger",
+          "asset_type": "Intel",
+          "description": "A book containing the true lineage of the Conservatory's seeds.",
+          "story_use": "Leverage against the Seed Geneticists."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Vault Architecture",
+          "summary": "Deep understanding of the Patent Seed Vault's structural weaknesses.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Vespera's Routine",
+          "summary": "Detailed logs of the Chief Hydrologist's patrol patterns.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Marius Gilt",
+      "role_name": "Luxury Sheet Collector",
+      "activity": "Appraising rare atmospheric compositions in the Fern-Gilded Lounge",
+      "home_base": "The Fern-Gilded Lounge",
+      "arc_goal": "To acquire the legendary 'Solar Flare' weather sheet from the Press.",
+      "inventory": [
+        {
+          "name": "CRC-024: Velvet-Lined Display Case",
+          "description": "A protective box for high-value weather sheets.",
+          "quantity": 3
+        },
+        {
+          "name": "CRC-025: Monocle of Clarity",
+          "description": "A lens that reveals micro-etchings on metal music sheets.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-026: Gilded Fountain Pen",
+          "description": "Used for signing high-stakes trade contracts.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-027: Scented Humidity-Wipes",
+          "description": "Used to clean fingerprints off polished brass.",
+          "quantity": 20
+        },
+        {
+          "name": "CRC-028: Rare 'Drizzle' Sheet",
+          "description": "An early-edition weather sheet with a unique rhythmic pattern.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-029: Silver Calling Card",
+          "description": "Embossed with the Gilt family crest.",
+          "quantity": 50
+        },
+        {
+          "name": "CRC-030: Portable Hygrometer",
+          "description": "Measures the moisture content of the air to protect assets.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-031: Silk Pocket Square",
+          "description": "Embroidered with the Conservatory's logo.",
+          "quantity": 5
+        },
+        {
+          "name": "CRC-032: Bottle of Aged Rain-Wine",
+          "description": "A vintage beverage fermented during a heavy storm.",
+          "quantity": 2
+        },
+        {
+          "name": "CRC-033: Miniature Steam-Fan",
+          "description": "A hand-held device to keep the user cool in the Lounge.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-034: Trade Ledger",
+          "description": "A record of all transactions with Lyra Cinder.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-035: Gold-Plated Calipers",
+          "description": "Used to measure the thickness of weather sheets.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-036: Invitation to the Gala",
+          "description": "A pass to the exclusive annual Conservatory ball.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-037: Small Bag of Gemstones",
+          "description": "Used as collateral for high-value trades.",
+          "quantity": 10
+        },
+        {
+          "name": "CRC-038: Map of the Press",
+          "description": "A blueprint showing the location of the master plates.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Private Lounge Booth",
+          "asset_type": "Real Estate",
+          "description": "A secluded corner in the Fern-Gilded Lounge for private deals.",
+          "story_use": "A secure location for negotiating with Silas Vane."
+        },
+        {
+          "asset_name": "The Gilt Collection",
+          "asset_type": "Asset",
+          "description": "A world-renowned archive of rare weather sheets.",
+          "story_use": "Used to influence the market value of atmospheric compositions."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Market Trends",
+          "summary": "Expertise in the fluctuating value of irrigation rights.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Sheet Authenticity",
+          "summary": "Ability to spot forged weather sheets at a glance.",
+          "confidence": 98
+        }
+      ]
+    },
+    {
+      "display_name": "Fennel Root",
+      "role_name": "Grafting Apprentice",
+      "activity": "Pruning the bioluminescent ferns in the Root-Grafting Laboratory",
+      "home_base": "Root-Grafting Laboratory",
+      "arc_goal": "To discover a way to grow plants without the need for patented seeds.",
+      "inventory": [
+        {
+          "name": "CRC-039: Copper Pruning Shears",
+          "description": "Specially designed for delicate bioluminescent stems.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-040: Nutrient-Rich Sludge",
+          "description": "A thick paste used to accelerate root growth.",
+          "quantity": 5
+        },
+        {
+          "name": "CRC-041: Glass Specimen Jars",
+          "description": "Used for collecting rare spore samples.",
+          "quantity": 10
+        },
+        {
+          "name": "CRC-042: Grafting Tape",
+          "description": "A sticky, breathable fabric for binding plant limbs.",
+          "quantity": 3
+        },
+        {
+          "name": "CRC-043: Mist-Spray Bottle",
+          "description": "Filled with a mixture of water and growth hormones.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-044: Leather Work Gloves",
+          "description": "Reinforced to protect against thorny mutations.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-045: Sketchbook of Flora",
+          "description": "Contains detailed drawings of Elara Moss's experiments.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-046: Small Pouch of Soil",
+          "description": "High-quality earth taken from the Pipe-Works Commons.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Secret Greenhouse",
+          "asset_type": "Facility",
+          "description": "A hidden alcove behind the laboratory for illegal experiments.",
+          "story_use": "Where the player can grow non-patented flora."
+        },
+        {
+          "asset_name": "Apprentice's Badge",
+          "asset_type": "Access",
+          "description": "A copper badge granting entry to the lower labs.",
+          "story_use": "Used to bypass the Hydro-Pneumatic Checkpoint."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Botany Basics",
+          "summary": "Knowledge of plant nutrition and grafting techniques.",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Lab Security",
+          "summary": "Awareness of the blind spots in the laboratory's surveillance.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Holloway",
+      "role_name": "Pipe-Works Scavenger",
+      "activity": "Diving into the flooded sub-levels of the Pipe-Works Commons",
+      "home_base": "The Pipe-Works Commons",
+      "arc_goal": "To find the lost 'Master Key' that controls the entire Conservatory's water flow.",
+      "inventory": [
+        {
+          "name": "CRC-047: Brass Diving Helmet",
+          "description": "A heavy, pressurized helmet for underwater exploration.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-048: Oxygen-Tank Harness",
+          "description": "Connects to the helmet to provide breathable air.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-049: Waterproof Lantern",
+          "description": "A clockwork light source that works underwater.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-050: Magnetic Scrap-Hook",
+          "description": "Used to pull valuable metal from the sludge.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-051: Rusty Pipe-Wrench",
+          "description": "A heavy tool that doubles as a defensive weapon.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-052: Mesh Collection Bag",
+          "description": "For carrying salvaged parts back to the surface.",
+          "quantity": 2
+        },
+        {
+          "name": "CRC-053: Compressed Air Canister",
+          "description": "Emergency air supply for long dives.",
+          "quantity": 3
+        },
+        {
+          "name": "CRC-054: Tattered Map of the Sump",
+          "description": "A hand-drawn guide to the flooded sub-levels.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Scavenger's Barge",
+          "asset_type": "Vehicle",
+          "description": "A small, steam-powered raft used to navigate the Commons.",
+          "story_use": "Transporting heavy salvage across the Pipe-Works."
+        },
+        {
+          "asset_name": "Salvage Rights",
+          "asset_type": "Permit",
+          "description": "A forged document allowing the collection of scrap.",
+          "story_use": "Avoiding trouble with Bram Tallow's crew."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Sub-Level Geography",
+          "summary": "Intimate knowledge of the Conservatory's flooded basement.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Steam-Pressure Physics",
+          "summary": "Understanding how to manipulate valves to create air pockets.",
+          "confidence": 82
+        }
+      ]
+    },
+    {
+      "display_name": "Ignatius Vane",
+      "role_name": "Vault Scribe",
+      "activity": "Transcribing genetic sequences onto brass scrolls",
+      "home_base": "Patent Seed Vault",
+      "arc_goal": "To recover the lost 'Ever-Bloom' sequence stolen by Thistle Thorne",
+      "inventory": [
+        {
+          "name": "Brass Stylus",
+          "description": "A precision tool for etching micro-script into metal.",
+          "quantity": 1
+        },
+        {
+          "name": "Magnifying Monocle",
+          "description": "A lens calibrated for viewing cellular structures.",
+          "quantity": 1
+        },
+        {
+          "name": "Ink-Pot of Liquid Copper",
+          "description": "Conductive ink used for permanent record-keeping.",
+          "quantity": 3
+        },
+        {
+          "name": "Dormant Fern Spore",
+          "description": "A tiny, glowing seed encased in a glass vial.",
+          "quantity": 12
+        },
+        {
+          "name": "Vault Access Key",
+          "description": "A heavy, notched iron key with the Vane family crest.",
+          "quantity": 1
+        },
+        {
+          "name": "Polishing Cloth",
+          "description": "A soft chamois for cleaning brass scrolls.",
+          "quantity": 2
+        },
+        {
+          "name": "Genetic Cipher Book",
+          "description": "A leather-bound guide to decoding plant DNA.",
+          "quantity": 1
+        },
+        {
+          "name": "Wax Seal Stamp",
+          "description": "Used to certify the authenticity of seed batches.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Scribe's Desk",
+          "asset_type": "Furniture",
+          "description": "A massive mahogany desk with built-in micro-lathes.",
+          "story_use": "Used to create the permanent records of the Conservatory's flora."
+        },
+        {
+          "asset_name": "Archive Locker 402",
+          "asset_type": "Storage",
+          "description": "A pressurized locker containing forbidden botanical blueprints.",
+          "story_use": "Holds the secret history of the Conservatory's founding."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Seed Genealogy",
+          "summary": "Deep understanding of the lineage of every plant in the vault.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Thistle's Tactics",
+          "summary": "Knowledge of the specific corrosive glyphs used by the saboteur.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Seraphina Gilt",
+      "role_name": "Atmospheric Sommelier",
+      "activity": "Curating a tasting of 'High-Altitude Mist' sheets",
+      "home_base": "The Fern-Gilded Lounge",
+      "arc_goal": "To secure an exclusive contract with Marius Gilt for the 'Storm-Front' vintage",
+      "inventory": [
+        {
+          "name": "Silver Sheet Tongs",
+          "description": "Delicate pincers for handling weather sheets without smudging.",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Condensed Dew",
+          "description": "A sample of pure, unrefined mountain moisture.",
+          "quantity": 5
+        },
+        {
+          "name": "Aroma Diffuser",
+          "description": "A clockwork device that releases the scent of rain.",
+          "quantity": 1
+        },
+        {
+          "name": "Velvet Sheet Portfolio",
+          "description": "A protective case for transporting rare weather music.",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Fork",
+          "description": "Used to check the resonance of metal weather sheets.",
+          "quantity": 1
+        },
+        {
+          "name": "Gilded Invitation",
+          "description": "A pass to the most exclusive lounges in the Conservatory.",
+          "quantity": 3
+        },
+        {
+          "name": "Silk Gloves",
+          "description": "White gloves to prevent oil transfer to delicate assets.",
+          "quantity": 2
+        },
+        {
+          "name": "Crystal Decanter",
+          "description": "Used for serving aerated water to elite patrons.",
+          "quantity": 1
+        },
+        {
+          "name": "Scented Handkerchief",
+          "description": "Infused with lavender to mask the smell of the Pipe-Works.",
+          "quantity": 4
+        },
+        {
+          "name": "Ledger of Patrons",
+          "description": "A list of the wealthiest collectors in the city.",
+          "quantity": 1
+        },
+        {
+          "name": "Miniature Barometer",
+          "description": "A pocket-sized device for checking local pressure.",
+          "quantity": 1
+        },
+        {
+          "name": "Gold-Leaf Garnish",
+          "description": "Edible flakes used to decorate high-end beverages.",
+          "quantity": 20
+        },
+        {
+          "name": "Reservation Book",
+          "description": "A schedule of private tastings for the elite.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Brass Bell",
+          "description": "Used to summon lounge attendants.",
+          "quantity": 1
+        },
+        {
+          "name": "Sample Tin of 'Thunder'",
+          "description": "A small sheet that vibrates with low-frequency sound.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gilded Booth",
+          "asset_type": "Real Estate",
+          "description": "A private, sound-proofed alcove in the Lounge.",
+          "story_use": "A secure location for high-stakes trading and gossip."
+        },
+        {
+          "asset_name": "Vintage Press Plate",
+          "asset_type": "Tool",
+          "description": "An antique plate for pressing unique weather patterns.",
+          "story_use": "Allows for the creation of bespoke atmospheric experiences."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Lounge Etiquette",
+          "summary": "Mastery of the complex social hierarchies of the elite.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Weather Sheet Grading",
+          "summary": "The ability to distinguish between genuine and forged sheets.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Kestrel Reed",
+      "role_name": "Pressure Scout",
+      "activity": "Mapping air-current leaks near the Lookout",
+      "home_base": "Rain-Catcher Lookout",
+      "arc_goal": "To find a way to bypass the Hydro-Pneumatic Checkpoint undetected",
+      "inventory": [
+        {
+          "name": "Pneumatic Grappling Hook",
+          "description": "A steam-powered launcher for scaling exterior pipes.",
+          "quantity": 1
+        },
+        {
+          "name": "Wind-Speed Gauge",
+          "description": "A handheld anemometer with a cracked glass face.",
+          "quantity": 1
+        },
+        {
+          "name": "Copper Signal Mirror",
+          "description": "Used to flash messages across the Conservatory.",
+          "quantity": 1
+        },
+        {
+          "name": "Roll of Lead Tape",
+          "description": "Heavy-duty tape for temporary leak repairs.",
+          "quantity": 3
+        },
+        {
+          "name": "Scout's Binoculars",
+          "description": "Enhanced lenses for spotting distant weather patterns.",
+          "quantity": 1
+        },
+        {
+          "name": "Leather Harness",
+          "description": "A sturdy rig for hanging off the side of the Lookout.",
+          "quantity": 1
+        },
+        {
+          "name": "Canteen of Filtered Rain",
+          "description": "Essential hydration for long shifts on the exterior.",
+          "quantity": 1
+        },
+        {
+          "name": "Whistle of the Winds",
+          "description": "A high-pitched whistle used to signal other scouts.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Perch",
+          "asset_type": "Outpost",
+          "description": "A hidden platform tucked under the Lookout's eaves.",
+          "story_use": "A staging ground for unauthorized excursions."
+        },
+        {
+          "asset_name": "Modified Pressure Suit",
+          "asset_type": "Equipment",
+          "description": "A suit reinforced to withstand extreme steam bursts.",
+          "story_use": "Enables exploration of the dangerous Pipe-Works sub-levels."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Air Current Mapping",
+          "summary": "Knowledge of the invisible paths through the Conservatory.",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Checkpoint Blindspots",
+          "summary": "Information on when the scanners at the Checkpoint cycle.",
+          "confidence": 65
+        }
+      ]
+    },
+    {
+      "display_name": "Bastian Moss",
+      "role_name": "Irrigation Technician",
+      "activity": "Repairing a jammed flow-regulator",
+      "home_base": "The Pipe-Works Commons",
+      "arc_goal": "To expose the corruption in Silas Vane's water distribution",
+      "inventory": [
+        {
+          "name": "Heavy Pipe Wrench",
+          "description": "A massive tool for turning stubborn iron valves.",
+          "quantity": 1
+        },
+        {
+          "name": "Gasket Sealant",
+          "description": "A sticky, waterproof resin for fixing leaks.",
+          "quantity": 4
+        },
+        {
+          "name": "Pressure Gauge",
+          "description": "A brass dial that measures steam intensity.",
+          "quantity": 1
+        },
+        {
+          "name": "Oiled Rags",
+          "description": "Used for cleaning grease off hands and machinery.",
+          "quantity": 10
+        },
+        {
+          "name": "Blueprint of Sector 4",
+          "description": "A detailed map of the local irrigation pipes.",
+          "quantity": 1
+        },
+        {
+          "name": "Tool Belt",
+          "description": "A worn leather belt with various loops and pouches.",
+          "quantity": 1
+        },
+        {
+          "name": "Spare Brass Nut",
+          "description": "A common but essential part for pipe repair.",
+          "quantity": 15
+        },
+        {
+          "name": "Emergency Flare",
+          "description": "A chemical stick that burns bright red underwater.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Maintenance Hub",
+          "asset_type": "Workshop",
+          "description": "A cluttered room filled with spare parts and tools.",
+          "story_use": "The center for all repair operations in the Commons."
+        },
+        {
+          "asset_name": "Flow-Control Console",
+          "asset_type": "Machinery",
+          "description": "A complex array of levers governing water flow.",
+          "story_use": "Can be used to reroute water to different sectors."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Hydraulic Systems",
+          "summary": "Expertise in the mechanical workings of the Conservatory.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Vane's Ledger Secrets",
+          "summary": "Suspicions regarding the illegal diversion of water.",
+          "confidence": 40
+        }
+      ]
+    },
+    {
+      "display_name": "Valerius Gilt",
+      "role_name": "Sheet Music Forger",
+      "activity": "Etching counterfeit storm-patterns onto recycled brass",
+      "home_base": "The Fern-Gilded Lounge",
+      "arc_goal": "To replace the Conservatory's master weather-sheet with a permanent drought-loop",
+      "inventory": [
+        {
+          "name": "CRC-016 Acid-Etched Stylus",
+          "description": "A precision tool for carving micro-grooves into weather sheets.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-017 Blank Brass Folio",
+          "description": "High-grade brass sheets ready for atmospheric imprinting.",
+          "quantity": 15
+        },
+        {
+          "name": "CRC-018 Counterfeit Seal of the Press",
+          "description": "A wax stamp mimicking the official Weather Sheet Music Press mark.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-019 Jar of Corrosive Vapor",
+          "description": "Used to age new brass to look like ancient vault stock.",
+          "quantity": 3
+        },
+        {
+          "name": "CRC-020 Stolen Humidity Ledger",
+          "description": "A logbook detailing the exact moisture levels of the last decade.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-021 Gilt Family Signet",
+          "description": "A ring used to bypass security in the Fern-Gilded Lounge.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-022 Resonating Tuning Fork",
+          "description": "Used to check the pitch of weather-grooves.",
+          "quantity": 2
+        },
+        {
+          "name": "CRC-023 Polishing Pumice",
+          "description": "Fine stone for removing errors from metal sheets.",
+          "quantity": 5
+        },
+        {
+          "name": "CRC-024 Black Market Rain-Catcher Permits",
+          "description": "Forged documents for restricted lookout access.",
+          "quantity": 10
+        },
+        {
+          "name": "CRC-025 Silent Steam-Valve Key",
+          "description": "A specialized wrench that operates without a hiss.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-026 Vial of 'False-Dew' Ink",
+          "description": "Ink that only appears under specific barometric pressures.",
+          "quantity": 4
+        },
+        {
+          "name": "CRC-027 Magnifying Monocle",
+          "description": "Jeweler's glass for inspecting micro-grafts.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-028 Scrap of 'Great Flood' Sheet",
+          "description": "A fragment of a legendary, forbidden weather pattern.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-029 Weighted Brass Shavings",
+          "description": "Used to bribe Pipe-Works scavengers.",
+          "quantity": 50
+        },
+        {
+          "name": "CRC-030 Encrypted Correspondence",
+          "description": "Letters between Valerius and Thistle Thorne regarding vault vulnerabilities.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gilt Alcove",
+          "asset_type": "Private Booth",
+          "description": "A sound-proofed corner of the Fern-Gilded Lounge.",
+          "story_use": "Used for discreetly meeting with corrupt officials like Silas Vane."
+        },
+        {
+          "asset_name": "Portable Press-Jig",
+          "asset_type": "Machinery",
+          "description": "A compact, illegal version of the Weather Sheet Music Press.",
+          "story_use": "Allows for the creation of forged sheets outside of the main factory."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-GILT-01",
+          "topic": "Atmospheric Forgery",
+          "summary": "The art of mimicking natural rain patterns through manual metal-etching.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-GILT-02",
+          "topic": "Gilt Family Secrets",
+          "summary": "Knowledge of the secret passages connecting the Lounge to the Seed Vault.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Oona Reed",
+      "role_name": "Pressure-Valve Saboteur",
+      "activity": "Loosening the primary steam-gaskets in the Pipe-Works Commons",
+      "home_base": "The Pipe-Works Commons",
+      "arc_goal": "To trigger a controlled pressure-surge that exposes the corruption in the Irrigation Exchange",
+      "inventory": [
+        {
+          "name": "CRC-031 Gasket-Breaker Bar",
+          "description": "A heavy iron tool designed to force open rusted valves.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-032 Pressure-Sensitive Detonator",
+          "description": "A device that triggers when steam levels reach a specific PSI.",
+          "quantity": 4
+        },
+        {
+          "name": "CRC-033 Clogged Filter-Mesh",
+          "description": "Used to intentionally obstruct water flow in the Commons.",
+          "quantity": 8
+        },
+        {
+          "name": "CRC-034 Reed Family Whistle",
+          "description": "A high-pitched whistle used to signal Kaelen Reed during shifts.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-035 Thermal Insulation Wrap",
+          "description": "Protective gear for handling super-heated pipes.",
+          "quantity": 2
+        },
+        {
+          "name": "CRC-036 Stolen Checkpoint Badge",
+          "description": "A low-level pass taken from a distracted inspector.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-037 Jar of Lubricating Sludge",
+          "description": "Thick grease used to make surfaces dangerously slick.",
+          "quantity": 3
+        },
+        {
+          "name": "CRC-038 Schematic of the Main Boiler",
+          "description": "A blueprint showing the structural weaknesses of the Conservatory.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Sub-Level 4 Hideout",
+          "asset_type": "Safehouse",
+          "description": "A dry pocket hidden behind the main steam turbines.",
+          "story_use": "A staging ground for Oona's raids on the Pipe-Works."
+        },
+        {
+          "asset_name": "The 'Steam-Slicer'",
+          "asset_type": "Custom Tool",
+          "description": "A modified pipe-cutter that works silently.",
+          "story_use": "Used to sabotage the flow-regulators repaired by Bastian Moss."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-REED-01",
+          "topic": "Pipe-Works Layout",
+          "summary": "Detailed understanding of the labyrinthine plumbing beneath the Conservatory.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-REED-02",
+          "topic": "Steam-Harmonics",
+          "summary": "The ability to predict pipe bursts by listening to the vibrations of the metal.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Aris Thorne",
+      "role_name": "Seed-Vault Archivist",
+      "activity": "Cross-referencing genetic markers in the Patent Seed Vault",
+      "home_base": "Patent Seed Vault",
+      "arc_goal": "To find the 'Origin Seed' before Thistle Thorne can destroy it",
+      "inventory": [
+        {
+          "name": "CRC-039 Brass Scroll Case",
+          "description": "A protective tube for carrying sensitive genetic data.",
+          "quantity": 3
+        },
+        {
+          "name": "CRC-040 Micro-Grafting Scalpel",
+          "description": "A razor-sharp blade for taking samples from dormant flora.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-041 Seed-Signature Scanner",
+          "description": "A handheld device that reads the bio-rhythms of seeds.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-042 Vial of Growth-Serum",
+          "description": "A concentrated liquid that can wake a seed from dormancy instantly.",
+          "quantity": 5
+        },
+        {
+          "name": "CRC-043 Archivist's White Gloves",
+          "description": "Silk gloves to prevent skin oils from contaminating the vault.",
+          "quantity": 2
+        },
+        {
+          "name": "CRC-044 Cipher-Key for the Vault",
+          "description": "A rotating brass disc used to decode the vault's locks.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-045 Dried Fern-Spore Sample",
+          "description": "A rare specimen from the Root-Grafting Laboratory.",
+          "quantity": 10
+        },
+        {
+          "name": "CRC-046 Thorne Family Ledger",
+          "description": "A record of every seed ever entered into the Conservatory.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Archivist's Desk",
+          "asset_type": "Workstation",
+          "description": "A heavy mahogany desk bolted to the floor of the Seed Vault.",
+          "story_use": "Where Aris decodes the glyphs left by Thistle Thorne."
+        },
+        {
+          "asset_name": "Cryo-Storage Unit",
+          "asset_type": "Container",
+          "description": "A small, portable refrigeration unit for sensitive biologicals.",
+          "story_use": "Used to transport the Origin Seed safely through the heat of the Commons."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-THORNE-01",
+          "topic": "Genetic Taxonomy",
+          "summary": "The classification of all flora within the Clockwork Rain Conservatory.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-THORNE-02",
+          "topic": "Vault Security Protocols",
+          "summary": "Knowledge of the automated defenses and lock-out timers of the Seed Vault.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Mila Moss",
+      "role_name": "Irrigation Smuggler",
+      "activity": "Hiding water-canisters inside hollowed-out root-grafts",
+      "home_base": "Hydro-Pneumatic Checkpoint",
+      "arc_goal": "To provide the lower-level scavengers with enough water to survive the drought",
+      "inventory": [
+        {
+          "name": "CRC-047 Hollowed-Out Root-Stock",
+          "description": "Plant matter modified to hide liquid containers.",
+          "quantity": 20
+        },
+        {
+          "name": "CRC-048 High-Pressure Water Canister",
+          "description": "Reinforced flasks for carrying stolen irrigation water.",
+          "quantity": 15
+        },
+        {
+          "name": "CRC-049 Checkpoint Manifest",
+          "description": "A list of incoming shipments, used to find gaps in security.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-050 Bribery Chits",
+          "description": "Tokens redeemable for luxury goods in the Fern-Gilded Lounge.",
+          "quantity": 30
+        },
+        {
+          "name": "CRC-051 Siphon-Hose",
+          "description": "A flexible tube for draining water from the main lines.",
+          "quantity": 2
+        },
+        {
+          "name": "CRC-052 Camouflage Cloak",
+          "description": "A garment that mimics the texture of the Conservatory walls.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-053 False-Bottomed Crate",
+          "description": "A shipping container used to bypass Cora Mistral's scans.",
+          "quantity": 5
+        },
+        {
+          "name": "CRC-054 Pheromone Masking Spray",
+          "description": "Used to hide the scent of fresh water from security hounds.",
+          "quantity": 4
+        },
+        {
+          "name": "CRC-055 Emergency Flare",
+          "description": "A chemical light for signaling Holloway in the flooded sub-levels.",
+          "quantity": 6
+        },
+        {
+          "name": "CRC-056 Magnetic Grappling Hook",
+          "description": "Used to scale the exterior of the Pipe-Works.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-057 Encrypted Radio",
+          "description": "A short-range device for communicating with Elara Moss.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-058 Water-Purity Tester",
+          "description": "A kit to ensure the stolen water isn't contaminated with acid.",
+          "quantity": 3
+        },
+        {
+          "name": "CRC-059 Forged Export License",
+          "description": "A document allowing the movement of 'agricultural waste'.",
+          "quantity": 2
+        },
+        {
+          "name": "CRC-060 Heavy-Duty Bolt Cutters",
+          "description": "Used to breach the fences of the Irrigation Rights Exchange.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-061 Map of the 'Wet-Ways'",
+          "description": "A chart of the secret, flooded tunnels used by smugglers.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hidden Sluice",
+          "asset_type": "Infrastructure",
+          "description": "A modified drainage pipe that bypasses the Hydro-Pneumatic Checkpoint.",
+          "story_use": "Mila's primary route for moving contraband water."
+        },
+        {
+          "asset_name": "Smuggler's Skiff",
+          "asset_type": "Vehicle",
+          "description": "A small, silent boat designed for the narrow irrigation canals.",
+          "story_use": "Used to transport large quantities of water to the Pipe-Works scavengers."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-MOSS-01",
+          "topic": "Checkpoint Evasion",
+          "summary": "Techniques for bypassing the biological and mechanical scans of the Conservatory.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "K-MOSS-02",
+          "topic": "Water-Rights Law",
+          "summary": "A deep understanding of the legal loopholes in the Irrigation Rights Exchange.",
+          "confidence": 82
+        }
+      ]
+    },
+    {
+      "display_name": "Elias Vane",
+      "role_name": "Vault Auditor",
+      "activity": "Auditing the genetic integrity of the Patent Seed Vault",
+      "home_base": "Patent Seed Vault",
+      "arc_goal": "To expose the corruption in the Seed Vault's genetic records",
+      "inventory": [
+        {
+          "name": "CRC-001: Brass Caliper",
+          "description": "A precision tool for measuring seed diameter.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-002: Genetic Ledger",
+          "description": "A leather-bound book containing the genetic sequences of all seeds in the vault.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-003: Magnifying Glass",
+          "description": "A high-powered lens for inspecting seeds for signs of tampering.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-004: Seed Sample Jar",
+          "description": "A small glass jar for collecting seed samples.",
+          "quantity": 5
+        },
+        {
+          "name": "CRC-005: Inkwell and Quill",
+          "description": "For recording audit findings in the ledger.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-006: Vault Keycard",
+          "description": "A brass card that grants access to the Patent Seed Vault.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-007: Cleaning Cloth",
+          "description": "A soft cloth for cleaning the magnifying glass and calipers.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-008: Audit Report",
+          "description": "A partially completed report on the state of the Seed Vault.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Auditor's Desk",
+          "asset_type": "Furniture",
+          "description": "A heavy oak desk in the Patent Seed Vault.",
+          "story_use": "Where Elias conducts his audits and records his findings."
+        },
+        {
+          "asset_name": "Personal Safe",
+          "asset_type": "Storage",
+          "description": "A small, secure safe for storing sensitive audit documents.",
+          "story_use": "Where Elias keeps his most incriminating evidence."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Seed Genetics",
+          "summary": "A deep understanding of the genetic makeup of the seeds in the vault.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Vault Security",
+          "summary": "Knowledge of the security protocols and vulnerabilities of the Patent Seed Vault.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra Reed",
+      "role_name": "Weather Sheet Merchant",
+      "activity": "Trading weather sheets in the Weather Sheet Music Press",
+      "home_base": "Weather Sheet Music Press",
+      "arc_goal": "To become the most successful weather sheet merchant in the Conservatory",
+      "inventory": [
+        {
+          "name": "CRC-009: Weather Sheet: Gentle Rain",
+          "description": "A sheet that produces a gentle, soothing rain when played.",
+          "quantity": 10
+        },
+        {
+          "name": "CRC-010: Weather Sheet: Thunderstorm",
+          "description": "A sheet that produces a powerful thunderstorm when played.",
+          "quantity": 5
+        },
+        {
+          "name": "CRC-011: Weather Sheet: Morning Mist",
+          "description": "A sheet that produces a light, refreshing mist when played.",
+          "quantity": 15
+        },
+        {
+          "name": "CRC-012: Weather Sheet: Summer Breeze",
+          "description": "A sheet that produces a warm, gentle breeze when played.",
+          "quantity": 8
+        },
+        {
+          "name": "CRC-013: Weather Sheet: Autumn Gale",
+          "description": "A sheet that produces a strong, cool wind when played.",
+          "quantity": 3
+        },
+        {
+          "name": "CRC-014: Weather Sheet: Winter Frost",
+          "description": "A sheet that produces a light dusting of frost when played.",
+          "quantity": 12
+        },
+        {
+          "name": "CRC-015: Weather Sheet: Spring Shower",
+          "description": "A sheet that produces a light, refreshing rain when played.",
+          "quantity": 20
+        },
+        {
+          "name": "CRC-016: Weather Sheet: Heat Wave",
+          "description": "A sheet that produces a wave of intense heat when played.",
+          "quantity": 2
+        },
+        {
+          "name": "CRC-017: Weather Sheet: Hailstorm",
+          "description": "A sheet that produces a heavy hailstorm when played.",
+          "quantity": 4
+        },
+        {
+          "name": "CRC-018: Weather Sheet: Foggy Night",
+          "description": "A sheet that produces a thick, dense fog when played.",
+          "quantity": 7
+        },
+        {
+          "name": "CRC-019: Weather Sheet: Sunny Day",
+          "description": "A sheet that produces a bright, sunny day when played.",
+          "quantity": 18
+        },
+        {
+          "name": "CRC-020: Weather Sheet: Rainbow",
+          "description": "A rare sheet that produces a beautiful rainbow when played.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-021: Merchant's Ledger",
+          "description": "A book for recording sales and inventory.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-022: Coin Pouch",
+          "description": "A pouch for holding the currency of the Conservatory.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-023: Display Case",
+          "description": "A portable case for displaying weather sheets to potential customers.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Merchant's Stall",
+          "asset_type": "Structure",
+          "description": "A small, colorful stall in the Weather Sheet Music Press.",
+          "story_use": "Where Lyra sells her weather sheets to customers."
+        },
+        {
+          "asset_name": "Storage Crate",
+          "asset_type": "Storage",
+          "description": "A large, sturdy crate for storing her inventory of weather sheets.",
+          "story_use": "Where Lyra keeps her stock of weather sheets when she's not at her stall."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Weather Patterns",
+          "summary": "A deep understanding of the different types of weather and how they are represented on weather sheets.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Market Trends",
+          "summary": "Knowledge of the current demand for different types of weather sheets and how to price them.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen Moss",
+      "role_name": "Irrigation Engineer",
+      "activity": "Maintaining the irrigation systems in the Irrigation Rights Exchange",
+      "home_base": "Irrigation Rights Exchange",
+      "arc_goal": "To ensure that the irrigation systems are running efficiently and fairly",
+      "inventory": [
+        {
+          "name": "CRC-024: Pipe Wrench",
+          "description": "A heavy-duty wrench for tightening and loosening pipes.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-025: Pressure Gauge",
+          "description": "A device for measuring the pressure in the irrigation pipes.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-026: Leak Detector",
+          "description": "A tool for finding leaks in the irrigation system.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-027: Irrigation Map",
+          "description": "A detailed map of the irrigation systems in the Conservatory.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-028: Tool Belt",
+          "description": "A belt for carrying his tools and equipment.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-029: Spare Gaskets",
+          "description": "A set of spare gaskets for repairing leaks.",
+          "quantity": 10
+        },
+        {
+          "name": "CRC-030: Lubricant",
+          "description": "A bottle of lubricant for keeping the irrigation systems running smoothly.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-031: Flashlight",
+          "description": "A powerful flashlight for inspecting the irrigation systems in dark areas.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Engineer's Workshop",
+          "asset_type": "Room",
+          "description": "A small workshop in the Irrigation Rights Exchange.",
+          "story_use": "Where Kaelen repairs and maintains his tools and equipment."
+        },
+        {
+          "asset_name": "Irrigation Control Panel",
+          "asset_type": "Equipment",
+          "description": "A complex control panel for managing the irrigation systems.",
+          "story_use": "Where Kaelen monitors and adjusts the flow of water through the irrigation systems."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Irrigation Systems",
+          "summary": "A deep understanding of the design and operation of the irrigation systems in the Conservatory.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Water Rights",
+          "summary": "Knowledge of the laws and regulations governing the use of water in the Conservatory.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Seraphina Thorne",
+      "role_name": "Checkpoint Guard",
+      "activity": "Guarding the Hydro-Pneumatic Checkpoint",
+      "home_base": "Hydro-Pneumatic Checkpoint",
+      "arc_goal": "To protect the Conservatory from outside threats",
+      "inventory": [
+        {
+          "name": "CRC-032: Guard's Uniform",
+          "description": "A sturdy, waterproof uniform worn by the guards of the Conservatory.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-033: Baton",
+          "description": "A heavy baton for subduing unruly individuals.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-034: Handcuffs",
+          "description": "A pair of sturdy handcuffs for restraining suspects.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-035: Guard's Badge",
+          "description": "A brass badge that identifies Seraphina as a guard of the Conservatory.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-036: Whistle",
+          "description": "A loud whistle for signaling for help or alerting other guards.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-037: First Aid Kit",
+          "description": "A small kit containing basic medical supplies.",
+          "quantity": 1
+        },
+        {
+          "name": "CRC-038: Ration Bars",
+          "description": "A set of high-energy ration bars for long shifts.",
+          "quantity": 5
+        },
+        {
+          "name": "CRC-039: Water Canteen",
+          "description": "A sturdy canteen for carrying water.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guard's Post",
+          "asset_type": "Structure",
+          "description": "A small, fortified post at the Hydro-Pneumatic Checkpoint.",
+          "story_use": "Where Seraphina stands guard and monitors the flow of people and goods through the checkpoint."
+        },
+        {
+          "asset_name": "Detention Cell",
+          "asset_type": "Room",
+          "description": "A small, secure cell for holding suspects.",
+          "story_use": "Where Seraphina detains individuals who are suspected of breaking the law."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Security Protocols",
+          "summary": "A deep understanding of the security protocols and procedures of the Conservatory.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Threat Assessment",
+          "summary": "Knowledge of how to identify and assess potential threats to the Conservatory.",
+          "confidence": 85
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Litigation Cycle",
+      "summary": "Players gather evidence of temporal malpractice, present cases to the Gear-Judges, and enforce ritualistic penalties.",
+      "roles": [
+        "Advocate",
+        "Judge",
+        "Witness"
+      ],
+      "rooms": [
+        "The High Court of Ticks",
+        "Evidence Vault"
+      ],
+      "pressure": "The ticking of the Doomsday Clock."
+    },
+    {
+      "label": "Maintenance Ritual",
+      "summary": "Players must navigate the internal machinery to lubricate gears and adjust springs before the rain stops.",
+      "roles": [
+        "Engineer",
+        "Oiler",
+        "Overseer"
+      ],
+      "rooms": [
+        "The Engine Heart",
+        "Steam Tunnels"
+      ],
+      "pressure": "Rising heat and failing pressure valves under pressure."
+    }
+  ],
+  "player_entry_points": [
+    "A newly appointed apprentice arriving at the gates.",
+    "A disgraced lawyer seeking redemption in the clockwork courts.",
+    "A merchant delivering rare oils for the Great Gear."
+  ],
+  "conflict_hooks": [
+    "The Great Gear has skipped a beat, causing a temporal paradox in the lower wards.",
+    "A rival conservatory has filed a lawsuit claiming ownership of the Rain-Dance ritual.",
+    "The Lead Chronometer has been found frozen in time, and the primary suspect is their successor."
+  ],
+  "custom_actions": [
+    "Recalibrate Time-Piece",
+    "File Formal Grievance",
+    "Invoke Ancient Precedent",
+    "Synchronize Rhythms"
+  ],
+  "social_rules": [
+    "All disputes must be mediated by a licensed Chronometer.",
+    "No physical violence is permitted within the Conservatory walls.",
+    "The ritual of the Rain-Dance must be observed every sunset.",
+    "Silence is mandatory in the Grand Library of Gears."
+  ],
+  "item_themes": [
+    "mechanical gears",
+    "rare orchids",
+    "legal documents",
+    "musical irrigation",
+    "umbrella weaponry"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "CRC-001",
+      "name": "Brass-Cased Patent Seed: Chrono-Lily",
+      "price": 1200,
+      "mass": 0.2,
+      "description": "A legally protected seed encased in a brass shell that blooms exactly at the stroke of noon.",
+      "image_prompt": "A small brass mechanical seed pod with intricate engravings, resting on velvet.",
+      "category": "Patent Seeds"
+    },
+    {
+      "item_id": "CRC-002",
+      "name": "Sheet Music: Gentle Drizzle Sonata",
+      "price": 450,
+      "mass": 0.1,
+      "description": "A perforated copper scroll that, when played on a hydro-organ, triggers a localized light rain.",
+      "image_prompt": "A roll of perforated copper sheet music with Art Nouveau floral patterns.",
+      "category": "Weather Sheet Music"
+    },
+    {
+      "item_id": "CRC-003",
+      "name": "Irrigation Right: Sector 7 Voucher",
+      "price": 3000,
+      "mass": 0.05,
+      "description": "A wax-sealed document granting the bearer 48 hours of pressurized nutrient-water flow.",
+      "image_prompt": "An official document with a heavy wax seal and gold leaf borders.",
+      "category": "Legal Documents"
+    },
+    {
+      "item_id": "CRC-004",
+      "name": "The Gilded Parasol-Rifle",
+      "price": 5500,
+      "mass": 4.5,
+      "description": "A defensive umbrella with a hidden brass barrel, firing steam-propelled darts.",
+      "image_prompt": "A steampunk umbrella made of silk and brass with a visible trigger mechanism.",
+      "category": "Umbrella Weaponry"
+    },
+    {
+      "item_id": "CRC-005",
+      "name": "Clockwork Orchid Pollinator",
+      "price": 850,
+      "mass": 0.8,
+      "description": "A mechanical hummingbird designed to cross-pollinate rare orchids in high-altitude glasshouses.",
+      "image_prompt": "A brass mechanical hummingbird with translucent emerald wings.",
+      "category": "Mechanical Gears"
+    },
+    {
+      "item_id": "CRC-006",
+      "name": "Pressure-Sensitive Rain Gauge",
+      "price": 200,
+      "mass": 1.2,
+      "description": "An ornate brass instrument that measures the rhythmic intensity of the conservatory's artificial storms.",
+      "image_prompt": "A tall brass gauge with a glass tube and intricate clockwork dials.",
+      "category": "Mechanical Gears"
+    },
+    {
+      "item_id": "CRC-007",
+      "name": "Patent Seed: Iron-Vein Fern",
+      "price": 1500,
+      "mass": 0.3,
+      "description": "A genetically modified fern that grows metallic fronds used for structural reinforcement.",
+      "image_prompt": "A fern with metallic silver leaves and copper stems in a glass jar.",
+      "category": "Patent Seeds"
+    },
+    {
+      "item_id": "CRC-008",
+      "name": "Sheet Music: Thunderous Crescendo",
+      "price": 900,
+      "mass": 0.15,
+      "description": "High-intensity weather music designed to clear debris from irrigation pipes via sonic vibration.",
+      "image_prompt": "A thick copper scroll with jagged musical notations and lightning motifs.",
+      "category": "Weather Sheet Music"
+    },
+    {
+      "item_id": "CRC-009",
+      "name": "Hydro-Clock Regulator",
+      "price": 1100,
+      "mass": 2.5,
+      "description": "A gear-driven valve that synchronizes garden watering cycles with the central conservatory clock.",
+      "image_prompt": "A complex assembly of brass gears and water pipes with a clock face.",
+      "category": "Mechanical Gears"
+    },
+    {
+      "item_id": "CRC-010",
+      "name": "Velvet-Lined Seed Vault",
+      "price": 600,
+      "mass": 3.0,
+      "description": "A portable, pressurized case for transporting high-value patent seeds safely.",
+      "image_prompt": "A leather and brass briefcase with padded interior compartments.",
+      "category": "Legal Documents"
+    },
+    {
+      "item_id": "CRC-011",
+      "name": "Steam-Mist Atomizer",
+      "price": 350,
+      "mass": 0.9,
+      "description": "A handheld device that creates a fine nutrient mist for delicate tropical mosses.",
+      "image_prompt": "A brass spray bottle with a hand pump and Art Nouveau filigree.",
+      "category": "Mechanical Gears"
+    },
+    {
+      "item_id": "CRC-012",
+      "name": "Orchid-Hunter's Monocle",
+      "price": 750,
+      "mass": 0.1,
+      "description": "A lens calibrated to detect the specific UV signature of unpatented wild orchids.",
+      "image_prompt": "A brass monocle with multiple rotating colored glass lenses.",
+      "category": "Mechanical Gears"
+    },
+    {
+      "item_id": "CRC-013",
+      "name": "Patent Seed: Luminescent Clock-Vine",
+      "price": 2200,
+      "mass": 0.25,
+      "description": "A climbing vine that glows in sequence to indicate the passing hours.",
+      "image_prompt": "A glowing blue vine wrapped around a brass pillar in a dark room.",
+      "category": "Patent Seeds"
+    },
+    {
+      "item_id": "CRC-014",
+      "name": "Brass-Ribbed Storm Cloak",
+      "price": 1800,
+      "mass": 2.2,
+      "description": "A heavy waterproof cloak reinforced with brass struts to withstand high-pressure irrigation bursts.",
+      "image_prompt": "A dark green waterproof cloak with brass structural ribs and buckles.",
+      "category": "Umbrella Weaponry"
+    },
+    {
+      "item_id": "CRC-015",
+      "name": "Notary's Steam-Press",
+      "price": 1300,
+      "mass": 5.5,
+      "description": "A heavy desk tool used to emboss patent numbers onto seed casings and legal deeds.",
+      "image_prompt": "A heavy brass mechanical press with a large lever and floral engravings.",
+      "category": "Legal Documents"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "clockwork-rain-conservatory-wardrobe-v1",
+    "world_wardrobe_brief": "A fusion of Art Nouveau elegance and clockpunk utility. Attire features waterproofed silks, brass structural reinforcements, and botanical motifs, reflecting a society governed by mechanical rain and plant patents.",
+    "forbidden_aesthetics": [
+      "cyberpunk neon",
+      "generic medieval fantasy",
+      "modern denim",
+      "tattered rags",
+      "military camouflage",
+      "space-age plastics"
+    ],
+    "palette_families": [
+      {
+        "name": "Botanical Elite",
+        "dominant": "#2d4f1e",
+        "accent": "#c5a059",
+        "trim": "#e0f2f1",
+        "material": "Varnished Silk"
+      },
+      {
+        "name": "Hydraulic Utility",
+        "dominant": "#1a1a1a",
+        "accent": "#4a90e2",
+        "trim": "#c5a059",
+        "material": "Treated Canvas"
+      },
+      {
+        "name": "Brass Scribe",
+        "dominant": "#c5a059",
+        "accent": "#2d4f1e",
+        "trim": "#4a90e2",
+        "material": "Polished Leather"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "hydrologist_arbitrator",
+        "role_keywords": [
+          "Hydrologist",
+          "Arbitrator",
+          "Broker"
+        ],
+        "attire": [
+          "Tailored frock coats",
+          "Brass-ribbed storm cloaks",
+          "High-collared vests"
+        ],
+        "props": [
+          "Pressure gauges",
+          "Wax-sealed vouchers",
+          "Gilded parasols"
+        ],
+        "palette_notes": "Dominant deep greens with heavy brass accents.",
+        "silhouette_notes": "Tall, rigid silhouettes with flared coat tails.",
+        "avoid": [
+          "Short sleeves",
+          "Exposed skin"
+        ]
+      },
+      {
+        "rule_id": "botanical_scholar",
+        "role_keywords": [
+          "Geneticist",
+          "Apprentice",
+          "Scribe"
+        ],
+        "attire": [
+          "Etched glass aprons",
+          "Magnifying spectacles",
+          "Fitted tunics"
+        ],
+        "props": [
+          "Seed canisters",
+          "Brass scrolls",
+          "Micro-scalpels"
+        ],
+        "palette_notes": "Lighter highlight tones with copper trim.",
+        "silhouette_notes": "Slim, functional shapes with tool-heavy belts.",
+        "avoid": [
+          "Bulky capes"
+        ]
+      },
+      {
+        "rule_id": "pipe_works_industrial",
+        "role_keywords": [
+          "Foreman",
+          "Technician",
+          "Scavenger"
+        ],
+        "attire": [
+          "Heavy rubberized boots",
+          "Utility jumpsuits",
+          "Leather welding masks"
+        ],
+        "props": [
+          "Wrenches",
+          "Steam-valves",
+          "Diving helmets"
+        ],
+        "palette_notes": "Dark shadows and weathered brass.",
+        "silhouette_notes": "Top-heavy with oversized mechanical backpacks.",
+        "avoid": [
+          "Delicate lace"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "conservatory_citizen",
+      "role_keywords": [
+        "citizen",
+        "visitor"
+      ],
+      "attire": [
+        "Art Nouveau patterned robes",
+        "Brass-buttoned waistcoats"
+      ],
+      "props": [
+        "Small mist-atomizers"
+      ],
+      "palette_notes": "Balanced mix of moss green and brass.",
+      "silhouette_notes": "Elegant, elongated 8-head ratio.",
+      "avoid": []
+    },
+    "visual_consistency_rules": [
+      "1px brass-colored outlines for all sprites.",
+      "Oversized headwear or backpacks for role identification.",
+      "Strict top-down perspective with no visible feet.",
+      "Constant wet/reflective sheen on metallic surfaces."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "clockwork-rain-conservatory",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees_vertical",
+      "scale_rule": "32px_per_meter_grid_aligned"
+    },
+    "palette": {
+      "dominant": "#2d4f1e",
+      "secondary": "#c5a059",
+      "accent": "#4a90e2",
+      "shadow": "#1a1a1a",
+      "highlight": "#e0f2f1"
+    },
+    "materials": [
+      "polished_brass",
+      "etched_stained_glass",
+      "damp_mossy_stone",
+      "wrought_iron_filigree",
+      "varnished_mahogany",
+      "pressurized_copper_piping"
+    ],
+    "lighting": "diffuse_greenhouse_glow_with_caustic_water_reflections",
+    "architecture": [
+      "art_nouveau_curves",
+      "ribbed_glass_domes",
+      "exposed_gear_assemblies",
+      "stepped_botanical_tiers"
+    ],
+    "terrain": {
+      "ground": "hexagonal_brass_grating_over_dark_water",
+      "path": "polished_malachite_walkways",
+      "edge": "overflow_gutters_and_steam_vents"
+    },
+    "sprite_language": {
+      "body_proportion": "elongated_elegant_8_head_ratio",
+      "outline": "1px_selective_brass_colored_inking",
+      "role_readability": "oversized_hats_and_mechanical_backpacks"
+    },
+    "world_prompt_prefix": "top-down_orthographic_clockpunk_botanical_conservatory_brass_and_glass_lush_flora",
+    "sprite_prompt_prefix": "top-down_character_sprite_art_nouveau_uniform_brass_accents_flat_colors",
+    "forbidden_visuals": [
+      "isometric_perspective",
+      "photorealism",
+      "text_labels",
+      "ui_elements_in_render",
+      "generic_fantasy_stone",
+      "cyberpunk_neon",
+      "beige_dirt"
+    ],
+    "canon_hash": "0d68fc7333d804b7"
+  }
+}

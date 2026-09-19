@@ -1,0 +1,55 @@
+# Model-Controlled Decomposed Baseline
+
+Generated: `2026-07-29T21:26:29.850742+00:00`
+
+Production specialist generation and package validation are run without FLUX art, browser launch, or publication. Pro and lite node groups are forced to the same model and generation settings for this experiment.
+
+## Summary
+
+- `world_count`: 5
+- `trial_count`: 5
+- `complete_successes`: 5
+- `complete_success_rate`: 1.0
+- `complete_success_wilson_95`: [0.5655, 1.0]
+- `worlds_with_majority_success`: 5
+- `first_pass_complete_successes`: 4
+- `first_pass_complete_success_rate`: 0.8
+- `worlds_with_majority_first_pass_success`: 4
+- `mean_elapsed_seconds`: 175.0502
+- `median_elapsed_seconds`: 161.133
+- `provider_attempt_count`: 79
+- `retry_or_failure_attempt_count`: 0
+- `usage_metadata_attempt_count`: 79
+- `usage_metadata_coverage`: 1.0
+- `localized_node_retry_event_count`: 1
+- `localized_node_retry_failed_node_counts`: {'roles': 1}
+- `localized_node_retry_preserved_cache_key_count`: 5
+- `token_totals`: {'candidatesTokenCount': 129216, 'promptTokenCount': 257293, 'thoughtsTokenCount': 1271, 'totalTokenCount': 387780}
+- `mean_total_tokens_per_trial`: 77556.0
+
+## Paired Monolithic Comparison
+
+- `paired_trial_count`: 5
+- `decomposed_only_successes`: 1
+- `monolithic_only_successes`: 0
+- `discordant_trial_count`: 1
+- `trial_level_one_sided_exact_p`: 0.5
+- `first_pass_decomposed_only_successes`: 3
+- `first_pass_monolithic_only_successes`: 1
+- `first_pass_discordant_trial_count`: 4
+- `first_pass_trial_level_one_sided_exact_p`: 0.3125
+- `first_pass_world_majority_decomposed_only`: 3
+- `first_pass_world_majority_monolithic_only`: 1
+- `first_pass_world_discordant_count`: 4
+- `first_pass_world_level_one_sided_sign_test_p`: 0.3125
+- `warning`: Repeated trials within a world are not independent premise clusters; the world-majority analysis remains primary.
+
+## Per World
+
+| World | Success | Trials | Rate |
+| --- | ---: | ---: | ---: |
+| Aurora Court of Migrating Cities | 1 | 1 | 1.0 |
+| Clockwork Rain Conservatory | 1 | 1 | 1.0 |
+| Mycelium Patent Bazaar | 1 | 1 | 1.0 |
+| Sunken Satellite Monastery | 1 | 1 | 1.0 |
+| Tidal Embassy of Lost Languages | 1 | 1 | 1.0 |

@@ -1,0 +1,1769 @@
+{
+  "world_name": "Verdant Express",
+  "world_id": "verdant_express_01",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "en-US",
+    "tone": "Whimsical yet bureaucratic",
+    "visual_direction": "Steampunk botanical",
+    "currency_code": "SD",
+    "currency_symbol": "🌱",
+    "currency_minor_unit": "sprout",
+    "currency_name": "Seedling",
+    "domain_label": "Railway Greenhouse",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "inst_conductor_guild",
+        "name": "The Conductor's Guild",
+        "mandate": "Ensure train schedule and route efficiency",
+        "decision_rule": "Prioritize routes with highest crop yield potential",
+        "enforced_by": "Ticket inspectors and route switchers",
+        "visible_output": "Train speed and route announcements"
+      },
+      {
+        "institution_id": "inst_botanical_board",
+        "name": "The Botanical Board",
+        "mandate": "Maintain ecological balance within the train",
+        "decision_rule": "Allocate water and light based on crop rarity",
+        "enforced_by": "Automated sprinkler systems and sun-roofs",
+        "visible_output": "Water pressure and light intensity in cars"
+      },
+      {
+        "institution_id": "inst_passenger_union",
+        "name": "The Passenger Union",
+        "mandate": "Protect passenger rights and comfort",
+        "decision_rule": "Demand better amenities when crop labor is high",
+        "enforced_by": "Strikes and refusal to tend crops",
+        "visible_output": "Passenger morale and cabin cleanliness"
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "sv_crop_health",
+        "label": "Overall Crop Health",
+        "initial_tension": "Moderate",
+        "changed_by": [
+          "Passenger tending",
+          "Water allocation"
+        ],
+        "affects": [
+          "Platform access",
+          "Train speed"
+        ]
+      },
+      {
+        "state_id": "sv_passenger_fatigue",
+        "label": "Passenger Fatigue Level",
+        "initial_tension": "Low",
+        "changed_by": [
+          "Crop tending labor",
+          "Cabin comfort"
+        ],
+        "affects": [
+          "Crop health",
+          "Passenger morale"
+        ]
+      },
+      {
+        "state_id": "sv_train_speed",
+        "label": "Train Speed",
+        "initial_tension": "High",
+        "changed_by": [
+          "Route efficiency",
+          "Crop health"
+        ],
+        "affects": [
+          "Arrival time",
+          "Resource consumption"
+        ]
+      },
+      {
+        "state_id": "sv_resource_reserves",
+        "label": "Water and Light Reserves",
+        "initial_tension": "Moderate",
+        "changed_by": [
+          "Botanical Board allocation",
+          "Train speed"
+        ],
+        "affects": [
+          "Crop health",
+          "Cabin comfort"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "sv_passenger_fatigue",
+        "trigger": "Fatigue reaches high levels",
+        "target_state": "sv_crop_health",
+        "effect": "Decreases due to neglect",
+        "delay": "Immediate"
+      },
+      {
+        "source_state": "sv_crop_health",
+        "trigger": "Crop health drops below threshold",
+        "target_state": "sv_train_speed",
+        "effect": "Decreases as conductors reroute for better conditions",
+        "delay": "Short"
+      },
+      {
+        "source_state": "sv_train_speed",
+        "trigger": "Speed increases significantly",
+        "target_state": "sv_resource_reserves",
+        "effect": "Depletes faster due to engine demands",
+        "delay": "Medium"
+      },
+      {
+        "source_state": "sv_resource_reserves",
+        "trigger": "Reserves run low",
+        "target_state": "sv_passenger_fatigue",
+        "effect": "Increases as passengers must manually water crops",
+        "delay": "Long"
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "sg_rare_botanists",
+        "name": "Rare Crop Botanists",
+        "goal": "Cultivate exotic, high-maintenance plants",
+        "leverage": "Expertise in rare seeds",
+        "dependency": "High water and light allocation"
+      },
+      {
+        "group_id": "sg_commuters",
+        "name": "Daily Commuters",
+        "goal": "Reach destination quickly with minimal labor",
+        "leverage": "Numbers and ticket revenue",
+        "dependency": "Fast train speed and low fatigue"
+      },
+      {
+        "group_id": "sg_engineers",
+        "name": "Train Engineers",
+        "goal": "Maintain engine efficiency and speed",
+        "leverage": "Control over train mechanics",
+        "dependency": "Stable resource reserves"
+      }
+    ]
+  },
+  "genre": "Steampunk Botanical Simulation",
+  "premise": "A railway greenhouse grants platform access according to which crops passengers agree to tend during the journey.",
+  "simulation_objective": "Balance crop cultivation with passenger comfort and train efficiency to reach destinations successfully.",
+  "agent_count_target": 12,
+  "player_count_target": 50,
+  "wall_color_theme": "riveted_metal_and_glass",
+  "economy_focus": "Resource management and labor exchange",
+  "exploration_focus": "Discovering new routes and rare seeds",
+  "conflict_tone": "Cooperative with underlying resource tension",
+  "visual_style": "Lush greenery intertwined with brass and steam machinery",
+  "rooms": [
+    {
+      "name": "Guild Navigation Deck",
+      "biome": "Brass and Glass",
+      "purpose": "Conductor's Guild route planning and speed control. Affects sv_train_speed.",
+      "decor_tags": [
+        "brass_instruments",
+        "maps",
+        "valves"
+      ],
+      "activity_tags": [
+        "planning",
+        "steering"
+      ],
+      "flux_floor_prompt": "Strict top-down orthographic 2D pixel art, polished mahogany floorboards with intricate brass inlays of train routes, seamless texture",
+      "room_scene_prompt": "Strict top-down orthographic 2D game art, Guild Navigation Deck, steampunk botanical train interior, large brass steering mechanisms, route maps on tables, mahogany floors, no visible text, no labels, no blank background, edge-to-edge room plate",
+      "width_tiles": 8,
+      "height_tiles": 6,
+      "ambient_palette": "focused_blue",
+      "archetype": "lookout",
+      "scene_components": [
+        {
+          "component_id": "brass_route_plotter",
+          "label": "Route Plotter",
+          "description": "A massive brass table with glowing dials and route maps.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Botanical Control Center",
+      "biome": "Lush Machinery",
+      "purpose": "Botanical Board water and light allocation. Affects sv_resource_reserves.",
+      "decor_tags": [
+        "gauges",
+        "pipes",
+        "glowing_panels"
+      ],
+      "activity_tags": [
+        "monitoring",
+        "adjusting"
+      ],
+      "flux_floor_prompt": "Strict top-down orthographic 2D pixel art, iron grate walkways over dark soil beds, steampunk pipes visible underneath",
+      "room_scene_prompt": "Strict top-down orthographic 2D game art, Botanical Control Center, steampunk botanical train interior, walls lined with glowing water pressure gauges and light switches, iron grate floors, lush vines creeping on pipes, no visible text, no labels, edge-to-edge room plate",
+      "width_tiles": 7,
+      "height_tiles": 7,
+      "ambient_palette": "soft_mint",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "master_valve_manifold",
+          "label": "Valve Manifold",
+          "description": "A complex array of steaming brass valves controlling water flow.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Commuter Rest Cabin",
+      "biome": "Wooden Slats",
+      "purpose": "Passenger Union rest area to lower sv_passenger_fatigue.",
+      "decor_tags": [
+        "benches",
+        "hammocks",
+        "tea_kettles"
+      ],
+      "activity_tags": [
+        "resting",
+        "complaining"
+      ],
+      "flux_floor_prompt": "Strict top-down orthographic 2D pixel art, worn slatted wooden floorboards, cozy and slightly scuffed",
+      "room_scene_prompt": "Strict top-down orthographic 2D game art, Commuter Rest Cabin, steampunk botanical train interior, wooden benches, hanging hammocks, small brass tea kettles, worn wooden floors, no visible text, no labels, edge-to-edge room plate",
+      "width_tiles": 6,
+      "height_tiles": 5,
+      "ambient_palette": "warm_lantern",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "brass_tea_station",
+          "label": "Tea Station",
+          "description": "A steaming brass boiler for brewing herbal teas.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Rare Orchid Carriage",
+      "biome": "Exotic Greenhouse",
+      "purpose": "Rare Crop Botanists cultivate high-maintenance plants. High sv_crop_health impact.",
+      "decor_tags": [
+        "exotic_flowers",
+        "glass_domes",
+        "humidifiers"
+      ],
+      "activity_tags": [
+        "tending",
+        "pruning"
+      ],
+      "flux_floor_prompt": "Strict top-down orthographic 2D pixel art, rich dark soil beds bordered by polished brass trim, scattered fallen petals",
+      "room_scene_prompt": "Strict top-down orthographic 2D game art, Rare Orchid Carriage, steampunk botanical train interior, vibrant exotic flowers under glass cloches, brass humidifiers steaming, dark soil floors, no visible text, no labels, edge-to-edge room plate",
+      "width_tiles": 9,
+      "height_tiles": 6,
+      "ambient_palette": "soft_mint",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "exotic_cloche_display",
+          "label": "Cloche Display",
+          "description": "A large brass table holding glowing exotic plants under glass domes.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Engine Boiler Room",
+      "biome": "Steaming Iron",
+      "purpose": "Train Engineers maintain engine. Depletes sv_resource_reserves when speed is high.",
+      "decor_tags": [
+        "furnaces",
+        "coal",
+        "gears"
+      ],
+      "activity_tags": [
+        "shoveling",
+        "repairing"
+      ],
+      "flux_floor_prompt": "Strict top-down orthographic 2D pixel art, heavy iron plating with rivets, soot stains and glowing embers in cracks",
+      "room_scene_prompt": "Strict top-down orthographic 2D game art, Engine Boiler Room, steampunk botanical train interior, massive iron furnaces, glowing embers, brass gears, heavy iron floors, no visible text, no labels, edge-to-edge room plate",
+      "width_tiles": 8,
+      "height_tiles": 8,
+      "ambient_palette": "ember_orange",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "main_furnace_door",
+          "label": "Furnace Door",
+          "description": "A roaring iron furnace door emitting intense heat and light.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Labor Exchange Platform",
+      "biome": "Market Concourse",
+      "purpose": "Passengers agree to crop tending duties for platform access.",
+      "decor_tags": [
+        "bulletin_boards",
+        "ticket_booths",
+        "scales"
+      ],
+      "activity_tags": [
+        "trading",
+        "signing"
+      ],
+      "flux_floor_prompt": "Strict top-down orthographic 2D pixel art, polished brass tiles alternating with dark wood, elegant and worn by foot traffic",
+      "room_scene_prompt": "Strict top-down orthographic 2D game art, Labor Exchange Platform, steampunk botanical train interior, brass ticket booths, large mechanical scales for weighing crops, elegant brass and wood floors, no visible text, no labels, edge-to-edge room plate",
+      "width_tiles": 10,
+      "height_tiles": 7,
+      "ambient_palette": "clear_day",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "labor_contract_desk",
+          "label": "Contract Desk",
+          "description": "A long brass desk where passengers sign labor agreements.",
+          "anchor": "south_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Dr. Aris Thorne",
+      "role_name": "Chief Botanist",
+      "activity": "Monitoring sv_crop_health and allocating resources via inst_botanical_board",
+      "home_base": "Botanical Control Center",
+      "arc_goal": "Cultivate the ultimate exotic orchid without depleting sv_resource_reserves",
+      "inventory": [
+        {
+          "name": "item_brass_trowel",
+          "description": "A finely crafted trowel for delicate root work.",
+          "quantity": 1
+        },
+        {
+          "name": "item_lunar_fern_spores",
+          "description": "Rare spores that glow under moonlight.",
+          "quantity": 3
+        },
+        {
+          "name": "item_moisture_meter",
+          "description": "A precise gauge for soil hydration.",
+          "quantity": 1
+        },
+        {
+          "name": "item_botanical_manifest",
+          "description": "Log of all flora aboard the Express.",
+          "quantity": 1
+        },
+        {
+          "name": "item_pruning_shears",
+          "description": "Sharp shears for maintaining plant health.",
+          "quantity": 1
+        },
+        {
+          "name": "item_exotic_orchid_bulb",
+          "description": "A dormant bulb of immense value.",
+          "quantity": 2
+        },
+        {
+          "name": "item_sun_lens",
+          "description": "Focuses ambient light for shade-dwelling plants.",
+          "quantity": 1
+        },
+        {
+          "name": "item_nutrient_vial",
+          "description": "Concentrated fertilizer for emergency growth.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Orchid Incubation Chamber",
+          "asset_type": "Equipment",
+          "description": "A climate-controlled glass box for rare bulbs.",
+          "story_use": "Used to safely grow the exotic orchid bulb."
+        },
+        {
+          "asset_name": "Botanical Override Key",
+          "asset_type": "Tool",
+          "description": "A brass key that bypasses standard sprinkler limits.",
+          "story_use": "Allows emergency watering of dying crops."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_orchid_needs",
+          "topic": "Exotic Orchid Cultivation",
+          "summary": "Requires precise humidity and low light to bloom.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_water_reserves",
+          "topic": "Train Water Levels",
+          "summary": "Current reserves are dangerously low due to engine demands.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Silas Vance",
+      "role_name": "Lead Engineer",
+      "activity": "Maintaining sv_train_speed and managing sv_resource_reserves for the engine",
+      "home_base": "Engine Boiler Room",
+      "arc_goal": "Keep the train on schedule despite the Botanical Board's water demands",
+      "inventory": [
+        {
+          "name": "item_engine_coal",
+          "description": "High-grade coal for maximum heat.",
+          "quantity": 20
+        },
+        {
+          "name": "item_water_valve",
+          "description": "A heavy iron valve for controlling steam flow.",
+          "quantity": 2
+        },
+        {
+          "name": "item_route_map",
+          "description": "Detailed map of the tracks and elevation changes.",
+          "quantity": 1
+        },
+        {
+          "name": "item_fatigue_tonic",
+          "description": "A bitter brew to stay awake during long shifts.",
+          "quantity": 3
+        },
+        {
+          "name": "item_soot_goggles",
+          "description": "Protective eyewear for the boiler room.",
+          "quantity": 1
+        },
+        {
+          "name": "item_pressure_gauge",
+          "description": "Measures boiler pressure to prevent explosions.",
+          "quantity": 1
+        },
+        {
+          "name": "item_heavy_wrench",
+          "description": "A massive tool for tightening engine bolts.",
+          "quantity": 1
+        },
+        {
+          "name": "item_grease_tin",
+          "description": "Lubricant for moving engine parts.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Auxiliary Boiler",
+          "asset_type": "Machinery",
+          "description": "A backup boiler used when main pressure drops.",
+          "story_use": "Can be fired up to increase train speed temporarily."
+        },
+        {
+          "asset_name": "Coal Chute Mechanism",
+          "asset_type": "Machinery",
+          "description": "Automated system for feeding coal into the firebox.",
+          "story_use": "Reduces manual labor required in the engine room."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_engine_efficiency",
+          "topic": "Boiler Performance",
+          "summary": "The engine runs best when water is diverted from the botanical cars.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_track_conditions",
+          "topic": "Upcoming Terrain",
+          "summary": "A steep incline is approaching, requiring maximum steam pressure.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Elara Vance",
+      "role_name": "Union Representative",
+      "activity": "Monitoring sv_passenger_fatigue and advocating for sg_commuters",
+      "home_base": "Commuter Rest Cabin",
+      "arc_goal": "Reduce mandatory crop tending labor to improve passenger morale",
+      "inventory": [
+        {
+          "name": "item_union_badge",
+          "description": "Symbol of authority among the passengers.",
+          "quantity": 1
+        },
+        {
+          "name": "item_comfort_cushion",
+          "description": "A small luxury for the hard wooden seats.",
+          "quantity": 1
+        },
+        {
+          "name": "item_fatigue_tonic",
+          "description": "Distributed to exhausted workers.",
+          "quantity": 5
+        },
+        {
+          "name": "item_petition_scroll",
+          "description": "A list of grievances signed by commuters.",
+          "quantity": 1
+        },
+        {
+          "name": "item_first_class_ticket",
+          "description": "Confiscated from a wealthy passenger.",
+          "quantity": 1
+        },
+        {
+          "name": "item_megaphone",
+          "description": "Used to address large crowds in the cabins.",
+          "quantity": 1
+        },
+        {
+          "name": "item_ration_ticket",
+          "description": "Vouchers for extra food in the dining car.",
+          "quantity": 10
+        },
+        {
+          "name": "item_healing_salve",
+          "description": "Ointment for blistered hands from crop tending.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Union Notice Board",
+          "asset_type": "Fixture",
+          "description": "A corkboard covered in strike threats and meeting times.",
+          "story_use": "Used to organize passenger protests."
+        },
+        {
+          "asset_name": "Hidden Stash",
+          "asset_type": "Storage",
+          "description": "A loose floorboard containing smuggled comfort items.",
+          "story_use": "Provides relief to the most fatigued passengers."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_passenger_morale",
+          "topic": "Commuter Sentiment",
+          "summary": "Passengers are close to striking if labor hours aren't reduced.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_guild_weakness",
+          "topic": "Conductor's Guild Vulnerability",
+          "summary": "The Guild cannot maintain the schedule without passenger labor.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen Ro",
+      "role_name": "Route Navigator",
+      "activity": "Optimizing sv_train_speed via inst_conductor_guild",
+      "home_base": "Guild Navigation Deck",
+      "arc_goal": "Find the fastest route to the destination to secure a Guild promotion",
+      "inventory": [
+        {
+          "name": "item_route_map",
+          "description": "An annotated map of all possible track switches.",
+          "quantity": 1
+        },
+        {
+          "name": "item_brass_compass",
+          "description": "A reliable navigation tool.",
+          "quantity": 1
+        },
+        {
+          "name": "item_spyglass",
+          "description": "Used to spot track conditions ahead.",
+          "quantity": 1
+        },
+        {
+          "name": "item_switch_key",
+          "description": "A heavy key used to manually change tracks.",
+          "quantity": 2
+        },
+        {
+          "name": "item_guild_whistle",
+          "description": "Used to signal the engine room.",
+          "quantity": 1
+        },
+        {
+          "name": "item_pocket_watch",
+          "description": "Essential for keeping the train on schedule.",
+          "quantity": 1
+        },
+        {
+          "name": "item_signal_flare",
+          "description": "Used in emergencies to warn other trains.",
+          "quantity": 3
+        },
+        {
+          "name": "item_logbook",
+          "description": "Records of all route changes and delays.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Navigation Console",
+          "asset_type": "Equipment",
+          "description": "A complex array of levers and dials for track switching.",
+          "story_use": "Allows remote changing of the train's route."
+        },
+        {
+          "asset_name": "Telegraph Station",
+          "asset_type": "Communication",
+          "description": "A device for receiving weather and track updates.",
+          "story_use": "Provides early warning of obstacles."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_route_efficiency",
+          "topic": "Track Switching",
+          "summary": "The northern route is faster but rougher on the crops.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_guild_politics",
+          "topic": "Guild Leadership",
+          "summary": "The Guild values speed above all else, even crop health.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra Vance",
+      "role_name": "Black Market Seed Smuggler",
+      "activity": "Smuggling rare seeds to manipulate sv_crop_health and bypass inst_botanical_board",
+      "home_base": "Rare Orchid Carriage",
+      "arc_goal": "Establish a monopoly on exotic seeds to gain leverage over sg_rare_botanists",
+      "inventory": [
+        {
+          "name": "item_lunar_fern_spores",
+          "description": "Glowing spores that thrive in low light.",
+          "quantity": 5
+        },
+        {
+          "name": "item_exotic_orchid_bulb",
+          "description": "A highly sought-after bulb requiring immense water.",
+          "quantity": 2
+        },
+        {
+          "name": "item_brass_trowel",
+          "description": "A sturdy trowel for quick planting.",
+          "quantity": 1
+        },
+        {
+          "name": "item_hidden_pouch",
+          "description": "A specialized pouch for concealing seeds from inspectors.",
+          "quantity": 1
+        },
+        {
+          "name": "item_fake_botanical_manifest",
+          "description": "Forged documents to bypass guild checks.",
+          "quantity": 1
+        },
+        {
+          "name": "item_moisture_meter",
+          "description": "Used to find optimal planting spots.",
+          "quantity": 1
+        },
+        {
+          "name": "item_bribe_coins",
+          "description": "Used to pay off ticket inspectors.",
+          "quantity": 50
+        },
+        {
+          "name": "item_fatigue_tonic",
+          "description": "Keeps her awake during night smuggling runs.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Seed Cache",
+          "asset_type": "Storage",
+          "description": "A secret compartment under the floorboards.",
+          "story_use": "Storing illegal exotic seeds."
+        },
+        {
+          "asset_name": "Forged Inspector Badge",
+          "asset_type": "Tool",
+          "description": "A fake badge to access restricted carriages.",
+          "story_use": "Bypassing security."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_smuggling_routes",
+          "topic": "Train Layout",
+          "summary": "Knows the blind spots of the ticket inspectors.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_rare_seed_needs",
+          "topic": "Botany",
+          "summary": "Understands the exact water and light requirements for exotic seeds.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Inspector Kael",
+      "role_name": "Guild Enforcer",
+      "activity": "Enforcing inst_conductor_guild mandates to maintain sv_train_speed",
+      "home_base": "Guild Navigation Deck",
+      "arc_goal": "Root out corruption and smuggling to ensure maximum route efficiency",
+      "inventory": [
+        {
+          "name": "item_first_class_ticket",
+          "description": "Confiscated from a smuggler.",
+          "quantity": 1
+        },
+        {
+          "name": "item_union_badge",
+          "description": "Taken from a striking passenger.",
+          "quantity": 1
+        },
+        {
+          "name": "item_route_map",
+          "description": "Detailed map of the train's current path.",
+          "quantity": 1
+        },
+        {
+          "name": "item_inspection_log",
+          "description": "Record of all passenger infractions.",
+          "quantity": 1
+        },
+        {
+          "name": "item_brass_whistle",
+          "description": "Used to signal other inspectors.",
+          "quantity": 1
+        },
+        {
+          "name": "item_heavy_baton",
+          "description": "For self-defense and intimidation.",
+          "quantity": 1
+        },
+        {
+          "name": "item_botanical_manifest",
+          "description": "Official list of approved crops.",
+          "quantity": 1
+        },
+        {
+          "name": "item_pocket_watch",
+          "description": "To ensure the train stays on schedule.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guild Interrogation Room",
+          "asset_type": "Facility",
+          "description": "A small, intimidating room for questioning passengers.",
+          "story_use": "Extracting information from smugglers."
+        },
+        {
+          "asset_name": "Master Key Ring",
+          "asset_type": "Tool",
+          "description": "Keys to most standard carriages.",
+          "story_use": "Accessing locked areas for inspection."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_guild_regulations",
+          "topic": "Law",
+          "summary": "Memorized every rule of the Conductor's Guild.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_smuggler_tactics",
+          "topic": "Security",
+          "summary": "Familiar with common methods used to hide contraband.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Jaxon 'Soot' Miller",
+      "role_name": "Engine Stoker",
+      "activity": "Managing sv_resource_reserves to keep sv_train_speed high for sg_engineers",
+      "home_base": "Engine Boiler Room",
+      "arc_goal": "Prove his worth to Silas Vance and secure a promotion to Lead Engineer",
+      "inventory": [
+        {
+          "name": "item_engine_coal",
+          "description": "High-grade coal for the boiler.",
+          "quantity": 20
+        },
+        {
+          "name": "item_water_valve",
+          "description": "Spare valve for the steam system.",
+          "quantity": 2
+        },
+        {
+          "name": "item_heat_gloves",
+          "description": "Thick gloves to prevent burns.",
+          "quantity": 1
+        },
+        {
+          "name": "item_soot_mask",
+          "description": "Protects lungs from coal dust.",
+          "quantity": 1
+        },
+        {
+          "name": "item_fatigue_tonic",
+          "description": "Needed for long shifts in the boiler room.",
+          "quantity": 2
+        },
+        {
+          "name": "item_steam_sprinkler",
+          "description": "Broken sprinkler he's trying to fix.",
+          "quantity": 1
+        },
+        {
+          "name": "item_wrench",
+          "description": "Heavy wrench for tightening valves.",
+          "quantity": 1
+        },
+        {
+          "name": "item_burn_salve",
+          "description": "Ointment for inevitable boiler burns.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Personal Coal Stash",
+          "asset_type": "Resource",
+          "description": "A small reserve of high-quality coal hidden away.",
+          "story_use": "Used in emergencies to boost train speed."
+        },
+        {
+          "asset_name": "Custom Valve Wrench",
+          "asset_type": "Tool",
+          "description": "A modified wrench that turns valves faster.",
+          "story_use": "Quickly adjusting steam pressure."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_boiler_mechanics",
+          "topic": "Engineering",
+          "summary": "Knows the quirks of the main engine boiler.",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "k_resource_flow",
+          "topic": "Logistics",
+          "summary": "Understands how water is diverted between the engine and crops.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Cora Lin",
+      "role_name": "Labor Organizer",
+      "activity": "Mobilizing sg_commuters to protest high sv_passenger_fatigue via inst_passenger_union",
+      "home_base": "Labor Exchange Platform",
+      "arc_goal": "Force the Botanical Board to automate crop tending and reduce passenger labor",
+      "inventory": [
+        {
+          "name": "item_union_badge",
+          "description": "Symbol of her leadership in the Passenger Union.",
+          "quantity": 1
+        },
+        {
+          "name": "item_megaphone",
+          "description": "Used to address large crowds of commuters.",
+          "quantity": 1
+        },
+        {
+          "name": "item_strike_pamphlets",
+          "description": "Literature detailing passenger rights.",
+          "quantity": 50
+        },
+        {
+          "name": "item_comfort_cushion",
+          "description": "A rare luxury item she uses to demonstrate what passengers deserve.",
+          "quantity": 1
+        },
+        {
+          "name": "item_pruning_shears",
+          "description": "Dull shears to show the poor quality of provided tools.",
+          "quantity": 1
+        },
+        {
+          "name": "item_fatigue_tonic",
+          "description": "Distributed to exhausted workers.",
+          "quantity": 5
+        },
+        {
+          "name": "item_petition_scroll",
+          "description": "Signed by hundreds of angry commuters.",
+          "quantity": 1
+        },
+        {
+          "name": "item_sun_lens",
+          "description": "Used to show how light is hoarded by the Botanical Board.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Secret Printing Press",
+          "asset_type": "Equipment",
+          "description": "A small press used to make strike pamphlets.",
+          "story_use": "Spreading union propaganda."
+        },
+        {
+          "asset_name": "Union Strike Fund",
+          "asset_type": "Resource",
+          "description": "A hidden stash of rations and tonics.",
+          "story_use": "Supporting passengers during a strike."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_labor_laws",
+          "topic": "Law",
+          "summary": "Expert on the historical rights of train passengers.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_crowd_psychology",
+          "topic": "Social",
+          "summary": "Knows how to incite or calm a mob of commuters.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Vesper Quinn",
+      "role_name": "Orchid Whisperer",
+      "activity": "Cultivating exotic blooms to boost sv_crop_health for sg_rare_botanists",
+      "home_base": "Rare Orchid Carriage",
+      "arc_goal": "Breed a legendary orchid that forces inst_botanical_board to grant her unlimited water access",
+      "inventory": [
+        {
+          "name": "item_exotic_orchid_bulb",
+          "description": "A dormant bulb of the rare Midnight Bloom.",
+          "quantity": 3
+        },
+        {
+          "name": "item_brass_trowel",
+          "description": "A finely crafted trowel for delicate root work.",
+          "quantity": 1
+        },
+        {
+          "name": "item_moisture_meter",
+          "description": "A gauge to measure soil dampness.",
+          "quantity": 1
+        },
+        {
+          "name": "item_lunar_fern_spores",
+          "description": "Spores that glow faintly in the dark.",
+          "quantity": 5
+        },
+        {
+          "name": "item_pruning_shears",
+          "description": "Sharp shears for trimming dead leaves.",
+          "quantity": 1
+        },
+        {
+          "name": "item_botanical_manifest",
+          "description": "A log of all rare plants on board.",
+          "quantity": 1
+        },
+        {
+          "name": "item_sun_lens",
+          "description": "A magnifying lens to focus sunlight on seedlings.",
+          "quantity": 2
+        },
+        {
+          "name": "item_water_valve",
+          "description": "A spare valve for the irrigation system.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Midnight Bloom Terrarium",
+          "asset_type": "Equipment",
+          "description": "A climate-controlled glass case for sensitive orchids.",
+          "story_use": "Used to safely transport and grow the rarest flowers."
+        },
+        {
+          "asset_name": "Secret Seed Cache",
+          "asset_type": "Storage",
+          "description": "A hidden compartment under the floorboards.",
+          "story_use": "Hides unregistered seeds from the Botanical Board."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_orchid_breeding",
+          "topic": "Rare Orchid Genetics",
+          "summary": "Deep understanding of how to cross-pollinate exotic train-grown orchids.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_water_schedules",
+          "topic": "Irrigation Timing",
+          "summary": "Knows the exact times the Botanical Board diverts water to different carriages.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Gideon Locke",
+      "role_name": "Ticket Inspector",
+      "activity": "Patrolling carriages to enforce inst_conductor_guild rules and maintain sv_train_speed",
+      "home_base": "Guild Navigation Deck",
+      "arc_goal": "Root out fare evaders and labor shirkers to ensure maximum efficiency for sg_commuters",
+      "inventory": [
+        {
+          "name": "item_first_class_ticket",
+          "description": "A confiscated ticket from a wealthy passenger.",
+          "quantity": 1
+        },
+        {
+          "name": "item_route_map",
+          "description": "An updated map of the Verdant Express's path.",
+          "quantity": 1
+        },
+        {
+          "name": "item_union_badge",
+          "description": "A confiscated badge from a protesting commuter.",
+          "quantity": 3
+        },
+        {
+          "name": "item_fatigue_tonic",
+          "description": "A strong stimulant to stay awake during double shifts.",
+          "quantity": 2
+        },
+        {
+          "name": "item_brass_whistle",
+          "description": "A loud whistle used to signal infractions.",
+          "quantity": 1
+        },
+        {
+          "name": "item_inspection_ledger",
+          "description": "A book recording all passenger infractions.",
+          "quantity": 1
+        },
+        {
+          "name": "item_pocket_watch",
+          "description": "A precise timepiece synced to the engine's rhythm.",
+          "quantity": 1
+        },
+        {
+          "name": "item_sturdy_boots",
+          "description": "Heavy boots for walking the length of the train.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Inspector's Booth",
+          "asset_type": "Workspace",
+          "description": "A small, secure booth for processing fines.",
+          "story_use": "Used to interrogate passengers suspected of rule-breaking."
+        },
+        {
+          "asset_name": "Guild Rulebook",
+          "asset_type": "Document",
+          "description": "The massive, leather-bound tome of all train regulations.",
+          "story_use": "Cited to justify harsh penalties on passengers."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_passenger_manifests",
+          "topic": "Ticketing Records",
+          "summary": "Knows exactly who is supposed to be in which carriage at any time.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_hidden_compartments",
+          "topic": "Train Layout",
+          "summary": "Aware of common hiding spots used by stowaways and smugglers.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Talia 'Sparks' Vance",
+      "role_name": "Boiler Technician",
+      "activity": "Optimizing sv_resource_reserves to keep sv_train_speed high for sg_engineers",
+      "home_base": "Engine Boiler Room",
+      "arc_goal": "Invent a new coal-burning method to reduce resource consumption without sacrificing speed",
+      "inventory": [
+        {
+          "name": "item_engine_coal",
+          "description": "High-grade coal for the main boiler.",
+          "quantity": 10
+        },
+        {
+          "name": "item_steam_sprinkler",
+          "description": "A modified sprinkler head used for cooling engine parts.",
+          "quantity": 2
+        },
+        {
+          "name": "item_heavy_wrench",
+          "description": "A large wrench for tightening boiler valves.",
+          "quantity": 1
+        },
+        {
+          "name": "item_heat_gloves",
+          "description": "Thick, asbestos-lined gloves for handling hot metal.",
+          "quantity": 1
+        },
+        {
+          "name": "item_pressure_gauge",
+          "description": "A spare gauge for monitoring steam pressure.",
+          "quantity": 1
+        },
+        {
+          "name": "item_soot_mask",
+          "description": "A mask to filter out coal dust.",
+          "quantity": 1
+        },
+        {
+          "name": "item_oil_can",
+          "description": "A can of heavy grease for lubricating gears.",
+          "quantity": 1
+        },
+        {
+          "name": "item_welding_goggles",
+          "description": "Dark goggles to protect eyes from sparks.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Experimental Boiler Valve",
+          "asset_type": "Equipment",
+          "description": "A custom-machined valve designed to increase steam efficiency.",
+          "story_use": "Tested secretly to improve train speed without draining reserves."
+        },
+        {
+          "asset_name": "Technician's Toolbox",
+          "asset_type": "Storage",
+          "description": "A heavy metal box containing specialized engine tools.",
+          "story_use": "Carried everywhere to perform emergency repairs."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_boiler_mechanics",
+          "topic": "Steam Engine Operation",
+          "summary": "Expertise in maintaining optimal pressure and heat in the main boiler.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_coal_efficiency",
+          "topic": "Fuel Management",
+          "summary": "Knows how to stretch coal reserves during long stretches between stations.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Bram 'The Pillow' Halloway",
+      "role_name": "Cabin Steward",
+      "activity": "Managing sv_passenger_fatigue by providing amenities to sg_commuters",
+      "home_base": "Commuter Rest Cabin",
+      "arc_goal": "Leverage passenger comfort to gain influence within inst_passenger_union",
+      "inventory": [
+        {
+          "name": "item_comfort_cushion",
+          "description": "A plush velvet cushion for weary travelers.",
+          "quantity": 5
+        },
+        {
+          "name": "item_fatigue_tonic",
+          "description": "A mild, soothing tea to help passengers sleep.",
+          "quantity": 4
+        },
+        {
+          "name": "item_clean_linens",
+          "description": "Freshly laundered sheets for the sleeper berths.",
+          "quantity": 10
+        },
+        {
+          "name": "item_lavender_sachet",
+          "description": "A small bag of dried lavender to mask train odors.",
+          "quantity": 6
+        },
+        {
+          "name": "item_union_badge",
+          "description": "A badge showing solidarity with the Passenger Union.",
+          "quantity": 1
+        },
+        {
+          "name": "item_silver_tray",
+          "description": "A polished tray for serving drinks.",
+          "quantity": 1
+        },
+        {
+          "name": "item_complaint_forms",
+          "description": "Official forms for passengers to log grievances.",
+          "quantity": 20
+        },
+        {
+          "name": "item_earplugs",
+          "description": "Wax earplugs to block out engine noise.",
+          "quantity": 8
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Steward's Cart",
+          "asset_type": "Vehicle",
+          "description": "A rolling cart stocked with teas, cushions, and blankets.",
+          "story_use": "Pushed through the aisles to distribute comfort items to commuters."
+        },
+        {
+          "asset_name": "Hidden Liquor Stash",
+          "asset_type": "Storage",
+          "description": "A locked cabinet containing premium spirits.",
+          "story_use": "Used to bribe or placate particularly irate first-class passengers."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_passenger_psychology",
+          "topic": "Crowd Mood Management",
+          "summary": "Knows exactly what amenities will calm an angry mob of tired commuters.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_cabin_acoustics",
+          "topic": "Noise Reduction",
+          "summary": "Understands which berths are quietest and how to muffle engine vibrations.",
+          "confidence": 70
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Resource Allocation Dispute",
+      "summary": "Players must negotiate water and light distribution between rare crops and passenger comfort.",
+      "roles": [
+        "Chief Botanist",
+        "Union Representative"
+      ],
+      "rooms": [
+        "Botanical Control Center",
+        "Commuter Rest Cabin"
+      ],
+      "pressure": "Water and Light Reserves are dropping, increasing Passenger Fatigue."
+    },
+    {
+      "label": "Speed vs. Stability",
+      "summary": "Engineers and Navigators must balance train speed with the risk of damaging delicate crops.",
+      "roles": [
+        "Lead Engineer",
+        "Route Navigator"
+      ],
+      "rooms": [
+        "Guild Navigation Deck",
+        "Engine Boiler Room"
+      ],
+      "pressure": "High train speed depletes resources faster, threatening Overall Crop Health."
+    },
+    {
+      "label": "Labor Strike Negotiation",
+      "summary": "The Union attempts to halt crop tending until conditions improve, while the Guild tries to maintain order.",
+      "roles": [
+        "Labor Organizer",
+        "Guild Enforcer"
+      ],
+      "rooms": [
+        "Labor Exchange Platform",
+        "Rare Orchid Carriage"
+      ],
+      "pressure": "High Passenger Fatigue leads to crop neglect, forcing a confrontation."
+    }
+  ],
+  "player_entry_points": [
+    "You wake up to the sound of the automated sprinklers failing.",
+    "A ticket inspector demands to see your crop yield quota.",
+    "The train suddenly lurches as it changes routes unexpectedly."
+  ],
+  "conflict_hooks": [
+    "The Botanical Board has cut water to the Commuter Rest Cabin to save the Rare Orchid Carriage.",
+    "The Passenger Union is threatening a strike if train speed isn't increased to reach the next station sooner."
+  ],
+  "custom_actions": [
+    "Reroute Water Supply",
+    "Adjust Sun-Roof Panels",
+    "Smuggle Rare Seeds",
+    "Call for a Labor Strike",
+    "Inspect Ticket Validity",
+    "Stoke the Engine Boiler"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "Bribe for Extra Water",
+      "initiating_role": "Black Market Seed Smuggler",
+      "target_role": "Boiler Technician",
+      "situation": "The smuggler needs more water for their illicit orchids and offers rare seeds in exchange.",
+      "proposed_effects": [
+        "transfer",
+        "speech"
+      ],
+      "coordinator_checks": [
+        "Does the Boiler Technician have access to extra water?",
+        "Are there witnesses nearby?",
+        "Does the Boiler Technician consent to the trade?"
+      ]
+    },
+    {
+      "action_name": "Declare Emergency Reroute",
+      "initiating_role": "Route Navigator",
+      "target_role": "Lead Engineer",
+      "situation": "The navigator spots a high-yield crop zone and wants to change course immediately.",
+      "proposed_effects": [
+        "status",
+        "speech"
+      ],
+      "coordinator_checks": [
+        "Is the Lead Engineer at the controls?",
+        "Does the Guild Enforcer approve the reroute?",
+        "Is the train speed currently high enough to maneuver?"
+      ]
+    },
+    {
+      "action_name": "Organize Protest",
+      "initiating_role": "Labor Organizer",
+      "target_role": "Union Representative",
+      "situation": "Passenger fatigue is too high, and the organizer wants to stop all crop tending.",
+      "proposed_effects": [
+        "status",
+        "speech"
+      ],
+      "coordinator_checks": [
+        "Are there enough passengers in the Commuter Rest Cabin?",
+        "Does the Union Representative agree to lead the strike?",
+        "What is the current Passenger Fatigue Level?"
+      ]
+    },
+    {
+      "action_name": "Synthesize Fertilizer",
+      "initiating_role": "Chief Botanist",
+      "target_role": "Orchid Whisperer",
+      "situation": "The botanist attempts to create a new fertilizer blend to save a dying rare orchid.",
+      "proposed_effects": [
+        "create_item",
+        "transfer"
+      ],
+      "coordinator_checks": [
+        "Does the Chief Botanist have the necessary chemical components?",
+        "Is the Orchid Whisperer present to apply it?",
+        "Is the crop health critically low?"
+      ]
+    }
+  ],
+  "social_rules": [
+    "Never touch another passenger's assigned crop without permission.",
+    "Always defer to the Guild Enforcer regarding train schedule disputes.",
+    "Water rations must be negotiated, never taken by force."
+  ],
+  "item_themes": [
+    "Gardening tools",
+    "Train tickets",
+    "Rare seeds",
+    "Steampunk gadgets"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "item_brass_trowel",
+      "name": "Brass-Fitted Trowel",
+      "price": 15,
+      "mass": 0.8,
+      "description": "A sturdy gardening trowel with a brass handle, essential for tending crops on the move.",
+      "image_prompt": "A steampunk-style gardening trowel with a polished brass handle and a steel blade, resting on a wooden bench surrounded by lush green leaves.",
+      "category": "Gardening Tools"
+    },
+    {
+      "item_id": "item_first_class_ticket",
+      "name": "First Class Commuter Ticket",
+      "price": 150,
+      "mass": 0.05,
+      "description": "A gold-leafed ticket granting access to the fastest routes and most comfortable cabins.",
+      "image_prompt": "An ornate, vintage train ticket with gold foil stamping and intricate steampunk gears printed on the borders.",
+      "category": "Train Tickets"
+    },
+    {
+      "item_id": "item_lunar_fern_spores",
+      "name": "Lunar Fern Spores",
+      "price": 300,
+      "mass": 0.1,
+      "description": "Extremely rare seeds that require precise light allocation from the Botanical Board.",
+      "image_prompt": "A small, glowing glass vial filled with shimmering silver spores, sitting on a velvet cushion.",
+      "category": "Rare Seeds"
+    },
+    {
+      "item_id": "item_steam_sprinkler",
+      "name": "Portable Steam Sprinkler",
+      "price": 85,
+      "mass": 2.5,
+      "description": "A gadget that uses excess engine steam to gently hydrate delicate plants.",
+      "image_prompt": "A small, brass contraption with multiple nozzles and a tiny pressure gauge, emitting a fine mist of water.",
+      "category": "Steampunk Gadgets"
+    },
+    {
+      "item_id": "item_fatigue_tonic",
+      "name": "Passenger's Revitalizing Tonic",
+      "price": 40,
+      "mass": 0.4,
+      "description": "A bitter but effective herbal brew that lowers passenger fatigue during long shifts.",
+      "image_prompt": "A dark glass apothecary bottle with a cork stopper and a label depicting a steam train and a botanical leaf.",
+      "category": "Consumables"
+    },
+    {
+      "item_id": "item_moisture_meter",
+      "name": "Brass Moisture Meter",
+      "price": 60,
+      "mass": 0.6,
+      "description": "An instrument used by Botanists to measure the exact water reserves in the soil.",
+      "image_prompt": "A handheld brass device with a long probe and a circular dial showing moisture levels, steampunk aesthetic.",
+      "category": "Instruments"
+    },
+    {
+      "item_id": "item_engine_coal",
+      "name": "High-Grade Engine Coal",
+      "price": 25,
+      "mass": 5.0,
+      "description": "Premium fuel required by Train Engineers to maintain high train speeds.",
+      "image_prompt": "A burlap sack overflowing with shiny, black chunks of high-grade coal.",
+      "category": "Resources"
+    },
+    {
+      "item_id": "item_union_badge",
+      "name": "Passenger Union Badge",
+      "price": 10,
+      "mass": 0.1,
+      "description": "A pin worn by union members to show solidarity during labor disputes.",
+      "image_prompt": "A small, circular brass pin featuring an engraving of a crossed wrench and a wheat stalk.",
+      "category": "Credentials"
+    },
+    {
+      "item_id": "item_sun_lens",
+      "name": "Adjustable Sun-Roof Lens",
+      "price": 120,
+      "mass": 1.5,
+      "description": "A replacement lens for the train's sun-roofs, used to focus light on rare crops.",
+      "image_prompt": "A thick, convex glass lens mounted in a heavy brass ring with adjustable gears.",
+      "category": "Steampunk Gadgets"
+    },
+    {
+      "item_id": "item_botanical_manifest",
+      "name": "Botanical Board Manifest",
+      "price": 50,
+      "mass": 0.3,
+      "description": "An official document detailing the water and light allocation for the current journey.",
+      "image_prompt": "A rolled parchment tied with a green ribbon, bearing a wax seal of a leaf and a gear.",
+      "category": "Credentials"
+    },
+    {
+      "item_id": "item_pruning_shears",
+      "name": "Steam-Assisted Pruning Shears",
+      "price": 95,
+      "mass": 1.2,
+      "description": "Heavy-duty shears powered by a small steam canister, making crop tending effortless.",
+      "image_prompt": "A pair of large gardening shears with a small, attached brass cylinder and tiny steam pipes.",
+      "category": "Gardening Tools"
+    },
+    {
+      "item_id": "item_route_map",
+      "name": "Conductor's Route Map",
+      "price": 75,
+      "mass": 0.2,
+      "description": "A complex map showing all possible tracks and their current crop yield potentials.",
+      "image_prompt": "An intricate, fold-out map with glowing lines and mechanical compasses attached to the corners.",
+      "category": "Instruments"
+    },
+    {
+      "item_id": "item_water_valve",
+      "name": "Emergency Water Valve",
+      "price": 45,
+      "mass": 1.8,
+      "description": "A heavy brass valve used to manually override the automated sprinkler systems.",
+      "image_prompt": "A large, red-painted cast iron wheel valve with brass fittings, slightly weathered.",
+      "category": "Steampunk Gadgets"
+    },
+    {
+      "item_id": "item_exotic_orchid_bulb",
+      "name": "Exotic Steam-Orchid Bulb",
+      "price": 250,
+      "mass": 0.5,
+      "description": "A highly sought-after bulb that thrives in the humid environment near the train's engine.",
+      "image_prompt": "A large, strange-looking plant bulb with metallic-looking veins, resting in a bed of damp moss.",
+      "category": "Rare Seeds"
+    },
+    {
+      "item_id": "item_comfort_cushion",
+      "name": "Ergonomic Cabin Cushion",
+      "price": 30,
+      "mass": 0.9,
+      "description": "A plush cushion designed to reduce passenger fatigue during long commutes.",
+      "image_prompt": "A luxurious, velvet cushion with intricate embroidery of vines and gears, in deep green and gold.",
+      "category": "Consumables"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "verdant_express_wardrobe_v1",
+    "world_wardrobe_brief": "Steampunk botanical train attire blending Victorian-era tailoring with heavy brass machinery, gardening utility gear, and lush green accents. Outfits feature thick fabrics, leather aprons, brass goggles, and integrated steam-powered tools.",
+    "forbidden_aesthetics": [
+      "cyberpunk neon",
+      "modern casual wear",
+      "generic medieval fantasy armor",
+      "space suits",
+      "magic robes",
+      "post-apocalyptic rags"
+    ],
+    "palette_families": [
+      {
+        "name": "Botanical Board",
+        "dominant": "#2e4a35",
+        "accent": "#f4d03f",
+        "trim": "#b87333",
+        "material": "heavy cotton and brass"
+      },
+      {
+        "name": "Engineers Guild",
+        "dominant": "#1a251c",
+        "accent": "#b87333",
+        "trim": "#4a4a4a",
+        "material": "soot-stained canvas and iron"
+      },
+      {
+        "name": "Passenger Union",
+        "dominant": "#5c4033",
+        "accent": "#8b4513",
+        "trim": "#e8f8f5",
+        "material": "worn wool and leather"
+      },
+      {
+        "name": "Conductors",
+        "dominant": "#000080",
+        "accent": "#f4d03f",
+        "trim": "#b87333",
+        "material": "tailored wool and polished brass"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "botanist_attire",
+        "role_keywords": [
+          "Botanist",
+          "Whisperer"
+        ],
+        "attire": [
+          "green aprons",
+          "brass-buttoned vests",
+          "thick gloves"
+        ],
+        "props": [
+          "brass trowel",
+          "moisture meter",
+          "steam sprinkler"
+        ],
+        "palette_notes": "Dominant greens with brass accents.",
+        "silhouette_notes": "Bulky around the waist due to tool belts.",
+        "avoid": [
+          "clean white lab coats",
+          "formal suits"
+        ]
+      },
+      {
+        "rule_id": "engineer_attire",
+        "role_keywords": [
+          "Engineer",
+          "Stoker",
+          "Technician"
+        ],
+        "attire": [
+          "soot-stained overalls",
+          "heavy boots",
+          "welding goggles"
+        ],
+        "props": [
+          "coal shovel",
+          "wrenches",
+          "steam valves"
+        ],
+        "palette_notes": "Dark, grimy colors with bright brass or copper highlights.",
+        "silhouette_notes": "Broad and heavy, emphasizing physical labor.",
+        "avoid": [
+          "delicate fabrics",
+          "bright clean colors"
+        ]
+      },
+      {
+        "rule_id": "conductor_attire",
+        "role_keywords": [
+          "Navigator",
+          "Enforcer",
+          "Inspector"
+        ],
+        "attire": [
+          "tailored uniform coats",
+          "peaked caps",
+          "pocket watches"
+        ],
+        "props": [
+          "route map",
+          "ticket puncher",
+          "brass lantern"
+        ],
+        "palette_notes": "Navy or dark green with gold/brass trim.",
+        "silhouette_notes": "Crisp, upright, and authoritative.",
+        "avoid": [
+          "messy or asymmetrical clothing"
+        ]
+      },
+      {
+        "rule_id": "passenger_attire",
+        "role_keywords": [
+          "Representative",
+          "Organizer",
+          "Steward",
+          "Smuggler"
+        ],
+        "attire": [
+          "travel coats",
+          "scarves",
+          "satchels"
+        ],
+        "props": [
+          "union badge",
+          "fatigue tonic",
+          "hidden seed pouches"
+        ],
+        "palette_notes": "Earthy browns and muted tones.",
+        "silhouette_notes": "Layered and practical for travel.",
+        "avoid": [
+          "overly ornate aristocratic wear",
+          "heavy armor"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "default_commuter",
+      "role_keywords": [
+        "*"
+      ],
+      "attire": [
+        "simple wool trousers",
+        "button-up shirts",
+        "suspenders"
+      ],
+      "props": [
+        "travel bag",
+        "basic tools"
+      ],
+      "palette_notes": "Muted earth tones with occasional brass buttons.",
+      "silhouette_notes": "Standard humanoid, practical fit.",
+      "avoid": [
+        "extreme exaggerations",
+        "glowing elements"
+      ]
+    },
+    "visual_consistency_rules": [
+      "All characters must have a 2px dark green or brass outline.",
+      "Shading must be flat to match the 2D orthographic style.",
+      "Tools and props should be slightly exaggerated for readability at 64x64.",
+      "Hats or headgear should clearly indicate the character's guild or role."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "verdant_express_01",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees_orthographic",
+      "scale_rule": "1_tile_equals_1_meter"
+    },
+    "palette": {
+      "dominant": "#2e4a35",
+      "secondary": "#b87333",
+      "accent": "#f4d03f",
+      "shadow": "#1a251c",
+      "highlight": "#e8f8f5"
+    },
+    "materials": [
+      "polished_brass",
+      "wrought_iron",
+      "stained_glass",
+      "rich_mahogany",
+      "lush_foliage",
+      "steaming_pipes"
+    ],
+    "lighting": "diffused_greenhouse_sunlight_with_warm_brass_lantern_glows",
+    "architecture": [
+      "curved_glass_roofs",
+      "riveted_metal_beams",
+      "integrated_planter_boxes",
+      "narrow_train_corridors",
+      "steampunk_valves_and_gauges"
+    ],
+    "terrain": {
+      "ground": "slatted_wooden_floorboards_with_brass_inlays",
+      "path": "iron_grate_walkways_over_soil_beds",
+      "edge": "riveted_train_car_walls_and_glass_panes"
+    },
+    "sprite_language": {
+      "body_proportion": "chibi_with_exaggerated_tools",
+      "outline": "2px_dark_green_or_brass",
+      "role_readability": "uniforms_color_coded_by_guild_with_distinct_hats"
+    },
+    "world_prompt_prefix": "Strict top-down orthographic 2D game art, steampunk botanical train interior, lush greenery intertwined with brass machinery, slatted wooden floors, iron grates, curved glass roofs, #2E4A35 and #B87333 palette",
+    "sprite_prompt_prefix": "Strict top-down orthographic 2D game sprite, steampunk botanical character, exaggerated gardening tools, brass and green uniform, thick outline, flat shading",
+    "forbidden_visuals": [
+      "perspective_angles",
+      "isometric_projection",
+      "photorealism",
+      "text_labels",
+      "UI_elements",
+      "modern_technology",
+      "magic_auras",
+      "generic_fantasy_armor",
+      "cyberpunk_neon",
+      "barren_landscapes"
+    ],
+    "canon_hash": "c9a84ad1550cba5b"
+  }
+}

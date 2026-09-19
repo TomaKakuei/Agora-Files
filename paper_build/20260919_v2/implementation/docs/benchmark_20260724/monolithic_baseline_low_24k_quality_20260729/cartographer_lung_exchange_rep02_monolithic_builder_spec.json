@@ -1,0 +1,1625 @@
+{
+  "world_name": "Cartographer Lung Exchange",
+  "world_id": "lung_exchange_727102",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "civic_social_world",
+    "profile_id": "civic_social_world",
+    "locale": "en-US",
+    "tone": "biopunk political economy",
+    "visual_direction": "oxidized teal membranes, ivory ceramic, saffron signal threads",
+    "currency_code": "CRD",
+    "currency_symbol": "ϗ",
+    "currency_minor_unit": "point",
+    "currency_name": "Atmospheric Credits",
+    "domain_label": "orbital_lung",
+    "starting_wallet_minor": {
+      "min": 1000,
+      "max": 5000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "civic_social_world_v1",
+      "frontend_affordance_id": "civic_social_world_v1",
+      "asset_prompt_kit_id": "civic_social_world_v1"
+    },
+    "policy_refs": {
+      "economy_policy_id": "civic_credit_v1",
+      "item_collection_id": "civic_social_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "civic_social_world_v1",
+      "property_policy_id": "civic_social_world_v1",
+      "knowledge_policy_id": "civic_social_world_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "biopunk orbital political economy",
+  "premise": "Inside a biomechanical lung orbiting a gas giant, breathable air is a traded commodity. Exhalation tides physically shift the station's layout, connecting and disconnecting rival factions.",
+  "simulation_objective": "Manage air pressure and political leverage through the trade of breath futures and biological maintenance.",
+  "agent_count_target": 12,
+  "player_count_target": 4,
+  "economy_focus": "Breath futures, pressure-based access, and biological hardware maintenance.",
+  "exploration_focus": "Navigating shifting corridors during exhalation tides to reach isolated trade hubs.",
+  "conflict_tone": "High-stakes diplomatic tension and resource scarcity.",
+  "visual_style": "Top-down pixel art with oxidized teal membranes, ivory ceramic hardware, and saffron signal threads.",
+  "rooms": [
+    {
+      "name": "The Alveoli Atrium",
+      "biome": "biological_chamber",
+      "purpose": "Central hub for air distribution and social gathering.",
+      "decor_tags": [
+        "pulsing_walls",
+        "ceramic_pipes",
+        "teal_membranes"
+      ],
+      "activity_tags": [
+        "trading",
+        "socializing",
+        "breathing"
+      ],
+      "flux_floor_prompt": "A floor of translucent teal membranes with visible pulsing veins beneath.",
+      "room_scene_prompt": "A vast chamber with ivory ceramic pillars and saffron threads hanging from the ceiling.",
+      "floor_tile": "clean_tile",
+      "wall_tile": "red_pillar_wall",
+      "ambient_palette": "warm_lantern",
+      "archetype": "commons",
+      "width_tiles": 40,
+      "height_tiles": 40,
+      "scene_components": [
+        {
+          "component_id": "central_respirator",
+          "label": "Central Respirator",
+          "description": "A massive ivory ceramic machine that regulates the room's air pressure.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Bronchial Exchange",
+      "biome": "industrial_biological",
+      "purpose": "The primary market for breath futures and atmospheric contracts.",
+      "decor_tags": [
+        "ticker_tapes",
+        "pressure_gauges",
+        "saffron_banners"
+      ],
+      "activity_tags": [
+        "trading",
+        "contracting",
+        "arguing"
+      ],
+      "flux_floor_prompt": "Hardened ivory ceramic tiles with embedded saffron signal lines.",
+      "room_scene_prompt": "A bustling market filled with traders shouting over the hiss of escaping steam.",
+      "floor_tile": "stone_checker",
+      "wall_tile": "stall_canvas_wall",
+      "ambient_palette": "focused_blue",
+      "archetype": "market_exchange",
+      "width_tiles": 50,
+      "height_tiles": 50,
+      "scene_components": [
+        {
+          "component_id": "futures_board",
+          "label": "Futures Board",
+          "description": "A large display showing the current price of oxygen and nitrogen futures.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Pleural Pump Room",
+      "biome": "mechanical_biological",
+      "purpose": "Maintaining the station's physical expansion and contraction.",
+      "decor_tags": [
+        "heavy_pistons",
+        "grease",
+        "teal_fluid"
+      ],
+      "activity_tags": [
+        "repairing",
+        "monitoring",
+        "sabotaging"
+      ],
+      "flux_floor_prompt": "Gritty slate tiles stained with teal biological lubricants.",
+      "room_scene_prompt": "A dark, cramped room dominated by the rhythmic thumping of massive biological pumps.",
+      "floor_tile": "forge_slate",
+      "wall_tile": "forge_wall",
+      "ambient_palette": "ember_orange",
+      "archetype": "workshop",
+      "width_tiles": 30,
+      "height_tiles": 30,
+      "scene_components": [
+        {
+          "component_id": "main_piston",
+          "label": "Main Piston",
+          "description": "A giant ceramic piston that drives the station's exhalation cycle.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Capillary Archives",
+      "biome": "quiet_biological",
+      "purpose": "Storage of genetic records and historical air-rights contracts.",
+      "decor_tags": [
+        "scroll_racks",
+        "soft_lighting",
+        "teal_moss"
+      ],
+      "activity_tags": [
+        "researching",
+        "filing",
+        "whispering"
+      ],
+      "flux_floor_prompt": "Soft, moss-covered planks that dampen all sound.",
+      "room_scene_prompt": "A serene library where the walls are lined with thousands of ceramic canisters.",
+      "floor_tile": "library_planks",
+      "wall_tile": "library_shelf_wall",
+      "ambient_palette": "soft_mint",
+      "archetype": "archive_ritual",
+      "width_tiles": 35,
+      "height_tiles": 35,
+      "scene_components": [
+        {
+          "component_id": "gene_sequencer",
+          "label": "Gene Sequencer",
+          "description": "An ancient device used to verify the identity of contract signers.",
+          "anchor": "east_mid",
+          "width_tiles": 1,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Diaphragm Lookout",
+      "biome": "exterior_biological",
+      "purpose": "Observing the gas giant and incoming supply ships.",
+      "decor_tags": [
+        "telescopes",
+        "reinforced_glass",
+        "ivory_railings"
+      ],
+      "activity_tags": [
+        "watching",
+        "signaling",
+        "contemplating"
+      ],
+      "flux_floor_prompt": "Polished jade tiles reflecting the swirling clouds of the gas giant below.",
+      "room_scene_prompt": "A wide balcony with a panoramic view of the orange and purple gas giant.",
+      "floor_tile": "jade_tile",
+      "wall_tile": "glass_case_wall",
+      "ambient_palette": "clear_day",
+      "archetype": "lookout",
+      "width_tiles": 45,
+      "height_tiles": 25,
+      "scene_components": [
+        {
+          "component_id": "signal_lantern",
+          "label": "Signal Lantern",
+          "description": "A powerful saffron light used to communicate with orbital craft.",
+          "anchor": "north_east",
+          "width_tiles": 1,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Tracheal Transit",
+      "biome": "corridor_biological",
+      "purpose": "A major thoroughfare that shifts during exhalation.",
+      "decor_tags": [
+        "directional_signs",
+        "emergency_masks",
+        "teal_veins"
+      ],
+      "activity_tags": [
+        "traveling",
+        "waiting",
+        "smuggling"
+      ],
+      "flux_floor_prompt": "Ribbed ceramic flooring designed for grip during station shifts.",
+      "room_scene_prompt": "A long, curving tunnel that groans and flexes as the station breathes.",
+      "floor_tile": "yard_pavers",
+      "wall_tile": "quiet_lane_wall",
+      "ambient_palette": "low_lantern",
+      "archetype": "checkpoint",
+      "width_tiles": 60,
+      "height_tiles": 15,
+      "scene_components": [
+        {
+          "component_id": "pressure_gate",
+          "label": "Pressure Gate",
+          "description": "A heavy ceramic door that seals off sections during low-pressure cycles.",
+          "anchor": "west_mid",
+          "width_tiles": 1,
+          "height_tiles": 3
+        }
+      ]
+    }
+  ],
+  "role_groups": [
+    {
+      "role_name": "Breath Broker",
+      "count": 3,
+      "core_values": [
+        "Profit",
+        "Stability",
+        "Leverage"
+      ],
+      "activity": "Trading air futures and manipulating market prices.",
+      "starting_item_ids": [
+        "pressure_ledger",
+        "saffron_seal"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Exchange Stall",
+          "asset_type": "commercial",
+          "description": "A prime spot in the Bronchial Exchange.",
+          "story_use": "Used to conduct high-volume air trades."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "market_trends_01",
+          "topic": "Air Prices",
+          "summary": "Oxygen prices are expected to spike during the next long exhalation.",
+          "confidence": 90
+        }
+      ]
+    }
+  ],
+  "main_characters": [
+    {
+      "display_name": "Vaxen Thul",
+      "role_name": "High Broker",
+      "activity": "Managing the primary air futures market.",
+      "home_base": "The Bronchial Exchange",
+      "arc_goal": "To monopolize the nitrogen supply before the next tide.",
+      "inventory": [
+        {
+          "item_id": "ivory_gavel",
+          "name": "Ivory Gavel",
+          "description": "A heavy ceramic gavel used to close trades.",
+          "quantity": 1
+        },
+        {
+          "item_id": "breath_contract_01",
+          "name": "Oxygen Future #402",
+          "description": "A contract for 500 liters of pure O2.",
+          "quantity": 5
+        },
+        {
+          "item_id": "saffron_ink",
+          "name": "Saffron Ink",
+          "description": "Permanent ink for signing official documents.",
+          "quantity": 2
+        },
+        {
+          "item_id": "pressure_gauge_portable",
+          "name": "Pocket Manometer",
+          "description": "A precise tool for checking local air pressure.",
+          "quantity": 1
+        },
+        {
+          "item_id": "teal_membrane_sample",
+          "name": "Membrane Patch",
+          "description": "Emergency repair material for lung leaks.",
+          "quantity": 3
+        },
+        {
+          "item_id": "ceramic_coin_gold",
+          "name": "High Credit Disc",
+          "description": "A high-value currency token.",
+          "quantity": 10
+        },
+        {
+          "item_id": "scented_oxygen_canister",
+          "name": "Minted Air Vial",
+          "description": "Luxury breathable air with a hint of mint.",
+          "quantity": 4
+        },
+        {
+          "item_id": "ledger_encrypted",
+          "name": "Private Ledger",
+          "description": "Contains Vaxen's secret debt records.",
+          "quantity": 1
+        },
+        {
+          "item_id": "nitrogen_canister",
+          "name": "Nitrogen Tank",
+          "description": "Industrial grade nitrogen for pressure balancing.",
+          "quantity": 2
+        },
+        {
+          "item_id": "signal_whistle",
+          "name": "Ceramic Whistle",
+          "description": "Used to signal the start of trading rounds.",
+          "quantity": 1
+        },
+        {
+          "item_id": "wax_seal_kit",
+          "name": "Broker's Seal",
+          "description": "Personal seal for authenticating contracts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "magnifying_lens",
+          "name": "Jeweler's Loupe",
+          "description": "Used to inspect ceramic hardware for micro-cracks.",
+          "quantity": 1
+        },
+        {
+          "item_id": "silk_handkerchief",
+          "name": "Saffron Silk",
+          "description": "A fine cloth for cleaning delicate instruments.",
+          "quantity": 2
+        },
+        {
+          "item_id": "emergency_flare",
+          "name": "Teal Flare",
+          "description": "Signals for help during a pressure drop.",
+          "quantity": 2
+        },
+        {
+          "item_id": "identification_card",
+          "name": "Exchange ID",
+          "description": "Grants access to the inner trading floor.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Central Trading Desk",
+          "asset_type": "office",
+          "description": "The most influential desk in the Exchange.",
+          "story_use": "Vaxen uses this to control the flow of information."
+        },
+        {
+          "asset_name": "Private Air Vault",
+          "asset_type": "storage",
+          "description": "A secure chamber filled with high-pressure O2.",
+          "story_use": "A safety net for Vaxen's personal survival."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "debt_of_kaelen",
+          "topic": "Kaelen's Debt",
+          "summary": "Kaelen owes the Exchange 5000 credits for a failed pump repair.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "tide_schedule",
+          "topic": "Exhalation Timing",
+          "summary": "The next major tide will occur in exactly 4 hours.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen Voss",
+      "role_name": "Pump Mechanic",
+      "activity": "Repairing the biological pistons in the Pump Room.",
+      "home_base": "The Pleural Pump Room",
+      "arc_goal": "To clear his debt to Vaxen by sabotaging a rival's air supply.",
+      "inventory": [
+        {
+          "name": "Ceramic Wrench",
+          "description": "A non-sparking tool for biological hardware.",
+          "quantity": 1
+        },
+        {
+          "name": "Teal Lubricant",
+          "description": "Viscous fluid for biological joints.",
+          "quantity": 5
+        },
+        {
+          "name": "Pressure Gasket",
+          "description": "A replacement seal for ceramic pipes.",
+          "quantity": 10
+        },
+        {
+          "name": "Welding Torch",
+          "description": "A low-heat torch for fusing membranes.",
+          "quantity": 1
+        },
+        {
+          "name": "Scrap Ceramic",
+          "description": "Bits of broken ivory hardware.",
+          "quantity": 20
+        },
+        {
+          "name": "Work Gloves",
+          "description": "Thick gloves stained with teal fluid.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Air Tank",
+          "description": "Emergency supply for working in low-pressure zones.",
+          "quantity": 2
+        },
+        {
+          "name": "Debt Notice",
+          "description": "A formal demand for payment from Vaxen.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Repair Workshop",
+          "asset_type": "industrial",
+          "description": "A small corner of the Pump Room.",
+          "story_use": "Where Kaelen tinkers with illegal modifications."
+        },
+        {
+          "asset_name": "Tool Locker",
+          "asset_type": "storage",
+          "description": "A locked cabinet containing specialized tools.",
+          "story_use": "Stores Kaelen's most valuable repair equipment."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "pump_weakness",
+          "topic": "Piston Vulnerability",
+          "summary": "The main piston has a hairline fracture that could be exploited.",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "vaxen_secret",
+          "topic": "Vaxen's Supply",
+          "summary": "Vaxen is hoarding more air than the legal limit allows.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra Sorn",
+      "role_name": "Archivist",
+      "activity": "Cataloging air-rights and genetic lineages.",
+      "home_base": "The Capillary Archives",
+      "arc_goal": "To find proof that the current High Broker's family stole their seat.",
+      "inventory": [
+        {
+          "name": "Ivory Stylus",
+          "description": "Used for etching records onto ceramic tablets.",
+          "quantity": 1
+        },
+        {
+          "name": "Blank Tablet",
+          "description": "A fresh ceramic slab for record-keeping.",
+          "quantity": 5
+        },
+        {
+          "name": "Dusting Brush",
+          "description": "A soft brush for cleaning ancient scrolls.",
+          "quantity": 1
+        },
+        {
+          "name": "Magnifying Glass",
+          "description": "A high-quality lens for reading micro-etchings.",
+          "quantity": 1
+        },
+        {
+          "name": "Archive Key",
+          "description": "A heavy ceramic key to the restricted section.",
+          "quantity": 1
+        },
+        {
+          "name": "Saffron Ribbon",
+          "description": "Used to bundle related scrolls together.",
+          "quantity": 10
+        },
+        {
+          "name": "Preservation Fluid",
+          "description": "A teal liquid that prevents membrane decay.",
+          "quantity": 3
+        },
+        {
+          "name": "Old Map",
+          "description": "A diagram of the station before the last major growth spurt.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Research Desk",
+          "asset_type": "office",
+          "description": "A quiet spot in the back of the Archives.",
+          "story_use": "Where Lyra conducts her secret investigations."
+        },
+        {
+          "asset_name": "Restricted Shelf",
+          "asset_type": "storage",
+          "description": "A shelf containing the station's founding documents.",
+          "story_use": "Lyra has exclusive access to these sensitive records."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "founding_lie",
+          "topic": "Station History",
+          "summary": "The station was not built by the current Council, but by a forgotten guild.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "kaelen_ancestry",
+          "topic": "Kaelen's Lineage",
+          "summary": "Kaelen is actually the rightful heir to a defunct air-rights dynasty.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Dax Miller",
+      "role_name": "Air Smuggler",
+      "activity": "Moving unrecorded canisters through the Tracheal Transit.",
+      "home_base": "The Tracheal Transit",
+      "arc_goal": "To deliver a shipment of pure oxygen to the lower-lung rebels.",
+      "inventory": [
+        {
+          "name": "Hidden Compartment Vest",
+          "description": "A vest designed to hide small canisters.",
+          "quantity": 1
+        },
+        {
+          "name": "Unmarked O2 Canister",
+          "description": "A canister with no tracking serial number.",
+          "quantity": 6
+        },
+        {
+          "name": "Lockpick Set",
+          "description": "Tools for bypassing ceramic pressure locks.",
+          "quantity": 1
+        },
+        {
+          "name": "Bribe Credits",
+          "description": "A stack of low-value credit discs.",
+          "quantity": 50
+        },
+        {
+          "name": "Smoke Bomb",
+          "description": "Creates a cloud of teal vapor for quick escapes.",
+          "quantity": 3
+        },
+        {
+          "name": "Fake ID",
+          "description": "A convincing forgery of a maintenance worker's badge.",
+          "quantity": 1
+        },
+        {
+          "name": "Stun Baton",
+          "description": "A defensive tool for tight corridors.",
+          "quantity": 1
+        },
+        {
+          "name": "Transit Map",
+          "description": "A map showing secret vents and bypasses.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Secret Cache",
+          "asset_type": "storage",
+          "description": "A hidden hole behind a loose membrane.",
+          "story_use": "Dax uses this to store illegal goods between runs."
+        },
+        {
+          "asset_name": "Modified Transit Pod",
+          "asset_type": "transport",
+          "description": "A fast-moving pod with muffled engines.",
+          "story_use": "Allows Dax to move quickly during exhalation tides."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "guard_rotation",
+          "topic": "Security Patterns",
+          "summary": "The Tracheal guards change shifts every 6 hours.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "rebel_contact",
+          "topic": "Lower Lung Rebels",
+          "summary": "The rebels are planning a protest at the next tide.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Elowen Ray",
+      "role_name": "Signal Officer",
+      "activity": "Coordinating ship arrivals and station-wide alerts.",
+      "home_base": "The Diaphragm Lookout",
+      "arc_goal": "To warn an incoming ship of a planned pirate ambush.",
+      "inventory": [
+        {
+          "name": "Signal Flags",
+          "description": "Bright saffron flags for visual communication.",
+          "quantity": 1
+        },
+        {
+          "name": "High-Power Binoculars",
+          "description": "Used to spot ships in the gas giant's rings.",
+          "quantity": 1
+        },
+        {
+          "name": "Logbook",
+          "description": "A record of all incoming and outgoing traffic.",
+          "quantity": 1
+        },
+        {
+          "name": "Flare Gun",
+          "description": "Launches bright saffron signals into space.",
+          "quantity": 1
+        },
+        {
+          "name": "Radio Transceiver",
+          "description": "A bulky device for long-range audio comms.",
+          "quantity": 1
+        },
+        {
+          "name": "Encryption Key",
+          "description": "A small ceramic chip for secure signals.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Rations",
+          "description": "Nutrient paste for long shifts.",
+          "quantity": 5
+        },
+        {
+          "name": "Compass",
+          "description": "A magnetic tool for orbital navigation.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Signal Tower",
+          "asset_type": "infrastructure",
+          "description": "The highest point on the Diaphragm.",
+          "story_use": "Elowen's primary workstation for orbital comms."
+        },
+        {
+          "asset_name": "Observation Deck",
+          "asset_type": "residential",
+          "description": "A small living space with a view of the stars.",
+          "story_use": "Where Elowen spends her off-hours watching the sky."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "pirate_frequency",
+          "topic": "Pirate Comms",
+          "summary": "The local pirates use a specific sub-band for coordination.",
+          "confidence": 75
+        },
+        {
+          "knowledge_id": "ship_manifest",
+          "topic": "Incoming Cargo",
+          "summary": "The next ship is carrying a critical supply of ceramic filters.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Milo Thorne",
+      "role_name": "Membrane Farmer",
+      "activity": "Harvesting and repairing the station's living walls.",
+      "home_base": "The Alveoli Atrium",
+      "arc_goal": "To grow a new section of the lung to house the homeless.",
+      "inventory": [
+        {
+          "name": "Harvesting Knife",
+          "description": "A sharp ceramic blade for pruning membranes.",
+          "quantity": 1
+        },
+        {
+          "name": "Nutrient Spray",
+          "description": "A saffron-colored liquid that promotes growth.",
+          "quantity": 10
+        },
+        {
+          "name": "Seed Spores",
+          "description": "Biological starters for new lung tissue.",
+          "quantity": 20
+        },
+        {
+          "name": "Watering Can",
+          "description": "A ceramic vessel for biological hydration.",
+          "quantity": 1
+        },
+        {
+          "name": "Soil Sample",
+          "description": "Rich biological substrate for planting.",
+          "quantity": 5
+        },
+        {
+          "name": "Pruning Shears",
+          "description": "Heavy-duty shears for thick bronchial tubes.",
+          "quantity": 1
+        },
+        {
+          "name": "Sun Lamp",
+          "description": "A portable light that mimics the gas giant's glow.",
+          "quantity": 2
+        },
+        {
+          "name": "Farmer's Hat",
+          "description": "A wide-brimmed hat made of woven saffron threads.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Nursery Plot",
+          "asset_type": "agricultural",
+          "description": "A small area of the Atrium dedicated to growth.",
+          "story_use": "Where Milo cultivates rare biological components."
+        },
+        {
+          "asset_name": "Compost Bin",
+          "asset_type": "storage",
+          "description": "A large vat for recycling biological waste.",
+          "story_use": "Milo uses this to create his potent nutrient spray."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "growth_pattern",
+          "topic": "Lung Expansion",
+          "summary": "The lung grows faster when the air pressure is kept high.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "toxic_mold",
+          "topic": "Biological Threats",
+          "summary": "A patch of black mold is spreading in the lower ducts.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Sana Kim",
+      "role_name": "Pressure Guard",
+      "activity": "Enforcing air rations and station laws.",
+      "home_base": "The Tracheal Transit",
+      "arc_goal": "To find the person responsible for the recent pressure leaks.",
+      "inventory": [
+        {
+          "name": "Heavy Armor",
+          "description": "Ivory ceramic plates over a teal undersuit.",
+          "quantity": 1
+        },
+        {
+          "name": "Shock Shield",
+          "description": "A large shield that can emit a stunning pulse.",
+          "quantity": 1
+        },
+        {
+          "name": "Handcuffs",
+          "description": "Ceramic restraints for lawbreakers.",
+          "quantity": 3
+        },
+        {
+          "name": "Patrol Log",
+          "description": "A tablet for recording incidents.",
+          "quantity": 1
+        },
+        {
+          "name": "Flashlight",
+          "description": "A powerful beam for dark corridors.",
+          "quantity": 1
+        },
+        {
+          "name": "First Aid Kit",
+          "description": "Contains bandages and teal antiseptic.",
+          "quantity": 2
+        },
+        {
+          "name": "Ration Bars",
+          "description": "Standard issue guard food.",
+          "quantity": 10
+        },
+        {
+          "name": "Duty Badge",
+          "description": "A symbol of authority in the Lung.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guard Post",
+          "asset_type": "security",
+          "description": "A fortified booth in the Transit corridor.",
+          "story_use": "Sana's base of operations during her shift."
+        },
+        {
+          "asset_name": "Evidence Locker",
+          "asset_type": "storage",
+          "description": "A secure safe for confiscated items.",
+          "story_use": "Where Sana keeps clues from her investigations."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "smuggler_routes",
+          "topic": "Illegal Transit",
+          "summary": "Smugglers are using the ventilation shafts to bypass gates.",
+          "confidence": 80
+        },
+        {
+          "knowledge_id": "vaxen_influence",
+          "topic": "Political Corruption",
+          "summary": "Vaxen has several guards on his payroll.",
+          "confidence": 65
+        }
+      ]
+    },
+    {
+      "display_name": "Orin Thal",
+      "role_name": "Bio-Electrician",
+      "activity": "Maintaining the saffron signal threads that carry data.",
+      "home_base": "The Alveoli Atrium",
+      "arc_goal": "To tap into the Broker's private network.",
+      "inventory": [
+        {
+          "name": "Wire Strippers",
+          "description": "Precision tools for saffron threads.",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Tester",
+          "description": "A device that visualizes data pulses.",
+          "quantity": 1
+        },
+        {
+          "name": "Spare Thread",
+          "description": "A spool of conductive saffron silk.",
+          "quantity": 5
+        },
+        {
+          "name": "Insulating Tape",
+          "description": "Teal tape for sealing electrical leaks.",
+          "quantity": 4
+        },
+        {
+          "name": "Soldering Iron",
+          "description": "Used for making permanent connections.",
+          "quantity": 1
+        },
+        {
+          "name": "Data Spike",
+          "description": "A tool for extracting information from threads.",
+          "quantity": 2
+        },
+        {
+          "name": "Multimeter",
+          "description": "Measures the flow of bio-electricity.",
+          "quantity": 1
+        },
+        {
+          "name": "Headlamp",
+          "description": "Hands-free lighting for dark crawlspaces.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Wiring Hub",
+          "asset_type": "infrastructure",
+          "description": "A central junction for the station's data.",
+          "story_use": "Orin can monitor all station traffic from here."
+        },
+        {
+          "asset_name": "Hidden Terminal",
+          "asset_type": "office",
+          "description": "A secret computer tucked away in the walls.",
+          "story_use": "Where Orin performs his illegal hacking."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "network_backdoor",
+          "topic": "Data Security",
+          "summary": "There is an unpatched vulnerability in the Exchange's server.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "thread_interference",
+          "topic": "Signal Noise",
+          "summary": "The station's breathing causes periodic data loss.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Kira Jho",
+      "role_name": "Air Chemist",
+      "activity": "Refining raw gas into breathable air.",
+      "home_base": "The Pleural Pump Room",
+      "arc_goal": "To create a synthetic air substitute that doesn't require the Lung.",
+      "inventory": [
+        {
+          "name": "Test Tubes",
+          "description": "Ceramic tubes for mixing chemicals.",
+          "quantity": 10
+        },
+        {
+          "name": "Centrifuge",
+          "description": "A hand-cranked device for separating gases.",
+          "quantity": 1
+        },
+        {
+          "name": "Chemical Reagents",
+          "description": "Various powders for air purification.",
+          "quantity": 8
+        },
+        {
+          "name": "Gas Mask",
+          "description": "A high-quality mask with advanced filters.",
+          "quantity": 1
+        },
+        {
+          "name": "Lab Coat",
+          "description": "A stained white coat with many pockets.",
+          "quantity": 1
+        },
+        {
+          "name": "pH Strips",
+          "description": "Used to test the acidity of the lung fluid.",
+          "quantity": 20
+        },
+        {
+          "name": "Bunsen Burner",
+          "description": "A small gas-powered heater.",
+          "quantity": 1
+        },
+        {
+          "name": "Notebook",
+          "description": "Filled with complex chemical formulas.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Chemistry Lab",
+          "asset_type": "industrial",
+          "description": "A sterile environment for gas research.",
+          "story_use": "Kira's primary site for her air experiments."
+        },
+        {
+          "asset_name": "Gas Storage Tank",
+          "asset_type": "storage",
+          "description": "A large tank for holding experimental mixtures.",
+          "story_use": "Stores Kira's prototype synthetic air."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "synthetic_formula",
+          "topic": "Air Synthesis",
+          "summary": "The formula is almost complete, but needs a rare catalyst.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "lung_toxicity",
+          "topic": "Environmental Health",
+          "summary": "The lung's natural air is becoming increasingly toxic.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Bram Low",
+      "role_name": "Tide Watcher",
+      "activity": "Predicting the physical shifts of the station.",
+      "home_base": "The Diaphragm Lookout",
+      "arc_goal": "To find a way to stabilize the station permanently.",
+      "inventory": [
+        {
+          "name": "Astrolabe",
+          "description": "A ceramic tool for tracking orbital position.",
+          "quantity": 1
+        },
+        {
+          "name": "Tide Tables",
+          "description": "A book of predicted station shifts.",
+          "quantity": 1
+        },
+        {
+          "name": "Barometer",
+          "description": "Measures the external pressure of the gas giant.",
+          "quantity": 1
+        },
+        {
+          "name": "Chalk",
+          "description": "Used for drawing diagrams on the floor.",
+          "quantity": 5
+        },
+        {
+          "name": "Telescope",
+          "description": "A long ceramic tube for star-gazing.",
+          "quantity": 1
+        },
+        {
+          "name": "Sand Timer",
+          "description": "Used to time the duration of exhalations.",
+          "quantity": 3
+        },
+        {
+          "name": "Heavy Cloak",
+          "description": "A thick saffron cloak for cold nights.",
+          "quantity": 1
+        },
+        {
+          "name": "Star Chart",
+          "description": "A map of the surrounding star systems.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Observation Balcony",
+          "asset_type": "lookout",
+          "description": "A private spot with the best view of the tides.",
+          "story_use": "Where Bram makes his most accurate predictions."
+        },
+        {
+          "asset_name": "Chronometer Room",
+          "asset_type": "office",
+          "description": "A room filled with ticking ceramic clocks.",
+          "story_use": "Bram's office for calculating tide schedules."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "rogue_tide",
+          "topic": "Station Instability",
+          "summary": "A massive, unpredictable tide is coming in three days.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "orbital_decay",
+          "topic": "Station Safety",
+          "summary": "The station's orbit is slowly decaying toward the gas giant.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Zora Vane",
+      "role_name": "Contract Lawyer",
+      "activity": "Mediating disputes over air-rights and futures.",
+      "home_base": "The Capillary Archives",
+      "arc_goal": "To sue the Exchange for the wrongful death of her partner.",
+      "inventory": [
+        {
+          "name": "Legal Briefcase",
+          "description": "A sturdy ivory case for documents.",
+          "quantity": 1
+        },
+        {
+          "name": "Official Seal",
+          "description": "A government-sanctioned stamp of approval.",
+          "quantity": 1
+        },
+        {
+          "name": "Law Book",
+          "description": "A thick volume of station regulations.",
+          "quantity": 1
+        },
+        {
+          "name": "Recording Device",
+          "description": "A small ceramic box that captures audio.",
+          "quantity": 1
+        },
+        {
+          "name": "Business Cards",
+          "description": "Ivory cards with saffron lettering.",
+          "quantity": 50
+        },
+        {
+          "name": "Ink Well",
+          "description": "A pot of high-quality saffron ink.",
+          "quantity": 1
+        },
+        {
+          "name": "Paperweight",
+          "description": "A heavy ceramic sphere.",
+          "quantity": 1
+        },
+        {
+          "name": "Spectacles",
+          "description": "Fine glasses for reading small print.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Law Office",
+          "asset_type": "office",
+          "description": "A professional space near the Archives.",
+          "story_use": "Where Zora meets with her clients."
+        },
+        {
+          "asset_name": "Legal Library",
+          "asset_type": "archive",
+          "description": "A collection of every law ever passed in the Lung.",
+          "story_use": "Zora's primary resource for building her cases."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "vaxen_liability",
+          "topic": "Legal Weakness",
+          "summary": "Vaxen is legally responsible for any pump failures in his sector.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "hidden_clause",
+          "topic": "Contract Law",
+          "summary": "There is a clause that allows the Council to seize the Exchange.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Tess Oly",
+      "role_name": "General Merchant",
+      "activity": "Selling essential supplies to station residents.",
+      "home_base": "The Bronchial Exchange",
+      "arc_goal": "To earn enough to buy a ticket off the station.",
+      "inventory": [
+        {
+          "name": "Ceramic Bowl",
+          "description": "A simple vessel for eating.",
+          "quantity": 10
+        },
+        {
+          "name": "Saffron Thread Spool",
+          "description": "Common thread for clothing repair.",
+          "quantity": 15
+        },
+        {
+          "name": "Teal Soap",
+          "description": "Biological soap for cleaning membranes.",
+          "quantity": 20
+        },
+        {
+          "name": "Dried Algae",
+          "description": "A cheap and nutritious food source.",
+          "quantity": 50
+        },
+        {
+          "name": "Small Mirror",
+          "description": "A polished ceramic surface.",
+          "quantity": 5
+        },
+        {
+          "name": "Comb",
+          "description": "Made from carved ivory.",
+          "quantity": 10
+        },
+        {
+          "name": "Blanket",
+          "description": "A warm, scratchy saffron blanket.",
+          "quantity": 8
+        },
+        {
+          "name": "Water Bottle",
+          "description": "A reusable ceramic bottle.",
+          "quantity": 12
+        },
+        {
+          "name": "Candle",
+          "description": "Made from biological wax.",
+          "quantity": 30
+        },
+        {
+          "name": "Needle Kit",
+          "description": "For sewing and minor repairs.",
+          "quantity": 10
+        },
+        {
+          "name": "Salt Shaker",
+          "description": "A rare luxury in the Lung.",
+          "quantity": 5
+        },
+        {
+          "name": "Playing Cards",
+          "description": "A worn deck of ceramic cards.",
+          "quantity": 3
+        },
+        {
+          "name": "Small Knife",
+          "description": "A utility blade for daily tasks.",
+          "quantity": 10
+        },
+        {
+          "name": "String",
+          "description": "A ball of sturdy saffron twine.",
+          "quantity": 15
+        },
+        {
+          "name": "Bag of Credits",
+          "description": "Tess's life savings.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Merchant Stall",
+          "asset_type": "commercial",
+          "description": "A busy stall in the heart of the Exchange.",
+          "story_use": "Where Tess sells her wares to the public."
+        },
+        {
+          "asset_name": "Storage Crate",
+          "asset_type": "storage",
+          "description": "A large crate for holding excess inventory.",
+          "story_use": "Tess keeps her most valuable items locked in here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "customer_gossip",
+          "topic": "Station Rumors",
+          "summary": "People are saying the air is going to be cut off tonight.",
+          "confidence": 60
+        },
+        {
+          "knowledge_id": "supply_shortage",
+          "topic": "Market Conditions",
+          "summary": "Ceramic goods are going to double in price next week.",
+          "confidence": 85
+        }
+      ]
+    }
+  ],
+  "social_rules": [
+    "Breath is currency; wasting air is a crime.",
+    "Contracts signed in saffron ink are legally binding.",
+    "During exhalation tides, all movement must cease for safety.",
+    "The High Broker's word is law in the Exchange."
+  ],
+  "item_themes": [
+    "Biomechanical",
+    "Ceramic",
+    "Atmospheric",
+    "Saffron",
+    "Teal"
+  ],
+  "custom_actions": [
+    "Trade Breath Futures",
+    "Repair Membrane Leak",
+    "Signal Orbital Craft",
+    "Adjust Room Pressure"
+  ],
+  "player_entry_points": [
+    "Arriving on a supply ship at the Diaphragm Lookout.",
+    "Waking up in the Alveoli Atrium as a new resident.",
+    "Being summoned to the Bronchial Exchange for a contract."
+  ],
+  "conflict_hooks": [
+    "A sudden pressure drop threatens a whole sector.",
+    "A rival broker is trying to sabotage the main pump.",
+    "A lost archive reveals a secret about the station's origin."
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Breath Trade",
+      "summary": "Players buy and sell air futures to gain wealth and influence.",
+      "roles": [
+        "Breath Broker",
+        "General Merchant"
+      ],
+      "rooms": [
+        "The Bronchial Exchange"
+      ],
+      "pressure": "High economic competition."
+    },
+    {
+      "label": "Station Maintenance",
+      "summary": "Players repair the lung's biological systems to keep the air flowing.",
+      "roles": [
+        "Pump Mechanic",
+        "Membrane Farmer"
+      ],
+      "rooms": [
+        "The Pleural Pump Room",
+        "The Alveoli Atrium"
+      ],
+      "pressure": "Constant physical danger."
+    }
+  ],
+  "item_catalog": [
+    {
+      "item_id": "oxygen_canister",
+      "name": "Oxygen Canister",
+      "price": 100,
+      "mass": 2.0,
+      "description": "A standard canister of breathable oxygen.",
+      "image_prompt": "A sleek ivory ceramic canister with teal accents.",
+      "category": "survival"
+    },
+    {
+      "item_id": "pressure_gauge",
+      "name": "Pressure Gauge",
+      "price": 50,
+      "mass": 0.5,
+      "description": "A tool for measuring atmospheric pressure.",
+      "image_prompt": "A round ceramic gauge with a saffron needle.",
+      "category": "tool"
+    },
+    {
+      "item_id": "saffron_thread",
+      "name": "Saffron Thread",
+      "price": 10,
+      "mass": 0.1,
+      "description": "Conductive thread used for signaling and repair.",
+      "image_prompt": "A spool of bright saffron-colored silk thread.",
+      "category": "material"
+    },
+    {
+      "item_id": "ceramic_wrench",
+      "name": "Ceramic Wrench",
+      "price": 75,
+      "mass": 1.0,
+      "description": "A non-sparking wrench for biological hardware.",
+      "image_prompt": "A heavy wrench made of polished ivory ceramic.",
+      "category": "tool"
+    },
+    {
+      "item_id": "teal_lubricant",
+      "name": "Teal Lubricant",
+      "price": 25,
+      "mass": 0.5,
+      "description": "Biological lubricant for station maintenance.",
+      "image_prompt": "A bottle of viscous, glowing teal liquid.",
+      "category": "material"
+    },
+    {
+      "item_id": "breath_contract",
+      "name": "Breath Contract",
+      "price": 500,
+      "mass": 0.1,
+      "description": "A legal document for future air delivery.",
+      "image_prompt": "A ceramic tablet with saffron ink etchings.",
+      "category": "document"
+    },
+    {
+      "item_id": "emergency_mask",
+      "name": "Emergency Mask",
+      "price": 150,
+      "mass": 1.0,
+      "description": "A simple mask for low-pressure situations.",
+      "image_prompt": "A teal membrane mask with ivory filters.",
+      "category": "survival"
+    },
+    {
+      "item_id": "nutrient_paste",
+      "name": "Nutrient Paste",
+      "price": 20,
+      "mass": 0.2,
+      "description": "Standard food for station residents.",
+      "image_prompt": "A tube of thick, saffron-colored paste.",
+      "category": "food"
+    },
+    {
+      "item_id": "signal_flare",
+      "name": "Signal Flare",
+      "price": 40,
+      "mass": 0.3,
+      "description": "A flare that burns with a bright saffron light.",
+      "image_prompt": "A small ceramic cylinder with a saffron tip.",
+      "category": "tool"
+    },
+    {
+      "item_id": "membrane_patch",
+      "name": "Membrane Patch",
+      "price": 60,
+      "mass": 0.2,
+      "description": "A piece of living tissue for repairing leaks.",
+      "image_prompt": "A square of pulsing teal membrane.",
+      "category": "material"
+    },
+    {
+      "item_id": "ivory_stylus",
+      "name": "Ivory Stylus",
+      "price": 30,
+      "mass": 0.1,
+      "description": "A tool for writing on ceramic tablets.",
+      "image_prompt": "A sharp, carved ivory pen.",
+      "category": "tool"
+    },
+    {
+      "item_id": "data_chip",
+      "name": "Data Chip",
+      "price": 200,
+      "mass": 0.05,
+      "description": "A small ceramic chip for storing information.",
+      "image_prompt": "A tiny ivory square with saffron circuits.",
+      "category": "technology"
+    },
+    {
+      "item_id": "shock_baton",
+      "name": "Shock Baton",
+      "price": 300,
+      "mass": 1.5,
+      "description": "A defensive weapon used by station guards.",
+      "image_prompt": "A long ivory rod with teal glowing ends.",
+      "category": "weapon"
+    },
+    {
+      "item_id": "air_filter",
+      "name": "Air Filter",
+      "price": 80,
+      "mass": 0.4,
+      "description": "A replacement filter for respirators.",
+      "image_prompt": "A circular ceramic disc with fine mesh.",
+      "category": "part"
+    },
+    {
+      "item_id": "credit_disc",
+      "name": "Credit Disc",
+      "price": 1,
+      "mass": 0.01,
+      "description": "The standard currency of the Lung.",
+      "image_prompt": "A small, flat ivory disc with a hole in the center.",
+      "category": "currency"
+    }
+  ],
+  "visual_canon": {
+    "canon_id": "lung_exchange_v1",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees",
+      "scale_rule": "1_unit_per_meter"
+    },
+    "palette": {
+      "dominant": "oxidized_teal",
+      "secondary": "ivory_ceramic",
+      "accent": "saffron_signal",
+      "shadow": "charcoal_black",
+      "highlight": "soft_mint_glow"
+    },
+    "materials": [
+      "pulsing_membranes",
+      "polished_ceramic",
+      "conductive_silk",
+      "hardened_bone"
+    ],
+    "lighting": "Soft, biological luminescence with harsh directional shadows from ceramic hardware.",
+    "architecture": [
+      "organic_curves",
+      "ribbed_vaulting",
+      "exposed_piping",
+      "modular_chambers"
+    ],
+    "terrain": {
+      "ground": "translucent_teal_membrane",
+      "path": "ivory_ceramic_walkway",
+      "edge": "pulsing_bronchial_wall"
+    },
+    "sprite_language": {
+      "body_proportion": "realistic_humanoid",
+      "outline": "thin_charcoal",
+      "role_readability": "high_contrast_accents"
+    },
+    "world_prompt_prefix": "Top-down pixel art, biopunk orbital station, oxidized teal and ivory ceramic.",
+    "sprite_prompt_prefix": "Top-down pixel art character, wearing saffron and teal biopunk attire.",
+    "forbidden_visuals": [
+      "neon_lights",
+      "medieval_fantasy",
+      "antique_markets",
+      "generic_cyberpunk"
+    ]
+  },
+  "agent_visual_policy": {
+    "policy_id": "lung_resident_style",
+    "world_wardrobe_brief": "Residents wear practical, multi-layered clothing designed for pressure changes, featuring saffron signal threads and ivory ceramic accessories.",
+    "forbidden_aesthetics": [
+      "denim",
+      "plastic",
+      "bright_primary_colors",
+      "capes"
+    ],
+    "palette_families": [
+      {
+        "name": "Broker_Elite",
+        "dominant": "ivory",
+        "accent": "saffron",
+        "trim": "gold",
+        "material": "silk"
+      },
+      {
+        "name": "Worker_Class",
+        "dominant": "teal",
+        "accent": "charcoal",
+        "trim": "saffron",
+        "material": "canvas"
+      },
+      {
+        "name": "Security_Force",
+        "dominant": "charcoal",
+        "accent": "teal",
+        "trim": "ivory",
+        "material": "ceramic_plate"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "broker_style",
+        "role_keywords": [
+          "broker",
+          "lawyer",
+          "merchant"
+        ],
+        "attire": [
+          "layered_silk_robes",
+          "ivory_jewelry",
+          "saffron_sashes"
+        ],
+        "props": [
+          "ceramic_ledgers",
+          "stylus"
+        ],
+        "palette_notes": "Heavy use of ivory and saffron to show wealth.",
+        "silhouette_notes": "Flowing, voluminous shapes."
+      },
+      {
+        "rule_id": "mechanic_style",
+        "role_keywords": [
+          "mechanic",
+          "farmer",
+          "electrician"
+        ],
+        "attire": [
+          "teal_jumpsuits",
+          "utility_belts",
+          "heavy_boots"
+        ],
+        "props": [
+          "wrenches",
+          "toolkits"
+        ],
+        "palette_notes": "Stained and worn teal fabrics.",
+        "silhouette_notes": "Functional, slim-fitting shapes."
+      }
+    ],
+    "default_rule": {
+      "rule_id": "standard_resident",
+      "role_keywords": [
+        "resident",
+        "citizen"
+      ],
+      "attire": [
+        "teal_tunics",
+        "saffron_scarves"
+      ],
+      "props": [
+        "personal_respirator"
+      ],
+      "palette_notes": "Balanced mix of teal and saffron.",
+      "silhouette_notes": "Simple, practical shapes."
+    },
+    "visual_consistency_rules": [
+      "All characters must have a visible personal respirator.",
+      "Saffron threads must be integrated into every outfit.",
+      "No character should wear more than three distinct colors."
+    ]
+  }
+}

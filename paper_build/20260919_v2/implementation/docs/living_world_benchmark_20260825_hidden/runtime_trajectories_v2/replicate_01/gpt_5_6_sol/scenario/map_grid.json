@@ -1,0 +1,1632 @@
+{
+  "grid_shape": {
+    "x": 49,
+    "y": 53,
+    "z": 1
+  },
+  "map_visual": {
+    "projection": "orthographic_grid",
+    "style": "pixel_art",
+    "tile_width": 32,
+    "tile_height": 32,
+    "room_width_tiles": 6,
+    "room_height_tiles": 4,
+    "agent_sprite_size": 64,
+    "origin": {
+      "x": 0,
+      "y": 0
+    },
+    "layers": [
+      "floor",
+      "objects",
+      "agents",
+      "effects",
+      "ui"
+    ],
+    "camera": {
+      "start_room_id": "room_10_whisper_drain_exchange",
+      "zoom": 2.0,
+      "follow_main_character": "weight_of_words_main_01"
+    },
+    "tileset": {
+      "key": "weight_of_words_pixel_tiles",
+      "image_path": "",
+      "tile_margin": 0,
+      "tile_spacing": 0
+    },
+    "theme_label": "Painterly cliffside civic fantasy with pale stone, oxidized brass, wax seals, rope machinery, luminous echoes, and visible layers of vertical traffic.",
+    "visual_canon_hash": "7af1c78766b29ea9"
+  },
+  "rooms": [
+    {
+      "room_id": "room_01_triple_reading_chamber",
+      "name": "Triple Reading Chamber",
+      "x": 34,
+      "y": 24,
+      "z": 0,
+      "width_tiles": 15,
+      "height_tiles": 13,
+      "doorways": [
+        {
+          "doorway_id": "room_01_triple_reading_chamber_to_room_04_courier_refusal_shelter",
+          "position": {
+            "x": 40,
+            "y": 24,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_04_courier_refusal_shelter",
+          "label": "passage to Courier Refusal Shelter"
+        },
+        {
+          "doorway_id": "room_01_triple_reading_chamber_to_room_07_treasury_redemption_floor",
+          "position": {
+            "x": 34,
+            "y": 30,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_07_treasury_redemption_floor",
+          "label": "passage to Treasury Redemption Floor"
+        },
+        {
+          "doorway_id": "room_01_triple_reading_chamber_to_room_10_whisper_drain_exchange",
+          "position": {
+            "x": 39,
+            "y": 36,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_10_whisper_drain_exchange",
+          "label": "passage to Whisper Drain Exchange"
+        }
+      ],
+      "visual": {
+        "biome": "enclosed civic speaking chamber",
+        "floor_tile": "library_wood",
+        "wall_tile": "library_shelf_wall",
+        "decor_tags": [
+          "concentric brass inlays",
+          "radial acoustic slots",
+          "smoked-glass witness bays",
+          "cyan echo halos",
+          "calibration weights"
+        ],
+        "ambient_palette": "soft_mint",
+        "visual_canon_hash": "7af1c78766b29ea9",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_01_triple_reading_chamber_triple_echo_balance",
+            "label": "Triple Echo Balance",
+            "description": "Three linked oxidized-brass balance arms surrounding a pale cyan resonance cup, with red wax calibration tabs.",
+            "anchor": "center",
+            "width_tiles": 3,
+            "height_tiles": 3
+          },
+          {
+            "component_id": "room_01_triple_reading_chamber_witness_resonator",
+            "label": "Witness Resonator",
+            "description": "Smoked-glass listening hood with radial brass slots that captures a witness echo without written records.",
+            "anchor": "north_mid",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "The Office of Spoken Weights and Guild of Licensed Weighers capture witnessed promises; three matching balance readings bind tax assessments. Distorted readings expose changes in civic_resonance_stability, which later undermine household_trust in the Echo Court.",
+        "activity_tags": [
+          "promise assessment",
+          "witness registration",
+          "reweighing appeal",
+          "echo calibration"
+        ],
+        "player_entry_hook": "A red overload flag at Burden Sorting Post forces a choice between delaying legal dispatches and risking promise decay.",
+        "room_archetype": "archive_ritual",
+        "layout_signal": "Triple Reading Chamber | The Office of Spoken Weights and Guild of Licensed Weighers capture witnessed promises; three matching balance readings bind tax assessments. Distorted readings expose changes in civic_resonance_stability, which later undermine household_trust in the Echo Court. | enclosed civic speaking chamber | promise assessment | witness registration | reweighing appeal | echo calibration | concentric brass inlays | radial acoustic slots | smoked-glass witness bays | cyan echo halos | calibration weights"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "Seamless crunchy 16-bit pixel-art floor texture, strict orthographic top-down, chalky limestone tiles filling the rectangle edge to edge, concentric oxidized-brass measurement rings, radial acoustic slots, sparse chisel arcs and hairline resonance cracks, five-color palette #D8D0B4 #66736C #B46A4C #292D33 #8FC9C3, compact southeast shadows, no text or symbols resembling writing.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular room plate for the Triple Reading Chamber, where licensed weighers assess witnessed speech. Chalky limestone floor with concentric brass inlays, three paired balance arms around a cyan echo-capture basin, smoked-glass witness bays, red wax sample seals and radial acoustic dampers. Collision-grid composition, crunchy civic-fantasy pixel art, five-color canon only, readable at 32x32 pixels per tile. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Wall and floor transitions plus usable floor texture reach all four image edges for direct map pasting; no perspective, facades, or isolated diorama.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "weight_of_words_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90 degrees; no horizon or visible vertical faces",
+          "scale_rule": "Collision-aligned square grid; 1 tile = one walking body width; props and overlays snap to tiles or edges"
+        },
+        "palette": {
+          "dominant": "#d8d0b4",
+          "secondary": "#66736c",
+          "accent": "#b46a4c",
+          "shadow": "#292d33",
+          "highlight": "#8fc9c3"
+        },
+        "materials": [
+          "chalky limestone",
+          "oxidized brass",
+          "red sealing wax",
+          "tarred rope",
+          "smoked glass",
+          "dark iron",
+          "pale echo-glow"
+        ],
+        "lighting": "Diffuse overcast base; shadow falls uniformly southeast in compact tile-readable shapes; echoes and active obligations alone emit #8FC9C3 halos; danger and default use #B46A4C; no gradients outside soft glow fringes.",
+        "architecture": [
+          "Cliff wards read as contiguous stepped limestone grids, never isolated dioramas",
+          "Stairs, rope lifts, bridges, anchors, cisterns, and speaking chambers form visible circulation chains",
+          "Speaking chambers use concentric brass inlays and radial acoustic slots",
+          "Promise infrastructure repeats paired balance arms, sealed caskets, rope pulleys, and resonance dampers",
+          "Route state is shown by icon-shaped lamps, chains, flags, cracks, and scaffold geometry without writing",
+          "Edges terminate in dark cliff voids crossed by anchored ropes and narrow masonry spans"
+        ],
+        "terrain": {
+          "ground": "Pale limestone tiles with sparse chisel arcs and hairline resonance cracks",
+          "path": "Compressed blue-gray stone bands marked by brass studs and rope-shadow rhythm",
+          "edge": "Irregular pale cliff lip with dark iron anchors over a flat #292D33 void"
+        },
+        "sprite_language": {
+          "body_proportion": "Compact top-down figures: head 1/3 body width, broad shoulders, short limbs, oversized burden silhouettes",
+          "outline": "Single #292D33 outline, one pixel-equivalent at runtime scale; no interior black linework",
+          "role_readability": "Roles read through equipment silhouettes: courier harness, weigher balance, bailiff chain, warden hook, broker reed; status uses wax tabs, echo halos, and burden tilt, never text"
+        },
+        "world_prompt_prefix": "Strict orthographic top-down civic cliff fantasy, collision-grid composition, five-color canon only, pale limestone wards, oxidized brass promise machinery, red wax burdens, tarred rope lifts, cyan echo resonance, contiguous vertical-route network.",
+        "sprite_prompt_prefix": "Strict top-down compact civic-fantasy sprite, dark single outline, five-color canon only, role-defining tool silhouette, wax-sealed burden and brass fittings, tile-readable pose, no text.",
+        "forbidden_visuals": [
+          "visible labels, letters, numerals, title text, or readable signage",
+          "poster, card, badge-sheet, or framed presentation layouts",
+          "disconnected room dioramas or floating map islands",
+          "perspective, isometric, oblique, side-view, horizon, or visible facades",
+          "photorealism, 3D-render gloss, cinematic depth of field, or realistic lens effects",
+          "generic medieval castles, taverns, forests, dungeons, dragons, or ornate high-fantasy armor",
+          "generic cyberpunk neon, holographic UI, circuitry, skyscrapers, or firearms",
+          "generic beige procedural terrain, broad empty wilderness, or unrelated real-world landmarks",
+          "colors outside the specified five-color palette",
+          "unbounded gradients, multicolored lighting, or ambient bloom",
+          "decorative text textures, ledger writing, plaque writing, or currency glyphs",
+          "detached runtime overlays; overlays must use canon colors, icon geometry, and grid alignment"
+        ],
+        "canon_hash": "7af1c78766b29ea9"
+      }
+    },
+    {
+      "room_id": "room_02_threshold_lien_office",
+      "name": "Threshold Lien Office",
+      "x": 16,
+      "y": 0,
+      "z": 0,
+      "width_tiles": 12,
+      "height_tiles": 10,
+      "doorways": [
+        {
+          "doorway_id": "room_02_threshold_lien_office_to_room_03_burden_sorting_post",
+          "position": {
+            "x": 21,
+            "y": 9,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_03_burden_sorting_post",
+          "label": "passage to Burden Sorting Post"
+        }
+      ],
+      "visual": {
+        "biome": "cliff-ward assessment vestibule",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "brass threshold scales",
+          "dark iron lien chains",
+          "wax-tab racks",
+          "cistern-share valves",
+          "inspection gates"
+        ],
+        "ambient_palette": "focused_blue",
+        "visual_canon_hash": "7af1c78766b29ea9",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_02_threshold_lien_office_lien_threshold_scale",
+            "label": "Lien Threshold Scale",
+            "description": "Paired brass arms compare a sealed obligation against an iron lift-key weight; an overload arm locks the nearby chain.",
+            "anchor": "center",
+            "width_tiles": 3,
+            "height_tiles": 2
+          },
+          {
+            "component_id": "room_02_threshold_lien_office_cistern_share_lock",
+            "label": "Cistern Share Lock",
+            "description": "Dark iron valve collar with brass balance latch and red wax seizure seal.",
+            "anchor": "east_mid",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Inspectors convert binding assessments into household liens, visibly threatening lift keys and cistern shares while ledge households petition for exemptions. Rising promise_tax_arrears here increases dispatch volume at the Burden Sorting Post during the next cycle.",
+        "activity_tags": [
+          "lien assessment",
+          "tax petition",
+          "asset restraint",
+          "household inspection"
+        ],
+        "player_entry_hook": "A household asks for representation before a third reading in Triple Reading Chamber makes its disputed tax binding.",
+        "room_archetype": "checkpoint",
+        "layout_signal": "Threshold Lien Office | Inspectors convert binding assessments into household liens, visibly threatening lift keys and cistern shares while ledge households petition for exemptions. Rising promise_tax_arrears here increases dispatch volume at the Burden Sorting Post during the next cycle. | cliff-ward assessment vestibule | lien assessment | tax petition | asset restraint | household inspection | brass threshold scales | dark iron lien chains | wax-tab racks | cistern-share valves | inspection gates"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "Crunchy 16-bit strict top-down pixel-art flooring filling the full rectangle, pale chalky limestone threshold grid crossed by compressed blue-gray traffic bands, oxidized-brass studs, dark iron chain sockets, small red wax drips and sparse resonance cracks, exact five-color canon, no writing, no borders, seamless usable edges.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular plate for the Threshold Lien Office, a civic vestibule where inspectors attach tax liability to household lifts and cistern shares. Pale limestone grid, brass threshold scales, dark iron restraint chains, wax-tab sorting pegs, guarded floor gates and a model cistern valve under lien. Compact tile-readable pixel art in the five canon colors, diffuse overcast light and southeast shadows. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Wall/floor transitions and walkable texture must touch all four image edges for direct world-map insertion; no poster, diagram, facade, perspective, or detached overlay.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "weight_of_words_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90 degrees; no horizon or visible vertical faces",
+          "scale_rule": "Collision-aligned square grid; 1 tile = one walking body width; props and overlays snap to tiles or edges"
+        },
+        "palette": {
+          "dominant": "#d8d0b4",
+          "secondary": "#66736c",
+          "accent": "#b46a4c",
+          "shadow": "#292d33",
+          "highlight": "#8fc9c3"
+        },
+        "materials": [
+          "chalky limestone",
+          "oxidized brass",
+          "red sealing wax",
+          "tarred rope",
+          "smoked glass",
+          "dark iron",
+          "pale echo-glow"
+        ],
+        "lighting": "Diffuse overcast base; shadow falls uniformly southeast in compact tile-readable shapes; echoes and active obligations alone emit #8FC9C3 halos; danger and default use #B46A4C; no gradients outside soft glow fringes.",
+        "architecture": [
+          "Cliff wards read as contiguous stepped limestone grids, never isolated dioramas",
+          "Stairs, rope lifts, bridges, anchors, cisterns, and speaking chambers form visible circulation chains",
+          "Speaking chambers use concentric brass inlays and radial acoustic slots",
+          "Promise infrastructure repeats paired balance arms, sealed caskets, rope pulleys, and resonance dampers",
+          "Route state is shown by icon-shaped lamps, chains, flags, cracks, and scaffold geometry without writing",
+          "Edges terminate in dark cliff voids crossed by anchored ropes and narrow masonry spans"
+        ],
+        "terrain": {
+          "ground": "Pale limestone tiles with sparse chisel arcs and hairline resonance cracks",
+          "path": "Compressed blue-gray stone bands marked by brass studs and rope-shadow rhythm",
+          "edge": "Irregular pale cliff lip with dark iron anchors over a flat #292D33 void"
+        },
+        "sprite_language": {
+          "body_proportion": "Compact top-down figures: head 1/3 body width, broad shoulders, short limbs, oversized burden silhouettes",
+          "outline": "Single #292D33 outline, one pixel-equivalent at runtime scale; no interior black linework",
+          "role_readability": "Roles read through equipment silhouettes: courier harness, weigher balance, bailiff chain, warden hook, broker reed; status uses wax tabs, echo halos, and burden tilt, never text"
+        },
+        "world_prompt_prefix": "Strict orthographic top-down civic cliff fantasy, collision-grid composition, five-color canon only, pale limestone wards, oxidized brass promise machinery, red wax burdens, tarred rope lifts, cyan echo resonance, contiguous vertical-route network.",
+        "sprite_prompt_prefix": "Strict top-down compact civic-fantasy sprite, dark single outline, five-color canon only, role-defining tool silhouette, wax-sealed burden and brass fittings, tile-readable pose, no text.",
+        "forbidden_visuals": [
+          "visible labels, letters, numerals, title text, or readable signage",
+          "poster, card, badge-sheet, or framed presentation layouts",
+          "disconnected room dioramas or floating map islands",
+          "perspective, isometric, oblique, side-view, horizon, or visible facades",
+          "photorealism, 3D-render gloss, cinematic depth of field, or realistic lens effects",
+          "generic medieval castles, taverns, forests, dungeons, dragons, or ornate high-fantasy armor",
+          "generic cyberpunk neon, holographic UI, circuitry, skyscrapers, or firearms",
+          "generic beige procedural terrain, broad empty wilderness, or unrelated real-world landmarks",
+          "colors outside the specified five-color palette",
+          "unbounded gradients, multicolored lighting, or ambient bloom",
+          "decorative text textures, ledger writing, plaque writing, or currency glyphs",
+          "detached runtime overlays; overlays must use canon colors, icon geometry, and grid alignment"
+        ],
+        "canon_hash": "7af1c78766b29ea9"
+      }
+    },
+    {
+      "room_id": "room_03_burden_sorting_post",
+      "name": "Burden Sorting Post",
+      "x": 16,
+      "y": 10,
+      "z": 0,
+      "width_tiles": 18,
+      "height_tiles": 14,
+      "doorways": [
+        {
+          "doorway_id": "room_02_threshold_lien_office_to_room_03_burden_sorting_post",
+          "position": {
+            "x": 21,
+            "y": 10,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_02_threshold_lien_office",
+          "label": "passage to Threshold Lien Office"
+        },
+        {
+          "doorway_id": "room_03_burden_sorting_post_to_room_04_courier_refusal_shelter",
+          "position": {
+            "x": 33,
+            "y": 18,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_04_courier_refusal_shelter",
+          "label": "passage to Courier Refusal Shelter"
+        },
+        {
+          "doorway_id": "room_03_burden_sorting_post_to_room_05_anchor_gate_and_lift_mouth",
+          "position": {
+            "x": 16,
+            "y": 17,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_05_anchor_gate_and_lift_mouth",
+          "label": "passage to Anchor Gate and Lift Mouth"
+        },
+        {
+          "doorway_id": "room_03_burden_sorting_post_to_room_07_treasury_redemption_floor",
+          "position": {
+            "x": 24,
+            "y": 23,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_07_treasury_redemption_floor",
+          "label": "passage to Treasury Redemption Floor"
+        }
+      ],
+      "visual": {
+        "biome": "resonant courier depot",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "sealed casket lanes",
+          "harness gantries",
+          "red overload flags",
+          "rope pulleys",
+          "cyan casket halos"
+        ],
+        "ambient_palette": "clear_day",
+        "visual_canon_hash": "7af1c78766b29ea9",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_03_burden_sorting_post_priority_balance_carousel",
+            "label": "Priority Balance Carousel",
+            "description": "Rotating brass balance with three casket hooks showing decay, deadline and receiver capacity through shape and tilt rather than writing.",
+            "anchor": "center",
+            "width_tiles": 3,
+            "height_tiles": 3
+          },
+          {
+            "component_id": "room_03_burden_sorting_post_bonded_harness_gantry",
+            "label": "Bonded Harness Gantry",
+            "description": "Tarred-rope frame that lowers a sealed red-wax obligation casket onto a courier harness and stamps the bond mechanically.",
+            "anchor": "south_mid",
+            "width_tiles": 3,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "The Burden Post stores and prioritizes sealed obligations by decay risk, deadline, and receiver capacity. Higher promise_tax_arrears sends more caskets here; rising courier_burden then produces congestion and closures at the Anchor Gate and harmful vibration in the Damper Vault.",
+        "activity_tags": [
+          "dispatch sorting",
+          "harness sealing",
+          "burden transfer",
+          "courier queueing"
+        ],
+        "player_entry_hook": "Couriers gather at Courier Refusal Shelter to demand enforceable load caps before the next dispatch cycle.",
+        "room_archetype": "logistics_yard",
+        "layout_signal": "Burden Sorting Post | The Burden Post stores and prioritizes sealed obligations by decay risk, deadline, and receiver capacity. Higher promise_tax_arrears sends more caskets here; rising courier_burden then produces congestion and closures at the Anchor Gate and harmful vibration in the Damper Vault. | resonant courier depot | dispatch sorting | harness sealing | burden transfer | courier queueing | sealed casket lanes | harness gantries | red overload flags | rope pulleys | cyan casket halos"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "Strict top-down crunchy 16-bit pixel-art depot floor covering the entire rectangle, pale limestone tiles with parallel blue-gray dispatch lanes, oxidized-brass studs, tarred-rope shadow rhythm, red wax scuffs, dark iron casket sockets and restrained cyan resonance fringes, five-color canon only, no text, edge-to-edge texture.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular room plate for the Burden Sorting Post, a crowded depot for storing and dispatching unpaid spoken promises. Parallel limestone dispatch lanes hold humming wax-sealed caskets, brass routing balances, tarred-rope pulley gantries, courier harness stations and red overload flags formed only as icon geometry. Dense but navigable collision grid, five-color crunchy pixel art, compact southeast shadows and cyan halos only around active burdens. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Usable floor and wall transitions reach all four image edges for seamless map placement; no isolated diorama, oblique view, or visible facade.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "weight_of_words_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90 degrees; no horizon or visible vertical faces",
+          "scale_rule": "Collision-aligned square grid; 1 tile = one walking body width; props and overlays snap to tiles or edges"
+        },
+        "palette": {
+          "dominant": "#d8d0b4",
+          "secondary": "#66736c",
+          "accent": "#b46a4c",
+          "shadow": "#292d33",
+          "highlight": "#8fc9c3"
+        },
+        "materials": [
+          "chalky limestone",
+          "oxidized brass",
+          "red sealing wax",
+          "tarred rope",
+          "smoked glass",
+          "dark iron",
+          "pale echo-glow"
+        ],
+        "lighting": "Diffuse overcast base; shadow falls uniformly southeast in compact tile-readable shapes; echoes and active obligations alone emit #8FC9C3 halos; danger and default use #B46A4C; no gradients outside soft glow fringes.",
+        "architecture": [
+          "Cliff wards read as contiguous stepped limestone grids, never isolated dioramas",
+          "Stairs, rope lifts, bridges, anchors, cisterns, and speaking chambers form visible circulation chains",
+          "Speaking chambers use concentric brass inlays and radial acoustic slots",
+          "Promise infrastructure repeats paired balance arms, sealed caskets, rope pulleys, and resonance dampers",
+          "Route state is shown by icon-shaped lamps, chains, flags, cracks, and scaffold geometry without writing",
+          "Edges terminate in dark cliff voids crossed by anchored ropes and narrow masonry spans"
+        ],
+        "terrain": {
+          "ground": "Pale limestone tiles with sparse chisel arcs and hairline resonance cracks",
+          "path": "Compressed blue-gray stone bands marked by brass studs and rope-shadow rhythm",
+          "edge": "Irregular pale cliff lip with dark iron anchors over a flat #292D33 void"
+        },
+        "sprite_language": {
+          "body_proportion": "Compact top-down figures: head 1/3 body width, broad shoulders, short limbs, oversized burden silhouettes",
+          "outline": "Single #292D33 outline, one pixel-equivalent at runtime scale; no interior black linework",
+          "role_readability": "Roles read through equipment silhouettes: courier harness, weigher balance, bailiff chain, warden hook, broker reed; status uses wax tabs, echo halos, and burden tilt, never text"
+        },
+        "world_prompt_prefix": "Strict orthographic top-down civic cliff fantasy, collision-grid composition, five-color canon only, pale limestone wards, oxidized brass promise machinery, red wax burdens, tarred rope lifts, cyan echo resonance, contiguous vertical-route network.",
+        "sprite_prompt_prefix": "Strict top-down compact civic-fantasy sprite, dark single outline, five-color canon only, role-defining tool silhouette, wax-sealed burden and brass fittings, tile-readable pose, no text.",
+        "forbidden_visuals": [
+          "visible labels, letters, numerals, title text, or readable signage",
+          "poster, card, badge-sheet, or framed presentation layouts",
+          "disconnected room dioramas or floating map islands",
+          "perspective, isometric, oblique, side-view, horizon, or visible facades",
+          "photorealism, 3D-render gloss, cinematic depth of field, or realistic lens effects",
+          "generic medieval castles, taverns, forests, dungeons, dragons, or ornate high-fantasy armor",
+          "generic cyberpunk neon, holographic UI, circuitry, skyscrapers, or firearms",
+          "generic beige procedural terrain, broad empty wilderness, or unrelated real-world landmarks",
+          "colors outside the specified five-color palette",
+          "unbounded gradients, multicolored lighting, or ambient bloom",
+          "decorative text textures, ledger writing, plaque writing, or currency glyphs",
+          "detached runtime overlays; overlays must use canon colors, icon geometry, and grid alignment"
+        ],
+        "canon_hash": "7af1c78766b29ea9"
+      }
+    },
+    {
+      "room_id": "room_04_courier_refusal_shelter",
+      "name": "Courier Refusal Shelter",
+      "x": 34,
+      "y": 13,
+      "z": 0,
+      "width_tiles": 13,
+      "height_tiles": 11,
+      "doorways": [
+        {
+          "doorway_id": "room_01_triple_reading_chamber_to_room_04_courier_refusal_shelter",
+          "position": {
+            "x": 40,
+            "y": 23,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_01_triple_reading_chamber",
+          "label": "passage to Triple Reading Chamber"
+        },
+        {
+          "doorway_id": "room_03_burden_sorting_post_to_room_04_courier_refusal_shelter",
+          "position": {
+            "x": 34,
+            "y": 18,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_03_burden_sorting_post",
+          "label": "passage to Burden Sorting Post"
+        }
+      ],
+      "visual": {
+        "biome": "protected cliff relay shelter",
+        "floor_tile": "tavern_planks",
+        "wall_tile": "tavern_wall",
+        "decor_tags": [
+          "harness rests",
+          "burden cradles",
+          "resonance baffles",
+          "courier bond seals",
+          "route hook lamps"
+        ],
+        "ambient_palette": "low_lantern",
+        "visual_canon_hash": "7af1c78766b29ea9",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_04_courier_refusal_shelter_burden_refusal_cradle",
+            "label": "Burden Refusal Cradle",
+            "description": "Suspended brass-and-rope cradle whose tilted arms isolate a casket emitting an unsafe cyan echo halo.",
+            "anchor": "north_mid",
+            "width_tiles": 3,
+            "height_tiles": 2
+          },
+          {
+            "component_id": "room_04_courier_refusal_shelter_courier_harness_rest",
+            "label": "Courier Harness Rest",
+            "description": "Dark iron shoulder-frame rack with oversized burden silhouettes and intact red bond seals.",
+            "anchor": "west_mid",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Bonded Burden Couriers rest, inspect unstable promises, organize collective halts, and seek authority to refuse unsafe loads. Safe relay capacity here reduces courier_burden after routes reopen, while loss of shelter concentrates traffic at the Anchor Gate.",
+        "activity_tags": [
+          "load inspection",
+          "courier rest",
+          "burden refusal",
+          "relay transfer"
+        ],
+        "player_entry_hook": "A lien at Anchor Gate and Lift Mouth isolates households from water, work, and a redemption deadline.",
+        "room_archetype": "rest_social",
+        "layout_signal": "Courier Refusal Shelter | Bonded Burden Couriers rest, inspect unstable promises, organize collective halts, and seek authority to refuse unsafe loads. Safe relay capacity here reduces courier_burden after routes reopen, while loss of shelter concentrates traffic at the Anchor Gate. | protected cliff relay shelter | load inspection | courier rest | burden refusal | relay transfer | harness rests | burden cradles | resonance baffles | courier bond seals | route hook lamps"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "Crunchy strict top-down 16-bit pixel-art shelter floor, edge-to-edge pale limestone with blue-gray padded walking bands, brass harness sockets, tarred-rope wear arcs, dark iron anchoring points, sparse red wax chips and soft cyan stress traces, only the five canon colors, no lettering or decorative borders.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular plate for the Courier Refusal Shelter, a Warden-certified relay where bonded couriers unload, inspect and reject unstable promise burdens. Limestone floor, brass harness rests, smoked-glass resonance baffles, tarred-rope suspension cradles, red wax bond seals and icon-shaped route lamps. Clear circulation aisles and compact props suited to a 32x32-per-tile game map, five-color pixel art only. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Floor texture and thin wall transitions extend to every edge for map embedding; no vignette, poster, perspective, facade, or floating room.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "weight_of_words_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90 degrees; no horizon or visible vertical faces",
+          "scale_rule": "Collision-aligned square grid; 1 tile = one walking body width; props and overlays snap to tiles or edges"
+        },
+        "palette": {
+          "dominant": "#d8d0b4",
+          "secondary": "#66736c",
+          "accent": "#b46a4c",
+          "shadow": "#292d33",
+          "highlight": "#8fc9c3"
+        },
+        "materials": [
+          "chalky limestone",
+          "oxidized brass",
+          "red sealing wax",
+          "tarred rope",
+          "smoked glass",
+          "dark iron",
+          "pale echo-glow"
+        ],
+        "lighting": "Diffuse overcast base; shadow falls uniformly southeast in compact tile-readable shapes; echoes and active obligations alone emit #8FC9C3 halos; danger and default use #B46A4C; no gradients outside soft glow fringes.",
+        "architecture": [
+          "Cliff wards read as contiguous stepped limestone grids, never isolated dioramas",
+          "Stairs, rope lifts, bridges, anchors, cisterns, and speaking chambers form visible circulation chains",
+          "Speaking chambers use concentric brass inlays and radial acoustic slots",
+          "Promise infrastructure repeats paired balance arms, sealed caskets, rope pulleys, and resonance dampers",
+          "Route state is shown by icon-shaped lamps, chains, flags, cracks, and scaffold geometry without writing",
+          "Edges terminate in dark cliff voids crossed by anchored ropes and narrow masonry spans"
+        ],
+        "terrain": {
+          "ground": "Pale limestone tiles with sparse chisel arcs and hairline resonance cracks",
+          "path": "Compressed blue-gray stone bands marked by brass studs and rope-shadow rhythm",
+          "edge": "Irregular pale cliff lip with dark iron anchors over a flat #292D33 void"
+        },
+        "sprite_language": {
+          "body_proportion": "Compact top-down figures: head 1/3 body width, broad shoulders, short limbs, oversized burden silhouettes",
+          "outline": "Single #292D33 outline, one pixel-equivalent at runtime scale; no interior black linework",
+          "role_readability": "Roles read through equipment silhouettes: courier harness, weigher balance, bailiff chain, warden hook, broker reed; status uses wax tabs, echo halos, and burden tilt, never text"
+        },
+        "world_prompt_prefix": "Strict orthographic top-down civic cliff fantasy, collision-grid composition, five-color canon only, pale limestone wards, oxidized brass promise machinery, red wax burdens, tarred rope lifts, cyan echo resonance, contiguous vertical-route network.",
+        "sprite_prompt_prefix": "Strict top-down compact civic-fantasy sprite, dark single outline, five-color canon only, role-defining tool silhouette, wax-sealed burden and brass fittings, tile-readable pose, no text.",
+        "forbidden_visuals": [
+          "visible labels, letters, numerals, title text, or readable signage",
+          "poster, card, badge-sheet, or framed presentation layouts",
+          "disconnected room dioramas or floating map islands",
+          "perspective, isometric, oblique, side-view, horizon, or visible facades",
+          "photorealism, 3D-render gloss, cinematic depth of field, or realistic lens effects",
+          "generic medieval castles, taverns, forests, dungeons, dragons, or ornate high-fantasy armor",
+          "generic cyberpunk neon, holographic UI, circuitry, skyscrapers, or firearms",
+          "generic beige procedural terrain, broad empty wilderness, or unrelated real-world landmarks",
+          "colors outside the specified five-color palette",
+          "unbounded gradients, multicolored lighting, or ambient bloom",
+          "decorative text textures, ledger writing, plaque writing, or currency glyphs",
+          "detached runtime overlays; overlays must use canon colors, icon geometry, and grid alignment"
+        ],
+        "canon_hash": "7af1c78766b29ea9"
+      }
+    },
+    {
+      "room_id": "room_05_anchor_gate_and_lift_mouth",
+      "name": "Anchor Gate and Lift Mouth",
+      "x": 0,
+      "y": 12,
+      "z": 0,
+      "width_tiles": 16,
+      "height_tiles": 12,
+      "doorways": [
+        {
+          "doorway_id": "room_03_burden_sorting_post_to_room_05_anchor_gate_and_lift_mouth",
+          "position": {
+            "x": 15,
+            "y": 17,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_03_burden_sorting_post",
+          "label": "passage to Burden Sorting Post"
+        },
+        {
+          "doorway_id": "room_05_anchor_gate_and_lift_mouth_to_room_08_cooperative_damper_vault",
+          "position": {
+            "x": 7,
+            "y": 23,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_08_cooperative_damper_vault",
+          "label": "passage to Cooperative Damper Vault"
+        }
+      ],
+      "visual": {
+        "biome": "exposed cliff-route checkpoint",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "bridge closure chains",
+          "lift drums",
+          "anchor gauges",
+          "route lamps",
+          "repair scaffolds"
+        ],
+        "ambient_palette": "clear_day",
+        "visual_canon_hash": "7af1c78766b29ea9",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_05_anchor_gate_and_lift_mouth_warden_load_gate",
+            "label": "Warden Load Gate",
+            "description": "Paired brass balance arms linked to an iron closure chain; excess weight drops the chain across the route.",
+            "anchor": "center",
+            "width_tiles": 3,
+            "height_tiles": 2
+          },
+          {
+            "component_id": "room_05_anchor_gate_and_lift_mouth_certified_lift_drum",
+            "label": "Certified Lift Drum",
+            "description": "Large tarred-rope drum fixed to dark iron anchors with cyan stress lamps and a Warden hook.",
+            "anchor": "east_mid",
+            "width_tiles": 3,
+            "height_tiles": 3
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Cliff Wardens measure bridge and lift loads, close unsafe routes, and confiscate unstable burdens. Reduced cliff_route_access here delays deliveries and income, causing new promise_tax_arrears at the Threshold Lien Office after payment deadlines.",
+        "activity_tags": [
+          "load inspection",
+          "route closure",
+          "lift operation",
+          "burden confiscation"
+        ],
+        "player_entry_hook": "A red overload flag at Burden Sorting Post forces a choice between delaying legal dispatches and risking promise decay.",
+        "room_archetype": "checkpoint",
+        "layout_signal": "Anchor Gate and Lift Mouth | Cliff Wardens measure bridge and lift loads, close unsafe routes, and confiscate unstable burdens. Reduced cliff_route_access here delays deliveries and income, causing new promise_tax_arrears at the Threshold Lien Office after payment deadlines. | exposed cliff-route checkpoint | load inspection | route closure | lift operation | burden confiscation | bridge closure chains | lift drums | anchor gauges | route lamps | repair scaffolds"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "Strict orthographic top-down crunchy pixel-art route floor filling the whole rectangle, pale limestone cliff-lip tiles, compressed blue-gray transit band, oxidized-brass load studs, dark iron anchor plates, tarred-rope grooves, red danger cracks and small cyan resonance stress, exact five-color palette, no text, no empty margins.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular room plate for the Anchor Gate and Lift Mouth, where Cliff Wardens regulate a rope lift and narrow masonry span over a flat dark void edge. Collision-aligned limestone approach, brass load gauge, dark iron closure chains, tarred-rope lift drum, icon-shaped route lamps, scaffold braces and casket confiscation hook. Five-color crunchy pixel art with no horizon or visible vertical faces; compact southeast shadows. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Route and floor transitions continue through all four image edges so the plate joins the contiguous ward map; no isolated island, facade, perspective, or decorative frame.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "weight_of_words_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90 degrees; no horizon or visible vertical faces",
+          "scale_rule": "Collision-aligned square grid; 1 tile = one walking body width; props and overlays snap to tiles or edges"
+        },
+        "palette": {
+          "dominant": "#d8d0b4",
+          "secondary": "#66736c",
+          "accent": "#b46a4c",
+          "shadow": "#292d33",
+          "highlight": "#8fc9c3"
+        },
+        "materials": [
+          "chalky limestone",
+          "oxidized brass",
+          "red sealing wax",
+          "tarred rope",
+          "smoked glass",
+          "dark iron",
+          "pale echo-glow"
+        ],
+        "lighting": "Diffuse overcast base; shadow falls uniformly southeast in compact tile-readable shapes; echoes and active obligations alone emit #8FC9C3 halos; danger and default use #B46A4C; no gradients outside soft glow fringes.",
+        "architecture": [
+          "Cliff wards read as contiguous stepped limestone grids, never isolated dioramas",
+          "Stairs, rope lifts, bridges, anchors, cisterns, and speaking chambers form visible circulation chains",
+          "Speaking chambers use concentric brass inlays and radial acoustic slots",
+          "Promise infrastructure repeats paired balance arms, sealed caskets, rope pulleys, and resonance dampers",
+          "Route state is shown by icon-shaped lamps, chains, flags, cracks, and scaffold geometry without writing",
+          "Edges terminate in dark cliff voids crossed by anchored ropes and narrow masonry spans"
+        ],
+        "terrain": {
+          "ground": "Pale limestone tiles with sparse chisel arcs and hairline resonance cracks",
+          "path": "Compressed blue-gray stone bands marked by brass studs and rope-shadow rhythm",
+          "edge": "Irregular pale cliff lip with dark iron anchors over a flat #292D33 void"
+        },
+        "sprite_language": {
+          "body_proportion": "Compact top-down figures: head 1/3 body width, broad shoulders, short limbs, oversized burden silhouettes",
+          "outline": "Single #292D33 outline, one pixel-equivalent at runtime scale; no interior black linework",
+          "role_readability": "Roles read through equipment silhouettes: courier harness, weigher balance, bailiff chain, warden hook, broker reed; status uses wax tabs, echo halos, and burden tilt, never text"
+        },
+        "world_prompt_prefix": "Strict orthographic top-down civic cliff fantasy, collision-grid composition, five-color canon only, pale limestone wards, oxidized brass promise machinery, red wax burdens, tarred rope lifts, cyan echo resonance, contiguous vertical-route network.",
+        "sprite_prompt_prefix": "Strict top-down compact civic-fantasy sprite, dark single outline, five-color canon only, role-defining tool silhouette, wax-sealed burden and brass fittings, tile-readable pose, no text.",
+        "forbidden_visuals": [
+          "visible labels, letters, numerals, title text, or readable signage",
+          "poster, card, badge-sheet, or framed presentation layouts",
+          "disconnected room dioramas or floating map islands",
+          "perspective, isometric, oblique, side-view, horizon, or visible facades",
+          "photorealism, 3D-render gloss, cinematic depth of field, or realistic lens effects",
+          "generic medieval castles, taverns, forests, dungeons, dragons, or ornate high-fantasy armor",
+          "generic cyberpunk neon, holographic UI, circuitry, skyscrapers, or firearms",
+          "generic beige procedural terrain, broad empty wilderness, or unrelated real-world landmarks",
+          "colors outside the specified five-color palette",
+          "unbounded gradients, multicolored lighting, or ambient bloom",
+          "decorative text textures, ledger writing, plaque writing, or currency glyphs",
+          "detached runtime overlays; overlays must use canon colors, icon geometry, and grid alignment"
+        ],
+        "canon_hash": "7af1c78766b29ea9"
+      }
+    },
+    {
+      "room_id": "room_06_echo_court",
+      "name": "Echo Court",
+      "x": 16,
+      "y": 39,
+      "z": 0,
+      "width_tiles": 17,
+      "height_tiles": 14,
+      "doorways": [
+        {
+          "doorway_id": "room_06_echo_court_to_room_07_treasury_redemption_floor",
+          "position": {
+            "x": 24,
+            "y": 39,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_07_treasury_redemption_floor",
+          "label": "passage to Treasury Redemption Floor"
+        },
+        {
+          "doorway_id": "room_06_echo_court_to_room_09_ledge_mutual_aid_court",
+          "position": {
+            "x": 16,
+            "y": 43,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_09_ledge_mutual_aid_court",
+          "label": "passage to Ledge Mutual-Aid Court"
+        }
+      ],
+      "visual": {
+        "biome": "civic arbitration chamber",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "echo dais",
+          "liability balance",
+          "bailiff chains",
+          "cracked seals",
+          "smoked-glass testimony cells"
+        ],
+        "ambient_palette": "soft_mint",
+        "visual_canon_hash": "7af1c78766b29ea9",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_06_echo_court_reliance_echo_dais",
+            "label": "Reliance Echo Dais",
+            "description": "Concentric brass platform balancing an original cyan echo against sealed tokens of another household's measurable reliance.",
+            "anchor": "center",
+            "width_tiles": 3,
+            "height_tiles": 3
+          },
+          {
+            "component_id": "room_06_echo_court_bailiff_seal_breaker",
+            "label": "Bailiff Seal Breaker",
+            "description": "Dark iron jaw and chain apparatus that cracks red wax when a promise is voided or declared broken.",
+            "anchor": "south_east",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "The Court of Ledgers and Echoes rules promises fulfilled, void, inherited, transferred, or broken; ledger bailiffs seize vowmarks and suspend speech licenses. Fair rulings increase household_trust, enabling pooled payments that later reduce promise_tax_arrears at the Treasury Redemption Floor.",
+        "activity_tags": [
+          "arbitration",
+          "echo comparison",
+          "liability transfer",
+          "seal breaking"
+        ],
+        "player_entry_hook": "A household asks for representation before a third reading in Triple Reading Chamber makes its disputed tax binding.",
+        "room_archetype": "council",
+        "layout_signal": "Echo Court | The Court of Ledgers and Echoes rules promises fulfilled, void, inherited, transferred, or broken; ledger bailiffs seize vowmarks and suspend speech licenses. Fair rulings increase household_trust, enabling pooled payments that later reduce promise_tax_arrears at the Treasury Redemption Floor. | civic arbitration chamber | arbitration | echo comparison | liability transfer | seal breaking | echo dais | liability balance | bailiff chains | cracked seals | smoked-glass testimony cells"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "Edge-to-edge strict top-down 16-bit pixel-art court flooring, chalky limestone square grid with a central circular oxidized-brass acoustic inlay, radial testimony paths, dark iron chain sockets, red cracked-wax flecks and pale cyan echo traces, five canon colors only, no writing, seamless rectangular fill.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular plate for the Echo Court, a chamber for resolving disputed wording and transferring liability. Central brass echo dais, paired reliance scales, smoked-glass testimony cells, dark iron bailiff chains, orderly sealed caskets and a cracked-wax discharge basin. Formal but tile-readable civic cliff architecture, five-color crunchy pixel art, cyan glow limited to live echoes and red accent for defaults. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Limestone floor and thin wall transitions reach all four image edges for immediate map insertion; no poster, ledger writing, perspective, facade, or detached diorama.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "weight_of_words_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90 degrees; no horizon or visible vertical faces",
+          "scale_rule": "Collision-aligned square grid; 1 tile = one walking body width; props and overlays snap to tiles or edges"
+        },
+        "palette": {
+          "dominant": "#d8d0b4",
+          "secondary": "#66736c",
+          "accent": "#b46a4c",
+          "shadow": "#292d33",
+          "highlight": "#8fc9c3"
+        },
+        "materials": [
+          "chalky limestone",
+          "oxidized brass",
+          "red sealing wax",
+          "tarred rope",
+          "smoked glass",
+          "dark iron",
+          "pale echo-glow"
+        ],
+        "lighting": "Diffuse overcast base; shadow falls uniformly southeast in compact tile-readable shapes; echoes and active obligations alone emit #8FC9C3 halos; danger and default use #B46A4C; no gradients outside soft glow fringes.",
+        "architecture": [
+          "Cliff wards read as contiguous stepped limestone grids, never isolated dioramas",
+          "Stairs, rope lifts, bridges, anchors, cisterns, and speaking chambers form visible circulation chains",
+          "Speaking chambers use concentric brass inlays and radial acoustic slots",
+          "Promise infrastructure repeats paired balance arms, sealed caskets, rope pulleys, and resonance dampers",
+          "Route state is shown by icon-shaped lamps, chains, flags, cracks, and scaffold geometry without writing",
+          "Edges terminate in dark cliff voids crossed by anchored ropes and narrow masonry spans"
+        ],
+        "terrain": {
+          "ground": "Pale limestone tiles with sparse chisel arcs and hairline resonance cracks",
+          "path": "Compressed blue-gray stone bands marked by brass studs and rope-shadow rhythm",
+          "edge": "Irregular pale cliff lip with dark iron anchors over a flat #292D33 void"
+        },
+        "sprite_language": {
+          "body_proportion": "Compact top-down figures: head 1/3 body width, broad shoulders, short limbs, oversized burden silhouettes",
+          "outline": "Single #292D33 outline, one pixel-equivalent at runtime scale; no interior black linework",
+          "role_readability": "Roles read through equipment silhouettes: courier harness, weigher balance, bailiff chain, warden hook, broker reed; status uses wax tabs, echo halos, and burden tilt, never text"
+        },
+        "world_prompt_prefix": "Strict orthographic top-down civic cliff fantasy, collision-grid composition, five-color canon only, pale limestone wards, oxidized brass promise machinery, red wax burdens, tarred rope lifts, cyan echo resonance, contiguous vertical-route network.",
+        "sprite_prompt_prefix": "Strict top-down compact civic-fantasy sprite, dark single outline, five-color canon only, role-defining tool silhouette, wax-sealed burden and brass fittings, tile-readable pose, no text.",
+        "forbidden_visuals": [
+          "visible labels, letters, numerals, title text, or readable signage",
+          "poster, card, badge-sheet, or framed presentation layouts",
+          "disconnected room dioramas or floating map islands",
+          "perspective, isometric, oblique, side-view, horizon, or visible facades",
+          "photorealism, 3D-render gloss, cinematic depth of field, or realistic lens effects",
+          "generic medieval castles, taverns, forests, dungeons, dragons, or ornate high-fantasy armor",
+          "generic cyberpunk neon, holographic UI, circuitry, skyscrapers, or firearms",
+          "generic beige procedural terrain, broad empty wilderness, or unrelated real-world landmarks",
+          "colors outside the specified five-color palette",
+          "unbounded gradients, multicolored lighting, or ambient bloom",
+          "decorative text textures, ledger writing, plaque writing, or currency glyphs",
+          "detached runtime overlays; overlays must use canon colors, icon geometry, and grid alignment"
+        ],
+        "canon_hash": "7af1c78766b29ea9"
+      }
+    },
+    {
+      "room_id": "room_07_treasury_redemption_floor",
+      "name": "Treasury Redemption Floor",
+      "x": 16,
+      "y": 24,
+      "z": 0,
+      "width_tiles": 18,
+      "height_tiles": 15,
+      "doorways": [
+        {
+          "doorway_id": "room_01_triple_reading_chamber_to_room_07_treasury_redemption_floor",
+          "position": {
+            "x": 33,
+            "y": 30,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_01_triple_reading_chamber",
+          "label": "passage to Triple Reading Chamber"
+        },
+        {
+          "doorway_id": "room_03_burden_sorting_post_to_room_07_treasury_redemption_floor",
+          "position": {
+            "x": 24,
+            "y": 24,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_03_burden_sorting_post",
+          "label": "passage to Burden Sorting Post"
+        },
+        {
+          "doorway_id": "room_06_echo_court_to_room_07_treasury_redemption_floor",
+          "position": {
+            "x": 24,
+            "y": 38,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_06_echo_court",
+          "label": "passage to Echo Court"
+        },
+        {
+          "doorway_id": "room_07_treasury_redemption_floor_to_room_08_cooperative_damper_vault",
+          "position": {
+            "x": 16,
+            "y": 30,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_08_cooperative_damper_vault",
+          "label": "passage to Cooperative Damper Vault"
+        }
+      ],
+      "visual": {
+        "biome": "bell-funded civic exchange",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "bell balances",
+          "redemption braziers",
+          "grant chutes",
+          "vowmark trays",
+          "repair allocation arms"
+        ],
+        "ambient_palette": "warm_lantern",
+        "visual_canon_hash": "7af1c78766b29ea9",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_07_treasury_redemption_floor_redemption_bell_balance",
+            "label": "Redemption Bell Balance",
+            "description": "Squat brass bell suspended between paired arms; a paid wax seal is melted as the bell releases a cyan echo ring.",
+            "anchor": "center",
+            "width_tiles": 3,
+            "height_tiles": 3
+          },
+          {
+            "component_id": "room_07_treasury_redemption_floor_infrastructure_grant_diverter",
+            "label": "Infrastructure Grant Diverter",
+            "description": "Branching brass chute that directs vowmark tokens toward anchor, lift and damper-shaped receivers.",
+            "anchor": "north_east",
+            "width_tiles": 3,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "The Bell Treasury collects promise tax, auctions liabilities, funds route repairs, and runs subsidized redemption days. Redemptions lower promise_tax_arrears; after several days the Damper Vault experiences improved civic_resonance_stability as stored caskets are discharged.",
+        "activity_tags": [
+          "tax payment",
+          "promise redemption",
+          "liability auction",
+          "repair funding"
+        ],
+        "player_entry_hook": "Couriers gather at Courier Refusal Shelter to demand enforceable load caps before the next dispatch cycle.",
+        "room_archetype": "market_exchange",
+        "layout_signal": "Treasury Redemption Floor | The Bell Treasury collects promise tax, auctions liabilities, funds route repairs, and runs subsidized redemption days. Redemptions lower promise_tax_arrears; after several days the Damper Vault experiences improved civic_resonance_stability as stored caskets are discharged. | bell-funded civic exchange | tax payment | promise redemption | liability auction | repair funding | bell balances | redemption braziers | grant chutes | vowmark trays | repair allocation arms"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "Crunchy strict top-down 16-bit pixel-art treasury floor texture filling every edge, pale limestone with fan-shaped oxidized-brass allocation channels, blue-gray queue bands, red wax redemption stains, dark iron bell sockets and sparse cyan discharged-echo rings, exact five-color canon, no letters, numerals or coin glyphs.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular plate for the Treasury Redemption Floor, where assessed promise taxes are collected, sealed liabilities redeemed, and repair grants routed to cliff infrastructure. Limestone queue grid, low brass bell balances, wax-melting discharge braziers, vowmark trays without glyphs, allocation arms feeding miniature anchor and lift components. Dense civic exchange readable on a 32x32 tile grid, five-color crunchy pixel art. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Walkable floor and thin wall transitions extend to all four image edges; no framed market card, perspective, facade, or floating diorama.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "weight_of_words_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90 degrees; no horizon or visible vertical faces",
+          "scale_rule": "Collision-aligned square grid; 1 tile = one walking body width; props and overlays snap to tiles or edges"
+        },
+        "palette": {
+          "dominant": "#d8d0b4",
+          "secondary": "#66736c",
+          "accent": "#b46a4c",
+          "shadow": "#292d33",
+          "highlight": "#8fc9c3"
+        },
+        "materials": [
+          "chalky limestone",
+          "oxidized brass",
+          "red sealing wax",
+          "tarred rope",
+          "smoked glass",
+          "dark iron",
+          "pale echo-glow"
+        ],
+        "lighting": "Diffuse overcast base; shadow falls uniformly southeast in compact tile-readable shapes; echoes and active obligations alone emit #8FC9C3 halos; danger and default use #B46A4C; no gradients outside soft glow fringes.",
+        "architecture": [
+          "Cliff wards read as contiguous stepped limestone grids, never isolated dioramas",
+          "Stairs, rope lifts, bridges, anchors, cisterns, and speaking chambers form visible circulation chains",
+          "Speaking chambers use concentric brass inlays and radial acoustic slots",
+          "Promise infrastructure repeats paired balance arms, sealed caskets, rope pulleys, and resonance dampers",
+          "Route state is shown by icon-shaped lamps, chains, flags, cracks, and scaffold geometry without writing",
+          "Edges terminate in dark cliff voids crossed by anchored ropes and narrow masonry spans"
+        ],
+        "terrain": {
+          "ground": "Pale limestone tiles with sparse chisel arcs and hairline resonance cracks",
+          "path": "Compressed blue-gray stone bands marked by brass studs and rope-shadow rhythm",
+          "edge": "Irregular pale cliff lip with dark iron anchors over a flat #292D33 void"
+        },
+        "sprite_language": {
+          "body_proportion": "Compact top-down figures: head 1/3 body width, broad shoulders, short limbs, oversized burden silhouettes",
+          "outline": "Single #292D33 outline, one pixel-equivalent at runtime scale; no interior black linework",
+          "role_readability": "Roles read through equipment silhouettes: courier harness, weigher balance, bailiff chain, warden hook, broker reed; status uses wax tabs, echo halos, and burden tilt, never text"
+        },
+        "world_prompt_prefix": "Strict orthographic top-down civic cliff fantasy, collision-grid composition, five-color canon only, pale limestone wards, oxidized brass promise machinery, red wax burdens, tarred rope lifts, cyan echo resonance, contiguous vertical-route network.",
+        "sprite_prompt_prefix": "Strict top-down compact civic-fantasy sprite, dark single outline, five-color canon only, role-defining tool silhouette, wax-sealed burden and brass fittings, tile-readable pose, no text.",
+        "forbidden_visuals": [
+          "visible labels, letters, numerals, title text, or readable signage",
+          "poster, card, badge-sheet, or framed presentation layouts",
+          "disconnected room dioramas or floating map islands",
+          "perspective, isometric, oblique, side-view, horizon, or visible facades",
+          "photorealism, 3D-render gloss, cinematic depth of field, or realistic lens effects",
+          "generic medieval castles, taverns, forests, dungeons, dragons, or ornate high-fantasy armor",
+          "generic cyberpunk neon, holographic UI, circuitry, skyscrapers, or firearms",
+          "generic beige procedural terrain, broad empty wilderness, or unrelated real-world landmarks",
+          "colors outside the specified five-color palette",
+          "unbounded gradients, multicolored lighting, or ambient bloom",
+          "decorative text textures, ledger writing, plaque writing, or currency glyphs",
+          "detached runtime overlays; overlays must use canon colors, icon geometry, and grid alignment"
+        ],
+        "canon_hash": "7af1c78766b29ea9"
+      }
+    },
+    {
+      "room_id": "room_08_cooperative_damper_vault",
+      "name": "Cooperative Damper Vault",
+      "x": 0,
+      "y": 24,
+      "z": 0,
+      "width_tiles": 16,
+      "height_tiles": 13,
+      "doorways": [
+        {
+          "doorway_id": "room_05_anchor_gate_and_lift_mouth_to_room_08_cooperative_damper_vault",
+          "position": {
+            "x": 7,
+            "y": 24,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_05_anchor_gate_and_lift_mouth",
+          "label": "passage to Anchor Gate and Lift Mouth"
+        },
+        {
+          "doorway_id": "room_07_treasury_redemption_floor_to_room_08_cooperative_damper_vault",
+          "position": {
+            "x": 15,
+            "y": 30,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_07_treasury_redemption_floor",
+          "label": "passage to Treasury Redemption Floor"
+        },
+        {
+          "doorway_id": "room_08_cooperative_damper_vault_to_room_09_ledge_mutual_aid_court",
+          "position": {
+            "x": 8,
+            "y": 36,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_09_ledge_mutual_aid_court",
+          "label": "passage to Ledge Mutual-Aid Court"
+        }
+      ],
+      "visual": {
+        "biome": "resonance maintenance workshop",
+        "floor_tile": "library_wood",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "resonance dampers",
+          "anchor forge",
+          "brass tuning forks",
+          "repair scaffolds",
+          "stress lamps"
+        ],
+        "ambient_palette": "ember_orange",
+        "visual_canon_hash": "7af1c78766b29ea9",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_08_cooperative_damper_vault_civic_resonance_damper",
+            "label": "Civic Resonance Damper",
+            "description": "Smoked-glass cylinder held by brass tuning arms, absorbing cyan vibration from a cracked iron anchor plate.",
+            "anchor": "center",
+            "width_tiles": 3,
+            "height_tiles": 3
+          },
+          {
+            "component_id": "room_08_cooperative_damper_vault_anchor_certification_rig",
+            "label": "Anchor Certification Rig",
+            "description": "Tarred-rope tension frame that pulls a dark iron anchor against paired brass load arms.",
+            "anchor": "west_mid",
+            "width_tiles": 3,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Cliff Maintenance Cooperatives install dampers, rebuild anchors, and may withhold specialized labor unless Treasury contracts and safe access arrive. Caskets stalled at the Burden Sorting Post raise civic_resonance_stability stress here; completed repairs reopen the Anchor Gate and reduce courier_burden next cycle.",
+        "activity_tags": [
+          "damper fabrication",
+          "anchor repair",
+          "route certification",
+          "maintenance bargaining"
+        ],
+        "player_entry_hook": "A lien at Anchor Gate and Lift Mouth isolates households from water, work, and a redemption deadline.",
+        "room_archetype": "workshop",
+        "layout_signal": "Cooperative Damper Vault | Cliff Maintenance Cooperatives install dampers, rebuild anchors, and may withhold specialized labor unless Treasury contracts and safe access arrive. Caskets stalled at the Burden Sorting Post raise civic_resonance_stability stress here; completed repairs reopen the Anchor Gate and reduce courier_burden next cycle. | resonance maintenance workshop | damper fabrication | anchor repair | route certification | maintenance bargaining | resonance dampers | anchor forge | brass tuning forks | repair scaffolds | stress lamps"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "Strict top-down crunchy 16-bit pixel-art workshop floor, full rectangular edge-to-edge chalky limestone slabs with blue-gray work lanes, oxidized-brass tuning arcs, dark iron anchor sockets, tarred-rope scuffs, red hot-stress marks and cyan vibration fringes, five-color canon only, no writing or margin.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular plate for the Cooperative Damper Vault, a worker-controlled workshop that fabricates resonance dampers and repairs cliff anchors. Limestone work grid, brass tuning forks, smoked-glass damping cylinders, dark iron anchor jigs, tarred-rope tension rigs, repair scaffolds and cyan stress lamps. Tile-snapped industrial civic fantasy in crunchy five-color pixel art, compact southeast shadows. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Functional floor and wall transitions must touch all four edges for seamless world-map placement; no generic forge, perspective, visible facade, poster, or isolated diorama.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "weight_of_words_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90 degrees; no horizon or visible vertical faces",
+          "scale_rule": "Collision-aligned square grid; 1 tile = one walking body width; props and overlays snap to tiles or edges"
+        },
+        "palette": {
+          "dominant": "#d8d0b4",
+          "secondary": "#66736c",
+          "accent": "#b46a4c",
+          "shadow": "#292d33",
+          "highlight": "#8fc9c3"
+        },
+        "materials": [
+          "chalky limestone",
+          "oxidized brass",
+          "red sealing wax",
+          "tarred rope",
+          "smoked glass",
+          "dark iron",
+          "pale echo-glow"
+        ],
+        "lighting": "Diffuse overcast base; shadow falls uniformly southeast in compact tile-readable shapes; echoes and active obligations alone emit #8FC9C3 halos; danger and default use #B46A4C; no gradients outside soft glow fringes.",
+        "architecture": [
+          "Cliff wards read as contiguous stepped limestone grids, never isolated dioramas",
+          "Stairs, rope lifts, bridges, anchors, cisterns, and speaking chambers form visible circulation chains",
+          "Speaking chambers use concentric brass inlays and radial acoustic slots",
+          "Promise infrastructure repeats paired balance arms, sealed caskets, rope pulleys, and resonance dampers",
+          "Route state is shown by icon-shaped lamps, chains, flags, cracks, and scaffold geometry without writing",
+          "Edges terminate in dark cliff voids crossed by anchored ropes and narrow masonry spans"
+        ],
+        "terrain": {
+          "ground": "Pale limestone tiles with sparse chisel arcs and hairline resonance cracks",
+          "path": "Compressed blue-gray stone bands marked by brass studs and rope-shadow rhythm",
+          "edge": "Irregular pale cliff lip with dark iron anchors over a flat #292D33 void"
+        },
+        "sprite_language": {
+          "body_proportion": "Compact top-down figures: head 1/3 body width, broad shoulders, short limbs, oversized burden silhouettes",
+          "outline": "Single #292D33 outline, one pixel-equivalent at runtime scale; no interior black linework",
+          "role_readability": "Roles read through equipment silhouettes: courier harness, weigher balance, bailiff chain, warden hook, broker reed; status uses wax tabs, echo halos, and burden tilt, never text"
+        },
+        "world_prompt_prefix": "Strict orthographic top-down civic cliff fantasy, collision-grid composition, five-color canon only, pale limestone wards, oxidized brass promise machinery, red wax burdens, tarred rope lifts, cyan echo resonance, contiguous vertical-route network.",
+        "sprite_prompt_prefix": "Strict top-down compact civic-fantasy sprite, dark single outline, five-color canon only, role-defining tool silhouette, wax-sealed burden and brass fittings, tile-readable pose, no text.",
+        "forbidden_visuals": [
+          "visible labels, letters, numerals, title text, or readable signage",
+          "poster, card, badge-sheet, or framed presentation layouts",
+          "disconnected room dioramas or floating map islands",
+          "perspective, isometric, oblique, side-view, horizon, or visible facades",
+          "photorealism, 3D-render gloss, cinematic depth of field, or realistic lens effects",
+          "generic medieval castles, taverns, forests, dungeons, dragons, or ornate high-fantasy armor",
+          "generic cyberpunk neon, holographic UI, circuitry, skyscrapers, or firearms",
+          "generic beige procedural terrain, broad empty wilderness, or unrelated real-world landmarks",
+          "colors outside the specified five-color palette",
+          "unbounded gradients, multicolored lighting, or ambient bloom",
+          "decorative text textures, ledger writing, plaque writing, or currency glyphs",
+          "detached runtime overlays; overlays must use canon colors, icon geometry, and grid alignment"
+        ],
+        "canon_hash": "7af1c78766b29ea9"
+      }
+    },
+    {
+      "room_id": "room_09_ledge_mutual_aid_court",
+      "name": "Ledge Mutual-Aid Court",
+      "x": 2,
+      "y": 37,
+      "z": 0,
+      "width_tiles": 14,
+      "height_tiles": 12,
+      "doorways": [
+        {
+          "doorway_id": "room_06_echo_court_to_room_09_ledge_mutual_aid_court",
+          "position": {
+            "x": 15,
+            "y": 43,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_06_echo_court",
+          "label": "passage to Echo Court"
+        },
+        {
+          "doorway_id": "room_08_cooperative_damper_vault_to_room_09_ledge_mutual_aid_court",
+          "position": {
+            "x": 8,
+            "y": 37,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_08_cooperative_damper_vault",
+          "label": "passage to Cooperative Damper Vault"
+        }
+      ],
+      "visual": {
+        "biome": "household cistern commons",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "shared cistern",
+          "household burden hooks",
+          "witness circle",
+          "pooled vowmark basin",
+          "lift-key rail"
+        ],
+        "ambient_palette": "clear_day",
+        "visual_canon_hash": "7af1c78766b29ea9",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_09_ledge_mutual_aid_court_pooled_vowmark_basin",
+            "label": "Pooled Vowmark Basin",
+            "description": "Brass-rimmed limestone basin holding plain red wax tokens beneath two balanced household hooks.",
+            "anchor": "center",
+            "width_tiles": 2,
+            "height_tiles": 2
+          },
+          {
+            "component_id": "room_09_ledge_mutual_aid_court_neighbor_burden_yoke",
+            "label": "Neighbor Burden Yoke",
+            "description": "Paired shoulder yoke allowing two households to share one sealed promise casket during a witnessed transfer.",
+            "anchor": "south_mid",
+            "width_tiles": 3,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Ledge households recruit witnesses, pool tax payments, extend trade credit, and arrange voluntary assumption of neighbors' burdens. Repeated fair exchanges raise household_trust and subsequently reduce promise_tax_arrears at the Threshold Lien Office after witnessed transactions.",
+        "activity_tags": [
+          "mutual aid",
+          "pooled payment",
+          "neighbor witnessing",
+          "burden assumption"
+        ],
+        "player_entry_hook": "A red overload flag at Burden Sorting Post forces a choice between delaying legal dispatches and risking promise decay.",
+        "room_archetype": "commons",
+        "layout_signal": "Ledge Mutual-Aid Court | Ledge households recruit witnesses, pool tax payments, extend trade credit, and arrange voluntary assumption of neighbors' burdens. Repeated fair exchanges raise household_trust and subsequently reduce promise_tax_arrears at the Threshold Lien Office after witnessed transactions. | household cistern commons | mutual aid | pooled payment | neighbor witnessing | burden assumption | shared cistern | household burden hooks | witness circle | pooled vowmark basin | lift-key rail"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "Seamless crunchy 16-bit strict top-down commons floor, pale limestone household tiles filling edge to edge, compressed blue-gray paths around a brass-rimmed cistern, tarred-rope lift shadows, red wax household tabs and faint cyan witnessed-echo rings, five canon colors only, no text or decorative border.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular plate for the Ledge Mutual-Aid Court, a household commons around a shared cistern where neighbors witness agreements, pool tax resources and assume burdens. Pale limestone grid, brass cistern rim, circular witness standing marks, sealed burden hooks, lift-key rail and a pooled vowmark basin with no currency glyphs. Welcoming but materially strained, collision-readable five-color pixel art. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Floor paths and thin wall transitions continue to all four image edges for direct map pasting; no tavern imagery, perspective, facade, framed scene, or disconnected diorama.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "weight_of_words_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90 degrees; no horizon or visible vertical faces",
+          "scale_rule": "Collision-aligned square grid; 1 tile = one walking body width; props and overlays snap to tiles or edges"
+        },
+        "palette": {
+          "dominant": "#d8d0b4",
+          "secondary": "#66736c",
+          "accent": "#b46a4c",
+          "shadow": "#292d33",
+          "highlight": "#8fc9c3"
+        },
+        "materials": [
+          "chalky limestone",
+          "oxidized brass",
+          "red sealing wax",
+          "tarred rope",
+          "smoked glass",
+          "dark iron",
+          "pale echo-glow"
+        ],
+        "lighting": "Diffuse overcast base; shadow falls uniformly southeast in compact tile-readable shapes; echoes and active obligations alone emit #8FC9C3 halos; danger and default use #B46A4C; no gradients outside soft glow fringes.",
+        "architecture": [
+          "Cliff wards read as contiguous stepped limestone grids, never isolated dioramas",
+          "Stairs, rope lifts, bridges, anchors, cisterns, and speaking chambers form visible circulation chains",
+          "Speaking chambers use concentric brass inlays and radial acoustic slots",
+          "Promise infrastructure repeats paired balance arms, sealed caskets, rope pulleys, and resonance dampers",
+          "Route state is shown by icon-shaped lamps, chains, flags, cracks, and scaffold geometry without writing",
+          "Edges terminate in dark cliff voids crossed by anchored ropes and narrow masonry spans"
+        ],
+        "terrain": {
+          "ground": "Pale limestone tiles with sparse chisel arcs and hairline resonance cracks",
+          "path": "Compressed blue-gray stone bands marked by brass studs and rope-shadow rhythm",
+          "edge": "Irregular pale cliff lip with dark iron anchors over a flat #292D33 void"
+        },
+        "sprite_language": {
+          "body_proportion": "Compact top-down figures: head 1/3 body width, broad shoulders, short limbs, oversized burden silhouettes",
+          "outline": "Single #292D33 outline, one pixel-equivalent at runtime scale; no interior black linework",
+          "role_readability": "Roles read through equipment silhouettes: courier harness, weigher balance, bailiff chain, warden hook, broker reed; status uses wax tabs, echo halos, and burden tilt, never text"
+        },
+        "world_prompt_prefix": "Strict orthographic top-down civic cliff fantasy, collision-grid composition, five-color canon only, pale limestone wards, oxidized brass promise machinery, red wax burdens, tarred rope lifts, cyan echo resonance, contiguous vertical-route network.",
+        "sprite_prompt_prefix": "Strict top-down compact civic-fantasy sprite, dark single outline, five-color canon only, role-defining tool silhouette, wax-sealed burden and brass fittings, tile-readable pose, no text.",
+        "forbidden_visuals": [
+          "visible labels, letters, numerals, title text, or readable signage",
+          "poster, card, badge-sheet, or framed presentation layouts",
+          "disconnected room dioramas or floating map islands",
+          "perspective, isometric, oblique, side-view, horizon, or visible facades",
+          "photorealism, 3D-render gloss, cinematic depth of field, or realistic lens effects",
+          "generic medieval castles, taverns, forests, dungeons, dragons, or ornate high-fantasy armor",
+          "generic cyberpunk neon, holographic UI, circuitry, skyscrapers, or firearms",
+          "generic beige procedural terrain, broad empty wilderness, or unrelated real-world landmarks",
+          "colors outside the specified five-color palette",
+          "unbounded gradients, multicolored lighting, or ambient bloom",
+          "decorative text textures, ledger writing, plaque writing, or currency glyphs",
+          "detached runtime overlays; overlays must use canon colors, icon geometry, and grid alignment"
+        ],
+        "canon_hash": "7af1c78766b29ea9"
+      }
+    },
+    {
+      "room_id": "room_10_whisper_drain_exchange",
+      "name": "Whisper Drain Exchange",
+      "x": 34,
+      "y": 37,
+      "z": 0,
+      "width_tiles": 12,
+      "height_tiles": 11,
+      "doorways": [
+        {
+          "doorway_id": "room_01_triple_reading_chamber_to_room_10_whisper_drain_exchange",
+          "position": {
+            "x": 39,
+            "y": 37,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_01_triple_reading_chamber",
+          "label": "passage to Triple Reading Chamber"
+        }
+      ],
+      "visual": {
+        "biome": "concealed service-passage market",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "acoustic reed booths",
+          "drain grates",
+          "forged echo phials",
+          "concealed casket niches",
+          "rope crawlway"
+        ],
+        "ambient_palette": "low_lantern",
+        "visual_canon_hash": "7af1c78766b29ea9",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_10_whisper_drain_exchange_whisper_reed_condenser",
+            "label": "Whisper Reed Condenser",
+            "description": "Bundled brass reeds feeding a smoked-glass bulb that traps an unweighed cyan echo before witnesses can hear it.",
+            "anchor": "center",
+            "width_tiles": 2,
+            "height_tiles": 3
+          },
+          {
+            "component_id": "room_10_whisper_drain_exchange_forged_echo_splicer",
+            "label": "Forged Echo Splicer",
+            "description": "Dark iron clamp joining two sealed echo phials with mismatched red wax collars.",
+            "anchor": "north_west",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Whisper Brokers trade unweighed promises, forged echoes, covert routes, and emergency credit through abandoned drains. Low household_trust increases black_market_volume here; greater untaxed trade later worsens promise_tax_arrears at the Treasury by shrinking lawful revenue.",
+        "activity_tags": [
+          "untaxed promise trade",
+          "echo forgery",
+          "covert dispatch",
+          "inspector evasion"
+        ],
+        "player_entry_hook": "A household asks for representation before a third reading in Triple Reading Chamber makes its disputed tax binding.",
+        "room_archetype": "market_exchange",
+        "layout_signal": "Whisper Drain Exchange | Whisper Brokers trade unweighed promises, forged echoes, covert routes, and emergency credit through abandoned drains. Low household_trust increases black_market_volume here; greater untaxed trade later worsens promise_tax_arrears at the Treasury by shrinking lawful revenue. | concealed service-passage market | untaxed promise trade | echo forgery | covert dispatch | inspector evasion | acoustic reed booths | drain grates | forged echo phials | concealed casket niches | rope crawlway"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "Crunchy strict top-down 16-bit pixel-art hidden passage floor filling the entire rectangle, worn pale limestone drainage tiles, blue-gray runoff channels, oxidized-brass reed sockets, dark iron grates, tarred-rope crawl marks, red illicit wax scraps and tiny cyan false-echo glints, exact five-color canon, no text.",
+      "room_scene_prompt": "Strict orthographic top-down map-embedded rectangular plate for the Whisper Drain Exchange, a concealed service passage where brokers move untaxed spoken promises and forged echoes. Worn limestone drain grid, dark iron grates, acoustic reed booths, smoked-glass echo phials, hidden wax-sealed casket niches and a tarred-rope crawlway. Claustrophobic collision-readable pixel art using only the five canon colors; sparse cyan false echoes and red illicit seals. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room. Passage floor and wall transitions reach all four edges to connect directly into the ward map; no cyberpunk neon, perspective, facade, poster, or isolated shrine diorama.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "weight_of_words_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90 degrees; no horizon or visible vertical faces",
+          "scale_rule": "Collision-aligned square grid; 1 tile = one walking body width; props and overlays snap to tiles or edges"
+        },
+        "palette": {
+          "dominant": "#d8d0b4",
+          "secondary": "#66736c",
+          "accent": "#b46a4c",
+          "shadow": "#292d33",
+          "highlight": "#8fc9c3"
+        },
+        "materials": [
+          "chalky limestone",
+          "oxidized brass",
+          "red sealing wax",
+          "tarred rope",
+          "smoked glass",
+          "dark iron",
+          "pale echo-glow"
+        ],
+        "lighting": "Diffuse overcast base; shadow falls uniformly southeast in compact tile-readable shapes; echoes and active obligations alone emit #8FC9C3 halos; danger and default use #B46A4C; no gradients outside soft glow fringes.",
+        "architecture": [
+          "Cliff wards read as contiguous stepped limestone grids, never isolated dioramas",
+          "Stairs, rope lifts, bridges, anchors, cisterns, and speaking chambers form visible circulation chains",
+          "Speaking chambers use concentric brass inlays and radial acoustic slots",
+          "Promise infrastructure repeats paired balance arms, sealed caskets, rope pulleys, and resonance dampers",
+          "Route state is shown by icon-shaped lamps, chains, flags, cracks, and scaffold geometry without writing",
+          "Edges terminate in dark cliff voids crossed by anchored ropes and narrow masonry spans"
+        ],
+        "terrain": {
+          "ground": "Pale limestone tiles with sparse chisel arcs and hairline resonance cracks",
+          "path": "Compressed blue-gray stone bands marked by brass studs and rope-shadow rhythm",
+          "edge": "Irregular pale cliff lip with dark iron anchors over a flat #292D33 void"
+        },
+        "sprite_language": {
+          "body_proportion": "Compact top-down figures: head 1/3 body width, broad shoulders, short limbs, oversized burden silhouettes",
+          "outline": "Single #292D33 outline, one pixel-equivalent at runtime scale; no interior black linework",
+          "role_readability": "Roles read through equipment silhouettes: courier harness, weigher balance, bailiff chain, warden hook, broker reed; status uses wax tabs, echo halos, and burden tilt, never text"
+        },
+        "world_prompt_prefix": "Strict orthographic top-down civic cliff fantasy, collision-grid composition, five-color canon only, pale limestone wards, oxidized brass promise machinery, red wax burdens, tarred rope lifts, cyan echo resonance, contiguous vertical-route network.",
+        "sprite_prompt_prefix": "Strict top-down compact civic-fantasy sprite, dark single outline, five-color canon only, role-defining tool silhouette, wax-sealed burden and brass fittings, tile-readable pose, no text.",
+        "forbidden_visuals": [
+          "visible labels, letters, numerals, title text, or readable signage",
+          "poster, card, badge-sheet, or framed presentation layouts",
+          "disconnected room dioramas or floating map islands",
+          "perspective, isometric, oblique, side-view, horizon, or visible facades",
+          "photorealism, 3D-render gloss, cinematic depth of field, or realistic lens effects",
+          "generic medieval castles, taverns, forests, dungeons, dragons, or ornate high-fantasy armor",
+          "generic cyberpunk neon, holographic UI, circuitry, skyscrapers, or firearms",
+          "generic beige procedural terrain, broad empty wilderness, or unrelated real-world landmarks",
+          "colors outside the specified five-color palette",
+          "unbounded gradients, multicolored lighting, or ambient bloom",
+          "decorative text textures, ledger writing, plaque writing, or currency glyphs",
+          "detached runtime overlays; overlays must use canon colors, icon geometry, and grid alignment"
+        ],
+        "canon_hash": "7af1c78766b29ea9"
+      }
+    }
+  ],
+  "initial_positions": {
+    "weight_of_words_main_01": {
+      "x": 35,
+      "y": 25,
+      "z": 0
+    },
+    "weight_of_words_main_02": {
+      "x": 35,
+      "y": 15,
+      "z": 0
+    },
+    "weight_of_words_main_03": {
+      "x": 1,
+      "y": 27,
+      "z": 0
+    },
+    "weight_of_words_main_04": {
+      "x": 35,
+      "y": 41,
+      "z": 0
+    },
+    "weight_of_words_main_05": {
+      "x": 17,
+      "y": 44,
+      "z": 0
+    },
+    "weight_of_words_main_06": {
+      "x": 1,
+      "y": 18,
+      "z": 0
+    },
+    "weight_of_words_main_07": {
+      "x": 3,
+      "y": 44,
+      "z": 0
+    },
+    "weight_of_words_main_08": {
+      "x": 17,
+      "y": 47,
+      "z": 0
+    },
+    "weight_of_words_main_09": {
+      "x": 1,
+      "y": 21,
+      "z": 0
+    },
+    "weight_of_words_main_10": {
+      "x": 1,
+      "y": 34,
+      "z": 0
+    },
+    "weight_of_words_main_11": {
+      "x": 35,
+      "y": 35,
+      "z": 0
+    },
+    "weight_of_words_main_12": {
+      "x": 17,
+      "y": 51,
+      "z": 0
+    }
+  },
+  "initial_room_ids": {
+    "weight_of_words_main_01": "room_01_triple_reading_chamber",
+    "weight_of_words_main_02": "room_04_courier_refusal_shelter",
+    "weight_of_words_main_03": "room_08_cooperative_damper_vault",
+    "weight_of_words_main_04": "room_10_whisper_drain_exchange",
+    "weight_of_words_main_05": "room_06_echo_court",
+    "weight_of_words_main_06": "room_05_anchor_gate_and_lift_mouth",
+    "weight_of_words_main_07": "room_09_ledge_mutual_aid_court",
+    "weight_of_words_main_08": "room_06_echo_court",
+    "weight_of_words_main_09": "room_05_anchor_gate_and_lift_mouth",
+    "weight_of_words_main_10": "room_08_cooperative_damper_vault",
+    "weight_of_words_main_11": "room_01_triple_reading_chamber",
+    "weight_of_words_main_12": "room_06_echo_court"
+  }
+}

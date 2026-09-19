@@ -1,0 +1,135 @@
+{
+  "trial_id": "intertidal_embassy_for_extinct_rivers_r01",
+  "world_name": "Intertidal Embassy for Extinct Rivers",
+  "draft_id": "creator_20260728_020032_6f7b670a",
+  "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_020032_6f7b670a/revisions/r001",
+  "replicate": 1,
+  "request": {
+    "world_name": "Intertidal Embassy for Extinct Rivers",
+    "genre": "tidal diplomatic habitat, sediment memory, ecological treaty economy",
+    "player_count_target": 4,
+    "agent_count_target": 12,
+    "focus": "multimodal environmental state tied to negotiation and memory",
+    "seed": 727104,
+    "brief": "An intertidal embassy reconstructs extinct rivers from sediment memories and negotiates their legal personhood. Delegates, hydrologists, smugglers, salt gardeners, and memory divers trade flow rights, flood testimony, watershed debts, and authenticated silt. Build exactly six connected, functionally distinct rooms and twelve socially entangled agents. The tide and reconstructed river moods must alter room affordances, trade routes, evidence, and conflicts. Include one or two unmistakable world-specific semantic props per room. Use verdigris copper, salt-white stone, indigo water, coral-red treaty seals without writing, and dark kelp-green shadows in a coherent top-down pixel-art canon. Avoid generic underwater ruins, generic fantasy, Beijing references, captions, readable letters, logos, and text baked into art."
+  },
+  "elapsed_seconds": 164.1944,
+  "generation_ok": true,
+  "complete_success": true,
+  "error": "",
+  "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/intertidal_embassy_for_extinct_rivers_r01_decomposed_builder_spec.json",
+  "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/intertidal_embassy_for_extinct_rivers_r01_decomposed_world_config.json",
+  "merged_contract_probe": {
+    "merged_contract_ok": true,
+    "error_codes": [],
+    "error": ""
+  },
+  "compile_probe": {
+    "compile_ok": true,
+    "compiler_status": "ok",
+    "runtime_agent_count": 12,
+    "compiled_room_count": 6,
+    "world_id": "intertidal_embassy_01"
+  },
+  "metrics": {
+    "rooms": 6,
+    "item_catalog_items": 15,
+    "main_characters": 12,
+    "gameplay_loops": 2,
+    "player_entry_points": 2,
+    "conflict_hooks": 2,
+    "inventory_items": 117,
+    "fallback_inventory_items": 0,
+    "agents_with_inventory": 12,
+    "agents_with_properties": 12,
+    "agents_with_knowledge": 12,
+    "world_coherence_proxy": 1.0,
+    "agent_specificity_proxy": 1.0,
+    "inventory_usefulness_proxy": 1.0,
+    "scale_coverage_proxy": 1.0,
+    "catalog_coverage_proxy": 0.9375,
+    "quality_proxy": 0.9875
+  },
+  "package_validation_status": "",
+  "compiler_critique_applied": false,
+  "compiler_critique_should_repair": false,
+  "generation_node_retries": [
+    {
+      "attempt": 1,
+      "failed_node": "contract",
+      "error": "ValueError: Evaluator-seeded roles defect: character 1 has fewer than 8 valid inventory items",
+      "invalidated_cache_keys": [
+        "hooks",
+        "roles",
+        "wardrobe"
+      ],
+      "preserved_cache_keys": [
+        "items",
+        "materials",
+        "planner",
+        "rooms",
+        "visual_canon"
+      ]
+    }
+  ],
+  "telemetry": {
+    "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/intertidal_embassy_for_extinct_rivers_r01_vertex_calls.jsonl",
+    "provider_attempt_count": 16,
+    "successful_attempt_count": 16,
+    "retry_or_failure_attempt_count": 0,
+    "usage_metadata_attempt_count": 16,
+    "usage_metadata_coverage": 1.0,
+    "status_counts": {
+      "ok": 16
+    },
+    "stage_attempt_counts": {
+      "agent_wardrobe_policy_generation": 2,
+      "main_character_generation": 6,
+      "world_creator_generation": 6,
+      "world_creator_text_generation": 1,
+      "world_visual_canon_generation": 1
+    },
+    "model_attempt_counts": {
+      "gemini-3-flash-preview": 16
+    },
+    "provider_elapsed_seconds_sum": 159.0265,
+    "token_totals": {
+      "candidatesTokenCount": 25287,
+      "promptTokenCount": 39514,
+      "thoughtsTokenCount": 1266,
+      "totalTokenCount": 66067
+    }
+  },
+  "seeded_fault_fired": true,
+  "localized_repair_measurement": {
+    "initial_provider_attempts": 10,
+    "pre_seed_extra_provider_attempts": 0,
+    "pre_seed_retry_event_count": 0,
+    "localized_repair_provider_attempts": 5,
+    "full_rebuild_call_counterfactual": 10,
+    "provider_call_reduction_vs_full_rebuild": 0.5,
+    "initial_tokens": 32579,
+    "localized_repair_tokens": 16069,
+    "token_reduction_vs_full_rebuild": 0.5068,
+    "initial_provider_elapsed_seconds": 97.6271,
+    "localized_repair_provider_elapsed_seconds": 52.1072,
+    "repair_stage_attempt_counts": {
+      "agent_wardrobe_policy_generation": 1,
+      "main_character_generation": 3,
+      "world_creator_generation": 1
+    },
+    "failed_node": "contract",
+    "invalidated_cache_keys": [
+      "hooks",
+      "roles",
+      "wardrobe"
+    ],
+    "preserved_cache_keys": [
+      "items",
+      "materials",
+      "planner",
+      "rooms",
+      "visual_canon"
+    ]
+  }
+}

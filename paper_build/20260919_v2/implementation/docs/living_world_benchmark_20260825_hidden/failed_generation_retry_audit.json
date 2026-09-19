@@ -1,0 +1,38 @@
+{
+  "source": "Live console transcript captured during the frozen GPT generation batch",
+  "note": "The pre-fix failed result format discarded retry events. Counts affect reliability reporting only because every listed case already scores zero for generation failure.",
+  "cases": {
+    "gpt-5.6-terra": {
+      "lwb_hidden_v2_02": {
+        "semantic_retry_count": 3,
+        "failed_nodes": ["contract", "contract", "contract"],
+        "failure_class": "planner_required_fields_missing"
+      },
+      "lwb_hidden_v2_03": {
+        "semantic_retry_count": 3,
+        "failed_nodes": ["contract", "contract", "contract"],
+        "failure_class": "planner_required_fields_missing"
+      }
+    },
+    "gpt-5.6-luna": {
+      "lwb_hidden_v2_01": {
+        "semantic_retry_count": 3,
+        "failed_nodes": ["roles", "roles", "roles"],
+        "failure_class": "invalid_relationship_references"
+      },
+      "lwb_hidden_v2_02": {
+        "semantic_retry_count": 3,
+        "failed_nodes": ["roles", "roles", "roles"],
+        "failure_class": "invalid_relationship_references_or_type"
+      },
+      "lwb_hidden_v2_03": {
+        "semantic_retry_count": 3,
+        "failed_nodes": ["roles", "roles", "roles"],
+        "failure_class": "invalid_relationship_references"
+      }
+    }
+  },
+  "unknown_legacy_failures": {
+    "gemini-3.5-flash-lite": ["lwb_hidden_v2_02", "lwb_hidden_v2_03"]
+  }
+}

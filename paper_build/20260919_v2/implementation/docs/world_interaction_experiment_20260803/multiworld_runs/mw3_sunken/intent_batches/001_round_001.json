@@ -1,0 +1,330 @@
+{
+  "timestep_index": 1,
+  "intents": [
+    {
+      "intent_id": "r001_0001_sunken_satellite_monastery_01_main_05_Coordinate",
+      "agent_id": "sunken_satellite_monastery_01_main_05",
+      "call": "Custom",
+      "intent_text": "Exarch Thorne uses Coordinate with Deacon Vane.",
+      "target_agent_id": "sunken_satellite_monastery_01_main_09",
+      "target_coordinates": null,
+      "operation": "",
+      "action": "Coordinate",
+      "item_id": "",
+      "target_item_ids": [],
+      "quantity": 1,
+      "api_prompt": "",
+      "metadata": {
+        "route_id": "the_heresy_hunt_coordinate_2",
+        "story_verb": "coordinated with",
+        "status_effect": "the_heresy_hunt_advanced",
+        "duration_steps": 2,
+        "relationship_adjustments_mode": "model",
+        "relationship_adjustment_source": "vertex_api_merged_interaction_routing",
+        "actor_relationship_instruction": "Thorne sees Vane's expertise as valuable in addressing the immediate threat, fostering a sense of shared purpose.",
+        "target_relationship_instruction": "Vane appreciates Thorne's initiative and willingness to coordinate on a critical issue, reinforcing trust in their shared duty.",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "sunken_satellite_monastery_01_main_05",
+            "target_agent_id": "sunken_satellite_monastery_01_main_09",
+            "trust_delta": 5,
+            "affection_delta": 3,
+            "influence_fear_delta": 0,
+            "reason": "Collaborating effectively on a shared, urgent threat builds trust and a degree of camaraderie.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "sunken_satellite_monastery_01_main_09",
+            "target_agent_id": "sunken_satellite_monastery_01_main_05",
+            "trust_delta": 5,
+            "affection_delta": 3,
+            "influence_fear_delta": 0,
+            "reason": "Vane recognizes Thorne's leadership and cooperation in tackling the network anomaly, increasing trust and positive regard.",
+            "source": "vertex_api"
+          }
+        ],
+        "shared_action_core": {
+          "shared_action_label": "Coordinating on Heresy Hunt response",
+          "shared_action_goal": "To address the spreading 'Heretic Signature' anomaly within the Bandwidth Exchange and trace its source.",
+          "action_beats": [
+            "Thorne points to a fluctuating data stream on a console.",
+            "Vane activates their frequency tuning fork, scanning the anomaly.",
+            "They exchange observations on the data corruption patterns.",
+            "They agree on a next step for tracing the signature."
+          ],
+          "actor_role_in_action": "Directing the analysis of bandwidth anomalies and potential throttling.",
+          "target_role_in_action": "Identifying and purging corrupted data-ghosts and heretic signatures.",
+          "props_in_use": [
+            "ssm_018_void_glass_monocle",
+            "ssm_017_frequency_tuning_fork"
+          ],
+          "location_focus": "The central consoles and data conduits of the Bandwidth Exchange.",
+          "why_now": "A 'Heretic Signature' is actively spreading in their current location, demanding immediate collaborative action.",
+          "json_action_alignment": "route_only",
+          "off_json_detail": "",
+          "main_character_recording_note": "Exarch Thorne and Deacon Vane are seen actively collaborating, using their unique tools to analyze and discuss the spreading 'Heretic Signature' anomaly, visibl"
+        }
+      }
+    },
+    {
+      "intent_id": "r001_0002_sunken_satellite_monastery_01_main_09_Purge Corrupt Packet",
+      "agent_id": "sunken_satellite_monastery_01_main_09",
+      "call": "Custom",
+      "intent_text": "Deacon Vane uses Purge Corrupt Packet with Human Interactor.",
+      "target_agent_id": "human_interactor",
+      "target_coordinates": null,
+      "operation": "",
+      "action": "Purge Corrupt Packet",
+      "item_id": "",
+      "target_item_ids": [],
+      "quantity": 1,
+      "api_prompt": "",
+      "metadata": {
+        "route_id": "world_action_purge_corrupt_packet",
+        "story_verb": "purge corrupt packet",
+        "status_effect": "world_action_advanced_2",
+        "duration_steps": 2,
+        "relationship_adjustments_mode": "model",
+        "relationship_adjustment_source": "vertex_api_merged_interaction_routing",
+        "actor_relationship_instruction": "Deacon Vane sees the Human Interactor's presence as a sign of trust and potential collaboration in a critical task.",
+        "target_relationship_instruction": "The Human Interactor observes Deacon Vane's expertise and dedication in combating the network anomaly, potentially increasing respect.",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "sunken_satellite_monastery_01_main_09",
+            "target_agent_id": "human_interactor",
+            "trust_delta": 3,
+            "affection_delta": 2,
+            "influence_fear_delta": 0,
+            "reason": "Actor appreciates target's presence and potential support during a critical task.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "human_interactor",
+            "target_agent_id": "sunken_satellite_monastery_01_main_09",
+            "trust_delta": 4,
+            "affection_delta": 1,
+            "influence_fear_delta": 0,
+            "reason": "Target witnesses actor's competence and dedication in addressing a serious threat.",
+            "source": "vertex_api"
+          }
+        ],
+        "shared_action_core": {
+          "shared_action_label": "Purging Corrupt Data Packet",
+          "shared_action_goal": "To neutralize the spreading 'Static-Heretic' anomaly within the Bandwidth Exchange and maintain network integrity.",
+          "action_beats": [
+            "Deacon Vane activates the frequency tuning fork, its brass humming.",
+            "The Human Interactor observes as Vane scans the data streams.",
+            "Vane applies void salt to a flickering console, stabilizing it.",
+            "A corrupted data-ghost pixelates and dissipates from the network."
+          ],
+          "actor_role_in_action": "Leading the ritualistic purge of the corrupt data packet.",
+          "target_role_in_action": "Observing and providing support or data input as directed.",
+          "props_in_use": [
+            "ssm_017_frequency_tuning_fork",
+            "ssm_016_void_salt"
+          ],
+          "location_focus": "The main console array in the Bandwidth Exchange.",
+          "why_now": "A 'Heretic Signature' is actively spreading, requiring immediate intervention to prevent further corruption.",
+          "json_action_alignment": "route_only",
+          "off_json_detail": "",
+          "main_character_recording_note": "Deacon Vane is actively performing a Static-Exorcist ritual to purge corruption, using his tools and knowledge, with the Human Interactor present."
+        }
+      }
+    },
+    {
+      "intent_id": "r001_0003_sunken_satellite_monastery_01_main_17_Negotiate Bandwidth Tithe",
+      "agent_id": "sunken_satellite_monastery_01_main_17",
+      "call": "Custom",
+      "intent_text": "Master-Tuner Solon uses Negotiate Bandwidth Tithe with High-Frequency Lyra.",
+      "target_agent_id": "sunken_satellite_monastery_01_main_13",
+      "target_coordinates": null,
+      "operation": "",
+      "action": "Negotiate Bandwidth Tithe",
+      "item_id": "",
+      "target_item_ids": [],
+      "quantity": 1,
+      "api_prompt": "",
+      "metadata": {
+        "route_id": "world_action_negotiate_bandwidth_tithe",
+        "story_verb": "negotiate bandwidth tithe",
+        "status_effect": "world_action_advanced_3",
+        "duration_steps": 2,
+        "relationship_adjustments_mode": "model",
+        "relationship_adjustment_source": "vertex_api_merged_interaction_routing",
+        "actor_relationship_instruction": "Solon's attempt to mediate and stabilize the situation, while implicitly challenging Lyra's activities, should slightly reduce trust but increase his perceived influence.",
+        "target_relationship_instruction": "Lyra views Solon's negotiation as an interference with her objectives, reducing trust and affection, but acknowledging his authority in the technical domain.",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "sunken_satellite_monastery_01_main_17",
+            "target_agent_id": "sunken_satellite_monastery_01_main_13",
+            "trust_delta": -5,
+            "affection_delta": 0,
+            "influence_fear_delta": 5,
+            "reason": "Solon attempts to assert control over bandwidth, potentially hindering Lyra's plans, but demonstrating his authority.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "sunken_satellite_monastery_01_main_13",
+            "target_agent_id": "sunken_satellite_monastery_01_main_17",
+            "trust_delta": -5,
+            "affection_delta": -5,
+            "influence_fear_delta": 0,
+            "reason": "Lyra sees Solon's intervention as an obstacle to her goals and a challenge to her autonomy.",
+            "source": "vertex_api"
+          }
+        ],
+        "shared_action_core": {
+          "shared_action_label": "Negotiating Bandwidth Allocation",
+          "shared_action_goal": "To resolve the guild dispute over the 'Holy Sector' data stream and stabilize critical bandwidth at the Signal Altar.",
+          "action_beats": [
+            "Solon approaches Lyra, gesturing at the flickering data displays.",
+            "Lyra adjusts a dial, her expression guarded as Solon speaks.",
+            "They both lean in, examining a holographic projection of the contested frequencies.",
+            "Solon offers a compromise, outlining a temporary bandwidth sharing protocol."
+          ],
+          "actor_role_in_action": "Proposing a structured resolution and outlining technical parameters.",
+          "target_role_in_action": "Evaluating the proposal and defending her guild's claim to the data stream.",
+          "props_in_use": [
+            "ssm_018_frequency_logbook",
+            "ssm_016_resonance_fork"
+          ],
+          "location_focus": "The central console of the Signal Altar, where data streams are visualized.",
+          "why_now": "The 'Guilds Contest' event is actively causing bandwidth interference, directly impacting the Signal Altar where both are present and have conflicting interests",
+          "json_action_alignment": "route_only",
+          "off_json_detail": "",
+          "main_character_recording_note": "Show Solon using his logbook to present data, while Lyra subtly counters with her resonance fork, indicating her continued intent to manipulate frequencies."
+        }
+      }
+    },
+    {
+      "intent_id": "r001_0004_sunken_satellite_monastery_01_main_01_Negotiate Bandwidth Tithe",
+      "agent_id": "sunken_satellite_monastery_01_main_01",
+      "call": "Custom",
+      "intent_text": "Abbot Kaelen-01 uses Negotiate Bandwidth Tithe with Grand-Arbitrator Valerius.",
+      "target_agent_id": "sunken_satellite_monastery_01_main_16",
+      "target_coordinates": null,
+      "operation": "",
+      "action": "Negotiate Bandwidth Tithe",
+      "item_id": "",
+      "target_item_ids": [],
+      "quantity": 1,
+      "api_prompt": "",
+      "metadata": {
+        "route_id": "world_action_negotiate_bandwidth_tithe",
+        "story_verb": "negotiate bandwidth tithe",
+        "status_effect": "world_action_advanced_3",
+        "duration_steps": 2,
+        "relationship_adjustments_mode": "model",
+        "relationship_adjustment_source": "vertex_api_merged_interaction_routing",
+        "actor_relationship_instruction": "The Abbot sees Valerius as a necessary partner in maintaining order and ensuring the smooth flow of data, crucial for his own quest.",
+        "target_relationship_instruction": "Valerius recognizes the Abbot's initiative in addressing a critical system disruption, reinforcing his role as a guardian of monastic stability.",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "sunken_satellite_monastery_01_main_01",
+            "target_agent_id": "sunken_satellite_monastery_01_main_16",
+            "trust_delta": 3,
+            "affection_delta": 2,
+            "influence_fear_delta": 0,
+            "reason": "Collaborated effectively to address a critical system disruption, showing mutual respect and competence.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "sunken_satellite_monastery_01_main_16",
+            "target_agent_id": "sunken_satellite_monastery_01_main_01",
+            "trust_delta": 3,
+            "affection_delta": 2,
+            "influence_fear_delta": 0,
+            "reason": "Collaborated effectively to address a critical system disruption, showing mutual respect and competence.",
+            "source": "vertex_api"
+          }
+        ],
+        "shared_action_core": {
+          "shared_action_label": "Mediating a bandwidth dispute",
+          "shared_action_goal": "To resolve the guild conflict over the 'Holy Sector' data stream and restore stable bandwidth, allowing progress on both data purification and heresy tracing.",
+          "action_beats": [
+            "Abbot Kaelen-01 approaches Grand-Arbitrator Valerius, gesturing towards the bandwidth logs.",
+            "Valerius consults the Great Ledger, cross-referencing guild claims.",
+            "They exchange data wafers, reviewing contested bandwidth allocations.",
+            "Both nod, reaching a temporary agreement to re-route contested data."
+          ],
+          "actor_role_in_action": "Proposing a temporary bandwidth allocation and data re-routing to ease guild tension.",
+          "target_role_in_action": "Reviewing and validating the proposed bandwidth adjustments against monastic law.",
+          "props_in_use": [
+            "ssm_048_the_great_ledger",
+            "ssm_003__sanctified_data_wafer"
+          ],
+          "location_focus": "room_08_the_high_council_chamber, with an implied connection to the Signal Altar's data streams",
+          "why_now": "The 'Guilds Contest Holy Sector Data' event is causing significant bandwidth interference, directly impacting the monastery's operations and the progress of bot",
+          "json_action_alignment": "route_only",
+          "off_json_detail": "",
+          "main_character_recording_note": "Abbot Kaelen-01 and Grand-Arbitrator Valerius are visibly engaged in a serious negotiation, using their respective tools and knowledge to resolve the bandwidth "
+        }
+      }
+    },
+    {
+      "intent_id": "r001_0005_sunken_satellite_monastery_01_main_02_Coordinate",
+      "agent_id": "sunken_satellite_monastery_01_main_02",
+      "call": "Custom",
+      "intent_text": "Salvage-Acolyte Nix uses Coordinate with Quartermaster Jora.",
+      "target_agent_id": "sunken_satellite_monastery_01_main_06",
+      "target_coordinates": null,
+      "operation": "",
+      "action": "Coordinate",
+      "item_id": "",
+      "target_item_ids": [],
+      "quantity": 1,
+      "api_prompt": "",
+      "metadata": {
+        "route_id": "the_heresy_hunt_coordinate_2",
+        "story_verb": "coordinated with",
+        "status_effect": "the_heresy_hunt_advanced",
+        "duration_steps": 2,
+        "relationship_adjustments_mode": "model",
+        "relationship_adjustment_source": "vertex_api_merged_interaction_routing",
+        "actor_relationship_instruction": "Nix sees Jora as a pragmatic partner in navigating the dangers and opportunities of the salvage yard, especially with the new corruption threat.",
+        "target_relationship_instruction": "Jora views Nix as a reliable and knowledgeable scavenger, whose insights are valuable when appraising new, potentially dangerous, tech.",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "sunken_satellite_monastery_01_main_02",
+            "target_agent_id": "sunken_satellite_monastery_01_main_06",
+            "trust_delta": 3,
+            "affection_delta": 2,
+            "influence_fear_delta": 0,
+            "reason": "Successfully coordinating on a shared local threat builds trust and a sense of camaraderie.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "sunken_satellite_monastery_01_main_06",
+            "target_agent_id": "sunken_satellite_monastery_01_main_02",
+            "trust_delta": 3,
+            "affection_delta": 2,
+            "influence_fear_delta": 0,
+            "reason": "Working together effectively on a critical local issue reinforces their professional and personal bond.",
+            "source": "vertex_api"
+          }
+        ],
+        "shared_action_core": {
+          "shared_action_label": "Jointly assessing corrupted data-ghost emissions",
+          "shared_action_goal": "To determine the immediate threat and potential salvage value of the corrupted core fragment in Salvage Yard Gamma.",
+          "action_beats": [
+            "Nix points out a flickering data anomaly in a pile of scrap.",
+            "Jora uses a handheld scanner to analyze the corrupted signal.",
+            "They exchange a look, acknowledging the escalating risk.",
+            "They discuss the next steps for containment or exploitation."
+          ],
+          "actor_role_in_action": "Identifying and analyzing the physical manifestation of the data corruption.",
+          "target_role_in_action": "Evaluating the technical specifics and potential illicit value of the corrupted fragment.",
+          "props_in_use": [
+            "ssm_011__magnetic_grapple_hook",
+            "ssm_027_thermal_cutting_torch"
+          ],
+          "location_focus": "The core fragment emitting corrupted data-ghosts within Salvage Yard Gamma.",
+          "why_now": "A corrupted data-ghost source has been traced directly to their current location, requiring immediate attention.",
+          "json_action_alignment": "route_only",
+          "off_json_detail": "",
+          "main_character_recording_note": "Show Nix and Jora actively examining the corrupted core fragment, using their tools to assess it, and discussing its implications."
+        }
+      }
+    }
+  ]
+}

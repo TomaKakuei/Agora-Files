@@ -1,0 +1,517 @@
+{
+  "protocol": {
+    "project_name": "Agora",
+    "project_vision": "One Sentence, One Executable World",
+    "model": "gemini-3-flash-preview",
+    "temperature": 0.2,
+    "thinking_level": "low",
+    "specialist_per_node_output_cap": 8192,
+    "monolithic_output_cap": 24576,
+    "strict_no_content_fallback": true,
+    "primary_worlds": 5,
+    "primary_replicates_per_world": 3,
+    "heldout_worlds": 5,
+    "heldout_replicates_per_world": 1,
+    "primary_analysis_unit": "world",
+    "all_completed_model_outputs_retained": true,
+    "failed_contract_outputs_retained": true,
+    "heldout_set_frozen_before_generation": true,
+    "quality_evaluator_frozen_before_heldout_generation": true
+  },
+  "reliability": {
+    "eventual": {
+      "paired_world_count": 10,
+      "specialist_successes": 10,
+      "monolithic_successes": 7,
+      "specialist_only": 3,
+      "monolithic_only": 0,
+      "discordant_worlds": 3,
+      "one_sided_exact_p": 0.125
+    },
+    "first_pass": {
+      "paired_world_count": 10,
+      "specialist_successes": 9,
+      "monolithic_successes": 5,
+      "specialist_only": 5,
+      "monolithic_only": 1,
+      "discordant_worlds": 6,
+      "one_sided_exact_p": 0.109375
+    }
+  },
+  "paired_worlds": [
+    {
+      "world_name": "Archive of Borrowed Gravity",
+      "split": "primary",
+      "specialist_eventual_rate": 1.0,
+      "monolithic_eventual_rate": 1.0,
+      "specialist_first_pass_rate": 1.0,
+      "monolithic_first_pass_rate": 1.0,
+      "specialist_eventual_success": true,
+      "monolithic_eventual_success": true,
+      "specialist_first_pass_success": true,
+      "monolithic_first_pass_success": true
+    },
+    {
+      "world_name": "Cartographer Lung Exchange",
+      "split": "primary",
+      "specialist_eventual_rate": 1.0,
+      "monolithic_eventual_rate": 1.0,
+      "specialist_first_pass_rate": 1.0,
+      "monolithic_first_pass_rate": 1.0,
+      "specialist_eventual_success": true,
+      "monolithic_eventual_success": true,
+      "specialist_first_pass_success": true,
+      "monolithic_first_pass_success": true
+    },
+    {
+      "world_name": "Intertidal Embassy for Extinct Rivers",
+      "split": "primary",
+      "specialist_eventual_rate": 1.0,
+      "monolithic_eventual_rate": 0.6667,
+      "specialist_first_pass_rate": 1.0,
+      "monolithic_first_pass_rate": 0.6667,
+      "specialist_eventual_success": true,
+      "monolithic_eventual_success": true,
+      "specialist_first_pass_success": true,
+      "monolithic_first_pass_success": true
+    },
+    {
+      "world_name": "Museum of Future Debts",
+      "split": "primary",
+      "specialist_eventual_rate": 1.0,
+      "monolithic_eventual_rate": 0.3333,
+      "specialist_first_pass_rate": 0.6667,
+      "monolithic_first_pass_rate": 0.3333,
+      "specialist_eventual_success": true,
+      "monolithic_eventual_success": false,
+      "specialist_first_pass_success": true,
+      "monolithic_first_pass_success": false
+    },
+    {
+      "world_name": "Night Market of Unfinished Weather",
+      "split": "primary",
+      "specialist_eventual_rate": 1.0,
+      "monolithic_eventual_rate": 0.0,
+      "specialist_first_pass_rate": 1.0,
+      "monolithic_first_pass_rate": 0.0,
+      "specialist_eventual_success": true,
+      "monolithic_eventual_success": false,
+      "specialist_first_pass_success": true,
+      "monolithic_first_pass_success": false
+    },
+    {
+      "world_name": "Aurora Court of Migrating Cities",
+      "split": "heldout",
+      "specialist_eventual_rate": 1.0,
+      "monolithic_eventual_rate": 1.0,
+      "specialist_first_pass_rate": 0.0,
+      "monolithic_first_pass_rate": 1.0,
+      "specialist_eventual_success": true,
+      "monolithic_eventual_success": true,
+      "specialist_first_pass_success": false,
+      "monolithic_first_pass_success": true
+    },
+    {
+      "world_name": "Clockwork Rain Conservatory",
+      "split": "heldout",
+      "specialist_eventual_rate": 1.0,
+      "monolithic_eventual_rate": 1.0,
+      "specialist_first_pass_rate": 1.0,
+      "monolithic_first_pass_rate": 0.0,
+      "specialist_eventual_success": true,
+      "monolithic_eventual_success": true,
+      "specialist_first_pass_success": true,
+      "monolithic_first_pass_success": false
+    },
+    {
+      "world_name": "Mycelium Patent Bazaar",
+      "split": "heldout",
+      "specialist_eventual_rate": 1.0,
+      "monolithic_eventual_rate": 1.0,
+      "specialist_first_pass_rate": 1.0,
+      "monolithic_first_pass_rate": 1.0,
+      "specialist_eventual_success": true,
+      "monolithic_eventual_success": true,
+      "specialist_first_pass_success": true,
+      "monolithic_first_pass_success": true
+    },
+    {
+      "world_name": "Sunken Satellite Monastery",
+      "split": "heldout",
+      "specialist_eventual_rate": 1.0,
+      "monolithic_eventual_rate": 0.0,
+      "specialist_first_pass_rate": 1.0,
+      "monolithic_first_pass_rate": 0.0,
+      "specialist_eventual_success": true,
+      "monolithic_eventual_success": false,
+      "specialist_first_pass_success": true,
+      "monolithic_first_pass_success": false
+    },
+    {
+      "world_name": "Tidal Embassy of Lost Languages",
+      "split": "heldout",
+      "specialist_eventual_rate": 1.0,
+      "monolithic_eventual_rate": 1.0,
+      "specialist_first_pass_rate": 1.0,
+      "monolithic_first_pass_rate": 0.0,
+      "specialist_eventual_success": true,
+      "monolithic_eventual_success": true,
+      "specialist_first_pass_success": true,
+      "monolithic_first_pass_success": false
+    }
+  ],
+  "cost_by_split": {
+    "primary": [
+      {
+        "treatment": "specialist",
+        "trials": 15,
+        "mean_total_tokens_per_trial": 48526.87,
+        "mean_elapsed_seconds": 138.0757,
+        "median_elapsed_seconds": 101.2177,
+        "mean_provider_attempts_per_trial": 11.0667,
+        "first_pass_successes": 14,
+        "eventual_successes": 15
+      },
+      {
+        "treatment": "monolithic",
+        "trials": 15,
+        "mean_total_tokens_per_trial": 22249.87,
+        "mean_elapsed_seconds": 55.6687,
+        "median_elapsed_seconds": 55.752,
+        "mean_provider_attempts_per_trial": 1.0,
+        "first_pass_successes": 9,
+        "eventual_successes": 9
+      }
+    ],
+    "heldout": [
+      {
+        "treatment": "specialist",
+        "trials": 5,
+        "mean_total_tokens_per_trial": 77556.0,
+        "mean_elapsed_seconds": 175.0502,
+        "median_elapsed_seconds": 161.133,
+        "mean_provider_attempts_per_trial": 15.8,
+        "first_pass_successes": 4,
+        "eventual_successes": 5
+      },
+      {
+        "treatment": "monolithic",
+        "trials": 5,
+        "mean_total_tokens_per_trial": 38922.0,
+        "mean_elapsed_seconds": 111.9568,
+        "median_elapsed_seconds": 86.144,
+        "mean_provider_attempts_per_trial": 1.4,
+        "first_pass_successes": 2,
+        "eventual_successes": 4
+      }
+    ]
+  },
+  "quality_combined_10_worlds": {
+    "merchant_inventory_pass_rate": {
+      "decomposed_mean": 1.0,
+      "monolithic_mean": 0.825,
+      "decomposed_wins": 4,
+      "monolithic_wins": 0,
+      "ties": 6,
+      "one_sided_sign_test_p": 0.0625
+    },
+    "premise_items_recall": {
+      "decomposed_mean": 0.3483,
+      "monolithic_mean": 0.2325,
+      "decomposed_wins": 8,
+      "monolithic_wins": 2,
+      "ties": 0,
+      "one_sided_sign_test_p": 0.054688
+    },
+    "premise_agents_recall": {
+      "decomposed_mean": 0.4632,
+      "monolithic_mean": 0.5593,
+      "decomposed_wins": 2,
+      "monolithic_wins": 7,
+      "ties": 1,
+      "one_sided_sign_test_p": 0.980469
+    },
+    "role_unique_rate": {
+      "decomposed_mean": 0.972,
+      "monolithic_mean": 0.8538,
+      "decomposed_wins": 3,
+      "monolithic_wins": 1,
+      "ties": 6,
+      "one_sided_sign_test_p": 0.3125
+    },
+    "room_visual_canon_adherence": {
+      "decomposed_mean": 0.9,
+      "monolithic_mean": 0.8125,
+      "decomposed_wins": 5,
+      "monolithic_wins": 1,
+      "ties": 4,
+      "one_sided_sign_test_p": 0.109375
+    },
+    "wardrobe_canon_term_coverage": {
+      "decomposed_mean": 0.5071,
+      "monolithic_mean": 0.3212,
+      "decomposed_wins": 9,
+      "monolithic_wins": 1,
+      "ties": 0,
+      "one_sided_sign_test_p": 0.010742
+    }
+  },
+  "quality_worlds": [
+    {
+      "world_name": "Cartographer Lung Exchange",
+      "specialist": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.28,
+        "premise_agents_recall": 0.4,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 1.0,
+        "wardrobe_canon_term_coverage": 0.5385
+      },
+      "monolithic": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.16,
+        "premise_agents_recall": 0.4,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 1.0,
+        "wardrobe_canon_term_coverage": 0.4333
+      }
+    },
+    {
+      "world_name": "Archive of Borrowed Gravity",
+      "specialist": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.3333,
+        "premise_agents_recall": 0.3333,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 1.0,
+        "wardrobe_canon_term_coverage": 0.4412
+      },
+      "monolithic": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.1667,
+        "premise_agents_recall": 0.5,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 1.0,
+        "wardrobe_canon_term_coverage": 0.3448
+      }
+    },
+    {
+      "world_name": "Intertidal Embassy for Extinct Rivers",
+      "specialist": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.3529,
+        "premise_agents_recall": 0.4706,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 1.0,
+        "wardrobe_canon_term_coverage": 0.5641
+      },
+      "monolithic": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.4118,
+        "premise_agents_recall": 0.5882,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 1.0,
+        "wardrobe_canon_term_coverage": 0.4231
+      }
+    },
+    {
+      "world_name": "Night Market of Unfinished Weather",
+      "specialist": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.4,
+        "premise_agents_recall": 0.52,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 1.0,
+        "wardrobe_canon_term_coverage": 0.5476
+      },
+      "monolithic": {
+        "merchant_inventory_pass_rate": 0.5,
+        "premise_items_recall": 0.24,
+        "premise_agents_recall": 0.56,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 0.8333,
+        "wardrobe_canon_term_coverage": 0.56
+      }
+    },
+    {
+      "world_name": "Museum of Future Debts",
+      "specialist": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.4375,
+        "premise_agents_recall": 0.5625,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 1.0,
+        "wardrobe_canon_term_coverage": 0.5938
+      },
+      "monolithic": {
+        "merchant_inventory_pass_rate": 0.5,
+        "premise_items_recall": 0.125,
+        "premise_agents_recall": 0.75,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 1.0,
+        "wardrobe_canon_term_coverage": 0.3913
+      }
+    },
+    {
+      "world_name": "Aurora Court of Migrating Cities",
+      "specialist": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.4194,
+        "premise_agents_recall": 0.5484,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 1.0,
+        "wardrobe_canon_term_coverage": 0.4884
+      },
+      "monolithic": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.3226,
+        "premise_agents_recall": 0.5161,
+        "role_unique_rate": 0.88,
+        "room_visual_canon_adherence": 0.75,
+        "wardrobe_canon_term_coverage": 0.1818
+      }
+    },
+    {
+      "world_name": "Clockwork Rain Conservatory",
+      "specialist": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.3077,
+        "premise_agents_recall": 0.4615,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 1.0,
+        "wardrobe_canon_term_coverage": 0.3721
+      },
+      "monolithic": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.2308,
+        "premise_agents_recall": 0.3846,
+        "role_unique_rate": 0.4583,
+        "room_visual_canon_adherence": 0.6667,
+        "wardrobe_canon_term_coverage": 0.0882
+      }
+    },
+    {
+      "world_name": "Mycelium Patent Bazaar",
+      "specialist": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.3846,
+        "premise_agents_recall": 0.4615,
+        "role_unique_rate": 0.8,
+        "room_visual_canon_adherence": 1.0,
+        "wardrobe_canon_term_coverage": 0.52
+      },
+      "monolithic": {
+        "merchant_inventory_pass_rate": 0.75,
+        "premise_items_recall": 0.3462,
+        "premise_agents_recall": 0.6538,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 0.5,
+        "wardrobe_canon_term_coverage": 0.2727
+      }
+    },
+    {
+      "world_name": "Sunken Satellite Monastery",
+      "specialist": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.1765,
+        "premise_agents_recall": 0.3529,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 0.0,
+        "wardrobe_canon_term_coverage": 0.4375
+      },
+      "monolithic": {
+        "merchant_inventory_pass_rate": 0.5,
+        "premise_items_recall": 0.2353,
+        "premise_agents_recall": 0.5882,
+        "role_unique_rate": 1.0,
+        "room_visual_canon_adherence": 0.75,
+        "wardrobe_canon_term_coverage": 0.2759
+      }
+    },
+    {
+      "world_name": "Tidal Embassy of Lost Languages",
+      "specialist": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.3913,
+        "premise_agents_recall": 0.5217,
+        "role_unique_rate": 0.92,
+        "room_visual_canon_adherence": 1.0,
+        "wardrobe_canon_term_coverage": 0.5676
+      },
+      "monolithic": {
+        "merchant_inventory_pass_rate": 1.0,
+        "premise_items_recall": 0.087,
+        "premise_agents_recall": 0.6522,
+        "role_unique_rate": 0.2,
+        "room_visual_canon_adherence": 0.625,
+        "wardrobe_canon_term_coverage": 0.2414
+      }
+    }
+  ],
+  "wardrobe_heldout_confirmation": {
+    "decomposed_mean": 0.4771,
+    "monolithic_mean": 0.212,
+    "decomposed_wins": 5,
+    "monolithic_wins": 0,
+    "ties": 0,
+    "one_sided_sign_test_p": 0.03125
+  },
+  "localized_repair": {
+    "generated_at": "2026-07-29T20:45:14.757222+00:00",
+    "fault": "roles inventory contract defect after the first complete node pass",
+    "world_count": 5,
+    "complete_successes": 5,
+    "correctly_attributed_roles_faults": 5,
+    "mean_provider_call_reduction_vs_full_rebuild": 0.48,
+    "mean_token_reduction_vs_full_rebuild": 0.3988,
+    "mean_localized_repair_provider_elapsed_seconds": 63.2294,
+    "mean_initial_provider_elapsed_seconds": 86.3777,
+    "median_localized_repair_provider_elapsed_seconds": 52.1072,
+    "median_initial_provider_elapsed_seconds": 85.6809,
+    "token_reduction_worlds": 5,
+    "token_reduction_one_sided_sign_test_p": 0.03125,
+    "elapsed_reduction_worlds": 4,
+    "elapsed_reduction_one_sided_sign_test_p": 0.1875
+  },
+  "localized_repair_worlds": [
+    {
+      "world_name": "Cartographer Lung Exchange",
+      "call_ratio": 0.5,
+      "token_ratio": 0.712401055408971,
+      "provider_time_ratio": 1.2271829392248241
+    },
+    {
+      "world_name": "Archive of Borrowed Gravity",
+      "call_ratio": 0.5,
+      "token_ratio": 0.5701006124234471,
+      "provider_time_ratio": 0.6220363228131167
+    },
+    {
+      "world_name": "Intertidal Embassy for Extinct Rivers",
+      "call_ratio": 0.5,
+      "token_ratio": 0.4932318364590687,
+      "provider_time_ratio": 0.5337370463733943
+    },
+    {
+      "world_name": "Night Market of Unfinished Weather",
+      "call_ratio": 0.6,
+      "token_ratio": 0.6437283127769953,
+      "provider_time_ratio": 0.7612711817919747
+    },
+    {
+      "world_name": "Museum of Future Debts",
+      "call_ratio": 0.5,
+      "token_ratio": 0.586417329859748,
+      "provider_time_ratio": 0.5861124218372432
+    }
+  ],
+  "source_paths": {
+    "primary_specialist": "benchmark_sources/decomposed_controlled_low_20260729/decomposed_controlled_summary.json",
+    "primary_monolithic": "benchmark_sources/monolithic_baseline_low_24k_quality_20260729/monolithic_baseline_summary.json",
+    "heldout_specialist": "benchmark_sources/decomposed_controlled_low_heldout_20260729/decomposed_controlled_summary.json",
+    "heldout_monolithic": "benchmark_sources/monolithic_baseline_low_24k_quality_heldout_20260729/monolithic_baseline_summary.json",
+    "quality": "benchmark_sources/objective_quality_combined10_20260729/objective_world_quality.json",
+    "quality_heldout": "benchmark_sources/objective_quality_heldout_20260729/objective_world_quality.json",
+    "local_repair": "benchmark_sources/seeded_local_retry_20260729/seeded_local_retry_summary.json"
+  }
+}

@@ -1,0 +1,38 @@
+You are the MONOLITHIC baseline for an Agora world compiler paper.
+Do not decompose the work into specialist nodes. Produce one complete builder_spec JSON object in one call.
+The result will be normalized and compiled by the same deterministic Agora compiler used by the strict pipeline.
+
+Original request:
+{
+  "world_name": "Cartographer Lung Exchange",
+  "genre": "biopunk orbital political economy",
+  "player_count_target": 4,
+  "agent_count_target": 12,
+  "focus": "breath futures, moving architecture, embodied diplomacy, readable spatial consequences",
+  "seed": 727102,
+  "brief": "Inside a colossal biomechanical lung orbiting a gas giant, breathable atmosphere is traded as futures and each exhalation tide changes which institutions can reach one another. Build six or more functionally distinct rooms, twelve deeply interdependent named agents, explicit scarce resources, enforceable contracts, rival institutions, and player actions that visibly alter room access, prices, trust, and air pressure. Every room needs one or two premise-specific semantic hero props. Keep the visual language coherent and inspectable: top-down pixel world, oxidized teal membranes, ivory ceramic pressure hardware, saffron signal threads, charcoal shadows, no visible labels, no generic cyberpunk neon, no medieval fantasy, no Beijing or antique-market leakage."
+}
+
+Required content:
+- Exactly 12 main_characters.
+- Give every main character a distinct social or economic niche; do not repeat role templates under new names.
+- Connect each character to at least one other named character through a concrete dependency, rivalry, debt, contract, supply relation, or alliance.
+- At least 6 rooms.
+- At least 15 world-specific item_catalog entries.
+- Each main_character must contain at least 8 concrete inventory objects with name, description, and quantity.
+- A merchant, trader, broker, vendor, seller, dealer, stall, shop, or proprietor must contain at least 15 inventory objects.
+- Each main_character must contain at least 2 property_templates and at least 2 knowledge_templates.
+- Do not use generic placeholder inventory such as Task Ledger, Meeting Notice, Tea Coupon, Generic Key, Basic Rations, or Blank Map.
+- Rooms must include archetype, ambient_palette, width_tiles, height_tiles, floor_tile, wall_tile, and a room_scene_prompt.
+- Every room must include 1 or 2 world-specific scene_components with component_id, label, description, anchor, width_tiles, and height_tiles.
+- Include gameplay_loops, player_entry_points, conflict_hooks, social_rules, item_themes, and visual_style.
+- Include a complete strict-top-down visual_canon and a world-specific agent_visual_policy with at least 3 palette families and 3 role style rules.
+- Include world_seed with registry-compatible kit_refs and policy_refs.
+
+Registry choices:
+- grounded_antique_market -> grounded_antique_market_v1 kits, cny_market_v1, antique_market_items_v1, CNY, cny_cash, fen
+- coastal_trade_city -> coastal_trade_city_v1 kits, harbor_chit_v1, harbor_trade_items_v1, HBR, harbor_chit, mark
+- civic_social_world -> civic_social_world_v1 kits, civic_credit_v1, civic_social_items_v1, CRD, civic_credit, point
+- fantasy_guild_world -> fantasy_guild_world_v1 kits, guild_gold_v1, fantasy_guild_items_v1, GLD, gold, coin
+
+Return only JSON. Do not include Markdown.

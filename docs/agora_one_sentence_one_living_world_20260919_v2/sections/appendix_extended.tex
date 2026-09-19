@@ -1,0 +1,95 @@
+\section{Extended Evidence: Counts and Harness Audit}
+\label{app:extended}
+
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabularx}{\textwidth}{@{}Yrrrrrr@{}}
+\toprule
+Recorded model & Complete & First pass & Executed & Inventory/location & Approved & Non-speech \\
+\midrule
+Gemini 2.5 Flash & 3/3 & 2/3 & 174/216 & 50/174 & 45 & 34/45 \\
+Gemini 3.1 Flash Lite & 3/3 & 2/3 & 185/216 & 75/185 & 89 & 50/89 \\
+Gemini 3.1 Pro Preview & 3/3 & 0/3 & 190/216 & 67/190 & 19 & 13/19 \\
+Gemini 3.5 Flash Lite & 1/3 & 1/3 & 171/216 & 42/171 & 102 & 45/102 \\
+Gemini 3.7 Flash & 3/3 & 3/3 & 216/216 & 19/216 & 22 & 4/22 \\
+GPT-5.6 Luna & 0/3 & 0/3 & N/E & N/E & N/E & N/E \\
+GPT-5.6 Sol & 3/3 & 1/3 & 215/216 & 87/215 & 19 & 4/19 \\
+GPT-5.6 Terra & 1/3 & 0/3 & 214/216 & 58/214 & 18 & 0/18 \\
+\midrule
+Total & 17/24 & 9/24 & 1365/1512 & 398/1365 & 314 & 150/314 \\
+\bottomrule
+\end{tabularx}
+\caption{Retrospective counts without reviewer scores or rank ordering.
+Construction columns use three prompts per model. Execution columns use only
+the first prompt's generated artifact and three repeated trajectories.
+N/E means no eligible artifact; it is not a runtime zero or a human preference.
+``Non-speech'' includes status effects and is counted from approved proposals.}
+\label{tab:extended-audit}
+\end{table*}
+
+\paragraph{Source selection.}
+Generation outcomes come from the 24 result records under the archive's
+\texttt{confirmatory\_runs} directory. A first-pass completion is a complete
+artifact with no recorded localized generation retry. Retry lists for some
+failed cases were not preserved in the original format; we therefore do not
+estimate total repair incidence from those lists. Failed cases remain failed.
+The 21 execution sources are the corrected
+\texttt{runtime\_trajectories\_v2/replicate\_*} records. Earlier runs affected
+by human placement and transport defects are not substituted or pooled.
+All raw result and trajectory records used here are frozen with SHA-256 hashes
+and recomputed by the bundled audit script.
+
+\paragraph{Input scope of the earlier construction comparison.}
+The ten requests in Section~\ref{sec:construction} are \emph{world briefs}:
+some include several sentences specifying institutions, cast size, room
+requirements, and visual style. They do not test strictly one-sentence input.
+For the comparative questionnaire, the archived single-pass prompt contains
+an original-request JSON exactly matching the corresponding compositional
+request for all ten selected first replicates. This confirms a shared user
+request; the method-specific system instructions and total computation differ.
+The three later prompts are separate, genuinely one-sentence semantic inputs.
+
+\paragraph{Execution schedule and observability.}
+Each four-round block is planned from one snapshot; intermediate actions can
+make later planned actions invalid. At each checkpoint the policy receives
+room connectivity, all-agent summaries, the action catalog, up to four open
+action examples, the current intervention, and the 24 most recent events.
+Decoding uses the recorded temperature 0.75 and low thinking setting. There is
+no archived claim of matched random seeds across providers. A model generates
+and controls its own world, so world difficulty, generation quality, and
+policy quality are confounded. The harness is an executable-plan stress test,
+not an information-asymmetric social experiment.
+
+\paragraph{Scripted human and recovery probes.}
+The round-5 request and round-21 follow-up are supplied by the harness.
+When needed, the harness moves the human into an occupied room before a
+request or rejection probe; this movement is not counted among model actions.
+The round-9 probe requests transfer of an item the human does not possess.
+All 21 such probes are rejected without a state-hash change. A resource shock
+at round 13 and a cross-room instruction at round 17 are likewise scripted.
+Target acceptance in model-generated proposals is a declared field, not an
+independently elicited human response.
+
+\paragraph{What counts as a consequence.}
+The inventory/location endpoint includes successful movement as well as
+inventory effects, and therefore is not a measure of economic transformation
+alone. The non-speech endpoint includes temporary statuses and describes the
+requested effects of approved proposals; approval does not establish that
+every intended semantic consequence occurred. The 147 failed model actions
+contain both before/after hashes and a false state-change flag. Five references
+to nonexistent event IDs occur in failed Gemini 2.5 Flash actions; no successful
+action in the archive has such an unknown reference. Thread labels and event
+references are supplied by the planner, so retaining them is not independent
+proof of causal coherence.
+
+\paragraph{Statistics and reproducibility.}
+The independent scope is 24 generation cells and 21 trajectory records, not
+1,512 independent experimental units. We report counts and the observed range
+over three runs, without asymptotic confidence intervals, significance stars,
+or a composite leaderboard. The audit reads raw outcomes and mutations and
+does not load the identity-visible expert review or its weighted scores.
+The source snapshot also includes the planner harness, coordinator validation,
+and custom-action handler used to interpret the records. Source inspection
+supports the mechanism explanation but does not replace fresh execution tests
+against an immutable historical checkout.

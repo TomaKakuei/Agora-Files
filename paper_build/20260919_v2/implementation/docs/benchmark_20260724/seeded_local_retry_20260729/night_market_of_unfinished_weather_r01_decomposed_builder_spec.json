@@ -1,0 +1,1756 @@
+{
+  "world_name": "Night Market of Unfinished Weather",
+  "world_id": "night_market_unfinished_weather",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "grounded_antique_market",
+    "profile_id": "grounded_antique_market",
+    "locale": "en-US",
+    "tone": "atmospheric, industrial-meteorological, tense",
+    "visual_direction": "top-down pixel art, storm-gray canvas, celadon instruments, electric-yellow kite silk, magenta warning thread, wet charcoal floors, silver condensation",
+    "currency_code": "CNY",
+    "currency_symbol": "¥",
+    "currency_minor_unit": "fen",
+    "currency_name": "Barometric Credits",
+    "domain_label": "meteorological-trade",
+    "starting_wallet_minor": {
+      "min": 3000,
+      "max": 14000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "weather_market_pixel_v1",
+      "frontend_affordance_id": "atmospheric_ui_v1",
+      "asset_prompt_kit_id": "weather_engine_assets"
+    },
+    "policy_refs": {
+      "economy_policy_id": "cny_market_v1",
+      "item_collection_id": "antique_market_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "grounded_antique_market_v1",
+      "property_policy_id": "grounded_antique_market_v1",
+      "knowledge_policy_id": "grounded_antique_market_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "Meteorological Trade Simulation",
+  "premise": "Vendors trade unfinished weather patterns beneath a planet-scale engine, where every transaction alters the local environment and social leverage.",
+  "simulation_objective": "Manage the trade and release of atmospheric phenomena while navigating delivery disputes and environmental shifts.",
+  "agent_count_target": 12,
+  "player_count_target": 12,
+  "wall_color_theme": "celadon_coated_brass",
+  "economy_focus": "Climate craft, weather lot auctions, and delivery logistics.",
+  "exploration_focus": "Six connected market rooms with dynamic visibility and route changes based on active weather lots.",
+  "conflict_tone": "Socially entangled disputes over environmental consequences and bargaining leverage.",
+  "visual_style": "Storm-gray and celadon pixel art with electric-yellow and magenta accents; no text or logos.",
+  "rooms": [
+    {
+      "name": "Barometric Auction Pit",
+      "biome": "meteorological_industrial",
+      "purpose": "High-stakes bidding on unfinished storm fronts.",
+      "decor_tags": [
+        "brass_pipes",
+        "pressure_gauges",
+        "sunken_floor"
+      ],
+      "activity_tags": [
+        "bidding",
+        "weather_monitoring"
+      ],
+      "flux_floor_prompt": "top-down pixel art of wet charcoal stone tiles with circular brass pressure vents and silver condensation sheen, 32-bit style.",
+      "room_scene_prompt": "top-down pixel art view of a sunken auction pit, tiered charcoal seating, central brass podium with glowing orange filaments, barometric pipe networks on walls, no text, no margins.",
+      "width_tiles": 12,
+      "height_tiles": 12,
+      "ambient_palette": "focused_blue",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "pressure_gavel_podium",
+          "label": "Pressure Gavel",
+          "description": "A heavy brass pedestal that releases steam bursts when a bid is finalized.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Cloud-Silk Loom Room",
+      "biome": "textile_atmospheric",
+      "purpose": "Weaving electric kite silk into weather containment bags.",
+      "decor_tags": [
+        "magenta_thread",
+        "spinning_spools",
+        "static_dischargers"
+      ],
+      "activity_tags": [
+        "weaving",
+        "crafting"
+      ],
+      "flux_floor_prompt": "top-down pixel art of dark metal grating with magenta safety threads woven through the mesh, 32-bit style.",
+      "room_scene_prompt": "top-down pixel art workshop, large celadon looms weaving glowing magenta silk, silver glass canisters of raw lightning, industrial machinery, no text, no margins.",
+      "width_tiles": 8,
+      "height_tiles": 10,
+      "ambient_palette": "soft_mint",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "static_loom_prime",
+          "label": "Static Loom",
+          "description": "A massive brass frame humming with blue electricity and magenta thread.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Condensation Vault",
+      "biome": "cryogenic_storage",
+      "purpose": "Secure storage for rare unfinished blizzard patterns.",
+      "decor_tags": [
+        "frost_patterns",
+        "iron_vaults",
+        "silver_glass"
+      ],
+      "activity_tags": [
+        "storage",
+        "inspection"
+      ],
+      "flux_floor_prompt": "top-down pixel art of frozen charcoal stone with silver ice crystals and heavy iron floor bolts, 32-bit style.",
+      "room_scene_prompt": "top-down pixel art vault, heavy iron containment doors, silver condensation glass canisters on reinforced shelves, mint-green ambient glow, no text, no margins.",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "low_lantern",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "blizzard_canister_rack",
+          "label": "Blizzard Rack",
+          "description": "Reinforced shelving holding swirling white vortexes in silver glass.",
+          "anchor": "west_mid",
+          "width_tiles": 1,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Courier’s Gust-Port",
+      "biome": "logistics_hub",
+      "purpose": "Dispatching weather patterns via high-pressure pneumatic tubes.",
+      "decor_tags": [
+        "pneumatic_tubes",
+        "yellow_banners",
+        "sorting_bins"
+      ],
+      "activity_tags": [
+        "delivery",
+        "sorting"
+      ],
+      "flux_floor_prompt": "top-down pixel art of scuffed celadon metal plating with yellow directional arrows and drainage sluices, 32-bit style.",
+      "room_scene_prompt": "top-down pixel art logistics hub, network of oxidized copper pipes entering the walls, sorting tables with yellow silk satchels, no text, no margins.",
+      "width_tiles": 10,
+      "height_tiles": 8,
+      "ambient_palette": "ember_orange",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "pneumatic_dispatch_array",
+          "label": "Dispatch Array",
+          "description": "A cluster of large copper tubes for launching weather canisters.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Isobaric Tea Stall",
+      "biome": "social_climate",
+      "purpose": "A place for traders to rest and discuss climate leverage.",
+      "decor_tags": [
+        "steam_tables",
+        "silk_awnings",
+        "brass_kettles"
+      ],
+      "activity_tags": [
+        "socializing",
+        "drinking"
+      ],
+      "flux_floor_prompt": "top-down pixel art of wet charcoal tiles with decorative brass inlay patterns, 32-bit style.",
+      "room_scene_prompt": "top-down pixel art tea stall, retractable electric-yellow silk awnings, low brass tables with steaming kettles, warm lantern light, no text, no margins.",
+      "width_tiles": 7,
+      "height_tiles": 7,
+      "ambient_palette": "warm_lantern",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "central_steam_samovar",
+          "label": "Climate Samovar",
+          "description": "A large brass tea urn that vents localized fog into the room.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Anemometer Lookout",
+      "biome": "high_altitude_monitoring",
+      "purpose": "Monitoring the planet-scale engine's output.",
+      "decor_tags": [
+        "spinning_vanes",
+        "telescopes",
+        "wind_socks"
+      ],
+      "activity_tags": [
+        "observation",
+        "data_logging"
+      ],
+      "flux_floor_prompt": "top-down pixel art of raised celadon metal grating over a dark abyss, 32-bit style.",
+      "room_scene_prompt": "top-down pixel art lookout tower, spinning brass anemometers on the balcony, silver glass telescopes, dark storm-gray atmosphere, no text, no margins.",
+      "width_tiles": 5,
+      "height_tiles": 9,
+      "ambient_palette": "clear_day",
+      "archetype": "lookout",
+      "scene_components": [
+        {
+          "component_id": "engine_monitor_scope",
+          "label": "Engine Scope",
+          "description": "A long silver instrument pointed upward at the planet-scale engine.",
+          "anchor": "south_mid",
+          "width_tiles": 1,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Vaelen the Mist-Stitcher",
+      "role_name": "Cloud-Silk Weaver",
+      "activity": "Weaving a tapestry of captured morning fog",
+      "home_base": "Cloud-Silk Loom Room",
+      "arc_goal": "To weave a storm-front capable of ending the Great Drought",
+      "inventory": [
+        {
+          "name": "Silvered Loom-Needle",
+          "description": "A needle that leaves a trail of condensed vapor.",
+          "quantity": 1
+        },
+        {
+          "name": "Spool of Cirrus Thread",
+          "description": "High-altitude cloud fibers spun into silk.",
+          "quantity": 5
+        },
+        {
+          "name": "Vial of Static Charge",
+          "description": "A glass tube humming with blue electricity.",
+          "quantity": 3
+        },
+        {
+          "name": "Mist-Dampened Thimble",
+          "description": "Protects fingers from the bite of cold fog.",
+          "quantity": 1
+        },
+        {
+          "name": "Pattern of the Unborn Gale",
+          "description": "A blueprint for a wind that never blew.",
+          "quantity": 1
+        },
+        {
+          "name": "Dew-Drop Beads",
+          "description": "Solidified morning moisture used for embroidery.",
+          "quantity": 20
+        },
+        {
+          "name": "Shears of the North Wind",
+          "description": "Blades that can cut through literal air.",
+          "quantity": 1
+        },
+        {
+          "name": "Loom-Oil of Petrichor",
+          "description": "Scented oil that keeps the gears turning smoothly.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Loom of Sighs",
+          "asset_type": "Machinery",
+          "description": "A massive wooden frame that vibrates with the sound of distant thunder.",
+          "story_use": "Used to craft the legendary Cloud-Silk garments."
+        },
+        {
+          "asset_name": "Vapor-Locked Chest",
+          "asset_type": "Storage",
+          "description": "A chest that only opens when the humidity reaches 90%.",
+          "story_use": "Stores the most delicate unfinished weather patterns."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-001",
+          "topic": "Vapor-Dynamics",
+          "summary": "The art of manipulating humidity into physical shapes.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "kn-002",
+          "topic": "Loom-Maintenance",
+          "summary": "How to repair ancient machinery using only wind and song.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelith the Barometric Broker",
+      "role_name": "Weather Merchant",
+      "activity": "Bidding on a shipment of bottled monsoons",
+      "home_base": "Barometric Auction Pit",
+      "arc_goal": "To monopolize the trade of high-pressure systems",
+      "inventory": [
+        {
+          "name": "Gavel of Low Pressure",
+          "description": "A hammer that creates a vacuum when struck.",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Bottled Monsoon",
+          "description": "A swirling vortex trapped in reinforced glass.",
+          "quantity": 4
+        },
+        {
+          "name": "Ledger of Lost Breezes",
+          "description": "A record of every wind traded in the market.",
+          "quantity": 1
+        },
+        {
+          "name": "Trade-Token of the Eye",
+          "description": "A coin minted in the center of a hurricane.",
+          "quantity": 50
+        },
+        {
+          "name": "Sack of Dried Hailstones",
+          "description": "Used as small change for minor transactions.",
+          "quantity": 100
+        },
+        {
+          "name": "Magnifying Glass of Clarity",
+          "description": "Reveals the purity of captured weather.",
+          "quantity": 1
+        },
+        {
+          "name": "Contract of the Trade Winds",
+          "description": "A binding legal document signed in smoke.",
+          "quantity": 5
+        },
+        {
+          "name": "Aromatic Rain-Stick",
+          "description": "Used to calm nervous bidders during high-stakes auctions.",
+          "quantity": 1
+        },
+        {
+          "name": "Crate of Compressed Fog",
+          "description": "Industrial grade mist for large-scale cooling.",
+          "quantity": 10
+        },
+        {
+          "name": "Sample of Sunset Glow",
+          "description": "A rare aesthetic weather phenomenon in a jar.",
+          "quantity": 2
+        },
+        {
+          "name": "Whistle of the Zephyr",
+          "description": "Summons a gentle breeze to clear the air.",
+          "quantity": 1
+        },
+        {
+          "name": "Scale of Atmospheric Weight",
+          "description": "Measures the potential energy of a storm.",
+          "quantity": 1
+        },
+        {
+          "name": "Ink of the Ink-Cloud",
+          "description": "Squid ink mixed with storm-water for permanent records.",
+          "quantity": 3
+        },
+        {
+          "name": "Quill of a Storm-Petrel",
+          "description": "A feather that writes even in a downpour.",
+          "quantity": 2
+        },
+        {
+          "name": "Seal of the Merchant Guild",
+          "description": "A heavy wax seal depicting a rising barometer.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The High-Pressure Vault",
+          "asset_type": "Real Estate",
+          "description": "A reinforced room designed to hold volatile weather samples.",
+          "story_use": "Secures the merchant's most valuable atmospheric assets."
+        },
+        {
+          "asset_name": "Auctioneer's Podium",
+          "asset_type": "Furniture",
+          "description": "A carved stone stand that amplifies the speaker's voice like thunder.",
+          "story_use": "Used to control the flow of the Barometric Auction."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-003",
+          "topic": "Market Fluctuations",
+          "summary": "Predicting the value of rain based on seasonal migration.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "kn-004",
+          "topic": "Counterfeit Detection",
+          "summary": "Identifying fake fog created by mundane smoke machines.",
+          "confidence": 98
+        }
+      ]
+    },
+    {
+      "display_name": "Zephyr-Runner Jax",
+      "role_name": "Atmospheric Courier",
+      "activity": "Delivering a message before the dew evaporates",
+      "home_base": "Courier’s Gust-Port",
+      "arc_goal": "To find the legendary 'Still-Point' where no wind blows",
+      "inventory": [
+        {
+          "name": "Winged Sandals of the Draft",
+          "description": "Footwear that catches updrafts effortlessly.",
+          "quantity": 1
+        },
+        {
+          "name": "Scroll-Tube of Vacuum-Seal",
+          "description": "Protects messages from humidity damage.",
+          "quantity": 3
+        },
+        {
+          "name": "Compass of the Four Winds",
+          "description": "Points toward the strongest current air current.",
+          "quantity": 1
+        },
+        {
+          "name": "Dried Cloud-Jerky",
+          "description": "Lightweight, airy sustenance for long flights.",
+          "quantity": 10
+        },
+        {
+          "name": "Signal Flare of Lightning",
+          "description": "A bright flash used for emergency navigation.",
+          "quantity": 5
+        },
+        {
+          "name": "Map of the Invisible Paths",
+          "description": "A chart showing permanent air streams.",
+          "quantity": 1
+        },
+        {
+          "name": "Goggles of the Gale",
+          "description": "Protects eyes from high-speed debris.",
+          "quantity": 1
+        },
+        {
+          "name": "Flask of Liquid Oxygen",
+          "description": "A quick boost for high-altitude sprints.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gust-Glider",
+          "asset_type": "Vehicle",
+          "description": "A lightweight frame of bone and silk for riding thermals.",
+          "story_use": "Allows for rapid transit between the market's floating tiers."
+        },
+        {
+          "asset_name": "Landing Perch",
+          "asset_type": "Structure",
+          "description": "A high-altitude platform for receiving incoming couriers.",
+          "story_use": "The primary hub for all incoming and outgoing messages."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-005",
+          "topic": "Thermal Navigation",
+          "summary": "Finding the fastest routes through the market's heat vents.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "kn-006",
+          "topic": "Courier Code",
+          "summary": "The secret language used by runners to bypass guards.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Elder Nimbus",
+      "role_name": "Condensation Archivist",
+      "activity": "Cataloging the humidity of ancient memories",
+      "home_base": "The Condensation Vault",
+      "arc_goal": "To restore the Great Library of Rain",
+      "inventory": [
+        {
+          "name": "Crystal Jar of 100-Year Rain",
+          "description": "Water collected from a storm a century ago.",
+          "quantity": 1
+        },
+        {
+          "name": "Etching Tool of Frost",
+          "description": "Writes by freezing the moisture on a surface.",
+          "quantity": 1
+        },
+        {
+          "name": "Gloves of the Cloud-Toucher",
+          "description": "Allows the wearer to handle vapor as if it were solid.",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Fork of Resonance",
+          "description": "Used to identify the frequency of different mists.",
+          "quantity": 1
+        },
+        {
+          "name": "Book of Drowned Secrets",
+          "description": "A tome whose pages only appear when submerged.",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Tears of the Sky",
+          "description": "Extremely pure water with healing properties.",
+          "quantity": 5
+        },
+        {
+          "name": "Lantern of the Sun-Piercer",
+          "description": "A light that cuts through even the thickest smog.",
+          "quantity": 1
+        },
+        {
+          "name": "Sponge of Infinite Absorption",
+          "description": "Can soak up an entire puddle without getting heavy.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Archive of Drips",
+          "asset_type": "Library",
+          "description": "A series of glass tubes containing the history of the world's weather.",
+          "story_use": "The source of all historical weather data in the market."
+        },
+        {
+          "asset_name": "The Dehumidifier",
+          "asset_type": "Machinery",
+          "description": "A large brass device that keeps the vault's air perfectly dry.",
+          "story_use": "Protects the physical records from mold and decay."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-007",
+          "topic": "Historical Meteorology",
+          "summary": "The study of how past storms shaped current civilizations.",
+          "confidence": 99
+        },
+        {
+          "knowledge_id": "kn-008",
+          "topic": "Vapor-Memory",
+          "summary": "The theory that water retains the 'feel' of the places it has been.",
+          "confidence": 82
+        }
+      ]
+    },
+    {
+      "display_name": "Sylas the Pressure-Gauger",
+      "role_name": "Isobaric Tea Master",
+      "activity": "Steeping high-altitude oolong in pressurized steam",
+      "home_base": "Isobaric Tea Stall",
+      "arc_goal": "To brew the legendary 'Eye of the Storm' infusion to cure Vaelen's fading sight",
+      "inventory": [
+        {
+          "name": "Vacuum-Sealed Oolong",
+          "description": "Tea leaves harvested from the center of a cyclone",
+          "quantity": 15
+        },
+        {
+          "name": "Isobaric Kettle",
+          "description": "A heavy brass vessel that maintains constant pressure",
+          "quantity": 1
+        },
+        {
+          "name": "Condensed Dew Drops",
+          "description": "Pure moisture collected from the Condensation Vault",
+          "quantity": 20
+        },
+        {
+          "name": "Shattered Barometer Glass",
+          "description": "Shards from a failed high-pressure brew",
+          "quantity": 5
+        },
+        {
+          "name": "Steam-Whistle Reed",
+          "description": "Used to signal when the pressure is optimal",
+          "quantity": 3
+        },
+        {
+          "name": "Porcelain Siphon",
+          "description": "Delicate tubes for transferring tea without aeration",
+          "quantity": 2
+        },
+        {
+          "name": "Crushed Hailstone Sugar",
+          "description": "Sweetener that never melts, only evaporates",
+          "quantity": 12
+        },
+        {
+          "name": "Thermal Insulation Wrap",
+          "description": "Keeps the tea at a precise boiling point",
+          "quantity": 4
+        },
+        {
+          "name": "Aromatic Mist-Vial",
+          "description": "Concentrated scent of a coming rainstorm",
+          "quantity": 8
+        },
+        {
+          "name": "Copper Stirring Rod",
+          "description": "Conducts heat evenly through the thick tea",
+          "quantity": 1
+        },
+        {
+          "name": "Weighted Serving Tray",
+          "description": "Prevents cups from floating away in low-gravity pockets",
+          "quantity": 1
+        },
+        {
+          "name": "Fermented Cloud-Pulp",
+          "description": "A bitter additive for depth of flavor",
+          "quantity": 10
+        },
+        {
+          "name": "Gauger's Logbook",
+          "description": "Records of every atmospheric shift during brewing",
+          "quantity": 1
+        },
+        {
+          "name": "Silver Tea Strainer",
+          "description": "Fine mesh to catch stray lightning sparks",
+          "quantity": 1
+        },
+        {
+          "name": "Obsidian Warming Stone",
+          "description": "Retains heat for hours in the cold market air",
+          "quantity": 6
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Pressure-Hearth",
+          "asset_type": "Industrial Kitchen",
+          "description": "A reinforced stove capable of simulating deep-sea or high-altitude pressures",
+          "story_use": "Used to extract flavors from weather-hardened ingredients"
+        },
+        {
+          "asset_name": "The Silent Samovar",
+          "asset_type": "Relic",
+          "description": "An ancient tea urn that hums when a storm is approaching",
+          "story_use": "Provides early warning for the Market's weather shifts"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-001",
+          "topic": "Atmospheric Infusion",
+          "summary": "The art of using barometric pressure to alter the molecular structure of tea",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "kn-002",
+          "topic": "Vaelen's Debt",
+          "summary": "Knowledge of the specific fog-silk weave Vaelen needs to stabilize his loom",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra the Gust-Collector",
+      "role_name": "Wind-Trade Merchant",
+      "activity": "Auctioning bottled trade winds from the southern reaches",
+      "home_base": "Barometric Auction Pit",
+      "arc_goal": "To outbid Kaelith for the rights to the Great Monsoon Harvest",
+      "inventory": [
+        {
+          "name": "Bottled Zephyr",
+          "description": "A gentle breeze trapped in blue glass",
+          "quantity": 10
+        },
+        {
+          "name": "Gale-Force Canister",
+          "description": "Highly compressed wind capable of powering a small mill",
+          "quantity": 5
+        },
+        {
+          "name": "Trade-Wind Map",
+          "description": "A shifting parchment showing current air currents",
+          "quantity": 1
+        },
+        {
+          "name": "Anemometer Ring",
+          "description": "Jewelry that spins faster as profit margins rise",
+          "quantity": 1
+        },
+        {
+          "name": "Whirlwind Seed",
+          "description": "A small pearl that creates a localized dust devil when cracked",
+          "quantity": 12
+        },
+        {
+          "name": "Bellows of the North",
+          "description": "Hand-held device for releasing freezing gusts",
+          "quantity": 2
+        },
+        {
+          "name": "Aero-Weight Scales",
+          "description": "Used to weigh the literal weight of air",
+          "quantity": 1
+        },
+        {
+          "name": "Draft-Excluder Wax",
+          "description": "Used to seal leaks in wind-bottles",
+          "quantity": 20
+        },
+        {
+          "name": "Sighing Conch",
+          "description": "A shell that plays back the sound of a calm sea",
+          "quantity": 3
+        },
+        {
+          "name": "Tornado-Glass Shard",
+          "description": "Obsidian-like glass formed in the heart of a twister",
+          "quantity": 7
+        },
+        {
+          "name": "Feather-Light Crate",
+          "description": "Shipping containers that weigh nothing when filled with air",
+          "quantity": 15
+        },
+        {
+          "name": "Wind-Chime Keys",
+          "description": "Keys that unlock specific gust-ports in the city",
+          "quantity": 4
+        },
+        {
+          "name": "Trade License (Weather)",
+          "description": "Official scroll permitting the sale of atmospheric phenomena",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Stagnant Air",
+          "description": "Rare, perfectly still air from a forgotten tomb",
+          "quantity": 2
+        },
+        {
+          "name": "Bidding Gavel of Thunder",
+          "description": "Makes a booming sound when struck",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Vault of Drafts",
+          "asset_type": "Warehouse",
+          "description": "A subterranean chamber where winds are stored in pressurized vats",
+          "story_use": "Storage for the merchant's most volatile inventory"
+        },
+        {
+          "asset_name": "The Auctioneer's Podium",
+          "asset_type": "Business Asset",
+          "description": "A high-perch in the Pit that grants a clear view of all bidders",
+          "story_use": "Used to manipulate the market through superior vantage"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-003",
+          "topic": "Market Manipulation",
+          "summary": "Techniques for artificiality inflating the price of bottled monsoons",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "kn-004",
+          "topic": "Kaelith's Ledger",
+          "summary": "Secret information regarding Kaelith's recent losses in the Condensation Vault",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Bram the Lookout",
+      "role_name": "Atmospheric Sentry",
+      "activity": "Monitoring the approach of the Great Void Front",
+      "home_base": "Anemometer Lookout",
+      "arc_goal": "To warn Jax of the coming turbulence before the courier routes are destroyed",
+      "inventory": [
+        {
+          "name": "Long-Range Spyglass",
+          "description": "Lenses ground from frozen rain",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Flare (Phosphor)",
+          "description": "Burns bright green even in thickest fog",
+          "quantity": 10
+        },
+        {
+          "name": "Weather-Vane Dagger",
+          "description": "A blade that always points toward the nearest storm",
+          "quantity": 1
+        },
+        {
+          "name": "Heavy Lead Boots",
+          "description": "Prevents being blown off the lookout during gales",
+          "quantity": 1
+        },
+        {
+          "name": "Log of Cloud Formations",
+          "description": "Sketches of dangerous cumulonimbus patterns",
+          "quantity": 1
+        },
+        {
+          "name": "Dried Sky-Berries",
+          "description": "High-energy food for long shifts",
+          "quantity": 30
+        },
+        {
+          "name": "Emergency Parachute",
+          "description": "Silk canopy for rapid descent",
+          "quantity": 1
+        },
+        {
+          "name": "Whistle of Piercing",
+          "description": "Cuts through the sound of any storm",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The High Perch",
+          "asset_type": "Observation Deck",
+          "description": "The highest point in the Night Market, above the smog",
+          "story_use": "Primary location for spotting incoming weather threats"
+        },
+        {
+          "asset_name": "The Signal Lantern",
+          "asset_type": "Communication Device",
+          "description": "A massive lamp fueled by captured lightning",
+          "story_use": "Used to broadcast warnings to the Courier's Gust-Port"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-005",
+          "topic": "Storm Tracking",
+          "summary": "Predicting the path of unfinished weather based on thermal shifts",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "kn-006",
+          "topic": "Courier Routes",
+          "summary": "The secret low-pressure lanes Jax uses to navigate the market",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Mistress Elara",
+      "role_name": "Dew-Point Alchemist",
+      "activity": "Distilling memories from the Condensation Vault",
+      "home_base": "The Condensation Vault",
+      "arc_goal": "To synthesize a 'Perfect Day' for Elder Nimbus's failing archives",
+      "inventory": [
+        {
+          "name": "Memory-Laden Mist",
+          "description": "Vapor that whispers secrets when inhaled",
+          "quantity": 5
+        },
+        {
+          "name": "Glass Distillation Coil",
+          "description": "Intricate tubing for separating moisture from thought",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Pure Sorrow",
+          "description": "Rainwater collected during a mass mourning",
+          "quantity": 3
+        },
+        {
+          "name": "Essence of Sunlight",
+          "description": "A rare liquid that glows with golden warmth",
+          "quantity": 1
+        },
+        {
+          "name": "Silver Pipette",
+          "description": "For precise measurement of emotional dew",
+          "quantity": 2
+        },
+        {
+          "name": "Crystalline Flask",
+          "description": "Reinforced glass for holding volatile memories",
+          "quantity": 12
+        },
+        {
+          "name": "Filter Paper (Cloud-Silk)",
+          "description": "Scraps of Vaelen's silk used for filtration",
+          "quantity": 20
+        },
+        {
+          "name": "Alchemical Salt",
+          "description": "Used to precipitate solid ideas from vapor",
+          "quantity": 15
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Condensation Still",
+          "asset_type": "Laboratory",
+          "description": "A complex machine that turns fog into liquid memory",
+          "story_use": "The source of all memory-based products in the market"
+        },
+        {
+          "asset_name": "The Cold Room",
+          "asset_type": "Storage",
+          "description": "A room kept at absolute dew point to prevent evaporation",
+          "story_use": "Where the most sensitive 'unfinished' weather is kept"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn-007",
+          "topic": "Memory Distillation",
+          "summary": "The process of extracting human experiences from atmospheric moisture",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "kn-008",
+          "topic": "Nimbus's Archive",
+          "summary": "The structural layout of the Elder's memory storage system",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Thrum the Loom-Tuner",
+      "role_name": "Cloud-Silk Mechanic",
+      "activity": "Calibrating the tension of vapor-threads",
+      "home_base": "Cloud-Silk Loom Room",
+      "arc_goal": "To repair the Master Loom before the humidity drops below critical levels",
+      "inventory": [
+        {
+          "name": "Vapor-Wrench",
+          "description": "A tool that tightens bolts made of solid steam",
+          "quantity": 1
+        },
+        {
+          "name": "Static-Brush",
+          "description": "Removes excess lightning from silk strands",
+          "quantity": 3
+        },
+        {
+          "name": "Dew-Oil",
+          "description": "Lubricant for high-altitude machinery",
+          "quantity": 5
+        },
+        {
+          "name": "Fractal-Needle",
+          "description": "Used for stitching complex storm patterns",
+          "quantity": 12
+        },
+        {
+          "name": "Mist-Gasket",
+          "description": "A seal that prevents pressure leaks in the loom",
+          "quantity": 4
+        },
+        {
+          "name": "Thunder-Nut",
+          "description": "A fastener that vibrates when tightened correctly",
+          "quantity": 20
+        },
+        {
+          "name": "Cirrus-Spool",
+          "description": "Raw material for fine, high-altitude weaving",
+          "quantity": 2
+        },
+        {
+          "name": "Tuning-Fork (B-Flat)",
+          "description": "Harmonizes the loom with the local atmosphere",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Harmonic Spindle",
+          "asset_type": "Machinery",
+          "description": "A spinning device that sings as it works",
+          "story_use": "Used to create the finest grade of cloud-silk"
+        },
+        {
+          "asset_name": "Workshop Stall 4",
+          "asset_type": "Real Estate",
+          "description": "A cramped space filled with gears and fog",
+          "story_use": "Thrum's base of operations for repairs"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "loom-01",
+          "topic": "Vapor Mechanics",
+          "summary": "The science of keeping clouds in a solid state for weaving",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "loom-02",
+          "topic": "Vaelen's Technique",
+          "summary": "Observations on Vaelen's unique mist-stitching style",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Orla the Pressure-Pirate",
+      "role_name": "Isobaric Smuggler",
+      "activity": "Hiding illegal low-pressure canisters",
+      "home_base": "The Condensation Vault",
+      "arc_goal": "To smuggle a rare 'Eye of the Storm' out of the market",
+      "inventory": [
+        {
+          "name": "Vacuum-Flask",
+          "description": "Holds pure nothingness to stabilize pressure",
+          "quantity": 2
+        },
+        {
+          "name": "False-Bottom Crate",
+          "description": "Used to hide contraband from Bram the Lookout",
+          "quantity": 1
+        },
+        {
+          "name": "Pressure-Gauge Bypass",
+          "description": "Tricks sensors into reading normal levels",
+          "quantity": 3
+        },
+        {
+          "name": "Siphon-Tube",
+          "description": "Steals condensation from the Vault's main tank",
+          "quantity": 1
+        },
+        {
+          "name": "Bribe-Coin",
+          "description": "Currency minted from compressed hail",
+          "quantity": 50
+        },
+        {
+          "name": "Muffled-Boots",
+          "description": "Footwear that makes no sound on metal grates",
+          "quantity": 1
+        },
+        {
+          "name": "Signal-Flare (Blue)",
+          "description": "Indicates a clear path to the Gust-Port",
+          "quantity": 5
+        },
+        {
+          "name": "Lock-Pick (Ice)",
+          "description": "Melts after use, leaving no evidence",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Silent Skiff",
+          "asset_type": "Vehicle",
+          "description": "A small boat that sails on thermal drafts",
+          "story_use": "Orla's primary means of escaping the market"
+        },
+        {
+          "asset_name": "Vault Keycard",
+          "asset_type": "Access",
+          "description": "A stolen pass to the restricted zones",
+          "story_use": "Allows entry into the deepest parts of the Condensation Vault"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "smug-01",
+          "topic": "Sentry Blindspots",
+          "summary": "The exact moments Bram looks away from the port",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "smug-02",
+          "topic": "Black Market Routes",
+          "summary": "Hidden paths through the Barometric Auction Pit",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Master Haze",
+      "role_name": "Atmospheric Commodity Broker",
+      "activity": "Manipulating the price of bottled monsoons",
+      "home_base": "Barometric Auction Pit",
+      "arc_goal": "To bankrupt Kaelith and monopolize the weather trade",
+      "inventory": [
+        {
+          "name": "Gavel of Thunder",
+          "description": "A hammer that booms when a sale is closed",
+          "quantity": 1
+        },
+        {
+          "name": "Ledger of Winds",
+          "description": "Records every transaction in the Pit",
+          "quantity": 1
+        },
+        {
+          "name": "Monsoon-Futures",
+          "description": "Paper contracts for rain yet to fall",
+          "quantity": 100
+        },
+        {
+          "name": "Sample-Vial: Hurricane",
+          "description": "A tiny, swirling vortex for display",
+          "quantity": 5
+        },
+        {
+          "name": "Sample-Vial: Drizzle",
+          "description": "A calming, low-value mist sample",
+          "quantity": 20
+        },
+        {
+          "name": "Magnifying Glass (Crystal)",
+          "description": "Used to inspect the purity of fog-001",
+          "quantity": 1
+        },
+        {
+          "name": "Ink-Pot (Storm-Cloud)",
+          "description": "Ink that changes color with the weather",
+          "quantity": 3
+        },
+        {
+          "name": "Quill (Albatross)",
+          "description": "A sturdy pen for signing high-stakes deals",
+          "quantity": 2
+        },
+        {
+          "name": "Abacus (Hailstone)",
+          "description": "Calculating tool with frozen beads",
+          "quantity": 1
+        },
+        {
+          "name": "Trade-Seal",
+          "description": "Wax stamper for official market documents",
+          "quantity": 1
+        },
+        {
+          "name": "Pocket-Watch (Barometric)",
+          "description": "Tells time based on air pressure changes",
+          "quantity": 1
+        },
+        {
+          "name": "Cigar (Dried Kelp)",
+          "description": "Smells like a salt marsh when lit",
+          "quantity": 10
+        },
+        {
+          "name": "Silk-Handkerchief",
+          "description": "Woven by Vaelen, used for cleaning lenses",
+          "quantity": 2
+        },
+        {
+          "name": "Gold-Dust (Sunlight)",
+          "description": "Used to add value to dull weather samples",
+          "quantity": 50
+        },
+        {
+          "name": "Letter of Credit",
+          "description": "Backed by the Isobaric Tea Stall's reserves",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The High-Seat",
+          "asset_type": "Furniture",
+          "description": "An elevated chair overlooking the Auction Pit",
+          "story_use": "Haze's position of power during bidding wars"
+        },
+        {
+          "asset_name": "Vault-Box 99",
+          "asset_type": "Storage",
+          "description": "A reinforced box for storing high-value weather",
+          "story_use": "Where Haze keeps his most dangerous storm samples"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "trade-01",
+          "topic": "Market Manipulation",
+          "summary": "How to trigger a panic buy of bottled sunshine",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "trade-02",
+          "topic": "Kaelith's Debt",
+          "summary": "Insider info on Kaelith's failing monsoon shipments",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Sora the Gust-Taster",
+      "role_name": "Tea Sommelier",
+      "activity": "Blending winds for the perfect brew",
+      "home_base": "Isobaric Tea Stall",
+      "arc_goal": "To find the legendary 'Zephyr of the First Dawn'",
+      "inventory": [
+        {
+          "name": "Wind-Infuser",
+          "description": "Aerates tea with specific atmospheric samples",
+          "quantity": 1
+        },
+        {
+          "name": "Ceramic-Cup (Thin)",
+          "description": "Translucent porcelain that vibrates with heat",
+          "quantity": 12
+        },
+        {
+          "name": "Tea-Leaf (Stratus)",
+          "description": "Grown on the tops of clouds",
+          "quantity": 50
+        },
+        {
+          "name": "Tea-Leaf (Cumulus)",
+          "description": "Heavy, bold leaves that produce thick steam",
+          "quantity": 30
+        },
+        {
+          "name": "Thermometer (Mercury)",
+          "description": "Measures the exact heat of the steeping water",
+          "quantity": 2
+        },
+        {
+          "name": "Whisk (Bamboo)",
+          "description": "Used to froth the tea into a light foam",
+          "quantity": 5
+        },
+        {
+          "name": "Scent-Jar",
+          "description": "Contains the smell of rain on dry earth",
+          "quantity": 10
+        },
+        {
+          "name": "Strainer (Silver)",
+          "description": "Filters out any stray lightning bolts",
+          "quantity": 1
+        },
+        {
+          "name": "Honey-Pot (Amber)",
+          "description": "Sweetener made from bees that live in the eye of storms",
+          "quantity": 3
+        },
+        {
+          "name": "Serving-Tray",
+          "description": "Carved from wood struck by lightning",
+          "quantity": 4
+        },
+        {
+          "name": "Kettle (Copper)",
+          "description": "Heats rapidly over a pressurized flame",
+          "quantity": 2
+        },
+        {
+          "name": "Cleaning-Rag",
+          "description": "Always damp with distilled morning dew",
+          "quantity": 10
+        },
+        {
+          "name": "Menu-Scroll",
+          "description": "Lists the daily blends and their pressures",
+          "quantity": 5
+        },
+        {
+          "name": "Small-Bell",
+          "description": "Rung when a new pot is ready for tasting",
+          "quantity": 1
+        },
+        {
+          "name": "Tasting-Spoon",
+          "description": "Long-handled spoon for sampling the brew",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Pressure-Steeper",
+          "asset_type": "Appliance",
+          "description": "A complex machine for high-altitude brewing",
+          "story_use": "Essential for making Sylas's signature oolong"
+        },
+        {
+          "asset_name": "The Tea-Garden Balcony",
+          "asset_type": "Real Estate",
+          "description": "A terrace overlooking the Anemometer Lookout",
+          "story_use": "The best place to catch fresh drafts for tea"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "tea-01",
+          "topic": "Flavor Profiles",
+          "summary": "The relationship between humidity and bitterness",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "tea-02",
+          "topic": "Sylas's Secret",
+          "summary": "The hidden ingredient in the Tea Master's private reserve",
+          "confidence": 60
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Atmospheric Arbitrage",
+      "summary": "Players acquire low-pressure systems from desperate sellers and flip them to high-altitude elites for political favors.",
+      "roles": [
+        "Broker",
+        "Smuggler"
+      ],
+      "rooms": [
+        "The Vapor Exchange",
+        "Cloud-Catcher Docks"
+      ],
+      "pressure": "Rapidly shifting barometric pressure destabilizes stored goods."
+    },
+    {
+      "label": "The Great Thaw",
+      "summary": "Players must negotiate the release of a frozen blizzard before it melts and floods the lower market districts.",
+      "roles": [
+        "Mediator",
+        "Engineer"
+      ],
+      "rooms": [
+        "The Cryo-Vaults",
+        "Submerged Alleys"
+      ],
+      "pressure": "Rising temperatures threaten to destroy physical inventory."
+    }
+  ],
+  "player_entry_points": [
+    "A merchant seeking to buy back a stolen monsoon.",
+    "A climate refugee looking for a stable micro-climate.",
+    "An atmospheric smuggler with a leaking jar of lightning."
+  ],
+  "conflict_hooks": [
+    "The local Sun-Broker has artificially extended the drought to drive up heat prices.",
+    "A shipment of 'Gentle Spring Rain' was swapped with 'Corrosive Acid Fog' by a rival faction."
+  ],
+  "custom_actions": [
+    "Siphon Humidity",
+    "Barter Storm-Cell",
+    "Forecast Betrayal"
+  ],
+  "social_rules": [
+    "All bargains are sealed with a breath of captured mist.",
+    "No physical violence is permitted within the market's atmospheric dome.",
+    "Debts are settled in weather patterns, not currency."
+  ],
+  "item_themes": [
+    "Unfinished Fogs",
+    "Monsoon Vials",
+    "Hail Songs",
+    "Wind Corridors",
+    "Drought Endings",
+    "Barometric Regulators"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "fog-001",
+      "name": "Unfinished Morning Mist",
+      "price": 450,
+      "mass": 0.1,
+      "description": "A swirling jar of gray vapor that never quite settles into a cloud. Used for tactical concealment.",
+      "image_prompt": "Storm-gray and celadon pixel art of a glass jar containing swirling thick mist with magenta sparks, no text.",
+      "category": "Unfinished Fogs"
+    },
+    {
+      "item_id": "vial-002",
+      "name": "Monsoon Heart-Drop",
+      "price": 1200,
+      "mass": 0.5,
+      "description": "A single, heavy drop of concentrated tropical downpour. Capable of flooding a small cellar instantly.",
+      "image_prompt": "Celadon pixel art of a glowing blue liquid drop inside a crystal vial, electric-yellow lightning accents, no text."
+    },
+    {
+      "item_id": "song-003",
+      "name": "Shattered Hail Song",
+      "price": 850,
+      "mass": 1.2,
+      "description": "A music box containing the percussive rhythm of a thousand ice stones hitting a tin roof.",
+      "image_prompt": "Pixel art of a metallic music box with frozen jagged edges, storm-gray and magenta color palette, no text.",
+      "category": "Hail Songs"
+    },
+    {
+      "item_id": "wind-004",
+      "name": "Draft of the North Corridor",
+      "price": 2100,
+      "mass": 0.0,
+      "description": "A bottled high-pressure wind stream. When opened, it creates a localized gale for rapid transport.",
+      "image_prompt": "Electric-yellow pixel art of a swirling vortex inside a transparent tube, celadon highlights, no text.",
+      "category": "Wind Corridors"
+    },
+    {
+      "item_id": "reg-005",
+      "name": "Barometric Anchor",
+      "price": 3000,
+      "mass": 15.5,
+      "description": "A heavy leaden device used to stabilize local air pressure during auction disputes.",
+      "image_prompt": "Storm-gray pixel art of a heavy mechanical anchor with glowing magenta pressure gauges, no text.",
+      "category": "Barometric Regulators"
+    },
+    {
+      "item_id": "end-006",
+      "name": "Drought's Final Sigh",
+      "price": 5500,
+      "mass": 0.2,
+      "description": "A rare essence extracted from the last dry day of a decade. Highly sought by desert terraformers.",
+      "image_prompt": "Pixel art of a cracked clay pot emitting a faint golden heat haze, celadon and magenta accents, no text.",
+      "category": "Drought Endings"
+    },
+    {
+      "item_id": "fog-007",
+      "name": "Neon Smog Remnant",
+      "price": 320,
+      "mass": 0.3,
+      "description": "A byproduct of the market's electric district. Smells of ozone and burnt sugar.",
+      "image_prompt": "Magenta and electric-yellow pixel art of thick industrial smoke trapped in a glass sphere, no text.",
+      "category": "Unfinished Fogs"
+    },
+    {
+      "item_id": "vial-008",
+      "name": "Petrichor Concentrate",
+      "price": 150,
+      "mass": 0.1,
+      "description": "The scent of the first rain on dry earth, distilled into a potent aromatic oil.",
+      "image_prompt": "Celadon pixel art of a small dropper bottle with earthy brown and bright green pixels, no text."
+    },
+    {
+      "item_id": "song-009",
+      "name": "Sleet Symphony Scroll",
+      "price": 900,
+      "mass": 0.4,
+      "description": "A physical transcription of a winter storm's frequency. Can be played on a weather-harp.",
+      "image_prompt": "Storm-gray pixel art of a glowing parchment scroll with jagged blue musical notes, no text.",
+      "category": "Hail Songs"
+    },
+    {
+      "item_id": "wind-010",
+      "name": "Zephyr in a Thimble",
+      "price": 600,
+      "mass": 0.05,
+      "description": "A tiny, gentle breeze perfect for cooling a single cup of tea or clearing a small desk.",
+      "image_prompt": "Electric-yellow pixel art of a tiny silver thimble with a small cyclone emerging, no text.",
+      "category": "Wind Corridors"
+    },
+    {
+      "item_id": "reg-011",
+      "name": "Isobaric Compass",
+      "price": 1750,
+      "mass": 0.8,
+      "description": "Points toward the nearest low-pressure system. Essential for storm-chasers and delivery pilots.",
+      "image_prompt": "Celadon and storm-gray pixel art of a handheld compass with a spinning magenta needle, no text.",
+      "category": "Barometric Regulators"
+    },
+    {
+      "item_id": "end-012",
+      "name": "Aridity Nullifier",
+      "price": 4200,
+      "mass": 5.0,
+      "description": "A mechanical core that absorbs all ambient heat to trigger immediate condensation.",
+      "image_prompt": "Pixel art of a metallic sphere covered in frost, electric-yellow sparks, storm-gray background, no text.",
+      "category": "Drought Endings"
+    },
+    {
+      "item_id": "vial-013",
+      "name": "Thunderhead Marrow",
+      "price": 2500,
+      "mass": 2.5,
+      "description": "The dense, vibrating core of a cumulonimbus cloud. Extremely volatile.",
+      "image_prompt": "Magenta pixel art of a pulsing dark cloud core inside a reinforced cage, electric-yellow bolts, no text."
+    },
+    {
+      "item_id": "fog-014",
+      "name": "Ghost-Frost Vapor",
+      "price": 1100,
+      "mass": 0.1,
+      "description": "A mist that freezes only the shadows it touches. Used in high-end security.",
+      "image_prompt": "Storm-gray and celadon pixel art of a thin, wispy vapor trailing across a dark floor, no text.",
+      "category": "Unfinished Fogs"
+    },
+    {
+      "item_id": "reg-015",
+      "name": "Cyclonic Stabilizer",
+      "price": 6800,
+      "mass": 12.0,
+      "description": "A heavy-duty gyro-stabilizer designed to keep delivery vessels upright in a Category 5.",
+      "image_prompt": "Electric-yellow and storm-gray pixel art of a spinning mechanical gyroscope with magenta lights, no text.",
+      "category": "Barometric Regulators"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "night-market-unfinished-weather-v1",
+    "world_wardrobe_brief": "Characters in the Night Market wear heavy, weather-resistant industrial attire designed for high-pressure environments and static-heavy meteorological crafting. Silhouettes are slim and vertical, dominated by storm-gray and celadon with high-visibility electric accents indicating professional rank.",
+    "forbidden_aesthetics": [
+      "natural sunlight colors",
+      "beige",
+      "logos",
+      "text",
+      "isometric perspective",
+      "denim",
+      "floral patterns",
+      "casual streetwear",
+      "fantasy plate armor"
+    ],
+    "palette_families": [
+      {
+        "name": "Storm-Industrial",
+        "dominant": "#2f353b",
+        "accent": "#729b92",
+        "trim": "#1a1d21",
+        "material": "wet charcoal stone"
+      },
+      {
+        "name": "Courier-High-Vis",
+        "dominant": "#2f353b",
+        "accent": "#ffef00",
+        "trim": "#729b92",
+        "material": "electric kite silk"
+      },
+      {
+        "name": "Warden-Warning",
+        "dominant": "#1a1d21",
+        "accent": "#ff00ff",
+        "trim": "#729b92",
+        "material": "magenta warning thread"
+      },
+      {
+        "name": "Merchant-Brass",
+        "dominant": "#729b92",
+        "accent": "#ffef00",
+        "trim": "#2f353b",
+        "material": "celadon-coated brass"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "weather_merchant",
+        "role_keywords": [
+          "broker",
+          "merchant",
+          "trader"
+        ],
+        "attire": [
+          "celadon-coated brass breastplates",
+          "heavy charcoal overcoats",
+          "silver condensation glass monocles"
+        ],
+        "props": [
+          "barometric anchors",
+          "bottled monsoons",
+          "isobaric compasses"
+        ],
+        "palette_notes": "Heavy use of celadon and brass highlights.",
+        "silhouette_notes": "Bulky upper body with slim legs.",
+        "avoid": [
+          "backpacks",
+          "bright yellow"
+        ]
+      },
+      {
+        "rule_id": "atmospheric_courier",
+        "role_keywords": [
+          "courier",
+          "runner",
+          "pilot"
+        ],
+        "attire": [
+          "electric-yellow silk jumpsuits",
+          "pneumatic-resistant goggles",
+          "magenta thread stitching"
+        ],
+        "props": [
+          "high-pressure canisters",
+          "sorting bins",
+          "cyclonic stabilizers"
+        ],
+        "palette_notes": "Dominant electric-yellow for high visibility.",
+        "silhouette_notes": "Streamlined, tight-fitting, aerodynamic.",
+        "avoid": [
+          "heavy coats",
+          "dangling scarves"
+        ]
+      },
+      {
+        "rule_id": "cloud_weaver",
+        "role_keywords": [
+          "weaver",
+          "mechanic",
+          "stitcher"
+        ],
+        "attire": [
+          "magenta-threaded aprons",
+          "static-discharge gloves",
+          "oxidized copper tool belts"
+        ],
+        "props": [
+          "vapor-thread spools",
+          "static dischargers",
+          "weather-harps"
+        ],
+        "palette_notes": "Magenta accents on dark gray base.",
+        "silhouette_notes": "Asymmetrical with many small tool attachments.",
+        "avoid": [
+          "loose silk",
+          "yellow accents"
+        ]
+      },
+      {
+        "rule_id": "market_archivist",
+        "role_keywords": [
+          "archivist",
+          "alchemist",
+          "sentry"
+        ],
+        "attire": [
+          "silver-glass layered robes",
+          "heavy iron containment boots",
+          "storm-gray hoods"
+        ],
+        "props": [
+          "frost-patterned vials",
+          "telescopes",
+          "aridity nullifiers"
+        ],
+        "palette_notes": "Muted storm-gray and silver highlights.",
+        "silhouette_notes": "Tall, shrouded, rectangular.",
+        "avoid": [
+          "bright colors",
+          "exposed skin"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "market_denizen",
+      "role_keywords": [
+        "citizen",
+        "visitor",
+        "staff"
+      ],
+      "attire": [
+        "storm-gray utility tunics",
+        "celadon scarves",
+        "charcoal trousers"
+      ],
+      "props": [
+        "small vapor jars",
+        "brass kettles"
+      ],
+      "palette_notes": "Balanced storm-gray and celadon.",
+      "silhouette_notes": "Standard 6-head slim silhouette.",
+      "avoid": [
+        "high-contrast magenta",
+        "high-contrast yellow"
+      ]
+    },
+    "visual_consistency_rules": [
+      "1px selective dark-gray outlines only.",
+      "No text or symbols on clothing; use color blocks for identification.",
+      "High-contrast flicker pixels for electric/magenta elements.",
+      "Strict top-down 90-degree perspective; no side-facing feet.",
+      "Materials must look wet or metallic via high-contrast highlights."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "night-market-unfinished-weather",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90 degrees vertical",
+      "scale_rule": "32px per meter, pixel-perfect grid alignment"
+    },
+    "palette": {
+      "dominant": "#2f353b",
+      "secondary": "#729b92",
+      "accent": "#ffef00",
+      "shadow": "#1a1d21",
+      "highlight": "#ff00ff"
+    },
+    "materials": [
+      "wet charcoal stone",
+      "celadon-coated brass",
+      "electric kite silk",
+      "silver condensation glass",
+      "magenta warning thread",
+      "oxidized copper piping"
+    ],
+    "lighting": "Global ambient storm-gray with high-contrast point-source flickers from electric-yellow conduits and magenta warning beacons.",
+    "architecture": [
+      "modular market stalls with retractable silk awnings",
+      "exposed barometric pipe networks",
+      "sunken drainage sluices",
+      "heavy iron containment vaults"
+    ],
+    "terrain": {
+      "ground": "dark wet charcoal tiles with silver condensation sheen",
+      "path": "raised celadon metal grating",
+      "edge": "deep shadow gutters with magenta safety threading"
+    },
+    "sprite_language": {
+      "body_proportion": "6-head tall slim silhouettes",
+      "outline": "1px selective dark-gray coloring",
+      "role_readability": "high-contrast accent color on gear (yellow for couriers, magenta for wardens)"
+    },
+    "world_prompt_prefix": "top-down pixel art, Night Market of Unfinished Weather, storm-gray and celadon palette, wet charcoal textures, meteorological industrial machinery, no text.",
+    "sprite_prompt_prefix": "top-down pixel art character, meteorological trader, wearing electric-yellow silk and silver instruments, 32-bit style, no text.",
+    "forbidden_visuals": [
+      "text",
+      "labels",
+      "logos",
+      "photorealism",
+      "isometric perspective",
+      "diorama borders",
+      "ui elements in-world",
+      "beige",
+      "natural sunlight"
+    ],
+    "canon_hash": "d1b7e39e66c85c47"
+  }
+}

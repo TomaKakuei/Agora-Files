@@ -1,0 +1,1714 @@
+{
+  "world_name": "The Shoreline Tribunal",
+  "world_id": "shoreline_tribunal_001",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "coastal-judicial-archipelago",
+    "tone": "bureaucratic-surrealism",
+    "visual_direction": "brutalist-architecture-meets-tide-pools",
+    "currency_code": "SHL",
+    "currency_symbol": "§",
+    "currency_minor_unit": "pebble",
+    "currency_name": "Shoreline Credits",
+    "domain_label": "jurisdiction.shore",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "inst_court",
+        "name": "The High Tribunal of Tides",
+        "mandate": "Adjudicate property disputes via object confiscation",
+        "decision_rule": "Majority vote based on object aesthetic value",
+        "enforced_by": "Tidal Wardens",
+        "visible_output": "Physical shoreline expansion"
+      },
+      {
+        "institution_id": "inst_guild",
+        "name": "The Reclamation Guild",
+        "mandate": "Salvage and process confiscated debris",
+        "decision_rule": "Efficiency-first sorting",
+        "enforced_by": "Automated sorting cranes",
+        "visible_output": "Construction material supply"
+      },
+      {
+        "institution_id": "inst_council",
+        "name": "Neighborhood Planning Board",
+        "mandate": "Allocate land rights to districts",
+        "decision_rule": "Proximity to water access",
+        "enforced_by": "Zoning permits",
+        "visible_output": "District expansion maps"
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "state_shoreline_depth",
+        "label": "Shoreline Depth",
+        "initial_tension": "Low",
+        "changed_by": [
+          "The Reclamation Guild"
+        ],
+        "affects": [
+          "state_district_access"
+        ]
+      },
+      {
+        "state_id": "state_confiscation_rate",
+        "label": "Confiscation Rate",
+        "initial_tension": "High",
+        "changed_by": [
+          "The High Tribunal of Tides"
+        ],
+        "affects": [
+          "state_material_stockpile"
+        ]
+      },
+      {
+        "state_id": "state_material_stockpile",
+        "label": "Material Stockpile",
+        "initial_tension": "Medium",
+        "changed_by": [
+          "The Reclamation Guild"
+        ],
+        "affects": [
+          "state_shoreline_depth"
+        ]
+      },
+      {
+        "state_id": "state_district_access",
+        "label": "District Water Access",
+        "initial_tension": "High",
+        "changed_by": [
+          "Neighborhood Planning Board"
+        ],
+        "affects": [
+          "state_confiscation_rate"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "state_confiscation_rate",
+        "trigger": "High volume of confiscated items",
+        "target_state": "state_material_stockpile",
+        "effect": "Increases available construction debris",
+        "delay": "24 hours"
+      },
+      {
+        "source_state": "state_material_stockpile",
+        "trigger": "Guild construction projects",
+        "target_state": "state_shoreline_depth",
+        "effect": "Extends the physical landmass into the sea",
+        "delay": "48 hours"
+      },
+      {
+        "source_state": "state_shoreline_depth",
+        "trigger": "New land formation",
+        "target_state": "state_district_access",
+        "effect": "Shifts which neighborhoods touch the water",
+        "delay": "12 hours"
+      },
+      {
+        "source_state": "state_district_access",
+        "trigger": "Loss of water access",
+        "target_state": "state_confiscation_rate",
+        "effect": "Triggers aggressive litigation to reclaim land",
+        "delay": "6 hours"
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "group_merchants",
+        "name": "Waterfront Merchants",
+        "goal": "Maintain direct sea access for trade",
+        "leverage": "Economic bribery of the Tribunal",
+        "dependency": "state_district_access"
+      },
+      {
+        "group_id": "group_scavengers",
+        "name": "Shoreline Scavengers",
+        "goal": "Maximize debris collection for profit",
+        "leverage": "Sabotage of construction cranes",
+        "dependency": "state_material_stockpile"
+      },
+      {
+        "group_id": "group_bureaucrats",
+        "name": "Tribunal Clerks",
+        "goal": "Standardize the confiscation process",
+        "leverage": "Control over legal filing queues",
+        "dependency": "state_confiscation_rate"
+      }
+    ]
+  },
+  "genre": "Bureaucratic Surrealism",
+  "premise": "An island courthouse rebuilds its shoreline from confiscated objects, changing which neighborhoods can reach the sea.",
+  "simulation_objective": "Balance district access through strategic litigation and debris management.",
+  "agent_count_target": 12,
+  "player_count_target": 4,
+  "wall_color_theme": "monolithic_concrete_blocks",
+  "economy_focus": "Material-based land reclamation",
+  "exploration_focus": "Shifting urban geography",
+  "conflict_tone": "Legalistic and territorial",
+  "visual_style": "Brutalist architecture with organic debris textures",
+  "rooms": [
+    {
+      "name": "The Tribunal Chamber",
+      "biome": "Coastal Brutalist",
+      "purpose": "Adjudicate property disputes; changes state_confiscation_rate",
+      "decor_tags": [
+        "rusted_iron",
+        "geometric_staircases"
+      ],
+      "activity_tags": [
+        "legal_judgment",
+        "confiscation_decree"
+      ],
+      "flux_floor_prompt": "16-bit pixel art of polished dark grey concrete floor with inlaid rusted iron grid lines",
+      "room_scene_prompt": "top-down view of a brutalist courtroom with monolithic concrete walls, a raised judge podium, no text, no labels, sharp shadows, harsh overhead lighting, industrial aesthetic",
+      "width_tiles": 8,
+      "height_tiles": 8,
+      "ambient_palette": "focused_blue",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "tribunal_gavel_pedestal",
+          "label": "Gavel Pedestal",
+          "description": "A heavy concrete block with a rusted iron mallet resting on top",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Sorting Crane Yard",
+      "biome": "Industrial Coastal",
+      "purpose": "Process confiscated debris; changes state_material_stockpile",
+      "decor_tags": [
+        "exposed_rebar",
+        "wet_sand"
+      ],
+      "activity_tags": [
+        "salvage",
+        "sorting"
+      ],
+      "flux_floor_prompt": "16-bit pixel art of cracked concrete slabs with patches of wet sand and scattered debris",
+      "room_scene_prompt": "top-down view of an industrial sorting yard, exposed rebar grids, piles of salvaged scrap metal, no text, no labels, harsh sunlight, sharp shadows",
+      "width_tiles": 10,
+      "height_tiles": 10,
+      "ambient_palette": "dusty_brown",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "sorting_crane_arm",
+          "label": "Sorting Crane",
+          "description": "A large, rusted iron mechanical claw suspended over a pile of debris",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Zoning Permit Office",
+      "biome": "Bureaucratic Brutalist",
+      "purpose": "Allocate land rights; changes state_district_access",
+      "decor_tags": [
+        "modular_filing_cabinets",
+        "translucent_resin"
+      ],
+      "activity_tags": [
+        "zoning",
+        "permitting"
+      ],
+      "flux_floor_prompt": "16-bit pixel art of clean, seamless grey concrete floor",
+      "room_scene_prompt": "top-down view of a cramped office filled with modular filing cabinets, translucent resin desk, no text, no labels, harsh overhead lighting",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "clear_day",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "filing_tower",
+          "label": "Filing Tower",
+          "description": "A stack of modular metal filing cabinets reaching the ceiling",
+          "anchor": "south_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Merchant Trade Dock",
+      "biome": "Waterfront Commercial",
+      "purpose": "Maintain sea access for trade",
+      "decor_tags": [
+        "bleached_driftwood",
+        "rusted_iron"
+      ],
+      "activity_tags": [
+        "trading",
+        "bribery"
+      ],
+      "flux_floor_prompt": "16-bit pixel art of wet concrete dock edge with tide pools",
+      "room_scene_prompt": "top-down view of a merchant dock, bleached driftwood crates, rusted iron scales, no text, no labels, harsh sunlight, sharp shadows",
+      "width_tiles": 7,
+      "height_tiles": 7,
+      "ambient_palette": "clear_day",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "trade_scale",
+          "label": "Merchant Scale",
+          "description": "A heavy iron scale used for weighing trade goods",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Scavenger Salvage Pit",
+      "biome": "Debris Field",
+      "purpose": "Maximize debris collection",
+      "decor_tags": [
+        "rusted_iron",
+        "wet_sand"
+      ],
+      "activity_tags": [
+        "scavenging",
+        "sabotage"
+      ],
+      "flux_floor_prompt": "16-bit pixel art of jagged reclaimed debris and wet sand",
+      "room_scene_prompt": "top-down view of a salvage pit, piles of rusted iron scrap, jagged debris barriers, no text, no labels, harsh sunlight",
+      "width_tiles": 8,
+      "height_tiles": 8,
+      "ambient_palette": "ember_orange",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "scrap_pile",
+          "label": "Scrap Heap",
+          "description": "A large, disorganized mound of rusted iron and concrete chunks",
+          "anchor": "north_west",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Clerk Archive Vault",
+      "biome": "Bureaucratic Storage",
+      "purpose": "Standardize confiscation records",
+      "decor_tags": [
+        "modular_filing_cabinets",
+        "translucent_resin"
+      ],
+      "activity_tags": [
+        "archiving",
+        "filing"
+      ],
+      "flux_floor_prompt": "16-bit pixel art of dark grey concrete with subtle resin inlay",
+      "room_scene_prompt": "top-down view of an archive vault, rows of modular filing cabinets, translucent resin desk, no text, no labels, harsh overhead lighting",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "archive_desk",
+          "label": "Clerk Desk",
+          "description": "A minimalist desk made of translucent resin and concrete",
+          "anchor": "south_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Elara the Silt-Sifter",
+      "role_name": "Lead Scavenger",
+      "activity": "Manipulates state_material_stockpile by hoarding rare debris to force scarcity.",
+      "home_base": "Scavenger Salvage Pit",
+      "arc_goal": "Influence state_shoreline_depth to create new salvage zones for the Shoreline Scavengers.",
+      "inventory": [
+        {
+          "name": "rusted_tide_hook",
+          "description": "A jagged iron hook used for pulling debris from deep mud.",
+          "quantity": 1
+        },
+        {
+          "name": "brine_soaked_rope",
+          "description": "Heavy hemp rope, stiffened by salt and age.",
+          "quantity": 3
+        },
+        {
+          "name": "barnacle_scraper",
+          "description": "A flat, sharpened blade for cleaning salvage.",
+          "quantity": 1
+        },
+        {
+          "name": "salvage_logbook",
+          "description": "A water-damaged ledger tracking daily hauls.",
+          "quantity": 1
+        },
+        {
+          "name": "waterproof_tarp",
+          "description": "Oil-treated canvas for protecting dry goods.",
+          "quantity": 2
+        },
+        {
+          "name": "heavy_duty_gloves",
+          "description": "Thick leather gloves reinforced with metal studs.",
+          "quantity": 1
+        },
+        {
+          "name": "copper_wire_coil",
+          "description": "Salvaged electrical wiring, highly conductive.",
+          "quantity": 5
+        },
+        {
+          "name": "dried_kelp_ration",
+          "description": "Salty, chewy sustenance for long shifts.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Salvage Pit Workbench",
+          "asset_type": "Workstation",
+          "description": "A sturdy table bolted to the bedrock.",
+          "story_use": "Used to dismantle confiscated items for parts."
+        },
+        {
+          "asset_name": "Sorting Crane Override Switch",
+          "asset_type": "Mechanism",
+          "description": "A hidden lever near the crane base.",
+          "story_use": "Allows manual control of the Reclamation Guild cranes."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_tide_patterns",
+          "topic": "Tidal Cycle Patterns",
+          "summary": "Predicts when the tide will expose the most valuable debris.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_crane_weakness",
+          "topic": "Guild Crane Weak Points",
+          "summary": "Identifies the specific hydraulic seals that fail under pressure.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen the Zoning Architect",
+      "role_name": "Zoning Permit Officer",
+      "activity": "Manipulates state_district_access by issuing permits to restrict water access.",
+      "home_base": "Zoning Permit Office",
+      "arc_goal": "Control state_confiscation_rate to favor specific districts over others.",
+      "inventory": [
+        {
+          "name": "official_seal_stamp",
+          "description": "A heavy brass stamp with the Tribunal crest.",
+          "quantity": 1
+        },
+        {
+          "name": "zoning_map_scroll",
+          "description": "A massive, annotated map of the shoreline districts.",
+          "quantity": 1
+        },
+        {
+          "name": "ink_well_black",
+          "description": "Permanent, indelible ink for legal documents.",
+          "quantity": 2
+        },
+        {
+          "name": "red_correction_pen",
+          "description": "Used to mark permit denials.",
+          "quantity": 3
+        },
+        {
+          "name": "permit_application_stack",
+          "description": "A pile of pending requests from desperate citizens.",
+          "quantity": 50
+        },
+        {
+          "name": "brass_ruler",
+          "description": "Precision tool for measuring district boundaries.",
+          "quantity": 1
+        },
+        {
+          "name": "surveyor_compass",
+          "description": "Used to align new construction with the tide.",
+          "quantity": 1
+        },
+        {
+          "name": "wax_seal_kit",
+          "description": "Red wax and a heating candle for securing documents.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Zoning Permit Desk",
+          "asset_type": "Furniture",
+          "description": "A high-walled desk that separates the officer from the public.",
+          "story_use": "The primary location for processing permit bribes."
+        },
+        {
+          "asset_name": "District Boundary Marker",
+          "asset_type": "Structure",
+          "description": "A stone pillar marking the edge of a jurisdiction.",
+          "story_use": "Can be moved to legally shift district water access."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_land_laws",
+          "topic": "Land Allocation Laws",
+          "summary": "Deep understanding of the loopholes in property rights.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_bribe_thresholds",
+          "topic": "Merchant Bribery Thresholds",
+          "summary": "Knows exactly how much to charge for a prime waterfront permit.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Vane the Tide-Merchant",
+      "role_name": "Waterfront Trade Liaison",
+      "activity": "Manipulates state_confiscation_rate via bribery to protect trade routes.",
+      "home_base": "Merchant Trade Dock",
+      "arc_goal": "Protect group_merchants dependency on state_district_access.",
+      "inventory": [
+        {
+          "name": "ledger_of_debts",
+          "description": "A book tracking who owes the merchant favors.",
+          "quantity": 1
+        },
+        {
+          "name": "silk_pouch_coins",
+          "description": "A heavy pouch of currency for quick transactions.",
+          "quantity": 1
+        },
+        {
+          "name": "ornate_abacus",
+          "description": "A complex counting tool made of polished bone.",
+          "quantity": 1
+        },
+        {
+          "name": "trade_manifest_scroll",
+          "description": "A list of incoming goods from the sea.",
+          "quantity": 4
+        },
+        {
+          "name": "silver_weighing_scale",
+          "description": "Used to verify the value of precious metals.",
+          "quantity": 1
+        },
+        {
+          "name": "velvet_cloth_swatch",
+          "description": "A sample of luxury goods for high-end clients.",
+          "quantity": 10
+        },
+        {
+          "name": "imported_spice_tin",
+          "description": "Rare spices used as currency in the Tribunal.",
+          "quantity": 3
+        },
+        {
+          "name": "wax_sealed_bribe",
+          "description": "A discreet envelope containing payment for officials.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Merchant Trade Stall",
+          "asset_type": "Structure",
+          "description": "A semi-permanent booth on the docks.",
+          "story_use": "The hub for black market trade and information exchange."
+        },
+        {
+          "asset_name": "Private Docking Pier",
+          "asset_type": "Infrastructure",
+          "description": "A reinforced pier with restricted access.",
+          "story_use": "Allows for the smuggling of goods past the Tribunal."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_trade_routes",
+          "topic": "Trade Route Viability",
+          "summary": "Knows which sea lanes are currently safe from confiscation.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_tribunal_corruption",
+          "topic": "Tribunal Corruption Index",
+          "summary": "A mental map of which officials are susceptible to bribery.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Soren the Tribunal Clerk",
+      "role_name": "Archive Vault Keeper",
+      "activity": "Manipulates state_confiscation_rate by hiding evidence in the archives.",
+      "home_base": "Clerk Archive Vault",
+      "arc_goal": "Mentor group_bureaucrats in legal obfuscation techniques.",
+      "inventory": [
+        {
+          "name": "archival_quill",
+          "description": "A fine-tipped quill for precise record alteration.",
+          "quantity": 2
+        },
+        {
+          "name": "dust_mask",
+          "description": "A cloth mask to protect against archive mold.",
+          "quantity": 1
+        },
+        {
+          "name": "heavy_iron_key",
+          "description": "Opens the restricted evidence lockers.",
+          "quantity": 1
+        },
+        {
+          "name": "parchment_binding_tape",
+          "description": "Used to reseal tampered documents.",
+          "quantity": 5
+        },
+        {
+          "name": "magnifying_lens",
+          "description": "Used to inspect fine print on legal seals.",
+          "quantity": 1
+        },
+        {
+          "name": "ink_blotter",
+          "description": "Used to dry ink quickly on forged documents.",
+          "quantity": 1
+        },
+        {
+          "name": "evidence_tag_bundle",
+          "description": "Blank tags for mislabeling confiscated items.",
+          "quantity": 20
+        },
+        {
+          "name": "secret_ledger_key",
+          "description": "A small key to a hidden compartment in the vault.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Archive Filing Cabinet",
+          "asset_type": "Furniture",
+          "description": "A massive, locked cabinet filled with historical records.",
+          "story_use": "Used to hide or destroy evidence of Tribunal overreach."
+        },
+        {
+          "asset_name": "Tribunal Evidence Locker",
+          "asset_type": "Storage",
+          "description": "A secure, reinforced box for confiscated goods.",
+          "story_use": "The primary location for storing items before they are processed."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_confiscation_history",
+          "topic": "Confiscation History",
+          "summary": "Knows the precedent for every item seized in the last decade.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_filing_protocols",
+          "topic": "Clerk Filing Protocols",
+          "summary": "Understands the bureaucracy well enough to bypass it entirely.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Jorin the Crane-Wrench",
+      "role_name": "Guild Maintenance Lead",
+      "activity": "Manipulates state_material_stockpile by sabotaging sorting cranes to slow down processing.",
+      "home_base": "Sorting Crane Yard",
+      "arc_goal": "To force the Reclamation Guild to hire him as a consultant by creating artificial maintenance backlogs.",
+      "inventory": [
+        {
+          "name": "rusted_spanner_09",
+          "description": "A heavy iron wrench stained with salt and hydraulic fluid.",
+          "quantity": 1
+        },
+        {
+          "name": "crane_oil_vial_04",
+          "description": "A small glass vial containing high-viscosity lubricant for crane gears.",
+          "quantity": 3
+        },
+        {
+          "name": "scrap_metal_shard_02",
+          "description": "A jagged piece of hull plating used for quick, dirty repairs.",
+          "quantity": 5
+        },
+        {
+          "name": "grease_rag_01",
+          "description": "A filthy cloth soaked in industrial solvents.",
+          "quantity": 2
+        },
+        {
+          "name": "blueprint_fragment_07",
+          "description": "A torn schematic showing the internal wiring of the sorting cranes.",
+          "quantity": 1
+        },
+        {
+          "name": "locking_pin_03",
+          "description": "A heavy steel pin used to jam the crane's rotation mechanism.",
+          "quantity": 4
+        },
+        {
+          "name": "copper_wire_coil_01",
+          "description": "Spool of conductive wire salvaged from the sorting floor.",
+          "quantity": 2
+        },
+        {
+          "name": "safety_goggles_01",
+          "description": "Cracked protective eyewear with salt-etched lenses.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Crane Control Override",
+          "asset_type": "Mechanism",
+          "description": "A hidden switch installed in the crane housing.",
+          "story_use": "Allows the user to halt sorting operations remotely."
+        },
+        {
+          "asset_name": "Maintenance Logbook",
+          "asset_type": "Document",
+          "description": "A ledger tracking fake repairs and phantom parts.",
+          "story_use": "Used to embezzle funds from the Reclamation Guild."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_crane_weakness",
+          "topic": "Sorting Crane Vulnerabilities",
+          "summary": "The automated cranes fail if the hydraulic pressure is modulated by 5%.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_guild_schedule",
+          "topic": "Guild Processing Cycles",
+          "summary": "The Guild processes the highest volume of debris on Tuesday mornings.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Mira the Tide-Watcher",
+      "role_name": "Tribunal Bailiff",
+      "activity": "Manipulates state_confiscation_rate by selectively enforcing seizure orders.",
+      "home_base": "The Tribunal Chamber",
+      "arc_goal": "To climb the ranks of the High Tribunal by proving she can seize assets from the most powerful merchants.",
+      "inventory": [
+        {
+          "name": "tribunal_gavel_02",
+          "description": "A ceremonial gavel made of driftwood and brass.",
+          "quantity": 1
+        },
+        {
+          "name": "seizure_seal_05",
+          "description": "A wax stamp used to mark confiscated property.",
+          "quantity": 10
+        },
+        {
+          "name": "tide_gauge_02",
+          "description": "A portable device for measuring local water levels.",
+          "quantity": 1
+        },
+        {
+          "name": "evidence_tag_09",
+          "description": "A bundle of numbered tags for cataloging seized goods.",
+          "quantity": 20
+        },
+        {
+          "name": "ledger_of_seizures",
+          "description": "A small notebook tracking daily confiscation quotas.",
+          "quantity": 1
+        },
+        {
+          "name": "warden_whistle_01",
+          "description": "A shrill whistle used to summon Tidal Wardens.",
+          "quantity": 1
+        },
+        {
+          "name": "ink_well_03",
+          "description": "A spill-proof ink container for field documentation.",
+          "quantity": 1
+        },
+        {
+          "name": "parchment_roll_04",
+          "description": "Official Tribunal stationary for issuing notices.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Bailiff's Podium",
+          "asset_type": "Furniture",
+          "description": "A raised platform in the chamber for reading verdicts.",
+          "story_use": "Provides a vantage point to observe merchant bribery attempts."
+        },
+        {
+          "asset_name": "Confiscation Warrant",
+          "asset_type": "Document",
+          "description": "A legal order signed by the High Tribunal.",
+          "story_use": "Grants the authority to seize any item on the shoreline."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_tribunal_bias",
+          "topic": "Tribunal Decision Patterns",
+          "summary": "The Tribunal favors aesthetic value over utility in 70% of cases.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_merchant_bribes",
+          "topic": "Bribery Methods",
+          "summary": "Merchants often hide bribes inside hollowed-out debris bundles.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Bram the Permit-Broker",
+      "role_name": "Zoning Office Fixer",
+      "activity": "Manipulates state_district_access by selling forged zoning permits.",
+      "home_base": "Zoning Permit Office",
+      "arc_goal": "To accumulate enough wealth to buy a private pier outside the Tribunal's jurisdiction.",
+      "inventory": [
+        {
+          "name": "permit_zone_b",
+          "description": "A forged permit for restricted water access.",
+          "quantity": 3
+        },
+        {
+          "name": "clerk_stamp_02",
+          "description": "A counterfeit stamp used to validate fake permits.",
+          "quantity": 1
+        },
+        {
+          "name": "bribe_envelope_02",
+          "description": "An envelope containing untraceable currency.",
+          "quantity": 5
+        },
+        {
+          "name": "zoning_map_02",
+          "description": "A map showing secret, unlisted shoreline access points.",
+          "quantity": 1
+        },
+        {
+          "name": "wax_seal_kit_01",
+          "description": "Tools for creating official-looking wax seals.",
+          "quantity": 1
+        },
+        {
+          "name": "ink_remover_01",
+          "description": "A chemical solution for erasing ink from official documents.",
+          "quantity": 2
+        },
+        {
+          "name": "ledger_of_clients",
+          "description": "A list of merchants who have paid for illegal access.",
+          "quantity": 1
+        },
+        {
+          "name": "forgery_pen_01",
+          "description": "A fine-tipped quill used for mimicking official signatures.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Safe",
+          "asset_type": "Storage",
+          "description": "A wall-mounted safe behind a zoning map.",
+          "story_use": "Stores the illicit funds collected from permit sales."
+        },
+        {
+          "asset_name": "Permit Printer",
+          "asset_type": "Tool",
+          "description": "An old mechanical press for printing permit forms.",
+          "story_use": "Used to mass-produce forged zoning documents."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_zoning_loopholes",
+          "topic": "Zoning Law Loopholes",
+          "summary": "District boundaries are defined by tide lines, which shift daily.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_merchant_needs",
+          "topic": "Merchant Trade Routes",
+          "summary": "Merchants are desperate for access to the northern docks.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Hana the Archive-Rat",
+      "role_name": "Vault Archivist",
+      "activity": "Manipulates state_confiscation_rate by altering historical property records.",
+      "home_base": "Clerk Archive Vault",
+      "arc_goal": "To erase the history of her family's land seizure by the Tribunal.",
+      "inventory": [
+        {
+          "name": "clerk_stamp_03",
+          "description": "A stamp used to mark documents as 'Archived'.",
+          "quantity": 1
+        },
+        {
+          "name": "heirloom_locket_02",
+          "description": "A locket containing a map to her family's lost property.",
+          "quantity": 1
+        },
+        {
+          "name": "archive_key_01",
+          "description": "A heavy iron key to the restricted vault section.",
+          "quantity": 1
+        },
+        {
+          "name": "dust_mask_01",
+          "description": "A cloth mask for working in the dusty archives.",
+          "quantity": 1
+        },
+        {
+          "name": "faded_deed_01",
+          "description": "An old land deed proving her family's ownership.",
+          "quantity": 1
+        },
+        {
+          "name": "ink_pot_04",
+          "description": "A pot of permanent black ink for record alteration.",
+          "quantity": 2
+        },
+        {
+          "name": "magnifying_glass_01",
+          "description": "A lens for reading tiny, faded handwriting.",
+          "quantity": 1
+        },
+        {
+          "name": "scrap_paper_bundle",
+          "description": "A bundle of blank paper for forging records.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Archive Filing Cabinet",
+          "asset_type": "Storage",
+          "description": "A massive wooden cabinet filled with property records.",
+          "story_use": "Hides the altered deeds that change land ownership."
+        },
+        {
+          "asset_name": "Vault Desk",
+          "asset_type": "Furniture",
+          "description": "A sturdy desk used for processing archive requests.",
+          "story_use": "Provides a workspace to forge documents in secret."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_land_history",
+          "topic": "Shoreline Land History",
+          "summary": "Most current land claims are based on falsified records from 20 years ago.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "k_tribunal_secrets",
+          "topic": "Tribunal Secrets",
+          "summary": "The Tribunal keeps a secret ledger of all confiscated items.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelith the Tide-Weaver",
+      "role_name": "Hydraulic Engineer",
+      "activity": "Manipulates state_shoreline_depth by calibrating water flow to erode or build land",
+      "home_base": "Sorting Crane Yard",
+      "arc_goal": "Manipulate state_shoreline_depth to force the Tribunal to redraw district lines",
+      "inventory": [
+        {
+          "name": "brass_tide_caliper",
+          "description": "Precision tool for measuring sea-level rise",
+          "quantity": 1
+        },
+        {
+          "name": "sediment_density_chart",
+          "description": "Hand-drawn map of seabed composition",
+          "quantity": 3
+        },
+        {
+          "name": "crane_override_key",
+          "description": "Master key for Guild sorting machinery",
+          "quantity": 1
+        },
+        {
+          "name": "tide_gauge_calibration_weight",
+          "description": "Lead weight for stabilizing water sensors",
+          "quantity": 5
+        },
+        {
+          "name": "blueprint_tube_copper",
+          "description": "Contains schematics for shoreline barriers",
+          "quantity": 1
+        },
+        {
+          "name": "salvaged_gear_cog",
+          "description": "Heavy brass cog from a broken crane",
+          "quantity": 12
+        },
+        {
+          "name": "oil_can_viscous",
+          "description": "Lubricant for hydraulic pistons",
+          "quantity": 2
+        },
+        {
+          "name": "tide_prediction_log",
+          "description": "Personal notes on lunar cycle impacts",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hydraulic Sluice Gate",
+          "asset_type": "Infrastructure",
+          "description": "A massive iron gate controlling water flow",
+          "story_use": "Used to redirect currents to alter shoreline depth"
+        },
+        {
+          "asset_name": "Tide-Weaver Workshop",
+          "asset_type": "Workspace",
+          "description": "A cluttered shed filled with water-pressure gauges",
+          "story_use": "Base of operations for manipulating land formation"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "tide_flow_patterns",
+          "topic": "Hydrodynamics",
+          "summary": "Understanding how water flow dictates land accretion",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "crane_weak_points",
+          "topic": "Guild Machinery",
+          "summary": "Knowing exactly where to jam the sorting cranes",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Silas the Seal-Breaker",
+      "role_name": "Bureaucratic Forger",
+      "activity": "Manipulates state_confiscation_rate by forging official seizure stamps",
+      "home_base": "Clerk Archive Vault",
+      "arc_goal": "Manipulate state_confiscation_rate to protect specific merchant assets",
+      "inventory": [
+        {
+          "name": "clerk_stamp_forged",
+          "description": "Replica of the High Tribunal seal",
+          "quantity": 1
+        },
+        {
+          "name": "ink_well_indelible",
+          "description": "Deep purple ink for official documents",
+          "quantity": 2
+        },
+        {
+          "name": "parchment_aged_vellum",
+          "description": "High-quality paper for legal forgeries",
+          "quantity": 10
+        },
+        {
+          "name": "wax_seal_kit",
+          "description": "Red wax and signet ring for sealing orders",
+          "quantity": 1
+        },
+        {
+          "name": "archive_access_pass",
+          "description": "Stolen credential for vault entry",
+          "quantity": 1
+        },
+        {
+          "name": "bribe_envelope_empty",
+          "description": "Plain envelopes for discreet payments",
+          "quantity": 20
+        },
+        {
+          "name": "ledger_fragment_hidden",
+          "description": "Evidence of past confiscation errors",
+          "quantity": 1
+        },
+        {
+          "name": "quill_silver_nib",
+          "description": "Fine-tipped pen for precise forgery",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Archive Nook",
+          "asset_type": "Secret Room",
+          "description": "A hollowed-out section behind the main shelves",
+          "story_use": "Used to store forged documents away from prying eyes"
+        },
+        {
+          "asset_name": "Forgery Desk",
+          "asset_type": "Furniture",
+          "description": "A portable desk with hidden compartments",
+          "story_use": "Used to create fake seizure orders on the fly"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "tribunal_filing_system",
+          "topic": "Legal Procedures",
+          "summary": "Mastery of the filing queues to hide documents",
+          "confidence": 10
+        },
+        {
+          "knowledge_id": "clerk_shift_rotations",
+          "topic": "Bureaucracy",
+          "summary": "Knowing when the archives are least guarded",
+          "confidence": 7
+        }
+      ]
+    },
+    {
+      "display_name": "Mara the Mud-Lark",
+      "role_name": "Scavenger Scout",
+      "activity": "Manipulates state_material_stockpile by identifying high-value debris before the Guild",
+      "home_base": "Scavenger Salvage Pit",
+      "arc_goal": "Manipulate state_material_stockpile to create artificial scarcity",
+      "inventory": [
+        {
+          "name": "scavenger_hook_reinforced",
+          "description": "Steel hook for pulling debris from mud",
+          "quantity": 1
+        },
+        {
+          "name": "mud_resistant_boots",
+          "description": "Heavy leather boots for shoreline walking",
+          "quantity": 1
+        },
+        {
+          "name": "debris_tracking_beads",
+          "description": "Used to mark locations of valuable finds",
+          "quantity": 50
+        },
+        {
+          "name": "salvage_pouch_leather",
+          "description": "Waterproof bag for small artifacts",
+          "quantity": 3
+        },
+        {
+          "name": "tide_chart_pocket",
+          "description": "Small map showing low tide windows",
+          "quantity": 1
+        },
+        {
+          "name": "flare_signal_smoke",
+          "description": "Used to mark debris for retrieval teams",
+          "quantity": 5
+        },
+        {
+          "name": "reclaimed_gear_pendant",
+          "description": "A lucky charm made from scrap metal",
+          "quantity": 1
+        },
+        {
+          "name": "rope_coiled_hemp",
+          "description": "Strong rope for hauling heavy debris",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Salvage Pit Cache",
+          "asset_type": "Storage",
+          "description": "A buried chest in the mud flats",
+          "story_use": "Used to hide high-value debris from the Guild"
+        },
+        {
+          "asset_name": "Scout Lookout",
+          "asset_type": "Observation Post",
+          "description": "A high vantage point overlooking the salvage yard",
+          "story_use": "Used to monitor Guild crane activity"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "debris_drift_patterns",
+          "topic": "Shoreline Geography",
+          "summary": "Predicting where valuable items wash up",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "guild_crane_schedules",
+          "topic": "Guild Operations",
+          "summary": "Knowing when the cranes are active in the pit",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Oren the Zoning-Spy",
+      "role_name": "Permit Auditor",
+      "activity": "Manipulates state_district_access by auditing zoning permits for errors",
+      "home_base": "Zoning Permit Office",
+      "arc_goal": "Manipulate state_district_access to force land redistribution",
+      "inventory": [
+        {
+          "name": "zoning_map_annotated",
+          "description": "Map showing illegal district expansions",
+          "quantity": 1
+        },
+        {
+          "name": "audit_ledger_book",
+          "description": "Record of permit discrepancies",
+          "quantity": 1
+        },
+        {
+          "name": "magnifying_lens_brass",
+          "description": "Tool for inspecting permit seals",
+          "quantity": 1
+        },
+        {
+          "name": "permit_zone_a_voided",
+          "description": "A cancelled permit for a prime location",
+          "quantity": 5
+        },
+        {
+          "name": "bribe_envelope_marked",
+          "description": "Evidence of merchant bribery",
+          "quantity": 2
+        },
+        {
+          "name": "official_ink_stamp_audit",
+          "description": "Stamp used to flag permits for review",
+          "quantity": 1
+        },
+        {
+          "name": "district_boundary_ruler",
+          "description": "Precision tool for measuring land claims",
+          "quantity": 1
+        },
+        {
+          "name": "witness_statement_form",
+          "description": "Blank forms for reporting zoning violations",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Audit Desk",
+          "asset_type": "Furniture",
+          "description": "A desk covered in stacks of permit applications",
+          "story_use": "Used to process and flag suspicious zoning permits"
+        },
+        {
+          "asset_name": "Evidence Locker",
+          "asset_type": "Storage",
+          "description": "A locked cabinet for storing illegal permits",
+          "story_use": "Used to hold leverage over other officials"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "zoning_law_loopholes",
+          "topic": "Legal Codes",
+          "summary": "Finding ways to invalidate existing land rights",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "merchant_bribery_trails",
+          "topic": "Corruption",
+          "summary": "Tracking the flow of money to the Tribunal",
+          "confidence": 8
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Litigation Grind",
+      "summary": "Players file and argue cases to influence the confiscation rate, directly impacting the material stockpile.",
+      "roles": [
+        "Tribunal Bailiff",
+        "Waterfront Trade Liaison",
+        "Bureaucratic Forger"
+      ],
+      "rooms": [
+        "The Tribunal Chamber",
+        "Clerk Archive Vault"
+      ],
+      "pressure": "High volume of cases increases the state_confiscation_rate, leading to more debris."
+    },
+    {
+      "label": "The Salvage Cycle",
+      "summary": "Scavengers and Guild members compete to process debris, affecting the material stockpile and shoreline depth.",
+      "roles": [
+        "Lead Scavenger",
+        "Guild Maintenance Lead",
+        "Scavenger Scout"
+      ],
+      "rooms": [
+        "Sorting Crane Yard",
+        "Scavenger Salvage Pit"
+      ],
+      "pressure": "Efficient sorting increases state_material_stockpile, which eventually extends the shoreline."
+    },
+    {
+      "label": "The Zoning War",
+      "summary": "Fixers and Officers manipulate land rights, shifting district access and triggering litigation.",
+      "roles": [
+        "Zoning Permit Officer",
+        "Zoning Office Fixer",
+        "Permit Auditor"
+      ],
+      "rooms": [
+        "Zoning Permit Office",
+        "Merchant Trade Dock"
+      ],
+      "pressure": "Changing district access triggers aggressive litigation to reclaim land."
+    }
+  ],
+  "player_entry_points": [
+    "A desperate scavenger arriving at the Sorting Crane Yard with a rare find.",
+    "A merchant seeking a permit at the Zoning Permit Office to save their dock.",
+    "A clerk starting their shift at the Clerk Archive Vault with a stack of backlogged files.",
+    "A fixer meeting a contact at the Merchant Trade Dock to discuss illegal zoning changes."
+  ],
+  "conflict_hooks": [
+    "The Tribunal has declared a moratorium on new land expansion, threatening the livelihood of all waterfront merchants.",
+    "A massive influx of confiscated debris has overwhelmed the Reclamation Guild, causing a backlog that halts all construction.",
+    "The Neighborhood Planning Board has secretly rezoned a prime salvage pit, sparking a turf war between scavengers and developers."
+  ],
+  "custom_actions": [
+    "File Litigation",
+    "Forge Permit",
+    "Sabotage Crane",
+    "Expedite Filing",
+    "Reclaim Debris",
+    "Zone Reallocation"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "Forge Permit",
+      "initiating_role": "Bureaucratic Forger",
+      "target_role": "Zoning Permit Officer",
+      "situation": "The Forger attempts to create a fake land-access permit to bypass the current zoning restrictions.",
+      "proposed_effects": [
+        "create_item",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Check if the Forger has sufficient ink supplies",
+        "Verify the Officer is distracted by a queue",
+        "Roll for forgery quality against the Officer's perception"
+      ]
+    },
+    {
+      "action_name": "Sabotage Crane",
+      "initiating_role": "Scavenger Scout",
+      "target_role": "Guild Maintenance Lead",
+      "situation": "The Scout attempts to disable a sorting crane to slow down material processing and increase salvage availability.",
+      "proposed_effects": [
+        "status"
+      ],
+      "coordinator_checks": [
+        "Check if the crane is currently active",
+        "Verify the Scout has stealth tools",
+        "Determine if the Maintenance Lead is patrolling the yard"
+      ]
+    },
+    {
+      "action_name": "Expedite Filing",
+      "initiating_role": "Waterfront Trade Liaison",
+      "target_role": "Tribunal Bailiff",
+      "situation": "The Liaison offers a bribe to move their property dispute to the front of the Tribunal's docket.",
+      "proposed_effects": [
+        "speech",
+        "transfer"
+      ],
+      "coordinator_checks": [
+        "Check if the bribe amount exceeds the Bailiff's threshold",
+        "Verify the current docket length",
+        "Check for witnesses in the Tribunal Chamber"
+      ]
+    },
+    {
+      "action_name": "Reclaim Debris",
+      "initiating_role": "Lead Scavenger",
+      "target_role": "Vault Archivist",
+      "situation": "The Scavenger attempts to claim a specific item from the archives before it is officially processed.",
+      "proposed_effects": [
+        "transfer",
+        "speech"
+      ],
+      "coordinator_checks": [
+        "Check if the item is logged in the archive",
+        "Verify the Scavenger has the correct retrieval form",
+        "Check if the Archivist is currently busy with a audit"
+      ]
+    }
+  ],
+  "social_rules": [
+    "All property disputes must be filed in triplicate at the Zoning Permit Office.",
+    "The Tribunal Chamber requires formal attire and silence during adjudication.",
+    "Salvaged items are state property until processed by the Reclamation Guild.",
+    "Waterfront access is a privilege granted by the Neighborhood Planning Board, not a right.",
+    "Bribery of Tribunal Bailiffs is strictly prohibited, though 'expedited filing fees' are standard."
+  ],
+  "item_themes": [
+    "Confiscated heirlooms",
+    "Salvaged industrial parts",
+    "Legal documents",
+    "Tidal sediment"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "tribunal_gavel_01",
+      "name": "Obsidian Gavel of the High Tribunal",
+      "price": 5000,
+      "mass": 2.5,
+      "description": "A heavy, brutalist gavel used to finalize confiscation orders. It vibrates when near disputed property.",
+      "image_prompt": "A heavy, sharp-edged black obsidian gavel sitting on a concrete desk, minimalist brutalist style.",
+      "category": "Legal Instrument"
+    },
+    {
+      "item_id": "tide_gauge_01",
+      "name": "Hydro-Static Depth Gauge",
+      "price": 1200,
+      "mass": 4.2,
+      "description": "Measures the current shoreline depth. Essential for predicting land reclamation shifts.",
+      "image_prompt": "A brass and concrete analog gauge with a needle pointing to a water level, industrial aesthetic.",
+      "category": "Measurement Tool"
+    },
+    {
+      "item_id": "permit_zone_a",
+      "name": "Zone A Water Access Permit",
+      "price": 8500,
+      "mass": 0.1,
+      "description": "A laminated legal document granting temporary water access rights. Highly coveted by merchants.",
+      "image_prompt": "A stamped, official-looking document with wax seals and bureaucratic watermarks.",
+      "category": "Credential"
+    },
+    {
+      "item_id": "debris_bundle_01",
+      "name": "Processed Concrete Aggregate",
+      "price": 150,
+      "mass": 25.0,
+      "description": "Standardized construction material salvaged by the Guild. Used for land reclamation.",
+      "image_prompt": "A neat cube of crushed concrete and sea shells, industrial texture.",
+      "category": "Material"
+    },
+    {
+      "item_id": "clerk_stamp_01",
+      "name": "Redaction Stamp",
+      "price": 450,
+      "mass": 0.8,
+      "description": "Used by Tribunal Clerks to invalidate property claims. The ink is permanent.",
+      "image_prompt": "A heavy iron stamp with a worn rubber face, sitting on a pile of paperwork.",
+      "category": "Legal Instrument"
+    },
+    {
+      "item_id": "scavenger_hook_01",
+      "name": "Magnetic Salvage Hook",
+      "price": 300,
+      "mass": 1.5,
+      "description": "A specialized tool for pulling debris from the tide before the automated cranes arrive.",
+      "image_prompt": "A rusted, industrial-looking magnetic hook with a frayed rope attached.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "heirloom_locket_01",
+      "name": "Confiscated Silver Locket",
+      "price": 1200,
+      "mass": 0.2,
+      "description": "A personal item seized during a property dispute. It holds no legal value but high sentimental weight.",
+      "image_prompt": "A tarnished silver locket lying on a cold, grey concrete floor.",
+      "category": "Confiscated Heirloom"
+    },
+    {
+      "item_id": "crane_key_01",
+      "name": "Guild Crane Override Key",
+      "price": 3500,
+      "mass": 0.05,
+      "description": "A digital keycard that allows temporary control over sorting cranes. Highly illegal.",
+      "image_prompt": "A sleek, brutalist-style plastic keycard with a glowing red light.",
+      "category": "Credential"
+    },
+    {
+      "item_id": "sediment_sample_01",
+      "name": "Tidal Sediment Vial",
+      "price": 50,
+      "mass": 0.3,
+      "description": "A vial of soil from the new shoreline. Used to prove land formation progress.",
+      "image_prompt": "A glass vial filled with dark, wet sand and small shell fragments.",
+      "category": "Material"
+    },
+    {
+      "item_id": "bribe_envelope_01",
+      "name": "Standardized Bribe Envelope",
+      "price": 2000,
+      "mass": 0.1,
+      "description": "An unmarked envelope designed to fit perfectly into Tribunal filing slots.",
+      "image_prompt": "A plain, thick grey envelope with no markings, resting on a desk.",
+      "category": "Legal Instrument"
+    },
+    {
+      "item_id": "zoning_map_01",
+      "name": "District Expansion Map",
+      "price": 600,
+      "mass": 0.5,
+      "description": "A blueprint showing projected shoreline growth. Updated every 12 hours.",
+      "image_prompt": "A large, folded blueprint with red ink markings and grid lines.",
+      "category": "Document"
+    },
+    {
+      "item_id": "crane_oil_01",
+      "name": "Industrial Lubricant Canister",
+      "price": 250,
+      "mass": 2.0,
+      "description": "Used to maintain the sorting cranes. Often traded by scavengers for parts.",
+      "image_prompt": "A dented, industrial metal canister with a warning label.",
+      "category": "Material"
+    },
+    {
+      "item_id": "tribunal_robe_01",
+      "name": "Clerk's Grey Robe",
+      "price": 900,
+      "mass": 1.2,
+      "description": "Standard issue attire for Tribunal Clerks. Provides minor protection against sea spray.",
+      "image_prompt": "A heavy, coarse grey wool robe hanging on a concrete hook.",
+      "category": "Apparel"
+    },
+    {
+      "item_id": "evidence_tag_01",
+      "name": "Property Evidence Tag",
+      "price": 10,
+      "mass": 0.01,
+      "description": "Required to label any item submitted for Tribunal review.",
+      "image_prompt": "A simple paper tag with a metal eyelet and a string.",
+      "category": "Legal Instrument"
+    },
+    {
+      "item_id": "reclaimed_gear_01",
+      "name": "Salvaged Gearbox",
+      "price": 1800,
+      "mass": 15.0,
+      "description": "A heavy mechanical part salvaged from the tide. Essential for crane repairs.",
+      "image_prompt": "A rusted, heavy-duty iron gearbox with visible gears and grease.",
+      "category": "Material"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "shoreline-tribunal-wardrobe-001",
+    "world_wardrobe_brief": "Bureaucratic-industrial attire for a coastal brutalist society. Clothing must reflect rigid, functional, and legalistic roles, utilizing reclaimed materials and harsh, geometric silhouettes.",
+    "forbidden_aesthetics": [
+      "flowing_fabrics",
+      "vibrant_colors",
+      "fantasy_armor",
+      "organic_patterns",
+      "soft_textiles",
+      "medieval_garb",
+      "high_fashion_jewelry"
+    ],
+    "palette_families": [
+      {
+        "name": "Tribunal_Grey",
+        "dominant": "#2f4f4f",
+        "accent": "#ff4500",
+        "trim": "#1a1a1a",
+        "material": "heavy_wool_felt"
+      },
+      {
+        "name": "Salvage_Rust",
+        "dominant": "#a9a9a9",
+        "accent": "#ff4500",
+        "trim": "#2f4f4f",
+        "material": "rusted_iron_plating"
+      },
+      {
+        "name": "Archive_Resin",
+        "dominant": "#e0ffff",
+        "accent": "#2f4f4f",
+        "trim": "#1a1a1a",
+        "material": "translucent_resin"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "tribunal_official",
+        "role_keywords": [
+          "bailiff",
+          "clerk",
+          "archivist"
+        ],
+        "attire": [
+          "stiff_grey_robes",
+          "high_collared_tunics",
+          "structured_shoulder_pads"
+        ],
+        "props": [
+          "redaction_stamp",
+          "evidence_tag",
+          "gavel"
+        ],
+        "palette_notes": "Dominant dark grey with sharp orange accents.",
+        "silhouette_notes": "Rectangular, monolithic, and imposing.",
+        "avoid": []
+      },
+      {
+        "rule_id": "scavenger_worker",
+        "role_keywords": [
+          "scavenger",
+          "crane_wrench",
+          "engineer"
+        ],
+        "attire": [
+          "patched_jumpsuits",
+          "rebar_reinforced_aprons",
+          "heavy_rubber_boots"
+        ],
+        "props": [
+          "magnetic_hook",
+          "oil_canister",
+          "crane_key"
+        ],
+        "palette_notes": "Dominant rusted iron and grey with orange hazard markings.",
+        "silhouette_notes": "Bulky, asymmetrical, and utilitarian.",
+        "avoid": []
+      },
+      {
+        "rule_id": "merchant_fixer",
+        "role_keywords": [
+          "merchant",
+          "broker",
+          "liaison"
+        ],
+        "attire": [
+          "layered_trench_coats",
+          "resin_buttoned_vests",
+          "concealed_pockets"
+        ],
+        "props": [
+          "bribe_envelope",
+          "permit_document",
+          "zoning_map"
+        ],
+        "palette_notes": "Mixed grey and translucent resin tones.",
+        "silhouette_notes": "Sharp, angular, and layered.",
+        "avoid": []
+      }
+    ],
+    "default_rule": {
+      "rule_id": "default_citizen",
+      "role_keywords": [
+        "citizen",
+        "resident"
+      ],
+      "attire": [
+        "simple_concrete_colored_tunics",
+        "utility_belts"
+      ],
+      "props": [
+        "sediment_vial"
+      ],
+      "palette_notes": "Monochromatic grey palette.",
+      "silhouette_notes": "Simple, boxy, and non-descript.",
+      "avoid": []
+    },
+    "visual_consistency_rules": [
+      "All characters must have thick black ink outlines.",
+      "Use stiff, geometric body proportions.",
+      "Avoid rounded shapes; prioritize sharp corners.",
+      "Ensure all props are clearly readable at 64x64 resolution.",
+      "Maintain a strict top-down perspective for all character sprites."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "shoreline-tribunal-001",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90 degrees",
+      "scale_rule": "1 tile equals 1 meter"
+    },
+    "palette": {
+      "dominant": "#2f4f4f",
+      "secondary": "#a9a9a9",
+      "accent": "#ff4500",
+      "shadow": "#1a1a1a",
+      "highlight": "#e0ffff"
+    },
+    "materials": [
+      "raw_concrete",
+      "rusted_iron",
+      "wet_sand",
+      "bleached_driftwood",
+      "translucent_resin"
+    ],
+    "lighting": "harsh_overhead_sun_with_long_sharp_shadows",
+    "architecture": [
+      "monolithic_concrete_blocks",
+      "geometric_staircases",
+      "exposed_rebar_grids",
+      "modular_filing_cabinets"
+    ],
+    "terrain": {
+      "ground": "cracked_concrete_slabs",
+      "path": "tide_pools_with_sediment",
+      "edge": "jagged_reclaimed_debris_barriers"
+    },
+    "sprite_language": {
+      "body_proportion": "stiff_geometric_forms",
+      "outline": "thick_black_ink_stroke",
+      "role_readability": "silhouette_based_on_bureaucratic_function"
+    },
+    "world_prompt_prefix": "brutalist_coastal_archipelago_top_down_view",
+    "sprite_prompt_prefix": "bureaucratic_surrealist_sprite_top_down",
+    "forbidden_visuals": [
+      "text_labels",
+      "photorealism",
+      "organic_foliage",
+      "soft_lighting",
+      "fantasy_magic_effects",
+      "rounded_organic_shapes"
+    ],
+    "canon_hash": "340209da39efa829"
+  }
+}

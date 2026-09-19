@@ -1,0 +1,254 @@
+{
+  "run_id": "mw3_tidal",
+  "created_at": "2026-08-04T00:19:54",
+  "config_path": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_configs/tidal_embassy_lost_languages.json",
+  "scenario_dir": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_tidal/run_inputs/scenario",
+  "scenario_files": {
+    "manifest": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_tidal/run_inputs/scenario/manifest.json",
+    "world_rules": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_tidal/run_inputs/scenario/world_rules.json",
+    "map_grid": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_tidal/run_inputs/scenario/map_grid.json",
+    "agents_dir": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_tidal/run_inputs/scenario/Agents"
+  },
+  "agent_profile_cache_dir": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_tidal/agent_profile_api_cache",
+  "reused_agent_profile_cache": "",
+  "rounds": 2,
+  "activation_probability": 0.12,
+  "seed": 26080415,
+  "agent_profile_source": "compiled_world_profiles",
+  "disable_longlive": true,
+  "disable_image_generation": true,
+  "max_images_per_round": 10,
+  "image_generation": {
+    "enabled": false,
+    "backend": "flux_local_service",
+    "model": "gemini-3.1-flash-image-preview",
+    "max_images_per_round": 10,
+    "temperature": 0.35,
+    "thinking_budget": 0,
+    "max_output_tokens": 1024,
+    "response_modalities": [
+      "TEXT"
+    ],
+    "output_subdir": "image_jobs",
+    "conditions": [
+      "Still-image routes use Gemini text prompting when needed, then render through the FLUX local service."
+    ],
+    "prompt_policy": "Grounded harbor-trade illustration with visible cargo logic, weathered tools, route signals, and no visible text or watermark.",
+    "default_prompt_template": "{domain_label}. Create one polished still image of {image_subject} for {actor_name} and {target_name}. Emphasize harbor logistics, route pressure, dock wear, and civic trade signals. No visible text, no watermark.",
+    "endpoint": "http://127.0.0.1:8135",
+    "generate_character_portraits": true,
+    "item_image_mode": "important_only"
+  },
+  "inventory_generation": {
+    "enabled": false,
+    "stage": "initial_inventory_generation",
+    "preserve_existing_inventory": true,
+    "max_distinct_items_per_agent": 3,
+    "max_quantity_per_item": 3,
+    "allowed_item_ids": [
+      "AG-001",
+      "AG-002",
+      "AG-003",
+      "AG-004",
+      "AG-005",
+      "AG-006",
+      "AG-007",
+      "AG-008",
+      "AG-009",
+      "AG-010",
+      "AG-011",
+      "AG-012",
+      "AG-013",
+      "AG-014",
+      "AG-015",
+      "dock_contract",
+      "tide_chart",
+      "signal_flag_roll",
+      "tea_tin"
+    ],
+    "policy": "Generate compact role-appropriate actionable inventory only from the item catalog. Use property_library for non-actionable treasures, titles, clues, personal tools, debts, or keepsakes. Do not create images here; image generation is a later system step when a route requests it.",
+    "reason": "Boutique character node already generated at least eight validated inventory items per agent."
+  },
+  "extra_world_functions": {
+    "enabled": true,
+    "stage": "extra_world_functions",
+    "activation_probability": 1.0,
+    "max_events_per_function": 2,
+    "max_events_per_round": 5,
+    "functions": [
+      {
+        "function_id": "the_redaction_game_progressor",
+        "enabled": true,
+        "activation_probability": 1.0,
+        "max_events": 2,
+        "purpose": "Create or advance event threads for the The Redaction Game loop so the world keeps generating concrete next steps in The Scriptorium, The Vault of Redacted Truths.",
+        "event_policy": "Prefer compact progress events that deepen The Redaction Game: Players compete to edit sensitive documents to favor their faction while avoiding detection by the censors. Use Censor, Scribe, Informant as likely responders, keep the pressure on The approaching deadline for the Grand Proclamation., and ensure at least one event gives players a readable way into the world such as A disgraced scholar seeking to restore their family name..",
+        "main_character_policy": "Vaelen the Echo-Catcher (Phonetic Sluice Technician) should care when the event supports Filtering semantic residue from the incoming tide; Archivist Elara (Guardian of the Vowels) should care when the event supports Cataloging the shifting grammar of the deep; Kaelen the Word-Broker (Syntax Merchant) should care when the event supports Trading rare adjectives for stable nouns; Speaker Thalassa (Council Mediator) should care when the event supports Presiding over the Council of the Last Speaker; Silt-Walker Orrin (Grotto Scavenger) should care when the event supports Dredging the Ink-Stained Grotto for calcified idioms; Mistress Lyra of the Watch (Tide-Watch Commander) should care when the event supports Monitoring the horizon for incoming semantic storms; Balthazar the Lexicon-Broker (Master Merchant) should care when the event supports Negotiating high-stakes trades for forbidden synonyms; The Silent Acolyte (Monastic Custodian) should care when the event supports Polishing the echoes in the Silent Lounge; Caspian the Sluice-Warden (Hydraulic Linguist) should care when the event supports Calibrating the resonance filters to prevent semantic drift in the Phonetic Sluice; Zora the Ink-Steward (Pigment Alchemist) should care when the event supports Distilling calcified idioms into usable ink for the scribes; Master Pavo (Syntax Arbitrator) should care when the event supports Mediating disputes between merchants over the definition of 'Value'; Kiri of the High Watch (Signal Officer) should care when the event supports Transmitting phonetic warnings to the lower embassy via light signals; Scribe Malakor (Etymological Restorer) should care when the event supports Reconstituting dissolved syntax from the Ink-Stained Grotto; Vespera the Silent (Echo-Lounge Curator) should care when the event supports Polishing the resonance chambers in the Silent Lounge; Jaxen the Sluice-Runner (Phonetic Courier) should care when the event supports Delivering high-priority phonemes between the Sluice and the Council; Master Elian (High-Stakes Syntax Merchant) should care when the event supports Trading complex sentence structures for rare semantic artifacts; Soren the Sluice-Diver (Sub-Phonetic Salvager) should care when the event supports Diving into the Phonetic Sluice to recover heavy-metal consonants; Mistress Vala (Syntax Black-Marketeer) should care when the event supports Smuggling illegal double-negatives and forbidden metaphors; Elder Karys (Vowel-Steward) should care when the event supports Polishing the calcified 'O's in the Archive; Nym of the Silent (Echo-Lounge Attendant) should care when the event supports Serving distilled silence to weary diplomats; Rook the Sluice-Scrapper (Phonetic Scavenger) should care when the event supports Sifting through the Phonetic Sluice for discarded phonemes; Sylas the Syntax-Broker (Master Merchant) should care when the event supports Negotiating high-value trades in the Syntax Exchange; Elder Miri (Council Speaker) should care when the event supports Mediating disputes in the Council of the Last Speaker; Kael the Ink-Diver (Grotto Scavenger) should care when the event supports Diving into the Ink-Stained Grotto for lost idioms; Thistle the Dialect-Poacher (Sub-Grammar Smuggler) should care when the event supports Illicitly harvesting regional accents from the Dialect Yard for the black market.",
+        "continuity_policy": "Use titles and status_tags to show next-phase progress for The Redaction Game, such as posted, blocked, negotiated, rerouted, verified, escalated, or resolved."
+      },
+      {
+        "function_id": "the_dialect_duel_progressor",
+        "enabled": true,
+        "activation_probability": 1.0,
+        "max_events": 2,
+        "purpose": "Create or advance event threads for the The Dialect Duel loop so the world keeps generating concrete next steps in The Hall of Echoes, The Floating Gardens.",
+        "event_policy": "Prefer compact progress events that deepen The Dialect Duel: Social combat where players use rare vocabulary to assert dominance and win over the neutral ambassadors. Use Ambassador, Linguist, Socialite as likely responders, keep the pressure on The shifting tides of public opinion., and ensure at least one event gives players a readable way into the world such as A disgraced scholar seeking to restore their family name..",
+        "main_character_policy": "Vaelen the Echo-Catcher (Phonetic Sluice Technician) should care when the event supports Filtering semantic residue from the incoming tide; Archivist Elara (Guardian of the Vowels) should care when the event supports Cataloging the shifting grammar of the deep; Kaelen the Word-Broker (Syntax Merchant) should care when the event supports Trading rare adjectives for stable nouns; Speaker Thalassa (Council Mediator) should care when the event supports Presiding over the Council of the Last Speaker; Silt-Walker Orrin (Grotto Scavenger) should care when the event supports Dredging the Ink-Stained Grotto for calcified idioms; Mistress Lyra of the Watch (Tide-Watch Commander) should care when the event supports Monitoring the horizon for incoming semantic storms; Balthazar the Lexicon-Broker (Master Merchant) should care when the event supports Negotiating high-stakes trades for forbidden synonyms; The Silent Acolyte (Monastic Custodian) should care when the event supports Polishing the echoes in the Silent Lounge; Caspian the Sluice-Warden (Hydraulic Linguist) should care when the event supports Calibrating the resonance filters to prevent semantic drift in the Phonetic Sluice; Zora the Ink-Steward (Pigment Alchemist) should care when the event supports Distilling calcified idioms into usable ink for the scribes; Master Pavo (Syntax Arbitrator) should care when the event supports Mediating disputes between merchants over the definition of 'Value'; Kiri of the High Watch (Signal Officer) should care when the event supports Transmitting phonetic warnings to the lower embassy via light signals; Scribe Malakor (Etymological Restorer) should care when the event supports Reconstituting dissolved syntax from the Ink-Stained Grotto; Vespera the Silent (Echo-Lounge Curator) should care when the event supports Polishing the resonance chambers in the Silent Lounge; Jaxen the Sluice-Runner (Phonetic Courier) should care when the event supports Delivering high-priority phonemes between the Sluice and the Council; Master Elian (High-Stakes Syntax Merchant) should care when the event supports Trading complex sentence structures for rare semantic artifacts; Soren the Sluice-Diver (Sub-Phonetic Salvager) should care when the event supports Diving into the Phonetic Sluice to recover heavy-metal consonants; Mistress Vala (Syntax Black-Marketeer) should care when the event supports Smuggling illegal double-negatives and forbidden metaphors; Elder Karys (Vowel-Steward) should care when the event supports Polishing the calcified 'O's in the Archive; Nym of the Silent (Echo-Lounge Attendant) should care when the event supports Serving distilled silence to weary diplomats; Rook the Sluice-Scrapper (Phonetic Scavenger) should care when the event supports Sifting through the Phonetic Sluice for discarded phonemes; Sylas the Syntax-Broker (Master Merchant) should care when the event supports Negotiating high-value trades in the Syntax Exchange; Elder Miri (Council Speaker) should care when the event supports Mediating disputes in the Council of the Last Speaker; Kael the Ink-Diver (Grotto Scavenger) should care when the event supports Diving into the Ink-Stained Grotto for lost idioms; Thistle the Dialect-Poacher (Sub-Grammar Smuggler) should care when the event supports Illicitly harvesting regional accents from the Dialect Yard for the black market.",
+        "continuity_policy": "Use titles and status_tags to show next-phase progress for The Dialect Duel, such as posted, blocked, negotiated, rerouted, verified, escalated, or resolved."
+      },
+      {
+        "function_id": "tidal_embassy_lost_languages_tension_generator",
+        "enabled": true,
+        "activation_probability": 0.88,
+        "max_events": 2,
+        "purpose": "Generate light-to-moderate persistent tension incidents that sharpen negotiation, routing, alliances, and local stakes without overriding agent autonomy.",
+        "event_policy": "Use the compiled conflict hooks as style anchors only when they fit current world memory: The discovery of a scroll that invalidates the current ruling dynasty's lineage.; A sudden flood in the lower archives threatening to erase the only record of a peace treaty.. Prefer incidents that create follow-up routes, targetable bottlenecks, or contested interpretations instead of one-off flavor.",
+        "main_character_policy": "Vaelen the Echo-Catcher (Phonetic Sluice Technician) should care when the event supports Filtering semantic residue from the incoming tide; Archivist Elara (Guardian of the Vowels) should care when the event supports Cataloging the shifting grammar of the deep; Kaelen the Word-Broker (Syntax Merchant) should care when the event supports Trading rare adjectives for stable nouns; Speaker Thalassa (Council Mediator) should care when the event supports Presiding over the Council of the Last Speaker; Silt-Walker Orrin (Grotto Scavenger) should care when the event supports Dredging the Ink-Stained Grotto for calcified idioms; Mistress Lyra of the Watch (Tide-Watch Commander) should care when the event supports Monitoring the horizon for incoming semantic storms; Balthazar the Lexicon-Broker (Master Merchant) should care when the event supports Negotiating high-stakes trades for forbidden synonyms; The Silent Acolyte (Monastic Custodian) should care when the event supports Polishing the echoes in the Silent Lounge; Caspian the Sluice-Warden (Hydraulic Linguist) should care when the event supports Calibrating the resonance filters to prevent semantic drift in the Phonetic Sluice; Zora the Ink-Steward (Pigment Alchemist) should care when the event supports Distilling calcified idioms into usable ink for the scribes; Master Pavo (Syntax Arbitrator) should care when the event supports Mediating disputes between merchants over the definition of 'Value'; Kiri of the High Watch (Signal Officer) should care when the event supports Transmitting phonetic warnings to the lower embassy via light signals; Scribe Malakor (Etymological Restorer) should care when the event supports Reconstituting dissolved syntax from the Ink-Stained Grotto; Vespera the Silent (Echo-Lounge Curator) should care when the event supports Polishing the resonance chambers in the Silent Lounge; Jaxen the Sluice-Runner (Phonetic Courier) should care when the event supports Delivering high-priority phonemes between the Sluice and the Council; Master Elian (High-Stakes Syntax Merchant) should care when the event supports Trading complex sentence structures for rare semantic artifacts; Soren the Sluice-Diver (Sub-Phonetic Salvager) should care when the event supports Diving into the Phonetic Sluice to recover heavy-metal consonants; Mistress Vala (Syntax Black-Marketeer) should care when the event supports Smuggling illegal double-negatives and forbidden metaphors; Elder Karys (Vowel-Steward) should care when the event supports Polishing the calcified 'O's in the Archive; Nym of the Silent (Echo-Lounge Attendant) should care when the event supports Serving distilled silence to weary diplomats; Rook the Sluice-Scrapper (Phonetic Scavenger) should care when the event supports Sifting through the Phonetic Sluice for discarded phonemes; Sylas the Syntax-Broker (Master Merchant) should care when the event supports Negotiating high-value trades in the Syntax Exchange; Elder Miri (Council Speaker) should care when the event supports Mediating disputes in the Council of the Last Speaker; Kael the Ink-Diver (Grotto Scavenger) should care when the event supports Diving into the Ink-Stained Grotto for lost idioms; Thistle the Dialect-Poacher (Sub-Grammar Smuggler) should care when the event supports Illicitly harvesting regional accents from the Dialect Yard for the black market.",
+        "continuity_policy": "Let tension incidents branch or cool down over multiple rounds through status_tags such as delayed, inspected, contested, exposed, rerouted, softened, or settled."
+      },
+      {
+        "function_id": "tidal_embassy_lost_languages_player_entry_generator",
+        "enabled": true,
+        "activation_probability": 0.72,
+        "max_events": 1,
+        "purpose": "Generate newcomer-readable incidents that expose what the world is about and give human players an immediate way to participate.",
+        "event_policy": "Prefer events that make the world legible from the ground level: A disgraced scholar seeking to restore their family name.; A merchant whose trade permits are written in a language they cannot read.; A spy masquerading as a humble ink-mixer.. A good event should tell a player where to go, who to ask, or which pressure is already live.",
+        "main_character_policy": "Vaelen the Echo-Catcher (Phonetic Sluice Technician) should care when the event supports Filtering semantic residue from the incoming tide; Archivist Elara (Guardian of the Vowels) should care when the event supports Cataloging the shifting grammar of the deep; Kaelen the Word-Broker (Syntax Merchant) should care when the event supports Trading rare adjectives for stable nouns; Speaker Thalassa (Council Mediator) should care when the event supports Presiding over the Council of the Last Speaker; Silt-Walker Orrin (Grotto Scavenger) should care when the event supports Dredging the Ink-Stained Grotto for calcified idioms; Mistress Lyra of the Watch (Tide-Watch Commander) should care when the event supports Monitoring the horizon for incoming semantic storms; Balthazar the Lexicon-Broker (Master Merchant) should care when the event supports Negotiating high-stakes trades for forbidden synonyms; The Silent Acolyte (Monastic Custodian) should care when the event supports Polishing the echoes in the Silent Lounge; Caspian the Sluice-Warden (Hydraulic Linguist) should care when the event supports Calibrating the resonance filters to prevent semantic drift in the Phonetic Sluice; Zora the Ink-Steward (Pigment Alchemist) should care when the event supports Distilling calcified idioms into usable ink for the scribes; Master Pavo (Syntax Arbitrator) should care when the event supports Mediating disputes between merchants over the definition of 'Value'; Kiri of the High Watch (Signal Officer) should care when the event supports Transmitting phonetic warnings to the lower embassy via light signals; Scribe Malakor (Etymological Restorer) should care when the event supports Reconstituting dissolved syntax from the Ink-Stained Grotto; Vespera the Silent (Echo-Lounge Curator) should care when the event supports Polishing the resonance chambers in the Silent Lounge; Jaxen the Sluice-Runner (Phonetic Courier) should care when the event supports Delivering high-priority phonemes between the Sluice and the Council; Master Elian (High-Stakes Syntax Merchant) should care when the event supports Trading complex sentence structures for rare semantic artifacts; Soren the Sluice-Diver (Sub-Phonetic Salvager) should care when the event supports Diving into the Phonetic Sluice to recover heavy-metal consonants; Mistress Vala (Syntax Black-Marketeer) should care when the event supports Smuggling illegal double-negatives and forbidden metaphors; Elder Karys (Vowel-Steward) should care when the event supports Polishing the calcified 'O's in the Archive; Nym of the Silent (Echo-Lounge Attendant) should care when the event supports Serving distilled silence to weary diplomats; Rook the Sluice-Scrapper (Phonetic Scavenger) should care when the event supports Sifting through the Phonetic Sluice for discarded phonemes; Sylas the Syntax-Broker (Master Merchant) should care when the event supports Negotiating high-value trades in the Syntax Exchange; Elder Miri (Council Speaker) should care when the event supports Mediating disputes in the Council of the Last Speaker; Kael the Ink-Diver (Grotto Scavenger) should care when the event supports Diving into the Ink-Stained Grotto for lost idioms; Thistle the Dialect-Poacher (Sub-Grammar Smuggler) should care when the event supports Illicitly harvesting regional accents from the Dialect Yard for the black market.",
+        "continuity_policy": "Entry incidents should either resolve into a larger loop or hand off to an existing conflict, rumor, or coordination thread within 1-3 rounds."
+      }
+    ]
+  },
+  "always_activate_agent_ids": [
+    "tidal_embassy_lost_languages_main_01",
+    "tidal_embassy_lost_languages_main_02"
+  ],
+  "force_cinematic_agent_ids": [
+    "tidal_embassy_lost_languages_main_01",
+    "tidal_embassy_lost_languages_main_02",
+    "tidal_embassy_lost_languages_main_03",
+    "tidal_embassy_lost_languages_main_04",
+    "tidal_embassy_lost_languages_main_05",
+    "tidal_embassy_lost_languages_main_06",
+    "tidal_embassy_lost_languages_main_07",
+    "tidal_embassy_lost_languages_main_08",
+    "tidal_embassy_lost_languages_main_09",
+    "tidal_embassy_lost_languages_main_10",
+    "tidal_embassy_lost_languages_main_11",
+    "tidal_embassy_lost_languages_main_12",
+    "tidal_embassy_lost_languages_main_13",
+    "tidal_embassy_lost_languages_main_14",
+    "tidal_embassy_lost_languages_main_15",
+    "tidal_embassy_lost_languages_main_16",
+    "tidal_embassy_lost_languages_main_17",
+    "tidal_embassy_lost_languages_main_18",
+    "tidal_embassy_lost_languages_main_19",
+    "tidal_embassy_lost_languages_main_20",
+    "tidal_embassy_lost_languages_main_21",
+    "tidal_embassy_lost_languages_main_22",
+    "tidal_embassy_lost_languages_main_23",
+    "tidal_embassy_lost_languages_main_24",
+    "tidal_embassy_lost_languages_main_25"
+  ],
+  "story_filename": "story.jsonl",
+  "run_name": "tidal_embassy_lost_languages",
+  "vertex_api": {
+    "backend": "ai_studio",
+    "active_backend_name": "primary",
+    "api_key_env": "AGORA_AISTUDIO_API_KEY",
+    "endpoint_base": "https://generativelanguage.googleapis.com/v1beta",
+    "method": "generateContent",
+    "default_model": "gemini-2.5-flash",
+    "thinking_level": "low",
+    "thinking_budget": 512,
+    "max_output_tokens": 1024,
+    "temperature": 0.45,
+    "fallback": null,
+    "retry": {
+      "max_attempts": 8,
+      "initial_sleep_seconds": 5.0,
+      "max_sleep_seconds": 120.0,
+      "backoff_multiplier": 2.0,
+      "status_codes": [
+        408,
+        429,
+        500,
+        502,
+        503,
+        504
+      ]
+    },
+    "stages": {
+      "agent_profile_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 1024,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "interaction_routing": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 4096,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "relationship_adjustment": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 1024,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "video_prompt_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 4096,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "image_prompt_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 2048,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "story_report_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 20000,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "main_character_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 10000,
+        "thinking_level": "low",
+        "thinking_budget": 2048,
+        "temperature": 0.55
+      },
+      "initial_inventory_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 4096,
+        "thinking_level": "low",
+        "thinking_budget": 1024,
+        "temperature": 0.45
+      },
+      "extra_world_functions": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 10000,
+        "thinking_level": "low",
+        "thinking_budget": 2048,
+        "temperature": 0.5
+      }
+    }
+  },
+  "vertex_image_sdk": null,
+  "resume": {
+    "source_run_dir": "",
+    "completed_round": 0,
+    "start_round": 1,
+    "in_place": false
+  },
+  "compiled_orchestration_path": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_tidal/compiled_orchestration.json"
+}

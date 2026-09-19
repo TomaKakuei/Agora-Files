@@ -1,0 +1,2012 @@
+{
+  "world_name": "The Verdant Express",
+  "world_id": "verdant_express_001",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "en-US",
+    "tone": "Hopeful, industrious, community-focused",
+    "visual_direction": "Art Nouveau, Biopunk, Gilded Age industrialism meets lush botanical gardens",
+    "currency_code": "CRD",
+    "currency_symbol": "🌿",
+    "currency_minor_unit": "Seed",
+    "currency_name": "Crop Credits",
+    "domain_label": "Agri-Transit",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "INST_RAIL_AUTH",
+        "name": "Railway Authority",
+        "mandate": "Ensure safe and timely rail transport, manage platform access.",
+        "decision_rule": "Centralized, based on operational efficiency and passenger compliance.",
+        "enforced_by": "Train Conductors, Automated Gates",
+        "visible_output": "Platform access status, train schedules, route changes"
+      },
+      {
+        "institution_id": "INST_GREEN_GUILD",
+        "name": "Greenhouse Guild",
+        "mandate": "Oversee crop health, allocate tending tasks, certify produce quality.",
+        "decision_rule": "Consensus-based among master botanists, guided by ecological principles.",
+        "enforced_by": "Guild Enforcers, Crop Quality Scans",
+        "visible_output": "Crop health reports, task assignments, produce market value"
+      },
+      {
+        "institution_id": "INST_PASS_COUNCIL",
+        "name": "Passenger Council",
+        "mandate": "Represent passenger interests, mediate disputes, advocate for fair access.",
+        "decision_rule": "Democratic vote among elected passenger representatives.",
+        "enforced_by": "Social pressure, formal complaints, public appeals",
+        "visible_output": "Policy recommendations, dispute resolutions, community announcements"
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "S_PLATFORM_ACCESS",
+        "label": "Platform Access Level",
+        "initial_tension": "Moderate",
+        "changed_by": [
+          "INST_RAIL_AUTH",
+          "S_CROP_HEALTH"
+        ],
+        "affects": [
+          "S_RAIL_EFFICIENCY",
+          "S_PASSENGER_TRUST"
+        ]
+      },
+      {
+        "state_id": "S_CROP_HEALTH",
+        "label": "Overall Crop Health",
+        "initial_tension": "Low",
+        "changed_by": [
+          "INST_GREEN_GUILD",
+          "STAKE_BOTANISTS",
+          "S_PASSENGER_TRUST"
+        ],
+        "affects": [
+          "S_PLATFORM_ACCESS",
+          "S_GUILD_REPUTATION"
+        ]
+      },
+      {
+        "state_id": "S_PASSENGER_TRUST",
+        "label": "Passenger Trust & Cooperation",
+        "initial_tension": "Moderate",
+        "changed_by": [
+          "INST_PASS_COUNCIL",
+          "S_RAIL_EFFICIENCY",
+          "S_GUILD_REPUTATION"
+        ],
+        "affects": [
+          "S_CROP_HEALTH",
+          "S_PLATFORM_ACCESS"
+        ]
+      },
+      {
+        "state_id": "S_RAIL_EFFICIENCY",
+        "label": "Railway Operational Efficiency",
+        "initial_tension": "Low",
+        "changed_by": [
+          "INST_RAIL_AUTH",
+          "S_PLATFORM_ACCESS",
+          "STAKE_RAIL_STAFF"
+        ],
+        "affects": [
+          "S_PASSENGER_TRUST"
+        ]
+      },
+      {
+        "state_id": "S_GUILD_REPUTATION",
+        "label": "Greenhouse Guild Reputation",
+        "initial_tension": "Low",
+        "changed_by": [
+          "INST_GREEN_GUILD",
+          "S_CROP_HEALTH"
+        ],
+        "affects": [
+          "S_PASSENGER_TRUST"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "S_CROP_HEALTH",
+        "trigger": "If crop health is high due to diligent tending",
+        "target_state": "S_PLATFORM_ACCESS",
+        "effect": "Platform access for all passengers improves",
+        "delay": "Short"
+      },
+      {
+        "source_state": "S_PASSENGER_TRUST",
+        "trigger": "If passenger cooperation in tending tasks is high",
+        "target_state": "S_CROP_HEALTH",
+        "effect": "Overall crop health improves significantly",
+        "delay": "Medium"
+      },
+      {
+        "source_state": "S_RAIL_EFFICIENCY",
+        "trigger": "If railway operations are consistently smooth and on schedule",
+        "target_state": "S_PASSENGER_TRUST",
+        "effect": "Passenger trust in the system increases",
+        "delay": "Short"
+      },
+      {
+        "source_state": "S_PLATFORM_ACCESS",
+        "trigger": "If platform access becomes overly restricted or congested",
+        "target_state": "S_RAIL_EFFICIENCY",
+        "effect": "Railway operational efficiency decreases due to delays",
+        "delay": "Medium"
+      },
+      {
+        "source_state": "S_GUILD_REPUTATION",
+        "trigger": "If the Greenhouse Guild's reputation is high due to fair practices",
+        "target_state": "S_PASSENGER_TRUST",
+        "effect": "Passenger trust in the system and its institutions increases",
+        "delay": "Short"
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "STAKE_COMMUTERS",
+        "name": "Commuters",
+        "goal": "Reach destinations quickly and reliably with minimal effort.",
+        "leverage": "Collective refusal to tend crops, public complaints.",
+        "dependency": "Reliant on the Railway Authority for transport and the Greenhouse Guild for access."
+      },
+      {
+        "group_id": "STAKE_BOTANISTS",
+        "name": "Botanists",
+        "goal": "Achieve optimal crop yields and biodiversity within the greenhouse.",
+        "leverage": "Expert knowledge, control over crop assignments and quality assessment.",
+        "dependency": "Reliant on passengers for labor and the Railway Authority for stable conditions."
+      },
+      {
+        "group_id": "STAKE_RAIL_STAFF",
+        "name": "Railway Staff",
+        "goal": "Maintain safe, efficient, and orderly railway operations.",
+        "leverage": "Control over train movement, enforcement of rules.",
+        "dependency": "Reliant on passengers for compliance and the Railway Authority for resources."
+      },
+      {
+        "group_id": "STAKE_MERCHANTS",
+        "name": "Merchants",
+        "goal": "Acquire high-quality, diverse produce to sell at various stations.",
+        "leverage": "Economic influence, ability to purchase large quantities of produce.",
+        "dependency": "Reliant on the Greenhouse Guild for certified crops and the Railway Authority for transport."
+      }
+    ]
+  },
+  "genre": "Cooperative Sci-Fi / Eco-Management",
+  "premise": "A railway greenhouse grants platform access according to which crops passengers agree to tend during the journey.",
+  "simulation_objective": "Balance efficient rail travel with sustainable agricultural practices and foster a cooperative passenger community.",
+  "agent_count_target": 12,
+  "player_count_target": 50,
+  "wall_color_theme": "Ornate Ironwork",
+  "economy_focus": "Resource-based, labor-for-access, trade of specialty crops.",
+  "exploration_focus": "Unlocking new crop varieties, discovering optimal growing techniques, exploring different train routes and their unique biomes.",
+  "conflict_tone": "Cooperative problem-solving, resource allocation debates, ethical dilemmas around labor and access.",
+  "visual_style": "Lush, vibrant botanical interiors contrasted with sleek, functional train exteriors; Art Nouveau motifs; glowing plant life.",
+  "rooms": [
+    {
+      "name": "Conductor's Control Cabin",
+      "biome": "Train Interior",
+      "purpose": "Centralized control for rail operations and platform access. Here, S_RAIL_EFFICIENCY is directly managed, affecting S_PASSENGER_TRUST.",
+      "decor_tags": [
+        "Gilded Age",
+        "industrial",
+        "brass",
+        "gauges",
+        "hardwood"
+      ],
+      "activity_tags": [
+        "monitoring",
+        "dispatching",
+        "access control"
+      ],
+      "flux_floor_prompt": "seamless 16-bit pixel art of polished rich hardwood flooring with subtle brass inlays, top-down view",
+      "room_scene_prompt": "Art Nouveau biopunk train interior, Conductor's Control Cabin, Gilded Age industrialism, polished brass, rich hardwood, ornate ironwork, high vaulted glass ceiling, strict top-down orthographic view, no text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, no blank background.",
+      "width_tiles": 7,
+      "height_tiles": 5,
+      "ambient_palette": "focused_blue",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "main_control_panel",
+          "label": "Control Panel",
+          "description": "An ornate brass and hardwood control panel with glowing bioluminescent gauges and levers, managing train speed and platform gates.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Greenhouse Guild Master's Office",
+      "biome": "Train Greenhouse",
+      "purpose": "Where master botanists oversee crop health and allocate tending tasks. S_CROP_HEALTH is assessed and S_GUILD_REPUTATION is influenced by decisions made here.",
+      "decor_tags": [
+        "biopunk",
+        "botanical",
+        "living vines",
+        "hydroponic glass",
+        "rich hardwood"
+      ],
+      "activity_tags": [
+        "research",
+        "planning",
+        "certification"
+      ],
+      "flux_floor_prompt": "seamless 16-bit pixel art of ornate tiled pathways with integrated planter boxes, top-down view",
+      "room_scene_prompt": "Art Nouveau biopunk train interior, Greenhouse Guild Master's Office, lush botanical groundcover, living vines, hydroponic glass, rich hardwood desk, high vaulted glass ceiling, strict top-down orthographic view, no text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, no blank background.",
+      "width_tiles": 8,
+      "height_tiles": 6,
+      "ambient_palette": "soft_mint",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "botanical_research_station",
+          "label": "Research Station",
+          "description": "A large desk made of rich hardwood with integrated hydroponic glass panels displaying glowing plant samples and bioluminescent moss.",
+          "anchor": "north_west",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Passenger Council Assembly Hall",
+      "biome": "Train Interior",
+      "purpose": "A space for democratic vote among elected passenger representatives to mediate disputes and advocate for fair access. This directly affects S_PASSENGER_TRUST and can influence S_PLATFORM_ACCESS.",
+      "decor_tags": [
+        "Art Nouveau",
+        "social",
+        "stained glass",
+        "rich hardwood",
+        "ornate ironwork"
+      ],
+      "activity_tags": [
+        "debating",
+        "voting",
+        "mediating"
+      ],
+      "flux_floor_prompt": "seamless 16-bit pixel art of polished rich hardwood flooring with a large, circular stained glass inlay in the center, top-down view",
+      "room_scene_prompt": "Art Nouveau biopunk train interior, Passenger Council Assembly Hall, high vaulted stained glass ceiling, ornate ironwork benches, rich hardwood, soft diffused light, strict top-down orthographic view, no text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, no blank background.",
+      "width_tiles": 10,
+      "height_tiles": 8,
+      "ambient_palette": "clear_day",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "council_podium",
+          "label": "Council Podium",
+          "description": "An ornate ironwork and stained glass podium at the front of a semi-circular arrangement of benches, glowing softly.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Hydroponic Cultivation Bay",
+      "biome": "Train Greenhouse",
+      "purpose": "The primary location for passengers to tend crops. Diligent tending here directly improves S_CROP_HEALTH, which in turn improves S_PLATFORM_ACCESS.",
+      "decor_tags": [
+        "biopunk",
+        "hydroponic",
+        "living vines",
+        "bioluminescent moss",
+        "glass"
+      ],
+      "activity_tags": [
+        "tending",
+        "harvesting",
+        "cultivating"
+      ],
+      "flux_floor_prompt": "seamless 16-bit pixel art of wet, dark soil pathways between glowing hydroponic troughs, top-down view",
+      "room_scene_prompt": "Art Nouveau biopunk train interior, Hydroponic Cultivation Bay, rows of glowing hydroponic glass troughs, lush botanical groundcover, living vines, bioluminescent moss, high vaulted glass ceiling, strict top-down orthographic view, no text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, no blank background.",
+      "width_tiles": 12,
+      "height_tiles": 10,
+      "ambient_palette": "soft_mint",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "hydroponic_trough_array",
+          "label": "Trough Array",
+          "description": "A large array of glowing hydroponic glass troughs filled with various vibrant crops and integrated bioluminescent moss.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Produce Exchange Market",
+      "biome": "Train Interior",
+      "purpose": "Where merchants acquire and trade certified produce. The availability and quality of produce here reflect S_CROP_HEALTH and influence S_GUILD_REPUTATION.",
+      "decor_tags": [
+        "market",
+        "brass",
+        "rich hardwood",
+        "stained glass",
+        "ornate ironwork"
+      ],
+      "activity_tags": [
+        "trading",
+        "selling",
+        "buying"
+      ],
+      "flux_floor_prompt": "seamless 16-bit pixel art of ornate tiled pathways with subtle botanical patterns, top-down view",
+      "room_scene_prompt": "Art Nouveau biopunk train interior, Produce Exchange Market, stalls with polished brass scales, rich hardwood counters, displays of vibrant crops under soft stained glass light, ornate ironwork, strict top-down orthographic view, no text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, no blank background.",
+      "width_tiles": 9,
+      "height_tiles": 7,
+      "ambient_palette": "warm_lantern",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "merchant_stall",
+          "label": "Merchant Stall",
+          "description": "An ornate market stall with a polished brass counter, a set of delicate scales, and baskets overflowing with exotic, glowing produce.",
+          "anchor": "south_east",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Train Conductor's Rest Car",
+      "biome": "Train Interior",
+      "purpose": "A small, private area for railway staff to rest. The comfort and availability of such spaces can affect STAKE_RAIL_STAFF morale, indirectly influencing S_RAIL_EFFICIENCY.",
+      "decor_tags": [
+        "Gilded Age",
+        "comfort",
+        "rich hardwood",
+        "velvet",
+        "brass"
+      ],
+      "activity_tags": [
+        "resting",
+        "relaxing",
+        "planning"
+      ],
+      "flux_floor_prompt": "seamless 16-bit pixel art of plush, dark green velvet carpet with subtle gold trim, top-down view",
+      "room_scene_prompt": "Art Nouveau biopunk train interior, Train Conductor's Rest Car, rich hardwood paneling, plush velvet seating, small brass reading lamps, soft, warm lighting, strict top-down orthographic view, no text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, no blank background.",
+      "width_tiles": 6,
+      "height_tiles": 4,
+      "ambient_palette": "low_lantern",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "conductor_lounge_chair",
+          "label": "Lounge Chair",
+          "description": "A plush, dark green velvet lounge chair with ornate brass armrests and a small, glowing reading lamp beside it.",
+          "anchor": "south_west",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Elara Vance",
+      "role_name": "Greenhouse Guild Master",
+      "activity": "Overseeing crop health and allocating tending tasks to improve S_CROP_HEALTH and S_GUILD_REPUTATION.",
+      "home_base": "Greenhouse Guild Master's Office",
+      "arc_goal": "To ensure optimal S_CROP_HEALTH and biodiversity, thereby strengthening the INST_GREEN_GUILD's influence and securing S_PLATFORM_ACCESS for essential supplies.",
+      "inventory": [
+        {
+          "name": "SEED_AURORA_BERRY",
+          "description": "A small vial of extremely rare, genetically stable Aurora Berry seeds.",
+          "quantity": 10
+        },
+        {
+          "name": "DRONE_TEND_MINI",
+          "description": "A compact, personal tending drone for precision crop care.",
+          "quantity": 1
+        },
+        {
+          "name": "JOURNAL_BIO_VOL3",
+          "description": "Elara's personal research journal, detailing experimental nutrient formulas.",
+          "quantity": 1
+        },
+        {
+          "name": "TOOL_PRUNING_SHEARS",
+          "description": "Finely crafted, self-sharpening shears for delicate plant work.",
+          "quantity": 1
+        },
+        {
+          "name": "SENSOR_CROP_HEALTH",
+          "description": "A portable, multi-spectrum sensor for instant crop diagnostics.",
+          "quantity": 1
+        },
+        {
+          "name": "CRED_GUILD_APPR",
+          "description": "Tokens of approval from the Greenhouse Guild for exceptional work.",
+          "quantity": 5
+        },
+        {
+          "name": "NUTRIENT_GEL_PACK",
+          "description": "An experimental, highly concentrated nutrient gel for struggling plants.",
+          "quantity": 3
+        },
+        {
+          "name": "SEED_BANK_CRYO",
+          "description": "A small, cryo-sealed container holding a diverse collection of heirloom seeds.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Verdant Codex",
+          "asset_type": "Ancient Text",
+          "description": "A digitized compendium of pre-Collapse botanical knowledge.",
+          "story_use": "Provides critical insights for improving S_CROP_HEALTH and developing new strains."
+        },
+        {
+          "asset_name": "Bio-Luminescent Grow Lamps",
+          "asset_type": "Advanced Technology",
+          "description": "Specialized lamps that mimic natural sunlight cycles for accelerated growth.",
+          "story_use": "Can be used to rapidly improve S_CROP_HEALTH in specific bays, potentially affecting S_PLATFORM_ACCESS."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_AURORA_BERRY_CULT",
+          "topic": "Aurora Berry Cultivation",
+          "summary": "Detailed knowledge of the rare Aurora Berry's growth cycle and optimal conditions.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K_GUILD_PROTOCOLS",
+          "topic": "Greenhouse Guild Protocols",
+          "summary": "Intimate understanding of all INST_GREEN_GUILD operational procedures and decision-making rules.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen Thorne",
+      "role_name": "Chief Train Conductor",
+      "activity": "Ensuring safe and timely rail transport, directly impacting S_RAIL_EFFICIENCY and S_PLATFORM_ACCESS.",
+      "home_base": "Conductor's Control Cabin",
+      "arc_goal": "To maintain peak S_RAIL_EFFICIENCY and order, upholding the INST_RAIL_AUTH's mandate and restoring S_PASSENGER_TRUST in the system.",
+      "inventory": [
+        {
+          "name": "RAIL_PASS_PLATINUM",
+          "description": "A master keycard granting access to all train sections and restricted areas.",
+          "quantity": 1
+        },
+        {
+          "name": "VOX_COMM_UNIT",
+          "description": "A secure, encrypted communication device for railway staff.",
+          "quantity": 1
+        },
+        {
+          "name": "MANIFEST_PASS_ARCHIVE",
+          "description": "A digital archive of all passenger manifests and travel histories.",
+          "quantity": 1
+        },
+        {
+          "name": "DRONE_REPAIR_KIT",
+          "description": "A compact kit for emergency repairs on automated rail drones.",
+          "quantity": 1
+        },
+        {
+          "name": "MAP_ROUTE_CENTRAL",
+          "description": "A detailed, real-time holographic map of the entire Verdant Express route.",
+          "quantity": 1
+        },
+        {
+          "name": "WHISTLE_SIGNAL_BRASS",
+          "description": "A traditional brass whistle, used for emergency signaling.",
+          "quantity": 1
+        },
+        {
+          "name": "LOG_OPERATIONAL_DAILY",
+          "description": "A personal data slate logging daily operational events and anomalies.",
+          "quantity": 1
+        },
+        {
+          "name": "TOOL_TRACK_GAUGE",
+          "description": "A precision tool for checking rail alignment and integrity.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Automated Dispatch System",
+          "asset_type": "Control Software",
+          "description": "The core AI managing train schedules, routing, and platform access.",
+          "story_use": "Can be manipulated to prioritize S_RAIL_EFFICIENCY or S_PLATFORM_ACCESS, affecting S_PASSENGER_TRUST."
+        },
+        {
+          "asset_name": "Emergency Braking Override",
+          "asset_type": "Physical Control",
+          "description": "A manual override lever for the train's primary braking system.",
+          "story_use": "Allows for immediate, drastic changes to S_RAIL_EFFICIENCY in critical situations, potentially impacting S_PASSENGER_TRUST."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_RAIL_AUTH_LAWS",
+          "topic": "Railway Authority Regulations",
+          "summary": "Comprehensive knowledge of all INST_RAIL_AUTH laws, bylaws, and enforcement procedures.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K_TRAIN_MAINT_DIAG",
+          "topic": "Train Maintenance & Diagnostics",
+          "summary": "Expertise in diagnosing and resolving common mechanical and software issues affecting S_RAIL_EFFICIENCY.",
+          "confidence": 92
+        }
+      ]
+    },
+    {
+      "display_name": "Seraphina 'Sera' Bellwether",
+      "role_name": "Passenger Council Chair",
+      "activity": "Representing passenger interests and mediating disputes to improve S_PASSENGER_TRUST and S_PLATFORM_ACCESS.",
+      "home_base": "Passenger Council Assembly Hall",
+      "arc_goal": "To advocate for fair access and transparency, ensuring the INST_PASS_COUNCIL's voice is heard and improving S_PASSENGER_TRUST across the train.",
+      "inventory": [
+        {
+          "name": "PASS_COUNCIL_CHARTER",
+          "description": "The official charter outlining the rights and responsibilities of the Passenger Council.",
+          "quantity": 1
+        },
+        {
+          "name": "VOX_COMM_UNIT_PUBLIC",
+          "description": "A public-facing communication unit for broadcasting announcements to passengers.",
+          "quantity": 1
+        },
+        {
+          "name": "SCROLL_PETITION_BLANK",
+          "description": "A digital scroll for collecting passenger signatures on grievances or proposals.",
+          "quantity": 5
+        },
+        {
+          "name": "BADGE_COUNCIL_CHAIR",
+          "description": "An ornate badge signifying the authority of the Passenger Council Chair.",
+          "quantity": 1
+        },
+        {
+          "name": "DATA_CHIP_GRIEVANCES",
+          "description": "A data chip containing a compiled list of passenger complaints and concerns.",
+          "quantity": 1
+        },
+        {
+          "name": "PEN_INK_PERMANENT",
+          "description": "A specialized pen for signing official documents that cannot be altered.",
+          "quantity": 1
+        },
+        {
+          "name": "BOOK_MEDIATION_GUIDE",
+          "description": "A worn but well-read guide on conflict resolution and negotiation tactics.",
+          "quantity": 1
+        },
+        {
+          "name": "TEA_CALMING_BLEND",
+          "description": "A small tin of herbal tea, known for its calming properties during tense meetings.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Public Forum Projector",
+          "asset_type": "Display Technology",
+          "description": "A large holographic projector used for public announcements and debates.",
+          "story_use": "Can be used to sway S_PASSENGER_TRUST and influence public opinion regarding INST_RAIL_AUTH or INST_GREEN_GUILD policies."
+        },
+        {
+          "asset_name": "Council Voting System",
+          "asset_type": "Digital Platform",
+          "description": "The secure digital system used for democratic voting on Passenger Council resolutions.",
+          "story_use": "Allows for formal decisions that can directly impact S_PLATFORM_ACCESS or S_CROP_HEALTH through policy recommendations."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_PASS_RIGHTS_CODE",
+          "topic": "Passenger Rights Code",
+          "summary": "Extensive knowledge of the established rights and protections for all passengers aboard the Verdant Express.",
+          "confidence": 97
+        },
+        {
+          "knowledge_id": "K_INST_LEVERAGE_POINTS",
+          "topic": "Institutional Leverage Points",
+          "summary": "Understanding of how to apply social pressure and formal complaints to influence INST_RAIL_AUTH and INST_GREEN_GUILD decisions.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Jax 'The Root' Riley",
+      "role_name": "Hydroponic Cultivation Technician",
+      "activity": "Maintaining the hydroponic systems and performing tending tasks, directly affecting S_CROP_HEALTH.",
+      "home_base": "Hydroponic Cultivation Bay",
+      "arc_goal": "To optimize the efficiency of the Hydroponic Cultivation Bay, proving the value of individual labor to the INST_GREEN_GUILD and improving S_CROP_HEALTH for all.",
+      "inventory": [
+        {
+          "name": "HYD_UNIT_COMPACT",
+          "description": "A portable, multi-tool for diagnosing and repairing hydroponic system malfunctions.",
+          "quantity": 1
+        },
+        {
+          "name": "TOOL_WRENCH_ADJUST",
+          "description": "A heavy-duty adjustable wrench, essential for pipe and valve maintenance.",
+          "quantity": 1
+        },
+        {
+          "name": "GLOVES_BIO_RESIST",
+          "description": "Thick, bio-resistant gloves for handling nutrient solutions and plant matter.",
+          "quantity": 1
+        },
+        {
+          "name": "DATA_PAD_CROP_LOGS",
+          "description": "A rugged data pad containing detailed logs of crop growth cycles and nutrient levels.",
+          "quantity": 1
+        },
+        {
+          "name": "NUTRIENT_SOLUTION_BASIC",
+          "description": "A standard bottle of nutrient solution for routine plant feeding.",
+          "quantity": 2
+        },
+        {
+          "name": "SEED_PACK_COMMON_VEG",
+          "description": "A small packet of common vegetable seeds for daily cultivation.",
+          "quantity": 5
+        },
+        {
+          "name": "CLEANING_BRUSH_ALGAE",
+          "description": "A specialized brush for removing algae buildup in hydroponic channels.",
+          "quantity": 1
+        },
+        {
+          "name": "VOX_COMM_UNIT_BASIC",
+          "description": "A basic communication unit for internal bay communications.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Automated Nutrient Mixer",
+          "asset_type": "Machinery",
+          "description": "A large machine that precisely mixes and dispenses nutrient solutions to the crops.",
+          "story_use": "Can be calibrated to optimize S_CROP_HEALTH, but a malfunction could severely impact yields."
+        },
+        {
+          "asset_name": "Water Recycling System",
+          "asset_type": "Infrastructure",
+          "description": "The closed-loop system that purifies and recirculates water throughout the cultivation bays.",
+          "story_use": "Critical for sustainable S_CROP_HEALTH; any disruption affects the entire greenhouse."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_HYDROPONIC_MAINT",
+          "topic": "Hydroponic System Maintenance",
+          "summary": "Practical knowledge of maintaining and troubleshooting all aspects of the hydroponic cultivation bays.",
+          "confidence": 88
+        },
+        {
+          "knowledge_id": "K_PLANT_DISEASE_ID",
+          "topic": "Common Plant Disease Identification",
+          "summary": "Ability to identify early signs of common plant diseases and pests affecting S_CROP_HEALTH.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Finnian \"Fin\" Croft",
+      "role_name": "Independent Produce Broker",
+      "activity": "Negotiating deals for rare produce and finding new distribution routes, directly impacting S_GUILD_REPUTATION and STAKE_MERCHANTS.",
+      "home_base": "Produce Exchange Market",
+      "arc_goal": "Establish a legitimate, profitable trade network for exotic produce, increasing S_PASSENGER_TRUST in diverse offerings.",
+      "inventory": [
+        {
+          "name": "Data Slate (Market Trends)",
+          "description": "A compact device displaying real-time supply and demand for various crops across the train.",
+          "quantity": 1
+        },
+        {
+          "name": "Sample Kit (Exotic Seeds)",
+          "description": "A small, sealed box containing rare and uncertified seed varieties from outside the Guild's registry.",
+          "quantity": 12
+        },
+        {
+          "name": "Trade Ledger (Encrypted)",
+          "description": "A digital ledger detailing past transactions, contacts, and potential black market deals.",
+          "quantity": 1
+        },
+        {
+          "name": "Nutrient Analyzer (Portable)",
+          "description": "A handheld device for quickly assessing the quality and nutrient content of produce samples.",
+          "quantity": 1
+        },
+        {
+          "name": "Discreet Comm Unit",
+          "description": "A small, untraceable communication device for sensitive negotiations.",
+          "quantity": 1
+        },
+        {
+          "name": "Guild Bypass Permit (Expired)",
+          "description": "An old, expired permit that once allowed direct trade without full Guild certification.",
+          "quantity": 1
+        },
+        {
+          "name": "Cargo Manifest (Blank)",
+          "description": "Unfilled forms for documenting produce shipments, ready for new deals.",
+          "quantity": 5
+        },
+        {
+          "name": "Credit Chips (Various Denominations)",
+          "description": "A small pouch of universal credit chips for immediate transactions.",
+          "quantity": 20
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Compartment (Stall)",
+          "asset_type": "Storage",
+          "description": "A concealed space beneath Fin's market stall, perfect for stashing uncertified goods.",
+          "story_use": "Used to hide or retrieve illicit or unapproved produce and items."
+        },
+        {
+          "asset_name": "'The Wanderer's Guide'",
+          "asset_type": "Book",
+          "description": "A worn, annotated guide to forgotten cultivation techniques and wild plant identification.",
+          "story_use": "Contains information that could challenge Greenhouse Guild practices or reveal new crop sources."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_BLACK_MARKET_ROUTES",
+          "topic": "Underground Trade Networks",
+          "summary": "Knowledge of unofficial routes and contacts for moving goods between train sections without Railway Authority oversight.",
+          "confidence": 8
+        },
+        {
+          "knowledge_id": "K_GUILD_LOOPHOLES",
+          "topic": "Greenhouse Guild Regulations",
+          "summary": "Detailed understanding of the Greenhouse Guild's certification processes and their exploitable weaknesses.",
+          "confidence": 7
+        }
+      ]
+    },
+    {
+      "display_name": "Dr. Aris Thorne",
+      "role_name": "Railway Systems Engineer",
+      "activity": "Optimizing train mechanics and automated systems, directly influencing S_RAIL_EFFICIENCY and INST_RAIL_AUTH.",
+      "home_base": "Conductor's Control Cabin",
+      "arc_goal": "Implement a new predictive maintenance system to prevent rail disruptions, thereby stabilizing S_RAIL_EFFICIENCY and improving S_PASSENGER_TRUST.",
+      "inventory": [
+        {
+          "name": "Diagnostic Toolkit (Advanced)",
+          "description": "A specialized kit containing sensors, scanners, and tools for intricate railway system diagnostics.",
+          "quantity": 1
+        },
+        {
+          "name": "Schematics (Verdant Express)",
+          "description": "Detailed blueprints of the entire train's mechanical and electrical systems.",
+          "quantity": 1
+        },
+        {
+          "name": "Automated Repair Drone (Mini)",
+          "description": "A small, foldable drone capable of performing minor repairs in hard-to-reach areas.",
+          "quantity": 1
+        },
+        {
+          "name": "Data Log (System Anomalies)",
+          "description": "A digital record of unusual system behaviors and potential vulnerabilities.",
+          "quantity": 1
+        },
+        {
+          "name": "Rail Lubricant (High-Viscosity)",
+          "description": "A specialized lubricant designed to reduce friction and wear on critical moving parts.",
+          "quantity": 3
+        },
+        {
+          "name": "Security Override Keycard",
+          "description": "A master keycard for accessing restricted maintenance panels and control systems.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Signal Flare",
+          "description": "A device for signaling distress or critical system failures to other train sections.",
+          "quantity": 2
+        },
+        {
+          "name": "Personal Comm Link (Encrypted)",
+          "description": "A secure communication device for direct contact with critical personnel.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Engineering Workstation",
+          "asset_type": "Equipment",
+          "description": "A dedicated console with multiple screens for monitoring and controlling train systems.",
+          "story_use": "Used for real-time diagnostics, system adjustments, and implementing new protocols."
+        },
+        {
+          "asset_name": "Prototype Rail Sensor",
+          "asset_type": "Device",
+          "description": "An experimental sensor designed to detect subtle track imperfections before they become critical.",
+          "story_use": "Could provide early warnings for potential derailments or track damage, impacting S_RAIL_EFFICIENCY."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_RAIL_VULNERABILITIES",
+          "topic": "Train System Weaknesses",
+          "summary": "Deep understanding of the Verdant Express's structural and software vulnerabilities, including potential points of failure.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K_AUTOMATION_PROTOCOLS",
+          "topic": "Railway Authority Automation",
+          "summary": "Comprehensive knowledge of the automated systems governing train movement and platform access, and how they can be manipulated.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra 'The Whisper' Solara",
+      "role_name": "Passenger Council Archivist",
+      "activity": "Documenting passenger grievances and historical precedents, influencing INST_PASS_COUNCIL decisions and S_PASSENGER_TRUST.",
+      "home_base": "Passenger Council Assembly Hall",
+      "arc_goal": "Uncover forgotten council charters to empower passengers and challenge institutional overreach, thereby increasing S_PASSENGER_TRUST.",
+      "inventory": [
+        {
+          "name": "Archival Data Crystal",
+          "description": "A small, encrypted crystal containing centuries of Passenger Council meeting minutes and resolutions.",
+          "quantity": 1
+        },
+        {
+          "name": "Microfilm Reader (Portable)",
+          "description": "A compact device for viewing ancient documents stored on microfilm.",
+          "quantity": 1
+        },
+        {
+          "name": "Cipher Key (Council)",
+          "description": "A physical key used to decrypt older Passenger Council communications.",
+          "quantity": 1
+        },
+        {
+          "name": "Ink & Quill Set (Replica)",
+          "description": "A traditional writing set, used for transcribing particularly important historical texts.",
+          "quantity": 1
+        },
+        {
+          "name": "Petition Scroll (Blank)",
+          "description": "A roll of parchment for collecting passenger signatures on new grievances or proposals.",
+          "quantity": 5
+        },
+        {
+          "name": "Voice Recorder (Discreet)",
+          "description": "A tiny device for secretly recording conversations or public statements.",
+          "quantity": 1
+        },
+        {
+          "name": "Historical Map (Train Layout)",
+          "description": "An old map showing previous configurations and forgotten sections of the Verdant Express.",
+          "quantity": 1
+        },
+        {
+          "name": "Council Seal (Wax)",
+          "description": "A small, ornate seal used to authenticate official Passenger Council documents.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Archive Niche",
+          "asset_type": "Storage",
+          "description": "A concealed compartment within the Assembly Hall's walls, holding sensitive historical documents.",
+          "story_use": "Contains evidence of past institutional abuses or forgotten passenger rights."
+        },
+        {
+          "asset_name": "'The People's Voice' Manifesto",
+          "asset_type": "Document",
+          "description": "A foundational text outlining the original, expansive rights and powers of the Passenger Council.",
+          "story_use": "Could be used to challenge current institutional mandates and empower passengers."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_COUNCIL_HISTORY",
+          "topic": "Passenger Council Precedents",
+          "summary": "Extensive knowledge of historical Passenger Council rulings, forgotten charters, and past conflicts with other institutions.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K_INSTITUTIONAL_WEAKNESSES",
+          "topic": "Railway/Guild Legal Loopholes",
+          "summary": "Understanding of legal and procedural weaknesses in the Railway Authority and Greenhouse Guild's mandates, based on historical records.",
+          "confidence": 7
+        }
+      ]
+    },
+    {
+      "display_name": "Roric 'The Spore' Vane",
+      "role_name": "Bio-Security Specialist",
+      "activity": "Monitoring for invasive species and plant diseases, directly affecting S_CROP_HEALTH and INST_GREEN_GUILD.",
+      "home_base": "Hydroponic Cultivation Bay",
+      "arc_goal": "Develop a rapid-response bio-containment protocol to protect the train's ecosystem from external threats, stabilizing S_CROP_HEALTH.",
+      "inventory": [
+        {
+          "name": "Bio-Scanner (Advanced)",
+          "description": "A sophisticated handheld device for detecting microscopic pathogens and genetic anomalies in plant life.",
+          "quantity": 1
+        },
+        {
+          "name": "Containment Kit (Emergency)",
+          "description": "A sealed kit containing sterile tools, bio-hazard suits, and rapid-acting fungicides/pesticides.",
+          "quantity": 1
+        },
+        {
+          "name": "Spore Trap Array (Portable)",
+          "description": "A deployable system of air filters and sticky traps for collecting airborne biological samples.",
+          "quantity": 3
+        },
+        {
+          "name": "Genetic Sequencer (Mini)",
+          "description": "A compact device for quick on-site analysis of DNA and RNA from unknown organisms.",
+          "quantity": 1
+        },
+        {
+          "name": "Quarantine Tags (Biohazard)",
+          "description": "Brightly colored tags used to mark contaminated or suspicious plant sections.",
+          "quantity": 20
+        },
+        {
+          "name": "Antiviral Plant Serum",
+          "description": "A potent, experimental serum designed to combat aggressive plant viruses.",
+          "quantity": 5
+        },
+        {
+          "name": "Environmental Regulator (Handheld)",
+          "description": "A device for precisely adjusting localized humidity, temperature, and light conditions.",
+          "quantity": 1
+        },
+        {
+          "name": "Field Journal (Pathogen Log)",
+          "description": "A waterproof journal filled with detailed observations and sketches of various plant diseases.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Bio-Containment Unit",
+          "asset_type": "Facility",
+          "description": "A small, isolated chamber within the Hydroponic Cultivation Bay for studying and isolating dangerous biological samples.",
+          "story_use": "Used to research new pathogens or safely store highly contagious plant material."
+        },
+        {
+          "asset_name": "'The Verdant Shield' Protocol",
+          "asset_type": "Document",
+          "description": "Roric's personal, highly detailed plan for defending the train's ecosystem from a catastrophic biological threat.",
+          "story_use": "Outlines radical measures that could impact other institutions or state variables if implemented."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_PATHOGEN_IDENTIFICATION",
+          "topic": "Plant Diseases & Pests",
+          "summary": "Expert knowledge in identifying and classifying a vast array of plant pathogens, fungi, and invasive insect species.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K_ECOSYSTEM_VULNERABILITY",
+          "topic": "Verdant Express Ecosystem",
+          "summary": "Deep understanding of the delicate balance of the train's closed ecosystem and its susceptibility to external biological threats.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Silas \"The Seed Whisperer\" Blackwood",
+      "role_name": "Rare Seed Collector",
+      "activity": "Acquiring and cultivating unlisted plant varieties, potentially impacting S_CROP_HEALTH and challenging INST_GREEN_GUILD's control over biodiversity.",
+      "home_base": "Hydroponic Cultivation Bay",
+      "arc_goal": "To introduce a new, highly resilient crop strain to the Verdant Express, thereby improving S_CROP_HEALTH and gaining recognition, despite INST_GREEN_GUILD regulations.",
+      "inventory": [
+        {
+          "name": "Cryo-Sealed Seed Vial",
+          "description": "A small, insulated vial containing dormant seeds of a rare, high-yield grain.",
+          "quantity": 3
+        },
+        {
+          "name": "Botanist's Magnifying Loupe",
+          "description": "An antique loupe with multiple lenses for detailed plant inspection.",
+          "quantity": 1
+        },
+        {
+          "name": "Illicit Seed Ledger",
+          "description": "A coded journal detailing sources and locations of rare, unapproved seeds.",
+          "quantity": 1
+        },
+        {
+          "name": "Portable Grow Lamp",
+          "description": "A compact, energy-efficient LED lamp for emergency plant cultivation.",
+          "quantity": 1
+        },
+        {
+          "name": "Nutrient Solution Kit",
+          "description": "A set of concentrated nutrient solutions for experimental plant growth.",
+          "quantity": 1
+        },
+        {
+          "name": "Disguised Seed Pouch",
+          "description": "A small, unassuming pouch designed to conceal seeds during inspections.",
+          "quantity": 2
+        },
+        {
+          "name": "Hydroponic Test Strips",
+          "description": "Strips for quickly checking water pH and nutrient levels in small setups.",
+          "quantity": 10
+        },
+        {
+          "name": "Foraging Knife",
+          "description": "A small, sharp knife used for carefully collecting plant samples.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Micro-Cultivation Unit",
+          "asset_type": "Hydroponic System",
+          "description": "A compact, self-contained unit for growing small batches of experimental plants, concealed within a larger bay.",
+          "story_use": "Allows Silas to cultivate rare seeds without immediate detection by the Greenhouse Guild."
+        },
+        {
+          "asset_name": "Botanical Archive (Digital)",
+          "asset_type": "Data Drive",
+          "description": "A heavily encrypted data drive containing extensive research on forgotten plant species and their genetic modifications.",
+          "story_use": "Provides Silas with the knowledge to identify, cultivate, and potentially improve new crop strains."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_RARE_SEED_SOURCES",
+          "topic": "Rare Seed Acquisition",
+          "summary": "Knowledge of clandestine networks and forgotten locations where rare and unlisted plant seeds can be obtained, often bypassing official channels.",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "K_GENETIC_RESILIENCE",
+          "topic": "Plant Genetic Resilience",
+          "summary": "Deep understanding of plant genetics, specifically how to identify and enhance traits for disease resistance and adaptability to harsh environments.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Anya 'The Fixer' Petrova",
+      "role_name": "Railway Systems Mechanic",
+      "activity": "Performing unauthorized repairs and modifications to train systems, potentially affecting S_RAIL_EFFICIENCY and challenging INST_RAIL_AUTH's protocols.",
+      "home_base": "Conductor's Control Cabin",
+      "arc_goal": "To prove that her unconventional modifications can significantly improve S_RAIL_EFFICIENCY and safety, despite the rigid rules of INST_RAIL_AUTH, thereby earning official recognition.",
+      "inventory": [
+        {
+          "name": "Multi-Tool Wrench Set",
+          "description": "A versatile set of wrenches, custom-machined for various train components.",
+          "quantity": 1
+        },
+        {
+          "name": "Diagnostic Data Pad (Modified)",
+          "description": "A standard diagnostic pad, heavily modified to access restricted system logs.",
+          "quantity": 1
+        },
+        {
+          "name": "High-Tensile Wiring Spool",
+          "description": "A spool of specialized wiring, resistant to extreme temperatures and vibrations.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Bypass Unit",
+          "description": "A small device capable of temporarily overriding automated safety protocols.",
+          "quantity": 1
+        },
+        {
+          "name": "Grease-Stained Schematics",
+          "description": "Hand-drawn diagrams of train systems, with Anya's personal annotations.",
+          "quantity": 1
+        },
+        {
+          "name": "Magnetic Component Retriever",
+          "description": "A flexible tool with a strong magnet for retrieving dropped parts in tight spaces.",
+          "quantity": 1
+        },
+        {
+          "name": "Conductor's Whistle (Broken)",
+          "description": "A non-functional whistle, kept as a reminder of a past rail incident.",
+          "quantity": 1
+        },
+        {
+          "name": "Energy Cell Recharger",
+          "description": "A portable recharger for various rail system energy cells.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Workshop Compartment",
+          "asset_type": "Maintenance Bay",
+          "description": "A small, concealed compartment within the Conductor's Control Cabin, equipped with tools for discreet repairs and modifications.",
+          "story_use": "Allows Anya to work on sensitive railway components without constant oversight from the Railway Authority."
+        },
+        {
+          "asset_name": "Legacy Rail Manuals",
+          "asset_type": "Technical Documents",
+          "description": "A collection of outdated but highly detailed technical manuals for older train models, containing insights into fundamental system designs.",
+          "story_use": "Provides Anya with a deeper understanding of rail mechanics, allowing her to devise innovative solutions not found in modern protocols."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_RAIL_SYSTEM_EXPLOITS",
+          "topic": "Railway System Vulnerabilities",
+          "summary": "Intimate knowledge of the Verdant Express's automated systems, including hidden access points and potential exploits for unauthorized modifications.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K_EMERGENCY_REPAIR_PROTOCOLS",
+          "topic": "Improvised Rail Repairs",
+          "summary": "Expertise in performing rapid, unconventional repairs to critical train systems under pressure, often bypassing standard safety procedures.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Jian Li",
+      "role_name": "Produce Exchange Auditor",
+      "activity": "Monitoring transactions and quality assessments at the Produce Exchange Market, directly influencing S_GUILD_REPUTATION and STAKE_MERCHANTS' trust.",
+      "home_base": "Produce Exchange Market",
+      "arc_goal": "To expose corruption and unfair practices within the Produce Exchange, ensuring transparency and fairness for all STAKE_MERCHANTS and improving S_GUILD_REPUTATION.",
+      "inventory": [
+        {
+          "name": "Digital Ledger Device",
+          "description": "A secure device for recording and cross-referencing produce transactions and quality scores.",
+          "quantity": 1
+        },
+        {
+          "name": "Portable Spectrometer",
+          "description": "A handheld device for analyzing produce quality and nutrient content on the spot.",
+          "quantity": 1
+        },
+        {
+          "name": "Guild Regulation Codex",
+          "description": "A comprehensive digital copy of all Greenhouse Guild regulations and market standards.",
+          "quantity": 1
+        },
+        {
+          "name": "Hidden Audio Recorder",
+          "description": "A discreet device for capturing conversations during suspicious transactions.",
+          "quantity": 1
+        },
+        {
+          "name": "Market Trend Analysis Software",
+          "description": "Proprietary software for identifying anomalies and potential manipulation in produce pricing.",
+          "quantity": 1
+        },
+        {
+          "name": "Weighted Scale Calibrator",
+          "description": "A small, precise tool for verifying the accuracy of market scales.",
+          "quantity": 1
+        },
+        {
+          "name": "Anonymous Complaint Box Key",
+          "description": "A key to a secure, anonymous complaint box maintained by the Passenger Council.",
+          "quantity": 1
+        },
+        {
+          "name": "Nutrient Deficiency Chart",
+          "description": "A laminated chart detailing visual indicators of common crop deficiencies.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Secure Data Terminal (Market)",
+          "asset_type": "Workstation",
+          "description": "A dedicated terminal within the Produce Exchange Market with access to all recorded transactions and quality reports.",
+          "story_use": "Allows Jian to meticulously track and audit all market activities for discrepancies and unfair practices."
+        },
+        {
+          "asset_name": "Market Surveillance Drones",
+          "asset_type": "Automated System",
+          "description": "A network of small, unobtrusive drones that monitor the Produce Exchange for unauthorized activities and suspicious dealings.",
+          "story_use": "Provides Jian with an additional layer of oversight to detect illicit trading or manipulation."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_MARKET_MANIPULATION_TACTICS",
+          "topic": "Produce Market Manipulation",
+          "summary": "Detailed understanding of common tactics used by merchants and brokers to manipulate produce prices, quality ratings, and supply chains.",
+          "confidence": 80
+        },
+        {
+          "knowledge_id": "K_GUILD_REGULATORY_LOOPHOLES",
+          "topic": "Greenhouse Guild Regulations",
+          "summary": "Extensive knowledge of the Greenhouse Guild's regulatory framework, including its strengths, weaknesses, and potential loopholes exploited by unscrupulous parties.",
+          "confidence": 92
+        }
+      ]
+    },
+    {
+      "display_name": "Dr. Lena Petrova",
+      "role_name": "Passenger Council Medical Liaison",
+      "activity": "Advocating for passenger health and well-being, particularly concerning environmental factors, directly impacting S_PASSENGER_TRUST and S_CROP_HEALTH.",
+      "home_base": "Passenger Council Assembly Hall",
+      "arc_goal": "To implement comprehensive health and sanitation protocols across the Verdant Express, improving S_PASSENGER_TRUST and ensuring the long-term health of the community, even if it means challenging existing institutional practices.",
+      "inventory": [
+        {
+          "name": "Portable Air Quality Monitor",
+          "description": "A device for detecting airborne pathogens, allergens, and pollutants within train cars.",
+          "quantity": 1
+        },
+        {
+          "name": "Medical Diagnostic Kit",
+          "description": "A compact kit containing tools for basic health assessments and emergency care.",
+          "quantity": 1
+        },
+        {
+          "name": "Passenger Health Survey Forms",
+          "description": "Official forms for collecting anonymous feedback on passenger well-being and environmental concerns.",
+          "quantity": 10
+        },
+        {
+          "name": "Herbal Remedy Compendium",
+          "description": "A digital compendium of traditional and modern herbal remedies for common ailments on the train.",
+          "quantity": 1
+        },
+        {
+          "name": "Sanitation Protocol Guidelines",
+          "description": "A laminated card outlining best practices for hygiene and waste management.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Water Purifier",
+          "description": "A small, portable device for purifying water in critical situations.",
+          "quantity": 1
+        },
+        {
+          "name": "Allergy Identification Kit",
+          "description": "A set of reagents and slides for identifying common plant-based allergens.",
+          "quantity": 1
+        },
+        {
+          "name": "Community Health Report (Draft)",
+          "description": "An unfinished report detailing health trends and recommendations for the Passenger Council.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Mobile Health Clinic Unit",
+          "asset_type": "Medical Cart",
+          "description": "A compact, wheeled unit equipped with basic medical supplies and diagnostic tools, designed for rapid deployment across train cars.",
+          "story_use": "Allows Lena to conduct health check-ups and respond to medical emergencies directly where passengers are, building trust."
+        },
+        {
+          "asset_name": "Environmental Data Archive",
+          "asset_type": "Data Storage",
+          "description": "A secure database containing historical environmental readings, health records, and epidemiological data from the Verdant Express.",
+          "story_use": "Provides Lena with the evidence needed to link environmental factors (like crop health) to passenger well-being and advocate for policy changes."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_TRAIN_ENVIRONMENTAL_HEALTH",
+          "topic": "Closed-System Health Risks",
+          "summary": "Expert knowledge of the unique health challenges and disease transmission risks inherent in a closed, moving environment like the Verdant Express.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K_COMMUNITY_HEALTH_ADVOCACY",
+          "topic": "Public Health Policy & Advocacy",
+          "summary": "Understanding of how to effectively advocate for public health policies within institutional frameworks, leveraging data and community support.",
+          "confidence": 85
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Crop Management & Distribution",
+      "summary": "Players collaborate to maintain optimal crop health and ensure fair distribution of produce, balancing the needs of the train's population with the Guild's ecological principles.",
+      "roles": [
+        "Greenhouse Guild Master",
+        "Hydroponic Cultivation Technician",
+        "Independent Produce Broker",
+        "Produce Exchange Auditor"
+      ],
+      "rooms": [
+        "Hydroponic Cultivation Bay",
+        "Produce Exchange Market",
+        "Greenhouse Guild Master's Office"
+      ],
+      "pressure": "Fluctuations in S_CROP_HEALTH due to environmental factors or labor shortages, activating the causal link: 'If crop health is high due to diligent tending, Platform access for all passengers improves'."
+    },
+    {
+      "label": "Railway Operations & Passenger Trust",
+      "summary": "Players work to keep the train running efficiently and safely, addressing technical issues and managing passenger expectations to maintain trust in the system.",
+      "roles": [
+        "Chief Train Conductor",
+        "Railway Systems Engineer",
+        "Railway Systems Mechanic",
+        "Passenger Council Chair"
+      ],
+      "rooms": [
+        "Conductor's Control Cabin",
+        "Train Conductor's Rest Car",
+        "Passenger Council Assembly Hall"
+      ],
+      "pressure": "Unexpected system failures or delays impacting S_RAIL_EFFICIENCY, activating the causal link: 'If railway operations are consistently smooth and on schedule, Passenger trust in the system increases'."
+    },
+    {
+      "label": "Community Governance & Resource Allocation",
+      "summary": "Players engage in debates and decision-making within the Passenger Council to allocate resources, mediate disputes, and advocate for passenger interests, influencing overall cooperation.",
+      "roles": [
+        "Passenger Council Chair",
+        "Passenger Council Archivist",
+        "Passenger Council Medical Liaison",
+        "Greenhouse Guild Master"
+      ],
+      "rooms": [
+        "Passenger Council Assembly Hall",
+        "Greenhouse Guild Master's Office"
+      ],
+      "pressure": "Rising tension in S_PASSENGER_TRUST due to perceived unfairness or resource scarcity, activating the causal link: 'If passenger cooperation in tending tasks is high, Overall crop health improves significantly'."
+    }
+  ],
+  "player_entry_points": [
+    "A critical hydroponic pump malfunctions, threatening crop health.",
+    "A new, highly sought-after rare seed variety is discovered, sparking interest from collectors and brokers.",
+    "The train experiences unexpected turbulence, causing minor damage to a rail system component.",
+    "A new passenger council policy regarding produce distribution is met with strong opposition."
+  ],
+  "conflict_hooks": [
+    "A sudden blight threatens a major crop, forcing a debate between the Greenhouse Guild Master and Bio-Security Specialist on aggressive quarantine measures versus preserving biodiversity, potentially impacting S_CROP_HEALTH and S_GUILD_REPUTATION.",
+    "The Chief Train Conductor announces a necessary reroute due to track maintenance, which will delay produce deliveries and passenger travel, creating tension between the Railway Authority and Passenger Council, affecting S_RAIL_EFFICIENCY and S_PASSENGER_TRUST.",
+    "An Independent Produce Broker attempts to monopolize a vital nutrient supply, driving up prices and creating an ethical dilemma for the Produce Exchange Auditor and Passenger Council Chair regarding fair access and market regulation.",
+    "A critical component of the train's life support system shows signs of wear, requiring immediate attention from the Railway Systems Engineer and Mechanic, but diverting resources from other essential maintenance, potentially impacting S_RAIL_EFFICIENCY and S_PLATFORM_ACCESS."
+  ],
+  "custom_actions": [
+    "CertifyProduce",
+    "AllocateTendingTasks",
+    "InspectRailSystems",
+    "ProposePolicy",
+    "BrokerDeal",
+    "QuarantineSection",
+    "AuditExchange",
+    "DiagnoseAilment"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "UndervalueRareSeeds",
+      "initiating_role": "Independent Produce Broker",
+      "target_role": "Rare Seed Collector",
+      "situation": "The Rare Seed Collector has a unique seed variety, and the Broker wants to acquire it for a fraction of its true value.",
+      "proposed_effects": [
+        "transfer",
+        "speech"
+      ],
+      "coordinator_checks": [
+        "Is the Rare Seed Collector aware of the true market value?",
+        "Does the Broker have sufficient currency/items for a fair trade?",
+        "Is the exchange consensual?"
+      ]
+    },
+    {
+      "action_name": "ExpressWorkloadGrievance",
+      "initiating_role": "Hydroponic Cultivation Technician",
+      "target_role": "Greenhouse Guild Master",
+      "situation": "The technician feels overwhelmed by the current crop tending schedule and believes it's unsustainable.",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Is the Guild Master present and able to hear the grievance?",
+        "Are there other technicians who share this sentiment?",
+        "What is the current workload status for technicians?"
+      ]
+    },
+    {
+      "action_name": "ImproviseRepairPart",
+      "initiating_role": "Railway Systems Mechanic",
+      "target_role": "Railway Systems Engineer",
+      "situation": "A critical train component is failing, and a standard replacement part is unavailable. The Mechanic proposes to create a temporary fix from salvaged materials.",
+      "proposed_effects": [
+        "create_item",
+        "speech"
+      ],
+      "coordinator_checks": [
+        "Are the necessary salvaged materials available?",
+        "Does the Mechanic possess the skills to create the part?",
+        "What are the potential risks of using an improvised part?",
+        "Does the Engineer approve the design?"
+      ]
+    },
+    {
+      "action_name": "ChallengeCouncilDecision",
+      "initiating_role": "Passenger Council Chair",
+      "target_role": "Passenger Council Archivist",
+      "situation": "The Passenger Council has passed a controversial policy, and the Chair wants the Archivist to publicly document dissenting opinions and call for a re-vote.",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Was the original vote conducted fairly?",
+        "Are there established procedures for challenging council decisions?",
+        "Does the Archivist have the authority to call for a re-vote?"
+      ]
+    }
+  ],
+  "social_rules": [
+    "Prioritize collective well-being over individual gain when resources are scarce.",
+    "All passengers are expected to contribute to the maintenance of the train's vital systems, including hydroponics.",
+    "Decisions impacting the entire train's welfare must be debated and approved by relevant institutional representatives."
+  ],
+  "item_themes": [
+    "Advanced hydroponic systems",
+    "Rare seed packets",
+    "Automated tending drones",
+    "Botanical research journals",
+    "Specialized gardening tools",
+    "Train route maps"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "HYD_UNIT_COMPACT",
+      "name": "Compact Hydro-Grow Unit",
+      "price": 500,
+      "mass": 15.5,
+      "description": "A self-contained, energy-efficient hydroponic unit for personal crop cultivation in small spaces. Features automated nutrient delivery.",
+      "image_prompt": "Sleek, compact hydroponic unit with glowing blue nutrient lines, small leafy plants, Art Nouveau accents, sci-fi interior.",
+      "category": "Hydroponics"
+    },
+    {
+      "item_id": "SEED_AURORA_BERRY",
+      "name": "Aurora Berry Seed Packet",
+      "price": 150,
+      "mass": 0.05,
+      "description": "Seeds for the highly sought-after Aurora Berry, known for its bioluminescent properties and potent medicinal qualities. Requires specific light spectrum.",
+      "image_prompt": "Small, ornate seed packet with a stylized glowing berry illustration, Art Nouveau design, vibrant colors.",
+      "category": "Seeds"
+    },
+    {
+      "item_id": "DRONE_TEND_MINI",
+      "name": "Mini-Tender Drone",
+      "price": 800,
+      "mass": 2.3,
+      "description": "A small, agile drone designed for precision pollination and pest detection in dense botanical environments. Operates autonomously.",
+      "image_prompt": "Miniature, sleek white drone with delicate manipulators, hovering among lush glowing plants in a greenhouse, sci-fi.",
+      "category": "Drones"
+    },
+    {
+      "item_id": "JOURNAL_BIO_VOL3",
+      "name": "Guild Botanist's Journal (Vol. 3)",
+      "price": 75,
+      "mass": 0.8,
+      "description": "A compendium of advanced botanical research, detailing optimal growing conditions for rare Verdant Express flora.",
+      "image_prompt": "Leather-bound journal with glowing botanical illustrations on the cover, open to intricate diagrams of plant structures, Art Nouveau style.",
+      "category": "Research"
+    },
+    {
+      "item_id": "TOOL_PRUNING_SHEARS",
+      "name": "Ergonomic Pruning Shears",
+      "price": 40,
+      "mass": 0.3,
+      "description": "Lightweight, self-sharpening shears crafted from recycled alloys, essential for precise plant maintenance.",
+      "image_prompt": "Sleek, silver and green pruning shears with ergonomic grip, resting on a vibrant leaf, sci-fi gardening tool.",
+      "category": "Tools"
+    },
+    {
+      "item_id": "MAP_ROUTE_CENTRAL",
+      "name": "Central Line Route Map",
+      "price": 25,
+      "mass": 0.1,
+      "description": "A detailed, illuminated map of the Verdant Express's central railway lines, showing station stops and greenhouse car locations.",
+      "image_prompt": "Glowing, holographic train route map displaying intricate lines and station icons, Art Nouveau borders.",
+      "category": "Navigation"
+    },
+    {
+      "item_id": "MANIFEST_PASS_ARCHIVE",
+      "name": "Archived Passenger Manifest",
+      "price": 10,
+      "mass": 0.2,
+      "description": "A digital scroll containing records of passenger movements and access permissions from a previous cycle.",
+      "image_prompt": "Ancient-looking digital scroll with glowing text, displaying names and dates, sci-fi archival document.",
+      "category": "Records"
+    },
+    {
+      "item_id": "SENSOR_CROP_HEALTH",
+      "name": "Bio-Luminescence Crop Sensor",
+      "price": 120,
+      "mass": 0.15,
+      "description": "A portable device that measures the bio-luminescence output of plants, indicating their overall health and nutrient levels.",
+      "image_prompt": "Small, handheld sensor device with a glowing display showing a plant's health metrics, surrounded by vibrant foliage.",
+      "category": "Sensors"
+    },
+    {
+      "item_id": "CRED_GUILD_APPR",
+      "name": "Greenhouse Guild Apprenticeship Token",
+      "price": 200,
+      "mass": 0.01,
+      "description": "A digital token signifying completion of basic botanical training, granting access to entry-level tending tasks.",
+      "image_prompt": "Small, glowing green crystalline token with the Greenhouse Guild emblem, Art Nouveau design.",
+      "category": "Credentials"
+    },
+    {
+      "item_id": "NUTRIENT_GEL_PACK",
+      "name": "Concentrated Nutrient Gel Pack",
+      "price": 30,
+      "mass": 0.25,
+      "description": "A highly potent, slow-release nutrient gel designed to revitalize struggling crops and boost growth.",
+      "image_prompt": "Sleek, metallic pouch filled with glowing green gel, labeled with botanical symbols, sci-fi nutrient.",
+      "category": "Consumables"
+    },
+    {
+      "item_id": "RAIL_PASS_PLATINUM",
+      "name": "Platinum Rail Pass",
+      "price": 1000,
+      "mass": 0.02,
+      "description": "Grants priority access to all platforms and express lines, recognized by the Railway Authority.",
+      "image_prompt": "Gleaming platinum card with intricate Art Nouveau engravings, glowing with a soft blue light.",
+      "category": "Credentials"
+    },
+    {
+      "item_id": "VOX_COMM_UNIT",
+      "name": "Personal Vox-Comm Unit",
+      "price": 180,
+      "mass": 0.4,
+      "description": "A compact communication device for secure, encrypted messaging between passengers and institutions.",
+      "image_prompt": "Small, sleek, ergonomic communication device with a glowing interface, held in a hand.",
+      "category": "Technology"
+    },
+    {
+      "item_id": "SEED_BANK_CRYO",
+      "name": "Cryo-Sealed Rare Seed Bank",
+      "price": 2500,
+      "mass": 5.0,
+      "description": "A secure, cryogenically preserved collection of highly rare and endangered plant seeds, vital for biodiversity.",
+      "image_prompt": "Futuristic, cylindrical cryo-chamber with glowing blue lights, containing numerous small seed vials, sci-fi.",
+      "category": "Seeds"
+    },
+    {
+      "item_id": "DRONE_REPAIR_KIT",
+      "name": "Automated Drone Repair Kit",
+      "price": 90,
+      "mass": 1.1,
+      "description": "A compact kit containing essential tools and components for field repairs of tending drones.",
+      "image_prompt": "Small, ruggedized toolbox with glowing tools and spare parts, sci-fi repair kit.",
+      "category": "Tools"
+    },
+    {
+      "item_id": "PASS_COUNCIL_CHARTER",
+      "name": "Passenger Council Charter",
+      "price": 50,
+      "mass": 0.3,
+      "description": "The foundational document outlining the rights and responsibilities of passengers, endorsed by the Passenger Council.",
+      "image_prompt": "Elegant, illuminated scroll with official seals and flowing script, Art Nouveau style, glowing.",
+      "category": "Records"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "verdant_express_001_wardrobe",
+    "world_wardrobe_brief": "Attire reflects a blend of Art Nouveau elegance, Gilded Age industrialism, and biopunk functionality. Clothing is practical for train travel and botanical work, often incorporating natural motifs, polished metals, and integrated tech, suitable for a railway greenhouse environment.",
+    "forbidden_aesthetics": [
+      "visible labels",
+      "title text",
+      "poster/card layouts",
+      "disconnected room dioramas",
+      "photorealism",
+      "generic fantasy RPG aesthetics",
+      "generic cyberpunk aesthetics",
+      "generic beige procedural terrain",
+      "unrelated real-world locations",
+      "rustic farmwear",
+      "steampunk goggles",
+      "post-apocalyptic rags",
+      "modern streetwear",
+      "medieval garb",
+      "futuristic chrome armor"
+    ],
+    "palette_families": [
+      {
+        "name": "Botanical Lush",
+        "dominant": "#3a6b3b",
+        "accent": "#00ced1",
+        "trim": "#b8860b",
+        "material": "Living Vines"
+      },
+      {
+        "name": "Railway Authority",
+        "dominant": "#2f4f4f",
+        "accent": "#b8860b",
+        "trim": "#fdf5e6",
+        "material": "Polished Brass"
+      },
+      {
+        "name": "Passenger Comfort",
+        "dominant": "#8b4513",
+        "accent": "#800000",
+        "trim": "#b8860b",
+        "material": "Rich Hardwood"
+      },
+      {
+        "name": "Hydroponic Tech",
+        "dominant": "#add8e6",
+        "accent": "#00ced1",
+        "trim": "#d3d3d3",
+        "material": "Hydroponic Glass"
+      },
+      {
+        "name": "Gilded Age Opulence",
+        "dominant": "#b8860b",
+        "accent": "#800000",
+        "trim": "#2f4f4f",
+        "material": "Stained Glass"
+      },
+      {
+        "name": "Bioluminescent Glow",
+        "dominant": "#00ced1",
+        "accent": "#90ee90",
+        "trim": "#fdf5e6",
+        "material": "Bioluminescent Moss"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "rule_guild_master",
+        "role_keywords": [
+          "Greenhouse Guild Master",
+          "master botanist"
+        ],
+        "attire": [
+          "Tailored botanical-motif jacket",
+          "Elegant tunic",
+          "Practical yet refined trousers/skirt",
+          "Sturdy, polished boots"
+        ],
+        "props": [
+          "Guild Botanist's Journal",
+          "Bio-Luminescence Crop Sensor"
+        ],
+        "palette_notes": "Dominantly Botanical Lush with subtle Railway Authority trims.",
+        "silhouette_notes": "Refined, slightly flowing, with practical elements.",
+        "avoid": [
+          "overly formal ballgowns",
+          "grimy work clothes"
+        ]
+      },
+      {
+        "rule_id": "rule_conductor",
+        "role_keywords": [
+          "Chief Train Conductor",
+          "railway staff"
+        ],
+        "attire": [
+          "Crisp uniform jacket with brass buttons",
+          "Tailored trousers",
+          "White collared shirt",
+          "Polished cap",
+          "Gloves"
+        ],
+        "props": [
+          "Central Line Route Map",
+          "Personal Vox-Comm Unit"
+        ],
+        "palette_notes": "Primarily Railway Authority with polished brass accents.",
+        "silhouette_notes": "Sharp, authoritative, structured.",
+        "avoid": [
+          "casual wear",
+          "loose fitting clothes"
+        ]
+      },
+      {
+        "rule_id": "rule_council_chair",
+        "role_keywords": [
+          "Passenger Council Chair",
+          "representative"
+        ],
+        "attire": [
+          "Formal Art Nouveau inspired gown/suit",
+          "Elegant, flowing fabrics",
+          "Subtle ornate embroidery"
+        ],
+        "props": [
+          "Passenger Council Charter",
+          "Archived Passenger Manifest"
+        ],
+        "palette_notes": "Gilded Age Opulence with Passenger Comfort undertones.",
+        "silhouette_notes": "Graceful, commanding, with soft curves.",
+        "avoid": [
+          "utilitarian jumpsuits",
+          "heavy industrial gear"
+        ]
+      },
+      {
+        "rule_id": "rule_cultivation_tech",
+        "role_keywords": [
+          "Hydroponic Cultivation Technician",
+          "tending staff"
+        ],
+        "attire": [
+          "Durable, water-resistant jumpsuit",
+          "Reinforced gloves",
+          "Utility belt with pouches",
+          "Comfortable, non-slip boots"
+        ],
+        "props": [
+          "Ergonomic Pruning Shears",
+          "Mini-Tender Drone"
+        ],
+        "palette_notes": "Hydroponic Tech with Botanical Lush accents.",
+        "silhouette_notes": "Practical, agile, with visible tools.",
+        "avoid": [
+          "formal wear",
+          "restrictive clothing"
+        ]
+      },
+      {
+        "rule_id": "rule_broker",
+        "role_keywords": [
+          "Independent Produce Broker",
+          "merchant"
+        ],
+        "attire": [
+          "Smart, travel-worn jacket",
+          "Comfortable yet stylish shirt",
+          "Durable trousers",
+          "Leather satchel"
+        ],
+        "props": [
+          "Cryo-Sealed Rare Seed Bank",
+          "Nutrient Gel Pack"
+        ],
+        "palette_notes": "Earth tones from Rich Hardwood, with subtle brass accents.",
+        "silhouette_notes": "Resourceful, slightly rugged but presentable.",
+        "avoid": [
+          "uniforms",
+          "overly clean attire"
+        ]
+      },
+      {
+        "rule_id": "rule_engineer",
+        "role_keywords": [
+          "Railway Systems Engineer",
+          "mechanic"
+        ],
+        "attire": [
+          "Clean, fitted utility jumpsuit",
+          "Tool belt with specialized compartments",
+          "Protective eyewear (optional)",
+          "Sturdy, reinforced boots"
+        ],
+        "props": [
+          "Automated Drone Repair Kit",
+          "Compact Hydro-Grow Unit"
+        ],
+        "palette_notes": "Railway Authority with metallic trims.",
+        "silhouette_notes": "Streamlined, functional, with visible tools.",
+        "avoid": [
+          "ornate clothing",
+          "loose fabrics"
+        ]
+      },
+      {
+        "rule_id": "rule_archivist",
+        "role_keywords": [
+          "Passenger Council Archivist"
+        ],
+        "attire": [
+          "Neat, understated tunic or blouse",
+          "Long, flowing skirt or tailored trousers",
+          "Comfortable, sensible shoes"
+        ],
+        "props": [
+          "Archived Passenger Manifest",
+          "Personal Vox-Comm Unit"
+        ],
+        "palette_notes": "Subdued Passenger Comfort with hints of Gilded Age trim.",
+        "silhouette_notes": "Scholarly, composed, with a gentle drape.",
+        "avoid": [
+          "flashy attire",
+          "heavy work gear"
+        ]
+      },
+      {
+        "rule_id": "rule_bio_security",
+        "role_keywords": [
+          "Bio-Security Specialist"
+        ],
+        "attire": [
+          "Lightweight, sealed protective suit",
+          "Integrated sensor patches",
+          "Utility vest",
+          "Respirator mask (optional)"
+        ],
+        "props": [
+          "Bio-Luminescence Crop Sensor",
+          "Ergonomic Pruning Shears"
+        ],
+        "palette_notes": "Hydroponic Tech with stark, clean accents.",
+        "silhouette_notes": "Sleek, protective, slightly imposing.",
+        "avoid": [
+          "decorative clothing",
+          "loose elements"
+        ]
+      },
+      {
+        "rule_id": "rule_seed_collector",
+        "role_keywords": [
+          "Rare Seed Collector"
+        ],
+        "attire": [
+          "Multi-pocketed vest or jacket",
+          "Durable, breathable clothing",
+          "Wide-brimmed hat (optional)",
+          "Rugged boots"
+        ],
+        "props": [
+          "Cryo-Sealed Rare Seed Bank",
+          "Aurora Berry Seed Packet"
+        ],
+        "palette_notes": "Botanical Lush with earthy, natural tones.",
+        "silhouette_notes": "Adventurous, practical, with many small compartments.",
+        "avoid": [
+          "formal wear",
+          "uniforms"
+        ]
+      },
+      {
+        "rule_id": "rule_auditor",
+        "role_keywords": [
+          "Produce Exchange Auditor"
+        ],
+        "attire": [
+          "Sharp, professional vest or jacket",
+          "Clean, pressed shirt",
+          "Tailored trousers or skirt"
+        ],
+        "props": [
+          "Guild Botanist's Journal",
+          "Personal Vox-Comm Unit"
+        ],
+        "palette_notes": "Railway Authority with refined Gilded Age accents.",
+        "silhouette_notes": "Precise, observant, well-kept.",
+        "avoid": [
+          "casual attire",
+          "overly ornate clothing"
+        ]
+      },
+      {
+        "rule_id": "rule_medical_liaison",
+        "role_keywords": [
+          "Passenger Council Medical Liaison"
+        ],
+        "attire": [
+          "Clean, light-colored tunic or lab coat",
+          "Comfortable, practical trousers",
+          "Sensible, clean shoes"
+        ],
+        "props": [
+          "Bio-Luminescence Crop Sensor",
+          "Nutrient Gel Pack"
+        ],
+        "palette_notes": "Clean Hydroponic Tech with soft, calming accents.",
+        "silhouette_notes": "Caring, professional, unencumbered.",
+        "avoid": [
+          "heavy uniforms",
+          "decorative elements"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "default_passenger_rule",
+      "role_keywords": [
+        "passenger",
+        "traveler",
+        "citizen"
+      ],
+      "attire": [
+        "Comfortable, durable clothing suitable for travel",
+        "Layered garments",
+        "Sensible shoes"
+      ],
+      "props": [
+        "Small personal bag",
+        "Water bottle"
+      ],
+      "palette_notes": "A mix of Passenger Comfort and muted Botanical Lush, avoiding bright or overly formal colors.",
+      "silhouette_notes": "Varied, generally relaxed but practical for movement within the train.",
+      "avoid": [
+        "heavy armor",
+        "revealing clothing",
+        "excessive ornamentation"
+      ]
+    },
+    "visual_consistency_rules": [
+      "All sprites must maintain stylized human proportions.",
+      "Subtle, dark outlines are required for clarity on 64x64 sprites.",
+      "Distinct silhouettes and color accents must clearly differentiate roles.",
+      "Attire should reflect the Art Nouveau biopunk aesthetic, avoiding anachronisms.",
+      "Materials like polished brass, stained glass, living vines, and rich hardwood should be subtly represented in clothing details.",
+      "Bioluminescent elements should be incorporated where appropriate for plant-related roles or accents.",
+      "Clothing should appear functional for train travel and botanical work, not purely decorative.",
+      "No visible text or labels on clothing or props.",
+      "Avoid photorealism; maintain a stylized, illustrative quality."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "verdant_express_001",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "0 degrees",
+      "scale_rule": "fixed grid scale"
+    },
+    "palette": {
+      "dominant": "#3a6b3b",
+      "secondary": "#b8860b",
+      "accent": "#00ced1",
+      "shadow": "#2f4f4f",
+      "highlight": "#fdf5e6"
+    },
+    "materials": [
+      "Polished Brass",
+      "Stained Glass",
+      "Living Vines",
+      "Hydroponic Glass",
+      "Ornate Ironwork",
+      "Rich Hardwood",
+      "Bioluminescent Moss"
+    ],
+    "lighting": "Soft, diffused ambient light with localized bioluminescent glows and warm, directional light from ornate fixtures.",
+    "architecture": [
+      "Art Nouveau curves and organic forms",
+      "Gilded Age ornate metalwork",
+      "Biopunk integrated plant structures",
+      "Modular train car sections",
+      "High vaulted glass ceilings"
+    ],
+    "terrain": {
+      "ground": "Lush botanical groundcover",
+      "path": "Ornate tiled pathways",
+      "edge": "Integrated planter boxes"
+    },
+    "sprite_language": {
+      "body_proportion": "Stylized human proportions",
+      "outline": "Subtle, dark outline for clarity",
+      "role_readability": "Distinct silhouettes and color accents for roles"
+    },
+    "world_prompt_prefix": "Art Nouveau biopunk train interior, lush botanical gardens, Gilded Age industrialism, strict top-down orthographic view, no text, no labels, no photorealism, no dioramas, no card layouts, no unrelated aesthetics,",
+    "sprite_prompt_prefix": "Art Nouveau biopunk character, stylized human proportions, subtle dark outline, distinct silhouette, strict top-down orthographic view, no text, no labels, no photorealism, no dioramas, no card layouts, no unrelated aesthetics,",
+    "forbidden_visuals": [
+      "visible labels",
+      "title text",
+      "poster/card layouts",
+      "disconnected room dioramas",
+      "photorealism",
+      "generic fantasy RPG aesthetics",
+      "generic cyberpunk aesthetics",
+      "generic beige procedural terrain",
+      "unrelated real-world locations"
+    ],
+    "canon_hash": "1d1215e2209998ea"
+  }
+}

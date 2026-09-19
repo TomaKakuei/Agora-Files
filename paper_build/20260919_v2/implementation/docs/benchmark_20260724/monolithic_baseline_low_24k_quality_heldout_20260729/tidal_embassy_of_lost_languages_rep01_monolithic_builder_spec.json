@@ -1,0 +1,2744 @@
+{
+  "world_name": "Tidal Embassy of Lost Languages",
+  "world_id": "tidal_embassy_01",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "coastal_trade_city",
+    "profile_id": "coastal_trade_city",
+    "locale": "en-US",
+    "tone": "melancholic, diplomatic, high-stakes",
+    "visual_direction": "bioluminescent aquatic brutalism",
+    "currency_code": "HBR",
+    "currency_symbol": "⚓",
+    "currency_minor_unit": "100",
+    "currency_name": "Harbor Chit",
+    "domain_label": "embassy.tidal",
+    "starting_wallet_minor": {
+      "min": 500,
+      "max": 5000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "coastal_trade_city_v1",
+      "frontend_affordance_id": "coastal_trade_city_v1",
+      "asset_prompt_kit_id": "coastal_trade_city_v1"
+    },
+    "policy_refs": {
+      "economy_policy_id": "harbor_chit_v1",
+      "item_collection_id": "harbor_trade_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "coastal_trade_city_v1",
+      "property_policy_id": "coastal_trade_city_v1",
+      "knowledge_policy_id": "coastal_trade_city_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "floating diplomatic archive",
+  "premise": "A shifting embassy where languages are currency and the tide dictates the law.",
+  "agent_count_target": 25,
+  "player_count_target": 4,
+  "economy_focus": "translation rights and cultural debt",
+  "exploration_focus": "submerged archives and forbidden idioms",
+  "rooms": [
+    {
+      "name": "The Sinking Scriptarium",
+      "biome": "aquatic_archive",
+      "purpose": "translation of ancient scrolls",
+      "decor_tags": [
+        "barnacles",
+        "glowing_ink",
+        "stone_desks"
+      ],
+      "archetype": "archive_ritual",
+      "ambient_palette": "low_lantern",
+      "width_tiles": 40,
+      "height_tiles": 40,
+      "floor_tile": "stone_slabs",
+      "wall_tile": "quiet_lane_wall",
+      "flux_floor_prompt": "wet stone floor with glowing algae patterns",
+      "room_scene_prompt": "a flooded library with floating scrolls and stone pillars",
+      "scene_components": [
+        {
+          "component_id": "tide_dial",
+          "label": "Lunar Tide Dial",
+          "description": "A massive brass clock tracking the water level.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Coral Council Chamber",
+      "biome": "oceanic_court",
+      "purpose": "diplomatic negotiation",
+      "decor_tags": [
+        "coral_thrones",
+        "bubble_curtains"
+      ],
+      "archetype": "council",
+      "ambient_palette": "focused_blue",
+      "width_tiles": 30,
+      "height_tiles": 30,
+      "floor_tile": "jade_tile",
+      "wall_tile": "red_pillar_wall",
+      "flux_floor_prompt": "polished jade floor reflecting bioluminescent light",
+      "room_scene_prompt": "a grand hall with coral seating and a central glass table",
+      "scene_components": [
+        {
+          "component_id": "oath_stone",
+          "label": "The Silent Oathstone",
+          "description": "A stone that vibrates when a lie is told.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Salt-Stained Market",
+      "biome": "floating_bazaar",
+      "purpose": "trading linguistic artifacts",
+      "decor_tags": [
+        "stalls",
+        "nets",
+        "hanging_lanterns"
+      ],
+      "archetype": "market_exchange",
+      "ambient_palette": "warm_lantern",
+      "width_tiles": 50,
+      "height_tiles": 50,
+      "floor_tile": "wood_planks",
+      "wall_tile": "stall_canvas_wall",
+      "flux_floor_prompt": "creaking wooden planks over dark water",
+      "room_scene_prompt": "a bustling market on a floating platform",
+      "scene_components": [
+        {
+          "component_id": "lexicon_scale",
+          "label": "Lexicon Scales",
+          "description": "Scales used to weigh the value of a spoken word.",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Diver's Respite",
+      "biome": "underwater_tavern",
+      "purpose": "socializing and rumor trading",
+      "decor_tags": [
+        "barrels",
+        "seaweed_tapestries"
+      ],
+      "archetype": "rest_social",
+      "ambient_palette": "ember_orange",
+      "width_tiles": 25,
+      "height_tiles": 25,
+      "floor_tile": "bamboo_planks",
+      "wall_tile": "tavern_wall",
+      "flux_floor_prompt": "dark bamboo floor with amber lighting",
+      "room_scene_prompt": "a cozy tavern filled with divers and sailors",
+      "scene_components": [
+        {
+          "component_id": "kelp_bar",
+          "label": "The Kelp Bar",
+          "description": "A bar carved from a single giant piece of driftwood.",
+          "anchor": "west_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Echo Vault",
+      "biome": "sealed_chamber",
+      "purpose": "storing dangerous idioms",
+      "decor_tags": [
+        "lead_boxes",
+        "soundproofing"
+      ],
+      "archetype": "checkpoint",
+      "ambient_palette": "soft_mint",
+      "width_tiles": 20,
+      "height_tiles": 20,
+      "floor_tile": "stone_checker",
+      "wall_tile": "storage_wall",
+      "flux_floor_prompt": "checkered stone floor with damp moss",
+      "room_scene_prompt": "a high-security vault with heavy iron doors",
+      "scene_components": [
+        {
+          "component_id": "voice_lock",
+          "label": "Harmonic Voice Lock",
+          "description": "A lock that only opens to a specific pitch.",
+          "anchor": "north_east",
+          "width_tiles": 1,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Observation Deck",
+      "biome": "high_tower",
+      "purpose": "monitoring the tide",
+      "decor_tags": [
+        "telescopes",
+        "star_charts"
+      ],
+      "archetype": "lookout",
+      "ambient_palette": "clear_day",
+      "width_tiles": 20,
+      "height_tiles": 30,
+      "floor_tile": "yard_pavers",
+      "wall_tile": "yard_fence",
+      "flux_floor_prompt": "stone pavers under a clear sky",
+      "room_scene_prompt": "a high balcony overlooking the ocean",
+      "scene_components": [
+        {
+          "component_id": "tide_scope",
+          "label": "Tidal Telescope",
+          "description": "A device for watching the horizon for incoming ships.",
+          "anchor": "south_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Forgery Lab",
+      "biome": "hidden_workshop",
+      "purpose": "creating fake linguistic relics",
+      "decor_tags": [
+        "ink_vats",
+        "parchment_scraps"
+      ],
+      "archetype": "workshop",
+      "ambient_palette": "dusty_brown",
+      "width_tiles": 25,
+      "height_tiles": 25,
+      "floor_tile": "forge_slate",
+      "wall_tile": "forge_wall",
+      "flux_floor_prompt": "dark slate floor stained with ink",
+      "room_scene_prompt": "a cluttered workshop with chemical smells",
+      "scene_components": [
+        {
+          "component_id": "ink_press",
+          "label": "The Master Press",
+          "description": "A machine for aging new scrolls instantly.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Common Dock",
+      "biome": "harbor",
+      "purpose": "arrival and departure",
+      "decor_tags": [
+        "ropes",
+        "anchors",
+        "cranes"
+      ],
+      "archetype": "commons",
+      "ambient_palette": "clear_day",
+      "width_tiles": 60,
+      "height_tiles": 40,
+      "floor_tile": "wood_planks",
+      "wall_tile": "quiet_lane_wall",
+      "flux_floor_prompt": "weathered wood planks at the water's edge",
+      "room_scene_prompt": "a busy dock with ships coming and going",
+      "scene_components": [
+        {
+          "component_id": "crane_01",
+          "label": "Steam Crane",
+          "description": "A heavy crane for unloading cargo.",
+          "anchor": "south_east",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    }
+  ],
+  "role_groups": [
+    {
+      "role_name": "Linguist",
+      "count": 5,
+      "core_values": [
+        "accuracy",
+        "preservation",
+        "prestige"
+      ],
+      "activity": "translating scrolls and verifying idioms",
+      "starting_item_ids": [
+        "ink_well_01",
+        "parchment_bundle_01"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Translation Desk",
+          "asset_type": "furniture",
+          "description": "A heavy oak desk for scholarly work.",
+          "story_use": "Used to decode ancient texts."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_old_tongue",
+          "topic": "Old Tidal Dialect",
+          "summary": "The grammar of the first settlers.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "role_name": "Smuggler",
+      "count": 5,
+      "core_values": [
+        "profit",
+        "stealth",
+        "freedom"
+      ],
+      "activity": "moving forbidden texts past the tide guards",
+      "starting_item_ids": [
+        "hidden_pouch_01",
+        "false_bottom_crate_01"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Locker",
+          "asset_type": "storage",
+          "description": "A locker hidden behind a loose wall panel.",
+          "story_use": "Stores contraband."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_guard_routes",
+          "topic": "Guard Patrols",
+          "summary": "The timing of the Scriptarium guards.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "role_name": "Ambassador",
+      "count": 5,
+      "core_values": [
+        "influence",
+        "protocol",
+        "peace"
+      ],
+      "activity": "negotiating treaties and cultural exchanges",
+      "starting_item_ids": [
+        "signet_ring_01",
+        "diplomatic_pouch_01"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Private Balcony",
+          "asset_type": "real_estate",
+          "description": "A quiet spot for secret meetings.",
+          "story_use": "Hosting clandestine talks."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_treaty_v3",
+          "topic": "The Third Treaty",
+          "summary": "The current rules of the floating embassy.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "role_name": "Memory Diver",
+      "count": 5,
+      "core_values": [
+        "bravery",
+        "discovery",
+        "history"
+      ],
+      "activity": "retrieving artifacts from submerged levels",
+      "starting_item_ids": [
+        "diving_helmet_01",
+        "oxygen_tank_01"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Diving Bell",
+          "asset_type": "vehicle",
+          "description": "A pressurized bell for deep descents.",
+          "story_use": "Accessing the lowest archives."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_currents",
+          "topic": "Tidal Currents",
+          "summary": "The flow of water through the lower vents.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "role_name": "Archive Guard",
+      "count": 5,
+      "core_values": [
+        "duty",
+        "order",
+        "vigilance"
+      ],
+      "activity": "protecting the scriptarium from thieves",
+      "starting_item_ids": [
+        "halberd_01",
+        "brass_whistle_01"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guard Post",
+          "asset_type": "structure",
+          "description": "A fortified booth at the vault entrance.",
+          "story_use": "Monitoring all traffic."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_vault_codes",
+          "topic": "Vault Access",
+          "summary": "The daily rotating passphrases.",
+          "confidence": 100
+        }
+      ]
+    }
+  ],
+  "main_characters": [
+    {
+      "display_name": "High Archivist Elara",
+      "role_name": "Linguist",
+      "activity": "Overseeing the Scriptarium",
+      "home_base": "The Sinking Scriptarium",
+      "arc_goal": "To find the lost verb of creation.",
+      "inventory": [
+        {
+          "name": "Prism of Clarity",
+          "description": "A crystal that reveals hidden ink.",
+          "quantity": 1
+        },
+        {
+          "name": "Master Keycard",
+          "description": "Access to all library levels.",
+          "quantity": 1
+        },
+        {
+          "name": "Bottle of Blue Ink",
+          "description": "Rare ink made from deep-sea squid.",
+          "quantity": 3
+        },
+        {
+          "name": "Silk Gloves",
+          "description": "For handling fragile scrolls.",
+          "quantity": 2
+        },
+        {
+          "name": "Magnifying Lens",
+          "description": "A brass-rimmed glass for fine detail.",
+          "quantity": 1
+        },
+        {
+          "name": "Translation Ledger",
+          "description": "A record of all recent decryptions.",
+          "quantity": 1
+        },
+        {
+          "name": "Dried Kelp Snack",
+          "description": "A salty treat for long nights.",
+          "quantity": 5
+        },
+        {
+          "name": "Silver Stylus",
+          "description": "A pen that never runs dry.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Grand Desk",
+          "asset_type": "furniture",
+          "description": "A massive desk in the center of the Scriptarium.",
+          "story_use": "The seat of linguistic power."
+        },
+        {
+          "asset_name": "Private Study",
+          "asset_type": "room",
+          "description": "A soundproof room for deep focus.",
+          "story_use": "Where Elara hides her secret research."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_elara_secret",
+          "topic": "The Forged Scroll",
+          "summary": "Elara knows the founding charter is a fake.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_tide_pattern",
+          "topic": "Tidal Cycles",
+          "summary": "The exact timing of the next flood.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Captain Jax",
+      "role_name": "Smuggler",
+      "activity": "Trading at the Salt-Stained Market",
+      "home_base": "The Salt-Stained Market",
+      "arc_goal": "To clear his debt with the Tide King.",
+      "inventory": [
+        {
+          "name": "Crate of Forbidden Idioms",
+          "description": "Illegal phrases that can charm listeners.",
+          "quantity": 15
+        },
+        {
+          "name": "Rusty Harpoon",
+          "description": "A weapon and a tool for docking.",
+          "quantity": 1
+        },
+        {
+          "name": "Bag of Harbor Chits",
+          "description": "A heavy pouch of local currency.",
+          "quantity": 500
+        },
+        {
+          "name": "Fake ID Papers",
+          "description": "Documents for a merchant named 'Sven'.",
+          "quantity": 2
+        },
+        {
+          "name": "Compass of the Deep",
+          "description": "Points to the nearest air pocket.",
+          "quantity": 1
+        },
+        {
+          "name": "Bottle of Grog",
+          "description": "Strong, cheap alcohol.",
+          "quantity": 4
+        },
+        {
+          "name": "Smuggler's Cloak",
+          "description": "A dark cloak with many hidden pockets.",
+          "quantity": 1
+        },
+        {
+          "name": "Lockpick Set",
+          "description": "Fine tools for opening archive doors.",
+          "quantity": 1
+        },
+        {
+          "name": "Map of the Vents",
+          "description": "A chart of the embassy's plumbing.",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Flare",
+          "description": "For emergency extraction.",
+          "quantity": 3
+        },
+        {
+          "name": "Whetstone",
+          "description": "For keeping the harpoon sharp.",
+          "quantity": 1
+        },
+        {
+          "name": "Tobacco Pouch",
+          "description": "Smells of sea salt and cherry.",
+          "quantity": 1
+        },
+        {
+          "name": "Brass Knuckles",
+          "description": "For market disputes.",
+          "quantity": 1
+        },
+        {
+          "name": "Stolen Seal",
+          "description": "A diplomatic stamp from a rival nation.",
+          "quantity": 1
+        },
+        {
+          "name": "Dried Fish",
+          "description": "Tough but filling rations.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Salty Dog",
+          "asset_type": "ship",
+          "description": "A fast, low-profile lugger.",
+          "story_use": "Used for midnight runs."
+        },
+        {
+          "asset_name": "Market Stall 4B",
+          "asset_type": "stall",
+          "description": "A nondescript stall selling 'spices'.",
+          "story_use": "A front for illegal trade."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_jax_debt",
+          "topic": "The Tide King's Debt",
+          "summary": "Jax owes 10,000 chits to the local boss.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_secret_dock",
+          "topic": "The Hidden Pier",
+          "summary": "A dock that only appears at low tide.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Ambassador Vane",
+      "role_name": "Ambassador",
+      "activity": "Negotiating in the Coral Chamber",
+      "home_base": "Coral Council Chamber",
+      "arc_goal": "To annex the Scriptarium for his empire.",
+      "inventory": [
+        {
+          "name": "Golden Signet Ring",
+          "description": "The seal of the Sun Empire.",
+          "quantity": 1
+        },
+        {
+          "name": "Velvet Scroll Case",
+          "description": "Contains a draft of a new treaty.",
+          "quantity": 1
+        },
+        {
+          "name": "Perfumed Handkerchief",
+          "description": "To block the smell of the docks.",
+          "quantity": 5
+        },
+        {
+          "name": "Box of Fine Cigars",
+          "description": "A gift for potential allies.",
+          "quantity": 1
+        },
+        {
+          "name": "Pocket Watch",
+          "description": "Keeps time with the Sun Empire.",
+          "quantity": 1
+        },
+        {
+          "name": "Letter of Credit",
+          "description": "Worth 5000 Harbor Chits.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Dagger",
+          "description": "Hidden in a boot for 'self-defense'.",
+          "quantity": 1
+        },
+        {
+          "name": "Bottle of Vintage Wine",
+          "description": "A 50-year-old red.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Embassy Suite",
+          "asset_type": "residence",
+          "description": "A luxurious apartment in the upper levels.",
+          "story_use": "Vane's base of operations."
+        },
+        {
+          "asset_name": "Private Carriage",
+          "asset_type": "vehicle",
+          "description": "A steam-powered transport for the docks.",
+          "story_use": "Moving through the city in style."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_vane_plot",
+          "topic": "The Annexation Plan",
+          "summary": "Vane is bribing guards to allow a coup.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_rival_weakness",
+          "topic": "Ambassador Kael's Secret",
+          "summary": "Kael is addicted to deep-sea pearls.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen the Diver",
+      "role_name": "Memory Diver",
+      "activity": "Diving in the Sinking Scriptarium",
+      "home_base": "Diver's Respite",
+      "arc_goal": "To recover his family's lost history.",
+      "inventory": [
+        {
+          "name": "Heavy Diving Suit",
+          "description": "Protects against pressure and cold.",
+          "quantity": 1
+        },
+        {
+          "name": "Underwater Torch",
+          "description": "Burns with a chemical green flame.",
+          "quantity": 3
+        },
+        {
+          "name": "Net Bag",
+          "description": "For carrying salvaged items.",
+          "quantity": 1
+        },
+        {
+          "name": "Scrap of Ancient Map",
+          "description": "Shows a hidden vault level.",
+          "quantity": 1
+        },
+        {
+          "name": "Lead Weights",
+          "description": "To stay grounded in currents.",
+          "quantity": 4
+        },
+        {
+          "name": "Emergency Air Tank",
+          "description": "Provides 5 minutes of oxygen.",
+          "quantity": 2
+        },
+        {
+          "name": "Pry Bar",
+          "description": "For opening rusted hatches.",
+          "quantity": 1
+        },
+        {
+          "name": "Thermos of Soup",
+          "description": "Stays warm even underwater.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Diving Platform",
+          "asset_type": "structure",
+          "description": "A small raft with a winch.",
+          "story_use": "Kaelen's starting point for dives."
+        },
+        {
+          "asset_name": "Workshop Locker",
+          "asset_type": "storage",
+          "description": "Where Kaelen keeps his diving gear.",
+          "story_use": "A safe place for his findings."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_submerged_path",
+          "topic": "The Flooded Hallway",
+          "summary": "A shortcut to the Echo Vault.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_diver_code",
+          "topic": "Diver's Cant",
+          "summary": "Hand signals used underwater.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Sergeant Thorne",
+      "role_name": "Archive Guard",
+      "activity": "Patrolling the Echo Vault",
+      "home_base": "The Echo Vault",
+      "arc_goal": "To maintain order at any cost.",
+      "inventory": [
+        {
+          "name": "Heavy Brass Halberd",
+          "description": "The symbol of the Guard.",
+          "quantity": 1
+        },
+        {
+          "name": "Iron Shackles",
+          "description": "For detaining intruders.",
+          "quantity": 2
+        },
+        {
+          "name": "Whistle of Alarm",
+          "description": "Can be heard across the embassy.",
+          "quantity": 1
+        },
+        {
+          "name": "Lantern of Truth",
+          "description": "Reveals invisible creatures.",
+          "quantity": 1
+        },
+        {
+          "name": "Duty Roster",
+          "description": "A list of guard shifts.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Shield",
+          "description": "Emblazoned with the embassy crest.",
+          "quantity": 1
+        },
+        {
+          "name": "Leather Boots",
+          "description": "Reinforced for heavy walking.",
+          "quantity": 1
+        },
+        {
+          "name": "Ration Bar",
+          "description": "Tasteless but nutritious.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guard Barracks",
+          "asset_type": "residence",
+          "description": "A shared room for the guards.",
+          "story_use": "Where Thorne rests."
+        },
+        {
+          "asset_name": "Weapon Rack",
+          "asset_type": "furniture",
+          "description": "A locked rack for guard equipment.",
+          "story_use": "Securing the embassy's arms."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_security_flaw",
+          "topic": "Vault Vent",
+          "summary": "A small vent that a child could fit through.",
+          "confidence": 70
+        },
+        {
+          "knowledge_id": "k_traitor_rumor",
+          "topic": "The Guard Traitor",
+          "summary": "Thorne suspects one of his men is on Vane's payroll.",
+          "confidence": 60
+        }
+      ]
+    },
+    {
+      "display_name": "Mira the Forger",
+      "role_name": "Linguist",
+      "activity": "Working in the Forgery Lab",
+      "home_base": "The Forgery Lab",
+      "arc_goal": "To create a perfect copy of the Creation Verb.",
+      "inventory": [
+        {
+          "name": "Set of Fine Brushes",
+          "description": "For delicate script work.",
+          "quantity": 1
+        },
+        {
+          "name": "Bottle of Aged Ink",
+          "description": "Chemically treated to look 100 years old.",
+          "quantity": 5
+        },
+        {
+          "name": "Blank Vellum",
+          "description": "High-quality animal skin for writing.",
+          "quantity": 10
+        },
+        {
+          "name": "Acid Solution",
+          "description": "For distressing paper.",
+          "quantity": 2
+        },
+        {
+          "name": "Wax Seal Kit",
+          "description": "Includes various noble crests.",
+          "quantity": 1
+        },
+        {
+          "name": "Magnifying Glass",
+          "description": "Essential for detail work.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Hammer",
+          "description": "For cracking old seals.",
+          "quantity": 1
+        },
+        {
+          "name": "Drafting Compass",
+          "description": "For precise geometric patterns.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Lab",
+          "asset_type": "room",
+          "description": "A hidden room behind a bookshelf.",
+          "story_use": "Mira's secret workspace."
+        },
+        {
+          "asset_name": "Ink Cabinet",
+          "asset_type": "storage",
+          "description": "Contains rare and illegal pigments.",
+          "story_use": "The source of Mira's talent."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_forgery_tell",
+          "topic": "The Red Dot",
+          "summary": "Mira leaves a tiny red dot on all her fakes.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_client_list",
+          "topic": "Mira's Clients",
+          "summary": "A list of everyone who bought a fake.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Old Man Silas",
+      "role_name": "Memory Diver",
+      "activity": "Drinking at Diver's Respite",
+      "home_base": "Diver's Respite",
+      "arc_goal": "To tell one last great story.",
+      "inventory": [
+        {
+          "name": "Broken Diving Helmet",
+          "description": "A relic of a failed expedition.",
+          "quantity": 1
+        },
+        {
+          "name": "Flask of Rum",
+          "description": "Silas's constant companion.",
+          "quantity": 1
+        },
+        {
+          "name": "Tattered Journal",
+          "description": "Filled with half-remembered maps.",
+          "quantity": 1
+        },
+        {
+          "name": "Lucky Coin",
+          "description": "A gold coin from a lost civilization.",
+          "quantity": 1
+        },
+        {
+          "name": "Pipe and Tobacco",
+          "description": "Silas's only luxury.",
+          "quantity": 1
+        },
+        {
+          "name": "Old Photograph",
+          "description": "A faded image of a woman.",
+          "quantity": 1
+        },
+        {
+          "name": "Walking Stick",
+          "description": "Carved from whale bone.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Compass",
+          "description": "Doesn't point north anymore.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Corner Booth",
+          "asset_type": "furniture",
+          "description": "Silas's permanent seat at the tavern.",
+          "story_use": "Where he holds court."
+        },
+        {
+          "asset_name": "Attic Room",
+          "asset_type": "residence",
+          "description": "A small, dusty room above the tavern.",
+          "story_use": "Silas's home."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_lost_city",
+          "topic": "The City of Whispers",
+          "summary": "Silas knows the location of a sunken city.",
+          "confidence": 50
+        },
+        {
+          "knowledge_id": "k_tide_secret",
+          "topic": "The Great Flood",
+          "summary": "Silas remembers when the embassy was on land.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Lira the Merchant",
+      "role_name": "Smuggler",
+      "activity": "Trading at the Salt-Stained Market",
+      "home_base": "The Salt-Stained Market",
+      "arc_goal": "To become the richest person in the embassy.",
+      "inventory": [
+        {
+          "name": "Silk Scarf",
+          "description": "Imported from the mainland.",
+          "quantity": 10
+        },
+        {
+          "name": "Spiced Tea",
+          "description": "A popular luxury item.",
+          "quantity": 20
+        },
+        {
+          "name": "Small Jade Statue",
+          "description": "A decorative piece.",
+          "quantity": 5
+        },
+        {
+          "name": "Silver Spoon",
+          "description": "Part of a larger set.",
+          "quantity": 12
+        },
+        {
+          "name": "Bag of Harbor Chits",
+          "description": "Her daily earnings.",
+          "quantity": 1000
+        },
+        {
+          "name": "Trade Ledger",
+          "description": "A record of all transactions.",
+          "quantity": 1
+        },
+        {
+          "name": "Scale Weights",
+          "description": "For her lexicon scales.",
+          "quantity": 10
+        },
+        {
+          "name": "Copper Kettle",
+          "description": "For making tea for clients.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Market Stall 1A",
+          "asset_type": "stall",
+          "description": "The most prominent stall in the market.",
+          "story_use": "Lira's business hub."
+        },
+        {
+          "asset_name": "Warehouse C",
+          "asset_type": "building",
+          "description": "A large storage space for her goods.",
+          "story_use": "Where she keeps her bulk stock."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_market_trends",
+          "topic": "Price of Ink",
+          "summary": "Ink prices are expected to double next week.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_lira_rival",
+          "topic": "Jax's Secret",
+          "summary": "Lira knows Jax is stealing from the Tide King.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Scribe Oryn",
+      "role_name": "Linguist",
+      "activity": "Copying texts in the Scriptarium",
+      "home_base": "The Sinking Scriptarium",
+      "arc_goal": "To be promoted to Senior Archivist.",
+      "inventory": [
+        {
+          "name": "Bundle of Quills",
+          "description": "Made from seagull feathers.",
+          "quantity": 20
+        },
+        {
+          "name": "Ink Pot",
+          "description": "Standard black ink.",
+          "quantity": 5
+        },
+        {
+          "name": "Sand Shaker",
+          "description": "For drying ink quickly.",
+          "quantity": 2
+        },
+        {
+          "name": "Correcting Knife",
+          "description": "For scraping mistakes off vellum.",
+          "quantity": 1
+        },
+        {
+          "name": "Reading Glasses",
+          "description": "For long hours of copying.",
+          "quantity": 1
+        },
+        {
+          "name": "Scribe's Robe",
+          "description": "Stained with ink.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Lamp",
+          "description": "For working in the dark.",
+          "quantity": 1
+        },
+        {
+          "name": "Loaf of Bread",
+          "description": "His lunch.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scribe's Desk",
+          "asset_type": "furniture",
+          "description": "A small, cramped desk in the back.",
+          "story_use": "Oryn's workspace."
+        },
+        {
+          "asset_name": "Shared Dorm",
+          "asset_type": "residence",
+          "description": "A room shared with four other scribes.",
+          "story_use": "Where Oryn sleeps."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_oryn_discovery",
+          "topic": "The Hidden Page",
+          "summary": "Oryn found a page stuck inside another book.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_archivist_habits",
+          "topic": "Elara's Schedule",
+          "summary": "When Elara leaves her office unattended.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Tide-Caller Mael",
+      "role_name": "Ambassador",
+      "activity": "Observing from the Observation Deck",
+      "home_base": "Observation Deck",
+      "arc_goal": "To predict the final flood.",
+      "inventory": [
+        {
+          "name": "Astrolabe",
+          "description": "For tracking celestial movements.",
+          "quantity": 1
+        },
+        {
+          "name": "Tidal Chart",
+          "description": "A complex map of water levels.",
+          "quantity": 5
+        },
+        {
+          "name": "Blue Robe",
+          "description": "Embroidered with wave patterns.",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Orb",
+          "description": "Used for meditation.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Bell",
+          "description": "Rung at the turn of the tide.",
+          "quantity": 1
+        },
+        {
+          "name": "Journal of Waves",
+          "description": "Observations of the ocean.",
+          "quantity": 1
+        },
+        {
+          "name": "Dried Seaweed",
+          "description": "Used in rituals.",
+          "quantity": 10
+        },
+        {
+          "name": "Silver Ring",
+          "description": "A gift from the Sea People.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Observatory",
+          "asset_type": "room",
+          "description": "A high room with a glass ceiling.",
+          "story_use": "Mael's ritual space."
+        },
+        {
+          "asset_name": "Tidal Pool",
+          "asset_type": "structure",
+          "description": "A small pool that mimics the ocean.",
+          "story_use": "Used for predictions."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_mael_vision",
+          "topic": "The Great Wave",
+          "summary": "Mael believes a massive wave is coming.",
+          "confidence": 70
+        },
+        {
+          "knowledge_id": "k_sea_people",
+          "topic": "Sea People Language",
+          "summary": "Mael can speak a few words of the deep.",
+          "confidence": 40
+        }
+      ]
+    },
+    {
+      "display_name": "Bryn the Runner",
+      "role_name": "Smuggler",
+      "activity": "Delivering messages across the embassy",
+      "home_base": "The Common Dock",
+      "arc_goal": "To buy his own boat.",
+      "inventory": [
+        {
+          "name": "Leather Satchel",
+          "description": "Waterproof for deliveries.",
+          "quantity": 1
+        },
+        {
+          "name": "Pair of Fast Boots",
+          "description": "Well-worn but sturdy.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Map",
+          "description": "Shows all the shortcuts.",
+          "quantity": 1
+        },
+        {
+          "name": "Copper Chits",
+          "description": "His tips for the day.",
+          "quantity": 50
+        },
+        {
+          "name": "Whistle",
+          "description": "To clear a path in the market.",
+          "quantity": 1
+        },
+        {
+          "name": "Water Bottle",
+          "description": "Essential for a runner.",
+          "quantity": 1
+        },
+        {
+          "name": "Apple",
+          "description": "A quick snack.",
+          "quantity": 2
+        },
+        {
+          "name": "Message Tube",
+          "description": "Protects scrolls from rain.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Nook",
+          "asset_type": "residence",
+          "description": "A tiny space under a staircase.",
+          "story_use": "Bryn's home."
+        },
+        {
+          "asset_name": "Bicycle",
+          "asset_type": "vehicle",
+          "description": "A rusty bike for the long docks.",
+          "story_use": "Speeding up deliveries."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_bryn_secret",
+          "topic": "The Secret Message",
+          "summary": "Bryn read a message he was supposed to deliver.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_shortcut_01",
+          "topic": "The Kitchen Route",
+          "summary": "A way to bypass the main gate.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Chef Gardo",
+      "role_name": "Ambassador",
+      "activity": "Cooking at Diver's Respite",
+      "home_base": "Diver's Respite",
+      "arc_goal": "To find the legendary Spice of the Deep.",
+      "inventory": [
+        {
+          "name": "Chef's Knife",
+          "description": "Razor sharp and well-balanced.",
+          "quantity": 1
+        },
+        {
+          "name": "Iron Pot",
+          "description": "For making his famous stew.",
+          "quantity": 1
+        },
+        {
+          "name": "Bag of Rare Spices",
+          "description": "Worth more than gold.",
+          "quantity": 1
+        },
+        {
+          "name": "Apron",
+          "description": "Covered in flour and grease.",
+          "quantity": 1
+        },
+        {
+          "name": "Recipe Book",
+          "description": "Contains secret family dishes.",
+          "quantity": 1
+        },
+        {
+          "name": "Wooden Spoon",
+          "description": "For tasting the stew.",
+          "quantity": 1
+        },
+        {
+          "name": "Salt Shaker",
+          "description": "Always at hand.",
+          "quantity": 1
+        },
+        {
+          "name": "Fresh Fish",
+          "description": "The catch of the day.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Kitchen",
+          "asset_type": "room",
+          "description": "The heart of the tavern.",
+          "story_use": "Gardo's domain."
+        },
+        {
+          "asset_name": "Pantry",
+          "asset_type": "storage",
+          "description": "Stocked with exotic ingredients.",
+          "story_use": "Where Gardo hides his spices."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_gardo_poison",
+          "topic": "Poisonous Fish",
+          "summary": "How to prepare the deadly pufferfish.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_tavern_gossip",
+          "topic": "The Diver's Secret",
+          "summary": "Gardo hears everything the divers say.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Vesper the Thief",
+      "role_name": "Smuggler",
+      "activity": "Stealing from the Scriptarium",
+      "home_base": "The Echo Vault",
+      "arc_goal": "To steal the Creation Verb.",
+      "inventory": [
+        {
+          "name": "Grappling Hook",
+          "description": "For climbing the embassy walls.",
+          "quantity": 1
+        },
+        {
+          "name": "Smoke Bomb",
+          "description": "For a quick escape.",
+          "quantity": 3
+        },
+        {
+          "name": "Glass Cutter",
+          "description": "For silent entry.",
+          "quantity": 1
+        },
+        {
+          "name": "Black Mask",
+          "description": "To hide her identity.",
+          "quantity": 1
+        },
+        {
+          "name": "Lockpicks",
+          "description": "Professional grade tools.",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Sleeping Gas",
+          "description": "For neutralizing guards.",
+          "quantity": 2
+        },
+        {
+          "name": "Lightweight Rope",
+          "description": "50 feet of silk rope.",
+          "quantity": 1
+        },
+        {
+          "name": "Stolen Gem",
+          "description": "A small ruby from a noble's room.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hideout",
+          "asset_type": "room",
+          "description": "A room in the abandoned lower levels.",
+          "story_use": "Vesper's base."
+        },
+        {
+          "asset_name": "Secret Passage",
+          "asset_type": "structure",
+          "description": "A tunnel leading to the Scriptarium.",
+          "story_use": "Her way in and out."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_vesper_plan",
+          "topic": "The Vault Heist",
+          "summary": "Vesper knows the guard rotation perfectly.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_hidden_treasure",
+          "topic": "The Duke's Hoard",
+          "summary": "Vesper found a hidden safe in the Duke's room.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Duke Valerius",
+      "role_name": "Ambassador",
+      "activity": "Negotiating in the Coral Chamber",
+      "home_base": "Coral Council Chamber",
+      "arc_goal": "To maintain the status quo.",
+      "inventory": [
+        {
+          "name": "Ornate Cane",
+          "description": "Topped with a pearl.",
+          "quantity": 1
+        },
+        {
+          "name": "Silk Waistcoat",
+          "description": "The height of fashion.",
+          "quantity": 1
+        },
+        {
+          "name": "Gold Pocket Watch",
+          "description": "A family heirloom.",
+          "quantity": 1
+        },
+        {
+          "name": "Box of Chocolates",
+          "description": "Imported and expensive.",
+          "quantity": 1
+        },
+        {
+          "name": "Diplomatic Passport",
+          "description": "Allows free travel.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Pistol",
+          "description": "A decorative but functional weapon.",
+          "quantity": 1
+        },
+        {
+          "name": "Bottle of Brandy",
+          "description": "For toast and celebrations.",
+          "quantity": 1
+        },
+        {
+          "name": "Signet Ring",
+          "description": "The Valerius family crest.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Valerius Estate",
+          "asset_type": "residence",
+          "description": "A large mansion on the upper deck.",
+          "story_use": "The Duke's home."
+        },
+        {
+          "asset_name": "Private Library",
+          "asset_type": "room",
+          "description": "Contains rare books on history.",
+          "story_use": "Where the Duke does his research."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_duke_secret",
+          "topic": "The Debt",
+          "summary": "The Duke is bankrupt and owes Lira.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_political_web",
+          "topic": "Embassy Alliances",
+          "summary": "Who is allied with whom.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Finn the Deckhand",
+      "role_name": "Memory Diver",
+      "activity": "Working on the Common Dock",
+      "home_base": "The Common Dock",
+      "arc_goal": "To sail to the edge of the world.",
+      "inventory": [
+        {
+          "name": "Coil of Rope",
+          "description": "Essential for dock work.",
+          "quantity": 1
+        },
+        {
+          "name": "Knife",
+          "description": "For cutting lines.",
+          "quantity": 1
+        },
+        {
+          "name": "Work Gloves",
+          "description": "To prevent rope burn.",
+          "quantity": 1
+        },
+        {
+          "name": "Cap",
+          "description": "To keep the sun out of his eyes.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Carved Boat",
+          "description": "A toy he made himself.",
+          "quantity": 1
+        },
+        {
+          "name": "Bag of Sandwiches",
+          "description": "His lunch.",
+          "quantity": 1
+        },
+        {
+          "name": "Water Canteen",
+          "description": "Stays hydrated.",
+          "quantity": 1
+        },
+        {
+          "name": "Copper Coin",
+          "description": "His only savings.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Bunk",
+          "asset_type": "residence",
+          "description": "A small bed on a cargo ship.",
+          "story_use": "Finn's home."
+        },
+        {
+          "asset_name": "Toolbox",
+          "asset_type": "storage",
+          "description": "Contains basic repair tools.",
+          "story_use": "Finn's pride and joy."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_ship_schedules",
+          "topic": "Arrival Times",
+          "summary": "When the big ships are due.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_knot_tying",
+          "topic": "Advanced Knots",
+          "summary": "How to tie the most secure knots.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Zara the Scholar",
+      "role_name": "Linguist",
+      "activity": "Researching in the Scriptarium",
+      "home_base": "The Sinking Scriptarium",
+      "arc_goal": "To translate the 'Song of the Sea'.",
+      "inventory": [
+        {
+          "name": "Notebook",
+          "description": "Filled with linguistic notes.",
+          "quantity": 1
+        },
+        {
+          "name": "Ink Pen",
+          "description": "A simple but reliable tool.",
+          "quantity": 2
+        },
+        {
+          "name": "Magnifying Glass",
+          "description": "For reading small text.",
+          "quantity": 1
+        },
+        {
+          "name": "Book of Poetry",
+          "description": "Her favorite inspiration.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Lamp",
+          "description": "For late night study.",
+          "quantity": 1
+        },
+        {
+          "name": "Scarf",
+          "description": "To keep warm in the drafty library.",
+          "quantity": 1
+        },
+        {
+          "name": "Dried Berries",
+          "description": "A healthy snack.",
+          "quantity": 1
+        },
+        {
+          "name": "Library Card",
+          "description": "Allows access to the main collection.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Study Carrel",
+          "asset_type": "furniture",
+          "description": "A private desk in the library.",
+          "story_use": "Zara's research spot."
+        },
+        {
+          "asset_name": "Book Collection",
+          "asset_type": "storage",
+          "description": "Her personal library of rare texts.",
+          "story_use": "The source of her knowledge."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_zara_theory",
+          "topic": "The Sea Song",
+          "summary": "Zara believes the song is a map.",
+          "confidence": 80
+        },
+        {
+          "knowledge_id": "k_library_layout",
+          "topic": "The Secret Shelves",
+          "summary": "Where the forbidden books are kept.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Krog the Guard",
+      "role_name": "Archive Guard",
+      "activity": "Guarding the Scriptarium Entrance",
+      "home_base": "The Sinking Scriptarium",
+      "arc_goal": "To earn enough to retire.",
+      "inventory": [
+        {
+          "name": "Spear",
+          "description": "Standard guard issue.",
+          "quantity": 1
+        },
+        {
+          "name": "Helmet",
+          "description": "A bit too small for him.",
+          "quantity": 1
+        },
+        {
+          "name": "Breastplate",
+          "description": "Scratched and dented.",
+          "quantity": 1
+        },
+        {
+          "name": "Whistle",
+          "description": "For calling for help.",
+          "quantity": 1
+        },
+        {
+          "name": "Key Ring",
+          "description": "Keys to the outer gates.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Pouch",
+          "description": "Contains a few chits.",
+          "quantity": 1
+        },
+        {
+          "name": "Ration Pack",
+          "description": "Dried meat and crackers.",
+          "quantity": 2
+        },
+        {
+          "name": "Dice Set",
+          "description": "For playing with other guards.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guard Shack",
+          "asset_type": "structure",
+          "description": "A small booth at the gate.",
+          "story_use": "Krog's post."
+        },
+        {
+          "asset_name": "Locker",
+          "asset_type": "storage",
+          "description": "Where Krog keeps his personal items.",
+          "story_use": "His only private space."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_krog_bribe",
+          "topic": "The Price of Entry",
+          "summary": "Krog will look the other way for 50 chits.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_guard_gossip",
+          "topic": "The Sergeant's Secret",
+          "summary": "Thorne is in love with Elara.",
+          "confidence": 50
+        }
+      ]
+    },
+    {
+      "display_name": "Nia the Diver",
+      "role_name": "Memory Diver",
+      "activity": "Diving for artifacts",
+      "home_base": "The Sinking Scriptarium",
+      "arc_goal": "To find the 'Pearl of Wisdom'.",
+      "inventory": [
+        {
+          "name": "Diving Mask",
+          "description": "Provides a clear view underwater.",
+          "quantity": 1
+        },
+        {
+          "name": "Flippers",
+          "description": "For faster swimming.",
+          "quantity": 1
+        },
+        {
+          "name": "Speargun",
+          "description": "For protection against sea life.",
+          "quantity": 1
+        },
+        {
+          "name": "Underwater Camera",
+          "description": "A rare and expensive device.",
+          "quantity": 1
+        },
+        {
+          "name": "Sample Bags",
+          "description": "For collecting small items.",
+          "quantity": 10
+        },
+        {
+          "name": "Flashlight",
+          "description": "Waterproof and bright.",
+          "quantity": 1
+        },
+        {
+          "name": "Knife",
+          "description": "A diver's best friend.",
+          "quantity": 1
+        },
+        {
+          "name": "Energy Bar",
+          "description": "For a quick boost.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Diving Boat",
+          "asset_type": "vehicle",
+          "description": "A small, fast motorboat.",
+          "story_use": "Nia's transport."
+        },
+        {
+          "asset_name": "Equipment Shed",
+          "asset_type": "structure",
+          "description": "Where Nia stores her gear.",
+          "story_use": "Her base of operations."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_nia_discovery",
+          "topic": "The Sunken Temple",
+          "summary": "Nia found a temple under the embassy.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_sea_life",
+          "topic": "Dangerous Fish",
+          "summary": "Which fish to avoid while diving.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Silas the Younger",
+      "role_name": "Smuggler",
+      "activity": "Helping Jax at the Market",
+      "home_base": "The Salt-Stained Market",
+      "arc_goal": "To surpass his father's legacy.",
+      "inventory": [
+        {
+          "name": "Small Knife",
+          "description": "For opening crates.",
+          "quantity": 1
+        },
+        {
+          "name": "Leather Vest",
+          "description": "Tough and practical.",
+          "quantity": 1
+        },
+        {
+          "name": "Bag of Chits",
+          "description": "His share of the profits.",
+          "quantity": 100
+        },
+        {
+          "name": "Signal Mirror",
+          "description": "For communicating with ships.",
+          "quantity": 1
+        },
+        {
+          "name": "Lockpick",
+          "description": "A single, well-made tool.",
+          "quantity": 1
+        },
+        {
+          "name": "Bandana",
+          "description": "To keep sweat out of his eyes.",
+          "quantity": 1
+        },
+        {
+          "name": "Dried Fruit",
+          "description": "A sweet snack.",
+          "quantity": 5
+        },
+        {
+          "name": "Note from Jax",
+          "description": "Instructions for the next job.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Small Boat",
+          "asset_type": "vehicle",
+          "description": "A rowboat for short trips.",
+          "story_use": "Silas's transport."
+        },
+        {
+          "asset_name": "Hidden Cache",
+          "asset_type": "storage",
+          "description": "A hole in the wall for hiding goods.",
+          "story_use": "His secret storage."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_silas_secret",
+          "topic": "The Hidden Route",
+          "summary": "A way into the embassy through the sewers.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_jax_weakness",
+          "topic": "Jax's Fear",
+          "summary": "Jax is terrified of the deep water.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Elena the Ambassador",
+      "role_name": "Ambassador",
+      "activity": "Negotiating for the Moon Kingdom",
+      "home_base": "Coral Council Chamber",
+      "arc_goal": "To secure translation rights for her people.",
+      "inventory": [
+        {
+          "name": "Silver Signet Ring",
+          "description": "The seal of the Moon Kingdom.",
+          "quantity": 1
+        },
+        {
+          "name": "Silk Gown",
+          "description": "Elegant and formal.",
+          "quantity": 1
+        },
+        {
+          "name": "Pearl Necklace",
+          "description": "A gift from her queen.",
+          "quantity": 1
+        },
+        {
+          "name": "Fan",
+          "description": "For cooling herself in the chamber.",
+          "quantity": 1
+        },
+        {
+          "name": "Diplomatic Note",
+          "description": "A message for the High Archivist.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Mirror",
+          "description": "For checking her appearance.",
+          "quantity": 1
+        },
+        {
+          "name": "Perfume Bottle",
+          "description": "Smells of jasmine.",
+          "quantity": 1
+        },
+        {
+          "name": "Box of Tea",
+          "description": "A peace offering.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Moon Suite",
+          "asset_type": "residence",
+          "description": "A beautiful room overlooking the sea.",
+          "story_use": "Elena's home."
+        },
+        {
+          "asset_name": "Private Garden",
+          "asset_type": "room",
+          "description": "A small garden with bioluminescent plants.",
+          "story_use": "Where Elena relaxes."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_elena_plan",
+          "topic": "The Translation Deal",
+          "summary": "Elena is offering gold for the Creation Verb.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_vane_rivalry",
+          "topic": "Vane's Ambition",
+          "summary": "Elena knows Vane wants to take over.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Milo the Scribe",
+      "role_name": "Linguist",
+      "activity": "Copying scrolls for Elara",
+      "home_base": "The Sinking Scriptarium",
+      "arc_goal": "To discover a new language.",
+      "inventory": [
+        {
+          "name": "Ink Well",
+          "description": "Full of fresh ink.",
+          "quantity": 1
+        },
+        {
+          "name": "Quill Pen",
+          "description": "A fine-tipped pen.",
+          "quantity": 1
+        },
+        {
+          "name": "Scroll of Vellum",
+          "description": "Ready for writing.",
+          "quantity": 5
+        },
+        {
+          "name": "Small Knife",
+          "description": "For sharpening quills.",
+          "quantity": 1
+        },
+        {
+          "name": "Reading Lamp",
+          "description": "A small oil lamp.",
+          "quantity": 1
+        },
+        {
+          "name": "Spectacles",
+          "description": "For seeing fine detail.",
+          "quantity": 1
+        },
+        {
+          "name": "Bag of Nuts",
+          "description": "A quick snack.",
+          "quantity": 1
+        },
+        {
+          "name": "Note from Elara",
+          "description": "Tasks for the day.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scribe's Bench",
+          "asset_type": "furniture",
+          "description": "A long bench shared with others.",
+          "story_use": "Milo's workspace."
+        },
+        {
+          "asset_name": "Small Chest",
+          "asset_type": "storage",
+          "description": "Where Milo keeps his personal items.",
+          "story_use": "His only storage."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_milo_discovery",
+          "topic": "The Ancient Symbol",
+          "summary": "Milo found a symbol he doesn't recognize.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_library_secret",
+          "topic": "The Hidden Door",
+          "summary": "A door behind a tapestry in the library.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Captain Rourke",
+      "role_name": "Archive Guard",
+      "activity": "Commanding the Guard",
+      "home_base": "The Echo Vault",
+      "arc_goal": "To protect the embassy from the coming tide.",
+      "inventory": [
+        {
+          "name": "Officer's Sword",
+          "description": "A fine steel blade.",
+          "quantity": 1
+        },
+        {
+          "name": "Gold-Plated Helmet",
+          "description": "The mark of his rank.",
+          "quantity": 1
+        },
+        {
+          "name": "Heavy Cloak",
+          "description": "To stay warm on the docks.",
+          "quantity": 1
+        },
+        {
+          "name": "Map of the Embassy",
+          "description": "Shows all guard posts.",
+          "quantity": 1
+        },
+        {
+          "name": "Whistle of Command",
+          "description": "A unique sound for the Captain.",
+          "quantity": 1
+        },
+        {
+          "name": "Logbook",
+          "description": "A record of all incidents.",
+          "quantity": 1
+        },
+        {
+          "name": "Bottle of Whiskey",
+          "description": "For a quiet moment.",
+          "quantity": 1
+        },
+        {
+          "name": "Signet Ring",
+          "description": "The Guard Captain's seal.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Captain's Office",
+          "asset_type": "room",
+          "description": "A large room in the guard tower.",
+          "story_use": "Rourke's base."
+        },
+        {
+          "asset_name": "Private Armory",
+          "asset_type": "storage",
+          "description": "Contains the best weapons.",
+          "story_use": "Where Rourke keeps his gear."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_rourke_fear",
+          "topic": "The Tide's Power",
+          "summary": "Rourke knows the embassy's foundations are failing.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_guard_loyalty",
+          "topic": "The Loyal Men",
+          "summary": "Which guards can be trusted.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Tessa the Diver",
+      "role_name": "Memory Diver",
+      "activity": "Searching for lost scrolls",
+      "home_base": "The Sinking Scriptarium",
+      "arc_goal": "To find the 'Scroll of Ages'.",
+      "inventory": [
+        {
+          "name": "Diving Suit",
+          "description": "A custom-fitted suit.",
+          "quantity": 1
+        },
+        {
+          "name": "Underwater Lantern",
+          "description": "Burns for 10 hours.",
+          "quantity": 1
+        },
+        {
+          "name": "Net",
+          "description": "For catching floating scrolls.",
+          "quantity": 1
+        },
+        {
+          "name": "Oxygen Tank",
+          "description": "A large capacity tank.",
+          "quantity": 1
+        },
+        {
+          "name": "Knife",
+          "description": "For cutting through seaweed.",
+          "quantity": 1
+        },
+        {
+          "name": "Compass",
+          "description": "Works underwater.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Bag of Chits",
+          "description": "For buying supplies.",
+          "quantity": 50
+        },
+        {
+          "name": "Dried Meat",
+          "description": "A quick meal.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Diving Hut",
+          "asset_type": "structure",
+          "description": "A small shack on the dock.",
+          "story_use": "Tessa's home."
+        },
+        {
+          "asset_name": "Winch System",
+          "asset_type": "structure",
+          "description": "For lowering her into the water.",
+          "story_use": "Her way down."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_tessa_secret",
+          "topic": "The Hidden Archive",
+          "summary": "Tessa found a room that isn't on any map.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_water_currents",
+          "topic": "The Deep Flow",
+          "summary": "How the water moves in the lower levels.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Bram the Merchant",
+      "role_name": "Smuggler",
+      "activity": "Selling artifacts at the Market",
+      "home_base": "The Salt-Stained Market",
+      "arc_goal": "To corner the market on ancient scrolls.",
+      "inventory": [
+        {
+          "name": "Ancient Scroll",
+          "description": "A genuine artifact.",
+          "quantity": 1
+        },
+        {
+          "name": "Magnifying Glass",
+          "description": "For showing off details.",
+          "quantity": 1
+        },
+        {
+          "name": "Silk Cloth",
+          "description": "For wrapping delicate items.",
+          "quantity": 5
+        },
+        {
+          "name": "Bag of Harbor Chits",
+          "description": "His daily take.",
+          "quantity": 2000
+        },
+        {
+          "name": "Trade License",
+          "description": "A forged document.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Scale",
+          "description": "For weighing gold.",
+          "quantity": 1
+        },
+        {
+          "name": "Bottle of Ink",
+          "description": "High quality for repairs.",
+          "quantity": 2
+        },
+        {
+          "name": "Note from a Buyer",
+          "description": "A request for a specific item.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Market Stall 2C",
+          "asset_type": "stall",
+          "description": "A large stall with many displays.",
+          "story_use": "Bram's business."
+        },
+        {
+          "asset_name": "Storage Unit",
+          "asset_type": "storage",
+          "description": "A secure room for his best items.",
+          "story_use": "Where he keeps the real treasures."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_bram_source",
+          "topic": "The Secret Supplier",
+          "summary": "Bram gets his best items from Jax.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_market_prices",
+          "topic": "Scroll Values",
+          "summary": "What people are willing to pay.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Sila the Scribe",
+      "role_name": "Linguist",
+      "activity": "Translating for the Ambassadors",
+      "home_base": "Coral Council Chamber",
+      "arc_goal": "To become a diplomat.",
+      "inventory": [
+        {
+          "name": "Translation Book",
+          "description": "A dictionary of common terms.",
+          "quantity": 1
+        },
+        {
+          "name": "Ink Pen",
+          "description": "A fancy silver pen.",
+          "quantity": 1
+        },
+        {
+          "name": "Notebook",
+          "description": "For taking meeting notes.",
+          "quantity": 2
+        },
+        {
+          "name": "Small Lamp",
+          "description": "For reading in the chamber.",
+          "quantity": 1
+        },
+        {
+          "name": "Spectacles",
+          "description": "For seeing the speakers.",
+          "quantity": 1
+        },
+        {
+          "name": "Silk Scarf",
+          "description": "A gift from an ambassador.",
+          "quantity": 1
+        },
+        {
+          "name": "Bag of Sweets",
+          "description": "To keep her energy up.",
+          "quantity": 1
+        },
+        {
+          "name": "Letter of Recommendation",
+          "description": "From Ambassador Elena.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scribe's Chair",
+          "asset_type": "furniture",
+          "description": "A seat in the council chamber.",
+          "story_use": "Sila's place of work."
+        },
+        {
+          "asset_name": "Small Apartment",
+          "asset_type": "residence",
+          "description": "A modest room in the middle levels.",
+          "story_use": "Sila's home."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_sila_secret",
+          "topic": "The Secret Deal",
+          "summary": "Sila heard a deal she shouldn't have.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_diplomatic_code",
+          "topic": "Secret Signals",
+          "summary": "How ambassadors communicate without speaking.",
+          "confidence": 80
+        }
+      ]
+    }
+  ],
+  "social_rules": [
+    "Never speak a dead language aloud outside the Scriptarium.",
+    "The tide level determines the value of all linguistic assets.",
+    "Diplomatic immunity is revoked if a lie is proven by the Oathstone.",
+    "All salvaged items must be registered with the High Archivist."
+  ],
+  "item_themes": [
+    "bioluminescent",
+    "ancient",
+    "water-damaged",
+    "brass",
+    "silk"
+  ],
+  "custom_actions": [
+    "Translate Scroll",
+    "Verify Idiom",
+    "Dive for Artifacts",
+    "Forge Document"
+  ],
+  "player_entry_points": [
+    "Arriving as a new linguist on the Common Dock.",
+    "Smuggling yourself in via a diver's bell.",
+    "Being appointed as a junior ambassador."
+  ],
+  "conflict_hooks": [
+    "The High Archivist is accused of forging the embassy's founding charter.",
+    "A massive tide is predicted to submerge the Scriptarium permanently.",
+    "A rare idiom has been stolen and is being sold on the black market."
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Linguistic Trade",
+      "summary": "Players find or forge scrolls, verify their authenticity, and trade them for political influence or currency.",
+      "roles": [
+        "Linguist",
+        "Smuggler",
+        "Ambassador"
+      ],
+      "rooms": [
+        "The Sinking Scriptarium",
+        "The Salt-Stained Market",
+        "The Forgery Lab"
+      ],
+      "pressure": "The rising tide threatens to destroy unverified scrolls."
+    },
+    {
+      "label": "Submerged Salvage",
+      "summary": "Players dive into the flooded lower levels to retrieve lost knowledge while avoiding guards and environmental hazards.",
+      "roles": [
+        "Memory Diver",
+        "Archive Guard"
+      ],
+      "rooms": [
+        "The Sinking Scriptarium",
+        "The Echo Vault",
+        "Diver's Respite"
+      ],
+      "pressure": "Oxygen is limited and the currents are unpredictable."
+    }
+  ],
+  "item_catalog": [
+    {
+      "item_id": "ink_well_01",
+      "name": "Bioluminescent Ink",
+      "price": 50,
+      "mass": 0.2,
+      "description": "Ink that glows in the dark, harvested from deep-sea squids.",
+      "image_prompt": "a small glass bottle filled with glowing blue ink",
+      "category": "writing_supplies"
+    },
+    {
+      "item_id": "parchment_bundle_01",
+      "name": "Vellum Sheets",
+      "price": 20,
+      "mass": 0.5,
+      "description": "High-quality animal skin prepared for writing.",
+      "image_prompt": "a roll of thick, cream-colored parchment",
+      "category": "writing_supplies"
+    },
+    {
+      "item_id": "diving_helmet_01",
+      "name": "Brass Diving Helmet",
+      "price": 500,
+      "mass": 10.0,
+      "description": "A heavy brass helmet with a glass porthole.",
+      "image_prompt": "a steampunk-style brass diving helmet",
+      "category": "equipment"
+    },
+    {
+      "item_id": "signet_ring_01",
+      "name": "Ambassador's Signet",
+      "price": 1000,
+      "mass": 0.1,
+      "description": "A gold ring used to seal official documents.",
+      "image_prompt": "a gold ring with a complex crest engraved on it",
+      "category": "jewelry"
+    },
+    {
+      "item_id": "halberd_01",
+      "name": "Guard Halberd",
+      "price": 200,
+      "mass": 5.0,
+      "description": "A long-reaching polearm used by the embassy guards.",
+      "image_prompt": "a tall halberd with a polished brass blade",
+      "category": "weapons"
+    },
+    {
+      "item_id": "hidden_pouch_01",
+      "name": "Smuggler's Pouch",
+      "price": 30,
+      "mass": 0.1,
+      "description": "A small pouch designed to be hidden inside clothing.",
+      "image_prompt": "a small, dark leather pouch",
+      "category": "storage"
+    },
+    {
+      "item_id": "creation_verb_scroll",
+      "name": "The Creation Verb",
+      "price": 10000,
+      "mass": 0.5,
+      "description": "A legendary scroll said to contain a word of power.",
+      "image_prompt": "an ancient, glowing scroll with complex symbols",
+      "category": "artifacts"
+    },
+    {
+      "item_id": "harbor_chit_bag",
+      "name": "Bag of Chits",
+      "price": 100,
+      "mass": 1.0,
+      "description": "A pouch filled with local currency.",
+      "image_prompt": "a small canvas bag overflowing with brass coins",
+      "category": "currency"
+    },
+    {
+      "item_id": "oxygen_tank_01",
+      "name": "Air Tank",
+      "price": 150,
+      "mass": 8.0,
+      "description": "A pressurized tank providing breathable air.",
+      "image_prompt": "a cylindrical metal tank with a pressure gauge",
+      "category": "equipment"
+    },
+    {
+      "item_id": "translation_ledger_01",
+      "name": "Linguist's Ledger",
+      "price": 40,
+      "mass": 1.0,
+      "description": "A book for recording translations and notes.",
+      "image_prompt": "a thick, leather-bound book with many bookmarks",
+      "category": "writing_supplies"
+    },
+    {
+      "item_id": "fake_id_01",
+      "name": "Forged Papers",
+      "price": 200,
+      "mass": 0.1,
+      "description": "Documents that look official but are fake.",
+      "image_prompt": "a set of stamped papers with a wax seal",
+      "category": "documents"
+    },
+    {
+      "item_id": "grog_bottle_01",
+      "name": "Bottle of Grog",
+      "price": 10,
+      "mass": 1.0,
+      "description": "Strong and cheap alcohol favored by sailors.",
+      "image_prompt": "a dark glass bottle with a cork stopper",
+      "category": "consumables"
+    },
+    {
+      "item_id": "jade_statue_01",
+      "name": "Jade Sea Dragon",
+      "price": 300,
+      "mass": 2.0,
+      "description": "A small, intricately carved statue of a sea dragon.",
+      "image_prompt": "a small green jade statue of a dragon",
+      "category": "art"
+    },
+    {
+      "item_id": "silk_scarf_01",
+      "name": "Embroidered Scarf",
+      "price": 60,
+      "mass": 0.1,
+      "description": "A soft silk scarf with wave patterns.",
+      "image_prompt": "a blue silk scarf with silver embroidery",
+      "category": "clothing"
+    },
+    {
+      "item_id": "lockpick_set_01",
+      "name": "Master Lockpicks",
+      "price": 120,
+      "mass": 0.3,
+      "description": "A set of fine tools for opening locks.",
+      "image_prompt": "a small leather roll containing various metal picks",
+      "category": "tools"
+    }
+  ],
+  "visual_style": "A blend of Victorian steampunk and bioluminescent aquatic fantasy. Architecture is heavy stone and brass, often covered in barnacles and glowing algae. Lighting is provided by lanterns and glowing sea life.",
+  "visual_canon": {
+    "canon_id": "tidal_embassy_canon",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees",
+      "scale_rule": "fixed_pixel_ratio"
+    },
+    "palette": {
+      "dominant": "#1a2a3a",
+      "secondary": "#2c3e50",
+      "accent": "#3498db",
+      "shadow": "#0d141b",
+      "highlight": "#5dade2"
+    },
+    "materials": [
+      "weathered brass",
+      "wet stone",
+      "polished jade",
+      "damp wood",
+      "silk"
+    ],
+    "lighting": "dim, with points of bioluminescent blue and warm amber lantern light",
+    "architecture": [
+      "brutalist stone pillars",
+      "brass piping",
+      "curved coral-like structures",
+      "floating wooden platforms"
+    ],
+    "terrain": {
+      "ground": "wet stone slabs or wooden planks",
+      "path": "brass-lined walkways",
+      "edge": "dark, swirling water"
+    },
+    "sprite_language": {
+      "body_proportion": "realistic_humanoid",
+      "outline": "thin_dark_blue",
+      "role_readability": "high_via_color_coding"
+    },
+    "world_prompt_prefix": "a top-down view of a floating embassy, wet stone, brass pipes, bioluminescent algae, dim lighting",
+    "sprite_prompt_prefix": "a top-down character sprite, detailed clothing, clear role indicators",
+    "forbidden_visuals": [
+      "modern technology",
+      "bright neon colors",
+      "dry desert landscapes",
+      "plastic materials"
+    ]
+  },
+  "agent_visual_policy": {
+    "policy_id": "tidal_embassy_agents",
+    "world_wardrobe_brief": "Characters wear practical, layered clothing suited for a damp, coastal environment. High-status individuals use silk and jade accents, while workers use leather and heavy wool.",
+    "forbidden_aesthetics": [
+      "modern zippers",
+      "synthetic fabrics",
+      "bright pinks",
+      "high-tech gadgets"
+    ],
+    "palette_families": [
+      {
+        "name": "Archivist",
+        "dominant": "#2c3e50",
+        "accent": "#3498db",
+        "trim": "#ecf0f1",
+        "material": "wool_and_silk"
+      },
+      {
+        "name": "Smuggler",
+        "dominant": "#1a1a1a",
+        "accent": "#7f8c8d",
+        "trim": "#c0392b",
+        "material": "leather_and_canvas"
+      },
+      {
+        "name": "Ambassador",
+        "dominant": "#f1c40f",
+        "accent": "#e67e22",
+        "trim": "#ffffff",
+        "material": "fine_silk"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "linguist_style",
+        "role_keywords": [
+          "Linguist",
+          "Scribe",
+          "Archivist"
+        ],
+        "attire": [
+          "long robes",
+          "ink-stained aprons",
+          "spectacles"
+        ],
+        "props": [
+          "quills",
+          "scrolls",
+          "magnifying glasses"
+        ],
+        "palette_notes": "mostly dark blues and greys with white accents",
+        "silhouette_notes": "long, flowing lines with many pockets for scrolls"
+      },
+      {
+        "rule_id": "smuggler_style",
+        "role_keywords": [
+          "Smuggler",
+          "Thief",
+          "Runner"
+        ],
+        "attire": [
+          "leather vests",
+          "hooded cloaks",
+          "sturdy boots"
+        ],
+        "props": [
+          "knives",
+          "lockpicks",
+          "satchels"
+        ],
+        "palette_notes": "dark, muted colors for blending into shadows",
+        "silhouette_notes": "compact and practical for quick movement"
+      },
+      {
+        "rule_id": "guard_style",
+        "role_keywords": [
+          "Guard",
+          "Sergeant",
+          "Captain"
+        ],
+        "attire": [
+          "brass breastplates",
+          "heavy helmets",
+          "blue capes"
+        ],
+        "props": [
+          "halberds",
+          "whistles",
+          "lanterns"
+        ],
+        "palette_notes": "metallic brass and deep blue",
+        "silhouette_notes": "heavy and imposing"
+      }
+    ],
+    "default_rule": {
+      "rule_id": "citizen_style",
+      "role_keywords": [
+        "citizen",
+        "worker"
+      ],
+      "attire": [
+        "simple tunics",
+        "trousers",
+        "work boots"
+      ],
+      "props": [
+        "tools",
+        "bags"
+      ],
+      "palette_notes": "browns and tans",
+      "silhouette_notes": "functional and simple"
+    },
+    "visual_consistency_rules": [
+      "All characters must have at least one item made of brass or leather.",
+      "Bioluminescent accents are reserved for high-ranking linguists and ambassadors.",
+      "Footwear must appear wet or salt-stained."
+    ]
+  }
+}

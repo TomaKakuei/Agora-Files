@@ -1,0 +1,86 @@
+\section{Prospective Tidal Memory Intervention}
+\label{app:intervention}
+\textbf{Status.} This appendix describes planned work, not an additional
+completed experiment. The project contains a local protocol and a one-round
+full-memory smoke run; it does not contain completed paired 32-round results
+supporting a causal memory claim. No external preregistration identifier is
+available in the release. The changes to analysis and measurement specified
+below must be frozen before confirmatory runs and are not represented as an
+already registered plan.
+
+\subsection{Intervention and Hypothesis}
+The 25-agent Tidal Embassy world is initialized once and reused. At round
+zero, three agents in the lower archive privately learn that a flood threatens
+the only surviving peace treaty unless it is moved and authenticated. The
+full-memory condition retains prior social episodes. The ablation removes
+prior-round social episodes from decision context while preserving current
+locations, inventories, public facts, task state, and directed relationships.
+Thus it tests access to episodic social history, not removal of all memory:
+tasks, current knowledge, and relationships can also carry historical signals.
+
+The planned seeds are 26080311, 26080312, and 26080313, with 32 rounds per
+condition. Initial profiles, world configuration, model and decoding settings,
+and activation schedule are matched within each pair. Activation draws should
+be precomputed with a separate random stream; reusing a seed alone does not
+guarantee matching if the conditions consume randomness differently. API
+nondeterminism remains a source of variation.
+
+The hypothesis is that access to earlier social episodes increases warning
+diffusion and coordinated rescue within this generated setting. Generative
+Agents motivates studying memory in community behavior \cite{park2023};
+the separation of information reach and collective action is also informed
+by contagion research \cite{centola}.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/memory_intervention_design.pdf}
+\caption{\paneltitle{Prospective design; no paired results reported.}
+Matched initial states receive the same private warning. Conditions differ
+in access to prior social episodes. Diffusion and material rescue are distinct
+outcomes. The planned unit of comparison is a seed pair.}
+\label{fig:tidal-design}
+\end{figure*}
+
+\subsection{Outcomes and Measurement Controls}
+The primary endpoint is warning reach by round 16 among the 22 initially
+uninformed agents. Let $Z_i(16)$ indicate that the agent has expressed or
+recorded a prespecified treaty-threat proposition by that round. Then
+\begin{equation}
+D_{16}=\frac{1}{22}\sum_{i\notin I_0}Z_i(16),
+\qquad |I_0|=3.
+\end{equation}
+Measurement must use an append-only audit stream outside the ablated decision
+memory; otherwise deleting memory could mechanically reduce measured reach
+even after successful transmission. The audit record is not fed back to
+agents. Initial warning availability must be preserved equally through its
+first intended use, so the ablation does not inadvertently remove the treatment
+trigger itself.
+
+Secondary outcomes are first cross-room transmission time, rescue-task
+participation and role diversity, treaty relocation and authentication,
+unique and repeated dyads, largest component, object transfers, relationship
+changes, and rule violations. Unreached transmission or rescue events are
+reported as censored at the horizon. Two condition-blind annotators should
+label candidate episodes under a frozen proposition codebook; agreement and
+resolved disagreements must be reported before condition-level interpretation.
+
+Manipulation checks verify that only the designated agents initially receive
+the warning, that paired initial states and activation schedules match, and
+that the ablation removes the intended history without exposing hidden facts
+through summaries or coordinator feedback. These checks implement the
+information-boundary concern highlighted by Zhou et al.\ \cite{misleading}.
+
+\subsection{Analysis and Precision}
+The independent comparison unit is a seed pair, not an event or an agent.
+For seed $s$, report
+$\Delta_s=D_{16,s}^{\mathrm{full}}-D_{16,s}^{\mathrm{ablation}}$, both condition
+trajectories, and the material rescue outcome. Report all three differences
+and their mean and range. Three pairs are too few for a stable bootstrap
+confidence interval or a well-powered confirmatory test; additional seeds
+and a prospectively justified sample size are needed for precise inference.
+
+Qualitative selection rules are the earliest cross-room transmission, first
+multi-role rescue, largest trust reversal, and first failed coordination.
+Selections should be applied identically to both conditions and report when
+an event does not occur. The existing one-round smoke run is execution
+validation only and must remain outside these comparisons.

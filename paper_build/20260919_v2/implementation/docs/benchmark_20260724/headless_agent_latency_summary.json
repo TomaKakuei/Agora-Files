@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-07-25T17:24:37.407006+00:00",
+  "command": "scripts/agora_headless_agent_latency_batch.py --base-port 8125 --timeout-seconds 180 --snapshot-timeout-seconds 30 --out-dir docs/benchmark_20260724",
+  "summary": {
+    "world_count": 5,
+    "ok_count": 1,
+    "error_count": 4,
+    "agent_reply_ms": {
+      "count": 1,
+      "mean": 2690.0,
+      "median": 2690.0,
+      "p95": 2690.0,
+      "min": 2690.0,
+      "max": 2690.0
+    },
+    "provider_latency_ms": {
+      "count": 1,
+      "mean": 2182.0,
+      "median": 2182.0,
+      "p95": 2182.0,
+      "min": 2182.0,
+      "max": 2182.0
+    },
+    "message_persist_ms": {
+      "count": 1,
+      "mean": 392.0,
+      "median": 392.0,
+      "p95": 392.0,
+      "min": 392.0,
+      "max": 392.0
+    }
+  },
+  "runs": [
+    {
+      "world_name": "Clockwork Rain Conservatory",
+      "access_code": "a0d595161b975dd0",
+      "started_at": "2026-07-25T17:15:26.491843+00:00",
+      "returncode": 0,
+      "status": "ok",
+      "message_persist_ms": 392,
+      "agent_reply_ms": 2690,
+      "provider_latency_ms": 2182,
+      "model": "gemini-3.1-flash-lite-preview",
+      "session_id": "87a6f4324a7a3169",
+      "target_agent_id": "clockwork_rain_conservatory_main_01",
+      "unique_message": "headless regression 1784999791410",
+      "screenshot": "/tmp/agora_pixel_headless_42617_7ae812fd8520387d.png",
+      "screenshot_warning": "snapshot harness did not finish cleanly: headless regression did not finish: None; missing screenshot output: /tmp/agora_pixel_headless_42617_7ae812fd8520387d.png"
+    },
+    {
+      "world_name": "Aurora Court of Migrating Cities",
+      "access_code": "cfa9e1aa1ed06a38",
+      "started_at": "2026-07-25T17:17:34.769720+00:00",
+      "returncode": 1,
+      "status": "error",
+      "error": "no JSON object found in output: etected via PCI, cannot deduce vendor\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x1a03/0x2000\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\n\nstderr:\n*** You are running in headless mode.\n[WARN  rkv::backend::impl_safe::environment] `load_ratio()` is irrelevant for this storage backend.\n[WARN  audioipc2_server::server] Promotion of content process thread to real-time error\n[WARN  rkv::backend::impl_safe::environment] `load_ratio()` is irrelevant for this storage backend.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\n\n\n",
+      "stdout_tail": "Firefox screenshot run failed or timed out:\nstdout:\n[GFX1-]: glxtest: Unable to open a connection to the X server\n[GFX1-]: More than 1 GPU vendor detected via PCI, cannot deduce vendor\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x1a03/0x2000\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\n\nstderr:\n*** You are running in headless mode.\n[WARN  rkv::backend::impl_safe::environment] `load_ratio()` is irrelevant for this storage backend.\n[WARN  audioipc2_server::server] Promotion of content process thread to real-time error\n[WARN  rkv::backend::impl_safe::environment] `load_ratio()` is irrelevant for this storage backend.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\n\n\n",
+      "stderr_tail": "Using port 8125\n{\n  \"status\": \"error\",\n  \"message\": \"Live movement did not change the claimed agent position\",\n  \"error\": \"run@http://127.0.0.1:8125/__test__/headless-pixel?seed=42617&token=0f3248336f0b83b8&access_code=cfa9e1aa1ed06a38:391:19\\n\",\n  \"seed\": 42617,\n  \"token\": \"0f3248336f0b83b8\",\n  \"access_code\": \"cfa9e1aa1ed06a38\",\n  \"selected_access_code\": \"cfa9e1aa1ed06a38\",\n  \"session_endpoint\": \"/api/pixel/worlds/cfa9e1aa1ed06a38/live/sessions\",\n  \"expected_session_endpoint\": \"/api/pixel/worlds/cfa9e1aa1ed06a38/live/sessions\",\n  \"bundle_version\": \"dev\",\n  \"frame_location\": \"http://127.0.0.1:8125/pixel/?mode=live&seed=42617&pixel_world=cfa9e1aa1ed06a38&persist_session=0&reset_client_state=1&headless_kick=1&bundle=e26d9e202635&frame_token=0f3248336f0b83b8\",\n  \"startup_status_text\": \"Live session 310cf915bab3a377\"\n}\n"
+    },
+    {
+      "world_name": "Mycelium Patent Bazaar",
+      "access_code": "995cad4cf9d281d9",
+      "started_at": "2026-07-25T17:19:18.274607+00:00",
+      "returncode": 1,
+      "status": "error",
+      "error": "no JSON object found in output: ",
+      "stdout_tail": "",
+      "stderr_tail": "Using port 8125\n{\n  \"status\": \"error\",\n  \"message\": \"actor inventory did not persist the quoted trade result. Inventory: [{\\\"item_id\\\": \\\"restorative_tea\\\", \\\"quantity\\\": 1, \\\"name\\\": \\\"Restorative Tea\\\", \\\"description\\\": \\\"A simple restorative used for live interaction checks.\\\", \\\"image_path\\\": \\\"\\\", \\\"image_url\\\": \\\"\\\", \\\"metadata\\\": {\\\"name\\\": \\\"Restorative Tea\\\"}}, {\\\"item_id\\\": \\\"trade_token\\\", \\\"quantity\\\": 1, \\\"name\\\": \\\"Trade Token\\\", \\\"description\\\": \\\"A compact token used for barter drills.\\\", \\\"image_path\\\": \\\"\\\", \\\"image_url\\\": \\\"\\\", \\\"metadata\\\": {\\\"name\\\": \\\"Trade Token\\\"}}, {\\\"item_id\\\": \\\"cny_cash\\\", \\\"quantity\\\": 90, \\\"name\\\": \\\"renminbi\\\", \\\"description\\\": \\\"CNY\\\", \\\"image_path\\\": \\\"\\\", \\\"image_url\\\": \\\"\\\", \\\"metadata\\\": {\\\"currency\\\": true, \\\"name\\\": \\\"CNY\\\", \\\"currency_code\\\": \\\"CNY\\\", \\\"currency_symbol\\\": \\\"\\\\u00a5\\\", \\\"amount_minor\\\": 90}}]\",\n  \"error\": \"actor inventory did not persist the quoted trade result. Inventory: [{\\\"item_id\\\": \\\"restorative_tea\\\", \\\"quantity\\\": 1, \\\"name\\\": \\\"Restorative Tea\\\", \\\"description\\\": \\\"A simple restorative used for live interaction checks.\\\", \\\"image_path\\\": \\\"\\\", \\\"image_url\\\": \\\"\\\", \\\"metadata\\\": {\\\"name\\\": \\\"Restorative Tea\\\"}}, {\\\"item_id\\\": \\\"trade_token\\\", \\\"quantity\\\": 1, \\\"name\\\": \\\"Trade Token\\\", \\\"description\\\": \\\"A compact token used for barter drills.\\\", \\\"image_path\\\": \\\"\\\", \\\"image_url\\\": \\\"\\\", \\\"metadata\\\": {\\\"name\\\": \\\"Trade Token\\\"}}, {\\\"item_id\\\": \\\"cny_cash\\\", \\\"quantity\\\": 90, \\\"name\\\": \\\"renminbi\\\", \\\"description\\\": \\\"CNY\\\", \\\"image_path\\\": \\\"\\\", \\\"image_url\\\": \\\"\\\", \\\"metadata\\\": {\\\"currency\\\": true, \\\"name\\\": \\\"CNY\\\", \\\"currency_code\\\": \\\"CNY\\\", \\\"currency_symbol\\\": \\\"\\\\u00a5\\\", \\\"amount_minor\\\": 90}}]\"\n}\n"
+    },
+    {
+      "world_name": "Tidal Embassy of Lost Languages",
+      "access_code": "21c6573255c5933f",
+      "started_at": "2026-07-25T17:20:27.799406+00:00",
+      "returncode": 1,
+      "status": "error",
+      "error": "no JSON object found in output: FX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x1a03/0x2000\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\n[GFX1-]: CompositorBridgeChild receives IPC close with reason=AbnormalShutdown\n\nstderr:\n*** You are running in headless mode.\n[WARN  rkv::backend::impl_safe::environment] `load_ratio()` is irrelevant for this storage backend.\n[WARN  audioipc2_server::server] Promotion of content process thread to real-time error\n[WARN  rkv::backend::impl_safe::environment] `load_ratio()` is irrelevant for this storage backend.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\n\n\n",
+      "stdout_tail": "Firefox screenshot run failed or timed out:\nstdout:\n[GFX1-]: glxtest: Unable to open a connection to the X server\n[GFX1-]: More than 1 GPU vendor detected via PCI, cannot deduce vendor\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x1a03/0x2000\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\n[GFX1-]: CompositorBridgeChild receives IPC close with reason=AbnormalShutdown\n\nstderr:\n*** You are running in headless mode.\n[WARN  rkv::backend::impl_safe::environment] `load_ratio()` is irrelevant for this storage backend.\n[WARN  audioipc2_server::server] Promotion of content process thread to real-time error\n[WARN  rkv::backend::impl_safe::environment] `load_ratio()` is irrelevant for this storage backend.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\n\n\n",
+      "stderr_tail": "Using port 8125\n{\n  \"status\": \"error\",\n  \"message\": \"Live movement did not change the claimed agent position\",\n  \"error\": \"run@http://127.0.0.1:8125/__test__/headless-pixel?seed=42617&token=1c6c6eb239663436&access_code=21c6573255c5933f:391:19\\n\",\n  \"seed\": 42617,\n  \"token\": \"1c6c6eb239663436\",\n  \"access_code\": \"21c6573255c5933f\",\n  \"selected_access_code\": \"21c6573255c5933f\",\n  \"session_endpoint\": \"/api/pixel/worlds/21c6573255c5933f/live/sessions\",\n  \"expected_session_endpoint\": \"/api/pixel/worlds/21c6573255c5933f/live/sessions\",\n  \"bundle_version\": \"dev\",\n  \"frame_location\": \"http://127.0.0.1:8125/pixel/?mode=live&seed=42617&pixel_world=21c6573255c5933f&persist_session=0&reset_client_state=1&headless_kick=1&bundle=e26d9e202635&frame_token=1c6c6eb239663436\",\n  \"startup_status_text\": \"Live session 5353e0ff5df37050\"\n}\n"
+    },
+    {
+      "world_name": "Sunken Satellite Monastery",
+      "access_code": "82f0356e41af144a",
+      "started_at": "2026-07-25T17:22:12.276694+00:00",
+      "returncode": 1,
+      "status": "error",
+      "error": "no JSON object found in output: FX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x1a03/0x2000\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\n[GFX1-]: CompositorBridgeChild receives IPC close with reason=AbnormalShutdown\n\nstderr:\n*** You are running in headless mode.\n[WARN  rkv::backend::impl_safe::environment] `load_ratio()` is irrelevant for this storage backend.\n[WARN  audioipc2_server::server] Promotion of content process thread to real-time error\n[WARN  rkv::backend::impl_safe::environment] `load_ratio()` is irrelevant for this storage backend.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\n\n\n",
+      "stdout_tail": "Firefox screenshot run failed or timed out:\nstdout:\n[GFX1-]: glxtest: Unable to open a connection to the X server\n[GFX1-]: More than 1 GPU vendor detected via PCI, cannot deduce vendor\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x1a03/0x2000\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: PCI candidate 0x10de/0x20b5\n\n[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\n[GFX1-]: CompositorBridgeChild receives IPC close with reason=AbnormalShutdown\n\nstderr:\n*** You are running in headless mode.\n[WARN  rkv::backend::impl_safe::environment] `load_ratio()` is irrelevant for this storage backend.\n[WARN  audioipc2_server::server] Promotion of content process thread to real-time error\n[WARN  rkv::backend::impl_safe::environment] `load_ratio()` is irrelevant for this storage backend.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\nExiting due to channel error.\n\n\n",
+      "stderr_tail": "Using port 8125\n{\n  \"status\": \"error\",\n  \"message\": \"Timed out waiting for browser condition at agent reply visible\",\n  \"error\": \"waitFor@http://127.0.0.1:8125/__test__/headless-pixel?seed=42617&token=7d3bd09474cf0273&access_code=82f0356e41af144a:75:30\\n\",\n  \"seed\": 42617,\n  \"token\": \"7d3bd09474cf0273\",\n  \"access_code\": \"82f0356e41af144a\",\n  \"selected_access_code\": \"82f0356e41af144a\",\n  \"session_endpoint\": \"/api/pixel/worlds/82f0356e41af144a/live/sessions\",\n  \"expected_session_endpoint\": \"/api/pixel/worlds/82f0356e41af144a/live/sessions\",\n  \"bundle_version\": \"dev\",\n  \"frame_location\": \"http://127.0.0.1:8125/pixel/?mode=live&seed=42617&pixel_world=82f0356e41af144a&persist_session=0&reset_client_state=1&headless_kick=1&bundle=e26d9e202635&frame_token=7d3bd09474cf0273\",\n  \"startup_status_text\": \"Live session 07f41e2a47b4418c\"\n}\n"
+    }
+  ]
+}

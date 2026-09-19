@@ -1,0 +1,2896 @@
+{
+  "world_name": "Aurora Court of Migrating Cities",
+  "world_id": "aurora_court_migrating_cities",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "civic_social_world",
+    "profile_id": "civic_social_world",
+    "locale": "en-US",
+    "tone": "Diplomatic, tense, bureaucratic, and awe-inspiring",
+    "visual_direction": "Arctic dieselpunk with bioluminescent aurora lighting and massive mechanical legs",
+    "currency_code": "CRD",
+    "currency_symbol": "cr",
+    "currency_minor_unit": "point",
+    "currency_name": "Thermal Calories",
+    "domain_label": "The Frost-Walk Convoys",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "arctic_industrial_v1",
+      "frontend_affordance_id": "logistics_dashboard_v1",
+      "asset_prompt_kit_id": "dieselpunk_ice_world"
+    },
+    "policy_refs": {
+      "economy_policy_id": "civic_credit_v1",
+      "item_collection_id": "civic_social_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "civic_social_world_v1",
+      "property_policy_id": "civic_social_world_v1",
+      "knowledge_policy_id": "civic_social_world_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "Arctic Dieselpunk Logistics & Diplomacy",
+  "premise": "Walking polar cities traverse an endless ice shelf, managing heat debt and political alliances under the aurora.",
+  "simulation_objective": "Balance fuel logistics, inter-city reputation, and diplomatic marriages to ensure city survival.",
+  "agent_count_target": 25,
+  "player_count_target": 50,
+  "wall_color_theme": "riveted_cast_iron",
+  "economy_focus": "Heat exchange, route rights, engine parts, and citizenship favors.",
+  "exploration_focus": "Ice shelf navigation, weather prediction, and black-market engine salvage.",
+  "conflict_tone": "High-stakes bureaucratic intrigue and resource-driven border disputes.",
+  "visual_style": "Massive iron walkers, glowing blue ice, steam-venting pipes, and vibrant aurora skies.",
+  "rooms": [
+    {
+      "name": "Heat Exchange Hub 01",
+      "biome": "industrial_arctic",
+      "purpose": "Trading thermal credits and steam pressure",
+      "decor_tags": [
+        "pipes",
+        "valves",
+        "steam",
+        "brass"
+      ],
+      "activity_tags": [
+        "trading",
+        "monitoring"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of heated metal grating walkways over glowing orange lava-like heat coils, industrial grit",
+      "room_scene_prompt": "top-down orthographic view of a heat exchange station, heavy iron machinery, glowing orange pipes, brass valves, steam vents, no text, no labels, full bleed to edges",
+      "width_tiles": 8,
+      "height_tiles": 8,
+      "ambient_palette": "ember_orange",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "thermal_ledger_terminal",
+          "label": "Thermal Ledger",
+          "description": "A bulky brass terminal displaying glowing orange heat-debt charts",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Engine Part Scrapyard",
+      "biome": "industrial_arctic",
+      "purpose": "Salvaging mechanical components for city legs",
+      "decor_tags": [
+        "gears",
+        "rust",
+        "oil",
+        "cranes"
+      ],
+      "activity_tags": [
+        "repairing",
+        "scavenging"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of oil-stained corrugated steel plating with scattered iron bolts",
+      "room_scene_prompt": "top-down orthographic view of a dieselpunk scrapyard, piles of rusted gears and massive pistons, hydraulic cranes, dark indigo shadows, no text, no labels, full bleed to edges",
+      "width_tiles": 10,
+      "height_tiles": 12,
+      "ambient_palette": "dusty_brown",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "piston_disassembly_rig",
+          "label": "Piston Rig",
+          "description": "A massive tripod crane holding a glowing cyan engine piston",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Aurora Navigation Bridge",
+      "biome": "high_altitude_arctic",
+      "purpose": "Plotting routes across the ice shelf",
+      "decor_tags": [
+        "glass",
+        "maps",
+        "aurora",
+        "telescopes"
+      ],
+      "activity_tags": [
+        "mapping",
+        "steering"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of frosted reinforced glass tiles with cyan bioluminescent circuitry underneath",
+      "room_scene_prompt": "top-down orthographic view of a city bridge, panoramic frosted windows, glowing holographic ice maps, brass navigation wheels, no text, no labels, full bleed to edges",
+      "width_tiles": 12,
+      "height_tiles": 6,
+      "ambient_palette": "focused_blue",
+      "archetype": "lookout",
+      "scene_components": [
+        {
+          "component_id": "ice_shelf_projector",
+          "label": "Ice Map Projector",
+          "description": "A circular floor-mounted projector emitting a flickering cyan hologram of the tundra",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Citizenship Favor Archive",
+      "biome": "bureaucratic_industrial",
+      "purpose": "Storing records of political alliances",
+      "decor_tags": [
+        "cabinets",
+        "pneumatic_tubes",
+        "paper",
+        "iron"
+      ],
+      "activity_tags": [
+        "filing",
+        "whispering"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of dark riveted iron floor plates with yellow safety stripes",
+      "room_scene_prompt": "top-down orthographic view of a narrow archive room, floor-to-ceiling iron filing cabinets, pneumatic tubes snaking across walls, dim lantern light, no text, no labels, full bleed to edges",
+      "width_tiles": 6,
+      "height_tiles": 10,
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "pneumatic_sorting_hub",
+          "label": "Pneumatic Hub",
+          "description": "A wall-mounted cluster of brass tubes and glass canisters for message delivery",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Thawing Canteen",
+      "biome": "social_industrial",
+      "purpose": "Socializing and consuming synthetic rations",
+      "decor_tags": [
+        "tables",
+        "stoves",
+        "mugs",
+        "pipes"
+      ],
+      "activity_tags": [
+        "eating",
+        "drinking"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of scuffed metal plating with circular ventilation grates emitting steam",
+      "room_scene_prompt": "top-down orthographic view of a dieselpunk mess hall, heavy bolted tables, a central steam-powered stove, glowing cyan pipes, no text, no labels, full bleed to edges",
+      "width_tiles": 9,
+      "height_tiles": 9,
+      "ambient_palette": "warm_lantern",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "central_steam_samovar",
+          "label": "Steam Samovar",
+          "description": "A large brass vat dispensing hot synthetic tea via pressurized levers",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Leg-Joint Maintenance Pit",
+      "biome": "heavy_machinery",
+      "purpose": "Greasing the massive city joints",
+      "decor_tags": [
+        "hydraulics",
+        "grease",
+        "chains",
+        "tools"
+      ],
+      "activity_tags": [
+        "climbing",
+        "welding"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of heavy industrial diamond-plate steel with deep grease stains",
+      "room_scene_prompt": "top-down orthographic view of a maintenance bay, massive hydraulic pistons visible in floor pits, heavy chains hanging from ceiling, cyan rim glow, no text, no labels, full bleed to edges",
+      "width_tiles": 14,
+      "height_tiles": 8,
+      "ambient_palette": "ember_orange",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "hydraulic_fluid_pump",
+          "label": "Fluid Pump",
+          "description": "A vibrating machine with transparent tubes filled with glowing cyan hydraulic fluid",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Route Rights Negotiation Chamber",
+      "biome": "political_industrial",
+      "purpose": "High-stakes meetings between city captains",
+      "decor_tags": [
+        "banners",
+        "heavy_chairs",
+        "maps",
+        "brass"
+      ],
+      "activity_tags": [
+        "arguing",
+        "signing"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of polished brass floor inlay over dark indigo iron",
+      "room_scene_prompt": "top-down orthographic view of a circular council room, a large round iron table, high-backed chairs with glowing visors, aurora light through skylight, no text, no labels, full bleed to edges",
+      "width_tiles": 7,
+      "height_tiles": 7,
+      "ambient_palette": "focused_blue",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "captain_high_seat",
+          "label": "High Seat",
+          "description": "An ornate riveted iron throne with integrated communication headsets",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Permafrost Drill Station",
+      "biome": "extraction_arctic",
+      "purpose": "Extracting minerals from the ice shelf",
+      "decor_tags": [
+        "drills",
+        "ice",
+        "crates",
+        "plasma"
+      ],
+      "activity_tags": [
+        "drilling",
+        "hauling"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of cracked blue ice sheets partially covered by metal walkways",
+      "room_scene_prompt": "top-down orthographic view of a drilling room, a massive central plasma drill piercing the ice floor, glowing cyan sparks, heavy bulkheads, no text, no labels, full bleed to edges",
+      "width_tiles": 10,
+      "height_tiles": 10,
+      "ambient_palette": "soft_mint",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "plasma_drill_core",
+          "label": "Plasma Drill",
+          "description": "A vertical industrial drill emitting a constant cyan plasma beam into the floor",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Vespera Vane",
+      "role_name": "Route Rights Merchant",
+      "activity": "Brokering passage through the shifting ice-veins",
+      "home_base": "Route Rights Negotiation Chamber",
+      "arc_goal": "To secure a monopoly on the Southern Thaw corridor before the Great Migration",
+      "inventory": [
+        {
+          "name": "AC-001 Glacial Deed",
+          "description": "A frost-resistant parchment detailing ownership of the 44th Parallel.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-002 Thermal Ink Vial",
+          "description": "Ink that only becomes visible when held near a Heat Exchange Hub.",
+          "quantity": 5
+        },
+        {
+          "name": "AC-003 Brass Navigation Caliper",
+          "description": "A precision tool for measuring city-leg stride frequency.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-004 Aurora Wax Seal",
+          "description": "Used to authenticate treaties between migrating city-states.",
+          "quantity": 3
+        },
+        {
+          "name": "AC-005 Cryo-Preserved Bribe",
+          "description": "Rare tropical seeds kept in a stasis tube for high-ranking officials.",
+          "quantity": 10
+        },
+        {
+          "name": "AC-006 Pressure-Plate Key",
+          "description": "A heavy iron key for the Citizenship Favor Archive vaults.",
+          "quantity": 2
+        },
+        {
+          "name": "AC-007 Magnetic Route Map",
+          "description": "A shifting map that tracks the real-time position of Aurora Court.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-008 Scrip of the Frozen Sun",
+          "description": "High-denomination currency used exclusively by the Merchant Guild.",
+          "quantity": 50
+        },
+        {
+          "name": "AC-009 Thaw-Point Sensor",
+          "description": "A handheld device that detects structural weaknesses in permafrost.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-010 Gilded Piston Pin",
+          "description": "A decorative but functional component for a city's primary engine.",
+          "quantity": 4
+        },
+        {
+          "name": "AC-011 Negotiation Chime",
+          "description": "A silver bell used to signal the start of a formal trade session.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-012 Compressed Steam Canister",
+          "description": "Emergency heat source for long-distance travel between cities.",
+          "quantity": 6
+        },
+        {
+          "name": "AC-013 Ledger of Debts",
+          "description": "A thick book bound in seal-hide containing the favors owed by lords.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-014 Micro-Fiche of Ancestry",
+          "description": "Records proving lineage for citizenship claims.",
+          "quantity": 20
+        },
+        {
+          "name": "AC-015 Signal Flare (Violet)",
+          "description": "Used to signal a successful trade to distant scout towers.",
+          "quantity": 12
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gilded Ledger",
+          "asset_type": "Business",
+          "description": "A high-end brokerage firm within the Negotiation Chamber.",
+          "story_use": "Acts as the primary hub for all high-stakes territorial disputes."
+        },
+        {
+          "asset_name": "Vault 7-B",
+          "asset_type": "Storage",
+          "description": "A secure, temperature-controlled locker in the Citizenship Favor Archive.",
+          "story_use": "Stores the sensitive blackmail material Vespera uses for leverage."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Ice-Vein Fluctuations",
+          "summary": "Predictive patterns of the permafrost melting cycles.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Guild Bribery Protocols",
+          "summary": "The specific social etiquette required to grease the palms of the High Navigators.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen Frost-Weld",
+      "role_name": "Master Pit-Technician",
+      "activity": "Recalibrating the hydraulic stabilizers of the city's port-side legs",
+      "home_base": "Leg-Joint Maintenance Pit",
+      "arc_goal": "To prevent the catastrophic collapse of the city's third leg before the winter storm.",
+      "inventory": [
+        {
+          "name": "AC-016 Heavy Impact Wrench",
+          "description": "A steam-powered tool for tightening massive leg bolts.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-017 Lubricant Bladder",
+          "description": "Viscous oil derived from whale blubber for joint maintenance.",
+          "quantity": 4
+        },
+        {
+          "name": "AC-018 Scrap-Iron Shard",
+          "description": "A jagged piece of metal salvaged from the Engine Part Scrapyard.",
+          "quantity": 15
+        },
+        {
+          "name": "AC-019 Heat-Shield Goggles",
+          "description": "Protective eyewear for working near the Heat Exchange Hub.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-020 Piston Gasket",
+          "description": "A reinforced rubber ring for sealing steam chambers.",
+          "quantity": 8
+        },
+        {
+          "name": "AC-021 Welding Rod (Thermite)",
+          "description": "High-heat rods for fusing structural steel in sub-zero temps.",
+          "quantity": 20
+        },
+        {
+          "name": "AC-022 Hydraulic Fluid Sample",
+          "description": "A vial of blue fluid used to check for contamination.",
+          "quantity": 3
+        },
+        {
+          "name": "AC-023 Master Pit Pass",
+          "description": "A notched copper disc granting access to all maintenance levels.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Weld-Shop",
+          "asset_type": "Workshop",
+          "description": "A cluttered stall overlooking the main hydraulic shafts.",
+          "story_use": "Where Kaelen crafts custom replacement parts for the city's legs."
+        },
+        {
+          "asset_name": "Scrapyard Claim 04",
+          "asset_type": "Resource",
+          "description": "A designated zone in the Scrapyard rich in pre-migration alloys.",
+          "story_use": "Provides the raw materials needed for emergency repairs."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Hydraulic Stress Points",
+          "summary": "Understanding where the city's weight shifts during steep climbs.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Scrapyard Salvage Rights",
+          "summary": "The complex laws governing who can take what from the engine piles.",
+          "confidence": 72
+        }
+      ]
+    },
+    {
+      "display_name": "Archivist Elara",
+      "role_name": "Favor Custodian",
+      "activity": "Cataloging the social debts of the migrating elite",
+      "home_base": "Citizenship Favor Archive",
+      "arc_goal": "To find the missing record that proves her family's right to stay in the city.",
+      "inventory": [
+        {
+          "name": "AC-024 White Silk Gloves",
+          "description": "Used to handle delicate, ancient citizenship scrolls.",
+          "quantity": 2
+        },
+        {
+          "name": "AC-025 Magnifying Monocle",
+          "description": "A lens for inspecting micro-stamps on favor tokens.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-026 Ink-Eater Sponge",
+          "description": "A chemical sponge used to correct errors in the archive.",
+          "quantity": 5
+        },
+        {
+          "name": "AC-027 Favor Token (Bronze)",
+          "description": "A physical representation of a minor debt owed by a citizen.",
+          "quantity": 12
+        },
+        {
+          "name": "AC-028 Archive Index Pin",
+          "description": "A small needle used to navigate the mechanical filing system.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-029 Scented Tallow Candle",
+          "description": "Used to mask the smell of damp parchment in the vaults.",
+          "quantity": 10
+        },
+        {
+          "name": "AC-030 Cipher Wheel",
+          "description": "A brass device for decoding encrypted messages between officials.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-031 Dusting Brush",
+          "description": "Made from fine synthetic bristles to clean ancient data-plates.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Silent Alcove",
+          "asset_type": "Office",
+          "description": "A private reading room deep within the Archive.",
+          "story_use": "A secure location for Elara to meet with those seeking to trade secrets."
+        },
+        {
+          "asset_name": "Archive Key-Chain",
+          "asset_type": "Access",
+          "description": "A heavy ring of keys for the lower 'forgotten' levels.",
+          "story_use": "Allows Elara to explore restricted historical data."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Genealogical Verification",
+          "summary": "The process of cross-referencing bloodlines with city rights.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Political Debt-Mapping",
+          "summary": "A mental web of who owes whom within the Aurora Court.",
+          "confidence": 91
+        }
+      ]
+    },
+    {
+      "display_name": "Captain Thorne",
+      "role_name": "Navigation Lead",
+      "activity": "Plotting the course through the Permafrost Wastes",
+      "home_base": "Aurora Navigation Bridge",
+      "arc_goal": "To find the 'Green Patch'—a legendary area of unfrozen land.",
+      "inventory": [
+        {
+          "name": "AC-032 Sextant of the North",
+          "description": "An advanced navigation tool that tracks the Aurora Borealis.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-033 Logbook of the Aurora",
+          "description": "The official record of the city's movement and fuel consumption.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-034 Wind-Speed Anemometer",
+          "description": "A handheld device to measure the biting arctic gales.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-035 Captain's Signet Ring",
+          "description": "A heavy gold ring used to authorize emergency engine overrides.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-036 Binoculars (Thermal)",
+          "description": "Optics that highlight heat signatures of distant cities or beasts.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-037 Compass (Gyro-Stabilized)",
+          "description": "A compass that remains true despite the city's mechanical vibrations.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-038 Emergency Flare Gun",
+          "description": "A heavy-duty launcher for signaling the entire fleet.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-039 Map Weight (Lead)",
+          "description": "Heavy spheres used to keep charts flat during high-speed travel.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Bridge Command Chair",
+          "asset_type": "Command",
+          "description": "The central seat with direct links to the Engine Room.",
+          "story_use": "The point from which Thorne controls the city's destiny."
+        },
+        {
+          "asset_name": "Navigation Chart Table",
+          "asset_type": "Tool",
+          "description": "A massive backlit table showing the known world.",
+          "story_use": "Where the path of the city is debated and decided."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Celestial Navigation",
+          "summary": "Using stars and auroras to guide the city when ground markers fail.",
+          "confidence": 99
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Engine-Stress Limits",
+          "summary": "Knowing exactly how fast the city can move before the legs buckle.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Soren the Scav-King",
+      "role_name": "Salvage Broker",
+      "activity": "Sorting high-yield alloys for Kaelen Frost-Weld's stabilizers",
+      "home_base": "Engine Part Scrapyard",
+      "arc_goal": "To monopolize the supply of rare hydraulic seals to control the city's movement",
+      "inventory": [
+        {
+          "name": "AC-001: Corroded Piston",
+          "description": "A heavy-duty piston from a decommissioned crawler leg.",
+          "quantity": 3
+        },
+        {
+          "name": "AC-002: Thermal Gasket",
+          "description": "A heat-resistant seal used in the Heat Exchange Hub.",
+          "quantity": 12
+        },
+        {
+          "name": "AC-003: Brass Gear-Link",
+          "description": "A precision-cut gear from an old navigation clock.",
+          "quantity": 8
+        },
+        {
+          "name": "AC-004: Scrap Titanium Plate",
+          "description": "Reinforced plating salvaged from the outer hull.",
+          "quantity": 5
+        },
+        {
+          "name": "AC-005: Hydraulic Fluid Canister",
+          "description": "Pressurized fluid essential for leg-joint maintenance.",
+          "quantity": 20
+        },
+        {
+          "name": "AC-006: Copper Wiring Spool",
+          "description": "High-conductivity wire stripped from the lower decks.",
+          "quantity": 15
+        },
+        {
+          "name": "AC-007: Rusty Bolt-Set",
+          "description": "A collection of oversized bolts for structural repairs.",
+          "quantity": 50
+        },
+        {
+          "name": "AC-008: Filter Mesh",
+          "description": "Fine mesh used to keep permafrost dust out of engines.",
+          "quantity": 10
+        },
+        {
+          "name": "AC-009: Pressure Gauge",
+          "description": "A cracked but functional gauge for steam monitoring.",
+          "quantity": 4
+        },
+        {
+          "name": "AC-010: Lead Solder Bar",
+          "description": "Used for quick, dirty repairs in the Scrapyard.",
+          "quantity": 6
+        },
+        {
+          "name": "AC-011: Insulated Pipe-Joint",
+          "description": "A T-junction pipe with thermal wrapping.",
+          "quantity": 9
+        },
+        {
+          "name": "AC-012: Bearing Ball-Case",
+          "description": "Steel bearings for smooth joint rotation.",
+          "quantity": 30
+        },
+        {
+          "name": "AC-013: Valve Handwheel",
+          "description": "A cast-iron wheel for manual steam overrides.",
+          "quantity": 2
+        },
+        {
+          "name": "AC-014: Tungsten Drill Bit",
+          "description": "A dulled bit used in the Permafrost Drill Station.",
+          "quantity": 7
+        },
+        {
+          "name": "AC-015: Magnetic Retrieval Tool",
+          "description": "A long-reach tool for grabbing dropped parts.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Rust-Heap Throne",
+          "asset_type": "Workshop",
+          "description": "A fortified corner of the Scrapyard filled with premium salvage.",
+          "story_use": "A base for negotiating black-market part trades."
+        },
+        {
+          "asset_name": "Scrap-Hauler Sled",
+          "asset_type": "Vehicle",
+          "description": "A heavy, treaded sled for moving massive engine components.",
+          "story_use": "Used to transport goods to the Leg-Joint Maintenance Pit."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "SCRAP_VALUE_01",
+          "topic": "Alloy Identification",
+          "summary": "The ability to distinguish between common iron and rare Aurora-grade titanium by sound.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KAELEN_DEBT_01",
+          "topic": "Technician Leverage",
+          "summary": "Knowledge of Kaelen Frost-Weld's secret reliance on non-sanctioned parts.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Nixie 'Steam-Lung'",
+      "role_name": "Thermal Regulator",
+      "activity": "Venting excess pressure to prevent a meltdown in the Hub",
+      "home_base": "Heat Exchange Hub 01",
+      "arc_goal": "To sabotage the elite's heating to force a renegotiation of worker rights",
+      "inventory": [
+        {
+          "name": "AC-016: Pressure Release Key",
+          "description": "A specialized wrench for opening emergency steam vents.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-017: Thermal Goggles",
+          "description": "Protective eyewear for seeing through thick steam clouds.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-018: Heat-Resistant Gloves",
+          "description": "Heavy gloves lined with asbestos-alternative fibers.",
+          "quantity": 2
+        },
+        {
+          "name": "AC-019: Steam-Whistle Signal",
+          "description": "A hand-held device for communicating over engine roar.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-020: Condensation Vial",
+          "description": "Pure water collected from steam runoff, a rare commodity.",
+          "quantity": 5
+        },
+        {
+          "name": "AC-021: Pipe-Patching Tape",
+          "description": "High-temperature adhesive for temporary leak repair.",
+          "quantity": 3
+        },
+        {
+          "name": "AC-022: Hub Access Badge",
+          "description": "A scorched ID card granting entry to the core.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-023: Pocket Thermometer",
+          "description": "An analog device for checking ambient pipe heat.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Venting Station 4",
+          "asset_type": "Workstation",
+          "description": "A precarious platform overlooking the main heat exchangers.",
+          "story_use": "A vantage point for monitoring city-wide thermal distribution."
+        },
+        {
+          "asset_name": "The Steam-Pipe Network",
+          "asset_type": "Infrastructure",
+          "description": "A series of crawlspaces Nixie knows better than anyone.",
+          "story_use": "Used for stealthy movement between city sectors."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "HUB_WEAKNESS_01",
+          "topic": "Thermal Sabotage",
+          "summary": "Understanding which valves cause the most discomfort to the upper decks.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "VESPERA_ROUTE_01",
+          "topic": "Route Heat-Sync",
+          "summary": "Knowledge of how Vespera's chosen routes affect engine strain.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Bailiff Orin",
+      "role_name": "Debt Enforcer",
+      "activity": "Collecting 'Favor Tokens' from delinquent citizens for Elara",
+      "home_base": "Citizenship Favor Archive",
+      "arc_goal": "To seize enough favors to buy his way into the Navigation Bridge crew",
+      "inventory": [
+        {
+          "name": "AC-024: Brass Knuckle-Seal",
+          "description": "A heavy ring used to stamp official debt notices.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-025: Favor Ledger",
+          "description": "A small book listing local debts and their expiration.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-026: Restraining Manacles",
+          "description": "Cold-iron cuffs for those who refuse to pay their social dues.",
+          "quantity": 2
+        },
+        {
+          "name": "AC-027: Archive Keycard",
+          "description": "A low-level clearance card for the Favor Archive.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-028: Ink-Stained Quill",
+          "description": "Used for marking off debts in the presence of witnesses.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-029: Weighted Truncheon",
+          "description": "A peacekeeper's tool for 'encouraging' cooperation.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-030: Debt-Token Pouch",
+          "description": "A leather bag containing physical markers of social debt.",
+          "quantity": 12
+        },
+        {
+          "name": "AC-031: Official Summons",
+          "description": "Pre-written legal notices for the Thawing Canteen regulars.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Enforcer's Booth",
+          "asset_type": "Office",
+          "description": "A cramped desk near the Archive entrance.",
+          "story_use": "Where Orin processes citizens before they see Elara."
+        },
+        {
+          "asset_name": "The Debt-Log",
+          "asset_type": "Document",
+          "description": "A master list of minor infractions and owed favors.",
+          "story_use": "Used to blackmail or recruit informants."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "ELARA_TRUST_01",
+          "topic": "Archivist Habits",
+          "summary": "Knowing when Elara is most distracted by her cataloging.",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "CANTEEN_GOSSIP_01",
+          "topic": "Social Debt Tracking",
+          "summary": "Identifying who is secretly broke and unable to pay their favors.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Cook Marrow",
+      "role_name": "Canteen Proprietor",
+      "activity": "Trading nutrient-paste recipes for navigation secrets",
+      "home_base": "The Thawing Canteen",
+      "arc_goal": "To secure a permanent seat on the Navigation Bridge through bribery",
+      "inventory": [
+        {
+          "name": "AC-032: Fermented Lichen Jar",
+          "description": "A pungent delicacy served to the elite.",
+          "quantity": 5
+        },
+        {
+          "name": "AC-033: Nutrient Paste Tube",
+          "description": "Standard-issue survival food for the lower decks.",
+          "quantity": 40
+        },
+        {
+          "name": "AC-034: Distilled Ice-Spirit",
+          "description": "Strong alcohol made from melted permafrost runoff.",
+          "quantity": 15
+        },
+        {
+          "name": "AC-035: Cleaver-Knife",
+          "description": "A heavy, notched blade for cutting frozen meat.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-036: Spice-Packet (Synthetic)",
+          "description": "Rare flavoring used to mask the taste of recycled water.",
+          "quantity": 20
+        },
+        {
+          "name": "AC-037: Canteen Token",
+          "description": "Local currency accepted only within the Thawing Canteen.",
+          "quantity": 100
+        },
+        {
+          "name": "AC-038: Steam-Cooker Pot",
+          "description": "A pressurized vessel for rapid food preparation.",
+          "quantity": 2
+        },
+        {
+          "name": "AC-039: Ration Card",
+          "description": "A punched card used to track citizen food intake.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-040: Dried Moss-Cake",
+          "description": "A chewy, high-calorie snack for long shifts.",
+          "quantity": 12
+        },
+        {
+          "name": "AC-041: Copper Ladle",
+          "description": "A well-worn tool for serving the daily stew.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-042: Secret Recipe Scroll",
+          "description": "A hidden list of ingredients for 'The Captain's Special'.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-043: Bribe-Grade Caviar",
+          "description": "Preserved fish eggs from the old world, highly valuable.",
+          "quantity": 3
+        },
+        {
+          "name": "AC-044: Cleaning Acid",
+          "description": "Industrial-strength liquid for scrubbing the canteen floors.",
+          "quantity": 2
+        },
+        {
+          "name": "AC-045: Apron (Stained)",
+          "description": "A heavy leather apron that protects against spills.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-046: Sharpening Stone",
+          "description": "Used to keep the cleaver ready for tough cuts.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Thawing Canteen",
+          "asset_type": "Business",
+          "description": "The social heart of the city, where all classes meet to eat.",
+          "story_use": "A hub for gathering rumors and trading items."
+        },
+        {
+          "asset_name": "The Secret Pantry",
+          "asset_type": "Storage",
+          "description": "A locked cellar containing non-rationed luxury goods.",
+          "story_use": "Used to hide contraband or high-value trade items."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "THORNE_APPETITE_01",
+          "topic": "Captain's Preferences",
+          "summary": "Knowing exactly what meal will put Captain Thorne in a talkative mood.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "ROUTE_RUMORS_01",
+          "topic": "Navigation Gossip",
+          "summary": "Information overheard from bridge crew about upcoming course changes.",
+          "confidence": 82
+        }
+      ]
+    },
+    {
+      "display_name": "Zale the Ice-Borer",
+      "role_name": "Sub-Surface Prospector",
+      "activity": "Extracting core samples for the Navigation Bridge",
+      "home_base": "Permafrost Drill Station",
+      "arc_goal": "To find the legendary 'Warm-Pocket' before Captain Thorne's fuel runs out",
+      "inventory": [
+        {
+          "name": "AC-016 Cryo-Bit",
+          "description": "A diamond-tipped drill bit designed for sub-zero rock",
+          "quantity": 3
+        },
+        {
+          "name": "AC-017 Thermal Flare",
+          "description": "Magnesium-based stick that burns underwater and under ice",
+          "quantity": 12
+        },
+        {
+          "name": "AC-018 Seismic Pinger",
+          "description": "Handheld device to map hollow ice-veins",
+          "quantity": 1
+        },
+        {
+          "name": "AC-019 Frost-Bitten Flask",
+          "description": "Contains high-proof 'Engine-Starter' moonshine",
+          "quantity": 1
+        },
+        {
+          "name": "AC-020 Core Sample Tube",
+          "description": "Pressurized glass for preserving ancient air bubbles",
+          "quantity": 10
+        },
+        {
+          "name": "AC-021 Heated Chisel",
+          "description": "Vibrating tool for delicate extraction",
+          "quantity": 2
+        },
+        {
+          "name": "AC-022 Insulated Tether",
+          "description": "Reinforced cable rated for 5 tons of tension",
+          "quantity": 1
+        },
+        {
+          "name": "AC-023 Oxygen Canister",
+          "description": "Emergency 10-minute supply for deep-bore accidents",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Deep-Digger",
+          "asset_type": "Heavy Drill Rig",
+          "description": "A spider-legged drilling platform with a heated cockpit",
+          "story_use": "Used to access the lower strata of the permafrost for resources"
+        },
+        {
+          "asset_name": "Bore-Hole Alpha",
+          "asset_type": "Mining Claim",
+          "description": "A high-yield site near the city's current path",
+          "story_use": "A source of conflict with Soren the Scav-King over mineral rights"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-ICE-01",
+          "topic": "Glacial Stratigraphy",
+          "summary": "Understanding the age and stability of ice layers to prevent city-sink",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-ICE-02",
+          "topic": "Sub-Ice Cavities",
+          "summary": "Locations of hidden caverns that could collapse under the city's weight",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra 'The Valve'",
+      "role_name": "Pressure-Flow Arbitrator",
+      "activity": "Balancing the heat distribution between the Hub and the Canteen",
+      "home_base": "Heat Exchange Hub 01",
+      "arc_goal": "To divert enough heat to the slums without Nixie 'Steam-Lung' noticing",
+      "inventory": [
+        {
+          "name": "AC-024 Brass Manifold",
+          "description": "A complex three-way valve for steam redirection",
+          "quantity": 2
+        },
+        {
+          "name": "AC-025 Pressure Gauge",
+          "description": "Analog dial showing the strain on the primary boiler",
+          "quantity": 1
+        },
+        {
+          "name": "AC-026 Gasket Sealant",
+          "description": "Sticky, heat-resistant resin for emergency leaks",
+          "quantity": 5
+        },
+        {
+          "name": "AC-027 Steam-Whistle",
+          "description": "Used for signaling across the noisy Hub floor",
+          "quantity": 1
+        },
+        {
+          "name": "AC-028 Copper Tubing",
+          "description": "Flexible piping for bypass circuits",
+          "quantity": 15
+        },
+        {
+          "name": "AC-029 Thermal Gloves",
+          "description": "Asbestos-lined mitts for handling hot pipes",
+          "quantity": 1
+        },
+        {
+          "name": "AC-030 Bleeder Key",
+          "description": "Small tool used to release air pockets from radiators",
+          "quantity": 3
+        },
+        {
+          "name": "AC-031 Condensation Jar",
+          "description": "Collects pure distilled water from steam runoff",
+          "quantity": 6
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Bypass Junction",
+          "asset_type": "Infrastructure Node",
+          "description": "A hidden series of pipes Lyra installed to help the poor",
+          "story_use": "The primary tool for her secret heat-redistribution scheme"
+        },
+        {
+          "asset_name": "Maintenance Locker 4B",
+          "asset_type": "Storage Unit",
+          "description": "A cramped space filled with illegal steam-tech",
+          "story_use": "Where she hides her tools from Bailiff Orin's inspections"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-STM-01",
+          "topic": "Thermodynamic Routing",
+          "summary": "The art of moving heat without triggering system-wide alarms",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-STM-02",
+          "topic": "Hub Weak-Points",
+          "summary": "Knowledge of which pipes will burst if the city speeds up",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Master-Broker Silas",
+      "role_name": "Component Trafficker",
+      "activity": "Smuggling high-grade alloys from the Scrapyard to the elite",
+      "home_base": "Engine Part Scrapyard",
+      "arc_goal": "To monopolize the supply of AC-grade alloys before Vespera Vane notices",
+      "inventory": [
+        {
+          "name": "AC-032 Tungsten Rod",
+          "description": "High-density metal used in leg-joint reinforcement",
+          "quantity": 20
+        },
+        {
+          "name": "AC-033 Piston Seal",
+          "description": "Synthetic rubber ring for hydraulic cylinders",
+          "quantity": 50
+        },
+        {
+          "name": "AC-034 Micro-Bearing",
+          "description": "Tiny, frictionless spheres for precision instruments",
+          "quantity": 200
+        },
+        {
+          "name": "AC-035 Alloy Scanner",
+          "description": "Handheld spectrometer to verify metal purity",
+          "quantity": 1
+        },
+        {
+          "name": "AC-036 Smuggler's Crate",
+          "description": "Lead-lined box to hide items from scanners",
+          "quantity": 5
+        },
+        {
+          "name": "AC-037 Forged Manifest",
+          "description": "Paperwork that makes stolen goods look legal",
+          "quantity": 10
+        },
+        {
+          "name": "AC-038 Grease Tin",
+          "description": "Industrial lubricant for heavy machinery",
+          "quantity": 12
+        },
+        {
+          "name": "AC-039 Hydraulic Fluid",
+          "description": "High-viscosity blue liquid for the city's legs",
+          "quantity": 8
+        },
+        {
+          "name": "AC-040 Scrap Magnet",
+          "description": "Powerful electromagnet for sorting debris",
+          "quantity": 1
+        },
+        {
+          "name": "AC-041 Plasma Cutter",
+          "description": "Portable tool for slicing through thick plating",
+          "quantity": 2
+        },
+        {
+          "name": "AC-042 Identification Tags",
+          "description": "Blank tags used to re-label salvaged parts",
+          "quantity": 30
+        },
+        {
+          "name": "AC-043 Wire Spool",
+          "description": "Conductive copper-gold alloy for bridge electronics",
+          "quantity": 15
+        },
+        {
+          "name": "AC-044 Pressure Bolt",
+          "description": "Heavy-duty fastener for the main engine housing",
+          "quantity": 100
+        },
+        {
+          "name": "AC-045 Filter Mesh",
+          "description": "Fine screen for cleaning intake air",
+          "quantity": 25
+        },
+        {
+          "name": "AC-046 Gear-Tooth Template",
+          "description": "Used to cast replacement gears for the Hub",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hidden Cache",
+          "asset_type": "Secret Warehouse",
+          "description": "A buried container in the Scrapyard filled with premium parts",
+          "story_use": "Silas's leverage against Kaelen Frost-Weld's repair needs"
+        },
+        {
+          "asset_name": "Salvage Crane 'Claw'",
+          "asset_type": "Heavy Machinery",
+          "description": "A modified crane with a silent motor for night operations",
+          "story_use": "Used to steal parts from the official city reserves"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-TRD-01",
+          "topic": "Black Market Valuation",
+          "summary": "The fluctuating price of alloys based on the city's mechanical health",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-TRD-02",
+          "topic": "Scrapyard Layout",
+          "summary": "Knowledge of every blind spot in the Scrapyard's security",
+          "confidence": 94
+        }
+      ]
+    },
+    {
+      "display_name": "Elder Pimm",
+      "role_name": "Favor Scrivener",
+      "activity": "Transcribing oral debts into the Citizenship Favor Archive",
+      "home_base": "Citizenship Favor Archive",
+      "arc_goal": "To erase his family's debt by altering Elara's records",
+      "inventory": [
+        {
+          "name": "AC-047 Vellum Scroll",
+          "description": "Treated skin used for permanent debt recording",
+          "quantity": 20
+        },
+        {
+          "name": "AC-048 Ever-Ink Well",
+          "description": "A self-heating inkpot that prevents freezing",
+          "quantity": 2
+        },
+        {
+          "name": "AC-049 Bone Stylus",
+          "description": "A sharp carving tool for etching into wax seals",
+          "quantity": 3
+        },
+        {
+          "name": "AC-050 Magnifying Monocle",
+          "description": "Used to spot forgeries in old favor-tokens",
+          "quantity": 1
+        },
+        {
+          "name": "AC-051 Wax Seal Kit",
+          "description": "Contains the official crest of the Aurora Court",
+          "quantity": 1
+        },
+        {
+          "name": "AC-052 Ledger Satchel",
+          "description": "Fireproof bag for transporting sensitive documents",
+          "quantity": 1
+        },
+        {
+          "name": "AC-053 Debt-Chime",
+          "description": "A small bell that rings when a contract expires",
+          "quantity": 1
+        },
+        {
+          "name": "AC-054 Erasure Acid",
+          "description": "A chemical used to carefully dissolve ink from vellum",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Silent Desk",
+          "asset_type": "Workstation",
+          "description": "A secluded corner of the archive with a view of the legs",
+          "story_use": "Where Pimm performs his illicit record alterations"
+        },
+        {
+          "asset_name": "Archive Keycard",
+          "asset_type": "Access Tool",
+          "description": "A high-level clearance card stolen from a previous Archivist",
+          "story_use": "Allows Pimm to enter the restricted 'Deep Debt' vaults"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-LAW-01",
+          "topic": "Aurora Jurisprudence",
+          "summary": "The complex laws governing social debt and migration rights",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K-LAW-02",
+          "topic": "Genealogical Debts",
+          "summary": "Knowledge of which families owe favors to the founding captains",
+          "confidence": 96
+        }
+      ]
+    },
+    {
+      "display_name": "Rook the Joint-Greaser",
+      "role_name": "Hydraulic Lubricant Chemist",
+      "activity": "Synthesizing friction-reducing compounds for the city's primary gait",
+      "home_base": "Leg-Joint Maintenance Pit",
+      "arc_goal": "To sabotage Kaelen Frost-Weld's stabilizers to prove his own chemical solutions are superior",
+      "inventory": [
+        {
+          "name": "AC-016 Viscosity Meter",
+          "description": "A brass-cased gauge for measuring the thickness of leg-joint grease",
+          "quantity": 1
+        },
+        {
+          "name": "AC-017 Sludge-Filter",
+          "description": "A mesh screen used to remove metal shavings from recycled lubricants",
+          "quantity": 3
+        },
+        {
+          "name": "AC-018 Tallow-Press",
+          "description": "A hand-cranked device for extracting oils from frozen tundra-moss",
+          "quantity": 1
+        },
+        {
+          "name": "AC-019 Friction-Dampening Gel",
+          "description": "A glowing blue substance that prevents metal-on-metal screeching",
+          "quantity": 12
+        },
+        {
+          "name": "AC-020 Piston-Seal Gasket",
+          "description": "A heavy rubber ring designed for high-pressure hydraulic cylinders",
+          "quantity": 6
+        },
+        {
+          "name": "AC-021 Degreasing Solvent",
+          "description": "A harsh chemical spray that strips old carbon buildup from joints",
+          "quantity": 4
+        },
+        {
+          "name": "AC-022 Magnetic Swarf-Collector",
+          "description": "A wand used to pull iron filings out of the maintenance pit",
+          "quantity": 1
+        },
+        {
+          "name": "AC-023 Joint-Greaser's Overalls",
+          "description": "Heavy canvas clothing saturated with years of industrial oils",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Vat-Room",
+          "asset_type": "Laboratory",
+          "description": "A cramped space filled with bubbling chemical vats beneath the maintenance floor",
+          "story_use": "Used to secretly brew experimental and potentially corrosive lubricants"
+        },
+        {
+          "asset_name": "Pit-Access Keycard",
+          "asset_type": "Security Clearance",
+          "description": "A dented metal card granting access to the lower hydraulic chambers",
+          "story_use": "Allows Rook to bypass Kaelen's security to inspect the stabilizers"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Hydraulic Stress Points",
+          "summary": "Deep understanding of where the city's legs are most likely to buckle under pressure",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Kaelen's Design Flaws",
+          "summary": "Obsessive documentation of every minor error in Kaelen Frost-Weld's stabilizer logic",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Vara the Ledger-Burner",
+      "role_name": "Debt-Erasure Specialist",
+      "activity": "Infiltrating the Archive to redact the debts of the lower-tier workers",
+      "home_base": "Citizenship Favor Archive",
+      "arc_goal": "To erase the debt records of the maintenance crew to trigger a labor strike",
+      "inventory": [
+        {
+          "name": "AC-024 Ink-Eater Acid",
+          "description": "A specialized chemical that dissolves archival ink without burning paper",
+          "quantity": 5
+        },
+        {
+          "name": "AC-025 Counterfeit Favor-Token",
+          "description": "A high-quality lead replica of an elite debt-coin",
+          "quantity": 10
+        },
+        {
+          "name": "AC-026 Silent Lock-Pick",
+          "description": "A padded toolset designed for the Archive's clockwork tumblers",
+          "quantity": 1
+        },
+        {
+          "name": "AC-027 Archivist's Spectacles",
+          "description": "Magnifying lenses stolen from a junior clerk to blend in",
+          "quantity": 1
+        },
+        {
+          "name": "AC-028 Wax-Seal Press",
+          "description": "A device for forging the official stamp of Elder Pimm",
+          "quantity": 1
+        },
+        {
+          "name": "AC-029 Ledger-Page Fragment",
+          "description": "A torn piece of paper containing the names of the city's biggest debtors",
+          "quantity": 3
+        },
+        {
+          "name": "AC-030 Smoke-Bomb Vial",
+          "description": "A quick-release canister for escaping the Archive guards",
+          "quantity": 2
+        },
+        {
+          "name": "AC-031 Encrypted Cipher-Key",
+          "description": "A rotating disc used to decode the shorthand used by Elara",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hidden Alcove",
+          "asset_type": "Safehouse",
+          "description": "A crawlspace behind the Archive's north wall filled with stolen ledgers",
+          "story_use": "A base for Vara to plan her next infiltration of the Favor Archive"
+        },
+        {
+          "asset_name": "Archive Maintenance Pass",
+          "asset_type": "Identification",
+          "description": "A forged document claiming Vara is a ventilation repair technician",
+          "story_use": "Used to move through the Archive without alerting Bailiff Orin"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Archive Patrol Routes",
+          "summary": "The exact timing of Bailiff Orin's rounds through the debt vaults",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Elite Lineage Debts",
+          "summary": "Knowledge of which high-ranking families owe the most 'Favor' to the city",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Milo the Scrap-Peddler",
+      "role_name": "Salvage Merchant",
+      "activity": "Trading scavenged engine parts for navigation data and food",
+      "home_base": "Engine Part Scrapyard",
+      "arc_goal": "To acquire enough high-grade alloy to buy a seat on the Navigation Bridge",
+      "inventory": [
+        {
+          "name": "AC-032 Corroded Turbine Blade",
+          "description": "A jagged piece of alloy that can be reforged into high-end tools",
+          "quantity": 4
+        },
+        {
+          "name": "AC-033 Copper-Wire Spool",
+          "description": "Salvaged wiring from a decommissioned heat exchanger",
+          "quantity": 15
+        },
+        {
+          "name": "AC-034 Rusty Piston-Head",
+          "description": "A heavy iron component used as a trade weight or raw material",
+          "quantity": 2
+        },
+        {
+          "name": "AC-035 Brass Fitting Nut",
+          "description": "Small but essential connectors for steam-pipe repairs",
+          "quantity": 40
+        },
+        {
+          "name": "AC-036 Cracked Pressure Gauge",
+          "description": "A non-functional gauge valued for its glass and internal springs",
+          "quantity": 8
+        },
+        {
+          "name": "AC-037 Scrap-Metal Sled",
+          "description": "A low-friction platform for hauling heavy salvage across the ice",
+          "quantity": 1
+        },
+        {
+          "name": "AC-038 Industrial Magnet",
+          "description": "A powerful magnet used to pull small parts from the permafrost",
+          "quantity": 1
+        },
+        {
+          "name": "AC-039 Merchant's Scale",
+          "description": "A precision balance for weighing scrap against nutrient-paste",
+          "quantity": 1
+        },
+        {
+          "name": "AC-040 Insulated Gloves",
+          "description": "Thick leather gloves reinforced with wire to handle hot engine parts",
+          "quantity": 2
+        },
+        {
+          "name": "AC-041 Salvage-Rights Permit",
+          "description": "A faded document signed by Soren the Scav-King",
+          "quantity": 1
+        },
+        {
+          "name": "AC-042 Hydraulic Fluid Canister",
+          "description": "Half-empty container of low-grade oil found in the pit",
+          "quantity": 3
+        },
+        {
+          "name": "AC-043 Titanium Bolt",
+          "description": "Rare, high-strength fasteners highly prized by Kaelen Frost-Weld",
+          "quantity": 12
+        },
+        {
+          "name": "AC-044 Scrap-Cutter Torch",
+          "description": "A portable fuel-cell torch for slicing through frozen metal",
+          "quantity": 1
+        },
+        {
+          "name": "AC-045 Tundra-Goggles",
+          "description": "Protective eyewear with amber lenses to prevent snow blindness",
+          "quantity": 1
+        },
+        {
+          "name": "AC-046 Signal Flare",
+          "description": "A red emergency flare for signaling the city from the wastes",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Scrap-Shack",
+          "asset_type": "Trading Post",
+          "description": "A lean-to made of rusted hull plates located at the edge of the scrapyard",
+          "story_use": "The primary location for trading salvaged goods with the city's technicians"
+        },
+        {
+          "asset_name": "Scavenger's Cart",
+          "asset_type": "Vehicle",
+          "description": "A reinforced hand-cart with oversized wheels for navigating the permafrost",
+          "story_use": "Used to transport large hauls of scrap from the drill station to the hub"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Alloy Identification",
+          "summary": "The ability to distinguish between common iron and high-yield aerospace alloys by sight",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Soren's Weaknesses",
+          "summary": "Information on which scrap-piles Soren the Scav-King ignores during his rounds",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Tessa the Steam-Whisperer",
+      "role_name": "Thermal Distribution Arbitrator",
+      "activity": "Redirecting steam flow to prevent the Thawing Canteen from freezing over",
+      "home_base": "Heat Exchange Hub 01",
+      "arc_goal": "To divert enough heat to the lower decks to prevent a worker uprising",
+      "inventory": [
+        {
+          "name": "AC-047 Brass Steam-Whistle",
+          "description": "A signaling device used to communicate across the noisy Hub",
+          "quantity": 1
+        },
+        {
+          "name": "AC-048 Thermal-Imaging Monocle",
+          "description": "A lens that reveals heat leaks in the city's insulated pipes",
+          "quantity": 1
+        },
+        {
+          "name": "AC-049 Pipe-Wrench (Heavy)",
+          "description": "A massive tool for turning the stubborn valves of the main boiler",
+          "quantity": 1
+        },
+        {
+          "name": "AC-050 Asbestos-Lined Apron",
+          "description": "Protective gear for working near the high-pressure steam vents",
+          "quantity": 1
+        },
+        {
+          "name": "AC-051 Pressure-Release Valve",
+          "description": "A spare safety component for the Hub's primary manifold",
+          "quantity": 3
+        },
+        {
+          "name": "AC-052 Condensation Collector",
+          "description": "A device that turns steam-leakage into drinkable distilled water",
+          "quantity": 2
+        },
+        {
+          "name": "AC-053 Heat-Sink Fin",
+          "description": "A copper component used to dissipate excess heat from the Hub",
+          "quantity": 5
+        },
+        {
+          "name": "AC-054 Steam-Flow Map",
+          "description": "A complex blueprint showing the thermal veins of the entire city",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Steam-Manifold",
+          "asset_type": "Control Station",
+          "description": "A platform overlooking the primary heat exchangers of Hub 01",
+          "story_use": "The central point where Tessa can manipulate the city's temperature distribution"
+        },
+        {
+          "asset_name": "Emergency Vent-Key",
+          "asset_type": "Tool",
+          "description": "A specialized wrench required to open the external pressure vents",
+          "story_use": "Used to prevent a catastrophic meltdown during engine overloads"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Thermal Dynamics",
+          "summary": "Expertise in how heat moves through the city's metal superstructure",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Lyra's Valve-Patterns",
+          "summary": "Knowledge of how Lyra 'The Valve' manipulates pressure for political leverage",
+          "confidence": 82
+        }
+      ]
+    },
+    {
+      "display_name": "Gideon 'The Gasket' Vane",
+      "role_name": "Pressure-Seal Smuggler",
+      "activity": "Bypassing safety valves to divert steam for the black market",
+      "home_base": "Heat Exchange Hub 01",
+      "arc_goal": "To undermine Vespera Vane's route monopoly by creating a private steam-powered path",
+      "inventory": [
+        {
+          "name": "Reinforced Brass Gasket",
+          "description": "A heavy-duty seal capable of withstanding Hub 01's peak pressure",
+          "quantity": 4
+        },
+        {
+          "name": "Steam-Bypass Key",
+          "description": "A forbidden tool used to reroute thermal energy around meters",
+          "quantity": 1
+        },
+        {
+          "name": "Vane Family Signet (Cracked)",
+          "description": "A symbol of his severed ties with Vespera",
+          "quantity": 1
+        },
+        {
+          "name": "Thermal-Insulated Gloves",
+          "description": "Gloves lined with frost-wyrm hide for handling hot pipes",
+          "quantity": 1
+        },
+        {
+          "name": "Pressure-Gauge Calibrator",
+          "description": "A handheld device to spoof official pressure readings",
+          "quantity": 1
+        },
+        {
+          "name": "Condensed Steam-Vial",
+          "description": "High-purity distilled water used as currency in the Hub",
+          "quantity": 12
+        },
+        {
+          "name": "Illicit Valve-Nut",
+          "description": "A non-standard bolt used to tap into main steam lines",
+          "quantity": 6
+        },
+        {
+          "name": "Hub-Access Override Chip",
+          "description": "A bootleg circuit used to open maintenance hatches",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hidden Siphon",
+          "asset_type": "Infrastructure",
+          "description": "A concealed series of pipes tapping into the city's primary heat vein",
+          "story_use": "Allows Gideon to provide heat to unauthorized zones for a fee"
+        },
+        {
+          "asset_name": "Modified Pressure-Suit",
+          "asset_type": "Equipment",
+          "description": "A bulky suit designed for high-heat environments",
+          "story_use": "Enables Gideon to survive in the Hub's core during venting cycles"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "hub_bypass_01",
+          "topic": "Hub Bypass Routes",
+          "summary": "Detailed maps of the ventilation shafts that bypass Vespera's checkpoints",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "nixie_pressure_habits",
+          "topic": "Nixie's Venting Schedule",
+          "summary": "Observation logs of when Nixie 'Steam-Lung' vents pressure, creating windows for smuggling",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Scribe Joryn",
+      "role_name": "Favor-Debt Auditor",
+      "activity": "Cross-referencing oral debts against the physical Archive ledgers",
+      "home_base": "Citizenship Favor Archive",
+      "arc_goal": "To expose Vara's debt-erasure scheme and reclaim his status under Elder Pimm",
+      "inventory": [
+        {
+          "name": "Indelible Blue Ink",
+          "description": "Specialized ink that reacts to the Archive's unique parchment",
+          "quantity": 3
+        },
+        {
+          "name": "Magnifying Monocle",
+          "description": "A lens used to detect microscopic alterations in debt-scrolls",
+          "quantity": 1
+        },
+        {
+          "name": "Official Audit Seal",
+          "description": "A heavy iron stamp used to freeze disputed favor accounts",
+          "quantity": 1
+        },
+        {
+          "name": "Debt-Chain Link",
+          "description": "A physical token representing a minor favor owed by a citizen",
+          "quantity": 15
+        },
+        {
+          "name": "Scrivener's Bone-Stylus",
+          "description": "A sharpened tool for etching permanent records",
+          "quantity": 2
+        },
+        {
+          "name": "Archive Security Keycard",
+          "description": "A low-level clearance card for the lower stacks",
+          "quantity": 1
+        },
+        {
+          "name": "Redaction-Detection Fluid",
+          "description": "A chemical wash that reveals erased text on favor-scrolls",
+          "quantity": 5
+        },
+        {
+          "name": "Pouch of Wax Pellets",
+          "description": "Used for sealing official correspondence to Bailiff Orin",
+          "quantity": 20
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Auditor's Lectern",
+          "asset_type": "Furniture",
+          "description": "A high-standing desk with hidden compartments for sensitive ledgers",
+          "story_use": "The central point for Joryn's investigations into favor-fraud"
+        },
+        {
+          "asset_name": "Encrypted Debt-Ledger",
+          "asset_type": "Document",
+          "description": "A private record of debts Joryn suspects have been tampered with",
+          "story_use": "Contains the evidence needed to convict Vara the Ledger-Burner"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "favor_forgery_01",
+          "topic": "Favor-Debt Forgery Detection",
+          "summary": "Techniques for identifying the specific handwriting of Vara the Ledger-Burner",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "archive_security_rotations",
+          "topic": "Archive Guard Rotations",
+          "summary": "The schedule of Bailiff Orin's patrols through the Favor Archive",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Pip",
+      "role_name": "Hydraulic Stress-Analyst",
+      "activity": "Monitoring micro-fractures in the city's primary gait-pistons",
+      "home_base": "Leg-Joint Maintenance Pit",
+      "arc_goal": "To prove his worth to Kaelen Frost-Weld by inventing a self-sealing joint-shim",
+      "inventory": [
+        {
+          "name": "Micro-Stress Gauge",
+          "description": "A delicate instrument for measuring metal fatigue in leg-joints",
+          "quantity": 1
+        },
+        {
+          "name": "Rook's Experimental Lubricant",
+          "description": "A vial of high-viscosity fluid synthesized by Rook",
+          "quantity": 3
+        },
+        {
+          "name": "Titanium Joint-Shim",
+          "description": "A thin wedge used to stabilize wobbling hydraulic pistons",
+          "quantity": 12
+        },
+        {
+          "name": "Magnetic Bolt-Tray",
+          "description": "A wrist-mounted tray to prevent losing parts in the Pit",
+          "quantity": 1
+        },
+        {
+          "name": "Piston-Cleaning Brush",
+          "description": "A stiff wire brush for removing permafrost buildup",
+          "quantity": 2
+        },
+        {
+          "name": "Hydraulic Fluid Sample",
+          "description": "A jar of used fluid for chemical analysis",
+          "quantity": 5
+        },
+        {
+          "name": "Apprentice's Multi-Tool",
+          "description": "A standard-issue tool modified with Pip's own attachments",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Flare-Stick",
+          "description": "Used to signal for help if trapped under a moving leg",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Stress-Testing Rig",
+          "asset_type": "Machinery",
+          "description": "A custom-built frame for simulating the pressure of the city's weight",
+          "story_use": "Used by Pip to test new alloys for Kaelen's stabilizers"
+        },
+        {
+          "asset_name": "Personal Tool-Belt",
+          "asset_type": "Equipment",
+          "description": "A worn leather belt containing specialized tools for leg maintenance",
+          "story_use": "Identifies Pip as a member of the Pit-Technician guild"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "leg_stress_patterns",
+          "topic": "Leg-Joint Stress Patterns",
+          "summary": "Data on how the city's gait changes when traversing different ice densities",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "kaelen_welding_secrets",
+          "topic": "Kaelen's Welding Techniques",
+          "summary": "Observations of Kaelen's unique 'Frost-Weld' method for repairing alloys",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Madam Vora",
+      "role_name": "Permafrost Spice & Fuel Trader",
+      "activity": "Negotiating bulk fuel rates for the Thawing Canteen",
+      "home_base": "The Thawing Canteen",
+      "arc_goal": "To monopolize the supply of synthetic saffron and fuel to the elite",
+      "inventory": [
+        {
+          "name": "Synthetic Saffron",
+          "description": "A lab-grown spice highly prized by the migrating elite",
+          "quantity": 50
+        },
+        {
+          "name": "Refined Permafrost-Oil",
+          "description": "High-grade fuel extracted from the deep ice",
+          "quantity": 20
+        },
+        {
+          "name": "Frozen Lichen-Root",
+          "description": "A bitter but nutritious root used in Cook Marrow's recipes",
+          "quantity": 100
+        },
+        {
+          "name": "Brass Trade-Scales",
+          "description": "Precision scales used for weighing spices and favor-tokens",
+          "quantity": 1
+        },
+        {
+          "name": "Canteen Credit-Chits",
+          "description": "Tokens redeemable for meals and warmth in the Thawing Canteen",
+          "quantity": 30
+        },
+        {
+          "name": "Insulated Spice-Canister",
+          "description": "A vacuum-sealed container to prevent flavor degradation",
+          "quantity": 10
+        },
+        {
+          "name": "Smuggled Alloy-Scrap",
+          "description": "High-yield metal bits obtained from Silas's contacts",
+          "quantity": 15
+        },
+        {
+          "name": "Aromatic Resin",
+          "description": "Burned to mask the smell of engine grease in the Canteen",
+          "quantity": 25
+        },
+        {
+          "name": "Route-Rights Permit",
+          "description": "A temporary pass issued by Vespera Vane for trade caravans",
+          "quantity": 1
+        },
+        {
+          "name": "Navigation-Data Slate",
+          "description": "Purchased from Milo, containing safe paths through the wastes",
+          "quantity": 2
+        },
+        {
+          "name": "Dried Frost-Berry",
+          "description": "A rare delicacy that grows only in the wake of the city",
+          "quantity": 40
+        },
+        {
+          "name": "Fuel-Transfer Hose",
+          "description": "A reinforced hose for offloading oil to the Canteen's heaters",
+          "quantity": 2
+        },
+        {
+          "name": "Merchant's Ledger",
+          "description": "A thick book detailing Vora's extensive trade network",
+          "quantity": 1
+        },
+        {
+          "name": "Silver-Plated Serving Tray",
+          "description": "Used for presenting spices to high-tier customers",
+          "quantity": 1
+        },
+        {
+          "name": "Portable Heat-Lamp",
+          "description": "A small device to keep Vora's stall the warmest in the Canteen",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Spice-Vault",
+          "asset_type": "Storage",
+          "description": "A reinforced, temperature-controlled locker within the Canteen",
+          "story_use": "Protects Vora's most valuable inventory from theft and the cold"
+        },
+        {
+          "asset_name": "Mobile Trade-Cart",
+          "asset_type": "Vehicle",
+          "description": "A heavy-duty cart with heated wheels for navigating the city's decks",
+          "story_use": "Allows Vora to bring her goods directly to the Navigation Bridge elite"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "permafrost_trade_routes",
+          "topic": "Permafrost Trade Routes",
+          "summary": "Knowledge of the safest paths for external supply sleds to reach the city",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "canteen_black_market",
+          "topic": "Canteen Black Market Prices",
+          "summary": "Current exchange rates for fuel, food, and favor-tokens in the Canteen",
+          "confidence": 98
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelo the Joint-Striker",
+      "role_name": "Hydraulic Impact Specialist",
+      "activity": "Manually unseizing frozen gait-pistons with kinetic force",
+      "home_base": "Leg-Joint Maintenance Pit",
+      "arc_goal": "To replace the failing primary piston of the city's rear-left leg before the migration stalls.",
+      "inventory": [
+        {
+          "name": "AC-016 Tungsten Sledge",
+          "description": "A heavy, thermal-wrapped hammer for breaking ice-locks.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-017 Flash-Heater Rods",
+          "description": "Single-use chemical sticks that generate 2000 degrees for 10 seconds.",
+          "quantity": 12
+        },
+        {
+          "name": "AC-018 Gasket Shims",
+          "description": "Thin brass spacers used to stop hydraulic leaks in the gait-pistons.",
+          "quantity": 25
+        },
+        {
+          "name": "AC-019 Piston-Grease Tub",
+          "description": "High-viscosity lubricant resistant to sub-zero temperatures.",
+          "quantity": 3
+        },
+        {
+          "name": "AC-020 Pressure Gauge (Analog)",
+          "description": "A brass-cased dial used to check for internal seal failure.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-021 Scrap-Metal Wedges",
+          "description": "Irregular shards used to brace slipping joints.",
+          "quantity": 15
+        },
+        {
+          "name": "AC-022 Ear-Protection Muffs",
+          "description": "Heavy-duty insulation to block the scream of grinding metal.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-023 Magnetic Bolt-Tray",
+          "description": "Keeps small fasteners from falling into the permafrost.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Impact Cradle",
+          "asset_type": "Workshop",
+          "description": "A suspended platform hanging directly beneath the city's main knee-joint.",
+          "story_use": "Used as a base for emergency repairs during active migration."
+        },
+        {
+          "asset_name": "Pneumatic Jack-Rig",
+          "asset_type": "Heavy Machinery",
+          "description": "A portable lift capable of supporting 50 tons of city-weight.",
+          "story_use": "Essential for swapping out damaged hydraulic seals."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Gait Rhythms",
+          "summary": "Understanding the specific vibrations that signal an imminent leg-lock.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Kaelen's Shortcuts",
+          "summary": "Knowledge of Kaelen Frost-Weld's unofficial bypasses in the stabilizer system.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Vora the Core-Taster",
+      "role_name": "Sub-Surface Mineral Merchant",
+      "activity": "Trading rare earth minerals extracted from the permafrost for city-fuel",
+      "home_base": "Permafrost Drill Station",
+      "arc_goal": "To secure a monopoly on the high-yield lithium veins discovered by Zale the Ice-Borer.",
+      "inventory": [
+        {
+          "name": "AC-024 Raw Lithium Ore",
+          "description": "Unrefined blue-tinted crystals essential for battery arrays.",
+          "quantity": 40
+        },
+        {
+          "name": "AC-025 Geologic Core Samples",
+          "description": "Cylindrical dirt and ice segments showing mineral depth.",
+          "quantity": 10
+        },
+        {
+          "name": "AC-026 Trade-Weight Scale",
+          "description": "A precision balance for measuring mineral dust.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-027 Insulated Ore Bags",
+          "description": "Lead-lined pouches to prevent mineral degradation.",
+          "quantity": 20
+        },
+        {
+          "name": "AC-028 Drill-Bit Tips",
+          "description": "Diamond-tipped replacements for the station's main auger.",
+          "quantity": 5
+        },
+        {
+          "name": "AC-029 Thermal Flask of 'Borer-Brew'",
+          "description": "A pungent, high-caffeine liquid used by drillers.",
+          "quantity": 2
+        },
+        {
+          "name": "AC-030 Favor-Chits (Low Tier)",
+          "description": "Small tokens representing minor debts from the drill crew.",
+          "quantity": 15
+        },
+        {
+          "name": "AC-031 Survey Maps",
+          "description": "Crude drawings of the sub-surface terrain ahead of the city.",
+          "quantity": 4
+        },
+        {
+          "name": "AC-032 Mineral Identification Kit",
+          "description": "Chemical reagents that change color based on ore purity.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-033 Portable Heater-Coil",
+          "description": "Small electric unit to keep the merchant stall from freezing.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-034 Brass Magnifying Glass",
+          "description": "Used to inspect the crystalline structure of core samples.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-035 Ledger of Extraction",
+          "description": "A record of every gram of ore pulled from the current site.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-036 Protective Goggles",
+          "description": "Amber-tinted lenses to protect against drill-spark and ice-glare.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-037 Sample Vials",
+          "description": "Small glass tubes for liquid mineral suspensions.",
+          "quantity": 30
+        },
+        {
+          "name": "AC-038 Heavy Leather Gloves",
+          "description": "Reinforced gloves for handling jagged, frozen rocks.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Auger-Vault",
+          "asset_type": "Storage",
+          "description": "A reinforced locker inside the Drill Station for high-value minerals.",
+          "story_use": "The primary location for storing wealth before it is converted to Favor."
+        },
+        {
+          "asset_name": "Mobile Sifting-Tray",
+          "asset_type": "Equipment",
+          "description": "A vibrating screen used to separate ore from permafrost slush.",
+          "story_use": "Used to demonstrate the quality of goods to potential buyers like Madam Vora."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Seismic Patterns",
+          "summary": "Predicting where the ice is thin enough for the city to safely plant its legs.",
+          "confidence": 88
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Zale's Secret Veins",
+          "summary": "The exact coordinates of the richest mineral deposits Zale has found.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Scribe Malen",
+      "role_name": "Favor-Debt Eraser",
+      "activity": "Secretly altering the Citizenship Favor Archive for the desperate",
+      "home_base": "Citizenship Favor Archive",
+      "arc_goal": "To erase the massive debt of the Maintenance Pit workers without being caught by Scribe Joryn.",
+      "inventory": [
+        {
+          "name": "AC-039 Acidic Ink-Eater",
+          "description": "A chemical solution that dissolves official archive ink.",
+          "quantity": 3
+        },
+        {
+          "name": "AC-040 Counterfeit Seal-Wax",
+          "description": "Wax that perfectly mimics the color of the High Court's seal.",
+          "quantity": 5
+        },
+        {
+          "name": "AC-041 Fine-Point Quills",
+          "description": "Precision writing instruments for forging signatures.",
+          "quantity": 10
+        },
+        {
+          "name": "AC-042 Blank Favor-Parchment",
+          "description": "Official-grade paper stolen from the Archive's backroom.",
+          "quantity": 20
+        },
+        {
+          "name": "AC-043 Hidden Lantern",
+          "description": "A shuttered light source that emits only a narrow beam.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-044 Archive Key-Mold",
+          "description": "An impression of the main vault key in soft clay.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-045 Magnifying Monocle",
+          "description": "Used for detecting the microscopic texture of forged documents.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-046 Fingerprint-Dusting Powder",
+          "description": "Used to ensure no traces are left on the ledgers.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The False-Bottom Desk",
+          "asset_type": "Furniture",
+          "description": "A standard scribe's desk with a hidden compartment for illicit tools.",
+          "story_use": "Where Malen hides the 'real' ledgers he is forging."
+        },
+        {
+          "asset_name": "Archive Access Badge",
+          "asset_type": "Identification",
+          "description": "A low-level clearance pass that allows entry after hours.",
+          "story_use": "Allows Malen to move through the Archive without alerting the Bailiffs."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Archival Forgery",
+          "summary": "The art of matching the handwriting of Elder Pimm and Scribe Joryn.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Bailiff Patrol Routes",
+          "summary": "The exact timing of Bailiff Orin's rounds through the Archive.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Hana the Steam-Tapper",
+      "role_name": "Illicit Heat Distributor",
+      "activity": "Siphoning steam from the Heat Exchange Hub to the lower-tier slums",
+      "home_base": "Heat Exchange Hub 01",
+      "arc_goal": "To keep the 'Frost-Bitten' district warm enough to survive the crossing of the Great Tundra.",
+      "inventory": [
+        {
+          "name": "AC-047 Copper Bypass-Pipe",
+          "description": "A custom-bent pipe used to divert steam around main meters.",
+          "quantity": 4
+        },
+        {
+          "name": "AC-048 Pressure-Resistant Tape",
+          "description": "Heavy adhesive used to patch micro-leaks in stolen lines.",
+          "quantity": 6
+        },
+        {
+          "name": "AC-049 Valve-Turning Wrench",
+          "description": "A specialized tool for opening the Hub's heavy-duty steam gates.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-050 Thermal Insulation Wrap",
+          "description": "Used to hide the heat signature of illegal pipes from scanners.",
+          "quantity": 10
+        },
+        {
+          "name": "AC-051 Steam-Whistle Silencer",
+          "description": "A device that muffles the sound of high-pressure venting.",
+          "quantity": 2
+        },
+        {
+          "name": "AC-052 Condensation Collector",
+          "description": "A small unit that turns steam-leakage into drinkable water.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-053 Heat-Sensitive Chalk",
+          "description": "Changes color to indicate the temperature of a pipe's surface.",
+          "quantity": 8
+        },
+        {
+          "name": "AC-054 Hub Access Code-Sheet",
+          "description": "A list of stolen passwords for the Hub's automated valves.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hidden Manifold",
+          "asset_type": "Infrastructure",
+          "description": "A secret junction box hidden behind a loose panel in the Hub.",
+          "story_use": "The central point where Hana controls the flow of stolen heat."
+        },
+        {
+          "asset_name": "Thermal Cloak",
+          "asset_type": "Clothing",
+          "description": "A garment that masks the wearer's body heat from Hub sensors.",
+          "story_use": "Allows Hana to work in the Hub without being detected by Nixie 'Steam-Lung'."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Hub Architecture",
+          "summary": "Knowledge of the 'dead zones' in the Hub where sensors don't reach.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Steam-Lung's Habits",
+          "summary": "The specific times Nixie 'Steam-Lung' takes her breaks in the Canteen.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Torsten 'The Piston-Pulse' Vane",
+      "role_name": "Gait-Sync Harmonizer",
+      "activity": "Calibrating the rhythmic oscillation of the city's primary walking-struts to prevent structural resonance collapse.",
+      "home_base": "Leg-Joint Maintenance Pit",
+      "arc_goal": "To synchronize the city's gait with the subterranean vibrations detected by Zale the Ice-Borer, preventing a catastrophic leg-lock.",
+      "inventory": [
+        {
+          "name": "AC-016 Harmonic Tuning Fork",
+          "description": "A heavy brass fork used to detect micro-vibrations in the hydraulic pistons.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-017 Viscosity-Grade Grease",
+          "description": "A canister of high-friction lubricant stolen from Rook the Joint-Greaser's private stash.",
+          "quantity": 3
+        },
+        {
+          "name": "AC-018 Piston-Seal Gasket",
+          "description": "A reinforced rubber ring salvaged from Gideon Vane's black market supply.",
+          "quantity": 5
+        },
+        {
+          "name": "AC-019 Thermal-Imaging Monocle",
+          "description": "A cracked lens that highlights heat-leaks in the steam-lines connecting to the Hub.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-020 Pressure-Relief Key",
+          "description": "A specialized tool for manually venting steam when Lyra 'The Valve' is unresponsive.",
+          "quantity": 2
+        },
+        {
+          "name": "AC-021 Scrap-Metal Shims",
+          "description": "Thin wedges of alloy provided by Milo the Scrap-Peddler to stabilize rattling joints.",
+          "quantity": 12
+        },
+        {
+          "name": "AC-022 Favor-Chit (Counterfeit)",
+          "description": "A poorly forged debt-token intended to bribe Scribe Malen for a record wipe.",
+          "quantity": 1
+        },
+        {
+          "name": "AC-023 Permafrost Core-Sample",
+          "description": "A frozen cylinder of earth used to test the grip-strength of the city's foot-pads.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Resonance Cradle",
+          "asset_type": "Workshop",
+          "description": "A suspended platform within the Leg-Joint Maintenance Pit, filled with acoustic sensors.",
+          "story_use": "Serves as the primary site for Torsten to analyze the city's structural integrity against the permafrost."
+        },
+        {
+          "asset_name": "Vane-Family Gait-Log",
+          "asset_type": "Data-Slate",
+          "description": "A historical record of every stride the city has taken since the Great Freeze.",
+          "story_use": "Used to predict mechanical failures before they occur, often contested by Captain Thorne's navigation data."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-GAIT-001",
+          "topic": "Hydraulic Resonance Patterns",
+          "summary": "The specific frequencies at which the city's legs will shatter if not properly dampened.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KNOW-DEBT-002",
+          "topic": "Vane Family Leverage",
+          "summary": "Knowledge of the specific favors Vespera Vane owes to the maintenance crews.",
+          "confidence": 78
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Resource Race",
+      "summary": "Scout for rare minerals, file legal claims at the Court, and defend extraction sites from rival city-states.",
+      "roles": [
+        "Scout",
+        "Diplomat",
+        "Warden"
+      ],
+      "rooms": [
+        "The High Court",
+        "The Resource Fields",
+        "The Command Deck"
+      ],
+      "pressure": "Depleting fuel reserves."
+    },
+    {
+      "label": "Bureaucratic Espionage",
+      "summary": "Infiltrate rival archives to steal migration routes and blackmail officials for favorable docking rights.",
+      "roles": [
+        "Spy",
+        "Clerk",
+        "Negotiator"
+      ],
+      "rooms": [
+        "The Archives",
+        "The Gala Hall",
+        "The Docking Bay"
+      ],
+      "pressure": "Impending border closure."
+    }
+  ],
+  "player_entry_points": [
+    "A disgraced cartographer seeking to clear their name.",
+    "A resource scout who discovered a forbidden oasis.",
+    "A bureaucratic intern caught in a web of forged transit permits."
+  ],
+  "conflict_hooks": [
+    "A collision course between two major cities is revealed to be intentional sabotage.",
+    "The discovery of a 'Static Zone' where cities cannot move creates a desperate land grab."
+  ],
+  "custom_actions": [
+    "Forge Migration Ledger",
+    "Siphon Geothermal Core",
+    "Blackmail District Overseer"
+  ],
+  "social_rules": [
+    "All migration path deviations must be ratified by the High Chancellor.",
+    "Resource sharing is mandatory during solar eclipses.",
+    "No city may deploy anchors within three leagues of a rival's foundation."
+  ],
+  "item_themes": [
+    "Mechanical Spare Parts",
+    "Thermal Batteries",
+    "Diplomatic Visas",
+    "Arctic Rations",
+    "Navigation Charts"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "AC-001",
+      "name": "Piston-Seal Gasket",
+      "price": 450,
+      "mass": 1.2,
+      "description": "Reinforced rubber and brass seal for the main hydraulic legs of a migrating city. Essential for preventing steam leaks in sub-zero temperatures.",
+      "image_prompt": "A heavy industrial brass and black rubber gasket, covered in frost, dieselpunk aesthetic, macro photography.",
+      "category": "Mechanical Spare Parts"
+    },
+    {
+      "item_id": "AC-002",
+      "name": "Aurora-Charged Thermal Cell",
+      "price": 1200,
+      "mass": 5.5,
+      "description": "A high-capacity battery that stores atmospheric static from the Aurora. Provides 48 hours of emergency heat for a standard residential pod.",
+      "image_prompt": "A glowing blue cylindrical battery with copper coils, venting faint steam, set against a dark metallic background.",
+      "category": "Thermal Batteries"
+    },
+    {
+      "item_id": "AC-003",
+      "name": "Glacier-Pass Transit Visa",
+      "price": 3000,
+      "mass": 0.1,
+      "description": "An official stamped steel plate granting a crawler passage through the High-Ice Sovereignty. Valid for one migration cycle.",
+      "image_prompt": "A small rectangular steel plate with intricate engravings and a glowing blue wax seal, arctic diplomacy style.",
+      "category": "Diplomatic Visas"
+    },
+    {
+      "item_id": "AC-004",
+      "name": "Whale-Oil Hardtack",
+      "price": 25,
+      "mass": 0.5,
+      "description": "Calorie-dense survival rations infused with rendered leviathan fat. Tastes of salt and soot, but keeps the blood warm.",
+      "image_prompt": "A stack of thick, greyish square biscuits wrapped in waxed brown paper, tied with twine.",
+      "category": "Arctic Rations"
+    },
+    {
+      "item_id": "AC-005",
+      "name": "Sextant of the Shifting Pole",
+      "price": 850,
+      "mass": 2.3,
+      "description": "A brass navigation tool modified to account for the erratic magnetic interference of the Aurora Borealis.",
+      "image_prompt": "An ornate brass sextant with glowing blue glass lenses and moving clockwork gears.",
+      "category": "Navigation Charts"
+    },
+    {
+      "item_id": "AC-006",
+      "name": "Frost-Bite Pressure Valve",
+      "price": 150,
+      "mass": 3.0,
+      "description": "A heavy-duty iron valve designed to bleed excess steam from walker engines before they freeze and shatter.",
+      "image_prompt": "A rugged iron wheel valve with frozen condensation and red-painted handles, dieselpunk style.",
+      "category": "Mechanical Spare Parts"
+    },
+    {
+      "item_id": "AC-007",
+      "name": "Citizen's Heat Token",
+      "price": 500,
+      "mass": 0.05,
+      "description": "A copper coin representing a pre-paid share of the city's central boiler output. Can be traded for favors or hot water.",
+      "image_prompt": "A thick copper coin with a flame emblem on one side and a city-walker silhouette on the other.",
+      "category": "Citizenship Favors"
+    },
+    {
+      "item_id": "AC-008",
+      "name": "Permafrost Core Drill",
+      "price": 2100,
+      "mass": 15.0,
+      "description": "A diamond-tipped pneumatic drill used to anchor migrating cities to the ice during heavy blizzards.",
+      "image_prompt": "A large industrial drill bit with glowing blue highlights and heavy soot staining.",
+      "category": "Mechanical Spare Parts"
+    },
+    {
+      "item_id": "AC-009",
+      "name": "Lichen-Paste Concentrate",
+      "price": 40,
+      "mass": 0.2,
+      "description": "A tube of nutrient-rich green paste harvested from the underside of the walking cities. High in Vitamin D.",
+      "image_prompt": "A metallic squeeze tube with a minimalist label showing a green plant icon, arctic survival gear.",
+      "category": "Arctic Rations"
+    },
+    {
+      "item_id": "AC-010",
+      "name": "Star-Chart of the Frozen Sea",
+      "price": 600,
+      "mass": 0.8,
+      "description": "A vellum map showing the safest routes across the shifting ice floes, marked with known thermal vents.",
+      "image_prompt": "A rolled leather map with glowing blue ink lines and metallic weights on the corners.",
+      "category": "Navigation Charts"
+    },
+    {
+      "item_id": "AC-011",
+      "name": "Insulated Steam Pipe (Meter)",
+      "price": 200,
+      "mass": 8.0,
+      "description": "Double-walled copper piping wrapped in synthetic wool to transport heat from the engine core to the outer wards.",
+      "image_prompt": "A section of thick copper pipe with visible insulation layers and heavy iron bolts.",
+      "category": "Mechanical Spare Parts"
+    },
+    {
+      "item_id": "AC-012",
+      "name": "Ambassador's Fur Cloak",
+      "price": 4500,
+      "mass": 4.0,
+      "description": "A heavy cloak made from synthetic polar bear fur, lined with micro-heating filaments. A sign of high diplomatic status.",
+      "image_prompt": "A massive white fur cloak with a high collar and glowing blue fiber-optic trim.",
+      "category": "Diplomatic Visas"
+    },
+    {
+      "item_id": "AC-013",
+      "name": "Emergency Flare Canister",
+      "price": 110,
+      "mass": 1.1,
+      "description": "Produces a brilliant violet light that cuts through the thickest arctic fog. Used for signaling distress to nearby walkers.",
+      "image_prompt": "A cylindrical metal canister with a pull-ring, emitting a faint violet glow from the cap.",
+      "category": "Navigation Charts"
+    },
+    {
+      "item_id": "AC-014",
+      "name": "Boiler-Room Work Boots",
+      "price": 320,
+      "mass": 2.5,
+      "description": "Lead-lined boots with spiked soles for grip on icy metal catwalks. Heat-resistant up to 200 degrees Celsius.",
+      "image_prompt": "Heavy leather and iron boots with jagged metal spikes on the soles, resting on a metal grate.",
+      "category": "Mechanical Spare Parts"
+    },
+    {
+      "item_id": "AC-015",
+      "name": "Cryo-Stabilized Lubricant",
+      "price": 95,
+      "mass": 1.0,
+      "description": "A specialized oil that remains fluid even at absolute zero. Prevents the city's leg joints from seizing.",
+      "image_prompt": "A glass bottle containing a swirling iridescent blue liquid, sealed with a heavy cork and wax.",
+      "category": "Mechanical Spare Parts"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "aurora-court-wardrobe-v1",
+    "world_wardrobe_brief": "Arctic dieselpunk attire designed for survival in sub-zero temperatures and high-pressure industrial environments. Clothing is heavy, layered, and functional, featuring reinforced padding, thermal insulation, and integrated mechanical components like valves and glowing visors for low-light aurora navigation.",
+    "forbidden_aesthetics": [
+      "short_sleeves",
+      "exposed_skin",
+      "bright_floral_patterns",
+      "generic_fantasy_robes",
+      "modern_business_suits",
+      "sandals",
+      "lightweight_fabrics"
+    ],
+    "palette_families": [
+      {
+        "name": "Engine_Core",
+        "dominant": "#1a1c2c",
+        "accent": "#5d275d",
+        "trim": "#00ffcc",
+        "material": "riveted_cast_iron"
+      },
+      {
+        "name": "Thermal_Brass",
+        "dominant": "#3d251e",
+        "accent": "#d4a017",
+        "trim": "#e0f8cf",
+        "material": "polished_brass"
+      },
+      {
+        "name": "Aurora_Frost",
+        "dominant": "#2d3a4f",
+        "accent": "#00ffcc",
+        "trim": "#ffffff",
+        "material": "frosted_glass"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "merchant_diplomat",
+        "role_keywords": [
+          "Merchant",
+          "Ambassador",
+          "Broker",
+          "Vane"
+        ],
+        "attire": [
+          "Synthetic fur-lined heavy cloaks",
+          "Heated silk scarves",
+          "Ornate brass badges"
+        ],
+        "props": [
+          "Transit visas",
+          "Sextants",
+          "Heat tokens"
+        ],
+        "palette_notes": "Deep purples and polished brass accents to signify status.",
+        "silhouette_notes": "Bulky upper body with flowing capes.",
+        "avoid": [
+          "Grease stains",
+          "Exposed tools"
+        ]
+      },
+      {
+        "rule_id": "heavy_technician",
+        "role_keywords": [
+          "Technician",
+          "Welder",
+          "Greaser",
+          "Piston",
+          "Joint"
+        ],
+        "attire": [
+          "Lead-lined aprons",
+          "Padded utility jumpsuits",
+          "Thermal gloves"
+        ],
+        "props": [
+          "Wrenches",
+          "Oil canisters",
+          "Welding masks"
+        ],
+        "palette_notes": "Dark indigo and iron-grey with high-visibility cyan trim.",
+        "silhouette_notes": "Wide shoulders with heavy tool belts.",
+        "avoid": [
+          "Delicate fabrics",
+          "Capes"
+        ]
+      },
+      {
+        "rule_id": "bureaucratic_archivist",
+        "role_keywords": [
+          "Archivist",
+          "Scribe",
+          "Auditor",
+          "Custodian"
+        ],
+        "attire": [
+          "Multi-layered wool tunics",
+          "Pneumatic tube harnesses",
+          "Fingerless thermal gloves"
+        ],
+        "props": [
+          "Ledgers",
+          "Ink vials",
+          "Favor tokens"
+        ],
+        "palette_notes": "Muted browns and greys with brass fasteners.",
+        "silhouette_notes": "Slimmer, vertical silhouette with many pockets.",
+        "avoid": [
+          "Heavy armor",
+          "Grease"
+        ]
+      },
+      {
+        "rule_id": "arctic_prospector",
+        "role_keywords": [
+          "Prospector",
+          "Borer",
+          "Drill",
+          "Scavenger"
+        ],
+        "attire": [
+          "Exoskeleton-reinforced parkas",
+          "Spiked ice-boots",
+          "Oxygen masks"
+        ],
+        "props": [
+          "Core drills",
+          "Flares",
+          "Sample bags"
+        ],
+        "palette_notes": "High-contrast cyan highlights on dark blue bases.",
+        "silhouette_notes": "Heavy, grounded stance with external frame packs.",
+        "avoid": [
+          "Formal wear",
+          "Uninsulated gear"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "standard_citizen",
+      "role_keywords": [
+        "Citizen",
+        "Worker",
+        "Resident"
+      ],
+      "attire": [
+        "Quilted thermal jackets",
+        "Heavy boots",
+        "Woolen caps"
+      ],
+      "props": [
+        "Mugs",
+        "Small tools",
+        "Heat cells"
+      ],
+      "palette_notes": "Practical dark blues and greys.",
+      "silhouette_notes": "Chunky, rounded layers for warmth.",
+      "avoid": [
+        "Luxury items",
+        "Specialized machinery"
+      ]
+    },
+    "visual_consistency_rules": [
+      "All characters must have a 1px dark indigo outline.",
+      "Shoulder pads or collars must use the accent color for role identification.",
+      "Visors and goggles must glow with #00ffcc.",
+      "Maintain 60:40 head-to-torso ratio for 32x32 readability.",
+      "No skin should be visible; use masks or scarves."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "aurora-court-migrating-cities",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees_vertical",
+      "scale_rule": "1_meter_per_32_pixels"
+    },
+    "palette": {
+      "dominant": "#1a1c2c",
+      "secondary": "#5d275d",
+      "accent": "#00ffcc",
+      "shadow": "#060608",
+      "highlight": "#e0f8cf"
+    },
+    "materials": [
+      "riveted_cast_iron",
+      "frosted_reinforced_glass",
+      "corrugated_steel",
+      "polished_brass",
+      "frozen_permafrost",
+      "glowing_plasma_tubes"
+    ],
+    "lighting": "high_contrast_top_down_with_cyan_bioluminescent_rim_glow",
+    "architecture": [
+      "dieselpunk_industrial_brutalism",
+      "exposed_pneumatic_piping",
+      "circular_ventilation_grates",
+      "heavy_bolted_bulkheads"
+    ],
+    "terrain": {
+      "ground": "cracked_blue_ice_sheets",
+      "path": "heated_metal_grating_walkways",
+      "edge": "steaming_mechanical_leg_joints"
+    },
+    "sprite_language": {
+      "body_proportion": "chunky_top_down_60_40_head_to_torso",
+      "outline": "1px_dark_indigo_selective_line",
+      "role_readability": "color_coded_shoulder_pads_and_glowing_visors"
+    },
+    "world_prompt_prefix": "top-down orthographic view, arctic dieselpunk industrial interior, heavy iron machinery, glowing cyan pipes, dark purple shadows, 16-bit pixel art style",
+    "sprite_prompt_prefix": "top-down character sprite, arctic gear, heavy dieselpunk armor, glowing visor, 16-bit pixel art, isolated on blue ice",
+    "forbidden_visuals": [
+      "isometric_perspective",
+      "photorealism",
+      "text_labels",
+      "ui_elements_in_render",
+      "natural_greenery",
+      "sunlight",
+      "generic_fantasy_wood"
+    ],
+    "canon_hash": "6f7e4076a58fdb73"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "scenario_meta": {
+    "world_id": "world_aethel_01",
+    "world_name": "Aethel",
+    "version": "1.0",
+    "description": "A cliffside city taxes spoken promises by their weight, and couriers carry unpaid ones between households.",
+    "simulation_objective": "Manage linguistic debt and courier logistics without collapsing the city's credit.",
+    "visual_canon_hash": "aecbcdfcbf5adf23",
+    "player_entry_points": [
+      "Arrive at The Grand Scale to contest a lead tax receipt",
+      "Inspect whispering notes at The Unbound Guild Hall before dispatch"
+    ],
+    "creator_conflict_hooks": [
+      "Escalating syllable taxes cause mass abandonment of pledges and rising default rates",
+      "Expanding mute zones delay courier transit and accrue massive debt interest"
+    ]
+  },
+  "engine_config": {
+    "world_mode": "Fixed",
+    "adjudicator_api": {
+      "provider": "Local",
+      "model": "",
+      "temperature": 0.0,
+      "flex_api_url": "http://127.0.0.1:8000/v1",
+      "server_script": ""
+    },
+    "agent_default_api": {
+      "provider": "Vertex_AI",
+      "model": "gemini-3.1-flash-lite-preview",
+      "temperature": 0.6,
+      "flex_api_url": "http://127.0.0.1:8000/v1",
+      "server_script": "vertex_flex_server.py"
+    },
+    "simulation_params": {
+      "max_timesteps": 32,
+      "parallel_execution": true,
+      "tick_rate_ms": 0,
+      "concurrency_limit": 12
+    }
+  },
+  "asset_bindings": {
+    "world_rules_path": "./world_rules.json",
+    "map_grid_path": "./map_grid.json",
+    "active_agents": [
+      "./Agents/world_aethel_01_main_01.json",
+      "./Agents/world_aethel_01_main_02.json",
+      "./Agents/world_aethel_01_main_03.json",
+      "./Agents/world_aethel_01_main_04.json",
+      "./Agents/world_aethel_01_main_05.json",
+      "./Agents/world_aethel_01_main_06.json",
+      "./Agents/world_aethel_01_main_07.json",
+      "./Agents/world_aethel_01_main_08.json",
+      "./Agents/world_aethel_01_main_09.json",
+      "./Agents/world_aethel_01_main_10.json",
+      "./Agents/world_aethel_01_main_11.json",
+      "./Agents/world_aethel_01_main_12.json"
+    ],
+    "relationship_tensor_path": "",
+    "localized_visual_state_path": "",
+    "intents_path": "./agent_intents.json",
+    "intent_batches_path": "./intent_batches",
+    "prompt_path": "../../data/templates/foundation/universal_adjudicator_prompt.jsonc"
+  }
+}

@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agora_UI Scenario Console</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=20260430b" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">Agora_UI Scenario Console</div>
+          <h1 id="world-name">Loading world...</h1>
+          <p id="world-description"></p>
+          <div class="hero-stats" id="hero-stats"></div>
+        </div>
+        <div class="hero-side">
+          <div class="summary-card">
+            <div class="summary-label">Parallel Views</div>
+            <div class="summary-body">
+              <a class="secondary-button link-button" href="/pixel/" target="_blank" rel="noreferrer">Open Pixel View</a>
+            </div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label">Current Run</div>
+            <div id="run-summary" class="summary-body"></div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label">Round Snapshot</div>
+            <div id="round-summary" class="summary-body"></div>
+          </div>
+        </div>
+      </header>
+
+      <section class="control-band">
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Run Control</h2>
+            <p>Launch from editable world JSON, keep the run generic, and let heavy assets render off the UI thread.</p>
+          </div>
+          <form id="launch-form" class="launch-form">
+            <label>
+              <span>Run Id</span>
+              <input type="text" name="run_id" value="scenario_40_agents_42627" />
+            </label>
+            <label>
+              <span>Resume From Run Id</span>
+              <input type="text" name="resume_run_id" placeholder="Optional existing run id" />
+            </label>
+            <label>
+              <span>Package Access Code</span>
+              <input type="text" name="package_access_code" maxlength="16" placeholder="16-char code" />
+            </label>
+            <label>
+              <span>World Name</span>
+              <input type="text" name="world_name" value="Agora Multi-Scene Scenario Template" />
+            </label>
+            <label>
+              <span>World Id</span>
+              <input type="text" name="world_id" value="agora_multiscene_template" />
+            </label>
+            <label>
+              <span>Domain Label</span>
+              <input type="text" name="domain_label" value="multi-scene simulation world" />
+            </label>
+            <label>
+              <span>Regular Agents</span>
+              <input type="number" name="regular_agent_count" min="8" max="120" value="40" />
+            </label>
+            <label>
+              <span>Rounds</span>
+              <input type="number" name="rounds" min="1" max="60" value="25" />
+            </label>
+            <label>
+              <span>Activation</span>
+              <input type="number" name="activation_probability" min="0" max="1" step="0.05" value="0.3" />
+            </label>
+            <label>
+              <span>Seed</span>
+              <input type="number" name="seed" min="1" max="999999999" value="42627" />
+            </label>
+            <label>
+              <span>LongLive / Round</span>
+              <input type="number" name="max_videos_per_round" min="0" max="10" value="1" />
+            </label>
+            <label>
+              <span>Images / Round</span>
+              <input type="number" name="max_images_per_round" min="0" max="10" value="1" />
+            </label>
+            <label class="toggle-row">
+              <input type="checkbox" name="generate_character_portraits" checked />
+              <span>Generate Character Portraits</span>
+            </label>
+            <label>
+              <span>Item Images</span>
+              <select name="item_image_mode">
+                <option value="important_only" selected>Important Artifacts Only</option>
+                <option value="all">All Inventory Items</option>
+                <option value="off">Off</option>
+              </select>
+            </label>
+            <label class="toggle-row">
+              <input type="checkbox" name="artifact_image_reasoning_enabled" checked />
+              <span>Use Artifact Images In Reasoning</span>
+            </label>
+            <label>
+              <span>Reasoning Image Max Edge</span>
+              <input type="number" name="artifact_reasoning_max_edge_px" min="128" max="1024" step="16" value="500" />
+            </label>
+            <label>
+              <span>Segment Seconds</span>
+              <input type="number" name="segment_seconds" min="2" max="12" value="4" />
+            </label>
+            <label class="full-span">
+              <span>Description</span>
+              <textarea name="description" rows="3"></textarea>
+            </label>
+            <label class="toggle-row">
+              <input type="checkbox" name="main_characters_always_activate" checked />
+              <span>Main Characters Always Activate</span>
+            </label>
+            <label class="toggle-row">
+              <input type="checkbox" name="start_asset_worker" checked />
+              <span>Start Background Asset Worker</span>
+            </label>
+            <div class="button-row full-span">
+              <button id="resume-current-run" type="button" class="secondary-button">Use Current Run</button>
+            </div>
+            <div class="button-row full-span">
+              <button id="package-export" type="button" class="secondary-button">Export DB</button>
+              <button id="package-pull" type="button" class="secondary-button">Pull DB</button>
+            </div>
+            <button type="submit" class="primary-button">Start Run</button>
+          </form>
+          <div id="launch-status" class="inline-status"></div>
+          <div id="package-status" class="inline-status"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Replay Browser</h2>
+            <p>Current run auto-loads. Older runs stay available for playback.</p>
+          </div>
+          <div id="run-list" class="run-list"></div>
+          <div class="asset-worker-box">
+            <div class="summary-label">Asset Worker</div>
+            <div id="asset-worker-status" class="summary-body"></div>
+            <div class="button-row">
+              <button id="asset-worker-start" type="button" class="secondary-button">Generate Images</button>
+              <button id="asset-worker-refresh" type="button" class="secondary-button">Refresh Status</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Human Interactor</h2>
+            <p>Inject a live human-controlled actor into the current run. The runner consumes queued events each round.</p>
+          </div>
+          <form id="human-form" class="launch-form">
+            <label>
+              <span>Name</span>
+              <input type="text" name="display_name" value="Human Interactor" />
+            </label>
+            <label>
+              <span>Room Id</span>
+              <input type="text" name="room_id" placeholder="room_id" />
+            </label>
+            <label>
+              <span>Target Agent Id</span>
+              <input type="text" name="target_agent_id" placeholder="Optional target agent id" />
+            </label>
+            <label>
+              <span>Speed Seconds / Round</span>
+              <input type="number" name="speed_seconds_per_round" min="0.5" max="120" step="0.5" value="8" />
+            </label>
+            <label class="full-span">
+              <span>Action</span>
+              <textarea name="action_text" rows="3" placeholder="Describe what the human says or does."></textarea>
+            </label>
+            <div class="button-row full-span">
+              <button id="human-presence-save" type="button" class="secondary-button">Save Presence</button>
+              <button type="submit" class="primary-button">Queue Human Action</button>
+            </div>
+          </form>
+          <div id="human-status" class="inline-status"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Timeline</h2>
+            <p>Scrub round history and inspect how rooms, relationships, and media change.</p>
+          </div>
+          <div class="timeline-controls">
+            <div id="timeline-label" class="timeline-label">Initial</div>
+            <input id="timeline-slider" type="range" min="0" max="0" value="0" />
+            <div id="timeline-meta" class="timeline-meta"></div>
+          </div>
+        </section>
+      </section>
+
+      <main class="layout">
+        <section class="main-column">
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Configuration Studio</h2>
+              <p>Edit the same run config either as structured section JSON or as one full document. Help stays one click away.</p>
+            </div>
+            <div class="button-row">
+              <a class="secondary-button link-button" href="/README.md" target="_blank" rel="noreferrer">Open README</a>
+              <button id="config-load-template" type="button" class="secondary-button">Load Template</button>
+              <button id="config-load-current" type="button" class="secondary-button">Load Current Run Config</button>
+              <button id="config-apply-json" type="button" class="secondary-button">Apply Full JSON</button>
+            </div>
+            <div id="config-status" class="inline-status"></div>
+            <div id="config-sections" class="config-sections"></div>
+            <label class="config-json-label">
+              <span>Full World Config JSON</span>
+              <textarea id="config-json" class="config-json" spellcheck="false"></textarea>
+            </label>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div class="panel-summary-title">
+                <h2>World Map</h2>
+                <button id="map-enlarge" type="button" class="secondary-button">Enlarge</button>
+              </div>
+              <p>Minimal room summary on the main page. Open enlarge for the full floor plan map.</p>
+            </div>
+            <div id="macro-map" class="macro-map"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Relationship Graph</h2>
+              <p>Non-neutral ties from the selected replay frame.</p>
+            </div>
+            <div id="relationship-graph" class="graph-canvas"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Dialogue And Situation</h2>
+              <p>Frame-specific stories, relationship deltas, and world events.</p>
+            </div>
+            <div id="story-feed" class="story-feed"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>LongLive And Artifacts</h2>
+              <p>Real run outputs appear here as soon as the frame contains them.</p>
+            </div>
+            <div id="media-feed" class="media-grid"></div>
+          </section>
+        </section>
+
+        <aside class="side-column">
+          <details class="panel collapsible-panel">
+            <summary>
+              <div class="panel-summary-copy">
+                <div class="panel-summary-title">
+                  <h2>All Agents</h2>
+                  <span id="all-agents-count" class="panel-count"></span>
+                </div>
+                <p>Portraits are generated for the replay run itself and stay inside its run folder.</p>
+              </div>
+            </summary>
+            <div class="panel-body">
+              <div id="featured-agents" class="agent-list"></div>
+            </div>
+          </details>
+
+          <details class="panel collapsible-panel" open>
+            <summary>
+              <div class="panel-summary-copy">
+                <div class="panel-summary-title">
+                  <h2>Selected Agent</h2>
+                  <span id="selected-agent-badge" class="panel-count">Open</span>
+                </div>
+                <p id="selected-agent-summary">Click a room occupant, relationship node, or agent card.</p>
+              </div>
+            </summary>
+            <div class="panel-body">
+              <div id="selected-agent" class="selected-agent"></div>
+            </div>
+          </details>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>World Events</h2>
+              <p>Recent global context for the selected replay frame.</p>
+            </div>
+            <div id="world-events" class="event-list"></div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <div id="map-modal" class="map-modal" hidden>
+      <div class="map-modal-shell">
+        <div class="map-modal-head">
+          <div>
+            <div class="summary-label">Full Map</div>
+            <h2 id="map-modal-title">World Floor Plan</h2>
+          </div>
+          <div class="button-row">
+            <button id="map-fit" type="button" class="secondary-button">Fit View</button>
+            <label class="map-zoom-control">
+              <span>Zoom</span>
+              <input id="map-zoom" type="range" min="0.5" max="3" step="0.05" value="1" />
+            </label>
+            <button id="map-close" type="button" class="secondary-button">Close</button>
+          </div>
+        </div>
+        <div class="map-modal-layout">
+          <div id="macro-map-full" class="macro-map-full"></div>
+          <aside class="room-detail-panel">
+            <div class="summary-label">Selected Room</div>
+            <div id="selected-room-summary" class="summary-body">Click a room card or room label.</div>
+            <div id="selected-room" class="selected-room"></div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script type="module" src="./app.js?v=20260523f"></script>
+  </body>
+</html>

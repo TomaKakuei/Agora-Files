@@ -1,0 +1,1286 @@
+{
+  "grid_shape": {
+    "x": 29,
+    "y": 28,
+    "z": 1
+  },
+  "map_visual": {
+    "projection": "orthographic_grid",
+    "style": "pixel_art",
+    "tile_width": 32,
+    "tile_height": 32,
+    "room_width_tiles": 6,
+    "room_height_tiles": 4,
+    "agent_sprite_size": 40,
+    "origin": {
+      "x": 0,
+      "y": 0
+    },
+    "layers": [
+      "floor",
+      "objects",
+      "agents",
+      "effects",
+      "ui"
+    ],
+    "camera": {
+      "start_room_id": "room_03_aurora_navigation_bridge",
+      "zoom": 2.0,
+      "follow_main_character": "aurora_court_migrating_cities_main_01"
+    },
+    "tileset": {
+      "key": "aurora_court_migrating_cities_pixel_tiles",
+      "image_path": "",
+      "tile_margin": 0,
+      "tile_spacing": 0
+    },
+    "theme_label": "Massive iron walkers, glowing blue ice, steam-venting pipes, and vibrant aurora skies.",
+    "visual_canon_hash": "6f7e4076a58fdb73"
+  },
+  "rooms": [
+    {
+      "room_id": "room_01_heat_exchange_hub_01",
+      "name": "Heat Exchange Hub 01",
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "width_tiles": 8,
+      "height_tiles": 8,
+      "doorways": [
+        {
+          "doorway_id": "room_01_heat_exchange_hub_01_to_room_06_leg_joint_maintenance_pit",
+          "position": {
+            "x": 9,
+            "y": 3,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_06_leg_joint_maintenance_pit",
+          "label": "passage to Leg-Joint Maintenance Pit"
+        },
+        {
+          "doorway_id": "room_01_heat_exchange_hub_01_to_room_08_permafrost_drill_station",
+          "position": {
+            "x": 5,
+            "y": 7,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_08_permafrost_drill_station",
+          "label": "passage to Permafrost Drill Station"
+        }
+      ],
+      "visual": {
+        "biome": "industrial_arctic",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "pipes",
+          "valves",
+          "steam",
+          "brass"
+        ],
+        "ambient_palette": "ember_orange",
+        "visual_canon_hash": "6f7e4076a58fdb73",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_01_heat_exchange_hub_01_thermal_ledger_terminal",
+            "label": "Thermal Ledger",
+            "description": "A bulky brass terminal displaying glowing orange heat-debt charts",
+            "anchor": "center",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Trading thermal credits and steam pressure",
+        "activity_tags": [
+          "trading",
+          "monitoring"
+        ],
+        "player_entry_hook": "A disgraced cartographer seeking to clear their name.",
+        "room_archetype": "market_exchange",
+        "layout_signal": "Heat Exchange Hub 01 | Trading thermal credits and steam pressure | industrial_arctic | trading | monitoring | pipes | valves | steam | brass"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down 16-bit pixel art of heated metal grating walkways over glowing orange lava-like heat coils, industrial grit",
+      "room_scene_prompt": "top-down orthographic view of a heat exchange station, heavy iron machinery, glowing orange pipes, brass valves, steam vents, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "aurora-court-migrating-cities",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "1_meter_per_32_pixels"
+        },
+        "palette": {
+          "dominant": "#1a1c2c",
+          "secondary": "#5d275d",
+          "accent": "#00ffcc",
+          "shadow": "#060608",
+          "highlight": "#e0f8cf"
+        },
+        "materials": [
+          "riveted_cast_iron",
+          "frosted_reinforced_glass",
+          "corrugated_steel",
+          "polished_brass",
+          "frozen_permafrost",
+          "glowing_plasma_tubes"
+        ],
+        "lighting": "high_contrast_top_down_with_cyan_bioluminescent_rim_glow",
+        "architecture": [
+          "dieselpunk_industrial_brutalism",
+          "exposed_pneumatic_piping",
+          "circular_ventilation_grates",
+          "heavy_bolted_bulkheads"
+        ],
+        "terrain": {
+          "ground": "cracked_blue_ice_sheets",
+          "path": "heated_metal_grating_walkways",
+          "edge": "steaming_mechanical_leg_joints"
+        },
+        "sprite_language": {
+          "body_proportion": "chunky_top_down_60_40_head_to_torso",
+          "outline": "1px_dark_indigo_selective_line",
+          "role_readability": "color_coded_shoulder_pads_and_glowing_visors"
+        },
+        "world_prompt_prefix": "top-down orthographic view, arctic dieselpunk industrial interior, heavy iron machinery, glowing cyan pipes, dark purple shadows, 16-bit pixel art style",
+        "sprite_prompt_prefix": "top-down character sprite, arctic gear, heavy dieselpunk armor, glowing visor, 16-bit pixel art, isolated on blue ice",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_elements_in_render",
+          "natural_greenery",
+          "sunlight",
+          "generic_fantasy_wood"
+        ],
+        "canon_hash": "6f7e4076a58fdb73"
+      }
+    },
+    {
+      "room_id": "room_02_engine_part_scrapyard",
+      "name": "Engine Part Scrapyard",
+      "x": 10,
+      "y": 8,
+      "z": 0,
+      "width_tiles": 10,
+      "height_tiles": 12,
+      "doorways": [
+        {
+          "doorway_id": "room_02_engine_part_scrapyard_to_room_03_aurora_navigation_bridge",
+          "position": {
+            "x": 14,
+            "y": 19,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_03_aurora_navigation_bridge",
+          "label": "passage to Aurora Navigation Bridge"
+        },
+        {
+          "doorway_id": "room_02_engine_part_scrapyard_to_room_05_the_thawing_canteen",
+          "position": {
+            "x": 19,
+            "y": 12,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_05_the_thawing_canteen",
+          "label": "passage to The Thawing Canteen"
+        },
+        {
+          "doorway_id": "room_02_engine_part_scrapyard_to_room_06_leg_joint_maintenance_pit",
+          "position": {
+            "x": 14,
+            "y": 8,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_06_leg_joint_maintenance_pit",
+          "label": "passage to Leg-Joint Maintenance Pit"
+        },
+        {
+          "doorway_id": "room_02_engine_part_scrapyard_to_room_08_permafrost_drill_station",
+          "position": {
+            "x": 10,
+            "y": 12,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_08_permafrost_drill_station",
+          "label": "passage to Permafrost Drill Station"
+        }
+      ],
+      "visual": {
+        "biome": "industrial_arctic",
+        "floor_tile": "library_wood",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "gears",
+          "rust",
+          "oil",
+          "cranes"
+        ],
+        "ambient_palette": "dusty_brown",
+        "visual_canon_hash": "6f7e4076a58fdb73",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_02_engine_part_scrapyard_piston_disassembly_rig",
+            "label": "Piston Rig",
+            "description": "A massive tripod crane holding a glowing cyan engine piston",
+            "anchor": "north_mid",
+            "width_tiles": 3,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Salvaging mechanical components for city legs",
+        "activity_tags": [
+          "repairing",
+          "scavenging"
+        ],
+        "player_entry_hook": "A resource scout who discovered a forbidden oasis.",
+        "room_archetype": "workshop",
+        "layout_signal": "Engine Part Scrapyard | Salvaging mechanical components for city legs | industrial_arctic | repairing | scavenging | gears | rust | oil | cranes"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down 16-bit pixel art of oil-stained corrugated steel plating with scattered iron bolts",
+      "room_scene_prompt": "top-down orthographic view of a dieselpunk scrapyard, piles of rusted gears and massive pistons, hydraulic cranes, dark indigo shadows, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "aurora-court-migrating-cities",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "1_meter_per_32_pixels"
+        },
+        "palette": {
+          "dominant": "#1a1c2c",
+          "secondary": "#5d275d",
+          "accent": "#00ffcc",
+          "shadow": "#060608",
+          "highlight": "#e0f8cf"
+        },
+        "materials": [
+          "riveted_cast_iron",
+          "frosted_reinforced_glass",
+          "corrugated_steel",
+          "polished_brass",
+          "frozen_permafrost",
+          "glowing_plasma_tubes"
+        ],
+        "lighting": "high_contrast_top_down_with_cyan_bioluminescent_rim_glow",
+        "architecture": [
+          "dieselpunk_industrial_brutalism",
+          "exposed_pneumatic_piping",
+          "circular_ventilation_grates",
+          "heavy_bolted_bulkheads"
+        ],
+        "terrain": {
+          "ground": "cracked_blue_ice_sheets",
+          "path": "heated_metal_grating_walkways",
+          "edge": "steaming_mechanical_leg_joints"
+        },
+        "sprite_language": {
+          "body_proportion": "chunky_top_down_60_40_head_to_torso",
+          "outline": "1px_dark_indigo_selective_line",
+          "role_readability": "color_coded_shoulder_pads_and_glowing_visors"
+        },
+        "world_prompt_prefix": "top-down orthographic view, arctic dieselpunk industrial interior, heavy iron machinery, glowing cyan pipes, dark purple shadows, 16-bit pixel art style",
+        "sprite_prompt_prefix": "top-down character sprite, arctic gear, heavy dieselpunk armor, glowing visor, 16-bit pixel art, isolated on blue ice",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_elements_in_render",
+          "natural_greenery",
+          "sunlight",
+          "generic_fantasy_wood"
+        ],
+        "canon_hash": "6f7e4076a58fdb73"
+      }
+    },
+    {
+      "room_id": "room_03_aurora_navigation_bridge",
+      "name": "Aurora Navigation Bridge",
+      "x": 10,
+      "y": 20,
+      "z": 0,
+      "width_tiles": 12,
+      "height_tiles": 6,
+      "doorways": [
+        {
+          "doorway_id": "room_02_engine_part_scrapyard_to_room_03_aurora_navigation_bridge",
+          "position": {
+            "x": 14,
+            "y": 20,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_02_engine_part_scrapyard",
+          "label": "passage to Engine Part Scrapyard"
+        },
+        {
+          "doorway_id": "room_03_aurora_navigation_bridge_to_room_04_citizenship_favor_archive",
+          "position": {
+            "x": 10,
+            "y": 22,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_04_citizenship_favor_archive",
+          "label": "passage to Citizenship Favor Archive"
+        },
+        {
+          "doorway_id": "room_03_aurora_navigation_bridge_to_room_07_route_rights_negotiation_chamber",
+          "position": {
+            "x": 21,
+            "y": 21,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_07_route_rights_negotiation_chamber",
+          "label": "passage to Route Rights Negotiation Chamber"
+        }
+      ],
+      "visual": {
+        "biome": "high_altitude_arctic",
+        "floor_tile": "library_wood",
+        "wall_tile": "library_shelf_wall",
+        "decor_tags": [
+          "glass",
+          "maps",
+          "aurora",
+          "telescopes"
+        ],
+        "ambient_palette": "focused_blue",
+        "visual_canon_hash": "6f7e4076a58fdb73",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_03_aurora_navigation_bridge_ice_shelf_projector",
+            "label": "Ice Map Projector",
+            "description": "A circular floor-mounted projector emitting a flickering cyan hologram of the tundra",
+            "anchor": "center",
+            "width_tiles": 3,
+            "height_tiles": 3
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Plotting routes across the ice shelf",
+        "activity_tags": [
+          "mapping",
+          "steering"
+        ],
+        "player_entry_hook": "A bureaucratic intern caught in a web of forged transit permits.",
+        "room_archetype": "lookout",
+        "layout_signal": "Aurora Navigation Bridge | Plotting routes across the ice shelf | high_altitude_arctic | mapping | steering | glass | maps | aurora | telescopes"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down 16-bit pixel art of frosted reinforced glass tiles with cyan bioluminescent circuitry underneath",
+      "room_scene_prompt": "top-down orthographic view of a city bridge, panoramic frosted windows, glowing holographic ice maps, brass navigation wheels, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "aurora-court-migrating-cities",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "1_meter_per_32_pixels"
+        },
+        "palette": {
+          "dominant": "#1a1c2c",
+          "secondary": "#5d275d",
+          "accent": "#00ffcc",
+          "shadow": "#060608",
+          "highlight": "#e0f8cf"
+        },
+        "materials": [
+          "riveted_cast_iron",
+          "frosted_reinforced_glass",
+          "corrugated_steel",
+          "polished_brass",
+          "frozen_permafrost",
+          "glowing_plasma_tubes"
+        ],
+        "lighting": "high_contrast_top_down_with_cyan_bioluminescent_rim_glow",
+        "architecture": [
+          "dieselpunk_industrial_brutalism",
+          "exposed_pneumatic_piping",
+          "circular_ventilation_grates",
+          "heavy_bolted_bulkheads"
+        ],
+        "terrain": {
+          "ground": "cracked_blue_ice_sheets",
+          "path": "heated_metal_grating_walkways",
+          "edge": "steaming_mechanical_leg_joints"
+        },
+        "sprite_language": {
+          "body_proportion": "chunky_top_down_60_40_head_to_torso",
+          "outline": "1px_dark_indigo_selective_line",
+          "role_readability": "color_coded_shoulder_pads_and_glowing_visors"
+        },
+        "world_prompt_prefix": "top-down orthographic view, arctic dieselpunk industrial interior, heavy iron machinery, glowing cyan pipes, dark purple shadows, 16-bit pixel art style",
+        "sprite_prompt_prefix": "top-down character sprite, arctic gear, heavy dieselpunk armor, glowing visor, 16-bit pixel art, isolated on blue ice",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_elements_in_render",
+          "natural_greenery",
+          "sunlight",
+          "generic_fantasy_wood"
+        ],
+        "canon_hash": "6f7e4076a58fdb73"
+      }
+    },
+    {
+      "room_id": "room_04_citizenship_favor_archive",
+      "name": "Citizenship Favor Archive",
+      "x": 4,
+      "y": 18,
+      "z": 0,
+      "width_tiles": 6,
+      "height_tiles": 10,
+      "doorways": [
+        {
+          "doorway_id": "room_03_aurora_navigation_bridge_to_room_04_citizenship_favor_archive",
+          "position": {
+            "x": 9,
+            "y": 22,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_03_aurora_navigation_bridge",
+          "label": "passage to Aurora Navigation Bridge"
+        },
+        {
+          "doorway_id": "room_04_citizenship_favor_archive_to_room_08_permafrost_drill_station",
+          "position": {
+            "x": 6,
+            "y": 18,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_08_permafrost_drill_station",
+          "label": "passage to Permafrost Drill Station"
+        }
+      ],
+      "visual": {
+        "biome": "bureaucratic_industrial",
+        "floor_tile": "library_wood",
+        "wall_tile": "library_shelf_wall",
+        "decor_tags": [
+          "cabinets",
+          "pneumatic_tubes",
+          "paper",
+          "iron"
+        ],
+        "ambient_palette": "low_lantern",
+        "visual_canon_hash": "6f7e4076a58fdb73",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_04_citizenship_favor_archive_pneumatic_sorting_hub",
+            "label": "Pneumatic Hub",
+            "description": "A wall-mounted cluster of brass tubes and glass canisters for message delivery",
+            "anchor": "north_east",
+            "width_tiles": 2,
+            "height_tiles": 1
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Storing records of political alliances",
+        "activity_tags": [
+          "filing",
+          "whispering"
+        ],
+        "player_entry_hook": "A disgraced cartographer seeking to clear their name.",
+        "room_archetype": "archive_ritual",
+        "layout_signal": "Citizenship Favor Archive | Storing records of political alliances | bureaucratic_industrial | filing | whispering | cabinets | pneumatic_tubes | paper | iron"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down 16-bit pixel art of dark riveted iron floor plates with yellow safety stripes",
+      "room_scene_prompt": "top-down orthographic view of a narrow archive room, floor-to-ceiling iron filing cabinets, pneumatic tubes snaking across walls, dim lantern light, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "aurora-court-migrating-cities",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "1_meter_per_32_pixels"
+        },
+        "palette": {
+          "dominant": "#1a1c2c",
+          "secondary": "#5d275d",
+          "accent": "#00ffcc",
+          "shadow": "#060608",
+          "highlight": "#e0f8cf"
+        },
+        "materials": [
+          "riveted_cast_iron",
+          "frosted_reinforced_glass",
+          "corrugated_steel",
+          "polished_brass",
+          "frozen_permafrost",
+          "glowing_plasma_tubes"
+        ],
+        "lighting": "high_contrast_top_down_with_cyan_bioluminescent_rim_glow",
+        "architecture": [
+          "dieselpunk_industrial_brutalism",
+          "exposed_pneumatic_piping",
+          "circular_ventilation_grates",
+          "heavy_bolted_bulkheads"
+        ],
+        "terrain": {
+          "ground": "cracked_blue_ice_sheets",
+          "path": "heated_metal_grating_walkways",
+          "edge": "steaming_mechanical_leg_joints"
+        },
+        "sprite_language": {
+          "body_proportion": "chunky_top_down_60_40_head_to_torso",
+          "outline": "1px_dark_indigo_selective_line",
+          "role_readability": "color_coded_shoulder_pads_and_glowing_visors"
+        },
+        "world_prompt_prefix": "top-down orthographic view, arctic dieselpunk industrial interior, heavy iron machinery, glowing cyan pipes, dark purple shadows, 16-bit pixel art style",
+        "sprite_prompt_prefix": "top-down character sprite, arctic gear, heavy dieselpunk armor, glowing visor, 16-bit pixel art, isolated on blue ice",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_elements_in_render",
+          "natural_greenery",
+          "sunlight",
+          "generic_fantasy_wood"
+        ],
+        "canon_hash": "6f7e4076a58fdb73"
+      }
+    },
+    {
+      "room_id": "room_05_the_thawing_canteen",
+      "name": "The Thawing Canteen",
+      "x": 20,
+      "y": 8,
+      "z": 0,
+      "width_tiles": 9,
+      "height_tiles": 9,
+      "doorways": [
+        {
+          "doorway_id": "room_02_engine_part_scrapyard_to_room_05_the_thawing_canteen",
+          "position": {
+            "x": 20,
+            "y": 12,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_02_engine_part_scrapyard",
+          "label": "passage to Engine Part Scrapyard"
+        },
+        {
+          "doorway_id": "room_05_the_thawing_canteen_to_room_06_leg_joint_maintenance_pit",
+          "position": {
+            "x": 21,
+            "y": 8,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_06_leg_joint_maintenance_pit",
+          "label": "passage to Leg-Joint Maintenance Pit"
+        },
+        {
+          "doorway_id": "room_05_the_thawing_canteen_to_room_07_route_rights_negotiation_chamber",
+          "position": {
+            "x": 25,
+            "y": 16,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_07_route_rights_negotiation_chamber",
+          "label": "passage to Route Rights Negotiation Chamber"
+        }
+      ],
+      "visual": {
+        "biome": "social_industrial",
+        "floor_tile": "tavern_planks",
+        "wall_tile": "tavern_wall",
+        "decor_tags": [
+          "tables",
+          "stoves",
+          "mugs",
+          "pipes"
+        ],
+        "ambient_palette": "warm_lantern",
+        "visual_canon_hash": "6f7e4076a58fdb73",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_05_the_thawing_canteen_central_steam_samovar",
+            "label": "Steam Samovar",
+            "description": "A large brass vat dispensing hot synthetic tea via pressurized levers",
+            "anchor": "center",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Socializing and consuming synthetic rations",
+        "activity_tags": [
+          "eating",
+          "drinking"
+        ],
+        "player_entry_hook": "A resource scout who discovered a forbidden oasis.",
+        "room_archetype": "rest_social",
+        "layout_signal": "The Thawing Canteen | Socializing and consuming synthetic rations | social_industrial | eating | drinking | tables | stoves | mugs | pipes"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down 16-bit pixel art of scuffed metal plating with circular ventilation grates emitting steam",
+      "room_scene_prompt": "top-down orthographic view of a dieselpunk mess hall, heavy bolted tables, a central steam-powered stove, glowing cyan pipes, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "aurora-court-migrating-cities",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "1_meter_per_32_pixels"
+        },
+        "palette": {
+          "dominant": "#1a1c2c",
+          "secondary": "#5d275d",
+          "accent": "#00ffcc",
+          "shadow": "#060608",
+          "highlight": "#e0f8cf"
+        },
+        "materials": [
+          "riveted_cast_iron",
+          "frosted_reinforced_glass",
+          "corrugated_steel",
+          "polished_brass",
+          "frozen_permafrost",
+          "glowing_plasma_tubes"
+        ],
+        "lighting": "high_contrast_top_down_with_cyan_bioluminescent_rim_glow",
+        "architecture": [
+          "dieselpunk_industrial_brutalism",
+          "exposed_pneumatic_piping",
+          "circular_ventilation_grates",
+          "heavy_bolted_bulkheads"
+        ],
+        "terrain": {
+          "ground": "cracked_blue_ice_sheets",
+          "path": "heated_metal_grating_walkways",
+          "edge": "steaming_mechanical_leg_joints"
+        },
+        "sprite_language": {
+          "body_proportion": "chunky_top_down_60_40_head_to_torso",
+          "outline": "1px_dark_indigo_selective_line",
+          "role_readability": "color_coded_shoulder_pads_and_glowing_visors"
+        },
+        "world_prompt_prefix": "top-down orthographic view, arctic dieselpunk industrial interior, heavy iron machinery, glowing cyan pipes, dark purple shadows, 16-bit pixel art style",
+        "sprite_prompt_prefix": "top-down character sprite, arctic gear, heavy dieselpunk armor, glowing visor, 16-bit pixel art, isolated on blue ice",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_elements_in_render",
+          "natural_greenery",
+          "sunlight",
+          "generic_fantasy_wood"
+        ],
+        "canon_hash": "6f7e4076a58fdb73"
+      }
+    },
+    {
+      "room_id": "room_06_leg_joint_maintenance_pit",
+      "name": "Leg-Joint Maintenance Pit",
+      "x": 10,
+      "y": 0,
+      "z": 0,
+      "width_tiles": 14,
+      "height_tiles": 8,
+      "doorways": [
+        {
+          "doorway_id": "room_01_heat_exchange_hub_01_to_room_06_leg_joint_maintenance_pit",
+          "position": {
+            "x": 10,
+            "y": 3,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_01_heat_exchange_hub_01",
+          "label": "passage to Heat Exchange Hub 01"
+        },
+        {
+          "doorway_id": "room_02_engine_part_scrapyard_to_room_06_leg_joint_maintenance_pit",
+          "position": {
+            "x": 14,
+            "y": 7,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_02_engine_part_scrapyard",
+          "label": "passage to Engine Part Scrapyard"
+        },
+        {
+          "doorway_id": "room_05_the_thawing_canteen_to_room_06_leg_joint_maintenance_pit",
+          "position": {
+            "x": 21,
+            "y": 7,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_05_the_thawing_canteen",
+          "label": "passage to The Thawing Canteen"
+        }
+      ],
+      "visual": {
+        "biome": "heavy_machinery",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "hydraulics",
+          "grease",
+          "chains",
+          "tools"
+        ],
+        "ambient_palette": "ember_orange",
+        "visual_canon_hash": "6f7e4076a58fdb73",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_06_leg_joint_maintenance_pit_hydraulic_fluid_pump",
+            "label": "Fluid Pump",
+            "description": "A vibrating machine with transparent tubes filled with glowing cyan hydraulic fluid",
+            "anchor": "west_mid",
+            "width_tiles": 2,
+            "height_tiles": 3
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Greasing the massive city joints",
+        "activity_tags": [
+          "climbing",
+          "welding"
+        ],
+        "player_entry_hook": "A bureaucratic intern caught in a web of forged transit permits.",
+        "room_archetype": "logistics_yard",
+        "layout_signal": "Leg-Joint Maintenance Pit | Greasing the massive city joints | heavy_machinery | climbing | welding | hydraulics | grease | chains | tools"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down 16-bit pixel art of heavy industrial diamond-plate steel with deep grease stains",
+      "room_scene_prompt": "top-down orthographic view of a maintenance bay, massive hydraulic pistons visible in floor pits, heavy chains hanging from ceiling, cyan rim glow, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "aurora-court-migrating-cities",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "1_meter_per_32_pixels"
+        },
+        "palette": {
+          "dominant": "#1a1c2c",
+          "secondary": "#5d275d",
+          "accent": "#00ffcc",
+          "shadow": "#060608",
+          "highlight": "#e0f8cf"
+        },
+        "materials": [
+          "riveted_cast_iron",
+          "frosted_reinforced_glass",
+          "corrugated_steel",
+          "polished_brass",
+          "frozen_permafrost",
+          "glowing_plasma_tubes"
+        ],
+        "lighting": "high_contrast_top_down_with_cyan_bioluminescent_rim_glow",
+        "architecture": [
+          "dieselpunk_industrial_brutalism",
+          "exposed_pneumatic_piping",
+          "circular_ventilation_grates",
+          "heavy_bolted_bulkheads"
+        ],
+        "terrain": {
+          "ground": "cracked_blue_ice_sheets",
+          "path": "heated_metal_grating_walkways",
+          "edge": "steaming_mechanical_leg_joints"
+        },
+        "sprite_language": {
+          "body_proportion": "chunky_top_down_60_40_head_to_torso",
+          "outline": "1px_dark_indigo_selective_line",
+          "role_readability": "color_coded_shoulder_pads_and_glowing_visors"
+        },
+        "world_prompt_prefix": "top-down orthographic view, arctic dieselpunk industrial interior, heavy iron machinery, glowing cyan pipes, dark purple shadows, 16-bit pixel art style",
+        "sprite_prompt_prefix": "top-down character sprite, arctic gear, heavy dieselpunk armor, glowing visor, 16-bit pixel art, isolated on blue ice",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_elements_in_render",
+          "natural_greenery",
+          "sunlight",
+          "generic_fantasy_wood"
+        ],
+        "canon_hash": "6f7e4076a58fdb73"
+      }
+    },
+    {
+      "room_id": "room_07_route_rights_negotiation_chamber",
+      "name": "Route Rights Negotiation Chamber",
+      "x": 22,
+      "y": 17,
+      "z": 0,
+      "width_tiles": 7,
+      "height_tiles": 7,
+      "doorways": [
+        {
+          "doorway_id": "room_03_aurora_navigation_bridge_to_room_07_route_rights_negotiation_chamber",
+          "position": {
+            "x": 22,
+            "y": 21,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_03_aurora_navigation_bridge",
+          "label": "passage to Aurora Navigation Bridge"
+        },
+        {
+          "doorway_id": "room_05_the_thawing_canteen_to_room_07_route_rights_negotiation_chamber",
+          "position": {
+            "x": 25,
+            "y": 17,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_05_the_thawing_canteen",
+          "label": "passage to The Thawing Canteen"
+        }
+      ],
+      "visual": {
+        "biome": "political_industrial",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "banners",
+          "heavy_chairs",
+          "maps",
+          "brass"
+        ],
+        "ambient_palette": "focused_blue",
+        "visual_canon_hash": "6f7e4076a58fdb73",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_07_route_rights_negotiation_chamber_captain_high_seat",
+            "label": "High Seat",
+            "description": "An ornate riveted iron throne with integrated communication headsets",
+            "anchor": "north_mid",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "High-stakes meetings between city captains",
+        "activity_tags": [
+          "arguing",
+          "signing"
+        ],
+        "player_entry_hook": "A disgraced cartographer seeking to clear their name.",
+        "room_archetype": "council",
+        "layout_signal": "Route Rights Negotiation Chamber | High-stakes meetings between city captains | political_industrial | arguing | signing | banners | heavy_chairs | maps | brass"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down 16-bit pixel art of polished brass floor inlay over dark indigo iron",
+      "room_scene_prompt": "top-down orthographic view of a circular council room, a large round iron table, high-backed chairs with glowing visors, aurora light through skylight, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "aurora-court-migrating-cities",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "1_meter_per_32_pixels"
+        },
+        "palette": {
+          "dominant": "#1a1c2c",
+          "secondary": "#5d275d",
+          "accent": "#00ffcc",
+          "shadow": "#060608",
+          "highlight": "#e0f8cf"
+        },
+        "materials": [
+          "riveted_cast_iron",
+          "frosted_reinforced_glass",
+          "corrugated_steel",
+          "polished_brass",
+          "frozen_permafrost",
+          "glowing_plasma_tubes"
+        ],
+        "lighting": "high_contrast_top_down_with_cyan_bioluminescent_rim_glow",
+        "architecture": [
+          "dieselpunk_industrial_brutalism",
+          "exposed_pneumatic_piping",
+          "circular_ventilation_grates",
+          "heavy_bolted_bulkheads"
+        ],
+        "terrain": {
+          "ground": "cracked_blue_ice_sheets",
+          "path": "heated_metal_grating_walkways",
+          "edge": "steaming_mechanical_leg_joints"
+        },
+        "sprite_language": {
+          "body_proportion": "chunky_top_down_60_40_head_to_torso",
+          "outline": "1px_dark_indigo_selective_line",
+          "role_readability": "color_coded_shoulder_pads_and_glowing_visors"
+        },
+        "world_prompt_prefix": "top-down orthographic view, arctic dieselpunk industrial interior, heavy iron machinery, glowing cyan pipes, dark purple shadows, 16-bit pixel art style",
+        "sprite_prompt_prefix": "top-down character sprite, arctic gear, heavy dieselpunk armor, glowing visor, 16-bit pixel art, isolated on blue ice",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_elements_in_render",
+          "natural_greenery",
+          "sunlight",
+          "generic_fantasy_wood"
+        ],
+        "canon_hash": "6f7e4076a58fdb73"
+      }
+    },
+    {
+      "room_id": "room_08_permafrost_drill_station",
+      "name": "Permafrost Drill Station",
+      "x": 0,
+      "y": 8,
+      "z": 0,
+      "width_tiles": 10,
+      "height_tiles": 10,
+      "doorways": [
+        {
+          "doorway_id": "room_01_heat_exchange_hub_01_to_room_08_permafrost_drill_station",
+          "position": {
+            "x": 5,
+            "y": 8,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_01_heat_exchange_hub_01",
+          "label": "passage to Heat Exchange Hub 01"
+        },
+        {
+          "doorway_id": "room_02_engine_part_scrapyard_to_room_08_permafrost_drill_station",
+          "position": {
+            "x": 9,
+            "y": 12,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_02_engine_part_scrapyard",
+          "label": "passage to Engine Part Scrapyard"
+        },
+        {
+          "doorway_id": "room_04_citizenship_favor_archive_to_room_08_permafrost_drill_station",
+          "position": {
+            "x": 6,
+            "y": 17,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_04_citizenship_favor_archive",
+          "label": "passage to Citizenship Favor Archive"
+        }
+      ],
+      "visual": {
+        "biome": "extraction_arctic",
+        "floor_tile": "library_wood",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "drills",
+          "ice",
+          "crates",
+          "plasma"
+        ],
+        "ambient_palette": "soft_mint",
+        "visual_canon_hash": "6f7e4076a58fdb73",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_08_permafrost_drill_station_plasma_drill_core",
+            "label": "Plasma Drill",
+            "description": "A vertical industrial drill emitting a constant cyan plasma beam into the floor",
+            "anchor": "center",
+            "width_tiles": 3,
+            "height_tiles": 3
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Extracting minerals from the ice shelf",
+        "activity_tags": [
+          "drilling",
+          "hauling"
+        ],
+        "player_entry_hook": "A resource scout who discovered a forbidden oasis.",
+        "room_archetype": "workshop",
+        "layout_signal": "Permafrost Drill Station | Extracting minerals from the ice shelf | extraction_arctic | drilling | hauling | drills | ice | crates | plasma"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down 16-bit pixel art of cracked blue ice sheets partially covered by metal walkways",
+      "room_scene_prompt": "top-down orthographic view of a drilling room, a massive central plasma drill piercing the ice floor, glowing cyan sparks, heavy bulkheads, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "aurora-court-migrating-cities",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "1_meter_per_32_pixels"
+        },
+        "palette": {
+          "dominant": "#1a1c2c",
+          "secondary": "#5d275d",
+          "accent": "#00ffcc",
+          "shadow": "#060608",
+          "highlight": "#e0f8cf"
+        },
+        "materials": [
+          "riveted_cast_iron",
+          "frosted_reinforced_glass",
+          "corrugated_steel",
+          "polished_brass",
+          "frozen_permafrost",
+          "glowing_plasma_tubes"
+        ],
+        "lighting": "high_contrast_top_down_with_cyan_bioluminescent_rim_glow",
+        "architecture": [
+          "dieselpunk_industrial_brutalism",
+          "exposed_pneumatic_piping",
+          "circular_ventilation_grates",
+          "heavy_bolted_bulkheads"
+        ],
+        "terrain": {
+          "ground": "cracked_blue_ice_sheets",
+          "path": "heated_metal_grating_walkways",
+          "edge": "steaming_mechanical_leg_joints"
+        },
+        "sprite_language": {
+          "body_proportion": "chunky_top_down_60_40_head_to_torso",
+          "outline": "1px_dark_indigo_selective_line",
+          "role_readability": "color_coded_shoulder_pads_and_glowing_visors"
+        },
+        "world_prompt_prefix": "top-down orthographic view, arctic dieselpunk industrial interior, heavy iron machinery, glowing cyan pipes, dark purple shadows, 16-bit pixel art style",
+        "sprite_prompt_prefix": "top-down character sprite, arctic gear, heavy dieselpunk armor, glowing visor, 16-bit pixel art, isolated on blue ice",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_elements_in_render",
+          "natural_greenery",
+          "sunlight",
+          "generic_fantasy_wood"
+        ],
+        "canon_hash": "6f7e4076a58fdb73"
+      }
+    }
+  ],
+  "initial_positions": {
+    "aurora_court_migrating_cities_main_01": {
+      "x": 23,
+      "y": 18,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_02": {
+      "x": 11,
+      "y": 2,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_03": {
+      "x": 5,
+      "y": 21,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_04": {
+      "x": 11,
+      "y": 24,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_05": {
+      "x": 11,
+      "y": 13,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_06": {
+      "x": 3,
+      "y": 6,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_07": {
+      "x": 5,
+      "y": 25,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_08": {
+      "x": 22,
+      "y": 9,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_09": {
+      "x": 2,
+      "y": 9,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_10": {
+      "x": 4,
+      "y": 4,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_11": {
+      "x": 12,
+      "y": 9,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_12": {
+      "x": 6,
+      "y": 22,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_13": {
+      "x": 13,
+      "y": 1,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_14": {
+      "x": 6,
+      "y": 24,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_15": {
+      "x": 12,
+      "y": 13,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_16": {
+      "x": 5,
+      "y": 4,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_17": {
+      "x": 5,
+      "y": 5,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_18": {
+      "x": 7,
+      "y": 20,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_19": {
+      "x": 14,
+      "y": 1,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_20": {
+      "x": 23,
+      "y": 14,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_21": {
+      "x": 14,
+      "y": 3,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_22": {
+      "x": 3,
+      "y": 14,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_23": {
+      "x": 7,
+      "y": 25,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_24": {
+      "x": 6,
+      "y": 6,
+      "z": 0
+    },
+    "aurora_court_migrating_cities_main_25": {
+      "x": 15,
+      "y": 1,
+      "z": 0
+    }
+  },
+  "initial_room_ids": {
+    "aurora_court_migrating_cities_main_01": "room_07_route_rights_negotiation_chamber",
+    "aurora_court_migrating_cities_main_02": "room_06_leg_joint_maintenance_pit",
+    "aurora_court_migrating_cities_main_03": "room_04_citizenship_favor_archive",
+    "aurora_court_migrating_cities_main_04": "room_03_aurora_navigation_bridge",
+    "aurora_court_migrating_cities_main_05": "room_02_engine_part_scrapyard",
+    "aurora_court_migrating_cities_main_06": "room_01_heat_exchange_hub_01",
+    "aurora_court_migrating_cities_main_07": "room_04_citizenship_favor_archive",
+    "aurora_court_migrating_cities_main_08": "room_05_the_thawing_canteen",
+    "aurora_court_migrating_cities_main_09": "room_08_permafrost_drill_station",
+    "aurora_court_migrating_cities_main_10": "room_01_heat_exchange_hub_01",
+    "aurora_court_migrating_cities_main_11": "room_02_engine_part_scrapyard",
+    "aurora_court_migrating_cities_main_12": "room_04_citizenship_favor_archive",
+    "aurora_court_migrating_cities_main_13": "room_06_leg_joint_maintenance_pit",
+    "aurora_court_migrating_cities_main_14": "room_04_citizenship_favor_archive",
+    "aurora_court_migrating_cities_main_15": "room_02_engine_part_scrapyard",
+    "aurora_court_migrating_cities_main_16": "room_01_heat_exchange_hub_01",
+    "aurora_court_migrating_cities_main_17": "room_01_heat_exchange_hub_01",
+    "aurora_court_migrating_cities_main_18": "room_04_citizenship_favor_archive",
+    "aurora_court_migrating_cities_main_19": "room_06_leg_joint_maintenance_pit",
+    "aurora_court_migrating_cities_main_20": "room_05_the_thawing_canteen",
+    "aurora_court_migrating_cities_main_21": "room_06_leg_joint_maintenance_pit",
+    "aurora_court_migrating_cities_main_22": "room_08_permafrost_drill_station",
+    "aurora_court_migrating_cities_main_23": "room_04_citizenship_favor_archive",
+    "aurora_court_migrating_cities_main_24": "room_01_heat_exchange_hub_01",
+    "aurora_court_migrating_cities_main_25": "room_06_leg_joint_maintenance_pit"
+  }
+}

@@ -1,0 +1,1830 @@
+{
+  "world_name": "Tide's Verdict",
+  "world_id": "w_tides_verdict_01",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "en-US",
+    "tone": "Bureaucratic and Melancholic",
+    "visual_direction": "Coastal decay mixed with towering piles of confiscated goods, shifting shorelines, and imposing stone architecture",
+    "currency_code": "CNF",
+    "currency_symbol": "§",
+    "currency_minor_unit": "scrap",
+    "currency_name": "Confiscation Chit",
+    "domain_label": "tides-verdict",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "inst_courthouse",
+        "name": "The High Court of Confiscation",
+        "mandate": "Adjudicate disputes and seize property to reinforce the island's foundation",
+        "decision_rule": "Majority vote by the Tribunal of Tides",
+        "enforced_by": "Bailiffs of the Shore",
+        "visible_output": "New landmasses formed from seized goods"
+      },
+      {
+        "institution_id": "inst_surveyors",
+        "name": "The Shoreline Surveyors",
+        "mandate": "Map the shifting coast and determine neighborhood access rights",
+        "decision_rule": "Algorithmic assessment of structural integrity",
+        "enforced_by": "Access Gatekeepers",
+        "visible_output": "Updated maps and locked/unlocked neighborhood gates"
+      },
+      {
+        "institution_id": "inst_salvagers",
+        "name": "The Deep Salvage Guild",
+        "mandate": "Recover lost items from the sea before they are officially seized",
+        "decision_rule": "First to claim, first to keep",
+        "enforced_by": "Guild Enforcers",
+        "visible_output": "Black market stalls and missing foundation materials"
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "sv_shoreline_integrity",
+        "label": "Shoreline Integrity",
+        "initial_tension": "Moderate",
+        "changed_by": [
+          "inst_courthouse",
+          "inst_salvagers"
+        ],
+        "affects": [
+          "sv_neighborhood_access",
+          "sv_court_authority"
+        ]
+      },
+      {
+        "state_id": "sv_neighborhood_access",
+        "label": "Neighborhood Sea Access",
+        "initial_tension": "High",
+        "changed_by": [
+          "inst_surveyors"
+        ],
+        "affects": [
+          "sv_public_unrest",
+          "sv_black_market_activity"
+        ]
+      },
+      {
+        "state_id": "sv_public_unrest",
+        "label": "Public Unrest",
+        "initial_tension": "Low",
+        "changed_by": [
+          "sv_neighborhood_access"
+        ],
+        "affects": [
+          "sv_court_authority"
+        ]
+      },
+      {
+        "state_id": "sv_court_authority",
+        "label": "Court Authority",
+        "initial_tension": "High",
+        "changed_by": [
+          "sv_public_unrest",
+          "sv_shoreline_integrity"
+        ],
+        "affects": [
+          "sv_shoreline_integrity"
+        ]
+      },
+      {
+        "state_id": "sv_black_market_activity",
+        "label": "Black Market Activity",
+        "initial_tension": "Moderate",
+        "changed_by": [
+          "sv_neighborhood_access"
+        ],
+        "affects": [
+          "sv_shoreline_integrity"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "sv_shoreline_integrity",
+        "trigger": "Integrity drops below threshold",
+        "target_state": "sv_neighborhood_access",
+        "effect": "Surveyors restrict access to unstable zones",
+        "delay": "Immediate"
+      },
+      {
+        "source_state": "sv_neighborhood_access",
+        "trigger": "Access restricted for prolonged period",
+        "target_state": "sv_public_unrest",
+        "effect": "Citizens protest loss of sea access",
+        "delay": "Medium"
+      },
+      {
+        "source_state": "sv_public_unrest",
+        "trigger": "Unrest reaches critical level",
+        "target_state": "sv_court_authority",
+        "effect": "Court struggles to enforce confiscations",
+        "delay": "Medium"
+      },
+      {
+        "source_state": "sv_court_authority",
+        "trigger": "Authority weakens",
+        "target_state": "sv_shoreline_integrity",
+        "effect": "Fewer goods seized, shoreline degrades further",
+        "delay": "Long"
+      },
+      {
+        "source_state": "sv_neighborhood_access",
+        "trigger": "Access restricted",
+        "target_state": "sv_black_market_activity",
+        "effect": "Citizens turn to smugglers for sea goods",
+        "delay": "Short"
+      },
+      {
+        "source_state": "sv_black_market_activity",
+        "trigger": "Black market thrives",
+        "target_state": "sv_shoreline_integrity",
+        "effect": "Salvagers steal foundation materials, weakening shoreline",
+        "delay": "Medium"
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "sg_coastal_elite",
+        "name": "The Coastal Elite",
+        "goal": "Maintain exclusive access to the sea and protect their properties",
+        "leverage": "Wealth and political influence over the Court",
+        "dependency": "Stable shoreline integrity in their districts"
+      },
+      {
+        "group_id": "sg_inland_workers",
+        "name": "The Inland Workers",
+        "goal": "Gain access to the sea for fishing and trade",
+        "leverage": "Labor strikes and public protests",
+        "dependency": "Surveyors opening access gates"
+      },
+      {
+        "group_id": "sg_smugglers",
+        "name": "The Smugglers' Syndicate",
+        "goal": "Profit from restricted access and stolen goods",
+        "leverage": "Control over the black market and secret routes",
+        "dependency": "Weakened Court authority and restricted neighborhood access"
+      }
+    ]
+  },
+  "genre": "Bureaucratic Fantasy / Coastal Survival",
+  "premise": "An island courthouse rebuilds its shoreline from confiscated objects, changing which neighborhoods can reach the sea.",
+  "simulation_objective": "Balance the structural integrity of the island with the needs and unrest of its citizens while managing the flow of confiscated goods.",
+  "agent_count_target": 12,
+  "player_count_target": 50,
+  "wall_color_theme": "weathered_basalt_and_rusted_iron",
+  "economy_focus": "Resource management, confiscation, and black market trading",
+  "exploration_focus": "Navigating shifting shorelines and discovering newly formed landmasses",
+  "conflict_tone": "Tense, political, and desperate",
+  "visual_style": "Gritty, weathered, and surreal, with structures built from recognizable but decaying everyday objects",
+  "rooms": [
+    {
+      "name": "The High Court of Confiscation",
+      "biome": "coastal_decay",
+      "purpose": "Adjudicate disputes and seize property (changes sv_shoreline_integrity)",
+      "decor_tags": [
+        "brutalist",
+        "stone",
+        "bureaucratic",
+        "heavy"
+      ],
+      "activity_tags": [
+        "judging",
+        "seizing",
+        "debating"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of wet cobblestones mixed with compressed debris and mud, top-down orthographic, seamless texture",
+      "room_scene_prompt": "Top-down orthographic 2D game art, Tide's Verdict, The High Court of Confiscation, brutalist stone courthouse interior, heavy iron gates, bureaucratic brutalism, overcast lighting with harsh orange lantern light, no visible text, no labels, no blank background, edge-to-edge room plate",
+      "width_tiles": 12,
+      "height_tiles": 10,
+      "ambient_palette": "low_lantern",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "tribunal_bench",
+          "label": "Tribunal Bench",
+          "description": "A massive, imposing stone bench where the Tribunal of Tides sits, built from petrified paper documents and rusted iron.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Shoreline Surveyors Office",
+      "biome": "coastal_decay",
+      "purpose": "Map the shifting coast and determine access (changes sv_neighborhood_access)",
+      "decor_tags": [
+        "maps",
+        "instruments",
+        "cluttered",
+        "bureaucratic"
+      ],
+      "activity_tags": [
+        "mapping",
+        "calculating",
+        "restricting"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of waterlogged mahogany floorboards, top-down orthographic, seamless texture",
+      "room_scene_prompt": "Top-down orthographic 2D game art, Tide's Verdict, Shoreline Surveyors Office, cluttered room with maps and brass instruments, waterlogged mahogany floor, overcast lighting, no visible text, no labels, no blank background, edge-to-edge room plate",
+      "width_tiles": 8,
+      "height_tiles": 8,
+      "ambient_palette": "focused_blue",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "survey_table",
+          "label": "Survey Table",
+          "description": "A large table covered in maps and barnacle-encrusted brass surveying instruments.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Deep Salvage Guildhall",
+      "biome": "coastal_decay",
+      "purpose": "Recover lost items and trade on the black market (changes sv_black_market_activity)",
+      "decor_tags": [
+        "salvage",
+        "rusted",
+        "cluttered",
+        "wet"
+      ],
+      "activity_tags": [
+        "trading",
+        "salvaging",
+        "smuggling"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of rusted metal grating over dark water, top-down orthographic, seamless texture",
+      "room_scene_prompt": "Top-down orthographic 2D game art, Tide's Verdict, Deep Salvage Guildhall, cluttered room with rusted iron and salvaged junk, wet cobblestones, harsh orange lantern light, no visible text, no labels, no blank background, edge-to-edge room plate",
+      "width_tiles": 10,
+      "height_tiles": 10,
+      "ambient_palette": "ember_orange",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "salvage_pile",
+          "label": "Salvage Pile",
+          "description": "A massive pile of compressed confiscated junk and salvaged goods, dripping with seawater.",
+          "anchor": "south_east",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Coastal Elite Enclave",
+      "biome": "coastal_decay",
+      "purpose": "Exclusive residential area for the wealthy (depends on sv_shoreline_integrity)",
+      "decor_tags": [
+        "wealthy",
+        "stone",
+        "guarded",
+        "exclusive"
+      ],
+      "activity_tags": [
+        "resting",
+        "socializing",
+        "guarding"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of clean, polished basalt tiles, top-down orthographic, seamless texture",
+      "room_scene_prompt": "Top-down orthographic 2D game art, Tide's Verdict, Coastal Elite Enclave, wealthy residential area with polished basalt floors and heavy iron gates, overcast lighting, no visible text, no labels, no blank background, edge-to-edge room plate",
+      "width_tiles": 15,
+      "height_tiles": 12,
+      "ambient_palette": "warm_lantern",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "elite_gate",
+          "label": "Elite Gate",
+          "description": "A heavy iron gate guarding the entrance to the enclave, adorned with barnacle-encrusted brass.",
+          "anchor": "south_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Inland Workers Protest Square",
+      "biome": "coastal_decay",
+      "purpose": "Gathering place for inland workers protesting lack of sea access (changes sv_public_unrest)",
+      "decor_tags": [
+        "protest",
+        "muddy",
+        "crowded",
+        "makeshift"
+      ],
+      "activity_tags": [
+        "protesting",
+        "gathering",
+        "shouting"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of muddy cobblestones and compressed debris, top-down orthographic, seamless texture",
+      "room_scene_prompt": "Top-down orthographic 2D game art, Tide's Verdict, Inland Workers Protest Square, muddy cobblestone square with makeshift barricades and signs, overcast lighting, no visible text, no labels, no blank background, edge-to-edge room plate",
+      "width_tiles": 14,
+      "height_tiles": 14,
+      "ambient_palette": "dusty_brown",
+      "archetype": "commons",
+      "scene_components": [
+        {
+          "component_id": "protest_barricade",
+          "label": "Protest Barricade",
+          "description": "A makeshift barricade built from compressed junk and rusted iron, used by protesting workers.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Smugglers Cove",
+      "biome": "coastal_decay",
+      "purpose": "Hidden area for black market trading and smuggling (depends on sv_neighborhood_access)",
+      "decor_tags": [
+        "hidden",
+        "dark",
+        "cluttered",
+        "waterlogged"
+      ],
+      "activity_tags": [
+        "smuggling",
+        "trading",
+        "hiding"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of wet wooden boardwalks and dark water, top-down orthographic, seamless texture",
+      "room_scene_prompt": "Top-down orthographic 2D game art, Tide's Verdict, Smugglers Cove, hidden cove with wet wooden boardwalks and crates of smuggled goods, harsh orange lantern light, no visible text, no labels, no blank background, edge-to-edge room plate",
+      "width_tiles": 10,
+      "height_tiles": 12,
+      "ambient_palette": "low_lantern",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "smuggler_boat",
+          "label": "Smuggler Boat",
+          "description": "A small, weathered boat used for smuggling goods past the shoreline surveyors.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 3
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Judge Silas",
+      "role_name": "Chief Adjudicator",
+      "activity": "Presiding over confiscation hearings to bolster sv_shoreline_integrity",
+      "home_base": "The High Court of Confiscation",
+      "arc_goal": "Maintain sv_court_authority by ensuring sg_coastal_elite properties are protected while seizing inland assets",
+      "inventory": [
+        {
+          "name": "Gavel of Petrification",
+          "description": "A heavy stone gavel used to finalize confiscation decrees.",
+          "quantity": 1
+        },
+        {
+          "name": "Tide-Stained Robes",
+          "description": "Ceremonial robes showing the high water mark of the last great storm.",
+          "quantity": 1
+        },
+        {
+          "name": "List of Condemned Properties",
+          "description": "A parchment scroll detailing inland homes slated for seizure.",
+          "quantity": 1
+        },
+        {
+          "name": "Seal of the Tribunal",
+          "description": "A wax seal stamp bearing the crest of the High Court.",
+          "quantity": 1
+        },
+        {
+          "name": "Pocket Watch of the Tides",
+          "description": "A timepiece that tracks the shifting tides rather than hours.",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Seawater",
+          "description": "A symbolic vial of water from the deep ocean.",
+          "quantity": 1
+        },
+        {
+          "name": "Bailiff's Whistle",
+          "description": "A silver whistle used to summon Court Enforcers.",
+          "quantity": 1
+        },
+        {
+          "name": "Ledger of Seized Goods",
+          "description": "A thick book recording every item taken for the island's foundation.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Confiscation Decree",
+          "asset_type": "Legal Document",
+          "description": "An official order to seize property.",
+          "story_use": "Used to legally take assets from citizens."
+        },
+        {
+          "asset_name": "Foundation Stone",
+          "asset_type": "Building Material",
+          "description": "A block of compressed seized goods used to reinforce the shoreline.",
+          "story_use": "Increases shoreline integrity when placed."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_court_precedents",
+          "topic": "Legal Precedents",
+          "summary": "Deep knowledge of past confiscation rulings and loopholes.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_elite_bribes",
+          "topic": "Elite Influence",
+          "summary": "Awareness of which Coastal Elite families have paid for protection.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Surveyor Vance",
+      "role_name": "Lead Shoreline Mapper",
+      "activity": "Updating coastal maps to determine sv_neighborhood_access",
+      "home_base": "Shoreline Surveyors Office",
+      "arc_goal": "Accurately map the shifting coast to prevent sv_shoreline_integrity collapse, despite pressure from sg_coastal_elite",
+      "inventory": [
+        {
+          "name": "Brass Astrolabe",
+          "description": "A precision instrument for measuring coastal angles.",
+          "quantity": 1
+        },
+        {
+          "name": "Waterproof Vellum Map",
+          "description": "A constantly updated map of the island's shifting borders.",
+          "quantity": 1
+        },
+        {
+          "name": "Plumb Bob of the Deep",
+          "description": "A heavy lead weight used to measure water depth.",
+          "quantity": 1
+        },
+        {
+          "name": "Surveyor's Spyglass",
+          "description": "A collapsible telescope for viewing distant shorelines.",
+          "quantity": 1
+        },
+        {
+          "name": "Ink of the Squid",
+          "description": "Water-resistant ink used for drawing permanent map lines.",
+          "quantity": 1
+        },
+        {
+          "name": "Gatekeeper's Master Key",
+          "description": "A key that can unlock any neighborhood access gate.",
+          "quantity": 1
+        },
+        {
+          "name": "Tide Prediction Charts",
+          "description": "Complex tables predicting future water levels.",
+          "quantity": 1
+        },
+        {
+          "name": "Compass of True North",
+          "description": "A magnetic compass that always points to the island's center.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Updated Coastal Map",
+          "asset_type": "Information",
+          "description": "The latest assessment of shoreline stability.",
+          "story_use": "Determines which neighborhoods are locked or unlocked."
+        },
+        {
+          "asset_name": "Access Gate Lock",
+          "asset_type": "Mechanism",
+          "description": "A heavy iron lock used to restrict access to unstable zones.",
+          "story_use": "Prevents citizens from entering dangerous areas."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_shoreline_weaknesses",
+          "topic": "Structural Integrity",
+          "summary": "Knows exactly which parts of the island are closest to collapse.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_smuggler_routes",
+          "topic": "Hidden Paths",
+          "summary": "Aware of secret routes used by smugglers to bypass gates.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Elara of the Shallows",
+      "role_name": "Master Salvager",
+      "activity": "Recovering lost goods to fuel sv_black_market_activity",
+      "home_base": "Deep Salvage Guildhall",
+      "arc_goal": "Undermine inst_courthouse by claiming valuable items before they can be seized",
+      "inventory": [
+        {
+          "name": "Barnacle-Encrusted Hook",
+          "description": "A sharp hook used for dragging items from the sea floor.",
+          "quantity": 1
+        },
+        {
+          "name": "Diving Bell Helmet",
+          "description": "A heavy brass helmet for deep underwater excursions.",
+          "quantity": 1
+        },
+        {
+          "name": "Net of Woven Kelp",
+          "description": "A strong net for hauling large salvaged items.",
+          "quantity": 1
+        },
+        {
+          "name": "Guild Insignia Ring",
+          "description": "A ring proving membership in the Deep Salvage Guild.",
+          "quantity": 1
+        },
+        {
+          "name": "Waterproof Lantern",
+          "description": "A lantern that burns brightly even underwater.",
+          "quantity": 1
+        },
+        {
+          "name": "Salvaged Gold Coin",
+          "description": "A rare coin found in a sunken shipwreck.",
+          "quantity": 5
+        },
+        {
+          "name": "Chisel of the Deep",
+          "description": "A tool for prying valuable gems from coral reefs.",
+          "quantity": 1
+        },
+        {
+          "name": "Map of Sunken Wrecks",
+          "description": "A personal map detailing the locations of known shipwrecks.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Salvaged Artifact",
+          "asset_type": "Valuable",
+          "description": "A rare item recovered from the sea.",
+          "story_use": "Can be sold on the black market or used to bribe officials."
+        },
+        {
+          "asset_name": "Guild Claim Marker",
+          "asset_type": "Tool",
+          "description": "A buoy used to mark a salvage site as claimed by the Guild.",
+          "story_use": "Prevents others from legally salvaging in that area."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_sunken_treasures",
+          "topic": "Salvage Locations",
+          "summary": "Knows the locations of the most valuable sunken ships.",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "k_court_seizures",
+          "topic": "Confiscation Plans",
+          "summary": "Has inside information on what the Court plans to seize next.",
+          "confidence": 60
+        }
+      ]
+    },
+    {
+      "display_name": "Kael the Smuggler",
+      "role_name": "Syndicate Boss",
+      "activity": "Running illicit goods to increase sv_black_market_activity",
+      "home_base": "Smugglers Cove",
+      "arc_goal": "Exploit restricted sv_neighborhood_access to maximize profits for sg_smugglers",
+      "inventory": [
+        {
+          "name": "Hidden Blade of the Cove",
+          "description": "A concealed dagger used for self-defense.",
+          "quantity": 1
+        },
+        {
+          "name": "Smuggler's Ledger",
+          "description": "A coded book detailing illicit transactions and debts.",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Shadow Ink",
+          "description": "Ink that only appears under moonlight, used for secret messages.",
+          "quantity": 1
+        },
+        {
+          "name": "Lockpicks of Bone",
+          "description": "Tools crafted from fish bones for bypassing access gates.",
+          "quantity": 1
+        },
+        {
+          "name": "Bag of Counterfeit Coins",
+          "description": "Fake currency used to trick unsuspecting buyers.",
+          "quantity": 1
+        },
+        {
+          "name": "Cloak of the Night Tide",
+          "description": "A dark cloak that blends in with the ocean at night.",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Lantern",
+          "description": "A lantern with colored glass used to send messages to ships.",
+          "quantity": 1
+        },
+        {
+          "name": "Stolen Foundation Stone",
+          "description": "A block of material stolen from the shoreline defenses.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Black Market Stall",
+          "asset_type": "Location",
+          "description": "A hidden stall where illicit goods are sold.",
+          "story_use": "Increases black market activity and public unrest."
+        },
+        {
+          "asset_name": "Smuggler's Skiff",
+          "asset_type": "Vehicle",
+          "description": "A small, fast boat used to evade Court Enforcers.",
+          "story_use": "Allows for the transport of goods past restricted zones."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_black_market_demand",
+          "topic": "Illicit Trade",
+          "summary": "Knows exactly what goods the Inland Workers are desperate for.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_surveyor_patrols",
+          "topic": "Enforcement Routes",
+          "summary": "Tracks the movements of Access Gatekeepers to avoid detection.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Bailiff Thorne",
+      "role_name": "Enforcer of the Shore",
+      "activity": "Seizing goods for the inst_courthouse to maintain sv_shoreline_integrity",
+      "home_base": "The High Court of Confiscation",
+      "arc_goal": "Increase sv_court_authority by cracking down on sg_smugglers",
+      "inventory": [
+        {
+          "name": "Confiscation Ledger",
+          "description": "A water-damaged book detailing seized assets.",
+          "quantity": 1
+        },
+        {
+          "name": "Iron Manacles",
+          "description": "Heavy restraints used for arresting smugglers.",
+          "quantity": 2
+        },
+        {
+          "name": "Court Seal",
+          "description": "Official stamp of the Tribunal of Tides.",
+          "quantity": 1
+        },
+        {
+          "name": "Salt-Crusted Baton",
+          "description": "A heavy wooden club for enforcement.",
+          "quantity": 1
+        },
+        {
+          "name": "Tide Clock",
+          "description": "A pocket watch that tracks the shifting tides.",
+          "quantity": 1
+        },
+        {
+          "name": "Seized Pearl",
+          "description": "A valuable pearl taken from a smuggler.",
+          "quantity": 3
+        },
+        {
+          "name": "Writ of Seizure",
+          "description": "Blank documents authorizing property confiscation.",
+          "quantity": 5
+        },
+        {
+          "name": "Rations",
+          "description": "Dried kelp and salted fish for long patrols.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Confiscated Skiff",
+          "asset_type": "Vehicle",
+          "description": "A small boat seized from a debtor.",
+          "story_use": "Used for coastal patrols."
+        },
+        {
+          "asset_name": "Enforcer's Badge",
+          "asset_type": "Equipment",
+          "description": "A brass badge denoting authority.",
+          "story_use": "Grants access to restricted areas."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_smuggler_routes",
+          "topic": "Smuggling Routes",
+          "summary": "Knows the hidden paths used by the Syndicate.",
+          "confidence": 80
+        },
+        {
+          "knowledge_id": "k_court_law",
+          "topic": "Confiscation Law",
+          "summary": "Expertise in the legal loopholes of property seizure.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Marina the Agitator",
+      "role_name": "Protest Leader",
+      "activity": "Organizing sg_inland_workers to protest restricted sv_neighborhood_access",
+      "home_base": "Inland Workers Protest Square",
+      "arc_goal": "Raise sv_public_unrest to force the inst_surveyors to open the gates",
+      "inventory": [
+        {
+          "name": "Megaphone",
+          "description": "A battered brass cone for amplifying her voice.",
+          "quantity": 1
+        },
+        {
+          "name": "Protest Pamphlets",
+          "description": "Hand-drawn flyers demanding sea access.",
+          "quantity": 50
+        },
+        {
+          "name": "Worker's Token",
+          "description": "A symbol of solidarity among the inland workers.",
+          "quantity": 1
+        },
+        {
+          "name": "Smuggled Fish",
+          "description": "Fresh catch bought from the black market.",
+          "quantity": 2
+        },
+        {
+          "name": "Charcoal Sticks",
+          "description": "Used for writing slogans on walls.",
+          "quantity": 10
+        },
+        {
+          "name": "Flask of Grog",
+          "description": "Cheap alcohol to share with supporters.",
+          "quantity": 1
+        },
+        {
+          "name": "Stolen Surveyor Map",
+          "description": "A torn map showing restricted zones.",
+          "quantity": 1
+        },
+        {
+          "name": "Bandages",
+          "description": "For treating injuries from clashes with Bailiffs.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Soapbox",
+          "asset_type": "Prop",
+          "description": "A sturdy wooden crate used as a makeshift podium.",
+          "story_use": "Used to rally the crowd."
+        },
+        {
+          "asset_name": "Hidden Stash",
+          "asset_type": "Container",
+          "description": "A secret compartment holding protest funds.",
+          "story_use": "Funds the resistance."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_worker_grievances",
+          "topic": "Public Sentiment",
+          "summary": "Understands the deep anger of the inland workers.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_gate_weaknesses",
+          "topic": "Gate Security",
+          "summary": "Knows which access gates are poorly guarded.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Lord Corvus",
+      "role_name": "Elite Landowner",
+      "activity": "Bribing the inst_courthouse to protect sg_coastal_elite properties",
+      "home_base": "Coastal Elite Enclave",
+      "arc_goal": "Maintain sv_shoreline_integrity in his district at all costs",
+      "inventory": [
+        {
+          "name": "Gold Coins",
+          "description": "Heavy currency used for bribes.",
+          "quantity": 100
+        },
+        {
+          "name": "Deed of Ownership",
+          "description": "Parchment proving his claim to prime coastal land.",
+          "quantity": 1
+        },
+        {
+          "name": "Silk Handkerchief",
+          "description": "Used to block the smell of the sea.",
+          "quantity": 1
+        },
+        {
+          "name": "Signet Ring",
+          "description": "A heavy gold ring bearing his family crest.",
+          "quantity": 1
+        },
+        {
+          "name": "Imported Wine",
+          "description": "A rare vintage from across the sea.",
+          "quantity": 2
+        },
+        {
+          "name": "Blackmail Dossier",
+          "description": "Secrets about Court officials.",
+          "quantity": 1
+        },
+        {
+          "name": "Ornate Cane",
+          "description": "A walking stick with a hidden blade.",
+          "quantity": 1
+        },
+        {
+          "name": "Telescope",
+          "description": "For watching the shoreline from his balcony.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Seaside Manor",
+          "asset_type": "Building",
+          "description": "A lavish estate built on stable ground.",
+          "story_use": "Hosts secret meetings with Court officials."
+        },
+        {
+          "asset_name": "Private Dock",
+          "asset_type": "Infrastructure",
+          "description": "Exclusive access to the water.",
+          "story_use": "Used for receiving smuggled luxury goods."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_court_corruption",
+          "topic": "Court Politics",
+          "summary": "Knows exactly who to bribe in the Tribunal.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_elite_secrets",
+          "topic": "Elite Gossip",
+          "summary": "Aware of the financial troubles of other elites.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Finn the Fence",
+      "role_name": "Black Market Broker",
+      "activity": "Selling goods recovered by inst_salvagers to increase sv_black_market_activity",
+      "home_base": "Smugglers Cove",
+      "arc_goal": "Profit from the drop in sv_neighborhood_access by supplying restricted goods",
+      "inventory": [
+        {
+          "name": "Lockpicks",
+          "description": "Tools for opening salvaged chests.",
+          "quantity": 1
+        },
+        {
+          "name": "Counterfeit Court Seals",
+          "description": "Fake stamps to legitimize stolen goods.",
+          "quantity": 3
+        },
+        {
+          "name": "Weighing Scales",
+          "description": "Small brass scales for measuring precious metals.",
+          "quantity": 1
+        },
+        {
+          "name": "Salvaged Compass",
+          "description": "A waterlogged but functional compass.",
+          "quantity": 1
+        },
+        {
+          "name": "Hidden Dagger",
+          "description": "A small blade kept in his boot.",
+          "quantity": 1
+        },
+        {
+          "name": "Ledger of Debts",
+          "description": "A coded book of who owes him money.",
+          "quantity": 1
+        },
+        {
+          "name": "Foundation Stone",
+          "description": "A piece of the island's base, highly illegal.",
+          "quantity": 1
+        },
+        {
+          "name": "Smuggler's Lantern",
+          "description": "A hooded lantern for signaling at night.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Stall",
+          "asset_type": "Business",
+          "description": "A camouflaged market stand in the Cove.",
+          "story_use": "Where illicit trades happen."
+        },
+        {
+          "asset_name": "Smuggler's Cache",
+          "asset_type": "Container",
+          "description": "A buried chest of valuable salvage.",
+          "story_use": "Emergency funds."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_black_market_prices",
+          "topic": "Market Value",
+          "summary": "Knows the exact worth of any salvaged item.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_salvage_locations",
+          "topic": "Sunken Goods",
+          "summary": "Knows where the best items wash up.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Archivist Lira",
+      "role_name": "Court Historian",
+      "activity": "Reviewing past confiscation records to justify new seizures for inst_courthouse",
+      "home_base": "The High Court of Confiscation",
+      "arc_goal": "Uncover legal precedents to increase sv_court_authority and stabilize sv_shoreline_integrity",
+      "inventory": [
+        {
+          "name": "Tide-Stained Ledger",
+          "description": "A heavy book containing records of the first confiscations.",
+          "quantity": 1
+        },
+        {
+          "name": "Brass Magnifier",
+          "description": "Used to read water-damaged legal texts.",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Preservative Ink",
+          "description": "Special ink that resists saltwater fading.",
+          "quantity": 3
+        },
+        {
+          "name": "Sealing Wax Sticks",
+          "description": "Official red wax for court documents.",
+          "quantity": 5
+        },
+        {
+          "name": "Gilded Bookmark",
+          "description": "A gift from a wealthy patron.",
+          "quantity": 1
+        },
+        {
+          "name": "Dusty Spectacles",
+          "description": "Wire-rimmed glasses for close reading.",
+          "quantity": 1
+        },
+        {
+          "name": "Parchment Rolls",
+          "description": "Blank scrolls for copying old laws.",
+          "quantity": 10
+        },
+        {
+          "name": "Court Signet Ring",
+          "description": "A ring bearing the crest of the Tribunal.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Archive Vault Key",
+          "asset_type": "Key",
+          "description": "Grants access to the deepest records of the High Court.",
+          "story_use": "Can be used to find hidden legal loopholes."
+        },
+        {
+          "asset_name": "Ancestral Deed",
+          "asset_type": "Document",
+          "description": "Proof of ownership for a contested coastal property.",
+          "story_use": "Leverage against Lord Corvus."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_legal_loophole",
+          "topic": "Confiscation Law",
+          "summary": "Knows a forgotten clause that exempts certain salvage from seizure.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_corvus_bribes",
+          "topic": "Court Corruption",
+          "summary": "Has evidence of Lord Corvus bribing Judge Silas.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Tide-Caller Oram",
+      "role_name": "Rogue Surveyor",
+      "activity": "Secretly mapping unstable zones to sell routes to sg_smugglers",
+      "home_base": "Shoreline Surveyors Office",
+      "arc_goal": "Profit from sv_neighborhood_access restrictions by aiding sv_black_market_activity",
+      "inventory": [
+        {
+          "name": "Waterproof Compass",
+          "description": "A specialized compass that works in heavy sea spray.",
+          "quantity": 1
+        },
+        {
+          "name": "Smuggler's Map",
+          "description": "A hand-drawn map of hidden coastal caves.",
+          "quantity": 1
+        },
+        {
+          "name": "Sounding Line",
+          "description": "A weighted rope for measuring water depth.",
+          "quantity": 2
+        },
+        {
+          "name": "Chalk Sticks",
+          "description": "Used to mark safe paths on wet stone.",
+          "quantity": 6
+        },
+        {
+          "name": "Spyglass",
+          "description": "A collapsible brass telescope.",
+          "quantity": 1
+        },
+        {
+          "name": "Flask of Rum",
+          "description": "Cheap liquor to ward off the coastal chill.",
+          "quantity": 1
+        },
+        {
+          "name": "Hidden Coin Pouch",
+          "description": "A waterproof pouch for illicit earnings.",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Lantern",
+          "description": "A lantern with colored glass for secret signaling.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Forged Access Pass",
+          "asset_type": "Document",
+          "description": "A fake pass that bypasses Surveyor gates.",
+          "story_use": "Allows smugglers to enter restricted zones."
+        },
+        {
+          "asset_name": "Hidden Skiff",
+          "asset_type": "Vehicle",
+          "description": "A small, fast boat hidden in a cove.",
+          "story_use": "Used for quick escapes or moving small contraband."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_unstable_cove",
+          "topic": "Coastal Geography",
+          "summary": "Knows the exact location of a highly unstable but unguarded cove.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_vance_schedule",
+          "topic": "Surveyor Patrols",
+          "summary": "Knows Surveyor Vance's patrol routes and blind spots.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Foreman Griggs",
+      "role_name": "Foundation Builder",
+      "activity": "Using confiscated goods to reinforce the shoreline, affecting sv_shoreline_integrity",
+      "home_base": "The High Court of Confiscation",
+      "arc_goal": "Secure enough materials to stabilize the coast and reduce sv_public_unrest",
+      "inventory": [
+        {
+          "name": "Heavy Mallet",
+          "description": "A large wooden hammer for driving piles.",
+          "quantity": 1
+        },
+        {
+          "name": "Plumb Bob",
+          "description": "A lead weight on a string for checking vertical alignment.",
+          "quantity": 1
+        },
+        {
+          "name": "Work Gloves",
+          "description": "Thick leather gloves worn from hard labor.",
+          "quantity": 2
+        },
+        {
+          "name": "Blueprint Tube",
+          "description": "A waterproof tube containing foundation plans.",
+          "quantity": 1
+        },
+        {
+          "name": "Iron Spikes",
+          "description": "Large spikes used to secure foundation beams.",
+          "quantity": 20
+        },
+        {
+          "name": "Measuring Chain",
+          "description": "A metal chain used for surveying distances.",
+          "quantity": 1
+        },
+        {
+          "name": "Trowel",
+          "description": "A small tool for applying mortar.",
+          "quantity": 1
+        },
+        {
+          "name": "Hardtack Rations",
+          "description": "Dry, long-lasting biscuits for long shifts.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Reinforced Piling",
+          "asset_type": "Infrastructure",
+          "description": "A massive wooden beam treated to resist rot.",
+          "story_use": "Crucial for stabilizing a collapsing section of the shore."
+        },
+        {
+          "asset_name": "Confiscated Marble",
+          "asset_type": "Material",
+          "description": "High-quality stone seized from a wealthy estate.",
+          "story_use": "Can be used to build a strong sea wall or sold on the black market."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_foundation_weakness",
+          "topic": "Structural Integrity",
+          "summary": "Knows which elite properties are built on failing foundations.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_salvage_theft",
+          "topic": "Material Theft",
+          "summary": "Suspects Elara of stealing foundation materials before they are placed.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Widow Hess",
+      "role_name": "Inland Agitator",
+      "activity": "Rallying sg_inland_workers to demand access to the sea, increasing sv_public_unrest",
+      "home_base": "Inland Workers Protest Square",
+      "arc_goal": "Force the inst_surveyors to open the gates and improve sv_neighborhood_access",
+      "inventory": [
+        {
+          "name": "Megaphone",
+          "description": "A battered brass cone used to amplify her voice.",
+          "quantity": 1
+        },
+        {
+          "name": "Protest Banners",
+          "description": "Cloth banners painted with slogans demanding sea access.",
+          "quantity": 3
+        },
+        {
+          "name": "Husband's Fishing Net",
+          "description": "A dry, unused net belonging to her late husband.",
+          "quantity": 1
+        },
+        {
+          "name": "Pamphlets",
+          "description": "Crude prints detailing the injustices of the Court.",
+          "quantity": 50
+        },
+        {
+          "name": "Charcoal Stubs",
+          "description": "Used for writing protest signs.",
+          "quantity": 10
+        },
+        {
+          "name": "Thermos of Tea",
+          "description": "Keeps her warm during long protests.",
+          "quantity": 1
+        },
+        {
+          "name": "Whistle",
+          "description": "A loud whistle to signal the crowd.",
+          "quantity": 1
+        },
+        {
+          "name": "Petition Scroll",
+          "description": "A long scroll filled with signatures from inland workers.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Makeshift Barricade",
+          "asset_type": "Structure",
+          "description": "A pile of debris used to block Surveyor carts.",
+          "story_use": "Can halt official business and increase unrest."
+        },
+        {
+          "asset_name": "Secret Meeting Cellar",
+          "asset_type": "Location",
+          "description": "A hidden basement where protest leaders plan.",
+          "story_use": "A safe place to organize without Court interference."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_worker_morale",
+          "topic": "Public Sentiment",
+          "summary": "Knows exactly what it takes to push the workers into a full riot.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_smuggler_sympathy",
+          "topic": "Black Market Ties",
+          "summary": "Knows which smugglers are willing to help the workers bypass gates.",
+          "confidence": 80
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Confiscation Cycle",
+      "summary": "The Court confiscates goods to reinforce the shoreline, which angers the public and fuels the black market.",
+      "roles": [
+        "Chief Adjudicator",
+        "Enforcer of the Shore",
+        "Protest Leader"
+      ],
+      "rooms": [
+        "The High Court of Confiscation",
+        "Inland Workers Protest Square"
+      ],
+      "pressure": "Public Unrest increases as more goods are seized."
+    },
+    {
+      "label": "The Smuggler's Dilemma",
+      "summary": "Smugglers exploit restricted access to sell goods, which weakens the shoreline as salvagers steal foundation materials.",
+      "roles": [
+        "Syndicate Boss",
+        "Black Market Broker",
+        "Master Salvager"
+      ],
+      "rooms": [
+        "Smugglers Cove",
+        "Deep Salvage Guildhall"
+      ],
+      "pressure": "Shoreline Integrity decreases as the black market thrives."
+    },
+    {
+      "label": "The Surveyor's Burden",
+      "summary": "Surveyors must balance shoreline integrity with public access, facing pressure from both the Elite and the Workers.",
+      "roles": [
+        "Lead Shoreline Mapper",
+        "Elite Landowner",
+        "Inland Agitator"
+      ],
+      "rooms": [
+        "Shoreline Surveyors Office",
+        "Coastal Elite Enclave"
+      ],
+      "pressure": "Neighborhood Sea Access fluctuates based on Surveyor decisions."
+    }
+  ],
+  "player_entry_points": [
+    "You have just arrived at the High Court of Confiscation, seeking justice for a seized family heirloom.",
+    "You are a newly appointed Surveyor, tasked with mapping a particularly unstable section of the shoreline.",
+    "You are a smuggler looking to make a profit in the thriving black market."
+  ],
+  "conflict_hooks": [
+    "The Court has ordered the confiscation of a vital neighborhood access point, sparking outrage among the Inland Workers.",
+    "A massive storm has severely damaged the shoreline, forcing the Surveyors to restrict access to several key districts."
+  ],
+  "custom_actions": [
+    "Petition the Court for Confiscation",
+    "Bribe a Surveyor for Access",
+    "Smuggle Goods through the Cove",
+    "Incite a Protest at the Square",
+    "Reinforce the Shoreline Foundation",
+    "Appraise Salvaged Artifacts"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "Declare a Salvaged Item as Sacred",
+      "initiating_role": "Court Historian",
+      "target_role": "Master Salvager",
+      "situation": "The Historian wants to prevent a salvaged item from being confiscated by declaring it culturally significant.",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Does the Historian have the authority to declare items sacred?",
+        "Is the item currently in the possession of the Master Salvager?",
+        "Does the Master Salvager consent to this declaration?"
+      ]
+    },
+    {
+      "action_name": "Forge a Shoreline Map",
+      "initiating_role": "Rogue Surveyor",
+      "target_role": "Syndicate Boss",
+      "situation": "The Rogue Surveyor creates a fake map to grant the Syndicate Boss access to a restricted zone.",
+      "proposed_effects": [
+        "create_item",
+        "transfer"
+      ],
+      "coordinator_checks": [
+        "Does the Rogue Surveyor have the necessary tools to forge a map?",
+        "Is the Syndicate Boss present to receive the map?",
+        "Does the forged map conflict with existing official maps?"
+      ]
+    },
+    {
+      "action_name": "Publicly Denounce the Court",
+      "initiating_role": "Protest Leader",
+      "target_role": "Chief Adjudicator",
+      "situation": "The Protest Leader gives a speech to incite unrest against the Court's confiscation policies.",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Is the Protest Leader in a public area like the Inland Workers Protest Square?",
+        "Are there enough citizens present to hear the speech?",
+        "Does the speech directly target the Chief Adjudicator's recent actions?"
+      ]
+    },
+    {
+      "action_name": "Offer a Bribe for Leniency",
+      "initiating_role": "Black Market Broker",
+      "target_role": "Enforcer of the Shore",
+      "situation": "The Broker offers goods to the Enforcer to overlook a smuggling operation.",
+      "proposed_effects": [
+        "transfer",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Does the Broker have the goods to offer?",
+        "Is the Enforcer willing to accept the bribe?",
+        "Are they in a secluded location to avoid detection?"
+      ]
+    }
+  ],
+  "social_rules": [
+    "All seized goods must be publicly declared before being used for foundation building.",
+    "Access to the sea is a privilege granted by the Surveyors, not a right.",
+    "Salvaged items belong to the finder unless claimed by the Court within 24 hours."
+  ],
+  "item_themes": [
+    "Confiscated heirlooms",
+    "Legal documents",
+    "Salvaged maritime gear",
+    "Makeshift building materials"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "item_001",
+      "name": "Seized Brass Compass",
+      "price": 150,
+      "mass": 0.4,
+      "description": "A heavy brass compass confiscated by the High Court, used to navigate the shifting tides.",
+      "image_prompt": "A weathered brass compass with intricate engravings, resting on a damp wooden table.",
+      "category": "Salvaged maritime gear"
+    },
+    {
+      "item_id": "item_002",
+      "name": "Writ of Confiscation",
+      "price": 50,
+      "mass": 0.1,
+      "description": "An official document authorizing the seizure of property for shoreline reinforcement.",
+      "image_prompt": "A rolled parchment with a heavy wax seal of the High Court, slightly water-damaged.",
+      "category": "Legal documents"
+    },
+    {
+      "item_id": "item_003",
+      "name": "Foundation Rubble Block",
+      "price": 20,
+      "mass": 15.0,
+      "description": "A chunk of compressed debris and seized goods, used to shore up the island's foundation.",
+      "image_prompt": "A cubic block made of crushed everyday objects like typewriters and clocks, bound by cement.",
+      "category": "Makeshift building materials"
+    },
+    {
+      "item_id": "item_004",
+      "name": "Surveyor's Tide Gauge",
+      "price": 200,
+      "mass": 1.2,
+      "description": "An algorithmic tool used by Shoreline Surveyors to assess structural integrity.",
+      "image_prompt": "A complex mechanical gauge with dials and a glass tube filled with murky water.",
+      "category": "Instruments"
+    },
+    {
+      "item_id": "item_005",
+      "name": "Smuggler's Lantern",
+      "price": 80,
+      "mass": 0.8,
+      "description": "A shielded lantern used by the Deep Salvage Guild to signal in the dark.",
+      "image_prompt": "A rusted iron lantern with a shutter mechanism, emitting a faint green glow.",
+      "category": "Salvaged maritime gear"
+    },
+    {
+      "item_id": "item_006",
+      "name": "Elite Access Token",
+      "price": 500,
+      "mass": 0.2,
+      "description": "A heavy silver token granting passage through locked neighborhood gates.",
+      "image_prompt": "A polished silver coin stamped with a wave motif, gleaming against a dark background.",
+      "category": "Credentials"
+    },
+    {
+      "item_id": "item_007",
+      "name": "Waterlogged Heirloom Locket",
+      "price": 300,
+      "mass": 0.1,
+      "description": "A confiscated family locket, now traded on the black market.",
+      "image_prompt": "A tarnished silver locket, slightly open, revealing a faded photograph inside.",
+      "category": "Confiscated heirlooms"
+    },
+    {
+      "item_id": "item_008",
+      "name": "Bailiff's Truncheon",
+      "price": 120,
+      "mass": 1.5,
+      "description": "A heavy wooden club carried by the Bailiffs of the Shore.",
+      "image_prompt": "A dark, polished wooden truncheon with a leather grip and a brass pommel.",
+      "category": "Weapons"
+    },
+    {
+      "item_id": "item_009",
+      "name": "Forged Access Papers",
+      "price": 100,
+      "mass": 0.1,
+      "description": "Counterfeit documents used by Inland Workers to bypass Surveyor gates.",
+      "image_prompt": "A stack of slightly smudged papers with a fake High Court stamp.",
+      "category": "Legal documents"
+    },
+    {
+      "item_id": "item_010",
+      "name": "Salvaged Fishing Net",
+      "price": 40,
+      "mass": 3.0,
+      "description": "A repaired net recovered from the sea, essential for Inland Workers.",
+      "image_prompt": "A tangled pile of thick, salt-crusted rope netting with cork floats.",
+      "category": "Salvaged maritime gear"
+    },
+    {
+      "item_id": "item_011",
+      "name": "Court Mandate Scroll",
+      "price": 75,
+      "mass": 0.2,
+      "description": "A scroll detailing the latest decisions by the Tribunal of Tides.",
+      "image_prompt": "A long, unrolled scroll covered in dense, bureaucratic script, pinned to a board.",
+      "category": "Legal documents"
+    },
+    {
+      "item_id": "item_012",
+      "name": "Black Market Ledger",
+      "price": 250,
+      "mass": 0.6,
+      "description": "A coded book tracking illicit trades and stolen foundation materials.",
+      "image_prompt": "A leather-bound book with water stains, filled with cryptic symbols and numbers.",
+      "category": "Legal documents"
+    },
+    {
+      "item_id": "item_013",
+      "name": "Corroded Anchor Chain",
+      "price": 60,
+      "mass": 25.0,
+      "description": "Heavy iron chain used to tether unstable landmasses.",
+      "image_prompt": "A thick, heavily rusted iron chain coiled on a wet stone dock.",
+      "category": "Makeshift building materials"
+    },
+    {
+      "item_id": "item_014",
+      "name": "Tide-Worn Gavel",
+      "price": 400,
+      "mass": 0.9,
+      "description": "A ceremonial gavel used by the High Court, carved from driftwood.",
+      "image_prompt": "A smooth, dark driftwood gavel resting on a sounding block.",
+      "category": "Confiscated heirlooms"
+    },
+    {
+      "item_id": "item_015",
+      "name": "Smuggled Sea Salt",
+      "price": 30,
+      "mass": 1.0,
+      "description": "A rare commodity harvested illegally from restricted coastal zones.",
+      "image_prompt": "A coarse burlap sack partially open, revealing large, crystalline sea salt.",
+      "category": "Resource"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "w_tides_verdict_01_wardrobe",
+    "world_wardrobe_brief": "Gritty, weathered bureaucratic fantasy attire mixed with coastal survival gear. Heavy, layered clothing, rusted metal accents, and waterlogged materials.",
+    "forbidden_aesthetics": [
+      "clean modern clothing",
+      "neon cyberpunk gear",
+      "generic medieval fantasy armor",
+      "bright tropical beachwear",
+      "pristine royal finery"
+    ],
+    "palette_families": [
+      {
+        "name": "Bureaucratic Authority",
+        "dominant": "#2c3e50",
+        "accent": "#bdc3c7",
+        "trim": "#1a252f",
+        "material": "stiff wool and tarnished brass"
+      },
+      {
+        "name": "Coastal Survival",
+        "dominant": "#7f8c8d",
+        "accent": "#d35400",
+        "trim": "#2c3e50",
+        "material": "waxed canvas and rusted iron"
+      },
+      {
+        "name": "Elite Privilege",
+        "dominant": "#1a252f",
+        "accent": "#bdc3c7",
+        "trim": "#d35400",
+        "material": "fine dark velvet and polished silver"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "bureaucrat_official",
+        "role_keywords": [
+          "Judge",
+          "Adjudicator",
+          "Bailiff",
+          "Archivist",
+          "Historian"
+        ],
+        "attire": [
+          "heavy robes",
+          "stiff high collars",
+          "angular coats"
+        ],
+        "props": [
+          "gavel",
+          "scrolls",
+          "truncheon",
+          "ledgers"
+        ],
+        "palette_notes": "Use Bureaucratic Authority palette. Dark blues and greys with dull metallic accents.",
+        "silhouette_notes": "Sharp, angular, imposing, top-heavy.",
+        "avoid": [
+          "ragged edges",
+          "bright colors",
+          "casual wear"
+        ]
+      },
+      {
+        "rule_id": "surveyor_mapper",
+        "role_keywords": [
+          "Surveyor",
+          "Mapper",
+          "Tide-Caller"
+        ],
+        "attire": [
+          "waxed coats",
+          "utility belts",
+          "goggles",
+          "sturdy boots"
+        ],
+        "props": [
+          "compass",
+          "tide gauge",
+          "maps",
+          "measuring tools"
+        ],
+        "palette_notes": "Use Coastal Survival palette. Greys and muted oranges.",
+        "silhouette_notes": "Practical, layered, equipped with tools.",
+        "avoid": [
+          "flowing robes",
+          "unprotected footwear"
+        ]
+      },
+      {
+        "rule_id": "salvager_smuggler",
+        "role_keywords": [
+          "Salvager",
+          "Smuggler",
+          "Syndicate",
+          "Fence"
+        ],
+        "attire": [
+          "waterlogged leathers",
+          "asymmetrical gear",
+          "hoods",
+          "heavy gloves"
+        ],
+        "props": [
+          "lantern",
+          "hooks",
+          "nets",
+          "pouches"
+        ],
+        "palette_notes": "Use Coastal Survival palette but darker, muddier.",
+        "silhouette_notes": "Bulky, asymmetrical, hunched.",
+        "avoid": [
+          "clean lines",
+          "official badges"
+        ]
+      },
+      {
+        "rule_id": "elite_landowner",
+        "role_keywords": [
+          "Elite",
+          "Landowner",
+          "Lord"
+        ],
+        "attire": [
+          "tailored coats",
+          "fur trims",
+          "clean boots"
+        ],
+        "props": [
+          "access token",
+          "cane",
+          "jewelry"
+        ],
+        "palette_notes": "Use Elite Privilege palette. Deep darks with silver highlights.",
+        "silhouette_notes": "Upright, sleek, distinct from the hunched masses.",
+        "avoid": [
+          "muddy hems",
+          "rusted metals"
+        ]
+      },
+      {
+        "rule_id": "inland_worker",
+        "role_keywords": [
+          "Agitator",
+          "Protest",
+          "Worker",
+          "Builder",
+          "Foreman"
+        ],
+        "attire": [
+          "patched overalls",
+          "ragged shirts",
+          "makeshift rain gear"
+        ],
+        "props": [
+          "tools",
+          "placards",
+          "salvaged scrap"
+        ],
+        "palette_notes": "Muted greys and browns, heavily weathered.",
+        "silhouette_notes": "Rounded, ragged layers, hunched posture.",
+        "avoid": [
+          "fine fabrics",
+          "official uniforms"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "default_citizen",
+      "role_keywords": [
+        "*"
+      ],
+      "attire": [
+        "weathered coats",
+        "sturdy boots",
+        "scarves"
+      ],
+      "props": [
+        "small satchel",
+        "walking stick"
+      ],
+      "palette_notes": "Muted greys and dark blues.",
+      "silhouette_notes": "Hunched, layered, practical.",
+      "avoid": [
+        "bright colors",
+        "clean fabrics"
+      ]
+    },
+    "visual_consistency_rules": [
+      "All clothing must appear weathered, damp, or salt-stained.",
+      "Silhouettes should emphasize a hunched or burdened posture.",
+      "Use thick, dark outlines to separate characters from the cluttered background.",
+      "Metals should appear rusted or tarnished, never pristine.",
+      "Avoid fine details that will be lost at 64x64 resolution; focus on bold shapes."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "w_tides_verdict_01_visuals",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90 degrees straight down",
+      "scale_rule": "1 tile = 1 meter, characters occupy 1x1 tile, large confiscated piles occupy 3x3 tiles"
+    },
+    "palette": {
+      "dominant": "#2c3e50",
+      "secondary": "#7f8c8d",
+      "accent": "#d35400",
+      "shadow": "#1a252f",
+      "highlight": "#bdc3c7"
+    },
+    "materials": [
+      "weathered basalt",
+      "rusted iron",
+      "waterlogged mahogany",
+      "petrified paper documents",
+      "barnacle-encrusted brass",
+      "compressed confiscated junk"
+    ],
+    "lighting": "Overcast, diffuse, melancholic daylight with harsh, directional orange lantern light cutting through coastal fog.",
+    "architecture": [
+      "Brutalist stone courthouses",
+      "Foundations made of compressed, recognizable junk (furniture, crates, carriages)",
+      "Rickety wooden scaffolding clinging to stone walls",
+      "Heavy iron gates and bureaucratic checkpoints"
+    ],
+    "terrain": {
+      "ground": "Wet cobblestones mixed with compressed debris and mud",
+      "path": "Wooden boardwalks and rusted metal grating",
+      "edge": "Crumbling shoreline dropping into dark, churning water"
+    },
+    "sprite_language": {
+      "body_proportion": "Squat, heavy-set, hunched under the weight of bureaucracy or survival",
+      "outline": "Thick, dark outlines to separate from the cluttered, debris-filled background",
+      "role_readability": "Officials wear sharp, angular silhouettes; citizens wear rounded, ragged layers; salvagers wear bulky, asymmetrical gear"
+    },
+    "world_prompt_prefix": "Top-down orthographic 2D game art, Tide's Verdict, coastal decay, bureaucratic brutalism, foundations built from compressed confiscated junk, weathered stone, rusted iron, overcast lighting",
+    "sprite_prompt_prefix": "Top-down orthographic 2D game sprite, Tide's Verdict character, thick outline, hunched posture, weathered clothing, bureaucratic fantasy",
+    "forbidden_visuals": [
+      "isometric perspective",
+      "bright sunny skies",
+      "generic medieval fantasy castles",
+      "neon cyberpunk lights",
+      "clean modern architecture",
+      "visible text or UI elements",
+      "photorealism"
+    ],
+    "canon_hash": "7371f3947a4db71f"
+  }
+}

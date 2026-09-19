@@ -1,0 +1,1606 @@
+{
+  "world_name": "Night Market of Unfinished Weather",
+  "world_id": "weather_market_727105",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "grounded_antique_market",
+    "profile_id": "grounded_antique_market",
+    "locale": "The Under-Sky Basin",
+    "tone": "Atmospheric, mercantile, and heavy with humidity",
+    "visual_direction": "Storm-gray canvas, celadon instruments, electric-yellow kite silk, and wet charcoal floors",
+    "currency_code": "CNY",
+    "currency_symbol": "¥",
+    "currency_minor_unit": "fen",
+    "currency_name": "cny_cash",
+    "domain_label": "meteorological_trade",
+    "starting_wallet_minor": {
+      "min": 5000,
+      "max": 25000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "grounded_antique_market_v1",
+      "frontend_affordance_id": "grounded_antique_market_v1",
+      "asset_prompt_kit_id": "grounded_antique_market_v1"
+    },
+    "policy_refs": {
+      "economy_policy_id": "cny_market_v1",
+      "item_collection_id": "antique_market_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "grounded_antique_market_v1",
+      "property_policy_id": "grounded_antique_market_v1",
+      "knowledge_policy_id": "grounded_antique_market_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "meteorological night market, climate craft, delivery disputes",
+  "premise": "In the shadow of the Great Weather Engine, vendors trade unfinished atmospheric phenomena before they are released into the global sky.",
+  "simulation_objective": "Facilitate the trade and stabilization of volatile weather lots while managing the social friction of competing climate interests.",
+  "agent_count_target": 12,
+  "player_count_target": 4,
+  "economy_focus": "The sale of high-value, high-risk weather canisters and the tools required to contain them.",
+  "exploration_focus": "Navigating the shifting visibility and environmental hazards of the market rooms.",
+  "conflict_tone": "Tense, bureaucratic, and physically damp.",
+  "visual_style": "Top-down pixel art with heavy saturation on electric yellow and celadon against dark, wet backgrounds.",
+  "rooms": [
+    {
+      "name": "The Fog Bottling Yard",
+      "biome": "misty_industrial",
+      "purpose": "Condensing and packaging low-altitude visibility hazards.",
+      "decor_tags": [
+        "canisters",
+        "steam",
+        "gray_canvas"
+      ],
+      "activity_tags": [
+        "bottling",
+        "sealing"
+      ],
+      "archetype": "logistics_yard",
+      "ambient_palette": "low_lantern",
+      "width_tiles": 40,
+      "height_tiles": 40,
+      "floor_tile": "stone_slabs",
+      "wall_tile": "storage_wall",
+      "flux_floor_prompt": "wet charcoal stone slabs with silver condensation trails",
+      "room_scene_prompt": "A yard filled with storm-gray canvas tents and heavy celadon pressure tanks leaking thick white mist.",
+      "scene_components": [
+        {
+          "component_id": "mist_condenser_01",
+          "label": "The Great Condenser",
+          "description": "A massive celadon machine that pulls moisture from the air into glass vials.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Monsoon Gallery",
+      "biome": "tropical_storm",
+      "purpose": "Displaying high-volume precipitation lots for agricultural buyers.",
+      "decor_tags": [
+        "waterfalls",
+        "bamboo",
+        "silk_banners"
+      ],
+      "activity_tags": [
+        "bidding",
+        "inspection"
+      ],
+      "archetype": "market_exchange",
+      "ambient_palette": "focused_blue",
+      "width_tiles": 50,
+      "height_tiles": 50,
+      "floor_tile": "bamboo_planks",
+      "wall_tile": "bamboo_wall",
+      "flux_floor_prompt": "dark bamboo planks slick with constant artificial rain",
+      "room_scene_prompt": "An open-air gallery where localized rainstorms are held behind shimmering magenta thread barriers.",
+      "scene_components": [
+        {
+          "component_id": "rain_altar_01",
+          "label": "Precipitation Plinth",
+          "description": "A raised stone platform where a miniature monsoon swirls in a containment field.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Gale Corridor",
+      "biome": "windy_tunnel",
+      "purpose": "Testing wind speeds and aerodynamic stability of kite-based weather delivery.",
+      "decor_tags": [
+        "kites",
+        "ribbons",
+        "fans"
+      ],
+      "activity_tags": [
+        "testing",
+        "flying"
+      ],
+      "archetype": "workshop",
+      "ambient_palette": "clear_day",
+      "width_tiles": 30,
+      "height_tiles": 60,
+      "floor_tile": "yard_pavers",
+      "wall_tile": "stall_canvas_wall",
+      "flux_floor_prompt": "scuffed yard pavers with electric-yellow kite silk snagged in the cracks",
+      "room_scene_prompt": "A long, narrow corridor where high-velocity winds whip electric-yellow ribbons into a frenzy.",
+      "scene_components": [
+        {
+          "component_id": "wind_vane_01",
+          "label": "The Giant Anemometer",
+          "description": "A spinning celadon tower that measures the strength of the corridor's drafts.",
+          "anchor": "south_mid",
+          "width_tiles": 2,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Drought Ending Vault",
+      "biome": "arid_storage",
+      "purpose": "Secure storage for rare, moisture-negative weather events.",
+      "decor_tags": [
+        "sand",
+        "sealed_jars",
+        "iron_locks"
+      ],
+      "activity_tags": [
+        "guarding",
+        "vault_access"
+      ],
+      "archetype": "checkpoint",
+      "ambient_palette": "dusty_brown",
+      "width_tiles": 35,
+      "height_tiles": 35,
+      "floor_tile": "red_brick",
+      "wall_tile": "quiet_lane_wall",
+      "flux_floor_prompt": "dry red bricks covered in a fine layer of desiccated silver dust",
+      "room_scene_prompt": "A silent, dry vault where the air feels thin and every sound is muffled by heavy gray curtains.",
+      "scene_components": [
+        {
+          "component_id": "desiccant_tank_01",
+          "label": "The Aridity Tank",
+          "description": "A lead-lined container holding a concentrated drought core.",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Hail Song Archive",
+      "biome": "frozen_acoustic",
+      "purpose": "Recording and selling the percussive sounds of ice-based weather.",
+      "decor_tags": [
+        "ice_crystals",
+        "phonographs",
+        "silver_wire"
+      ],
+      "activity_tags": [
+        "listening",
+        "recording"
+      ],
+      "archetype": "archive_ritual",
+      "ambient_palette": "warm_lantern",
+      "width_tiles": 40,
+      "height_tiles": 40,
+      "floor_tile": "stone_checker",
+      "wall_tile": "library_shelf_wall",
+      "flux_floor_prompt": "checkered stone floor with frost patterns creeping from the corners",
+      "room_scene_prompt": "A library of frozen sounds where silver wires vibrate with the chime of falling ice.",
+      "scene_components": [
+        {
+          "component_id": "hail_drum_01",
+          "label": "The Resonant Basin",
+          "description": "A large celadon bowl where hail is dropped to create specific musical scales.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Sky-Watch Commons",
+      "biome": "open_plaza",
+      "purpose": "Social gathering and observation of the Great Weather Engine above.",
+      "decor_tags": [
+        "telescopes",
+        "benches",
+        "lanterns"
+      ],
+      "activity_tags": [
+        "socializing",
+        "observing"
+      ],
+      "archetype": "commons",
+      "ambient_palette": "ember_orange",
+      "width_tiles": 60,
+      "height_tiles": 40,
+      "floor_tile": "clean_tile",
+      "wall_tile": "yard_fence",
+      "flux_floor_prompt": "polished clean tiles reflecting the orange glow of the engine above",
+      "room_scene_prompt": "A wide plaza where traders gather to watch the release of weather lots into the upper atmosphere.",
+      "scene_components": [
+        {
+          "component_id": "engine_scope_01",
+          "label": "The Zenith Telescope",
+          "description": "A massive brass and celadon telescope pointed directly at the sky-engine's exhaust.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [
+    {
+      "role_name": "Weather Broker",
+      "count": 3,
+      "core_values": [
+        "Profit",
+        "Predictability",
+        "Leverage"
+      ],
+      "activity": "Negotiating the sale of large-scale weather lots to regional governors.",
+      "starting_item_ids": [
+        "barometer_cane",
+        "ledger_of_clouds"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Trading Stall",
+          "asset_type": "commercial_lease",
+          "description": "A prime spot in the Monsoon Gallery.",
+          "story_use": "Used to host high-stakes auctions."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "market_trends_01",
+          "topic": "Cloud Pricing",
+          "summary": "The price of cumulonimbus is expected to rise due to northern droughts.",
+          "confidence": 90
+        }
+      ]
+    }
+  ],
+  "main_characters": [
+    {
+      "display_name": "Vane the Bottler",
+      "role_name": "Master Vendor",
+      "activity": "Sealing volatile fogs into pressurized canisters.",
+      "home_base": "The Fog Bottling Yard",
+      "arc_goal": "To secure a contract for the 'Eternal Mist' project.",
+      "inventory": [
+        {
+          "item_id": "fog_canister_01",
+          "name": "Unfinished Pea-Souper",
+          "description": "A thick, green-tinted fog that obscures vision for 50 meters.",
+          "quantity": 5
+        },
+        {
+          "item_id": "pressure_gauge",
+          "name": "Celadon Pressure Gauge",
+          "description": "A delicate tool for measuring canister stability.",
+          "quantity": 1
+        },
+        {
+          "item_id": "silver_solder",
+          "name": "Silver Condensation Solder",
+          "description": "Used to seal leaks in weather containers.",
+          "quantity": 20
+        },
+        {
+          "item_id": "gray_canvas_patch",
+          "name": "Storm-Gray Patch",
+          "description": "Heavy duty fabric for tent repair.",
+          "quantity": 10
+        },
+        {
+          "item_id": "mist_filter",
+          "name": "Respirator Filter",
+          "description": "Prevents the inhalation of unfinished weather.",
+          "quantity": 3
+        },
+        {
+          "item_id": "wax_seal",
+          "name": "Official Market Wax",
+          "description": "Used to certify a canister is ready for transport.",
+          "quantity": 15
+        },
+        {
+          "item_id": "tongs_long",
+          "name": "Insulated Tongs",
+          "description": "For handling cold-snap vials.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ledger_vane",
+          "name": "Vane's Shipping Log",
+          "description": "A record of every fog lot sold this season.",
+          "quantity": 1
+        },
+        {
+          "item_id": "cny_pouch",
+          "name": "Heavy Coin Pouch",
+          "description": "Contains a significant amount of market currency.",
+          "quantity": 1
+        },
+        {
+          "item_id": "warning_thread",
+          "name": "Magenta Warning Thread",
+          "description": "Used to mark off dangerous work zones.",
+          "quantity": 50
+        },
+        {
+          "item_id": "cleaning_rag",
+          "name": "Oily Rag",
+          "description": "For wiping down celadon instruments.",
+          "quantity": 5
+        },
+        {
+          "item_id": "lunch_tin",
+          "name": "Steamed Bun Tin",
+          "description": "A simple meal for a long shift.",
+          "quantity": 1
+        },
+        {
+          "item_id": "wrench_celadon",
+          "name": "Celadon Pipe Wrench",
+          "description": "Specifically sized for the Great Condenser.",
+          "quantity": 1
+        },
+        {
+          "item_id": "safety_goggles",
+          "name": "Amber Goggles",
+          "description": "Protects eyes from high-pressure steam.",
+          "quantity": 1
+        },
+        {
+          "item_id": "id_badge",
+          "name": "Yard Access Badge",
+          "description": "Proof of employment in the Bottling Yard.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Condenser Station 4",
+          "asset_type": "industrial_equipment",
+          "description": "A high-output mist condenser.",
+          "story_use": "Vane's primary source of income."
+        },
+        {
+          "asset_name": "Storage Locker 12",
+          "asset_type": "storage",
+          "description": "A secure locker for personal tools.",
+          "story_use": "Where Vane hides his secret fog recipes."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "vane_debt",
+          "topic": "Debt to Gale",
+          "summary": "Vane owes Gale 5000 CNY for kite delivery services.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "fog_recipe",
+          "topic": "The Perfect Mist",
+          "summary": "Adding a pinch of silver dust makes fog linger twice as long.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Gale the Courier",
+      "role_name": "Kite Pilot",
+      "activity": "Delivering weather canisters via high-altitude kite lines.",
+      "home_base": "The Gale Corridor",
+      "arc_goal": "To clear his debt with Vane and buy a new silk kite.",
+      "inventory": [
+        {
+          "name": "Electric-Yellow Silk Kite",
+          "description": "A high-tension kite for heavy lifting.",
+          "quantity": 1
+        },
+        {
+          "name": "Kite Spool",
+          "description": "Reinforced silver wire on a celadon reel.",
+          "quantity": 1
+        },
+        {
+          "name": "Wind Whistle",
+          "description": "Used to signal other pilots in the fog.",
+          "quantity": 2
+        },
+        {
+          "name": "Leather Harness",
+          "description": "Keeps the pilot attached to the kite line.",
+          "quantity": 1
+        },
+        {
+          "name": "Delivery Manifest",
+          "description": "A list of canisters to be dropped tonight.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Compass",
+          "description": "Essential for navigating the Corridor.",
+          "quantity": 1
+        },
+        {
+          "name": "Dried Fruit",
+          "description": "Quick energy for long flights.",
+          "quantity": 5
+        },
+        {
+          "name": "Repair Tape",
+          "description": "Sticky silk tape for kite tears.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Kite Hangar",
+          "asset_type": "workshop",
+          "description": "A small shed in the Gale Corridor.",
+          "story_use": "Gale's home and repair shop."
+        },
+        {
+          "asset_name": "Corridor Right-of-Way",
+          "asset_type": "license",
+          "description": "Permission to fly in the main wind tunnel.",
+          "story_use": "Gale's most valuable legal asset."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "wind_currents",
+          "topic": "Corridor Drafts",
+          "summary": "The 3 AM draft is the strongest and most dangerous.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "vane_secret",
+          "topic": "Vane's Leak",
+          "summary": "Vane is selling substandard canisters to the northern governors.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Mistress Hail",
+      "role_name": "Acoustic Archivist",
+      "activity": "Cataloging the sounds of frozen precipitation.",
+      "home_base": "The Hail Song Archive",
+      "arc_goal": "To record the legendary 'Thunder-Chime' before the engine resets.",
+      "inventory": [
+        {
+          "name": "Silver Recording Wire",
+          "description": "Captures vibrations with extreme precision.",
+          "quantity": 10
+        },
+        {
+          "name": "Tuning Fork",
+          "description": "A celadon fork tuned to the frequency of ice.",
+          "quantity": 1
+        },
+        {
+          "name": "Insulated Gloves",
+          "description": "Prevents frostbite while handling hail.",
+          "quantity": 1
+        },
+        {
+          "name": "Sound Jar",
+          "description": "A vacuum-sealed jar containing a single clap of thunder.",
+          "quantity": 1
+        },
+        {
+          "name": "Archive Key",
+          "description": "A heavy iron key to the sound vaults.",
+          "quantity": 1
+        },
+        {
+          "name": "Magnifying Glass",
+          "description": "For inspecting the structure of hailstones.",
+          "quantity": 1
+        },
+        {
+          "name": "Ink and Quill",
+          "description": "For transcribing weather patterns into music.",
+          "quantity": 1
+        },
+        {
+          "name": "Warm Cloak",
+          "description": "Essential for working in the Archive.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Resonant Basin",
+          "asset_type": "instrument",
+          "description": "A massive celadon bowl for sound capture.",
+          "story_use": "The centerpiece of Mistress Hail's work."
+        },
+        {
+          "asset_name": "Sound Library Shelf",
+          "asset_type": "storage",
+          "description": "A collection of rare weather recordings.",
+          "story_use": "Contains the only known recording of a 'Solar Sleet'."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "hail_patterns",
+          "topic": "Ice Geometry",
+          "summary": "Hexagonal hail produces a sharper C-sharp than pentagonal.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "gale_admiration",
+          "topic": "Gale's Skill",
+          "summary": "Gale is the only pilot brave enough to fly during a hail storm.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Broker Raines",
+      "role_name": "Monsoon Dealer",
+      "activity": "Selling large-scale rain events to desperate farmers.",
+      "home_base": "The Monsoon Gallery",
+      "arc_goal": "To monopolize the trade of 'Drought-Enders'.",
+      "inventory": [
+        {
+          "name": "Rain Contract",
+          "description": "A legal document promising 40 days of rain.",
+          "quantity": 3
+        },
+        {
+          "name": "Sample Vial: Monsoon",
+          "description": "A small taste of a high-intensity storm.",
+          "quantity": 5
+        },
+        {
+          "name": "Gold-Leaf Umbrella",
+          "description": "A symbol of status and protection.",
+          "quantity": 1
+        },
+        {
+          "name": "Bidding Paddle",
+          "description": "Used in the Gallery auctions.",
+          "quantity": 1
+        },
+        {
+          "name": "Pocket Watch",
+          "description": "Keeps track of weather release schedules.",
+          "quantity": 1
+        },
+        {
+          "name": "Scented Handkerchief",
+          "description": "To mask the smell of ozone and wet charcoal.",
+          "quantity": 2
+        },
+        {
+          "name": "Bottle of Fine Wine",
+          "description": "For celebrating successful deals.",
+          "quantity": 1
+        },
+        {
+          "name": "Personal Seal",
+          "description": "Used to sign official contracts.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Gallery Booth A",
+          "asset_type": "commercial_space",
+          "description": "The most visible booth in the Monsoon Gallery.",
+          "story_use": "Where Raines conducts his most public business."
+        },
+        {
+          "asset_name": "Rain Reservoir",
+          "asset_type": "storage",
+          "description": "An underground tank for holding unsold storms.",
+          "story_use": "Raines' secret stockpile."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "raines_rivalry",
+          "topic": "Rivalry with Vane",
+          "summary": "Raines believes Vane is overcharging for fog canisters.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "market_manipulation",
+          "topic": "Artificial Scarcity",
+          "summary": "Raines is intentionally holding back rain lots to drive up prices.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Silt the Scavenger",
+      "role_name": "Waste Collector",
+      "activity": "Gathering leaked weather and broken canister shards.",
+      "home_base": "The Fog Bottling Yard",
+      "arc_goal": "To build a 'Franken-Storm' from market scraps.",
+      "inventory": [
+        {
+          "name": "Broken Celadon Shard",
+          "description": "Sharp and still humming with energy.",
+          "quantity": 12
+        },
+        {
+          "name": "Leaked Mist Jar",
+          "description": "A low-quality fog collected from the floor.",
+          "quantity": 4
+        },
+        {
+          "name": "Rusty Magnet",
+          "description": "Used to find metal scraps in the wet charcoal.",
+          "quantity": 1
+        },
+        {
+          "name": "Burlap Sack",
+          "description": "Full of miscellaneous market junk.",
+          "quantity": 2
+        },
+        {
+          "name": "Half-Eaten Sandwich",
+          "description": "Found near the Sky-Watch Commons.",
+          "quantity": 1
+        },
+        {
+          "name": "Bent Kite Rib",
+          "description": "Electric-yellow silk still attached.",
+          "quantity": 3
+        },
+        {
+          "name": "Dull Knife",
+          "description": "For prying canisters open.",
+          "quantity": 1
+        },
+        {
+          "name": "Lucky Pebble",
+          "description": "A smooth stone from the Gale Corridor.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scrap Pile",
+          "asset_type": "storage",
+          "description": "A hidden mound of junk behind the Yard.",
+          "story_use": "Where Silt hides his 'Franken-Storm'."
+        },
+        {
+          "asset_name": "Drainage Map",
+          "asset_type": "intel",
+          "description": "A map of the market's gutter system.",
+          "story_use": "Allows Silt to move between rooms unseen."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "silt_secret",
+          "topic": "The Leak",
+          "summary": "The Great Condenser has a hairline fracture in its base.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "silt_dependency",
+          "topic": "Dependency on Vane",
+          "summary": "Vane occasionally gives Silt real work in exchange for silence.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Elder Dryas",
+      "role_name": "Drought Guardian",
+      "activity": "Overseeing the containment of moisture-negative events.",
+      "home_base": "The Drought Ending Vault",
+      "arc_goal": "To prevent the release of a 'Great Desiccation'.",
+      "inventory": [
+        {
+          "name": "Vault Master Key",
+          "description": "A complex celadon and iron device.",
+          "quantity": 1
+        },
+        {
+          "name": "Humidity Sensor",
+          "description": "Beeps loudly if the air gets too moist.",
+          "quantity": 1
+        },
+        {
+          "name": "Sand-Glass",
+          "description": "A timer filled with desiccated silver dust.",
+          "quantity": 1
+        },
+        {
+          "name": "Ceremonial Staff",
+          "description": "Made of petrified wood from a dead forest.",
+          "quantity": 1
+        },
+        {
+          "name": "Prayer Beads",
+          "description": "Carved from hailstones that never melt.",
+          "quantity": 1
+        },
+        {
+          "name": "Sealing Salt",
+          "description": "Used to reinforce the vault's barriers.",
+          "quantity": 10
+        },
+        {
+          "name": "Ancient Scroll",
+          "description": "Describes the first Great Drought.",
+          "quantity": 1
+        },
+        {
+          "name": "Water Skin",
+          "description": "Always kept full, just in case.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Aridity Tank",
+          "asset_type": "containment",
+          "description": "The primary vault for drought cores.",
+          "story_use": "Dryas's sacred charge."
+        },
+        {
+          "asset_name": "Vault Meditation Chamber",
+          "asset_type": "living_quarters",
+          "description": "A small, dry room inside the vault.",
+          "story_use": "Where Dryas sleeps."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "dryas_fear",
+          "topic": "The Breach",
+          "summary": "If the vault fails, the entire market will turn to dust.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "dryas_alliance",
+          "topic": "Alliance with Hail",
+          "summary": "Mistress Hail provides the acoustic dampening for the vault.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Kite-Smith Jinn",
+      "role_name": "Artisan",
+      "activity": "Crafting the high-tension kites used by couriers.",
+      "home_base": "The Gale Corridor",
+      "arc_goal": "To create a kite that can carry a monsoon canister.",
+      "inventory": [
+        {
+          "name": "Roll of Yellow Silk",
+          "description": "Tough, lightweight, and highly visible.",
+          "quantity": 5
+        },
+        {
+          "name": "Bamboo Struts",
+          "description": "Flexible wood for kite frames.",
+          "quantity": 20
+        },
+        {
+          "name": "Silk Needle",
+          "description": "A fine needle for intricate stitching.",
+          "quantity": 2
+        },
+        {
+          "name": "Pot of Resin",
+          "description": "Used to waterproof kite joints.",
+          "quantity": 1
+        },
+        {
+          "name": "Drafting Paper",
+          "description": "Covered in complex aerodynamic formulas.",
+          "quantity": 10
+        },
+        {
+          "name": "Measuring Tape",
+          "description": "Marked in both meters and wind-knots.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Hammer",
+          "description": "For tapping bamboo into place.",
+          "quantity": 1
+        },
+        {
+          "name": "Jinn's Signature Stamp",
+          "description": "Used to mark high-quality kites.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Kite Workshop",
+          "asset_type": "commercial_space",
+          "description": "A cluttered stall in the Gale Corridor.",
+          "story_use": "Where Jinn builds his masterpieces."
+        },
+        {
+          "asset_name": "Wind Tunnel Access",
+          "asset_type": "utility",
+          "description": "A private vent for testing kite lift.",
+          "story_use": "Essential for Jinn's research."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "jinn_contract",
+          "topic": "Gale's Debt",
+          "summary": "Gale owes Jinn for the kite he currently uses.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "jinn_innovation",
+          "topic": "New Materials",
+          "summary": "Silver-threaded silk is 30% stronger than standard yellow.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Inspector Cumulus",
+      "role_name": "Regulator",
+      "activity": "Ensuring all weather lots meet safety standards.",
+      "home_base": "The Sky-Watch Commons",
+      "arc_goal": "To shut down Vane's bottling operation for safety violations.",
+      "inventory": [
+        {
+          "name": "Official Rulebook",
+          "description": "A thick tome of meteorological regulations.",
+          "quantity": 1
+        },
+        {
+          "name": "Inspection Stamp",
+          "description": "Used to approve or reject canisters.",
+          "quantity": 1
+        },
+        {
+          "name": "Magnifying Lens",
+          "description": "For checking canister seals for micro-fractures.",
+          "quantity": 1
+        },
+        {
+          "name": "Violation Notice",
+          "description": "A stack of magenta-bordered forms.",
+          "quantity": 20
+        },
+        {
+          "name": "Standard Barometer",
+          "description": "A calibrated celadon instrument.",
+          "quantity": 1
+        },
+        {
+          "name": "Whistle of Authority",
+          "description": "Used to stop all work in a room.",
+          "quantity": 1
+        },
+        {
+          "name": "Clipboard",
+          "description": "Holds the night's inspection schedule.",
+          "quantity": 1
+        },
+        {
+          "name": "Flashlight",
+          "description": "For looking into dark corners of the Yard.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Inspector's Office",
+          "asset_type": "office",
+          "description": "A small, tidy room overlooking the Commons.",
+          "story_use": "Where Cumulus writes his reports."
+        },
+        {
+          "asset_name": "Confiscation Locker",
+          "asset_type": "storage",
+          "description": "A secure place for illegal weather lots.",
+          "story_use": "Currently holds a 'Forbidden Cyclone'."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "cumulus_suspicion",
+          "topic": "Vane's Bribes",
+          "summary": "Cumulus suspects Raines is bribing other inspectors.",
+          "confidence": 80
+        },
+        {
+          "knowledge_id": "cumulus_duty",
+          "topic": "Safety First",
+          "summary": "A single unsealed canister could destroy the market.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Zephyr the Lookout",
+      "role_name": "Sky-Watcher",
+      "activity": "Monitoring the Great Weather Engine for release signals.",
+      "home_base": "The Sky-Watch Commons",
+      "arc_goal": "To predict the exact moment of the 'Great Release'.",
+      "inventory": [
+        {
+          "name": "Brass Spyglass",
+          "description": "A powerful tool for watching the sky.",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Flare",
+          "description": "Electric-yellow flare to signal the market.",
+          "quantity": 5
+        },
+        {
+          "name": "Star Chart",
+          "description": "Used to align the engine's exhaust ports.",
+          "quantity": 1
+        },
+        {
+          "name": "Thermos of Coffee",
+          "description": "To stay awake during the long night.",
+          "quantity": 1
+        },
+        {
+          "name": "Notebook",
+          "description": "Filled with observations of the engine's glow.",
+          "quantity": 1
+        },
+        {
+          "name": "Warm Hat",
+          "description": "A knitted cap for the cold plaza air.",
+          "quantity": 1
+        },
+        {
+          "name": "Sun-Dial (Moon-Dial)",
+          "description": "Tells time by the engine's light.",
+          "quantity": 1
+        },
+        {
+          "name": "Bag of Nuts",
+          "description": "A simple snack for the lookout tower.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Lookout Tower",
+          "asset_type": "structure",
+          "description": "The highest point in the Commons.",
+          "story_use": "Zephyr's post."
+        },
+        {
+          "asset_name": "Zenith Telescope",
+          "asset_type": "instrument",
+          "description": "The massive telescope in the Commons.",
+          "story_use": "Zephyr's primary tool."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "zephyr_prediction",
+          "topic": "The Next Storm",
+          "summary": "The engine is vibrating; a massive release is imminent.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "zephyr_friendship",
+          "topic": "Friendship with Gale",
+          "summary": "Zephyr signals Gale when the winds are safe for flying.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Ozone the Alchemist",
+      "role_name": "Stabilizer",
+      "activity": "Mixing chemical agents to prevent weather from decaying.",
+      "home_base": "The Fog Bottling Yard",
+      "arc_goal": "To discover a way to make weather permanent.",
+      "inventory": [
+        {
+          "name": "Vial of Catalyst",
+          "description": "A glowing blue liquid that stabilizes mist.",
+          "quantity": 10
+        },
+        {
+          "name": "Mortar and Pestle",
+          "description": "Used to grind silver condensation into powder.",
+          "quantity": 1
+        },
+        {
+          "name": "Test Tube Rack",
+          "description": "Filled with various unfinished weather samples.",
+          "quantity": 1
+        },
+        {
+          "name": "Bunsen Burner",
+          "description": "A small, portable heat source.",
+          "quantity": 1
+        },
+        {
+          "name": "Protective Apron",
+          "description": "Stained with various meteorological chemicals.",
+          "quantity": 1
+        },
+        {
+          "name": "Alchemical Journal",
+          "description": "Contains formulas for weather stabilization.",
+          "quantity": 1
+        },
+        {
+          "name": "Dropper Bottle",
+          "description": "For precise application of catalysts.",
+          "quantity": 5
+        },
+        {
+          "name": "Emergency Neutralizer",
+          "description": "Instantly dissolves any weather lot.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Alchemy Lab",
+          "asset_type": "workshop",
+          "description": "A corner of the Bottling Yard filled with glass.",
+          "story_use": "Where Ozone performs his experiments."
+        },
+        {
+          "asset_name": "Chemical Cabinet",
+          "asset_type": "storage",
+          "description": "A locked cabinet for dangerous catalysts.",
+          "story_use": "Contains the rare 'Silver Nitrate'."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "ozone_discovery",
+          "topic": "Permanent Rain",
+          "summary": "Adding crushed hail to a monsoon lot makes it last forever.",
+          "confidence": 60
+        },
+        {
+          "knowledge_id": "ozone_debt",
+          "topic": "Debt to Raines",
+          "summary": "Raines provides the raw weather lots for Ozone's research.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Tiller the Porter",
+      "role_name": "Heavy Lifter",
+      "activity": "Moving heavy canisters between market rooms.",
+      "home_base": "The Fog Bottling Yard",
+      "arc_goal": "To earn enough to retire to a place with normal weather.",
+      "inventory": [
+        {
+          "name": "Hand Truck",
+          "description": "A sturdy celadon cart for canisters.",
+          "quantity": 1
+        },
+        {
+          "name": "Back Support Belt",
+          "description": "Essential for lifting heavy weather.",
+          "quantity": 1
+        },
+        {
+          "name": "Work Gloves",
+          "description": "Thick leather to protect against sharp edges.",
+          "quantity": 1
+        },
+        {
+          "name": "Canister Strap",
+          "description": "Heavy-duty magenta thread for securing loads.",
+          "quantity": 5
+        },
+        {
+          "name": "Water Bottle",
+          "description": "A large, dented metal bottle.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Wrench",
+          "description": "For tightening cart wheels.",
+          "quantity": 1
+        },
+        {
+          "name": "Identification Tag",
+          "description": "Worn on a chain around the neck.",
+          "quantity": 1
+        },
+        {
+          "name": "Crushed Hat",
+          "description": "A simple gray cap.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Porter's Cart",
+          "asset_type": "vehicle",
+          "description": "A well-maintained celadon hand truck.",
+          "story_use": "Tiller's livelihood."
+        },
+        {
+          "asset_name": "Bunk Space",
+          "asset_type": "living_quarters",
+          "description": "A small bed in the Yard's dormitory.",
+          "story_use": "Where Tiller rests."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "tiller_observation",
+          "topic": "Market Gossip",
+          "summary": "Raines and Vane were seen arguing near the vault.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "tiller_route",
+          "topic": "Shortcuts",
+          "summary": "The path through the Gale Corridor is faster but windier.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Sleet the Guard",
+      "role_name": "Enforcer",
+      "activity": "Protecting the high-value lots in the Monsoon Gallery.",
+      "home_base": "The Monsoon Gallery",
+      "arc_goal": "To catch the thief who has been stealing mist vials.",
+      "inventory": [
+        {
+          "name": "Stun Baton",
+          "description": "A celadon rod that emits a static charge.",
+          "quantity": 1
+        },
+        {
+          "name": "Handcuffs",
+          "description": "Made of heavy iron and magenta thread.",
+          "quantity": 2
+        },
+        {
+          "name": "Lantern",
+          "description": "A bright, focused lantern for patrols.",
+          "quantity": 1
+        },
+        {
+          "name": "Guard Uniform",
+          "description": "A storm-gray coat with silver trim.",
+          "quantity": 1
+        },
+        {
+          "name": "Radio",
+          "description": "For communicating with other guards.",
+          "quantity": 1
+        },
+        {
+          "name": "Pepper Spray",
+          "description": "Contains a concentrated 'Dust Devil' extract.",
+          "quantity": 1
+        },
+        {
+          "name": "First Aid Kit",
+          "description": "Basic supplies for market injuries.",
+          "quantity": 1
+        },
+        {
+          "name": "Badge of Office",
+          "description": "A silver badge showing the market's crest.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guard Post 2",
+          "asset_type": "structure",
+          "description": "A small booth at the Gallery entrance.",
+          "story_use": "Sleet's station."
+        },
+        {
+          "asset_name": "Evidence Locker",
+          "asset_type": "storage",
+          "description": "Where Sleet keeps confiscated items.",
+          "story_use": "Contains a stolen kite rib."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "sleet_suspicion",
+          "topic": "Silt's Activities",
+          "summary": "Silt has been seen lurking near the sound vaults.",
+          "confidence": 75
+        },
+        {
+          "knowledge_id": "sleet_loyalty",
+          "topic": "Loyalty to Raines",
+          "summary": "Raines pays Sleet a bonus for 'extra' protection.",
+          "confidence": 100
+        }
+      ]
+    }
+  ],
+  "social_rules": [
+    "No weather lot may be released within market limits without a Level 4 permit.",
+    "Bargaining is mandatory; accepting the first price is considered an insult to the craft.",
+    "Magenta thread boundaries are absolute; crossing one without a guide is a finable offense.",
+    "All leaks must be reported to the nearest Porter or Inspector immediately."
+  ],
+  "item_themes": [
+    "Meteorological containment",
+    "Celadon instrumentation",
+    "High-tension silk",
+    "Atmospheric stabilization"
+  ],
+  "custom_actions": [
+    "Stabilize Canister",
+    "Release Sample",
+    "Negotiate Weather Lot",
+    "Inspect Seal"
+  ],
+  "player_entry_points": [
+    "Arriving as a junior weather broker at the Sky-Watch Commons.",
+    "Starting as a kite-pilot apprentice in the Gale Corridor.",
+    "Being hired as a temporary guard for the Monsoon Gallery."
+  ],
+  "conflict_hooks": [
+    "A major fog canister has ruptured in the Bottling Yard, and the Inspector is on his way.",
+    "Raines is attempting to buy out the Hail Song Archive to turn it into a rain reservoir.",
+    "Gale has lost a high-value delivery in the Gale Corridor and needs help recovering it."
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Trade Loop",
+      "summary": "Acquire unfinished weather, stabilize it with alchemical agents, and sell it to brokers in the Gallery.",
+      "roles": [
+        "Master Vendor",
+        "Monsoon Dealer",
+        "Stabilizer"
+      ],
+      "rooms": [
+        "The Fog Bottling Yard",
+        "The Monsoon Gallery"
+      ],
+      "pressure": "Canisters decay over time and must be sold or stabilized quickly."
+    },
+    {
+      "label": "The Delivery Loop",
+      "summary": "Transport canisters across the market using kites or hand trucks while avoiding environmental hazards.",
+      "roles": [
+        "Kite Pilot",
+        "Heavy Lifter"
+      ],
+      "rooms": [
+        "The Gale Corridor",
+        "The Fog Bottling Yard"
+      ],
+      "pressure": "High winds and low visibility make transport dangerous."
+    }
+  ],
+  "item_catalog": [
+    {
+      "item_id": "barometer_cane",
+      "name": "Barometer Cane",
+      "price": 1200,
+      "mass": 1.5,
+      "description": "A walking stick that predicts local pressure changes.",
+      "image_prompt": "A sleek celadon cane with a glass pressure gauge embedded in the handle.",
+      "category": "tool"
+    },
+    {
+      "item_id": "ledger_of_clouds",
+      "name": "Ledger of Clouds",
+      "price": 800,
+      "mass": 2.0,
+      "description": "A record of current weather prices and regional demands.",
+      "image_prompt": "A thick book bound in storm-gray canvas with silver-edged pages.",
+      "category": "intel"
+    },
+    {
+      "item_id": "fog_canister_01",
+      "name": "Unfinished Pea-Souper",
+      "price": 3000,
+      "mass": 15.0,
+      "description": "A heavy canister containing a dense green fog.",
+      "image_prompt": "A pressurized celadon tank with magenta warning threads wrapped around the valves.",
+      "category": "weather_lot"
+    },
+    {
+      "item_id": "electric_yellow_silk",
+      "name": "Electric-Yellow Kite Silk",
+      "price": 500,
+      "mass": 0.5,
+      "description": "High-visibility, high-strength fabric for kite making.",
+      "image_prompt": "A roll of vibrant, glowing yellow silk fabric.",
+      "category": "material"
+    },
+    {
+      "item_id": "silver_condensation",
+      "name": "Silver Condensation",
+      "price": 1500,
+      "mass": 0.1,
+      "description": "A rare liquid metal harvested from the sky-engine's exhaust.",
+      "image_prompt": "A small glass vial containing swirling, iridescent silver liquid.",
+      "category": "material"
+    },
+    {
+      "item_id": "hail_stone_resonant",
+      "name": "Resonant Hailstone",
+      "price": 200,
+      "mass": 0.2,
+      "description": "A piece of ice that hums a perfect middle C.",
+      "image_prompt": "A perfectly hexagonal ice crystal glowing with a soft blue light.",
+      "category": "weather_lot"
+    },
+    {
+      "item_id": "drought_core",
+      "name": "Drought Core",
+      "price": 10000,
+      "mass": 5.0,
+      "description": "A highly dangerous, moisture-absorbing artifact.",
+      "image_prompt": "A cracked, dry stone sphere inside a lead-lined celadon box.",
+      "category": "weather_lot"
+    },
+    {
+      "item_id": "monsoon_vial",
+      "name": "Monsoon Sample",
+      "price": 450,
+      "mass": 0.3,
+      "description": "A small dose of high-intensity rainfall.",
+      "image_prompt": "A glass vial containing a miniature, swirling dark cloud and tiny lightning bolts.",
+      "category": "weather_lot"
+    },
+    {
+      "item_id": "celadon_wrench",
+      "name": "Celadon Wrench",
+      "price": 150,
+      "mass": 1.0,
+      "description": "A standard tool for market maintenance.",
+      "image_prompt": "A heavy, pale-green ceramic wrench.",
+      "category": "tool"
+    },
+    {
+      "item_id": "magenta_thread_spool",
+      "name": "Magenta Warning Thread",
+      "price": 50,
+      "mass": 0.2,
+      "description": "Used to mark hazardous areas.",
+      "image_prompt": "A wooden spool of bright, neon-magenta thread.",
+      "category": "material"
+    },
+    {
+      "item_id": "storm_gray_canvas",
+      "name": "Storm-Gray Canvas",
+      "price": 100,
+      "mass": 2.0,
+      "description": "Durable, waterproof fabric for tents and covers.",
+      "image_prompt": "A folded stack of heavy, dark gray fabric.",
+      "category": "material"
+    },
+    {
+      "item_id": "pressure_gauge_deluxe",
+      "name": "Deluxe Pressure Gauge",
+      "price": 600,
+      "mass": 0.8,
+      "description": "A highly accurate tool for canister safety.",
+      "image_prompt": "A complex brass and celadon dial with multiple needles.",
+      "category": "tool"
+    },
+    {
+      "item_id": "wind_whistle_silver",
+      "name": "Silver Wind Whistle",
+      "price": 300,
+      "mass": 0.1,
+      "description": "A whistle that can be heard even in a gale.",
+      "image_prompt": "A small, ornate silver whistle shaped like a bird.",
+      "category": "tool"
+    },
+    {
+      "item_id": "alchemical_catalyst",
+      "name": "Weather Catalyst",
+      "price": 800,
+      "mass": 0.5,
+      "description": "A chemical agent used to stabilize weather lots.",
+      "image_prompt": "A bubbling blue liquid in a round-bottomed flask.",
+      "category": "material"
+    },
+    {
+      "item_id": "market_pass",
+      "name": "Night Market Pass",
+      "price": 5000,
+      "mass": 0.1,
+      "description": "Allows access to the high-value trade rooms.",
+      "image_prompt": "A silver coin with a hole in the center, stamped with a cloud.",
+      "category": "intel"
+    }
+  ],
+  "visual_canon": {
+    "canon_id": "weather_market_v1",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees",
+      "scale_rule": "1_unit_per_meter"
+    },
+    "palette": {
+      "dominant": "#2F2F2F",
+      "secondary": "#708090",
+      "accent": "#FFFF00",
+      "shadow": "#1A1A1A",
+      "highlight": "#ACE1AF"
+    },
+    "materials": [
+      "wet charcoal",
+      "celadon ceramic",
+      "storm-gray canvas",
+      "electric-yellow silk"
+    ],
+    "lighting": "Low-ambient night with sharp, localized glows from lanterns and electric-yellow silk.",
+    "architecture": [
+      "industrial logistics",
+      "bamboo scaffolding",
+      "heavy stone vaults"
+    ],
+    "terrain": {
+      "ground": "wet charcoal stone",
+      "path": "silver condensation trails",
+      "edge": "magenta thread barriers"
+    },
+    "sprite_language": {
+      "body_proportion": "chibi_standard",
+      "outline": "1px_dark_gray",
+      "role_readability": "high_via_color_coding"
+    },
+    "world_prompt_prefix": "Strict top-down pixel art, Night Market of Unfinished Weather, wet charcoal floors, celadon instruments, electric-yellow accents, no text.",
+    "sprite_prompt_prefix": "Strict top-down pixel art character, weather market attire, storm-gray and celadon palette.",
+    "forbidden_visuals": [
+      "neon cyberpunk",
+      "generic magic shops",
+      "Beijing references",
+      "signs",
+      "captions",
+      "readable letters",
+      "logos",
+      "text"
+    ]
+  },
+  "agent_visual_policy": {
+    "policy_id": "weather_market_agents_v1",
+    "world_wardrobe_brief": "Characters wear heavy, waterproof layers in storm-gray and charcoal, accented by the colors of their trade (yellow for pilots, celadon for vendors).",
+    "forbidden_aesthetics": [
+      "bright casual wear",
+      "modern suits",
+      "high-fantasy armor"
+    ],
+    "palette_families": [
+      {
+        "name": "Vendor Standard",
+        "dominant": "#708090",
+        "accent": "#ACE1AF",
+        "trim": "#2F2F2F",
+        "material": "canvas"
+      },
+      {
+        "name": "Pilot High-Vis",
+        "dominant": "#2F2F2F",
+        "accent": "#FFFF00",
+        "trim": "#ACE1AF",
+        "material": "silk"
+      },
+      {
+        "name": "Archivist Cold",
+        "dominant": "#2F2F2F",
+        "accent": "#C0C0C0",
+        "trim": "#ACE1AF",
+        "material": "wool"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "vendor_style",
+        "role_keywords": [
+          "vendor",
+          "broker",
+          "dealer"
+        ],
+        "attire": [
+          "heavy canvas apron",
+          "utility belt",
+          "celadon badge"
+        ],
+        "props": [
+          "canister",
+          "gauge"
+        ],
+        "palette_notes": "Heavy on storm-gray and celadon.",
+        "silhouette_notes": "Bulky and grounded."
+      },
+      {
+        "rule_id": "pilot_style",
+        "role_keywords": [
+          "pilot",
+          "courier"
+        ],
+        "attire": [
+          "silk scarf",
+          "leather harness",
+          "goggles"
+        ],
+        "props": [
+          "kite",
+          "spool"
+        ],
+        "palette_notes": "Electric-yellow accents are mandatory.",
+        "silhouette_notes": "Lean and aerodynamic."
+      },
+      {
+        "rule_id": "guard_style",
+        "role_keywords": [
+          "guard",
+          "enforcer",
+          "inspector"
+        ],
+        "attire": [
+          "long coat",
+          "silver trim",
+          "official cap"
+        ],
+        "props": [
+          "baton",
+          "lantern"
+        ],
+        "palette_notes": "Darkest charcoal with silver highlights.",
+        "silhouette_notes": "Tall and imposing."
+      }
+    ],
+    "default_rule": {
+      "rule_id": "citizen_style",
+      "role_keywords": [
+        "scavenger",
+        "porter"
+      ],
+      "attire": [
+        "patched coat",
+        "work boots"
+      ],
+      "props": [
+        "sack",
+        "cart"
+      ],
+      "palette_notes": "Muted grays and browns.",
+      "silhouette_notes": "Functional and worn."
+    },
+    "visual_consistency_rules": [
+      "All characters must have at least one celadon or electric-yellow accessory.",
+      "Footwear must appear wet or muddy.",
+      "No character may have visible text on their clothing."
+    ]
+  }
+}

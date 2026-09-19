@@ -1,0 +1,156 @@
+{
+  "generated_at": "2026-08-25T21:16:07.558232+00:00",
+  "treatment": "production_specialist_decomposition_without_art",
+  "model": "gpt-5.6-terra",
+  "temperature": 0.2,
+  "thinking_level": "low",
+  "thinking_budget": 1024,
+  "max_output_tokens": 32768,
+  "replicates": 1,
+  "case_set": "livingworldbench:lwb_hidden_v2_02",
+  "manifest_path": "",
+  "monolithic_summary_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_fair_20260729/monolithic_baseline_summary.json",
+  "protocol": {
+    "same_original_briefs": true,
+    "generator_semantic_input": "sentence_only",
+    "input_case_count": 1,
+    "same_model_across_all_specialist_nodes": true,
+    "same_model_as_monolithic": false,
+    "same_temperature_as_monolithic": true,
+    "same_thinking_level_as_monolithic": false,
+    "same_per_call_output_cap_as_monolithic": false,
+    "monolithic_output_cap": 8192,
+    "same_merged_contract_evaluator": true,
+    "same_deterministic_compiler": true,
+    "strict_no_content_fallback": true,
+    "art_browser_publish_excluded": true,
+    "provider_usage_metadata_recorded": true,
+    "provider": "openai",
+    "thinking_control": "reasoning_effort"
+  },
+  "summary": {
+    "world_count": 1,
+    "trial_count": 1,
+    "complete_successes": 0,
+    "complete_success_rate": 0.0,
+    "complete_success_wilson_95": [
+      0.0,
+      0.7935
+    ],
+    "worlds_with_majority_success": 0,
+    "first_pass_complete_successes": 0,
+    "first_pass_complete_success_rate": 0.0,
+    "worlds_with_majority_first_pass_success": 0,
+    "per_world": [
+      {
+        "world_name": "lwb_hidden_v2_02",
+        "successes": 0,
+        "first_pass_successes": 0,
+        "trials": 1,
+        "success_rate": 0.0,
+        "first_pass_success_rate": 0.0,
+        "wilson_95": [
+          0.0,
+          0.7935
+        ]
+      }
+    ],
+    "mean_elapsed_seconds": 268.7093,
+    "median_elapsed_seconds": 268.7093,
+    "provider_attempt_count": 12,
+    "retry_or_failure_attempt_count": 0,
+    "usage_metadata_attempt_count": 12,
+    "usage_metadata_coverage": 1.0,
+    "localized_node_retry_event_count": 0,
+    "localized_node_retry_failed_node_counts": {},
+    "localized_node_retry_preserved_cache_key_count": 0,
+    "token_totals": {
+      "input_tokens": 26853,
+      "output_tokens": 18528,
+      "reasoning_tokens": 606,
+      "total_tokens": 45381
+    },
+    "mean_total_tokens_per_trial": 45381.0,
+    "paired_monolithic": {
+      "paired_trial_count": 0,
+      "decomposed_only_successes": 0,
+      "monolithic_only_successes": 0,
+      "discordant_trial_count": 0,
+      "trial_level_one_sided_exact_p": 1.0,
+      "first_pass_decomposed_only_successes": 0,
+      "first_pass_monolithic_only_successes": 0,
+      "first_pass_discordant_trial_count": 0,
+      "first_pass_trial_level_one_sided_exact_p": 1.0,
+      "first_pass_world_majority_decomposed_only": 0,
+      "first_pass_world_majority_monolithic_only": 0,
+      "first_pass_world_discordant_count": 0,
+      "first_pass_world_level_one_sided_sign_test_p": 1.0,
+      "warning": "Repeated trials within a world are not independent premise clusters; the world-majority analysis remains primary.",
+      "pairs": []
+    }
+  },
+  "worlds": [
+    {
+      "trial_id": "lwb_hidden_v2_02_r01",
+      "world_name": "lwb_hidden_v2_02",
+      "draft_id": "",
+      "source_revision_dir": "",
+      "replicate": 1,
+      "request": {
+        "world_name": "",
+        "genre": "",
+        "player_count_target": 4,
+        "agent_count_target": 12,
+        "focus": "",
+        "seed": 26082401,
+        "brief": "A railway greenhouse grants platform access according to which crops passengers agree to tend during the journey."
+      },
+      "elapsed_seconds": 268.7093,
+      "generation_ok": false,
+      "complete_success": false,
+      "error": "ValueError: All decoupled generation attempts failed strict validation; no fallback world was compiled.",
+      "builder_spec_path": "",
+      "world_config_path": "",
+      "merged_contract_probe": {
+        "merged_contract_ok": false,
+        "error": "no builder_spec"
+      },
+      "compile_probe": {
+        "compile_ok": false,
+        "error": "no builder_spec"
+      },
+      "metrics": {},
+      "package_validation_status": "",
+      "compiler_critique_applied": false,
+      "compiler_critique_should_repair": false,
+      "generation_node_retries": [],
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/living_world_benchmark_20260825_hidden/confirmatory_runs/gpt_5_6_terra/lwb_hidden_v2_02/lwb_hidden_v2_02_r01_openai_calls.jsonl",
+        "provider_attempt_count": 12,
+        "successful_attempt_count": 12,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 12,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 12
+        },
+        "stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 1,
+          "main_character_generation": 3,
+          "world_creator_generation": 7,
+          "world_visual_canon_generation": 1
+        },
+        "model_attempt_counts": {
+          "gpt-5.6-terra": 12
+        },
+        "provider_elapsed_seconds_sum": 268.6765,
+        "token_totals": {
+          "input_tokens": 26853,
+          "output_tokens": 18528,
+          "reasoning_tokens": 606,
+          "total_tokens": 45381
+        }
+      }
+    }
+  ]
+}

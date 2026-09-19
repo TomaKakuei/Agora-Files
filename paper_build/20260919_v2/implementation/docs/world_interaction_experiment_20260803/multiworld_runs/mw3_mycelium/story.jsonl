@@ -1,0 +1,1200 @@
+{
+  "run_id": "mw3_mycelium",
+  "scenario_meta": {
+    "world_id": "mycelium_patent_bazaar",
+    "world_name": "Mycelium Patent Bazaar",
+    "version": "1.0",
+    "description": "In a humid undercity grown through engineered mycelium, families and guilds trade living bridges, spore encryption keys, medicine cultures, repair enzymes, and patent claims. Emphasize contracts, counterfeit strains, quarantine politics, lab gossip, and visible biological infrastructure.",
+    "simulation_objective": "Facilitate high-stakes trade of biological patents and counterfeit strains while managing quarantine risks.",
+    "visual_canon_hash": "3656986a37d325c8",
+    "player_entry_points": [
+      "A disgraced researcher seeking to reclaim a stolen genome.",
+      "A corporate spy disguised as a sanitation worker.",
+      "A black-market dealer looking for illegal bioluminescent strains."
+    ],
+    "creator_conflict_hooks": [
+      "A rival corporation has leaked a synthetic blight into the bazaar's ventilation.",
+      "The Patent Office's central database has been corrupted by a sentient mycelium."
+    ],
+    "interaction_study_protocol": "multiworld_open_actions_v1"
+  },
+  "resumed_from": {
+    "source_run_dir": "",
+    "completed_round": 0,
+    "start_round": 1,
+    "in_place": false
+  },
+  "round_summaries": [
+    {
+      "round_index": 1,
+      "activated_agent_count": 4,
+      "intent_count": 4,
+      "story_event_count": 4,
+      "video_job_count": 0,
+      "image_job_count": 0,
+      "action_success_count": 4,
+      "action_result_count": 4,
+      "routes": {
+        "the_patent_heist_coordinate_1": 2,
+        "quarantine_breach_coordinate_2": 2
+      }
+    },
+    {
+      "round_index": 2,
+      "activated_agent_count": 5,
+      "intent_count": 6,
+      "story_event_count": 5,
+      "video_job_count": 0,
+      "image_job_count": 0,
+      "action_success_count": 4,
+      "action_result_count": 6,
+      "routes": {
+        "the_patent_heist_coordinate_1": 2,
+        "quarantine_breach_coordinate_2": 2,
+        "trade_supplies": 1
+      }
+    }
+  ],
+  "stories": [
+    {
+      "round_index": 1,
+      "actor_id": "mycelium_patent_bazaar_main_01",
+      "actor_name": "Vexis Thorne",
+      "actor_room_id": "room_01_patent_filing_kiosk_04",
+      "actor_coordinate": {
+        "x": 6,
+        "y": 19,
+        "z": 0
+      },
+      "target_id": "human_interactor",
+      "target_name": "Human Interactor",
+      "target_room_id": "room_01_patent_filing_kiosk_04",
+      "target_coordinate": {
+        "x": 6,
+        "y": 19,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 0,
+      "route_id": "the_patent_heist_coordinate_1",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Vexis Thorne, as Lead Patent Auditor, is focused on exposing counterfeit spore-strains and advancing 'The Patent Heist' quest, which is directly impacted by the 'Vault Bio-Lock Compromised' and 'Patent Ledger Corruption' events in the current room. Coordinating with the Human Interactor is a direct ",
+      "shared_task_threads": [],
+      "actor_focus": "Verifying genetic sequences for unauthorized mutations Use The Patent Heist to push visible consequences and keep the world responsive to pl",
+      "target_focus": "awaiting human instruction",
+      "shared_action_core": {
+        "shared_action_label": "Strategizing on the Patent Heist",
+        "shared_action_goal": "To collaboratively plan an approach to the compromised bio-lock and corrupted ledger, advancing the 'Patent Heist' objective.",
+        "action_beats": [
+          "Vexis points to a flickering display on the biometric ledger.",
+          "The Human Interactor leans in, observing the anomaly.",
+          "Vexis outlines a potential bypass strategy.",
+          "Both nod, acknowledging the immediate threat."
+        ],
+        "actor_role_in_action": "Leading the analysis and proposing a course of action for the patent heist.",
+        "target_role_in_action": "Actively listening, observing, and considering the proposed strategy for the patent heist.",
+        "props_in_use": [
+          "mpb_002__chitinous_ledger"
+        ],
+        "location_focus": "The compromised biometric ledger at Patent Kiosk 04.",
+        "why_now": "The vault bio-lock is compromised and the patent ledger is corrupted, demanding immediate coordinated action to prevent a full breach and data loss.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Show Vexis Thorne actively engaging the Human Interactor, using the chitinous ledger to highlight the compromised data and discussing the next steps for 'The Pa"
+      },
+      "shared_action_label": "Strategizing on the Patent Heist",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Show Vexis Thorne actively engaging the Human Interactor, using the chitinous ledger to highlight the compromised data and discussing the next steps for 'The Pa",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_01",
+          "target_agent_id": "human_interactor",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Coordinating on an urgent, shared objective builds trust and positive rapport.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "human_interactor",
+          "target_agent_id": "mycelium_patent_bazaar_main_01",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Being included in critical planning by an authority figure fosters trust and connection.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 1,
+      "actor_id": "mycelium_patent_bazaar_main_16",
+      "actor_name": "Registrar Elen-Ka",
+      "actor_room_id": "room_01_patent_filing_kiosk_04",
+      "actor_coordinate": {
+        "x": 8,
+        "y": 19,
+        "z": 0
+      },
+      "target_id": "human_interactor",
+      "target_name": "Human Interactor",
+      "target_room_id": "room_01_patent_filing_kiosk_04",
+      "target_coordinate": {
+        "x": 6,
+        "y": 19,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 2,
+      "route_id": "the_patent_heist_coordinate_1",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Registrar Elen-Ka, a main character, is engaging the Human Interactor to advance the 'Patent Heist' objective, leveraging the compromised bio-lock and ledger corruption in their shared location.",
+      "shared_task_threads": [],
+      "actor_focus": "Processing a backlog of low-priority genetic patents Use Quarantine Breach to push visible consequences and keep the world responsive to pla",
+      "target_focus": "awaiting human instruction",
+      "shared_action_core": {
+        "shared_action_label": "Discussing the compromised patent vault",
+        "shared_action_goal": "To coordinate efforts to exploit or address the ongoing patent vault breach and ledger corruption.",
+        "action_beats": [
+          "Elen-Ka gestures towards the flickering biometric ledger.",
+          "The Human Interactor leans in, listening intently.",
+          "Elen-Ka whispers about the vault's tampered bio-lock.",
+          "Both glance towards the vault entrance, a shared understanding passing between them."
+        ],
+        "actor_role_in_action": "Initiating a covert discussion about the vault's vulnerabilities",
+        "target_role_in_action": "Receiving critical information and considering a response",
+        "props_in_use": [
+          "mpb_049_stack_of_unprocessed_filings",
+          "mpb_050_encryption_deciphering_lens"
+        ],
+        "location_focus": "The Patent Filing Kiosk 04, specifically the biometric ledger and vault entrance",
+        "why_now": "The 'Vault Bio-Lock Compromised' and 'Patent Ledger Corruption Detected' events are active and urgent, creating an immediate opportunity to advance the 'Patent ",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Registrar Elen-Ka is visibly initiating a secretive conversation with the Human Interactor about the compromised patent vault, using subtle gestures and hushed "
+      },
+      "shared_action_label": "Discussing the compromised patent vault",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Registrar Elen-Ka is visibly initiating a secretive conversation with the Human Interactor about the compromised patent vault, using subtle gestures and hushed ",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_16",
+          "target_agent_id": "human_interactor",
+          "trust_delta": 5,
+          "affection_delta": 0,
+          "influence_fear_delta": 3,
+          "reason": "Elen-Ka trusts the interactor enough to share sensitive information, subtly testing their potential as an accomplice.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "human_interactor",
+          "target_agent_id": "mycelium_patent_bazaar_main_16",
+          "trust_delta": 5,
+          "affection_delta": 0,
+          "influence_fear_delta": 3,
+          "reason": "The interactor gains trust in Elen-Ka's knowledge and feels a nascent sense of being influenced by the shared secret.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 1,
+      "actor_id": "mycelium_patent_bazaar_main_22",
+      "actor_name": "Bax the Bulk-Spore",
+      "actor_room_id": "room_07_bazaar_logistics_yard",
+      "actor_coordinate": {
+        "x": 13,
+        "y": 6,
+        "z": 0
+      },
+      "target_id": "mycelium_patent_bazaar_main_25",
+      "target_name": "Kaelo the Silt-Walker",
+      "target_room_id": "room_07_bazaar_logistics_yard",
+      "target_coordinate": {
+        "x": 14,
+        "y": 1,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 6,
+      "route_id": "quarantine_breach_coordinate_2",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Bax and Kaelo are both main characters in the Logistics Yard, which is currently experiencing a 'Corporate Agents Attempt Strain Extraction' event. Coordinating on the 'Quarantine Breach' objective directly addresses this local crisis and aligns with their roles and the world's progress policy.",
+      "shared_task_threads": [],
+      "actor_focus": "Managing the logistics of a massive spore shipment Use Quarantine Breach to push visible consequences and keep the world responsive to playe",
+      "target_focus": "Coordinating the heavy-lift spore-pods for off-world transport Use The Patent Heist to push visible consequences and keep the world responsi",
+      "shared_action_core": {
+        "shared_action_label": "Coordinating Logistics Against Corporate Extraction",
+        "shared_action_goal": "To secure the yard's spore shipments and counter corporate agents attempting to extract mutated strains amidst compromised security.",
+        "action_beats": [
+          "Bax gestures towards a compromised security point on a manifest.",
+          "Kaelo reviews the manifest, tapping his encrypted tablet thoughtfully.",
+          "They exchange urgent whispers about securing specific spore pods.",
+          "Both nod, agreeing on a synchronized defense strategy for the yard."
+        ],
+        "actor_role_in_action": "Directing the immediate response and identifying vulnerable shipments.",
+        "target_role_in_action": "Providing critical intelligence on secure routes and coordinating heavy-lift operations.",
+        "props_in_use": [
+          "mpb_024__bulk_spore_manifest",
+          "encrypted_spore_pod_manifest"
+        ],
+        "location_focus": "The compromised sections of the Bazaar Logistics Yard, near spore-pods.",
+        "why_now": "Corporate agents are actively attempting strain extraction in their shared location, demanding immediate coordinated action to protect valuable assets.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Record Bax and Kaelo actively discussing and planning a defense against the corporate extraction, using their respective manifests and showing their roles in ac"
+      },
+      "shared_action_label": "Coordinating Logistics Against Corporate Extraction",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Record Bax and Kaelo actively discussing and planning a defense against the corporate extraction, using their respective manifests and showing their roles in ac",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_22",
+          "target_agent_id": "mycelium_patent_bazaar_main_25",
+          "trust_delta": 4,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Coordinating effectively against a shared threat builds trust and a degree of camaraderie.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_25",
+          "target_agent_id": "mycelium_patent_bazaar_main_22",
+          "trust_delta": 4,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Successful coordination in a crisis strengthens Kaelo's trust in Bax's competence and shared objectives.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 1,
+      "actor_id": "mycelium_patent_bazaar_main_02",
+      "actor_name": "Kaelen Voss",
+      "actor_room_id": "room_02_spore_strain_exchange_stall",
+      "actor_coordinate": {
+        "x": 5,
+        "y": 2,
+        "z": 0
+      },
+      "target_id": "mycelium_patent_bazaar_main_15",
+      "target_name": "Varn the Splicer-King",
+      "target_room_id": "room_02_spore_strain_exchange_stall",
+      "target_coordinate": {
+        "x": 8,
+        "y": 1,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 4,
+      "route_id": "quarantine_breach_coordinate_2",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Kaelen, a Master Strain Trader, is directed to use 'Quarantine Breach' and is hooked to the 'Corporate Agents Attempt Strain Extraction' event. Varn, a Renegade Genetic Architect, is hooked to the 'Mutated Spore Outbreak' event. Coordinating on the Quarantine Breach aligns with both their immediate ",
+      "shared_task_threads": [],
+      "actor_focus": "Negotiating the price of a rare bioluminescent fungus Use Quarantine Breach to push visible consequences and keep the world responsive to pl",
+      "target_focus": "Overclocking the growth rate of a predatory fungal strain Use The Patent Heist to push visible consequences and keep the world responsive to",
+      "shared_action_core": {
+        "shared_action_label": "Discussing the Mutated Spore Outbreak",
+        "shared_action_goal": "To assess the threat of the mutated spore outbreak and strategize containment or exploitation, given corporate interest.",
+        "action_beats": [
+          "Kaelen leans in, lowering his voice, indicating urgency.",
+          "Varn gestures to his current work, hinting at its relevance.",
+          "They exchange glances, weighing the risks of the spreading infection.",
+          "A brief, intense discussion on the outbreak's potential impact."
+        ],
+        "actor_role_in_action": "Initiating a cautious discussion about the outbreak's market implications and potential containment.",
+        "target_role_in_action": "Responding to the inquiry, subtly hinting at his own involvement or knowledge of the mutated strain.",
+        "props_in_use": [
+          "mpb_011__scent_masking_veil",
+          "mpb_042_neural_link_headset"
+        ],
+        "location_focus": "The Spore Strain Exchange Stall, amidst the hum of other traders.",
+        "why_now": "The 'Mutated Spore Outbreak Detected' and 'Corporate Agents Attempt Strain Extraction' events are active and directly relevant to both characters' roles and dir",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Show Kaelen Voss initiating a discreet conversation with Varn, both appearing to weigh the implications of the spore outbreak and corporate extraction attempts."
+      },
+      "shared_action_label": "Discussing the Mutated Spore Outbreak",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Show Kaelen Voss initiating a discreet conversation with Varn, both appearing to weigh the implications of the spore outbreak and corporate extraction attempts.",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_02",
+          "target_agent_id": "mycelium_patent_bazaar_main_15",
+          "trust_delta": 3,
+          "affection_delta": 0,
+          "influence_fear_delta": 2,
+          "reason": "Kaelen seeks information, showing a degree of trust in Varn's expertise, but also a subtle attempt to assert influence over the situation.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_15",
+          "target_agent_id": "mycelium_patent_bazaar_main_02",
+          "trust_delta": 2,
+          "affection_delta": 0,
+          "influence_fear_delta": 3,
+          "reason": "Varn shares limited information, acknowledging Kaelen's interest while subtly asserting his own control over the mutated strain's knowledge.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 2,
+      "actor_id": "mycelium_patent_bazaar_main_01",
+      "actor_name": "Vexis Thorne",
+      "actor_room_id": "room_01_patent_filing_kiosk_04",
+      "actor_coordinate": {
+        "x": 6,
+        "y": 19,
+        "z": 0
+      },
+      "target_id": "human_interactor",
+      "target_name": "Human Interactor",
+      "target_room_id": "room_01_patent_filing_kiosk_04",
+      "target_coordinate": {
+        "x": 6,
+        "y": 19,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 0,
+      "route_id": "the_patent_heist_coordinate_1",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Vexis Thorne continues to coordinate with the Human Interactor on 'The Patent Heist', building on the previous round's progress and the new 'Vault Entry Point Secured' event.",
+      "shared_task_threads": [],
+      "actor_focus": "Continue after coordinated with with Human Interactor.",
+      "target_focus": "awaiting human instruction",
+      "shared_action_core": {
+        "shared_action_label": "Strategizing Heist Entry",
+        "shared_action_goal": "To discuss the newly secured vault entry point and plan the next immediate steps for the Patent Heist.",
+        "action_beats": [
+          "Vexis points to the compromised bio-lock data on a chitinous ledger.",
+          "Vexis outlines the risks of rising spore toxicity.",
+          "Both lean in, discussing the timing of the vault infiltration.",
+          "Vexis gestures towards the vault, indicating readiness."
+        ],
+        "actor_role_in_action": "Lead Patent Auditor providing critical intel and tactical guidance for the heist.",
+        "target_role_in_action": "Human Interactor receiving instructions and confirming understanding for the heist.",
+        "props_in_use": [
+          "mpb_002__chitinous_ledger",
+          "mpb_001__bio_luminescent_stylus"
+        ],
+        "location_focus": "Patent Filing Kiosk 04, near the now-bypassed bio-lock.",
+        "why_now": "The vault entry is secured, and rising toxicity levels necessitate immediate action to advance 'The Patent Heist' quest.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Vexis Thorne and Human Interactor are seen discussing the secured vault entry, with Vexis using the bioluminescent stylus to highlight details on the chitinous "
+      },
+      "shared_action_label": "Strategizing Heist Entry",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Vexis Thorne and Human Interactor are seen discussing the secured vault entry, with Vexis using the bioluminescent stylus to highlight details on the chitinous ",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_01",
+          "target_agent_id": "human_interactor",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Continuing to coordinate on the heist strengthens Vexis's trust and shared purpose with the Interactor.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "human_interactor",
+          "target_agent_id": "mycelium_patent_bazaar_main_01",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Vexis's clear leadership and continued coordination on the heist builds the Interactor's trust and affection.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 2,
+      "actor_id": "mycelium_patent_bazaar_main_03",
+      "actor_name": "Unit 7-B 'Root'",
+      "actor_room_id": "room_04_contract_enforcement_barracks",
+      "actor_coordinate": {
+        "x": 4,
+        "y": 7,
+        "z": 0
+      },
+      "target_id": "mycelium_patent_bazaar_main_21",
+      "target_name": "Kaelen the Graft-Hunter",
+      "target_room_id": "room_04_contract_enforcement_barracks",
+      "target_coordinate": {
+        "x": 4,
+        "y": 5,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 2,
+      "route_id": "quarantine_breach_coordinate_2",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Both agents are enforcement roles and a critical spore outbreak is escalating, requiring coordinated containment efforts. The actor has an active task related to this outbreak, and the target's goal of securing the 'God-Strain' aligns with containing mutated spores.",
+      "shared_task_threads": [],
+      "actor_focus": "A highly aggressive, rapidly mutating spore strain has been detected in the Genetic Splicing Workshop, threatening to overwhelm containment",
+      "target_focus": "Tracking down Tessa 'The Graft' Vahl for patent infringement Use The Patent Heist to push visible consequences and keep the world responsive",
+      "shared_action_core": {
+        "shared_action_label": "Coordinating containment efforts for the mutated spore outbreak",
+        "shared_action_goal": "To prevent the rapidly adapting spore strain from overwhelming containment protocols and spreading further into the bazaar.",
+        "action_beats": [
+          "Unit 7-B 'Root' gestures towards a holographic map, highlighting affected zones.",
+          "Kaelen the Graft-Hunter reviews the data, suggesting immediate deployment strategies.",
+          "They discuss resource allocation and potential choke points for containment."
+        ],
+        "actor_role_in_action": "Leading the tactical assessment and proposing initial containment directives.",
+        "target_role_in_action": "Analyzing data and contributing strategic insights for spore containment.",
+        "props_in_use": [
+          "identification_scanner",
+          "pheromone_tracker"
+        ],
+        "location_focus": "The Contract Enforcement Barracks, using a shared tactical display.",
+        "why_now": "The mutated spore strain is adapting rapidly, and containment protocols are failing, demanding immediate, coordinated intervention.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Record Unit 7-B 'Root' and Kaelen the Graft-Hunter actively discussing and planning the containment of the spore outbreak using a tactical display."
+      },
+      "shared_action_label": "Coordinating containment efforts for the mutated spore outbreak",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Record Unit 7-B 'Root' and Kaelen the Graft-Hunter actively discussing and planning the containment of the spore outbreak using a tactical display.",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_03",
+          "target_agent_id": "mycelium_patent_bazaar_main_21",
+          "trust_delta": 3,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Effective coordination on a critical threat builds professional trust and camaraderie.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_21",
+          "target_agent_id": "mycelium_patent_bazaar_main_03",
+          "trust_delta": 3,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Collaborating on an urgent task reinforces mutual respect and a sense of shared purpose.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 2,
+      "actor_id": "mycelium_patent_bazaar_main_04",
+      "actor_name": "Elara Myn",
+      "actor_room_id": "room_06_genetic_splicing_workshop",
+      "actor_coordinate": {
+        "x": 11,
+        "y": 25,
+        "z": 0
+      },
+      "target_id": "mycelium_patent_bazaar_main_10",
+      "target_name": "Tessa 'The Graft' Vahl",
+      "target_room_id": "room_06_genetic_splicing_workshop",
+      "target_coordinate": {
+        "x": 12,
+        "y": 26,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 2,
+      "route_id": "quarantine_breach_coordinate_2",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Both main characters are in the Genetic Splicing Workshop, facing a rapidly escalating mutated spore outbreak. Coordinating efforts is critical to contain the threat and advance the 'Quarantine Breach' gameplay loop.",
+      "shared_task_threads": [
+        "world:mutated_spore_outbreak_01"
+      ],
+      "actor_focus": "A highly aggressive, rapidly mutating spore strain has been detected in the Genetic Splicing Workshop, threatening to overwhelm containment",
+      "target_focus": "A highly aggressive, rapidly mutating spore strain has been detected in the Genetic Splicing Workshop, threatening to overwhelm containment",
+      "shared_action_core": {
+        "shared_action_label": "Coordinating spore containment efforts",
+        "shared_action_goal": "To prevent the mutated spore strain from overwhelming containment protocols and spreading beyond the workshop.",
+        "action_beats": [
+          "Elara points to a containment breach on a monitor, explaining the strain's rapid adaptation.",
+          "Tessa quickly reviews the data, suggesting a counter-agent synthesis strategy.",
+          "They both move towards a central console, preparing to implement their plan.",
+          "Elara and Tessa work in tandem, adjusting environmental controls and preparing samples."
+        ],
+        "actor_role_in_action": "Analyzing spore data and directing containment adjustments.",
+        "target_role_in_action": "Proposing counter-agent strategies and assisting with synthesis protocols.",
+        "props_in_use": [
+          "precision_pipette",
+          "splicing_catalyst",
+          "mutagenic_catalyst",
+          "petri_dish_array"
+        ],
+        "location_focus": "The central console and containment units within the Genetic Splicing Workshop.",
+        "why_now": "The spore containment protocols are actively failing, and the infection meter is rising, demanding immediate, coordinated intervention.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Show Elara and Tessa actively collaborating at the central console, using their tools to combat the spore outbreak. Emphasize their focused, urgent teamwork."
+      },
+      "shared_action_label": "Coordinating spore containment efforts",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Show Elara and Tessa actively collaborating at the central console, using their tools to combat the spore outbreak. Emphasize their focused, urgent teamwork.",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_04",
+          "target_agent_id": "mycelium_patent_bazaar_main_10",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Successfully coordinating to address the urgent spore outbreak builds trust and a sense of shared purpose.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_10",
+          "target_agent_id": "mycelium_patent_bazaar_main_04",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Working effectively with Elara on a critical task demonstrates her competence and fosters cooperation.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 2,
+      "actor_id": "mycelium_patent_bazaar_main_16",
+      "actor_name": "Registrar Elen-Ka",
+      "actor_room_id": "room_01_patent_filing_kiosk_04",
+      "actor_coordinate": {
+        "x": 8,
+        "y": 19,
+        "z": 0
+      },
+      "target_id": "human_interactor",
+      "target_name": "Human Interactor",
+      "target_room_id": "room_01_patent_filing_kiosk_04",
+      "target_coordinate": {
+        "x": 6,
+        "y": 19,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 2,
+      "route_id": "the_patent_heist_coordinate_1",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Registrar Elen-Ka continues to coordinate with the Human Interactor to advance the patent heist, leveraging the recently secured vault entry and the ongoing ledger corruption.",
+      "shared_task_threads": [],
+      "actor_focus": "Continue after coordinated with with Human Interactor.",
+      "target_focus": "awaiting human instruction",
+      "shared_action_core": {
+        "shared_action_label": "Reviewing Vault Access Plan",
+        "shared_action_goal": "To confirm the next steps for infiltrating the vault and securing the fungal genome amidst rising toxicity.",
+        "action_beats": [
+          "Elen-Ka gestures towards the biometric ledger, highlighting a corrupted entry.",
+          "The Interactor points to a schematic of the vault entry point.",
+          "Both agents lean in, discussing the timing of the infiltration.",
+          "Elen-Ka hands over a small, encrypted data chip."
+        ],
+        "actor_role_in_action": "Providing critical intelligence and access details for the vault infiltration.",
+        "target_role_in_action": "Confirming understanding of the plan and preparing for the next phase of the heist.",
+        "props_in_use": [
+          "mpb_050_encryption_deciphering_lens",
+          "mpb_049_stack_of_unprocessed_filings",
+          "Encrypted Data Chip"
+        ],
+        "location_focus": "The patent filing kiosk, specifically near the compromised biometric ledger.",
+        "why_now": "The vault entry point has been secured, and spore toxicity levels are rising, necessitating immediate action to proceed with the heist.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Registrar Elen-Ka visibly shares encrypted data and discusses the vault infiltration plan with the Human Interactor, using the biometric ledger as a focal point"
+      },
+      "shared_action_label": "Reviewing Vault Access Plan",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Registrar Elen-Ka visibly shares encrypted data and discusses the vault infiltration plan with the Human Interactor, using the biometric ledger as a focal point",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_16",
+          "target_agent_id": "human_interactor",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Successful coordination and sharing of critical heist information builds trust and camaraderie.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "human_interactor",
+          "target_agent_id": "mycelium_patent_bazaar_main_16",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Receiving vital intelligence and tools from Elen-Ka reinforces her reliability and strengthens the partnership.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 2,
+      "actor_id": "mycelium_patent_bazaar_main_02",
+      "actor_name": "Kaelen Voss",
+      "actor_room_id": "room_02_spore_strain_exchange_stall",
+      "actor_coordinate": {
+        "x": 5,
+        "y": 2,
+        "z": 0
+      },
+      "target_id": "mycelium_patent_bazaar_main_08",
+      "target_name": "Mira the Graft",
+      "target_room_id": "room_02_spore_strain_exchange_stall",
+      "target_coordinate": {
+        "x": 8,
+        "y": 2,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 3,
+      "route_id": "trade_supplies",
+      "kind": "item_trade",
+      "story_verb": "traded supplies with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Kaelen, a Master Strain Trader, is actively involved in the 'Quarantine Breach' quest, which now has a 'corporate sample secured' event. Mira, an Independent Strain Merchant, is in the same room and her directive is to sell spores. This aligns with Kaelen's goal of monopolizing strains and the world",
+      "shared_task_threads": [],
+      "actor_focus": "Continue after coordinated with with Varn the Splicer-King.",
+      "target_focus": "Selling exotic hybrid spores to the highest bidder Use Quarantine Breach to push visible consequences and keep the world responsive to playe",
+      "shared_action_core": {
+        "shared_action_label": "Negotiating for a secured spore sample",
+        "shared_action_goal": "Kaelen attempts to acquire the corporate-secured spore sample from Mira to further his monopoly, while Mira aims to profit.",
+        "action_beats": [
+          "Kaelen approaches Mira's stall, a glint of interest in his eye.",
+          "Mira displays her wares, subtly hinting at a newly acquired, valuable sample.",
+          "Kaelen examines the sample, his expression unreadable as he considers an offer.",
+          "Mira subtly gauges Kaelen's intent, ready to drive a hard bargain."
+        ],
+        "actor_role_in_action": "The discerning buyer, attempting to secure a rare sample for strategic advantage.",
+        "target_role_in_action": "The shrewd merchant, leveraging a high-stakes item for maximum profit and influence.",
+        "props_in_use": [
+          "mpb_009__cryo_spore_canister",
+          "gilded_spore_scale",
+          "display_case",
+          "hybrid_rose_spore"
+        ],
+        "location_focus": "Mira's stall in the Spore Strain Exchange",
+        "why_now": "A corporate team has secured a spore sample, creating a high-stakes trade opportunity that aligns with both Kaelen's monopolization goal and Mira's profit-seeki",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Kaelen Voss is seen negotiating with Mira the Graft over a newly acquired, potentially corporate-secured spore sample, using his gilded spore scale to inspect i"
+      },
+      "shared_action_label": "Negotiating for a secured spore sample",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Kaelen Voss is seen negotiating with Mira the Graft over a newly acquired, potentially corporate-secured spore sample, using his gilded spore scale to inspect i",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_02",
+          "target_agent_id": "mycelium_patent_bazaar_main_08",
+          "trust_delta": 2,
+          "affection_delta": 0,
+          "influence_fear_delta": 1,
+          "reason": "Kaelen initiates a trade for a high-value item, showing intent to control the market, which can increase Mira's business trust but also her competitive wariness.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "mycelium_patent_bazaar_main_08",
+          "target_agent_id": "mycelium_patent_bazaar_main_02",
+          "trust_delta": 3,
+          "affection_delta": 0,
+          "influence_fear_delta": 0,
+          "reason": "Mira engages in a direct trade, demonstrating her reliability as a merchant, which increases Kaelen's trust in her as a business contact.",
+          "source": "vertex_api"
+        }
+      ],
+      "intent_count": 2
+    }
+  ],
+  "route_counts": {
+    "the_patent_heist_coordinate_1": 4,
+    "quarantine_breach_coordinate_2": 4,
+    "trade_supplies": 1
+  },
+  "longlive_counts": {},
+  "image_counts": {},
+  "extra_world_events": [
+    {
+      "event_id": "vault_bio_lock_alert",
+      "title": "Vault Bio-Lock Compromised",
+      "description": "The bio-lock at Patent Kiosk 04 shows signs of tampering, indicating an imminent vault breach. Spore toxicity levels are rising, complicating access for a disgraced researcher.",
+      "room_id": "room_01_patent_filing_kiosk_04",
+      "coordinate": {
+        "x": 5,
+        "y": 18,
+        "z": 0
+      },
+      "event_type": "quest_chain",
+      "status_tags": [
+        "compromised",
+        "escalated",
+        "patent_heist"
+      ],
+      "preferred_routes": [
+        "the_patent_heist_coordinate_1",
+        "world_action_bypass_bio_lock"
+      ],
+      "main_character_hooks": [
+        "mycelium_patent_bazaar_main_01",
+        "mycelium_patent_bazaar_main_03",
+        "human_interactor"
+      ],
+      "expires_after_rounds": 3,
+      "round_index": 1,
+      "function_id": "the_patent_heist_progressor",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "server_room_spore_spike",
+      "title": "Mycelial Server Room Toxicity Spike",
+      "description": "A sudden spike in spore toxicity within the Mycelial Server Room suggests a data extraction attempt under cover of environmental chaos. Containment protocols are failing, blocking normal access.",
+      "room_id": "room_03_the_mycelial_server_room",
+      "coordinate": {
+        "x": 21,
+        "y": 10,
+        "z": 0
+      },
+      "event_type": "hazard",
+      "status_tags": [
+        "toxicity_rising",
+        "blocked",
+        "data_breach"
+      ],
+      "preferred_routes": [
+        "the_patent_heist_coordinate_1",
+        "world_action_bypass_bio_lock"
+      ],
+      "main_character_hooks": [
+        "mycelium_patent_bazaar_main_09",
+        "mycelium_patent_bazaar_main_17",
+        "mycelium_patent_bazaar_main_05"
+      ],
+      "expires_after_rounds": 2,
+      "round_index": 1,
+      "function_id": "the_patent_heist_progressor",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "mutated_spore_outbreak_01",
+      "title": "Mutated Spore Outbreak Detected",
+      "description": "A highly aggressive, rapidly mutating spore strain has been detected in the Genetic Splicing Workshop, threatening to overwhelm containment protocols. Immediate action is required to prevent widespread infection.",
+      "room_id": "room_06_genetic_splicing_workshop",
+      "coordinate": {
+        "x": 10,
+        "y": 21,
+        "z": 0
+      },
+      "event_type": "hazard",
+      "status_tags": [
+        "outbreak_detected",
+        "infection_rising",
+        "uncontained",
+        "urgent"
+      ],
+      "preferred_routes": [
+        "quarantine_breach_coordinate_2",
+        "world_action_siphon_spore_sample"
+      ],
+      "main_character_hooks": [
+        "mycelium_patent_bazaar_main_04",
+        "mycelium_patent_bazaar_main_10",
+        "mycelium_patent_bazaar_main_12",
+        "mycelium_patent_bazaar_main_15",
+        "mycelium_patent_bazaar_main_01",
+        "mycelium_patent_bazaar_main_03"
+      ],
+      "expires_after_rounds": 3,
+      "round_index": 1,
+      "function_id": "quarantine_breach_progressor",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "corporate_extraction_attempt_01",
+      "title": "Corporate Agents Attempt Strain Extraction",
+      "description": "Whispers confirm corporate agents are attempting to illicitly extract samples of the newly mutated spore strain from the Bazaar Logistics Yard, aiming to weaponize or patent it. Security is compromised.",
+      "room_id": "room_07_bazaar_logistics_yard",
+      "coordinate": {
+        "x": 10,
+        "y": 0,
+        "z": 0
+      },
+      "event_type": "quest_chain",
+      "status_tags": [
+        "corporate_interest",
+        "extraction_attempt",
+        "escalated",
+        "compromised_security"
+      ],
+      "preferred_routes": [
+        "quarantine_breach_coordinate_2",
+        "trade_supplies",
+        "move_to_next_thread"
+      ],
+      "main_character_hooks": [
+        "mycelium_patent_bazaar_main_11",
+        "mycelium_patent_bazaar_main_13",
+        "mycelium_patent_bazaar_main_19",
+        "mycelium_patent_bazaar_main_12",
+        "mycelium_patent_bazaar_main_05",
+        "mycelium_patent_bazaar_main_02"
+      ],
+      "expires_after_rounds": 4,
+      "round_index": 1,
+      "function_id": "quarantine_breach_progressor",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "patent_ledger_corruption",
+      "title": "Patent Ledger Corruption Detected",
+      "description": "The Biometric Ledger at Kiosk 04 is intermittently failing, displaying corrupted patent data and delaying new registrations. This suggests a deeper issue with the Patent Office's central database.",
+      "room_id": "room_01_patent_filing_kiosk_04",
+      "coordinate": {
+        "x": 5,
+        "y": 18,
+        "z": 0
+      },
+      "event_type": "hazard",
+      "status_tags": [
+        "corrupted_data",
+        "delayed",
+        "contested_IP",
+        "database_issue"
+      ],
+      "preferred_routes": [
+        "the_patent_heist_coordinate_1",
+        "world_action_forge_patent_certificate",
+        "ease_world_tension"
+      ],
+      "main_character_hooks": [
+        "mycelium_patent_bazaar_main_01",
+        "mycelium_patent_bazaar_main_06",
+        "mycelium_patent_bazaar_main_16"
+      ],
+      "expires_after_rounds": 3,
+      "round_index": 1,
+      "function_id": "mycelium_patent_bazaar_tension_generator",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "vault_entry_secured",
+      "title": "Vault Entry Point Secured",
+      "description": "The compromised bio-lock at Patent Kiosk 04 has been bypassed, creating a temporary entry point into the vault. Rising spore toxicity levels make the path hazardous.",
+      "room_id": "room_01_patent_filing_kiosk_04",
+      "coordinate": {
+        "x": 5,
+        "y": 18,
+        "z": 0
+      },
+      "event_type": "quest_chain",
+      "status_tags": [
+        "entry_secured",
+        "bypassed",
+        "patent_heist",
+        "toxicity_hazard"
+      ],
+      "preferred_routes": [
+        "the_patent_heist_coordinate_1",
+        "world_action_bypass_bio_lock"
+      ],
+      "main_character_hooks": [
+        "mycelium_patent_bazaar_main_01",
+        "mycelium_patent_bazaar_main_03",
+        "mycelium_patent_bazaar_main_05",
+        "human_interactor"
+      ],
+      "expires_after_rounds": 3,
+      "round_index": 2,
+      "function_id": "the_patent_heist_progressor",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "genome_data_access_gained",
+      "title": "Proprietary Genome Data Access Gained",
+      "description": "Amidst the server room's rising toxicity, a hacker has gained partial access to the proprietary fungal genome's data. Full extraction requires further decryption.",
+      "room_id": "room_03_the_mycelial_server_room",
+      "coordinate": {
+        "x": 21,
+        "y": 10,
+        "z": 0
+      },
+      "event_type": "quest_chain",
+      "status_tags": [
+        "access_gained",
+        "decryption_needed",
+        "toxicity_rising",
+        "patent_heist"
+      ],
+      "preferred_routes": [
+        "the_patent_heist_coordinate_1",
+        "world_action_bypass_bio_lock"
+      ],
+      "main_character_hooks": [
+        "mycelium_patent_bazaar_main_09",
+        "mycelium_patent_bazaar_main_17",
+        "mycelium_patent_bazaar_main_05",
+        "mycelium_patent_bazaar_main_06"
+      ],
+      "expires_after_rounds": 2,
+      "round_index": 2,
+      "function_id": "the_patent_heist_progressor",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "spore_containment_failure_02",
+      "title": "Spore Containment Protocols Failing",
+      "description": "The mutated spore strain in the Genetic Splicing Workshop is adapting rapidly, overwhelming current containment efforts. The infection meter is rising, requiring immediate intervention.",
+      "room_id": "room_06_genetic_splicing_workshop",
+      "coordinate": {
+        "x": 10,
+        "y": 21,
+        "z": 0
+      },
+      "event_type": "hazard",
+      "status_tags": [
+        "containment_breached",
+        "infection_escalated",
+        "urgent",
+        "quarantine_breach"
+      ],
+      "preferred_routes": [
+        "quarantine_breach_coordinate_2",
+        "world_action_siphon_spore_sample"
+      ],
+      "main_character_hooks": [
+        "mycelium_patent_bazaar_main_04",
+        "mycelium_patent_bazaar_main_10",
+        "mycelium_patent_bazaar_main_12"
+      ],
+      "expires_after_rounds": 3,
+      "round_index": 2,
+      "function_id": "quarantine_breach_progressor",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "corporate_sample_secured_02",
+      "title": "Corporate Team Secures Spore Sample",
+      "description": "Despite security, a corporate team has secured a small sample of the mutated spore strain from the Bazaar Logistics Yard. They are now seeking a buyer or a safe extraction route, creating a high-stakes trade opportunity for a black-market dealer.",
+      "room_id": "room_07_bazaar_logistics_yard",
+      "coordinate": {
+        "x": 10,
+        "y": 0,
+        "z": 0
+      },
+      "event_type": "quest_chain",
+      "status_tags": [
+        "sample_secured",
+        "corporate_advantage",
+        "trade_opportunity",
+        "quarantine_breach"
+      ],
+      "preferred_routes": [
+        "quarantine_breach_coordinate_2",
+        "trade_supplies",
+        "move_to_next_thread"
+      ],
+      "main_character_hooks": [
+        "mycelium_patent_bazaar_main_02",
+        "mycelium_patent_bazaar_main_05",
+        "mycelium_patent_bazaar_main_08",
+        "mycelium_patent_bazaar_main_11"
+      ],
+      "expires_after_rounds": 4,
+      "round_index": 2,
+      "function_id": "quarantine_breach_progressor",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "blight_ventilation_rumor",
+      "title": "Ventilation Blight Rumors Spread",
+      "description": "Whispers of a synthetic blight leaking into the Spore-Cloud Lounge's ventilation system are causing panic, impacting trade and negotiations. Origins unknown.",
+      "room_id": "room_05_the_spore_cloud_lounge",
+      "coordinate": {
+        "x": 0,
+        "y": 10,
+        "z": 0
+      },
+      "event_type": "rumor",
+      "status_tags": [
+        "unconfirmed",
+        "panic_spreading",
+        "trade_impacted",
+        "ventilation_issue"
+      ],
+      "preferred_routes": [
+        "ease_world_tension",
+        "trade_supplies",
+        "document_world_detail"
+      ],
+      "main_character_hooks": [
+        "mycelium_patent_bazaar_main_05",
+        "mycelium_patent_bazaar_main_24",
+        "mycelium_patent_bazaar_main_02",
+        "mycelium_patent_bazaar_main_03",
+        "mycelium_patent_bazaar_main_07"
+      ],
+      "expires_after_rounds": 3,
+      "round_index": 2,
+      "function_id": "mycelium_patent_bazaar_tension_generator",
+      "source": "vertex_api"
+    }
+  ],
+  "target_legality": {
+    "invalid_count": 0,
+    "invalid": []
+  },
+  "orchestration": {
+    "version": "agora_c_1",
+    "mode": "json_declared_runtime",
+    "components": [
+      {
+        "component_id": "phase_trace",
+        "kind": "phase_trace"
+      }
+    ],
+    "policies": {
+      "activation_policy": {
+        "policy_id": "human_visible_decay_activation"
+      },
+      "target_selection_policy": {
+        "policy_id": "human_priority_target_selection"
+      },
+      "route_request_policy": {
+        "policy_id": "vertex_json_route_request"
+      },
+      "route_quota_policy": {
+        "policy_id": "quota_fallback"
+      },
+      "intent_builder_policy": {
+        "policy_id": "legacy_intent_builder"
+      },
+      "adjudication_policy": {
+        "policy_id": "local_universal_adjudicator"
+      },
+      "finalization_policy": {
+        "policy_id": "legacy_manifest_writer"
+      }
+    },
+    "phases": [
+      {
+        "phase_id": "bootstrap",
+        "steps": [
+          {
+            "operation": "initialize_runtime"
+          },
+          {
+            "operation": "materialize_or_resume_state"
+          },
+          {
+            "operation": "initialize_round_accumulators"
+          },
+          {
+            "operation": "write_compiled_runtime_plan"
+          }
+        ]
+      },
+      {
+        "phase_id": "round_loop",
+        "for_each": "round_indices",
+        "item_as": "round_index",
+        "steps": [
+          {
+            "operation": "prepare_round"
+          },
+          {
+            "operation": "sync_human_interactor"
+          },
+          {
+            "operation": "run_extra_world_functions"
+          },
+          {
+            "operation": "activate_agents"
+          },
+          {
+            "phase_id": "actor_loop",
+            "for_each": "activated_agents",
+            "item_as": "actor",
+            "steps": [
+              {
+                "operation": "select_target"
+              },
+              {
+                "operation": "prepare_actor_request"
+              },
+              {
+                "operation": "request_route",
+                "when": {
+                  "store_key": "current_actor_skipped",
+                  "equals": false
+                }
+              },
+              {
+                "operation": "apply_route_fallbacks",
+                "when": {
+                  "store_key": "current_actor_skipped",
+                  "equals": false
+                }
+              },
+              {
+                "operation": "build_actor_outputs",
+                "when": {
+                  "store_key": "current_actor_skipped",
+                  "equals": false
+                }
+              },
+              {
+                "operation": "record_actor_outputs",
+                "when": {
+                  "store_key": "current_actor_skipped",
+                  "equals": false
+                }
+              }
+            ]
+          },
+          {
+            "operation": "adjudicate_round"
+          },
+          {
+            "operation": "record_round_outputs"
+          }
+        ]
+      },
+      {
+        "phase_id": "finalize",
+        "steps": [
+          {
+            "operation": "write_final_outputs"
+          },
+          {
+            "operation": "build_optional_report"
+          },
+          {
+            "operation": "write_runtime_snapshot"
+          }
+        ]
+      }
+    ]
+  }
+}

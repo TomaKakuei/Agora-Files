@@ -1,0 +1,178 @@
+\section{The Agora System}
+\label{sec:method}
+
+\subsection{World Representation}
+Given a one-sentence premise $p$, the generation pipeline constructs
+\begin{equation}
+W=(E,G,R,K,A,M,P),
+\end{equation}
+where $E$ contains entities and their stable identities; $G$ is traversable
+geometry; $R$ contains physical, economic, and institutional rules; $K$
+specifies knowledge allocation and access; $A$ is the initial action
+repertoire; $M$ associates visual media with entities; and $P$ records world
+identity and revision. Mutable state $S_t$ contains locations, holdings,
+knowledge acquired during play, tasks, relationships, and event status.
+The schema is shared across worlds; its entities and rules depend on $p$.
+
+This separation gives language-generated descriptions operational meaning.
+An archive must refer to an existing room, an item must have a valid owner,
+and a private fact must have a defined holder. Each visual asset is linked to
+the same entity identity used by the runtime. Changes then propagate through
+the state observed by subsequent actors rather than remaining only in dialogue.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/generation_overview.pdf}
+\caption{\paneltitle{From premise to persistent consequences.} Specialized
+generation stages populate a shared world representation. Validation connects
+semantic, visual, and spatial requirements; local repair revisits affected
+dependencies. Humans and agents act through the same world, while logged
+decisions and state changes support separate construction and interaction
+evaluations.}
+\label{fig:generation-overview}
+\end{figure*}
+
+\subsection{Compositional Generation and Local Refinement}
+A planning stage identifies institutions, conflicts, resources, and activity
+loops. Specialized stages expand materials, rooms, items, roles, main
+characters, knowledge, visual direction, wardrobe, property, and placement.
+The shared representation constrains references between their outputs.
+Visual generation produces room floors, character atlases, and objects under
+a common style specification; assembly connects these assets to the playable
+geometry and entity identities.
+
+Validation targets four properties: semantic completeness, cross-modal
+identity, navigable and readable space, and persistent interactive state.
+Structural validators check references, inventories, asset provenance, and
+image contracts. Visual inspection and interactive checks supply different
+evidence about readability and use. When a check identifies an invalid
+character--item relation, that dependency can be revisited while unaffected
+stages remain fixed. This instantiates repair as a constrained part of
+generation, consistent with the broader PCG literature \cite{pcgml}.
+
+\paragraph{Running example.}
+Tidal Embassy of Lost Languages turns linguistic scarcity into institutions
+and actions. Its generated configuration contains eight rooms, 25 named main
+characters, and 20 item types. Diplomats, smugglers, and memory divers receive
+different possessions and private knowledge. The setting exposes activities
+such as translating an archaic bribe, forging a linguistic seal, and rescuing
+a flooded treaty. These relations create reasons to move, exchange, withhold
+information, and seek cooperation. Appendix~\ref{app:tidal} follows the full
+generation trace, including failed room images and localized visual repair.
+
+\subsection{Bounded Observation and Situated Intention}
+At round $t$, an activation policy selects agents. Agent $i$ receives
+\begin{equation}
+o_i^t=(\ell_i^t,N_i^t,I_i^t,K_i^t,H_i^t,Q_i^t),
+\end{equation}
+comprising location, nearby actors, inventory, accessible knowledge, episode
+and task memory, and selected directed relationships. Role and goals provide
+the decision context. The observation boundary is intended to preserve
+information asymmetry, an important distinction from omniscient social
+simulation \cite{misleading}.
+
+The agent chooses a partner and an intention, using either a generated action
+or an open proposal. Visible actions explain what an institution makes
+possible; proposals express intentions absent from that initial vocabulary.
+Open proposals in the audited implementation support four effect primitives:
+speech, transfer, item creation, and temporary status. Movement is a separate
+action route. These primitives can describe new contextual intentions, but
+they are not arbitrary executable programs or a general physics engine. Humans can approach an inhabitant, send messages, use or trade
+items, select a visible action, or formulate a proposal through the same world
+interface. This extends the shared grounded-play tradition of LIGHT
+\cite{light} to premise-generated settings.
+
+\subsection{Coordinator-Governed State Changes}
+We write an open proposal as $q=(i,j,u,F,C)$: actor $i$, optional target $j$,
+language intention $u$, requested effects $F$, and declared consent evidence
+$C$. The model supplies a structured proposal; the audited coordinator core uses
+deterministic schema and state checks to return a decision and explanation,
+\begin{equation}
+\Gamma(W,S_t,q)=(d,r),\quad
+d\in\{\text{approve},\text{revise},\text{reject}\}.
+\end{equation}
+Following the action-grounding role of Concordia's Game Master
+\cite{vezhnevets2023}, interpretation is separated from committing effects.
+An approved effect is applied by the state-transition machinery. Revision or
+rejection leaves the requested material effects unapplied, while the attempt
+can remain in the interaction history.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\columnwidth}{@{}L{0.19\columnwidth}Y@{}}
+\toprule
+Effect & Required grounding \\
+\midrule
+Speech & Addressable participant and a permitted channel \\
+Transfer & Existing item, ownership, quantity, and co-presence where required \\
+Trade & Transfer conditions and the partner's acceptance \\
+Creation & Declared available inputs and a resulting object identity \\
+Status & Permitted target, bounded magnitude, and duration \\
+Movement & Reachable destination and valid occupancy \\
+\bottomrule
+\end{tabularx}
+\caption{Examples of action conditions in the shared world. Linguistic
+plausibility alone does not establish that a requested effect is executable.}
+\label{tab:conditions}
+\end{table}
+
+The resulting loop combines generative interpretation with state constraints
+(Table~\ref{tab:conditions}). Ownership, quantity, location, and duration are
+represented explicitly. Social interpretation, including the meaning of an
+exchange or an accusation, remains model-mediated upstream. Declared partner
+acceptance is an input to validation; it is not itself proof of independently
+obtained human consent. Natural-language institutions are not automatically
+formalized as executable invariants by these checks. Consequently, the
+coordinator is a practical adjudication mechanism, not a proof of correct
+interpretation or universally valid social norms. Our evaluation reports
+observed outcomes rather than claiming exhaustive rule compliance.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/situated_action_cycle.pdf}
+\caption{\paneltitle{One interaction cycle.} Bounded observations inform a
+visible action or an open proposal. The coordinator evaluates the proposed
+effects; approved changes update shared state. Both outcomes and failed
+attempts provide history for later decisions.}
+\label{fig:agent-loop}
+\end{figure*}
+
+\section{Evaluation Design}
+\label{sec:evaluation}
+We separate three units of evidence: a generated world, an interaction event,
+and an action result. A world can pass structural checks without producing
+engaging play. An event can contain several effects or attempts, so the
+number of logged events need not equal the number of adjudicated results.
+Longer trajectories describe the simulated population, while human judgments
+require a separate instrument and participants.
+
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabularx}{\textwidth}{@{}L{0.19\textwidth}L{0.23\textwidth}YY@{}}
+\toprule
+Study & Unit and scope & Evidence reported & Interpretation \\
+\midrule
+Generation comparison & 10 paired premises; 20 trials per method & Completion, structural quality proxies, cost & Descriptive reliability--cost tradeoff \\
+Validation and repair & 58 injected faults with clean checks; 5 repair cases & Detection, attribution, local repair cost & Specified contracts and seeded defects \\
+Multiworld interaction & 5 worlds; 2 rounds each; 53 events & Action pathways, dyads, outcomes, state changes & Initial behavior under common runtime settings \\
+Cross-model audit & 24 generations; 21 scripted 24-round runs & Completion, executed effects, rejected actions & Retrospective coverage and execution stress test \\
+Historical pilot & 3 prior runs; 1,052 events & Repeated ties and relational trajectories & Exploratory, confounded across worlds \\
+Human evaluation & Matched English/Chinese artifact forms & Released materials; no collected ratings here & Prospective artifact judgments \\
+Memory intervention & Planned 3 seed pairs, 32 rounds & Protocol only; no paired results here & Prospective within-world mechanism test \\
+\bottomrule
+\end{tabularx}
+\caption{Evaluation scope and evidence status. Completed observations are
+separated from evaluation materials and planned experiments.}
+\label{tab:evidence}
+\end{table*}
+
+The studies address four questions: \textbf{RQ1}, how reliably can a premise
+produce a complete world and at what cost; \textbf{RQ2}, which generated and
+open action pathways are actually used; \textbf{RQ3}, whether humans are
+reachable through the common interaction interface; and \textbf{RQ4}, what
+repeated social structure appears in longer historical trajectories.
+A fifth question asks whether high execution success coincides with material
+state changes under a longer, scripted policy harness.
+Table~\ref{tab:evidence} states the scope of each answer.

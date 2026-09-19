@@ -1,0 +1,1961 @@
+{
+  "world_name": "Echoes of Promise",
+  "world_id": "veridia_promise_tax_v1",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "en-US",
+    "tone": "Mysterious, Bureaucratic, Philosophical",
+    "visual_direction": "Cliffside, Ancient, Intricate Mechanisms, Weight-based Architecture",
+    "currency_code": "PRM",
+    "currency_symbol": "⚖️",
+    "currency_minor_unit": "Whisper",
+    "currency_name": "Promise",
+    "domain_label": "Promise Taxation",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "PTA",
+        "name": "Promise Tax Authority",
+        "mandate": "To assess, collect, and record taxes on all spoken promises based on their perceived weight and societal impact.",
+        "decision_rule": "Based on established promise valuation algorithms and historical precedents.",
+        "enforced_by": "Courier Guild, City Guard",
+        "visible_output": "Tax notices, debt ledgers, public promise registries"
+      },
+      {
+        "institution_id": "CG",
+        "name": "Courier Guild",
+        "mandate": "To physically transport unpaid promise debts between parties and ensure their eventual settlement or collection.",
+        "decision_rule": "Guild bylaws, contract terms, and directives from the Promise Tax Authority.",
+        "enforced_by": "Guild members, social contracts",
+        "visible_output": "Promise deliveries, debt collection attempts, courier logs"
+      },
+      {
+        "institution_id": "CoE",
+        "name": "Council of Elders",
+        "mandate": "To interpret ancient promise law, mediate disputes, and maintain the overall social and ethical fabric of Veridia.",
+        "decision_rule": "Consensus among elders, guided by sacred texts and historical wisdom.",
+        "enforced_by": "Moral authority, public opinion, City Guard",
+        "visible_output": "Public decrees, legal interpretations, mediated settlements"
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "promise_debt_level",
+        "label": "Collective Promise Debt",
+        "initial_tension": "High",
+        "changed_by": [
+          "PTA",
+          "CG",
+          "CoE"
+        ],
+        "affects": [
+          "courier_activity_level",
+          "city_trust_index",
+          "tax_revenue_stability"
+        ]
+      },
+      {
+        "state_id": "courier_activity_level",
+        "label": "Courier Workload",
+        "initial_tension": "Medium",
+        "changed_by": [
+          "CG",
+          "PTA"
+        ],
+        "affects": [
+          "promise_debt_level",
+          "city_trust_index",
+          "courier_union_satisfaction"
+        ]
+      },
+      {
+        "state_id": "city_trust_index",
+        "label": "Inter-Citizen Trust",
+        "initial_tension": "Medium",
+        "changed_by": [
+          "CoE",
+          "PTA",
+          "CG"
+        ],
+        "affects": [
+          "promise_debt_level",
+          "tax_revenue_stability",
+          "social_cohesion"
+        ]
+      },
+      {
+        "state_id": "tax_revenue_stability",
+        "label": "City Tax Revenue Stability",
+        "initial_tension": "Medium",
+        "changed_by": [
+          "PTA",
+          "CoE"
+        ],
+        "affects": [
+          "promise_enforcement_rigor",
+          "city_infrastructure_quality"
+        ]
+      },
+      {
+        "state_id": "promise_enforcement_rigor",
+        "label": "Promise Enforcement Rigor",
+        "initial_tension": "Medium",
+        "changed_by": [
+          "PTA",
+          "CoE"
+        ],
+        "affects": [
+          "promise_debt_level",
+          "courier_activity_level"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "promise_debt_level",
+        "trigger": "If collective promise debt is high.",
+        "target_state": "courier_activity_level",
+        "effect": "Courier workload increases significantly.",
+        "delay": "Short"
+      },
+      {
+        "source_state": "courier_activity_level",
+        "trigger": "If courier workload is consistently high due to unpaid promises.",
+        "target_state": "city_trust_index",
+        "effect": "Inter-citizen trust decreases as constant debt reminders strain relationships.",
+        "delay": "Medium"
+      },
+      {
+        "source_state": "tax_revenue_stability",
+        "trigger": "If city tax revenue stability is low.",
+        "target_state": "promise_enforcement_rigor",
+        "effect": "The Promise Tax Authority increases enforcement rigor to boost collections.",
+        "delay": "Medium"
+      },
+      {
+        "source_state": "promise_enforcement_rigor",
+        "trigger": "If promise enforcement rigor is high.",
+        "target_state": "promise_debt_level",
+        "effect": "Collective promise debt begins to decrease as more promises are settled.",
+        "delay": "Medium"
+      },
+      {
+        "source_state": "city_trust_index",
+        "trigger": "If inter-citizen trust is low.",
+        "target_state": "promise_debt_level",
+        "effect": "People are less likely to keep promises, increasing collective debt.",
+        "delay": "Long"
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "PK",
+        "name": "Promise Keepers",
+        "goal": "To maintain a high level of social trust and avoid accumulating promise debt.",
+        "leverage": "Social standing, influence within the Council of Elders.",
+        "dependency": "The fairness and transparency of the Promise Tax Authority."
+      },
+      {
+        "group_id": "DD",
+        "name": "Debt Dodgers",
+        "goal": "To minimize or avoid paying promise taxes and exploit loopholes in the system.",
+        "leverage": "Anonymity, collective non-compliance, knowledge of obscure promise laws.",
+        "dependency": "The laxity of enforcement by the Courier Guild and Promise Tax Authority."
+      },
+      {
+        "group_id": "CU",
+        "name": "Courier Union",
+        "goal": "To ensure fair wages, manageable workloads, and safe working conditions for couriers.",
+        "leverage": "Control over the physical transport and enforcement of promise debts.",
+        "dependency": "The volume of promise debt and the city's ability to fund their operations."
+      },
+      {
+        "group_id": "CM",
+        "name": "City Merchants",
+        "goal": "To foster a stable economic environment with reliable transactions and predictable taxation.",
+        "leverage": "Economic power, influence on public opinion and the Council of Elders.",
+        "dependency": "High inter-citizen trust and stable tax revenue for city services."
+      }
+    ]
+  },
+  "genre": "Bureaucratic Fantasy",
+  "premise": "In the cliffside city of Veridia, spoken promises are tangible, weighed, and taxed. Unpaid promises become physical burdens, carried by couriers between households, shaping the city's economy and social fabric.",
+  "simulation_objective": "Explore the socio-economic impacts of a promise-based taxation system, the dynamics between trust and debt, and the role of intermediaries in a unique economic model.",
+  "agent_count_target": 12,
+  "player_count_target": 50,
+  "wall_color_theme": "dark_brick",
+  "economy_focus": "Promise-based taxation, debt management, courier services, social credit",
+  "exploration_focus": "The intricate social contracts, the physical manifestation of abstract concepts, the unique urban landscape shaped by promise weight.",
+  "conflict_tone": "Bureaucratic, Ethical, Economic, Social",
+  "visual_style": "Gothic, Steampunk, Intricate, Weight-bearing Architecture",
+  "rooms": [
+    {
+      "name": "Promise Assessment Chamber",
+      "biome": "cliffside_urban",
+      "purpose": "Where the Promise Tax Authority (PTA) assesses and taxes spoken promises, directly influencing the 'promise_debt_level' state variable. High activity here increases debt, which then impacts the 'courier_activity_level' in the Courier Guild Dispatch.",
+      "decor_tags": [
+        "official",
+        "taxation",
+        "mechanical",
+        "brass_accents",
+        "parchment"
+      ],
+      "activity_tags": [
+        "assessment",
+        "recording",
+        "valuation"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of dark, heavy flagstone flooring, worn smooth in the center, with subtle brass inlay patterns",
+      "room_scene_prompt": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism. A Promise Assessment Chamber with a central, ornate brass and iron weighing scale, surrounded by heavy carved wood desks and stacks of thick parchment ledgers, all rendered in clean pixel art suitable for a 32x32 tile map texture.",
+      "width_tiles": 7,
+      "height_tiles": 7,
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "promise_weighing_scale",
+          "label": "Promise Scale",
+          "description": "An intricate, large brass and darkened iron weighing scale with visible gears, designed to physically represent the 'weight' of a promise.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "ledger_desk",
+          "label": "Ledger Desk",
+          "description": "A heavy carved wood desk with an open, thick parchment ledger and quill, surrounded by smaller stacks of scrolls.",
+          "anchor": "south_east",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Courier Guild Dispatch",
+      "biome": "cliffside_urban",
+      "purpose": "The central hub for the Courier Guild (CG), where couriers receive assignments for transporting unpaid promise debts. High 'promise_debt_level' from the Assessment Chamber directly increases the 'courier_activity_level' here, which in turn strains 'city_trust_index'.",
+      "decor_tags": [
+        "functional",
+        "logistics",
+        "worn_leather",
+        "iron_fixtures"
+      ],
+      "activity_tags": [
+        "dispatch",
+        "loading",
+        "reporting"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of rough, uneven grey-brown cliff rock, worn smooth in high traffic areas, with faint grooves from heavy loads",
+      "room_scene_prompt": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism. A bustling Courier Guild Dispatch room with a large, central iron dispatch board displaying routes, surrounded by heavy wooden benches and racks of worn leather satchels and gear, all rendered in clean pixel art suitable for a 32x32 tile map texture.",
+      "width_tiles": 8,
+      "height_tiles": 6,
+      "ambient_palette": "dusty_brown",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "dispatch_board",
+          "label": "Dispatch Board",
+          "description": "A tall, dark iron board with numerous hooks and slots, holding small parchment slips detailing courier routes and debt assignments.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        },
+        {
+          "component_id": "courier_gear_rack",
+          "label": "Gear Rack",
+          "description": "A heavy carved wood and iron rack holding various worn leather satchels, ropes, and climbing gear for couriers.",
+          "anchor": "south_west",
+          "width_tiles": 1,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Council of Elders Chamber",
+      "biome": "cliffside_urban",
+      "purpose": "Where the Council of Elders (CoE) mediates disputes and interprets ancient promise law, directly influencing the 'city_trust_index' and 'promise_enforcement_rigor'. Their decisions here can reduce 'promise_debt_level' city-wide.",
+      "decor_tags": [
+        "sacred",
+        "ancient",
+        "ceremonial",
+        "heavy_wood",
+        "smoked_glass"
+      ],
+      "activity_tags": [
+        "mediation",
+        "deliberation",
+        "decree"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of polished dark flagstones, arranged in an intricate geometric pattern, with subtle light reflections",
+      "room_scene_prompt": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism. A solemn Council of Elders Chamber with a large, circular heavy carved wood table at its center, surrounded by high-backed chairs and illuminated by soft light filtering through smoked glass windows, all rendered in clean pixel art suitable for a 32x32 tile map texture.",
+      "width_tiles": 9,
+      "height_tiles": 9,
+      "ambient_palette": "warm_lantern",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "council_table",
+          "label": "Council Table",
+          "description": "A massive, circular table made of dark, heavy carved wood, with intricate symbols etched into its surface.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        },
+        {
+          "component_id": "elder_lectern",
+          "label": "Elder Lectern",
+          "description": "A tall, ornate lectern made of polished brass and heavy wood, holding a large, ancient tome.",
+          "anchor": "north_mid",
+          "width_tiles": 1,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Public Promise Registry",
+      "biome": "cliffside_urban",
+      "purpose": "A public archive maintained by the Promise Tax Authority (PTA) where citizens can view their own and others' promise statuses. Transparency here affects the 'city_trust_index' and can influence 'promise_debt_level' by encouraging accountability.",
+      "decor_tags": [
+        "public",
+        "informational",
+        "parchment",
+        "brass_fittings"
+      ],
+      "activity_tags": [
+        "consultation",
+        "record_keeping",
+        "dispute_checking"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of light grey-brown flagstones, well-trodden and slightly uneven, with faint dust motes",
+      "room_scene_prompt": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism. A Public Promise Registry room with tall, open shelves filled with scrolls and ledgers, and several brass-fitted reading stands where citizens can consult public records, all rendered in clean pixel art suitable for a 32x32 tile map texture.",
+      "width_tiles": 6,
+      "height_tiles": 8,
+      "ambient_palette": "focused_blue",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "registry_shelves",
+          "label": "Registry Shelves",
+          "description": "Tall, heavy carved wood shelves packed with countless rolled parchments and bound ledgers, accessible to the public.",
+          "anchor": "north_west",
+          "width_tiles": 2,
+          "height_tiles": 3
+        },
+        {
+          "component_id": "reading_stand",
+          "label": "Reading Stand",
+          "description": "A sturdy, waist-high stand made of dark wood with a brass top, holding an open ledger for public viewing.",
+          "anchor": "south_mid",
+          "width_tiles": 1,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Debt Courier's Rest",
+      "biome": "cliffside_urban",
+      "purpose": "A common area for couriers to rest and socialize, managed by the Courier Union (CU). The 'courier_activity_level' directly impacts the mood and occupancy here, affecting 'courier_union_satisfaction'.",
+      "decor_tags": [
+        "worn",
+        "communal",
+        "simple",
+        "heavy_wood"
+      ],
+      "activity_tags": [
+        "resting",
+        "socializing",
+        "planning"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of rough, dark wooden planks, scuffed and worn from heavy boots, with scattered straw",
+      "room_scene_prompt": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism. A Debt Courier's Rest room with a large, communal heavy carved wood table, surrounded by simple wooden stools and a small, glowing brazier for warmth, all rendered in clean pixel art suitable for a 32x32 tile map texture.",
+      "width_tiles": 7,
+      "height_tiles": 5,
+      "ambient_palette": "warm_lantern",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "communal_table",
+          "label": "Communal Table",
+          "description": "A long, sturdy table made of heavy, dark wood, scarred from use, with several simple stools around it.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "brazier",
+          "label": "Brazier",
+          "description": "A small, iron brazier emitting a warm, low glow, providing heat and light.",
+          "anchor": "north_east",
+          "width_tiles": 1,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Merchant's Exchange Stall",
+      "biome": "cliffside_urban",
+      "purpose": "A typical stall where City Merchants (CM) conduct transactions. The 'city_trust_index' and 'tax_revenue_stability' directly influence the vibrancy and activity here, reflecting the health of the promise-based economy.",
+      "decor_tags": [
+        "commercial",
+        "trade",
+        "brass_weights",
+        "goods"
+      ],
+      "activity_tags": [
+        "selling",
+        "bargaining",
+        "exchanging"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of tightly packed, small grey cobblestones, well-worn and slightly uneven",
+      "room_scene_prompt": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism. A Merchant's Exchange Stall with a heavy carved wood counter displaying various goods, a small brass weighing scale, and a ledger for recording transactions, all rendered in clean pixel art suitable for a 32x32 tile map texture.",
+      "width_tiles": 5,
+      "height_tiles": 4,
+      "ambient_palette": "clear_day",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "merchant_counter",
+          "label": "Merchant Counter",
+          "description": "A sturdy, heavy carved wood counter laden with various small, intriguing goods and a small, precise brass weighing scale.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        },
+        {
+          "component_id": "transaction_ledger",
+          "label": "Transaction Ledger",
+          "description": "A thick, open ledger book with a quill, used for recording promises and transactions.",
+          "anchor": "east_mid",
+          "width_tiles": 1,
+          "height_tiles": 1
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Elara Vowkeeper",
+      "role_name": "Promise Tax Auditor",
+      "activity": "Actively auditing promise registries to ensure fair taxation and identify discrepancies, aiming to change 'tax_revenue_stability' by increasing collections.",
+      "home_base": "Promise Assessment Chamber",
+      "arc_goal": "To uncover a systemic flaw in the Promise Tax Authority's valuation algorithms that disproportionately burdens the innocent, thereby improving 'city_trust_index' and reforming the PTA's 'promise_enforcement_rigor'.",
+      "inventory": [
+        {
+          "name": "Valuation Quill",
+          "description": "A finely crafted quill that glows faintly when used to assess a promise's weight, making it easier to determine its tax value.",
+          "quantity": 1
+        },
+        {
+          "name": "Ledger of Unspoken Debts",
+          "description": "A personal, encrypted ledger where Elara records promises she suspects are being hidden from the public registry.",
+          "quantity": 1
+        },
+        {
+          "name": "Crystalline Lens",
+          "description": "A magnifying lens made from a rare crystal, used to examine the intricate script of ancient promise contracts.",
+          "quantity": 1
+        },
+        {
+          "name": "Promise Scale Calibrator",
+          "description": "A small, intricate device used to ensure the accuracy of the official promise scales in the assessment chamber.",
+          "quantity": 1
+        },
+        {
+          "name": "Ink of Truth",
+          "description": "A special, shimmering ink that is said to reveal hidden clauses or intentions when applied to a promise document.",
+          "quantity": 3
+        },
+        {
+          "name": "Ciphered Notes",
+          "description": "A collection of personal notes on complex promise cases, written in a code only Elara understands.",
+          "quantity": 1
+        },
+        {
+          "name": "Guilder's Pouch (Empty)",
+          "description": "A small, worn leather pouch, a reminder of the meager tax collections from the previous cycle.",
+          "quantity": 1
+        },
+        {
+          "name": "Scroll of Precedents",
+          "description": "A condensed scroll containing summaries of historical promise tax rulings and their outcomes.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Promise Assessment Chamber",
+          "asset_type": "Location",
+          "description": "The primary facility where new promises are registered and their tax values are calculated.",
+          "story_use": "A central hub for Elara's work, where she interacts with citizens and other officials, and where critical data is stored."
+        },
+        {
+          "asset_name": "Official Tax Seal",
+          "asset_type": "Tool",
+          "description": "A heavy, ornate seal used to officially stamp promise tax notices.",
+          "story_use": "Elara uses this to finalize tax assessments, but it could also be used to forge or validate documents."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K001_PTA_Algorithms",
+          "topic": "Promise Valuation Algorithms",
+          "summary": "Elara possesses deep knowledge of the complex algorithms used by the Promise Tax Authority to calculate the tax burden of each promise, including their hidden biases.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K002_Hidden_Debts",
+          "topic": "Methods of Debt Evasion",
+          "summary": "Elara has observed various subtle techniques used by citizens to evade promise taxes or hide their true promise obligations.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen Swiftfoot",
+      "role_name": "Senior Debt Courier",
+      "activity": "Navigating the city to deliver promise debt notices and collect overdue payments, directly impacting 'courier_activity_level' and the 'promise_debt_level'.",
+      "home_base": "Courier Guild Dispatch",
+      "arc_goal": "To expose the corruption within the Courier Guild that allows certain powerful individuals to avoid their promise debts, thereby improving 'courier_union_satisfaction' and 'city_trust_index'.",
+      "inventory": [
+        {
+          "name": "Guilder's Satchel",
+          "description": "A sturdy, leather satchel, worn from countless deliveries, containing various promise notices and collection receipts.",
+          "quantity": 1
+        },
+        {
+          "name": "Footfall Tracker",
+          "description": "A small, enchanted device that subtly records Kaelen's movements, ensuring accountability for deliveries.",
+          "quantity": 1
+        },
+        {
+          "name": "Promise-Bound Compass",
+          "description": "A compass that subtly points towards the location of the next outstanding promise debt on Kaelen's manifest.",
+          "quantity": 1
+        },
+        {
+          "name": "Debt Ledger (Personal)",
+          "description": "A small, private ledger where Kaelen tracks particularly difficult or suspicious debt cases.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Ration Bar",
+          "description": "A nutrient-dense bar for long, arduous delivery routes.",
+          "quantity": 5
+        },
+        {
+          "name": "Lockpicking Set (Basic)",
+          "description": "A small set of tools, useful for gaining access to abandoned properties where debtors might hide.",
+          "quantity": 1
+        },
+        {
+          "name": "Courier's Whistle",
+          "description": "A distinct whistle used to signal other couriers or alert the City Guard in emergencies.",
+          "quantity": 1
+        },
+        {
+          "name": "Map of Veridia (Annotated)",
+          "description": "A detailed map of the city with Kaelen's personal shortcuts and known debtor hideouts marked.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Courier Guild Dispatch",
+          "asset_type": "Location",
+          "description": "The central hub for all courier operations, where assignments are given and reports are filed.",
+          "story_use": "Kaelen's starting point and reporting station, a place for interaction with other couriers and guild masters."
+        },
+        {
+          "asset_name": "Guild Master's Seal",
+          "asset_type": "Tool",
+          "description": "A heavy, brass seal used by the Guild Master to authorize high-priority debt collections.",
+          "story_use": "Kaelen suspects this seal is being misused to protect certain individuals from debt collection."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K003_Guild_Routes",
+          "topic": "Optimal Courier Routes",
+          "summary": "Kaelen knows the most efficient and discreet routes through Veridia, including hidden passages and less-patrolled areas.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K004_Debtor_Tactics",
+          "topic": "Common Debtor Evasion Tactics",
+          "summary": "Kaelen is familiar with the various tricks and excuses debtors use to avoid payment or hide their assets.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Silas Thorne",
+      "role_name": "Shrewd Merchant",
+      "activity": "Managing his stall in the Merchant's Exchange, engaging in complex promise-based transactions, and subtly influencing 'tax_revenue_stability' through his business practices.",
+      "home_base": "Merchant's Exchange Stall",
+      "arc_goal": "To establish a new, less restrictive system for commercial promises that benefits merchants, thereby increasing 'tax_revenue_stability' for the city while also increasing his own wealth and influence among 'City Merchants'.",
+      "inventory": [
+        {
+          "name": "Gilded Abacus",
+          "description": "An ornate abacus used for rapid and complex calculations of promise interest and trade values.",
+          "quantity": 1
+        },
+        {
+          "name": "Contract Scroll (Blank)",
+          "description": "High-quality, blank scrolls for drafting new promise contracts, often with cleverly worded clauses.",
+          "quantity": 5
+        },
+        {
+          "name": "Weight of Trust Scales",
+          "description": "Small, portable scales used to symbolically weigh the 'trust' in a promise during negotiations.",
+          "quantity": 1
+        },
+        {
+          "name": "Pocket of Promise Tokens",
+          "description": "Small, engraved tokens representing minor promises or favors, used for quick, informal transactions.",
+          "quantity": 12
+        },
+        {
+          "name": "Disguised Ledger",
+          "description": "A ledger disguised as a common recipe book, containing records of Silas's more 'unconventional' deals.",
+          "quantity": 1
+        },
+        {
+          "name": "Whisper-Proof Earring",
+          "description": "A small, enchanted earring that muffles nearby conversations, allowing for private negotiations in public.",
+          "quantity": 1
+        },
+        {
+          "name": "Merchant's Guild Pin",
+          "description": "A polished pin signifying Silas's membership and standing within the influential Merchant's Guild.",
+          "quantity": 1
+        },
+        {
+          "name": "Pouch of 'Good Faith' Gems",
+          "description": "A small pouch containing low-value, shimmering gems used as initial 'good faith' deposits in promise negotiations.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Merchant's Exchange Stall",
+          "asset_type": "Location",
+          "description": "Silas's bustling stall, a hub for trade and negotiation, strategically located for maximum visibility.",
+          "story_use": "The primary setting for Silas's business dealings, where he interacts with customers, rivals, and potential partners."
+        },
+        {
+          "asset_name": "Promise-Bound Lockbox",
+          "asset_type": "Container",
+          "description": "A sturdy, magically sealed lockbox that can only be opened when a specific promise is fulfilled.",
+          "story_use": "Silas uses this to secure valuable goods or sensitive documents, tied to the completion of a promise."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K005_Contract_Loopholes",
+          "topic": "Exploiting Promise Contract Loopholes",
+          "summary": "Silas is an expert at finding and utilizing ambiguities and loopholes in promise contracts to his advantage.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K006_Market_Manipulation",
+          "topic": "Market Dynamics and Promise Impact",
+          "summary": "Silas understands how the collective promise debt level and enforcement rigor affect market prices and trade stability.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra Whisperwind",
+      "role_name": "Council Scholar-Apprentice",
+      "activity": "Studying ancient promise texts and assisting the Council of Elders in legal interpretations, directly influencing 'city_trust_index' and the Council of Elders' 'decision_rule'.",
+      "home_base": "Council of Elders Chamber",
+      "arc_goal": "To restore the original intent of the ancient promise laws, ensuring justice and fairness for all citizens, thereby strengthening 'city_trust_index' and reducing the 'promise_debt_level'.",
+      "inventory": [
+        {
+          "name": "Ancient Promise Codex",
+          "description": "A fragile, leather-bound book containing the earliest known promise laws, heavily annotated by Lyra.",
+          "quantity": 1
+        },
+        {
+          "name": "Interpretation Slate",
+          "description": "A smooth, polished slate used to record Lyra's thoughts and interpretations of complex legal passages.",
+          "quantity": 1
+        },
+        {
+          "name": "Herbal Tea Kit",
+          "description": "A small kit for brewing calming teas, essential for long hours of study and contemplation.",
+          "quantity": 1
+        },
+        {
+          "name": "Councilor's Seal (Apprentice)",
+          "description": "A smaller, less ornate version of the Council's seal, signifying Lyra's apprentice status.",
+          "quantity": 1
+        },
+        {
+          "name": "Dream-Weaver's Thread",
+          "description": "A single strand of shimmering thread, believed to aid in clarity of thought and memory recall.",
+          "quantity": 1
+        },
+        {
+          "name": "Scroll of Forgotten Oaths",
+          "description": "A collection of obscure or rarely cited promise oaths that Lyra believes hold significant legal weight.",
+          "quantity": 1
+        },
+        {
+          "name": "Candle of Illumination",
+          "description": "A specially crafted candle that burns with a steady, bright flame, said to ward off mental fatigue.",
+          "quantity": 1
+        },
+        {
+          "name": "Pocket Sundial",
+          "description": "A small, precise sundial for tracking time during her studies, as clocks are forbidden in the Council chambers.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Council of Elders Chamber",
+          "asset_type": "Location",
+          "description": "The hallowed hall where the Council convenes to interpret laws and mediate disputes.",
+          "story_use": "Lyra's primary place of study and where she observes the Council's deliberations, seeking to influence their decisions."
+        },
+        {
+          "asset_name": "Veridian Law Compendium",
+          "asset_type": "Book",
+          "description": "A comprehensive collection of all known promise laws and their historical applications.",
+          "story_use": "Lyra uses this as her main reference, but suspects certain sections have been subtly altered over time."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K007_Ancient_Law",
+          "topic": "Ancient Promise Law Interpretations",
+          "summary": "Lyra has an unparalleled understanding of the nuanced and often contradictory interpretations of ancient promise laws.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K008_Council_Politics",
+          "topic": "Council of Elders Internal Politics",
+          "summary": "Lyra is keenly aware of the various factions and personal agendas within the Council of Elders that influence their rulings.",
+          "confidence": 7
+        }
+      ]
+    },
+    {
+      "display_name": "Seraphina Lorekeeper",
+      "role_name": "Archivist of Forgotten Promises",
+      "activity": "Meticulously cataloging ancient and obscure promise records, seeking precedents that could alter 'promise_enforcement_rigor' or 'promise_debt_level'.",
+      "home_base": "Public Promise Registry",
+      "arc_goal": "To uncover a forgotten promise law that could either absolve a significant portion of the collective 'promise_debt_level' or redefine the 'decision_rule' of the Council of Elders.",
+      "inventory": [
+        {
+          "name": "Quill of Truth",
+          "description": "A feather quill said to only write true statements, though its ink can be manipulated.",
+          "quantity": 1
+        },
+        {
+          "name": "Ledger of Whispers",
+          "description": "A personal journal filled with notes on obscure promise cases and their hidden implications.",
+          "quantity": 1
+        },
+        {
+          "name": "Dust-Brushed Spectacles",
+          "description": "Ancient spectacles that enhance vision for deciphering faded scripts.",
+          "quantity": 1
+        },
+        {
+          "name": "Cipher Wheel",
+          "description": "A small, intricate device used for decrypting old promise codes.",
+          "quantity": 1
+        },
+        {
+          "name": "Inkwell of Ages",
+          "description": "An inkwell containing a special, long-lasting ink for archival purposes.",
+          "quantity": 1
+        },
+        {
+          "name": "Wax Seal Kit",
+          "description": "For authenticating documents and sealing sensitive information.",
+          "quantity": 1
+        },
+        {
+          "name": "Scroll of Binding",
+          "description": "A blank scroll believed to amplify the weight of any promise written upon it.",
+          "quantity": 1
+        },
+        {
+          "name": "Chronometer of Cycles",
+          "description": "A precise timepiece used to track the exact duration of ancient promise terms.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Grand Archive",
+          "asset_type": "location",
+          "description": "A vast, labyrinthine repository of all recorded promises, both public and private, spanning centuries.",
+          "story_use": "Contains critical information for legal disputes and historical precedents, a target for information seekers."
+        },
+        {
+          "asset_name": "Promise Law Codex (Annotated)",
+          "asset_type": "book",
+          "description": "A personal copy of the foundational promise laws, heavily annotated with Seraphina's insights and cross-references.",
+          "story_use": "Provides deep legal understanding and potential loopholes for promise interpretation."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K001_AncientLaws",
+          "topic": "Ancient Promise Law Precedents",
+          "summary": "Deep understanding of forgotten promise laws and their historical applications, which could challenge current interpretations.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K002_RegistrySecrets",
+          "topic": "Public Promise Registry Vulnerabilities",
+          "summary": "Awareness of inconsistencies and potential data manipulation within the Public Promise Registry system.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Roric Stonehand",
+      "role_name": "Guildmaster of Couriers",
+      "activity": "Overseeing the daily operations of the Courier Guild, ensuring efficient debt collection and managing 'courier_activity_level' to maintain 'courier_union_satisfaction'.",
+      "home_base": "Courier Guild Dispatch",
+      "arc_goal": "To improve the working conditions and public perception of the Courier Guild, directly impacting 'courier_union_satisfaction' and 'city_trust_index'.",
+      "inventory": [
+        {
+          "name": "Guildmaster's Seal",
+          "description": "A heavy, ornate signet ring used to authenticate official Guild documents.",
+          "quantity": 1
+        },
+        {
+          "name": "Route Optimization Charts",
+          "description": "Detailed maps and schedules for efficient debt courier routes across the city.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Whistle",
+          "description": "A loud, distinct whistle used to summon aid or alert other couriers in distress.",
+          "quantity": 1
+        },
+        {
+          "name": "Pouch of Guild Tokens",
+          "description": "Small, inscribed tokens used for internal guild transactions and rewards.",
+          "quantity": 1
+        },
+        {
+          "name": "Weather-Resistant Cloak",
+          "description": "A durable cloak designed to protect against the elements during long deliveries.",
+          "quantity": 1
+        },
+        {
+          "name": "Repair Kit (Satchel)",
+          "description": "Contains tools for minor repairs to courier equipment or vehicles.",
+          "quantity": 1
+        },
+        {
+          "name": "Code of Conduct Scroll",
+          "description": "The official bylaws and ethical guidelines for all Courier Guild members.",
+          "quantity": 1
+        },
+        {
+          "name": "Personal Logbook",
+          "description": "A small book where Roric records observations on courier performance and city sentiment.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Courier Guild Headquarters",
+          "asset_type": "location",
+          "description": "The central hub for all Courier Guild operations, including dispatch, training, and administration.",
+          "story_use": "A place of authority and coordination for debt collection, a potential target for those seeking to disrupt enforcement."
+        },
+        {
+          "asset_name": "Fleet of Swift-Steeds",
+          "asset_type": "vehicle",
+          "description": "A stable of specially bred, fast, and reliable mounts used by couriers for rapid transit.",
+          "story_use": "Essential for the timely delivery of promise notices and collection of debts, representing the Guild's efficiency."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K003_GuildLogistics",
+          "topic": "Courier Guild Operational Efficiency",
+          "summary": "Expertise in optimizing courier routes, managing personnel, and ensuring timely debt collection.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K004_DebtDodgerTactics",
+          "topic": "Common Debt Dodger Evasion Methods",
+          "summary": "Familiarity with various strategies employed by Debt Dodgers to avoid promise payments and evade couriers.",
+          "confidence": 7
+        }
+      ]
+    },
+    {
+      "display_name": "Valerius the Unbound",
+      "role_name": "Promise Broker & Loophole Finder",
+      "activity": "Actively seeking and exploiting ambiguities in promise law to benefit clients, directly influencing the 'decision_rule' of the Council of Elders and the 'promise_debt_level' for individuals.",
+      "home_base": "Debt Courier's Rest",
+      "arc_goal": "To establish a new precedent in promise law that allows for easier renegotiation or nullification of 'promise_debt_level' for the common citizen, challenging the 'Promise Tax Authority'.",
+      "inventory": [
+        {
+          "name": "Pocket-Sized Law Compendium",
+          "description": "A heavily annotated, compact book of obscure promise statutes and precedents.",
+          "quantity": 1
+        },
+        {
+          "name": "Forged Promise Seal",
+          "description": "A discreet, customizable seal used for creating convincing, albeit unofficial, promise documents.",
+          "quantity": 1
+        },
+        {
+          "name": "Whisper-Thin Parchment",
+          "description": "Extremely delicate parchment used for drafting contracts with hidden clauses.",
+          "quantity": 1
+        },
+        {
+          "name": "Disguise Kit (Basic)",
+          "description": "A small collection of items for altering appearance to avoid recognition.",
+          "quantity": 1
+        },
+        {
+          "name": "Coin of Favor",
+          "description": "A unique coin given to those who owe Valerius a future service.",
+          "quantity": 3
+        },
+        {
+          "name": "Ink of Fading",
+          "description": "Special ink that slowly disappears over time, useful for temporary agreements.",
+          "quantity": 1
+        },
+        {
+          "name": "Client Ledger (Coded)",
+          "description": "A personal ledger detailing clients and their promise issues, written in a complex cipher.",
+          "quantity": 1
+        },
+        {
+          "name": "Silver Tongue Charm",
+          "description": "A small, polished charm believed to enhance persuasive speaking.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Shaded Alcove",
+          "asset_type": "location",
+          "description": "A discreet, often overlooked corner in the Debt Courier's Rest, used for clandestine meetings and consultations.",
+          "story_use": "A private space for negotiating deals and sharing sensitive information away from prying eyes."
+        },
+        {
+          "asset_name": "Collection of Forged Documents",
+          "asset_type": "item_set",
+          "description": "A hidden stash of expertly crafted fake promise documents, tax notices, and guild passes.",
+          "story_use": "Can be used to create false trails, mislead authorities, or provide clients with temporary relief."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K005_LegalLoopholes",
+          "topic": "Exploiting Promise Law Ambiguities",
+          "summary": "Mastery of finding and utilizing obscure clauses and contradictions within the vast body of promise law.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K006_PTAWeaknesses",
+          "topic": "Promise Tax Authority Procedural Gaps",
+          "summary": "Detailed understanding of the bureaucratic inefficiencies and potential vulnerabilities in the PTA's assessment and collection processes.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Anya Shadowbrook",
+      "role_name": "Underground Information Broker",
+      "activity": "Gathering and trading sensitive information about promises, debts, and institutional movements, influencing 'city_trust_index' and the 'decision_rule' of various institutions through strategic leaks.",
+      "home_base": "Merchant's Exchange Stall",
+      "arc_goal": "To expose corruption within the 'Promise Tax Authority' and the 'Courier Guild' to shift 'city_trust_index' and empower the 'Debt Dodgers' stakeholder group.",
+      "inventory": [
+        {
+          "name": "Ciphered Message Drops",
+          "description": "Small, coded notes left in specific locations for information exchange.",
+          "quantity": 5
+        },
+        {
+          "name": "Listening Device (Acoustic)",
+          "description": "A discreet, finely tuned instrument for overhearing conversations from a distance.",
+          "quantity": 1
+        },
+        {
+          "name": "False Identity Papers",
+          "description": "A set of convincing, but fake, identification documents for various personas.",
+          "quantity": 1
+        },
+        {
+          "name": "Hidden Compartment Belt",
+          "description": "A belt with multiple secret pockets for concealing small items and documents.",
+          "quantity": 1
+        },
+        {
+          "name": "Whisper-Glass Orb",
+          "description": "A small, polished glass orb said to amplify faint sounds and distant conversations.",
+          "quantity": 1
+        },
+        {
+          "name": "Network Contact List (Coded)",
+          "description": "A scroll containing a coded list of Anya's various informants and contacts.",
+          "quantity": 1
+        },
+        {
+          "name": "Disguise Makeup Kit",
+          "description": "A small kit of theatrical makeup for quick alterations to appearance.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Escape Smoke Pellet",
+          "description": "A small pellet that releases a dense, disorienting smoke when activated.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The 'Silent Echo' Stall",
+          "asset_type": "location",
+          "description": "A seemingly innocuous stall in the Merchant's Exchange, used as a front for Anya's information network.",
+          "story_use": "A central hub for receiving and disseminating information, a place where secrets are traded under the guise of commerce."
+        },
+        {
+          "asset_name": "Network of Street Informants",
+          "asset_type": "network",
+          "description": "A diverse group of individuals across the city who feed Anya snippets of overheard conversations and observations.",
+          "story_use": "Provides a constant stream of raw intelligence, crucial for uncovering hidden truths and institutional secrets."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K007_PTACorruption",
+          "topic": "Evidence of Promise Tax Authority Corruption",
+          "summary": "Knowledge of specific instances and individuals within the PTA involved in bribery, favoritism, and illegal promise manipulation.",
+          "confidence": 8
+        },
+        {
+          "knowledge_id": "K008_GuildSecrets",
+          "topic": "Courier Guild Internal Conflicts",
+          "summary": "Awareness of internal power struggles, illicit side dealings, and vulnerabilities within the Courier Guild's operations.",
+          "confidence": 7
+        }
+      ]
+    },
+    {
+      "display_name": "Elara Vowscribe",
+      "role_name": "Scrivener of Sacred Vows",
+      "activity": "Meticulously documenting and interpreting the nuances of newly declared promises for the Council of Elders, influencing the 'decision_rule' of the CoE.",
+      "home_base": "Council of Elders Chamber",
+      "arc_goal": "To restore the sanctity of spoken promises by ensuring precise legal interpretation, thereby increasing 'city_trust_index' and reducing 'promise_debt_level' through clarity.",
+      "inventory": [
+        {
+          "name": "Quill of Binding Ink",
+          "description": "A ceremonial quill used for transcribing sacred vows, believed to imbue promises with greater weight.",
+          "quantity": 1
+        },
+        {
+          "name": "Lexicon of Ancient Oaths",
+          "description": "A heavy, leather-bound book containing archaic promise formulations and their historical interpretations.",
+          "quantity": 1
+        },
+        {
+          "name": "Promise Seal Wax",
+          "description": "Small, intricate wax seals used to authenticate official promise documents.",
+          "quantity": 5
+        },
+        {
+          "name": "Magnifying Glass of Truth",
+          "description": "A finely crafted lens used to examine the minute details of promise scripts for alterations or hidden clauses.",
+          "quantity": 1
+        },
+        {
+          "name": "Scroll of Precedent",
+          "description": "Rolled parchment containing summaries of landmark promise dispute rulings.",
+          "quantity": 3
+        },
+        {
+          "name": "Inkwell of Clarity",
+          "description": "A ceramic inkwell filled with a special ink that resists fading, symbolizing the permanence of vows.",
+          "quantity": 1
+        },
+        {
+          "name": "Oath-Weave Thread",
+          "description": "Small lengths of consecrated thread, sometimes exchanged as a physical token of a promise.",
+          "quantity": 10
+        },
+        {
+          "name": "Ledger of Unspoken Intent",
+          "description": "A personal journal where Elara notes down observations on the true intentions behind promises, not just the words.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scriptorium Sanctum",
+          "asset_type": "Private Study",
+          "description": "A quiet, secluded chamber within the Council's archives, filled with ancient texts and transcription tools.",
+          "story_use": "A place for deep research, private consultations, and the creation of official promise documents."
+        },
+        {
+          "asset_name": "Promise-Stone Tablet",
+          "asset_type": "Artifact",
+          "description": "A small, smooth stone tablet believed to absorb the essence of promises spoken over it.",
+          "story_use": "Used in ceremonial vow-making or as a tool for meditation on promise integrity."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_VOW_INTERP_01",
+          "topic": "Nuances of Promise Interpretation",
+          "summary": "Deep understanding of how subtle phrasing changes can drastically alter a promise's legal and social weight.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K_COE_HISTORY_02",
+          "topic": "Council of Elders' Historical Rulings",
+          "summary": "Extensive knowledge of past Council decisions and their impact on promise law.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Joric the Ledgerhand",
+      "role_name": "Public Promise Registrar",
+      "activity": "Managing the Public Promise Registry, ensuring all new promises are recorded accurately and accessible, directly impacting 'promise_debt_level' by preventing unrecorded promises.",
+      "home_base": "Public Promise Registry",
+      "arc_goal": "To make the Public Promise Registry an infallible record of all commitments, thereby increasing 'city_trust_index' and reducing opportunities for 'Debt Dodgers' to exploit unrecorded vows.",
+      "inventory": [
+        {
+          "name": "Registry Quill",
+          "description": "A heavy, brass-tipped quill used for official entries into the Public Promise Registry.",
+          "quantity": 1
+        },
+        {
+          "name": "Ink of Permanence",
+          "description": "A special, quick-drying ink that resists smudging and fading, ensuring records are indelible.",
+          "quantity": 3
+        },
+        {
+          "name": "Master Ledger Key",
+          "description": "An ornate, heavy key that unlocks the central, most secure promise ledgers.",
+          "quantity": 1
+        },
+        {
+          "name": "Verification Seal",
+          "description": "A personal seal used to stamp and authenticate newly registered promises.",
+          "quantity": 1
+        },
+        {
+          "name": "Archivist's Spectacles",
+          "description": "Magnifying spectacles with multiple lenses for examining fine print and faded entries.",
+          "quantity": 1
+        },
+        {
+          "name": "Scroll of Daily Entries",
+          "description": "A rolled parchment used to temporarily record promises before their official ledger entry.",
+          "quantity": 5
+        },
+        {
+          "name": "Dusting Brush of Care",
+          "description": "A soft-bristled brush used to meticulously clean and preserve ancient registry pages.",
+          "quantity": 1
+        },
+        {
+          "name": "Pocket Abacus",
+          "description": "A small, portable counting device for quickly tallying promise tax assessments.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Grand Registry Desk",
+          "asset_type": "Workstation",
+          "description": "A massive, ancient wooden desk at the heart of the Public Promise Registry, where all official entries are made.",
+          "story_use": "The central point for promise registration, public inquiries, and official record-keeping."
+        },
+        {
+          "asset_name": "Chronicle of First Vows",
+          "asset_type": "Sacred Text",
+          "description": "The foundational text containing the very first promises recorded in Veridia, setting precedents for all others.",
+          "story_use": "A source of ultimate authority for promise law, consulted in complex disputes."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_REGISTRY_LAW_01",
+          "topic": "Public Promise Registry Laws",
+          "summary": "Comprehensive understanding of all statutes and procedures governing promise registration and access.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K_DEBT_DODGER_TACTICS_02",
+          "topic": "Common Debt Dodger Evasion Tactics",
+          "summary": "Awareness of typical methods used by individuals to avoid registering or fulfilling promises.",
+          "confidence": 7
+        }
+      ]
+    },
+    {
+      "display_name": "Seraphina Lorekeeper",
+      "role_name": "Archivist of Forgotten Promises",
+      "activity": "Meticulously cataloging ancient and obscure promise records, seeking precedents that could alter 'promise_enforcement_rigor' or 'promise_debt_level'.",
+      "home_base": "Public Promise Registry",
+      "arc_goal": "To uncover forgotten promise laws and historical precedents that can be used to either alleviate unjust debts or strengthen the 'promise_enforcement_rigor' for chronic 'Debt Dodgers'.",
+      "inventory": [
+        {
+          "name": "Ciphered Scroll Case",
+          "description": "A locked case containing fragile, encrypted scrolls of ancient, forgotten promises.",
+          "quantity": 1
+        },
+        {
+          "name": "Dusting Brush of Ages",
+          "description": "A delicate brush used to clean and preserve brittle, centuries-old parchments.",
+          "quantity": 1
+        },
+        {
+          "name": "Lexicon of Dead Tongues",
+          "description": "A rare dictionary for translating archaic languages found in the oldest promise records.",
+          "quantity": 1
+        },
+        {
+          "name": "Preservation Balm",
+          "description": "A special herbal balm used to restore and protect decaying paper and leather.",
+          "quantity": 3
+        },
+        {
+          "name": "Micro-Etched Lens",
+          "description": "A powerful magnifying lens for reading incredibly small or faded script on ancient documents.",
+          "quantity": 1
+        },
+        {
+          "name": "Chronology of Vows",
+          "description": "A personal timeline charting the evolution of promise law and its enforcement over centuries.",
+          "quantity": 1
+        },
+        {
+          "name": "Whisper-Thin Gloves",
+          "description": "Special gloves worn to handle extremely fragile documents without causing damage.",
+          "quantity": 1
+        },
+        {
+          "name": "Hidden Compartment Key",
+          "description": "A small, unassuming key that unlocks a secret section of the archives.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Vault of Whispers",
+          "asset_type": "Archive Section",
+          "description": "A dimly lit, temperature-controlled section of the Public Promise Registry, housing the most ancient and sensitive promise records.",
+          "story_use": "A secure location for researching forgotten laws and uncovering hidden truths about promises."
+        },
+        {
+          "asset_name": "Echoing Tablet",
+          "asset_type": "Artifact",
+          "description": "A stone tablet rumored to faintly replay the original spoken words of promises recorded on it.",
+          "story_use": "Used in deep research to discern the original intent behind ambiguous ancient vows."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_ANCIENT_PROMISE_LAW_01",
+          "topic": "Ancient Promise Law & Precedents",
+          "summary": "Extensive knowledge of historical promise laws, their interpretations, and their impact on society.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K_INSTITUTIONAL_EVOLUTION_02",
+          "topic": "Evolution of Promise Institutions",
+          "summary": "Understanding how the PTA, CG, and CoE have changed their mandates and decision rules over time.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Roric Stonehand",
+      "role_name": "Guildmaster of Couriers",
+      "activity": "Overseeing the daily operations of the Courier Guild, ensuring efficient debt collection and managing 'courier_activity_level' to maintain 'courier_union_satisfaction'.",
+      "home_base": "Courier Guild Dispatch",
+      "arc_goal": "To balance the demands of the Promise Tax Authority with the welfare of his couriers, ensuring 'courier_union_satisfaction' remains high while effectively managing the 'promise_debt_level'.",
+      "inventory": [
+        {
+          "name": "Guildmaster's Seal",
+          "description": "A heavy, iron seal used to authorize official Courier Guild documents and dispatches.",
+          "quantity": 1
+        },
+        {
+          "name": "Route Optimization Map",
+          "description": "A detailed, annotated map of Veridia, highlighting efficient courier routes and known trouble spots.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Signal Whistle",
+          "description": "A loud, distinct whistle used to call for immediate guild assistance in emergencies.",
+          "quantity": 1
+        },
+        {
+          "name": "Courier's Code Book",
+          "description": "A small, worn book containing the strict rules and ethical guidelines for all guild members.",
+          "quantity": 1
+        },
+        {
+          "name": "Repair Kit for Satchels",
+          "description": "A compact kit containing leather patches, needles, and thread for on-the-go repairs of courier satchels.",
+          "quantity": 1
+        },
+        {
+          "name": "Daily Dispatch Log",
+          "description": "A ledger recording all outgoing and incoming promise debt deliveries and collections.",
+          "quantity": 1
+        },
+        {
+          "name": "Pouch of Swift-Step Dust",
+          "description": "A small pouch containing a fine powder rumored to invigorate couriers and hasten their steps.",
+          "quantity": 3
+        },
+        {
+          "name": "Negotiator's Charm",
+          "description": "A small, polished stone believed to aid in difficult debt collection negotiations.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guildmaster's Office",
+          "asset_type": "Private Office",
+          "description": "A functional, well-organized office within the Courier Guild Dispatch, where Roric manages operations.",
+          "story_use": "A place for strategic planning, private meetings with couriers, and handling sensitive guild matters."
+        },
+        {
+          "asset_name": "Courier's Oathstone",
+          "asset_type": "Ceremonial Object",
+          "description": "A large, smooth stone at the guild entrance where new couriers swear their oath of service.",
+          "story_use": "Used in guild initiation ceremonies and as a symbol of courier dedication and loyalty."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_COURIER_LOGISTICS_01",
+          "topic": "Courier Route & Resource Management",
+          "summary": "Expertise in optimizing courier routes, managing resources, and ensuring timely deliveries.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K_UNION_GRIEVANCES_02",
+          "topic": "Courier Union Grievances & Welfare",
+          "summary": "Deep understanding of the concerns, needs, and morale of his guild members.",
+          "confidence": 8
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Debt Collection & Enforcement",
+      "summary": "Senior Debt Couriers actively pursue unpaid promise debts, increasing courier workload and potentially decreasing inter-citizen trust.",
+      "roles": [
+        "Senior Debt Courier",
+        "Promise Tax Auditor",
+        "Shrewd Merchant"
+      ],
+      "rooms": [
+        "Courier Guild Dispatch",
+        "Debt Courier's Rest",
+        "Merchant's Exchange Stall"
+      ],
+      "pressure": "High collective promise debt (promise_debt_level) drives increased courier activity (courier_activity_level), straining resources and trust (city_trust_index)."
+    },
+    {
+      "label": "Promise Tax Assessment & Challenge",
+      "summary": "Promise Tax Auditors assess new and existing promises, leading to potential challenges from citizens and adjustments by the Council.",
+      "roles": [
+        "Promise Tax Auditor",
+        "Council Scholar-Apprentice",
+        "Public Promise Registrar"
+      ],
+      "rooms": [
+        "Promise Assessment Chamber",
+        "Council of Elders Chamber",
+        "Public Promise Registry"
+      ],
+      "pressure": "Low city tax revenue stability (tax_revenue_stability) forces the Promise Tax Authority to increase enforcement rigor (promise_enforcement_rigor), leading to public scrutiny and potential disputes."
+    },
+    {
+      "label": "Information Brokerage & Manipulation",
+      "summary": "Underground Information Brokers and Promise Brokers seek to exploit loopholes or manipulate records, often involving the Archivist or Public Promise Registrar, to alter promise statuses or evade taxes.",
+      "roles": [
+        "Underground Information Broker",
+        "Promise Broker & Loophole Finder",
+        "Archivist of Forgotten Promises",
+        "Public Promise Registrar"
+      ],
+      "rooms": [
+        "Public Promise Registry",
+        "Merchant's Exchange Stall"
+      ],
+      "pressure": "High promise enforcement rigor (promise_enforcement_rigor) creates demand for illicit services to reduce promise debt (promise_debt_level) and avoid taxes."
+    }
+  ],
+  "player_entry_points": [
+    "You have just received a notice for an unexpectedly high promise tax on a minor vow.",
+    "A Senior Debt Courier has approached you, demanding payment for a promise you believe was already fulfilled.",
+    "The Guildmaster of Couriers has assigned you a particularly sensitive debt collection that could upset powerful figures.",
+    "You've uncovered a discrepancy in the Public Promise Registry that could expose a major scandal."
+  ],
+  "conflict_hooks": [
+    "A newly discovered ancient text contradicts current Promise Tax Authority valuation algorithms, leading to widespread challenges of existing debts.",
+    "The Courier Guild goes on strike, refusing to deliver debt notices until their hazardous working conditions and low wages are addressed, causing collective promise debt to skyrocket.",
+    "A prominent Council Elder is found to have secretly defaulted on a significant promise, eroding inter-citizen trust and challenging the Council's moral authority.",
+    "A powerful Shrewd Merchant attempts to buy up all outstanding promise debts at a discount, planning to enforce them rigorously and destabilize the market."
+  ],
+  "custom_actions": [
+    "RegisterPromise",
+    "AssessPromiseTax",
+    "DeliverDebtNotice",
+    "BrokerPromiseSettlement",
+    "ChallengeTaxAssessment",
+    "UnearthForgottenVow",
+    "IssueGuildDirective",
+    "PetitionCouncil"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "NegotiatePartialDebtForgiveness",
+      "initiating_role": "Shrewd Merchant",
+      "target_role": "Senior Debt Courier",
+      "situation": "A merchant is struggling to pay a large promise tax debt and seeks to reduce the burden.",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Is the Senior Debt Courier authorized to negotiate?",
+        "Does the Shrewd Merchant have a compelling reason (e.g., hardship)?",
+        "What is the minimum acceptable payment?",
+        "Is the Promise Tax Authority aware of this negotiation?"
+      ]
+    },
+    {
+      "action_name": "FabricatePromiseLedgerEntry",
+      "initiating_role": "Underground Information Broker",
+      "target_role": "Archivist of Forgotten Promises",
+      "situation": "The broker needs to create a false record of a promise being fulfilled to help a client evade a tax.",
+      "proposed_effects": [
+        "create_item",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Is the Archivist complicit or unaware?",
+        "Does the broker have access to the registry tools?",
+        "What is the difficulty of detection?",
+        "Are there witnesses?"
+      ]
+    },
+    {
+      "action_name": "OfferBribeForDelayedCollection",
+      "initiating_role": "Promise Broker & Loophole Finder",
+      "target_role": "Guildmaster of Couriers",
+      "situation": "A client needs more time to gather funds for a promise debt, and the broker offers a personal incentive to the Guildmaster.",
+      "proposed_effects": [
+        "transfer",
+        "speech"
+      ],
+      "coordinator_checks": [
+        "Is the Guildmaster susceptible to bribes?",
+        "What is the value of the bribe?",
+        "How long is the requested delay?",
+        "Are there any witnesses or oversight mechanisms in place?"
+      ]
+    },
+    {
+      "action_name": "PubliclyDenounceUnjustTax",
+      "initiating_role": "Council Scholar-Apprentice",
+      "target_role": "Promise Tax Auditor",
+      "situation": "The Scholar-Apprentice believes a recent promise tax assessment is ethically unsound and seeks to rally public opinion against it.",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Is the Scholar-Apprentice's claim verifiable?",
+        "What is the public's current sentiment towards the PTA?",
+        "Are there any immediate repercussions for the Scholar-Apprentice?",
+        "Does the Auditor have a strong defense?"
+      ]
+    }
+  ],
+  "social_rules": [
+    "All spoken promises of significant weight must be registered with the Public Promise Registrar.",
+    "Failure to fulfill a registered promise incurs a promise tax, assessed by the Promise Tax Auditor.",
+    "Promise debts are legally binding and can be collected by Senior Debt Couriers.",
+    "Attempts to deliberately evade promise taxes or debt collection are considered a breach of civic trust.",
+    "Information regarding promise debts and tax assessments is considered public record, accessible via the Archivist of Forgotten Promises."
+  ],
+  "item_themes": [
+    "Promise Scrolls",
+    "Weight Scales",
+    "Courier Satchels",
+    "Debt Ledgers",
+    "Trust Charms",
+    "Promise Seals"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "PS001",
+      "name": "Blank Promise Scroll",
+      "price": 10,
+      "mass": 0.1,
+      "description": "A pristine, unblemished scroll of treated parchment, ready to bear the weight of a new promise. Its surface is receptive to the most intricate of vows, awaiting the ink of commitment.",
+      "image_prompt": "A rolled, blank parchment scroll with a delicate, aged texture, tied with a simple twine, on a dark, gothic wooden desk.",
+      "category": "Promise Material"
+    },
+    {
+      "item_id": "DL002",
+      "name": "Personal Debt Ledger",
+      "price": 50,
+      "mass": 0.5,
+      "description": "A compact, leather-bound ledger for individuals to meticulously track their own outstanding promises and received debts. Essential for maintaining one's social credit.",
+      "image_prompt": "A small, ornate leather-bound ledger with brass clasps, open to a page with intricate handwriting and columns, on a dark, polished surface.",
+      "category": "Record Keeping"
+    },
+    {
+      "item_id": "PPS003",
+      "name": "Pocket Promise Scale",
+      "price": 120,
+      "mass": 0.3,
+      "description": "A finely calibrated, miniature brass scale designed to give a rough estimate of a promise's perceived weight and potential tax burden. Not official, but useful for personal assessment.",
+      "image_prompt": "A small, intricate brass pocket scale with two delicate pans, balanced, against a dark, steampunk-inspired background.",
+      "category": "Measurement Tool"
+    },
+    {
+      "item_id": "CS004",
+      "name": "Standard Courier Satchel",
+      "price": 80,
+      "mass": 1.2,
+      "description": "A sturdy, reinforced canvas satchel, standard issue for Courier Guild members. Designed to securely transport promise debts and official notices across the city.",
+      "image_prompt": "A rugged, dark canvas courier satchel with leather straps and brass buckles, slung over a wooden chair in a gothic hallway.",
+      "category": "Courier Gear"
+    },
+    {
+      "item_id": "TC005",
+      "name": "Minor Trust Charm",
+      "price": 30,
+      "mass": 0.05,
+      "description": "A small, polished stone amulet, often worn by those seeking to rebuild their social credit or signify good faith in minor transactions.",
+      "image_prompt": "A smooth, dark grey polished stone charm with a subtle, glowing symbol etched into it, hanging from a simple leather cord.",
+      "category": "Social Credit"
+    },
+    {
+      "item_id": "PTAS006",
+      "name": "PTA Assessment Seal",
+      "price": 200,
+      "mass": 0.4,
+      "description": "An official, heavy brass seal used by the Promise Tax Authority to mark promises that have been formally assessed for their societal weight and tax implications.",
+      "image_prompt": "A heavy, ornate brass seal with the intricate emblem of the Promise Tax Authority, resting on a stack of official documents.",
+      "category": "Institutional Tool"
+    },
+    {
+      "item_id": "IUC007",
+      "name": "Inkwell of Unwavering Commitment",
+      "price": 90,
+      "mass": 0.7,
+      "description": "A specially formulated, quick-drying ink known for its deep, indelible black hue. Favored by scribes and promise-makers for its symbolic permanence.",
+      "image_prompt": "An elegant, gothic-style glass inkwell filled with dark, shimmering ink, with a feather quill resting beside it, on a mahogany desk.",
+      "category": "Writing Utensil"
+    },
+    {
+      "item_id": "GPS008",
+      "name": "Grand Promise Balancer (Replica)",
+      "price": 500,
+      "mass": 2.5,
+      "description": "A meticulously crafted replica of the Grand Promise Balancer, used by the Council of Elders. While not functional for official use, it serves as a powerful symbol of justice and balance.",
+      "image_prompt": "A detailed, miniature replica of a large, ornate brass and dark wood balance scale, with intricate carvings and gears, on a display stand.",
+      "category": "Symbolic Item"
+    },
+    {
+      "item_id": "GSM009",
+      "name": "Guild Seal of Passage",
+      "price": 150,
+      "mass": 0.2,
+      "description": "A small, embossed metal disc issued by the Courier Guild, granting its bearer recognized authority and safe passage through city districts for official duties.",
+      "image_prompt": "A round, antique bronze seal with the stylized emblem of the Courier Guild, showing a winged messenger, on a dark velvet cloth.",
+      "category": "Credential"
+    },
+    {
+      "item_id": "UM010",
+      "name": "Urgent Delivery Mandate",
+      "price": 70,
+      "mass": 0.15,
+      "description": "A scroll bearing the official seal of the Promise Tax Authority, prioritizing the immediate collection or delivery of a specific promise debt.",
+      "image_prompt": "A tightly rolled parchment scroll with a prominent red wax seal, indicating urgency, held by a gloved hand.",
+      "category": "Official Document"
+    },
+    {
+      "item_id": "QPT011",
+      "name": "Quill of Precise Transcription",
+      "price": 40,
+      "mass": 0.03,
+      "description": "A finely tipped quill, crafted for meticulous record-keeping and the precise transcription of complex promise agreements and legal texts.",
+      "image_prompt": "A slender, dark feather quill with a sharp, metallic nib, poised over a blank page of parchment.",
+      "category": "Writing Utensil"
+    },
+    {
+      "item_id": "CDD012",
+      "name": "Chronometer of Due Dates",
+      "price": 180,
+      "mass": 0.6,
+      "description": "A intricate steampunk device with multiple dials and gears, designed to track the due dates of various promises and tax deadlines.",
+      "image_prompt": "A complex, brass and copper steampunk chronometer with multiple small clock faces and exposed gears, ticking on a leather-bound desk.",
+      "category": "Measurement Tool"
+    },
+    {
+      "item_id": "VLC013",
+      "name": "Veridian Law Codex (Abbreviated)",
+      "price": 100,
+      "mass": 0.8,
+      "description": "A condensed, pocket-sized edition of the most commonly referenced promise laws and regulations of Veridia. Indispensable for citizens and couriers alike.",
+      "image_prompt": "A small, thick, leather-bound book with a title embossed in gold, 'Veridian Law Codex', resting on a stack of scrolls.",
+      "category": "Legal Text"
+    },
+    {
+      "item_id": "TP014",
+      "name": "Taxed Promise Scroll",
+      "price": 25,
+      "mass": 0.12,
+      "description": "A promise scroll that has been officially assessed by the PTA, bearing their seal and the calculated tax amount. A record of a promise's societal cost.",
+      "image_prompt": "A rolled parchment scroll with a prominent, dark wax seal of the Promise Tax Authority, and faint script visible through the paper.",
+      "category": "Promise Material"
+    },
+    {
+      "item_id": "SCA015",
+      "name": "Social Credit Amulet",
+      "price": 300,
+      "mass": 0.08,
+      "description": "A sophisticated, glowing amulet that displays the wearer's current social credit score, fluctuating based on promise fulfillment and debt status.",
+      "image_prompt": "A small, intricate amulet made of polished dark metal and a glowing, ethereal crystal that displays a numerical value, worn around a neck.",
+      "category": "Social Credit"
+    },
+    {
+      "item_id": "RCS016",
+      "name": "Reinforced Courier Satchel",
+      "price": 150,
+      "mass": 1.8,
+      "description": "An upgraded courier satchel, featuring additional steel plating and stronger locks, designed for the secure transport of high-value or contentious promise debts.",
+      "image_prompt": "A heavy-duty, dark leather and canvas satchel with visible brass rivets and steel reinforcement, featuring a complex locking mechanism.",
+      "category": "Courier Gear"
+    },
+    {
+      "item_id": "FP017",
+      "name": "Forged Promise Scroll",
+      "price": 60,
+      "mass": 0.11,
+      "description": "A cunningly crafted imitation of a legitimate promise scroll, often used by Debt Dodgers to mislead authorities or delay collection.",
+      "image_prompt": "A slightly discolored, aged parchment scroll with a crudely applied, smudged wax seal, looking suspiciously authentic.",
+      "category": "Contraband"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "veridia_promise_tax_v1",
+    "world_wardrobe_brief": "Attire in Veridia reflects its bureaucratic fantasy and gothic steampunk aesthetic, emphasizing practicality for carrying burdens, intricate details, and formal elements suitable for a promise-taxed society. Clothing is functional yet ornate, often featuring layers, durable materials, and subtle mechanical accents.",
+    "forbidden_aesthetics": [
+      "visible labels",
+      "title text",
+      "poster/card layouts",
+      "disconnected room dioramas",
+      "photorealism",
+      "aesthetics unrelated to this exact premise",
+      "modern casual wear",
+      "futuristic techwear",
+      "bright neon colors",
+      "tropical attire",
+      "minimalist designs",
+      "sleek sci-fi",
+      "high fantasy robes (unless specified)",
+      "distressed punk",
+      "beachwear"
+    ],
+    "palette_families": [
+      {
+        "name": "Bureaucratic Formal",
+        "dominant": "#4a4a4a",
+        "accent": "#b8860b",
+        "trim": "#e0e0e0",
+        "material": "Polished Brass, Thick Parchment, Worn Leather"
+      },
+      {
+        "name": "Courier Functional",
+        "dominant": "#7f7f7f",
+        "accent": "#2c2c2c",
+        "trim": "#b8860b",
+        "material": "Worn Leather, Darkened Iron, Heavy Canvas"
+      },
+      {
+        "name": "Scholarly Elder",
+        "dominant": "#2c2c2c",
+        "accent": "#7f7f7f",
+        "trim": "#e0e0e0",
+        "material": "Heavy Carved Wood, Thick Parchment, Smoked Glass"
+      },
+      {
+        "name": "Merchant Practical",
+        "dominant": "#7f7f7f",
+        "accent": "#b8860b",
+        "trim": "#4a4a4a",
+        "material": "Worn Leather, Darkened Iron, Heavy Canvas"
+      },
+      {
+        "name": "Underworld Discreet",
+        "dominant": "#4a4a4a",
+        "accent": "#2c2c2c",
+        "trim": "#7f7f7f",
+        "material": "Darkened Iron, Worn Leather, Smoked Glass"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "R001",
+        "role_keywords": [
+          "Promise Tax Auditor",
+          "Public Promise Registrar"
+        ],
+        "attire": [
+          "Formal tunic",
+          "tailored trousers/skirt",
+          "vest",
+          "cufflinks",
+          "spectacles",
+          "official badge"
+        ],
+        "props": [
+          "Personal Debt Ledger",
+          "PTA Assessment Seal",
+          "Quill of Precise Transcription",
+          "Chronometer of Due Dates"
+        ],
+        "palette_notes": "Dominantly Bureaucratic Formal palette, with accents of brass and parchment tones.",
+        "silhouette_notes": "Sharp, structured, and authoritative silhouettes. Emphasis on neatness and order.",
+        "avoid": [
+          "loose clothing",
+          "excessive ornamentation"
+        ]
+      },
+      {
+        "rule_id": "R002",
+        "role_keywords": [
+          "Senior Debt Courier",
+          "Guildmaster of Couriers"
+        ],
+        "attire": [
+          "Durable tunic",
+          "reinforced trousers",
+          "heavy boots",
+          "utility belt",
+          "layered vest",
+          "gloves"
+        ],
+        "props": [
+          "Standard Courier Satchel",
+          "Guild Seal of Passage",
+          "Urgent Delivery Mandate",
+          "Reinforced Courier Satchel"
+        ],
+        "palette_notes": "Dominantly Courier Functional palette, with worn leather and darkened iron tones.",
+        "silhouette_notes": "Robust, practical, and slightly bulky silhouettes, suggesting strength and mobility.",
+        "avoid": [
+          "delicate fabrics",
+          "formal wear",
+          "unsecured items"
+        ]
+      },
+      {
+        "rule_id": "R003",
+        "role_keywords": [
+          "Shrewd Merchant",
+          "Underground Information Broker"
+        ],
+        "attire": [
+          "Practical coat",
+          "layered tunic",
+          "sturdy trousers",
+          "fingerless gloves",
+          "utility pouches"
+        ],
+        "props": [
+          "Pocket Promise Scale",
+          "Personal Debt Ledger",
+          "Minor Trust Charm",
+          "Social Credit Amulet"
+        ],
+        "palette_notes": "Merchant Practical palette, with earthy tones and brass accents.",
+        "silhouette_notes": "Adaptable, slightly irregular silhouettes, suggesting resourcefulness and movement.",
+        "avoid": [
+          "official uniforms",
+          "excessive formal wear"
+        ]
+      },
+      {
+        "rule_id": "R004",
+        "role_keywords": [
+          "Council Scholar-Apprentice",
+          "Archivist of Forgotten Promises",
+          "Scrivener of Sacred Vows"
+        ],
+        "attire": [
+          "Long, layered robes",
+          "simple tunic",
+          "comfortable trousers",
+          "soft shoes",
+          "scholarly spectacles"
+        ],
+        "props": [
+          "Veridian Law Codex (Abbreviated)",
+          "Inkwell of Unwavering Commitment",
+          "Quill of Precise Transcription",
+          "Grand Promise Balancer (Replica)"
+        ],
+        "palette_notes": "Scholarly Elder palette, with deep charcoal, parchment, and smoked glass tones.",
+        "silhouette_notes": "Flowing, dignified, and slightly elongated silhouettes, conveying wisdom and studiousness.",
+        "avoid": [
+          "military attire",
+          "bright colors",
+          "revealing clothing"
+        ]
+      },
+      {
+        "rule_id": "R005",
+        "role_keywords": [
+          "Promise Broker & Loophole Finder"
+        ],
+        "attire": [
+          "Tailored but slightly unconventional coat",
+          "layered vest",
+          "dark trousers",
+          "subtle accessories",
+          "scarf"
+        ],
+        "props": [
+          "Personal Debt Ledger",
+          "Forged Promise Scroll",
+          "Pocket Promise Scale",
+          "Chronometer of Due Dates"
+        ],
+        "palette_notes": "Underworld Discreet palette, favoring darker tones with subtle, unexpected accents.",
+        "silhouette_notes": "Sleek, cunning, and slightly ambiguous silhouettes, suggesting hidden motives.",
+        "avoid": [
+          "official insignia",
+          "bright, attention-grabbing colors",
+          "overtly formal attire"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "D001",
+      "role_keywords": [
+        "Citizen",
+        "Commoner"
+      ],
+      "attire": [
+        "Simple tunic",
+        "sturdy trousers/skirt",
+        "practical boots",
+        "basic cloak/shawl"
+      ],
+      "props": [
+        "Personal Debt Ledger",
+        "Minor Trust Charm"
+      ],
+      "palette_notes": "A blend of Courier Functional and Merchant Practical palettes, leaning towards muted, earthy tones.",
+      "silhouette_notes": "Functional, unadorned, and slightly worn silhouettes, reflecting everyday life.",
+      "avoid": [
+        "excessive ornamentation",
+        "official uniforms",
+        "luxurious fabrics"
+      ]
+    },
+    "visual_consistency_rules": [
+      "All sprites must maintain a slightly stylized, realistic body proportion, with emphasis on broad shoulders for carrying or slender for agility.",
+      "A thin, dark, crisp outline must be present on all sprites for readability against complex backgrounds.",
+      "Clear visual cues for roles (e.g., couriers with satchels, tax collectors with ledgers, elders with robes/staves) are mandatory.",
+      "Muted palette with dominant greys, secondary greys, and brass accents must be consistently applied.",
+      "Gothic steampunk elements like gears, brass fittings, and heavy materials should be subtly integrated into clothing and props.",
+      "No visible labels, title text, or photorealism.",
+      "All attire should appear durable and suitable for a cliffside, weight-bearing environment."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "veridia_promise_tax_v1",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "Slightly angled, showing tops of structures and ground, minimal wall visibility",
+      "scale_rule": "1 unit = 1 meter, consistent object scaling"
+    },
+    "palette": {
+      "dominant": "#4a4a4a",
+      "secondary": "#7f7f7f",
+      "accent": "#b8860b",
+      "shadow": "#2c2c2c",
+      "highlight": "#e0e0e0"
+    },
+    "materials": [
+      "Aged Stone",
+      "Darkened Iron",
+      "Polished Brass",
+      "Heavy Carved Wood",
+      "Thick Parchment",
+      "Worn Leather",
+      "Intricate Gears",
+      "Smoked Glass"
+    ],
+    "lighting": "Soft, directional, emphasizing intricate details and deep shadows, with occasional warm glows from mechanisms",
+    "architecture": [
+      "Massive structures carved into cliffs",
+      "Overhanging balconies and bridges with visible counterweights",
+      "Integrated clockwork and gear mechanisms",
+      "Heavy, reinforced doorways and archways",
+      "Verticality, structures built into and on top of each other",
+      "Gothic arches and buttresses with mechanical elements"
+    ],
+    "terrain": {
+      "ground": "Rough, uneven grey-brown cliff rock, worn smooth in high traffic areas",
+      "path": "Paved with dark, heavy flagstones, often showing grooves from heavy loads",
+      "edge": "Sheer cliff drops, reinforced with heavy iron railings or carved stone barriers"
+    },
+    "sprite_language": {
+      "body_proportion": "Slightly stylized, realistic proportions with emphasis on broad shoulders for carrying, or slender for agility",
+      "outline": "Thin, dark, crisp outline for readability against complex backgrounds",
+      "role_readability": "Clear visual cues for roles (e.g., couriers with satchels, tax collectors with ledgers, elders with robes/staves)"
+    },
+    "world_prompt_prefix": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism",
+    "sprite_prompt_prefix": "Orthographic top-down view, Veridia citizen, stylized, crisp outline, clear role, no text, no labels, no photorealism",
+    "forbidden_visuals": [
+      "visible labels",
+      "title text",
+      "poster/card layouts",
+      "disconnected room dioramas",
+      "photorealism",
+      "aesthetics unrelated to this exact premise"
+    ],
+    "canon_hash": "8de439b0a52756fa"
+  }
+}

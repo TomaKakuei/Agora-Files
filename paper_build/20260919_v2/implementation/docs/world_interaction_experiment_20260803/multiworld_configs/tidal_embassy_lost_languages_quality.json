@@ -1,0 +1,400 @@
+{
+  "world_id": "tidal_embassy_lost_languages",
+  "affordance_count": 11,
+  "interaction_families": [
+    "creation",
+    "economy",
+    "embodied_social",
+    "exploration",
+    "social"
+  ],
+  "world_specific_affordance_count": 5,
+  "shared_human_ai_fraction": 1.0,
+  "persistent_effect_fraction": 1.0,
+  "target_types": [
+    "agent",
+    "human_player",
+    "room",
+    "world"
+  ],
+  "checks": {
+    "at_least_eight_affordances": true,
+    "at_least_four_interaction_families": true,
+    "human_ai_shared_contract": true,
+    "persistent_effect_coverage": true,
+    "world_specific_actions": true,
+    "supports_agents_and_players": true
+  },
+  "passed": true,
+  "affordances": [
+    {
+      "affordance_id": "trade_supplies",
+      "route_id": "trade_supplies",
+      "label": "Trade",
+      "description": "traded supplies with",
+      "kind": "item_trade",
+      "interaction_family": "economy",
+      "actor_modes": [
+        "human",
+        "ai"
+      ],
+      "target_types": [
+        "agent",
+        "human_player"
+      ],
+      "preconditions": {
+        "same_room": true,
+        "actor_role_ids": [],
+        "requires_actor_item_ids_any": []
+      },
+      "persistent_effects": [
+        "relationship",
+        "inventory"
+      ],
+      "status_effect": "",
+      "evidence_fields": [
+        "actor_id",
+        "route_id",
+        "success",
+        "round_index",
+        "target_id",
+        "relationship_adjustments",
+        "trade_item_id"
+      ]
+    },
+    {
+      "affordance_id": "the_redaction_game_coordinate_1",
+      "route_id": "the_redaction_game_coordinate_1",
+      "label": "Coordinate",
+      "description": "Players compete to edit sensitive documents to favor their faction while avoiding detection by the censors.",
+      "kind": "custom",
+      "interaction_family": "social",
+      "actor_modes": [
+        "human",
+        "ai"
+      ],
+      "target_types": [
+        "agent",
+        "human_player"
+      ],
+      "preconditions": {
+        "same_room": true,
+        "actor_role_ids": [],
+        "requires_actor_item_ids_any": []
+      },
+      "persistent_effects": [
+        "relationship",
+        "status"
+      ],
+      "status_effect": "the_redaction_game_advanced",
+      "evidence_fields": [
+        "actor_id",
+        "route_id",
+        "success",
+        "round_index",
+        "target_id",
+        "relationship_adjustments"
+      ]
+    },
+    {
+      "affordance_id": "the_dialect_duel_coordinate_2",
+      "route_id": "the_dialect_duel_coordinate_2",
+      "label": "Coordinate",
+      "description": "Social combat where players use rare vocabulary to assert dominance and win over the neutral ambassadors.",
+      "kind": "custom",
+      "interaction_family": "social",
+      "actor_modes": [
+        "human",
+        "ai"
+      ],
+      "target_types": [
+        "agent",
+        "human_player"
+      ],
+      "preconditions": {
+        "same_room": true,
+        "actor_role_ids": [],
+        "requires_actor_item_ids_any": []
+      },
+      "persistent_effects": [
+        "relationship",
+        "status"
+      ],
+      "status_effect": "the_dialect_duel_advanced",
+      "evidence_fields": [
+        "actor_id",
+        "route_id",
+        "success",
+        "round_index",
+        "target_id",
+        "relationship_adjustments"
+      ]
+    },
+    {
+      "affordance_id": "ease_world_tension",
+      "route_id": "ease_world_tension",
+      "label": "Mediate",
+      "description": "mediated a tense exchange with",
+      "kind": "custom",
+      "interaction_family": "social",
+      "actor_modes": [
+        "human",
+        "ai"
+      ],
+      "target_types": [
+        "agent",
+        "human_player"
+      ],
+      "preconditions": {
+        "same_room": true,
+        "actor_role_ids": [],
+        "requires_actor_item_ids_any": []
+      },
+      "persistent_effects": [
+        "relationship",
+        "status"
+      ],
+      "status_effect": "local_tension_softened",
+      "evidence_fields": [
+        "actor_id",
+        "route_id",
+        "success",
+        "round_index",
+        "target_id",
+        "relationship_adjustments"
+      ]
+    },
+    {
+      "affordance_id": "creator_world_chat",
+      "route_id": "creator_world_chat",
+      "label": "Chat",
+      "description": "spoke with",
+      "kind": "custom",
+      "interaction_family": "social",
+      "actor_modes": [
+        "human",
+        "ai"
+      ],
+      "target_types": [
+        "agent",
+        "human_player"
+      ],
+      "preconditions": {
+        "same_room": true,
+        "actor_role_ids": [],
+        "requires_actor_item_ids_any": []
+      },
+      "persistent_effects": [
+        "relationship",
+        "status"
+      ],
+      "status_effect": "local_context_shared",
+      "evidence_fields": [
+        "actor_id",
+        "route_id",
+        "success",
+        "round_index",
+        "target_id",
+        "relationship_adjustments"
+      ]
+    },
+    {
+      "affordance_id": "document_world_detail",
+      "route_id": "document_world_detail",
+      "label": "Document",
+      "description": "documented a notable world detail with",
+      "kind": "image",
+      "interaction_family": "creation",
+      "actor_modes": [
+        "human",
+        "ai"
+      ],
+      "target_types": [
+        "world"
+      ],
+      "preconditions": {
+        "same_room": false,
+        "actor_role_ids": [],
+        "requires_actor_item_ids_any": []
+      },
+      "persistent_effects": [
+        "artifact"
+      ],
+      "status_effect": "",
+      "evidence_fields": [
+        "actor_id",
+        "route_id",
+        "success",
+        "round_index"
+      ]
+    },
+    {
+      "affordance_id": "move_to_next_thread",
+      "route_id": "move_to_next_thread",
+      "label": "Move",
+      "description": "moved toward the next thread of activity",
+      "kind": "move",
+      "interaction_family": "exploration",
+      "actor_modes": [
+        "human",
+        "ai"
+      ],
+      "target_types": [
+        "room"
+      ],
+      "preconditions": {
+        "same_room": false,
+        "actor_role_ids": [],
+        "requires_actor_item_ids_any": []
+      },
+      "persistent_effects": [
+        "location"
+      ],
+      "status_effect": "",
+      "evidence_fields": [
+        "actor_id",
+        "route_id",
+        "success",
+        "round_index",
+        "actor_room_id",
+        "target_room_id"
+      ]
+    },
+    {
+      "affordance_id": "world_action_translate_a_bribe_into_an_archaic_metaphor.",
+      "route_id": "world_action_translate_a_bribe_into_an_archaic_metaphor.",
+      "label": "Translate a bribe into an archaic metaphor.",
+      "description": "Perform the world-specific action: Translate a bribe into an archaic metaphor.",
+      "kind": "custom",
+      "interaction_family": "social",
+      "actor_modes": [
+        "human",
+        "ai"
+      ],
+      "target_types": [
+        "agent",
+        "human_player"
+      ],
+      "preconditions": {
+        "same_room": true,
+        "actor_role_ids": [],
+        "requires_actor_item_ids_any": []
+      },
+      "persistent_effects": [
+        "relationship",
+        "status"
+      ],
+      "status_effect": "world_action_advanced_1",
+      "evidence_fields": [
+        "actor_id",
+        "route_id",
+        "success",
+        "round_index",
+        "target_id",
+        "relationship_adjustments"
+      ]
+    },
+    {
+      "affordance_id": "world_action_forge_a_linguistic_seal_of_authenticity.",
+      "route_id": "world_action_forge_a_linguistic_seal_of_authenticity.",
+      "label": "Forge a linguistic seal of authenticity.",
+      "description": "Perform the world-specific action: Forge a linguistic seal of authenticity.",
+      "kind": "custom",
+      "interaction_family": "social",
+      "actor_modes": [
+        "human",
+        "ai"
+      ],
+      "target_types": [
+        "agent",
+        "human_player"
+      ],
+      "preconditions": {
+        "same_room": true,
+        "actor_role_ids": [],
+        "requires_actor_item_ids_any": []
+      },
+      "persistent_effects": [
+        "relationship",
+        "status"
+      ],
+      "status_effect": "world_action_advanced_2",
+      "evidence_fields": [
+        "actor_id",
+        "route_id",
+        "success",
+        "round_index",
+        "target_id",
+        "relationship_adjustments"
+      ]
+    },
+    {
+      "affordance_id": "world_action_eavesdrop_on_a_sound_dampened_negotiation.",
+      "route_id": "world_action_eavesdrop_on_a_sound_dampened_negotiation.",
+      "label": "Eavesdrop on a sound-dampened negotiation.",
+      "description": "Perform the world-specific action: Eavesdrop on a sound-dampened negotiation.",
+      "kind": "custom",
+      "interaction_family": "social",
+      "actor_modes": [
+        "human",
+        "ai"
+      ],
+      "target_types": [
+        "agent",
+        "human_player"
+      ],
+      "preconditions": {
+        "same_room": true,
+        "actor_role_ids": [],
+        "requires_actor_item_ids_any": []
+      },
+      "persistent_effects": [
+        "relationship",
+        "status"
+      ],
+      "status_effect": "world_action_advanced_3",
+      "evidence_fields": [
+        "actor_id",
+        "route_id",
+        "success",
+        "round_index",
+        "target_id",
+        "relationship_adjustments"
+      ]
+    },
+    {
+      "affordance_id": "model_cinematic_interaction",
+      "route_id": "model_cinematic_interaction",
+      "label": "CinematicInteraction",
+      "description": "Invent a safe, context-specific, visible two-person action that expresses the world pressure in Tidal Embassy of Lost Languages and cannot be reduced to a simple routine exchange.",
+      "kind": "cinematic",
+      "interaction_family": "embodied_social",
+      "actor_modes": [
+        "human",
+        "ai"
+      ],
+      "target_types": [
+        "agent",
+        "human_player"
+      ],
+      "preconditions": {
+        "same_room": true,
+        "actor_role_ids": [],
+        "requires_actor_item_ids_any": []
+      },
+      "persistent_effects": [
+        "relationship",
+        "status"
+      ],
+      "status_effect": "freeform_cinematic_world_moment",
+      "evidence_fields": [
+        "actor_id",
+        "route_id",
+        "success",
+        "round_index",
+        "target_id",
+        "relationship_adjustments"
+      ]
+    }
+  ]
+}

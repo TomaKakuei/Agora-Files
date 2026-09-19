@@ -1,0 +1,563 @@
+{
+  "timestep_index": 1,
+  "intents": [
+    {
+      "intent_id": "r001_0001_clockwork_rain_conservatory_main_06_pay",
+      "agent_id": "clockwork_rain_conservatory_main_06",
+      "call": "Item",
+      "intent_text": "Lyra Cinder pays 1 civic_credit to Marius Gilt.",
+      "target_agent_id": "clockwork_rain_conservatory_main_10",
+      "target_coordinates": null,
+      "operation": "Give",
+      "action": "",
+      "item_id": "civic_credit",
+      "target_item_ids": [],
+      "quantity": 1,
+      "api_prompt": "",
+      "metadata": {
+        "route_id": "trade_supplies",
+        "story_verb": "traded supplies with",
+        "trade_item_id": "crc_024__velvet_lined_display_case",
+        "price": 1,
+        "phase": "currency_payment",
+        "relationship_adjustments_mode": "model",
+        "relationship_adjustment_source": "vertex_api_merged_interaction_routing",
+        "actor_relationship_instruction": "Lyra's interaction with Marius is a strategic move to gauge his interest and establish her position as a key distributor, potentially increasing her influence.",
+        "target_relationship_instruction": "Marius views this interaction as a chance to assess market stability and secure valuable sheets, potentially increasing his trust in Lyra if she offers a good deal.",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "clockwork_rain_conservatory_main_06",
+            "target_agent_id": "clockwork_rain_conservatory_main_10",
+            "trust_delta": 2,
+            "affection_delta": 0,
+            "influence_fear_delta": 3,
+            "reason": "Lyra initiates a trade discussion, subtly asserting her market position and control over sheet distribution, increasing her influence.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "clockwork_rain_conservatory_main_10",
+            "target_agent_id": "clockwork_rain_conservatory_main_06",
+            "trust_delta": 2,
+            "affection_delta": 0,
+            "influence_fear_delta": 1,
+            "reason": "Marius engages in a professional trade discussion, finding Lyra's insights on market conditions useful, slightly increasing trust and acknowledging her influence.",
+            "source": "vertex_api"
+          }
+        ]
+      }
+    },
+    {
+      "intent_id": "r001_0001_clockwork_rain_conservatory_main_10_sell",
+      "agent_id": "clockwork_rain_conservatory_main_10",
+      "call": "Item",
+      "intent_text": "Marius Gilt gives crc_024__velvet_lined_display_case to Lyra Cinder.",
+      "target_agent_id": "clockwork_rain_conservatory_main_06",
+      "target_coordinates": null,
+      "operation": "Give",
+      "action": "",
+      "item_id": "crc_024__velvet_lined_display_case",
+      "target_item_ids": [],
+      "quantity": 1,
+      "api_prompt": "",
+      "metadata": {
+        "route_id": "trade_supplies",
+        "story_verb": "traded supplies with",
+        "trade_item_id": "crc_024__velvet_lined_display_case",
+        "price": 1,
+        "phase": "item_delivery",
+        "relationship_adjustments_mode": "model",
+        "relationship_adjustment_source": "vertex_api_merged_interaction_routing",
+        "relationship_adjustments": [],
+        "relationship_adjustments_shared_with": "r001_0001_clockwork_rain_conservatory_main_06_pay"
+      }
+    },
+    {
+      "intent_id": "r001_0002_clockwork_rain_conservatory_main_10_Confront about Press Jam",
+      "agent_id": "clockwork_rain_conservatory_main_10",
+      "call": "Custom",
+      "intent_text": "Marius Gilt uses Confront about Press Jam with Valerius Gilt.",
+      "target_agent_id": "clockwork_rain_conservatory_main_17",
+      "target_coordinates": null,
+      "operation": "",
+      "action": "Confront about Press Jam",
+      "item_id": "",
+      "target_item_ids": [],
+      "quantity": 1,
+      "api_prompt": "",
+      "metadata": {
+        "route_id": "proposed_confront_about_press_jam",
+        "story_verb": "confront about press jam",
+        "status_effect": "proposed_confront_about_press_jam",
+        "duration_steps": 1,
+        "relationship_adjustments_mode": "model",
+        "relationship_adjustment_source": "vertex_api_merged_interaction_routing",
+        "actor_relationship_instruction": "",
+        "target_relationship_instruction": "",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "clockwork_rain_conservatory_main_10",
+            "target_agent_id": "clockwork_rain_conservatory_main_17",
+            "trust_delta": -5,
+            "affection_delta": -2,
+            "influence_fear_delta": 0,
+            "reason": "Marius suspects Valerius's involvement in the Press's jamming, hindering his quest.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "clockwork_rain_conservatory_main_17",
+            "target_agent_id": "clockwork_rain_conservatory_main_10",
+            "trust_delta": -5,
+            "affection_delta": -2,
+            "influence_fear_delta": 3,
+            "reason": "Valerius feels accused by Marius, potentially exposing his forgery activities.",
+            "source": "vertex_api"
+          }
+        ],
+        "shared_action_core": {
+          "shared_action_label": "Confront about Press Jam",
+          "shared_action_goal": "proposal satisfies world-state, proximity, ownership, consent, and bounded-effect checks",
+          "action_beats": [
+            "Marius Gilt initiates confront about press jam.",
+            "Valerius Gilt answers and continues the shared action."
+          ],
+          "actor_role_in_action": "Marius Gilt leads or initiates the visible action.",
+          "target_role_in_action": "Valerius Gilt receives, answers, or completes the shared action.",
+          "props_in_use": [],
+          "location_focus": "room_05_the_fern_gilded_lounge",
+          "why_now": "proposal satisfies world-state, proximity, ownership, consent, and bounded-effect checks",
+          "json_action_alignment": "route_only",
+          "off_json_detail": "",
+          "main_character_recording_note": "Visibly record what Marius Gilt and Valerius Gilt are doing in this round through the shared action."
+        },
+        "open_action_proposal": {
+          "action_name": "Confront about Press Jam",
+          "action_text": "\"Valerius, the Press is jammed. A spore, they say. Given your... unique talents with brass, I must ask: do you know anything about this particular 'spore'?\"",
+          "target_agent_id": "clockwork_rain_conservatory_main_17",
+          "rationale": "Marius, focused on acquiring a legendary sheet from the Press, directly confronts Valerius, a known forger, about the Press's current jammed state. This leverages Valerius's role and the current world hazard to advance Marius's quest.",
+          "target_response": "counter",
+          "effects": [
+            {
+              "kind": "speech",
+              "source_agent_id": "clockwork_rain_conservatory_main_10",
+              "target_agent_id": "clockwork_rain_conservatory_main_17",
+              "item_id": "",
+              "quantity": 1,
+              "item_name": "",
+              "item_description": "",
+              "input_item_ids": [],
+              "status_effect": "",
+              "duration_steps": 1,
+              "content": "\"Valerius, the Press is jammed. A spore, they say. Given your... unique talents with brass, I must ask: do you know anything about this particular 'spore'?\""
+            }
+          ]
+        },
+        "coordinator_decision": {
+          "status": "approved",
+          "reason": "proposal satisfies world-state, proximity, ownership, consent, and bounded-effect checks",
+          "proposal": {
+            "action_name": "Confront about Press Jam",
+            "action_text": "\"Valerius, the Press is jammed. A spore, they say. Given your... unique talents with brass, I must ask: do you know anything about this particular 'spore'?\"",
+            "target_agent_id": "clockwork_rain_conservatory_main_17",
+            "rationale": "Marius, focused on acquiring a legendary sheet from the Press, directly confronts Valerius, a known forger, about the Press's current jammed state. This leverages Valerius's role and the current world hazard to advance Marius's quest.",
+            "target_response": "counter",
+            "effects": [
+              {
+                "kind": "speech",
+                "source_agent_id": "clockwork_rain_conservatory_main_10",
+                "target_agent_id": "clockwork_rain_conservatory_main_17",
+                "item_id": "",
+                "quantity": 1,
+                "item_name": "",
+                "item_description": "",
+                "input_item_ids": [],
+                "status_effect": "",
+                "duration_steps": 1,
+                "content": "\"Valerius, the Press is jammed. A spore, they say. Given your... unique talents with brass, I must ask: do you know anything about this particular 'spore'?\""
+              }
+            ]
+          },
+          "checks": {
+            "proposal_enabled": true,
+            "actor_exists": true,
+            "target_exists": true,
+            "target_matches_context": true,
+            "same_room_for_physical_effects": true,
+            "ownership_and_inputs": true,
+            "consent_for_exchange": true,
+            "bounded_creation": true
+          }
+        }
+      }
+    },
+    {
+      "intent_id": "r001_0003_clockwork_rain_conservatory_main_14_Inquire about etching",
+      "agent_id": "clockwork_rain_conservatory_main_14",
+      "call": "Custom",
+      "intent_text": "Seraphina Gilt uses Inquire about etching with Valerius Gilt.",
+      "target_agent_id": "clockwork_rain_conservatory_main_17",
+      "target_coordinates": null,
+      "operation": "",
+      "action": "Inquire about etching",
+      "item_id": "",
+      "target_item_ids": [],
+      "quantity": 1,
+      "api_prompt": "",
+      "metadata": {
+        "route_id": "proposed_inquire_about_etching",
+        "story_verb": "inquire about etching",
+        "status_effect": "proposed_inquire_about_etching",
+        "duration_steps": 1,
+        "relationship_adjustments_mode": "model",
+        "relationship_adjustment_source": "vertex_api_merged_interaction_routing",
+        "actor_relationship_instruction": "",
+        "target_relationship_instruction": "",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "clockwork_rain_conservatory_main_14",
+            "target_agent_id": "clockwork_rain_conservatory_main_17",
+            "trust_delta": -2,
+            "affection_delta": 0,
+            "influence_fear_delta": 0,
+            "reason": "Seraphina's observation of Valerius's forging activities creates a subtle distrust.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "clockwork_rain_conservatory_main_17",
+            "target_agent_id": "clockwork_rain_conservatory_main_14",
+            "trust_delta": -2,
+            "affection_delta": 0,
+            "influence_fear_delta": 0,
+            "reason": "Valerius perceives Seraphina's inquiry as a form of suspicion, decreasing his trust.",
+            "source": "vertex_api"
+          }
+        ],
+        "shared_action_core": {
+          "shared_action_label": "Inquire about etching",
+          "shared_action_goal": "proposal satisfies world-state, proximity, ownership, consent, and bounded-effect checks",
+          "action_beats": [
+            "Seraphina Gilt initiates inquire about etching.",
+            "Valerius Gilt answers and continues the shared action."
+          ],
+          "actor_role_in_action": "Seraphina Gilt leads or initiates the visible action.",
+          "target_role_in_action": "Valerius Gilt receives, answers, or completes the shared action.",
+          "props_in_use": [],
+          "location_focus": "room_05_the_fern_gilded_lounge",
+          "why_now": "proposal satisfies world-state, proximity, ownership, consent, and bounded-effect checks",
+          "json_action_alignment": "route_only",
+          "off_json_detail": "",
+          "main_character_recording_note": "Visibly record what Seraphina Gilt and Valerius Gilt are doing in this round through the shared action."
+        },
+        "open_action_proposal": {
+          "action_name": "Inquire about etching",
+          "action_text": "“Valerius, I couldn't help but notice your meticulous work. Are these new compositions for the Conservatory, or perhaps a more… personal endeavor?”",
+          "target_agent_id": "clockwork_rain_conservatory_main_17",
+          "rationale": "Seraphina is subtly probing Valerius's activities, which are related to weather sheets, to understand if they align with or threaten her own goals and the Conservatory's integrity.",
+          "target_response": "counter",
+          "effects": [
+            {
+              "kind": "speech",
+              "source_agent_id": "clockwork_rain_conservatory_main_14",
+              "target_agent_id": "clockwork_rain_conservatory_main_17",
+              "item_id": "",
+              "quantity": 1,
+              "item_name": "",
+              "item_description": "",
+              "input_item_ids": [],
+              "status_effect": "",
+              "duration_steps": 1,
+              "content": "“Valerius, I couldn't help but notice your meticulous work. Are these new compositions for the Conservatory, or perhaps a more… personal endeavor?”"
+            }
+          ]
+        },
+        "coordinator_decision": {
+          "status": "approved",
+          "reason": "proposal satisfies world-state, proximity, ownership, consent, and bounded-effect checks",
+          "proposal": {
+            "action_name": "Inquire about etching",
+            "action_text": "“Valerius, I couldn't help but notice your meticulous work. Are these new compositions for the Conservatory, or perhaps a more… personal endeavor?”",
+            "target_agent_id": "clockwork_rain_conservatory_main_17",
+            "rationale": "Seraphina is subtly probing Valerius's activities, which are related to weather sheets, to understand if they align with or threaten her own goals and the Conservatory's integrity.",
+            "target_response": "counter",
+            "effects": [
+              {
+                "kind": "speech",
+                "source_agent_id": "clockwork_rain_conservatory_main_14",
+                "target_agent_id": "clockwork_rain_conservatory_main_17",
+                "item_id": "",
+                "quantity": 1,
+                "item_name": "",
+                "item_description": "",
+                "input_item_ids": [],
+                "status_effect": "",
+                "duration_steps": 1,
+                "content": "“Valerius, I couldn't help but notice your meticulous work. Are these new compositions for the Conservatory, or perhaps a more… personal endeavor?”"
+              }
+            ]
+          },
+          "checks": {
+            "proposal_enabled": true,
+            "actor_exists": true,
+            "target_exists": true,
+            "target_matches_context": true,
+            "same_room_for_physical_effects": true,
+            "ownership_and_inputs": true,
+            "consent_for_exchange": true,
+            "bounded_creation": true
+          }
+        }
+      }
+    },
+    {
+      "intent_id": "r001_0004_clockwork_rain_conservatory_main_17_Discuss Weather Sheet Authenticity",
+      "agent_id": "clockwork_rain_conservatory_main_17",
+      "call": "Custom",
+      "intent_text": "Valerius Gilt uses Discuss Weather Sheet Authenticity with Seraphina Gilt.",
+      "target_agent_id": "clockwork_rain_conservatory_main_14",
+      "target_coordinates": null,
+      "operation": "",
+      "action": "Discuss Weather Sheet Authenticity",
+      "item_id": "",
+      "target_item_ids": [],
+      "quantity": 1,
+      "api_prompt": "",
+      "metadata": {
+        "route_id": "proposed_discuss_weather_sheet_authenticity",
+        "story_verb": "discuss weather sheet authenticity",
+        "status_effect": "proposed_discuss_weather_sheet_authenticity",
+        "duration_steps": 1,
+        "relationship_adjustments_mode": "model",
+        "relationship_adjustment_source": "vertex_api_merged_interaction_routing",
+        "actor_relationship_instruction": "",
+        "target_relationship_instruction": "",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "clockwork_rain_conservatory_main_17",
+            "target_agent_id": "clockwork_rain_conservatory_main_14",
+            "trust_delta": -2,
+            "affection_delta": 0,
+            "influence_fear_delta": 1,
+            "reason": "Valerius subtly probes Seraphina's expertise, creating a slight, unstated tension and increasing his perceived influence if he feels he gained an advantage.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "clockwork_rain_conservatory_main_14",
+            "target_agent_id": "clockwork_rain_conservatory_main_17",
+            "trust_delta": 0,
+            "affection_delta": 0,
+            "influence_fear_delta": -1,
+            "reason": "Seraphina's trust remains neutral, but she might feel a subtle, unplaceable unease or a minor challenge to her authority from Valerius's pointed questions.",
+            "source": "vertex_api"
+          }
+        ],
+        "shared_action_core": {
+          "shared_action_label": "Discuss Weather Sheet Authenticity",
+          "shared_action_goal": "proposal satisfies world-state, proximity, ownership, consent, and bounded-effect checks",
+          "action_beats": [
+            "Valerius Gilt initiates discuss weather sheet authenticity.",
+            "Seraphina Gilt answers and continues the shared action."
+          ],
+          "actor_role_in_action": "Valerius Gilt leads or initiates the visible action.",
+          "target_role_in_action": "Seraphina Gilt receives, answers, or completes the shared action.",
+          "props_in_use": [],
+          "location_focus": "room_05_the_fern_gilded_lounge",
+          "why_now": "proposal satisfies world-state, proximity, ownership, consent, and bounded-effect checks",
+          "json_action_alignment": "route_only",
+          "off_json_detail": "",
+          "main_character_recording_note": "Visibly record what Valerius Gilt and Seraphina Gilt are doing in this round through the shared action."
+        },
+        "open_action_proposal": {
+          "action_name": "Discuss Weather Sheet Authenticity",
+          "action_text": "\"Seraphina, a moment of your esteemed expertise, if you please. I was just pondering the subtle nuances of these 'High-Altitude Mist' sheets. Do you ever find yourself questioning the very *essence* of their origin, or is the Conservatory's provenance truly infallible?\"",
+          "target_agent_id": "clockwork_rain_conservatory_main_14",
+          "rationale": "Valerius needs to understand Seraphina's ability to detect forgeries. By framing it as a philosophical question about 'essence' and 'provenance', he can gauge her knowledge without revealing his own illicit activities. This directly relates to his goal of replacing the master weather-sheet.",
+          "target_response": "counter",
+          "effects": [
+            {
+              "kind": "speech",
+              "source_agent_id": "clockwork_rain_conservatory_main_17",
+              "target_agent_id": "clockwork_rain_conservatory_main_14",
+              "item_id": "",
+              "quantity": 1,
+              "item_name": "",
+              "item_description": "",
+              "input_item_ids": [],
+              "status_effect": "",
+              "duration_steps": 1,
+              "content": "\"Seraphina, a moment of your esteemed expertise, if you please. I was just pondering the subtle nuances of these 'High-Altitude Mist' sheets. Do you ever find yourself questioning the very *essence* of their origin, or is the Conservatory's provenance truly infallible?\""
+            }
+          ]
+        },
+        "coordinator_decision": {
+          "status": "approved",
+          "reason": "proposal satisfies world-state, proximity, ownership, consent, and bounded-effect checks",
+          "proposal": {
+            "action_name": "Discuss Weather Sheet Authenticity",
+            "action_text": "\"Seraphina, a moment of your esteemed expertise, if you please. I was just pondering the subtle nuances of these 'High-Altitude Mist' sheets. Do you ever find yourself questioning the very *essence* of their origin, or is the Conservatory's provenance truly infallible?\"",
+            "target_agent_id": "clockwork_rain_conservatory_main_14",
+            "rationale": "Valerius needs to understand Seraphina's ability to detect forgeries. By framing it as a philosophical question about 'essence' and 'provenance', he can gauge her knowledge without revealing his own illicit activities. This directly relates to his goal of replacing the master weather-sheet.",
+            "target_response": "counter",
+            "effects": [
+              {
+                "kind": "speech",
+                "source_agent_id": "clockwork_rain_conservatory_main_17",
+                "target_agent_id": "clockwork_rain_conservatory_main_14",
+                "item_id": "",
+                "quantity": 1,
+                "item_name": "",
+                "item_description": "",
+                "input_item_ids": [],
+                "status_effect": "",
+                "duration_steps": 1,
+                "content": "\"Seraphina, a moment of your esteemed expertise, if you please. I was just pondering the subtle nuances of these 'High-Altitude Mist' sheets. Do you ever find yourself questioning the very *essence* of their origin, or is the Conservatory's provenance truly infallible?\""
+              }
+            ]
+          },
+          "checks": {
+            "proposal_enabled": true,
+            "actor_exists": true,
+            "target_exists": true,
+            "target_matches_context": true,
+            "same_room_for_physical_effects": true,
+            "ownership_and_inputs": true,
+            "consent_for_exchange": true,
+            "bounded_creation": true
+          }
+        }
+      }
+    },
+    {
+      "intent_id": "r001_0005_clockwork_rain_conservatory_main_01_Coordinate",
+      "agent_id": "clockwork_rain_conservatory_main_01",
+      "call": "Custom",
+      "intent_text": "Vespera Thorne uses Coordinate with Kestrel Reed.",
+      "target_agent_id": "clockwork_rain_conservatory_main_15",
+      "target_coordinates": null,
+      "operation": "",
+      "action": "Coordinate",
+      "item_id": "",
+      "target_item_ids": [],
+      "quantity": 1,
+      "api_prompt": "",
+      "metadata": {
+        "route_id": "maintenance_ritual_coordinate_2",
+        "story_verb": "coordinated with",
+        "status_effect": "maintenance_ritual_advanced",
+        "duration_steps": 2,
+        "relationship_adjustments_mode": "model",
+        "relationship_adjustment_source": "vertex_api_merged_interaction_routing",
+        "actor_relationship_instruction": "Vespera sees Kestrel as a crucial partner in addressing the immediate threat to the Conservatory's infrastructure, reinforcing trust through shared responsibility.",
+        "target_relationship_instruction": "Kestrel recognizes Vespera's leadership and expertise in this critical situation, increasing trust and a sense of shared purpose.",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "clockwork_rain_conservatory_main_01",
+            "target_agent_id": "clockwork_rain_conservatory_main_15",
+            "trust_delta": 5,
+            "affection_delta": 3,
+            "influence_fear_delta": 0,
+            "reason": "Collaborative effort on an urgent, shared threat builds trust and strengthens their working bond.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "clockwork_rain_conservatory_main_15",
+            "target_agent_id": "clockwork_rain_conservatory_main_01",
+            "trust_delta": 5,
+            "affection_delta": 3,
+            "influence_fear_delta": 0,
+            "reason": "Successful coordination on a critical task increases mutual trust and appreciation for each other's roles.",
+            "source": "vertex_api"
+          }
+        ],
+        "shared_action_core": {
+          "shared_action_label": "Synchronizing pressure readings and leak mapping",
+          "shared_action_goal": "To collaboratively assess the critical pipe-works issues and plan immediate repairs to prevent system rupture.",
+          "action_beats": [
+            "Vespera adjusts her brass pressure gauge, noting a critical reading.",
+            "Kestrel scans the nearby pipes with a wind speed gauge, identifying a significant leak.",
+            "They exchange a worried glance, confirming the urgency of the situation.",
+            "Vespera points towards a section of pipe, indicating a priority repair area."
+          ],
+          "actor_role_in_action": "Chief Hydrologist, leading the assessment and proposing solutions for critical pressure valves.",
+          "target_role_in_action": "Pressure Scout, identifying and mapping air-current leaks to inform repair efforts.",
+          "props_in_use": [
+            "brass_pressure_gauge",
+            "wind_speed_gauge",
+            "gasket_sealant",
+            "roll_of_lead_tape"
+          ],
+          "location_focus": "The Pipe-Works Commons, specifically the section visible from the Rain Catcher Lookout.",
+          "why_now": "The Pipe-Works is dangerously overheating and valves are failing, threatening a system rupture. Immediate coordination is necessary to prevent catastrophe.",
+          "json_action_alignment": "route_only",
+          "off_json_detail": "",
+          "main_character_recording_note": "Show Vespera and Kestrel in the Rain Catcher Lookout, actively using their tools to assess the Pipe-Works, exchanging information with focused expressions."
+        }
+      }
+    },
+    {
+      "intent_id": "r001_0006_clockwork_rain_conservatory_main_02_Coordinate",
+      "agent_id": "clockwork_rain_conservatory_main_02",
+      "call": "Custom",
+      "intent_text": "Silas Vane uses Coordinate with Kaelen Moss.",
+      "target_agent_id": "clockwork_rain_conservatory_main_23",
+      "target_coordinates": null,
+      "operation": "",
+      "action": "Coordinate",
+      "item_id": "",
+      "target_item_ids": [],
+      "quantity": 1,
+      "api_prompt": "",
+      "metadata": {
+        "route_id": "litigation_cycle_coordinate_1",
+        "story_verb": "coordinated with",
+        "status_effect": "litigation_cycle_advanced",
+        "duration_steps": 2,
+        "relationship_adjustments_mode": "model",
+        "relationship_adjustment_source": "vertex_api_merged_interaction_routing",
+        "actor_relationship_instruction": "Silas initiates coordination with Kaelen on an urgent legal matter, demonstrating shared responsibility and trust in Kaelen's technical expertise.",
+        "target_relationship_instruction": "Kaelen engages with Silas on the pressing summons, valuing Silas's legal insight and recognizing their shared stake in the irrigation system's fate.",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "clockwork_rain_conservatory_main_02",
+            "target_agent_id": "clockwork_rain_conservatory_main_23",
+            "trust_delta": 3,
+            "affection_delta": 2,
+            "influence_fear_delta": 0,
+            "reason": "Coordinating on an urgent, shared threat builds trust and a sense of camaraderie.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "clockwork_rain_conservatory_main_23",
+            "target_agent_id": "clockwork_rain_conservatory_main_02",
+            "trust_delta": 3,
+            "affection_delta": 2,
+            "influence_fear_delta": 0,
+            "reason": "Collaborating on a critical issue reinforces mutual trust and shared purpose.",
+            "source": "vertex_api"
+          }
+        ],
+        "shared_action_core": {
+          "shared_action_label": "Reviewing Gear-Judge Summons for Temporal Evidence",
+          "shared_action_goal": "To understand the specifics of the summons and strategize a response to protect irrigation quotas and system integrity.",
+          "action_beats": [
+            "Silas unfurls the official summons, its brass seals glinting.",
+            "Kaelen points to a section on temporal paradoxes, a furrow in their brow.",
+            "They both lean in, discussing the implications for water flow.",
+            "Silas makes a note in his ledger, Kaelen consults the irrigation map."
+          ],
+          "actor_role_in_action": "Initiating the review and documenting key legal points for a formal response.",
+          "target_role_in_action": "Analyzing the technical implications of temporal paradoxes on irrigation systems and water rights.",
+          "props_in_use": [
+            "ledger_of_debts",
+            "official_seal",
+            "silver_quill",
+            "crc_027__irrigation_map"
+          ],
+          "location_focus": "The Irrigation Rights Exchange, near the summons display.",
+          "why_now": "The Gear-Judge Summons is an urgent, escalated hazard directly impacting both their domains, demanding immediate coordination.",
+          "json_action_alignment": "route_only",
+          "off_json_detail": "",
+          "main_character_recording_note": "Show Silas and Kaelen engaged in a serious, focused discussion over the Gear-Judge Summons, using their respective tools to analyze the situation."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2993 @@
+{
+  "world_name": "Mycelium Patent Bazaar",
+  "world_id": "mycelium-patent-bazaar-26072402",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "grounded_antique_market",
+    "profile_id": "grounded_antique_market",
+    "locale": "Undercity Mycelium Network",
+    "tone": "Humid, bio-industrial, bureaucratic, high-stakes",
+    "visual_direction": "Bioluminescent fungal growths, damp stone, brass lab equipment",
+    "currency_code": "CNY",
+    "currency_symbol": "¥",
+    "currency_minor_unit": "fen",
+    "currency_name": "cny_cash",
+    "domain_label": "Patent Bazaar",
+    "starting_wallet_minor": {
+      "min": 5000,
+      "max": 25000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "grounded_antique_market_v1",
+      "frontend_affordance_id": "grounded_antique_market_v1",
+      "asset_prompt_kit_id": "grounded_antique_market_v1"
+    },
+    "policy_refs": {
+      "economy_policy_id": "cny_market_v1",
+      "item_collection_id": "antique_market_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "grounded_antique_market_v1",
+      "property_policy_id": "grounded_antique_market_v1",
+      "knowledge_policy_id": "grounded_antique_market_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "biotech undercity market, fungal infrastructure, intellectual-property conflict",
+  "premise": "In a humid undercity grown through engineered mycelium, guilds trade living bridges and spore encryption keys while navigating patent wars.",
+  "simulation_objective": "Facilitate high-stakes trade of biological intellectual property and fungal strains.",
+  "agent_count_target": 25,
+  "player_count_target": 4,
+  "economy_focus": "Patent licensing, strain trading, and biological infrastructure contracts.",
+  "exploration_focus": "Discovering hidden lab-stalls and navigating the humid mycelium tunnels.",
+  "conflict_tone": "Corporate espionage and biological quarantine politics.",
+  "visual_style": "Bioluminescent green and amber lighting against dark, damp organic textures.",
+  "rooms": [
+    {
+      "name": "The Spore Exchange",
+      "biome": "Fungal Hub",
+      "purpose": "Central trading floor for patent claims.",
+      "decor_tags": [
+        "bioluminescent",
+        "humid",
+        "brass-railings"
+      ],
+      "activity_tags": [
+        "trading",
+        "shouting",
+        "negotiating"
+      ],
+      "archetype": "market_exchange",
+      "ambient_palette": "warm_lantern",
+      "width_tiles": 40,
+      "height_tiles": 40,
+      "floor_tile": "stone_checker",
+      "wall_tile": "stall_canvas_wall",
+      "flux_floor_prompt": "Damp stone tiles with glowing moss in the cracks.",
+      "room_scene_prompt": "A bustling market floor under a canopy of giant glowing mushrooms.",
+      "scene_components": [
+        {
+          "component_id": "trading_podium",
+          "label": "The Gavel Cap",
+          "description": "A large mushroom used as a podium for auctioneers.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Quarantine Gate 4",
+      "biome": "Industrial Tunnel",
+      "purpose": "Security and biological screening.",
+      "decor_tags": [
+        "sterile",
+        "metal",
+        "mist-sprayers"
+      ],
+      "activity_tags": [
+        "scanning",
+        "waiting",
+        "inspecting"
+      ],
+      "archetype": "checkpoint",
+      "ambient_palette": "focused_blue",
+      "width_tiles": 20,
+      "height_tiles": 30,
+      "floor_tile": "clean_tile",
+      "wall_tile": "quiet_lane_wall",
+      "flux_floor_prompt": "Polished white tiles with drainage grates.",
+      "room_scene_prompt": "A high-tech checkpoint with decontamination mist sprayers.",
+      "scene_components": [
+        {
+          "component_id": "bio_scanner",
+          "label": "Strain Scanner",
+          "description": "A glowing archway that detects unauthorized spores.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Fermentation Vats",
+      "biome": "Bio-Lab",
+      "purpose": "Mass production of repair enzymes.",
+      "decor_tags": [
+        "bubbling",
+        "glass",
+        "tubing"
+      ],
+      "activity_tags": [
+        "brewing",
+        "monitoring",
+        "sampling"
+      ],
+      "archetype": "workshop",
+      "ambient_palette": "ember_orange",
+      "width_tiles": 35,
+      "height_tiles": 35,
+      "floor_tile": "forge_slate",
+      "wall_tile": "forge_wall",
+      "flux_floor_prompt": "Dark slate floor with copper pipes running across.",
+      "room_scene_prompt": "Massive glass vats filled with swirling orange bioluminescent fluid.",
+      "scene_components": [
+        {
+          "component_id": "vat_control",
+          "label": "Enzyme Console",
+          "description": "A brass console with many levers and pressure gauges.",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Archive of Strains",
+      "biome": "Library",
+      "purpose": "Storage of genetic patent scrolls.",
+      "decor_tags": [
+        "dusty",
+        "paper",
+        "shelves"
+      ],
+      "activity_tags": [
+        "researching",
+        "filing",
+        "whispering"
+      ],
+      "archetype": "archive_ritual",
+      "ambient_palette": "low_lantern",
+      "width_tiles": 25,
+      "height_tiles": 45,
+      "floor_tile": "library_planks",
+      "wall_tile": "library_shelf_wall",
+      "flux_floor_prompt": "Dark wood planks covered in a thin layer of spores.",
+      "room_scene_prompt": "Towering shelves filled with glowing glass canisters and parchment.",
+      "scene_components": [
+        {
+          "component_id": "scroll_desk",
+          "label": "Patent Desk",
+          "description": "A heavy oak desk for examining genetic sequences.",
+          "anchor": "south_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Mycelium Bridge",
+      "biome": "Living Infrastructure",
+      "purpose": "Transit between bazaar sectors.",
+      "decor_tags": [
+        "fibrous",
+        "pulsing",
+        "narrow"
+      ],
+      "activity_tags": [
+        "walking",
+        "balancing",
+        "observing"
+      ],
+      "archetype": "lookout",
+      "ambient_palette": "soft_mint",
+      "width_tiles": 15,
+      "height_tiles": 50,
+      "floor_tile": "bamboo_planks",
+      "wall_tile": "bamboo_wall",
+      "flux_floor_prompt": "Woven fungal fibers that feel slightly soft.",
+      "room_scene_prompt": "A bridge made of living white mycelium spanning a dark chasm.",
+      "scene_components": [
+        {
+          "component_id": "bridge_anchor",
+          "label": "Root Anchor",
+          "description": "A massive pulsing root holding the bridge in place.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Humid Commons",
+      "biome": "Social Hub",
+      "purpose": "Relaxation and gossip for traders.",
+      "decor_tags": [
+        "cushions",
+        "steam",
+        "vines"
+      ],
+      "activity_tags": [
+        "drinking",
+        "talking",
+        "resting"
+      ],
+      "archetype": "commons",
+      "ambient_palette": "clear_day",
+      "width_tiles": 40,
+      "height_tiles": 30,
+      "floor_tile": "yard_pavers",
+      "wall_tile": "yard_fence",
+      "flux_floor_prompt": "Stone pavers with steam rising from the gaps.",
+      "room_scene_prompt": "An open area with stone benches and hanging bioluminescent vines.",
+      "scene_components": [
+        {
+          "component_id": "steam_fountain",
+          "label": "Mist Fountain",
+          "description": "A fountain that sprays nutrient-rich mist into the air.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Patent Court",
+      "biome": "Legal Hall",
+      "purpose": "Resolving IP disputes.",
+      "decor_tags": [
+        "formal",
+        "banners",
+        "dais"
+      ],
+      "activity_tags": [
+        "arguing",
+        "judging",
+        "witnessing"
+      ],
+      "archetype": "council",
+      "ambient_palette": "focused_blue",
+      "width_tiles": 30,
+      "height_tiles": 30,
+      "floor_tile": "war_room_inlay",
+      "wall_tile": "war_room_wall",
+      "flux_floor_prompt": "Intricate wood inlay depicting a tree of life.",
+      "room_scene_prompt": "A solemn hall with a high dais for the Patent Arbitrators.",
+      "scene_components": [
+        {
+          "component_id": "judge_bench",
+          "label": "Arbitrator Bench",
+          "description": "A long stone bench for the three presiding judges.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Spore Silos",
+      "biome": "Storage",
+      "purpose": "Bulk storage of tradeable spores.",
+      "decor_tags": [
+        "metallic",
+        "cold",
+        "sealed"
+      ],
+      "activity_tags": [
+        "loading",
+        "counting",
+        "sealing"
+      ],
+      "archetype": "logistics_yard",
+      "ambient_palette": "dusty_brown",
+      "width_tiles": 50,
+      "height_tiles": 40,
+      "floor_tile": "stone_slabs",
+      "wall_tile": "storage_wall",
+      "flux_floor_prompt": "Heavy stone slabs designed to support massive weight.",
+      "room_scene_prompt": "A vast warehouse filled with rows of pressurized metal canisters.",
+      "scene_components": [
+        {
+          "component_id": "crane_arm",
+          "label": "Silo Crane",
+          "description": "A mechanical arm used to move heavy spore canisters.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 3
+        }
+      ]
+    }
+  ],
+  "role_groups": [
+    {
+      "role_name": "Patent Broker",
+      "count": 5,
+      "core_values": [
+        "Profit",
+        "Legality",
+        "Information"
+      ],
+      "activity": "Negotiating licenses for fungal strains.",
+      "starting_item_ids": [
+        "patent_scroll",
+        "ink_vial",
+        "magnifying_glass"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Brokerage Stall",
+          "asset_type": "Commercial",
+          "description": "A small booth in the Spore Exchange.",
+          "story_use": "Used to host private negotiations."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "market_trends_01",
+          "topic": "Market Prices",
+          "summary": "The price of repair enzymes is rising due to a leak in Sector 7.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "role_name": "Strain Cultivator",
+      "count": 8,
+      "core_values": [
+        "Purity",
+        "Growth",
+        "Innovation"
+      ],
+      "activity": "Growing and refining new biological cultures.",
+      "starting_item_ids": [
+        "petri_dish",
+        "nutrient_paste",
+        "scalpel"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Growth Lab",
+          "asset_type": "Industrial",
+          "description": "A humid room filled with incubation chambers.",
+          "story_use": "Used to develop new patentable strains."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "cultivation_secret_01",
+          "topic": "Growth Techniques",
+          "summary": "Adding copper dust to the substrate doubles the glow of bioluminescent strains.",
+          "confidence": 85
+        }
+      ]
+    }
+  ],
+  "main_characters": [
+    {
+      "display_name": "Varo the Veined",
+      "role_name": "Master Patent Broker",
+      "activity": "Managing the high-stakes auction of the 'Titan Bridge' strain.",
+      "home_base": "The Spore Exchange",
+      "arc_goal": "To monopolize the infrastructure patents of the Undercity.",
+      "inventory": [
+        {
+          "item_id": "titan_bridge_patent",
+          "name": "Titan Bridge Patent",
+          "description": "The original deed for the city's largest living bridge.",
+          "quantity": 1
+        },
+        {
+          "item_id": "gold_seal_stamp",
+          "name": "Gold Seal Stamp",
+          "description": "A heavy stamp used to finalize official contracts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ink_vial_black",
+          "name": "Indelible Ink Vial",
+          "description": "Ink that cannot be washed off fungal parchment.",
+          "quantity": 5
+        },
+        {
+          "item_id": "magnifying_glass_brass",
+          "name": "Brass Magnifier",
+          "description": "Used to inspect micro-signatures on patents.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ledger_of_debts",
+          "name": "Ledger of Debts",
+          "description": "A book containing the financial secrets of many traders.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bribe_pouch",
+          "name": "Pouch of Fen",
+          "description": "A small bag of coins for quick transactions.",
+          "quantity": 500
+        },
+        {
+          "item_id": "scented_handkerchief",
+          "name": "Scented Handkerchief",
+          "description": "To block out the smell of the fermentation vats.",
+          "quantity": 3
+        },
+        {
+          "item_id": "legal_brief_01",
+          "name": "Legal Brief: Sector 9",
+          "description": "Arguments for a pending property dispute.",
+          "quantity": 1
+        },
+        {
+          "item_id": "spore_key_01",
+          "name": "Exchange Vault Key",
+          "description": "A biological key that opens Varo's private safe.",
+          "quantity": 1
+        },
+        {
+          "item_id": "contract_scroll_blank",
+          "name": "Blank Contract Scroll",
+          "description": "High-quality fungal parchment.",
+          "quantity": 10
+        },
+        {
+          "item_id": "wax_seal_red",
+          "name": "Red Sealing Wax",
+          "description": "Used for urgent legal notices.",
+          "quantity": 4
+        },
+        {
+          "item_id": "pocket_watch_brass",
+          "name": "Brass Pocket Watch",
+          "description": "Essential for timing auction rounds.",
+          "quantity": 1
+        },
+        {
+          "item_id": "letter_opener_bone",
+          "name": "Bone Letter Opener",
+          "description": "Carved from the rib of a giant beetle.",
+          "quantity": 1
+        },
+        {
+          "item_id": "spectacles_silver",
+          "name": "Silver Spectacles",
+          "description": "Corrective lenses for reading fine print.",
+          "quantity": 1
+        },
+        {
+          "item_id": "patent_registry_map",
+          "name": "Patent Registry Map",
+          "description": "A map showing which guilds own which tunnels.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Golden Cap Office",
+          "asset_type": "Office",
+          "description": "A plush office overlooking the exchange floor.",
+          "story_use": "Varo uses this to intimidate clients."
+        },
+        {
+          "asset_name": "Safe Deposit Box 402",
+          "asset_type": "Storage",
+          "description": "A secure box in the central vault.",
+          "story_use": "Holds Varo's most incriminating evidence."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "varo_debt_01",
+          "topic": "Debt of Elara",
+          "summary": "Elara the Alchemist owes Varo 50,000 fen for a failed experiment.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "varo_secret_01",
+          "topic": "Counterfeit Strains",
+          "summary": "Varo knows that the 'Glow-Max' strain is actually a cheap imitation.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Elara the Alchemist",
+      "role_name": "Enzyme Manufacturer",
+      "activity": "Trying to synthesize a cure for the 'Rust Spore' blight.",
+      "home_base": "The Fermentation Vats",
+      "arc_goal": "To pay off her debt to Varo by discovering a miracle enzyme.",
+      "inventory": [
+        {
+          "item_id": "rust_spore_sample",
+          "name": "Rust Spore Sample",
+          "description": "A dangerous sample of the metal-eating fungus.",
+          "quantity": 1
+        },
+        {
+          "item_id": "enzyme_flask_01",
+          "name": "Experimental Enzyme",
+          "description": "A glowing blue liquid that might dissolve rust.",
+          "quantity": 3
+        },
+        {
+          "item_id": "glass_pipette",
+          "name": "Glass Pipette",
+          "description": "For precise measurement of bio-fluids.",
+          "quantity": 10
+        },
+        {
+          "item_id": "nutrient_broth",
+          "name": "Nutrient Broth",
+          "description": "Food for growing enzyme cultures.",
+          "quantity": 20
+        },
+        {
+          "item_id": "thermometer_mercury",
+          "name": "Mercury Thermometer",
+          "description": "Crucial for maintaining vat temperature.",
+          "quantity": 1
+        },
+        {
+          "item_id": "protective_gloves",
+          "name": "Thick Rubber Gloves",
+          "description": "Protects hands from corrosive enzymes.",
+          "quantity": 2
+        },
+        {
+          "item_id": "lab_notebook",
+          "name": "Lab Notebook",
+          "description": "Filled with failed formulas and desperate notes.",
+          "quantity": 1
+        },
+        {
+          "item_id": "copper_tubing",
+          "name": "Spare Copper Tubing",
+          "description": "For repairing vat connections.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Vat Station 7",
+          "asset_type": "Industrial",
+          "description": "A leased fermentation station.",
+          "story_use": "Elara's primary place of work."
+        },
+        {
+          "asset_name": "Basement Storage",
+          "asset_type": "Storage",
+          "description": "A damp cellar for storing raw materials.",
+          "story_use": "Where she hides her illegal samples."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "elara_debt_01",
+          "topic": "Varo's Pressure",
+          "summary": "Varo will seize Elara's lab if she doesn't pay by next week.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "elara_science_01",
+          "topic": "Rust Spore Weakness",
+          "summary": "The Rust Spore is vulnerable to high-frequency sound.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen the Guard",
+      "role_name": "Quarantine Officer",
+      "activity": "Searching for smuggled spores at Gate 4.",
+      "home_base": "Quarantine Gate 4",
+      "arc_goal": "To find the source of the 'Rust Spore' and stop the blight.",
+      "inventory": [
+        {
+          "item_id": "bio_scanner_handheld",
+          "name": "Handheld Bio-Scanner",
+          "description": "Beeps when it detects illegal genetic material.",
+          "quantity": 1
+        },
+        {
+          "item_id": "stun_baton",
+          "name": "Electric Stun Baton",
+          "description": "For subduing unruly smugglers.",
+          "quantity": 1
+        },
+        {
+          "item_id": "quarantine_tape",
+          "name": "Yellow Quarantine Tape",
+          "description": "Used to seal off contaminated areas.",
+          "quantity": 5
+        },
+        {
+          "item_id": "official_badge",
+          "name": "Officer Badge",
+          "description": "A heavy brass badge of the City Watch.",
+          "quantity": 1
+        },
+        {
+          "item_id": "confiscated_spores",
+          "name": "Confiscated Spores",
+          "description": "A small bag of unidentified fungal seeds.",
+          "quantity": 1
+        },
+        {
+          "item_id": "iron_shackles",
+          "name": "Iron Shackles",
+          "description": "For detaining patent thieves.",
+          "quantity": 2
+        },
+        {
+          "item_id": "patrol_log",
+          "name": "Patrol Log",
+          "description": "A record of everyone who passed through Gate 4.",
+          "quantity": 1
+        },
+        {
+          "item_id": "dried_meat",
+          "name": "Dried Beetle Meat",
+          "description": "A tough but filling snack.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guard Bunk",
+          "asset_type": "Residential",
+          "description": "A small bed in the barracks.",
+          "story_use": "Where Kaelen hides his personal research."
+        },
+        {
+          "asset_name": "Evidence Locker",
+          "asset_type": "Storage",
+          "description": "A locked cabinet at the gate.",
+          "story_use": "Contains items Kaelen hasn't reported yet."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kaelen_suspicion_01",
+          "topic": "Elara's Smuggling",
+          "summary": "Kaelen suspects Elara is bringing Rust Spores into the city.",
+          "confidence": 60
+        },
+        {
+          "knowledge_id": "kaelen_duty_01",
+          "topic": "Gate Protocols",
+          "summary": "The scanners are malfunctioning every day at midnight.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Milo the Runner",
+      "role_name": "Information Courier",
+      "activity": "Delivering a secret message from Varo to a rival guild.",
+      "home_base": "The Mycelium Bridge",
+      "arc_goal": "To earn enough to buy a permanent stall in the Exchange.",
+      "inventory": [
+        {
+          "item_id": "sealed_message",
+          "name": "Sealed Message",
+          "description": "A letter with Varo's private seal.",
+          "quantity": 1
+        },
+        {
+          "item_id": "running_shoes",
+          "name": "Soft-Sole Boots",
+          "description": "Designed for silent movement on mycelium.",
+          "quantity": 1
+        },
+        {
+          "item_id": "water_canteen",
+          "name": "Leather Canteen",
+          "description": "Filled with filtered tunnel water.",
+          "quantity": 1
+        },
+        {
+          "item_id": "small_knife",
+          "name": "Utility Knife",
+          "description": "For cutting through thick vines.",
+          "quantity": 1
+        },
+        {
+          "item_id": "map_shortcuts",
+          "name": "Map of Shortcuts",
+          "description": "Hand-drawn map of the ventilation ducts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "lucky_charm",
+          "name": "Glowing Pebble",
+          "description": "A small stone that pulses with light.",
+          "quantity": 1
+        },
+        {
+          "item_id": "smoke_bomb",
+          "name": "Spore Smoke Bomb",
+          "description": "Creates a thick cloud for quick escapes.",
+          "quantity": 2
+        },
+        {
+          "item_id": "bread_roll",
+          "name": "Fungal Bread Roll",
+          "description": "Slightly chewy but nutritious.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Nook",
+          "asset_type": "Residential",
+          "description": "A small crawlspace behind a pipe.",
+          "story_use": "Milo's secret sleeping spot."
+        },
+        {
+          "asset_name": "Message Drop Box",
+          "asset_type": "Storage",
+          "description": "A hollowed-out mushroom in the commons.",
+          "story_use": "Where Milo receives his assignments."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "milo_secret_01",
+          "topic": "Varo's Betrayal",
+          "summary": "The message Milo is carrying contains a trap for the recipient.",
+          "confidence": 40
+        },
+        {
+          "knowledge_id": "milo_route_01",
+          "topic": "Ventilation Path",
+          "summary": "The vent behind the Archive leads directly to the Vault.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Silas the Archivist",
+      "role_name": "Patent Historian",
+      "activity": "Verifying the lineage of a disputed bridge patent.",
+      "home_base": "Archive of Strains",
+      "arc_goal": "To preserve the original genetic records from corporate tampering.",
+      "inventory": [
+        {
+          "item_id": "ancient_scroll",
+          "name": "The First Spore Scroll",
+          "description": "A crumbling record of the city's founding.",
+          "quantity": 1
+        },
+        {
+          "item_id": "white_gloves",
+          "name": "Cotton Gloves",
+          "description": "To prevent skin oils from damaging old paper.",
+          "quantity": 5
+        },
+        {
+          "item_id": "reading_lamp",
+          "name": "Oil Reading Lamp",
+          "description": "Provides steady light for detailed work.",
+          "quantity": 1
+        },
+        {
+          "item_id": "catalog_index",
+          "name": "Archive Index",
+          "description": "A massive book listing every patent in the room.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ink_remover",
+          "name": "Chemical Ink Remover",
+          "description": "Used for cleaning old scrolls (or forging them).",
+          "quantity": 1
+        },
+        {
+          "item_id": "magnifying_lens",
+          "name": "Jeweler's Loupe",
+          "description": "For seeing microscopic genetic markers.",
+          "quantity": 1
+        },
+        {
+          "item_id": "dusting_brush",
+          "name": "Fine Camel-Hair Brush",
+          "description": "For removing spores from delicate surfaces.",
+          "quantity": 1
+        },
+        {
+          "item_id": "herbal_tea",
+          "name": "Dried Mint Leaves",
+          "description": "To soothe a throat irritated by archive dust.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Restricted Wing",
+          "asset_type": "Library",
+          "description": "A locked section of the archive.",
+          "story_use": "Contains the most sensitive political records."
+        },
+        {
+          "asset_name": "Archivist's Desk",
+          "asset_type": "Office",
+          "description": "A massive desk piled high with scrolls.",
+          "story_use": "Silas's base of operations."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "silas_history_01",
+          "topic": "The Great Blight",
+          "summary": "The last blight was caused by a corporate experiment gone wrong.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "silas_secret_01",
+          "topic": "Varo's Forgery",
+          "summary": "Varo's 'Titan Bridge' patent has a subtle flaw in the seal.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Bryn the Merchant",
+      "role_name": "General Goods Trader",
+      "activity": "Selling lab supplies and survival gear to newcomers.",
+      "home_base": "The Spore Exchange",
+      "arc_goal": "To expand her shop into a multi-sector franchise.",
+      "inventory": [
+        {
+          "item_id": "glass_vial_empty",
+          "name": "Empty Glass Vial",
+          "description": "Standard size for spore samples.",
+          "quantity": 50
+        },
+        {
+          "item_id": "nutrient_paste_tube",
+          "name": "Nutrient Paste Tube",
+          "description": "Basic food for lab-grown cultures.",
+          "quantity": 100
+        },
+        {
+          "item_id": "brass_tweezers",
+          "name": "Brass Tweezers",
+          "description": "For handling small biological samples.",
+          "quantity": 20
+        },
+        {
+          "item_id": "filter_mask",
+          "name": "Spore Filter Mask",
+          "description": "Essential for working in the lower tunnels.",
+          "quantity": 15
+        },
+        {
+          "item_id": "lantern_oil",
+          "name": "Glow-Oil Flask",
+          "description": "Fuel for bioluminescent lamps.",
+          "quantity": 30
+        },
+        {
+          "item_id": "rope_coil",
+          "name": "Fungal Fiber Rope",
+          "description": "Strong and resistant to rot.",
+          "quantity": 10
+        },
+        {
+          "item_id": "chalk_stick",
+          "name": "Marking Chalk",
+          "description": "Used to label crates and canisters.",
+          "quantity": 40
+        },
+        {
+          "item_id": "cleaning_solvent",
+          "name": "Bio-Solvent",
+          "description": "Removes stubborn fungal growth.",
+          "quantity": 12
+        },
+        {
+          "item_id": "leather_pouch",
+          "name": "Small Belt Pouch",
+          "description": "For carrying personal items.",
+          "quantity": 25
+        },
+        {
+          "item_id": "tally_board",
+          "name": "Wooden Tally Board",
+          "description": "For keeping track of inventory.",
+          "quantity": 5
+        },
+        {
+          "item_id": "copper_wire",
+          "name": "Spool of Copper Wire",
+          "description": "Used in lab equipment repairs.",
+          "quantity": 8
+        },
+        {
+          "item_id": "cork_stopper",
+          "name": "Bag of Corks",
+          "description": "For sealing glass vials.",
+          "quantity": 200
+        },
+        {
+          "item_id": "measuring_tape",
+          "name": "Retractable Tape",
+          "description": "Measures up to 10 meters.",
+          "quantity": 10
+        },
+        {
+          "item_id": "hand_soap",
+          "name": "Antiseptic Soap",
+          "description": "Smells strongly of pine.",
+          "quantity": 20
+        },
+        {
+          "item_id": "iron_nails",
+          "name": "Box of Nails",
+          "description": "For basic construction and repairs.",
+          "quantity": 500
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Bryn's Emporium",
+          "asset_type": "Commercial",
+          "description": "The largest general store in the bazaar.",
+          "story_use": "A hub for buying basic necessities."
+        },
+        {
+          "asset_name": "Backroom Warehouse",
+          "asset_type": "Storage",
+          "description": "A cluttered room behind the shop.",
+          "story_use": "Where Bryn keeps her bulk stock."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "bryn_market_01",
+          "topic": "Supply Shortage",
+          "summary": "Glass vials are becoming scarce due to a strike in the glassworks.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "bryn_gossip_01",
+          "topic": "Milo's Debt",
+          "summary": "Milo the Runner owes Bryn for his last three pairs of boots.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Dr. Aris",
+      "role_name": "Bio-Geneticist",
+      "activity": "Sequencing a new strain of bioluminescent moss.",
+      "home_base": "The Fermentation Vats",
+      "arc_goal": "To win the 'Innovation Prize' at the annual Patent Gala.",
+      "inventory": [
+        {
+          "item_id": "microscope_brass",
+          "name": "High-Power Microscope",
+          "description": "A precision instrument for viewing cells.",
+          "quantity": 1
+        },
+        {
+          "item_id": "genetic_map",
+          "name": "Moss Genome Map",
+          "description": "A complex chart of DNA sequences.",
+          "quantity": 1
+        },
+        {
+          "item_id": "sample_moss_01",
+          "name": "Neon Moss Sample",
+          "description": "A strain that glows bright purple.",
+          "quantity": 5
+        },
+        {
+          "item_id": "centrifuge_hand",
+          "name": "Hand-Crank Centrifuge",
+          "description": "For separating biological components.",
+          "quantity": 1
+        },
+        {
+          "item_id": "chemical_reagent_a",
+          "name": "Reagent Alpha",
+          "description": "Turns blue in the presence of toxins.",
+          "quantity": 10
+        },
+        {
+          "item_id": "petri_dish_sterile",
+          "name": "Sterile Petri Dish",
+          "description": "For growing pure cultures.",
+          "quantity": 20
+        },
+        {
+          "item_id": "lab_coat",
+          "name": "Stained Lab Coat",
+          "description": "Covered in various colorful fungal stains.",
+          "quantity": 1
+        },
+        {
+          "item_id": "sugar_cubes",
+          "name": "Sugar Cubes",
+          "description": "A quick energy boost for long nights.",
+          "quantity": 50
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Aris's Private Lab",
+          "asset_type": "Industrial",
+          "description": "A clean, well-organized laboratory.",
+          "story_use": "Where Aris conducts his secret research."
+        },
+        {
+          "asset_name": "Specimen Garden",
+          "asset_type": "Industrial",
+          "description": "A small indoor garden of exotic fungi.",
+          "story_use": "Source of Aris's raw materials."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "aris_discovery_01",
+          "topic": "Moss Hybrid",
+          "summary": "The neon moss can actually consume toxic waste.",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "aris_rivalry_01",
+          "topic": "Elara's Methods",
+          "summary": "Aris thinks Elara's work on the Rust Spore is dangerous and sloppy.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Arbitrator Thorne",
+      "role_name": "Patent Judge",
+      "activity": "Presiding over the case of 'Guild vs. Independent Cultivator'.",
+      "home_base": "The Patent Court",
+      "arc_goal": "To maintain the balance of power between the big guilds and small traders.",
+      "inventory": [
+        {
+          "item_id": "judicial_gavel",
+          "name": "Stone Gavel",
+          "description": "Used to bring the court to order.",
+          "quantity": 1
+        },
+        {
+          "item_id": "law_book_vol_1",
+          "name": "Undercity Law: Vol 1",
+          "description": "The definitive guide to property rights.",
+          "quantity": 1
+        },
+        {
+          "item_id": "evidence_bag_01",
+          "name": "Evidence Bag: Case 44",
+          "description": "Contains a disputed spore sample.",
+          "quantity": 1
+        },
+        {
+          "item_id": "official_seal_judge",
+          "name": "Arbitrator's Seal",
+          "description": "Used to sign binding legal rulings.",
+          "quantity": 1
+        },
+        {
+          "item_id": "inkwell_silver",
+          "name": "Silver Inkwell",
+          "description": "A gift from the Merchant's Guild.",
+          "quantity": 1
+        },
+        {
+          "item_id": "parchment_legal",
+          "name": "Legal Parchment",
+          "description": "Heavy-duty paper for court documents.",
+          "quantity": 20
+        },
+        {
+          "item_id": "spectacle_case",
+          "name": "Leather Spectacle Case",
+          "description": "Protects Thorne's reading glasses.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pocket_mirror",
+          "name": "Small Pocket Mirror",
+          "description": "For checking his appearance before court.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Judge's Chambers",
+          "asset_type": "Office",
+          "description": "A quiet room behind the courtroom.",
+          "story_use": "Where Thorne deliberates on difficult cases."
+        },
+        {
+          "asset_name": "Legal Library",
+          "asset_type": "Library",
+          "description": "A collection of every ruling made in the last 50 years.",
+          "story_use": "Used for legal research."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "thorne_bias_01",
+          "topic": "Guild Influence",
+          "summary": "The Merchant's Guild is trying to bribe Thorne with a new estate.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "thorne_law_01",
+          "topic": "Precedent 102",
+          "summary": "Naturally occurring strains cannot be patented.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Gnasher",
+      "role_name": "Scavenger",
+      "activity": "Searching the Spore Silos for leaked nutrients.",
+      "home_base": "The Spore Silos",
+      "arc_goal": "To find enough 'Titan' spores to start his own illegal farm.",
+      "inventory": [
+        {
+          "item_id": "scrap_metal",
+          "name": "Piece of Scrap Metal",
+          "description": "Useful for prying open crates.",
+          "quantity": 5
+        },
+        {
+          "item_id": "dirty_sack",
+          "name": "Large Burlap Sack",
+          "description": "For carrying scavenged goods.",
+          "quantity": 2
+        },
+        {
+          "item_id": "half_eaten_mushroom",
+          "name": "Half-Eaten Mushroom",
+          "description": "Gnasher's lunch.",
+          "quantity": 1
+        },
+        {
+          "item_id": "rusty_pliers",
+          "name": "Rusty Pliers",
+          "description": "Better than using his teeth.",
+          "quantity": 1
+        },
+        {
+          "item_id": "glow_worm_jar",
+          "name": "Jar of Glow-Worms",
+          "description": "A cheap, living light source.",
+          "quantity": 1
+        },
+        {
+          "item_id": "rat_tail",
+          "name": "Dried Rat Tail",
+          "description": "A good luck charm.",
+          "quantity": 3
+        },
+        {
+          "item_id": "leaky_canister",
+          "name": "Leaky Canister",
+          "description": "Contains a small amount of high-grade nutrient.",
+          "quantity": 1
+        },
+        {
+          "item_id": "torn_map",
+          "name": "Torn Map Fragment",
+          "description": "Shows the layout of the Silo basement.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Silo Crawlspace",
+          "asset_type": "Residential",
+          "description": "A cramped space under the floorboards.",
+          "story_use": "Gnasher's home and stash."
+        },
+        {
+          "asset_name": "Scrap Pile",
+          "asset_type": "Storage",
+          "description": "A heap of junk that Gnasher considers valuable.",
+          "story_use": "Where he hides his best finds."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "gnasher_secret_01",
+          "topic": "Silo Leak",
+          "summary": "Silo 3 has a crack that leaks nutrient broth every Tuesday.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "gnasher_fear_01",
+          "topic": "Kaelen's Patrol",
+          "summary": "Kaelen the Guard always checks the Silos at 3 AM.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra the Weaver",
+      "role_name": "Infrastructure Engineer",
+      "activity": "Repairing a section of the Mycelium Bridge.",
+      "home_base": "The Mycelium Bridge",
+      "arc_goal": "To replace the aging bridge with a new, self-healing strain.",
+      "inventory": [
+        {
+          "item_id": "weaving_needle",
+          "name": "Bone Weaving Needle",
+          "description": "Used to guide fungal fibers.",
+          "quantity": 2
+        },
+        {
+          "item_id": "fiber_spool",
+          "name": "High-Tensile Fiber",
+          "description": "Stronger than steel, grown from fungus.",
+          "quantity": 10
+        },
+        {
+          "item_id": "growth_accelerant",
+          "name": "Growth Spray",
+          "description": "Makes mycelium grow instantly.",
+          "quantity": 5
+        },
+        {
+          "item_id": "safety_harness",
+          "name": "Leather Safety Harness",
+          "description": "Prevents falls from the bridge.",
+          "quantity": 1
+        },
+        {
+          "item_id": "blueprints_bridge",
+          "name": "Bridge Blueprints",
+          "description": "Detailed plans of the bridge's structure.",
+          "quantity": 1
+        },
+        {
+          "item_id": "spirit_level",
+          "name": "Brass Spirit Level",
+          "description": "Ensures the bridge is perfectly horizontal.",
+          "quantity": 1
+        },
+        {
+          "item_id": "chisel_small",
+          "name": "Small Chisel",
+          "description": "For trimming excess fungal growth.",
+          "quantity": 1
+        },
+        {
+          "item_id": "lunch_box",
+          "name": "Metal Lunch Box",
+          "description": "Contains a sandwich and an apple.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Maintenance Shed",
+          "asset_type": "Workshop",
+          "description": "A small shack on the edge of the bridge.",
+          "story_use": "Where Lyra stores her tools."
+        },
+        {
+          "asset_name": "The Nursery",
+          "asset_type": "Industrial",
+          "description": "A small area where she grows replacement fibers.",
+          "story_use": "Source of her repair materials."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "lyra_structural_01",
+          "topic": "Bridge Weakness",
+          "summary": "The central anchor of the bridge is rotting from within.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "lyra_rivalry_01",
+          "topic": "Varo's Greed",
+          "summary": "Varo is refusing to fund the necessary repairs for the bridge.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Soot",
+      "role_name": "Stoker",
+      "activity": "Shoveling coal into the steam-mist generators.",
+      "home_base": "The Humid Commons",
+      "arc_goal": "To escape the heat of the boiler room and become a broker.",
+      "inventory": [
+        {
+          "item_id": "coal_shovel",
+          "name": "Heavy Iron Shovel",
+          "description": "Worn smooth from years of use.",
+          "quantity": 1
+        },
+        {
+          "item_id": "soot_rag",
+          "name": "Greasy Rag",
+          "description": "For wiping sweat and coal dust.",
+          "quantity": 3
+        },
+        {
+          "item_id": "water_jug",
+          "name": "Large Clay Jug",
+          "description": "Soot's only relief from the heat.",
+          "quantity": 1
+        },
+        {
+          "item_id": "coal_nugget",
+          "name": "Piece of Coal",
+          "description": "High-quality anthracite.",
+          "quantity": 20
+        },
+        {
+          "item_id": "work_boots",
+          "name": "Steel-Toed Boots",
+          "description": "Protects feet from falling coal.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pocket_knife",
+          "name": "Dull Pocket Knife",
+          "description": "For cutting bread or rope.",
+          "quantity": 1
+        },
+        {
+          "item_id": "copper_coin",
+          "name": "Lucky Copper Fen",
+          "description": "Soot's first earned coin.",
+          "quantity": 1
+        },
+        {
+          "item_id": "leather_apron",
+          "name": "Heavy Leather Apron",
+          "description": "Protects against sparks and heat.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Boiler Room Corner",
+          "asset_type": "Residential",
+          "description": "A warm, noisy place to sleep.",
+          "story_use": "Soot's only home."
+        },
+        {
+          "asset_name": "Coal Bin",
+          "asset_type": "Storage",
+          "description": "A large bin filled with fuel.",
+          "story_use": "Where Soot hides his meager savings."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "soot_boiler_01",
+          "topic": "Generator Flaw",
+          "summary": "The mist generator will explode if the pressure hits 200 psi.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "soot_gossip_01",
+          "topic": "Broker Secrets",
+          "summary": "Soot hears many secrets through the ventilation pipes.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Madam Vesper",
+      "role_name": "Tea House Proprietor",
+      "activity": "Serving nutrient-rich tea and facilitating 'quiet' meetings.",
+      "home_base": "The Humid Commons",
+      "arc_goal": "To become the primary information broker of the Undercity.",
+      "inventory": [
+        {
+          "item_id": "tea_pot_ceramic",
+          "name": "Ceramic Tea Pot",
+          "description": "Beautifully painted with fungal motifs.",
+          "quantity": 5
+        },
+        {
+          "item_id": "tea_cup_ceramic",
+          "name": "Ceramic Tea Cup",
+          "description": "Delicate and translucent.",
+          "quantity": 20
+        },
+        {
+          "item_id": "tea_leaves_premium",
+          "name": "Golden Spore Tea",
+          "description": "The most expensive tea in the bazaar.",
+          "quantity": 10
+        },
+        {
+          "item_id": "honey_jar",
+          "name": "Wild Mushroom Honey",
+          "description": "Sweet and slightly hallucinogenic.",
+          "quantity": 5
+        },
+        {
+          "item_id": "serving_tray",
+          "name": "Silver Serving Tray",
+          "description": "Polished to a mirror shine.",
+          "quantity": 3
+        },
+        {
+          "item_id": "silk_fan",
+          "name": "Painted Silk Fan",
+          "description": "Used to signal her staff.",
+          "quantity": 1
+        },
+        {
+          "item_id": "sugar_tongs",
+          "name": "Silver Sugar Tongs",
+          "description": "For elegant service.",
+          "quantity": 2
+        },
+        {
+          "item_id": "incense_sticks",
+          "name": "Sandalwood Incense",
+          "description": "To mask the smell of the tunnels.",
+          "quantity": 50
+        },
+        {
+          "item_id": "guest_ledger",
+          "name": "Tea House Ledger",
+          "description": "A list of everyone who visits her shop.",
+          "quantity": 1
+        },
+        {
+          "item_id": "small_bell",
+          "name": "Brass Hand Bell",
+          "description": "To call for service.",
+          "quantity": 2
+        },
+        {
+          "item_id": "napkins_linen",
+          "name": "Linen Napkins",
+          "description": "Embroidered with Vesper's crest.",
+          "quantity": 40
+        },
+        {
+          "item_id": "tea_strainer",
+          "name": "Fine Mesh Strainer",
+          "description": "Prevents spores from entering the cup.",
+          "quantity": 5
+        },
+        {
+          "item_id": "cushion_velvet",
+          "name": "Velvet Floor Cushion",
+          "description": "For comfortable seating.",
+          "quantity": 15
+        },
+        {
+          "item_id": "privacy_screen",
+          "name": "Folding Privacy Screen",
+          "description": "Used to create private booths.",
+          "quantity": 4
+        },
+        {
+          "item_id": "matchbox",
+          "name": "Box of Matches",
+          "description": "For lighting incense and lamps.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Vesper's Tea House",
+          "asset_type": "Commercial",
+          "description": "An elegant oasis in the humid bazaar.",
+          "story_use": "A neutral ground for negotiations."
+        },
+        {
+          "asset_name": "Private Tasting Room",
+          "asset_type": "Commercial",
+          "description": "A soundproof room for VIPs.",
+          "story_use": "Where the real deals are made."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "vesper_intel_01",
+          "topic": "Thorne's Weakness",
+          "summary": "Arbitrator Thorne is addicted to Golden Spore Tea.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "vesper_secret_01",
+          "topic": "The Hidden Tunnel",
+          "summary": "There is a secret door behind the tea house leading to the Archive.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Pike",
+      "role_name": "Debt Collector",
+      "activity": "Reminding Elara about her upcoming payment to Varo.",
+      "home_base": "The Spore Exchange",
+      "arc_goal": "To replace Varo as the head of the brokerage.",
+      "inventory": [
+        {
+          "item_id": "heavy_club",
+          "name": "Lead-Weighted Club",
+          "description": "For 'persuasive' conversations.",
+          "quantity": 1
+        },
+        {
+          "item_id": "debt_list",
+          "name": "Pike's Hit List",
+          "description": "A list of people who owe Varo money.",
+          "quantity": 1
+        },
+        {
+          "item_id": "brass_knuckles",
+          "name": "Brass Knuckles",
+          "description": "Hidden in his pocket.",
+          "quantity": 1
+        },
+        {
+          "item_id": "chewing_tobacco",
+          "name": "Dried Fungal Leaf",
+          "description": "A bitter stimulant.",
+          "quantity": 10
+        },
+        {
+          "item_id": "leather_jacket",
+          "name": "Tough Leather Jacket",
+          "description": "Provides some protection in a fight.",
+          "quantity": 1
+        },
+        {
+          "item_id": "iron_key_ring",
+          "name": "Ring of Keys",
+          "description": "Opens many doors in the bazaar.",
+          "quantity": 1
+        },
+        {
+          "item_id": "gold_tooth",
+          "name": "Spare Gold Tooth",
+          "description": "In case he loses one in a brawl.",
+          "quantity": 1
+        },
+        {
+          "item_id": "dice_set",
+          "name": "Bone Dice",
+          "description": "For gambling in the commons.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Back Alley Gym",
+          "asset_type": "Workshop",
+          "description": "A place where Pike trains his enforcers.",
+          "story_use": "Pike's personal headquarters."
+        },
+        {
+          "asset_name": "Small Safe",
+          "asset_type": "Storage",
+          "description": "A safe hidden in his gym.",
+          "story_use": "Where Pike keeps his 'side' earnings."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "pike_ambition_01",
+          "topic": "Varo's Weakness",
+          "summary": "Varo is terrified of the Rust Spore reaching his office.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "pike_debt_01",
+          "topic": "Elara's Assets",
+          "summary": "Elara has a secret stash of gold hidden in her lab.",
+          "confidence": 60
+        }
+      ]
+    },
+    {
+      "display_name": "Professor Wick",
+      "role_name": "Illegal Gene-Splicer",
+      "activity": "Creating a counterfeit 'Titan Bridge' spore.",
+      "home_base": "The Spore Silos",
+      "arc_goal": "To flood the market with cheap clones and crash the patent system.",
+      "inventory": [
+        {
+          "item_id": "splicing_kit",
+          "name": "Portable Splicing Kit",
+          "description": "A compact set of tools for genetic editing.",
+          "quantity": 1
+        },
+        {
+          "item_id": "fake_patent_seal",
+          "name": "Counterfeit Seal",
+          "description": "A near-perfect replica of the official stamp.",
+          "quantity": 1
+        },
+        {
+          "item_id": "vial_of_mutagen",
+          "name": "Mutagenic Serum",
+          "description": "Causes rapid, unpredictable growth.",
+          "quantity": 3
+        },
+        {
+          "item_id": "encrypted_data_disk",
+          "name": "Bio-Data Disk",
+          "description": "Contains the stolen Titan genome.",
+          "quantity": 1
+        },
+        {
+          "item_id": "disguise_kit",
+          "name": "Simple Disguise Kit",
+          "description": "Wig, glasses, and a fake mustache.",
+          "quantity": 1
+        },
+        {
+          "item_id": "acid_vial",
+          "name": "Glass-Dissolving Acid",
+          "description": "For destroying evidence quickly.",
+          "quantity": 2
+        },
+        {
+          "item_id": "magnifying_visor",
+          "name": "Optical Visor",
+          "description": "Provides multiple levels of zoom.",
+          "quantity": 1
+        },
+        {
+          "item_id": "stolen_id_card",
+          "name": "Archive Access Card",
+          "description": "Belonged to a deceased historian.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Shadow Lab",
+          "asset_type": "Industrial",
+          "description": "A lab hidden inside a hollowed-out giant mushroom.",
+          "story_use": "Wick's secret base."
+        },
+        {
+          "asset_name": "Smuggler's Cache",
+          "asset_type": "Storage",
+          "description": "A hidden compartment in the Silo walls.",
+          "story_use": "Where Wick stores his counterfeit spores."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "wick_plan_01",
+          "topic": "Market Crash",
+          "summary": "If the Titan clones are released, Varo's fortune will vanish.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "wick_ally_01",
+          "topic": "Gnasher's Help",
+          "summary": "Gnasher provides Wick with raw materials in exchange for food.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Officer Jora",
+      "role_name": "Patent Investigator",
+      "activity": "Investigating reports of counterfeit scrolls in the Exchange.",
+      "home_base": "The Patent Court",
+      "arc_goal": "To arrest Professor Wick and restore order to the market.",
+      "inventory": [
+        {
+          "item_id": "investigation_kit",
+          "name": "Forensic Kit",
+          "description": "Tools for detecting forged signatures.",
+          "quantity": 1
+        },
+        {
+          "item_id": "arrest_warrant",
+          "name": "Blank Arrest Warrant",
+          "description": "Needs only a name and a seal.",
+          "quantity": 5
+        },
+        {
+          "item_id": "handcuffs_steel",
+          "name": "Steel Handcuffs",
+          "description": "Standard issue for investigators.",
+          "quantity": 2
+        },
+        {
+          "item_id": "notebook_evidence",
+          "name": "Evidence Notebook",
+          "description": "Filled with clues and suspect names.",
+          "quantity": 1
+        },
+        {
+          "item_id": "signal_flare",
+          "name": "Emergency Flare",
+          "description": "Calls for backup from the City Watch.",
+          "quantity": 3
+        },
+        {
+          "item_id": "pistol_steam",
+          "name": "Steam-Powered Pistol",
+          "description": "Non-lethal but very effective.",
+          "quantity": 1
+        },
+        {
+          "item_id": "badge_investigator",
+          "name": "Investigator Badge",
+          "description": "Grants access to restricted areas.",
+          "quantity": 1
+        },
+        {
+          "item_id": "compass_brass",
+          "name": "Tunnel Compass",
+          "description": "Helps navigate the winding undercity.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Investigation Office",
+          "asset_type": "Office",
+          "description": "A small, tidy office in the court building.",
+          "story_use": "Where Jora compiles her cases."
+        },
+        {
+          "asset_name": "Evidence Room",
+          "asset_type": "Storage",
+          "description": "A secure room for storing confiscated items.",
+          "story_use": "Where Jora keeps the counterfeit scrolls."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "jora_clue_01",
+          "topic": "Wick's Signature",
+          "summary": "Wick always uses a specific type of rare blue ink.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "jora_suspicion_01",
+          "topic": "Varo's Involvement",
+          "summary": "Jora suspects Varo is actually funding the counterfeits to insurance-scam the guild.",
+          "confidence": 50
+        }
+      ]
+    },
+    {
+      "display_name": "Tally",
+      "role_name": "Silo Clerk",
+      "activity": "Counting canisters and updating the manifest.",
+      "home_base": "The Spore Silos",
+      "arc_goal": "To find a discrepancy that proves someone is stealing from the silos.",
+      "inventory": [
+        {
+          "item_id": "clipboard_wood",
+          "name": "Wooden Clipboard",
+          "description": "Holds the daily manifest.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pencil_lead",
+          "name": "Lead Pencil",
+          "description": "For marking the manifest.",
+          "quantity": 5
+        },
+        {
+          "item_id": "manifest_scroll",
+          "name": "Silo Manifest",
+          "description": "A long list of every canister in storage.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ink_pad_red",
+          "name": "Red Ink Pad",
+          "description": "For marking items as 'shipped'.",
+          "quantity": 1
+        },
+        {
+          "item_id": "rubber_stamp_ok",
+          "name": "Approved Stamp",
+          "description": "Used to clear canisters for transport.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pocket_calculator",
+          "name": "Mechanical Adder",
+          "description": "A small brass device for math.",
+          "quantity": 1
+        },
+        {
+          "item_id": "spectacles_reading",
+          "name": "Reading Glasses",
+          "description": "Tally can't see the small numbers without them.",
+          "quantity": 1
+        },
+        {
+          "item_id": "snack_bar",
+          "name": "Protein Bar",
+          "description": "Tastes like cardboard.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Clerk's Desk",
+          "asset_type": "Office",
+          "description": "A small desk near the silo entrance.",
+          "story_use": "Tally's workstation."
+        },
+        {
+          "asset_name": "Filing Cabinet",
+          "asset_type": "Storage",
+          "description": "Contains years of silo records.",
+          "story_use": "Where Tally looks for historical errors."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "tally_error_01",
+          "topic": "Missing Canisters",
+          "summary": "Exactly three canisters of 'Titan' spores are missing from the records.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "tally_suspicion_01",
+          "topic": "Gnasher's Presence",
+          "summary": "Tally has seen Gnasher hanging around Silo 3 at night.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Bellows",
+      "role_name": "Ventilation Tech",
+      "activity": "Cleaning the giant fans that keep the air breathable.",
+      "home_base": "The Mycelium Bridge",
+      "arc_goal": "To fix the main fan before the bazaar suffocates.",
+      "inventory": [
+        {
+          "item_id": "large_wrench",
+          "name": "Heavy Pipe Wrench",
+          "description": "For tightening fan bolts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "oil_can",
+          "name": "Lubricating Oil",
+          "description": "Keeps the fans spinning smoothly.",
+          "quantity": 2
+        },
+        {
+          "item_id": "dust_mask_heavy",
+          "name": "Industrial Respirator",
+          "description": "Protects against thick spore clouds.",
+          "quantity": 1
+        },
+        {
+          "item_id": "work_gloves_leather",
+          "name": "Heavy Leather Gloves",
+          "description": "Protects hands from moving parts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "flashlight_brass",
+          "name": "Brass Flashlight",
+          "description": "A powerful electric light.",
+          "quantity": 1
+        },
+        {
+          "item_id": "spare_fan_belt",
+          "name": "Rubber Fan Belt",
+          "description": "A critical spare part.",
+          "quantity": 1
+        },
+        {
+          "item_id": "screwdriver_set",
+          "name": "Set of Screwdrivers",
+          "description": "Various sizes for fan maintenance.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ear_plugs",
+          "name": "Wax Ear Plugs",
+          "description": "The fans are very loud.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Fan Room 1",
+          "asset_type": "Industrial",
+          "description": "A massive room containing the main air intake.",
+          "story_use": "Bellows's primary workplace."
+        },
+        {
+          "asset_name": "Tool Locker",
+          "asset_type": "Storage",
+          "description": "A locker filled with specialized tools.",
+          "story_use": "Where Bellows keeps his equipment."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "bellows_crisis_01",
+          "topic": "Fan Failure",
+          "summary": "The main fan is vibrating dangerously and will fail soon.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "bellows_secret_01",
+          "topic": "Air Quality",
+          "summary": "The air in the lower levels is becoming toxic.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Saffron",
+      "role_name": "Spore Artist",
+      "activity": "Painting a mural using bioluminescent spores.",
+      "home_base": "The Humid Commons",
+      "arc_goal": "To create a masterpiece that captures the beauty of the undercity.",
+      "inventory": [
+        {
+          "item_id": "paint_brush_set",
+          "name": "Artist Brushes",
+          "description": "Made from fine animal hair.",
+          "quantity": 10
+        },
+        {
+          "item_id": "spore_paint_vial",
+          "name": "Glowing Paint",
+          "description": "Vials of liquid spores in various colors.",
+          "quantity": 12
+        },
+        {
+          "item_id": "palette_wood",
+          "name": "Wooden Palette",
+          "description": "For mixing spore colors.",
+          "quantity": 1
+        },
+        {
+          "item_id": "sketchbook",
+          "name": "Artist Sketchbook",
+          "description": "Filled with drawings of the bazaar.",
+          "quantity": 1
+        },
+        {
+          "item_id": "charcoal_stick",
+          "name": "Drawing Charcoal",
+          "description": "For initial mural outlines.",
+          "quantity": 20
+        },
+        {
+          "item_id": "easel_portable",
+          "name": "Folding Easel",
+          "description": "Lightweight and easy to carry.",
+          "quantity": 1
+        },
+        {
+          "item_id": "beret_felt",
+          "name": "Stained Felt Beret",
+          "description": "Saffron's signature hat.",
+          "quantity": 1
+        },
+        {
+          "item_id": "wine_flask",
+          "name": "Mushroom Wine",
+          "description": "For artistic inspiration.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Saffron's Studio",
+          "asset_type": "Workshop",
+          "description": "A small, colorful room in the commons.",
+          "story_use": "Where Saffron prepares her paints."
+        },
+        {
+          "asset_name": "Mural Wall",
+          "asset_type": "Commercial",
+          "description": "A large wall in the exchange granted for her work.",
+          "story_use": "Her current project site."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "saffron_vision_01",
+          "topic": "Spore Light",
+          "summary": "Certain spores glow brighter when they are near each other.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "saffron_gossip_01",
+          "topic": "Varo's Vanity",
+          "summary": "Varo wants Saffron to paint a giant portrait of him.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Krix",
+      "role_name": "Tunnel Guide",
+      "activity": "Leading a group of nervous investors through the bazaar.",
+      "home_base": "The Mycelium Bridge",
+      "arc_goal": "To map the 'Deep Tunnels' and find a new trade route.",
+      "inventory": [
+        {
+          "item_id": "walking_staff",
+          "name": "Sturdy Oak Staff",
+          "description": "For testing the ground and balance.",
+          "quantity": 1
+        },
+        {
+          "item_id": "lantern_electric",
+          "name": "Electric Lantern",
+          "description": "Reliable light for dark tunnels.",
+          "quantity": 1
+        },
+        {
+          "item_id": "map_undercity",
+          "name": "Master Map",
+          "description": "The most accurate map of the bazaar.",
+          "quantity": 1
+        },
+        {
+          "item_id": "whistle_silver",
+          "name": "Signal Whistle",
+          "description": "For communicating over long distances.",
+          "quantity": 1
+        },
+        {
+          "item_id": "first_aid_kit",
+          "name": "Basic Med-Kit",
+          "description": "Bandages and antiseptic.",
+          "quantity": 1
+        },
+        {
+          "item_id": "energy_chews",
+          "name": "Caffeine Chews",
+          "description": "To keep the guide alert.",
+          "quantity": 20
+        },
+        {
+          "item_id": "rope_ladder",
+          "name": "Silk Rope Ladder",
+          "description": "For climbing steep sections.",
+          "quantity": 1
+        },
+        {
+          "item_id": "gloves_climbing",
+          "name": "Grip Gloves",
+          "description": "Improves traction on damp surfaces.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guide Booth",
+          "asset_type": "Commercial",
+          "description": "A small stand where Krix meets clients.",
+          "story_use": "His business headquarters."
+        },
+        {
+          "asset_name": "Gear Locker",
+          "asset_type": "Storage",
+          "description": "Contains spare lanterns and maps.",
+          "story_use": "Where he prepares for expeditions."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "krix_route_01",
+          "topic": "The Deep Path",
+          "summary": "There is a path through the Silos that bypasses the Gate.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "krix_danger_01",
+          "topic": "Tunnel Collapse",
+          "summary": "Sector 12 is unstable and should be avoided.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Mender",
+      "role_name": "Bio-Repairman",
+      "activity": "Fixing a leaking enzyme pipe in the vats.",
+      "home_base": "The Fermentation Vats",
+      "arc_goal": "To invent a universal sealant that works on any biological surface.",
+      "inventory": [
+        {
+          "item_id": "sealant_gun",
+          "name": "Bio-Sealant Gun",
+          "description": "Applies a quick-drying fungal paste.",
+          "quantity": 1
+        },
+        {
+          "item_id": "paste_cartridge",
+          "name": "Sealant Cartridge",
+          "description": "Refills for the sealant gun.",
+          "quantity": 10
+        },
+        {
+          "item_id": "pipe_cutter",
+          "name": "Small Pipe Cutter",
+          "description": "For trimming copper and plastic tubes.",
+          "quantity": 1
+        },
+        {
+          "item_id": "adjustable_wrench",
+          "name": "Crescent Wrench",
+          "description": "Fits most nuts and bolts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "leak_detector",
+          "name": "Ultrasonic Leak Detector",
+          "description": "Hears the hiss of escaping gas.",
+          "quantity": 1
+        },
+        {
+          "item_id": "safety_goggles",
+          "name": "Plastic Goggles",
+          "description": "Protects eyes from spraying fluid.",
+          "quantity": 1
+        },
+        {
+          "item_id": "rag_bundle",
+          "name": "Bundle of Rags",
+          "description": "For cleaning up spills.",
+          "quantity": 5
+        },
+        {
+          "item_id": "tool_belt",
+          "name": "Heavy Tool Belt",
+          "description": "Keeps everything within reach.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Repair Shop",
+          "asset_type": "Workshop",
+          "description": "A cluttered workshop filled with spare parts.",
+          "story_use": "Mender's base of operations."
+        },
+        {
+          "asset_name": "Parts Bin",
+          "asset_type": "Storage",
+          "description": "A collection of salvaged valves and pipes.",
+          "story_use": "Where he finds materials for his inventions."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "mender_secret_01",
+          "topic": "Vat Corrosion",
+          "summary": "The enzymes are eating through the copper pipes faster than expected.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "mender_ally_01",
+          "topic": "Elara's Help",
+          "summary": "Elara provides Mender with the chemical formulas for his sealants.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Vesper's Assistant",
+      "role_name": "Tea Server",
+      "activity": "Serving tea and eavesdropping on a conversation between Varo and Thorne.",
+      "home_base": "The Humid Commons",
+      "arc_goal": "To gather enough blackmail material to buy her freedom.",
+      "inventory": [
+        {
+          "item_id": "serving_tray_wood",
+          "name": "Wooden Serving Tray",
+          "description": "Simple and functional.",
+          "quantity": 1
+        },
+        {
+          "item_id": "tea_towel",
+          "name": "Clean Tea Towel",
+          "description": "Draped over her arm.",
+          "quantity": 2
+        },
+        {
+          "item_id": "order_pad",
+          "name": "Small Order Pad",
+          "description": "For taking tea orders.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pencil_stub",
+          "name": "Short Pencil",
+          "description": "For writing on the order pad.",
+          "quantity": 2
+        },
+        {
+          "item_id": "sugar_bowl",
+          "name": "Ceramic Sugar Bowl",
+          "description": "Filled with white sugar.",
+          "quantity": 1
+        },
+        {
+          "item_id": "milk_pitcher",
+          "name": "Small Milk Pitcher",
+          "description": "Filled with fungal milk.",
+          "quantity": 1
+        },
+        {
+          "item_id": "hidden_recorder",
+          "name": "Bio-Acoustic Recorder",
+          "description": "A small device hidden in her apron.",
+          "quantity": 1
+        },
+        {
+          "item_id": "spare_change",
+          "name": "Handful of Fen",
+          "description": "Tips from customers.",
+          "quantity": 50
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Staff Locker",
+          "asset_type": "Storage",
+          "description": "A small locker in the tea house kitchen.",
+          "story_use": "Where she hides her recorder."
+        },
+        {
+          "asset_name": "Kitchen Corner",
+          "asset_type": "Residential",
+          "description": "A small cot in the back of the kitchen.",
+          "story_use": "Her sleeping area."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "assistant_intel_01",
+          "topic": "Varo's Bribe",
+          "summary": "Varo just offered Thorne a 10% stake in the Titan Bridge.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "assistant_secret_01",
+          "topic": "Vesper's True Identity",
+          "summary": "Madam Vesper is actually a disgraced corporate spy.",
+          "confidence": 40
+        }
+      ]
+    },
+    {
+      "display_name": "The Auctioneer",
+      "role_name": "Market Facilitator",
+      "activity": "Running the daily patent auction at the Gavel Cap.",
+      "home_base": "The Spore Exchange",
+      "arc_goal": "To ensure every auction is fair (or at least looks fair).",
+      "inventory": [
+        {
+          "item_id": "auction_gavel",
+          "name": "Polished Wood Gavel",
+          "description": "Makes a very satisfying sound.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bid_cards",
+          "name": "Stack of Bid Cards",
+          "description": "Numbered cards for bidders.",
+          "quantity": 50
+        },
+        {
+          "item_id": "auction_ledger",
+          "name": "Daily Auction Ledger",
+          "description": "Records every sale and price.",
+          "quantity": 1
+        },
+        {
+          "item_id": "voice_amplifier",
+          "name": "Brass Megaphone",
+          "description": "Helps his voice carry over the crowd.",
+          "quantity": 1
+        },
+        {
+          "item_id": "timer_sand",
+          "name": "One-Minute Hourglass",
+          "description": "For timing final bids.",
+          "quantity": 1
+        },
+        {
+          "item_id": "silk_vest",
+          "name": "Bright Red Vest",
+          "description": "Makes him easy to spot in the crowd.",
+          "quantity": 1
+        },
+        {
+          "item_id": "throat_lozenges",
+          "name": "Honey Lozenges",
+          "description": "To keep his voice clear.",
+          "quantity": 20
+        },
+        {
+          "item_id": "gold_chain",
+          "name": "Heavy Gold Chain",
+          "description": "A symbol of his office.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Auction Podium",
+          "asset_type": "Office",
+          "description": "The central point of the exchange.",
+          "story_use": "His place of power."
+        },
+        {
+          "asset_name": "Auctioneer's Safe",
+          "asset_type": "Storage",
+          "description": "A safe for holding deposits.",
+          "story_use": "Where the day's earnings are kept."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "auctioneer_intel_01",
+          "topic": "Hidden Bidders",
+          "summary": "A mysterious figure is bidding on every infrastructure patent.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "auctioneer_secret_01",
+          "topic": "Rigged Bids",
+          "summary": "Varo has a secret signal to tell the auctioneer when to stop.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Spore-Eater",
+      "role_name": "Blight-Caster",
+      "activity": "Secretly spreading Rust Spores in the Silos.",
+      "home_base": "The Spore Silos",
+      "arc_goal": "To destroy the bazaar and return the undercity to nature.",
+      "inventory": [
+        {
+          "item_id": "blight_vial",
+          "name": "Concentrated Rust Spore",
+          "description": "A highly infectious fungal strain.",
+          "quantity": 5
+        },
+        {
+          "item_id": "dark_cloak",
+          "name": "Tattered Black Cloak",
+          "description": "Helps him blend into the shadows.",
+          "quantity": 1
+        },
+        {
+          "item_id": "gas_mask_old",
+          "name": "Ancient Gas Mask",
+          "description": "Protects him from his own spores.",
+          "quantity": 1
+        },
+        {
+          "item_id": "poison_darts",
+          "name": "Fungal Darts",
+          "description": "Causes temporary paralysis.",
+          "quantity": 10
+        },
+        {
+          "item_id": "blowgun_bamboo",
+          "name": "Bamboo Blowgun",
+          "description": "Silent and deadly.",
+          "quantity": 1
+        },
+        {
+          "item_id": "vial_of_acid",
+          "name": "Corrosive Acid",
+          "description": "For melting locks.",
+          "quantity": 2
+        },
+        {
+          "item_id": "dried_mushrooms",
+          "name": "Hallucinogenic Fungi",
+          "description": "For his ritualistic trances.",
+          "quantity": 5
+        },
+        {
+          "item_id": "bone_knife",
+          "name": "Jagged Bone Knife",
+          "description": "For self-defense.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Blight Nest",
+          "asset_type": "Residential",
+          "description": "A disgusting, spore-filled hole in the wall.",
+          "story_use": "His secret lair."
+        },
+        {
+          "asset_name": "Spore Cultivator",
+          "asset_type": "Industrial",
+          "description": "A small, illegal growth chamber.",
+          "story_use": "Where he breeds the Rust Spore."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "eater_plan_01",
+          "topic": "The Great Rot",
+          "summary": "The Rust Spore will reach the main fan by tomorrow.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "eater_secret_01",
+          "topic": "Varo's Fear",
+          "summary": "Varo knows the Spore-Eater exists but is too afraid to act.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "The Inspector",
+      "role_name": "Health & Safety Officer",
+      "activity": "Checking the mist generators for compliance.",
+      "home_base": "The Humid Commons",
+      "arc_goal": "To shut down the bazaar for safety violations (and collect bribes).",
+      "inventory": [
+        {
+          "item_id": "safety_checklist",
+          "name": "Compliance Checklist",
+          "description": "A long list of impossible standards.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pressure_gauge",
+          "name": "Portable Pressure Gauge",
+          "description": "For testing pipes and vats.",
+          "quantity": 1
+        },
+        {
+          "item_id": "violation_stickers",
+          "name": "Red Violation Stickers",
+          "description": "Used to mark unsafe equipment.",
+          "quantity": 50
+        },
+        {
+          "item_id": "official_clipboard",
+          "name": "Metal Clipboard",
+          "description": "Very intimidating.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bribe_envelope",
+          "name": "Empty Envelope",
+          "description": "Waiting to be filled with fen.",
+          "quantity": 10
+        },
+        {
+          "item_id": "white_lab_coat",
+          "name": "Clean Lab Coat",
+          "description": "To show his authority.",
+          "quantity": 1
+        },
+        {
+          "item_id": "flashlight_heavy",
+          "name": "Heavy Duty Flashlight",
+          "description": "Can also be used as a club.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pen_set",
+          "name": "Set of Fine Pens",
+          "description": "For writing official reports.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Inspection Office",
+          "asset_type": "Office",
+          "description": "A sterile office in the commons.",
+          "story_use": "Where he processes violations."
+        },
+        {
+          "asset_name": "Confiscated Goods Locker",
+          "asset_type": "Storage",
+          "description": "Contains items seized for 'safety' reasons.",
+          "story_use": "His personal stash of bribes."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "inspector_intel_01",
+          "topic": "Boiler Risk",
+          "summary": "The boiler room is a ticking time bomb.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "inspector_greed_01",
+          "topic": "Bryn's Bribe",
+          "summary": "Bryn pays the inspector 1000 fen a month to ignore her storage issues.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "The Chemist",
+      "role_name": "Substrate Specialist",
+      "activity": "Mixing a new batch of nutrient broth for the cultivators.",
+      "home_base": "The Fermentation Vats",
+      "arc_goal": "To create a broth that makes any fungus grow 500% faster.",
+      "inventory": [
+        {
+          "item_id": "mixing_paddle",
+          "name": "Large Mixing Paddle",
+          "description": "For stirring the giant vats.",
+          "quantity": 1
+        },
+        {
+          "item_id": "chemical_jug_1",
+          "name": "Nitrogen Concentrate",
+          "description": "A key ingredient in nutrient broth.",
+          "quantity": 5
+        },
+        {
+          "item_id": "chemical_jug_2",
+          "name": "Phosphorus Mix",
+          "description": "Promotes root growth.",
+          "quantity": 5
+        },
+        {
+          "item_id": "hydrometer",
+          "name": "Glass Hydrometer",
+          "description": "Measures the density of the broth.",
+          "quantity": 1
+        },
+        {
+          "item_id": "protective_apron",
+          "name": "Rubber Apron",
+          "description": "Protects against chemical splashes.",
+          "quantity": 1
+        },
+        {
+          "item_id": "sample_bottle",
+          "name": "Broth Sample Bottle",
+          "description": "For quality control testing.",
+          "quantity": 10
+        },
+        {
+          "item_id": "stirring_rod",
+          "name": "Glass Stirring Rod",
+          "description": "For small-scale mixing.",
+          "quantity": 5
+        },
+        {
+          "item_id": "safety_boots",
+          "name": "Rubber Safety Boots",
+          "description": "Waterproof and slip-resistant.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Mixing Station 4",
+          "asset_type": "Industrial",
+          "description": "A large platform above the vats.",
+          "story_use": "The Chemist's workstation."
+        },
+        {
+          "asset_name": "Chemical Storage",
+          "asset_type": "Storage",
+          "description": "A locked room filled with raw chemicals.",
+          "story_use": "Where he keeps his secret ingredients."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "chemist_secret_01",
+          "topic": "Broth Additive",
+          "summary": "Adding a bit of mushroom wine makes the broth more effective.",
+          "confidence": 80
+        },
+        {
+          "knowledge_id": "chemist_rivalry_01",
+          "topic": "Aris's Arrogance",
+          "summary": "The Chemist thinks Dr. Aris takes all the credit for his hard work.",
+          "confidence": 100
+        }
+      ]
+    }
+  ],
+  "social_rules": [
+    "All biological samples must be declared at Quarantine Gate 4.",
+    "Patent disputes are settled only by the presiding Arbitrator.",
+    "No open flames are permitted within 50 meters of the Spore Silos.",
+    "Trading of 'Rust Spore' or its derivatives is punishable by exile.",
+    "A 5% transaction tax is owed to the Broker's Guild on all Exchange trades."
+  ],
+  "item_themes": [
+    "Bioluminescence",
+    "Genetic Patents",
+    "Fungal Growth",
+    "Industrial Biotech",
+    "Bureaucratic Corruption"
+  ],
+  "custom_actions": [
+    "Inspect Patent Seal",
+    "Apply Growth Accelerant",
+    "Scan for Illegal Spores",
+    "Negotiate License Fee"
+  ],
+  "player_entry_points": [
+    "Arriving as a freelance strain hunter at Quarantine Gate 4.",
+    "Starting as a junior clerk in the Spore Exchange.",
+    "Waking up as a test subject in Elara's lab."
+  ],
+  "conflict_hooks": [
+    "A shipment of 'Titan Bridge' spores has gone missing from Silo 3.",
+    "The Rust Spore blight has been detected in the ventilation system.",
+    "Varo the Veined is attempting to seize the Archive of Strains."
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Patent Trade",
+      "summary": "Players acquire rare strains, verify their genetic markers, and auction them at the Spore Exchange.",
+      "roles": [
+        "Patent Broker",
+        "Strain Cultivator",
+        "Merchant"
+      ],
+      "rooms": [
+        "The Spore Exchange",
+        "Archive of Strains"
+      ],
+      "pressure": "Market prices fluctuate based on supply and blight outbreaks."
+    },
+    {
+      "label": "Quarantine Enforcement",
+      "summary": "Players must scan traders for illegal spores and prevent the spread of the Rust Spore.",
+      "roles": [
+        "Quarantine Officer",
+        "Patent Investigator"
+      ],
+      "rooms": [
+        "Quarantine Gate 4",
+        "The Spore Silos"
+      ],
+      "pressure": "Corruption and bribery make enforcement difficult."
+    }
+  ],
+  "item_catalog": [
+    {
+      "item_id": "patent_scroll",
+      "name": "Genetic Patent Scroll",
+      "price": 5000,
+      "mass": 0.5,
+      "description": "A legal deed proving ownership of a specific fungal strain.",
+      "image_prompt": "A glowing scroll made of fungal parchment with a gold seal.",
+      "category": "Legal"
+    },
+    {
+      "item_id": "spore_key",
+      "name": "Bioluminescent Spore Key",
+      "price": 1200,
+      "mass": 0.1,
+      "description": "A living key that unlocks specific bio-locks.",
+      "image_prompt": "A small, pulsing mushroom that glows green.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "repair_enzyme",
+      "name": "Structural Repair Enzyme",
+      "price": 800,
+      "mass": 1.0,
+      "description": "A liquid that triggers rapid growth in mycelium infrastructure.",
+      "image_prompt": "A glass flask filled with swirling blue liquid.",
+      "category": "Industrial"
+    },
+    {
+      "item_id": "rust_spore_vial",
+      "name": "Rust Spore Sample",
+      "price": 15000,
+      "mass": 0.2,
+      "description": "A highly illegal strain that consumes metal.",
+      "image_prompt": "A sealed lead canister containing orange dust.",
+      "category": "Illegal"
+    },
+    {
+      "item_id": "nutrient_paste",
+      "name": "Standard Nutrient Paste",
+      "price": 50,
+      "mass": 0.5,
+      "description": "Basic food for lab-grown cultures and workers.",
+      "image_prompt": "A grey tube of thick paste.",
+      "category": "Food"
+    },
+    {
+      "item_id": "bio_scanner",
+      "name": "Handheld Bio-Scanner",
+      "price": 3500,
+      "mass": 1.5,
+      "description": "Detects genetic signatures and contamination.",
+      "image_prompt": "A brass device with a glowing glass screen.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "titan_spore",
+      "name": "Titan Bridge Spore",
+      "price": 50000,
+      "mass": 0.1,
+      "description": "The seed for a massive, load-bearing fungal bridge.",
+      "image_prompt": "A large, heavy spore that pulses with white light.",
+      "category": "Rare"
+    },
+    {
+      "item_id": "glow_oil",
+      "name": "Bioluminescent Glow-Oil",
+      "price": 150,
+      "mass": 0.8,
+      "description": "Fuel for lamps that mimics natural fungal light.",
+      "image_prompt": "A bottle of glowing amber liquid.",
+      "category": "Fuel"
+    },
+    {
+      "item_id": "fungal_parchment",
+      "name": "Blank Fungal Parchment",
+      "price": 100,
+      "mass": 0.1,
+      "description": "Durable paper grown from mycelium mats.",
+      "image_prompt": "A roll of thick, cream-colored paper.",
+      "category": "Material"
+    },
+    {
+      "item_id": "magnifying_glass",
+      "name": "Broker's Magnifying Glass",
+      "price": 450,
+      "mass": 0.3,
+      "description": "Used to inspect the fine details of patent seals.",
+      "image_prompt": "A brass magnifying glass with a carved bone handle.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "decon_spray",
+      "name": "Decontamination Spray",
+      "price": 300,
+      "mass": 0.5,
+      "description": "Kills common surface spores and bacteria.",
+      "image_prompt": "A small spray bottle with a green nozzle.",
+      "category": "Medical"
+    },
+    {
+      "item_id": "spore_mask",
+      "name": "Industrial Spore Mask",
+      "price": 600,
+      "mass": 0.4,
+      "description": "Filters out harmful airborne fungi.",
+      "image_prompt": "A leather mask with glass eye-pieces and a filter.",
+      "category": "Gear"
+    },
+    {
+      "item_id": "growth_accelerant",
+      "name": "Rapid Growth Spray",
+      "price": 1200,
+      "mass": 0.6,
+      "description": "Causes fungal structures to grow at 10x speed.",
+      "image_prompt": "A pressurized canister with a fine mist nozzle.",
+      "category": "Industrial"
+    },
+    {
+      "item_id": "legal_seal_wax",
+      "name": "Arbitrator's Seal Wax",
+      "price": 200,
+      "mass": 0.2,
+      "description": "Special wax used for official court documents.",
+      "image_prompt": "A stick of deep purple wax.",
+      "category": "Legal"
+    },
+    {
+      "item_id": "mushroom_wine",
+      "name": "Vintage Mushroom Wine",
+      "price": 900,
+      "mass": 1.2,
+      "description": "A potent and earthy alcoholic beverage.",
+      "image_prompt": "A dark glass bottle with a fungal-themed label.",
+      "category": "Luxury"
+    }
+  ],
+  "visual_canon": {
+    "canon_id": "mycelium_bazaar_v1",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90 degrees",
+      "scale_rule": "1 unit = 1 meter"
+    },
+    "palette": {
+      "dominant": "#1a2e1a",
+      "secondary": "#3d2b1f",
+      "accent": "#00ffcc",
+      "shadow": "#0a0a0a",
+      "highlight": "#ffcc00"
+    },
+    "materials": [
+      "Damp Stone",
+      "Living Mycelium",
+      "Polished Brass",
+      "Stained Glass",
+      "Fungal Leather"
+    ],
+    "lighting": "Bioluminescent glows from floors and walls, supplemented by warm brass lanterns.",
+    "architecture": [
+      "Vaulted organic ceilings",
+      "Curved fungal walls",
+      "Brass pipe networks",
+      "Stone-paved tunnels"
+    ],
+    "terrain": {
+      "ground": "Damp stone or woven mycelium mats",
+      "path": "Glow-moss lined walkways",
+      "edge": "Dark chasm or thick fungal growth"
+    },
+    "sprite_language": {
+      "body_proportion": "Realistic human with slightly exaggerated gear",
+      "outline": "Soft dark green outline",
+      "role_readability": "Distinctive hats and tools (e.g., brokers have scrolls, guards have batons)"
+    },
+    "world_prompt_prefix": "A top-down view of a humid, bioluminescent undercity market. The environment is filled with giant glowing mushrooms, brass pipes, and damp stone surfaces.",
+    "sprite_prompt_prefix": "A top-down character sprite in a biotech undercity setting, wearing fungal-leather attire and carrying specialized tools.",
+    "forbidden_visuals": [
+      "Modern electronics",
+      "Bright sunlight",
+      "Plastic (unless bio-plastic)",
+      "Clean, dry environments"
+    ]
+  },
+  "agent_visual_policy": {
+    "policy_id": "mycelium_agent_v1",
+    "world_wardrobe_brief": "Undercity residents wear layered, humid-resistant clothing made of fungal leather and heavy fabrics, often adorned with brass fittings and glowing vials.",
+    "forbidden_aesthetics": [
+      "Neon cyberpunk",
+      "High fantasy armor",
+      "Modern business suits"
+    ],
+    "palette_families": [
+      {
+        "name": "Broker Gold",
+        "dominant": "#3d2b1f",
+        "accent": "#ffcc00",
+        "trim": "#1a2e1a",
+        "material": "Fine Fungal Silk"
+      },
+      {
+        "name": "Guard Blue",
+        "dominant": "#1a1a2e",
+        "accent": "#00ccff",
+        "trim": "#333333",
+        "material": "Heavy Fungal Leather"
+      },
+      {
+        "name": "Cultivator Green",
+        "dominant": "#1a2e1a",
+        "accent": "#00ff66",
+        "trim": "#ffffff",
+        "material": "Rubberized Apron"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "broker_style",
+        "role_keywords": [
+          "Broker",
+          "Arbitrator",
+          "Auctioneer"
+        ],
+        "attire": [
+          "Silk Vests",
+          "Long Coats",
+          "Spectacles"
+        ],
+        "props": [
+          "Scrolls",
+          "Gavels",
+          "Magnifying Glasses"
+        ],
+        "palette_notes": "Use the Broker Gold palette family.",
+        "silhouette_notes": "Tall, upright, often with hats."
+      },
+      {
+        "rule_id": "worker_style",
+        "role_keywords": [
+          "Tech",
+          "Mender",
+          "Stoker",
+          "Runner"
+        ],
+        "attire": [
+          "Leather Aprons",
+          "Heavy Boots",
+          "Tool Belts"
+        ],
+        "props": [
+          "Wrenches",
+          "Lanterns",
+          "Sacks"
+        ],
+        "palette_notes": "Use earthy browns and greys.",
+        "silhouette_notes": "Practical, slightly hunched, gear-heavy."
+      },
+      {
+        "rule_id": "scientist_style",
+        "role_keywords": [
+          "Alchemist",
+          "Geneticist",
+          "Chemist"
+        ],
+        "attire": [
+          "Lab Coats",
+          "Gloves",
+          "Respirators"
+        ],
+        "props": [
+          "Flasks",
+          "Pipettes",
+          "Scanners"
+        ],
+        "palette_notes": "Use the Cultivator Green palette family.",
+        "silhouette_notes": "Clean lines, glowing accessories."
+      }
+    ],
+    "default_rule": {
+      "rule_id": "citizen_style",
+      "role_keywords": [
+        "Citizen",
+        "Trader"
+      ],
+      "attire": [
+        "Tunics",
+        "Cloaks",
+        "Boots"
+      ],
+      "props": [
+        "Pouches",
+        "Small Lanterns"
+      ],
+      "palette_notes": "Muted earth tones with small glowing accents.",
+      "silhouette_notes": "Standard human silhouette."
+    },
+    "visual_consistency_rules": [
+      "All characters must have at least one glowing element (vial, button, or fabric).",
+      "Footwear must be visible and appropriate for damp stone floors.",
+      "No character should be completely dry or clean."
+    ]
+  }
+}

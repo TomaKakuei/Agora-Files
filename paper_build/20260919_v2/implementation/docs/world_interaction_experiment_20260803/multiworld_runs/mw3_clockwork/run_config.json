@@ -1,0 +1,252 @@
+{
+  "run_id": "mw3_clockwork",
+  "created_at": "2026-08-04T00:16:50",
+  "config_path": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_configs/clockwork_rain_conservatory.json",
+  "scenario_dir": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_clockwork/run_inputs/scenario",
+  "scenario_files": {
+    "manifest": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_clockwork/run_inputs/scenario/manifest.json",
+    "world_rules": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_clockwork/run_inputs/scenario/world_rules.json",
+    "map_grid": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_clockwork/run_inputs/scenario/map_grid.json",
+    "agents_dir": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_clockwork/run_inputs/scenario/Agents"
+  },
+  "agent_profile_cache_dir": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_clockwork/agent_profile_api_cache",
+  "reused_agent_profile_cache": "",
+  "rounds": 2,
+  "activation_probability": 0.12,
+  "seed": 26080412,
+  "agent_profile_source": "compiled_world_profiles",
+  "disable_longlive": true,
+  "disable_image_generation": true,
+  "max_images_per_round": 10,
+  "image_generation": {
+    "enabled": false,
+    "backend": "flux_local_service",
+    "model": "gemini-3.1-flash-image-preview",
+    "max_images_per_round": 10,
+    "temperature": 0.35,
+    "thinking_budget": 0,
+    "max_output_tokens": 1024,
+    "response_modalities": [
+      "TEXT"
+    ],
+    "output_subdir": "image_jobs",
+    "conditions": [
+      "Still-image routes use Gemini text prompting when needed, then render through the FLUX local service."
+    ],
+    "prompt_policy": "Grounded social-systems illustration with readable rooms, paperwork, tools, and no visible text or watermark.",
+    "default_prompt_template": "{domain_label}. Create one polished still image of {image_subject} for {actor_name} and {target_name}. Emphasize lived-in civic interiors, notices, ledgers, and social coordination pressure. No visible text, no watermark.",
+    "endpoint": "http://127.0.0.1:8135",
+    "generate_character_portraits": true,
+    "item_image_mode": "important_only"
+  },
+  "inventory_generation": {
+    "enabled": false,
+    "stage": "initial_inventory_generation",
+    "preserve_existing_inventory": true,
+    "max_distinct_items_per_agent": 3,
+    "max_quantity_per_item": 3,
+    "allowed_item_ids": [
+      "CRC-001",
+      "CRC-002",
+      "CRC-003",
+      "CRC-004",
+      "CRC-005",
+      "CRC-006",
+      "CRC-007",
+      "CRC-008",
+      "CRC-009",
+      "CRC-010",
+      "CRC-011",
+      "CRC-012",
+      "CRC-013",
+      "CRC-014",
+      "CRC-015",
+      "task_ledger",
+      "meeting_notice",
+      "tea_coupon"
+    ],
+    "policy": "Generate compact role-appropriate actionable inventory only from the item catalog. Use property_library for non-actionable treasures, titles, clues, personal tools, debts, or keepsakes. Do not create images here; image generation is a later system step when a route requests it.",
+    "reason": "Boutique character node already generated at least eight validated inventory items per agent."
+  },
+  "extra_world_functions": {
+    "enabled": true,
+    "stage": "extra_world_functions",
+    "activation_probability": 1.0,
+    "max_events_per_function": 2,
+    "max_events_per_round": 5,
+    "functions": [
+      {
+        "function_id": "litigation_cycle_progressor",
+        "enabled": true,
+        "activation_probability": 1.0,
+        "max_events": 2,
+        "purpose": "Create or advance event threads for the Litigation Cycle loop so the world keeps generating concrete next steps in The High Court of Ticks, Evidence Vault.",
+        "event_policy": "Prefer compact progress events that deepen Litigation Cycle: Players gather evidence of temporal malpractice, present cases to the Gear-Judges, and enforce ritualistic penalties. Use Advocate, Judge, Witness as likely responders, keep the pressure on The ticking of the Doomsday Clock., and ensure at least one event gives players a readable way into the world such as A newly appointed apprentice arriving at the gates..",
+        "main_character_policy": "Vespera Thorne (Chief Hydrologist) should care when the event supports Calibrating the pressure valves in the Pipe-Works Commons; Silas Vane (Irrigation Arbitrator) should care when the event supports Negotiating water quotas in the Irrigation Rights Exchange; Elara Moss (Seed Geneticist) should care when the event supports Grafting bioluminescent spores in the Root-Grafting Laboratory; Kaelen Reed (Sheet Music Presser) should care when the event supports Stamping weather patterns onto metal sheets in the Press; Orion Glass (Vault Custodian) should care when the event supports Cataloging dormant flora signatures; Lyra Cinder (Weather-Sheet Broker) should care when the event supports Trading atmospheric compositions; Bram Tallow (Pipe-Works Foreman) should care when the event supports Monitoring steam-pressure differentials; Cora Mistral (Checkpoint Inspector) should care when the event supports Scanning incoming shipments for biological contaminants; Thistle Thorne (Vault Saboteur) should care when the event supports Etching corrosive glyphs onto the Seed Vault's outer hull; Marius Gilt (Luxury Sheet Collector) should care when the event supports Appraising rare atmospheric compositions in the Fern-Gilded Lounge; Fennel Root (Grafting Apprentice) should care when the event supports Pruning the bioluminescent ferns in the Root-Grafting Laboratory; Holloway (Pipe-Works Scavenger) should care when the event supports Diving into the flooded sub-levels of the Pipe-Works Commons; Ignatius Vane (Vault Scribe) should care when the event supports Transcribing genetic sequences onto brass scrolls; Seraphina Gilt (Atmospheric Sommelier) should care when the event supports Curating a tasting of 'High-Altitude Mist' sheets; Kestrel Reed (Pressure Scout) should care when the event supports Mapping air-current leaks near the Lookout; Bastian Moss (Irrigation Technician) should care when the event supports Repairing a jammed flow-regulator; Valerius Gilt (Sheet Music Forger) should care when the event supports Etching counterfeit storm-patterns onto recycled brass; Oona Reed (Pressure-Valve Saboteur) should care when the event supports Loosening the primary steam-gaskets in the Pipe-Works Commons; Aris Thorne (Seed-Vault Archivist) should care when the event supports Cross-referencing genetic markers in the Patent Seed Vault; Mila Moss (Irrigation Smuggler) should care when the event supports Hiding water-canisters inside hollowed-out root-grafts; Elias Vane (Vault Auditor) should care when the event supports Auditing the genetic integrity of the Patent Seed Vault; Lyra Reed (Weather Sheet Merchant) should care when the event supports Trading weather sheets in the Weather Sheet Music Press; Kaelen Moss (Irrigation Engineer) should care when the event supports Maintaining the irrigation systems in the Irrigation Rights Exchange; Seraphina Thorne (Checkpoint Guard) should care when the event supports Guarding the Hydro-Pneumatic Checkpoint.",
+        "continuity_policy": "Use titles and status_tags to show next-phase progress for Litigation Cycle, such as posted, blocked, negotiated, rerouted, verified, escalated, or resolved."
+      },
+      {
+        "function_id": "maintenance_ritual_progressor",
+        "enabled": true,
+        "activation_probability": 1.0,
+        "max_events": 2,
+        "purpose": "Create or advance event threads for the Maintenance Ritual loop so the world keeps generating concrete next steps in The Engine Heart, Steam Tunnels.",
+        "event_policy": "Prefer compact progress events that deepen Maintenance Ritual: Players must navigate the internal machinery to lubricate gears and adjust springs before the rain stops. Use Engineer, Oiler, Overseer as likely responders, keep the pressure on Rising heat and failing pressure valves under pressure., and ensure at least one event gives players a readable way into the world such as A newly appointed apprentice arriving at the gates..",
+        "main_character_policy": "Vespera Thorne (Chief Hydrologist) should care when the event supports Calibrating the pressure valves in the Pipe-Works Commons; Silas Vane (Irrigation Arbitrator) should care when the event supports Negotiating water quotas in the Irrigation Rights Exchange; Elara Moss (Seed Geneticist) should care when the event supports Grafting bioluminescent spores in the Root-Grafting Laboratory; Kaelen Reed (Sheet Music Presser) should care when the event supports Stamping weather patterns onto metal sheets in the Press; Orion Glass (Vault Custodian) should care when the event supports Cataloging dormant flora signatures; Lyra Cinder (Weather-Sheet Broker) should care when the event supports Trading atmospheric compositions; Bram Tallow (Pipe-Works Foreman) should care when the event supports Monitoring steam-pressure differentials; Cora Mistral (Checkpoint Inspector) should care when the event supports Scanning incoming shipments for biological contaminants; Thistle Thorne (Vault Saboteur) should care when the event supports Etching corrosive glyphs onto the Seed Vault's outer hull; Marius Gilt (Luxury Sheet Collector) should care when the event supports Appraising rare atmospheric compositions in the Fern-Gilded Lounge; Fennel Root (Grafting Apprentice) should care when the event supports Pruning the bioluminescent ferns in the Root-Grafting Laboratory; Holloway (Pipe-Works Scavenger) should care when the event supports Diving into the flooded sub-levels of the Pipe-Works Commons; Ignatius Vane (Vault Scribe) should care when the event supports Transcribing genetic sequences onto brass scrolls; Seraphina Gilt (Atmospheric Sommelier) should care when the event supports Curating a tasting of 'High-Altitude Mist' sheets; Kestrel Reed (Pressure Scout) should care when the event supports Mapping air-current leaks near the Lookout; Bastian Moss (Irrigation Technician) should care when the event supports Repairing a jammed flow-regulator; Valerius Gilt (Sheet Music Forger) should care when the event supports Etching counterfeit storm-patterns onto recycled brass; Oona Reed (Pressure-Valve Saboteur) should care when the event supports Loosening the primary steam-gaskets in the Pipe-Works Commons; Aris Thorne (Seed-Vault Archivist) should care when the event supports Cross-referencing genetic markers in the Patent Seed Vault; Mila Moss (Irrigation Smuggler) should care when the event supports Hiding water-canisters inside hollowed-out root-grafts; Elias Vane (Vault Auditor) should care when the event supports Auditing the genetic integrity of the Patent Seed Vault; Lyra Reed (Weather Sheet Merchant) should care when the event supports Trading weather sheets in the Weather Sheet Music Press; Kaelen Moss (Irrigation Engineer) should care when the event supports Maintaining the irrigation systems in the Irrigation Rights Exchange; Seraphina Thorne (Checkpoint Guard) should care when the event supports Guarding the Hydro-Pneumatic Checkpoint.",
+        "continuity_policy": "Use titles and status_tags to show next-phase progress for Maintenance Ritual, such as posted, blocked, negotiated, rerouted, verified, escalated, or resolved."
+      },
+      {
+        "function_id": "clockwork_rain_conservatory_tension_generator",
+        "enabled": true,
+        "activation_probability": 0.88,
+        "max_events": 2,
+        "purpose": "Generate light-to-moderate persistent tension incidents that sharpen negotiation, routing, alliances, and local stakes without overriding agent autonomy.",
+        "event_policy": "Use the compiled conflict hooks as style anchors only when they fit current world memory: The Great Gear has skipped a beat, causing a temporal paradox in the lower wards.; A rival conservatory has filed a lawsuit claiming ownership of the Rain-Dance ritual.; The Lead Chronometer has been found frozen in time, and the primary suspect is their successor.. Prefer incidents that create follow-up routes, targetable bottlenecks, or contested interpretations instead of one-off flavor.",
+        "main_character_policy": "Vespera Thorne (Chief Hydrologist) should care when the event supports Calibrating the pressure valves in the Pipe-Works Commons; Silas Vane (Irrigation Arbitrator) should care when the event supports Negotiating water quotas in the Irrigation Rights Exchange; Elara Moss (Seed Geneticist) should care when the event supports Grafting bioluminescent spores in the Root-Grafting Laboratory; Kaelen Reed (Sheet Music Presser) should care when the event supports Stamping weather patterns onto metal sheets in the Press; Orion Glass (Vault Custodian) should care when the event supports Cataloging dormant flora signatures; Lyra Cinder (Weather-Sheet Broker) should care when the event supports Trading atmospheric compositions; Bram Tallow (Pipe-Works Foreman) should care when the event supports Monitoring steam-pressure differentials; Cora Mistral (Checkpoint Inspector) should care when the event supports Scanning incoming shipments for biological contaminants; Thistle Thorne (Vault Saboteur) should care when the event supports Etching corrosive glyphs onto the Seed Vault's outer hull; Marius Gilt (Luxury Sheet Collector) should care when the event supports Appraising rare atmospheric compositions in the Fern-Gilded Lounge; Fennel Root (Grafting Apprentice) should care when the event supports Pruning the bioluminescent ferns in the Root-Grafting Laboratory; Holloway (Pipe-Works Scavenger) should care when the event supports Diving into the flooded sub-levels of the Pipe-Works Commons; Ignatius Vane (Vault Scribe) should care when the event supports Transcribing genetic sequences onto brass scrolls; Seraphina Gilt (Atmospheric Sommelier) should care when the event supports Curating a tasting of 'High-Altitude Mist' sheets; Kestrel Reed (Pressure Scout) should care when the event supports Mapping air-current leaks near the Lookout; Bastian Moss (Irrigation Technician) should care when the event supports Repairing a jammed flow-regulator; Valerius Gilt (Sheet Music Forger) should care when the event supports Etching counterfeit storm-patterns onto recycled brass; Oona Reed (Pressure-Valve Saboteur) should care when the event supports Loosening the primary steam-gaskets in the Pipe-Works Commons; Aris Thorne (Seed-Vault Archivist) should care when the event supports Cross-referencing genetic markers in the Patent Seed Vault; Mila Moss (Irrigation Smuggler) should care when the event supports Hiding water-canisters inside hollowed-out root-grafts; Elias Vane (Vault Auditor) should care when the event supports Auditing the genetic integrity of the Patent Seed Vault; Lyra Reed (Weather Sheet Merchant) should care when the event supports Trading weather sheets in the Weather Sheet Music Press; Kaelen Moss (Irrigation Engineer) should care when the event supports Maintaining the irrigation systems in the Irrigation Rights Exchange; Seraphina Thorne (Checkpoint Guard) should care when the event supports Guarding the Hydro-Pneumatic Checkpoint.",
+        "continuity_policy": "Let tension incidents branch or cool down over multiple rounds through status_tags such as delayed, inspected, contested, exposed, rerouted, softened, or settled."
+      },
+      {
+        "function_id": "clockwork_rain_conservatory_player_entry_generator",
+        "enabled": true,
+        "activation_probability": 0.72,
+        "max_events": 1,
+        "purpose": "Generate newcomer-readable incidents that expose what the world is about and give human players an immediate way to participate.",
+        "event_policy": "Prefer events that make the world legible from the ground level: A newly appointed apprentice arriving at the gates.; A disgraced lawyer seeking redemption in the clockwork courts.; A merchant delivering rare oils for the Great Gear.. A good event should tell a player where to go, who to ask, or which pressure is already live.",
+        "main_character_policy": "Vespera Thorne (Chief Hydrologist) should care when the event supports Calibrating the pressure valves in the Pipe-Works Commons; Silas Vane (Irrigation Arbitrator) should care when the event supports Negotiating water quotas in the Irrigation Rights Exchange; Elara Moss (Seed Geneticist) should care when the event supports Grafting bioluminescent spores in the Root-Grafting Laboratory; Kaelen Reed (Sheet Music Presser) should care when the event supports Stamping weather patterns onto metal sheets in the Press; Orion Glass (Vault Custodian) should care when the event supports Cataloging dormant flora signatures; Lyra Cinder (Weather-Sheet Broker) should care when the event supports Trading atmospheric compositions; Bram Tallow (Pipe-Works Foreman) should care when the event supports Monitoring steam-pressure differentials; Cora Mistral (Checkpoint Inspector) should care when the event supports Scanning incoming shipments for biological contaminants; Thistle Thorne (Vault Saboteur) should care when the event supports Etching corrosive glyphs onto the Seed Vault's outer hull; Marius Gilt (Luxury Sheet Collector) should care when the event supports Appraising rare atmospheric compositions in the Fern-Gilded Lounge; Fennel Root (Grafting Apprentice) should care when the event supports Pruning the bioluminescent ferns in the Root-Grafting Laboratory; Holloway (Pipe-Works Scavenger) should care when the event supports Diving into the flooded sub-levels of the Pipe-Works Commons; Ignatius Vane (Vault Scribe) should care when the event supports Transcribing genetic sequences onto brass scrolls; Seraphina Gilt (Atmospheric Sommelier) should care when the event supports Curating a tasting of 'High-Altitude Mist' sheets; Kestrel Reed (Pressure Scout) should care when the event supports Mapping air-current leaks near the Lookout; Bastian Moss (Irrigation Technician) should care when the event supports Repairing a jammed flow-regulator; Valerius Gilt (Sheet Music Forger) should care when the event supports Etching counterfeit storm-patterns onto recycled brass; Oona Reed (Pressure-Valve Saboteur) should care when the event supports Loosening the primary steam-gaskets in the Pipe-Works Commons; Aris Thorne (Seed-Vault Archivist) should care when the event supports Cross-referencing genetic markers in the Patent Seed Vault; Mila Moss (Irrigation Smuggler) should care when the event supports Hiding water-canisters inside hollowed-out root-grafts; Elias Vane (Vault Auditor) should care when the event supports Auditing the genetic integrity of the Patent Seed Vault; Lyra Reed (Weather Sheet Merchant) should care when the event supports Trading weather sheets in the Weather Sheet Music Press; Kaelen Moss (Irrigation Engineer) should care when the event supports Maintaining the irrigation systems in the Irrigation Rights Exchange; Seraphina Thorne (Checkpoint Guard) should care when the event supports Guarding the Hydro-Pneumatic Checkpoint.",
+        "continuity_policy": "Entry incidents should either resolve into a larger loop or hand off to an existing conflict, rumor, or coordination thread within 1-3 rounds."
+      }
+    ]
+  },
+  "always_activate_agent_ids": [
+    "clockwork_rain_conservatory_main_01",
+    "clockwork_rain_conservatory_main_02"
+  ],
+  "force_cinematic_agent_ids": [
+    "clockwork_rain_conservatory_main_01",
+    "clockwork_rain_conservatory_main_02",
+    "clockwork_rain_conservatory_main_03",
+    "clockwork_rain_conservatory_main_04",
+    "clockwork_rain_conservatory_main_05",
+    "clockwork_rain_conservatory_main_06",
+    "clockwork_rain_conservatory_main_07",
+    "clockwork_rain_conservatory_main_08",
+    "clockwork_rain_conservatory_main_09",
+    "clockwork_rain_conservatory_main_10",
+    "clockwork_rain_conservatory_main_11",
+    "clockwork_rain_conservatory_main_12",
+    "clockwork_rain_conservatory_main_13",
+    "clockwork_rain_conservatory_main_14",
+    "clockwork_rain_conservatory_main_15",
+    "clockwork_rain_conservatory_main_16",
+    "clockwork_rain_conservatory_main_17",
+    "clockwork_rain_conservatory_main_18",
+    "clockwork_rain_conservatory_main_19",
+    "clockwork_rain_conservatory_main_20",
+    "clockwork_rain_conservatory_main_21",
+    "clockwork_rain_conservatory_main_22",
+    "clockwork_rain_conservatory_main_23",
+    "clockwork_rain_conservatory_main_24"
+  ],
+  "story_filename": "story.jsonl",
+  "run_name": "clockwork_rain_conservatory",
+  "vertex_api": {
+    "backend": "ai_studio",
+    "active_backend_name": "primary",
+    "api_key_env": "AGORA_AISTUDIO_API_KEY",
+    "endpoint_base": "https://generativelanguage.googleapis.com/v1beta",
+    "method": "generateContent",
+    "default_model": "gemini-2.5-flash",
+    "thinking_level": "low",
+    "thinking_budget": 512,
+    "max_output_tokens": 1024,
+    "temperature": 0.45,
+    "fallback": null,
+    "retry": {
+      "max_attempts": 8,
+      "initial_sleep_seconds": 5.0,
+      "max_sleep_seconds": 120.0,
+      "backoff_multiplier": 2.0,
+      "status_codes": [
+        408,
+        429,
+        500,
+        502,
+        503,
+        504
+      ]
+    },
+    "stages": {
+      "agent_profile_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 1024,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "interaction_routing": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 4096,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "relationship_adjustment": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 1024,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "video_prompt_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 4096,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "image_prompt_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 2048,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "story_report_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 20000,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "main_character_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 10000,
+        "thinking_level": "low",
+        "thinking_budget": 2048,
+        "temperature": 0.55
+      },
+      "initial_inventory_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 4096,
+        "thinking_level": "low",
+        "thinking_budget": 1024,
+        "temperature": 0.45
+      },
+      "extra_world_functions": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 10000,
+        "thinking_level": "low",
+        "thinking_budget": 2048,
+        "temperature": 0.5
+      }
+    }
+  },
+  "vertex_image_sdk": null,
+  "resume": {
+    "source_run_dir": "",
+    "completed_round": 0,
+    "start_round": 1,
+    "in_place": false
+  },
+  "compiled_orchestration_path": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_clockwork/compiled_orchestration.json"
+}

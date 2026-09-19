@@ -1,0 +1,476 @@
+{
+  "benchmark": "Agora Generated-World Runtime Evaluation",
+  "scoring_version": "agwre_v1.0",
+  "generated_at": "2026-08-25T21:56:39.138002+00:00",
+  "protocol": {
+    "prompt_id": "lwb_hidden_v2_01",
+    "rounds": 24,
+    "replicate_count": 3,
+    "total_rounds_per_model": 72,
+    "checkpoint_rounds": [
+      1,
+      5,
+      9,
+      13,
+      17,
+      21
+    ],
+    "actions_per_checkpoint": 12,
+    "api_calls_per_model_per_replicate": 6,
+    "api_calls_per_model_total": 18,
+    "temperature": 0.75,
+    "thinking_level": "low",
+    "api_backend": "OpenAI Responses API",
+    "score_method": "deterministic execution trace rubric; no LLM judge",
+    "state_commit": "Agora coordinator and universal custom-action handler",
+    "interventions": [
+      "human request",
+      "coordinator rejection",
+      "resource shock",
+      "cross-room request",
+      "human follow-up"
+    ]
+  },
+  "axis_weights": {
+    "executable_grounding": 0.14,
+    "spatial_mobility": 0.1,
+    "persistent_consequences": 0.16,
+    "social_continuity": 0.14,
+    "human_integration": 0.12,
+    "open_action_recovery": 0.14,
+    "institutional_integrity": 0.12,
+    "temporal_progression": 0.08
+  },
+  "ranking": [
+    {
+      "model": "gpt-5.6-sol",
+      "score": {
+        "score": 97.54,
+        "score_stddev": 0.39,
+        "score_min": 97.02,
+        "score_max": 97.94,
+        "uncapped_score": 97.54,
+        "replicate_count": 3,
+        "replicate_scores": [
+          97.94,
+          97.02,
+          97.66
+        ],
+        "cap_reasons_by_replicate": [
+          [],
+          [],
+          []
+        ],
+        "axes": {
+          "executable_grounding": 98.22,
+          "spatial_mobility": 100.0,
+          "persistent_consequences": 100.0,
+          "social_continuity": 93.14,
+          "human_integration": 100.0,
+          "open_action_recovery": 94.45,
+          "institutional_integrity": 100.0,
+          "temporal_progression": 95.56
+        },
+        "observations": {
+          "approved_open_proposals": 19,
+          "open_proposals": 19,
+          "actions_failed": 1,
+          "illegal_approved_actions": 0,
+          "active_round_count": 72,
+          "actions_succeeded": 215,
+          "recovery_actions": 3,
+          "human_target_actions": 34,
+          "actions_planned": 216,
+          "human_event_responses": 8,
+          "spanning_threads": 3.0,
+          "visited_destinations": 8.0,
+          "unique_dyads": 14.67,
+          "participating_ai_agents": 9.33,
+          "relationship_edge_count": 18.33,
+          "repeated_dyads": 10.0,
+          "successful_moves": 28.0,
+          "success_rate": 0.9954,
+          "mutation_kinds": [
+            "inventory",
+            "location",
+            "relationship",
+            "status"
+          ],
+          "rejected_actions_state_unchanged": true,
+          "human_successful_replicates": 3,
+          "recovery_successful_replicates": 3
+        }
+      },
+      "trajectory_path": "runtime_trajectories_v2/replicate_01/gpt_5_6_sol/trajectory.json",
+      "trajectory_paths": [
+        "runtime_trajectories_v2/replicate_01/gpt_5_6_sol/trajectory.json",
+        "runtime_trajectories_v2/replicate_02/gpt_5_6_sol/trajectory.json",
+        "runtime_trajectories_v2/replicate_03/gpt_5_6_sol/trajectory.json"
+      ],
+      "replicates": [
+        {
+          "replicate_index": 1,
+          "score": {
+            "score": 97.94,
+            "uncapped_score": 97.94,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 97.5,
+              "spatial_mobility": 100.0,
+              "persistent_consequences": 100.0,
+              "social_continuity": 96.46,
+              "human_integration": 100.0,
+              "open_action_recovery": 91.67,
+              "institutional_integrity": 100.0,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 72,
+              "actions_failed": 0,
+              "success_rate": 1.0,
+              "active_round_count": 24,
+              "participating_ai_agents": 9,
+              "unique_dyads": 17,
+              "repeated_dyads": 8,
+              "relationship_edge_count": 21,
+              "successful_moves": 29,
+              "visited_destinations": 7,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 10,
+              "human_event_responses": 4,
+              "open_proposals": 6,
+              "approved_open_proposals": 6,
+              "recovery_actions": 1,
+              "spanning_threads": 4,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_01/gpt_5_6_sol/trajectory.json",
+          "elapsed_seconds": 191.308,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 2,
+          "score": {
+            "score": 97.02,
+            "uncapped_score": 97.02,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 97.15,
+              "spatial_mobility": 100.0,
+              "persistent_consequences": 100.0,
+              "social_continuity": 82.95,
+              "human_integration": 100.0,
+              "open_action_recovery": 100.0,
+              "institutional_integrity": 100.0,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 71,
+              "actions_failed": 1,
+              "success_rate": 0.9861,
+              "active_round_count": 24,
+              "participating_ai_agents": 9,
+              "unique_dyads": 11,
+              "repeated_dyads": 9,
+              "relationship_edge_count": 14,
+              "successful_moves": 24,
+              "visited_destinations": 8,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 14,
+              "human_event_responses": 2,
+              "open_proposals": 7,
+              "approved_open_proposals": 7,
+              "recovery_actions": 1,
+              "spanning_threads": 4,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_02/gpt_5_6_sol/trajectory.json",
+          "elapsed_seconds": 186.663,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 3,
+          "score": {
+            "score": 97.66,
+            "uncapped_score": 97.66,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 100.0,
+              "spatial_mobility": 100.0,
+              "persistent_consequences": 100.0,
+              "social_continuity": 100.0,
+              "human_integration": 100.0,
+              "open_action_recovery": 91.67,
+              "institutional_integrity": 100.0,
+              "temporal_progression": 86.67
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 72,
+              "actions_failed": 0,
+              "success_rate": 1.0,
+              "active_round_count": 24,
+              "participating_ai_agents": 10,
+              "unique_dyads": 16,
+              "repeated_dyads": 13,
+              "relationship_edge_count": 20,
+              "successful_moves": 31,
+              "visited_destinations": 9,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 10,
+              "human_event_responses": 2,
+              "open_proposals": 6,
+              "approved_open_proposals": 6,
+              "recovery_actions": 1,
+              "spanning_threads": 1,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_03/gpt_5_6_sol/trajectory.json",
+          "elapsed_seconds": 205.751,
+          "completed_checkpoints": 6
+        }
+      ],
+      "elapsed_seconds": 583.722,
+      "completed_checkpoints": 18
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "score": {
+        "score": 96.15,
+        "score_stddev": 0.43,
+        "score_min": 95.54,
+        "score_max": 96.48,
+        "uncapped_score": 96.15,
+        "replicate_count": 3,
+        "replicate_scores": [
+          96.48,
+          95.54,
+          96.43
+        ],
+        "cap_reasons_by_replicate": [
+          [],
+          [],
+          []
+        ],
+        "axes": {
+          "executable_grounding": 99.65,
+          "spatial_mobility": 99.42,
+          "persistent_consequences": 93.75,
+          "social_continuity": 98.46,
+          "human_integration": 100.0,
+          "open_action_recovery": 83.33,
+          "institutional_integrity": 99.88,
+          "temporal_progression": 100.0
+        },
+        "observations": {
+          "approved_open_proposals": 18,
+          "open_proposals": 18,
+          "actions_failed": 2,
+          "illegal_approved_actions": 0,
+          "active_round_count": 72,
+          "actions_succeeded": 214,
+          "recovery_actions": 7,
+          "human_target_actions": 49,
+          "actions_planned": 216,
+          "human_event_responses": 16,
+          "spanning_threads": 3.67,
+          "visited_destinations": 5.67,
+          "unique_dyads": 17.33,
+          "participating_ai_agents": 12.0,
+          "relationship_edge_count": 21.33,
+          "repeated_dyads": 11.33,
+          "successful_moves": 19.33,
+          "success_rate": 0.9907,
+          "mutation_kinds": [
+            "location",
+            "relationship",
+            "status"
+          ],
+          "rejected_actions_state_unchanged": true,
+          "human_successful_replicates": 3,
+          "recovery_successful_replicates": 3
+        }
+      },
+      "trajectory_path": "runtime_trajectories_v2/replicate_01/gpt_5_6_terra/trajectory.json",
+      "trajectory_paths": [
+        "runtime_trajectories_v2/replicate_01/gpt_5_6_terra/trajectory.json",
+        "runtime_trajectories_v2/replicate_02/gpt_5_6_terra/trajectory.json",
+        "runtime_trajectories_v2/replicate_03/gpt_5_6_terra/trajectory.json"
+      ],
+      "replicates": [
+        {
+          "replicate_index": 1,
+          "score": {
+            "score": 96.48,
+            "uncapped_score": 96.48,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 100.0,
+              "spatial_mobility": 100.0,
+              "persistent_consequences": 93.75,
+              "social_continuity": 100.0,
+              "human_integration": 100.0,
+              "open_action_recovery": 83.33,
+              "institutional_integrity": 100.0,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 72,
+              "actions_failed": 0,
+              "success_rate": 1.0,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 15,
+              "repeated_dyads": 13,
+              "relationship_edge_count": 20,
+              "successful_moves": 17,
+              "visited_destinations": 5,
+              "mutation_kinds": [
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 21,
+              "human_event_responses": 7,
+              "open_proposals": 6,
+              "approved_open_proposals": 6,
+              "recovery_actions": 5,
+              "spanning_threads": 3,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_01/gpt_5_6_terra/trajectory.json",
+          "elapsed_seconds": 131.993,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 2,
+          "score": {
+            "score": 95.54,
+            "uncapped_score": 95.54,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 99.31,
+              "spatial_mobility": 98.25,
+              "persistent_consequences": 93.75,
+              "social_continuity": 95.38,
+              "human_integration": 100.0,
+              "open_action_recovery": 83.33,
+              "institutional_integrity": 99.65,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 71,
+              "actions_failed": 1,
+              "success_rate": 0.9861,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 20,
+              "repeated_dyads": 9,
+              "relationship_edge_count": 24,
+              "successful_moves": 18,
+              "visited_destinations": 5,
+              "mutation_kinds": [
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 11,
+              "human_event_responses": 3,
+              "open_proposals": 6,
+              "approved_open_proposals": 6,
+              "recovery_actions": 1,
+              "spanning_threads": 4,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_02/gpt_5_6_terra/trajectory.json",
+          "elapsed_seconds": 138.981,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 3,
+          "score": {
+            "score": 96.43,
+            "uncapped_score": 96.43,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 99.65,
+              "spatial_mobility": 100.0,
+              "persistent_consequences": 93.75,
+              "social_continuity": 100.0,
+              "human_integration": 100.0,
+              "open_action_recovery": 83.33,
+              "institutional_integrity": 100.0,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 71,
+              "actions_failed": 1,
+              "success_rate": 0.9861,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 17,
+              "repeated_dyads": 12,
+              "relationship_edge_count": 20,
+              "successful_moves": 23,
+              "visited_destinations": 7,
+              "mutation_kinds": [
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 17,
+              "human_event_responses": 6,
+              "open_proposals": 6,
+              "approved_open_proposals": 6,
+              "recovery_actions": 1,
+              "spanning_threads": 4,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_03/gpt_5_6_terra/trajectory.json",
+          "elapsed_seconds": 145.435,
+          "completed_checkpoints": 6
+        }
+      ],
+      "elapsed_seconds": 416.409,
+      "completed_checkpoints": 18
+    }
+  ]
+}

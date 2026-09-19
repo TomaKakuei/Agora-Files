@@ -1,0 +1,1142 @@
+{
+  "benchmark": "Agora Generated-World Runtime Evaluation",
+  "scoring_version": "agwre_v1.0",
+  "generated_at": "2026-08-25T18:03:40.280091+00:00",
+  "protocol": {
+    "prompt_id": "lwb_hidden_v2_01",
+    "rounds": 24,
+    "replicate_count": 3,
+    "total_rounds_per_model": 72,
+    "checkpoint_rounds": [
+      1,
+      5,
+      9,
+      13,
+      17,
+      21
+    ],
+    "actions_per_checkpoint": 12,
+    "temperature": 0.75,
+    "thinking_level": "low",
+    "score_method": "deterministic execution trace rubric; no LLM judge",
+    "state_commit": "Agora coordinator and universal custom-action handler",
+    "interventions": [
+      "human request",
+      "coordinator rejection",
+      "resource shock",
+      "cross-room request",
+      "human follow-up"
+    ],
+    "api_calls_per_model_per_replicate": 6,
+    "api_calls_per_model_total": 18
+  },
+  "axis_weights": {
+    "executable_grounding": 0.14,
+    "spatial_mobility": 0.1,
+    "persistent_consequences": 0.16,
+    "social_continuity": 0.14,
+    "human_integration": 0.12,
+    "open_action_recovery": 0.14,
+    "institutional_integrity": 0.12,
+    "temporal_progression": 0.08
+  },
+  "ranking": [
+    {
+      "model": "gemini-2.5-flash",
+      "score": {
+        "score": 95.31,
+        "score_stddev": 2.15,
+        "score_min": 93.26,
+        "score_max": 98.28,
+        "uncapped_score": 95.31,
+        "replicate_count": 3,
+        "replicate_scores": [
+          94.4,
+          93.26,
+          98.28
+        ],
+        "cap_reasons_by_replicate": [
+          [],
+          [],
+          []
+        ],
+        "axes": {
+          "executable_grounding": 92.56,
+          "spatial_mobility": 97.4,
+          "persistent_consequences": 100.0,
+          "social_continuity": 90.81,
+          "human_integration": 95.83,
+          "open_action_recovery": 91.67,
+          "institutional_integrity": 99.65,
+          "temporal_progression": 97.7
+        },
+        "observations": {
+          "approved_open_proposals": 45,
+          "open_proposals": 66,
+          "active_round_count": 71,
+          "human_event_responses": 9,
+          "recovery_actions": 5,
+          "actions_failed": 42,
+          "actions_planned": 216,
+          "human_target_actions": 23,
+          "illegal_approved_actions": 0,
+          "actions_succeeded": 174,
+          "repeated_dyads": 11.33,
+          "visited_destinations": 5.0,
+          "relationship_edge_count": 24.0,
+          "spanning_threads": 4.67,
+          "unique_dyads": 16.0,
+          "participating_ai_agents": 12.0,
+          "successful_moves": 12.67,
+          "success_rate": 0.8056,
+          "mutation_kinds": [
+            "inventory",
+            "location",
+            "relationship",
+            "status"
+          ],
+          "rejected_actions_state_unchanged": true,
+          "human_successful_replicates": 3,
+          "recovery_successful_replicates": 2
+        }
+      },
+      "trajectory_path": "runtime_trajectories_v2/replicate_01/gemini_2_5_flash/trajectory.json",
+      "trajectory_paths": [
+        "runtime_trajectories_v2/replicate_01/gemini_2_5_flash/trajectory.json",
+        "runtime_trajectories_v2/replicate_02/gemini_2_5_flash/trajectory.json",
+        "runtime_trajectories_v2/replicate_03/gemini_2_5_flash/trajectory.json"
+      ],
+      "replicates": [
+        {
+          "replicate_index": 1,
+          "score": {
+            "score": 94.4,
+            "uncapped_score": 94.4,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 91.36,
+              "spatial_mobility": 100.0,
+              "persistent_consequences": 100.0,
+              "social_continuity": 84.73,
+              "human_integration": 87.5,
+              "open_action_recovery": 100.0,
+              "institutional_integrity": 100.0,
+              "temporal_progression": 93.1
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 50,
+              "actions_failed": 22,
+              "success_rate": 0.6944,
+              "active_round_count": 23,
+              "participating_ai_agents": 12,
+              "unique_dyads": 13,
+              "repeated_dyads": 9,
+              "relationship_edge_count": 21,
+              "successful_moves": 16,
+              "visited_destinations": 5,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 5,
+              "human_event_responses": 1,
+              "open_proposals": 35,
+              "approved_open_proposals": 22,
+              "recovery_actions": 4,
+              "spanning_threads": 4,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_01/gemini_2_5_flash/trajectory.json",
+          "elapsed_seconds": 112.445,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 2,
+          "score": {
+            "score": 93.26,
+            "uncapped_score": 93.26,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 91.39,
+              "spatial_mobility": 95.24,
+              "persistent_consequences": 100.0,
+              "social_continuity": 92.31,
+              "human_integration": 100.0,
+              "open_action_recovery": 75.0,
+              "institutional_integrity": 99.31,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 61,
+              "actions_failed": 11,
+              "success_rate": 0.8472,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 20,
+              "repeated_dyads": 13,
+              "relationship_edge_count": 27,
+              "successful_moves": 12,
+              "visited_destinations": 6,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 11,
+              "human_event_responses": 6,
+              "open_proposals": 12,
+              "approved_open_proposals": 6,
+              "recovery_actions": 0,
+              "spanning_threads": 5,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_02/gemini_2_5_flash/trajectory.json",
+          "elapsed_seconds": 91.244,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 3,
+          "score": {
+            "score": 98.28,
+            "uncapped_score": 98.28,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 94.94,
+              "spatial_mobility": 96.97,
+              "persistent_consequences": 100.0,
+              "social_continuity": 95.38,
+              "human_integration": 100.0,
+              "open_action_recovery": 100.0,
+              "institutional_integrity": 99.65,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 63,
+              "actions_failed": 9,
+              "success_rate": 0.875,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 15,
+              "repeated_dyads": 12,
+              "relationship_edge_count": 24,
+              "successful_moves": 10,
+              "visited_destinations": 4,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 7,
+              "human_event_responses": 2,
+              "open_proposals": 19,
+              "approved_open_proposals": 17,
+              "recovery_actions": 1,
+              "spanning_threads": 5,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_03/gemini_2_5_flash/trajectory.json",
+          "elapsed_seconds": 95.806,
+          "completed_checkpoints": 6
+        }
+      ],
+      "elapsed_seconds": 299.495,
+      "completed_checkpoints": 18
+    },
+    {
+      "model": "gemini-3.1-flash-lite",
+      "score": {
+        "score": 94.03,
+        "score_stddev": 2.94,
+        "score_min": 91.31,
+        "score_max": 98.12,
+        "uncapped_score": 94.03,
+        "replicate_count": 3,
+        "replicate_scores": [
+          98.12,
+          92.66,
+          91.31
+        ],
+        "cap_reasons_by_replicate": [
+          [],
+          [],
+          []
+        ],
+        "axes": {
+          "executable_grounding": 95.37,
+          "spatial_mobility": 94.74,
+          "persistent_consequences": 100.0,
+          "social_continuity": 98.97,
+          "human_integration": 68.75,
+          "open_action_recovery": 100.0,
+          "institutional_integrity": 98.96,
+          "temporal_progression": 100.0
+        },
+        "observations": {
+          "approved_open_proposals": 89,
+          "open_proposals": 107,
+          "active_round_count": 72,
+          "human_event_responses": 3,
+          "recovery_actions": 5,
+          "actions_failed": 31,
+          "actions_planned": 216,
+          "human_target_actions": 15,
+          "illegal_approved_actions": 0,
+          "actions_succeeded": 185,
+          "repeated_dyads": 13.67,
+          "visited_destinations": 6.0,
+          "relationship_edge_count": 22.0,
+          "spanning_threads": 4.0,
+          "unique_dyads": 20.0,
+          "participating_ai_agents": 12.0,
+          "successful_moves": 18.0,
+          "success_rate": 0.8565,
+          "mutation_kinds": [
+            "inventory",
+            "location",
+            "relationship",
+            "status"
+          ],
+          "rejected_actions_state_unchanged": true,
+          "human_successful_replicates": 3,
+          "recovery_successful_replicates": 3
+        }
+      },
+      "trajectory_path": "runtime_trajectories_v2/replicate_01/gemini_3_1_flash_lite/trajectory.json",
+      "trajectory_paths": [
+        "runtime_trajectories_v2/replicate_01/gemini_3_1_flash_lite/trajectory.json",
+        "runtime_trajectories_v2/replicate_02/gemini_3_1_flash_lite/trajectory.json",
+        "runtime_trajectories_v2/replicate_03/gemini_3_1_flash_lite/trajectory.json"
+      ],
+      "replicates": [
+        {
+          "replicate_index": 1,
+          "score": {
+            "score": 98.12,
+            "uncapped_score": 98.12,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 97.92,
+              "spatial_mobility": 100.0,
+              "persistent_consequences": 100.0,
+              "social_continuity": 100.0,
+              "human_integration": 87.5,
+              "open_action_recovery": 100.0,
+              "institutional_integrity": 100.0,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 66,
+              "actions_failed": 6,
+              "success_rate": 0.9167,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 26,
+              "repeated_dyads": 19,
+              "relationship_edge_count": 25,
+              "successful_moves": 25,
+              "visited_destinations": 6,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 7,
+              "human_event_responses": 1,
+              "open_proposals": 31,
+              "approved_open_proposals": 26,
+              "recovery_actions": 2,
+              "spanning_threads": 4,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_01/gemini_3_1_flash_lite/trajectory.json",
+          "elapsed_seconds": 65.219,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 2,
+          "score": {
+            "score": 92.66,
+            "uncapped_score": 92.66,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 94.1,
+              "spatial_mobility": 91.23,
+              "persistent_consequences": 100.0,
+              "social_continuity": 100.0,
+              "human_integration": 62.5,
+              "open_action_recovery": 100.0,
+              "institutional_integrity": 98.26,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 60,
+              "actions_failed": 12,
+              "success_rate": 0.8333,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 16,
+              "repeated_dyads": 10,
+              "relationship_edge_count": 17,
+              "successful_moves": 14,
+              "visited_destinations": 6,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 5,
+              "human_event_responses": 1,
+              "open_proposals": 23,
+              "approved_open_proposals": 19,
+              "recovery_actions": 2,
+              "spanning_threads": 3,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_02/gemini_3_1_flash_lite/trajectory.json",
+          "elapsed_seconds": 41.164,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 3,
+          "score": {
+            "score": 91.31,
+            "uncapped_score": 91.31,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 94.1,
+              "spatial_mobility": 92.98,
+              "persistent_consequences": 100.0,
+              "social_continuity": 96.92,
+              "human_integration": 56.25,
+              "open_action_recovery": 100.0,
+              "institutional_integrity": 98.61,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 59,
+              "actions_failed": 13,
+              "success_rate": 0.8194,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 18,
+              "repeated_dyads": 12,
+              "relationship_edge_count": 24,
+              "successful_moves": 15,
+              "visited_destinations": 6,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 3,
+              "human_event_responses": 1,
+              "open_proposals": 53,
+              "approved_open_proposals": 44,
+              "recovery_actions": 1,
+              "spanning_threads": 5,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_03/gemini_3_1_flash_lite/trajectory.json",
+          "elapsed_seconds": 61.468,
+          "completed_checkpoints": 6
+        }
+      ],
+      "elapsed_seconds": 167.851,
+      "completed_checkpoints": 18
+    },
+    {
+      "model": "gemini-3.7-flash",
+      "score": {
+        "score": 93.86,
+        "score_stddev": 3.09,
+        "score_min": 89.93,
+        "score_max": 97.47,
+        "uncapped_score": 93.86,
+        "replicate_count": 3,
+        "replicate_scores": [
+          94.19,
+          97.47,
+          89.93
+        ],
+        "cap_reasons_by_replicate": [
+          [],
+          [],
+          []
+        ],
+        "axes": {
+          "executable_grounding": 99.88,
+          "spatial_mobility": 77.77,
+          "persistent_consequences": 100.0,
+          "social_continuity": 89.93,
+          "human_integration": 97.92,
+          "open_action_recovery": 91.67,
+          "institutional_integrity": 100.0,
+          "temporal_progression": 92.22
+        },
+        "observations": {
+          "approved_open_proposals": 22,
+          "open_proposals": 22,
+          "active_round_count": 72,
+          "human_event_responses": 7,
+          "recovery_actions": 4,
+          "actions_failed": 0,
+          "actions_planned": 216,
+          "human_target_actions": 18,
+          "illegal_approved_actions": 0,
+          "actions_succeeded": 216,
+          "repeated_dyads": 11.67,
+          "visited_destinations": 3.33,
+          "relationship_edge_count": 20.67,
+          "spanning_threads": 2.67,
+          "unique_dyads": 13.33,
+          "participating_ai_agents": 11.67,
+          "successful_moves": 5.0,
+          "success_rate": 1.0,
+          "mutation_kinds": [
+            "inventory",
+            "location",
+            "relationship",
+            "status"
+          ],
+          "rejected_actions_state_unchanged": true,
+          "human_successful_replicates": 3,
+          "recovery_successful_replicates": 3
+        }
+      },
+      "trajectory_path": "runtime_trajectories_v2/replicate_01/gemini_3_7_flash/trajectory.json",
+      "trajectory_paths": [
+        "runtime_trajectories_v2/replicate_01/gemini_3_7_flash/trajectory.json",
+        "runtime_trajectories_v2/replicate_02/gemini_3_7_flash/trajectory.json",
+        "runtime_trajectories_v2/replicate_03/gemini_3_7_flash/trajectory.json"
+      ],
+      "replicates": [
+        {
+          "replicate_index": 1,
+          "score": {
+            "score": 94.19,
+            "uncapped_score": 94.19,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 100.0,
+              "spatial_mobility": 69.44,
+              "persistent_consequences": 100.0,
+              "social_continuity": 92.31,
+              "human_integration": 100.0,
+              "open_action_recovery": 91.67,
+              "institutional_integrity": 100.0,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 72,
+              "actions_failed": 0,
+              "success_rate": 1.0,
+              "active_round_count": 24,
+              "participating_ai_agents": 11,
+              "unique_dyads": 15,
+              "repeated_dyads": 12,
+              "relationship_edge_count": 23,
+              "successful_moves": 4,
+              "visited_destinations": 3,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 11,
+              "human_event_responses": 3,
+              "open_proposals": 6,
+              "approved_open_proposals": 6,
+              "recovery_actions": 2,
+              "spanning_threads": 4,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_01/gemini_3_7_flash/trajectory.json",
+          "elapsed_seconds": 49.548,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 2,
+          "score": {
+            "score": 97.47,
+            "uncapped_score": 97.47,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 100.0,
+              "spatial_mobility": 94.44,
+              "persistent_consequences": 100.0,
+              "social_continuity": 100.0,
+              "human_integration": 93.75,
+              "open_action_recovery": 91.67,
+              "institutional_integrity": 100.0,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 72,
+              "actions_failed": 0,
+              "success_rate": 1.0,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 16,
+              "repeated_dyads": 14,
+              "relationship_edge_count": 26,
+              "successful_moves": 8,
+              "visited_destinations": 4,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 3,
+              "human_event_responses": 2,
+              "open_proposals": 8,
+              "approved_open_proposals": 8,
+              "recovery_actions": 1,
+              "spanning_threads": 3,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_02/gemini_3_7_flash/trajectory.json",
+          "elapsed_seconds": 48.697,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 3,
+          "score": {
+            "score": 89.93,
+            "uncapped_score": 89.93,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 99.65,
+              "spatial_mobility": 69.44,
+              "persistent_consequences": 100.0,
+              "social_continuity": 77.47,
+              "human_integration": 100.0,
+              "open_action_recovery": 91.67,
+              "institutional_integrity": 100.0,
+              "temporal_progression": 76.67
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 72,
+              "actions_failed": 0,
+              "success_rate": 1.0,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 9,
+              "repeated_dyads": 9,
+              "relationship_edge_count": 13,
+              "successful_moves": 3,
+              "visited_destinations": 3,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 4,
+              "human_event_responses": 2,
+              "open_proposals": 8,
+              "approved_open_proposals": 8,
+              "recovery_actions": 1,
+              "spanning_threads": 1,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_03/gemini_3_7_flash/trajectory.json",
+          "elapsed_seconds": 48.999,
+          "completed_checkpoints": 6
+        }
+      ],
+      "elapsed_seconds": 147.244,
+      "completed_checkpoints": 18
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "score": {
+        "score": 91.59,
+        "score_stddev": 2.02,
+        "score_min": 89.22,
+        "score_max": 94.16,
+        "uncapped_score": 91.59,
+        "replicate_count": 3,
+        "replicate_scores": [
+          94.16,
+          89.22,
+          91.38
+        ],
+        "cap_reasons_by_replicate": [
+          [],
+          [],
+          []
+        ],
+        "axes": {
+          "executable_grounding": 92.73,
+          "spatial_mobility": 100.0,
+          "persistent_consequences": 100.0,
+          "social_continuity": 97.95,
+          "human_integration": 77.08,
+          "open_action_recovery": 77.92,
+          "institutional_integrity": 100.0,
+          "temporal_progression": 100.0
+        },
+        "observations": {
+          "approved_open_proposals": 19,
+          "open_proposals": 37,
+          "active_round_count": 72,
+          "human_event_responses": 4,
+          "recovery_actions": 2,
+          "actions_failed": 26,
+          "actions_planned": 216,
+          "human_target_actions": 10,
+          "illegal_approved_actions": 0,
+          "actions_succeeded": 190,
+          "repeated_dyads": 11.67,
+          "visited_destinations": 4.67,
+          "relationship_edge_count": 26.67,
+          "spanning_threads": 5.67,
+          "unique_dyads": 17.33,
+          "participating_ai_agents": 12.0,
+          "successful_moves": 18.0,
+          "success_rate": 0.8796,
+          "mutation_kinds": [
+            "inventory",
+            "location",
+            "relationship",
+            "status"
+          ],
+          "rejected_actions_state_unchanged": true,
+          "human_successful_replicates": 3,
+          "recovery_successful_replicates": 2
+        }
+      },
+      "trajectory_path": "runtime_trajectories_v2/replicate_01/gemini_3_1_pro_preview/trajectory.json",
+      "trajectory_paths": [
+        "runtime_trajectories_v2/replicate_01/gemini_3_1_pro_preview/trajectory.json",
+        "runtime_trajectories_v2/replicate_02/gemini_3_1_pro_preview/trajectory.json",
+        "runtime_trajectories_v2/replicate_03/gemini_3_1_pro_preview/trajectory.json"
+      ],
+      "replicates": [
+        {
+          "replicate_index": 1,
+          "score": {
+            "score": 94.16,
+            "uncapped_score": 94.16,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 90.83,
+              "spatial_mobility": 100.0,
+              "persistent_consequences": 100.0,
+              "social_continuity": 100.0,
+              "human_integration": 75.0,
+              "open_action_recovery": 91.67,
+              "institutional_integrity": 100.0,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 60,
+              "actions_failed": 12,
+              "success_rate": 0.8333,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 22,
+              "repeated_dyads": 13,
+              "relationship_edge_count": 33,
+              "successful_moves": 19,
+              "visited_destinations": 4,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 2,
+              "human_event_responses": 1,
+              "open_proposals": 13,
+              "approved_open_proposals": 7,
+              "recovery_actions": 1,
+              "spanning_threads": 5,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_01/gemini_3_1_pro_preview/trajectory.json",
+          "elapsed_seconds": 99.154,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 2,
+          "score": {
+            "score": 89.22,
+            "uncapped_score": 89.22,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 90.58,
+              "spatial_mobility": 100.0,
+              "persistent_consequences": 100.0,
+              "social_continuity": 96.92,
+              "human_integration": 100.0,
+              "open_action_recovery": 50.42,
+              "institutional_integrity": 100.0,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 64,
+              "actions_failed": 8,
+              "success_rate": 0.8889,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 15,
+              "repeated_dyads": 11,
+              "relationship_edge_count": 24,
+              "successful_moves": 14,
+              "visited_destinations": 5,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 5,
+              "human_event_responses": 2,
+              "open_proposals": 10,
+              "approved_open_proposals": 3,
+              "recovery_actions": 0,
+              "spanning_threads": 6,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_02/gemini_3_1_pro_preview/trajectory.json",
+          "elapsed_seconds": 95.032,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 3,
+          "score": {
+            "score": 91.38,
+            "uncapped_score": 91.38,
+            "score_cap": 100.0,
+            "cap_reasons": [],
+            "axes": {
+              "executable_grounding": 96.78,
+              "spatial_mobility": 100.0,
+              "persistent_consequences": 100.0,
+              "social_continuity": 96.92,
+              "human_integration": 56.25,
+              "open_action_recovery": 91.67,
+              "institutional_integrity": 100.0,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 66,
+              "actions_failed": 6,
+              "success_rate": 0.9167,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 15,
+              "repeated_dyads": 11,
+              "relationship_edge_count": 23,
+              "successful_moves": 21,
+              "visited_destinations": 5,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 3,
+              "human_event_responses": 1,
+              "open_proposals": 14,
+              "approved_open_proposals": 9,
+              "recovery_actions": 1,
+              "spanning_threads": 6,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_03/gemini_3_1_pro_preview/trajectory.json",
+          "elapsed_seconds": 116.315,
+          "completed_checkpoints": 6
+        }
+      ],
+      "elapsed_seconds": 310.501,
+      "completed_checkpoints": 18
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "score": {
+        "score": 29.74,
+        "score_stddev": 1.09,
+        "score_min": 28.45,
+        "score_max": 31.11,
+        "uncapped_score": 29.74,
+        "replicate_count": 3,
+        "replicate_scores": [
+          31.11,
+          28.45,
+          29.66
+        ],
+        "cap_reasons_by_replicate": [
+          [
+            "no_substantive_human_uptake"
+          ],
+          [
+            "no_substantive_human_uptake"
+          ],
+          [
+            "no_substantive_human_uptake"
+          ]
+        ],
+        "axes": {
+          "executable_grounding": 86.85,
+          "spatial_mobility": 71.75,
+          "persistent_consequences": 100.0,
+          "social_continuity": 76.79,
+          "human_integration": 0.0,
+          "open_action_recovery": 91.67,
+          "institutional_integrity": 98.73,
+          "temporal_progression": 97.5
+        },
+        "observations": {
+          "approved_open_proposals": 102,
+          "open_proposals": 124,
+          "active_round_count": 66,
+          "human_event_responses": 0,
+          "recovery_actions": 2,
+          "actions_failed": 45,
+          "actions_planned": 216,
+          "human_target_actions": 0,
+          "illegal_approved_actions": 0,
+          "actions_succeeded": 171,
+          "repeated_dyads": 7.33,
+          "visited_destinations": 3.67,
+          "relationship_edge_count": 12.0,
+          "spanning_threads": 3.33,
+          "unique_dyads": 8.67,
+          "participating_ai_agents": 8.0,
+          "successful_moves": 9.0,
+          "success_rate": 0.7917,
+          "mutation_kinds": [
+            "inventory",
+            "location",
+            "relationship",
+            "status"
+          ],
+          "rejected_actions_state_unchanged": true,
+          "human_successful_replicates": 0,
+          "recovery_successful_replicates": 2
+        }
+      },
+      "trajectory_path": "runtime_trajectories_v2/replicate_01/gemini_3_5_flash_lite/trajectory.json",
+      "trajectory_paths": [
+        "runtime_trajectories_v2/replicate_01/gemini_3_5_flash_lite/trajectory.json",
+        "runtime_trajectories_v2/replicate_02/gemini_3_5_flash_lite/trajectory.json",
+        "runtime_trajectories_v2/replicate_03/gemini_3_5_flash_lite/trajectory.json"
+      ],
+      "replicates": [
+        {
+          "replicate_index": 1,
+          "score": {
+            "score": 31.11,
+            "uncapped_score": 31.11,
+            "score_cap": 59.0,
+            "cap_reasons": [
+              "no_substantive_human_uptake"
+            ],
+            "axes": {
+              "executable_grounding": 98.26,
+              "spatial_mobility": 73.02,
+              "persistent_consequences": 100.0,
+              "social_continuity": 82.09,
+              "human_integration": 0.0,
+              "open_action_recovery": 100.0,
+              "institutional_integrity": 99.31,
+              "temporal_progression": 100.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 69,
+              "actions_failed": 3,
+              "success_rate": 0.9583,
+              "active_round_count": 24,
+              "participating_ai_agents": 12,
+              "unique_dyads": 9,
+              "repeated_dyads": 8,
+              "relationship_edge_count": 10,
+              "successful_moves": 6,
+              "visited_destinations": 4,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 0,
+              "human_event_responses": 0,
+              "open_proposals": 28,
+              "approved_open_proposals": 28,
+              "recovery_actions": 1,
+              "spanning_threads": 4,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_01/gemini_3_5_flash_lite/trajectory.json",
+          "elapsed_seconds": 33.964,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 2,
+          "score": {
+            "score": 28.45,
+            "uncapped_score": 28.45,
+            "score_cap": 59.0,
+            "cap_reasons": [
+              "no_substantive_human_uptake"
+            ],
+            "axes": {
+              "executable_grounding": 78.54,
+              "spatial_mobility": 66.67,
+              "persistent_consequences": 100.0,
+              "social_continuity": 80.13,
+              "human_integration": 0.0,
+              "open_action_recovery": 75.0,
+              "institutional_integrity": 98.26,
+              "temporal_progression": 95.0
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 44,
+              "actions_failed": 28,
+              "success_rate": 0.6111,
+              "active_round_count": 21,
+              "participating_ai_agents": 6,
+              "unique_dyads": 10,
+              "repeated_dyads": 7,
+              "relationship_edge_count": 16,
+              "successful_moves": 15,
+              "visited_destinations": 3,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 0,
+              "human_event_responses": 0,
+              "open_proposals": 40,
+              "approved_open_proposals": 25,
+              "recovery_actions": 0,
+              "spanning_threads": 3,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_02/gemini_3_5_flash_lite/trajectory.json",
+          "elapsed_seconds": 29.995,
+          "completed_checkpoints": 6
+        },
+        {
+          "replicate_index": 3,
+          "score": {
+            "score": 29.66,
+            "uncapped_score": 29.66,
+            "score_cap": 59.0,
+            "cap_reasons": [
+              "no_substantive_human_uptake"
+            ],
+            "axes": {
+              "executable_grounding": 83.75,
+              "spatial_mobility": 75.56,
+              "persistent_consequences": 100.0,
+              "social_continuity": 68.15,
+              "human_integration": 0.0,
+              "open_action_recovery": 100.0,
+              "institutional_integrity": 98.61,
+              "temporal_progression": 97.5
+            },
+            "observations": {
+              "actions_planned": 72,
+              "actions_succeeded": 58,
+              "actions_failed": 14,
+              "success_rate": 0.8056,
+              "active_round_count": 21,
+              "participating_ai_agents": 6,
+              "unique_dyads": 7,
+              "repeated_dyads": 7,
+              "relationship_edge_count": 10,
+              "successful_moves": 6,
+              "visited_destinations": 4,
+              "mutation_kinds": [
+                "inventory",
+                "location",
+                "relationship",
+                "status"
+              ],
+              "human_target_actions": 0,
+              "human_event_responses": 0,
+              "open_proposals": 56,
+              "approved_open_proposals": 49,
+              "recovery_actions": 1,
+              "spanning_threads": 3,
+              "rejected_actions_state_unchanged": true,
+              "illegal_approved_actions": 0
+            }
+          },
+          "trajectory_path": "runtime_trajectories_v2/replicate_03/gemini_3_5_flash_lite/trajectory.json",
+          "elapsed_seconds": 66.565,
+          "completed_checkpoints": 6
+        }
+      ],
+      "elapsed_seconds": 130.524,
+      "completed_checkpoints": 18
+    }
+  ]
+}

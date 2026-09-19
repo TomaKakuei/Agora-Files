@@ -1,0 +1,711 @@
+{
+  "generated_at": "2026-07-29T20:45:14.757222+00:00",
+  "fault": "roles inventory contract defect after the first complete node pass",
+  "world_count": 5,
+  "complete_successes": 5,
+  "correctly_attributed_roles_faults": 5,
+  "mean_provider_call_reduction_vs_full_rebuild": 0.48,
+  "mean_token_reduction_vs_full_rebuild": 0.3988,
+  "mean_localized_repair_provider_elapsed_seconds": 63.2294,
+  "mean_initial_provider_elapsed_seconds": 86.3777,
+  "median_localized_repair_provider_elapsed_seconds": 52.1072,
+  "median_initial_provider_elapsed_seconds": 85.6809,
+  "token_reduction_worlds": 5,
+  "token_reduction_one_sided_sign_test_p": 0.03125,
+  "elapsed_reduction_worlds": 4,
+  "elapsed_reduction_one_sided_sign_test_p": 0.1875,
+  "worlds": [
+    {
+      "trial_id": "cartographer_lung_exchange_r01",
+      "world_name": "Cartographer Lung Exchange",
+      "draft_id": "creator_20260727_233333_efa8235f",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260727_233333_efa8235f/revisions/r001",
+      "replicate": 1,
+      "request": {
+        "world_name": "Cartographer Lung Exchange",
+        "genre": "biopunk orbital political economy",
+        "player_count_target": 4,
+        "agent_count_target": 12,
+        "focus": "breath futures, moving architecture, embodied diplomacy, readable spatial consequences",
+        "seed": 727102,
+        "brief": "Inside a colossal biomechanical lung orbiting a gas giant, breathable atmosphere is traded as futures and each exhalation tide changes which institutions can reach one another. Build six or more functionally distinct rooms, twelve deeply interdependent named agents, explicit scarce resources, enforceable contracts, rival institutions, and player actions that visibly alter room access, prices, trust, and air pressure. Every room needs one or two premise-specific semantic hero props. Keep the visual language coherent and inspectable: top-down pixel world, oxidized teal membranes, ivory ceramic pressure hardware, saffron signal threads, charcoal shadows, no visible labels, no generic cyberpunk neon, no medieval fantasy, no Beijing or antique-market leakage."
+      },
+      "elapsed_seconds": 196.019,
+      "generation_ok": true,
+      "complete_success": true,
+      "error": "",
+      "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/cartographer_lung_exchange_r01_decomposed_builder_spec.json",
+      "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/cartographer_lung_exchange_r01_decomposed_world_config.json",
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "cartographer_lung_exchange_01"
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 2,
+        "inventory_items": 117,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "package_validation_status": "",
+      "compiler_critique_applied": false,
+      "compiler_critique_should_repair": false,
+      "generation_node_retries": [
+        {
+          "attempt": 1,
+          "failed_node": "contract",
+          "error": "ValueError: Evaluator-seeded roles defect: character 1 has fewer than 8 valid inventory items",
+          "invalidated_cache_keys": [
+            "hooks",
+            "roles",
+            "wardrobe"
+          ],
+          "preserved_cache_keys": [
+            "items",
+            "materials",
+            "planner",
+            "rooms",
+            "visual_canon"
+          ]
+        }
+      ],
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/cartographer_lung_exchange_r01_vertex_calls.jsonl",
+        "provider_attempt_count": 16,
+        "successful_attempt_count": 16,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 16,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 16
+        },
+        "stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 2,
+          "main_character_generation": 6,
+          "world_creator_generation": 6,
+          "world_creator_text_generation": 1,
+          "world_visual_canon_generation": 1
+        },
+        "model_attempt_counts": {
+          "gemini-3-flash-preview": 16
+        },
+        "provider_elapsed_seconds_sum": 190.044,
+        "token_totals": {
+          "candidatesTokenCount": 25386,
+          "promptTokenCount": 38900,
+          "thoughtsTokenCount": 290,
+          "totalTokenCount": 64576
+        }
+      },
+      "seeded_fault_fired": true,
+      "localized_repair_measurement": {
+        "initial_provider_attempts": 10,
+        "pre_seed_extra_provider_attempts": 0,
+        "pre_seed_retry_event_count": 0,
+        "localized_repair_provider_attempts": 5,
+        "full_rebuild_call_counterfactual": 10,
+        "provider_call_reduction_vs_full_rebuild": 0.5,
+        "initial_tokens": 27288,
+        "localized_repair_tokens": 19440,
+        "token_reduction_vs_full_rebuild": 0.2876,
+        "initial_provider_elapsed_seconds": 78.2145,
+        "localized_repair_provider_elapsed_seconds": 95.9835,
+        "repair_stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 1,
+          "main_character_generation": 3,
+          "world_creator_generation": 1
+        },
+        "failed_node": "contract",
+        "invalidated_cache_keys": [
+          "hooks",
+          "roles",
+          "wardrobe"
+        ],
+        "preserved_cache_keys": [
+          "items",
+          "materials",
+          "planner",
+          "rooms",
+          "visual_canon"
+        ]
+      }
+    },
+    {
+      "trial_id": "archive_of_borrowed_gravity_r01",
+      "world_name": "Archive of Borrowed Gravity",
+      "draft_id": "creator_20260728_002605_dd9ffc0c",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_002605_dd9ffc0c/revisions/r001",
+      "replicate": 1,
+      "request": {
+        "world_name": "Archive of Borrowed Gravity",
+        "genre": "civic archive, gravity-rights exchange, spatial bureaucracy",
+        "player_count_target": 4,
+        "agent_count_target": 12,
+        "focus": "embodied social simulation with a tradeable physics system",
+        "seed": 727103,
+        "brief": "A municipal archive licenses gravity vectors as property. Couriers carry temporary down-directions, families mortgage ballast, and arbitrators settle accidents caused by counterfeit vectors. Build exactly six connected, functionally distinct rooms and twelve socially entangled agents. Make gravity rights affect movement, access, prices, disputes, and visible room conditions rather than serving as lore. Include one or two large world-specific semantic machines or props per room. Use cobalt glass, bone-white ceramic, vermilion plumb lines, graphite shadows, and brass measurement hardware in a coherent top-down pixel-art canon. Avoid generic cyberpunk, medieval fantasy, Beijing references, signs, captions, readable letters, logos, and text baked into art."
+      },
+      "elapsed_seconds": 156.8921,
+      "generation_ok": true,
+      "complete_success": true,
+      "error": "",
+      "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/archive_of_borrowed_gravity_r01_decomposed_builder_spec.json",
+      "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/archive_of_borrowed_gravity_r01_decomposed_world_config.json",
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "archive_borrowed_gravity_001"
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 2,
+        "inventory_items": 117,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "package_validation_status": "",
+      "compiler_critique_applied": false,
+      "compiler_critique_should_repair": false,
+      "generation_node_retries": [
+        {
+          "attempt": 1,
+          "failed_node": "contract",
+          "error": "ValueError: Evaluator-seeded roles defect: character 1 has fewer than 8 valid inventory items",
+          "invalidated_cache_keys": [
+            "hooks",
+            "roles",
+            "wardrobe"
+          ],
+          "preserved_cache_keys": [
+            "items",
+            "materials",
+            "planner",
+            "rooms",
+            "visual_canon"
+          ]
+        }
+      ],
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/archive_of_borrowed_gravity_r01_vertex_calls.jsonl",
+        "provider_attempt_count": 16,
+        "successful_attempt_count": 16,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 16,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 16
+        },
+        "stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 2,
+          "main_character_generation": 6,
+          "world_creator_generation": 6,
+          "world_creator_text_generation": 1,
+          "world_visual_canon_generation": 1
+        },
+        "model_attempt_counts": {
+          "gemini-3-flash-preview": 16
+        },
+        "provider_elapsed_seconds_sum": 150.8292,
+        "token_totals": {
+          "candidatesTokenCount": 21820,
+          "promptTokenCount": 39740,
+          "thoughtsTokenCount": 298,
+          "totalTokenCount": 61858
+        }
+      },
+      "seeded_fault_fired": true,
+      "localized_repair_measurement": {
+        "initial_provider_attempts": 10,
+        "pre_seed_extra_provider_attempts": 0,
+        "pre_seed_retry_event_count": 0,
+        "localized_repair_provider_attempts": 5,
+        "full_rebuild_call_counterfactual": 10,
+        "provider_call_reduction_vs_full_rebuild": 0.5,
+        "initial_tokens": 27432,
+        "localized_repair_tokens": 15639,
+        "token_reduction_vs_full_rebuild": 0.4299,
+        "initial_provider_elapsed_seconds": 82.8405,
+        "localized_repair_provider_elapsed_seconds": 51.5298,
+        "repair_stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 1,
+          "main_character_generation": 3,
+          "world_creator_generation": 1
+        },
+        "failed_node": "contract",
+        "invalidated_cache_keys": [
+          "hooks",
+          "roles",
+          "wardrobe"
+        ],
+        "preserved_cache_keys": [
+          "items",
+          "materials",
+          "planner",
+          "rooms",
+          "visual_canon"
+        ]
+      }
+    },
+    {
+      "trial_id": "intertidal_embassy_for_extinct_rivers_r01",
+      "world_name": "Intertidal Embassy for Extinct Rivers",
+      "draft_id": "creator_20260728_020032_6f7b670a",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_020032_6f7b670a/revisions/r001",
+      "replicate": 1,
+      "request": {
+        "world_name": "Intertidal Embassy for Extinct Rivers",
+        "genre": "tidal diplomatic habitat, sediment memory, ecological treaty economy",
+        "player_count_target": 4,
+        "agent_count_target": 12,
+        "focus": "multimodal environmental state tied to negotiation and memory",
+        "seed": 727104,
+        "brief": "An intertidal embassy reconstructs extinct rivers from sediment memories and negotiates their legal personhood. Delegates, hydrologists, smugglers, salt gardeners, and memory divers trade flow rights, flood testimony, watershed debts, and authenticated silt. Build exactly six connected, functionally distinct rooms and twelve socially entangled agents. The tide and reconstructed river moods must alter room affordances, trade routes, evidence, and conflicts. Include one or two unmistakable world-specific semantic props per room. Use verdigris copper, salt-white stone, indigo water, coral-red treaty seals without writing, and dark kelp-green shadows in a coherent top-down pixel-art canon. Avoid generic underwater ruins, generic fantasy, Beijing references, captions, readable letters, logos, and text baked into art."
+      },
+      "elapsed_seconds": 164.1944,
+      "generation_ok": true,
+      "complete_success": true,
+      "error": "",
+      "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/intertidal_embassy_for_extinct_rivers_r01_decomposed_builder_spec.json",
+      "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/intertidal_embassy_for_extinct_rivers_r01_decomposed_world_config.json",
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "intertidal_embassy_01"
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 2,
+        "conflict_hooks": 2,
+        "inventory_items": 117,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "package_validation_status": "",
+      "compiler_critique_applied": false,
+      "compiler_critique_should_repair": false,
+      "generation_node_retries": [
+        {
+          "attempt": 1,
+          "failed_node": "contract",
+          "error": "ValueError: Evaluator-seeded roles defect: character 1 has fewer than 8 valid inventory items",
+          "invalidated_cache_keys": [
+            "hooks",
+            "roles",
+            "wardrobe"
+          ],
+          "preserved_cache_keys": [
+            "items",
+            "materials",
+            "planner",
+            "rooms",
+            "visual_canon"
+          ]
+        }
+      ],
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/intertidal_embassy_for_extinct_rivers_r01_vertex_calls.jsonl",
+        "provider_attempt_count": 16,
+        "successful_attempt_count": 16,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 16,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 16
+        },
+        "stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 2,
+          "main_character_generation": 6,
+          "world_creator_generation": 6,
+          "world_creator_text_generation": 1,
+          "world_visual_canon_generation": 1
+        },
+        "model_attempt_counts": {
+          "gemini-3-flash-preview": 16
+        },
+        "provider_elapsed_seconds_sum": 159.0265,
+        "token_totals": {
+          "candidatesTokenCount": 25287,
+          "promptTokenCount": 39514,
+          "thoughtsTokenCount": 1266,
+          "totalTokenCount": 66067
+        }
+      },
+      "seeded_fault_fired": true,
+      "localized_repair_measurement": {
+        "initial_provider_attempts": 10,
+        "pre_seed_extra_provider_attempts": 0,
+        "pre_seed_retry_event_count": 0,
+        "localized_repair_provider_attempts": 5,
+        "full_rebuild_call_counterfactual": 10,
+        "provider_call_reduction_vs_full_rebuild": 0.5,
+        "initial_tokens": 32579,
+        "localized_repair_tokens": 16069,
+        "token_reduction_vs_full_rebuild": 0.5068,
+        "initial_provider_elapsed_seconds": 97.6271,
+        "localized_repair_provider_elapsed_seconds": 52.1072,
+        "repair_stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 1,
+          "main_character_generation": 3,
+          "world_creator_generation": 1
+        },
+        "failed_node": "contract",
+        "invalidated_cache_keys": [
+          "hooks",
+          "roles",
+          "wardrobe"
+        ],
+        "preserved_cache_keys": [
+          "items",
+          "materials",
+          "planner",
+          "rooms",
+          "visual_canon"
+        ]
+      }
+    },
+    {
+      "trial_id": "night_market_of_unfinished_weather_r01",
+      "world_name": "Night Market of Unfinished Weather",
+      "draft_id": "creator_20260728_220950_e2278e2f",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_220950_e2278e2f/revisions/r001",
+      "replicate": 1,
+      "request": {
+        "world_name": "Night Market of Unfinished Weather",
+        "genre": "meteorological night market, climate craft, delivery disputes",
+        "player_count_target": 4,
+        "agent_count_target": 12,
+        "focus": "tradeable weather with local visual and social consequences",
+        "seed": 727105,
+        "brief": "Below a planet-scale weather engine, vendors sell unfinished fogs, monsoons, hail songs, wind corridors, and drought endings before they are released into the sky. Build exactly six connected, functionally distinct market rooms and twelve socially entangled agents. Every weather lot should create concrete local changes to visibility, routes, inventories, bargaining leverage, and public safety. Include one or two large weather instruments or containers per room. Use storm-gray canvas, celadon instruments, electric-yellow kite silk, magenta warning thread, wet charcoal floors, and silver condensation in a coherent top-down pixel-art canon. Avoid neon cyberpunk, generic magic shops, Beijing references, signs, captions, readable letters, logos, and text baked into art."
+      },
+      "elapsed_seconds": 186.8224,
+      "generation_ok": true,
+      "complete_success": true,
+      "error": "",
+      "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/night_market_of_unfinished_weather_r01_decomposed_builder_spec.json",
+      "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/night_market_of_unfinished_weather_r01_decomposed_world_config.json",
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "night_market_unfinished_weather"
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 2,
+        "inventory_items": 131,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "package_validation_status": "",
+      "compiler_critique_applied": false,
+      "compiler_critique_should_repair": false,
+      "generation_node_retries": [
+        {
+          "attempt": 1,
+          "failed_node": "roles",
+          "error": "ValueError: Roles node failed at batch 1: Elder Saffron generated 8 valid inventory items, required 15.",
+          "invalidated_cache_keys": [
+            "hooks",
+            "roles",
+            "wardrobe"
+          ],
+          "preserved_cache_keys": [
+            "items",
+            "materials",
+            "planner",
+            "rooms",
+            "visual_canon"
+          ]
+        },
+        {
+          "attempt": 2,
+          "failed_node": "contract",
+          "error": "ValueError: Evaluator-seeded roles defect: character 1 has fewer than 8 valid inventory items",
+          "invalidated_cache_keys": [
+            "hooks",
+            "roles",
+            "wardrobe"
+          ],
+          "preserved_cache_keys": [
+            "items",
+            "materials",
+            "planner",
+            "rooms",
+            "visual_canon"
+          ]
+        }
+      ],
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/night_market_of_unfinished_weather_r01_vertex_calls.jsonl",
+        "provider_attempt_count": 18,
+        "successful_attempt_count": 17,
+        "retry_or_failure_attempt_count": 1,
+        "usage_metadata_attempt_count": 18,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "invalid_json": 1,
+          "ok": 17
+        },
+        "stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 2,
+          "main_character_generation": 8,
+          "world_creator_generation": 6,
+          "world_creator_text_generation": 1,
+          "world_visual_canon_generation": 1
+        },
+        "model_attempt_counts": {
+          "gemini-3-flash-preview": 18
+        },
+        "provider_elapsed_seconds_sum": 175.6323,
+        "token_totals": {
+          "candidatesTokenCount": 26248,
+          "promptTokenCount": 42286,
+          "thoughtsTokenCount": 385,
+          "totalTokenCount": 68919
+        }
+      },
+      "seeded_fault_fired": true,
+      "localized_repair_measurement": {
+        "initial_provider_attempts": 10,
+        "pre_seed_extra_provider_attempts": 1,
+        "pre_seed_retry_event_count": 1,
+        "localized_repair_provider_attempts": 6,
+        "full_rebuild_call_counterfactual": 10,
+        "provider_call_reduction_vs_full_rebuild": 0.4,
+        "initial_tokens": 29107,
+        "localized_repair_tokens": 18737,
+        "token_reduction_vs_full_rebuild": 0.3563,
+        "initial_provider_elapsed_seconds": 85.6809,
+        "localized_repair_provider_elapsed_seconds": 65.2264,
+        "repair_stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 1,
+          "main_character_generation": 4,
+          "world_creator_generation": 1
+        },
+        "failed_node": "contract",
+        "invalidated_cache_keys": [
+          "hooks",
+          "roles",
+          "wardrobe"
+        ],
+        "preserved_cache_keys": [
+          "items",
+          "materials",
+          "planner",
+          "rooms",
+          "visual_canon"
+        ]
+      }
+    },
+    {
+      "trial_id": "museum_of_future_debts_r01",
+      "world_name": "Museum of Future Debts",
+      "draft_id": "creator_20260728_223205_1924f12f",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260728_223205_1924f12f/revisions/r001",
+      "replicate": 1,
+      "request": {
+        "world_name": "Museum of Future Debts",
+        "genre": "counterfactual museum, obligation auction, probability politics",
+        "player_count_target": 4,
+        "agent_count_target": 12,
+        "focus": "counterfactual economy with inspectable causal consequences",
+        "seed": 727106,
+        "brief": "A public museum exhibits debts that nations, guilds, and families have not incurred yet. Curators stabilize possible obligations, actuaries price alternate histories, thieves swap liability provenance, and visitors can make an exhibit become real. Build exactly six connected, functionally distinct galleries and twelve socially entangled agents. Make probability and debt ownership alter access, prices, relationships, room states, and future event hooks. Include one or two monumental world-specific semantic exhibits per room. Use black basalt, frosted glass, oxidized silver, signal red, pale mint illumination, and white ceramic tally forms without writing in a coherent top-down pixel-art canon. Avoid generic museums, generic sci-fi terminals, Beijing references, signs, captions, readable letters, logos, and text baked into art."
+      },
+      "elapsed_seconds": 154.3382,
+      "generation_ok": true,
+      "complete_success": true,
+      "error": "",
+      "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/museum_of_future_debts_r01_decomposed_builder_spec.json",
+      "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/museum_of_future_debts_r01_decomposed_world_config.json",
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "museum_future_debts_01"
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 117,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "package_validation_status": "",
+      "compiler_critique_applied": false,
+      "compiler_critique_should_repair": false,
+      "generation_node_retries": [
+        {
+          "attempt": 1,
+          "failed_node": "contract",
+          "error": "ValueError: Evaluator-seeded roles defect: character 1 has fewer than 8 valid inventory items",
+          "invalidated_cache_keys": [
+            "hooks",
+            "roles",
+            "wardrobe"
+          ],
+          "preserved_cache_keys": [
+            "items",
+            "materials",
+            "planner",
+            "rooms",
+            "visual_canon"
+          ]
+        }
+      ],
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/seeded_local_retry_20260729/museum_of_future_debts_r01_vertex_calls.jsonl",
+        "provider_attempt_count": 16,
+        "successful_attempt_count": 16,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 16,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 16
+        },
+        "stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 2,
+          "main_character_generation": 6,
+          "world_creator_generation": 6,
+          "world_creator_text_generation": 1,
+          "world_visual_canon_generation": 1
+        },
+        "model_attempt_counts": {
+          "gemini-3-flash-preview": 16
+        },
+        "provider_elapsed_seconds_sum": 148.6845,
+        "token_totals": {
+          "candidatesTokenCount": 22502,
+          "promptTokenCount": 39946,
+          "totalTokenCount": 62448
+        }
+      },
+      "seeded_fault_fired": true,
+      "localized_repair_measurement": {
+        "initial_provider_attempts": 10,
+        "pre_seed_extra_provider_attempts": 0,
+        "pre_seed_retry_event_count": 0,
+        "localized_repair_provider_attempts": 5,
+        "full_rebuild_call_counterfactual": 10,
+        "provider_call_reduction_vs_full_rebuild": 0.5,
+        "initial_tokens": 28021,
+        "localized_repair_tokens": 16432,
+        "token_reduction_vs_full_rebuild": 0.4136,
+        "initial_provider_elapsed_seconds": 87.5257,
+        "localized_repair_provider_elapsed_seconds": 51.2999,
+        "repair_stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 1,
+          "main_character_generation": 3,
+          "world_creator_generation": 1
+        },
+        "failed_node": "contract",
+        "invalidated_cache_keys": [
+          "hooks",
+          "roles",
+          "wardrobe"
+        ],
+        "preserved_cache_keys": [
+          "items",
+          "materials",
+          "planner",
+          "rooms",
+          "visual_canon"
+        ]
+      }
+    }
+  ]
+}

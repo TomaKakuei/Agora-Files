@@ -1,0 +1,1703 @@
+{
+  "world_name": "Museum of Future Debts",
+  "world_id": "museum_future_debts_01",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "civic_social_world",
+    "profile_id": "civic_social_world",
+    "locale": "en-US",
+    "tone": "clinical, speculative, high-stakes, bureaucratic",
+    "visual_direction": "top-down pixel art, black basalt, frosted glass, oxidized silver, signal red, pale mint illumination, white ceramic tally forms",
+    "currency_code": "CRD",
+    "currency_symbol": "cr",
+    "currency_minor_unit": "point",
+    "currency_name": "Obligation Credits",
+    "domain_label": "causal-museum.agora",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "brutalist_bureaucracy_kit",
+      "frontend_affordance_id": "actuarial_interface_v1",
+      "asset_prompt_kit_id": "future_debt_visuals"
+    },
+    "policy_refs": {
+      "economy_policy_id": "civic_credit_v1",
+      "item_collection_id": "civic_social_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "civic_social_world_v1",
+      "property_policy_id": "civic_social_world_v1",
+      "knowledge_policy_id": "civic_social_world_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "Counterfactual Museum / Probability Politics",
+  "premise": "A facility exhibiting debts not yet incurred, where curators stabilize alternate histories and visitors can collapse possibilities into reality.",
+  "simulation_objective": "Simulate a counterfactual economy where causal consequences are traded as assets and liabilities.",
+  "agent_count_target": 12,
+  "player_count_target": 12,
+  "wall_color_theme": "black_basalt",
+  "economy_focus": "Obligation auctions and liability provenance swapping.",
+  "exploration_focus": "Six functionally distinct galleries with socially entangled agents and monumental semantic exhibits.",
+  "conflict_tone": "Cold, actuarial, and high-stakes social maneuvering.",
+  "visual_style": "Brutalist pixel art with black basalt, frosted glass, and signal red accents.",
+  "rooms": [
+    {
+      "name": "Actuarial Intake Hub",
+      "biome": "brutalist_museum",
+      "purpose": "Processing new liability claims",
+      "decor_tags": [
+        "brushed_steel",
+        "recessed_lighting",
+        "ceramic_tablets"
+      ],
+      "activity_tags": [
+        "registration",
+        "scanning",
+        "sorting"
+      ],
+      "flux_floor_prompt": "top-down pixel art of polished black basalt tiles with recessed floor channels for cable bundles, 32px grid aligned",
+      "room_scene_prompt": "top-down pixel art view of a brutalist intake room, black basalt walls, frosted glass counters, signal red accents, clinical lighting, no text, no labels, full bleed to edges.",
+      "width_tiles": 8,
+      "height_tiles": 6,
+      "ambient_palette": "soft_mint",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "intake_scanner_monolith",
+          "label": "Intake Monolith",
+          "description": "A tall brushed steel pillar with a glowing mint-colored scanning aperture.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Obligation Auction Floor",
+      "biome": "brutalist_museum",
+      "purpose": "Bidding on future debts",
+      "decor_tags": [
+        "frosted_glass",
+        "oxidized_silver",
+        "tiered_seating"
+      ],
+      "activity_tags": [
+        "bidding",
+        "trading",
+        "shouting"
+      ],
+      "flux_floor_prompt": "top-down pixel art of frosted glass floor panels with pale mint volumetric glow from beneath, seamless grid",
+      "room_scene_prompt": "top-down pixel art of a large auction hall, tiered basalt seating, central silver podium, signal red floor markings, clinical lighting, no text, no margins.",
+      "width_tiles": 12,
+      "height_tiles": 12,
+      "ambient_palette": "focused_blue",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "liability_ticker_pillar",
+          "label": "Liability Ticker",
+          "description": "A vertical silver column displaying shifting red light patterns representing debt values.",
+          "anchor": "center",
+          "width_tiles": 1,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Alternate History Stabilization Lab",
+      "biome": "brutalist_museum",
+      "purpose": "Fixing timeline variances",
+      "decor_tags": [
+        "white_ceramic",
+        "modular_desks",
+        "cable_bundles"
+      ],
+      "activity_tags": [
+        "calibration",
+        "monitoring",
+        "research"
+      ],
+      "flux_floor_prompt": "top-down pixel art of white ceramic floor tiles with thin black grout and exposed silver wiring channels",
+      "room_scene_prompt": "top-down pixel art of a sterile lab, modular actuarial desks, heavy vault doors on the north wall, pale mint glow, no text, no labels, edge-to-edge.",
+      "width_tiles": 10,
+      "height_tiles": 8,
+      "ambient_palette": "soft_mint",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "probability_anchor",
+          "label": "Probability Anchor",
+          "description": "A heavy basalt machine with rotating silver rings and a central red laser.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Provenance Vault",
+      "biome": "brutalist_museum",
+      "purpose": "Storing debt records",
+      "decor_tags": [
+        "heavy_vault_doors",
+        "black_basalt",
+        "oxidized_silver"
+      ],
+      "activity_tags": [
+        "archiving",
+        "retrieval",
+        "security"
+      ],
+      "flux_floor_prompt": "top-down pixel art of dark basalt flooring with heavy silver trim and recessed circular floor lights",
+      "room_scene_prompt": "top-down pixel art of a narrow high-security vault, rows of silver filing monoliths, harsh shadows, signal red security beams, no text, no margins.",
+      "width_tiles": 6,
+      "height_tiles": 10,
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "tally_tablet_rack",
+          "label": "Tally Rack",
+          "description": "A wall-mounted rack holding dozens of glowing white ceramic tablets.",
+          "anchor": "west_mid",
+          "width_tiles": 1,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Curator's Observation Deck",
+      "biome": "brutalist_museum",
+      "purpose": "Overseeing the museum floor",
+      "decor_tags": [
+        "frosted_glass",
+        "brushed_steel",
+        "minimalist_seating"
+      ],
+      "activity_tags": [
+        "supervision",
+        "planning",
+        "oversight"
+      ],
+      "flux_floor_prompt": "top-down pixel art of polished brushed steel floor plates with industrial rivets",
+      "room_scene_prompt": "top-down pixel art of an elevated observation room, glass floor looking down, basalt consoles, clinical lighting, no text, no labels, full bleed.",
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "ambient_palette": "focused_blue",
+      "archetype": "lookout",
+      "scene_components": [
+        {
+          "component_id": "master_actuarial_console",
+          "label": "Master Console",
+          "description": "A wide desk made of white ceramic with multiple recessed red displays.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Possibility Collapse Chamber",
+      "biome": "brutalist_museum",
+      "purpose": "Finalizing debt into reality",
+      "decor_tags": [
+        "signal_red_accents",
+        "black_basalt",
+        "volumetric_glow"
+      ],
+      "activity_tags": [
+        "ritual",
+        "finalization",
+        "collapse"
+      ],
+      "flux_floor_prompt": "top-down pixel art of black basalt with a large circular signal-red inlay in the center",
+      "room_scene_prompt": "top-down pixel art of a ritualistic chamber, central red circle, basalt pillars, harsh shadows, clinical top-down lighting, no text, no margins.",
+      "width_tiles": 9,
+      "height_tiles": 9,
+      "ambient_palette": "clear_day",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "reality_press",
+          "label": "Reality Press",
+          "description": "A massive brutalist monolith that descends from the ceiling to crush ceramic tablets.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Vaelen Thorne",
+      "role_name": "Lead Actuarial Auditor",
+      "activity": "Calculating the compound interest of unlived lives within the Intake Hub.",
+      "home_base": "Actuarial Intake Hub",
+      "arc_goal": "To identify the 'Prime Default'—the single debt that, if forgiven, collapses the entire museum.",
+      "inventory": [
+        {
+          "name": "debt_bond_001",
+          "description": "A shimmering scroll recording a debt of 500 years of silence.",
+          "quantity": 1
+        },
+        {
+          "name": "tally_003",
+          "description": "A brass device that clicks when a lie is told nearby.",
+          "quantity": 1
+        },
+        {
+          "name": "lien_004",
+          "description": "A legal claim against a child's future ability to dream.",
+          "quantity": 3
+        },
+        {
+          "name": "anchor_002",
+          "description": "A heavy iron weight that prevents the owner from floating into alternate timelines.",
+          "quantity": 1
+        },
+        {
+          "name": "Void-Ink Quill",
+          "description": "A pen that writes in a language only the dead can read.",
+          "quantity": 2
+        },
+        {
+          "name": "Shattered Hourglass",
+          "description": "Glass shards that glow when a deadline approaches.",
+          "quantity": 12
+        },
+        {
+          "name": "Probability Lens",
+          "description": "A monocle that shows the most likely way a person will fail.",
+          "quantity": 1
+        },
+        {
+          "name": "Ledger of Regrets",
+          "description": "A book that automatically records every missed opportunity in the room.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Calculation Desk",
+          "asset_type": "Furniture",
+          "description": "A desk carved from petrified logic.",
+          "story_use": "Used to process the intake of new debtors."
+        },
+        {
+          "asset_name": "Audit Seal",
+          "asset_type": "Tool",
+          "description": "A stamp that freezes a debt's interest rate.",
+          "story_use": "Can be used to bribe or protect specific assets."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "actuarial_math_01",
+          "topic": "Temporal Interest Rates",
+          "summary": "Understanding how time dilation affects debt maturity.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "museum_layout_01",
+          "topic": "Hidden Corridors",
+          "summary": "Knowledge of the maintenance tunnels between the Hub and the Vault.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelith Sun-Trader",
+      "role_name": "High-Stakes Obligation Broker",
+      "activity": "Aggressively bidding on the potential futures of fallen empires.",
+      "home_base": "Obligation Auction Floor",
+      "arc_goal": "To acquire enough 'Sovereign Debt' to purchase their own independence from the Museum.",
+      "inventory": [
+        {
+          "name": "bond_005",
+          "description": "A golden certificate representing the sunlight of a dead star.",
+          "quantity": 5
+        },
+        {
+          "name": "tally_007",
+          "description": "A silver counter used for tracking high-volume soul trades.",
+          "quantity": 10
+        },
+        {
+          "name": "lien_008",
+          "description": "A contract binding a merchant to only speak in rhyme.",
+          "quantity": 1
+        },
+        {
+          "name": "anchor_006",
+          "description": "A magnetic spike used to pin down volatile assets.",
+          "quantity": 4
+        },
+        {
+          "name": "Gavel of Finality",
+          "description": "A hammer that ends any argument when struck.",
+          "quantity": 1
+        },
+        {
+          "name": "Whisper-Coin",
+          "description": "Currency that tells you a secret when spent.",
+          "quantity": 50
+        },
+        {
+          "name": "Trade-Wind Map",
+          "description": "A map showing the flow of value across dimensions.",
+          "quantity": 1
+        },
+        {
+          "name": "Debt-Eater Larva",
+          "description": "A small parasite that consumes paper contracts.",
+          "quantity": 3
+        },
+        {
+          "name": "Auctioneer's Eye",
+          "description": "A glass eye that detects the maximum price a buyer is willing to pay.",
+          "quantity": 1
+        },
+        {
+          "name": "Contractual Chain",
+          "description": "A physical chain that grows shorter as a debt is paid.",
+          "quantity": 2
+        },
+        {
+          "name": "Liquidated Hope",
+          "description": "A vial of blue fluid distilled from a bankrupt colony.",
+          "quantity": 5
+        },
+        {
+          "name": "Proxy-Mask",
+          "description": "A mask that allows the wearer to bid anonymously.",
+          "quantity": 1
+        },
+        {
+          "name": "Interest-Bearing Seed",
+          "description": "A plant that grows gold coins if watered with blood.",
+          "quantity": 10
+        },
+        {
+          "name": "Default-Whistle",
+          "description": "A whistle that alerts the user when a nearby contract is breached.",
+          "quantity": 1
+        },
+        {
+          "name": "Ledger-Key",
+          "description": "A key that opens any locked financial record.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gilded Podium",
+          "asset_type": "Structure",
+          "description": "A platform that amplifies the voice of the speaker.",
+          "story_use": "Used to dominate the auction floor during bidding wars."
+        },
+        {
+          "asset_name": "Broker's Booth",
+          "asset_type": "Real Estate",
+          "description": "A private soundproof box overlooking the floor.",
+          "story_use": "A safe place to conduct illicit backroom deals."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "market_fluctuation_02",
+          "topic": "Soul Valuation",
+          "summary": "The current exchange rate between human souls and temporal energy.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "negotiation_tactics_01",
+          "topic": "The Art of the Squeeze",
+          "summary": "How to force a debtor into a predatory refinancing agreement.",
+          "confidence": 92
+        }
+      ]
+    },
+    {
+      "display_name": "Dr. Aris Thorne",
+      "role_name": "Stabilization Technician",
+      "activity": "Patching leaks in the timeline to prevent reality from unraveling.",
+      "home_base": "Alternate History Stabilization Lab",
+      "arc_goal": "To find the timeline where their family survived the Great Default.",
+      "inventory": [
+        {
+          "name": "anchor_010",
+          "description": "A heavy device that anchors the user to the 'True' timeline.",
+          "quantity": 2
+        },
+        {
+          "name": "tally_011",
+          "description": "A counter that tracks the number of paradoxes in the room.",
+          "quantity": 1
+        },
+        {
+          "name": "lien_012",
+          "description": "A temporal lien that prevents a person from being born.",
+          "quantity": 1
+        },
+        {
+          "name": "bond_009",
+          "description": "A bond backed by the kinetic energy of a collapsing star.",
+          "quantity": 1
+        },
+        {
+          "name": "Chrono-Suture",
+          "description": "A needle and thread made of light used to sew reality back together.",
+          "quantity": 5
+        },
+        {
+          "name": "Paradox-Bane",
+          "description": "A spray that dissolves temporal echoes.",
+          "quantity": 3
+        },
+        {
+          "name": "Memory-Vial",
+          "description": "A container for storing thoughts that no longer exist.",
+          "quantity": 8
+        },
+        {
+          "name": "Stabilization Tuning Fork",
+          "description": "A fork that vibrates when the timeline is secure.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Chrono-Forge",
+          "asset_type": "Machinery",
+          "description": "A machine that can reshape historical artifacts.",
+          "story_use": "Used to repair damaged items from the Provenance Vault."
+        },
+        {
+          "asset_name": "Containment Field",
+          "asset_type": "Utility",
+          "description": "A shimmering barrier that stops time inside it.",
+          "story_use": "Used to hold dangerous temporal anomalies for study."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "temporal_physics_01",
+          "topic": "Causality Loops",
+          "summary": "How to enter a loop without becoming trapped in it.",
+          "confidence": 88
+        },
+        {
+          "knowledge_id": "history_repair_01",
+          "topic": "Suture Techniques",
+          "summary": "The delicate art of merging two divergent timelines.",
+          "confidence": 94
+        }
+      ]
+    },
+    {
+      "display_name": "Curator Malakor",
+      "role_name": "Grand Archivist of Possibility",
+      "activity": "Watching the collapse of unchosen paths from the Observation Deck.",
+      "home_base": "Curator's Observation Deck",
+      "arc_goal": "To witness the final 'Possibility Collapse' and record the end of all debt.",
+      "inventory": [
+        {
+          "name": "bond_013",
+          "description": "A master bond that controls all other debts in the sector.",
+          "quantity": 1
+        },
+        {
+          "name": "anchor_014",
+          "description": "A massive anchor that holds the Museum in place between dimensions.",
+          "quantity": 1
+        },
+        {
+          "name": "tally_015",
+          "description": "A tally of every soul currently residing in the Museum.",
+          "quantity": 1
+        },
+        {
+          "name": "lien_016",
+          "description": "A lien against the concept of 'Tomorrow'.",
+          "quantity": 1
+        },
+        {
+          "name": "Observation Scope",
+          "description": "A telescope that looks into the hearts of the debtors.",
+          "quantity": 1
+        },
+        {
+          "name": "The Black Key",
+          "description": "A key that opens the Possibility Collapse Chamber.",
+          "quantity": 1
+        },
+        {
+          "name": "Dust of Was-Not",
+          "description": "Powder made from things that were erased from history.",
+          "quantity": 20
+        },
+        {
+          "name": "Echo-Stone",
+          "description": "A stone that plays the last words of a forgotten civilization.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Great Lens",
+          "asset_type": "Apparatus",
+          "description": "A massive crystalline structure that focuses the museum's power.",
+          "story_use": "Allows the Curator to see any point in the museum's history."
+        },
+        {
+          "asset_name": "The Silent Guard",
+          "asset_type": "Automaton",
+          "description": "A headless statue that protects the Curator.",
+          "story_use": "Acts as a physical deterrent for those seeking to steal from the Vault."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "cosmic_debt_01",
+          "topic": "The Entropy Tax",
+          "summary": "The fundamental law that all existence must eventually be repaid.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "museum_secrets_01",
+          "topic": "The Founder's Identity",
+          "summary": "The true nature of the entity that built the Museum.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Sola the Unbound",
+      "role_name": "Debt-Erasure Saboteur",
+      "activity": "Planting viral paradoxes in the Actuarial Intake Hub to nullify generational liens.",
+      "home_base": "Actuarial Intake Hub",
+      "arc_goal": "To trigger a systemic default that liberates all future-debtors from their predestined obligations.",
+      "inventory": [
+        {
+          "name": "debt_bond_001",
+          "description": "A shimmering, unstable scroll representing a life not yet lived.",
+          "quantity": 1
+        },
+        {
+          "name": "Void-Ink Stylus",
+          "description": "A pen that writes in negative space, capable of redacting actuarial entries.",
+          "quantity": 1
+        },
+        {
+          "name": "Paradox Trigger",
+          "description": "A small clockwork device that emits a 5-second temporal loop.",
+          "quantity": 3
+        },
+        {
+          "name": "Static-Field Cloak",
+          "description": "A garment woven from dead signals to bypass Hub sensors.",
+          "quantity": 1
+        },
+        {
+          "name": "Lien-Breaker Acid",
+          "description": "A corrosive substance that only dissolves holographic seals.",
+          "quantity": 5
+        },
+        {
+          "name": "Memory-Leak Vial",
+          "description": "Captured confusion from a collapsed timeline.",
+          "quantity": 2
+        },
+        {
+          "name": "False-Identity Core",
+          "description": "A data chip containing the biometric signature of a high-ranking auditor.",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Jammer",
+          "description": "A handheld device tuned to the frequency of the Museum's security grid.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Glitch-Cell",
+          "asset_type": "Safehouse",
+          "description": "A pocket dimension hidden between the walls of the Intake Hub.",
+          "story_use": "A base for planning raids on the central ledger."
+        },
+        {
+          "asset_name": "Sub-Ether Relay",
+          "asset_type": "Communication Array",
+          "description": "A clandestine radio used to contact underground resistance cells.",
+          "story_use": "Receiving intel on upcoming high-value debt transfers."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "hub_security_vulnerability",
+          "topic": "Intake Hub Weak Points",
+          "summary": "Detailed knowledge of the ventilation shafts and sensor blind spots in the Hub.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "vaelen_thorne_habits",
+          "topic": "Vaelen Thorne's Routine",
+          "summary": "Observations of the Lead Auditor's daily patterns and security overrides.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Xylos the Liquidator",
+      "role_name": "Black-Market Obligation Merchant",
+      "activity": "Trading high-risk debt-bonds for raw temporal energy on the Auction Floor.",
+      "home_base": "Obligation Auction Floor",
+      "arc_goal": "To acquire the 'Original Sin' bond and hold the Museum's entire economy hostage.",
+      "inventory": [
+        {
+          "name": "bond_005",
+          "description": "A golden-threaded contract representing the labor of a thousand unborn artisans.",
+          "quantity": 12
+        },
+        {
+          "name": "tally_007",
+          "description": "A notched bone used to track the soul-debt of minor nobility.",
+          "quantity": 20
+        },
+        {
+          "name": "lien_008",
+          "description": "A heavy iron plate signifying a mortgage on a planetary system.",
+          "quantity": 5
+        },
+        {
+          "name": "anchor_010",
+          "description": "A heavy lead weight that prevents a debt-bond from fluctuating in value.",
+          "quantity": 8
+        },
+        {
+          "name": "Gavel of Finality",
+          "description": "A ceremonial hammer that locks a trade into the timeline permanently.",
+          "quantity": 1
+        },
+        {
+          "name": "Speculation Lens",
+          "description": "A monocle that reveals the projected growth of a debt's interest.",
+          "quantity": 1
+        },
+        {
+          "name": "Bribe-Coin Pouch",
+          "description": "Currency minted from the regret of failed investors.",
+          "quantity": 50
+        },
+        {
+          "name": "Contractual Chain",
+          "description": "A physical manifestation of a binding agreement.",
+          "quantity": 10
+        },
+        {
+          "name": "Ledger of Lost Names",
+          "description": "A book containing the identities of those who defaulted.",
+          "quantity": 1
+        },
+        {
+          "name": "Void-Silk Handkerchief",
+          "description": "Used to clean fingerprints off sensitive debt-plates.",
+          "quantity": 3
+        },
+        {
+          "name": "Temporal Scale",
+          "description": "A balance used to weigh the importance of two different futures.",
+          "quantity": 1
+        },
+        {
+          "name": "Whisper-Box",
+          "description": "A device for receiving insider tips from the Curator's Deck.",
+          "quantity": 2
+        },
+        {
+          "name": "Debt-Scented Incense",
+          "description": "Used to calm nervous bidders during high-stakes auctions.",
+          "quantity": 15
+        },
+        {
+          "name": "Counterfeit Seal",
+          "description": "A perfect replica of the Museum's official verification stamp.",
+          "quantity": 1
+        },
+        {
+          "name": "Liquidated Hope",
+          "description": "A blue fluid extracted from canceled wedding contracts.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gilded Stall",
+          "asset_type": "Market Stall",
+          "description": "A lavishly decorated booth on the Auction Floor.",
+          "story_use": "The primary location for conducting high-value, illicit trades."
+        },
+        {
+          "asset_name": "Vault-Key Alpha",
+          "asset_type": "Security Clearance",
+          "description": "A master key to the lower-tier storage lockers.",
+          "story_use": "Accessing inventory that has been seized by the Museum."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kaelith_rivalry_intel",
+          "topic": "Kaelith Sun-Trader's Assets",
+          "summary": "A list of Kaelith's current holdings and her most desperate needs.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "auction_floor_rigging",
+          "topic": "Auction Manipulation",
+          "summary": "Techniques for artificially inflating the price of worthless obligations.",
+          "confidence": 98
+        }
+      ]
+    },
+    {
+      "display_name": "Nym of the Echoes",
+      "role_name": "Stabilization Scavenger",
+      "activity": "Recovering discarded artifacts from the Possibility Collapse Chamber.",
+      "home_base": "Possibility Collapse Chamber",
+      "arc_goal": "To reconstruct a lost timeline where her family still exists.",
+      "inventory": [
+        {
+          "name": "anchor_014",
+          "description": "A rusted spike used to pin down a fading memory.",
+          "quantity": 4
+        },
+        {
+          "name": "tally_015",
+          "description": "A wooden stick marked with the days of a week that never happened.",
+          "quantity": 12
+        },
+        {
+          "name": "Echo-Jar",
+          "description": "A glass container that captures the sound of a collapsed reality.",
+          "quantity": 6
+        },
+        {
+          "name": "Reality-Tether",
+          "description": "A glowing rope that keeps the user connected to the present.",
+          "quantity": 1
+        },
+        {
+          "name": "Scavenger's Hook",
+          "description": "A long tool for grabbing items from the edge of the void.",
+          "quantity": 1
+        },
+        {
+          "name": "Faded Photograph",
+          "description": "A picture of a city that was erased from history.",
+          "quantity": 1
+        },
+        {
+          "name": "Chrono-Filter Mask",
+          "description": "Protects the wearer from inhaling the dust of disintegrated futures.",
+          "quantity": 1
+        },
+        {
+          "name": "Resonance Tuning Fork",
+          "description": "Used to find items that share a frequency with the current timeline.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Junk-Rig",
+          "asset_type": "Vehicle",
+          "description": "A hover-sled built from salvaged stabilization equipment.",
+          "story_use": "Navigating the dangerous terrain of the Collapse Chamber."
+        },
+        {
+          "asset_name": "The Echo-Workshop",
+          "asset_type": "Laboratory",
+          "description": "A small, cluttered space for repairing temporal artifacts.",
+          "story_use": "Analyzing salvaged items for clues about the 'Prime' timeline."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "collapse_patterns",
+          "topic": "Temporal Decay",
+          "summary": "Understanding how and when a possibility will finally dissolve.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "aris_thorne_tech",
+          "topic": "Stabilization Tech",
+          "summary": "Knowledge of Dr. Aris Thorne's equipment and how to bypass its locks.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Archivist Elara",
+      "role_name": "Provenance Verifier",
+      "activity": "Authenticating the history of debts within The Provenance Vault.",
+      "home_base": "The Provenance Vault",
+      "arc_goal": "To expose the Curator's secret collection of 'Illegal Realities'.",
+      "inventory": [
+        {
+          "name": "lien_012",
+          "description": "A crystalline document proving the ownership of a star's light.",
+          "quantity": 1
+        },
+        {
+          "name": "bond_013",
+          "description": "A heavy, leather-bound contract signed in blood.",
+          "quantity": 1
+        },
+        {
+          "name": "Verification Lens",
+          "description": "A magnifying glass that shows the true origin of any object.",
+          "quantity": 1
+        },
+        {
+          "name": "Archivist's Gloves",
+          "description": "Silk gloves that prevent the wearer's timeline from contaminating artifacts.",
+          "quantity": 1
+        },
+        {
+          "name": "History-Scribe",
+          "description": "An automated quill that records the provenance of an item as it is touched.",
+          "quantity": 1
+        },
+        {
+          "name": "Seal of Authenticity",
+          "description": "A wax stamper used to certify a debt's legitimacy.",
+          "quantity": 5
+        },
+        {
+          "name": "Ink of Ages",
+          "description": "A special ink that never fades, even if the timeline is rewritten.",
+          "quantity": 3
+        },
+        {
+          "name": "Vault-Map",
+          "description": "A complex, shifting diagram of the Provenance Vault's layout.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Verification Suite",
+          "asset_type": "Office",
+          "description": "A sterile room equipped with high-end analytical tools.",
+          "story_use": "The location where all new Museum acquisitions are processed."
+        },
+        {
+          "asset_name": "The Forbidden Index",
+          "asset_type": "Database",
+          "description": "A hidden file containing records of items the Curator deleted.",
+          "story_use": "Providing evidence of the Curator's corruption."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "provenance_vault_logic",
+          "topic": "Vault Architecture",
+          "summary": "The shifting spatial geometry of the Museum's storage systems.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "curator_malakor_secrets",
+          "topic": "Malakor's Hidden Agenda",
+          "summary": "Suspicions and evidence regarding the Curator's manipulation of the archives.",
+          "confidence": 79
+        }
+      ]
+    },
+    {
+      "display_name": "Vespera Vane",
+      "role_name": "Collateralized Memory Harvester",
+      "activity": "Extracting sentimental value from bankrupt timelines",
+      "home_base": "Possibility Collapse Chamber",
+      "arc_goal": "To harvest enough 'First Love' echoes to pay off her family's ancestral void-debt.",
+      "inventory": [
+        {
+          "name": "Mnemosyne Siphon",
+          "description": "A brass-and-glass vacuum for capturing emotional residue.",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Stolen Laughter",
+          "description": "Concentrated joy extracted from a timeline that never happened.",
+          "quantity": 3
+        },
+        {
+          "name": "Regret Filter",
+          "description": "A mesh screen that separates usable memory from toxic remorse.",
+          "quantity": 1
+        },
+        {
+          "name": "debt_bond_001",
+          "description": "A shimmering scroll detailing the cost of a forgotten promise.",
+          "quantity": 1
+        },
+        {
+          "name": "tally_015",
+          "description": "A notched bone counting the days of a life unlived.",
+          "quantity": 1
+        },
+        {
+          "name": "Sorrow-Dampened Glove",
+          "description": "Protective wear for handling high-frequency grief.",
+          "quantity": 2
+        },
+        {
+          "name": "Echo-Chamber Jar",
+          "description": "A vacuum-sealed container for preserving auditory memories.",
+          "quantity": 5
+        },
+        {
+          "name": "Faded Wedding Ring",
+          "description": "A physical anchor to a marriage that was annulled by a temporal shift.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Glimmer-Rig",
+          "asset_type": "Extraction Machinery",
+          "description": "A mobile platform used to hover over collapsing realities.",
+          "story_use": "Allows Vespera to reach the center of the Collapse Chamber safely."
+        },
+        {
+          "asset_name": "Void-Lease 402",
+          "asset_type": "Real Estate",
+          "description": "A small, stable pocket of non-existence used for storage.",
+          "story_use": "Where Vespera hides her most valuable harvested memories from the Curator."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn_001_emo_val",
+          "topic": "Emotional Valuation",
+          "summary": "The current market rate for various human emotions in the Obligation Auction.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "kn_002_stab_pock",
+          "topic": "Stability Pockets",
+          "summary": "Locations within the Collapse Chamber where reality lingers longest.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Bax the Unmaker",
+      "role_name": "Default Enforcement Golem",
+      "activity": "Repossessing physical assets from insolvent timelines",
+      "home_base": "Actuarial Intake Hub",
+      "arc_goal": "To find the 'Original Sin' debt-bond and delete his own programming.",
+      "inventory": [
+        {
+          "name": "lien_004",
+          "description": "A heavy iron plate representing a claim on a soul.",
+          "quantity": 1
+        },
+        {
+          "name": "Reality Shears",
+          "description": "Large, jagged blades capable of cutting through stabilized history.",
+          "quantity": 1
+        },
+        {
+          "name": "anchor_006",
+          "description": "A heavy lead weight used to pin down shifting artifacts.",
+          "quantity": 1
+        },
+        {
+          "name": "Void-Iron Shackles",
+          "description": "Restraints that prevent a debtor from phasing out of existence.",
+          "quantity": 4
+        },
+        {
+          "name": "Repossession Ledger",
+          "description": "A book that automatically updates with the assets of the bankrupt.",
+          "quantity": 1
+        },
+        {
+          "name": "tally_011",
+          "description": "A digital counter tracking the number of timelines Bax has closed.",
+          "quantity": 1
+        },
+        {
+          "name": "Temporal Crowbar",
+          "description": "A tool for prying open locked possibilities.",
+          "quantity": 1
+        },
+        {
+          "name": "Crushed Crown",
+          "description": "The physical remains of a kingdom repossessed for non-payment.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Heavy Hand",
+          "asset_type": "Enforcement Vessel",
+          "description": "A brutalist transport ship designed for hauling heavy debt-loads.",
+          "story_use": "Used to transport repossessed artifacts to the Provenance Vault."
+        },
+        {
+          "asset_name": "Hub-Access Keycard",
+          "asset_type": "Security Clearance",
+          "description": "A high-level pass for the Actuarial Intake Hub.",
+          "story_use": "Allows Bax to bypass the red tape of Vaelen Thorne."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn_003_debt_law",
+          "topic": "Universal Debt Law",
+          "summary": "The legal framework governing the seizure of unlived futures.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "kn_004_golem_maint",
+          "topic": "Self-Maintenance",
+          "summary": "Procedures for repairing void-wear on a golem's chassis.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Zora the Speculator",
+      "role_name": "High-Risk Future Arbitrageur",
+      "activity": "Betting on the survival of doomed civilizations",
+      "home_base": "Obligation Auction Floor",
+      "arc_goal": "To manipulate the market into devaluing the 'Great Peace' so she can buy it cheap.",
+      "inventory": [
+        {
+          "name": "bond_005",
+          "description": "A high-yield debt-bond for a galactic empire's expansion.",
+          "quantity": 10
+        },
+        {
+          "name": "tally_007",
+          "description": "A golden abacus used for calculating complex temporal interest.",
+          "quantity": 1
+        },
+        {
+          "name": "lien_012",
+          "description": "A legal claim on the first-born children of a dying star system.",
+          "quantity": 5
+        },
+        {
+          "name": "anchor_014",
+          "description": "A stabilizing device to keep a volatile future from collapsing during trade.",
+          "quantity": 2
+        },
+        {
+          "name": "Speculator's Monocle",
+          "description": "An eyepiece that reveals the 'probability of success' for any debt.",
+          "quantity": 1
+        },
+        {
+          "name": "Insider's Scroll",
+          "description": "Leaked data from the Stabilization Lab regarding upcoming leaks.",
+          "quantity": 1
+        },
+        {
+          "name": "Bribe-Coin",
+          "description": "Currency minted from the compressed time of a thousand slaves.",
+          "quantity": 50
+        },
+        {
+          "name": "Auctioneer's Gavel",
+          "description": "A ceremonial tool used to finalize high-stakes trades.",
+          "quantity": 1
+        },
+        {
+          "name": "Probability Map",
+          "description": "A shifting chart showing the most likely outcomes of the current era.",
+          "quantity": 1
+        },
+        {
+          "name": "debt_bond_009",
+          "description": "A risky bet on a timeline where the Museum itself burns.",
+          "quantity": 1
+        },
+        {
+          "name": "Silk-Wrapped Paradox",
+          "description": "A dangerous logical loop kept as a last-resort trade asset.",
+          "quantity": 1
+        },
+        {
+          "name": "Verification Seal",
+          "description": "A stamp used to authenticate high-value obligations.",
+          "quantity": 1
+        },
+        {
+          "name": "Whisper-Box",
+          "description": "A device for receiving secret tips from the Curator's Deck.",
+          "quantity": 1
+        },
+        {
+          "name": "Liquid Time Vial",
+          "description": "Raw temporal energy used as a high-denomination currency.",
+          "quantity": 10
+        },
+        {
+          "name": "Contract of Sale",
+          "description": "A blank, magically binding agreement for any future asset.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Golden Booth",
+          "asset_type": "Trading Floor Stall",
+          "description": "A private, soundproofed area on the Auction Floor.",
+          "story_use": "Where Zora conducts her most illicit and high-stakes negotiations."
+        },
+        {
+          "asset_name": "Shadow-Portfolio",
+          "asset_type": "Digital Asset",
+          "description": "A hidden collection of debts not registered with the Museum.",
+          "story_use": "Provides Zora with leverage over Kaelith Sun-Trader."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn_005_mkt_manip",
+          "topic": "Market Manipulation",
+          "summary": "Techniques for causing panic selling in the future-debt market.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "kn_006_civ_fall",
+          "topic": "Civilization Collapse Patterns",
+          "summary": "Predictive models for when a society is about to default on its existence.",
+          "confidence": 92
+        }
+      ]
+    },
+    {
+      "display_name": "Phaedra the Weaver",
+      "role_name": "Alternate History Repair-Smith",
+      "activity": "Mending frayed timelines with golden thread",
+      "home_base": "Alternate History Stabilization Lab",
+      "arc_goal": "To stitch her own deleted childhood back into the primary timeline.",
+      "inventory": [
+        {
+          "name": "Golden Suture",
+          "description": "Thread made of pure, stabilized causality.",
+          "quantity": 10
+        },
+        {
+          "name": "Chronos-Needle",
+          "description": "A needle that can pierce the fabric of time without tearing it.",
+          "quantity": 2
+        },
+        {
+          "name": "anchor_002",
+          "description": "A small, heavy charm used to hold a loose thread of history in place.",
+          "quantity": 5
+        },
+        {
+          "name": "tally_003",
+          "description": "A device that counts the number of stitches in a repaired timeline.",
+          "quantity": 1
+        },
+        {
+          "name": "Thimble of Focus",
+          "description": "A magical thimble that prevents the weaver from being distracted by echoes.",
+          "quantity": 1
+        },
+        {
+          "name": "Scrap of 'What-If'",
+          "description": "A small piece of a discarded timeline used for patching.",
+          "quantity": 8
+        },
+        {
+          "name": "Stabilization Fluid",
+          "description": "A blue liquid used to cool overheated temporal seams.",
+          "quantity": 3
+        },
+        {
+          "name": "Magnifying Lens of Truth",
+          "description": "A lens that reveals the original, intended path of a history.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Loom of Ages",
+          "asset_type": "Industrial Machinery",
+          "description": "A massive machine used to re-weave large-scale historical events.",
+          "story_use": "Phaedra uses this to fix the leaks reported by Dr. Aris Thorne."
+        },
+        {
+          "asset_name": "The Scrap-Bin",
+          "asset_type": "Storage Container",
+          "description": "A bin containing the 'off-cuts' of repaired histories.",
+          "story_use": "A source of raw materials for Phaedra's secret personal projects."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn_007_temp_anat",
+          "topic": "Temporal Anatomy",
+          "summary": "The structural layout of how events connect to form a timeline.",
+          "confidence": 96
+        },
+        {
+          "knowledge_id": "kn_008_causal_fix",
+          "topic": "Causal Repair",
+          "summary": "Methods for fixing paradoxes without causing a total collapse.",
+          "confidence": 90
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Debt Cycle",
+      "summary": "Players acquire high-value information, trade it to reduce their debt, and use their new leverage to acquire more secrets.",
+      "roles": [
+        "Information Broker",
+        "Debtor"
+      ],
+      "rooms": [
+        "The Hall of Records",
+        "The Whispering Gallery"
+      ],
+      "pressure": "Interest rates rise every hour of real-time play."
+    },
+    {
+      "label": "The Liquidation Game",
+      "summary": "Players identify vulnerable targets, build a social coalition to isolate them, and split the assets once the target is liquidated.",
+      "roles": [
+        "Actuary",
+        "Socialite"
+      ],
+      "rooms": [
+        "The Auction Floor",
+        "The Private Lounge"
+      ],
+      "pressure": "The target can counter-sue if they find a flaw in the coalition's logic."
+    }
+  ],
+  "player_entry_points": [
+    "A disgraced heir seeking to reclaim a stolen family ledger.",
+    "A debt-collector looking for a legendary 'unpayable' contract.",
+    "A curator attempting to hide the insolvency of the museum's main wing."
+  ],
+  "conflict_hooks": [
+    "The Great Ledger has been tampered with, swapping the debts of the elite with the poor.",
+    "A new 'Infinite Debt' has appeared, threatening to crash the social economy.",
+    "The Museum Director is auctioning off the literal 'Future' of a prominent city-state."
+  ],
+  "custom_actions": [
+    "Audit Legacy: Investigate a rival's ancestral debt history.",
+    "Collateralize Memory: Trade a personal memory to delay a payment.",
+    "Foreclose Influence: Force a peer to use their social standing for your benefit."
+  ],
+  "social_rules": [
+    "All debts are public record but their origins are private.",
+    "Direct physical violence results in immediate asset liquidation.",
+    "Silence during a negotiation is legally binding as consent.",
+    "Status is measured by the duration of one's future obligations."
+  ],
+  "item_themes": [
+    "unrealized_debt_bonds",
+    "causal_anchors",
+    "ceramic_tally_forms",
+    "oxidized_silver_liens"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "debt_bond_001",
+      "name": "Unrealized Default Bond",
+      "price": 450,
+      "mass": 0.2,
+      "description": "A shimmering data-wafer representing a bankruptcy that never occurred in the primary timeline.",
+      "image_prompt": "Brutalist pixel art, black basalt wafer with glowing red circuitry, frosted glass background.",
+      "category": "unrealized_debt_bonds"
+    },
+    {
+      "item_id": "anchor_002",
+      "name": "Causal Anchor Bolt",
+      "price": 1200,
+      "mass": 15.5,
+      "description": "Heavy basalt spike used to pin a specific liability to a fixed temporal coordinate.",
+      "image_prompt": "Pixel art, heavy black basalt spike, signal red accents, industrial brutalist style.",
+      "category": "causal_anchors"
+    },
+    {
+      "item_id": "tally_003",
+      "name": "Ceramic Tally Fragment",
+      "price": 85,
+      "mass": 0.5,
+      "description": "A broken shard of a debt-tracking tablet, etched with the names of forgotten creditors.",
+      "image_prompt": "Pixel art, cracked ceramic shard, etched cuneiform, black and signal red palette.",
+      "category": "ceramic_tally_forms"
+    },
+    {
+      "item_id": "lien_004",
+      "name": "Oxidized Silver Lien",
+      "price": 3200,
+      "mass": 1.2,
+      "description": "A tarnished silver plate certifying a claim against a future that was successfully averted.",
+      "image_prompt": "Pixel art, tarnished silver plate, oxidized textures, frosted glass frame.",
+      "category": "oxidized_silver_liens"
+    },
+    {
+      "item_id": "bond_005",
+      "name": "Ghost-Interest Ledger",
+      "price": 600,
+      "mass": 2.1,
+      "description": "A ledger tracking interest accrued on loans taken by non-existent entities.",
+      "image_prompt": "Brutalist pixel art, thick black book, red ribbon marker, frosted glass cover.",
+      "category": "unrealized_debt_bonds"
+    },
+    {
+      "item_id": "anchor_006",
+      "name": "Probability Tether",
+      "price": 2100,
+      "mass": 8.4,
+      "description": "A braided cable of glass fibers used to stabilize fluctuating liability provenance.",
+      "image_prompt": "Pixel art, braided frosted glass cable, signal red core, black basalt connectors.",
+      "category": "causal_anchors"
+    },
+    {
+      "item_id": "tally_007",
+      "name": "Glazed Tally Cylinder",
+      "price": 150,
+      "mass": 0.8,
+      "description": "A cylindrical ceramic seal used to stamp obligations onto wet clay reality.",
+      "image_prompt": "Pixel art, black ceramic cylinder, intricate red engravings, brutalist aesthetic.",
+      "category": "ceramic_tally_forms"
+    },
+    {
+      "item_id": "lien_008",
+      "name": "Void-Collateral Stamp",
+      "price": 950,
+      "mass": 0.4,
+      "description": "A silver stamp used to mark assets that only exist in failed timelines.",
+      "image_prompt": "Pixel art, silver hand stamp, oxidized handle, signal red ink glow.",
+      "category": "oxidized_silver_liens"
+    },
+    {
+      "item_id": "bond_009",
+      "name": "Counterfactual Bailout Note",
+      "price": 5000,
+      "mass": 0.1,
+      "description": "A high-value note issued by the Museum to cover debts from deleted histories.",
+      "image_prompt": "Pixel art, thin black basalt card, glowing red text, frosted glass texture.",
+      "category": "unrealized_debt_bonds"
+    },
+    {
+      "item_id": "anchor_010",
+      "name": "Event-Horizon Sinker",
+      "price": 3300,
+      "mass": 45.0,
+      "description": "A massive basalt weight used to sink bad debts into the deep past.",
+      "image_prompt": "Brutalist pixel art, massive black cube, red warning stripes, frosted glass base.",
+      "category": "causal_anchors"
+    },
+    {
+      "item_id": "tally_011",
+      "name": "Shattered Obligation Tile",
+      "price": 45,
+      "mass": 0.3,
+      "description": "A small ceramic tile representing a debt that was physically broken during an auction.",
+      "image_prompt": "Pixel art, broken red ceramic tile, black basalt dust, sharp edges.",
+      "category": "ceramic_tally_forms"
+    },
+    {
+      "item_id": "lien_012",
+      "name": "Ancestral Debt Filigree",
+      "price": 1800,
+      "mass": 0.6,
+      "description": "Delicate silver wirework representing a lien passed down through potential generations.",
+      "image_prompt": "Pixel art, intricate silver wire, oxidized black spots, signal red highlights.",
+      "category": "oxidized_silver_liens"
+    },
+    {
+      "item_id": "bond_013",
+      "name": "Speculative Ruin Bond",
+      "price": 750,
+      "mass": 0.2,
+      "description": "A bond that pays out only if the current timeline collapses into a specific debt-spiral.",
+      "image_prompt": "Pixel art, flickering red data-wafer, black basalt casing, frosted glass.",
+      "category": "unrealized_debt_bonds"
+    },
+    {
+      "item_id": "anchor_014",
+      "name": "Paradox Wedge",
+      "price": 2700,
+      "mass": 12.0,
+      "description": "A basalt tool used to split a single liability into two manageable, non-intersecting debts.",
+      "image_prompt": "Pixel art, black basalt wedge, glowing red split line, brutalist design.",
+      "category": "causal_anchors"
+    },
+    {
+      "item_id": "tally_015",
+      "name": "Vitreous Tally Plate",
+      "price": 400,
+      "mass": 1.5,
+      "description": "A thick slab of frosted glass etched with the final tally of a closed auction.",
+      "image_prompt": "Pixel art, thick frosted glass slab, black basalt frame, red etched numbers.",
+      "category": "ceramic_tally_forms"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "museum-future-debts-wardrobe-v1",
+    "world_wardrobe_brief": "A cold, actuarial aesthetic defined by brutalist silhouettes and clinical materials. Attire reflects the rigid hierarchy of debt management, utilizing heavy fabrics, ceramic plating, and sharp geometric lines to signify status and stability in a world of shifting probabilities.",
+    "forbidden_aesthetics": [
+      "organic_curves",
+      "nature_patterns",
+      "warm_colors",
+      "steampunk",
+      "distressed_leather",
+      "loose_flowing_silhouettes",
+      "visible_buttons",
+      "denim"
+    ],
+    "palette_families": [
+      {
+        "name": "Actuarial_Standard",
+        "dominant": "#0a0a0a",
+        "accent": "#e0e0e0",
+        "trim": "#ff0000",
+        "material": "black_basalt_weave"
+      },
+      {
+        "name": "Stabilization_Grade",
+        "dominant": "#e0e0e0",
+        "accent": "#98ffd9",
+        "trim": "#1a1a1a",
+        "material": "white_ceramic"
+      },
+      {
+        "name": "High_Brokerage",
+        "dominant": "#1a1a1a",
+        "accent": "#ff0000",
+        "trim": "#e0e0e0",
+        "material": "oxidized_silver"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "auditor_actuary",
+        "role_keywords": [
+          "Auditor",
+          "Actuary",
+          "Verifier"
+        ],
+        "attire": [
+          "Stiff_high-collar_tunic",
+          "Ceramic_chest_plate",
+          "Signal_red_armband"
+        ],
+        "props": [
+          "Ceramic_tally_tablet",
+          "Oxidized_silver_stylus"
+        ],
+        "palette_notes": "Dominant black with sharp red accents on the left arm.",
+        "silhouette_notes": "Rectangular and rigid; sharp shoulders.",
+        "avoid": [
+          "Capes",
+          "Soft_hoods"
+        ]
+      },
+      {
+        "rule_id": "broker_merchant",
+        "role_keywords": [
+          "Broker",
+          "Merchant",
+          "Arbitrageur",
+          "Trader"
+        ],
+        "attire": [
+          "Layered_silver_filigree_vest",
+          "Frosted_glass_pauldrons",
+          "Dark_tapered_trousers"
+        ],
+        "props": [
+          "Data-wafer_case",
+          "Silver_lien_plates"
+        ],
+        "palette_notes": "High contrast between dark basalt and bright silver trim.",
+        "silhouette_notes": "V-shaped torso; sharp, reflective surfaces.",
+        "avoid": [
+          "Utility_belts",
+          "Helmets"
+        ]
+      },
+      {
+        "rule_id": "technician_repair",
+        "role_keywords": [
+          "Technician",
+          "Repair-Smith",
+          "Stabilization"
+        ],
+        "attire": [
+          "White_ceramic_jumpsuit",
+          "Cable-integrated_gauntlets",
+          "Mint-glow_visors"
+        ],
+        "props": [
+          "Probability_tether_spool",
+          "Paradox_wedge_tool"
+        ],
+        "palette_notes": "Dominant white and grey with mint-green highlights.",
+        "silhouette_notes": "Bulky forearms and legs; modular attachment points.",
+        "avoid": [
+          "Jewelry",
+          "Ties"
+        ]
+      },
+      {
+        "rule_id": "archivist_curator",
+        "role_keywords": [
+          "Archivist",
+          "Curator",
+          "Grand_Archivist"
+        ],
+        "attire": [
+          "Heavy_basalt-fiber_robes",
+          "Oxidized_silver_gorget",
+          "Frosted_glass_mask"
+        ],
+        "props": [
+          "Glazed_tally_cylinder",
+          "Event-horizon_sinker_pendant"
+        ],
+        "palette_notes": "Deepest blacks with minimal silver highlights.",
+        "silhouette_notes": "Monolithic; columnar shape with no visible feet.",
+        "avoid": [
+          "Bright_colors",
+          "Short_sleeves"
+        ]
+      },
+      {
+        "rule_id": "saboteur_scavenger",
+        "role_keywords": [
+          "Saboteur",
+          "Scavenger",
+          "Unbound"
+        ],
+        "attire": [
+          "Asymmetrical_shards_of_frosted_glass",
+          "Frayed_basalt_wraps",
+          "Dark_hood"
+        ],
+        "props": [
+          "Shattered_obligation_tile",
+          "Viral_paradox_vial"
+        ],
+        "palette_notes": "Muted greys and blacks; red accents are hidden or internal.",
+        "silhouette_notes": "Broken, jagged edges; obscured face.",
+        "avoid": [
+          "Uniforms",
+          "Polished_surfaces"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "standard_visitor",
+      "role_keywords": [
+        "Visitor",
+        "Debtor",
+        "Citizen"
+      ],
+      "attire": [
+        "Minimalist_grey_tunic",
+        "Black_basalt_belt",
+        "Frosted_glass_badge"
+      ],
+      "props": [
+        "Debt_bond_wafer"
+      ],
+      "palette_notes": "Neutral greys and blacks.",
+      "silhouette_notes": "Slender, 6-head tall humanoid; clean lines.",
+      "avoid": [
+        "Ornate_decorations",
+        "Heavy_armor"
+      ]
+    },
+    "visual_consistency_rules": [
+      "1px selective black outline for all sprites.",
+      "No gradients; use dithering for frosted glass effects.",
+      "Red is reserved for high-status or high-danger elements.",
+      "All props must be held at 90-degree angles to the body.",
+      "Shadows must be cast strictly downward at 100% opacity."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "museum-future-debts-01",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees_vertical",
+      "scale_rule": "32px_per_meter_grid_aligned"
+    },
+    "palette": {
+      "dominant": "#0a0a0a",
+      "secondary": "#e0e0e0",
+      "accent": "#ff0000",
+      "shadow": "#1a1a1a",
+      "highlight": "#98ffd9"
+    },
+    "materials": [
+      "black_basalt",
+      "frosted_glass",
+      "oxidized_silver",
+      "white_ceramic",
+      "brushed_steel"
+    ],
+    "lighting": "clinical_top_down_with_pale_mint_volumetric_glow_and_harsh_shadows",
+    "architecture": [
+      "brutalist_monoliths",
+      "recessed_floor_channels",
+      "modular_actuarial_desks",
+      "heavy_vault_doors"
+    ],
+    "terrain": {
+      "ground": "polished_black_basalt_tiles",
+      "path": "frosted_glass_walkways_with_underlight",
+      "edge": "oxidized_silver_trim_and_cable_bundles"
+    },
+    "sprite_language": {
+      "body_proportion": "6_head_tall_slender_humanoid",
+      "outline": "1px_selective_black_outline",
+      "role_readability": "color_coded_armbands_and_ceramic_tally_tablets"
+    },
+    "world_prompt_prefix": "top-down_pixel_art,brutalist_museum,black_basalt,frosted_glass,signal_red_accents,clinical_lighting,grid_aligned",
+    "sprite_prompt_prefix": "top-down_pixel_sprite,uniformed_actuary,minimalist_clothing,holding_ceramic_tablet,sharp_shadows",
+    "forbidden_visuals": [
+      "photorealism",
+      "isometric_view",
+      "organic_curves",
+      "nature_elements",
+      "visible_text_labels",
+      "floating_ui_elements",
+      "warm_colors"
+    ],
+    "canon_hash": "072555111680bbe4"
+  }
+}

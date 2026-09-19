@@ -1,0 +1,123 @@
+{
+  "generated_at": "2026-07-25T17:29:31.729961+00:00",
+  "command": "scripts/agora_headless_message_latency_batch.py --base-url http://127.0.0.1:8125 --timeout-seconds 90 --out-dir docs/benchmark_20260724",
+  "summary": {
+    "world_count": 5,
+    "ok_count": 5,
+    "error_count": 0,
+    "boot_ready_ms": {
+      "count": 5,
+      "mean": 21385.1,
+      "median": 21306.501,
+      "p95": 21840.828,
+      "min": 20818.957,
+      "max": 21866.789
+    },
+    "message_persist_ms": {
+      "count": 5,
+      "mean": 995.6,
+      "median": 948.0,
+      "p95": 1190.4,
+      "min": 900.0,
+      "max": 1243.0
+    },
+    "agent_reply_ms": {
+      "count": 5,
+      "mean": 3148.6,
+      "median": 3481.0,
+      "p95": 3539.8,
+      "min": 2499.0,
+      "max": 3551.0
+    },
+    "provider_latency_ms": {
+      "count": 5,
+      "mean": 1671.0,
+      "median": 1731.0,
+      "p95": 1780.8,
+      "min": 1407.0,
+      "max": 1791.0
+    }
+  },
+  "runs": [
+    {
+      "world_name": "Clockwork Rain Conservatory",
+      "access_code": "a0d595161b975dd0",
+      "status": "ok",
+      "started_at": "2026-07-25T17:27:12.923838+00:00",
+      "session_id": "784a0521d0da26e4",
+      "baseline_event_id": 76,
+      "response_event_id": 77,
+      "boot_ready_ms": 21866.789,
+      "message_persist_ms": 980,
+      "agent_reply_ms": 3551,
+      "provider_latency_ms": 1791,
+      "model": "gemini-3.1-flash-lite-preview",
+      "response_source": "ai_studio",
+      "unique_message": "message-only latency probe 1785000432923"
+    },
+    {
+      "world_name": "Aurora Court of Migrating Cities",
+      "access_code": "cfa9e1aa1ed06a38",
+      "status": "ok",
+      "started_at": "2026-07-25T17:27:41.978265+00:00",
+      "session_id": "af7b9228daf77f0b",
+      "baseline_event_id": 199,
+      "response_event_id": 200,
+      "boot_ready_ms": 21736.985,
+      "message_persist_ms": 900,
+      "agent_reply_ms": 3481,
+      "provider_latency_ms": 1740,
+      "model": "gemini-3.1-flash-lite-preview",
+      "response_source": "ai_studio",
+      "unique_message": "message-only latency probe 1785000461978"
+    },
+    {
+      "world_name": "Mycelium Patent Bazaar",
+      "access_code": "995cad4cf9d281d9",
+      "status": "ok",
+      "started_at": "2026-07-25T17:28:10.563848+00:00",
+      "session_id": "1f3053936ca4e907",
+      "baseline_event_id": 60,
+      "response_event_id": 62,
+      "boot_ready_ms": 20818.957,
+      "message_persist_ms": 907,
+      "agent_reply_ms": 2499,
+      "provider_latency_ms": 1407,
+      "model": "gemini-3.1-flash-lite-preview",
+      "response_source": "ai_studio",
+      "unique_message": "message-only latency probe 1785000490563"
+    },
+    {
+      "world_name": "Tidal Embassy of Lost Languages",
+      "access_code": "21c6573255c5933f",
+      "status": "ok",
+      "started_at": "2026-07-25T17:28:37.489828+00:00",
+      "session_id": "145c92727481ac58",
+      "baseline_event_id": 22,
+      "response_event_id": 23,
+      "boot_ready_ms": 21196.267,
+      "message_persist_ms": 1243,
+      "agent_reply_ms": 3495,
+      "provider_latency_ms": 1686,
+      "model": "gemini-3.1-flash-lite-preview",
+      "response_source": "ai_studio",
+      "unique_message": "message-only latency probe 1785000517489"
+    },
+    {
+      "world_name": "Sunken Satellite Monastery",
+      "access_code": "82f0356e41af144a",
+      "status": "ok",
+      "started_at": "2026-07-25T17:29:05.935053+00:00",
+      "session_id": "03f4bb2a92ae4ff7",
+      "baseline_event_id": 57,
+      "response_event_id": 58,
+      "boot_ready_ms": 21306.501,
+      "message_persist_ms": 948,
+      "agent_reply_ms": 2717,
+      "provider_latency_ms": 1731,
+      "model": "gemini-3.1-flash-lite-preview",
+      "response_source": "ai_studio",
+      "unique_message": "message-only latency probe 1785000545935"
+    }
+  ]
+}

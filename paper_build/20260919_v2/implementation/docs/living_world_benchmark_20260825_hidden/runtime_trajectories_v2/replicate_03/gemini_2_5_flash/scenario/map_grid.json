@@ -1,0 +1,960 @@
+{
+  "grid_shape": {
+    "x": 16,
+    "y": 23,
+    "z": 1
+  },
+  "map_visual": {
+    "projection": "orthographic_grid",
+    "style": "pixel_art",
+    "tile_width": 32,
+    "tile_height": 32,
+    "room_width_tiles": 6,
+    "room_height_tiles": 4,
+    "agent_sprite_size": 64,
+    "origin": {
+      "x": 0,
+      "y": 0
+    },
+    "layers": [
+      "floor",
+      "objects",
+      "agents",
+      "effects",
+      "ui"
+    ],
+    "camera": {
+      "start_room_id": "room_02_courier_guild_dispatch",
+      "zoom": 2.0,
+      "follow_main_character": "veridia_promise_tax_v1_main_01"
+    },
+    "tileset": {
+      "key": "veridia_promise_tax_v1_pixel_tiles",
+      "image_path": "",
+      "tile_margin": 0,
+      "tile_spacing": 0
+    },
+    "theme_label": "Gothic, Steampunk, Intricate, Weight-bearing Architecture",
+    "visual_canon_hash": "8de439b0a52756fa"
+  },
+  "rooms": [
+    {
+      "room_id": "room_01_promise_assessment_chamber",
+      "name": "Promise Assessment Chamber",
+      "x": 0,
+      "y": 6,
+      "z": 0,
+      "width_tiles": 7,
+      "height_tiles": 7,
+      "doorways": [
+        {
+          "doorway_id": "room_01_promise_assessment_chamber_to_room_03_council_of_elders_chamber",
+          "position": {
+            "x": 6,
+            "y": 9,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_03_council_of_elders_chamber",
+          "label": "passage to Council of Elders Chamber"
+        },
+        {
+          "doorway_id": "room_01_promise_assessment_chamber_to_room_05_debt_courier_s_rest",
+          "position": {
+            "x": 3,
+            "y": 6,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_05_debt_courier_s_rest",
+          "label": "passage to Debt Courier's Rest"
+        },
+        {
+          "doorway_id": "room_01_promise_assessment_chamber_to_room_06_merchant_s_exchange_stall",
+          "position": {
+            "x": 4,
+            "y": 12,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_06_merchant_s_exchange_stall",
+          "label": "passage to Merchant's Exchange Stall"
+        }
+      ],
+      "visual": {
+        "biome": "cliffside_urban",
+        "floor_tile": "library_wood",
+        "wall_tile": "library_shelf_wall",
+        "decor_tags": [
+          "official",
+          "taxation",
+          "mechanical",
+          "brass_accents",
+          "parchment"
+        ],
+        "ambient_palette": "low_lantern",
+        "visual_canon_hash": "8de439b0a52756fa",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_01_promise_assessment_chamber_promise_weighing_scale",
+            "label": "Promise Scale",
+            "description": "An intricate, large brass and darkened iron weighing scale with visible gears, designed to physically represent the 'weight' of a promise.",
+            "anchor": "center",
+            "width_tiles": 2,
+            "height_tiles": 2
+          },
+          {
+            "component_id": "room_01_promise_assessment_chamber_ledger_desk",
+            "label": "Ledger Desk",
+            "description": "A heavy carved wood desk with an open, thick parchment ledger and quill, surrounded by smaller stacks of scrolls.",
+            "anchor": "south_east",
+            "width_tiles": 2,
+            "height_tiles": 1
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Where the Promise Tax Authority (PTA) assesses and taxes spoken promises, directly influencing the 'promise_debt_level' state variable. High activity here increases debt, which then impacts the 'courier_activity_level' in the Courier Guild Dispatch.",
+        "activity_tags": [
+          "assessment",
+          "recording",
+          "valuation"
+        ],
+        "player_entry_hook": "You have just received a notice for an unexpectedly high promise tax on a minor vow.",
+        "room_archetype": "archive_ritual",
+        "layout_signal": "Promise Assessment Chamber | Where the Promise Tax Authority (PTA) assesses and taxes spoken promises, directly influencing the 'promise_debt_level' state variable. High activity here increases debt, which then impacts the 'courier_activity_level' in the Courier Guild Dispatch. | cliffside_urban | assessment | recording | valuation | official | taxation | mechanical | brass_accents | parchment"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of dark, heavy flagstone flooring, worn smooth in the center, with subtle brass inlay patterns",
+      "room_scene_prompt": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism. A Promise Assessment Chamber with a central, ornate brass and iron weighing scale, surrounded by heavy carved wood desks and stacks of thick parchment ledgers, all rendered in clean pixel art suitable for a 32x32 tile map texture.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "veridia_promise_tax_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "Slightly angled, showing tops of structures and ground, minimal wall visibility",
+          "scale_rule": "1 unit = 1 meter, consistent object scaling"
+        },
+        "palette": {
+          "dominant": "#4a4a4a",
+          "secondary": "#7f7f7f",
+          "accent": "#b8860b",
+          "shadow": "#2c2c2c",
+          "highlight": "#e0e0e0"
+        },
+        "materials": [
+          "Aged Stone",
+          "Darkened Iron",
+          "Polished Brass",
+          "Heavy Carved Wood",
+          "Thick Parchment",
+          "Worn Leather",
+          "Intricate Gears",
+          "Smoked Glass"
+        ],
+        "lighting": "Soft, directional, emphasizing intricate details and deep shadows, with occasional warm glows from mechanisms",
+        "architecture": [
+          "Massive structures carved into cliffs",
+          "Overhanging balconies and bridges with visible counterweights",
+          "Integrated clockwork and gear mechanisms",
+          "Heavy, reinforced doorways and archways",
+          "Verticality, structures built into and on top of each other",
+          "Gothic arches and buttresses with mechanical elements"
+        ],
+        "terrain": {
+          "ground": "Rough, uneven grey-brown cliff rock, worn smooth in high traffic areas",
+          "path": "Paved with dark, heavy flagstones, often showing grooves from heavy loads",
+          "edge": "Sheer cliff drops, reinforced with heavy iron railings or carved stone barriers"
+        },
+        "sprite_language": {
+          "body_proportion": "Slightly stylized, realistic proportions with emphasis on broad shoulders for carrying, or slender for agility",
+          "outline": "Thin, dark, crisp outline for readability against complex backgrounds",
+          "role_readability": "Clear visual cues for roles (e.g., couriers with satchels, tax collectors with ledgers, elders with robes/staves)"
+        },
+        "world_prompt_prefix": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism",
+        "sprite_prompt_prefix": "Orthographic top-down view, Veridia citizen, stylized, crisp outline, clear role, no text, no labels, no photorealism",
+        "forbidden_visuals": [
+          "visible labels",
+          "title text",
+          "poster/card layouts",
+          "disconnected room dioramas",
+          "photorealism",
+          "aesthetics unrelated to this exact premise"
+        ],
+        "canon_hash": "8de439b0a52756fa"
+      }
+    },
+    {
+      "room_id": "room_02_courier_guild_dispatch",
+      "name": "Courier Guild Dispatch",
+      "x": 7,
+      "y": 0,
+      "z": 0,
+      "width_tiles": 8,
+      "height_tiles": 6,
+      "doorways": [
+        {
+          "doorway_id": "room_02_courier_guild_dispatch_to_room_03_council_of_elders_chamber",
+          "position": {
+            "x": 10,
+            "y": 5,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_03_council_of_elders_chamber",
+          "label": "passage to Council of Elders Chamber"
+        },
+        {
+          "doorway_id": "room_02_courier_guild_dispatch_to_room_05_debt_courier_s_rest",
+          "position": {
+            "x": 7,
+            "y": 3,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_05_debt_courier_s_rest",
+          "label": "passage to Debt Courier's Rest"
+        }
+      ],
+      "visual": {
+        "biome": "cliffside_urban",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "functional",
+          "logistics",
+          "worn_leather",
+          "iron_fixtures"
+        ],
+        "ambient_palette": "dusty_brown",
+        "visual_canon_hash": "8de439b0a52756fa",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_02_courier_guild_dispatch_dispatch_board",
+            "label": "Dispatch Board",
+            "description": "A tall, dark iron board with numerous hooks and slots, holding small parchment slips detailing courier routes and debt assignments.",
+            "anchor": "north_mid",
+            "width_tiles": 2,
+            "height_tiles": 1
+          },
+          {
+            "component_id": "room_02_courier_guild_dispatch_courier_gear_rack",
+            "label": "Gear Rack",
+            "description": "A heavy carved wood and iron rack holding various worn leather satchels, ropes, and climbing gear for couriers.",
+            "anchor": "south_west",
+            "width_tiles": 1,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "The central hub for the Courier Guild (CG), where couriers receive assignments for transporting unpaid promise debts. High 'promise_debt_level' from the Assessment Chamber directly increases the 'courier_activity_level' here, which in turn strains 'city_trust_index'.",
+        "activity_tags": [
+          "dispatch",
+          "loading",
+          "reporting"
+        ],
+        "player_entry_hook": "A Senior Debt Courier has approached you, demanding payment for a promise you believe was already fulfilled.",
+        "room_archetype": "logistics_yard",
+        "layout_signal": "Courier Guild Dispatch | The central hub for the Courier Guild (CG), where couriers receive assignments for transporting unpaid promise debts. High 'promise_debt_level' from the Assessment Chamber directly increases the 'courier_activity_level' here, which in turn strains 'city_trust_index'. | cliffside_urban | dispatch | loading | reporting | functional | logistics | worn_leather | iron_fixtures"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of rough, uneven grey-brown cliff rock, worn smooth in high traffic areas, with faint grooves from heavy loads",
+      "room_scene_prompt": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism. A bustling Courier Guild Dispatch room with a large, central iron dispatch board displaying routes, surrounded by heavy wooden benches and racks of worn leather satchels and gear, all rendered in clean pixel art suitable for a 32x32 tile map texture.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "veridia_promise_tax_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "Slightly angled, showing tops of structures and ground, minimal wall visibility",
+          "scale_rule": "1 unit = 1 meter, consistent object scaling"
+        },
+        "palette": {
+          "dominant": "#4a4a4a",
+          "secondary": "#7f7f7f",
+          "accent": "#b8860b",
+          "shadow": "#2c2c2c",
+          "highlight": "#e0e0e0"
+        },
+        "materials": [
+          "Aged Stone",
+          "Darkened Iron",
+          "Polished Brass",
+          "Heavy Carved Wood",
+          "Thick Parchment",
+          "Worn Leather",
+          "Intricate Gears",
+          "Smoked Glass"
+        ],
+        "lighting": "Soft, directional, emphasizing intricate details and deep shadows, with occasional warm glows from mechanisms",
+        "architecture": [
+          "Massive structures carved into cliffs",
+          "Overhanging balconies and bridges with visible counterweights",
+          "Integrated clockwork and gear mechanisms",
+          "Heavy, reinforced doorways and archways",
+          "Verticality, structures built into and on top of each other",
+          "Gothic arches and buttresses with mechanical elements"
+        ],
+        "terrain": {
+          "ground": "Rough, uneven grey-brown cliff rock, worn smooth in high traffic areas",
+          "path": "Paved with dark, heavy flagstones, often showing grooves from heavy loads",
+          "edge": "Sheer cliff drops, reinforced with heavy iron railings or carved stone barriers"
+        },
+        "sprite_language": {
+          "body_proportion": "Slightly stylized, realistic proportions with emphasis on broad shoulders for carrying, or slender for agility",
+          "outline": "Thin, dark, crisp outline for readability against complex backgrounds",
+          "role_readability": "Clear visual cues for roles (e.g., couriers with satchels, tax collectors with ledgers, elders with robes/staves)"
+        },
+        "world_prompt_prefix": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism",
+        "sprite_prompt_prefix": "Orthographic top-down view, Veridia citizen, stylized, crisp outline, clear role, no text, no labels, no photorealism",
+        "forbidden_visuals": [
+          "visible labels",
+          "title text",
+          "poster/card layouts",
+          "disconnected room dioramas",
+          "photorealism",
+          "aesthetics unrelated to this exact premise"
+        ],
+        "canon_hash": "8de439b0a52756fa"
+      }
+    },
+    {
+      "room_id": "room_03_council_of_elders_chamber",
+      "name": "Council of Elders Chamber",
+      "x": 7,
+      "y": 6,
+      "z": 0,
+      "width_tiles": 9,
+      "height_tiles": 9,
+      "doorways": [
+        {
+          "doorway_id": "room_01_promise_assessment_chamber_to_room_03_council_of_elders_chamber",
+          "position": {
+            "x": 7,
+            "y": 9,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_01_promise_assessment_chamber",
+          "label": "passage to Promise Assessment Chamber"
+        },
+        {
+          "doorway_id": "room_02_courier_guild_dispatch_to_room_03_council_of_elders_chamber",
+          "position": {
+            "x": 10,
+            "y": 6,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_02_courier_guild_dispatch",
+          "label": "passage to Courier Guild Dispatch"
+        },
+        {
+          "doorway_id": "room_03_council_of_elders_chamber_to_room_04_public_promise_registry",
+          "position": {
+            "x": 9,
+            "y": 14,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_04_public_promise_registry",
+          "label": "passage to Public Promise Registry"
+        }
+      ],
+      "visual": {
+        "biome": "cliffside_urban",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "sacred",
+          "ancient",
+          "ceremonial",
+          "heavy_wood",
+          "smoked_glass"
+        ],
+        "ambient_palette": "warm_lantern",
+        "visual_canon_hash": "8de439b0a52756fa",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_03_council_of_elders_chamber_council_table",
+            "label": "Council Table",
+            "description": "A massive, circular table made of dark, heavy carved wood, with intricate symbols etched into its surface.",
+            "anchor": "center",
+            "width_tiles": 3,
+            "height_tiles": 3
+          },
+          {
+            "component_id": "room_03_council_of_elders_chamber_elder_lectern",
+            "label": "Elder Lectern",
+            "description": "A tall, ornate lectern made of polished brass and heavy wood, holding a large, ancient tome.",
+            "anchor": "north_mid",
+            "width_tiles": 1,
+            "height_tiles": 1
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Where the Council of Elders (CoE) mediates disputes and interprets ancient promise law, directly influencing the 'city_trust_index' and 'promise_enforcement_rigor'. Their decisions here can reduce 'promise_debt_level' city-wide.",
+        "activity_tags": [
+          "mediation",
+          "deliberation",
+          "decree"
+        ],
+        "player_entry_hook": "The Guildmaster of Couriers has assigned you a particularly sensitive debt collection that could upset powerful figures.",
+        "room_archetype": "council",
+        "layout_signal": "Council of Elders Chamber | Where the Council of Elders (CoE) mediates disputes and interprets ancient promise law, directly influencing the 'city_trust_index' and 'promise_enforcement_rigor'. Their decisions here can reduce 'promise_debt_level' city-wide. | cliffside_urban | mediation | deliberation | decree | sacred | ancient | ceremonial | heavy_wood | smoked_glass"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of polished dark flagstones, arranged in an intricate geometric pattern, with subtle light reflections",
+      "room_scene_prompt": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism. A solemn Council of Elders Chamber with a large, circular heavy carved wood table at its center, surrounded by high-backed chairs and illuminated by soft light filtering through smoked glass windows, all rendered in clean pixel art suitable for a 32x32 tile map texture.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "veridia_promise_tax_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "Slightly angled, showing tops of structures and ground, minimal wall visibility",
+          "scale_rule": "1 unit = 1 meter, consistent object scaling"
+        },
+        "palette": {
+          "dominant": "#4a4a4a",
+          "secondary": "#7f7f7f",
+          "accent": "#b8860b",
+          "shadow": "#2c2c2c",
+          "highlight": "#e0e0e0"
+        },
+        "materials": [
+          "Aged Stone",
+          "Darkened Iron",
+          "Polished Brass",
+          "Heavy Carved Wood",
+          "Thick Parchment",
+          "Worn Leather",
+          "Intricate Gears",
+          "Smoked Glass"
+        ],
+        "lighting": "Soft, directional, emphasizing intricate details and deep shadows, with occasional warm glows from mechanisms",
+        "architecture": [
+          "Massive structures carved into cliffs",
+          "Overhanging balconies and bridges with visible counterweights",
+          "Integrated clockwork and gear mechanisms",
+          "Heavy, reinforced doorways and archways",
+          "Verticality, structures built into and on top of each other",
+          "Gothic arches and buttresses with mechanical elements"
+        ],
+        "terrain": {
+          "ground": "Rough, uneven grey-brown cliff rock, worn smooth in high traffic areas",
+          "path": "Paved with dark, heavy flagstones, often showing grooves from heavy loads",
+          "edge": "Sheer cliff drops, reinforced with heavy iron railings or carved stone barriers"
+        },
+        "sprite_language": {
+          "body_proportion": "Slightly stylized, realistic proportions with emphasis on broad shoulders for carrying, or slender for agility",
+          "outline": "Thin, dark, crisp outline for readability against complex backgrounds",
+          "role_readability": "Clear visual cues for roles (e.g., couriers with satchels, tax collectors with ledgers, elders with robes/staves)"
+        },
+        "world_prompt_prefix": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism",
+        "sprite_prompt_prefix": "Orthographic top-down view, Veridia citizen, stylized, crisp outline, clear role, no text, no labels, no photorealism",
+        "forbidden_visuals": [
+          "visible labels",
+          "title text",
+          "poster/card layouts",
+          "disconnected room dioramas",
+          "photorealism",
+          "aesthetics unrelated to this exact premise"
+        ],
+        "canon_hash": "8de439b0a52756fa"
+      }
+    },
+    {
+      "room_id": "room_04_public_promise_registry",
+      "name": "Public Promise Registry",
+      "x": 7,
+      "y": 15,
+      "z": 0,
+      "width_tiles": 6,
+      "height_tiles": 8,
+      "doorways": [
+        {
+          "doorway_id": "room_03_council_of_elders_chamber_to_room_04_public_promise_registry",
+          "position": {
+            "x": 9,
+            "y": 15,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_03_council_of_elders_chamber",
+          "label": "passage to Council of Elders Chamber"
+        }
+      ],
+      "visual": {
+        "biome": "cliffside_urban",
+        "floor_tile": "library_wood",
+        "wall_tile": "library_shelf_wall",
+        "decor_tags": [
+          "public",
+          "informational",
+          "parchment",
+          "brass_fittings"
+        ],
+        "ambient_palette": "focused_blue",
+        "visual_canon_hash": "8de439b0a52756fa",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_04_public_promise_registry_registry_shelves",
+            "label": "Registry Shelves",
+            "description": "Tall, heavy carved wood shelves packed with countless rolled parchments and bound ledgers, accessible to the public.",
+            "anchor": "north_west",
+            "width_tiles": 2,
+            "height_tiles": 3
+          },
+          {
+            "component_id": "room_04_public_promise_registry_reading_stand",
+            "label": "Reading Stand",
+            "description": "A sturdy, waist-high stand made of dark wood with a brass top, holding an open ledger for public viewing.",
+            "anchor": "south_mid",
+            "width_tiles": 1,
+            "height_tiles": 1
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "A public archive maintained by the Promise Tax Authority (PTA) where citizens can view their own and others' promise statuses. Transparency here affects the 'city_trust_index' and can influence 'promise_debt_level' by encouraging accountability.",
+        "activity_tags": [
+          "consultation",
+          "record_keeping",
+          "dispute_checking"
+        ],
+        "player_entry_hook": "You've uncovered a discrepancy in the Public Promise Registry that could expose a major scandal.",
+        "room_archetype": "archive_ritual",
+        "layout_signal": "Public Promise Registry | A public archive maintained by the Promise Tax Authority (PTA) where citizens can view their own and others' promise statuses. Transparency here affects the 'city_trust_index' and can influence 'promise_debt_level' by encouraging accountability. | cliffside_urban | consultation | record_keeping | dispute_checking | public | informational | parchment | brass_fittings"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of light grey-brown flagstones, well-trodden and slightly uneven, with faint dust motes",
+      "room_scene_prompt": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism. A Public Promise Registry room with tall, open shelves filled with scrolls and ledgers, and several brass-fitted reading stands where citizens can consult public records, all rendered in clean pixel art suitable for a 32x32 tile map texture.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "veridia_promise_tax_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "Slightly angled, showing tops of structures and ground, minimal wall visibility",
+          "scale_rule": "1 unit = 1 meter, consistent object scaling"
+        },
+        "palette": {
+          "dominant": "#4a4a4a",
+          "secondary": "#7f7f7f",
+          "accent": "#b8860b",
+          "shadow": "#2c2c2c",
+          "highlight": "#e0e0e0"
+        },
+        "materials": [
+          "Aged Stone",
+          "Darkened Iron",
+          "Polished Brass",
+          "Heavy Carved Wood",
+          "Thick Parchment",
+          "Worn Leather",
+          "Intricate Gears",
+          "Smoked Glass"
+        ],
+        "lighting": "Soft, directional, emphasizing intricate details and deep shadows, with occasional warm glows from mechanisms",
+        "architecture": [
+          "Massive structures carved into cliffs",
+          "Overhanging balconies and bridges with visible counterweights",
+          "Integrated clockwork and gear mechanisms",
+          "Heavy, reinforced doorways and archways",
+          "Verticality, structures built into and on top of each other",
+          "Gothic arches and buttresses with mechanical elements"
+        ],
+        "terrain": {
+          "ground": "Rough, uneven grey-brown cliff rock, worn smooth in high traffic areas",
+          "path": "Paved with dark, heavy flagstones, often showing grooves from heavy loads",
+          "edge": "Sheer cliff drops, reinforced with heavy iron railings or carved stone barriers"
+        },
+        "sprite_language": {
+          "body_proportion": "Slightly stylized, realistic proportions with emphasis on broad shoulders for carrying, or slender for agility",
+          "outline": "Thin, dark, crisp outline for readability against complex backgrounds",
+          "role_readability": "Clear visual cues for roles (e.g., couriers with satchels, tax collectors with ledgers, elders with robes/staves)"
+        },
+        "world_prompt_prefix": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism",
+        "sprite_prompt_prefix": "Orthographic top-down view, Veridia citizen, stylized, crisp outline, clear role, no text, no labels, no photorealism",
+        "forbidden_visuals": [
+          "visible labels",
+          "title text",
+          "poster/card layouts",
+          "disconnected room dioramas",
+          "photorealism",
+          "aesthetics unrelated to this exact premise"
+        ],
+        "canon_hash": "8de439b0a52756fa"
+      }
+    },
+    {
+      "room_id": "room_05_debt_courier_s_rest",
+      "name": "Debt Courier's Rest",
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "width_tiles": 7,
+      "height_tiles": 5,
+      "doorways": [
+        {
+          "doorway_id": "room_01_promise_assessment_chamber_to_room_05_debt_courier_s_rest",
+          "position": {
+            "x": 3,
+            "y": 5,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_01_promise_assessment_chamber",
+          "label": "passage to Promise Assessment Chamber"
+        },
+        {
+          "doorway_id": "room_02_courier_guild_dispatch_to_room_05_debt_courier_s_rest",
+          "position": {
+            "x": 6,
+            "y": 3,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_02_courier_guild_dispatch",
+          "label": "passage to Courier Guild Dispatch"
+        }
+      ],
+      "visual": {
+        "biome": "cliffside_urban",
+        "floor_tile": "tavern_planks",
+        "wall_tile": "tavern_wall",
+        "decor_tags": [
+          "worn",
+          "communal",
+          "simple",
+          "heavy_wood"
+        ],
+        "ambient_palette": "warm_lantern",
+        "visual_canon_hash": "8de439b0a52756fa",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_05_debt_courier_s_rest_communal_table",
+            "label": "Communal Table",
+            "description": "A long, sturdy table made of heavy, dark wood, scarred from use, with several simple stools around it.",
+            "anchor": "center",
+            "width_tiles": 3,
+            "height_tiles": 2
+          },
+          {
+            "component_id": "room_05_debt_courier_s_rest_brazier",
+            "label": "Brazier",
+            "description": "A small, iron brazier emitting a warm, low glow, providing heat and light.",
+            "anchor": "north_east",
+            "width_tiles": 1,
+            "height_tiles": 1
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "A common area for couriers to rest and socialize, managed by the Courier Union (CU). The 'courier_activity_level' directly impacts the mood and occupancy here, affecting 'courier_union_satisfaction'.",
+        "activity_tags": [
+          "resting",
+          "socializing",
+          "planning"
+        ],
+        "player_entry_hook": "You have just received a notice for an unexpectedly high promise tax on a minor vow.",
+        "room_archetype": "rest_social",
+        "layout_signal": "Debt Courier's Rest | A common area for couriers to rest and socialize, managed by the Courier Union (CU). The 'courier_activity_level' directly impacts the mood and occupancy here, affecting 'courier_union_satisfaction'. | cliffside_urban | resting | socializing | planning | worn | communal | simple | heavy_wood"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of rough, dark wooden planks, scuffed and worn from heavy boots, with scattered straw",
+      "room_scene_prompt": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism. A Debt Courier's Rest room with a large, communal heavy carved wood table, surrounded by simple wooden stools and a small, glowing brazier for warmth, all rendered in clean pixel art suitable for a 32x32 tile map texture.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "veridia_promise_tax_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "Slightly angled, showing tops of structures and ground, minimal wall visibility",
+          "scale_rule": "1 unit = 1 meter, consistent object scaling"
+        },
+        "palette": {
+          "dominant": "#4a4a4a",
+          "secondary": "#7f7f7f",
+          "accent": "#b8860b",
+          "shadow": "#2c2c2c",
+          "highlight": "#e0e0e0"
+        },
+        "materials": [
+          "Aged Stone",
+          "Darkened Iron",
+          "Polished Brass",
+          "Heavy Carved Wood",
+          "Thick Parchment",
+          "Worn Leather",
+          "Intricate Gears",
+          "Smoked Glass"
+        ],
+        "lighting": "Soft, directional, emphasizing intricate details and deep shadows, with occasional warm glows from mechanisms",
+        "architecture": [
+          "Massive structures carved into cliffs",
+          "Overhanging balconies and bridges with visible counterweights",
+          "Integrated clockwork and gear mechanisms",
+          "Heavy, reinforced doorways and archways",
+          "Verticality, structures built into and on top of each other",
+          "Gothic arches and buttresses with mechanical elements"
+        ],
+        "terrain": {
+          "ground": "Rough, uneven grey-brown cliff rock, worn smooth in high traffic areas",
+          "path": "Paved with dark, heavy flagstones, often showing grooves from heavy loads",
+          "edge": "Sheer cliff drops, reinforced with heavy iron railings or carved stone barriers"
+        },
+        "sprite_language": {
+          "body_proportion": "Slightly stylized, realistic proportions with emphasis on broad shoulders for carrying, or slender for agility",
+          "outline": "Thin, dark, crisp outline for readability against complex backgrounds",
+          "role_readability": "Clear visual cues for roles (e.g., couriers with satchels, tax collectors with ledgers, elders with robes/staves)"
+        },
+        "world_prompt_prefix": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism",
+        "sprite_prompt_prefix": "Orthographic top-down view, Veridia citizen, stylized, crisp outline, clear role, no text, no labels, no photorealism",
+        "forbidden_visuals": [
+          "visible labels",
+          "title text",
+          "poster/card layouts",
+          "disconnected room dioramas",
+          "photorealism",
+          "aesthetics unrelated to this exact premise"
+        ],
+        "canon_hash": "8de439b0a52756fa"
+      }
+    },
+    {
+      "room_id": "room_06_merchant_s_exchange_stall",
+      "name": "Merchant's Exchange Stall",
+      "x": 2,
+      "y": 13,
+      "z": 0,
+      "width_tiles": 5,
+      "height_tiles": 4,
+      "doorways": [
+        {
+          "doorway_id": "room_01_promise_assessment_chamber_to_room_06_merchant_s_exchange_stall",
+          "position": {
+            "x": 4,
+            "y": 13,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_01_promise_assessment_chamber",
+          "label": "passage to Promise Assessment Chamber"
+        }
+      ],
+      "visual": {
+        "biome": "cliffside_urban",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "commercial",
+          "trade",
+          "brass_weights",
+          "goods"
+        ],
+        "ambient_palette": "clear_day",
+        "visual_canon_hash": "8de439b0a52756fa",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_06_merchant_s_exchange_stall_merchant_counter",
+            "label": "Merchant Counter",
+            "description": "A sturdy, heavy carved wood counter laden with various small, intriguing goods and a small, precise brass weighing scale.",
+            "anchor": "north_mid",
+            "width_tiles": 3,
+            "height_tiles": 1
+          },
+          {
+            "component_id": "room_06_merchant_s_exchange_stall_transaction_ledger",
+            "label": "Transaction Ledger",
+            "description": "A thick, open ledger book with a quill, used for recording promises and transactions.",
+            "anchor": "east_mid",
+            "width_tiles": 1,
+            "height_tiles": 1
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "A typical stall where City Merchants (CM) conduct transactions. The 'city_trust_index' and 'tax_revenue_stability' directly influence the vibrancy and activity here, reflecting the health of the promise-based economy.",
+        "activity_tags": [
+          "selling",
+          "bargaining",
+          "exchanging"
+        ],
+        "player_entry_hook": "A Senior Debt Courier has approached you, demanding payment for a promise you believe was already fulfilled.",
+        "room_archetype": "market_exchange",
+        "layout_signal": "Merchant's Exchange Stall | A typical stall where City Merchants (CM) conduct transactions. The 'city_trust_index' and 'tax_revenue_stability' directly influence the vibrancy and activity here, reflecting the health of the promise-based economy. | cliffside_urban | selling | bargaining | exchanging | commercial | trade | brass_weights | goods"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of tightly packed, small grey cobblestones, well-worn and slightly uneven",
+      "room_scene_prompt": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism. A Merchant's Exchange Stall with a heavy carved wood counter displaying various goods, a small brass weighing scale, and a ledger for recording transactions, all rendered in clean pixel art suitable for a 32x32 tile map texture.",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "veridia_promise_tax_v1",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "Slightly angled, showing tops of structures and ground, minimal wall visibility",
+          "scale_rule": "1 unit = 1 meter, consistent object scaling"
+        },
+        "palette": {
+          "dominant": "#4a4a4a",
+          "secondary": "#7f7f7f",
+          "accent": "#b8860b",
+          "shadow": "#2c2c2c",
+          "highlight": "#e0e0e0"
+        },
+        "materials": [
+          "Aged Stone",
+          "Darkened Iron",
+          "Polished Brass",
+          "Heavy Carved Wood",
+          "Thick Parchment",
+          "Worn Leather",
+          "Intricate Gears",
+          "Smoked Glass"
+        ],
+        "lighting": "Soft, directional, emphasizing intricate details and deep shadows, with occasional warm glows from mechanisms",
+        "architecture": [
+          "Massive structures carved into cliffs",
+          "Overhanging balconies and bridges with visible counterweights",
+          "Integrated clockwork and gear mechanisms",
+          "Heavy, reinforced doorways and archways",
+          "Verticality, structures built into and on top of each other",
+          "Gothic arches and buttresses with mechanical elements"
+        ],
+        "terrain": {
+          "ground": "Rough, uneven grey-brown cliff rock, worn smooth in high traffic areas",
+          "path": "Paved with dark, heavy flagstones, often showing grooves from heavy loads",
+          "edge": "Sheer cliff drops, reinforced with heavy iron railings or carved stone barriers"
+        },
+        "sprite_language": {
+          "body_proportion": "Slightly stylized, realistic proportions with emphasis on broad shoulders for carrying, or slender for agility",
+          "outline": "Thin, dark, crisp outline for readability against complex backgrounds",
+          "role_readability": "Clear visual cues for roles (e.g., couriers with satchels, tax collectors with ledgers, elders with robes/staves)"
+        },
+        "world_prompt_prefix": "Orthographic top-down view, Veridia, cliffside city, ancient, intricate mechanisms, weight-based architecture, gothic steampunk, muted palette, soft directional lighting, no text, no labels, no photorealism",
+        "sprite_prompt_prefix": "Orthographic top-down view, Veridia citizen, stylized, crisp outline, clear role, no text, no labels, no photorealism",
+        "forbidden_visuals": [
+          "visible labels",
+          "title text",
+          "poster/card layouts",
+          "disconnected room dioramas",
+          "photorealism",
+          "aesthetics unrelated to this exact premise"
+        ],
+        "canon_hash": "8de439b0a52756fa"
+      }
+    }
+  ],
+  "initial_positions": {
+    "veridia_promise_tax_v1_main_01": {
+      "x": 1,
+      "y": 7,
+      "z": 0
+    },
+    "veridia_promise_tax_v1_main_02": {
+      "x": 1,
+      "y": 8,
+      "z": 0
+    },
+    "veridia_promise_tax_v1_main_03": {
+      "x": 4,
+      "y": 14,
+      "z": 0
+    },
+    "veridia_promise_tax_v1_main_04": {
+      "x": 8,
+      "y": 10,
+      "z": 0
+    },
+    "veridia_promise_tax_v1_main_05": {
+      "x": 8,
+      "y": 11,
+      "z": 0
+    },
+    "veridia_promise_tax_v1_main_06": {
+      "x": 2,
+      "y": 4,
+      "z": 0
+    },
+    "veridia_promise_tax_v1_main_07": {
+      "x": 8,
+      "y": 13,
+      "z": 0
+    },
+    "veridia_promise_tax_v1_main_08": {
+      "x": 3,
+      "y": 15,
+      "z": 0
+    },
+    "veridia_promise_tax_v1_main_09": {
+      "x": 9,
+      "y": 8,
+      "z": 0
+    },
+    "veridia_promise_tax_v1_main_10": {
+      "x": 2,
+      "y": 11,
+      "z": 0
+    },
+    "veridia_promise_tax_v1_main_11": {
+      "x": 9,
+      "y": 10,
+      "z": 0
+    },
+    "veridia_promise_tax_v1_main_12": {
+      "x": 4,
+      "y": 4,
+      "z": 0
+    }
+  },
+  "initial_room_ids": {
+    "veridia_promise_tax_v1_main_01": "room_01_promise_assessment_chamber",
+    "veridia_promise_tax_v1_main_02": "room_01_promise_assessment_chamber",
+    "veridia_promise_tax_v1_main_03": "room_06_merchant_s_exchange_stall",
+    "veridia_promise_tax_v1_main_04": "room_03_council_of_elders_chamber",
+    "veridia_promise_tax_v1_main_05": "room_03_council_of_elders_chamber",
+    "veridia_promise_tax_v1_main_06": "room_05_debt_courier_s_rest",
+    "veridia_promise_tax_v1_main_07": "room_03_council_of_elders_chamber",
+    "veridia_promise_tax_v1_main_08": "room_06_merchant_s_exchange_stall",
+    "veridia_promise_tax_v1_main_09": "room_03_council_of_elders_chamber",
+    "veridia_promise_tax_v1_main_10": "room_01_promise_assessment_chamber",
+    "veridia_promise_tax_v1_main_11": "room_03_council_of_elders_chamber",
+    "veridia_promise_tax_v1_main_12": "room_05_debt_courier_s_rest"
+  }
+}

@@ -1,0 +1,622 @@
+{
+  "generated_at": "2026-07-29T21:26:29.850742+00:00",
+  "treatment": "production_specialist_decomposition_without_art",
+  "model": "gemini-3-flash-preview",
+  "temperature": 0.2,
+  "thinking_level": "low",
+  "thinking_budget": 1024,
+  "max_output_tokens": 8192,
+  "replicates": 1,
+  "case_set": "legacy_heldout",
+  "manifest_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/benchmark_manifest.json",
+  "monolithic_summary_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_low_24k_quality_heldout_20260729/monolithic_baseline_summary.json",
+  "protocol": {
+    "same_original_briefs": true,
+    "input_case_count": 5,
+    "same_model_across_all_specialist_nodes": true,
+    "same_model_as_monolithic": true,
+    "same_temperature_as_monolithic": true,
+    "same_thinking_level_as_monolithic": true,
+    "same_per_call_output_cap_as_monolithic": false,
+    "monolithic_output_cap": 24576,
+    "same_merged_contract_evaluator": true,
+    "same_deterministic_compiler": true,
+    "strict_no_content_fallback": true,
+    "art_browser_publish_excluded": true,
+    "provider_usage_metadata_recorded": true,
+    "thinking_control": "thinking_level"
+  },
+  "summary": {
+    "world_count": 5,
+    "trial_count": 5,
+    "complete_successes": 5,
+    "complete_success_rate": 1.0,
+    "complete_success_wilson_95": [
+      0.5655,
+      1.0
+    ],
+    "worlds_with_majority_success": 5,
+    "first_pass_complete_successes": 4,
+    "first_pass_complete_success_rate": 0.8,
+    "worlds_with_majority_first_pass_success": 4,
+    "per_world": [
+      {
+        "world_name": "Aurora Court of Migrating Cities",
+        "successes": 1,
+        "first_pass_successes": 0,
+        "trials": 1,
+        "success_rate": 1.0,
+        "first_pass_success_rate": 0.0,
+        "wilson_95": [
+          0.2065,
+          1.0
+        ]
+      },
+      {
+        "world_name": "Clockwork Rain Conservatory",
+        "successes": 1,
+        "first_pass_successes": 1,
+        "trials": 1,
+        "success_rate": 1.0,
+        "first_pass_success_rate": 1.0,
+        "wilson_95": [
+          0.2065,
+          1.0
+        ]
+      },
+      {
+        "world_name": "Mycelium Patent Bazaar",
+        "successes": 1,
+        "first_pass_successes": 1,
+        "trials": 1,
+        "success_rate": 1.0,
+        "first_pass_success_rate": 1.0,
+        "wilson_95": [
+          0.2065,
+          1.0
+        ]
+      },
+      {
+        "world_name": "Sunken Satellite Monastery",
+        "successes": 1,
+        "first_pass_successes": 1,
+        "trials": 1,
+        "success_rate": 1.0,
+        "first_pass_success_rate": 1.0,
+        "wilson_95": [
+          0.2065,
+          1.0
+        ]
+      },
+      {
+        "world_name": "Tidal Embassy of Lost Languages",
+        "successes": 1,
+        "first_pass_successes": 1,
+        "trials": 1,
+        "success_rate": 1.0,
+        "first_pass_success_rate": 1.0,
+        "wilson_95": [
+          0.2065,
+          1.0
+        ]
+      }
+    ],
+    "mean_elapsed_seconds": 175.0502,
+    "median_elapsed_seconds": 161.133,
+    "provider_attempt_count": 79,
+    "retry_or_failure_attempt_count": 0,
+    "usage_metadata_attempt_count": 79,
+    "usage_metadata_coverage": 1.0,
+    "localized_node_retry_event_count": 1,
+    "localized_node_retry_failed_node_counts": {
+      "roles": 1
+    },
+    "localized_node_retry_preserved_cache_key_count": 5,
+    "token_totals": {
+      "candidatesTokenCount": 129216,
+      "promptTokenCount": 257293,
+      "thoughtsTokenCount": 1271,
+      "totalTokenCount": 387780
+    },
+    "mean_total_tokens_per_trial": 77556.0,
+    "paired_monolithic": {
+      "paired_trial_count": 5,
+      "decomposed_only_successes": 1,
+      "monolithic_only_successes": 0,
+      "discordant_trial_count": 1,
+      "trial_level_one_sided_exact_p": 0.5,
+      "first_pass_decomposed_only_successes": 3,
+      "first_pass_monolithic_only_successes": 1,
+      "first_pass_discordant_trial_count": 4,
+      "first_pass_trial_level_one_sided_exact_p": 0.3125,
+      "first_pass_world_majority_decomposed_only": 3,
+      "first_pass_world_majority_monolithic_only": 1,
+      "first_pass_world_discordant_count": 4,
+      "first_pass_world_level_one_sided_sign_test_p": 0.3125,
+      "warning": "Repeated trials within a world are not independent premise clusters; the world-majority analysis remains primary.",
+      "pairs": [
+        {
+          "world_name": "Aurora Court of Migrating Cities",
+          "replicate": 1,
+          "decomposed_success": true,
+          "monolithic_success": true,
+          "decomposed_first_pass_success": false,
+          "monolithic_first_pass_success": true
+        },
+        {
+          "world_name": "Clockwork Rain Conservatory",
+          "replicate": 1,
+          "decomposed_success": true,
+          "monolithic_success": true,
+          "decomposed_first_pass_success": true,
+          "monolithic_first_pass_success": false
+        },
+        {
+          "world_name": "Mycelium Patent Bazaar",
+          "replicate": 1,
+          "decomposed_success": true,
+          "monolithic_success": true,
+          "decomposed_first_pass_success": true,
+          "monolithic_first_pass_success": true
+        },
+        {
+          "world_name": "Sunken Satellite Monastery",
+          "replicate": 1,
+          "decomposed_success": true,
+          "monolithic_success": false,
+          "decomposed_first_pass_success": true,
+          "monolithic_first_pass_success": false
+        },
+        {
+          "world_name": "Tidal Embassy of Lost Languages",
+          "replicate": 1,
+          "decomposed_success": true,
+          "monolithic_success": true,
+          "decomposed_first_pass_success": true,
+          "monolithic_first_pass_success": false
+        }
+      ]
+    }
+  },
+  "worlds": [
+    {
+      "trial_id": "aurora_court_of_migrating_cities_r01",
+      "world_name": "Aurora Court of Migrating Cities",
+      "draft_id": "creator_20260724_203817_f86ae13e",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260724_203817_f86ae13e/revisions/r001",
+      "replicate": 1,
+      "request": {
+        "world_name": "Aurora Court of Migrating Cities",
+        "genre": "mobile arctic city-state diplomacy, logistics market, civic intrigue",
+        "player_count_target": 4,
+        "agent_count_target": 25,
+        "focus": "economy and trade-heavy world",
+        "seed": 26072401,
+        "brief": "A chain of walking polar cities crosses an aurora-lit ice shelf, trading heat, route rights, food cultures, spare legs, weather predictions, and citizenship favors. Build a dense social simulation around convoy scheduling, fuel debt, inter-city marriages, border inspections, black-market engine parts, and public ceremonies where each city's reputation can rise or fall."
+      },
+      "elapsed_seconds": 231.5789,
+      "generation_ok": true,
+      "complete_success": true,
+      "error": "",
+      "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/aurora_court_of_migrating_cities_r01_decomposed_builder_spec.json",
+      "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/aurora_court_of_migrating_cities_r01_decomposed_world_config.json",
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 25,
+        "compiled_room_count": 8,
+        "world_id": "aurora_court_migrating_cities"
+      },
+      "metrics": {
+        "rooms": 8,
+        "item_catalog_items": 15,
+        "main_characters": 25,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 2,
+        "inventory_items": 249,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 25,
+        "agents_with_properties": 25,
+        "agents_with_knowledge": 25,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "package_validation_status": "",
+      "compiler_critique_applied": false,
+      "compiler_critique_should_repair": false,
+      "generation_node_retries": [
+        {
+          "attempt": 1,
+          "failed_node": "roles",
+          "error": "ValueError: Roles node failed at batch 5: Vespera Vane generated 8 valid inventory items, required 15.",
+          "invalidated_cache_keys": [
+            "hooks",
+            "roles",
+            "wardrobe"
+          ],
+          "preserved_cache_keys": [
+            "items",
+            "materials",
+            "planner",
+            "rooms",
+            "visual_canon"
+          ]
+        }
+      ],
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/aurora_court_of_migrating_cities_r01_vertex_calls.jsonl",
+        "provider_attempt_count": 20,
+        "successful_attempt_count": 20,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 20,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 20
+        },
+        "stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 1,
+          "main_character_generation": 12,
+          "world_creator_generation": 5,
+          "world_creator_text_generation": 1,
+          "world_visual_canon_generation": 1
+        },
+        "model_attempt_counts": {
+          "gemini-3-flash-preview": 20
+        },
+        "provider_elapsed_seconds_sum": 225.3198,
+        "token_totals": {
+          "candidatesTokenCount": 35870,
+          "promptTokenCount": 58198,
+          "thoughtsTokenCount": 1271,
+          "totalTokenCount": 95339
+        }
+      }
+    },
+    {
+      "trial_id": "clockwork_rain_conservatory_r01",
+      "world_name": "Clockwork Rain Conservatory",
+      "draft_id": "creator_20260706_053251_1ad0b086",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260706_053251_1ad0b086/revisions/r001",
+      "replicate": 1,
+      "request": {
+        "world_name": "Clockwork Rain Conservatory",
+        "genre": "clockpunk botanical intrigue / civic weather theater",
+        "player_count_target": 4,
+        "agent_count_target": 24,
+        "focus": "A glass conservatory-city where mechanical rain, legal botany, musical irrigation, and aristocratic seed debts create trade, sabotage, ritual, and social conflict.",
+        "seed": 26070642,
+        "brief": "Create a playable Agora world called Clockwork Rain Conservatory. It is a city-sized greenhouse of brass gutters, singing irrigation organs, legal seed vaults, and mechanical rain engines. Citizens trade patent seeds, forged pollen licenses, bottled monsoon gears, heirloom vines, umbrella dueling tokens, rain debts, and weather sheet music. Make the cast strange but socially concrete: rain organists, seed barristers, gutter mechanics, vine debtors, glasshouse smugglers, orchid notaries, umbrella duelists, irrigation auditors, aristocratic gardeners, fungal saboteurs, and petitioners. Every main character must have at least 8 world-specific inventory items, no generic civic fallback. Rooms should be visually distinct and support live negotiation, evidence exchange, repair, blackmail, rituals, trade, and consequences."
+      },
+      "elapsed_seconds": 137.1308,
+      "generation_ok": true,
+      "complete_success": true,
+      "error": "",
+      "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/clockwork_rain_conservatory_r01_decomposed_builder_spec.json",
+      "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/clockwork_rain_conservatory_r01_decomposed_world_config.json",
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 24,
+        "compiled_room_count": 8,
+        "world_id": "clockwork_rain_conservatory"
+      },
+      "metrics": {
+        "rooms": 8,
+        "item_catalog_items": 15,
+        "main_characters": 24,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 241,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 24,
+        "agents_with_properties": 24,
+        "agents_with_knowledge": 24,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "package_validation_status": "",
+      "compiler_critique_applied": false,
+      "compiler_critique_should_repair": false,
+      "generation_node_retries": [],
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/clockwork_rain_conservatory_r01_vertex_calls.jsonl",
+        "provider_attempt_count": 14,
+        "successful_attempt_count": 14,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 14,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 14
+        },
+        "stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 1,
+          "main_character_generation": 6,
+          "world_creator_generation": 5,
+          "world_creator_text_generation": 1,
+          "world_visual_canon_generation": 1
+        },
+        "model_attempt_counts": {
+          "gemini-3-flash-preview": 14
+        },
+        "provider_elapsed_seconds_sum": 131.7482,
+        "token_totals": {
+          "candidatesTokenCount": 20612,
+          "promptTokenCount": 47491,
+          "totalTokenCount": 68103
+        }
+      }
+    },
+    {
+      "trial_id": "mycelium_patent_bazaar_r01",
+      "world_name": "Mycelium Patent Bazaar",
+      "draft_id": "creator_20260724_211037_1c17ca96",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260724_211037_1c17ca96/revisions/r001",
+      "replicate": 1,
+      "request": {
+        "world_name": "Mycelium Patent Bazaar",
+        "genre": "biotech undercity market, fungal infrastructure, intellectual-property conflict",
+        "player_count_target": 4,
+        "agent_count_target": 25,
+        "focus": "economy and trade-heavy world",
+        "seed": 26072402,
+        "brief": "In a humid undercity grown through engineered mycelium, families and guilds trade living bridges, spore encryption keys, medicine cultures, repair enzymes, and patent claims. Emphasize contracts, counterfeit strains, quarantine politics, lab gossip, and visible biological infrastructure."
+      },
+      "elapsed_seconds": 201.0229,
+      "generation_ok": true,
+      "complete_success": true,
+      "error": "",
+      "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/mycelium_patent_bazaar_r01_decomposed_builder_spec.json",
+      "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/mycelium_patent_bazaar_r01_decomposed_world_config.json",
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 25,
+        "compiled_room_count": 8,
+        "world_id": "mycelium_patent_bazaar"
+      },
+      "metrics": {
+        "rooms": 8,
+        "item_catalog_items": 15,
+        "main_characters": 25,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 2,
+        "inventory_items": 263,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 25,
+        "agents_with_properties": 25,
+        "agents_with_knowledge": 25,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "package_validation_status": "",
+      "compiler_critique_applied": false,
+      "compiler_critique_should_repair": false,
+      "generation_node_retries": [],
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/mycelium_patent_bazaar_r01_vertex_calls.jsonl",
+        "provider_attempt_count": 15,
+        "successful_attempt_count": 15,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 15,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 15
+        },
+        "stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 1,
+          "main_character_generation": 7,
+          "world_creator_generation": 5,
+          "world_creator_text_generation": 1,
+          "world_visual_canon_generation": 1
+        },
+        "model_attempt_counts": {
+          "gemini-3-flash-preview": 15
+        },
+        "provider_elapsed_seconds_sum": 195.2353,
+        "token_totals": {
+          "candidatesTokenCount": 27819,
+          "promptTokenCount": 51316,
+          "totalTokenCount": 79135
+        }
+      }
+    },
+    {
+      "trial_id": "sunken_satellite_monastery_r01",
+      "world_name": "Sunken Satellite Monastery",
+      "draft_id": "creator_20260724_224121_43ca9360",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260724_224121_43ca9360/revisions/r001",
+      "replicate": 1,
+      "request": {
+        "world_name": "Sunken Satellite Monastery",
+        "genre": "post-orbital ocean monastery, salvage ethics, signal economy",
+        "player_count_target": 4,
+        "agent_count_target": 25,
+        "focus": "economy and trade-heavy world",
+        "seed": 26072404,
+        "brief": "A monastery built around a crashed communications satellite sits below a stormy sea dome. Monks, engineers, pearl brokers, signal pirates, and pilgrims trade bandwidth vows, pressure-suit favors, relic access, repair labor, and secret transmissions. Make consequences visible and commercially grounded."
+      },
+      "elapsed_seconds": 161.133,
+      "generation_ok": true,
+      "complete_success": true,
+      "error": "",
+      "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/sunken_satellite_monastery_r01_decomposed_builder_spec.json",
+      "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/sunken_satellite_monastery_r01_decomposed_world_config.json",
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 25,
+        "compiled_room_count": 8,
+        "world_id": "sunken_satellite_monastery_01"
+      },
+      "metrics": {
+        "rooms": 8,
+        "item_catalog_items": 15,
+        "main_characters": 25,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 3,
+        "inventory_items": 242,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 25,
+        "agents_with_properties": 25,
+        "agents_with_knowledge": 25,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "package_validation_status": "",
+      "compiler_critique_applied": false,
+      "compiler_critique_should_repair": false,
+      "generation_node_retries": [],
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/sunken_satellite_monastery_r01_vertex_calls.jsonl",
+        "provider_attempt_count": 15,
+        "successful_attempt_count": 15,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 15,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 15
+        },
+        "stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 1,
+          "main_character_generation": 7,
+          "world_creator_generation": 5,
+          "world_creator_text_generation": 1,
+          "world_visual_canon_generation": 1
+        },
+        "model_attempt_counts": {
+          "gemini-3-flash-preview": 15
+        },
+        "provider_elapsed_seconds_sum": 155.1449,
+        "token_totals": {
+          "candidatesTokenCount": 24078,
+          "promptTokenCount": 51071,
+          "totalTokenCount": 75149
+        }
+      }
+    },
+    {
+      "trial_id": "tidal_embassy_of_lost_languages_r01",
+      "world_name": "Tidal Embassy of Lost Languages",
+      "draft_id": "creator_20260724_215709_f5f54ceb",
+      "source_revision_dir": "/home/yz_wang/yz_main/agora_2.0/output/world_creator_drafts/creator_20260724_215709_f5f54ceb/revisions/r001",
+      "replicate": 1,
+      "request": {
+        "world_name": "Tidal Embassy of Lost Languages",
+        "genre": "floating diplomatic archive, translation economy, ritual trade",
+        "player_count_target": 4,
+        "agent_count_target": 25,
+        "focus": "social conflict and knowledge economy",
+        "seed": 26072403,
+        "brief": "A floating embassy rises and sinks with the tide while linguists, smugglers, ambassadors, and memory divers trade endangered languages as political assets. Build loops around translation rights, ritual protocols, archive access, forged idioms, cultural debts, and diplomatic scandals."
+      },
+      "elapsed_seconds": 144.3852,
+      "generation_ok": true,
+      "complete_success": true,
+      "error": "",
+      "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/tidal_embassy_of_lost_languages_r01_decomposed_builder_spec.json",
+      "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/tidal_embassy_of_lost_languages_r01_decomposed_world_config.json",
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 25,
+        "compiled_room_count": 8,
+        "world_id": "tidal_embassy_lost_languages"
+      },
+      "metrics": {
+        "rooms": 8,
+        "item_catalog_items": 15,
+        "main_characters": 25,
+        "gameplay_loops": 2,
+        "player_entry_points": 3,
+        "conflict_hooks": 2,
+        "inventory_items": 242,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 25,
+        "agents_with_properties": 25,
+        "agents_with_knowledge": 25,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "package_validation_status": "",
+      "compiler_critique_applied": false,
+      "compiler_critique_should_repair": false,
+      "generation_node_retries": [],
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/decomposed_controlled_low_heldout_20260729/tidal_embassy_of_lost_languages_r01_vertex_calls.jsonl",
+        "provider_attempt_count": 15,
+        "successful_attempt_count": 15,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 15,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 15
+        },
+        "stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 1,
+          "main_character_generation": 7,
+          "world_creator_generation": 5,
+          "world_creator_text_generation": 1,
+          "world_visual_canon_generation": 1
+        },
+        "model_attempt_counts": {
+          "gemini-3-flash-preview": 15
+        },
+        "provider_elapsed_seconds_sum": 139.0182,
+        "token_totals": {
+          "candidatesTokenCount": 20837,
+          "promptTokenCount": 49217,
+          "totalTokenCount": 70054
+        }
+      }
+    }
+  ]
+}

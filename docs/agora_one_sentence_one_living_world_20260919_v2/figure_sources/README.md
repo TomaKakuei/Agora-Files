@@ -1,0 +1,45 @@
+# Figure sources — September 19 revision
+
+`render_revision.py` is the canonical renderer. It creates the original 11 figure pairs
+from frozen inputs, reusing three evidence-gallery/design functions from
+`make_social_figures.py` and asset identifiers from `make_generation_figures.py`.
+The two older programs remain as supporting source; run the revised renderer
+for the publication layout.
+
+```bash
+python figure_sources/reproduce_and_verify.py
+```
+
+This rerenders to `reproduced_figures/` and checks all 12 PNGs against `figures/`.
+The documented environment used Python 3.9, Matplotlib 3.5.2, NumPy, and the
+system DejaVu Sans fonts. Different rendering-library versions can produce
+byte differences even when the data and layout agree.
+
+| Figure | Revised function |
+|---|---|
+| `generated_worlds` | `gallery` |
+| `generation_overview` | `overview` |
+| `situated_action_cycle` | `action_cycle` |
+| `world_quality_results` | `quality` |
+| `multiworld_interactions` | `interactions` |
+| `pilot_social_dynamics` | `pilot` |
+| `clockwork_social_episode` | `episode` |
+| `embodied_character_interaction` | `runtime` |
+| `memory_intervention_design` | supporting `experiment_design` |
+| `tidal_embassy_visual_elements` | supporting `tidal_artifact_gallery` |
+| `localized_visual_refinement` | supporting `tidal_repair_trace` |
+
+`verify_release.py` checks the source citation/label graph, reported summary
+arithmetic, exact paired-test values, and final LaTeX diagnostics. The two new
+audit JSONs retain source paths and SHA-256 hashes plus the needed raw fields:
+
+- `action_result_audit.json`: per-round events, successes, and action-result counts
+- `clockwork_open_audit.json`: seven open-proposal events and directed relation deltas
+
+The seeded-fault Markdown report identifies the deterministic validator suite.
+Other frozen generation/social summaries and original visual inputs are carried
+forward from the September 9 release. Screenshots are only cropped/composed;
+no synthetic replacement evidence was created.
+
+
+The evidence revision adds `audit_extended_evidence.py`, which recomputes all 24 generation outcomes and 21 longer trajectories from `input_snapshot/extended_evidence/` and renders `extended_runtime_audit`. The reproduction wrapper runs both renderers and compares all 12 publication figures.

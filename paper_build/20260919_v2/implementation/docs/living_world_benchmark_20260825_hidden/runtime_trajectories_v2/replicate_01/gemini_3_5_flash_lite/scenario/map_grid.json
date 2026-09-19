@@ -1,0 +1,874 @@
+{
+  "grid_shape": {
+    "x": 17,
+    "y": 17,
+    "z": 1
+  },
+  "map_visual": {
+    "projection": "orthographic_grid",
+    "style": "pixel_art",
+    "tile_width": 32,
+    "tile_height": 32,
+    "room_width_tiles": 6,
+    "room_height_tiles": 4,
+    "agent_sprite_size": 64,
+    "origin": {
+      "x": 0,
+      "y": 0
+    },
+    "layers": [
+      "floor",
+      "objects",
+      "agents",
+      "effects",
+      "ui"
+    ],
+    "camera": {
+      "start_room_id": "room_01_the_grand_scale",
+      "zoom": 2.0,
+      "follow_main_character": "world_aethel_01_main_01"
+    },
+    "tileset": {
+      "key": "world_aethel_01_pixel_tiles",
+      "image_path": "",
+      "tile_margin": 0,
+      "tile_spacing": 0
+    },
+    "theme_label": "stone and parchment",
+    "visual_canon_hash": "aecbcdfcbf5adf23"
+  },
+  "rooms": [
+    {
+      "room_id": "room_01_the_grand_scale",
+      "name": "The Grand Scale",
+      "x": 5,
+      "y": 6,
+      "z": 0,
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "doorways": [
+        {
+          "doorway_id": "room_01_the_grand_scale_to_room_02_the_unbound_guild_hall",
+          "position": {
+            "x": 7,
+            "y": 6,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_02_the_unbound_guild_hall",
+          "label": "passage to The Unbound Guild Hall"
+        },
+        {
+          "doorway_id": "room_01_the_grand_scale_to_room_03_the_silent_office",
+          "position": {
+            "x": 5,
+            "y": 8,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_03_the_silent_office",
+          "label": "passage to The Silent Office"
+        },
+        {
+          "doorway_id": "room_01_the_grand_scale_to_room_04_porters_rest",
+          "position": {
+            "x": 7,
+            "y": 11,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_04_porters_rest",
+          "label": "passage to Porters Rest"
+        },
+        {
+          "doorway_id": "room_01_the_grand_scale_to_room_05_orator_terrace",
+          "position": {
+            "x": 10,
+            "y": 8,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_05_orator_terrace",
+          "label": "passage to Orator Terrace"
+        }
+      ],
+      "visual": {
+        "biome": "cliffside terrace",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "lead foil scales",
+          "counterweights",
+          "parchment ledgers",
+          "notice_table"
+        ],
+        "ambient_palette": "dusty_brown",
+        "visual_canon_hash": "aecbcdfcbf5adf23",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_01_the_grand_scale_lead_scale",
+            "label": "Grand Scale",
+            "description": "Massive iron and lead balance for weighing spoken vows",
+            "anchor": "center",
+            "width_tiles": 3,
+            "height_tiles": 3
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Weigh spoken promises and levy debt taxes. State variable debt_load increases here, which affects default_rate in the silent office.",
+        "activity_tags": [
+          "weighing vows",
+          "tax collection"
+        ],
+        "player_entry_hook": "Arrive at The Grand Scale to contest a lead tax receipt",
+        "room_archetype": "market_exchange",
+        "layout_signal": "The Grand Scale | Weigh spoken promises and levy debt taxes. State variable debt_load increases here, which affects default_rate in the silent office. | cliffside terrace | weighing vows | tax collection | lead foil scales | counterweights | parchment ledgers | notice_table"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of cracked flagstone paving blocks with lead foil scraps",
+      "room_scene_prompt": "top-down pixel art of a bureaucratic weighing chamber with heavy lead scales and towering ledgers, gothic granite walls, overcast light, no text, no labels, edge-to-edge floor",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "world_aethel_01",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "0 degrees",
+          "scale_rule": "16 pixels per meter tile grid"
+        },
+        "palette": {
+          "dominant": "#2d3033",
+          "secondary": "#7a7265",
+          "accent": "#d4af37",
+          "shadow": "#141517",
+          "highlight": "#e6e2d3"
+        },
+        "materials": [
+          "gothic granite stone",
+          "aged parchment banners",
+          "heavy lead foil",
+          "rusted iron chains",
+          "dark stained oak wood"
+        ],
+        "lighting": "overcast diffuse daylight casting sharp short vertical shadows from vertical cliffs",
+        "architecture": [
+          "cantilevered cliffside staircases",
+          "tall bureaucratic archways",
+          "hanging balconies with counterweights",
+          "narrow vertically stacked tenements"
+        ],
+        "terrain": {
+          "ground": "cracked flagstone paving blocks",
+          "path": "worn stone steps covered in scattered white paper scraps",
+          "edge": "sheer vertical cliff drop with iron safety railings"
+        },
+        "sprite_language": {
+          "body_proportion": "stout and utilitarian with heavy layered coats",
+          "outline": "thick dark slate silhouette edges",
+          "role_readability": "distinguished by oversized tax ledgers and leather courier pouches"
+        },
+        "world_prompt_prefix": "Strict top-down pixel art of Aethel, vertical cliffside gothic architecture, parchment banners, lead tokens, overcast light",
+        "sprite_prompt_prefix": "Top-down 2D sprite of a bureaucratic citizen with heavy ledger, melancholic bureaucrat style",
+        "forbidden_visuals": [
+          "visible labels",
+          "title text",
+          "poster layouts",
+          "photorealism",
+          "bright tropical colors",
+          "modern technology"
+        ],
+        "canon_hash": "aecbcdfcbf5adf23"
+      }
+    },
+    {
+      "room_id": "room_02_the_unbound_guild_hall",
+      "name": "The Unbound Guild Hall",
+      "x": 5,
+      "y": 0,
+      "z": 0,
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "doorways": [
+        {
+          "doorway_id": "room_01_the_grand_scale_to_room_02_the_unbound_guild_hall",
+          "position": {
+            "x": 7,
+            "y": 5,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_01_the_grand_scale",
+          "label": "passage to The Grand Scale"
+        },
+        {
+          "doorway_id": "room_02_the_unbound_guild_hall_to_room_06_audit_archive",
+          "position": {
+            "x": 5,
+            "y": 3,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_06_audit_archive",
+          "label": "passage to Audit Archive"
+        }
+      ],
+      "visual": {
+        "biome": "hanging balcony",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "leather pouches",
+          "ropes",
+          "counterweight pulleys",
+          "notice_table"
+        ],
+        "ambient_palette": "focused_blue",
+        "visual_canon_hash": "aecbcdfcbf5adf23",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_02_the_unbound_guild_hall_courier_pouch_rack",
+            "label": "Parcel Rack",
+            "description": "Rows of leather courier pouches stuffed with notes",
+            "anchor": "north_mid",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Transport unpaid vows across vertical drops. State variable courier_speed is managed here, affecting transit latency.",
+        "activity_tags": [
+          "sorting parcels",
+          "auctioning routes"
+        ],
+        "player_entry_hook": "Inspect whispering notes at The Unbound Guild Hall before dispatch",
+        "room_archetype": "logistics_yard",
+        "layout_signal": "The Unbound Guild Hall | Transport unpaid vows across vertical drops. State variable courier_speed is managed here, affecting transit latency. | hanging balcony | sorting parcels | auctioning routes | leather pouches | ropes | counterweight pulleys | notice_table"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of worn dark stained oak wood floor planks",
+      "room_scene_prompt": "top-down pixel art of a courier guild hall with hanging balconies and leather pouches, dark oak wood, overcast light, no text, no labels, edge-to-edge floor",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "world_aethel_01",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "0 degrees",
+          "scale_rule": "16 pixels per meter tile grid"
+        },
+        "palette": {
+          "dominant": "#2d3033",
+          "secondary": "#7a7265",
+          "accent": "#d4af37",
+          "shadow": "#141517",
+          "highlight": "#e6e2d3"
+        },
+        "materials": [
+          "gothic granite stone",
+          "aged parchment banners",
+          "heavy lead foil",
+          "rusted iron chains",
+          "dark stained oak wood"
+        ],
+        "lighting": "overcast diffuse daylight casting sharp short vertical shadows from vertical cliffs",
+        "architecture": [
+          "cantilevered cliffside staircases",
+          "tall bureaucratic archways",
+          "hanging balconies with counterweights",
+          "narrow vertically stacked tenements"
+        ],
+        "terrain": {
+          "ground": "cracked flagstone paving blocks",
+          "path": "worn stone steps covered in scattered white paper scraps",
+          "edge": "sheer vertical cliff drop with iron safety railings"
+        },
+        "sprite_language": {
+          "body_proportion": "stout and utilitarian with heavy layered coats",
+          "outline": "thick dark slate silhouette edges",
+          "role_readability": "distinguished by oversized tax ledgers and leather courier pouches"
+        },
+        "world_prompt_prefix": "Strict top-down pixel art of Aethel, vertical cliffside gothic architecture, parchment banners, lead tokens, overcast light",
+        "sprite_prompt_prefix": "Top-down 2D sprite of a bureaucratic citizen with heavy ledger, melancholic bureaucrat style",
+        "forbidden_visuals": [
+          "visible labels",
+          "title text",
+          "poster layouts",
+          "photorealism",
+          "bright tropical colors",
+          "modern technology"
+        ],
+        "canon_hash": "aecbcdfcbf5adf23"
+      }
+    },
+    {
+      "room_id": "room_03_the_silent_office",
+      "name": "The Silent Office",
+      "x": 0,
+      "y": 6,
+      "z": 0,
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "doorways": [
+        {
+          "doorway_id": "room_01_the_grand_scale_to_room_03_the_silent_office",
+          "position": {
+            "x": 4,
+            "y": 8,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_01_the_grand_scale",
+          "label": "passage to The Grand Scale"
+        },
+        {
+          "doorway_id": "room_03_the_silent_office_to_room_06_audit_archive",
+          "position": {
+            "x": 2,
+            "y": 6,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_06_audit_archive",
+          "label": "passage to Audit Archive"
+        }
+      ],
+      "visual": {
+        "biome": "stacked tenement",
+        "floor_tile": "library_wood",
+        "wall_tile": "library_shelf_wall",
+        "decor_tags": [
+          "blank walls",
+          "ink pots",
+          "quills",
+          "scroll_table"
+        ],
+        "ambient_palette": "low_lantern",
+        "visual_canon_hash": "aecbcdfcbf5adf23",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_03_the_silent_office_ink_basin",
+            "label": "Erasure Basin",
+            "description": "Large basin of dark ink for blotting out unfulfilled vows",
+            "anchor": "center",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Eradicate unfulfilled contracts before they rot. State variable default_rate changes here, affecting silence_spread.",
+        "activity_tags": [
+          "erasing vows",
+          "censorship"
+        ],
+        "player_entry_hook": "Arrive at The Grand Scale to contest a lead tax receipt",
+        "room_archetype": "archive_ritual",
+        "layout_signal": "The Silent Office | Eradicate unfulfilled contracts before they rot. State variable default_rate changes here, affecting silence_spread. | stacked tenement | erasing vows | censorship | blank walls | ink pots | quills | scroll_table"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of smooth dark slate flooring",
+      "room_scene_prompt": "top-down pixel art of an ink-blind inquisitor office with blank walls and heavy lead inkwells, gothic granite walls, overcast light, no text, no labels, edge-to-edge floor",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "world_aethel_01",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "0 degrees",
+          "scale_rule": "16 pixels per meter tile grid"
+        },
+        "palette": {
+          "dominant": "#2d3033",
+          "secondary": "#7a7265",
+          "accent": "#d4af37",
+          "shadow": "#141517",
+          "highlight": "#e6e2d3"
+        },
+        "materials": [
+          "gothic granite stone",
+          "aged parchment banners",
+          "heavy lead foil",
+          "rusted iron chains",
+          "dark stained oak wood"
+        ],
+        "lighting": "overcast diffuse daylight casting sharp short vertical shadows from vertical cliffs",
+        "architecture": [
+          "cantilevered cliffside staircases",
+          "tall bureaucratic archways",
+          "hanging balconies with counterweights",
+          "narrow vertically stacked tenements"
+        ],
+        "terrain": {
+          "ground": "cracked flagstone paving blocks",
+          "path": "worn stone steps covered in scattered white paper scraps",
+          "edge": "sheer vertical cliff drop with iron safety railings"
+        },
+        "sprite_language": {
+          "body_proportion": "stout and utilitarian with heavy layered coats",
+          "outline": "thick dark slate silhouette edges",
+          "role_readability": "distinguished by oversized tax ledgers and leather courier pouches"
+        },
+        "world_prompt_prefix": "Strict top-down pixel art of Aethel, vertical cliffside gothic architecture, parchment banners, lead tokens, overcast light",
+        "sprite_prompt_prefix": "Top-down 2D sprite of a bureaucratic citizen with heavy ledger, melancholic bureaucrat style",
+        "forbidden_visuals": [
+          "visible labels",
+          "title text",
+          "poster layouts",
+          "photorealism",
+          "bright tropical colors",
+          "modern technology"
+        ],
+        "canon_hash": "aecbcdfcbf5adf23"
+      }
+    },
+    {
+      "room_id": "room_04_porters_rest",
+      "name": "Porters Rest",
+      "x": 5,
+      "y": 12,
+      "z": 0,
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "doorways": [
+        {
+          "doorway_id": "room_01_the_grand_scale_to_room_04_porters_rest",
+          "position": {
+            "x": 7,
+            "y": 12,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_01_the_grand_scale",
+          "label": "passage to The Grand Scale"
+        }
+      ],
+      "visual": {
+        "biome": "cliffside stairwell",
+        "floor_tile": "tavern_planks",
+        "wall_tile": "tavern_wall",
+        "decor_tags": [
+          "rusted chains",
+          "heavy coats",
+          "lanterns",
+          "round_table"
+        ],
+        "ambient_palette": "warm_lantern",
+        "visual_canon_hash": "aecbcdfcbf5adf23",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_04_porters_rest_hearth_brazier",
+            "label": "Iron Brazier",
+            "description": "Rusting iron brazier throwing short shadows",
+            "anchor": "south_mid",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Cliffside porters gather to demand higher wages for dangerous deliveries. State variable silence_spread is observed here.",
+        "activity_tags": [
+          "resting",
+          "negotiating wages"
+        ],
+        "player_entry_hook": "Inspect whispering notes at The Unbound Guild Hall before dispatch",
+        "room_archetype": "rest_social",
+        "layout_signal": "Porters Rest | Cliffside porters gather to demand higher wages for dangerous deliveries. State variable silence_spread is observed here. | cliffside stairwell | resting | negotiating wages | rusted chains | heavy coats | lanterns | round_table"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of worn stone steps covered in paper scraps",
+      "room_scene_prompt": "top-down pixel art of a porter shelter with rusted iron chains and layered coats, stone steps, overcast light, no text, no labels, edge-to-edge floor",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "world_aethel_01",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "0 degrees",
+          "scale_rule": "16 pixels per meter tile grid"
+        },
+        "palette": {
+          "dominant": "#2d3033",
+          "secondary": "#7a7265",
+          "accent": "#d4af37",
+          "shadow": "#141517",
+          "highlight": "#e6e2d3"
+        },
+        "materials": [
+          "gothic granite stone",
+          "aged parchment banners",
+          "heavy lead foil",
+          "rusted iron chains",
+          "dark stained oak wood"
+        ],
+        "lighting": "overcast diffuse daylight casting sharp short vertical shadows from vertical cliffs",
+        "architecture": [
+          "cantilevered cliffside staircases",
+          "tall bureaucratic archways",
+          "hanging balconies with counterweights",
+          "narrow vertically stacked tenements"
+        ],
+        "terrain": {
+          "ground": "cracked flagstone paving blocks",
+          "path": "worn stone steps covered in scattered white paper scraps",
+          "edge": "sheer vertical cliff drop with iron safety railings"
+        },
+        "sprite_language": {
+          "body_proportion": "stout and utilitarian with heavy layered coats",
+          "outline": "thick dark slate silhouette edges",
+          "role_readability": "distinguished by oversized tax ledgers and leather courier pouches"
+        },
+        "world_prompt_prefix": "Strict top-down pixel art of Aethel, vertical cliffside gothic architecture, parchment banners, lead tokens, overcast light",
+        "sprite_prompt_prefix": "Top-down 2D sprite of a bureaucratic citizen with heavy ledger, melancholic bureaucrat style",
+        "forbidden_visuals": [
+          "visible labels",
+          "title text",
+          "poster layouts",
+          "photorealism",
+          "bright tropical colors",
+          "modern technology"
+        ],
+        "canon_hash": "aecbcdfcbf5adf23"
+      }
+    },
+    {
+      "room_id": "room_05_orator_terrace",
+      "name": "Orator Terrace",
+      "x": 11,
+      "y": 6,
+      "z": 0,
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "doorways": [
+        {
+          "doorway_id": "room_01_the_grand_scale_to_room_05_orator_terrace",
+          "position": {
+            "x": 11,
+            "y": 8,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_01_the_grand_scale",
+          "label": "passage to The Grand Scale"
+        }
+      ],
+      "visual": {
+        "biome": "cantilevered ledge",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "parchment banners",
+          "stone podiums",
+          "microphones",
+          "notice_table"
+        ],
+        "ambient_palette": "clear_day",
+        "visual_canon_hash": "aecbcdfcbf5adf23",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_05_orator_terrace_stone_podium",
+            "label": "Vow Podium",
+            "description": "Heavy granite lectern for grand speeches",
+            "anchor": "north_east",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "The Eloquent speak grand futures without paying. State variable transit_latency is affected by orator crowds.",
+        "activity_tags": [
+          "speechmaking",
+          "debating"
+        ],
+        "player_entry_hook": "Arrive at The Grand Scale to contest a lead tax receipt",
+        "room_archetype": "commons",
+        "layout_signal": "Orator Terrace | The Eloquent speak grand futures without paying. State variable transit_latency is affected by orator crowds. | cantilevered ledge | speechmaking | debating | parchment banners | stone podiums | microphones | notice_table"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of cracked flagstone with scattered white paper scraps",
+      "room_scene_prompt": "top-down pixel art of an open orator ledge with aged parchment banners and stone podiums, vertical cliff drop edge, overcast light, no text, no labels, edge-to-edge floor",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "world_aethel_01",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "0 degrees",
+          "scale_rule": "16 pixels per meter tile grid"
+        },
+        "palette": {
+          "dominant": "#2d3033",
+          "secondary": "#7a7265",
+          "accent": "#d4af37",
+          "shadow": "#141517",
+          "highlight": "#e6e2d3"
+        },
+        "materials": [
+          "gothic granite stone",
+          "aged parchment banners",
+          "heavy lead foil",
+          "rusted iron chains",
+          "dark stained oak wood"
+        ],
+        "lighting": "overcast diffuse daylight casting sharp short vertical shadows from vertical cliffs",
+        "architecture": [
+          "cantilevered cliffside staircases",
+          "tall bureaucratic archways",
+          "hanging balconies with counterweights",
+          "narrow vertically stacked tenements"
+        ],
+        "terrain": {
+          "ground": "cracked flagstone paving blocks",
+          "path": "worn stone steps covered in scattered white paper scraps",
+          "edge": "sheer vertical cliff drop with iron safety railings"
+        },
+        "sprite_language": {
+          "body_proportion": "stout and utilitarian with heavy layered coats",
+          "outline": "thick dark slate silhouette edges",
+          "role_readability": "distinguished by oversized tax ledgers and leather courier pouches"
+        },
+        "world_prompt_prefix": "Strict top-down pixel art of Aethel, vertical cliffside gothic architecture, parchment banners, lead tokens, overcast light",
+        "sprite_prompt_prefix": "Top-down 2D sprite of a bureaucratic citizen with heavy ledger, melancholic bureaucrat style",
+        "forbidden_visuals": [
+          "visible labels",
+          "title text",
+          "poster layouts",
+          "photorealism",
+          "bright tropical colors",
+          "modern technology"
+        ],
+        "canon_hash": "aecbcdfcbf5adf23"
+      }
+    },
+    {
+      "room_id": "room_06_audit_archive",
+      "name": "Audit Archive",
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "doorways": [
+        {
+          "doorway_id": "room_02_the_unbound_guild_hall_to_room_06_audit_archive",
+          "position": {
+            "x": 4,
+            "y": 3,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_02_the_unbound_guild_hall",
+          "label": "passage to The Unbound Guild Hall"
+        },
+        {
+          "doorway_id": "room_03_the_silent_office_to_room_06_audit_archive",
+          "position": {
+            "x": 2,
+            "y": 5,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_03_the_silent_office",
+          "label": "passage to The Silent Office"
+        }
+      ],
+      "visual": {
+        "biome": "deep tenement",
+        "floor_tile": "library_wood",
+        "wall_tile": "library_shelf_wall",
+        "decor_tags": [
+          "lead foil scrolls",
+          "iron shelves",
+          "dust",
+          "scroll_table"
+        ],
+        "ambient_palette": "low_lantern",
+        "visual_canon_hash": "aecbcdfcbf5adf23",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_06_audit_archive_scroll_shelf",
+            "label": "Lead Scroll Rack",
+            "description": "Heavy iron shelves stacked with lead foil debt scrolls",
+            "anchor": "west_mid",
+            "width_tiles": 2,
+            "height_tiles": 3
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Store historical debt ledgers and default records. State variable debt_load archives old balances here.",
+        "activity_tags": [
+          "filing debts",
+          "auditing"
+        ],
+        "player_entry_hook": "Inspect whispering notes at The Unbound Guild Hall before dispatch",
+        "room_archetype": "archive_ritual",
+        "layout_signal": "Audit Archive | Store historical debt ledgers and default records. State variable debt_load archives old balances here. | deep tenement | filing debts | auditing | lead foil scrolls | iron shelves | dust | scroll_table"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of dark stained oak floor boards with dust motes",
+      "room_scene_prompt": "top-down pixel art of an archive vault with heavy lead scroll racks and iron shelves, dark stained wood, overcast light, no text, no labels, edge-to-edge floor",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "world_aethel_01",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "0 degrees",
+          "scale_rule": "16 pixels per meter tile grid"
+        },
+        "palette": {
+          "dominant": "#2d3033",
+          "secondary": "#7a7265",
+          "accent": "#d4af37",
+          "shadow": "#141517",
+          "highlight": "#e6e2d3"
+        },
+        "materials": [
+          "gothic granite stone",
+          "aged parchment banners",
+          "heavy lead foil",
+          "rusted iron chains",
+          "dark stained oak wood"
+        ],
+        "lighting": "overcast diffuse daylight casting sharp short vertical shadows from vertical cliffs",
+        "architecture": [
+          "cantilevered cliffside staircases",
+          "tall bureaucratic archways",
+          "hanging balconies with counterweights",
+          "narrow vertically stacked tenements"
+        ],
+        "terrain": {
+          "ground": "cracked flagstone paving blocks",
+          "path": "worn stone steps covered in scattered white paper scraps",
+          "edge": "sheer vertical cliff drop with iron safety railings"
+        },
+        "sprite_language": {
+          "body_proportion": "stout and utilitarian with heavy layered coats",
+          "outline": "thick dark slate silhouette edges",
+          "role_readability": "distinguished by oversized tax ledgers and leather courier pouches"
+        },
+        "world_prompt_prefix": "Strict top-down pixel art of Aethel, vertical cliffside gothic architecture, parchment banners, lead tokens, overcast light",
+        "sprite_prompt_prefix": "Top-down 2D sprite of a bureaucratic citizen with heavy ledger, melancholic bureaucrat style",
+        "forbidden_visuals": [
+          "visible labels",
+          "title text",
+          "poster layouts",
+          "photorealism",
+          "bright tropical colors",
+          "modern technology"
+        ],
+        "canon_hash": "aecbcdfcbf5adf23"
+      }
+    }
+  ],
+  "initial_positions": {
+    "world_aethel_01_main_01": {
+      "x": 6,
+      "y": 7,
+      "z": 0
+    },
+    "world_aethel_01_main_02": {
+      "x": 6,
+      "y": 2,
+      "z": 0
+    },
+    "world_aethel_01_main_03": {
+      "x": 1,
+      "y": 9,
+      "z": 0
+    },
+    "world_aethel_01_main_04": {
+      "x": 7,
+      "y": 13,
+      "z": 0
+    },
+    "world_aethel_01_main_05": {
+      "x": 7,
+      "y": 7,
+      "z": 0
+    },
+    "world_aethel_01_main_06": {
+      "x": 7,
+      "y": 2,
+      "z": 0
+    },
+    "world_aethel_01_main_07": {
+      "x": 3,
+      "y": 7,
+      "z": 0
+    },
+    "world_aethel_01_main_08": {
+      "x": 13,
+      "y": 10,
+      "z": 0
+    },
+    "world_aethel_01_main_09": {
+      "x": 8,
+      "y": 7,
+      "z": 0
+    },
+    "world_aethel_01_main_10": {
+      "x": 8,
+      "y": 2,
+      "z": 0
+    },
+    "world_aethel_01_main_11": {
+      "x": 1,
+      "y": 8,
+      "z": 0
+    },
+    "world_aethel_01_main_12": {
+      "x": 14,
+      "y": 10,
+      "z": 0
+    }
+  },
+  "initial_room_ids": {
+    "world_aethel_01_main_01": "room_01_the_grand_scale",
+    "world_aethel_01_main_02": "room_02_the_unbound_guild_hall",
+    "world_aethel_01_main_03": "room_03_the_silent_office",
+    "world_aethel_01_main_04": "room_04_porters_rest",
+    "world_aethel_01_main_05": "room_01_the_grand_scale",
+    "world_aethel_01_main_06": "room_02_the_unbound_guild_hall",
+    "world_aethel_01_main_07": "room_03_the_silent_office",
+    "world_aethel_01_main_08": "room_05_orator_terrace",
+    "world_aethel_01_main_09": "room_01_the_grand_scale",
+    "world_aethel_01_main_10": "room_02_the_unbound_guild_hall",
+    "world_aethel_01_main_11": "room_03_the_silent_office",
+    "world_aethel_01_main_12": "room_05_orator_terrace"
+  }
+}

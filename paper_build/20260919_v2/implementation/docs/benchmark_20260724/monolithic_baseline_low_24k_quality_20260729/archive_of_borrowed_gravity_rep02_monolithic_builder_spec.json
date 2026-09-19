@@ -1,0 +1,1733 @@
+{
+  "world_name": "Archive of Borrowed Gravity",
+  "world_id": "gravity_archive_01",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "civic_social_world",
+    "profile_id": "civic_social_world",
+    "locale": "en-US",
+    "tone": "Bureaucratic, weightless, clinical, high-stakes",
+    "visual_direction": "Top-down pixel art, cobalt glass, bone-white ceramic, vermilion plumb lines, graphite shadows, brass hardware",
+    "currency_code": "CRD",
+    "currency_symbol": "Ͼ",
+    "currency_minor_unit": "point",
+    "currency_name": "Civic Credit",
+    "domain_label": "Archive",
+    "starting_wallet_minor": {
+      "min": 500,
+      "max": 2500
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "civic_social_world_v1",
+      "frontend_affordance_id": "civic_social_world_v1",
+      "asset_prompt_kit_id": "civic_social_world_v1"
+    },
+    "policy_refs": {
+      "economy_policy_id": "civic_credit_v1",
+      "item_collection_id": "civic_social_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "civic_social_world_v1",
+      "property_policy_id": "civic_social_world_v1",
+      "knowledge_policy_id": "civic_social_world_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "civic archive, gravity-rights exchange, spatial bureaucracy",
+  "premise": "In a city where gravity is a licensed municipal utility, the Archive manages the vectors that keep citizens grounded. Movement is a commodity, and weight is a privilege.",
+  "simulation_objective": "Manage the flow of gravity licenses while resolving disputes over counterfeit vectors and ballast debt.",
+  "agent_count_target": 12,
+  "player_count_target": 4,
+  "economy_focus": "Gravity vector licensing and ballast-backed debt instruments.",
+  "exploration_focus": "Navigating rooms with varying directional pulls and restricted vertical access.",
+  "conflict_tone": "Legalistic, tense, and physically precarious.",
+  "visual_style": "Strict top-down pixel art with high-contrast cobalt and vermilion accents on bone-white surfaces.",
+  "rooms": [
+    {
+      "name": "The Central Plumb-Line Hall",
+      "biome": "archive_core",
+      "purpose": "Primary orientation and vector verification.",
+      "decor_tags": [
+        "plumb-lines",
+        "brass-scales",
+        "cobalt-glass"
+      ],
+      "activity_tags": [
+        "weighing",
+        "verifying",
+        "waiting"
+      ],
+      "archetype": "checkpoint",
+      "ambient_palette": "focused_blue",
+      "width_tiles": 40,
+      "height_tiles": 40,
+      "floor_tile": "stone_checker",
+      "wall_tile": "red_pillar_wall",
+      "flux_floor_prompt": "Checkered bone-white and graphite stone tiles with vermilion lines marking gravity zones.",
+      "room_scene_prompt": "A vast hall filled with hanging vermilion plumb lines that sway according to local gravity shifts. Brass measurement hardware is bolted to cobalt glass pillars.",
+      "scene_components": [
+        {
+          "component_id": "master_plumb_array",
+          "label": "Master Plumb Array",
+          "description": "A series of heavy brass weights suspended by vermilion cords to detect vector drift.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Vector Licensing Wing",
+      "biome": "bureaucracy",
+      "purpose": "Issuing and renewing gravity permits.",
+      "decor_tags": [
+        "ceramic-desks",
+        "graphite-screens",
+        "brass-stamps"
+      ],
+      "activity_tags": [
+        "filing",
+        "stamping",
+        "arguing"
+      ],
+      "archetype": "market_exchange",
+      "ambient_palette": "clear_day",
+      "width_tiles": 35,
+      "height_tiles": 35,
+      "floor_tile": "clean_tile",
+      "wall_tile": "glass_case_wall",
+      "flux_floor_prompt": "Polished white ceramic tiles with etched grid lines for precise movement.",
+      "room_scene_prompt": "Rows of bone-white ceramic desks where clerks process gravity applications under bright, shadowless lighting.",
+      "scene_components": [
+        {
+          "component_id": "pneumatic_vector_tube",
+          "label": "Vector Dispatch Tube",
+          "description": "A brass and glass transport system for sending physical gravity canisters to other wings.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Ballast Vault",
+      "biome": "storage",
+      "purpose": "Storing physical weights used as collateral for gravity loans.",
+      "decor_tags": [
+        "lead-bricks",
+        "heavy-chains",
+        "iron-safes"
+      ],
+      "activity_tags": [
+        "lifting",
+        "securing",
+        "auditing"
+      ],
+      "archetype": "logistics_yard",
+      "ambient_palette": "low_lantern",
+      "width_tiles": 30,
+      "height_tiles": 30,
+      "floor_tile": "stone_slabs",
+      "wall_tile": "storage_wall",
+      "flux_floor_prompt": "Reinforced dark stone slabs capable of supporting immense weight.",
+      "room_scene_prompt": "A dim, heavy room filled with stacks of graphite-coated lead bricks and massive brass scales.",
+      "scene_components": [
+        {
+          "component_id": "crane_hoist",
+          "label": "Ballast Crane",
+          "description": "A manual brass pulley system for moving high-density ballast blocks.",
+          "anchor": "east_mid",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Counterfeit Detection Lab",
+      "biome": "laboratory",
+      "purpose": "Testing vectors for illegal modifications or instability.",
+      "decor_tags": [
+        "microscopes",
+        "glass-vials",
+        "blue-lasers"
+      ],
+      "activity_tags": [
+        "analyzing",
+        "disassembling",
+        "reporting"
+      ],
+      "archetype": "workshop",
+      "ambient_palette": "soft_mint",
+      "width_tiles": 30,
+      "height_tiles": 30,
+      "floor_tile": "clean_tile",
+      "wall_tile": "healer_wall",
+      "flux_floor_prompt": "Anti-static mint-colored ceramic flooring with recessed lighting.",
+      "room_scene_prompt": "A sterile lab where technicians use cobalt glass instruments to dissect flickering gravity canisters.",
+      "scene_components": [
+        {
+          "component_id": "vector_centrifuge",
+          "label": "Vector Centrifuge",
+          "description": "A spinning brass device used to separate pure gravity from synthetic additives.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Arbitrator's Court",
+      "biome": "legal",
+      "purpose": "Settling disputes over gravity-related accidents.",
+      "decor_tags": [
+        "high-dais",
+        "vermilion-carpets",
+        "brass-gavel"
+      ],
+      "activity_tags": [
+        "judging",
+        "testifying",
+        "sentencing"
+      ],
+      "archetype": "council",
+      "ambient_palette": "warm_lantern",
+      "width_tiles": 40,
+      "height_tiles": 30,
+      "floor_tile": "library_planks",
+      "wall_tile": "war_room_wall",
+      "flux_floor_prompt": "Dark wood planks with a central vermilion carpet leading to the judge's seat.",
+      "room_scene_prompt": "A formal chamber where the floor is tilted at a 5-degree angle to test the poise of those testifying.",
+      "scene_components": [
+        {
+          "component_id": "judgment_scales",
+          "label": "The Great Balance",
+          "description": "A ceiling-mounted scale that weighs the evidence (physical ballast) of both parties.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Courier's Commons",
+      "biome": "social",
+      "purpose": "A rest area for those waiting for vector assignments.",
+      "decor_tags": [
+        "benches",
+        "vending-machines",
+        "notice-boards"
+      ],
+      "activity_tags": [
+        "resting",
+        "gossiping",
+        "trading"
+      ],
+      "archetype": "rest_social",
+      "ambient_palette": "dusty_brown",
+      "width_tiles": 45,
+      "height_tiles": 35,
+      "floor_tile": "wood_planks",
+      "wall_tile": "tavern_wall",
+      "flux_floor_prompt": "Worn wooden planks with scuff marks from heavy courier boots.",
+      "room_scene_prompt": "A bustling lounge where couriers adjust their harnesses and trade tips on stable flight paths.",
+      "scene_components": [
+        {
+          "component_id": "harness_rack",
+          "label": "Harness Calibration Rack",
+          "description": "A brass frame where couriers hang their gravity-stabilizing vests.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 3
+        }
+      ]
+    }
+  ],
+  "role_groups": [
+    {
+      "role_name": "Vector Clerk",
+      "count": 3,
+      "core_values": [
+        "Precision",
+        "Legality",
+        "Order"
+      ],
+      "activity": "Processing paperwork and validating gravity stamps.",
+      "starting_item_ids": [
+        "brass_stamp_official",
+        "ink_well_cobalt"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Clerk's Desk",
+          "asset_type": "workspace",
+          "description": "A bone-white ceramic desk in the Licensing Wing.",
+          "story_use": "Used to approve or deny gravity requests."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "licensing_codes",
+          "topic": "Gravity Law",
+          "summary": "The complex codes required to authorize a Class-4 vector.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "role_name": "Ballast Courier",
+      "count": 5,
+      "core_values": [
+        "Endurance",
+        "Speed",
+        "Balance"
+      ],
+      "activity": "Transporting physical ballast and vector canisters between wings.",
+      "starting_item_ids": [
+        "courier_harness",
+        "lead_slug_small"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Courier Locker",
+          "asset_type": "storage",
+          "description": "A small graphite locker in the Commons.",
+          "story_use": "Stores personal weights and illegal vector mods."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "shortcut_routes",
+          "topic": "Navigation",
+          "summary": "Paths through the archive where gravity is naturally weaker.",
+          "confidence": 80
+        }
+      ]
+    }
+  ],
+  "main_characters": [
+    {
+      "display_name": "Archivist Vane",
+      "role_name": "Head of Licensing",
+      "activity": "Overseeing the issuance of high-value vectors.",
+      "home_base": "Vector Licensing Wing",
+      "arc_goal": "To uncover the source of the 'Zero-G' counterfeit vectors circulating in the archive.",
+      "inventory": [
+        {
+          "item_id": "master_seal_brass",
+          "name": "Master Seal of Down",
+          "description": "A heavy brass stamp that can authorize any gravity vector.",
+          "quantity": 1
+        },
+        {
+          "item_id": "cobalt_ink_premium",
+          "name": "Premium Cobalt Ink",
+          "description": "Indelible ink used for permanent gravity licenses.",
+          "quantity": 5
+        },
+        {
+          "item_id": "vector_ledger_vane",
+          "name": "Vane's Private Ledger",
+          "description": "A graphite-bound book containing secret debt records.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ceramic_stylus",
+          "name": "Ceramic Stylus",
+          "description": "A sharp tool for etching into bone-white tablets.",
+          "quantity": 2
+        },
+        {
+          "item_id": "gravity_wafer_class4",
+          "name": "Class-4 Gravity Wafer",
+          "description": "A small ceramic disc that provides 24 hours of standard gravity.",
+          "quantity": 3
+        },
+        {
+          "item_id": "brass_caliper",
+          "name": "Precision Brass Caliper",
+          "description": "Used to measure the thickness of gravity permits.",
+          "quantity": 1
+        },
+        {
+          "item_id": "magnifying_lens_cobalt",
+          "name": "Cobalt Magnifying Lens",
+          "description": "Reveals hidden watermarks on counterfeit vectors.",
+          "quantity": 1
+        },
+        {
+          "item_id": "scented_wax_seal",
+          "name": "Scented Archive Wax",
+          "description": "Used to seal high-priority vector canisters.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The High Office",
+          "asset_type": "room",
+          "description": "A private office overlooking the Plumb-Line Hall.",
+          "story_use": "Where Vane meets with the Arbitrator in secret."
+        },
+        {
+          "asset_name": "Archive Keycard Alpha",
+          "asset_type": "access",
+          "description": "A bone-white card granting access to all wings.",
+          "story_use": "Allows Vane to investigate the Ballast Vault at night."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "vane_debt_secret",
+          "topic": "Blackmail",
+          "summary": "Knows that Courier Jax owes 5000 credits to the Ballast Vault.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "counterfeit_signature",
+          "topic": "Forgery",
+          "summary": "Can identify the specific 'shiver' in a fake vector's pull.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Jax the Leaper",
+      "role_name": "Senior Courier",
+      "activity": "Delivering heavy ballast to the Vault.",
+      "home_base": "The Courier's Commons",
+      "arc_goal": "To pay off his ballast debt before his gravity license is revoked.",
+      "inventory": [
+        {
+          "item_id": "heavy_harness_mk2",
+          "name": "Reinforced Courier Harness",
+          "description": "A brass-buckled leather vest with multiple ballast slots.",
+          "quantity": 1
+        },
+        {
+          "item_id": "lead_brick_standard",
+          "name": "Standard Lead Brick",
+          "description": "A 10kg ballast weight used for stability.",
+          "quantity": 4
+        },
+        {
+          "item_id": "frayed_vector_cord",
+          "name": "Frayed Vector Cord",
+          "description": "A vermilion cord that occasionally flickers.",
+          "quantity": 1
+        },
+        {
+          "item_id": "smuggled_gravity_vial",
+          "name": "Smuggled Gravity Vial",
+          "description": "A small glass tube containing concentrated 'Up' force.",
+          "quantity": 2
+        },
+        {
+          "item_id": "grease_tin_brass",
+          "name": "Brass Joint Grease",
+          "description": "Used to keep harness buckles from squeaking.",
+          "quantity": 1
+        },
+        {
+          "item_id": "stale_ration_bar",
+          "name": "Compressed Ration Bar",
+          "description": "Dense food for long shifts in high-gravity zones.",
+          "quantity": 6
+        },
+        {
+          "item_id": "lucky_brass_coin",
+          "name": "Lucky Brass Coin",
+          "description": "A coin that always falls heads-up, regardless of gravity.",
+          "quantity": 1
+        },
+        {
+          "item_id": "debt_notice_red",
+          "name": "Red Debt Notice",
+          "description": "A formal warning from the Ballast Vault.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Custom Jump-Boots",
+          "asset_type": "equipment",
+          "description": "Boots with built-in gravity dampeners.",
+          "story_use": "Allows Jax to survive falls in zero-G zones."
+        },
+        {
+          "asset_name": "Commons Bunk 14",
+          "asset_type": "residence",
+          "description": "A cramped sleeping pod in the Courier's Commons.",
+          "story_use": "Where Jax hides his smuggled gravity vials."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "vault_blind_spot",
+          "topic": "Security",
+          "summary": "A corner of the Ballast Vault where the cameras drift upward.",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "vane_habit_coffee",
+          "topic": "Observation",
+          "summary": "Archivist Vane leaves his office every day at 2 PM for tea.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Arbitrator Kael",
+      "role_name": "High Judge",
+      "activity": "Presiding over gravity disputes.",
+      "home_base": "The Arbitrator's Court",
+      "arc_goal": "To maintain the Archive's reputation despite growing corruption.",
+      "inventory": [
+        {
+          "item_id": "gavel_of_weight",
+          "name": "Gavel of Weight",
+          "description": "A heavy brass gavel that increases local gravity when struck.",
+          "quantity": 1
+        },
+        {
+          "item_id": "legal_scroll_bone",
+          "name": "Bone-White Legal Scroll",
+          "description": "A ceramic-paper scroll containing the Gravity Acts.",
+          "quantity": 3
+        },
+        {
+          "item_id": "spectacles_graphite",
+          "name": "Graphite-Framed Spectacles",
+          "description": "Lenses that highlight vector lines in the air.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ceremonial_plumb_pendant",
+          "name": "Ceremonial Plumb Pendant",
+          "description": "A vermilion silk cord with a tiny brass weight.",
+          "quantity": 1
+        },
+        {
+          "item_id": "judgment_ink_red",
+          "name": "Vermilion Judgment Ink",
+          "description": "Used only for final sentencing documents.",
+          "quantity": 2
+        },
+        {
+          "item_id": "wax_seal_justice",
+          "name": "Seal of the High Court",
+          "description": "A heavy stamp used to finalize legal rulings.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pocket_watch_brass",
+          "name": "Brass Gravity Watch",
+          "description": "Tells time and measures local Newtons.",
+          "quantity": 1
+        },
+        {
+          "item_id": "fine_silk_handkerchief",
+          "name": "White Silk Handkerchief",
+          "description": "For cleaning graphite dust off the bench.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The High Bench",
+          "asset_type": "furniture",
+          "description": "The elevated seat in the Arbitrator's Court.",
+          "story_use": "The only place in the room with perfectly stable gravity."
+        },
+        {
+          "asset_name": "Private Archive Access",
+          "asset_type": "access",
+          "description": "Permission to view the 'Forbidden Vectors' collection.",
+          "story_use": "Used to research historical gravity failures."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "vane_secret_meeting",
+          "topic": "Corruption",
+          "summary": "Saw Vane meeting with a known vector smuggler in the lab.",
+          "confidence": 70
+        },
+        {
+          "knowledge_id": "precedent_104",
+          "topic": "Law",
+          "summary": "A legal loophole that allows for 'emergency' gravity theft.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Silas the Smith",
+      "role_name": "Hardware Vendor",
+      "activity": "Selling and repairing gravity measurement tools.",
+      "home_base": "The Central Plumb-Line Hall",
+      "arc_goal": "To sell his new 'Self-Leveling Plumb' to the Archive.",
+      "inventory": [
+        {
+          "item_id": "brass_plumb_bob",
+          "name": "Polished Brass Plumb Bob",
+          "description": "A perfectly balanced weight for vector testing.",
+          "quantity": 15
+        },
+        {
+          "item_id": "vermilion_cord_spool",
+          "name": "Spool of Vermilion Cord",
+          "description": "High-tensile silk cord for hanging weights.",
+          "quantity": 10
+        },
+        {
+          "item_id": "graphite_lubricant",
+          "name": "Graphite Pulley Lubricant",
+          "description": "Reduces friction in gravity-sensitive machines.",
+          "quantity": 20
+        },
+        {
+          "item_id": "ceramic_casing_small",
+          "name": "Small Ceramic Casing",
+          "description": "Housing for portable gravity wafers.",
+          "quantity": 12
+        },
+        {
+          "item_id": "brass_screw_set",
+          "name": "Box of Brass Screws",
+          "description": "Non-magnetic fasteners for archive hardware.",
+          "quantity": 50
+        },
+        {
+          "item_id": "vector_tuning_fork",
+          "name": "Vector Tuning Fork",
+          "description": "Vibrates when exposed to unstable gravity.",
+          "quantity": 5
+        },
+        {
+          "item_id": "heavy_duty_wrench",
+          "name": "Brass-Plated Wrench",
+          "description": "For tightening floor-mounted ballast bolts.",
+          "quantity": 3
+        },
+        {
+          "item_id": "polishing_cloth_grey",
+          "name": "Grey Polishing Cloth",
+          "description": "Keeps brass hardware shining and accurate.",
+          "quantity": 15
+        },
+        {
+          "item_id": "prototype_plumb",
+          "name": "Self-Leveling Prototype",
+          "description": "A complex brass device that resists external pull.",
+          "quantity": 1
+        },
+        {
+          "item_id": "scrap_lead_bits",
+          "name": "Bag of Lead Scrap",
+          "description": "Small weights for minor adjustments.",
+          "quantity": 30
+        },
+        {
+          "item_id": "archive_permit_vendor",
+          "name": "Vendor's Permit",
+          "description": "Allows Silas to operate his stall in the Hall.",
+          "quantity": 1
+        },
+        {
+          "item_id": "measuring_tape_brass",
+          "name": "Brass Measuring Tape",
+          "description": "Measures distance and vector deviation.",
+          "quantity": 5
+        },
+        {
+          "item_id": "safety_goggles_cobalt",
+          "name": "Cobalt Safety Goggles",
+          "description": "Protects eyes from ceramic shards.",
+          "quantity": 2
+        },
+        {
+          "item_id": "small_hammer_brass",
+          "name": "Small Brass Hammer",
+          "description": "For delicate adjustments to scales.",
+          "quantity": 2
+        },
+        {
+          "item_id": "vector_canister_empty",
+          "name": "Empty Vector Canister",
+          "description": "A cobalt glass jar waiting for a charge.",
+          "quantity": 8
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Silas's Stall",
+          "asset_type": "business",
+          "description": "A brass-framed stall in the Plumb-Line Hall.",
+          "story_use": "The primary source of hardware for couriers and clerks."
+        },
+        {
+          "asset_name": "Hardware Workshop",
+          "asset_type": "room",
+          "description": "A small, cluttered room behind the stall.",
+          "story_use": "Where Silas builds his illegal vector-tuning forks."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "vane_hardware_order",
+          "topic": "Trade",
+          "summary": "Vane ordered 50 empty canisters last week, off the books.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "brass_purity_test",
+          "topic": "Craft",
+          "summary": "How to tell if a plumb bob has been hollowed out for smuggling.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Dr. Elara",
+      "role_name": "Vector Analyst",
+      "activity": "Testing vectors for stability.",
+      "home_base": "Counterfeit Detection Lab",
+      "arc_goal": "To prove that the Archive's master gravity source is decaying.",
+      "inventory": [
+        {
+          "item_id": "cobalt_microscope",
+          "name": "Cobalt Microscope",
+          "description": "Used to see the crystalline structure of gravity.",
+          "quantity": 1
+        },
+        {
+          "item_id": "test_tube_rack",
+          "name": "Rack of Glass Vials",
+          "description": "Contains samples of various gravity strengths.",
+          "quantity": 1
+        },
+        {
+          "item_id": "decay_report_elara",
+          "name": "Decay Analysis Report",
+          "description": "A thick stack of papers showing alarming trends.",
+          "quantity": 1
+        },
+        {
+          "item_id": "blue_laser_pointer",
+          "name": "Vector Alignment Laser",
+          "description": "Projects a perfectly straight line for testing.",
+          "quantity": 2
+        },
+        {
+          "item_id": "ceramic_petri_dish",
+          "name": "Ceramic Petri Dish",
+          "description": "For growing synthetic gravity cultures.",
+          "quantity": 10
+        },
+        {
+          "item_id": "protective_gloves_white",
+          "name": "White Ceramic-Fiber Gloves",
+          "description": "Protects hands from gravity burns.",
+          "quantity": 3
+        },
+        {
+          "item_id": "calibrated_weight_set",
+          "name": "Calibrated Brass Weights",
+          "description": "A set of weights from 1mg to 1kg.",
+          "quantity": 1
+        },
+        {
+          "item_id": "emergency_anchor_bolt",
+          "name": "Emergency Anchor Bolt",
+          "description": "A heavy bolt that can be slammed into the floor.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Lab Bench 4",
+          "asset_type": "workspace",
+          "description": "A sterile bench in the Detection Lab.",
+          "story_use": "Where Elara performs her secret decay tests."
+        },
+        {
+          "asset_name": "Data Terminal Access",
+          "asset_type": "access",
+          "description": "Login for the Archive's central gravity monitor.",
+          "story_use": "Allows Elara to see real-time vector fluctuations."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "gravity_decay_rate",
+          "topic": "Science",
+          "summary": "The Archive's gravity is losing 0.01% of its pull every month.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "kael_medical_secret",
+          "topic": "Blackmail",
+          "summary": "Arbitrator Kael uses a illegal 'Light-Step' vector for his gout.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Milo the Mime",
+      "role_name": "Gravity Performer",
+      "activity": "Entertaining couriers with zero-G tricks.",
+      "home_base": "The Courier's Commons",
+      "arc_goal": "To steal a Class-1 vector to perform a 'true flight' show.",
+      "inventory": [
+        {
+          "item_id": "white_face_paint",
+          "name": "Bone-White Face Paint",
+          "description": "Traditional makeup for gravity mimes.",
+          "quantity": 3
+        },
+        {
+          "item_id": "invisible_box_prop",
+          "name": "Invisible Box Prop",
+          "description": "Actually a set of small, hidden gravity anchors.",
+          "quantity": 4
+        },
+        {
+          "item_id": "juggling_balls_brass",
+          "name": "Weighted Juggling Balls",
+          "description": "Balls that fall at different speeds.",
+          "quantity": 6
+        },
+        {
+          "item_id": "silk_scarf_vermilion",
+          "name": "Vermilion Silk Scarf",
+          "description": "Used to show air currents and vector shifts.",
+          "quantity": 2
+        },
+        {
+          "item_id": "mime_gloves_white",
+          "name": "White Cotton Gloves",
+          "description": "Slightly stained with graphite dust.",
+          "quantity": 5
+        },
+        {
+          "item_id": "small_tin_cup",
+          "name": "Brass Tip Cup",
+          "description": "For collecting credits from the audience.",
+          "quantity": 1
+        },
+        {
+          "item_id": "folding_stool_graphite",
+          "name": "Graphite Folding Stool",
+          "description": "A lightweight seat for street performances.",
+          "quantity": 1
+        },
+        {
+          "item_id": "theatre_mask_cobalt",
+          "name": "Cobalt Theatre Mask",
+          "description": "A mask representing the 'Spirit of Down'.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Performance Corner",
+          "asset_type": "business",
+          "description": "A small patch of floor in the Commons.",
+          "story_use": "Where Milo gathers information while performing."
+        },
+        {
+          "asset_name": "Mime's Trunk",
+          "asset_type": "storage",
+          "description": "A locked box hidden under a bench.",
+          "story_use": "Contains Milo's collection of stolen vector scraps."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "courier_slang",
+          "topic": "Culture",
+          "summary": "The secret hand signals couriers use to warn of inspectors.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "jax_secret_stash",
+          "topic": "Theft",
+          "summary": "Knows exactly where Jax hides his smuggled vials.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Overseer Bram",
+      "role_name": "Vault Warden",
+      "activity": "Guarding the Ballast Vault.",
+      "home_base": "The Ballast Vault",
+      "arc_goal": "To catch the person who has been shaving lead off the ballast bricks.",
+      "inventory": [
+        {
+          "item_id": "heavy_keys_brass",
+          "name": "Vault Master Keys",
+          "description": "A massive ring of brass keys for every safe.",
+          "quantity": 1
+        },
+        {
+          "item_id": "shock_baton_archive",
+          "name": "Archive Peacekeeper Baton",
+          "description": "A graphite rod that delivers a heavy gravity pulse.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ballast_log_bram",
+          "name": "Ballast Audit Log",
+          "description": "Records the weight of every brick in the vault.",
+          "quantity": 1
+        },
+        {
+          "item_id": "iron_shackles_heavy",
+          "name": "Gravity Shackles",
+          "description": "Cuffs that pin the wearer to the floor.",
+          "quantity": 2
+        },
+        {
+          "item_id": "pocket_flask_ceramic",
+          "name": "Ceramic Hip Flask",
+          "description": "Contains strong, bitter tea.",
+          "quantity": 1
+        },
+        {
+          "item_id": "tobacco_pouch_leather",
+          "name": "Leather Tobacco Pouch",
+          "description": "Smells of graphite and old paper.",
+          "quantity": 1
+        },
+        {
+          "item_id": "brass_whistle_loud",
+          "name": "Warden's Whistle",
+          "description": "Used to signal a security breach.",
+          "quantity": 1
+        },
+        {
+          "item_id": "spare_uniform_button",
+          "name": "Brass Uniform Button",
+          "description": "A spare button with the Archive crest.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Warden's Chair",
+          "asset_type": "furniture",
+          "description": "A heavy iron chair bolted to the vault floor.",
+          "story_use": "Bram's primary vantage point for monitoring the vault."
+        },
+        {
+          "asset_name": "Security Camera Feed",
+          "asset_type": "access",
+          "description": "Access to the Vault's internal monitors.",
+          "story_use": "How Bram tracks movement within the Ballast Vault."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "shaved_lead_evidence",
+          "topic": "Investigation",
+          "summary": "Found lead shavings in Silas the Smith's workshop.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "vault_vent_path",
+          "topic": "Security",
+          "summary": "The ventilation shafts are too small for a human, but not a mime.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Clerk Pimm",
+      "role_name": "Junior Clerk",
+      "activity": "Filing endless vector applications.",
+      "home_base": "Vector Licensing Wing",
+      "arc_goal": "To get promoted to Senior Clerk by snitching on Vane.",
+      "inventory": [
+        {
+          "item_id": "filing_stamps_set",
+          "name": "Set of Filing Stamps",
+          "description": "Stamps for 'Pending', 'Denied', and 'Refer to Head'.",
+          "quantity": 1
+        },
+        {
+          "item_id": "paper_clips_brass",
+          "name": "Brass Paper Clips",
+          "description": "Keeps applications from floating away.",
+          "quantity": 100
+        },
+        {
+          "item_id": "ink_remover_vial",
+          "name": "Ink Remover Solution",
+          "description": "For correcting minor filing errors.",
+          "quantity": 2
+        },
+        {
+          "item_id": "lunch_box_ceramic",
+          "name": "Ceramic Lunch Box",
+          "description": "Contains a very sad sandwich.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pocket_dictionary_legal",
+          "name": "Legal Dictionary",
+          "description": "A small book of bureaucratic terms.",
+          "quantity": 1
+        },
+        {
+          "item_id": "spare_ink_ribbon",
+          "name": "Cobalt Ink Ribbon",
+          "description": "For the mechanical filing machines.",
+          "quantity": 3
+        },
+        {
+          "item_id": "stress_ball_lead",
+          "name": "Lead-Core Stress Ball",
+          "description": "A very heavy ball for squeezing.",
+          "quantity": 1
+        },
+        {
+          "item_id": "vane_trash_scrap",
+          "name": "Scrap from Vane's Trash",
+          "description": "A torn piece of paper with a secret code.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Desk 42",
+          "asset_type": "workspace",
+          "description": "The smallest desk in the Licensing Wing.",
+          "story_use": "Where Pimm spends 12 hours a day plotting."
+        },
+        {
+          "asset_name": "Archive Directory",
+          "asset_type": "knowledge",
+          "description": "A complete list of every employee's home address.",
+          "story_use": "Used by Pimm to track Vane's movements outside work."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "vane_fake_ledger",
+          "topic": "Corruption",
+          "summary": "Vane keeps a second ledger hidden in his desk's false bottom.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "pimm_promotion_req",
+          "topic": "Bureaucracy",
+          "summary": "Needs exactly three 'Commendations of Merit' to be promoted.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Tessa the Taker",
+      "role_name": "Debt Collector",
+      "activity": "Repossessing gravity licenses from those who can't pay.",
+      "home_base": "The Arbitrator's Court",
+      "arc_goal": "To repossess Jax's harness and force him into labor.",
+      "inventory": [
+        {
+          "item_id": "repossession_order",
+          "name": "Writ of Repossession",
+          "description": "A legal document signed by Arbitrator Kael.",
+          "quantity": 5
+        },
+        {
+          "item_id": "vector_nullifier",
+          "name": "Vector Nullifier Wand",
+          "description": "A brass device that temporarily disables a harness.",
+          "quantity": 1
+        },
+        {
+          "item_id": "heavy_boots_tessa",
+          "name": "Magnetic Lead Boots",
+          "description": "Keeps Tessa grounded even in zero-G.",
+          "quantity": 1
+        },
+        {
+          "item_id": "credit_scanner_portable",
+          "name": "Portable Credit Scanner",
+          "description": "Checks a citizen's balance on the spot.",
+          "quantity": 1
+        },
+        {
+          "item_id": "handcuffs_brass",
+          "name": "Brass Handcuffs",
+          "description": "For uncooperative debtors.",
+          "quantity": 3
+        },
+        {
+          "item_id": "black_ink_pen",
+          "name": "Graphite Marking Pen",
+          "description": "For crossing names off her list.",
+          "quantity": 2
+        },
+        {
+          "item_id": "small_ballast_bag",
+          "name": "Bag of Sand Ballast",
+          "description": "Used to weigh down seized documents.",
+          "quantity": 5
+        },
+        {
+          "item_id": "official_badge_tessa",
+          "name": "Debt Collector Badge",
+          "description": "A vermilion-enameled brass badge.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Repossession Van",
+          "asset_type": "vehicle",
+          "description": "A heavy, armored cart for transporting seized goods.",
+          "story_use": "Where Tessa keeps her collection of 'unclaimed' items."
+        },
+        {
+          "asset_name": "Courtroom Access",
+          "asset_type": "access",
+          "description": "Permission to enter the Arbitrator's private chambers.",
+          "story_use": "Tessa delivers the 'cut' of her collections to Kael here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "jax_debt_total",
+          "topic": "Finance",
+          "summary": "Jax owes exactly 12,450 credits plus interest.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "kael_kickback_rate",
+          "topic": "Corruption",
+          "summary": "Kael takes 10% of every repossession Tessa performs.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Bastian",
+      "role_name": "Archive Janitor",
+      "activity": "Cleaning up graphite dust and ceramic shards.",
+      "home_base": "The Central Plumb-Line Hall",
+      "arc_goal": "To find enough lead shavings to build his own gravity-free room.",
+      "inventory": [
+        {
+          "item_id": "magnetic_broom",
+          "name": "Magnetic Graphite Broom",
+          "description": "Attracts graphite dust and small metal bits.",
+          "quantity": 1
+        },
+        {
+          "item_id": "dustpan_brass",
+          "name": "Heavy Brass Dustpan",
+          "description": "Doesn't fly away in sudden vector shifts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "cleaning_fluid_vial",
+          "name": "Ceramic Polish",
+          "description": "Keeps the floors dangerously slippery.",
+          "quantity": 5
+        },
+        {
+          "item_id": "trash_bags_heavy",
+          "name": "Reinforced Trash Bags",
+          "description": "For carrying heavy ceramic waste.",
+          "quantity": 20
+        },
+        {
+          "item_id": "found_lead_shavings",
+          "name": "Jar of Lead Shavings",
+          "description": "Collected from the vault floor.",
+          "quantity": 1
+        },
+        {
+          "item_id": "lost_key_pimm",
+          "name": "Pimm's Lost Desk Key",
+          "description": "Found in a floor vent.",
+          "quantity": 1
+        },
+        {
+          "item_id": "rag_bundle_grey",
+          "name": "Bundle of Grey Rags",
+          "description": "For wiping down plumb lines.",
+          "quantity": 10
+        },
+        {
+          "item_id": "earplugs_foam",
+          "name": "Foam Earplugs",
+          "description": "To block out the constant humming of the centrifuge.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Janitor's Closet",
+          "asset_type": "room",
+          "description": "A tiny room under the main stairs.",
+          "story_use": "Where Bastian stores his 'treasures' found in the trash."
+        },
+        {
+          "asset_name": "Master Vent Key",
+          "asset_type": "access",
+          "description": "A tool for opening any ventilation grate.",
+          "story_use": "Allows Bastian to move between rooms unseen."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "trash_secrets",
+          "topic": "Gossip",
+          "summary": "Dr. Elara has been throwing away 'Failed' reports that look perfect.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "vent_network_map",
+          "topic": "Navigation",
+          "summary": "A mental map of the Archive's entire ventilation system.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra",
+      "role_name": "Vector Smuggler",
+      "activity": "Selling illegal 'Zero-G' canisters in the Commons.",
+      "home_base": "The Courier's Commons",
+      "arc_goal": "To replace the Archive's master vector with a fake one.",
+      "inventory": [
+        {
+          "item_id": "zero_g_canister",
+          "name": "Zero-G Canister",
+          "description": "A canister that creates a 3-meter sphere of weightlessness.",
+          "quantity": 2
+        },
+        {
+          "item_id": "fake_id_archive",
+          "name": "Forged Archive ID",
+          "description": "Identifies Lyra as a 'Maintenance Tech'.",
+          "quantity": 1
+        },
+        {
+          "item_id": "scrambler_device",
+          "name": "Signal Scrambler",
+          "description": "Temporarily blinds security cameras.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bribe_credits_pouch",
+          "name": "Pouch of High-Value Credits",
+          "description": "Used to silence curious clerks.",
+          "quantity": 1
+        },
+        {
+          "item_id": "lockpick_set_brass",
+          "name": "Brass Lockpick Set",
+          "description": "Designed for archive-style tumblers.",
+          "quantity": 1
+        },
+        {
+          "item_id": "smoke_bomb_graphite",
+          "name": "Graphite Smoke Bomb",
+          "description": "Creates a cloud of conductive dust.",
+          "quantity": 3
+        },
+        {
+          "item_id": "encrypted_comm_link",
+          "name": "Encrypted Comm-Link",
+          "description": "For talking to her outside contacts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "poison_needle_ring",
+          "name": "Needle Ring",
+          "description": "Contains a sedative for overzealous wardens.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hidden Cache",
+          "asset_type": "storage",
+          "description": "A loose floorboard in the Counterfeit Lab.",
+          "story_use": "Where Lyra stores her most dangerous prototypes."
+        },
+        {
+          "asset_name": "Smuggler's Route",
+          "asset_type": "access",
+          "description": "Knowledge of a secret entrance through the Ballast Vault.",
+          "story_use": "How Lyra gets her goods into the Archive."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "vane_partnership",
+          "topic": "Corruption",
+          "summary": "Vane is the one who provides the empty canisters for her fakes.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "master_vector_location",
+          "topic": "Security",
+          "summary": "The master vector is kept in a vacuum chamber behind the Court.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Kobo",
+      "role_name": "Ballast Auditor",
+      "activity": "Checking the purity of lead bricks.",
+      "home_base": "The Ballast Vault",
+      "arc_goal": "To find the 'Golden Brick' rumored to be hidden in the vault.",
+      "inventory": [
+        {
+          "item_id": "density_tester",
+          "name": "Ultrasonic Density Tester",
+          "description": "Checks for hollow spaces inside ballast.",
+          "quantity": 1
+        },
+        {
+          "item_id": "lead_seal_pliers",
+          "name": "Lead Seal Pliers",
+          "description": "For crimping official seals onto bricks.",
+          "quantity": 1
+        },
+        {
+          "item_id": "magnifying_glass_fine",
+          "name": "Fine Magnifying Glass",
+          "description": "For inspecting the grain of the lead.",
+          "quantity": 1
+        },
+        {
+          "item_id": "audit_stamps_kobo",
+          "name": "Kobo's Personal Audit Stamp",
+          "description": "A small brass stamp with his initials.",
+          "quantity": 1
+        },
+        {
+          "item_id": "graphite_pencil_set",
+          "name": "Set of Graphite Pencils",
+          "description": "For sketching anomalies in the ballast.",
+          "quantity": 5
+        },
+        {
+          "item_id": "small_lead_sample",
+          "name": "Sample of 'Pure' Lead",
+          "description": "A reference piece for testing.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pocket_scale_digital",
+          "name": "Digital Pocket Scale",
+          "description": "Measures up to 500g with extreme precision.",
+          "quantity": 1
+        },
+        {
+          "item_id": "protective_apron_heavy",
+          "name": "Heavy Lead-Lined Apron",
+          "description": "Protects against... something. Kobo is paranoid.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Audit Station",
+          "asset_type": "workspace",
+          "description": "A small desk inside the Ballast Vault.",
+          "story_use": "Where Kobo spends his days weighing bricks."
+        },
+        {
+          "asset_name": "Vault Blueprints",
+          "asset_type": "knowledge",
+          "description": "A set of original architectural drawings.",
+          "story_use": "Kobo uses these to look for hidden compartments."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "bram_laziness",
+          "topic": "Observation",
+          "summary": "Warden Bram falls asleep for 20 minutes every night at midnight.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "golden_brick_myth",
+          "topic": "Lore",
+          "summary": "The first ballast brick was made of solid gold to anchor the Archive.",
+          "confidence": 60
+        }
+      ]
+    }
+  ],
+  "social_rules": [
+    "Gravity licenses must be visible at all times (pinned to the chest).",
+    "Intentional vector-shifting in public halls is considered assault.",
+    "Ballast debt is hereditary; families must carry the weight of their ancestors.",
+    "Zero-G zones are restricted to authorized maintenance and medical staff.",
+    "All physical weights must be declared upon entry to the Archive."
+  ],
+  "item_themes": [
+    "Gravity Vectors",
+    "Ballast and Weight",
+    "Bureaucratic Hardware",
+    "Cobalt and Ceramic",
+    "Legal Forgery"
+  ],
+  "custom_actions": [
+    "Calibrate Vector",
+    "Verify Ballast Purity",
+    "File Gravity Dispute",
+    "Adjust Local Down-Direction"
+  ],
+  "player_entry_points": [
+    "Arriving as a new Courier with a heavy debt load.",
+    "Entering as a Legal Aide to Arbitrator Kael.",
+    "Sneaking in as a Maintenance Contractor to fix a 'leaky' vector."
+  ],
+  "conflict_hooks": [
+    "A sudden gravity inversion in the Licensing Wing has scrambled all physical files.",
+    "Jax has been caught with a counterfeit vector, and Tessa is coming to repossess his life.",
+    "Dr. Elara's report on gravity decay has been stolen, and she suspects Archivist Vane."
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Licensing Grind",
+      "summary": "Players must navigate the bureaucracy to obtain or renew gravity licenses, using credits or ballast as collateral.",
+      "roles": [
+        "Vector Clerk",
+        "Ballast Courier"
+      ],
+      "rooms": [
+        "Vector Licensing Wing",
+        "The Central Plumb-Line Hall"
+      ],
+      "pressure": "Licenses expire every 24 hours; without one, you float to the ceiling and are arrested."
+    },
+    {
+      "label": "The Counterfeit Hunt",
+      "summary": "Players investigate the source of unstable vectors, using lab tools to identify fakes and legal maneuvers to trap smugglers.",
+      "roles": [
+        "Vector Analyst",
+        "Debt Collector"
+      ],
+      "rooms": [
+        "Counterfeit Detection Lab",
+        "The Arbitrator's Court"
+      ],
+      "pressure": "Unstable vectors can cause 'Gravity Sickness' or structural damage to the Archive."
+    }
+  ],
+  "item_catalog": [
+    {
+      "item_id": "brass_plumb_bob",
+      "name": "Polished Brass Plumb Bob",
+      "price": 150,
+      "mass": 0.5,
+      "description": "A standard tool for checking the local vertical.",
+      "image_prompt": "A teardrop-shaped polished brass weight hanging from a thin red string, pixel art, top-down.",
+      "category": "Hardware"
+    },
+    {
+      "item_id": "gravity_wafer_class1",
+      "name": "Class-1 Gravity Wafer",
+      "price": 5000,
+      "mass": 0.1,
+      "description": "A high-grade ceramic disc providing perfect 1G stability.",
+      "image_prompt": "A small, glowing blue ceramic disc with etched brass circuitry, pixel art.",
+      "category": "Vector"
+    },
+    {
+      "item_id": "lead_brick_standard",
+      "name": "Standard Lead Brick",
+      "price": 200,
+      "mass": 10.0,
+      "description": "A heavy graphite-coated brick used as ballast.",
+      "image_prompt": "A rectangular dark grey brick with a metallic sheen, pixel art.",
+      "category": "Ballast"
+    },
+    {
+      "item_id": "cobalt_ink_well",
+      "name": "Archive Cobalt Ink",
+      "price": 80,
+      "mass": 0.2,
+      "description": "Official ink for gravity permits.",
+      "image_prompt": "A small square glass bottle filled with deep blue ink, brass cap, pixel art.",
+      "category": "Office"
+    },
+    {
+      "item_id": "vermilion_plumb_line",
+      "name": "Vermilion Plumb Line",
+      "price": 30,
+      "mass": 0.05,
+      "description": "High-visibility silk cord for vector measurement.",
+      "image_prompt": "A spool of bright red thread, pixel art.",
+      "category": "Hardware"
+    },
+    {
+      "item_id": "vector_nullifier",
+      "name": "Vector Nullifier Wand",
+      "price": 1200,
+      "mass": 0.8,
+      "description": "A security tool that disables gravity harnesses.",
+      "image_prompt": "A short graphite rod with a brass tip and a red button, pixel art.",
+      "category": "Security"
+    },
+    {
+      "item_id": "ceramic_stylus",
+      "name": "Ceramic Stylus",
+      "price": 45,
+      "mass": 0.02,
+      "description": "A sharp tool for writing on archive tablets.",
+      "image_prompt": "A thin white ceramic needle, pixel art.",
+      "category": "Office"
+    },
+    {
+      "item_id": "zero_g_canister",
+      "name": "Zero-G Canister",
+      "price": 2500,
+      "mass": 1.5,
+      "description": "Illegal device that creates a localized weightless zone.",
+      "image_prompt": "A cobalt glass jar containing a swirling grey mist, brass lid, pixel art.",
+      "category": "Contraband"
+    },
+    {
+      "item_id": "brass_caliper",
+      "name": "Precision Brass Caliper",
+      "price": 220,
+      "mass": 0.3,
+      "description": "Measures the thickness of gravity permits to detect forgeries.",
+      "image_prompt": "A brass sliding measurement tool, pixel art.",
+      "category": "Hardware"
+    },
+    {
+      "item_id": "lead_slug_small",
+      "name": "Small Lead Slug",
+      "price": 10,
+      "mass": 0.1,
+      "description": "A tiny weight for fine-tuning a harness.",
+      "image_prompt": "A small, dull grey metal cylinder, pixel art.",
+      "category": "Ballast"
+    },
+    {
+      "item_id": "archive_keycard_white",
+      "name": "Bone-White Keycard",
+      "price": 0,
+      "mass": 0.01,
+      "description": "Standard access card for archive staff.",
+      "image_prompt": "A flat white rectangular card with a small brass chip, pixel art.",
+      "category": "Access"
+    },
+    {
+      "item_id": "vector_tuning_fork",
+      "name": "Vector Tuning Fork",
+      "price": 350,
+      "mass": 0.2,
+      "description": "Vibrates when gravity is unstable.",
+      "image_prompt": "A two-pronged brass fork, pixel art.",
+      "category": "Hardware"
+    },
+    {
+      "item_id": "compressed_ration_bar",
+      "name": "Compressed Ration Bar",
+      "price": 15,
+      "mass": 0.1,
+      "description": "Dense, tasteless food for long shifts.",
+      "image_prompt": "A small brown rectangular block in clear wrapping, pixel art.",
+      "category": "Food"
+    },
+    {
+      "item_id": "graphite_lubricant",
+      "name": "Graphite Lubricant",
+      "price": 60,
+      "mass": 0.2,
+      "description": "Keeps brass gears moving in high-G.",
+      "image_prompt": "A small grey tube with a nozzle, pixel art.",
+      "category": "Hardware"
+    },
+    {
+      "item_id": "repossession_order",
+      "name": "Writ of Repossession",
+      "price": 0,
+      "mass": 0.05,
+      "description": "A legal document authorizing the seizure of property.",
+      "image_prompt": "A rolled white scroll with a red wax seal, pixel art.",
+      "category": "Legal"
+    }
+  ],
+  "visual_canon": {
+    "canon_id": "gravity_archive_v1",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees",
+      "scale_rule": "1_unit_per_meter"
+    },
+    "palette": {
+      "dominant": "bone_white",
+      "secondary": "graphite_grey",
+      "accent": "vermilion_red",
+      "shadow": "cobalt_blue",
+      "highlight": "brass_gold"
+    },
+    "materials": [
+      "polished ceramic",
+      "brushed brass",
+      "cobalt glass",
+      "lead-lined graphite",
+      "vermilion silk"
+    ],
+    "lighting": "Clinical, top-down, shadowless in offices; high-contrast lantern light in vaults.",
+    "architecture": [
+      "circular rooms",
+      "bolted-down furniture",
+      "recessed floor lighting",
+      "exposed brass piping"
+    ],
+    "terrain": {
+      "ground": "checkered ceramic tiles",
+      "path": "vermilion floor-lines",
+      "edge": "brass floor-rails"
+    },
+    "sprite_language": {
+      "body_proportion": "chibi_6_head",
+      "outline": "1px_graphite",
+      "role_readability": "high_contrast_uniforms"
+    },
+    "world_prompt_prefix": "Strict top-down pixel art, Archive of Borrowed Gravity, bone-white and cobalt palette, no text, no signs.",
+    "sprite_prompt_prefix": "Top-down pixel art character, gravity archive uniform, high contrast.",
+    "forbidden_visuals": [
+      "neon signs",
+      "cybernetic limbs",
+      "medieval armor",
+      "written text",
+      "logos",
+      "modern plastic"
+    ]
+  },
+  "agent_visual_policy": {
+    "policy_id": "archive_staff_v1",
+    "world_wardrobe_brief": "Uniforms are structured and clinical, featuring heavy harnesses for couriers and flowing white robes for clerks. All clothing is accented with vermilion plumb lines.",
+    "forbidden_aesthetics": [
+      "tattered clothing",
+      "bright green or orange",
+      "denim",
+      "hats with brims"
+    ],
+    "palette_families": [
+      {
+        "name": "Bureaucratic",
+        "dominant": "bone_white",
+        "accent": "cobalt_blue",
+        "trim": "brass",
+        "material": "stiff ceramic-fiber"
+      },
+      {
+        "name": "Logistics",
+        "dominant": "graphite_grey",
+        "accent": "vermilion_red",
+        "trim": "lead",
+        "material": "heavy leather"
+      },
+      {
+        "name": "Legal",
+        "dominant": "midnight_blue",
+        "accent": "brass",
+        "trim": "vermilion",
+        "material": "heavy silk"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "clerk_style",
+        "role_keywords": [
+          "clerk",
+          "archivist",
+          "analyst"
+        ],
+        "attire": [
+          "long white tunics",
+          "cobalt sashes",
+          "brass collar pins"
+        ],
+        "props": [
+          "stylus",
+          "ledger",
+          "magnifying lens"
+        ],
+        "palette_notes": "Primarily bone-white with cobalt accents.",
+        "silhouette_notes": "Slim, vertical, clean lines."
+      },
+      {
+        "rule_id": "courier_style",
+        "role_keywords": [
+          "courier",
+          "warden",
+          "collector"
+        ],
+        "attire": [
+          "graphite vests",
+          "heavy brass-buckled harnesses",
+          "reinforced boots"
+        ],
+        "props": [
+          "ballast bricks",
+          "canisters",
+          "wrenches"
+        ],
+        "palette_notes": "Darker tones, graphite and vermilion.",
+        "silhouette_notes": "Bulky, wide-shouldered due to harnesses."
+      },
+      {
+        "rule_id": "performer_style",
+        "role_keywords": [
+          "mime",
+          "smuggler"
+        ],
+        "attire": [
+          "tight-fitting white suits",
+          "vermilion scarves",
+          "face paint"
+        ],
+        "props": [
+          "juggling balls",
+          "hidden vials"
+        ],
+        "palette_notes": "High contrast white and red.",
+        "silhouette_notes": "Flexible, agile, minimal bulk."
+      }
+    ],
+    "default_rule": {
+      "rule_id": "citizen_default",
+      "role_keywords": [
+        "visitor",
+        "debtor"
+      ],
+      "attire": [
+        "grey jumpsuits",
+        "simple brass harnesses"
+      ],
+      "props": [
+        "identification tablets"
+      ],
+      "palette_notes": "Muted greys and whites.",
+      "silhouette_notes": "Standard human form."
+    },
+    "visual_consistency_rules": [
+      "All characters must have a visible vermilion cord somewhere on their person.",
+      "Harnesses must be rendered with a metallic brass sheen.",
+      "Shadows must be cast directly beneath the character to emphasize the top-down view."
+    ]
+  }
+}

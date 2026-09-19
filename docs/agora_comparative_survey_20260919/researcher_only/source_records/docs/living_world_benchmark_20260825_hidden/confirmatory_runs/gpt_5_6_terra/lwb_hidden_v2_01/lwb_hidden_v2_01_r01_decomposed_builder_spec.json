@@ -1,0 +1,2185 @@
+{
+  "world_name": "Vowfall",
+  "world_id": "vowfall_cliff_city",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "A vertical cliffside city of bridges, ledges, echo wells, and household terraces.",
+    "tone": "Lyrical civic pressure, intimate debt, and precarious trust.",
+    "visual_direction": "Layered sandstone balconies, brass speaking scales, sealed courier tubes, and wind-torn pledge ribbons.",
+    "currency_code": "VWT",
+    "currency_symbol": "◈",
+    "currency_minor_unit": "grain",
+    "currency_name": "vowweight",
+    "domain_label": "spoken-promise civic economy",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "weighhouse",
+        "name": "The Weighhouse",
+        "mandate": "Assess the weight-tax due on every witnessed spoken promise.",
+        "decision_rule": "Certified echo scales measure wording, witnesses, and duration; disputed vows are reweighed publicly.",
+        "enforced_by": "Tax listeners, scale clerks, and bridge gate seals.",
+        "visible_output": "Stamped vow slips showing weight, due date, and unpaid balance."
+      },
+      {
+        "institution_id": "courier_guild",
+        "name": "The Unburdened Route",
+        "mandate": "Carry unpaid promises between households until they are redeemed, transferred, or broken.",
+        "decision_rule": "Routes prioritize promises nearing maturity and cargo that exceeds a household's carrying limit.",
+        "enforced_by": "Licensed couriers, route ledgers, and sealed message satchels.",
+        "visible_output": "Couriers visibly bearing ribboned promise bundles across cliff bridges."
+      },
+      {
+        "institution_id": "echo_court",
+        "name": "Court of Echoes",
+        "mandate": "Rule whether a promise was fulfilled, amended, coerced, or void.",
+        "decision_rule": "Three magistrates compare recorded echoes against witness testimony; ties favor the debtor.",
+        "enforced_by": "Court bailiffs and orders recognized by the Weighhouse.",
+        "visible_output": "Public echo rulings, void marks, and compelled restitution notices."
+      },
+      {
+        "institution_id": "bridge_wardens",
+        "name": "Bridge Wardenry",
+        "mandate": "Keep cliff crossings safe and restrict passage for delinquent vowweight.",
+        "decision_rule": "A bridge closes to a household when unpaid weight exceeds its posted safety bond.",
+        "enforced_by": "Warden crews, gate chains, and wind-signal towers.",
+        "visible_output": "Open or chained bridges, household passage tags, and safety-bond boards."
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "unpaid_vowweight",
+        "label": "Unpaid vowweight in circulation",
+        "initial_tension": "High after a season of ambitious household bargains.",
+        "changed_by": [
+          "new promises",
+          "tax payment",
+          "fulfillment",
+          "court voiding",
+          "courier loss"
+        ],
+        "affects": [
+          "courier workload",
+          "household mobility",
+          "public trust"
+        ]
+      },
+      {
+        "state_id": "courier_route_capacity",
+        "label": "Courier route capacity",
+        "initial_tension": "Strained by wind damage and overloaded satchels.",
+        "changed_by": [
+          "hiring couriers",
+          "repairing routes",
+          "rerouting cargo",
+          "ambushes"
+        ],
+        "affects": [
+          "delivery delays",
+          "promise loss",
+          "market coordination"
+        ]
+      },
+      {
+        "state_id": "bridge_access",
+        "label": "Bridge access between terraces",
+        "initial_tension": "Uneven, with several debtor districts near closure.",
+        "changed_by": [
+          "safety-bond payment",
+          "warden rulings",
+          "bridge repairs",
+          "collective protest"
+        ],
+        "affects": [
+          "trade access",
+          "court attendance",
+          "courier routing"
+        ]
+      },
+      {
+        "state_id": "echo_credibility",
+        "label": "Credibility of recorded speech",
+        "initial_tension": "Fragile because forged echoes are circulating.",
+        "changed_by": [
+          "accurate rulings",
+          "forgery exposure",
+          "witness protection",
+          "coerced testimony"
+        ],
+        "affects": [
+          "promise prices",
+          "court compliance",
+          "willingness to speak"
+        ]
+      },
+      {
+        "state_id": "household_liquidity",
+        "label": "Household ability to pay vow taxes",
+        "initial_tension": "Low among upper-ledge tenants and seasonal workers.",
+        "changed_by": [
+          "trade income",
+          "tax relief",
+          "credit",
+          "bridge closure"
+        ],
+        "affects": [
+          "unpaid balances",
+          "defaults",
+          "political bargaining"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "unpaid_vowweight",
+        "trigger": "Balances rise beyond household carrying limits.",
+        "target_state": "courier_route_capacity",
+        "effect": "More promises are assigned to couriers, congesting routes and increasing late delivery.",
+        "delay": "Immediate congestion; severe backlog after several delivery cycles."
+      },
+      {
+        "source_state": "courier_route_capacity",
+        "trigger": "Routes remain overloaded or are cut by wind.",
+        "target_state": "echo_credibility",
+        "effect": "Late, lost, or tampered promise bundles make recorded speech easier to dispute.",
+        "delay": "Builds over successive missed deliveries."
+      },
+      {
+        "source_state": "echo_credibility",
+        "trigger": "Public confidence in echoes falls.",
+        "target_state": "unpaid_vowweight",
+        "effect": "Households delay settlement and demand more witnesses, leaving more taxable promises unresolved.",
+        "delay": "One market cycle."
+      },
+      {
+        "source_state": "household_liquidity",
+        "trigger": "Households cannot convert goods or labor into vowweight.",
+        "target_state": "unpaid_vowweight",
+        "effect": "Tax arrears and transferred promise burdens increase.",
+        "delay": "Immediate after tax deadlines."
+      },
+      {
+        "source_state": "unpaid_vowweight",
+        "trigger": "A household exceeds the Wardenry safety bond.",
+        "target_state": "bridge_access",
+        "effect": "Wardens restrict crossings, isolating debt-heavy terraces.",
+        "delay": "At the next posted bond review."
+      },
+      {
+        "source_state": "bridge_access",
+        "trigger": "Crossings are chained or rationed.",
+        "target_state": "household_liquidity",
+        "effect": "Restricted trade and work travel reduce household income, worsening ability to settle vows.",
+        "delay": "One to two trade cycles."
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "ledge_households",
+        "name": "Upper-Ledge Households",
+        "goal": "Lower vow taxes and preserve open bridge passage without surrendering family promises.",
+        "leverage": "They can collectively withhold testimony, labor, and safety-bond payments.",
+        "dependency": "They depend on couriers to move excess promise weight and on bridges for food and work."
+      },
+      {
+        "group_id": "licensed_couriers",
+        "name": "Licensed Couriers",
+        "goal": "Raise delivery fees and gain exclusive control over unpaid-promise routes.",
+        "leverage": "They control custody chains and can prioritize, delay, or reveal promise bundles.",
+        "dependency": "They depend on Weighhouse stamps, safe bridges, and credible echoes to make deliveries enforceable."
+      },
+      {
+        "group_id": "weighhouse_clerks",
+        "name": "Weighhouse Clerks",
+        "goal": "Protect tax collection and the authority of speaking scales.",
+        "leverage": "They certify weight, deadlines, and whether a spoken promise enters the ledger.",
+        "dependency": "They depend on witnesses, court-recognized recordings, and households remaining able to pay."
+      },
+      {
+        "group_id": "terrace_merchants",
+        "name": "Terrace Merchants",
+        "goal": "Keep bridges open and accept promises as trade credit with minimal delay.",
+        "leverage": "They set exchange discounts for vow slips and fund bridge repairs.",
+        "dependency": "They depend on household liquidity, reliable courier arrivals, and trusted echo records."
+      }
+    ]
+  },
+  "genre": "Civic fantasy simulation",
+  "premise": "In a cliffside city, every spoken promise is taxed by weight, while couriers carry unpaid vows between households.",
+  "simulation_objective": "Build influence by settling, transferring, contesting, or exploiting promise burdens without collapsing the city's trust and crossings.",
+  "agent_count_target": 12,
+  "player_count_target": 24,
+  "wall_color_theme": "windworn_sandstone_with_aged_brass_bond_inlays",
+  "economy_focus": "Taxable spoken obligations, courier custody, vowweight credit, and bridge-gated trade.",
+  "exploration_focus": "Vertical terraces, echo chambers, courier routes, closed bridges, and hidden witness networks.",
+  "conflict_tone": "Negotiated, systemic, and socially perilous.",
+  "visual_style": "Windworn vertical fantasy with brass instruments and luminous echo-script.",
+  "rooms": [
+    {
+      "name": "Weighhouse Speaking Hall",
+      "biome": "cliffside civic terrace",
+      "purpose": "The Weighhouse certifies spoken promises and collects tax. Rising unpaid_vowweight is recorded here; overloaded vows are then sent to the Courier Intake Vault.",
+      "decor_tags": [
+        "carved sandstone",
+        "aged brass",
+        "echo-glass",
+        "sealed paper",
+        "drainage grooves"
+      ],
+      "activity_tags": [
+        "vow weighing",
+        "tax assessment",
+        "witnessing",
+        "slip stamping"
+      ],
+      "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, windworn sandstone civic hall tiles edge to edge, circular brass speaking-scale inlay at center, fine carved drainage grooves, scattered pale dust, faint chalk echo-glass glints, deep blue-gray seams, bounded Vowfall palette, no objects, no text.",
+      "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Weighhouse Speaking Hall, a roofless carved-sandstone civic tax hall with brass speaking scales, circular echo well, witness rails, sealed-paper slip niches and tube-routing walls. Warm brass glints, pale echo glow, deep blue-gray shadows, usable tiled floor and thin sandstone walls reach all four image edges. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, no blank background around the room.",
+      "width_tiles": 15,
+      "height_tiles": 11,
+      "ambient_palette": "warm_lantern",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "certified_echo_scale",
+          "label": "Echo Scale",
+          "description": "A round aged-brass scale plinth with a chalk echo-glass basin and two witness speaking posts.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        },
+        {
+          "component_id": "vow_slip_press",
+          "label": "Slip Press",
+          "description": "A brass lever press that seals tiny paper tax slips with wax and bond marks.",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Courier Intake Vault",
+      "biome": "cliff-cut courier depot",
+      "purpose": "Licensed couriers take custody of unpaid promise bundles and prioritize mature routes. Strained courier_route_capacity here causes late bundles to undermine Echo Court evidence.",
+      "decor_tags": [
+        "waxed canvas",
+        "dark rope",
+        "sealed paper",
+        "tarnished iron",
+        "brass seals"
+      ],
+      "activity_tags": [
+        "bundle custody",
+        "route sorting",
+        "satchel sealing",
+        "courier dispatch"
+      ],
+      "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, darkened sandstone depot floor edge to edge, worn rope lanes, brass route studs, wax drips, paper-seal fragments, iron drain grates, pale dust and blue-gray shadow seams, Vowfall five-color palette, no objects, no text.",
+      "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Courier Intake Vault, a compact cliff-cut depot where licensed couriers receive ribboned unpaid-vow bundles. Show waxed-canvas sorting lanes, dark rope pulley runs, brass custody seal bench, sealed courier tubes, iron hooks and stacked satchels. Sandstone floor and thin walls reach all four image edges, dense readable tile-scale layout. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, and no blank background around the room.",
+      "width_tiles": 13,
+      "height_tiles": 10,
+      "ambient_palette": "focused_blue",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "custody_seal_drum",
+          "label": "Custody Seal Drum",
+          "description": "A waist-high brass drum that stamps a bundle's transfer seal beneath a hanging rope guide.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "vow_bundle_sorter",
+          "label": "Bundle Sorter",
+          "description": "A canvas-and-brass chute rack holding ribboned promise bundles by route urgency.",
+          "anchor": "south_west",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Chain-Gate Bondhouse",
+      "biome": "suspended bridge threshold",
+      "purpose": "Bridge wardens review household safety bonds and chain crossings for delinquent vowweight. Reduced bridge_access here cuts merchant trade at the Bridgehead Exchange afterward.",
+      "decor_tags": [
+        "tarnished iron",
+        "aged brass",
+        "dark rope",
+        "sandstone",
+        "pledge ribbons"
+      ],
+      "activity_tags": [
+        "bond review",
+        "passage inspection",
+        "gate chaining",
+        "wind signaling"
+      ],
+      "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, narrow brass-edged sandstone bridge threshold edge to edge, iron chain sockets, rope-rail shadow bands, worn wind-scoured slabs, clipped pledge-ribbon fibers, pale dust, deep cliff-shadow accents, no objects, no text.",
+      "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Chain-Gate Bondhouse, a bridge warden checkpoint built into a sandstone retaining arch. Show a heavy iron chain gate, aged brass safety-bond plinth, rope rails, wind-signal crank and passage-token slots; the bridge approach continues naturally through opposite edges. Floor, walls and bridge paving reach all four image edges. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, and no blank background around the room.",
+      "width_tiles": 11,
+      "height_tiles": 7,
+      "ambient_palette": "low_lantern",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "bond_chain_gate",
+          "label": "Bond Chain Gate",
+          "description": "A tarnished iron chain lattice on brass rollers, drawn across the bridge when a household bond fails.",
+          "anchor": "east_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "safety_bond_plinth",
+          "label": "Safety Bond Plinth",
+          "description": "A round sandstone plinth fitted with brass balance pins and a clipped passage-tag ring.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Court of Echoes Chamber",
+      "biome": "high terrace tribunal",
+      "purpose": "Three magistrates judge forged, coerced, amended, or void promises. Accurate rulings improve echo_credibility, which lowers delayed settlement pressure at the Weighhouse.",
+      "decor_tags": [
+        "chalk echo-glass",
+        "sealed paper",
+        "aged brass",
+        "carved sandstone",
+        "tarnished iron"
+      ],
+      "activity_tags": [
+        "echo comparison",
+        "witness testimony",
+        "void ruling",
+        "restitution order"
+      ],
+      "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, formal sandstone tribunal floor edge to edge, three-part circular chalk echo-glass mosaic, brass semicircle inlays, narrow dark grout, pale dust, soft mint reflection flecks, Vowfall palette, no objects, no text.",
+      "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Court of Echoes Chamber, a roofless sandstone tribunal with a three-seat magistrate crescent around a glowing chalk echo-glass well. Include witness standing marks, bailiff chain rail, sealed-paper evidence niches and brass void-stamp tray. Floor texture and thin walls extend to all four image edges for direct map pasting. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, and no blank background around the room.",
+      "width_tiles": 14,
+      "height_tiles": 11,
+      "ambient_palette": "soft_mint",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "triple_echo_well",
+          "label": "Triple Echo Well",
+          "description": "A circular chalk echo-glass basin split into three luminous listening arcs for magistrates.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        },
+        {
+          "component_id": "void_mark_press",
+          "label": "Void Mark Press",
+          "description": "A squat brass-and-iron press used to punch a public void mark into a disputed vow slip.",
+          "anchor": "south_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Bridgehead Vow Exchange",
+      "biome": "merchant terrace market",
+      "purpose": "Terrace merchants convert stamped vow slips into goods, credit, and bridge-repair funds. Open bridge_access brings trade here, improving household_liquidity on the upper ledges.",
+      "decor_tags": [
+        "canvas awnings",
+        "aged brass",
+        "sealed paper",
+        "sandstone",
+        "dark rope"
+      ],
+      "activity_tags": [
+        "vow credit exchange",
+        "merchant bargaining",
+        "repair funding",
+        "goods trade"
+      ],
+      "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, busy terraced sandstone market paving edge to edge, brass-edged lane strips, circular exchange inlays, canvas-awning shadow blocks, rope tie points, scattered wax flecks and pale dust, bounded Vowfall palette, no objects, no text.",
+      "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Bridgehead Vow Exchange, a compact terrace trade room beside a bridge approach. Show brass vow-credit counters, canvas awnings, goods baskets, repair-contribution funnel, sealed slips and rope-tied merchant stalls, all roofless and tile-readable. Sandstone paving and walls reach all four image edges. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, and no blank background around the room.",
+      "width_tiles": 14,
+      "height_tiles": 9,
+      "ambient_palette": "clear_day",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "vow_credit_abacus",
+          "label": "Vow Credit Abacus",
+          "description": "A broad brass rail abacus with sliding seal beads used to discount certified vow slips.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "bridge_repair_funnel",
+          "label": "Repair Fund Funnel",
+          "description": "A chained brass funnel receiving coin and pledge seals for bridge rope and plank repairs.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Upper-Ledge Relief Alcove",
+      "biome": "residential cliff terrace",
+      "purpose": "Upper-Ledge households pool food, labor pledges, and tax relief petitions. Low household_liquidity is made visible here; missed payments return as greater unpaid_vowweight at the Weighhouse.",
+      "decor_tags": [
+        "frayed pledge ribbons",
+        "waxed canvas",
+        "sandstone",
+        "household baskets",
+        "sealed paper"
+      ],
+      "activity_tags": [
+        "household pooling",
+        "tax relief",
+        "petition witnessing",
+        "promise transfer"
+      ],
+      "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, intimate residential sandstone terrace floor edge to edge, hand-worn tiles, frayed ribbon shadows, canvas awning shade, small drainage grooves, pale dust, brass peg rings and blue-gray seam shadows, no objects, no text.",
+      "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Upper-Ledge Relief Alcove, a roofless household mutual-aid courtyard cut into the cliff. Show pledge-ribbon lines, a shared vowweight basin, food baskets, waxed canvas shade, petition alcoves and a narrow stair exit. Materials are windworn sandstone, dark rope and aged brass. Floor and walls reach all four image edges. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, and no blank background around the room.",
+      "width_tiles": 12,
+      "height_tiles": 9,
+      "ambient_palette": "warm_lantern",
+      "archetype": "commons",
+      "scene_components": [
+        {
+          "component_id": "shared_vowweight_basin",
+          "label": "Shared Vow Basin",
+          "description": "A shallow brass-rimmed sandstone basin where households place sealed promise tokens for pooled payment.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "pledge_ribbon_line",
+          "label": "Pledge Ribbon Line",
+          "description": "A dark rope line hung with frayed household pledge ribbons and small wax-sealed transfers.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Wind-Rope Repair Loft",
+      "biome": "bridge maintenance terrace",
+      "purpose": "Warden crews and merchant-funded riggers repair route ropes, tube lines, and bridge fittings, increasing courier_route_capacity and restoring bridge access.",
+      "decor_tags": [
+        "dark rope",
+        "tarnished iron",
+        "aged brass",
+        "waxed canvas",
+        "sandstone"
+      ],
+      "activity_tags": [
+        "rope splicing",
+        "winch repair",
+        "tube maintenance",
+        "bridge inspection"
+      ],
+      "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, rugged sandstone maintenance terrace edge to edge, rope-burn marks, iron anchor plates, brass bolt circles, waxed canvas patches, windblown pale dust and deep blue-gray crevice shadows, no objects, no text.",
+      "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Wind-Rope Repair Loft, a cliffside bridge repair workspace with a sandstone floor, iron anchor sockets, rope-splicing rack, brass winch and sealed-tube repair cradle. Canvas windbreaks and retaining walls frame a dense practical layout; bridge hardware meets image edges naturally. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, and no blank background around the room.",
+      "width_tiles": 12,
+      "height_tiles": 8,
+      "ambient_palette": "ember_orange",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "bridge_winch_rig",
+          "label": "Bridge Winch Rig",
+          "description": "A tarnished iron winch with brass gear housing and thick dark rope leading toward the bridge edge.",
+          "anchor": "east_mid",
+          "width_tiles": 3,
+          "height_tiles": 3
+        },
+        {
+          "component_id": "courier_tube_cradle",
+          "label": "Tube Repair Cradle",
+          "description": "A brass-jawed stand holding a sealed courier tube while its cracked fittings are replaced.",
+          "anchor": "south_west",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Mera Venn",
+      "role_name": "Disputed-Vow Reweigher",
+      "activity": "Publicly reweighs coerced promises for the Weighhouse, able to reduce unpaid_vowweight and restore echo_credibility.",
+      "home_base": "Weighhouse Speaking Hall",
+      "arc_goal": "Win a precedent that lets low-liquidity households split duration taxes, changing household_liquidity and the Weighhouse decision rule.",
+      "inventory": [
+        {
+          "name": "Brass throat-calipers",
+          "description": "Folded calipers that mark tremor and breath breaks in sworn speech.",
+          "quantity": 1
+        },
+        {
+          "name": "Witness-knot rosary",
+          "description": "Twenty-seven wool knots, each cut only after a witness confirms a phrase.",
+          "quantity": 1
+        },
+        {
+          "name": "Reweighing chalk cakes",
+          "description": "Blue chalk used to circle disputed wording on the speaking floor.",
+          "quantity": 4
+        },
+        {
+          "name": "Dawn-balance shims",
+          "description": "Thin lead-free slivers for correcting wind-biased portable scales.",
+          "quantity": 6
+        },
+        {
+          "name": "Quiet-mouth veil",
+          "description": "Felt veil worn between hearings to avoid accidental taxable assurances.",
+          "quantity": 1
+        },
+        {
+          "name": "Appeal pebbles",
+          "description": "River stones etched with docket marks for queued public reweighs.",
+          "quantity": 11
+        },
+        {
+          "name": "Ledge-debtor tally cord",
+          "description": "Braided cord whose beads track households facing bond closure.",
+          "quantity": 1
+        },
+        {
+          "name": "Salted echo cloth",
+          "description": "Waxed cloth that dampens stray echoes before cylinder comparison.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Reweighing Niche",
+          "asset_type": "hearing stall",
+          "description": "A wind-screened Weighhouse alcove with floor rings for witnesses.",
+          "story_use": "Can host a public challenge to an inflated vow slip."
+        },
+        {
+          "asset_name": "Mera's Weight Notes",
+          "asset_type": "annotated docket folio",
+          "description": "Private comparisons of tax outcomes across similar promises.",
+          "story_use": "Reveals selective weighing patterns."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "mera-coercion-pauses",
+          "topic": "coerced speech markers",
+          "summary": "Knows pauses and inhalations that scales mistake for willing emphasis.",
+          "confidence": 87
+        },
+        {
+          "knowledge_id": "mera-bond-exemptions",
+          "topic": "safety-bond relief",
+          "summary": "Knows overlooked relief clauses for households carrying medical or storm vows.",
+          "confidence": 74
+        }
+      ]
+    },
+    {
+      "display_name": "Ilyra Quen",
+      "role_name": "Storm-Route Custodian",
+      "activity": "Allocates overloaded promise bundles for the Unburdened Route, directly changing courier_route_capacity and limiting courier loss.",
+      "home_base": "Courier Intake Vault",
+      "arc_goal": "Secure a neutral storm corridor that prevents bridge_access closures from severing debtor deliveries and worsened household_liquidity.",
+      "inventory": [
+        {
+          "name": "Gale-tension spool",
+          "description": "Silk-line spool that sings when a bridge rope reaches unsafe strain.",
+          "quantity": 1
+        },
+        {
+          "name": "Custody thumb-caps",
+          "description": "Copper caps stamped over courier nail marks when bundles change hands.",
+          "quantity": 8
+        },
+        {
+          "name": "Rainblind route lens",
+          "description": "Oiled mica lens for reading damp ledger threads in cloudburst wind.",
+          "quantity": 1
+        },
+        {
+          "name": "Maturity-bell tabs",
+          "description": "Tiny tuned tags that ring in order as promise deadlines approach.",
+          "quantity": 14
+        },
+        {
+          "name": "Cliff-scent sachets",
+          "description": "Juniper and iron dust packets used to identify route vault humidity.",
+          "quantity": 3
+        },
+        {
+          "name": "Split-load harness pin",
+          "description": "Bone pin that authorizes two couriers to carry one burdened pledge.",
+          "quantity": 2
+        },
+        {
+          "name": "Return-wind ribbons",
+          "description": "Grey ribbons tied at safe eddies for exhausted courier crews.",
+          "quantity": 7
+        },
+        {
+          "name": "Lost-satchel prayer strip",
+          "description": "Waterproof strip naming a finder as temporary lawful custodian.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Quen Intake Locker",
+          "asset_type": "sealed route locker",
+          "description": "A triple-latched vault cubby with a wind direction dial.",
+          "story_use": "Contains delayed bundles whose custody can alter court cases."
+        },
+        {
+          "asset_name": "Storm Corridor Chart",
+          "asset_type": "route map",
+          "description": "Hand-inked map of sheltered ladders, rope spans, and illegal shortcuts.",
+          "story_use": "Enables rerouting around chained bridges."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "ilyra-custody-breaks",
+          "topic": "courier custody fraud",
+          "summary": "Recognizes seal pressure patterns left by satchels opened in transit.",
+          "confidence": 91
+        },
+        {
+          "knowledge_id": "ilyra-wind-windows",
+          "topic": "cliff weather routing",
+          "summary": "Can predict short safe crossings from tower flags and rope harmonics.",
+          "confidence": 84
+        }
+      ]
+    },
+    {
+      "display_name": "Sable Orr",
+      "role_name": "Echo Bailiff and Forgery Listener",
+      "activity": "Protects Court of Echoes evidence and exposes counterfeit recordings, able to raise echo_credibility and reduce unresolved unpaid_vowweight.",
+      "home_base": "Court of Echoes Chamber",
+      "arc_goal": "Identify the source of circulating forged echoes before compromised rulings trigger bridge_access protests and mass defaults.",
+      "inventory": [
+        {
+          "name": "Resonance comb",
+          "description": "Four-toothed bronze comb that separates layered voices in a recorded echo.",
+          "quantity": 1
+        },
+        {
+          "name": "Bailiff's hush cord",
+          "description": "Black cord used to bind a witness's spoken interruptions into the record.",
+          "quantity": 1
+        },
+        {
+          "name": "Cylinder cradle felt",
+          "description": "Dense felt cradle protecting echo cylinders from cliff vibration.",
+          "quantity": 2
+        },
+        {
+          "name": "False-voice filings",
+          "description": "Folded paper tongues that curl differently when exposed to counterfeit echo ink.",
+          "quantity": 9
+        },
+        {
+          "name": "Magistrate-seat dust vial",
+          "description": "Grey dust collected from the chamber steps to date recent gatherings.",
+          "quantity": 1
+        },
+        {
+          "name": "Witness lantern shutter",
+          "description": "Palm shutter that signals protected testimony without audible speech.",
+          "quantity": 1
+        },
+        {
+          "name": "Verdict thread needles",
+          "description": "Blunt needles used to stitch void marks into compelled restitution notices.",
+          "quantity": 5
+        },
+        {
+          "name": "Oathless ear plugs",
+          "description": "Beeswax plugs that let her hear recordings without answering a speaker.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Protected Echo Cabinet",
+          "asset_type": "evidence cabinet",
+          "description": "A court cabinet with three magistrate keyholes and a false rear panel.",
+          "story_use": "Can hide or reveal a decisive certified recording."
+        },
+        {
+          "asset_name": "Bailiff's Listening Bench",
+          "asset_type": "court fixture",
+          "description": "A cracked cedar bench positioned at the chamber's truest echo point.",
+          "story_use": "Lets a character test whether an account was altered in the room."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "sable-forgery-harmonics",
+          "topic": "echo forgery detection",
+          "summary": "Knows the metallic aftertone produced when copied echoes are reheated.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "sable-witness-shelters",
+          "topic": "witness protection",
+          "summary": "Knows discreet relief alcoves and safe escort timings for threatened witnesses.",
+          "confidence": 81
+        }
+      ]
+    },
+    {
+      "display_name": "Tovin Rusk",
+      "role_name": "Bridge-Credit Factor",
+      "activity": "Converts household passage guarantees into bridge repair funding, able to improve bridge_access or worsen household_liquidity through harsh discounts.",
+      "home_base": "Bridgehead Vow Exchange",
+      "arc_goal": "Replace punitive safety-bond calls with merchant-backed repair shares, changing bridge_access while preserving terrace trade.",
+      "inventory": [
+        {
+          "name": "Passage-collar key",
+          "description": "A notched iron key for reading a chain-gate's current bond setting.",
+          "quantity": 1
+        },
+        {
+          "name": "Rivet dividend tokens",
+          "description": "Brass tokens promising a fraction of toll income after bridge repair.",
+          "quantity": 18
+        },
+        {
+          "name": "Ledge-market abacus",
+          "description": "Slate-bead abacus whose red beads represent promises nearing maturity.",
+          "quantity": 1
+        },
+        {
+          "name": "Debt-scent gloves",
+          "description": "Tanned gloves treated with wax that reveals freshly handled transfer chits.",
+          "quantity": 1
+        },
+        {
+          "name": "Wind-call counting cups",
+          "description": "Nested tin cups used to estimate repair crews by gust rhythm.",
+          "quantity": 3
+        },
+        {
+          "name": "Merchant guarantor seals",
+          "description": "Blank ceramic seals reserved for merchants underwriting a household bond.",
+          "quantity": 4
+        },
+        {
+          "name": "Chain-link gauge",
+          "description": "Pocket gauge measuring wear on gate chains and bridge anchor loops.",
+          "quantity": 1
+        },
+        {
+          "name": "Default notice reeds",
+          "description": "Split reeds that whistle when pinned to a debtor's public board.",
+          "quantity": 6
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Rusk Bond Table",
+          "asset_type": "exchange counter",
+          "description": "A bolted stone table marked with toll shares and safety-bond thresholds.",
+          "story_use": "Can broker collective payment or expose predatory terms."
+        },
+        {
+          "asset_name": "Repair Share Ledger",
+          "asset_type": "merchant ledger",
+          "description": "A coded ledger linking bridge rivets to merchant guarantors and household debt.",
+          "story_use": "Proves who profits when crossings are chained."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "tovin-bond-arbitrage",
+          "topic": "safety-bond pricing",
+          "summary": "Knows which posted bond reviews can be delayed through repair commitments.",
+          "confidence": 89
+        },
+        {
+          "knowledge_id": "tovin-merchant-collateral",
+          "topic": "terrace merchant credit",
+          "summary": "Knows which merchants can guarantee passage without immediate coin payment.",
+          "confidence": 78
+        }
+      ]
+    },
+    {
+      "display_name": "Pell Ardin",
+      "role_name": "Relief-Wafer Advocate",
+      "activity": "Distributes relief petitions through the Weighhouse, changing household_liquidity for Upper-Ledge Households and reducing unpaid_vowweight.",
+      "home_base": "Upper-Ledge Relief Alcove",
+      "arc_goal": "Win a standing tax-relief schedule from the Weighhouse before bridge_access closures strip Upper-Ledge Households of work travel.",
+      "inventory": [
+        {
+          "name": "Relief claimant's thumbbook",
+          "description": "Waxed booklet of tenant thumbprints and missed tax dates.",
+          "quantity": 1
+        },
+        {
+          "name": "Cracked ration-vow bead",
+          "description": "A household bead split when its food promise was taxed twice.",
+          "quantity": 1
+        },
+        {
+          "name": "Ledge census ribbons",
+          "description": "Color-knotted ribbons tallying dependents by windward stair.",
+          "quantity": 14
+        },
+        {
+          "name": "Petition-slate fragments",
+          "description": "Small slates bearing erased and rewritten relief arguments.",
+          "quantity": 6
+        },
+        {
+          "name": "Salt-bread witness tokens",
+          "description": "Bread-shaped clay tokens offered by families who cannot spare coin.",
+          "quantity": 9
+        },
+        {
+          "name": "Tax-relief-wafer",
+          "description": "A partially redeemed wafer retained as a precedent sample.",
+          "quantity": 1
+        },
+        {
+          "name": "Maturity-sandglass",
+          "description": "Narrow glass used to show how little time remains before default.",
+          "quantity": 1
+        },
+        {
+          "name": "Bridge closure chalk",
+          "description": "Blue chalk for marking households barred from a crossing.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Relief Alcove Petition Wall",
+          "asset_type": "civic fixture",
+          "description": "A sheltered wall with slots for stamped hardship claims.",
+          "story_use": "Lets Pell organize collective filings or reveal missing petitions."
+        },
+        {
+          "asset_name": "Shared Meal-Vow Hearth",
+          "asset_type": "community property",
+          "description": "A soot-black hearth whose meal pledges are witnessed nightly.",
+          "story_use": "Creates low-weight promises that can unite or divide tenants."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "pell-relief-cases",
+          "topic": "Weighhouse hardship precedent",
+          "summary": "Knows which wording has earned relief without triggering a reweighing.",
+          "confidence": 88
+        },
+        {
+          "knowledge_id": "pell-ledge-debts",
+          "topic": "Upper-ledge arrears",
+          "summary": "Tracks families nearest to safety-bond default and bridge closure.",
+          "confidence": 81
+        }
+      ]
+    },
+    {
+      "display_name": "Nessa Coil",
+      "role_name": "Witness-Shelter Keeper",
+      "activity": "Shelters threatened speakers for the Court of Echoes, protecting the witness dependency that changes echo_credibility.",
+      "home_base": "Court of Echoes Chamber",
+      "arc_goal": "Force the Court of Echoes to recognize protected depositions, raising echo_credibility despite courier-route tampering.",
+      "inventory": [
+        {
+          "name": "Hush-cord hood",
+          "description": "Braided hood that muffles a witness's identifying cadence.",
+          "quantity": 1
+        },
+        {
+          "name": "Witness-chime-pair",
+          "description": "Matched chimes used to confirm two separated witnesses heard one vow.",
+          "quantity": 1
+        },
+        {
+          "name": "Echo-ink vial",
+          "description": "Dense blue ink that exposes overwritten testimony seals.",
+          "quantity": 2
+        },
+        {
+          "name": "Shelter cot tally",
+          "description": "Bone tabs recording nights each witness has stayed hidden.",
+          "quantity": 11
+        },
+        {
+          "name": "Veil-lamp shutter",
+          "description": "Bronze shutter that signals a safe exit from the chamber.",
+          "quantity": 1
+        },
+        {
+          "name": "Coercion bruise chart",
+          "description": "Folded anatomical chart used to document pressure without spoken detail.",
+          "quantity": 1
+        },
+        {
+          "name": "False-name reed slips",
+          "description": "Waterproof slips carrying temporary court identities.",
+          "quantity": 8
+        },
+        {
+          "name": "Forged-echo splinter",
+          "description": "Resonant cylinder shaving preserved from a failed counterfeit.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Echo Chamber Witness Niche",
+          "asset_type": "protected room fixture",
+          "description": "A curtained recess with a one-way listening grille.",
+          "story_use": "Allows secret testimony, surveillance, or a breach of protection."
+        },
+        {
+          "asset_name": "Cadence Mask Cabinet",
+          "asset_type": "evidence storage",
+          "description": "Locked cabinet of approved voice-muffling hoods and reed filters.",
+          "story_use": "Can safeguard witness identities or become proof of manipulation."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "nessa-coercion-signs",
+          "topic": "Coerced testimony",
+          "summary": "Recognizes breath patterns and pauses associated with oath-room intimidation.",
+          "confidence": 93
+        },
+        {
+          "knowledge_id": "nessa-safe-witnesses",
+          "topic": "Witness shelter network",
+          "summary": "Knows which terrace homes can hide witnesses without alerting bailiffs.",
+          "confidence": 76
+        }
+      ]
+    },
+    {
+      "display_name": "Vey Korrin",
+      "role_name": "Chain-Gate Bond Diver",
+      "activity": "Inspects hidden bond substitutions for the Bridge Wardenry, changing bridge_access and the safety-bond dependency of debtor households.",
+      "home_base": "Chain-Gate Bondhouse",
+      "arc_goal": "Expose a ring of counterfeit safety bonds before chained crossings deepen household_liquidity losses.",
+      "inventory": [
+        {
+          "name": "Safety-bond-token",
+          "description": "A scored brass token with a suspect Wardenry edge stamp.",
+          "quantity": 1
+        },
+        {
+          "name": "Chain-gate grease tin",
+          "description": "Grey wind grease used to read fresh tampering on gate links.",
+          "quantity": 1
+        },
+        {
+          "name": "Bond-sink plummet",
+          "description": "Lead plummet for testing whether pledged metal is hollow.",
+          "quantity": 1
+        },
+        {
+          "name": "Gate-rattle listening cup",
+          "description": "Copper cup that amplifies a stressed chain's internal knock.",
+          "quantity": 1
+        },
+        {
+          "name": "Bridge-passage-tag",
+          "description": "Expired tag bearing a double-punched debtor district mark.",
+          "quantity": 1
+        },
+        {
+          "name": "Rivet dust phial",
+          "description": "Glass phial of filings from a replaced bridge-repair rivet.",
+          "quantity": 1
+        },
+        {
+          "name": "Warden wind-signal cards",
+          "description": "Oilskin cards recording closure signals seen from each tower.",
+          "quantity": 7
+        },
+        {
+          "name": "Void-mark slate",
+          "description": "Small slate stamped after a bond claim was invalidated.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Bondhouse Underchain Crawl",
+          "asset_type": "maintenance access",
+          "description": "A narrow service crawl beneath the gate winch and posted bond board.",
+          "story_use": "Lets Vey find sabotage, conceal evidence, or bypass a closure."
+        },
+        {
+          "asset_name": "Counterweight Test Rack",
+          "asset_type": "inspection apparatus",
+          "description": "A hanging rack that compares pledged tokens against certified weight.",
+          "story_use": "Can publicly expose counterfeit bonds or be rigged."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "vey-gate-tamper",
+          "topic": "Bridge gate tampering",
+          "summary": "Can distinguish storm wear from deliberate chain and rivet damage.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "vey-bond-lineage",
+          "topic": "Safety-bond custody",
+          "summary": "Memorizes the handoff marks used by legitimate wardens and factors.",
+          "confidence": 84
+        }
+      ]
+    },
+    {
+      "display_name": "Orro Myl",
+      "role_name": "Promise-Cord Salvager",
+      "activity": "Recovers damaged courier bundles for the Unburdened Route, changing courier_route_capacity and limiting losses that erode echo_credibility.",
+      "home_base": "Wind-Rope Repair Loft",
+      "arc_goal": "Build a recognized salvage chain with the courier guild so storm-lost promises return to adjudication rather than the forgery trade.",
+      "inventory": [
+        {
+          "name": "Promise-bundle cord",
+          "description": "Salt-stiff cord carrying three recoverable household knots.",
+          "quantity": 1
+        },
+        {
+          "name": "Windproof sealing wax",
+          "description": "Black-green wax that holds on exposed cliff lines.",
+          "quantity": 3
+        },
+        {
+          "name": "Snag-hook spool",
+          "description": "Fine hooked line for lifting bundles from bridge netting.",
+          "quantity": 1
+        },
+        {
+          "name": "Storm-knot samples",
+          "description": "Tagged cord knots showing how different terraces bind obligations.",
+          "quantity": 12
+        },
+        {
+          "name": "Courier-satchel seam patch",
+          "description": "Stamped leather patch cut from a burst licensed satchel.",
+          "quantity": 1
+        },
+        {
+          "name": "Route-ledger leaf",
+          "description": "Water-damaged ledger page naming an unrecorded handoff.",
+          "quantity": 1
+        },
+        {
+          "name": "Salted echo-cylinder cap",
+          "description": "Corroded cap preserving a faint fragment of recorded speech.",
+          "quantity": 1
+        },
+        {
+          "name": "Rope-splice bone needles",
+          "description": "Paired needles shaped for ribboned vow cords.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Wind-Rope Salvage Cradle",
+          "asset_type": "repair rig",
+          "description": "Suspended cradle for drying and untangling recovered promise bundles.",
+          "story_use": "Restores custody chains or hides tampered cargo among storm salvage."
+        },
+        {
+          "asset_name": "Cliffline Signal Mirror",
+          "asset_type": "route equipment",
+          "description": "A mirrored shutter used to direct retrieval crews between gusts.",
+          "story_use": "Coordinates rescues, misdirects couriers, or warns of an ambush."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "orro-knot-origin",
+          "topic": "Promise-bundle knot dialects",
+          "summary": "Identifies a bundle's terrace and likely handler from its binding pattern.",
+          "confidence": 91
+        },
+        {
+          "knowledge_id": "orro-storm-cache",
+          "topic": "Wind-loss recovery sites",
+          "summary": "Knows the gullies and net pockets where lost satchels collect after storms.",
+          "confidence": 86
+        }
+      ]
+    },
+    {
+      "display_name": "Kest Rill",
+      "role_name": "Maturity-Chime Calibrator",
+      "activity": "Calibrates disputed vow deadlines for the Weighhouse, changing unpaid_vowweight and echo_credibility when maturity records drift.",
+      "home_base": "Weighhouse Speaking Hall",
+      "arc_goal": "Force the Weighhouse to publish audible maturity standards, reducing the witness dependency that leaves Upper-Ledge Households vulnerable to surprise arrears.",
+      "inventory": [
+        {
+          "name": "three-note maturity chime",
+          "description": "A brass chime tuned to dawn, market-close, and storm-delay vow maturities.",
+          "quantity": 1
+        },
+        {
+          "name": "sandglass throat brush",
+          "description": "Reed brush for clearing grit from certified maturity sandglasses.",
+          "quantity": 2
+        },
+        {
+          "name": "deadline-thread spool",
+          "description": "Blue waxed thread used to tie a slip to its correct calendar peg.",
+          "quantity": 3
+        },
+        {
+          "name": "late-bell ear cuff",
+          "description": "Copper listening cuff that isolates a chime's final overtone.",
+          "quantity": 1
+        },
+        {
+          "name": "vow-slip-stamped",
+          "description": "Personal reweigh request slip bearing an unresolved maturity stamp.",
+          "quantity": 4
+        },
+        {
+          "name": "echo-ink-vial",
+          "description": "Dark ink used to mark the exact word that starts a promise clock.",
+          "quantity": 1
+        },
+        {
+          "name": "maturity-sandglass",
+          "description": "Narrow certified glass with a cracked but legible seal.",
+          "quantity": 1
+        },
+        {
+          "name": "witness-chime-pair",
+          "description": "Matched pocket chimes retained for comparing a witness's claimed hearing.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Chime Calibration Rail",
+          "asset_type": "weighhouse fixture",
+          "description": "Pegged wall rail that compares local maturity chimes against the public speaking scale.",
+          "story_use": "Can expose a coordinated alteration of deadline tones."
+        },
+        {
+          "asset_name": "Rill's Deferred-Slip Drawer",
+          "asset_type": "secured archive",
+          "description": "Locked drawer holding slips delayed by weather clauses and interrupted crossings.",
+          "story_use": "Contains evidence that could void or accelerate major balances."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "maturity-drift",
+          "topic": "Maturity chime drift",
+          "summary": "Knows which terrace chimes run early after cold wind and which clerks exploit the variance.",
+          "confidence": 88
+        },
+        {
+          "knowledge_id": "silence-clause",
+          "topic": "Silence clauses",
+          "summary": "Can distinguish a promised silence period from a promise that begins only after spoken confirmation.",
+          "confidence": 79
+        }
+      ]
+    },
+    {
+      "display_name": "Daro Fen",
+      "role_name": "Meal-Vow Cooper",
+      "activity": "Bundles communal meal pledges into payment schedules, changing household_liquidity and unpaid_vowweight for Upper-Ledge Households.",
+      "home_base": "Upper-Ledge Relief Alcove",
+      "arc_goal": "Win Weighhouse recognition for food-and-labor redemption, easing the household liquidity dependency on open bridge trade.",
+      "inventory": [
+        {
+          "name": "porridge-promise ladle",
+          "description": "Iron ladle notched to measure a day's meal share pledged toward a debt.",
+          "quantity": 1
+        },
+        {
+          "name": "pledge-ribbon-redemption",
+          "description": "Red ribbon segments from redeemed kitchen and care vows.",
+          "quantity": 11
+        },
+        {
+          "name": "tax-relief-wafer",
+          "description": "Relief wafer awaiting a clerk's countersignature for a communal petition.",
+          "quantity": 3
+        },
+        {
+          "name": "lentil-vow jar",
+          "description": "Sealed jar of counted lentils used to demonstrate a household's weekly contribution.",
+          "quantity": 2
+        },
+        {
+          "name": "promise-bundle-cord",
+          "description": "Braided cord labeled for a seven-household supper rota.",
+          "quantity": 5
+        },
+        {
+          "name": "market-vowweight-note",
+          "description": "Creased note recording the current discount on meal-backed vowweight.",
+          "quantity": 6
+        },
+        {
+          "name": "smoke-salt tally pebble",
+          "description": "Black saltstone pebble marked for each stove kept open during a closure.",
+          "quantity": 9
+        },
+        {
+          "name": "bridge-passage-tag",
+          "description": "Expired passage tag retained as proof that a cook lost a work crossing.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Seven-Stove Redemption Table",
+          "asset_type": "relief alcove installation",
+          "description": "Fold-out table where meal pledges are apportioned into household shares and witness marks.",
+          "story_use": "Can organize a legal collective payment or reveal who skimmed a ration."
+        },
+        {
+          "asset_name": "Fen's Steam Ledger Niche",
+          "asset_type": "concealed archive",
+          "description": "Warm wall niche preserving grease-proof records of food, care, and labor promises.",
+          "story_use": "Provides proof of informal fulfillment that the Court may reject or recognize."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "meal-redemption-rates",
+          "topic": "Meal vow conversion",
+          "summary": "Knows the seasonal exchange rate between cooked food, care labor, and vowweight.",
+          "confidence": 91
+        },
+        {
+          "knowledge_id": "ledge-pantry-network",
+          "topic": "Upper-Ledge pantry network",
+          "summary": "Knows which households can absorb a missed courier run without declaring a new debt.",
+          "confidence": 84
+        }
+      ]
+    },
+    {
+      "display_name": "Iven Soot",
+      "role_name": "Wind-Signal Stitcher",
+      "activity": "Stitches damaged wind-rope signals and chain warnings for the Bridge Wardenry, changing bridge_access and courier_route_capacity.",
+      "home_base": "Wind-Rope Repair Loft",
+      "arc_goal": "Make storm repairs publicly auditable so bridge_access cannot be quietly rationed against debtor districts by the Bridge Wardenry.",
+      "inventory": [
+        {
+          "name": "gust-knot gauge",
+          "description": "Bone gauge that tests whether a rope knot will hold a crosswind signal.",
+          "quantity": 1
+        },
+        {
+          "name": "bridge-repair-rivet",
+          "description": "Flat copper rivets stamped for emergency deck-plate repairs.",
+          "quantity": 18
+        },
+        {
+          "name": "windproof-sealing-wax",
+          "description": "Blue-black wax used to seal signal housings against rain and grit.",
+          "quantity": 2
+        },
+        {
+          "name": "chain-song whistle",
+          "description": "Four-hole whistle that carries distinct open, hold, and collapse warnings.",
+          "quantity": 1
+        },
+        {
+          "name": "fray-map cloth",
+          "description": "Oilcloth map showing recurring rope failures along the cliff crossings.",
+          "quantity": 1
+        },
+        {
+          "name": "safety-bond-token",
+          "description": "Warden token found wedged inside a severed signal box.",
+          "quantity": 1
+        },
+        {
+          "name": "tarred splice twine",
+          "description": "Fine twine for binding a split warning line before a full repair.",
+          "quantity": 7
+        },
+        {
+          "name": "bridge-passage-tag",
+          "description": "Crew passage tag authorizing access beneath closed gate chains.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Stormline Test Frame",
+          "asset_type": "repair loft apparatus",
+          "description": "Suspended frame that recreates crosswinds on a rope, chain, and warning vane assembly.",
+          "story_use": "Can prove a bridge closure was caused by neglect rather than weather."
+        },
+        {
+          "asset_name": "Soot's Signal-Scrap Rack",
+          "asset_type": "evidence storage",
+          "description": "Numbered rack of removed knots, cracked pulleys, and deliberately dulled signal tabs.",
+          "story_use": "Links repair sabotage to a specific crossing or Warden contract."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "wind-bridge-failures",
+          "topic": "Cliff bridge failure patterns",
+          "summary": "Reads wear marks to separate wind damage, overload strain, and deliberate cutting.",
+          "confidence": 93
+        },
+        {
+          "knowledge_id": "signal-code-variance",
+          "topic": "Warden signal code",
+          "summary": "Knows obsolete signal variants still used by isolated gate crews.",
+          "confidence": 76
+        }
+      ]
+    },
+    {
+      "display_name": "Luma Pex",
+      "role_name": "Burden-Swap Notary",
+      "activity": "Drafts witnessed transfers of maturing promise burdens through the Court of Echoes, changing unpaid_vowweight and household_liquidity.",
+      "home_base": "Courier Intake Vault",
+      "arc_goal": "Establish consent hearings for debt transfers, reducing the courier custody-chain dependency that lets powerful households shift vowweight onto tenants.",
+      "inventory": [
+        {
+          "name": "debt-transfer-chit",
+          "description": "Unfiled chit naming two households and a promise burden awaiting consent.",
+          "quantity": 5
+        },
+        {
+          "name": "courier-satchel-sealed",
+          "description": "Small sealed satchel containing a contested transfer echo.",
+          "quantity": 1
+        },
+        {
+          "name": "void-mark-slate",
+          "description": "Slate rubbed with erased void marks for comparing court-authorized cancellation strokes.",
+          "quantity": 1
+        },
+        {
+          "name": "consent-thumb wax",
+          "description": "Pale wax that retains a speaker's thumb ridge beside a transfer clause.",
+          "quantity": 3
+        },
+        {
+          "name": "route-ledger-leaf",
+          "description": "Torn ledger leaf tracing a burden through three delayed courier handoffs.",
+          "quantity": 2
+        },
+        {
+          "name": "forgery-test-fork",
+          "description": "Tuning fork used to test whether a consent echo was cut and rejoined.",
+          "quantity": 1
+        },
+        {
+          "name": "witness-chime-pair",
+          "description": "Paired chimes reserved for the two required transfer witnesses.",
+          "quantity": 1
+        },
+        {
+          "name": "promise-bundle-cord",
+          "description": "Gray cord binding obligations that must be accepted or refused together.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Two-Hand Consent Desk",
+          "asset_type": "portable notarizing station",
+          "description": "Split writing desk requiring debtor and recipient to seal opposite halves of a transfer record.",
+          "story_use": "Can protect a voluntary swap or demonstrate that a party was absent."
+        },
+        {
+          "asset_name": "Pex Custody Pinboard",
+          "asset_type": "intake vault archive",
+          "description": "Pinned route fragments tracking who touched disputed burden bundles at each handoff.",
+          "story_use": "Offers leverage against couriers, clerks, or households that altered custody."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "transfer-consent-law",
+          "topic": "Debt-transfer consent",
+          "summary": "Knows the narrow Court precedents that distinguish mutual burden swaps from coerced assignment.",
+          "confidence": 89
+        },
+        {
+          "knowledge_id": "custody-chain-gaps",
+          "topic": "Courier custody gaps",
+          "summary": "Can identify which route-ledger omissions make a transfer echo legally suspect.",
+          "confidence": 86
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Reweigh, settle, reopen",
+      "summary": "Contest excessive vowweight, assemble witnesses, and settle or amend the result before a bond review closes passage.",
+      "roles": [
+        "Disputed-Vow Reweigher",
+        "Relief-Wafer Advocate",
+        "Bridge-Credit Factor",
+        "Burden-Swap Notary"
+      ],
+      "rooms": [
+        "Weighhouse Speaking Hall",
+        "Bridgehead Vow Exchange",
+        "Upper-Ledge Relief Alcove"
+      ],
+      "pressure": "Changes unpaid_vowweight and household_liquidity; if balances remain high, activates the unpaid_vowweight-to-bridge_access closure link."
+    },
+    {
+      "label": "Custody chain recovery",
+      "summary": "Trace delayed bundles, repair route failures, and expose or contain tampered echoes before disputes spread.",
+      "roles": [
+        "Storm-Route Custodian",
+        "Promise-Cord Salvager",
+        "Wind-Signal Stitcher",
+        "Echo Bailiff and Forgery Listener"
+      ],
+      "rooms": [
+        "Courier Intake Vault",
+        "Wind-Rope Repair Loft",
+        "Court of Echoes Chamber"
+      ],
+      "pressure": "Changes courier_route_capacity and echo_credibility; prolonged overload activates the courier_route_capacity-to-echo_credibility causal link."
+    },
+    {
+      "label": "Bonded crossing bargain",
+      "summary": "Convert repair labor, temporary credit, and transferred burdens into enough safety bond to keep a terrace connected.",
+      "roles": [
+        "Chain-Gate Bond Diver",
+        "Bridge-Credit Factor",
+        "Wind-Signal Stitcher",
+        "Burden-Swap Notary"
+      ],
+      "rooms": [
+        "Chain-Gate Bondhouse",
+        "Bridgehead Vow Exchange",
+        "Wind-Rope Repair Loft"
+      ],
+      "pressure": "Changes bridge_access and household_liquidity; restricted crossings activate the bridge_access-to-household_liquidity causal link."
+    },
+    {
+      "label": "Sheltered testimony docket",
+      "summary": "Secure vulnerable witnesses, calibrate maturity timing, and test contested recordings in a ruling that may void obligations.",
+      "roles": [
+        "Witness-Shelter Keeper",
+        "Maturity-Chime Calibrator",
+        "Echo Bailiff and Forgery Listener",
+        "Meal-Vow Cooper"
+      ],
+      "rooms": [
+        "Upper-Ledge Relief Alcove",
+        "Court of Echoes Chamber",
+        "Weighhouse Speaking Hall"
+      ],
+      "pressure": "Changes echo_credibility and unpaid_vowweight; credible voids can reduce arrears, while coerced testimony worsens confidence in echoes."
+    }
+  ],
+  "player_entry_points": [
+    "Carry a late promise bundle whose seal was damaged in a wind crossing.",
+    "Petition to reweigh a family vow that now threatens bridge access.",
+    "Work a repair shift to earn bridge credit before a bond review.",
+    "Protect or challenge a witness tied to a suspected forged echo."
+  ],
+  "conflict_hooks": [
+    "A courier consortium offers fast delivery only to households that sign exclusive custody terms, forcing upper-ledge families to choose between mobility and control of their promises.",
+    "Forged echoes implicate a bridge-repair fund in coercive vows; exposing the forgery may freeze credit and chain an already fragile crossing.",
+    "Weighhouse clerks schedule a public mass reweighing after tax arrears surge, while merchants pressure them to accept discounted vows as payment.",
+    "A sheltered witness can clear several debtors, but the testimony would expose a courier's broken custody chain and trigger claims against many delayed bundles."
+  ],
+  "custom_actions": [
+    "Reweigh a vow",
+    "Seal a promise bundle",
+    "Tender a safety bond",
+    "Splice a wind-rope",
+    "Quarantine an echo",
+    "Assign burden custody",
+    "Chime a maturity deadline",
+    "Cooper a meal-vow",
+    "Counterstamp bridge credit",
+    "Shelter a witness",
+    "Salvage a promise-cord",
+    "Notarize a burden swap"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "Offer a meal-vow in exchange for a courier's priority slot",
+      "initiating_role": "Meal-Vow Cooper",
+      "target_role": "Storm-Route Custodian",
+      "situation": "A household's sealed promise bundle will mature before the next safe crossing.",
+      "proposed_effects": [
+        "speech",
+        "transfer",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Verify both parties can consent and the target controls route priority.",
+        "Confirm the offered meal-vow has a specific duration, recipient, and weight estimate.",
+        "Check that priority does not violate an existing emergency or court-ordered route assignment.",
+        "Record whether the arrangement creates a limited priority status rather than transferring public route authority."
+      ]
+    },
+    {
+      "action_name": "Create a one-use witness-shelter token",
+      "initiating_role": "Witness-Shelter Keeper",
+      "target_role": "Echo Bailiff and Forgery Listener",
+      "situation": "A frightened witness agrees to appear only if their location remains protected until the hearing ends.",
+      "proposed_effects": [
+        "create_item",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Confirm the Keeper has authority and material means to issue a shelter token.",
+        "Bound the token to one named witness, one hearing, and a clear expiry.",
+        "Ensure no token claims to erase lawful court access or override a protection order.",
+        "Obtain witness consent before recording protected status."
+      ]
+    },
+    {
+      "action_name": "Exchange half a bridge-credit claim for repair labor",
+      "initiating_role": "Bridge-Credit Factor",
+      "target_role": "Wind-Signal Stitcher",
+      "situation": "A damaged signal line threatens closure of a crossing used by both parties.",
+      "proposed_effects": [
+        "speech",
+        "transfer",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Verify ownership, amount, and encumbrances of the bridge-credit claim.",
+        "Confirm the Stitcher accepts the labor scope, hazard, and delivery deadline.",
+        "Check proximity and access to the damaged line before recognizing labor completion.",
+        "Limit the credit transfer to the stated fraction and prevent duplicate redemption."
+      ]
+    },
+    {
+      "action_name": "Declare a disputed echo temporarily unusable at a hearing",
+      "initiating_role": "Echo Bailiff and Forgery Listener",
+      "target_role": "Disputed-Vow Reweigher",
+      "situation": "The recording has an unexplained splice and its original custody seal is missing.",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Require a stated basis such as a missing seal, audible splice, or conflicting custody record.",
+        "Confirm the Bailiff has procedural standing in the pending matter.",
+        "Make the unusable status temporary, case-specific, and subject to review.",
+        "Notify affected speakers and preserve the recording rather than destroying it."
+      ]
+    }
+  ],
+  "social_rules": [
+    "Every witnessed promise accrues weight-tax until fulfilled, transferred, voided, or paid.",
+    "A stamped vow slip is presumptive evidence, but its wording may be publicly reweighed.",
+    "Bridge passage may be restricted when a household exceeds its posted safety bond.",
+    "Recorded echoes require consent or lawful court custody to be used as testimony.",
+    "Couriers must preserve sealed custody chains; a broken seal creates a rebuttable presumption of tampering.",
+    "Witnesses may seek shelter before testifying, and retaliation against sheltered witnesses taints their testimony.",
+    "Debt transfers require a named accepting bearer and a witnessed burden limit.",
+    "Collective bridge repairs can support a petition to revise a closure ruling."
+  ],
+  "item_themes": [
+    "stamped vow slips",
+    "speaking scales",
+    "sealed courier satchels",
+    "echo recordings",
+    "bridge passage tags",
+    "pledge ribbons"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "vow-slip-stamped",
+      "name": "Stamped Vow Slip",
+      "price": 18,
+      "mass": 0.01,
+      "description": "Brass-edged Weighhouse slip listing spoken terms, witnesses, tax weight, and due date.",
+      "image_prompt": "A small ivory paper vow slip with brass corner stamps, glowing blue echo-script, windworn civic fantasy desk",
+      "category": "credential"
+    },
+    {
+      "item_id": "speaking-scale-portable",
+      "name": "Portable Speaking Scale",
+      "price": 340,
+      "mass": 4.8,
+      "description": "A clerk-grade brass scale that weighs wording, duration, and named witnesses in a spoken pledge.",
+      "image_prompt": "Portable brass balance scale with luminous runes rising from its pans, cliffside civic fantasy workshop",
+      "category": "instrument"
+    },
+    {
+      "item_id": "courier-satchel-sealed",
+      "name": "Sealed Courier Satchel",
+      "price": 210,
+      "mass": 1.7,
+      "description": "Waxed windcloth satchel with three custody locks and ribbon slots for unpaid promise bundles.",
+      "image_prompt": "Weathered dark-blue courier satchel, brass locks, wax seals, vow ribbons fluttering in mountain wind",
+      "category": "container"
+    },
+    {
+      "item_id": "echo-cylinder-certified",
+      "name": "Certified Echo Cylinder",
+      "price": 95,
+      "mass": 0.35,
+      "description": "A crystal-and-brass recording cylinder admissible before the Court of Echoes when its seal remains intact.",
+      "image_prompt": "Glowing crystal sound cylinder in a brass cage, floating echo-script, dramatic vertical fantasy lighting",
+      "category": "evidence"
+    },
+    {
+      "item_id": "bridge-passage-tag",
+      "name": "Household Passage Tag",
+      "price": 32,
+      "mass": 0.04,
+      "description": "A numbered brass tag recognized at Wardenry gates; its color shows current safety-bond standing.",
+      "image_prompt": "Brass bridge pass tag on a cord, teal enamel stripe, engraved cliff bridge icon, windworn fantasy",
+      "category": "credential"
+    },
+    {
+      "item_id": "pledge-ribbon-redemption",
+      "name": "Redemption Pledge Ribbon",
+      "price": 7,
+      "mass": 0.02,
+      "description": "Luminous woven ribbon tied around a promise bundle when a debtor commits goods or labor toward settlement.",
+      "image_prompt": "Thin crimson and gold ribbon with glowing written vows, tied in a careful knot against cloudy cliffs",
+      "category": "consumable"
+    },
+    {
+      "item_id": "safety-bond-token",
+      "name": "Warden Safety-Bond Token",
+      "price": 60,
+      "mass": 0.12,
+      "description": "Stamped brass token deposited to keep a household's bridge access from being chained at review.",
+      "image_prompt": "Heavy brass token stamped with a suspension bridge and sunburst seal, scratched by use",
+      "category": "payment"
+    },
+    {
+      "item_id": "route-ledger-leaf",
+      "name": "Route Ledger Leaf",
+      "price": 14,
+      "mass": 0.03,
+      "description": "A numbered tear-out leaf documenting each transfer of promise custody between licensed couriers.",
+      "image_prompt": "Narrow ledger paper covered in neat glowing script, red thread, courier wax stamps",
+      "category": "evidence"
+    },
+    {
+      "item_id": "witness-chime-pair",
+      "name": "Witness Chime Pair",
+      "price": 48,
+      "mass": 0.5,
+      "description": "Matched brass chimes rung by witnesses at a vow's speaking; their tone pattern aids later reweighing.",
+      "image_prompt": "Two small ornate brass hand chimes with luminous sound glyphs, suspended over a civic plaza",
+      "category": "instrument"
+    },
+    {
+      "item_id": "windproof-sealing-wax",
+      "name": "Windproof Seal Wax",
+      "price": 11,
+      "mass": 0.08,
+      "description": "Black amber wax that holds courier and court seals through rain, grit, and high-bridge gusts.",
+      "image_prompt": "Black amber sealing wax sticks beside a glowing brass seal stamp, windblown parchment",
+      "category": "material"
+    },
+    {
+      "item_id": "echo-ink-vial",
+      "name": "Lumen Echo Ink",
+      "price": 27,
+      "mass": 0.1,
+      "description": "Rare blue ink used to copy verified recordings into durable civic script; forgery tests reveal weak imitations.",
+      "image_prompt": "Small glass vial of radiant blue ink, luminous calligraphy curling above it, brass desk tools",
+      "category": "material"
+    },
+    {
+      "item_id": "tax-relief-wafer",
+      "name": "Tax Relief Wafer",
+      "price": 85,
+      "mass": 0.01,
+      "description": "A Weighhouse-issued ceramic wafer redeemable against vow tax after approved hardship review.",
+      "image_prompt": "Pale ceramic token with a crackled glaze, official brass stamp, soft blue rune glow",
+      "category": "credit"
+    },
+    {
+      "item_id": "void-mark-slate",
+      "name": "Court Void-Mark Slate",
+      "price": 120,
+      "mass": 0.7,
+      "description": "A black slate bearing three magistrate seals; it voids a specified promise weight in every recognized ledger.",
+      "image_prompt": "Dark stone slate with three brass seals and a sharp white void glyph, echoing courtroom",
+      "category": "credential"
+    },
+    {
+      "item_id": "promise-bundle-cord",
+      "name": "Promise Bundle Cord",
+      "price": 5,
+      "mass": 0.06,
+      "description": "Strong braided cord for grouping slips by maturity date without mixing their custody ribbons.",
+      "image_prompt": "Coiled cream and indigo braided cord wrapped around tiny stamped vow slips",
+      "category": "material"
+    },
+    {
+      "item_id": "bridge-repair-rivet",
+      "name": "Skybridge Repair Rivet",
+      "price": 9,
+      "mass": 0.18,
+      "description": "Tempered brass-and-iron rivet for Wardenry bridge repairs, scarce after severe wind seasons.",
+      "image_prompt": "Large brass iron rivet on weathered bridge planks, vast misty cliff drop behind",
+      "category": "material"
+    },
+    {
+      "item_id": "debt-transfer-chit",
+      "name": "Vowweight Transfer Chit",
+      "price": 24,
+      "mass": 0.02,
+      "description": "Dual-signature chit allowing a promise burden to pass between households or into merchant credit.",
+      "image_prompt": "Folded transfer chit with two thumb seals, green glowing script, merchant scales in background",
+      "category": "credential"
+    },
+    {
+      "item_id": "courier-license-badge",
+      "name": "Unburdened Route Badge",
+      "price": 175,
+      "mass": 0.09,
+      "description": "A licensed courier's brass badge; gates and clerks recognize its bearer as lawful custodian of vow bundles.",
+      "image_prompt": "Polished brass courier badge shaped like a winged bridge, blue enamel and hanging ribbon",
+      "category": "credential"
+    },
+    {
+      "item_id": "forgery-test-fork",
+      "name": "Echo Forgery Test Fork",
+      "price": 155,
+      "mass": 0.28,
+      "description": "A tuned brass fork that makes altered echo cylinders stutter into visibly broken light-script.",
+      "image_prompt": "Elegant brass tuning fork touching a glowing crystal cylinder, fractured runes exposing a forgery",
+      "category": "instrument"
+    },
+    {
+      "item_id": "maturity-sandglass",
+      "name": "Promise Maturity Sandglass",
+      "price": 72,
+      "mass": 0.42,
+      "description": "A calibrated sandglass used by couriers to prioritize bundles nearing their stated fulfillment hour.",
+      "image_prompt": "Tall brass-framed sandglass filled with luminescent gold sand, cliff courier station",
+      "category": "instrument"
+    },
+    {
+      "item_id": "market-vowweight-note",
+      "name": "Merchant Vowweight Note",
+      "price": 40,
+      "mass": 0.01,
+      "description": "A terrace merchant's discounted trade note, exchangeable for goods while a verified vow slip awaits redemption.",
+      "image_prompt": "Elegant merchant credit note with bridge watermark, copper seal, glowing handwritten numerals",
+      "category": "credit"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "vowfall_cliff_city_wardrobe_v1",
+    "world_wardrobe_brief": "Windworn civic-fantasy attire for a vertical cliff city: compact layered sandstone and blue-gray workwear, brass civic fittings, dark rope closures, waxed-canvas weather protection, and sparse pale echo-script glow. Clothing signals vow custody, witnessing, bridge authority, or household trade.",
+    "forbidden_aesthetics": [
+      "antique-market clothing",
+      "generic medieval knight armor",
+      "royal court regalia",
+      "generic wizard robes",
+      "fantasy forest ranger gear",
+      "pirate attire",
+      "steampunk goggles-as-costume",
+      "neon cyberpunk fashion",
+      "modern business suits",
+      "modern streetwear",
+      "space suits",
+      "firearms",
+      "anime proportions"
+    ],
+    "palette_families": [
+      {
+        "name": "sandstone civic",
+        "dominant": "#B86F45",
+        "accent": "#C99A32",
+        "trim": "#392B32",
+        "material": "windworn linen, carved leather, aged brass"
+      },
+      {
+        "name": "shadow route",
+        "dominant": "#263B4A",
+        "accent": "#C99A32",
+        "trim": "#392B32",
+        "material": "waxed canvas, dark rope, tarnished iron"
+      },
+      {
+        "name": "echo witness",
+        "dominant": "#DDE0BE",
+        "accent": "#263B4A",
+        "trim": "#392B32",
+        "material": "chalk echo-glass, sealed paper, pale thread"
+      },
+      {
+        "name": "pledge ember",
+        "dominant": "#B86F45",
+        "accent": "#DDE0BE",
+        "trim": "#392B32",
+        "material": "frayed pledge ribbon, seal wax, woven cord"
+      },
+      {
+        "name": "warden iron",
+        "dominant": "#392B32",
+        "accent": "#C99A32",
+        "trim": "#263B4A",
+        "material": "tarnished iron, chain links, waxed canvas"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "courier_custody",
+        "role_keywords": [
+          "courier",
+          "custodian",
+          "salvager",
+          "route",
+          "intake",
+          "unburdened"
+        ],
+        "attire": [
+          "blue-gray waxed-canvas short cape",
+          "sandstone tunic",
+          "cross-body sealed satchel",
+          "dark rope harness",
+          "brass route badge"
+        ],
+        "props": [
+          "ribboned promise bundle",
+          "sealed courier satchel",
+          "route ledger leaf",
+          "maturity sandglass"
+        ],
+        "palette_notes": "Blue-gray dominant with sandstone panels and brass seal points.",
+        "silhouette_notes": "Large diagonal satchel and trailing ribbon ends read from above.",
+        "avoid": [
+          "flowing robes",
+          "heavy armor",
+          "merchant display trays"
+        ]
+      },
+      {
+        "rule_id": "weighhouse_clerk",
+        "role_keywords": [
+          "reweigher",
+          "weighhouse",
+          "calibrator",
+          "notary",
+          "tax",
+          "maturity"
+        ],
+        "attire": [
+          "sandstone clerk coat",
+          "blue-gray shoulder mantle",
+          "brass-buckled belt",
+          "paper slip tabs",
+          "close hood or head scarf"
+        ],
+        "props": [
+          "portable speaking scale",
+          "stamped vow slip",
+          "witness chime",
+          "maturity sandglass"
+        ],
+        "palette_notes": "Sandstone dominant, brass instruments, pale paper accents.",
+        "silhouette_notes": "Square shoulder mantle with one readable brass scale or slip fan.",
+        "avoid": [
+          "judge wigs",
+          "luxury regalia",
+          "weapons"
+        ]
+      },
+      {
+        "rule_id": "echo_court",
+        "role_keywords": [
+          "echo",
+          "bailiff",
+          "forgery",
+          "witness",
+          "shelter",
+          "court",
+          "magistrate"
+        ],
+        "attire": [
+          "deep blue-gray wrap cape",
+          "pale echo-glass collar or sash",
+          "dark plum gloves",
+          "brass seal clasp",
+          "modest layered civic robe"
+        ],
+        "props": [
+          "echo cylinder",
+          "forgery test fork",
+          "void-mark slate",
+          "witness chime pair"
+        ],
+        "palette_notes": "Blue-gray and pale echo highlights; brass only at seals and tools.",
+        "silhouette_notes": "Rounded cape silhouette with a single luminous pale collar, cylinder, or slate.",
+        "avoid": [
+          "ornate royal robes",
+          "religious vestments",
+          "neon glow"
+        ]
+      },
+      {
+        "rule_id": "bridge_warden",
+        "role_keywords": [
+          "bridge",
+          "chain-gate",
+          "warden",
+          "bond",
+          "diver",
+          "passage",
+          "signal"
+        ],
+        "attire": [
+          "dark rope safety harness",
+          "short blue-gray wind cape",
+          "sandstone work trousers",
+          "tarnished iron shoulder guard",
+          "brass passage tag"
+        ],
+        "props": [
+          "chain key",
+          "safety-bond token",
+          "signal pennant",
+          "inspection hook"
+        ],
+        "palette_notes": "Iron-dark and blue-gray with distinct brass token accents.",
+        "silhouette_notes": "Harness cross-straps and side-hung chain key make a broad practical outline.",
+        "avoid": [
+          "full plate armor",
+          "sailor uniforms",
+          "modern hard hats"
+        ]
+      },
+      {
+        "rule_id": "market_credit",
+        "role_keywords": [
+          "factor",
+          "merchant",
+          "exchange",
+          "credit",
+          "trade",
+          "bargaining"
+        ],
+        "attire": [
+          "sandstone canvas vest",
+          "blue-gray shawl",
+          "brass-edged money belt",
+          "rolled sleeves",
+          "pledge-ribbon cuff"
+        ],
+        "props": [
+          "merchant vowweight note",
+          "brass token pouch",
+          "trade ledger slip",
+          "repair rivet sample"
+        ],
+        "palette_notes": "Warm sandstone with restrained brass and one pledge-ribbon accent.",
+        "silhouette_notes": "Wide waist pouch or small trade tray; keep hands and props uncluttered.",
+        "avoid": [
+          "antique dealer costume",
+          "silk finery",
+          "coin-hoarding caricature"
+        ]
+      },
+      {
+        "rule_id": "relief_household",
+        "role_keywords": [
+          "relief",
+          "household",
+          "meal",
+          "cooper",
+          "petition",
+          "upper-ledge"
+        ],
+        "attire": [
+          "layered sandstone shawl",
+          "blue-gray apron or wrap",
+          "patched waxed-canvas hood",
+          "pledge-ribbon ties",
+          "simple rope belt"
+        ],
+        "props": [
+          "household basket",
+          "tax-relief wafer",
+          "petition slip",
+          "meal bundle"
+        ],
+        "palette_notes": "Soft sandstone and pale highlights, with muted blue-gray weather layers.",
+        "silhouette_notes": "Basket, bundled cloth, or broad shawl gives a domestic overhead read.",
+        "avoid": [
+          "peasant rags",
+          "lavish noble dress",
+          "farm-field costumes"
+        ]
+      },
+      {
+        "rule_id": "repair_rigger",
+        "role_keywords": [
+          "repair",
+          "rigger",
+          "wind-rope",
+          "stitcher",
+          "maintenance",
+          "winch"
+        ],
+        "attire": [
+          "blue-gray canvas overcoat",
+          "dark rope harness",
+          "sandstone knee wraps",
+          "iron tool belt",
+          "brass fastening pins"
+        ],
+        "props": [
+          "rope coil",
+          "splicing needle",
+          "bridge repair rivet",
+          "small winch hook"
+        ],
+        "palette_notes": "Blue-gray and dark rope dominant, brass hardware kept bright.",
+        "silhouette_notes": "Visible rope coil or side tool belt; compact, sturdy stance.",
+        "avoid": [
+          "industrial sci-fi coveralls",
+          "construction fluorescents",
+          "oversized machinery"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "vowfall_civic_default",
+      "role_keywords": [
+        "any unmatched Vowfall civic resident"
+      ],
+      "attire": [
+        "sandstone layered tunic or shawl",
+        "blue-gray wind mantle",
+        "dark rope belt",
+        "small brass civic clasp",
+        "waxed-canvas weather panel"
+      ],
+      "props": [
+        "sealed paper slip",
+        "pledge ribbon",
+        "small brass token or household bundle"
+      ],
+      "palette_notes": "Use sandstone and blue-gray as clothing base, dark plum edging, brass accents, and rare pale echo detail.",
+      "silhouette_notes": "Compact 2.5-head body, broad top-down-readable cape or shawl, one role-signaling carried item.",
+      "avoid": [
+        "unmarked generic fantasy clothes",
+        "bright multicolor outfits",
+        "unrelated historical or modern fashion"
+      ]
+    },
+    "visual_consistency_rules": [
+      "Strict top-down 64x64 sprite readability; no perspective or portrait posing.",
+      "Use compact 2.5-head figures with broad capes, shawls, satchels, or harnesses.",
+      "Outline with single dark #392B32 pixel edge; reserve #DDE0BE for small echo highlights.",
+      "Limit each sprite to one dominant garment color, one secondary color, brass accents, and one clear prop.",
+      "Make role props readable from overhead: bundles, scales, keys, baskets, rope coils, cylinders, or slips.",
+      "Keep luminous echo-script as sparse pale marks, never text or labels.",
+      "Favor weathered cloth, rope, brass, sealed paper, and iron over polished luxury surfaces."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "vowfall_cliff_city_v1",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90-degree orthographic",
+      "scale_rule": "Tile-aligned; doors, bridges, sprites, and props share fixed grid scale."
+    },
+    "palette": {
+      "dominant": "#b86f45",
+      "secondary": "#263b4a",
+      "accent": "#c99a32",
+      "shadow": "#392b32",
+      "highlight": "#dde0be"
+    },
+    "materials": [
+      "windworn sandstone",
+      "aged brass",
+      "dark rope",
+      "waxed canvas",
+      "sealed paper",
+      "tarnished iron",
+      "chalk echo-glass"
+    ],
+    "lighting": "Warm brass glints and pale echo glow on deep blue-gray cast shadows; no directional perspective shading.",
+    "architecture": [
+      "Stacked carved-sandstone terraces with cutaway roofless rooms.",
+      "Narrow suspended bridges with rope rails, chain gates, and brass bond seals.",
+      "Circular echo wells, speaking-scale plinths, and tube-routing walls.",
+      "Household balconies edged with frayed pledge ribbons and canvas awnings.",
+      "Vertical stairs, winch lifts, retaining arches, and cliff-cut cisterns."
+    ],
+    "terrain": {
+      "ground": "Terraced sandstone tiles with carved drainage grooves and sparse pale dust.",
+      "path": "Brass-edged stone walkways, rope bridges, and stair runs.",
+      "edge": "Sheer shadowed cliff cuts, chipped parapets, and iron railings."
+    },
+    "sprite_language": {
+      "body_proportion": "Compact 2.5-head figures with broad capes, satchels, and readable overhead silhouettes.",
+      "outline": "Single dark #392B32 pixel-outline with selective #DDE0BE echo highlights.",
+      "role_readability": "Couriers carry ribboned bundles; clerks carry brass scales or slips; wardens show chain keys; households show shawls or baskets."
+    },
+    "world_prompt_prefix": "Strict orthographic top-down pixel world of Vowfall: windworn sandstone cliff terraces, aged brass civic instruments, rope bridges, sealed courier tubes, frayed pledge ribbons, bounded five-color palette.",
+    "sprite_prompt_prefix": "Strict top-down Vowfall pixel sprite, compact outlined figure, dark plum outline, sandstone and blue-gray clothing, brass civic prop, role-readability silhouette.",
+    "forbidden_visuals": [
+      "visible labels",
+      "title text",
+      "poster layouts",
+      "card layouts",
+      "disconnected room dioramas",
+      "photorealism",
+      "isometric view",
+      "perspective camera",
+      "generic medieval castles",
+      "generic fantasy forests",
+      "neon cyberpunk",
+      "beige procedural terrain",
+      "real-world landmark aesthetics",
+      "modern vehicles",
+      "guns",
+      "anime portrait proportions"
+    ],
+    "canon_hash": "6f4ee6da3dd9517f"
+  }
+}

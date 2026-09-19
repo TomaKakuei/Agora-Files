@@ -1,0 +1,1842 @@
+{
+  "world_name": "Littoral Barony of Ostraka",
+  "world_id": "ostraka_shore_tribunal",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "en-US",
+    "tone": "litigious maritime reconstruction",
+    "visual_direction": "Brutal seawalls composed of crushed galleon ribs, iron strongboxes, and salt-crusted confiscated furniture jutting into surging teal tidepools.",
+    "currency_code": "OST",
+    "currency_symbol": "⚓",
+    "currency_minor_unit": "bitt",
+    "currency_name": "Bailiff Mark",
+    "domain_label": "The Forfeited Strand",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "tribunal_of_forfeiture",
+        "name": "High Admiralty Court of Forfeiture",
+        "mandate": "Condemn illicit coastal cargo and direct heavy contraband directly into littoral breakwater construction.",
+        "decision_rule": "Cargo exceeding legal tonnage or lacking excise chops is declared aggregate and ordered sunk into the nearest seawall sector.",
+        "enforced_by": "Court Bailiff-Pioneers and coastal halberdiers",
+        "visible_output": "Terraced seawalls lined with stamped iron chests, seized vessel keels, and court placards."
+      },
+      {
+        "institution_id": "haven_wharf_collective",
+        "name": "Haven Slipway Guild",
+        "mandate": "Maintain continuous intertidal ramp access and mooring rights for working fishercraft.",
+        "decision_rule": "Quorum of master mariners can declare a court seawall section an unlawful blockage and erect pirate slipways.",
+        "enforced_by": "Harbor dockhands and rope-runners",
+        "visible_output": "Improvised timber ramps spanning across newly raised seawall revetments."
+      },
+      {
+        "institution_id": "reclamation_appraisal_board",
+        "name": "Board of Riprap Assay",
+        "mandate": "Certify the structural buoyancy and load-bearing density of confiscated property before shoreline interment.",
+        "decision_rule": "High-density contraband is assigned to deep breakwaters; porous wood cargo is assigned to intertidal gabions.",
+        "enforced_by": "Surveyor-engineers with ballast seals",
+        "visible_output": "Color-coded chalk grids and salvage permits affixed to coastal aggregate heaps."
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "shoreline_reclamation_depth",
+        "label": "Reclaimed Coastal Extent",
+        "initial_tension": "High seawall advancement threatening historic low-tide alleys",
+        "changed_by": [
+          "Bailiff-Pioneer placement of condemned cargo",
+          "Storm erosion and rogue salvage crews"
+        ],
+        "affects": [
+          "neighborhood_sea_access",
+          "civic_unrest_level"
+        ]
+      },
+      {
+        "state_id": "neighborhood_sea_access",
+        "label": "District Slipway Permeability",
+        "initial_tension": "Outer wards cut off from ocean access by sheer confiscated barricades",
+        "changed_by": [
+          "Slipway Guild ramp excavations",
+          "Court expansion of fortress seawall barriers"
+        ],
+        "affects": [
+          "civic_unrest_level",
+          "contraband_forfeiture_volume"
+        ]
+      },
+      {
+        "state_id": "contraband_forfeiture_volume",
+        "label": "Impounded Cargo Stockpile",
+        "initial_tension": "Warehouses overflowing with unliquidated trade goods slated for shoreline burial",
+        "changed_by": [
+          "Tribunal seizure raids",
+          "Black-market theft from court holding pens"
+        ],
+        "affects": [
+          "shoreline_reclamation_depth",
+          "neighborhood_sea_access"
+        ]
+      },
+      {
+        "state_id": "civic_unrest_level",
+        "label": "Seaward Borough Volatility",
+        "initial_tension": "Simmering riots over lost launchways and arbitrary cargo condemnations",
+        "changed_by": [
+          "Nighttime sabotages of shoreline walls",
+          "Bailiff crackdowns and mass impoundment"
+        ],
+        "affects": [
+          "contraband_forfeiture_volume",
+          "shoreline_reclamation_depth"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "contraband_forfeiture_volume",
+        "trigger": "Aggressive customs sweeps yield surplus heavy cargo condemned for marine landfill",
+        "target_state": "shoreline_reclamation_depth",
+        "effect": "Accelerates the outward expansion of the barrier seawalls into navigable waters",
+        "delay": "3 cycles"
+      },
+      {
+        "source_state": "shoreline_reclamation_depth",
+        "trigger": "Barrier walls rise above low-water draft limits in working-class coves",
+        "target_state": "neighborhood_sea_access",
+        "effect": "Cuts off low-ward fishing alleys from open sea while routing access solely through court toll-gates",
+        "delay": "1 cycle"
+      },
+      {
+        "source_state": "neighborhood_sea_access",
+        "trigger": "Maritime access drops below commercial subsistence levels in artisanal districts",
+        "target_state": "civic_unrest_level",
+        "effect": "Incites coordinated dock strikes and clandestine demolition of riprap buttresses",
+        "delay": "2 cycles"
+      },
+      {
+        "source_state": "civic_unrest_level",
+        "trigger": "Public riots prompt the Admiralty Court to expand martial confiscation edicts",
+        "target_state": "contraband_forfeiture_volume",
+        "effect": "Increases the volume and variety of goods seized from dissenting coastal merchants",
+        "delay": "1 cycle"
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "low_cove_fishers",
+        "name": "Low-Cove Fisherfolk",
+        "goal": "Retain unobstructed tidal ramps and direct launch rights from historic neighborhood channels.",
+        "leverage": "Control of local food supply and intimate knowledge of submerged tidal hazards.",
+        "dependency": "Access to calm launch basins blocked by growing seawall bulkheads."
+      },
+      {
+        "group_id": "tribunal_magistrates",
+        "name": "Justiciars of the Admiralty",
+        "goal": "Enclose the entire island perimeter in an impenetrable, court-owned perimeter of consolidated contraband.",
+        "leverage": "Sovereign legal authority to seize merchant assets and mobilize public labor.",
+        "dependency": "Sufficient heavy, durable contraband to prevent ocean surges from breaching the court district."
+      },
+      {
+        "group_id": "salvage_smugglers",
+        "name": "Silt-Trench Free Traders",
+        "goal": "Exhume high-value smuggled relics and luxury goods from the newly laid shoreline before they are calcified in cement.",
+        "leverage": "Monopoly on off-book transport and diving equipment.",
+        "dependency": "Lax enforcement and high water turbulence around active construction zones."
+      }
+    ]
+  },
+  "genre": "Maritime Bureaucratic Speculative",
+  "premise": "On a tide-swept island, the governing Admiralty Court reclaims storm-eroded coastlines entirely out of impounded contraband, constantly shifting which districts can reach the water and reshaping urban power.",
+  "simulation_objective": "Simulate spatial and economic power struggles as agents divert cargo, demolish seawalls, and contest access to ocean transit.",
+  "agent_count_target": 12,
+  "player_count_target": 32,
+  "wall_color_theme": "oxidized_riveted_iron",
+  "economy_focus": "Material seizure, coastal engineering permits, salvage value, and slipway toll concessions.",
+  "exploration_focus": "Intertidal excavation, mapping evolving seawall mazes, and underwater ballast salvage.",
+  "conflict_tone": "Litigious, tactical, and socially fractured.",
+  "visual_style": "Nautical brutalism with barnacle-encrusted brass, timber hulls embedded in basalt, and chalk-marked masonry.",
+  "rooms": [
+    {
+      "name": "High Admiralty Forfeiture Chamber",
+      "biome": "coastal_fortress",
+      "purpose": "The Admiralty Court formally condemns seized sea-cargo into structural riprap, directly increasing contraband_forfeiture_volume and determining which seaward districts will lose direct water access.",
+      "decor_tags": [
+        "iron_court_bench",
+        "calcified_parchment_racks",
+        "ballast_weights",
+        "verdigris_brass_scales"
+      ],
+      "activity_tags": [
+        "condemning_cargo",
+        "stamping_deeds",
+        "allocating_fill"
+      ],
+      "flux_floor_prompt": "Strict top-down orthographic 2D pixel art of dark tarred oak planking inlaid with verdigris brass boundary rulers and salt-stained floorboards, edge to edge floor pattern, 32px grid aligned.",
+      "room_scene_prompt": "Strict top-down orthographic 2D game tilemap of an Admiralty maritime court room plate, dark oak plank floor, heavy iron-plated magistrate rostrum, brass scales, condemned cargo ledger desks, no visible text, no labels, no watermark, edge-to-edge walkable floor, Ostraka visual canon.",
+      "width_tiles": 8,
+      "height_tiles": 6,
+      "ambient_palette": "focused_blue",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "forfeiture_adjudication_bench",
+          "label": "Forfeiture Adjudication Bench",
+          "description": "A massive desk of salt-cured oak banded in oxidized iron, bearing heavy brass lead-sealing vices and condemnation stamps.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Board of Riprap Assay Depot",
+      "biome": "salvage_yard",
+      "purpose": "Engineers test buoyancy and density of confiscated contraband, stamping heavy iron and stone to advance shoreline_reclamation_depth outwards.",
+      "decor_tags": [
+        "hydraulic_press",
+        "chalk_marking_grids",
+        "crushed_basalt_mounds",
+        "test_vats"
+      ],
+      "activity_tags": [
+        "assaying_density",
+        "chalking_crates",
+        "testing_ballast"
+      ],
+      "flux_floor_prompt": "Strict top-down orthographic 2D pixel art of wet crushed basalt aggregate and calcified hydraulic mortar floor, crunchy textures with chalk grid lines, edge to edge.",
+      "room_scene_prompt": "Strict top-down orthographic 2D game tilemap of a coastal reclamation engineering workshop plate, wet basalt gravel floor, chalk lines, ballast testing vats, heavy iron winches, no visible text, no labels, no borders, full tile coverage.",
+      "width_tiles": 7,
+      "height_tiles": 7,
+      "ambient_palette": "dusty_brown",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "hydraulic_ballast_tester",
+          "label": "Hydraulic Ballast Press",
+          "description": "A steam-condensing verdigris brass hydraulic rig used to crush and weigh seized cargo for seawall compaction grade.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Haven Slipway Guild Hall",
+      "biome": "dockside_quarter",
+      "purpose": "Master mariners organize pirate ramps and maintain fishing access; when neighborhood_sea_access drops, unrest plans and dock strikes are coordinated here.",
+      "decor_tags": [
+        "tarred_ropes",
+        "shipwright_adzes",
+        "tide_charts",
+        "kelp_drying_screens"
+      ],
+      "activity_tags": [
+        "carving_slipways",
+        "rigging_skiffs",
+        "planning_blockades"
+      ],
+      "flux_floor_prompt": "Strict top-down orthographic 2D pixel art of weathered salt-bleached timber catwalk floor with tar caulking and scattered hemp fibers, seamless top-down texture.",
+      "room_scene_prompt": "Strict top-down orthographic 2D game tilemap of a dockside guild hall room plate, salt-bleached timber deck floor, coils of thick tarred hawsers, shipwright workbenches, skiff rudders, no text, no labels, edge-to-edge room.",
+      "width_tiles": 7,
+      "height_tiles": 6,
+      "ambient_palette": "warm_lantern",
+      "archetype": "commons",
+      "scene_components": [
+        {
+          "component_id": "guild_drafting_slipway_board",
+          "label": "Intertidal Sounding Table",
+          "description": "A low timber chart table covered with slate depth-markers and copper drift-weights plotting open slipway channels.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Seawall Toll-Gate Bastion",
+      "biome": "bulkhead_gate",
+      "purpose": "Court bailiffs collect slipway tolls and enforce restricted access points, directly bottlenecking neighborhood_sea_access for low-cove fishercraft.",
+      "decor_tags": [
+        "riveted_portcullis",
+        "halberd_racks",
+        "toll_lockboxes",
+        "lantern_posts"
+      ],
+      "activity_tags": [
+        "collecting_tolls",
+        "inspecting_permits",
+        "guarding_sluice"
+      ],
+      "flux_floor_prompt": "Strict top-down orthographic 2D pixel art of heavy riveted iron plates bolted over wet basalt flagstones, glinting with ocean spray, edge to edge floor pattern.",
+      "room_scene_prompt": "Strict top-down orthographic 2D game tilemap of an Admiralty toll checkpoint room plate, riveted iron floorplates, fortified heavy portcullis gates, bailiff weapon racks, brass strongboxes, no labels, no title, full plate coverage.",
+      "width_tiles": 6,
+      "height_tiles": 5,
+      "ambient_palette": "focused_blue",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "court_toll_weighgate",
+          "label": "Admiralty Turnstile Toll-Cage",
+          "description": "A heavy iron-barred gate with counterweighted brass toll-tumblers, controlling slipway egress.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Low-Cove Netmending Alley",
+      "biome": "tidal_basin",
+      "purpose": "Low-cove fishers repair gear in the shrinking tidal basin where declining sea access fuels neighborhood civic_unrest_level.",
+      "decor_tags": [
+        "brine_pools",
+        "oiled_netting",
+        "crab_traps",
+        "hanging_cod_racks"
+      ],
+      "activity_tags": [
+        "mending_nets",
+        "salting_catch",
+        "gathering_rumors"
+      ],
+      "flux_floor_prompt": "Strict top-down orthographic 2D pixel art of crushed shell and dark damp silt floor with small shallow turquoise brine puddles, top-down game tile texture.",
+      "room_scene_prompt": "Strict top-down orthographic 2D game tilemap of a coastal fisher workspace plate, crushed shell floor with puddle reflections, suspended green hemp netting, wicker fish traps, split cod frames, no text, no margins, map-ready texture.",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "clear_day",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "communal_net_loom",
+          "label": "Tidal Net-Stretching Frame",
+          "description": "A row of vertical timber poles strung with kelp-dyed fishing nets and weighted with drilled basalt sinkers.",
+          "anchor": "west_mid",
+          "width_tiles": 1,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Silt-Trench Salvage Lockup",
+      "biome": "submerged_vault",
+      "purpose": "Smugglers covertly sort valuable contraband dredged from un-calcified revetments before it can be cemented into breakwaters.",
+      "decor_tags": [
+        "iron_lockboxes",
+        "diving_helmets",
+        "pry_bars",
+        "barnacle_scraping_knives"
+      ],
+      "activity_tags": [
+        "sorting_relics",
+        "cracking_strongboxes",
+        "stashing_valuables"
+      ],
+      "flux_floor_prompt": "Strict top-down orthographic 2D pixel art of cracked dark stone revetment floor with half-submerged oxidized iron chest lids and barnacle clusters, edge to edge.",
+      "room_scene_prompt": "Strict top-down orthographic 2D game tilemap of an illicit salvage vault room plate, dark wet stone floor, pried open iron strongboxes, copper diving bells, barnacle scrapers, dim ember lantern light, no typography, no border.",
+      "width_tiles": 6,
+      "height_tiles": 5,
+      "ambient_palette": "low_lantern",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "exhumed_contraband_cache",
+          "label": "Pried Iron Keel-Chest",
+          "description": "A barnacle-encrusted galleon chest forced open with iron wedges, overflowing with stamped brass coins and sealed navigational cylinders.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Pioneer Breakwater Buttress",
+      "biome": "active_reclamation",
+      "purpose": "Bailiff-pioneers crane condemned ship hulls and iron crates directly into the surge, pushing shoreline_reclamation_depth further into the bay.",
+      "decor_tags": [
+        "galleon_oak_ribs",
+        "derrick_cranes",
+        "cement_troughs",
+        "iron_gabions"
+      ],
+      "activity_tags": [
+        "craning_cargo",
+        "pouring_mortar",
+        "bolting_keels"
+      ],
+      "flux_floor_prompt": "Strict top-down orthographic 2D pixel art of interred galleon hull revetments filled with calcified hydraulic mortar and basalt rubble, seamless top-down texture.",
+      "room_scene_prompt": "Strict top-down orthographic 2D game tilemap of an active shoreline reclamation bastion room plate, interred ship ribbing floor filled with hydraulic mortar, derrick winches, stone gabions, surging turquoise spray at edges, no text, edge-to-edge plate.",
+      "width_tiles": 8,
+      "height_tiles": 7,
+      "ambient_palette": "clear_day",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "heavy_keel_derrick",
+          "label": "Keel-Lowering Timber Derrick",
+          "description": "A massive tripod crane rigged with rusted chain falls and iron pulleys for dropping hulks into the intertidal riprap line.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Senior Assay-Master Corvus Vane",
+      "role_name": "Chief Contraband Ballast Assayer",
+      "activity": "Certifying density tags on impounded crates at the Board of Riprap Assay to modulate contraband_forfeiture_volume and direct heavy aggregate into breakwaters.",
+      "home_base": "Board of Riprap Assay Depot",
+      "arc_goal": "Redirect court-condemned iron consignments away from the barrier to slow down shoreline_reclamation_depth and compel the Tribunal of Forfeiture to negotiate terms.",
+      "inventory": [
+        {
+          "name": "ballast_assay_plummet",
+          "description": "A dense lead plumb line calibrated to measure the specific gravity of submerged cargo crates.",
+          "quantity": 1
+        },
+        {
+          "name": "seawall_chalk_stick",
+          "description": "Waterproof wax-chalk used to mark structural density codes on confiscated contraband.",
+          "quantity": 6
+        },
+        {
+          "name": "counterfeit_excise_chop",
+          "description": "A bronze stamp mimicking the High Admiralty seal, used to quietly mark cargo as inert stone.",
+          "quantity": 1
+        },
+        {
+          "name": "intertidal_leveling_theodolite",
+          "description": "A brass surveying scope mounted on a brine-resistant tripod for shoreline grade assessment.",
+          "quantity": 1
+        },
+        {
+          "name": "salvage_leverage_pick",
+          "description": "Hardened iron pry-tool with a hooked tip for cracking timber gabions.",
+          "quantity": 1
+        },
+        {
+          "name": "density_ledger_strip",
+          "description": "Vellum roll filled with buoyancy ratios for impounded merchant vessels.",
+          "quantity": 3
+        },
+        {
+          "name": "pozzolanic_sample_vial",
+          "description": "Sealed glass phial containing quick-curing hydraulic cement powder.",
+          "quantity": 4
+        },
+        {
+          "name": "brass_caliper_gauge",
+          "description": "Tide-pitted calipers for measuring hull plank thickness and aggregate porosity.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Central Assay Weighbridge",
+          "asset_type": "Facility",
+          "description": "A massive counterweighted stone scale used to condemn merchant cargo to the breakwater.",
+          "story_use": "Enables declaring high-value smuggler goods as high-density foundation riprap."
+        },
+        {
+          "asset_name": "Riprap Vault Stash",
+          "asset_type": "Storage",
+          "description": "A reinforced basement cell beneath the depot used to stash unlogged luxury items.",
+          "story_use": "Acts as leverage against Admiralty magistrates during forfeiture audits."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "seawall_hollow_chambers",
+          "topic": "Structural Faults in Sector 4",
+          "summary": "Knows which seawall buttresses were filled with rotting grain rather than dense stone aggregate.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "forfeiture_kickback_routes",
+          "topic": "Admiralty Smuggling Kickbacks",
+          "summary": "Possesses records showing magistrates skimming silver bullion before concrete internment.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Bailiff-Pioneer Justinian Kroll",
+      "role_name": "Admiralty Reclamation Marshal",
+      "activity": "Directing Pioneer halberdiers to sink forfeited timber keels at Seawall Toll-Gate Bastion, increasing shoreline_reclamation_depth.",
+      "home_base": "Seawall Toll-Gate Bastion",
+      "arc_goal": "Seal off Low-Cove launchways completely to enforce Tribunal of Forfeiture toll monopolies and crush neighborhood_sea_access.",
+      "inventory": [
+        {
+          "name": "bailiff_pioneer_poleaxe",
+          "description": "A heavy spike-headed poleaxe used both to fend off rioters and shatter cargo locks.",
+          "quantity": 1
+        },
+        {
+          "name": "forfeiture_manifest_ledger",
+          "description": "Iron-bound court book recording condemned vessels slated for burial into the seawall.",
+          "quantity": 1
+        },
+        {
+          "name": "corrugated_gabion_cage",
+          "description": "Heavy wire mesh cage packed with crushed gravel for rapid intertidal wall construction.",
+          "quantity": 2
+        },
+        {
+          "name": "pozzolanic_quicklime_cask",
+          "description": "Sealed mini-cask of caustic marine lime that hardens underwater upon breach.",
+          "quantity": 3
+        },
+        {
+          "name": "slipway_brass_toll_token",
+          "description": "Officially stamped Admiralty tokens used to grant temporary passage through the seawall gate.",
+          "quantity": 12
+        },
+        {
+          "name": "chain_securing_staples",
+          "description": "Heavy wrought iron staples driven into submerged hulls to pin them to the bedrock.",
+          "quantity": 8
+        },
+        {
+          "name": "seized_oak_keel_timber",
+          "description": "Beveled structural rib from a condemned skiff, marked for breakwater reinforcement.",
+          "quantity": 1
+        },
+        {
+          "name": "toll_whistle_pipe",
+          "description": "Shrill pewter whistle used to alert bastions of unpermitted low-tide vessel launches.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Sector 3 Barrier Winch Engine",
+          "asset_type": "Machinery",
+          "description": "Steam-assisted derrick that lowers seized merchant keels into littoral foundation trenches.",
+          "story_use": "Can rapidly drop heavy barricades to choke off the slipways during coastal unrest."
+        },
+        {
+          "asset_name": "Toll-Gate Barracks Armory",
+          "asset_type": "Outpost",
+          "description": "Fortified redoubt housing pioneer halberdiers and hydraulic quicklime stockpiles.",
+          "story_use": "Provides tactical reinforcement to suppress dock strikes and defend court-raised walls."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "unregistered_skiff_routes",
+          "topic": "Low-Cove Night Launches",
+          "summary": "Tracks illicit nighttime launch schedules used by local fishermen to bypass the toll-gate.",
+          "confidence": 82
+        },
+        {
+          "knowledge_id": "court_expansion_timeline",
+          "topic": "Admiralty Shoreline Enclosure Plan",
+          "summary": "Holds the classified schedule detailing when Low-Cove Netmending Alley will be permanently sealed.",
+          "confidence": 91
+        }
+      ]
+    },
+    {
+      "display_name": "Slipway Warden Orla Skiff",
+      "role_name": "Haven Maritime Guild Leader",
+      "activity": "Erecting illicit timber ramps across court seawall revetments at Haven Slipway Guild Hall to restore neighborhood_sea_access.",
+      "home_base": "Haven Slipway Guild Hall",
+      "arc_goal": "Organize Low-Cove Fisherfolk into a general dock strike to halt contraband_forfeiture_volume and dismantle the riprap buttress.",
+      "inventory": [
+        {
+          "name": "dock_strike_signal_horn",
+          "description": "Curved ox-horn rigged with a brass reed to rally maritime labor across the alleys.",
+          "quantity": 1
+        },
+        {
+          "name": "low_tide_sounding_staff",
+          "description": "Graduated ash pole tipped with iron for measuring changing silt and riprap depths.",
+          "quantity": 1
+        },
+        {
+          "name": "tarred_skiff_skid_roller",
+          "description": "Hardwood timber log wrapped in pitch-soaked canvas for rolling boats over seawall obstacles.",
+          "quantity": 2
+        },
+        {
+          "name": "hempen_towing_hawser",
+          "description": "Thick four-strand marine rope treated against salt-rot, used to haul grounded skiffs.",
+          "quantity": 1
+        },
+        {
+          "name": "slipway_brass_toll_token",
+          "description": "A fistful of forged toll tokens used to smuggle fishing crews past the Admiralty cordon.",
+          "quantity": 5
+        },
+        {
+          "name": "pitch_caulking_iron",
+          "description": "Wide-bladed shipyard tool for wedging oakum between strained launchway planks.",
+          "quantity": 1
+        },
+        {
+          "name": "wedge_sledgehammer",
+          "description": "Short-handled lead-filled maul for driving shoring timber beneath sinking slipways.",
+          "quantity": 1
+        },
+        {
+          "name": "netmenders_bone_fid",
+          "description": "Carved whalebone fid used to splice heavy mooring lines under high tension.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Great Haven Slipway",
+          "asset_type": "Infrastructure",
+          "description": "A massive inclined wooden ramp that allows multi-ton craft to slide across the intertidal mud.",
+          "story_use": "Crucial choke point for launching artisanal fishing fleets without paying Admiralty gate fees."
+        },
+        {
+          "asset_name": "Guild Rigging Loft",
+          "asset_type": "Workshop",
+          "description": "Upper floor packed with block-and-tackle gear, winches, and dry hemp cordage.",
+          "story_use": "Serves as clandestine operational headquarters for organizing seawall sabotage operations."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "intertidal_fault_troughs",
+          "topic": "Tidal Undermining Vectors",
+          "summary": "Understands how the outgoing spring tide creates scouring currents beneath the pioneer breakwaters.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "guild_strike_readiness",
+          "topic": "Fisherfolk Mobilization Network",
+          "summary": "Maintains an active network of maritime dockhands ready to blockade Admiralty slipways on command.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Diver-Captain Marrow Vex",
+      "role_name": "Silt-Trench Salvage Smuggler",
+      "activity": "Exhuming luxury contraband from submerged riprap gabions at Silt-Trench Salvage Lockup before concrete calcification.",
+      "home_base": "Silt-Trench Salvage Lockup",
+      "arc_goal": "Loot impounded cargo to escalate civic_unrest_level while selling stolen industrial winches to undermine court seawall expansion.",
+      "inventory": [
+        {
+          "name": "compressed_air_leather_hood",
+          "description": "Tallow-sealed diving hood fitted with brass viewports and a ribbed copper breathing tube.",
+          "quantity": 1
+        },
+        {
+          "name": "salvage_leverage_pick",
+          "description": "Heavy bronze prybar designed to breach undersea aggregate crates without generating sparks.",
+          "quantity": 1
+        },
+        {
+          "name": "impounded_steam_winch_drum",
+          "description": "A compact geared winch drum dragged from a sunken barge, primed for black-market resale.",
+          "quantity": 1
+        },
+        {
+          "name": "counterfeit_excise_chop",
+          "description": "Lead cast of an Admiralty salvage permit used to re-label exhumed cargo as legal flotsam.",
+          "quantity": 1
+        },
+        {
+          "name": "diving_lead_weight_belt",
+          "description": "Segmented belt of scrap ballast used to rapidly sink beneath the seawall surge.",
+          "quantity": 1
+        },
+        {
+          "name": "underwater_tallow_torch",
+          "description": "Chemical firepot that burns vigorously underwater to illuminate silted trenches.",
+          "quantity": 2
+        },
+        {
+          "name": "canvas_air_bladder",
+          "description": "Inflatable salvage bladder used to float heavy sunk iron chests to the surface at night.",
+          "quantity": 3
+        },
+        {
+          "name": "serrated_salvage_saw",
+          "description": "Short, wide-toothed saw built to slice through submerged oak keels and gabion ties.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Submerged Mud-Dorado Rig",
+          "asset_type": "Vessel",
+          "description": "A flat-bottomed salvage punt equipped with a hand-pumped diver's bellows and hidden hold.",
+          "story_use": "Provides stealth recovery of high-value contraband buried within the seawall perimeter."
+        },
+        {
+          "asset_name": "Silt-Trench Dry Well",
+          "asset_type": "Storage",
+          "description": "A tidal drainage chamber concealed beneath the lockup floor for drying waterlogged contraband.",
+          "story_use": "Serves as the primary distribution depot for illicitly recovered goods and diving equipment."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "sunken_contraband_caches",
+          "topic": "High-Value Riprap Coordinates",
+          "summary": "Tracks the exact breakwater sectors where unlogged silks, spirits, and coin chests were sunk.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "underwater_bastion_culverts",
+          "topic": "Seawall Sluice Infiltration",
+          "summary": "Knows the submerged sewer sluices that allow access into the High Admiralty Forfeiture Chamber.",
+          "confidence": 87
+        }
+      ]
+    },
+    {
+      "display_name": "Clerk-Notary Thaddeus Finch",
+      "role_name": "Admiralty Condemnation Registrar",
+      "activity": "Drafting summary condemnation warrants to accelerate contraband_forfeiture_volume into court breakwater allocations.",
+      "home_base": "High Admiralty Forfeiture Chamber",
+      "arc_goal": "Force the Tribunal of Forfeiture to designate all private shoreline wharves as state aggregate to seal the seaward perimeter.",
+      "inventory": [
+        {
+          "name": "forfeiture_manifest_ledger",
+          "description": "Bound ledger inscribed with iron-gall ink listing confiscated hulls and their calculated dry tonnage.",
+          "quantity": 1
+        },
+        {
+          "name": "counterfeit_excise_chop",
+          "description": "Brass stamp used to falsely identify legitimate merchant cargo as forfeited aggregate.",
+          "quantity": 1
+        },
+        {
+          "name": "admiralty_quill_knife",
+          "description": "Honed steel blade used for scraping parchment manifests and cutting court ribbons.",
+          "quantity": 1
+        },
+        {
+          "name": "calcified_coral_paperweight",
+          "description": "Heavy marine nodule used to pin condemnation warrants in wind-swept halls.",
+          "quantity": 2
+        },
+        {
+          "name": "registry_signet_wax",
+          "description": "Brittle vermilion wax stamped with the High Admiralty's anchor-and-scaffold emblem.",
+          "quantity": 4
+        },
+        {
+          "name": "slipway_brass_toll_token",
+          "description": "Minted token granting passage through the fortified tidal toll gates.",
+          "quantity": 6
+        },
+        {
+          "name": "intertidal_leveling_theodolite",
+          "description": "Brass surveying scope calibrated to measure high-water encroachment against private docks.",
+          "quantity": 1
+        },
+        {
+          "name": "parchment_condemnation_writs",
+          "description": "Blank legal orders authorizing immediate physical seizure of littoral properties.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "High Admiralty Archive Vault",
+          "asset_type": "Real Estate",
+          "description": "Reinforced masonry alcove holding historic title deeds and seizure logs for all littoral berths.",
+          "story_use": "Enables legal forfeiture of targeted coastal lots to increase shoreline_reclamation_depth."
+        },
+        {
+          "asset_name": "Confiscated Scribe Scriptatorium",
+          "asset_type": "Facility",
+          "description": "Writing desk and drafting table seized from a dissolved merchant consortium.",
+          "story_use": "Provides the bureaucratic throughput needed to process mass confiscation mandates."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "forfeiture_statute_loopholes",
+          "topic": "Maritime Admiralty Code",
+          "summary": "Specific legal clauses allowing the immediate sinking of cargo vessels if ballast stones lack assay marks.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "illicit_guild_manifests",
+          "topic": "Slipway Smuggling Logistics",
+          "summary": "Locations of hidden cargo stockpiles maintained by Haven Slipway Guild sympathizers.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Caisson-Mistress Vespera Hallow",
+      "role_name": "Breakwater Hydraulic Architect",
+      "activity": "Directing underwater lime injections at Pioneer Breakwater Buttress to accelerate shoreline_reclamation_depth.",
+      "home_base": "Pioneer Breakwater Buttress",
+      "arc_goal": "Calcify confiscated timber hulls into an unyielding artificial littoral shelf for the Board of Riprap Assay.",
+      "inventory": [
+        {
+          "name": "pozzolanic_quicklime_cask",
+          "description": "Sealed timber cask containing volcanic lime powder that hardens underwater upon saturation.",
+          "quantity": 3
+        },
+        {
+          "name": "ballast_assay_plummet",
+          "description": "Weighted bronze plumb line notched to test concrete setting density beneath murky surf.",
+          "quantity": 1
+        },
+        {
+          "name": "corrugated_gabion_cage",
+          "description": "Collapsible iron wire mesh used to bind shattered contraband keels into marine buttresses.",
+          "quantity": 2
+        },
+        {
+          "name": "seawall_chalk_stick",
+          "description": "Waterproof sulfurous chalk for marking tidal stress fractures on stone revetments.",
+          "quantity": 8
+        },
+        {
+          "name": "pneumatic_grout_nozzle",
+          "description": "Heavy brass lance used to force quick-setting pozzolana mortar into submerged ballast cavities.",
+          "quantity": 1
+        },
+        {
+          "name": "dock_strike_signal_horn",
+          "description": "Hand-cranked copper siren used to summon pioneer work crews during low-tide windows.",
+          "quantity": 1
+        },
+        {
+          "name": "hydrometric_tide_almanac",
+          "description": "Water-stained tables calculating foundation pressure at spring and neap tides.",
+          "quantity": 1
+        },
+        {
+          "name": "galvanized_riprap_tongs",
+          "description": "Long-handled forged gripping tongs used to position heavy core stones in surging surf.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Pioneer Steam-Grout Battery",
+          "asset_type": "Machinery",
+          "description": "Shore-mounted steam boiler and slurry pump dedicated to deep breakwater consolidation.",
+          "story_use": "Drives rapid expansion of coastal barrier walls into open navigation channels."
+        },
+        {
+          "asset_name": "Buttress Assay Testing Trench",
+          "asset_type": "Workshop",
+          "description": "Intertidal water-lock used to conduct load-bearing stress tests on condemned cargo materials.",
+          "story_use": "Certifies sunken contraband suitability to prevent catastrophic seawall collapses."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "pozzolana_curing_rates",
+          "topic": "Hydraulic Masonry",
+          "summary": "The exact salt-to-lime ratio needed to instantly freeze loose timber and ballast into granite-hard revetments.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "breakwater_structural_faults",
+          "topic": "Seawall Vulnerabilities",
+          "summary": "Unstable, voids-ridden ballast pockets in Sector 4 vulnerable to demolition wedges.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Net-Boss Yannis Brail",
+      "role_name": "Low-Cove Fisherfolk Syndic",
+      "activity": "Organizing clandestine ramp demolitions to restore neighborhood_sea_access for stranded fishing dories.",
+      "home_base": "Low-Cove Netmending Alley",
+      "arc_goal": "Lower civic_unrest_level by forcing the Admiralty to yield historic launching alleys back to the fishers.",
+      "inventory": [
+        {
+          "name": "salvage_leverage_pick",
+          "description": "Double-ended steel pry tool designed to lever loose ballast stones out of newly set seawalls.",
+          "quantity": 1
+        },
+        {
+          "name": "low_tide_sounding_staff",
+          "description": "Notched ash rod tipped with lead to sound shallow silting channels across the riprap barrier.",
+          "quantity": 1
+        },
+        {
+          "name": "tarred_hemp_parbuckle",
+          "description": "Heavy braided haul rope rigged with hardwood blocks for skidding small craft over breakwaters.",
+          "quantity": 2
+        },
+        {
+          "name": "salted_ling_provisions",
+          "description": "Cured fillets of intertidal ling used to sustain night demolition crews and feed dock strikers.",
+          "quantity": 6
+        },
+        {
+          "name": "dock_strike_signal_horn",
+          "description": "Hollowed bull-horn used to echo coordinated strike warnings across the cove alleys.",
+          "quantity": 1
+        },
+        {
+          "name": "seized_oak_keel_timber",
+          "description": "Reclaimed seasoned spar converted into an improvised launch roller for stranded dories.",
+          "quantity": 2
+        },
+        {
+          "name": "pitch_blackening_tallow",
+          "description": "Grease pot for silencing oarlocks and camouflaging skiffs during low-water night runs.",
+          "quantity": 3
+        },
+        {
+          "name": "iron_grapnel_anchor",
+          "description": "Four-pronged forged claw used to snare and dismantle wire gabions from the waterline.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Low-Cove Community Net-Loft",
+          "asset_type": "Workshop",
+          "description": "Communal timber loft overhanging the cove, used for rigging nets and holding syndic councils.",
+          "story_use": "Organizes working fisher resistance against encroaching Admiralty seawall projects."
+        },
+        {
+          "asset_name": "Concealed Mudflat Skidway",
+          "asset_type": "Real Estate",
+          "description": "Camouflaged intertidal timber ramp hidden behind decaying kelp-drying racks.",
+          "story_use": "Allows stealth boat launches beneath Admiralty radar during spring low tides."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "intertidal_shoal_channels",
+          "topic": "Littoral Navigation",
+          "summary": "Shifting mud channels that allow small flat-bottom dories to bypass state toll gates.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "seawall_mortar_weaknesses",
+          "topic": "Sapper Tactics",
+          "summary": "How to dissolve fresh pozzolana concrete joints using concentrated pickling brine.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Mire-Broker Hester Pell",
+      "role_name": "Silt-Trench Contraband Fence",
+      "activity": "Liquidating pilfered court ballast relics at Silt-Trench Salvage Lockup to siphon contraband_forfeiture_volume.",
+      "home_base": "Silt-Trench Salvage Lockup",
+      "arc_goal": "Exploit high civic_unrest_level to loot seized luxury goods from Admiralty caissons before burial.",
+      "inventory": [
+        {
+          "name": "compressed_air_leather_hood",
+          "description": "Oiled leather diving hood fitted with brass sight glasses and a reed exhaust valve.",
+          "quantity": 1
+        },
+        {
+          "name": "impounded_steam_winch_drum",
+          "description": "Salvaged iron winding gear modified for hoisting submerged crates out of riprap trenches.",
+          "quantity": 1
+        },
+        {
+          "name": "counterfeit_excise_chop",
+          "description": "Carved lignum vitae stamp mimicking the Admiralty's scrap-metal release brand.",
+          "quantity": 1
+        },
+        {
+          "name": "salvage_leverage_pick",
+          "description": "Short, heavy crow-bar notched for breaking court security seals on submerged crates.",
+          "quantity": 1
+        },
+        {
+          "name": "slipway_brass_toll_token",
+          "description": "Stolen official passage tokens used to move salvage wagons through the bastion gates.",
+          "quantity": 12
+        },
+        {
+          "name": "waxed_canvas_cache_pouches",
+          "description": "Waterproof pouches designed to hide pearls, coins, and spices during diving runs.",
+          "quantity": 4
+        },
+        {
+          "name": "copper_tide_gauge_callipers",
+          "description": "Fine calipers used to evaluate the metal purity of condemned ship fastenings.",
+          "quantity": 1
+        },
+        {
+          "name": "bottle_of_black_salve",
+          "description": "Pungent marine ointment applied to divers' limbs to insulate against hypothermia.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Tidal Sump Lockup Depot",
+          "asset_type": "Storage",
+          "description": "Subterranean silt basin beneath the slipways that floods and drains with the tide to hide goods.",
+          "story_use": "Stores high-value smuggled relics exhumed from active riprap construction zones."
+        },
+        {
+          "asset_name": "Under-Bastion Smuggling Sluice",
+          "asset_type": "Facility",
+          "description": "Grubbed drainage tunnel linking the Silt-Trench lockup directly to the open harbor.",
+          "story_use": "Permits silent night movements of illicit diving teams and heavy contraband cargo."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "court_cargo_burial_schedules",
+          "topic": "Admiralty Construction Logistics",
+          "summary": "Exact dates and caisson sectors where luxury cargo is scheduled to be entombed in concrete.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "toll_guard_bribery_rates",
+          "topic": "Bastion Security",
+          "summary": "Which bailiff shifts accept counterfeit toll tokens at the Seawall Toll-Gate Bastion.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Sounding-Engineman Gault Stoker",
+      "role_name": "Tidal Bathymetry Surveyor",
+      "activity": "Deploying weighted sounding lines and acoustic lead-tapers from the Pioneer Breakwater Buttress to survey submerged riprap foundations, altering shoreline_reclamation_depth.",
+      "home_base": "Pioneer Breakwater Buttress",
+      "arc_goal": "Chart illegal ballast voids within Tribunal seawall caissons to force the Reclamation Appraisal Board to halt revetment expansion and preserve low-water dory channels.",
+      "inventory": [
+        {
+          "name": "greased_bathymetric_plummet",
+          "description": "Tallow-smeared bronze sounding weight designed to pick up seabed silt samples.",
+          "quantity": 1
+        },
+        {
+          "name": "braided_hemp_lead_line",
+          "description": "Fathom-marked line knotted with brass indicators for shallow soundings.",
+          "quantity": 2
+        },
+        {
+          "name": "intertidal_leveling_theodolite",
+          "description": "Brass-mounted optical device used to gauge seawall elevation against datum posts.",
+          "quantity": 1
+        },
+        {
+          "name": "seawall_chalk_stick",
+          "description": "Luminescent red chalk stick for marking low-tide scour lines onto stone blocks.",
+          "quantity": 4
+        },
+        {
+          "name": "corrugated_gabion_cage",
+          "description": "Reinforced wire basket designed to anchor rubble aggregate in heavy currents.",
+          "quantity": 1
+        },
+        {
+          "name": "tallow_assay_scraper",
+          "description": "Notched blade used to clean core samples from sediment-retrieval plummets.",
+          "quantity": 1
+        },
+        {
+          "name": "tide_table_ephemeris",
+          "description": "Vellum pocket ledger recording littoral surge heights and moon cycles.",
+          "quantity": 1
+        },
+        {
+          "name": "surveyors_damped_compass",
+          "description": "Fluid-filled magnetic brass dial calibrated for iron-dense coastal buttresses.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Tidal Datum Skerry",
+          "asset_type": "mooring_platform",
+          "description": "An iron-framed survey platform bolted onto a submerged low-tide ledge.",
+          "story_use": "Enables precise calculation of shoreline advance and serves as a covert observation perch."
+        },
+        {
+          "asset_name": "Hydrographic Core Locker",
+          "asset_type": "equipment_cache",
+          "description": "A salt-varnished chest storing sediment logs and sounding charts.",
+          "story_use": "Stores technical proof of seawall structural instability."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "scour_void_patterns",
+          "topic": "Breakwater Sub-Basin Scour",
+          "summary": "Identifies where tidal currents are hollowing out court-laid caissons beneath the buttress.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "admiralty_datum_falsification",
+          "topic": "Survey Data Tampering",
+          "summary": "Details how court registrars inflate low-tide baselines to justify deeper cargo sinkings.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Customs-Chop Forger Lucine Kett",
+      "role_name": "Excise Stamp Engraver",
+      "activity": "Engraving false Admiralty stamps in the Low-Cove Netmending Alley to divert impounded crates away from tribunal condemnation and lower contraband_forfeiture_volume.",
+      "home_base": "Low-Cove Netmending Alley",
+      "arc_goal": "Flood the port with counterfeit excise seals to subvert the Tribunal of Forfeiture's cargo condemnations and preserve merchant livelihoods.",
+      "inventory": [
+        {
+          "name": "counterfeit_excise_chop",
+          "description": "Carved lignum vitae seal mimicking the Admiralty's triple-anchor clearance stamp.",
+          "quantity": 2
+        },
+        {
+          "name": "hardened_burin_set",
+          "description": "Set of fine tempered steel gouges used to cut official heraldic dies.",
+          "quantity": 1
+        },
+        {
+          "name": "indigo_vermilion_ink_pot",
+          "description": "Waterproof pigment pot containing court-formula dye for certifying cargo passes.",
+          "quantity": 2
+        },
+        {
+          "name": "scrap_forfeiture_vellum",
+          "description": "Trimmed court parchment blanks salvaged from Admiralty waste bins.",
+          "quantity": 6
+        },
+        {
+          "name": "magnifying_jewelers_loupe",
+          "description": "Brass-cased optical lens used to inspect intricate wax impressions.",
+          "quantity": 1
+        },
+        {
+          "name": "wax_seal_melter_pan",
+          "description": "Compact spirit burner and brass ladle for liquefying sealing wax.",
+          "quantity": 1
+        },
+        {
+          "name": "stolen_customs_wax_cake",
+          "description": "Lapis-tinted wax brick bearing the official chemical watermark.",
+          "quantity": 2
+        },
+        {
+          "name": "bone_scoring_knife",
+          "description": "Small carved bone blade used to duplicate wax stamp margins cleanly.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Net-Loft Engraving Bench",
+          "asset_type": "workshop",
+          "description": "A hidden workspace concealed beneath drying drift nets in the alley.",
+          "story_use": "Allows safe manufacturing of falsified customs documentation and seals."
+        },
+        {
+          "asset_name": "False-Bottomed Net Chest",
+          "asset_type": "storage",
+          "description": "A cedar sea chest disguised under salted cod lines.",
+          "story_use": "Stores forged stamps and blank Admiralty confiscation slips."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "chop_watermark_flaws",
+          "topic": "Admiralty Seal Authentication",
+          "summary": "Knows the microscopic variations in ink viscosity that Court bailiffs check on excise tags.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "forfeiture_manifest_leaks",
+          "topic": "Court Ledger Alteration",
+          "summary": "Understands the exact recording syntax used to expunge cargo lines from Admiralty manifests.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Pioneer-Sergeant Branigan Toll",
+      "role_name": "Gate Bastion Enforcer",
+      "activity": "Operating heavy portcullis winches and collecting transit surcharges at the Seawall Toll-Gate Bastion, restricting neighborhood_sea_access.",
+      "home_base": "Seawall Toll-Gate Bastion",
+      "arc_goal": "Enforce Admiralty cordon mandates across seawall gates while extracting unauthorized fees to control civic_unrest_level.",
+      "inventory": [
+        {
+          "name": "bailiff_pioneer_poleaxe",
+          "description": "Heavy billhook poleaxe stamped with the Admiralty's forfeiture tally-notches.",
+          "quantity": 1
+        },
+        {
+          "name": "slipway_brass_toll_token",
+          "description": "Heavy stamped brass coin required to pass through the bastion ramparts.",
+          "quantity": 12
+        },
+        {
+          "name": "iron_bastion_keyring",
+          "description": "Massive iron ring holding keys to the seawall portcullis winches.",
+          "quantity": 1
+        },
+        {
+          "name": "forfeiture_manifest_ledger",
+          "description": "Daily ledger tracking confiscated wagons and pedestrian toll receipts.",
+          "quantity": 1
+        },
+        {
+          "name": "pozzolanic_quicklime_cask",
+          "description": "Small container of caustic fast-setting powder for emergency wall repairs.",
+          "quantity": 1
+        },
+        {
+          "name": "cordwainer_leather_cuirass",
+          "description": "Studded salt-cured hide armor bearing Pioneer corps brass badges.",
+          "quantity": 1
+        },
+        {
+          "name": "dock_strike_signal_horn",
+          "description": "Curved ox-horn used to sound the general alarm during gate breaches.",
+          "quantity": 1
+        },
+        {
+          "name": "seized_oak_keel_timber",
+          "description": "Short crosscut block of condemned oak used as a barricade wedge.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Bastion Sentry Berth",
+          "asset_type": "defensive_post",
+          "description": "An elevated stone embrasure commanding the lower slipway approach.",
+          "story_use": "Controls the movement of fishermen and monitors illegal ramp construction."
+        },
+        {
+          "asset_name": "Impound Lock-Box",
+          "asset_type": "storage",
+          "description": "An iron chest embedded directly into the toll-gate masonry.",
+          "story_use": "Stores seized contraband tolls and unregistered weapons."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "gate_breach_vulnerabilities",
+          "topic": "Bastion Portcullis Weakpoints",
+          "summary": "Knows which iron drop-gates suffer from salt-corrosion and can be jammed by debris.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "toll_evasion_routes",
+          "topic": "Intertidal Smuggling Paths",
+          "summary": "Familiar with the low-tide ledge routes smugglers use to bypass the bastion gates.",
+          "confidence": 84
+        }
+      ]
+    },
+    {
+      "display_name": "Caisson-Diver Nerida Crane",
+      "role_name": "Underwater Hydraulic Diver",
+      "activity": "Descending into submerged riprap trenches from the Silt-Trench Salvage Lockup with compressed air gear, modulating shoreline_reclamation_depth.",
+      "home_base": "Silt-Trench Salvage Lockup",
+      "arc_goal": "Recover high-density ballast contraband before hydraulic lime slurry calcifies it into permanent breakwater masonry, reducing contraband_forfeiture_volume.",
+      "inventory": [
+        {
+          "name": "compressed_air_leather_hood",
+          "description": "Oiled leather diving helmet fitted with mica viewports and copper feed valves.",
+          "quantity": 1
+        },
+        {
+          "name": "salvage_leverage_pick",
+          "description": "Heavy pointed steel prybar used to dislodge iron-bound crates from aggregate beds.",
+          "quantity": 1
+        },
+        {
+          "name": "low_tide_sounding_staff",
+          "description": "Notched ash rod with weighted tip used to probe underwater silt depths.",
+          "quantity": 1
+        },
+        {
+          "name": "weighted_lead_soles",
+          "description": "Strapped iron-soled boots to anchor divers against strong rip currents.",
+          "quantity": 1
+        },
+        {
+          "name": "impounded_steam_winch_drum",
+          "description": "Compact bronze cable drum adapted for deep silt haulage.",
+          "quantity": 1
+        },
+        {
+          "name": "ballast_assay_plummet",
+          "description": "Calibrated density plummet for testing submerged cargo buoyancy.",
+          "quantity": 1
+        },
+        {
+          "name": "greased_canvas_salvage_sack",
+          "description": "Tarpaulin-lined gear bag designed to haul wet contraband to surface rigs.",
+          "quantity": 2
+        },
+        {
+          "name": "tallow_diver_candle_lamp",
+          "description": "Waterproof glass housing enclosing a thick tallow flame for murky waters.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Submerged Caisson Gantry",
+          "asset_type": "diving_rig",
+          "description": "A floating timber crane anchored above the submerged foundation trench.",
+          "story_use": "Provides descent staging and heavy winch-pulling for deep salvage ops."
+        },
+        {
+          "asset_name": "Air-Pump Compressor Stage",
+          "asset_type": "machinery",
+          "description": "A foot-treadle pneumatic pump feeding air lines to caisson divers.",
+          "story_use": "Supplies underwater breath support during extended seabed excavation runs."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "lime_calcification_rate",
+          "topic": "Pozzolanic Cement Curing",
+          "summary": "Knows precisely how many hours remain before injected grout permanently fuses contraband into stone.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "deep_riprap_trench_currents",
+          "topic": "Tidal Trench Vortexes",
+          "summary": "Mastery of treacherous underwater undertows generated around newly sunk keels.",
+          "confidence": 89
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Reclamation Foreclosure Cycle",
+      "summary": "Admiralty magistrates condemn seized trade goods and direct engineers to submerge them into expanding barriers, raising shoreline_reclamation_depth and restricting neighborhood_sea_access.",
+      "roles": [
+        "Admiralty Reclamation Marshal",
+        "Breakwater Hydraulic Architect",
+        "Gate Bastion Enforcer"
+      ],
+      "rooms": [
+        "High Admiralty Forfeiture Chamber",
+        "Pioneer Breakwater Buttress",
+        "Seawall Toll-Gate Bastion"
+      ],
+      "pressure": "Rising cargo volume forces aggressive shoreline enclosure, threatening to block harbor navigation."
+    },
+    {
+      "label": "Slipway Liberation and Smuggling Circuit",
+      "summary": "Fisherfolk and salvage syndicates dredge submerged cargo and construct illicit ramps to maintain neighborhood_sea_access, altering contraband_forfeiture_volume and civic_unrest_level.",
+      "roles": [
+        "Haven Maritime Guild Leader",
+        "Silt-Trench Salvage Smuggler",
+        "Underwater Hydraulic Diver"
+      ],
+      "rooms": [
+        "Haven Slipway Guild Hall",
+        "Low-Cove Netmending Alley",
+        "Silt-Trench Salvage Lockup"
+      ],
+      "pressure": "Rapid seawall construction creates maritime choke points, pushing the district toward violent dock strikes."
+    },
+    {
+      "label": "Ballast Assay and Certification Squeeze",
+      "summary": "Assayers and surveyors inspect impounded assets to allocate riprap density, navigating black-market bribes and forgeries that modulate civic_unrest_level and shoreline_reclamation_depth.",
+      "roles": [
+        "Chief Contraband Ballast Assayer",
+        "Tidal Bathymetry Surveyor",
+        "Excise Stamp Engraver"
+      ],
+      "rooms": [
+        "Board of Riprap Assay Depot",
+        "High Admiralty Forfeiture Chamber"
+      ],
+      "pressure": "Structural collapse looms if low-density contraband is falsely certified and laid into deep-water foundations."
+    }
+  ],
+  "player_entry_points": [
+    "A newly appointed Assayer inspecting disputed ballast chests at the Board of Riprap Assay Depot.",
+    "A desperate fisherman arriving at Haven Slipway Guild Hall to protest a sealed harbor ramp.",
+    "An under-the-table diver smuggling recovered coral gems into the Silt-Trench Salvage Lockup."
+  ],
+  "conflict_hooks": [
+    "The High Admiralty decrees the immediate enclosure of Low-Cove launch channels using newly seized foreign merchant vessels as revetment fill.",
+    "A massive spring tide threatens to breach the Pioneer Breakwater Buttress unless unassayed contraband is hastily sunk into the breach.",
+    "A cache of forged excise stamps is discovered in the Low-Cove Netmending Alley, triggering martial sweeps by the Gate Bastion Enforcer."
+  ],
+  "custom_actions": [
+    "Chop_Ballast_Manifest",
+    "Petition_Slipway_Exemption",
+    "Dredge_Submerged_Gabion",
+    "Counterfeit_Excise_Stamp",
+    "Survey_Tidal_Erosion",
+    "Incarcerate_Smuggler_Hull"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "Bribe With Silt-Gilded Relic",
+      "initiating_role": "Silt-Trench Contraband Fence",
+      "target_role": "Gate Bastion Enforcer",
+      "situation": "The Fence needs immediate passage through the seawall gate before the incoming tide seals the lower slipway.",
+      "proposed_effects": [
+        "transfer",
+        "speech"
+      ],
+      "coordinator_checks": [
+        "Proximity: Initiator and target must both be present in the Seawall Toll-Gate Bastion.",
+        "Ownership: Initiator must possess the specific uncataloged artifact.",
+        "Consent: Target role has the option to reject the bribe and trigger an arrest."
+      ]
+    },
+    {
+      "action_name": "Issue Summary Ballast Condemnation",
+      "initiating_role": "Admiralty Condemnation Registrar",
+      "target_role": "Low-Cove Fisherfolk Syndic",
+      "situation": "Registrar seeks to declare an impounded skiff as low-density aggregate to expand the Pioneer Breakwater Buttress.",
+      "proposed_effects": [
+        "status",
+        "create_item"
+      ],
+      "coordinator_checks": [
+        "Legality: Registrar must hold the official court seal of condemnation.",
+        "Proximity: Both parties must be in the High Admiralty Forfeiture Chamber or Low-Cove Netmending Alley.",
+        "Bounded Creation: Resulting ballast ticket must conform to legal cargo item limits."
+      ]
+    },
+    {
+      "action_name": "Forge Foundation Survey Report",
+      "initiating_role": "Tidal Bathymetry Surveyor",
+      "target_role": "Breakwater Hydraulic Architect",
+      "situation": "Surveyor provides falsified soundings to persuade the Architect to divert breakwater rubble away from secret salvage trenches.",
+      "proposed_effects": [
+        "transfer",
+        "speech"
+      ],
+      "coordinator_checks": [
+        "Legality: Surveyor must hold drafting implements and valid survey parchment.",
+        "Proximity: Both roles must be in the Board of Riprap Assay Depot or Pioneer Breakwater Buttress.",
+        "Consent: Architect can perform a verification check to detect fabricated depth figures."
+      ]
+    },
+    {
+      "action_name": "Establish Clandestine Slipway Mooring",
+      "initiating_role": "Haven Maritime Guild Leader",
+      "target_role": "Chief Contraband Ballast Assayer",
+      "situation": "Guild Leader creates a legally recognized low-tide dock notch within newly reinforced riprap buttresses.",
+      "proposed_effects": [
+        "create_item",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Legality: Requires either Assayer approval or an uncontested guild proclamation.",
+        "Proximity: Initiator and target must be in the Haven Slipway Guild Hall or Pioneer Breakwater Buttress.",
+        "Bounded Creation: Physical ramp item must not exceed spatial district parameters."
+      ]
+    }
+  ],
+  "social_rules": [
+    "No confiscated ballast or riprap may be extracted from the shoreline once marked with the High Admiralty lead chop.",
+    "Fishercraft must purchase a toll warrant before traversing breakwater gates during neap tide.",
+    "Any unmarked salvage hauled from the silt trenches is deemed Admiralty property by default.",
+    "Riprap assayers hold the final authority over whether seized luxury goods constitute structurally stable aggregate."
+  ],
+  "item_themes": [
+    "impounded marine machinery",
+    "forfeiture ledgers",
+    "salvage picks",
+    "ballast markers",
+    "tidal passes"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "forfeiture_manifest_ledger",
+      "name": "Admiralty Forfeiture Ledger",
+      "price": 320,
+      "mass": 3.4,
+      "description": "A brass-bound vellum ledger documenting condemned merchant goods reclassified as structural riprap.",
+      "image_prompt": "Heavy vellum ledger bound in sea-tarnished brass with Admiralty wax seals and ink tally marks, resting on wet basalt.",
+      "category": "Legal Instruments"
+    },
+    {
+      "item_id": "ballast_assay_plummet",
+      "name": "Hydrostatic Riprap Plummet",
+      "price": 180,
+      "mass": 4.5,
+      "description": "A calibrated lead and brass sinker used by the Assay Board to measure contraband buoyancy and core density.",
+      "image_prompt": "Brutal brass and lead sounding plummet encrusted with dried salt and etched with depth gradations.",
+      "category": "Survey Tools"
+    },
+    {
+      "item_id": "seawall_chalk_stick",
+      "name": "Cinnabar Masonry Chalk",
+      "price": 15,
+      "mass": 0.2,
+      "description": "Waterproof mineral compound used to score structural gridlines and forfeiture warrants on marine stone.",
+      "image_prompt": "Thick hexagonal sticks of dull vermilion chalk stamped with the crossed anchors of the Admiralty Court.",
+      "category": "Marking Tools"
+    },
+    {
+      "item_id": "salvage_leverage_pick",
+      "name": "Silt-Trench Salvage Crow",
+      "price": 95,
+      "mass": 6.8,
+      "description": "A heavy-toothed iron lever engineered to pry loose brass fittings from newly mortared seawall foundations.",
+      "image_prompt": "Heavy pitted wrought iron prybar with notched claw ends and a barnacle-fused handle wrap.",
+      "category": "Salvage Equipment"
+    },
+    {
+      "item_id": "slipway_brass_toll_token",
+      "name": "Tide-Pass Slipway Token",
+      "price": 40,
+      "mass": 0.15,
+      "description": "A heavy stamped brass token granting a single high-water vessel launch through Admiralty-controlled ramp gates.",
+      "image_prompt": "Verdigris-tinted octagonal brass token with an embossed portcullis over breaking ocean waves.",
+      "category": "Permits & Tokens"
+    },
+    {
+      "item_id": "impounded_steam_winch_drum",
+      "name": "Condemned Bronze Winch Core",
+      "price": 650,
+      "mass": 82.0,
+      "description": "A massive salvaged cable drum seized from an unlicensed foreign tug, awaiting shoreline burial.",
+      "image_prompt": "Massive cast bronze industrial winch drum with heavy gear teeth, partially covered in sea scum and Admiralty chalk tags.",
+      "category": "Heavy Machinery"
+    },
+    {
+      "item_id": "pozzolanic_quicklime_cask",
+      "name": "Sub-Aqueous Hydrated Mortar",
+      "price": 110,
+      "mass": 45.0,
+      "description": "A sealed timber cask of quick-setting lime aggregate that hardens directly under tidal surges.",
+      "image_prompt": "Oak cask reinforced with iron bands, leaking white mineral powder onto a dark wet dock.",
+      "category": "Construction Materials"
+    },
+    {
+      "item_id": "bailiff_pioneer_poleaxe",
+      "name": "Bailiff-Pioneer Spike-Halberd",
+      "price": 240,
+      "mass": 5.1,
+      "description": "Standard polearm of the seawall guard, fitted with a heavy pick for splitting contraband timber crates.",
+      "image_prompt": "Nautical brutalist poleaxe with a heavy square hammer head, broad spike, and darkened ash shaft.",
+      "category": "Weapons"
+    },
+    {
+      "item_id": "low_tide_sounding_staff",
+      "name": "Haven Sounding Rod",
+      "price": 50,
+      "mass": 2.1,
+      "description": "A jointed copper-tipped ash rod used by fishermen to locate newly submerged seawall hazards at night.",
+      "image_prompt": "Graduated ash measuring rod bound with copper wire and marked with notched tide heights.",
+      "category": "Navigation Tools"
+    },
+    {
+      "item_id": "counterfeit_excise_chop",
+      "name": "Forged Slipway Seal Stamp",
+      "price": 410,
+      "mass": 0.8,
+      "description": "An illicit soapstone stamp carved to duplicate the Board of Riprap's cargo clearance emblem.",
+      "image_prompt": "Hand-carved grey soapstone stamp with an intricate mirror-reversed heraldic sea-drake seal.",
+      "category": "Contraband"
+    },
+    {
+      "item_id": "corrugated_gabion_cage",
+      "name": "Galvanized Gabion Frame",
+      "price": 75,
+      "mass": 18.5,
+      "description": "A collapsible iron wire mesh cage designed to pack illicit lighter goods and timber offcuts into the reef.",
+      "image_prompt": "Heavy hexagonal wire mesh basket filled with jagged basalt rocks and crushed timber fragments.",
+      "category": "Construction Materials"
+    },
+    {
+      "item_id": "compressed_air_leather_hood",
+      "name": "Trench-Diver's Grease-Leather Hood",
+      "price": 380,
+      "mass": 7.2,
+      "description": "Reinforced breathing apparatus with thick mica viewports, used to inspect submerged seawall footings.",
+      "image_prompt": "Heavy oiled leather diving hood with circular brass viewports and a ribbed vulcanized intake tube.",
+      "category": "Diving Gear"
+    },
+    {
+      "item_id": "seized_oak_keel_timber",
+      "name": "Admiralty-Tagged Keel Strut",
+      "price": 290,
+      "mass": 120.0,
+      "description": "A dense white-oak structural keel marked with iron court-plates for integration into the low-cove breakwater.",
+      "image_prompt": "Gigantic curved ship timber banded with riveted iron strapping and marked with red Admiralty stencils.",
+      "category": "Raw Materials"
+    },
+    {
+      "item_id": "intertidal_leveling_theodolite",
+      "name": "Baron's Marine Theodolite",
+      "price": 520,
+      "mass": 9.4,
+      "description": "Precision water-level sight used by surveyor-engineers to project shore reclamation coordinates.",
+      "image_prompt": "Bulky brass and blackened iron surveying transit mounted on a sea-stained tripod over crashing surf.",
+      "category": "Survey Tools"
+    },
+    {
+      "item_id": "dock_strike_signal_horn",
+      "name": "Haven Guild Bellows Horn",
+      "price": 85,
+      "mass": 3.0,
+      "description": "A low-frequency bronze warning horn used by slipway workers to signal encroaching bailiff squads.",
+      "image_prompt": "Curved hammered bronze foghorn fitted with a hand-pumped leather bellows and cordage sling.",
+      "category": "Communication"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "ostraka_littoral_wardrobe_policy_v1",
+    "world_wardrobe_brief": "Nautical bureaucratic brutalism attire combining heavy weather-beaten maritime utility with rigid Admiralty Court uniforms. Silhouettes feature wide-shouldered oiled smocks, salt-bleached calcified mantles, brass diving apparatus, heavy leather tool-harnesses, and stark cinnabar or chalk forfeiture stoles designed for high overhead visibility in salt-spray environments.",
+    "forbidden_aesthetics": [
+      "cyberpunk neon and synthetic glows",
+      "flowing ornate high-fantasy silk robes",
+      "mirror-polished medieval plate armor",
+      "steampunk top hats and decorative brass cog motifs",
+      "modern lab coats and clean room hazmats",
+      "tropical resort beachwear",
+      "delicate antique market lace and filigree velvet"
+    ],
+    "palette_families": [
+      {
+        "name": "Admiralty Court Tribunal",
+        "dominant": "#2d383a",
+        "accent": "#d8e2dc",
+        "trim": "#d97736",
+        "material": "Salt-cured wool, iron-riveted brigandine leather, and chalked canvas stoles"
+      },
+      {
+        "name": "Tidal Salvage and Caisson",
+        "dominant": "#12181a",
+        "accent": "#1b6b6c",
+        "trim": "#d97736",
+        "material": "Grease-treated diving leather, weighted lead collars, and verdigris brass"
+      },
+      {
+        "name": "Haven Slipway Guild",
+        "dominant": "#1b6b6c",
+        "accent": "#d97736",
+        "trim": "#2d383a",
+        "material": "Tarred heavy sailcloth, coarse hemp cordage, and boiled sea-leather"
+      },
+      {
+        "name": "Assay Registry and Notaries",
+        "dominant": "#2d383a",
+        "accent": "#d8e2dc",
+        "trim": "#1b6b6c",
+        "material": "Wax-treated twill, calcified parchment aprons, and stamped brass brackets"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "admiralty_bailiff_pioneer",
+        "role_keywords": [
+          "bailiff",
+          "marshal",
+          "enforcer",
+          "sergeant",
+          "pioneer",
+          "guard"
+        ],
+        "attire": [
+          "Heavy charcoal storm coat with white chalk-marked court crosses on shoulders",
+          "Riveted iron gorget with Admiralty tally-bars",
+          "Salt-crusted wading gaiters over iron-toed boots"
+        ],
+        "props": [
+          "Bailiff-Pioneer spike-halberd",
+          "Heavy stamped-brass toll lockbox strapped to hip",
+          "Chalk holster with cinnabar sticks"
+        ],
+        "palette_notes": "Dominated by dark basalt charcoal (#2d383a) with stark chalk white (#d8e2dc) overhead markings and rusted cinnabar (#d97736) rivets.",
+        "silhouette_notes": "Broad, armored square shoulders with a wide top-down helm rim and protruding polearm shaft.",
+        "avoid": [
+          "Draped cloth capes that obscure overhead shoulder markers",
+          "Bare arms or unreinforced nautical fabric"
+        ]
+      },
+      {
+        "rule_id": "salvage_diver_engineer",
+        "role_keywords": [
+          "diver",
+          "caisson",
+          "smuggler",
+          "hydraulic",
+          "submerged",
+          "excavator"
+        ],
+        "attire": [
+          "Greased leather diving harness with vulcanized rubber seals",
+          "Heavy lead ballast weight-belt",
+          "Mica-lensed diving hood draped down onto shoulders when unsealed"
+        ],
+        "props": [
+          "Silt-trench salvage pry crow",
+          "Flexible brass-coupled breathing hose coils",
+          "Waterproof iron sample cylinder"
+        ],
+        "palette_notes": "Deep sludge charcoal (#12181a) base accented with oxidized verdigris brass (#1b6b6c) and orange rust highlights (#d97736).",
+        "silhouette_notes": "Bulky rounded overhead silhouette dominated by the helmet dome, lead back-weight, and looped breathing lines.",
+        "avoid": [
+          "Loose flapping parchment or untethered cloth wraps",
+          "High-collared court mantles"
+        ]
+      },
+      {
+        "rule_id": "assay_master_notary",
+        "role_keywords": [
+          "assay",
+          "notary",
+          "registrar",
+          "clerk",
+          "engraver",
+          "architect",
+          "surveyor"
+        ],
+        "attire": [
+          "Stiff waxed twill tunic layered over ink-stained split-skirt aprons",
+          "Bandolier of calibrated plummet weights and seal chops",
+          "Brass-framed optical loupe or leveling sight strapped to brow"
+        ],
+        "props": [
+          "Admiralty brass-bound forfeiture ledger",
+          "Hydrostatic riprap plummet sinker",
+          "Theodolite leveling rod or soapstone engraving chisel"
+        ],
+        "palette_notes": "Dark slate grey (#2d383a) with prominent parchment highlight sheets (#d8e2dc) and polished brass trims.",
+        "silhouette_notes": "Narrower shoulder frame contrasted by an asymmetrical side-slung document satchel and brass measuring rig.",
+        "avoid": [
+          "Heavy combat pauldrons",
+          "Greasy full-body wading gear"
+        ]
+      },
+      {
+        "rule_id": "slipway_guild_fisher",
+        "role_keywords": [
+          "slipway",
+          "guild",
+          "fisher",
+          "syndic",
+          "warden",
+          "skiff",
+          "broker"
+        ],
+        "attire": [
+          "Oiled teal sailcloth smock with patched leather elbow and knee reinforcements",
+          "Coarse tarred rope belt holding netmending shuffles",
+          "Waterproof sou'wester cap or rolled wool watch-cap"
+        ],
+        "props": [
+          "Jointed sounding rod with copper tip",
+          "Brass guild strike horn",
+          "Braided hemp towline coil and net pouch"
+        ],
+        "palette_notes": "Rich maritime teal (#1b6b6c) dominant, bounded by dark shadow (#12181a) with ochre cordage trim (#d97736).",
+        "silhouette_notes": "Organic, rounded top-down form with flared waterproof brim and distinct diagonal rope coils crossing the torso.",
+        "avoid": [
+          "Admiralty court insignia",
+          "Clean bureaucratic coats and polished metal plates"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "littoral_citizen_default",
+      "role_keywords": [
+        "citizen",
+        "laborer",
+        "resident",
+        "trader",
+        "commoner"
+      ],
+      "attire": [
+        "Wax-dipped utility smock over salt-stained wool trousers",
+        "Tough leather shore-boots with barnacle scraper hooks",
+        "Tide-gauge brass collar token"
+      ],
+      "props": [
+        "Stout ash walking stave or salvage lever",
+        "Folded oilskin utility pouch"
+      ],
+      "palette_notes": "Muted slate dominant (#2d383a) with weathered teal undertones (#1b6b6c) and salt-bleached highlights (#d8e2dc).",
+      "silhouette_notes": "Compact 1:3 top-down token silhouette with defined shoulder yoke and minimal extraneous protrusions.",
+      "avoid": [
+        "Silks",
+        "Bright ceremonial sashes",
+        "Clean untarred textiles"
+      ]
+    },
+    "visual_consistency_rules": [
+      "Sprite resolution is strictly 64x64 pixels rendered from a 90-degree zenith orthographic top-down camera.",
+      "All character tokens must use a crisp 1px dark charcoal (#12181a) outer outline without alpha blending.",
+      "Role identification must be instantly legible from top-down through high-contrast shoulder markers: white chalk stoles for Admiralty, round brass gear for divers, diagonal rope lines for Guild.",
+      "Avoid micro-texturing and sub-pixel dithering; use solid, high-value contrast clusters to maintain readability against crushed basalt and turquoise water tilemaps.",
+      "Keep maximum token occupancy within a 48x48 pixel inner circle centered on the 64x64 canvas to avoid clipping during grid movement."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "ostraka_littoral_tribunal_canon",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degree_zenith_orthographic",
+      "scale_rule": "32px_per_meter_grid_aligned"
+    },
+    "palette": {
+      "dominant": "#2d383a",
+      "secondary": "#1b6b6c",
+      "accent": "#d97736",
+      "shadow": "#12181a",
+      "highlight": "#d8e2dc"
+    },
+    "materials": [
+      "salt_encrusted_oak_ribs",
+      "oxidized_riveted_iron",
+      "crushed_basalt_riprap",
+      "calcified_hydraulic_mortar",
+      "verdigris_brass_fittings"
+    ],
+    "lighting": "Harsh overcast zenith daylight casting minimal vertical shadows into shallow brine pools with specular glints on wet stone and iron.",
+    "architecture": [
+      "interred galleon hull revetments",
+      "chalk-gridded contraband riprap buttresses",
+      "elevated timber slipway ramps",
+      "heavy iron-plated court toll-gates"
+    ],
+    "terrain": {
+      "ground": "Crushed shell and wet basalt aggregate densely packed with half-submerged cargo crates",
+      "path": "Tarred oak planking and salt-bleached timber catwalks spanning seawall tiers",
+      "edge": "Sheer vertical bulkhead drops into surging turquoise tidepools and barnacle colonies"
+    },
+    "sprite_language": {
+      "body_proportion": "1:3 compact top-down tokens with wide shoulders and pronounced overhead gear silhouettes",
+      "outline": "1px solid dark charcoal (#12181a) edge contour",
+      "role_readability": "High-contrast overhead identification: white chalk stoles for bailiffs, oiled teal smocks for fishers, rust-rigged harnesses for salvage crews"
+    },
+    "world_prompt_prefix": "Strict top-down orthographic 2D game tilemap, Ostraka nautical brutalism, crushed ship hulls and iron lockboxes embedded in wet basalt seawalls, turquoise tidepools, crisp grid-aligned pixel assets,",
+    "sprite_prompt_prefix": "Strict top-down orthographic 2D character sprite, Ostraka littoral salvage setting, 1px dark silhouette boundary, top-down game token, clean pixel art,",
+    "forbidden_visuals": [
+      "isometric perspective",
+      "three-quarter angle",
+      "perspective distortion",
+      "photorealism",
+      "visible typography",
+      "text labels",
+      "card borders",
+      "diorama pedestal frames",
+      "lush green meadows",
+      "neon cyberpunk hues",
+      "smooth modern concrete"
+    ],
+    "canon_hash": "f3de789e09724d1e"
+  }
+}

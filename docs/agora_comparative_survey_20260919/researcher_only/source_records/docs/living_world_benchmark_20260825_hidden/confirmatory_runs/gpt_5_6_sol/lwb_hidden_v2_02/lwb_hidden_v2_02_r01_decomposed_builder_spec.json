@@ -1,0 +1,2577 @@
+{
+  "world_name": "The Verdant Line",
+  "world_id": "verdant_line",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "en-GB",
+    "tone": "hopeful, negotiative, and quietly tense",
+    "visual_direction": "A brass-and-glass railway greenhouse, living platform signs, seed drawers, damp timber, and crops changing visibly between stations.",
+    "currency_code": "LEAF",
+    "currency_symbol": "ℓ",
+    "currency_minor_unit": "seed",
+    "currency_name": "leaf credit",
+    "domain_label": "railway greenhouse stewardship",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "platform_allotment_office",
+        "name": "Platform Allotment Office",
+        "mandate": "Assign platform access according to documented crop-tending commitments for each journey segment.",
+        "decision_rule": "Release access slots only when every crop bay has enough named passengers covering its watering, pruning, pollination, and harvest windows.",
+        "enforced_by": "Conductors scan signed tending rosters at greenhouse gates and suspend access when duties are missed.",
+        "visible_output": "A public platform board showing unlocked destinations, assigned passengers, crops, and duty windows."
+      },
+      {
+        "institution_id": "carriage_horticultural_guild",
+        "name": "Carriage Horticultural Guild",
+        "mandate": "Keep the moving greenhouse healthy and certify that passenger care is competent.",
+        "decision_rule": "Approve a tending plan when crop-specific skills, tools, and labour overlap with each crop's needs.",
+        "enforced_by": "Guild gardeners inspect bays, issue training requirements, and quarantine neglected or diseased crops.",
+        "visible_output": "Colour-coded crop health tags, quarantine ribbons, and competency stamps on passenger tickets."
+      },
+      {
+        "institution_id": "railway_provision_council",
+        "name": "Railway Provision Council",
+        "mandate": "Balance harvested food, seed reserves, and route demand across stations.",
+        "decision_rule": "Allocate produce and leaf credits by verified labour, crop scarcity, and upcoming station shortages.",
+        "enforced_by": "Locked harvest cabinets, audited weighings, and withholding of seed or supply allocations.",
+        "visible_output": "A carriage ledger listing harvest shares, seed stocks, shortages, and station-bound crates."
+      },
+      {
+        "institution_id": "passenger_compact_assembly",
+        "name": "Passenger Compact Assembly",
+        "mandate": "Resolve disputes over burdensome crops, substitutions, and collective access priorities.",
+        "decision_rule": "A proposal passes with a two-thirds vote of passengers whose current duties or destinations would change.",
+        "enforced_by": "Signed compact amendments become binding roster instructions for conductors and guild gardeners.",
+        "visible_output": "Posted votes, amended duty swaps, appeals, and destination priorities."
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "crop_commitment_coverage",
+        "label": "Crop duty coverage",
+        "initial_tension": "Popular destinations attract promises, but difficult night duties and allergenic crops remain uncovered.",
+        "changed_by": [
+          "Passengers sign, trade, split, or abandon crop duties.",
+          "The assembly changes destination priorities or approves substitutions.",
+          "Guild training makes specialist duties available to more passengers."
+        ],
+        "affects": [
+          "Whether platform slots unlock.",
+          "How evenly labour is distributed.",
+          "Whether crops receive care at the correct time."
+        ]
+      },
+      {
+        "state_id": "greenhouse_crop_health",
+        "label": "Greenhouse crop health",
+        "initial_tension": "Several bays are thriving while delicate fruiting crops are close to stress during long segments.",
+        "changed_by": [
+          "Passengers water, prune, pollinate, treat, harvest, neglect, or mishandle assigned crops.",
+          "Guild gardeners quarantine disease or teach corrective care.",
+          "Route delays alter heat and watering schedules."
+        ],
+        "affects": [
+          "Harvest quantity and seed viability.",
+          "The number of bays requiring urgent labour.",
+          "Guild certification of tending plans."
+        ]
+      },
+      {
+        "state_id": "platform_access_capacity",
+        "label": "Available platform access",
+        "initial_tension": "Only destinations backed by complete tending rosters are open, leaving some passengers stranded from preferred stops.",
+        "changed_by": [
+          "The Platform Allotment Office unlocks or suspends slots after roster audits.",
+          "Passengers complete critical duties or negotiate replacement carers.",
+          "Crop quarantine changes which commitments count toward access."
+        ],
+        "affects": [
+          "Who may board, transfer, or disembark.",
+          "Demand for particular crop duties.",
+          "Crowding and bargaining power aboard the train."
+        ]
+      },
+      {
+        "state_id": "passenger_trust",
+        "label": "Passenger trust in agreements",
+        "initial_tension": "Travellers need one another to reach destinations but suspect others will abandon duties after gaining access.",
+        "changed_by": [
+          "Passengers fulfil promises, witness care, disclose conflicts, broker fair swaps, or default.",
+          "Institutions publish accurate or disputed records.",
+          "Harvest and access rewards are distributed consistently or unfairly."
+        ],
+        "affects": [
+          "Willingness to sign shared tending plans.",
+          "Acceptance of assembly decisions.",
+          "Ease of recruiting replacements for difficult crops."
+        ]
+      },
+      {
+        "state_id": "journey_provision_reserve",
+        "label": "Journey provision reserve",
+        "initial_tension": "Food is sufficient for the current run, but future segments depend on timely harvests and fair rationing.",
+        "changed_by": [
+          "Healthy crops are harvested and allocated.",
+          "Passengers consume, trade, preserve, donate, or conceal produce.",
+          "The Provision Council redirects crates toward station shortages."
+        ],
+        "affects": [
+          "Passenger stamina for tending duties.",
+          "Pressure to prioritise fast crops over diverse crops.",
+          "Leaf-credit rewards and bargaining stakes."
+        ]
+      },
+      {
+        "state_id": "seed_diversity",
+        "label": "Viable seed diversity",
+        "initial_tension": "The greenhouse carries many varieties, but scarce platform slots encourage passengers to favour easy, high-yield crops.",
+        "changed_by": [
+          "Passengers save mature seed, cross-pollinate varieties, consume seed stock, or replace difficult crops.",
+          "The Provision Council funds scarce varieties.",
+          "Crop disease or premature harvest destroys viable seed."
+        ],
+        "affects": [
+          "Which crops can be planted on later journeys.",
+          "Resilience to disease and changing station needs.",
+          "Future combinations of duties that can unlock access."
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "crop_commitment_coverage",
+        "trigger": "Passengers fill every time-sensitive duty for a destination's required crop bays.",
+        "target_state": "platform_access_capacity",
+        "effect": "The office unlocks additional boarding and transfer slots for that destination.",
+        "delay": "At the next roster audit before arrival."
+      },
+      {
+        "source_state": "crop_commitment_coverage",
+        "trigger": "A promised watering, pruning, or pollination window passes without a qualified carer.",
+        "target_state": "greenhouse_crop_health",
+        "effect": "Affected bays lose health and may require more specialised recovery duties.",
+        "delay": "Visible within one journey segment; severe damage appears after two."
+      },
+      {
+        "source_state": "greenhouse_crop_health",
+        "trigger": "Healthy crops reach their certified harvest window and passengers complete harvesting correctly.",
+        "target_state": "journey_provision_reserve",
+        "effect": "Edible stores and tradable harvest shares increase.",
+        "delay": "After weighing at the next staffed carriage checkpoint."
+      },
+      {
+        "source_state": "journey_provision_reserve",
+        "trigger": "Reserves fall below the council's next-segment requirement.",
+        "target_state": "crop_commitment_coverage",
+        "effect": "Hungry or fatigued passengers avoid demanding duties unless offered larger harvest shares.",
+        "delay": "During the following duty negotiation round."
+      },
+      {
+        "source_state": "passenger_trust",
+        "trigger": "Public records confirm that signatories completed duties and received the promised access.",
+        "target_state": "crop_commitment_coverage",
+        "effect": "More passengers accept shared and interdependent tending plans.",
+        "delay": "At the next platform negotiation."
+      },
+      {
+        "source_state": "platform_access_capacity",
+        "trigger": "New transfer slots bring aboard passengers with rare horticultural skills.",
+        "target_state": "greenhouse_crop_health",
+        "effect": "Specialist treatment becomes possible for fragile or quarantined bays.",
+        "delay": "One segment after those passengers board."
+      },
+      {
+        "source_state": "greenhouse_crop_health",
+        "trigger": "Passengers repeatedly favour rapid harvests and collect crops before seeds mature.",
+        "target_state": "seed_diversity",
+        "effect": "Fewer viable varieties remain for future planting.",
+        "delay": "Revealed when seed drawers are audited at journey's end."
+      },
+      {
+        "source_state": "seed_diversity",
+        "trigger": "Seed diversity declines below the needs of upcoming climates and station diets.",
+        "target_state": "platform_access_capacity",
+        "effect": "Fewer destination-compatible crop plans can be offered, reducing unlockable platform routes.",
+        "delay": "During planning for the next full railway circuit."
+      },
+      {
+        "source_state": "platform_access_capacity",
+        "trigger": "Access is suspended after defaults by a few highly connected passengers.",
+        "target_state": "passenger_trust",
+        "effect": "Stranded passengers question collective agreements and demand narrower, individually guaranteed duties.",
+        "delay": "Immediate dispute, with stronger effects at the next assembly vote."
+      },
+      {
+        "source_state": "journey_provision_reserve",
+        "trigger": "The council allocates surplus produce transparently to workers and food-short stations.",
+        "target_state": "passenger_trust",
+        "effect": "Passengers become more willing to accept difficult duties for delayed communal rewards.",
+        "delay": "After recipients and shipment weights are publicly verified."
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "destination_bound_passengers",
+        "name": "Destination-Bound Passengers",
+        "goal": "Unlock their required platforms with the least disruptive crop labour possible.",
+        "leverage": "They can sign, bundle, trade, or withhold the commitments needed to complete a destination roster.",
+        "dependency": "They need other passengers to cover incompatible duty times and need office approval for access."
+      },
+      {
+        "group_id": "mobile_growers_collective",
+        "name": "Mobile Growers' Collective",
+        "goal": "Protect crop health and preserve difficult varieties even when doing so slows access.",
+        "leverage": "Members possess rare tending skills and can certify practical duty swaps through guild standing.",
+        "dependency": "They need passengers for routine labour and council-controlled tools, seed, and harvest space."
+      },
+      {
+        "group_id": "station_provision_delegates",
+        "name": "Station Provision Delegates",
+        "goal": "Direct harvests toward food-short stations and prioritise routes carrying essential produce.",
+        "leverage": "They provide shortage forecasts, destination demand, storage rights, and favourable produce contracts.",
+        "dependency": "They need healthy harvests, unlocked unloading platforms, and passengers willing to tend station-specific crops."
+      },
+      {
+        "group_id": "independent_access_brokers",
+        "name": "Independent Access Brokers",
+        "goal": "Profit by assembling crop-duty coalitions and reselling scarce access opportunities.",
+        "leverage": "They coordinate fragmented schedules, offer leaf-credit advances, and rapidly recruit replacement carers.",
+        "dependency": "They need trustworthy roster information, enforceable duty transfers, and persistent scarcity of platform slots."
+      }
+    ]
+  },
+  "genre": "Cooperative botanical railway simulation with negotiation and light institutional drama",
+  "premise": "A travelling greenhouse railway unlocks platform access only when passengers collectively agree to tend specific crops throughout each journey.",
+  "simulation_objective": "Negotiate credible tending rosters, keep crops and seed lines alive, distribute harvests, and expand access without exhausting trust or labour.",
+  "agent_count_target": 12,
+  "player_count_target": 24,
+  "wall_color_theme": "green_enamel_brass_ribbed_glass",
+  "economy_focus": "Labour-backed platform access, crop yields, seed scarcity, produce allocation, and leaf-credit contracts.",
+  "exploration_focus": "Unlocking stations and route branches by forming destination-specific crop-care agreements.",
+  "conflict_tone": "Nonviolent bargaining, defaults, rationing disputes, ecological trade-offs, and contested collective rules.",
+  "visual_style": "Luminous solarpunk railcars with Victorian greenhouse geometry, tactile paper ledgers, enamel signs, and visibly evolving plant bays.",
+  "rooms": [
+    {
+      "name": "Allotment Roster Office",
+      "biome": "glass-roofed administrative railcar",
+      "purpose": "The Platform Allotment Office audits named watering, pruning, pollination, and harvest coverage. Crop commitment coverage changes here; approved rosters unlock the Living Route Gate afterward, while rejected plans return to the Compact Negotiation Platform.",
+      "decor_tags": [
+        "roster_lattice",
+        "fold_down_ledger_desks",
+        "brass_ticket_scanners",
+        "cream_ledger_panes",
+        "green_enamel_cabinets"
+      ],
+      "activity_tags": [
+        "audit_tending_rosters",
+        "assign_platform_slots",
+        "suspend_access",
+        "verify_duty_windows"
+      ],
+      "flux_floor_prompt": "Seamless crunchy 16-bit pixel-art floor texture, strict orthographic top-down, damp dark timber planks crossed by thin aged-brass roster-lattice inlays, compact shadows, five-colour palette #234D3C #79A85A #C49A45 #172B2A #DCE8C5 only, texture fills the full rectangle edge to edge, no text or symbols resembling writing.",
+      "room_scene_prompt": "The Verdant Line Allotment Roster Office, a map-embedded rectangular administrative railcar in strict orthographic top-down view. Damp timber aisle, ribbed greenhouse-glass edges, repeating brass ribs, fold-down ledger desks, roster-lattice fixtures, enamel access scanners and crop-token slots make platform auditing immediately legible. Continuous floor and thin wall transitions reach all four image edges for direct placement on a 32x32-per-tile map. Crunchy pixel art, compact shadows, five-colour canon only. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 6,
+      "height_tiles": 10,
+      "ambient_palette": "soft_mint",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "roster_lattice_console",
+          "label": "Roster Lattice Console",
+          "description": "Brass lattice holding icon-only crop tokens and four duty-window shutters, with a green enamel scan plate.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "access_slot_releaser",
+          "label": "Access Slot Releaser",
+          "description": "Locked enamel mechanism feeding approved brass leaf tokens toward the route gate.",
+          "anchor": "south_east",
+          "width_tiles": 1,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Compact Negotiation Platform",
+      "biome": "covered greenhouse station platform",
+      "purpose": "Destination-bound passengers and independent access brokers bundle, split, trade, or abandon crop duties here. Passenger trust and crop commitment coverage change during witnessed bargains; the Allotment Roster Office later audits the resulting token bundles.",
+      "decor_tags": [
+        "crop_token_rails",
+        "broker_ticket_fans",
+        "destination_leaf_inlays",
+        "brass_junction_strips",
+        "woven_fibre_benches"
+      ],
+      "activity_tags": [
+        "negotiate_duties",
+        "broker_replacements",
+        "bundle_commitments",
+        "advance_leaf_credits"
+      ],
+      "flux_floor_prompt": "Crunchy top-down 16-bit pixel-art platform floor, two-tile damp dark timber circulation aisle with aged-brass junction strips and destination-specific leaf silhouette inlays, bounded palette #234D3C #79A85A #C49A45 #172B2A #DCE8C5 only, seamless material reaches every edge, no readable writing.",
+      "room_scene_prompt": "The Verdant Line Compact Negotiation Platform, a map-embedded rectangular covered platform in strict orthographic top-down view. A broad damp-timber aisle, brass leaf-direction inlays, crop-token exchange rails, broker ticket fans, woven plant-fibre waiting benches and clipped greenhouse corners support visible coalition bargaining. Connective floor and wall transitions continue to all four image edges, suitable for compression onto a 32x32-per-tile map. Crunchy pixel art, tile-legible props, no disconnected diorama. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 10,
+      "height_tiles": 12,
+      "ambient_palette": "clear_day",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "duty_bundle_rail",
+          "label": "Duty Bundle Rail",
+          "description": "Brass rail where crop silhouettes and watering, pruning, pollination, and harvest icons are physically grouped.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 1
+        },
+        {
+          "component_id": "leaf_credit_escrow_fan",
+          "label": "Leaf-Credit Escrow Fan",
+          "description": "Green enamel carousel securing brass leaf tokens until replacement carers complete assigned work.",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Guild Crop Inspection Car",
+      "biome": "humid diagnostic greenhouse railcar",
+      "purpose": "The Carriage Horticultural Guild inspects crop health, certifies skills, and quarantines neglected bays. Greenhouse crop health changes here through diagnosis and treatment; certified findings determine whether the Allotment Roster Office counts duties and whether specialists train in the Practice Car.",
+      "decor_tags": [
+        "grafted_leaf_symbols",
+        "quarantine_fibre_ribbons",
+        "tool_rails",
+        "glass_specimen_trays",
+        "health_tag_clips"
+      ],
+      "activity_tags": [
+        "inspect_crops",
+        "quarantine_bays",
+        "certify_competency",
+        "prescribe_recovery_labour"
+      ],
+      "flux_floor_prompt": "Crunchy strict top-down pixel-art floor of damp dark timber with inset ribbed greenhouse-glass specimen panels, aged-brass drainage channels and compact #172B2A shadows, five-colour canon only, full rectangular edge-to-edge texture, no text, no gradients.",
+      "room_scene_prompt": "The Verdant Line Guild Crop Inspection Car, a map-embedded rectangular diagnostic greenhouse room in strict orthographic top-down view. Brass ribs divide inspection lanes around terracotta specimen beds, grafted-leaf fixtures, icon-only crop-health clips, quarantine ribbons, cistern taps and precise tool rails. Damp timber and glass floor transitions extend fully to all four image edges for direct map pasting at 32x32 pixels per tile. Crunchy five-colour pixel art with compact shadows. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 6,
+      "height_tiles": 12,
+      "ambient_palette": "soft_mint",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "crop_health_inspection_frame",
+          "label": "Crop Health Inspection Frame",
+          "description": "Brass frame surrounding a terracotta test bed with movable leaf-state shutters from thriving to stressed.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "quarantine_ribbon_spindle",
+          "label": "Quarantine Ribbon Spindle",
+          "description": "Woven-fibre ribbon drum beside an enamel seal press bearing the grafted-leaf symbol.",
+          "anchor": "north_east",
+          "width_tiles": 1,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Horticultural Practice Car",
+      "biome": "training greenhouse railcar",
+      "purpose": "Guild gardeners teach passengers scarce pollination, pruning, and disease-care skills. Successful practice expands crop commitment coverage by qualifying more carers; the Guild Crop Inspection Car then certifies them and the Fruiting Bay receives specialist labour one segment later.",
+      "decor_tags": [
+        "practice_espaliers",
+        "tool_silhouettes",
+        "training_cisterns",
+        "grafted_leaf_badges",
+        "terracotta_beds"
+      ],
+      "activity_tags": [
+        "train_pollination",
+        "practice_pruning",
+        "learn_watering",
+        "qualify_specialists"
+      ],
+      "flux_floor_prompt": "Strict top-down crunchy 16-bit pixel-art training floor, damp timber planks with repeated aged-brass one-metre practice-grid corners, small terracotta scuff marks and greenhouse-glass drainage strips, palette #234D3C #79A85A #C49A45 #172B2A #DCE8C5 only, fills every edge, no writing.",
+      "room_scene_prompt": "The Verdant Line Horticultural Practice Car, a map-embedded rectangular training railcar in strict orthographic top-down view. Tile-aligned terracotta practice beds show pruning forms, hand-pollination stations, measured cistern taps, tool rails and low espalier frames beneath repeating brass greenhouse ribs. Keep a clear two-tile central aisle and make all tools readable at map scale. Floor and thin walls reach all four image edges for direct 32x32-per-tile placement. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 6,
+      "height_tiles": 11,
+      "ambient_palette": "clear_day",
+      "archetype": "training",
+      "scene_components": [
+        {
+          "component_id": "pollination_practice_espalier",
+          "label": "Pollination Practice Espalier",
+          "description": "Low brass trellis carrying oversized flowering crop forms and removable woven-fibre pollen pads.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "timed_cistern_trainer",
+          "label": "Timed Cistern Trainer",
+          "description": "Green enamel cistern with four icon valves for calibrated watering drills.",
+          "anchor": "south_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Delicate Fruiting Bay",
+      "biome": "moving orchard greenhouse car",
+      "purpose": "Passengers perform time-sensitive watering, pruning, and pollination while the Mobile Growers' Collective protects difficult varieties. Greenhouse crop health changes directly here; healthy harvests move to the Provision Weighing Car, while missed duties create quarantines in the Guild Crop Inspection Car.",
+      "decor_tags": [
+        "flowering_espaliers",
+        "fruiting_bays",
+        "stress_markers",
+        "drip_cisterns",
+        "dark_timber_aisle"
+      ],
+      "activity_tags": [
+        "water_crops",
+        "hand_pollinate",
+        "prune_vines",
+        "recover_stressed_plants",
+        "harvest_fruit"
+      ],
+      "flux_floor_prompt": "Crunchy strict top-down pixel-art greenhouse flooring, central two-tile damp dark timber aisle with aged-brass junction strips, alternating terracotta planted-bay edges and ribbed glass drainage tiles, compact foliage shadows, canon five colours only, rectangular texture fills edge to edge, no text.",
+      "room_scene_prompt": "The Verdant Line Delicate Fruiting Bay, a map-embedded rectangular productive greenhouse railcar in strict orthographic top-down view. A continuous two-tile timber aisle passes alternating flowering, fruiting and visibly stressed terracotta beds, brass espalier frames, drip cisterns, woven support ties and harvest catches. Plant states are distinct through silhouettes and canon colours, with no writing. Floor, beds and greenhouse wall transitions reach all four image edges for direct compression onto a 32x32-per-tile map. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 6,
+      "height_tiles": 16,
+      "ambient_palette": "soft_mint",
+      "archetype": "commons",
+      "scene_components": [
+        {
+          "component_id": "fragile_fruit_espalier",
+          "label": "Fragile Fruit Espalier",
+          "description": "Brass trellis bearing flowering and fruiting silhouettes with several curled stress leaves and hand-pollination cups.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        },
+        {
+          "component_id": "segment_drip_cistern",
+          "label": "Segment Drip Cistern",
+          "description": "Green enamel water vessel feeding four tile-aligned crop bays through brass channels.",
+          "anchor": "north_west",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Provision Weighing Car",
+      "biome": "secured harvest accounting railcar",
+      "purpose": "The Railway Provision Council audits harvests and allocates produce, seed, and leaf credits by verified labour and scarcity. Journey provision reserve and passenger trust change here; transparent shares reach the Delegate Dispatch Platform, while withheld seed moves to the Seed Reserve Archive.",
+      "decor_tags": [
+        "balance_basket_symbol",
+        "locked_harvest_cabinets",
+        "brass_scales",
+        "produce_chutes",
+        "ledger_panes"
+      ],
+      "activity_tags": [
+        "weigh_harvests",
+        "allocate_produce",
+        "issue_leaf_credits",
+        "audit_labour_shares"
+      ],
+      "flux_floor_prompt": "Crunchy strict orthographic top-down pixel-art floor, reinforced damp timber decking with aged-brass weighing-grid strips, dark compact cabinet shadows and sparse woven-fibre chaff, five-colour canon only, seamless edge-to-edge rectangle, no numerals or writing.",
+      "room_scene_prompt": "The Verdant Line Provision Weighing Car, a map-embedded rectangular secured accounting railcar in strict orthographic top-down view. Large balance-basket apparatus, tile-aligned produce chutes, locked green-enamel harvest cabinets, brass leaf-credit dispensers and fold-down ledger panes make audited allocation visible. Maintain a clear two-tile timber aisle and compact under-prop shadows. Floor and wall materials run to all four image edges for map insertion at 32x32 pixels per tile. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 6,
+      "height_tiles": 11,
+      "ambient_palette": "focused_blue",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "audited_balance_basket",
+          "label": "Audited Balance Basket",
+          "description": "Twin woven harvest baskets suspended from an aged-brass beam above crop and labour-token sockets.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "locked_share_cabinet",
+          "label": "Locked Share Cabinet",
+          "description": "Green enamel cabinet with separate icon-shaped compartments for food, seed, station shipment, and leaf credits.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Seed Reserve Archive",
+      "biome": "cool dry seed-library railcar",
+      "purpose": "Scarce varieties are dried, audited, and stored here under Provision Council control. Seed diversity changes when mature seed is saved or drawers are depleted; the Route Planning Gate later loses destination-compatible crop options when this archive lacks the required silhouettes.",
+      "decor_tags": [
+        "seed_drawer_grids",
+        "scarcity_leaf_symbols",
+        "drying_mesh",
+        "locked_germination_cabinet",
+        "cream_audit_panes"
+      ],
+      "activity_tags": [
+        "save_mature_seed",
+        "audit_varieties",
+        "test_germination",
+        "release_scarce_seed"
+      ],
+      "flux_floor_prompt": "Crunchy top-down 16-bit pixel-art archive floor, dry dark timber boards with fine aged-brass drawer-grid inlays and restrained cream ledger-paper inspection patches, palette #234D3C #79A85A #C49A45 #172B2A #DCE8C5 only, full edge-to-edge rectangle, no readable marks.",
+      "room_scene_prompt": "The Verdant Line Seed Reserve Archive, a map-embedded rectangular cool seed-library railcar in strict orthographic top-down view. Dense built-in seed-drawer grids, woven drying mesh, brass germination trays, locked enamel reserve cabinets and crop-silhouette handles convey variety scarcity without writing. A narrow central aisle connects continuously through the railcar. Usable timber floor and thin wall transitions touch all four image edges for direct 32x32-per-tile map placement. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 6,
+      "height_tiles": 10,
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "viable_seed_drawer_wall",
+          "label": "Viable Seed Drawer Wall",
+          "description": "Tile-wide grid of shallow drawers with distinct crop-silhouette brass pulls and several visibly empty sockets.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        },
+        {
+          "component_id": "germination_test_cabinet",
+          "label": "Germination Test Cabinet",
+          "description": "Locked green enamel case containing damp glass trays at seedling stages under a brass leaf gauge.",
+          "anchor": "south_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Passenger Compact Assembly Car",
+      "biome": "civic greenhouse carriage",
+      "purpose": "The Passenger Compact Assembly resolves burden disputes, substitutions, duty swaps, and destination priorities by a two-thirds affected-passenger vote. Passenger trust and crop commitment coverage change here; binding rosette tokens travel to the Allotment Roster Office and alter which routes the Living Route Gate can open.",
+      "decor_tags": [
+        "circular_vote_rosette",
+        "delegate_satchel_hooks",
+        "duty_swap_tracks",
+        "witness_benches",
+        "brass_quorum_ring"
+      ],
+      "activity_tags": [
+        "debate_burdens",
+        "vote_on_substitutions",
+        "amend_compacts",
+        "hear_appeals"
+      ],
+      "flux_floor_prompt": "Crunchy strict top-down pixel-art civic floor, radial aged-brass vote-rosette inlay set into damp dark timber, clipped greenhouse-glass corners and compact shadows, only #234D3C #79A85A #C49A45 #172B2A #DCE8C5, texture fills all edges, no letters or numerals.",
+      "room_scene_prompt": "The Verdant Line Passenger Compact Assembly Car, a map-embedded rectangular civic railcar in strict orthographic top-down view. A circular brass vote rosette occupies the timber floor, surrounded by compact woven benches, affected-duty token tracks, delegate satchel hooks and an enamel amendment press. The railcar remains connected through north and south aisles rather than appearing as an isolated chamber. Floor and greenhouse wall transitions extend to all four image edges for 32x32-per-tile use. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 8,
+      "height_tiles": 10,
+      "ambient_palette": "warm_lantern",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "two_thirds_vote_rosette",
+          "label": "Two-Thirds Vote Rosette",
+          "description": "Circular brass floor mechanism with three leaf sectors and movable passenger crop tokens indicating collective assent.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        },
+        {
+          "component_id": "binding_amendment_press",
+          "label": "Binding Amendment Press",
+          "description": "Green enamel press that embosses icon-only duty-swap panes for conductors and guild gardeners.",
+          "anchor": "north_east",
+          "width_tiles": 1,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Delegate Dispatch Platform",
+      "biome": "produce transfer platform under glass",
+      "purpose": "Station Provision Delegates compare shortage forecasts, secure storage rights, and direct station-bound harvests. Journey provision reserve is distributed here; verified deliveries raise passenger trust at the Compact Negotiation Platform, while delayed shipments pressure the Provision Weighing Car to ration future shares.",
+      "decor_tags": [
+        "station_crop_silhouettes",
+        "balance_basket_markers",
+        "produce_transfer_rails",
+        "insulated_cabinets",
+        "leaf_contract_clips"
+      ],
+      "activity_tags": [
+        "route_produce",
+        "verify_shipments",
+        "negotiate_storage",
+        "prioritise_shortages"
+      ],
+      "flux_floor_prompt": "Crunchy strict top-down pixel-art transfer-platform floor, damp dark timber with broad aged-brass loading rails, leaf-shaped station junction inlays and ribbed glass edge strips, five-colour canon only, edge-to-edge seamless rectangle, no readable writing.",
+      "room_scene_prompt": "The Verdant Line Delegate Dispatch Platform, a map-embedded rectangular produce-transfer platform in strict orthographic top-down view. Brass loading rails connect locked harvest cabinets to crop-silhouette destination gates; station delegates use shortage-token trees, insulated green-enamel carriers and balance-basket seals. Keep clear two-tile circulation lanes and explicit collision edges. Platform floor and greenhouse transitions continue to all four image edges for direct map pasting. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 10,
+      "height_tiles": 10,
+      "ambient_palette": "clear_day",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "shortage_token_tree",
+          "label": "Shortage Token Tree",
+          "description": "Brass branching stand holding station leaf silhouettes and removable crop-demand tokens, with no writing.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 3
+        },
+        {
+          "component_id": "station_dispatch_chute",
+          "label": "Station Dispatch Chute",
+          "description": "Green enamel transfer chute accepting sealed harvest baskets only when matching destination leaves align.",
+          "anchor": "east_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Living Route Gate",
+      "biome": "espalier access checkpoint",
+      "purpose": "Conductors enforce labour-backed boarding, transfer, and disembarkation through destination-specific living gates. Platform access capacity changes here when roster tokens are accepted or suspended; newly admitted specialists reach the Guild Crop Inspection Car, while stranded passengers return immediately to negotiation or assembly.",
+      "decor_tags": [
+        "living_espalier_signs",
+        "icon_only_enamel_signals",
+        "conductor_scanners",
+        "brass_platform_rails",
+        "leaf_slot_barriers"
+      ],
+      "activity_tags": [
+        "scan_roster_tokens",
+        "unlock_platform_access",
+        "suspend_transfers",
+        "admit_specialists"
+      ],
+      "flux_floor_prompt": "Crunchy strict orthographic top-down pixel-art checkpoint floor, two-tile dark timber lane with aged-brass threshold strips, living leaf inlays and ribbed greenhouse-glass border tiles, palette #234D3C #79A85A #C49A45 #172B2A #DCE8C5 only, fills rectangle edge to edge, no text.",
+      "room_scene_prompt": "The Verdant Line Living Route Gate, a map-embedded rectangular access checkpoint in strict orthographic top-down view. Destination-specific espalier arches cross brass threshold rails, paired conductor roster scanners face icon-only enamel signals, and leaf-slot barriers visibly open or close transfer lanes. Maintain continuous platform geometry, explicit collision edges and compact foliage shadows. Floor, rails and thin greenhouse walls reach all four image edges for direct 32x32-per-tile map insertion. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 8,
+      "height_tiles": 8,
+      "ambient_palette": "clear_day",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "destination_espalier_gate",
+          "label": "Destination Espalier Gate",
+          "description": "Living brass-supported hedge gate whose clipped leaf silhouette changes to match an approved destination crop plan.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "conductor_roster_scanner",
+          "label": "Conductor Roster Scanner",
+          "description": "Green enamel pedestal accepting embossed crop-duty panes and releasing a single brass threshold latch.",
+          "anchor": "west_mid",
+          "width_tiles": 1,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Maelin Voss-of-the-Dew",
+      "role_name": "Night-Bay Recovery Tender",
+      "activity": "Restores stressed fruiting bays for the Carriage Horticultural Guild, improving greenhouse_crop_health while depending on destination-bound passengers to cover daylight duties.",
+      "home_base": "Delicate Fruiting Bay",
+      "arc_goal": "Convince the Passenger Compact Assembly to protect recovery windows, raising crop_commitment_coverage without sacrificing seed_diversity for platform access.",
+      "inventory": [
+        {
+          "name": "Moonwick Irrigation Siphon",
+          "description": "Braided reed siphon calibrated for silent, low-pressure night watering.",
+          "quantity": 1
+        },
+        {
+          "name": "Voss Dew-Salt Ampoules",
+          "description": "Family-mixed mineral doses for reviving heat-stressed fruiting vines.",
+          "quantity": 6
+        },
+        {
+          "name": "Blue Moth Pollination Hood",
+          "description": "Indigo mesh hood that keeps pollen isolated during hand crosses.",
+          "quantity": 1
+        },
+        {
+          "name": "Whisper Fig Splints",
+          "description": "Steam-bent slivers supporting fruit-heavy stems against carriage sway.",
+          "quantity": 12
+        },
+        {
+          "name": "Condensation Bell Set",
+          "description": "Three glass bells that chime at dangerous humidity thresholds.",
+          "quantity": 1
+        },
+        {
+          "name": "Night-Tomato Lineage Cord",
+          "description": "Knotted green cord recording seven generations of saved seed.",
+          "quantity": 1
+        },
+        {
+          "name": "Feverleaf Poultice Tin",
+          "description": "Antifungal leaf paste approved for emergency guild treatment.",
+          "quantity": 2
+        },
+        {
+          "name": "Segment-Dark Eye Salve",
+          "description": "Cooling salve used after prolonged work beneath violet grow lamps.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Dew Family Recovery Bench",
+          "asset_type": "specialist_workstation",
+          "description": "A sway-braced bench fitted with capillary trays and shaded graft cradles.",
+          "story_use": "Permits recovery trials that can clear a fragile bay before a roster audit."
+        },
+        {
+          "asset_name": "Violet Window Custodianship",
+          "asset_type": "duty_right",
+          "description": "Recognised authority over one night-lit pollination window per segment.",
+          "story_use": "Gives Maelin leverage in duty swaps and disputes over delicate crops."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "maelin_stress_bloom_map",
+          "topic": "Fruiting-bay stress blooms",
+          "summary": "Recognises the colour sequence preceding blossom drop under route heat and vibration.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "maelin_hidden_crosses",
+          "topic": "Unregistered night-tomato crosses",
+          "summary": "Knows which archive lots contain resilient hybrids omitted from the public seed count.",
+          "confidence": 76
+        }
+      ]
+    },
+    {
+      "display_name": "Tavren Coil",
+      "role_name": "Shortage-Crate Weighmaster",
+      "activity": "Audits harvest shares for the Railway Provision Council, changing journey_provision_reserve and passenger_trust while relying on station delegates for credible shortage forecasts.",
+      "home_base": "Provision Weighing Car",
+      "arc_goal": "Expose manipulated station-bound weights and make transparent allocations improve passenger_trust without exhausting seed_diversity.",
+      "inventory": [
+        {
+          "name": "Coil Counterweight Necklace",
+          "description": "Graduated brass weights worn as a chain for checking carriage scales.",
+          "quantity": 1
+        },
+        {
+          "name": "Pearbarley Moisture Needle",
+          "description": "Bone-handled probe estimating spoilage risk inside ration loaves.",
+          "quantity": 1
+        },
+        {
+          "name": "Crate-Echo Mallet",
+          "description": "Hollowwood mallet revealing concealed compartments by resonance.",
+          "quantity": 1
+        },
+        {
+          "name": "Red Silt Calibration Pouch",
+          "description": "Sealed station soil of certified mass for testing weigh cradles.",
+          "quantity": 3
+        },
+        {
+          "name": "Provisioner's Thumb Guards",
+          "description": "Waxed leather guards used while binding wire around audited crates.",
+          "quantity": 1
+        },
+        {
+          "name": "Seven-Station Hunger Almanac",
+          "description": "Annotated booklet tracking seasonal shortages along the Verdant Line.",
+          "quantity": 1
+        },
+        {
+          "name": "Glassbean Brine Taster",
+          "description": "Silver capillary spoon for detecting diluted preservation brine.",
+          "quantity": 1
+        },
+        {
+          "name": "Witness-Knot Twine",
+          "description": "Green-and-copper twine cut only when both shipper and weigher attend.",
+          "quantity": 9
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Coil Verified Crate Rack",
+          "asset_type": "secured_storage",
+          "description": "A lock-bar rack reserved for weighed shipments bearing paired witness knots.",
+          "story_use": "Protects disputed provisions until the council publishes an allocation ruling."
+        },
+        {
+          "asset_name": "Seven-Station Weight Covenant",
+          "asset_type": "audit_authority",
+          "description": "A delegated right to challenge any shipment whose mass conflicts with shortage records.",
+          "story_use": "Lets Tavren halt lucrative diversions at the cost of delayed unloading."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "tavren_tare_signatures",
+          "topic": "Carriage-crate tare fraud",
+          "summary": "Identifies workshops by the hidden excess mass in their crate joinery.",
+          "confidence": 91
+        },
+        {
+          "knowledge_id": "tavren_shortage_variance",
+          "topic": "Station demand discrepancies",
+          "summary": "Knows which delegates routinely exaggerate forecasts to secure surplus food.",
+          "confidence": 83
+        }
+      ]
+    },
+    {
+      "display_name": "Ilyra Pennant",
+      "role_name": "Seed-Lineage Archive Witness",
+      "activity": "Authenticates rare lots for the Railway Provision Council, directly protecting seed_diversity while depending on the Mobile Growers' Collective to produce mature, viable seed.",
+      "home_base": "Seed Reserve Archive",
+      "arc_goal": "Prove that premature harvest contracts are collapsing seed_diversity and persuade the Platform Allotment Office to reward destination-compatible heritage crops.",
+      "inventory": [
+        {
+          "name": "Amber Drawer Listening Rod",
+          "description": "Resonant glass rod used to detect beetle movement in sealed seed drawers.",
+          "quantity": 1
+        },
+        {
+          "name": "Pennant Germination Quilt",
+          "description": "Patchwork felt carrying labelled pockets for controlled sprouting tests.",
+          "quantity": 1
+        },
+        {
+          "name": "Marsh-Fennel Memory Vial",
+          "description": "A family rootstock sample preserved in mineral gel for comparison.",
+          "quantity": 1
+        },
+        {
+          "name": "Pollen-Fingerprint Slides",
+          "description": "Smoke-darkened mica slips retaining distinctive grains from disputed crosses.",
+          "quantity": 14
+        },
+        {
+          "name": "Archive Breath Mask",
+          "description": "Linen-and-charcoal mask protecting old seed from moisture and the wearer from spores.",
+          "quantity": 1
+        },
+        {
+          "name": "Viability Tapstones",
+          "description": "Paired river pebbles used in a traditional acoustic seed test.",
+          "quantity": 2
+        },
+        {
+          "name": "Scarcity Ink Cakes",
+          "description": "Purple botanical ink reserved for marking endangered lineages.",
+          "quantity": 4
+        },
+        {
+          "name": "Drawer-Moth Lure Box",
+          "description": "Cedar box baited with sterile husks to reveal archive infestations.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Pennant Lineage Cabinet",
+          "asset_type": "heritage_seed_vault",
+          "description": "A narrow amberglass cabinet holding witnessed samples from climate-sensitive varieties.",
+          "story_use": "Provides evidence when easy-yield advocates attempt to erase a difficult crop line."
+        },
+        {
+          "asset_name": "Double-Witness Germination Rite",
+          "asset_type": "certification_protocol",
+          "description": "An archive procedure requiring one grower and one unaffiliated passenger to observe viability.",
+          "story_use": "Can validate scarce seed, delay allocations, or reveal falsified diversity counts."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "ilyra_pollen_genealogy",
+          "topic": "Verdant Line crop genealogy",
+          "summary": "Matches pollen morphology to heritage varieties and likely parent crosses.",
+          "confidence": 96
+        },
+        {
+          "knowledge_id": "ilyra_drawer_discrepancy",
+          "topic": "Missing reserve seed",
+          "summary": "Has traced repeated inventory losses to lots released before route-planning audits.",
+          "confidence": 72
+        }
+      ]
+    },
+    {
+      "display_name": "Brask Lumen",
+      "role_name": "Fourfold Roster Broker",
+      "activity": "Bundles duty coalitions for independent access brokers, changing crop_commitment_coverage and platform_access_capacity while depending on enforceable transfers from the Platform Allotment Office.",
+      "home_base": "Compact Negotiation Platform",
+      "arc_goal": "Turn a distrusted access bundle into a binding Passenger Compact Assembly standard that raises passenger_trust while preserving his brokerage leverage.",
+      "inventory": [
+        {
+          "name": "Lumen Shift-Abacus",
+          "description": "Four-rail pocket abacus aligning watering, pruning, pollination, and harvest windows.",
+          "quantity": 1
+        },
+        {
+          "name": "Platform Whisper Fan",
+          "description": "Folded route map whose coded creases signal available duty swaps.",
+          "quantity": 1
+        },
+        {
+          "name": "Broker's Copper Raincoat",
+          "description": "Short waterproof coat lined with concealed roster-document sleeves.",
+          "quantity": 1
+        },
+        {
+          "name": "Default Bell Pair",
+          "description": "Matched finger bells rung when a signatory misses a transfer deadline.",
+          "quantity": 2
+        },
+        {
+          "name": "Sway-Time Sand Capsule",
+          "description": "Magnetic sand timer corrected for acceleration between stations.",
+          "quantity": 1
+        },
+        {
+          "name": "Coalition Seal Wax",
+          "description": "Striped wax showing all four crop duties in distinct botanical pigments.",
+          "quantity": 5
+        },
+        {
+          "name": "Last-Slot Mourning Ribbon",
+          "description": "Black-green sash worn when an audit suspends a promised destination.",
+          "quantity": 1
+        },
+        {
+          "name": "Reciprocity Nut Tokens",
+          "description": "Carved orchard pits recording small, unwritten passenger obligations.",
+          "quantity": 18
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Lumen Fourfold Exchange Board",
+          "asset_type": "negotiation_infrastructure",
+          "description": "A portable magnetic board displaying linked duties, deadlines, and replacement carers.",
+          "story_use": "Rapidly completes rosters but publicly exposes whose withdrawal would close a platform."
+        },
+        {
+          "asset_name": "Contingent Slot Syndicate",
+          "asset_type": "access_contract",
+          "description": "A compact tying several platform claims to one insured replacement pool.",
+          "story_use": "Can unlock crowded routes or strand every member after a coordinated default."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "brask_roster_bottlenecks",
+          "topic": "Platform duty bottlenecks",
+          "summary": "Predicts which unfilled duty will command the highest price before each audit.",
+          "confidence": 93
+        },
+        {
+          "knowledge_id": "brask_private_defaults",
+          "topic": "Passenger reliability network",
+          "summary": "Maintains coded histories of defaults, substitutions, and concealed schedule conflicts.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Senn Arclasp",
+      "role_name": "Compact Burden Cartographer",
+      "activity": "Maps whose destinations and duty windows change under Passenger Compact Assembly amendments, shifting crop_commitment_coverage while depending on Destination-Bound Passengers to disclose hidden schedule conflicts.",
+      "home_base": "Passenger Compact Assembly Car",
+      "arc_goal": "Make the Passenger Compact Assembly adopt a witnessed burden index that raises passenger_trust without letting Independent Access Brokers monopolise platform_access_capacity.",
+      "inventory": [
+        {
+          "name": "Inkroot Burden Compass",
+          "description": "A four-needle dial comparing night work, allergen exposure, lost stops, and specialist risk.",
+          "quantity": 1
+        },
+        {
+          "name": "Folded Quorum Fan",
+          "description": "Pleated vine-paper fan marked with two-thirds voting thresholds for changing constituencies.",
+          "quantity": 1
+        },
+        {
+          "name": "Witness-Knot Waistcord",
+          "description": "Green cord carrying distinct knots for amendments personally witnessed aboard the line.",
+          "quantity": 1
+        },
+        {
+          "name": "Chalk of Reversible Promises",
+          "description": "Pale carriage chalk that fades only after the corresponding duty window closes.",
+          "quantity": 3
+        },
+        {
+          "name": "Pressed Nettle Fingerstalls",
+          "description": "Protective tips used when sorting allergen declarations and pollen-duty appeals.",
+          "quantity": 6
+        },
+        {
+          "name": "Bellglass Speaking Token",
+          "description": "A tiny resonant disc granting its holder one uninterrupted assembly statement.",
+          "quantity": 1
+        },
+        {
+          "name": "Disputed-Duty Palimpsest",
+          "description": "Reusable leafskin sheet bearing traces of previously overturned roster clauses.",
+          "quantity": 1
+        },
+        {
+          "name": "Pearbarley Debate Lozenge",
+          "description": "Dense ration sweet reserved for assembly sessions extending through meal bells.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Rotating Burden Mosaic",
+          "asset_type": "assembly installation",
+          "description": "A tile map showing which passengers absorb each amendment's time, health, and destination costs.",
+          "story_use": "Reveals concealed voting interests and can legitimise or derail a duty swap."
+        },
+        {
+          "asset_name": "Minority Appeal Pigeonholes",
+          "asset_type": "record cabinet",
+          "description": "Narrow numbered drawers preserving objections excluded from passed compact amendments.",
+          "story_use": "Provides evidence when an amendment worsens trust or strands a dissenting passenger."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "senn_changed_voter_map",
+          "topic": "Affected-passenger voting eligibility",
+          "summary": "Can determine exactly whose duties or destinations change under a proposed amendment.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "senn_burden_evasion_signs",
+          "topic": "Roster burden concealment",
+          "summary": "Recognises clauses that shift night, allergy, or recovery labour outside the posted tally.",
+          "confidence": 86
+        }
+      ]
+    },
+    {
+      "display_name": "Orris Pellweather",
+      "role_name": "Living-Pollen Substitution Tutor",
+      "activity": "Trains passengers in low-contact pollination substitutions for the Carriage Horticultural Guild, improving greenhouse_crop_health while depending on the Mobile Growers' Collective for live practice blossoms.",
+      "home_base": "Horticultural Practice Car",
+      "arc_goal": "Convince the Carriage Horticultural Guild to certify veil-assisted paired pollination, expanding crop_commitment_coverage without sacrificing seed_diversity.",
+      "inventory": [
+        {
+          "name": "Pellweather Breath Veil",
+          "description": "A fitted linen veil stained with harmless yellow tracer pollen to expose seal failures.",
+          "quantity": 1
+        },
+        {
+          "name": "Sablegrass Wrist Brush",
+          "description": "Short pollination brush strapped to the wrist for use by passengers with weak grip.",
+          "quantity": 1
+        },
+        {
+          "name": "Twin-Anther Tuning Fork",
+          "description": "A bronze fork calibrated to release pollen without bruising delicate fruiting blooms.",
+          "quantity": 1
+        },
+        {
+          "name": "Sterile Blossom Thimbles",
+          "description": "Amberglass caps that isolate demonstration flowers from accidental cross-pollination.",
+          "quantity": 8
+        },
+        {
+          "name": "Mite-Safe Sleeve Cuffs",
+          "description": "Soft cuffs preventing beneficial mites from being crushed during close instruction.",
+          "quantity": 2
+        },
+        {
+          "name": "Pollen Route Beads",
+          "description": "Colour-coded seed beads recording the order of compatible flower visits.",
+          "quantity": 24
+        },
+        {
+          "name": "Practice-Calix Wax",
+          "description": "Green sculpting wax used to model fragile floral anatomy during a moving lesson.",
+          "quantity": 2
+        },
+        {
+          "name": "Allergy Bell Reed",
+          "description": "A reed whistle with a low note signalling immediate withdrawal from a pollen bay.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Veiled Pollination Alcove",
+          "asset_type": "training station",
+          "description": "A filtered blossom cabinet where allergic passengers practise paired pollination safely.",
+          "story_use": "Creates new qualified carers when uncovered pollination windows threaten access."
+        },
+        {
+          "asset_name": "Compatibility Vinewheel",
+          "asset_type": "teaching apparatus",
+          "description": "A rotating botanical wheel displaying viable crosses, sterile pairings, and contamination risks.",
+          "story_use": "Guides substitutions that preserve rare lineages instead of merely maximising yield."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "orris_low_contact_pollination",
+          "topic": "Allergen-safe pollination methods",
+          "summary": "Knows which fruiting crops accept veiled, tool-assisted, or paired pollination duties.",
+          "confidence": 96
+        },
+        {
+          "knowledge_id": "orris_cross_viability",
+          "topic": "Mobile greenhouse cross-pollination",
+          "summary": "Predicts which carriage-grown crosses will yield viable seed under route vibration.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Ysabet Quoin",
+      "role_name": "Quarantine Passage Assayer",
+      "activity": "Tests whether quarantined bays still satisfy Platform Allotment Office roster rules, changing platform_access_capacity while depending on Carriage Horticultural Guild inspectors for defensible health findings.",
+      "home_base": "Living Route Gate",
+      "arc_goal": "Create a graded quarantine passage rule between the Platform Allotment Office and Carriage Horticultural Guild that protects greenhouse_crop_health without collectively punishing Destination-Bound Passengers.",
+      "inventory": [
+        {
+          "name": "Scarlet-Ribbon Seal Pliers",
+          "description": "Sunsteel pliers embossing quarantine ribbons with bay, segment, and inspector marks.",
+          "quantity": 1
+        },
+        {
+          "name": "Sporefall Mirror",
+          "description": "Black glass plate revealing pale fungal dust shaken loose at a gate inspection.",
+          "quantity": 1
+        },
+        {
+          "name": "Root-Fever Listening Cone",
+          "description": "Hollow marsh-fennel cone used to hear bubbling and collapse inside sealed grow beds.",
+          "quantity": 1
+        },
+        {
+          "name": "Gatekeeper's Chlorophyll Lens",
+          "description": "Green lens distinguishing heat stress from contagious leaf paling under carriage lamps.",
+          "quantity": 1
+        },
+        {
+          "name": "Three-Stage Passage Bells",
+          "description": "Nested bells sounding restricted care, sealed passage, or complete bay closure.",
+          "quantity": 3
+        },
+        {
+          "name": "Vinewax Evidence Capsules",
+          "description": "Tamper-soft capsules holding clipped lesions until a guild gardener examines them.",
+          "quantity": 6
+        },
+        {
+          "name": "Washed-Copper Boot Hooks",
+          "description": "Hooks that lift work boots for sole cleaning before crossing the Living Route Gate.",
+          "quantity": 2
+        },
+        {
+          "name": "Quoin's Grey Duty Mantle",
+          "description": "Ash-grey mantle whose removable hem is burned after severe contamination exposure.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Half-Seal Care Vestibule",
+          "asset_type": "containment threshold",
+          "description": "A double-curtained gate permitting trained carers to enter without opening passenger passage.",
+          "story_use": "Keeps critical treatment duties valid during a limited quarantine."
+        },
+        {
+          "asset_name": "Suspension Cause Rail",
+          "asset_type": "public evidence display",
+          "description": "A brass rail displaying sealed samples beside each suspended platform roster.",
+          "story_use": "Lets passengers contest arbitrary closure or discover genuine sabotage."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "ysabet_quarantine_coverage",
+          "topic": "Quarantine effects on roster validity",
+          "summary": "Knows which isolated duties remain countable and which require replacement certification.",
+          "confidence": 93
+        },
+        {
+          "knowledge_id": "ysabet_spore_transfer",
+          "topic": "Carriage-borne disease pathways",
+          "summary": "Tracks contamination through boots, veils, tools, mites, and shared capillary lines.",
+          "confidence": 91
+        }
+      ]
+    },
+    {
+      "display_name": "Neme Rillcast",
+      "role_name": "Edible-Route Delay Forecaster",
+      "activity": "Matches station shortage forecasts to harvest ripening windows for Station Provision Delegates, changing journey_provision_reserve while depending on the Railway Provision Council for audited weights and unlocked unloading capacity.",
+      "home_base": "Delegate Dispatch Platform",
+      "arc_goal": "Force the Railway Provision Council to publish delay-adjusted crate promises, raising passenger_trust while preventing urgent station demand from depleting seed_diversity.",
+      "inventory": [
+        {
+          "name": "Ripening-Signal Sextant",
+          "description": "A palm brass instrument aligning route light, carriage heat, and projected fruit maturity.",
+          "quantity": 1
+        },
+        {
+          "name": "Station Hunger Ribbonbook",
+          "description": "Accordion-fold textile recording verified shortage severity in station dye patterns.",
+          "quantity": 1
+        },
+        {
+          "name": "Delay-Mildew Abacus",
+          "description": "Porcelain counters estimating spoilage risk for every unscheduled hour aboard.",
+          "quantity": 1
+        },
+        {
+          "name": "Crate-Breath Listening Tube",
+          "description": "A reed tube used to detect fermentation inside sealed station-bound produce crates.",
+          "quantity": 1
+        },
+        {
+          "name": "Frostward Dispatch Cape",
+          "description": "Waxed leaf-fibre cape embroidered with cold-route junctions and emergency sidings.",
+          "quantity": 1
+        },
+        {
+          "name": "Rillcast Pear Knife",
+          "description": "Blunt silver tasting knife used to judge ripeness without damaging viable seeds.",
+          "quantity": 1
+        },
+        {
+          "name": "Sun-Dried Route Pears",
+          "description": "Personal ration slices labelled by the station climates where each variety thrives.",
+          "quantity": 7
+        },
+        {
+          "name": "Blue Shortage Beacon Wick",
+          "description": "Mineral-soaked wick burned only when a destination faces a verified staple deficit.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Moving Ripeness Orrery",
+          "asset_type": "forecast instrument",
+          "description": "Clockwork fruit models advance or stall according to route heat, delay, and watering reports.",
+          "story_use": "Shows whether a promised harvest will survive until its intended station."
+        },
+        {
+          "asset_name": "Shortage Echo Desk",
+          "asset_type": "dispatch console",
+          "description": "A speaking-tube desk comparing delegate claims with ration requests and historic crate receipts.",
+          "story_use": "Exposes exaggerated shortages or identifies stations whose need has been ignored."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "neme_delay_harvest_model",
+          "topic": "Delay-adjusted harvest timing",
+          "summary": "Forecasts edible maturity, seed maturity, and spoilage separately for route-grown crops.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "neme_station_claim_reliability",
+          "topic": "Station shortage credibility",
+          "summary": "Knows which delegates report accurately and which inflate demand to secure premium crates.",
+          "confidence": 84
+        }
+      ]
+    },
+    {
+      "display_name": "Cyr Vellumwake",
+      "role_name": "Delay-Bell Duty Chronometrist",
+      "activity": "Recalculates missed care windows for the Platform Allotment Office, changing crop_commitment_coverage while depending on Mobile Growers' Collective observations of heat and sap response.",
+      "home_base": "Allotment Roster Office",
+      "arc_goal": "Prove that route-delay adjustments can increase platform_access_capacity without letting the Platform Allotment Office excuse influential defaulters.",
+      "inventory": [
+        {
+          "name": "Conductor's Mossbeat Watch",
+          "description": "A route-calibrated watch whose living moss darkens when carriage heat accelerates crop thirst.",
+          "quantity": 1
+        },
+        {
+          "name": "Nine-Segment Delay Cord",
+          "description": "Knotted green cord used to translate unscheduled halts into revised watering intervals.",
+          "quantity": 1
+        },
+        {
+          "name": "Copper Dew Chime",
+          "description": "Tiny bay chime sounding when condensation reaches a documented threshold.",
+          "quantity": 2
+        },
+        {
+          "name": "Pressed Timetable Ferns",
+          "description": "Fern strips preserving inked records of disputed arrival and duty times.",
+          "quantity": 6
+        },
+        {
+          "name": "Sunrail Shadow Dial",
+          "description": "Window-mounted dial measuring greenhouse light independently of station clocks.",
+          "quantity": 1
+        },
+        {
+          "name": "Root-Heat Wax Tablets",
+          "description": "Wax slips that soften at temperatures requiring accelerated capillary checks.",
+          "quantity": 4
+        },
+        {
+          "name": "Bellkeeper's Blue Pencil",
+          "description": "Guild-resistant pencil reserved for countersigning emergency roster corrections.",
+          "quantity": 1
+        },
+        {
+          "name": "Sleepless Pear Seed Token",
+          "description": "A polished seed carried as a reminder of a night duty Cyr once miscalculated.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Rolling Duty-Time Concordance",
+          "asset_type": "procedural chart",
+          "description": "Links route delays, carriage heat, crop stage, and revised care windows.",
+          "story_use": "Can preserve valid commitments after a delay or expose a broker's impossible roster."
+        },
+        {
+          "asset_name": "Disputed Bell Cabinet",
+          "asset_type": "evidence fixture",
+          "description": "A sealed cabinet holding paired conductor and passenger time records.",
+          "story_use": "Provides decisive evidence during access suspensions and compact appeals."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "cyr_delay_correction",
+          "topic": "Delay-adjusted crop duties",
+          "summary": "Knows which watering and pollination windows move with plant stress rather than the railway clock.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "cyr_clock_fraud",
+          "topic": "Chronometer manipulation",
+          "summary": "Recognises altered duty timestamps, reheated wax marks, and forged conductor bell sequences.",
+          "confidence": 87
+        }
+      ]
+    },
+    {
+      "display_name": "Avenza Mirelace",
+      "role_name": "Allergen-Duty Veilwright",
+      "activity": "Fits named passengers for safe contact with allergenic bays under Carriage Horticultural Guild rules, improving crop_commitment_coverage while depending on destination-bound passengers to disclose reactions honestly.",
+      "home_base": "Horticultural Practice Car",
+      "arc_goal": "Make veil-certified duties count toward Platform Allotment Office access, changing platform_access_capacity without weakening greenhouse_crop_health safeguards.",
+      "inventory": [
+        {
+          "name": "Mirelace Breath Hood",
+          "description": "Her personal reed-silk hood, stained with diagnostic pollen along its filter seams.",
+          "quantity": 1
+        },
+        {
+          "name": "Sneeze-Pattern Slate",
+          "description": "Pocket slate recording the timing and severity of exposure reactions.",
+          "quantity": 1
+        },
+        {
+          "name": "Greenwax Face Cast",
+          "description": "Reusable wax mould shaped to test seals around a passenger's nose and jaw.",
+          "quantity": 1
+        },
+        {
+          "name": "Sablegrass Seam Awl",
+          "description": "Curved awl for repairing pollen veils without leaving leak-prone holes.",
+          "quantity": 1
+        },
+        {
+          "name": "Fennel-Steam Ampoules",
+          "description": "Sealed ampoules used to reveal whether humidity loosens a fitted veil.",
+          "quantity": 3
+        },
+        {
+          "name": "Amber Breath Beads",
+          "description": "Colour-changing beads that indicate pollen intrusion inside protective cloth.",
+          "quantity": 12
+        },
+        {
+          "name": "Guild Rinse Flask",
+          "description": "Narrow flask of sanctioned saline for decontaminating tools after bay practice.",
+          "quantity": 1
+        },
+        {
+          "name": "Red Orchard Cuff",
+          "description": "A warning cuff inherited from a tender who concealed a dangerous reaction.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Passenger Exposure Loom",
+          "asset_type": "fitting apparatus",
+          "description": "A compact loom that tensions protective cloth to match a passenger's movement and breathing.",
+          "story_use": "Can qualify a reluctant passenger for a scarce pollination duty."
+        },
+        {
+          "asset_name": "Reaction Provenance Wall",
+          "asset_type": "medical-duty record",
+          "description": "Layered cards connect crops, symptoms, veil materials, and witnessed outcomes.",
+          "story_use": "Reveals concealed allergies, false exemptions, or unsafe substitutions."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "avenza_pollen_profiles",
+          "topic": "Carriage pollen exposure",
+          "summary": "Distinguishes true crop allergies from heat stress, fear, and brokered avoidance claims.",
+          "confidence": 96
+        },
+        {
+          "knowledge_id": "avenza_veil_limits",
+          "topic": "Protective duty boundaries",
+          "summary": "Knows which pruning and pollination tasks remain unsafe even with certified veils.",
+          "confidence": 91
+        }
+      ]
+    },
+    {
+      "display_name": "Lio Ternshade",
+      "role_name": "Shared-Shift Trust Lamplighter",
+      "activity": "Witnesses handovers and illuminates disputed completion marks for the Passenger Compact Assembly, changing passenger_trust while depending on signatories to permit observation of their duties.",
+      "home_base": "Passenger Compact Assembly Car",
+      "arc_goal": "Create an Assembly-backed handover standard that raises passenger_trust and crop_commitment_coverage without turning mutual care into constant surveillance.",
+      "inventory": [
+        {
+          "name": "Ternshade Witness Lantern",
+          "description": "Green-glass lantern whose numbered shutters mark each stage of a shared duty.",
+          "quantity": 1
+        },
+        {
+          "name": "Sootprint Transfer Cards",
+          "description": "Cards taking distinct impressions from gloves used before and after a handover.",
+          "quantity": 8
+        },
+        {
+          "name": "Two-Handed Wick Key",
+          "description": "A brass key requiring both outgoing and incoming carers to light the witness flame.",
+          "quantity": 1
+        },
+        {
+          "name": "Quiet-Vote Hood",
+          "description": "Felt lantern cover used when testimony must remain unseen until an assembly count.",
+          "quantity": 1
+        },
+        {
+          "name": "Bay Echo Spoon",
+          "description": "Silvered spoon used to capture brief spoken handover statements in resin film.",
+          "quantity": 1
+        },
+        {
+          "name": "Promise Ash Phials",
+          "description": "Tiny sealed phials containing wick ash from successfully completed shared duties.",
+          "quantity": 5
+        },
+        {
+          "name": "Compact Green Thread",
+          "description": "Witness thread tied across tools to show whether they changed hands on time.",
+          "quantity": 3
+        },
+        {
+          "name": "Stranded Platform Button",
+          "description": "A scorched button from the coat worn when a false completion mark stranded Lio.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Handover Lantern Rail",
+          "asset_type": "public trust instrument",
+          "description": "A rack of coded lamps showing pending, witnessed, disputed, and completed duty transfers.",
+          "story_use": "Can restore confidence in a coalition or make a quiet default immediately visible."
+        },
+        {
+          "asset_name": "Reciprocal Testimony Bench",
+          "asset_type": "assembly fixture",
+          "description": "A narrow bench where both carers reconstruct a shift without seeing each other's account.",
+          "story_use": "Tests whether a disputed handover was genuine before an amendment vote."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "lio_handover_signs",
+          "topic": "Duty handover verification",
+          "summary": "Reads tool placement, moisture traces, lamp soot, and testimony gaps to verify shared shifts.",
+          "confidence": 93
+        },
+        {
+          "knowledge_id": "lio_trust_thresholds",
+          "topic": "Passenger agreement confidence",
+          "summary": "Knows which kinds of public proof rebuild trust and which provoke resistance or retaliation.",
+          "confidence": 84
+        }
+      ]
+    },
+    {
+      "display_name": "Thessa Brinegraft",
+      "role_name": "Salt-Climate Rootstock Envoy",
+      "activity": "Matches preserved rootstocks to station climates for Station Provision Delegates, changing seed_diversity while depending on the Railway Provision Council for storage space and audited destination demand.",
+      "home_base": "Seed Reserve Archive",
+      "arc_goal": "Secure route priority for slow, salt-tolerant rootstocks, improving seed_diversity and future platform_access_capacity despite pressure for rapid edible harvests.",
+      "inventory": [
+        {
+          "name": "Brinegraft Heel Knife",
+          "description": "Short crescent knife bearing salt-darkened marks from every rootstock line she has joined.",
+          "quantity": 1
+        },
+        {
+          "name": "Tidal Sap Vials",
+          "description": "Personal reference vials showing healthy sap colours under increasing salinity.",
+          "quantity": 7
+        },
+        {
+          "name": "Marshcloth Root Wrap",
+          "description": "Damp woven wrap keeping one diagnostic cutting alive between inspections.",
+          "quantity": 1
+        },
+        {
+          "name": "Station Soil Reliquary",
+          "description": "Segmented locket containing tiny authenticated soil samples from threatened gardens.",
+          "quantity": 1
+        },
+        {
+          "name": "Saltflower Lens",
+          "description": "Clouded lens revealing mineral crystals on leaves and root collars.",
+          "quantity": 1
+        },
+        {
+          "name": "Graft-Oath Pins",
+          "description": "Bone pins used to mark experimental joins she has personally pledged to revisit.",
+          "quantity": 9
+        },
+        {
+          "name": "Blackwater Germination Cup",
+          "description": "Folding cup for testing whether archived seed tolerates brackish station water.",
+          "quantity": 1
+        },
+        {
+          "name": "Unopened Orchard Letter",
+          "description": "A sealed dispatch naming the station where her failed rootstock caused a lost planting season.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Moving Salinity Gradient Bed",
+          "asset_type": "research plot",
+          "description": "A narrow archive bed exposing related rootstocks to controlled bands of mineral stress.",
+          "story_use": "Can prove a scarce variety deserves preservation or reveal a falsely labelled resilient line."
+        },
+        {
+          "asset_name": "Future-Orchard Route Folio",
+          "asset_type": "planning atlas",
+          "description": "Overlays station soils, dietary needs, unloading access, and multi-season graft viability.",
+          "story_use": "Supports destination priority arguments whose benefits arrive after the current journey."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "thessa_salt_rootstocks",
+          "topic": "Salt-tolerant perennial lines",
+          "summary": "Knows which rootstocks preserve yield, flavour, and viable seed under brackish irrigation.",
+          "confidence": 97
+        },
+        {
+          "knowledge_id": "thessa_station_soils",
+          "topic": "Destination soil authenticity",
+          "summary": "Can detect substituted soil reports and identify stations exaggerating climate hardship for route priority.",
+          "confidence": 82
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Roster, Serve, Unlock",
+      "summary": "The Fourfold Roster Broker assembles watering, pruning, pollination, and harvest coverage in the Allotment Roster Office. Completed windows raise crop commitment coverage; the next audit activates the causal link that increases platform access capacity.",
+      "roles": [
+        "Fourfold Roster Broker",
+        "Night-Bay Recovery Tender",
+        "Shared-Shift Trust Lamplighter"
+      ],
+      "rooms": [
+        "Allotment Roster Office",
+        "Compact Negotiation Platform"
+      ],
+      "pressure": "A single uncovered night or allergen duty can suspend every linked access slot."
+    },
+    {
+      "label": "Treat, Certify, Recover",
+      "summary": "The Quarantine Passage Assayer and Living-Pollen Substitution Tutor diagnose and retrain care in the Horticultural Practice Car, then apply a certified plan in the Delicate Fruiting Bay. Success raises greenhouse crop health; failure triggers the missed-duty link that creates specialist recovery work.",
+      "roles": [
+        "Quarantine Passage Assayer",
+        "Living-Pollen Substitution Tutor",
+        "Night-Bay Recovery Tender"
+      ],
+      "rooms": [
+        "Horticultural Practice Car",
+        "Delicate Fruiting Bay",
+        "Living Route Gate"
+      ],
+      "pressure": "Delay, disease, and narrow care windows can make the safest treatment incompatible with destination rosters."
+    },
+    {
+      "label": "Harvest, Weigh, Allocate",
+      "summary": "The Shortage-Crate Weighmaster audits harvests in the Provision Weighing Car while the Edible-Route Delay Forecaster tests station demand. Correct harvest and weighing activate the crop-health link that increases journey provision reserve, while transparent allocation can raise passenger trust.",
+      "roles": [
+        "Shortage-Crate Weighmaster",
+        "Edible-Route Delay Forecaster",
+        "Compact Burden Cartographer"
+      ],
+      "rooms": [
+        "Provision Weighing Car",
+        "Delegate Dispatch Platform"
+      ],
+      "pressure": "Immediate worker rewards compete with reserves and crates promised to food-short stations."
+    },
+    {
+      "label": "Mature, Witness, Preserve",
+      "summary": "The Seed-Lineage Archive Witness records whether crops are allowed to mature, then audits viable seed in the Seed Reserve Archive. Mature collection raises seed diversity; repeated early harvest activates its decline and later reduces platform access capacity.",
+      "roles": [
+        "Seed-Lineage Archive Witness",
+        "Salt-Climate Rootstock Envoy",
+        "Living-Pollen Substitution Tutor"
+      ],
+      "rooms": [
+        "Seed Reserve Archive",
+        "Guild Crop Inspection Car",
+        "Delicate Fruiting Bay"
+      ],
+      "pressure": "Passengers need food now, but upcoming climates require scarce lineages that yield slowly."
+    },
+    {
+      "label": "Amend, Vote, Rebuild Trust",
+      "summary": "The Compact Burden Cartographer maps unequal duty effects in the Passenger Compact Assembly Car, and the Shared-Shift Trust Lamplighter tests a substitution before a two-thirds vote. Fair amendments raise passenger trust and improve later crop commitment coverage.",
+      "roles": [
+        "Compact Burden Cartographer",
+        "Shared-Shift Trust Lamplighter",
+        "Allergen-Duty Veilwright",
+        "Delay-Bell Duty Chronometrist"
+      ],
+      "rooms": [
+        "Passenger Compact Assembly Car",
+        "Compact Negotiation Platform"
+      ],
+      "pressure": "Every concession changes whose destination, exposure, or rest window bears the cost."
+    }
+  ],
+  "player_entry_points": [
+    "Take an uncovered night duty in the Allotment Roster Office to help unlock a preferred destination.",
+    "Contest a shortage allocation after an audited weighing in the Provision Weighing Car.",
+    "Seek a competency stamp in the Horticultural Practice Car before volunteering for delicate crop care.",
+    "Witness a disputed seed drawer audit in the Seed Reserve Archive."
+  ],
+  "conflict_hooks": [
+    "A nearly complete destination roster lacks one allergenic night-pollination duty. Several passengers want the platform unlocked, but no one accepts the burden without protected equipment, extra harvest shares, and a guaranteed replacement after one segment.",
+    "A shortage crate is redirected toward an underfed station, reducing rewards promised to passengers who completed difficult duties. The weighing is accurate, but the compact never specified whether station need outranks labour claims.",
+    "Delicate fruit can be harvested now to restore provisions or left to mature for viable seed. Delay forecasts suggest waiting may damage the crop, while the archive warns that early harvest will erase a scarce lineage.",
+    "A quarantine ribbon invalidates commitments that had unlocked several transfers. Stranded passengers demand those commitments still count, while guild evidence indicates ordinary carers could spread disease."
+  ],
+  "custom_actions": [
+    "Bind a fourfold tending roster",
+    "Split a night-bay duty window",
+    "Stamp a crop-care competency",
+    "Ring a delay-duty bell",
+    "Audit a shortage crate",
+    "Witness a seed lineage",
+    "Assay a quarantine passage",
+    "Forecast an edible-route delay",
+    "Weave an allergen-duty veil",
+    "Map a compact burden",
+    "Tutor a living-pollen substitution",
+    "Petition a platform unlock"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "Offer a weighted night-duty exchange",
+      "initiating_role": "Fourfold Roster Broker",
+      "target_role": "Night-Bay Recovery Tender",
+      "situation": "A destination roster lacks two night watering windows, and the broker offers a larger harvest share for taking both.",
+      "proposed_effects": [
+        "speech",
+        "transfer",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Verify the offered harvest share exists and is controlled by the initiating party.",
+        "Confirm both roles are present or have a valid roster channel for the proposal.",
+        "Require explicit consent before transferring either duty window.",
+        "Check that the target has the required competency and no overlapping roster duty.",
+        "Do not grant access or trusted status until the roster amendment and promised consideration are verified."
+      ]
+    },
+    {
+      "action_name": "Declare a conditional default warning",
+      "initiating_role": "Delay-Bell Duty Chronometrist",
+      "target_role": "Edible-Route Delay Forecaster",
+      "situation": "A route delay will overlap a pollination window, and the chronometrist wants the forecaster publicly marked as responsible for revising the schedule.",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Verify the delay record and whether schedule revision falls within the target's accepted duties.",
+        "Confirm the target can hear or receive the declaration.",
+        "Distinguish a warning from a proven default; do not impose guilt without evidence.",
+        "Check whether the proposed status has a defined expiry or removal condition.",
+        "Allow the target to refuse new responsibility unless a binding compact already assigns it."
+      ]
+    },
+    {
+      "action_name": "Draft a single-window pollen warrant",
+      "initiating_role": "Living-Pollen Substitution Tutor",
+      "target_role": "Seed-Lineage Archive Witness",
+      "situation": "A quarantined variety needs one controlled substitution, so the tutor proposes creating a warrant limited to one pollination window.",
+      "proposed_effects": [
+        "speech",
+        "create_item",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Verify the initiator has authority or materials to draft, but not automatically certify, the warrant.",
+        "Require the target's consent before attaching their witness mark.",
+        "Confirm both parties are near the relevant records or possess authenticated copies.",
+        "Limit the created item to one named crop, one window, and one substitution method.",
+        "Check seed-lineage, quarantine, and competency requirements before treating the warrant as valid."
+      ]
+    },
+    {
+      "action_name": "Pledge a veil for deferred leaf credits",
+      "initiating_role": "Allergen-Duty Veilwright",
+      "target_role": "Shortage-Crate Weighmaster",
+      "situation": "The veilwright offers a newly fitted protective veil now in exchange for leaf credits after the next audited harvest.",
+      "proposed_effects": [
+        "speech",
+        "transfer",
+        "create_item",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Verify the veilwright owns the materials and can create one bounded protective item.",
+        "Confirm the parties are close enough to fit or transfer the veil safely.",
+        "Require consent to both the deferred payment and any duty attached to using the veil.",
+        "Check that pledged leaf credits are not already committed and remain conditional on audited harvest.",
+        "Do not confer allergen competency merely from possession; record only the agreed creditor or protected status."
+      ]
+    }
+  ],
+  "social_rules": [
+    "Platform access is conditional on complete, signed crop-duty coverage.",
+    "Duty transfers count only after the replacement consents and the roster is amended.",
+    "Missed duties must be disclosed before access, harvest shares, or leaf credits are reassigned.",
+    "Guild competency stamps are required for specialist, quarantined, or delicate crop care.",
+    "Harvest shares are settled only after audited weighing and reserve obligations are recorded.",
+    "Seed stock cannot be consumed, planted, or pledged without its archive status being disclosed.",
+    "Compact amendments require two-thirds support from passengers whose duties or destinations would change.",
+    "Allergen exposure, night work, and delay-created burdens must be declared during roster bargaining.",
+    "Quarantine ribbons suspend ordinary crop commitments until a qualified substitute plan is certified.",
+    "Witnessed fulfilment and transparent allocations strengthen later claims; concealed defaults weaken them."
+  ],
+  "item_themes": [
+    "crop-duty tickets",
+    "watering keys",
+    "pollination brushes",
+    "pruning tools",
+    "seed drawers",
+    "quarantine ribbons"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "duty_ticket_fourfold",
+      "name": "Fourfold Crop-Duty Ticket",
+      "price": 12,
+      "mass": 0.02,
+      "description": "Deckled paper ticket with signed windows for watering, pruning, pollination, and harvest; conductors scan its pressed-leaf code.",
+      "image_prompt": "Four-panel cream paper railway ticket, pressed-leaf code, green ink signatures, brass eyelet, solarpunk Victorian greenhouse carriage",
+      "category": "credential"
+    },
+    {
+      "item_id": "platform_allotment_stamp",
+      "name": "Platform Allotment Stamp",
+      "price": 38,
+      "mass": 0.32,
+      "description": "Office-issued brass stamp that validates a roster amendment and names the platform slot it may unlock.",
+      "image_prompt": "Heavy brass hand stamp, enamel platform number, vine-shaped handle, ink-stained ledger desk, luminous rail greenhouse",
+      "category": "institutional tool"
+    },
+    {
+      "item_id": "guild_competency_book",
+      "name": "Guild Competency Book",
+      "price": 24,
+      "mass": 0.14,
+      "description": "Accordion booklet bearing colour-coded stamps for crop skills, allergies, and supervised training.",
+      "image_prompt": "Accordion paper credential, botanical diagrams, coloured competency seals, linen tie, Victorian solarpunk styling",
+      "category": "credential"
+    },
+    {
+      "item_id": "night_watering_key",
+      "name": "Moonshift Watering Key",
+      "price": 31,
+      "mass": 0.18,
+      "description": "Numbered enamel key opening timed irrigation valves during restricted night-duty windows.",
+      "image_prompt": "Cobalt enamel valve key, crescent emblem, numbered brass tag, glowing irrigation pipes inside a greenhouse railcar",
+      "category": "tending tool"
+    },
+    {
+      "item_id": "capillary_flow_gauge",
+      "name": "Capillary Flow Gauge",
+      "price": 46,
+      "mass": 0.55,
+      "description": "Glass-and-brass meter recording water delivered to a bay, accepted as evidence of completed duty.",
+      "image_prompt": "Slim glass flow meter with brass fittings, paper tally wheel, condensation, luminous plant bay",
+      "category": "measuring instrument"
+    },
+    {
+      "item_id": "bay_health_triptych",
+      "name": "Bay Health Triptych",
+      "price": 54,
+      "mass": 0.72,
+      "description": "Guild instrument comparing leaf colour, sap pressure, and soil breath to grade greenhouse crop health.",
+      "image_prompt": "Folding brass botanical diagnostic case, leaf colour tiles, tiny pressure dial, soil respiration vial, enamel details",
+      "category": "measuring instrument"
+    },
+    {
+      "item_id": "pollen_brush_sablegrass",
+      "name": "Sablegrass Pollination Brush",
+      "price": 19,
+      "mass": 0.04,
+      "description": "Soft, antistatic brush for delicate fruiting flowers; its numbered ferrule links work to a duty roster.",
+      "image_prompt": "Fine pale grass pollination brush, numbered copper ferrule, green velvet sleeve, flowering railcar vines",
+      "category": "tending tool"
+    },
+    {
+      "item_id": "orchard_pruner_sunsteel",
+      "name": "Sunsteel Carriage Pruner",
+      "price": 42,
+      "mass": 0.48,
+      "description": "Compact spring pruner with sap channel and guild-approved blade geometry for crowded bays.",
+      "image_prompt": "Polished compact pruning shears, amber resin grips, leaf-shaped blade, greenhouse railway workbench",
+      "category": "tending tool"
+    },
+    {
+      "item_id": "seed_drawer_amberglass",
+      "name": "Amberglass Seed Drawer",
+      "price": 68,
+      "mass": 1.8,
+      "description": "Lockable humidity-buffered drawer preserving twelve varieties between railway circuits.",
+      "image_prompt": "Small Victorian seed cabinet, amber glass fronts, twelve labelled drawers, brass lock, luminous wood grain",
+      "category": "seed storage"
+    },
+    {
+      "item_id": "seed_diversity_counter",
+      "name": "Twelve-Climate Seed Counter",
+      "price": 73,
+      "mass": 1.15,
+      "description": "Council audit tray testing germination and sorting viable seed by climate, rarity, and station diet.",
+      "image_prompt": "Brass seed-sorting tray, magnifying lenses, tiny climate enamel icons, paper audit slips, greenhouse light",
+      "category": "measuring instrument"
+    },
+    {
+      "item_id": "scarlet_quarantine_ribbon",
+      "name": "Scarlet Quarantine Ribbon",
+      "price": 7,
+      "mass": 0.03,
+      "description": "Serialized guild ribbon sealing a diseased bay and suspending its duties until inspection.",
+      "image_prompt": "Scarlet woven ribbon with black serial marks and guild seal, tied across a misty plant bay",
+      "category": "institutional evidence"
+    },
+    {
+      "item_id": "amber_watch_ribbon",
+      "name": "Amber Recovery Ribbon",
+      "price": 6,
+      "mass": 0.03,
+      "description": "Marks a stressed bay under corrective care without fully removing its commitments from the roster.",
+      "image_prompt": "Amber ribbon, stitched watering and pruning symbols, clipped to a brass greenhouse rail",
+      "category": "institutional evidence"
+    },
+    {
+      "item_id": "leaf_credit_chit_ten",
+      "name": "Ten-Leaf Labour Chit",
+      "price": 10,
+      "mass": 0.01,
+      "description": "Transferable council note redeemable for provisions, tools, or contract deposits after verified labour.",
+      "image_prompt": "Tactile green fibre currency chit, embossed ten-leaf wreath, serial number, railway council seal",
+      "category": "currency"
+    },
+    {
+      "item_id": "broker_advance_bundle",
+      "name": "Broker's Advance Bundle",
+      "price": 45,
+      "mass": 0.09,
+      "description": "Five endorsed leaf-credit chits used to recruit replacement carers; repayment clauses are printed on the wrapper.",
+      "image_prompt": "Bundle of green paper chits, plum broker ribbon, handwritten repayment terms, crowded platform negotiation",
+      "category": "contract material"
+    },
+    {
+      "item_id": "compact_amendment_sheet",
+      "name": "Compact Amendment Sheet",
+      "price": 4,
+      "mass": 0.03,
+      "description": "Carbon-backed proposal form recording affected duties, destinations, substitutions, and the required two-thirds vote.",
+      "image_prompt": "Large cream voting sheet, carbon copy layer, destination columns, many signatures, enamel noticeboard",
+      "category": "proposal material"
+    },
+    {
+      "item_id": "roster_witness_tabs",
+      "name": "Roster Witness Tabs",
+      "price": 5,
+      "mass": 0.02,
+      "description": "Transferable gummed tabs attached by witnesses when a duty begins and ends, strengthening claims in disputes.",
+      "image_prompt": "Strip of tiny gummed paper tabs, eye and clock emblems, green and blue inks, open duty ledger",
+      "category": "evidence"
+    },
+    {
+      "item_id": "trust_tally_lantern",
+      "name": "Promise Tally Lantern",
+      "price": 61,
+      "mass": 0.95,
+      "description": "Public carriage lamp whose green segments illuminate as rostered duties receive matched witness tabs.",
+      "image_prompt": "Art nouveau brass lantern, stacked green glass segments, paper roster feed, glowing inside a solarpunk railcar",
+      "category": "measuring instrument"
+    },
+    {
+      "item_id": "harvest_weigh_cradle",
+      "name": "Council Harvest Cradle",
+      "price": 86,
+      "mass": 3.4,
+      "description": "Sealed hanging scale printing duplicate weights for worker shares, reserves, seed, and station consignments.",
+      "image_prompt": "Brass hanging produce scale, wicker cradle, four-column paper printer, enamel council badge, harvest carriage",
+      "category": "measuring instrument"
+    },
+    {
+      "item_id": "station_bound_crate",
+      "name": "Blue-Seal Harvest Crate",
+      "price": 27,
+      "mass": 4.2,
+      "description": "Ventilated stackable crate whose blue seal reserves its produce for a named food-short station.",
+      "image_prompt": "Slatted bamboo harvest crate, blue enamel seal, destination stencil, tomatoes and greens, railway platform",
+      "category": "logistics"
+    },
+    {
+      "item_id": "share_division_slips",
+      "name": "Harvest Share Slips",
+      "price": 3,
+      "mass": 0.02,
+      "description": "Perforated weighing slips assigning produce among workers, carriage reserve, seed saving, and station delivery.",
+      "image_prompt": "Perforated paper slips with four botanical columns, purple weighing stamp, tactile ledger aesthetic",
+      "category": "allocation evidence"
+    },
+    {
+      "item_id": "provision_sightglass",
+      "name": "Reserve Sightglass",
+      "price": 49,
+      "mass": 0.83,
+      "description": "Cabinet-mounted gauge displaying remaining meal-days against the Council's next-segment requirement.",
+      "image_prompt": "Vertical glass gauge, grain and meal-day markings, brass frame, red shortage line, locked provision cabinet",
+      "category": "measuring instrument"
+    },
+    {
+      "item_id": "journey_ration_pearbarley",
+      "name": "Pear-and-Barley Journey Brick",
+      "price": 8,
+      "mass": 0.28,
+      "description": "Dense preserved ration wrapped in waxed timetable paper; sustains one passenger through a demanding duty shift.",
+      "image_prompt": "Pressed pear and barley ration brick, waxed paper printed like a railway timetable, twine tie",
+      "category": "provision"
+    },
+    {
+      "item_id": "salted_glasshouse_beans",
+      "name": "Salted Glasshouse Beans",
+      "price": 11,
+      "mass": 0.42,
+      "description": "Reusable jar of herb-brined beans, commonly traded to night carers when reserves run tight.",
+      "image_prompt": "Faceted glass jar of green beans and herbs, brass clasp, handwritten night-shift label, carriage pantry",
+      "category": "provision"
+    },
+    {
+      "item_id": "heirloom_night_tomato_seed",
+      "name": "Night-Lantern Tomato Seeds",
+      "price": 58,
+      "mass": 0.06,
+      "description": "Scarce violet-fruited seed requiring hand pollination; prized for cool-route nutrition and genetic resilience.",
+      "image_prompt": "Tiny black seed packet with luminous violet tomato illustration, guild scarcity seal, amber seed drawer",
+      "category": "scarce seed"
+    },
+    {
+      "item_id": "marsh_fennel_rootstock",
+      "name": "Brasswater Fennel Rootstock",
+      "price": 44,
+      "mass": 0.36,
+      "description": "Salt-tolerant living stock needed for estuary stations, supplied only under a seed-return contract.",
+      "image_prompt": "Pale fennel rootstock wrapped in damp moss and copper mesh, estuary enamel tag, greenhouse bench",
+      "category": "scarce planting stock"
+    },
+    {
+      "item_id": "beneficial_mite_phial",
+      "name": "Guild Mite Phial",
+      "price": 35,
+      "mass": 0.08,
+      "description": "Cold-kept predatory mites for treating quarantined bays without poisoning pollinators.",
+      "image_prompt": "Corked amber phial in a chilled brass sleeve, tiny guild label, quarantine bay in background",
+      "category": "crop treatment"
+    },
+    {
+      "item_id": "pollen_veil_linen",
+      "name": "Pollen-Quiet Duty Veil",
+      "price": 23,
+      "mass": 0.16,
+      "description": "Washable linen veil allowing allergic passengers to cover selected pollination duties after guild instruction.",
+      "image_prompt": "Fine linen face veil, green piping, embroidered pollen symbol, hanging beside a glowing flower bay",
+      "category": "protective gear"
+    },
+    {
+      "item_id": "duty_window_chronometer",
+      "name": "Tending-Window Chronometer",
+      "price": 77,
+      "mass": 0.64,
+      "description": "Four-hand carriage clock tracking watering, pruning, pollination, and harvest windows despite route delays.",
+      "image_prompt": "Brass four-hand chronometer, botanical enamel dial, coloured duty arcs, mounted in Victorian greenhouse railcar",
+      "category": "measuring instrument"
+    },
+    {
+      "item_id": "platform_slot_token",
+      "name": "Unlocked Platform Token",
+      "price": 90,
+      "mass": 0.12,
+      "description": "Numbered ceramic token issued only after roster audit; proves a passenger may board, transfer, or disembark.",
+      "image_prompt": "Jade ceramic railway token, cutout platform number, brass rim, sunburst vine emblem, conductor's glove",
+      "category": "access credential"
+    },
+    {
+      "item_id": "crop_contract_ledger",
+      "name": "Leaf-Credit Contract Ledger",
+      "price": 29,
+      "mass": 0.88,
+      "description": "Thread-sewn ledger recording advances, crop yields, duty transfers, defaults, and delayed communal rewards.",
+      "image_prompt": "Thick green cloth ledger, exposed stitching, brass corners, pressed leaves, fountain pen and enamel signs",
+      "category": "recordkeeping"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "verdant_line_wardrobe_v1",
+    "world_wardrobe_brief": "Compact solarpunk railway-greenhouse workwear combining fitted utility layers, Victorian greenhouse tailoring, woven-fibre aprons, brass hardware, enamel role badges, and crop-care protection. Every outfit must communicate institutional role through hat geometry, apron or satchel shape, one top-visible tool, and one icon-only badge within the five-colour canon.",
+    "forbidden_aesthetics": [
+      "antique-market vendor clothing, flea-market eclecticism, or unrelated period costumes",
+      "medieval fantasy robes, armour, crowns, heraldry, or wizard attire",
+      "cyberpunk streetwear, neon techwear, holographic accessories, or chrome bodysuits",
+      "military uniforms, tactical armour, ammunition, or weapons",
+      "modern corporate suits, denim casualwear, sportswear, or contemporary branded clothing",
+      "space suits, astronaut gear, aviation uniforms, or nautical uniforms",
+      "steampunk goggles, excessive gears, smokestack-industrial fashion, or brown leather overload",
+      "Victorian aristocratic gowns, corset display, top hats, or ornamental mourning wear",
+      "desert, wilderness, cowboy, pirate, or expedition-colonial attire",
+      "photoreal textiles, gradients, bloom, colours outside the five-colour canon",
+      "readable words, letters, numerals, logos, or text on garments and props"
+    ],
+    "palette_families": [
+      {
+        "name": "Guild Verdure",
+        "dominant": "#234D3C deep green garment",
+        "accent": "#79A85A leaf badge",
+        "trim": "#C49A45 brass fasteners",
+        "material": "woven plant fibre and green enamel"
+      },
+      {
+        "name": "Ledger Cream",
+        "dominant": "#DCE8C5 cream overshirt",
+        "accent": "#234D3C fitted apron",
+        "trim": "#C49A45 brass clips",
+        "material": "ledger-paper cloth and damp-resistant canvas"
+      },
+      {
+        "name": "Night Bay",
+        "dominant": "#172B2A dark utility layer",
+        "accent": "#79A85A shoulder panel",
+        "trim": "#DCE8C5 cuff marks",
+        "material": "waxed fibre and ribbed canvas"
+      },
+      {
+        "name": "Council Balance",
+        "dominant": "#234D3C structured coat",
+        "accent": "#C49A45 balance-basket badge",
+        "trim": "#DCE8C5 apron edge",
+        "material": "green enamel hardware and woven cloth"
+      },
+      {
+        "name": "Quarantine Contrast",
+        "dominant": "#DCE8C5 protective smock",
+        "accent": "#C49A45 warning ribbon",
+        "trim": "#172B2A sealed edge",
+        "material": "washable plant-fibre cloth and glass-faced badge"
+      },
+      {
+        "name": "Passenger Leaf",
+        "dominant": "#79A85A short travel layer",
+        "accent": "#DCE8C5 crop token",
+        "trim": "#234D3C belt or scarf",
+        "material": "soft woven fibre and enamel token"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "conductor_gate_assayer",
+        "role_keywords": [
+          "conductor",
+          "gate",
+          "passage",
+          "assayer",
+          "access",
+          "scanner"
+        ],
+        "attire": [
+          "short structured conductor coat",
+          "square-peaked cap",
+          "cross-body token belt",
+          "reinforced dark cuffs"
+        ],
+        "props": [
+          "brass roster scanner",
+          "leaf-slot key",
+          "quarantine status clip"
+        ],
+        "palette_notes": "Deep green and shadow base; brass scanner and cream gate badge.",
+        "silhouette_notes": "Square cap, broad shoulders, and forward-held scanner must read from above.",
+        "avoid": [
+          "military rank bars",
+          "weapon-like batons",
+          "railway costume in unrelated bright colours"
+        ]
+      },
+      {
+        "rule_id": "guild_inspector_recovery_tender",
+        "role_keywords": [
+          "inspector",
+          "assayer",
+          "recovery",
+          "tender",
+          "diagnosis",
+          "quarantine",
+          "crop health"
+        ],
+        "attire": [
+          "cream sealed smock",
+          "deep-green fitted underlayer",
+          "leaf-point hood or compact brim cap",
+          "washable split apron"
+        ],
+        "props": [
+          "bay health instrument",
+          "capillary gauge",
+          "quarantine ribbon spool"
+        ],
+        "palette_notes": "Cream protection layer with green body mass and restrained brass warning accent.",
+        "silhouette_notes": "Leaf-point head shape and broad protective apron distinguish diagnostic work.",
+        "avoid": [
+          "medical scrubs",
+          "plague-doctor masks",
+          "scarlet outside-canon colour"
+        ]
+      },
+      {
+        "rule_id": "gardener_tutor_pollinator",
+        "role_keywords": [
+          "gardener",
+          "grower",
+          "tutor",
+          "pollination",
+          "pruning",
+          "watering",
+          "rootstock",
+          "horticultural"
+        ],
+        "attire": [
+          "cross-back gardener apron",
+          "rolled utility sleeves",
+          "rounded grafted-leaf cap",
+          "knee and wrist guards"
+        ],
+        "props": [
+          "pollination brush",
+          "compact pruner",
+          "watering valve key",
+          "grafted-leaf badge"
+        ],
+        "palette_notes": "Leaf green apron over deep green; cream sleeves and brass tool ferrules.",
+        "silhouette_notes": "Rounded cap, flared apron, and one small top-visible crop tool.",
+        "avoid": [
+          "rustic farm overalls",
+          "straw hats",
+          "oversized blades or weapon-like tools"
+        ]
+      },
+      {
+        "rule_id": "veilwright_allergen_specialist",
+        "role_keywords": [
+          "veilwright",
+          "allergen",
+          "safe contact",
+          "protective fitting"
+        ],
+        "attire": [
+          "cream face-and-neck veil",
+          "close green cap",
+          "sealed sleeve guards",
+          "short fitted protective apron"
+        ],
+        "props": [
+          "allergen icon tabs",
+          "veil fitting clips",
+          "compact brush case"
+        ],
+        "palette_notes": "Cream veil is dominant at the head; green body and brass clips maintain canon.",
+        "silhouette_notes": "Top-visible circular veil frame must remain compact and not obscure the role tool.",
+        "avoid": [
+          "religious veils",
+          "gas masks",
+          "hazmat suits",
+          "transparent gradients"
+        ]
+      },
+      {
+        "rule_id": "weighmaster_provision_council",
+        "role_keywords": [
+          "weighmaster",
+          "provision",
+          "council",
+          "harvest shares",
+          "allocation",
+          "ration"
+        ],
+        "attire": [
+          "structured balance-tabard",
+          "cream ledger cuffs",
+          "low round council cap",
+          "secured waist apron"
+        ],
+        "props": [
+          "small brass balance scale",
+          "share-slip fan",
+          "basket-symbol badge"
+        ],
+        "palette_notes": "Deep green tabard, cream ledger details, brass balance emblem.",
+        "silhouette_notes": "Symmetrical shoulders and paired scale pans create a balanced top-view silhouette.",
+        "avoid": [
+          "merchant finery",
+          "banker suits",
+          "coin purses",
+          "readable accounting text"
+        ]
+      },
+      {
+        "rule_id": "seed_archivist_witness",
+        "role_keywords": [
+          "seed",
+          "archive",
+          "lineage",
+          "germination",
+          "diversity",
+          "witness"
+        ],
+        "attire": [
+          "close-fitting dry-room coat",
+          "grid-pocket apron",
+          "cream dust cuffs",
+          "narrow seed-drawer cap"
+        ],
+        "props": [
+          "seed counter tray",
+          "amberglass drawer",
+          "scarcity-leaf badge"
+        ],
+        "palette_notes": "Dark green coat with cream pocket grid and brass drawer latch.",
+        "silhouette_notes": "Rectangular cap and square compartment tray identify archive duty.",
+        "avoid": [
+          "librarian stereotypes",
+          "spectacle emphasis",
+          "book stacks",
+          "antique-dealer attire"
+        ]
+      },
+      {
+        "rule_id": "broker_negotiator",
+        "role_keywords": [
+          "broker",
+          "negotiation",
+          "coalition",
+          "compact",
+          "duty bundle",
+          "leaf credit"
+        ],
+        "attire": [
+          "short asymmetric negotiation coat",
+          "ticket-loop sash",
+          "angular soft cap",
+          "narrow woven-fibre gloves"
+        ],
+        "props": [
+          "fourfold ticket fan",
+          "leaf-credit bundle",
+          "crop-token ring"
+        ],
+        "palette_notes": "Deep green coat, leaf-green sash, cream ticket shapes, minimal brass clips.",
+        "silhouette_notes": "Fan-shaped tickets and diagonal sash provide immediate role readability.",
+        "avoid": [
+          "luxury merchant clothing",
+          "gambling motifs",
+          "currency symbols",
+          "readable contracts"
+        ]
+      },
+      {
+        "rule_id": "assembly_cartographer_lamplighter",
+        "role_keywords": [
+          "assembly",
+          "cartographer",
+          "chronometrist",
+          "lamplighter",
+          "vote",
+          "trust",
+          "burden"
+        ],
+        "attire": [
+          "civic shoulder mantle",
+          "cream panelled vest",
+          "round rosette cap",
+          "delegate satchel"
+        ],
+        "props": [
+          "rosette vote token",
+          "folded icon-only duty chart",
+          "promise tally lantern"
+        ],
+        "palette_notes": "Cream civic panels over green; brass rosette or lantern is the single accent.",
+        "silhouette_notes": "Circular cap, one square satchel, and rosette prop separate civic roles from brokers.",
+        "avoid": [
+          "academic robes",
+          "ceremonial crowns",
+          "flame torches",
+          "readable maps or clocks"
+        ]
+      },
+      {
+        "rule_id": "delegate_forecaster_envoy",
+        "role_keywords": [
+          "delegate",
+          "dispatch",
+          "forecaster",
+          "envoy",
+          "station",
+          "shortage",
+          "shipment"
+        ],
+        "attire": [
+          "travel-ready dispatch jacket",
+          "insulated shoulder cape",
+          "leaf-shaped side cap",
+          "secured crate straps"
+        ],
+        "props": [
+          "crop-silhouette forecast tiles",
+          "contract clip",
+          "miniature sealed produce crate"
+        ],
+        "palette_notes": "Leaf green jacket with deep-green cape, cream tiles, and brass clip.",
+        "silhouette_notes": "Directional leaf cap and boxy crate or tile bundle read clearly from above.",
+        "avoid": [
+          "diplomatic formalwear",
+          "military courier uniforms",
+          "blue seals outside the canon palette"
+        ]
+      },
+      {
+        "rule_id": "roster_office_clerk",
+        "role_keywords": [
+          "roster",
+          "allotment",
+          "office",
+          "audit",
+          "duty window",
+          "chronometrist"
+        ],
+        "attire": [
+          "cream ledger vest",
+          "deep-green sleeve guards",
+          "lattice-panel apron",
+          "flat clipped office cap"
+        ],
+        "props": [
+          "brass allotment stamp",
+          "witness tabs",
+          "folded roster pane"
+        ],
+        "palette_notes": "Cream torso block with green sleeves and one brass stamping tool.",
+        "silhouette_notes": "Flat cap, rectangular apron grid, and raised stamp form the office silhouette.",
+        "avoid": [
+          "modern office attire",
+          "quill pens",
+          "readable paperwork",
+          "antique clerk costume"
+        ]
+      },
+      {
+        "rule_id": "passenger_carer",
+        "role_keywords": [
+          "passenger",
+          "destination-bound",
+          "trainee",
+          "carer",
+          "traveller"
+        ],
+        "attire": [
+          "simple short travel jacket",
+          "small utility half-apron",
+          "soft rounded cap or headscarf",
+          "compact duty belt"
+        ],
+        "props": [
+          "single crop token",
+          "assigned hand tool",
+          "folded ration packet"
+        ],
+        "palette_notes": "Leaf green and cream dominate; deep green outlines and minimal brass hardware.",
+        "silhouette_notes": "Simpler silhouette than officials; crop token and assigned tool show current commitment.",
+        "avoid": [
+          "tourist clothing",
+          "large luggage",
+          "unassigned luxury accessories",
+          "role-confusing official caps"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "verdant_line_general_worker",
+      "role_keywords": [
+        "worker",
+        "staff",
+        "specialist",
+        "resident",
+        "unmatched"
+      ],
+      "attire": [
+        "fitted deep-green utility layer",
+        "woven-fibre half-apron",
+        "compact soft cap",
+        "cream cuffs"
+      ],
+      "props": [
+        "one task-specific top-visible tool",
+        "one icon-only leaf badge"
+      ],
+      "palette_notes": "Use only #234D3C, #79A85A, #C49A45, #172B2A, and #DCE8C5; brass remains a small accent.",
+      "silhouette_notes": "Compact one-tile figure with large hat-and-shoulder mass, short limbs, and no more than one prominent prop.",
+      "avoid": [
+        "unrelated historical costume",
+        "modern casualwear",
+        "weapons",
+        "readable text",
+        "ambiguous oversized accessories"
+      ]
+    },
+    "visual_consistency_rules": [
+      "Use only #234D3C, #79A85A, #C49A45, #172B2A, and #DCE8C5.",
+      "Render strict top-down compact 1x1-tile figures with short limbs and top-visible hats, shoulders, and tools.",
+      "Apply a uniform 2 px #172B2A outer outline; use no internal line finer than 1 px.",
+      "Keep shadows compact, directly beneath the figure, and inside one tile.",
+      "Identify each role with exactly four cues: hat geometry, apron or torso shape, one carried tool, and one icon-only badge.",
+      "Limit each sprite to one dominant prop and one small secondary token; avoid silhouette clutter.",
+      "Use brass only for clips, scanners, scales, stamps, ferrules, and badge edges.",
+      "Represent paperwork as cream geometric panes, tabs, or fans without readable writing.",
+      "Protective gear must remain horticultural and railway-specific, never medical-hospital, military, or spacefaring.",
+      "Victorian influence is limited to greenhouse tailoring, fitted coats, structured caps, and brass closures; avoid aristocratic costume.",
+      "Show institutional affiliation through recurring icons: roster lattice, grafted leaf, balance basket, circular rosette, or destination leaf.",
+      "Keep cap, apron, satchel, and tool shapes distinct at 64x64; avoid fine textile patterns, gradients, and translucent effects."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "verdant_line_v1",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90 degrees, no visible horizons or facades",
+      "scale_rule": "Collision-aligned 1 m tiles; doors 1 tile, aisles 2 tiles, railcars 6 tiles wide; props and sprites remain tile-legible."
+    },
+    "palette": {
+      "dominant": "#234d3c",
+      "secondary": "#79a85a",
+      "accent": "#c49a45",
+      "shadow": "#172b2a",
+      "highlight": "#dce8c5"
+    },
+    "materials": [
+      "aged brass",
+      "ribbed greenhouse glass",
+      "damp dark timber",
+      "green enamel",
+      "cream ledger paper",
+      "terracotta",
+      "woven plant fibre"
+    ],
+    "lighting": "Diffuse glass-roof daylight in #DCE8C5; brass fixtures cast restrained #C49A45 pools; foliage and structures occlude with compact #172B2A shadows directly beneath; no coloured neon or gradients.",
+    "architecture": [
+      "Continuous narrow railcar and platform grid; never isolated dioramas.",
+      "Repeating brass greenhouse ribs, clipped corners, glass roof panels, and dark timber sleepers.",
+      "Plant bays visibly progress through seedling, flowering, fruiting, harvested, stressed, and quarantined states.",
+      "Built-ins use seed-drawer grids, locked harvest cabinets, fold-down ledger desks, cisterns, and tool rails.",
+      "Route gates are living espalier signs with destination-specific leaf silhouettes and icon-only enamel signals.",
+      "Institution zones differ by recurring symbols: roster lattice, grafted leaf, balance basket, and circular vote rosette.",
+      "Runtime overlays resemble translucent glass panes edged in brass, using icons, ticks, crop silhouettes, and palette-only status bands."
+    ],
+    "terrain": {
+      "ground": "Alternating greenhouse glass, damp timber decking, and planted bay tiles in the bounded palette.",
+      "path": "Two-tile dark timber aisle with brass junction strips and leaf-shaped direction inlays.",
+      "edge": "Continuous brass rail, greenhouse rib, carriage wall, hedge trellis, or track void; collision boundaries remain explicit."
+    },
+    "sprite_language": {
+      "body_proportion": "Compact 1x1-tile figures with large hat-and-shoulder silhouette, short limbs, and top-visible tools.",
+      "outline": "Uniform 2 px #172B2A outline; no internal line finer than 1 px; shadow stays inside one tile.",
+      "role_readability": "Roles read through hat geometry, apron shape, carried tool, and one accent badge: conductor cap, gardener apron, delegate satchel, broker ticket fan, passenger crop token."
+    },
+    "world_prompt_prefix": "The Verdant Line, strict orthographic top-down tile grid, luminous brass-and-glass railway greenhouse, damp timber aisles, evolving crop bays, tactile institutional fixtures, five-colour canon only.",
+    "sprite_prompt_prefix": "Verdant Line top-down grid sprite, compact one-tile silhouette, #172B2A outline, role-readable hat apron tool and icon badge, five-colour canon only.",
+    "forbidden_visuals": [
+      "visible words, labels, title text, numerals, or readable writing",
+      "poster, card, badge-sheet, or presentation layouts",
+      "disconnected room dioramas or floating map islands",
+      "perspective, isometric, oblique, side-view, horizon, or visible facade rendering",
+      "photorealism, painterly rendering, gradients, bloom, or lens effects",
+      "generic medieval fantasy, castles, magic runes, armour, or dungeon motifs",
+      "generic cyberpunk, neon, holograms, chrome megacities, or circuitry motifs",
+      "generic beige procedural terrain, deserts, or unrelated wilderness biomes",
+      "weapons, combat damage, gore, or militarised design",
+      "modern road vehicles, aircraft, skyscrapers, or unrelated real-world landmarks",
+      "colours outside #234D3C #79A85A #C49A45 #172B2A #DCE8C5"
+    ],
+    "canon_hash": "2469a927d0afd56f"
+  }
+}

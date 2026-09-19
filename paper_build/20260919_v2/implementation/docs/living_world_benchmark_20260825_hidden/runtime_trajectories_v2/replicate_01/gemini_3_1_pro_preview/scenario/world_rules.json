@@ -1,0 +1,853 @@
+{
+  "world_mode": "Fixed",
+  "topology": {
+    "grid_shape": {
+      "x": 30,
+      "y": 32,
+      "z": 1
+    },
+    "rooms": [
+      {
+        "room_id": "room_01_ministry_weighing_station_alpha",
+        "name": "Ministry Weighing Station Alpha",
+        "x": 10,
+        "y": 24,
+        "z": 0,
+        "width_tiles": 8,
+        "height_tiles": 8,
+        "doorways": [
+          {
+            "doorway_id": "room_01_ministry_weighing_station_alpha_to_room_05_silent_majority_plaza",
+            "position": {
+              "x": 13,
+              "y": 24,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_05_silent_majority_plaza",
+            "label": "passage to Silent Majority Plaza"
+          }
+        ],
+        "visual": {
+          "biome": "cliffside_bureaucracy",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "brass_scales",
+            "pneumatic_tubes",
+            "slate_desks",
+            "glowing_blue_ink"
+          ],
+          "ambient_palette": "focused_blue",
+          "visual_canon_hash": "d22816f3d7cd3ac0",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_01_ministry_weighing_station_alpha_grand_brass_scale",
+              "label": "Grand Brass Scale",
+              "description": "A massive, tarnished brass scale used to weigh the emotional gravity of transcribed promises.",
+              "anchor": "center",
+              "width_tiles": 3,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Assess and tax the weight of spoken promises (sv_tax_rate).",
+          "activity_tags": [
+            "weighing",
+            "taxing",
+            "recording"
+          ],
+          "player_entry_hook": "You are a Courier whose ledger is glowing dangerously bright.",
+          "room_archetype": "checkpoint",
+          "layout_signal": "Ministry Weighing Station Alpha | Assess and tax the weight of spoken promises (sv_tax_rate). | cliffside_bureaucracy | weighing | taxing | recording | brass_scales | pneumatic_tubes | slate_desks | glowing_blue_ink"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "crunchy 16-bit pixel art of wet slate cobblestones with tarnished brass grates and glowing blue ink stains, top-down orthographic",
+        "room_scene_prompt": "strict top-down orthographic 2D game art, bureaucratic dystopia cliffside city weighing station, wet slate floor, large tarnished brass scales, cramped bureaucratic kiosks, dense fog, harsh localized brass lantern spotlights, no visible text, no labels, no UI elements, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "w_oathsedge_01_canon",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90 degrees",
+            "scale_rule": "1 tile = 1 meter, characters occupy 1x1 tile"
+          },
+          "palette": {
+            "dominant": "#2c3539",
+            "secondary": "#8c92ac",
+            "accent": "#b5a642",
+            "shadow": "#1a1a1a",
+            "highlight": "#e6e6fa"
+          },
+          "materials": [
+            "tarnished brass",
+            "damp slate",
+            "yellowed parchment",
+            "wrought iron",
+            "glowing blue ink"
+          ],
+          "lighting": "diffuse, fog-filtered daylight with harsh, localized brass lantern spotlights",
+          "architecture": [
+            "steep vertical drops",
+            "narrow slate bridges",
+            "brass piping and pneumatic tubes",
+            "cramped bureaucratic kiosks",
+            "iron-wrought balconies"
+          ],
+          "terrain": {
+            "ground": "wet slate cobblestones",
+            "path": "worn stone steps and brass grates",
+            "edge": "abyssal fog-filled chasms"
+          },
+          "sprite_language": {
+            "body_proportion": "hunched, top-heavy with burdens",
+            "outline": "thick dark grey outline for readability against fog",
+            "role_readability": "couriers carry oversized ledgers/boxes, wardens wear brass masks"
+          },
+          "world_prompt_prefix": "strict top-down orthographic 2D game art, bureaucratic dystopia cliffside city, wet slate, tarnished brass scales, dense fog, steampunk gothic architecture",
+          "sprite_prompt_prefix": "strict top-down orthographic 2D game sprite, hunched figure, carrying heavy ledgers, brass accents, dark grey outline, flat lighting",
+          "forbidden_visuals": [
+            "visible text",
+            "labels",
+            "UI elements",
+            "isometric angles",
+            "perspective rendering",
+            "photorealism",
+            "bright sunny skies",
+            "generic medieval fantasy",
+            "neon cyberpunk"
+          ],
+          "canon_hash": "d22816f3d7cd3ac0"
+        }
+      },
+      {
+        "room_id": "room_02_courier_dispatch_yard",
+        "name": "Courier Dispatch Yard",
+        "x": 0,
+        "y": 10,
+        "z": 0,
+        "width_tiles": 10,
+        "height_tiles": 12,
+        "doorways": [
+          {
+            "doorway_id": "room_02_courier_dispatch_yard_to_room_04_gilded_tongues_exchange",
+            "position": {
+              "x": 5,
+              "y": 10,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_04_gilded_tongues_exchange",
+            "label": "passage to Gilded Tongues Exchange"
+          },
+          {
+            "doorway_id": "room_02_courier_dispatch_yard_to_room_05_silent_majority_plaza",
+            "position": {
+              "x": 9,
+              "y": 15,
+              "z": 0
+            },
+            "edge_dir": "right",
+            "connects_to_room_id": "room_05_silent_majority_plaza",
+            "label": "passage to Silent Majority Plaza"
+          }
+        ],
+        "visual": {
+          "biome": "cliffside_bureaucracy",
+          "floor_tile": "stone_hall",
+          "wall_tile": "wood_beam_wall",
+          "decor_tags": [
+            "iron_lockboxes",
+            "heavy_ledgers",
+            "worn_stone_steps",
+            "brass_piping"
+          ],
+          "ambient_palette": "dusty_brown",
+          "visual_canon_hash": "d22816f3d7cd3ac0",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_02_courier_dispatch_yard_ledger_loading_dock",
+              "label": "Ledger Loading Dock",
+              "description": "A reinforced slate platform where heavy, glowing ledgers are loaded into iron lockboxes.",
+              "anchor": "north_mid",
+              "width_tiles": 3,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Organize and dispatch couriers carrying unpaid promises (sv_courier_workload).",
+          "activity_tags": [
+            "dispatching",
+            "loading",
+            "resting"
+          ],
+          "player_entry_hook": "You are an Auditor who just discovered a massive discrepancy in the Gilded Tongues' taxes.",
+          "room_archetype": "logistics_yard",
+          "layout_signal": "Courier Dispatch Yard | Organize and dispatch couriers carrying unpaid promises (sv_courier_workload). | cliffside_bureaucracy | dispatching | loading | resting | iron_lockboxes | heavy_ledgers | worn_stone_steps | brass_piping"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "crunchy 16-bit pixel art of worn stone steps and cracked slate flooring with heavy scuff marks, top-down orthographic",
+        "room_scene_prompt": "strict top-down orthographic 2D game art, courier dispatch yard in a cliffside city, worn stone flooring, stacks of iron lockboxes and heavy glowing ledgers, brass piping, diffuse fog-filtered daylight, no visible text, no labels, no UI elements, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "w_oathsedge_01_canon",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90 degrees",
+            "scale_rule": "1 tile = 1 meter, characters occupy 1x1 tile"
+          },
+          "palette": {
+            "dominant": "#2c3539",
+            "secondary": "#8c92ac",
+            "accent": "#b5a642",
+            "shadow": "#1a1a1a",
+            "highlight": "#e6e6fa"
+          },
+          "materials": [
+            "tarnished brass",
+            "damp slate",
+            "yellowed parchment",
+            "wrought iron",
+            "glowing blue ink"
+          ],
+          "lighting": "diffuse, fog-filtered daylight with harsh, localized brass lantern spotlights",
+          "architecture": [
+            "steep vertical drops",
+            "narrow slate bridges",
+            "brass piping and pneumatic tubes",
+            "cramped bureaucratic kiosks",
+            "iron-wrought balconies"
+          ],
+          "terrain": {
+            "ground": "wet slate cobblestones",
+            "path": "worn stone steps and brass grates",
+            "edge": "abyssal fog-filled chasms"
+          },
+          "sprite_language": {
+            "body_proportion": "hunched, top-heavy with burdens",
+            "outline": "thick dark grey outline for readability against fog",
+            "role_readability": "couriers carry oversized ledgers/boxes, wardens wear brass masks"
+          },
+          "world_prompt_prefix": "strict top-down orthographic 2D game art, bureaucratic dystopia cliffside city, wet slate, tarnished brass scales, dense fog, steampunk gothic architecture",
+          "sprite_prompt_prefix": "strict top-down orthographic 2D game sprite, hunched figure, carrying heavy ledgers, brass accents, dark grey outline, flat lighting",
+          "forbidden_visuals": [
+            "visible text",
+            "labels",
+            "UI elements",
+            "isometric angles",
+            "perspective rendering",
+            "photorealism",
+            "bright sunny skies",
+            "generic medieval fantasy",
+            "neon cyberpunk"
+          ],
+          "canon_hash": "d22816f3d7cd3ac0"
+        }
+      },
+      {
+        "room_id": "room_03_the_deep_archive_entrance",
+        "name": "The Deep Archive Entrance",
+        "x": 10,
+        "y": 0,
+        "z": 0,
+        "width_tiles": 12,
+        "height_tiles": 10,
+        "doorways": [
+          {
+            "doorway_id": "room_03_the_deep_archive_entrance_to_room_04_gilded_tongues_exchange",
+            "position": {
+              "x": 10,
+              "y": 5,
+              "z": 0
+            },
+            "edge_dir": "left",
+            "connects_to_room_id": "room_04_gilded_tongues_exchange",
+            "label": "passage to Gilded Tongues Exchange"
+          },
+          {
+            "doorway_id": "room_03_the_deep_archive_entrance_to_room_05_silent_majority_plaza",
+            "position": {
+              "x": 15,
+              "y": 9,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_05_silent_majority_plaza",
+            "label": "passage to Silent Majority Plaza"
+          },
+          {
+            "doorway_id": "room_03_the_deep_archive_entrance_to_room_06_courier_union_hall",
+            "position": {
+              "x": 21,
+              "y": 6,
+              "z": 0
+            },
+            "edge_dir": "right",
+            "connects_to_room_id": "room_06_courier_union_hall",
+            "label": "passage to Courier Union Hall"
+          }
+        ],
+        "visual": {
+          "biome": "abyssal_fog",
+          "floor_tile": "library_wood",
+          "wall_tile": "library_shelf_wall",
+          "decor_tags": [
+            "colored_smoke",
+            "crushing_machinery",
+            "damp_slate",
+            "abyssal_fog"
+          ],
+          "ambient_palette": "low_lantern",
+          "visual_canon_hash": "d22816f3d7cd3ac0",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_03_the_deep_archive_entrance_promise_crusher",
+              "label": "Promise Crusher",
+              "description": "A towering wrought-iron machine that crushes broken promises into raw emotional energy, emitting colored smoke.",
+              "anchor": "center",
+              "width_tiles": 3,
+              "height_tiles": 3
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Store broken promises and extract residual value (sv_archive_capacity).",
+          "activity_tags": [
+            "storing",
+            "crushing",
+            "extracting"
+          ],
+          "player_entry_hook": "You are an Agitator planning to sabotage the scales in the plaza.",
+          "room_archetype": "archive_ritual",
+          "layout_signal": "The Deep Archive Entrance | Store broken promises and extract residual value (sv_archive_capacity). | abyssal_fog | storing | crushing | extracting | colored_smoke | crushing_machinery | damp_slate"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "crunchy 16-bit pixel art of damp slate flooring with deep cracks emitting colored smoke, top-down orthographic",
+        "room_scene_prompt": "strict top-down orthographic 2D game art, entrance to the deep archive, damp slate floor, massive iron crushing machinery, plumes of colored smoke, abyssal fog-filled chasms at the edges, no visible text, no labels, no UI elements, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "w_oathsedge_01_canon",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90 degrees",
+            "scale_rule": "1 tile = 1 meter, characters occupy 1x1 tile"
+          },
+          "palette": {
+            "dominant": "#2c3539",
+            "secondary": "#8c92ac",
+            "accent": "#b5a642",
+            "shadow": "#1a1a1a",
+            "highlight": "#e6e6fa"
+          },
+          "materials": [
+            "tarnished brass",
+            "damp slate",
+            "yellowed parchment",
+            "wrought iron",
+            "glowing blue ink"
+          ],
+          "lighting": "diffuse, fog-filtered daylight with harsh, localized brass lantern spotlights",
+          "architecture": [
+            "steep vertical drops",
+            "narrow slate bridges",
+            "brass piping and pneumatic tubes",
+            "cramped bureaucratic kiosks",
+            "iron-wrought balconies"
+          ],
+          "terrain": {
+            "ground": "wet slate cobblestones",
+            "path": "worn stone steps and brass grates",
+            "edge": "abyssal fog-filled chasms"
+          },
+          "sprite_language": {
+            "body_proportion": "hunched, top-heavy with burdens",
+            "outline": "thick dark grey outline for readability against fog",
+            "role_readability": "couriers carry oversized ledgers/boxes, wardens wear brass masks"
+          },
+          "world_prompt_prefix": "strict top-down orthographic 2D game art, bureaucratic dystopia cliffside city, wet slate, tarnished brass scales, dense fog, steampunk gothic architecture",
+          "sprite_prompt_prefix": "strict top-down orthographic 2D game sprite, hunched figure, carrying heavy ledgers, brass accents, dark grey outline, flat lighting",
+          "forbidden_visuals": [
+            "visible text",
+            "labels",
+            "UI elements",
+            "isometric angles",
+            "perspective rendering",
+            "photorealism",
+            "bright sunny skies",
+            "generic medieval fantasy",
+            "neon cyberpunk"
+          ],
+          "canon_hash": "d22816f3d7cd3ac0"
+        }
+      },
+      {
+        "room_id": "room_04_gilded_tongues_exchange",
+        "name": "Gilded Tongues Exchange",
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "width_tiles": 9,
+        "height_tiles": 9,
+        "doorways": [
+          {
+            "doorway_id": "room_02_courier_dispatch_yard_to_room_04_gilded_tongues_exchange",
+            "position": {
+              "x": 5,
+              "y": 9,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_02_courier_dispatch_yard",
+            "label": "passage to Courier Dispatch Yard"
+          },
+          {
+            "doorway_id": "room_03_the_deep_archive_entrance_to_room_04_gilded_tongues_exchange",
+            "position": {
+              "x": 9,
+              "y": 5,
+              "z": 0
+            },
+            "edge_dir": "right",
+            "connects_to_room_id": "room_03_the_deep_archive_entrance",
+            "label": "passage to The Deep Archive Entrance"
+          }
+        ],
+        "visual": {
+          "biome": "cliffside_bureaucracy",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "polished_brass",
+            "yellowed_parchment",
+            "iron_wrought_balconies",
+            "lanterns"
+          ],
+          "ambient_palette": "warm_lantern",
+          "visual_canon_hash": "d22816f3d7cd3ac0",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_04_gilded_tongues_exchange_merchant_negotiation_table",
+              "label": "Negotiation Table",
+              "description": "A large slate table covered in yellowed parchment and small brass scales for commercial promises.",
+              "anchor": "center",
+              "width_tiles": 3,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Wealthy merchants negotiate trade agreements and lobby for lower taxes.",
+          "activity_tags": [
+            "negotiating",
+            "trading",
+            "lobbying"
+          ],
+          "player_entry_hook": "You are a Courier whose ledger is glowing dangerously bright.",
+          "room_archetype": "market_exchange",
+          "layout_signal": "Gilded Tongues Exchange | Wealthy merchants negotiate trade agreements and lobby for lower taxes. | cliffside_bureaucracy | negotiating | trading | lobbying | polished_brass | yellowed_parchment | iron_wrought_balconies | lanterns"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "crunchy 16-bit pixel art of polished slate tiles with intricate brass inlays, top-down orthographic",
+        "room_scene_prompt": "strict top-down orthographic 2D game art, wealthy merchant exchange in a cliffside city, polished slate floor with brass inlays, iron-wrought balconies, stacks of yellowed parchment, harsh brass lantern spotlights, no visible text, no labels, no UI elements, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "w_oathsedge_01_canon",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90 degrees",
+            "scale_rule": "1 tile = 1 meter, characters occupy 1x1 tile"
+          },
+          "palette": {
+            "dominant": "#2c3539",
+            "secondary": "#8c92ac",
+            "accent": "#b5a642",
+            "shadow": "#1a1a1a",
+            "highlight": "#e6e6fa"
+          },
+          "materials": [
+            "tarnished brass",
+            "damp slate",
+            "yellowed parchment",
+            "wrought iron",
+            "glowing blue ink"
+          ],
+          "lighting": "diffuse, fog-filtered daylight with harsh, localized brass lantern spotlights",
+          "architecture": [
+            "steep vertical drops",
+            "narrow slate bridges",
+            "brass piping and pneumatic tubes",
+            "cramped bureaucratic kiosks",
+            "iron-wrought balconies"
+          ],
+          "terrain": {
+            "ground": "wet slate cobblestones",
+            "path": "worn stone steps and brass grates",
+            "edge": "abyssal fog-filled chasms"
+          },
+          "sprite_language": {
+            "body_proportion": "hunched, top-heavy with burdens",
+            "outline": "thick dark grey outline for readability against fog",
+            "role_readability": "couriers carry oversized ledgers/boxes, wardens wear brass masks"
+          },
+          "world_prompt_prefix": "strict top-down orthographic 2D game art, bureaucratic dystopia cliffside city, wet slate, tarnished brass scales, dense fog, steampunk gothic architecture",
+          "sprite_prompt_prefix": "strict top-down orthographic 2D game sprite, hunched figure, carrying heavy ledgers, brass accents, dark grey outline, flat lighting",
+          "forbidden_visuals": [
+            "visible text",
+            "labels",
+            "UI elements",
+            "isometric angles",
+            "perspective rendering",
+            "photorealism",
+            "bright sunny skies",
+            "generic medieval fantasy",
+            "neon cyberpunk"
+          ],
+          "canon_hash": "d22816f3d7cd3ac0"
+        }
+      },
+      {
+        "room_id": "room_05_silent_majority_plaza",
+        "name": "Silent Majority Plaza",
+        "x": 10,
+        "y": 10,
+        "z": 0,
+        "width_tiles": 14,
+        "height_tiles": 14,
+        "doorways": [
+          {
+            "doorway_id": "room_01_ministry_weighing_station_alpha_to_room_05_silent_majority_plaza",
+            "position": {
+              "x": 13,
+              "y": 23,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_01_ministry_weighing_station_alpha",
+            "label": "passage to Ministry Weighing Station Alpha"
+          },
+          {
+            "doorway_id": "room_02_courier_dispatch_yard_to_room_05_silent_majority_plaza",
+            "position": {
+              "x": 10,
+              "y": 15,
+              "z": 0
+            },
+            "edge_dir": "left",
+            "connects_to_room_id": "room_02_courier_dispatch_yard",
+            "label": "passage to Courier Dispatch Yard"
+          },
+          {
+            "doorway_id": "room_03_the_deep_archive_entrance_to_room_05_silent_majority_plaza",
+            "position": {
+              "x": 15,
+              "y": 10,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_03_the_deep_archive_entrance",
+            "label": "passage to The Deep Archive Entrance"
+          }
+        ],
+        "visual": {
+          "biome": "cliffside_bureaucracy",
+          "floor_tile": "stone_hall",
+          "wall_tile": "wood_beam_wall",
+          "decor_tags": [
+            "worn_cobblestones",
+            "makeshift_barricades",
+            "fog",
+            "damp_slate"
+          ],
+          "ambient_palette": "clear_day",
+          "visual_canon_hash": "d22816f3d7cd3ac0",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_05_silent_majority_plaza_protest_barricade",
+              "label": "Protest Barricade",
+              "description": "A makeshift barricade constructed from broken iron lockboxes and shattered slate.",
+              "anchor": "south_mid",
+              "width_tiles": 3,
+              "height_tiles": 1
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Poor citizens gather to protest the tax on personal promises (sv_public_trust).",
+          "activity_tags": [
+            "protesting",
+            "gathering",
+            "whispering"
+          ],
+          "player_entry_hook": "You are an Auditor who just discovered a massive discrepancy in the Gilded Tongues' taxes.",
+          "room_archetype": "commons",
+          "layout_signal": "Silent Majority Plaza | Poor citizens gather to protest the tax on personal promises (sv_public_trust). | cliffside_bureaucracy | protesting | gathering | whispering | worn_cobblestones | makeshift_barricades | fog | damp_slate"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "crunchy 16-bit pixel art of rough, wet slate cobblestones with puddles and debris, top-down orthographic",
+        "room_scene_prompt": "strict top-down orthographic 2D game art, public plaza in a cliffside city, rough wet slate cobblestones, makeshift barricades of broken iron and slate, dense fog, diffuse daylight, no visible text, no labels, no UI elements, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "w_oathsedge_01_canon",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90 degrees",
+            "scale_rule": "1 tile = 1 meter, characters occupy 1x1 tile"
+          },
+          "palette": {
+            "dominant": "#2c3539",
+            "secondary": "#8c92ac",
+            "accent": "#b5a642",
+            "shadow": "#1a1a1a",
+            "highlight": "#e6e6fa"
+          },
+          "materials": [
+            "tarnished brass",
+            "damp slate",
+            "yellowed parchment",
+            "wrought iron",
+            "glowing blue ink"
+          ],
+          "lighting": "diffuse, fog-filtered daylight with harsh, localized brass lantern spotlights",
+          "architecture": [
+            "steep vertical drops",
+            "narrow slate bridges",
+            "brass piping and pneumatic tubes",
+            "cramped bureaucratic kiosks",
+            "iron-wrought balconies"
+          ],
+          "terrain": {
+            "ground": "wet slate cobblestones",
+            "path": "worn stone steps and brass grates",
+            "edge": "abyssal fog-filled chasms"
+          },
+          "sprite_language": {
+            "body_proportion": "hunched, top-heavy with burdens",
+            "outline": "thick dark grey outline for readability against fog",
+            "role_readability": "couriers carry oversized ledgers/boxes, wardens wear brass masks"
+          },
+          "world_prompt_prefix": "strict top-down orthographic 2D game art, bureaucratic dystopia cliffside city, wet slate, tarnished brass scales, dense fog, steampunk gothic architecture",
+          "sprite_prompt_prefix": "strict top-down orthographic 2D game sprite, hunched figure, carrying heavy ledgers, brass accents, dark grey outline, flat lighting",
+          "forbidden_visuals": [
+            "visible text",
+            "labels",
+            "UI elements",
+            "isometric angles",
+            "perspective rendering",
+            "photorealism",
+            "bright sunny skies",
+            "generic medieval fantasy",
+            "neon cyberpunk"
+          ],
+          "canon_hash": "d22816f3d7cd3ac0"
+        }
+      },
+      {
+        "room_id": "room_06_courier_union_hall",
+        "name": "Courier Union Hall",
+        "x": 22,
+        "y": 4,
+        "z": 0,
+        "width_tiles": 8,
+        "height_tiles": 6,
+        "doorways": [
+          {
+            "doorway_id": "room_03_the_deep_archive_entrance_to_room_06_courier_union_hall",
+            "position": {
+              "x": 22,
+              "y": 6,
+              "z": 0
+            },
+            "edge_dir": "left",
+            "connects_to_room_id": "room_03_the_deep_archive_entrance",
+            "label": "passage to The Deep Archive Entrance"
+          }
+        ],
+        "visual": {
+          "biome": "cliffside_bureaucracy",
+          "floor_tile": "tavern_planks",
+          "wall_tile": "tavern_wall",
+          "decor_tags": [
+            "worn_benches",
+            "brass_lockers",
+            "dim_lighting",
+            "damp_slate"
+          ],
+          "ambient_palette": "ember_orange",
+          "visual_canon_hash": "d22816f3d7cd3ac0",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_06_courier_union_hall_brass_lockers",
+              "label": "Brass Lockers",
+              "description": "A row of tarnished brass lockers where couriers store their heavy gear and personal items.",
+              "anchor": "north_west",
+              "width_tiles": 3,
+              "height_tiles": 1
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Couriers rest and organize strikes to demand better conditions.",
+          "activity_tags": [
+            "resting",
+            "organizing",
+            "striking"
+          ],
+          "player_entry_hook": "You are an Agitator planning to sabotage the scales in the plaza.",
+          "room_archetype": "rest_social",
+          "layout_signal": "Courier Union Hall | Couriers rest and organize strikes to demand better conditions. | cliffside_bureaucracy | resting | organizing | striking | worn_benches | brass_lockers | dim_lighting | damp_slate"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "crunchy 16-bit pixel art of worn slate flooring with scuff marks and spilled glowing blue ink, top-down orthographic",
+        "room_scene_prompt": "strict top-down orthographic 2D game art, courier union hall in a cliffside city, worn slate floor, rows of tarnished brass lockers, worn wooden benches, dim diffuse lighting, no visible text, no labels, no UI elements, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "w_oathsedge_01_canon",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90 degrees",
+            "scale_rule": "1 tile = 1 meter, characters occupy 1x1 tile"
+          },
+          "palette": {
+            "dominant": "#2c3539",
+            "secondary": "#8c92ac",
+            "accent": "#b5a642",
+            "shadow": "#1a1a1a",
+            "highlight": "#e6e6fa"
+          },
+          "materials": [
+            "tarnished brass",
+            "damp slate",
+            "yellowed parchment",
+            "wrought iron",
+            "glowing blue ink"
+          ],
+          "lighting": "diffuse, fog-filtered daylight with harsh, localized brass lantern spotlights",
+          "architecture": [
+            "steep vertical drops",
+            "narrow slate bridges",
+            "brass piping and pneumatic tubes",
+            "cramped bureaucratic kiosks",
+            "iron-wrought balconies"
+          ],
+          "terrain": {
+            "ground": "wet slate cobblestones",
+            "path": "worn stone steps and brass grates",
+            "edge": "abyssal fog-filled chasms"
+          },
+          "sprite_language": {
+            "body_proportion": "hunched, top-heavy with burdens",
+            "outline": "thick dark grey outline for readability against fog",
+            "role_readability": "couriers carry oversized ledgers/boxes, wardens wear brass masks"
+          },
+          "world_prompt_prefix": "strict top-down orthographic 2D game art, bureaucratic dystopia cliffside city, wet slate, tarnished brass scales, dense fog, steampunk gothic architecture",
+          "sprite_prompt_prefix": "strict top-down orthographic 2D game sprite, hunched figure, carrying heavy ledgers, brass accents, dark grey outline, flat lighting",
+          "forbidden_visuals": [
+            "visible text",
+            "labels",
+            "UI elements",
+            "isometric angles",
+            "perspective rendering",
+            "photorealism",
+            "bright sunny skies",
+            "generic medieval fantasy",
+            "neon cyberpunk"
+          ],
+          "canon_hash": "d22816f3d7cd3ac0"
+        }
+      }
+    ]
+  },
+  "movement": {
+    "max_steps_per_timestep": 2,
+    "capacity_per_coordinate": 3,
+    "line_of_sight_required": false,
+    "allow_diagonal": false
+  },
+  "item_rules": {
+    "mass_conservation": true,
+    "require_same_coordinate_for_transfer": true,
+    "combinations": []
+  },
+  "image_rules": {
+    "enabled": true,
+    "allowed_operations": [
+      "create",
+      "edit"
+    ]
+  },
+  "custom_action_rules": {
+    "default_duration_steps": 2,
+    "max_range_steps": 10,
+    "allowed_actions": [
+      "Weigh a spoken promise",
+      "Transfer a defaulted promise",
+      "Extract emotional energy from a broken promise",
+      "Lobby for a commercial tax exemption",
+      "Agitate the Silent Majority",
+      "Calibrate the brass scales",
+      "Chat",
+      "Inspect",
+      "Coordinate",
+      "Trade",
+      "Move",
+      "CinematicInteraction",
+      "ScoutReport",
+      "Mediate"
+    ],
+    "open_proposals_enabled": true,
+    "open_proposal_effects": [
+      "speech",
+      "transfer",
+      "create_item",
+      "status"
+    ]
+  },
+  "social_rules": [
+    "Never speak a promise you cannot afford to have weighed.",
+    "Couriers must be given right of way; their burdens are heavy enough.",
+    "Do not look directly at the colored smoke rising from the Deep Archive.",
+    "Generated gameplay loops should create follow-up choices instead of dead ends.",
+    "Player entry points should remain understandable through local conversation, movement, and inspection.",
+    "Conflict hook: The Ministry has just doubled the tax on emotional promises, pushing the Silent Majority to the brink.",
+    "Conflict hook: The Deep Archive is at 99% capacity, and the colored smoke is beginning to mutate."
+  ],
+  "discovered_rules": []
+}

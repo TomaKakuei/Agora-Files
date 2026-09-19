@@ -1,0 +1,1842 @@
+{
+  "world_name": "Aethelcleft",
+  "world_id": "world_aethelcleft_v1",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "en-US",
+    "tone": "bureaucratic magical realism",
+    "visual_direction": "sheer chalk cliffs, suspended brass scales, pneumatic tubes, parchment-laden rope bridges",
+    "currency_code": "GRN",
+    "currency_symbol": "ℊ",
+    "currency_minor_unit": "grain",
+    "currency_name": "Grains of Truth",
+    "domain_label": "civic-economy",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "inst_toll_scale",
+        "name": "The Acoustic Excise",
+        "mandate": "Extract civic tithes by measuring the physical mass of condensed spoken pledges",
+        "decision_rule": "If pledge weight exceeds registered tariff balance, impound speech-capsule until fee is cleared",
+        "enforced_by": "Bell-warden bailiffs armed with tuning forks",
+        "visible_output": "Brass counterweights suspended across cliff faces, shifting height daily"
+      },
+      {
+        "institution_id": "inst_courier_guild",
+        "name": "Gantry Runners Syndicate",
+        "mandate": "Transport defaulted and floating promise-jars between debtors and claimants",
+        "decision_rule": "Route promises along shortest bridge path; dump heaviest insolvent vows into the abyss if unpaid for 30 cycles",
+        "enforced_by": "Rigging marshals on ziplines",
+        "visible_output": "Chalkboard ledger boards mounted on canyon towers logging outstanding deliveries"
+      },
+      {
+        "institution_id": "inst_null_tribunal",
+        "name": "The Silence Assembly",
+        "mandate": "Adjudicate breached covenants and dissolve toxic public vows",
+        "decision_rule": "Unanimous vote required to grind broken promise-capsules into civic mortar",
+        "enforced_by": "Veiled scriveners with wax presses",
+        "visible_output": "Dust plumes and white mortar applied to cliff reinforcement walls"
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "state_promise_backlog",
+        "label": "Unsettled Promise Mass",
+        "initial_tension": "High congestion of heavy defaulted spoken debts in transit hubs",
+        "changed_by": [
+          "inst_courier_guild",
+          "inst_toll_scale"
+        ],
+        "affects": [
+          "state_bridge_strain",
+          "state_civic_trust"
+        ]
+      },
+      {
+        "state_id": "state_bridge_strain",
+        "label": "Rope Bridge & Pulley Load",
+        "initial_tension": "Suspension cables near mechanical fatigue from physical debt weight",
+        "changed_by": [
+          "inst_courier_guild"
+        ],
+        "affects": [
+          "state_transit_cost",
+          "state_promise_backlog"
+        ]
+      },
+      {
+        "state_id": "state_transit_cost",
+        "label": "Courier Delivery Tariff",
+        "initial_tension": "Surging transit fees pushing lower cliff dwellers to default",
+        "changed_by": [
+          "inst_toll_scale"
+        ],
+        "affects": [
+          "state_civic_trust",
+          "state_promise_backlog"
+        ]
+      },
+      {
+        "state_id": "state_civic_trust",
+        "label": "Verbal Contract Liquidity",
+        "initial_tension": "Citizens whispering to keep spoken words physically light, stifling major commerce",
+        "changed_by": [
+          "inst_null_tribunal",
+          "inst_toll_scale"
+        ],
+        "affects": [
+          "state_promise_backlog",
+          "state_transit_cost"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "state_promise_backlog",
+        "trigger": "Courier hubs reach maximum volumetric capacity",
+        "target_state": "state_bridge_strain",
+        "effect": "Runners overload rope networks, risking structural collapse and slowing transit",
+        "delay": "Medium"
+      },
+      {
+        "source_state": "state_bridge_strain",
+        "trigger": "Pneumatic pulleys and cable bridges require emergency maintenance",
+        "target_state": "state_transit_cost",
+        "effect": "The Acoustic Excise raises transit surcharges to fund repairs",
+        "delay": "Immediate"
+      },
+      {
+        "source_state": "state_transit_cost",
+        "trigger": "Delivery fees exceed nominal value of carried spoken pledges",
+        "target_state": "state_civic_trust",
+        "effect": "Households refuse to formally utter pledges, resorting to unbonded trade",
+        "delay": "Short"
+      },
+      {
+        "source_state": "state_civic_trust",
+        "trigger": "Drop in sworn commitments reduces total pledge registration volume",
+        "target_state": "state_promise_backlog",
+        "effect": "Backlog drops in new entries but old high-weight debts stall without resolution",
+        "delay": "Long"
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "group_runners",
+        "name": "Abyss Couriers",
+        "goal": "Maximize delivery volume and bridge access without risking catastrophic rigging failure",
+        "leverage": "Control over physical transfer routes and promise custody",
+        "dependency": "Requires bridge maintenance funded by the Acoustic Excise"
+      },
+      {
+        "group_id": "group_whisperers",
+        "name": "Undercleft Households",
+        "goal": "Communicate and barter without heavy tax penalties imposed on solemn oaths",
+        "leverage": "Can hide spoken intentions through dialect slurs and silent pacts",
+        "dependency": "Need courier verification for inter-cleft legal recognition"
+      },
+      {
+        "group_id": "group_tax_justiciars",
+        "name": "Excise Magistrates",
+        "goal": "Maximize grain revenue by forcing public oration of high-consequence contracts",
+        "leverage": "Authority to seize real property and lock acoustic conduits",
+        "dependency": "Rely on runners to seize and present unpaid physical vows"
+      }
+    ]
+  },
+  "genre": "Fantasy Bureaucracy",
+  "premise": "In a vertiginous canyon city, spoken vows take on literal physical mass. The state taxes speech by weight upon utterance, and couriers must physically haul defaulted promises between precariously perched households.",
+  "simulation_objective": "Balance civic solvency, acoustic taxation rates, and physical bridge stability against public unrest and communication collapse.",
+  "agent_count_target": 12,
+  "player_count_target": 32,
+  "wall_color_theme": "scored_chalkstone",
+  "economy_focus": "Weight-based debt logistics and verbal trade contracts",
+  "exploration_focus": "Vertical cliffside navigation, precarious suspension networks, and acoustic catacombs",
+  "conflict_tone": "Bureaucratic tension, vertical peril, and socio-economic friction",
+  "visual_style": "Chalk cliff faces crisscrossed by brass wires, pneumatic counterweights, leather harnesses, and glowing glass vow-jars",
+  "rooms": [
+    {
+      "name": "Excise Weigh-Beam Registry",
+      "biome": "cantilevered_chalk_ledges",
+      "purpose": "The Acoustic Excise balances physical pledge-mass against civic ledgers; increasing state_transit_cost here drives Under-cleft households in the Low-Cleft Depot to trade unbonded speech.",
+      "decor_tags": [
+        "brass_counterweights",
+        "vellum_ledgers",
+        "tuning_forks",
+        "chalk_tables"
+      ],
+      "activity_tags": [
+        "weighing_spoken_vows",
+        "stamping_vellum",
+        "impounding_debt_jars"
+      ],
+      "flux_floor_prompt": "strict top-down 2D orthographic crunchy 16-bit pixel art of pale scraped chalkstone quarry floor scored with etched brass measurement grids, seamless tileable pattern, zero perspective tilt, 90-degree zenith view",
+      "room_scene_prompt": "strict top-down 2D orthographic pixel-art map plate of the Excise Weigh-Beam Registry, pale chalkstone floor edge-to-edge, huge brass balance scales suspended by tarred ropes, shelves of heavy wax-sealed pledge cylinders, bailiffs with tuning forks, teal glow from vowel jars, dark cast shadows, no text, no labels, no watermark, flat 90-degree zenith view",
+      "width_tiles": 8,
+      "height_tiles": 6,
+      "ambient_palette": "focused_blue",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "monumental_acoustic_balance",
+          "label": "Excise Toll Balance",
+          "description": "A massive brass balance scale equipped with harmonic tuning dampeners and heavy chalk counterweights.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "impounded_vow_rack",
+          "label": "Impound Registry Rack",
+          "description": "Cast brass pigeonholes holding dense, humming teal glass jars of unpaid verbal promises.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Gantry Cable Rigging Depot",
+      "biome": "tensioned_rope_slat_walkways",
+      "purpose": "Abyss Couriers stage and dispatch heavy floating promises across canyon bridges; rising state_promise_backlog here directly increases state_bridge_strain on the Gantry Cable Rigging Depot spans.",
+      "decor_tags": [
+        "tarred_hemp_rigging",
+        "winches",
+        "brass_carabiners",
+        "leather_harnesses"
+      ],
+      "activity_tags": [
+        "staging_promise_cargo",
+        "greasing_pulleys",
+        "sorting_vow_capsules"
+      ],
+      "flux_floor_prompt": "strict top-down 2D orthographic crunchy 16-bit pixel art of tarred wood plank decking with brass guide rails and tension cable anchoring plates, flat 90-degree zenith view",
+      "room_scene_prompt": "strict top-down 2D orthographic pixel-art map plate of Gantry Cable Rigging Depot, planked cable deck floor touching all borders, winch drums, harness racks, courier backpacks with heavy glowing promise jars, coiled tarred hemp ropes, hard void cast shadows, no text, no labels, no border, flat 90-degree zenith view",
+      "width_tiles": 7,
+      "height_tiles": 7,
+      "ambient_palette": "clear_day",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "canyon_winch_drum",
+          "label": "Tension Cable Winch",
+          "description": "A heavy brass and cast-iron cable winch with spooled tarred rigging that pulls freight harnesses across the chasm.",
+          "anchor": "north_west",
+          "width_tiles": 2,
+          "height_tiles": 2
+        },
+        {
+          "component_id": "vow_hauling_pallet",
+          "label": "Staged Promise Pallet",
+          "description": "A reinforced iron pallet stacked with lead-sleeved jars of defaulted verbal oaths awaiting transport.",
+          "anchor": "south_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Silence Assembly Mortar Basin",
+      "biome": "cliff_face_counterweight_wells",
+      "purpose": "The Silence Assembly pulverizes adjudicated breached vows into civic masonry paste to reinforce weakened cliff ledges.",
+      "decor_tags": [
+        "stone_pestles",
+        "white_chalk_paste",
+        "presses",
+        "shattered_glass"
+      ],
+      "activity_tags": [
+        "crushing_broken_vows",
+        "mixing_void_mortar",
+        "sealing_nullification_decrees"
+      ],
+      "flux_floor_prompt": "strict top-down 2D orthographic crunchy 16-bit pixel art of white chalk slurry stained flagstones with brass drainage channels, flat 90-degree zenith view",
+      "room_scene_prompt": "strict top-down 2D orthographic pixel-art map plate of The Silence Assembly Mortar Basin, chalk-stained floor reaching all four edges, large stone crushing basins, pulverizer pistons, jars of drained white promise-dust, veiled scriveners with wax seals, no labels, no text, flat 90-degree zenith view",
+      "width_tiles": 7,
+      "height_tiles": 6,
+      "ambient_palette": "ember_orange",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "pneumatic_vow_crusher",
+          "label": "Covenant Mortar Mill",
+          "description": "A brass pneumatic piston crushing crystalline broken promises into inert white sealing dust.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Undercleft Whisperer Exchange",
+      "biome": "cantilevered_chalk_ledges",
+      "purpose": "Low-cleft households conduct hushed barter to minimize spoken weight taxes, circumventing Acoustic Excise tithes.",
+      "decor_tags": [
+        "burlap_screens",
+        "acoustic_dampening_wool",
+        "brass_speaking_horns",
+        "parchment_chits"
+      ],
+      "activity_tags": [
+        "whispered_barter",
+        "acoustic_damping",
+        "ledger_concealment"
+      ],
+      "flux_floor_prompt": "strict top-down 2D orthographic crunchy 16-bit pixel art of rough scraped chalk quarry tiles lined with woven hemp runner mats, flat 90-degree zenith view",
+      "room_scene_prompt": "strict top-down 2D orthographic pixel-art map plate of Undercleft Whisperer Exchange, hemp-matted chalk flooring edge-to-edge, acoustic wool dividers, brass whispering conduits, small weight-dampened scale counters, shaded lanterns, no text, no captions, flat 90-degree zenith view",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "dusty_brown",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "acoustic_dampened_counter",
+          "label": "Muffled Trade Booth",
+          "description": "A thick wool-lined wooden counter fitted with narrow brass speaking funnels to suppress vocal acoustic mass.",
+          "anchor": "south_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        },
+        {
+          "component_id": "contraband_pledge_vault",
+          "label": "Concealed Promise Coffer",
+          "description": "A lead-shielded floor safe used to stash unregistered verbal promises away from Excise bailiffs.",
+          "anchor": "north_east",
+          "width_tiles": 1,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Gantry Runners Bivouac",
+      "biome": "tensioned_rope_slat_walkways",
+      "purpose": "Couriers rest, repair damaged harnesses, and study abyss bridge tension manifests between perilous freight runs.",
+      "decor_tags": [
+        "hammocks",
+        "grease_tubs",
+        "harness_stands",
+        "chalk_route_boards"
+      ],
+      "activity_tags": [
+        "resting",
+        "patching_rigging",
+        "reviewing_bridge_tensions"
+      ],
+      "flux_floor_prompt": "strict top-down 2D orthographic crunchy 16-bit pixel art of rough cedar plank flooring pegged with brass rivets and tar seams, flat 90-degree zenith view",
+      "room_scene_prompt": "strict top-down 2D orthographic pixel-art map plate of Gantry Runners Bivouac, wooden plank floor filling entire footprint, suspended tarred hammocks, courier rigging packs resting against chalk walls, mugs on low tables, teal luminescence from bedside promise jars, no labels, no text, flat 90-degree zenith view",
+      "width_tiles": 6,
+      "height_tiles": 5,
+      "ambient_palette": "warm_lantern",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "rigging_repair_bench",
+          "label": "Courier Harness Bench",
+          "description": "A heavy wooden workbench scattered with leather needles, tension clips, brass buckles, and grease tubs.",
+          "anchor": "north_west",
+          "width_tiles": 2,
+          "height_tiles": 1
+        },
+        {
+          "component_id": "route_strain_chalkboard",
+          "label": "Bridge Strain Map Board",
+          "description": "A framed slate board detailing daily weight capacities and cable wear across the canyon spans.",
+          "anchor": "east_mid",
+          "width_tiles": 1,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Acoustic Conduits Overlook",
+      "biome": "cliff_face_counterweight_wells",
+      "purpose": "Excise lookouts monitor acoustic emissions and canyon wire resonance to identify unmetered public vows.",
+      "decor_tags": [
+        "brass_resonator_cones",
+        "spotlights",
+        "pulley_dials",
+        "chalk_parapets"
+      ],
+      "activity_tags": [
+        "sounding_canyon_depths",
+        "spotting_contraband_gliders",
+        "logging_resonant_peaks"
+      ],
+      "flux_floor_prompt": "strict top-down 2D orthographic crunchy 16-bit pixel art of polished chalkstone slab floor with inlaid brass compass indices and wire track grooves, flat 90-degree zenith view",
+      "room_scene_prompt": "strict top-down 2D orthographic pixel-art map plate of Acoustic Conduits Overlook, pale stone tiles edge-to-edge, brass listening funnels mounted on iron stanchions looking out over the abyss edge, ledger desks, harsh zenith lighting, void shadows, no watermark, no text, flat 90-degree zenith view",
+      "width_tiles": 7,
+      "height_tiles": 5,
+      "ambient_palette": "low_lantern",
+      "archetype": "lookout",
+      "scene_components": [
+        {
+          "component_id": "canyon_listening_horn",
+          "label": "Resonance Directional Horn",
+          "description": "A massive flared brass megaphone directed downward into the canyon abyss to detect heavy illicit utterances.",
+          "anchor": "south_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Tavish Vane",
+      "role_name": "Senior Balance Bailiff",
+      "activity": "Auditing pledge density at the Acoustic Excise to adjust tariff rates and lower the state_promise_backlog",
+      "home_base": "Excise Weigh-Beam Registry",
+      "arc_goal": "Force the Gantry Runners Syndicate to surrender defaulted promise ampoules to relieve state_bridge_strain",
+      "inventory": [
+        {
+          "name": "Resonating Tuning Fork",
+          "description": "A heavy bell-metal fork used to test the physical acoustic density of spoken pledges.",
+          "quantity": 1
+        },
+        {
+          "name": "Wax Pledge Ledger",
+          "description": "A dense slate binder bound in sheepskin, registering sealed acoustic contracts.",
+          "quantity": 2
+        },
+        {
+          "name": "Bell-Warden Whistle",
+          "description": "A high-pitched silver whistle that signals cable checkpoints to seize unregistered vessels.",
+          "quantity": 1
+        },
+        {
+          "name": "Acoustic Balance Weight",
+          "description": "A calibrated lead disc engraved with the Excise crest for weigh-beam tests.",
+          "quantity": 4
+        },
+        {
+          "name": "Scrivener Press Seal",
+          "description": "A hand-screw vice that imprints regulatory tariff stamps on hardened vow wax.",
+          "quantity": 1
+        },
+        {
+          "name": "Condensed Speech Ampoule",
+          "description": "A sealed glass vial vibrating slightly with an impounded high-interest pledge.",
+          "quantity": 2
+        },
+        {
+          "name": "Insulating Muffler Wrap",
+          "description": "Felted wool strips soaked in bitumen to silence resonance during transport.",
+          "quantity": 3
+        },
+        {
+          "name": "Chalkboard Slate",
+          "description": "A framed slate displaying daily tariff multipliers for over-weighted vows.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Weigh-Beam Registry Vault",
+          "asset_type": "Security Staging Chamber",
+          "description": "Reinforced acoustic lockbox holding seized high-mass spoken debt ampoules.",
+          "story_use": "Enables Tavish to manipulate impounded vow custody to enforce Excise tariffs."
+        },
+        {
+          "asset_name": "Bailiff Counterweight Station",
+          "asset_type": "Toll Mechanism",
+          "description": "Suspended brass gantry arm regulating rope-way access to the upper cleft.",
+          "story_use": "Provides structural leverage to halt courier transit until taxes are cleared."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_excise_tariff_loopholes",
+          "topic": "Acoustic Excise Fee Calculations",
+          "summary": "Specific pitch frequencies that falsely register as low mass on the master weigh-beam.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "know_runner_overload_routes",
+          "topic": "Gantry Bridge Fatigue Thresholds",
+          "summary": "Mechanical stress maps showing which cable spans are closest to catastrophic failure.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Maren Kye",
+      "role_name": "Gantry Line Marshal",
+      "activity": "Coordinating heavy debt shipments through the Gantry Runners Syndicate to decrease state_transit_cost",
+      "home_base": "Gantry Cable Rigging Depot",
+      "arc_goal": "Re-route courier traffic across secondary spans to prevent bridge failure without paying Excise surcharges",
+      "inventory": [
+        {
+          "name": "Gantry Harness Rig",
+          "description": "Reinforced leather harness fitted with bronze zipline pulleys and friction brakes.",
+          "quantity": 1
+        },
+        {
+          "name": "Abyss Grapple Hook",
+          "description": "A spring-loaded steel claw used for securing snagged cargo lines in high crosswinds.",
+          "quantity": 2
+        },
+        {
+          "name": "Cable Grease Tallow",
+          "description": "A tin of thick animal fat mixed with graphite to reduce wear on tensioned steel ropes.",
+          "quantity": 3
+        },
+        {
+          "name": "Counterweight Slug",
+          "description": "Solid iron cylinder used to balance heavy courier carrier cradles on rapid runs.",
+          "quantity": 4
+        },
+        {
+          "name": "Resonator Cudgel",
+          "description": "A hollowed lead-weighted bat that disrupts hostile acoustic signatures on the line.",
+          "quantity": 1
+        },
+        {
+          "name": "Line Runner Signal Lantern",
+          "description": "A hooded oil lamp with tinted glass shutters for signaling cable clearances.",
+          "quantity": 1
+        },
+        {
+          "name": "Braided Tension Cord",
+          "description": "Coil of high-tensile hemp fiber used for emergency cable splices mid-abyss.",
+          "quantity": 2
+        },
+        {
+          "name": "Pledge Carrier Pouch",
+          "description": "Padded leather satchel designed to prevent fragile speech ampoules from cracking.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "High-Line Rigging Workshop",
+          "asset_type": "Maintenance Facility",
+          "description": "Cablesmith bench stocked with splice needles, pulleys, and replacement tension blocks.",
+          "story_use": "Allows emergency repair of critical transit links during high backlog strains."
+        },
+        {
+          "asset_name": "Depot Bunk Station",
+          "asset_type": "Courier Waypoint",
+          "description": "Canyon-edge resting shelter equipped with fast-drop zipline anchors.",
+          "story_use": "Serves as a staging ground for covert night runs across the cleft."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_gantry_blind_routes",
+          "topic": "Unmonitored Cable Crossings",
+          "summary": "Sub-gorge cable paths that bypass Excise observation towers and acoustic listening posts.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "know_promise_spoilage",
+          "topic": "Ampoule Structural Degradation",
+          "summary": "The exact rate at which overdue spoken vows heat up and shatter their glass casings.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Silas Fenn",
+      "role_name": "Silence Mortar Scrivener",
+      "activity": "Grinding defaulted contract capsules at The Silence Assembly to restore state_civic_trust",
+      "home_base": "The Silence Assembly Mortar Basin",
+      "arc_goal": "Dissolve toxic public vows to create structural mortar, challenging Excise hoarding of broken pledges",
+      "inventory": [
+        {
+          "name": "Harmonic Nullifier Paste",
+          "description": "A dense chemical putty that absorbs and cancels reverberations in broken glass vials.",
+          "quantity": 2
+        },
+        {
+          "name": "Toxic Vow Jar",
+          "description": "Thick leaded jar holding curdled, breached covenants awaiting mortar pulverization.",
+          "quantity": 1
+        },
+        {
+          "name": "Mortar Pestle of the Basin",
+          "description": "Heavy granite grinding stone carved with acoustic cancellation runes.",
+          "quantity": 1
+        },
+        {
+          "name": "Veiled Scrivener Hood",
+          "description": "Dense silk and wool cowl that protects the wearer from deafening contract discharges.",
+          "quantity": 1
+        },
+        {
+          "name": "Slate Dissolution Stylus",
+          "description": "A blunted bronze rod used to scrape fractured promise wax from registry basins.",
+          "quantity": 2
+        },
+        {
+          "name": "Acoustic Lime Flask",
+          "description": "Unslaked mineral powder that hardens when exposed to decaying vocal frequencies.",
+          "quantity": 3
+        },
+        {
+          "name": "Breached Seal Fragments",
+          "description": "Chipped shards of certified wax seals harvested from voided oaths.",
+          "quantity": 5
+        },
+        {
+          "name": "Cleft Mortar Trowel",
+          "description": "Broad iron tool used to apply nullifying vow-paste to fracturing cliff masonry.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Mortar Grinding Trough",
+          "asset_type": "Dissolution Basin",
+          "description": "Massive stone mortar where corrupted spoken promises are ground into stabilizing mortar.",
+          "story_use": "Converts toxic civic debts into physical reinforcement for weakening cliff foundations."
+        },
+        {
+          "asset_name": "Silence Registry Archives",
+          "asset_type": "Record Repository",
+          "description": "Soundproofed alcove storing certificates of dissolved covenants and erased debts.",
+          "story_use": "Provides proof of debt cancellation to release citizens from Excise warrants."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_mortar_composition",
+          "topic": "Acoustic Masonry Stabilization",
+          "summary": "Formulas for blending dissolved oaths with lime to seal crumbling cliff fissures.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "know_tribunal_precedent",
+          "topic": "Silence Assembly Verdicts",
+          "summary": "Legal precedents for nullifying high-value pledges without paying the Acoustic Excise.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Vespera Sol",
+      "role_name": "Undercleft Dialect Broker",
+      "activity": "Negotiating muffled trade agreements across the Undercleft to mitigate state_civic_trust collapse",
+      "home_base": "Undercleft Whisperer Exchange",
+      "arc_goal": "Establish unbonded whisper markets that circumvent the Acoustic Excise and reduce state_promise_backlog",
+      "inventory": [
+        {
+          "name": "Whisper Flute Valve",
+          "description": "A slotted bone mouthpiece that suppresses acoustic harmonics when vocalizing oaths.",
+          "quantity": 1
+        },
+        {
+          "name": "Soft-Wax Thimble",
+          "description": "Pliable beeswax cap used to quickly seal miniature promise droplets before they gain weight.",
+          "quantity": 4
+        },
+        {
+          "name": "Concealed Resonance Dampener",
+          "description": "Pocket-sized velvet pouch lined with lead foil to conceal vibrating speech vials.",
+          "quantity": 2
+        },
+        {
+          "name": "Undercleft Dialect Slate",
+          "description": "Coded slate board detailing phonetic shifts that evade bailiff acoustic sensors.",
+          "quantity": 1
+        },
+        {
+          "name": "Sub-Cleft Signal Cord",
+          "description": "Weighted braided twine used for silent mechanical tapping between cliff terraces.",
+          "quantity": 2
+        },
+        {
+          "name": "Raw Pitch Sap Jar",
+          "description": "Sticky resin used to plug acoustic leaks in residential wall conduits.",
+          "quantity": 2
+        },
+        {
+          "name": "Unregistered Vow Bead",
+          "description": "A glass bead containing a compressed verbal barter agreement from an Undercleft household.",
+          "quantity": 3
+        },
+        {
+          "name": "Bailiff Detection Chime",
+          "description": "A sensitive copper chime that vibrates in the presence of Excise tuning forks.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Whisper Conduit Alcove",
+          "asset_type": "Hidden Exchange Cell",
+          "description": "A soundproofed cavern junction equipped with dampening curtains and speaking tubes.",
+          "story_use": "Allows Undercleft families to finalize un-taxed contracts outside Excise surveillance."
+        },
+        {
+          "asset_name": "Barter Ledger Niche",
+          "asset_type": "Clandestine Safe",
+          "description": "A concealed hollow in the cliff rock holding unbonded merchant tallies.",
+          "story_use": "Secures community trade records from seizure during bailiff sweeps."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_dialect_slur_craft",
+          "topic": "Acoustic Masking Techniques",
+          "summary": "Vocal inflections and throat modulations that register zero mass on Excise weigh-beams.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "know_conduit_junctions",
+          "topic": "Cleft Acoustic Conduit Network",
+          "summary": "Locations of natural rock fissures that carry whispers across the gorge without echoes.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Orin Gale",
+      "role_name": "Gantry Cable Rigging Overseer",
+      "activity": "Tensioning oxidized abyss suspension lines at the Gantry Cable Rigging Depot to mitigate state_bridge_strain caused by heavy spoken debt carriages.",
+      "home_base": "Gantry Cable Rigging Depot",
+      "arc_goal": "Re-engineer high-tensile counterweight tracks for the Gantry Runners Syndicate to lower state_transit_cost without causing catastrophic line failure.",
+      "inventory": [
+        {
+          "name": "Braided Bronze Cable Shears",
+          "description": "Heavy calibrated snips designed to sever fraying load lines in mid-suspension.",
+          "quantity": 1
+        },
+        {
+          "name": "Tallow Pitch Cake",
+          "description": "Block of sulfurous animal fat mixed with graphite for friction reduction along pulleys.",
+          "quantity": 3
+        },
+        {
+          "name": "Lead Deflection Gauge",
+          "description": "Pendulum-weighted dial showing structural sag on canyon-spanning spans.",
+          "quantity": 1
+        },
+        {
+          "name": "Reinforced Gantry Harness",
+          "description": "Double-stitched leather climbing rig fitted with drop-forged arrest buckles.",
+          "quantity": 1
+        },
+        {
+          "name": "Vibration Dampening Shims",
+          "description": "Lead and cork spacers clamped against anchors to absorb harmonic chatter.",
+          "quantity": 6
+        },
+        {
+          "name": "Spoke-Wrench Spanner",
+          "description": "Notched iron lever for tightening high-stress cable turnbuckles.",
+          "quantity": 2
+        },
+        {
+          "name": "Solder Flux Pellet",
+          "description": "Rosin-core combustion pellets for rapid joint sealing in bitter winds.",
+          "quantity": 4
+        },
+        {
+          "name": "Frayed Rigging Core",
+          "description": "Cut section of failed courier cable preserved to analyze stress shear patterns.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "North Span Winch Platform",
+          "asset_type": "Mechanical Rigging Post",
+          "description": "A steam-assisted capstan perched over the north canyon chasm controlling primary carriage cables.",
+          "story_use": "Enables bulk transit of impounded promise crates between upper excises and lower runners."
+        },
+        {
+          "asset_name": "Friction Testing Bench",
+          "asset_type": "Workshop Installation",
+          "description": "A weighted cantilever table used to test cable tensile limits against synthetic vow mass.",
+          "story_use": "Calibrates allowable cargo weights before the Syndicate greenlights cross-abyss shipments."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_gantry_fatigue_thresholds",
+          "topic": "Suspension Cable Fatigue Limits",
+          "summary": "Precise load calculations detailing the exact promise-mass tonnage that causes catastrophic cable failure on main spans.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "know_syndicate_bribe_channels",
+          "topic": "Gantry Line Smuggling Corridors",
+          "summary": "Awareness of blind pulley drop-points used by undercleft couriers to bypass Acoustic Excise weigh stations.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Bruna Kest",
+      "role_name": "Conduit Frequency Sentry",
+      "activity": "Patrolling the Acoustic Conduits Overlook to intercept un-tariffed whispered oaths before they bypass inst_toll_scale collection.",
+      "home_base": "Acoustic Conduits Overlook",
+      "arc_goal": "Plug clandestine acoustic vents to force Undercleft commerce onto registered channels, decreasing state_promise_backlog.",
+      "inventory": [
+        {
+          "name": "Directional Resonance Horn",
+          "description": "Flared brass funnel with acoustic filters that isolate distant vocal frequencies.",
+          "quantity": 1
+        },
+        {
+          "name": "Pitch-Catcher Wax Tube",
+          "description": "Softened paraffin cylinder used to capture and record acoustic vibrations for appraisal.",
+          "quantity": 4
+        },
+        {
+          "name": "Bell-Metal Tuning Wand",
+          "description": "Slender rod pitched to ring when detecting unbonded speech passing through rock pipes.",
+          "quantity": 2
+        },
+        {
+          "name": "Excise Sentry Mantle",
+          "description": "Thick wool and oiled leather cloak lined with sound-muffling quilting.",
+          "quantity": 1
+        },
+        {
+          "name": "Conduit Valve Key",
+          "description": "Octagonal bronze key that locks and unlocks cliffside speaking-tube dampers.",
+          "quantity": 1
+        },
+        {
+          "name": "Acoustic Sealing Putty",
+          "description": "Dense clay compound pressed into fissure cracks to silence sound leaks.",
+          "quantity": 5
+        },
+        {
+          "name": "Signal Slate and Chalk",
+          "description": "Hand slate used to flash visual cipher warnings to registry balance operators.",
+          "quantity": 1
+        },
+        {
+          "name": "Gilded Tariff Whistle",
+          "description": "Piercing signaling whistle tuned to halt unauthorized courier descents immediately.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Upper Conduit Listening Post",
+          "asset_type": "Surveillance Outpost",
+          "description": "A stone redoubt built into the cliff overhang with direct tube taps into every natural gorge echo-chamber.",
+          "story_use": "Provides actionable intelligence on unbonded trade vows moving through illicit undercleft channels."
+        },
+        {
+          "asset_name": "Acoustic Damper Ironwork",
+          "asset_type": "Infrastructure Fortification",
+          "description": "A set of heavy iron louvers installed across the canyon wind-gap to stifle unmetered oratory.",
+          "story_use": "Allows Bruna to choke sound transmission across the cleft, forcing traders to use weigh-beam stations."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_undercleft_acoustic_echoes",
+          "topic": "Subterranean Vocal Echo Mapping",
+          "summary": "Complete structural layout of hidden canyon chimneys that carry sound upwards without losing clarity.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "know_vespera_cipher_dialect",
+          "topic": "Undercleft Dialect Slur Ciphers",
+          "summary": "Decryption patterns for muffled phonetic slang used by Undercleft merchants to evade tariff balances.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Corin Vael",
+      "role_name": "Abyss Promise Dredger",
+      "activity": "Hauling jettisoned promise jars from the canyon floor to the Gantry Runners Bivouac to resolve defaulted contracts.",
+      "home_base": "Gantry Runners Bivouac",
+      "arc_goal": "Salvage and broker abandoned spoken collateral to restore state_civic_trust among impoverished Undercleft debtors.",
+      "inventory": [
+        {
+          "name": "Abyss Grapple Winch Rig",
+          "description": "Spindle-mounted iron claw rigged with braided silk-line for pulling jars from deep talus.",
+          "quantity": 1
+        },
+        {
+          "name": "Cracked Spoken-Debt Jar",
+          "description": "Glass amphora containing a heavy, leaking vow of unpaid grain tithes.",
+          "quantity": 2
+        },
+        {
+          "name": "Padded Retrieval Sling",
+          "description": "Quilted canvas haversack divided into insulated pockets to prevent capsule shattering.",
+          "quantity": 1
+        },
+        {
+          "name": "Sulfur Flare Sticks",
+          "description": "Slow-burning chemical torches that ignite reliably in damp canyon-floor mists.",
+          "quantity": 6
+        },
+        {
+          "name": "Muffled Dredge Pick",
+          "description": "Rubber-wrapped hammer used to free wedged containers from rock fissures quietly.",
+          "quantity": 1
+        },
+        {
+          "name": "Impound Release Token",
+          "description": "Stamped bronze chit proving limited salvage authorization from the Courier Guild.",
+          "quantity": 1
+        },
+        {
+          "name": "Lead-Lined Jar Seal Caps",
+          "description": "Heavy threaded stoppers designed to prevent voice leakage from fractured promise glassware.",
+          "quantity": 4
+        },
+        {
+          "name": "Friction Descent Brake",
+          "description": "Toothed brass figure-eight descender worn for rapid drops into the abyss bed.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Abyss Talus Stash Depot",
+          "asset_type": "Hidden Cache",
+          "description": "A fortified sea-cave cut into the dry abyss base filled with unsorted, jettisoned promise jars.",
+          "story_use": "Serves as a secret storage house for high-value defaulted vows before they are ground into mortar."
+        },
+        {
+          "asset_name": "Salvage Winch Spindle",
+          "asset_type": "Mechanical Crane",
+          "description": "A hidden hand-cranked derrick bolted to the lower bivouac cliff face.",
+          "story_use": "Permits silent hauling of heavy promise-salvage directly into courier bivouacs without toll notice."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_canyon_drift_currents",
+          "topic": "Abyss Fall Zones and Wind Drift",
+          "summary": "Calculations predicting where jettisoned promise-jars land along the abyss bed based on seasonal draft wind speeds.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "know_breached_estate_vows",
+          "topic": "High-Value Defaulted Estates",
+          "summary": "Knowledge of ancient family vows discarded in the deep abyss whose verbal weight could overturn modern debt titles.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Elia Pell",
+      "role_name": "Resonant Mortar Compounder",
+      "activity": "Milling toxic broken vow capsules at The Silence Assembly Mortar Basin to manufacture resonant adhesive for cliff repairs.",
+      "home_base": "The Silence Assembly Mortar Basin",
+      "arc_goal": "Formulate a lighter vibration-proof mortar mix for inst_null_tribunal to reduce state_bridge_strain and seal brittle cliff walls.",
+      "inventory": [
+        {
+          "name": "Basin Mortar Pestle",
+          "description": "Massive granite grinding bar bound in iron bands for pulverizing speech-infused crystal.",
+          "quantity": 1
+        },
+        {
+          "name": "Nullifier Paste Jar",
+          "description": "Thick grey solvent that neutralizes the lingering acoustic vibration of broken promises.",
+          "quantity": 3
+        },
+        {
+          "name": "Pulverized Vow Slag",
+          "description": "Fine shimmering dust ground from breached contract capsules ready for lime binding.",
+          "quantity": 5
+        },
+        {
+          "name": "Resonance Filter Respirator",
+          "description": "Oiled leather mask containing charcoal and wool filters to prevent inhaling vocal fumes.",
+          "quantity": 1
+        },
+        {
+          "name": "Slaking Lime Bucket",
+          "description": "Quicklime blended with spring water used to activate acoustic mortar batches.",
+          "quantity": 2
+        },
+        {
+          "name": "Trowel of the Silence Assembly",
+          "description": "Notched steel blade used to spread resonant mortar into structural cliff faults.",
+          "quantity": 1
+        },
+        {
+          "name": "Density Sieve Set",
+          "description": "Graduated brass mesh sieves used to separate coarse pledge glass from fine null powder.",
+          "quantity": 1
+        },
+        {
+          "name": "Toxic Vow Test Vial",
+          "description": "Hermetically sealed glass bulb used to test the chemical dissolution rate of toxic oaths.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Basin Slaking Vat",
+          "asset_type": "Chemical Processing Vat",
+          "description": "A massive lead-lined stone vat used to dissolve toxic spoken oaths in boiling nullifier paste.",
+          "story_use": "Processes impounded toxic contracts into binding cement for municipal cliff reinforcement."
+        },
+        {
+          "asset_name": "Mortar Curing Kiln",
+          "asset_type": "Masonry Facility",
+          "description": "A low-draft thermal oven designed to set acoustic bricks without triggering harmonic detonation.",
+          "story_use": "Bakes structurally sound, soundproof masonry used to reinforce decaying gantry anchor points."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_toxic_oath_chemistry",
+          "topic": "Volatile Vow Decomposition",
+          "summary": "Chemical recipes to safely neutralize bitter, spite-laden spoken vows that produce corrosive vapor when crushed.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "know_cleft_wall_stress_points",
+          "topic": "Aethelcleft Geological Fault Zones",
+          "summary": "Map of cavern fissures where acoustic echo vibrations are causing rapid limestone crumble.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Alden Cross",
+      "role_name": "Tension Pulley Mechanic",
+      "activity": "Calibrating pressure ratchets along high cables at Gantry Cable Rigging Depot to decrease state_bridge_strain caused by heavy debt transit.",
+      "home_base": "Gantry Cable Rigging Depot",
+      "arc_goal": "Modernize the cable winches to prevent inst_courier_guild failures and lower state_transit_cost across all gorge spans.",
+      "inventory": [
+        {
+          "name": "Cable Tension Caliper",
+          "description": "A notched brass caliper measuring cable micro-fractures under oath-weight load.",
+          "quantity": 1
+        },
+        {
+          "name": "Mutton Tallow Spindle",
+          "description": "Solidified animal grease infused with lead flakes to lubricate squealing pulleys.",
+          "quantity": 3
+        },
+        {
+          "name": "Braided Steel Splice Needle",
+          "description": "Heavy-duty needle used to weave frayed high-tension courier wire ropes.",
+          "quantity": 2
+        },
+        {
+          "name": "Hardened Abyss Piton",
+          "description": "Steel anchor wedge scored for driving into brittle shale cliff faces.",
+          "quantity": 6
+        },
+        {
+          "name": "Spoke Ratchet Wrench",
+          "description": "Weighted socket lever designed to tighten oxidized gantry wheel hubs.",
+          "quantity": 1
+        },
+        {
+          "name": "Muffled Friction Glove",
+          "description": "Padded leather mitt treated with graphite to grab fast-moving ziplines.",
+          "quantity": 2
+        },
+        {
+          "name": "Lead Counterweight Shims",
+          "description": "Thin stamped slugs used to level tilting gantry track frames.",
+          "quantity": 8
+        },
+        {
+          "name": "Acoustic Dampening Felt",
+          "description": "Strips of dense pressed wool wrapped around humming bridge stays.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Depot West Winch Station",
+          "asset_type": "Mechanical Rigging Post",
+          "description": "A steam-assisted gear assembly anchoring the main western span line.",
+          "story_use": "Controls carriage speed and line tension for major debt shipments."
+        },
+        {
+          "asset_name": "Spool Storage Cage",
+          "asset_type": "Secure Workshop Bay",
+          "description": "Enclosed vault holding spools of untreated high-tensile steel wire.",
+          "story_use": "Essential for emergency bridge repairs after sudden pledge collapses."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_cable_fatigue_points",
+          "topic": "Structural Fatigue of Central Gorge Cables",
+          "summary": "Identifies exact micro-stress fractures on the primary transit cable threatening imminent bridge collapse.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "know_pulley_grease_formula",
+          "topic": "Low-Resonance Lubrication Compounds",
+          "summary": "Knows how to compound silent greases that prevent acoustic excise monitors from detecting illicit night transits.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Syllis Vane",
+      "role_name": "Acoustic Tariff Assayer",
+      "activity": "Measuring resonance density at Excise Weigh-Beam Registry to enforce inst_toll_scale tariffs and lower state_promise_backlog.",
+      "home_base": "Excise Weigh-Beam Registry",
+      "arc_goal": "Force wealthy merchants to log high-mass spoken vows publicly to maximize revenue for group_tax_justiciars.",
+      "inventory": [
+        {
+          "name": "Resonant Pitch Balance",
+          "description": "Delicate counterweighted scale that registers pitch frequencies of sealed vows.",
+          "quantity": 1
+        },
+        {
+          "name": "Lead Registry Stamp",
+          "description": "Heavy die used to imprint certified weight brackets on wax ampoule necks.",
+          "quantity": 1
+        },
+        {
+          "name": "Scribe Ink of Lampblack and Tin",
+          "description": "High-viscosity indelible ink that does not run in damp cliff mist.",
+          "quantity": 3
+        },
+        {
+          "name": "Silver Tuning Fork of Standard Middle-C",
+          "description": "Excise reference tool used to strike and verify vow resonance purity.",
+          "quantity": 2
+        },
+        {
+          "name": "Tariff Ledger Folio",
+          "description": "Thick sheepskin registry tracking outstanding debt weight by merchant house.",
+          "quantity": 1
+        },
+        {
+          "name": "Serrated Glass Ampoule Cutter",
+          "description": "Tool used to clip defective seal tips during mandatory state sample testing.",
+          "quantity": 1
+        },
+        {
+          "name": "Brass Seal Capping Pliers",
+          "description": "Mechanical crimper used to affix tamper-proof excise bands to debt jars.",
+          "quantity": 1
+        },
+        {
+          "name": "Velvet Damping Pouch",
+          "description": "Insulated carry bag designed to transport high-vibration oath vials safely.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Weigh-Beam Registry Booth Three",
+          "asset_type": "Official Assaying Station",
+          "description": "An iron-barred toll inspection station overlooking the intake bridge.",
+          "story_use": "Where spoken debt capsules are weighed and taxed before entering commerce."
+        },
+        {
+          "asset_name": "Impounded Promise Cabinet",
+          "asset_type": "Reinforced Vault Locker",
+          "description": "Iron cabinet containing unpaid verbal contract ampoules awaiting liquidation.",
+          "story_use": "Holds leverage against insolvent noble debtors seeking recovery."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_hidden_pledge_frequencies",
+          "topic": "Frequency Manipulation of Spoken Debts",
+          "summary": "Detailed records of harmonic tricks used by smugglers to make heavy contracts register as lightweight whispers.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "know_excise_tariff_schedule",
+          "topic": "Official Acoustic Excise Tax Brackets",
+          "summary": "Complete institutional mandate on tariff thresholds that trigger capsule impoundment.",
+          "confidence": 99
+        }
+      ]
+    },
+    {
+      "display_name": "Kel Harrow",
+      "role_name": "Gantry Express Cable-Rider",
+      "activity": "Running expedited debt shipments through Gantry Runners Bivouac to bypass bottlenecks and lower state_promise_backlog.",
+      "home_base": "Gantry Runners Bivouac",
+      "arc_goal": "Evade inst_toll_scale impoundments to keep group_runners solvent and maintain contract velocity across the canyon.",
+      "inventory": [
+        {
+          "name": "Double-Sheave Gantry Trolley",
+          "description": "Hardened bronze pulley harness built for high-speed descents across main canyon lines.",
+          "quantity": 1
+        },
+        {
+          "name": "Braided Rawhide Tether",
+          "description": "Emergency tether line tested against abrupt deceleration snapped stops.",
+          "quantity": 2
+        },
+        {
+          "name": "Shock-Absorbing Chest Rig",
+          "description": "Canvas and rib-bone vest tailored to cushion impact from heavy oath-vial crates.",
+          "quantity": 1
+        },
+        {
+          "name": "Quick-Release Carabiner",
+          "description": "Hand-forged steel latch allowing immediate detachment during line tangles.",
+          "quantity": 4
+        },
+        {
+          "name": "Rosin Block for Hand-Grip",
+          "description": "Sticky pine rosin brick used to maintain secure grip on frozen cables.",
+          "quantity": 2
+        },
+        {
+          "name": "Acoustic Shock Capsule Carrier",
+          "description": "Cushioned cylindrical pod that isolates jarred promises from breaking in transit.",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Mirror with Shutter",
+          "description": "Faceted canyon signaling mirror used to coordinate crossing clearance with bivouac scouts.",
+          "quantity": 1
+        },
+        {
+          "name": "Hardened Cable Cutter Knife",
+          "description": "Heavy hooked blade capable of severing snagged tow-ropes in an emergency.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Bivouac Perch Launch Cradle",
+          "asset_type": "Courier Rigging Platform",
+          "description": "A cantilevered wooden deck extending ten yards over the drop for rapid zipline launches.",
+          "story_use": "Enables rapid dispatch of emergency contracts ahead of excise seizures."
+        },
+        {
+          "asset_name": "Canyon Line Route Map Slate",
+          "asset_type": "Annotated Navigation Board",
+          "description": "Chalk slate displaying real-time wind shear and cable sag across all active spans.",
+          "story_use": "Used to plan optimal high-speed transit routes avoiding overloaded lines."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_gantry_blind_routes",
+          "topic": "Unmonitored Abyss Drop Paths",
+          "summary": "Knowledge of disused anchor lines that can bypass excise watchtowers during cross-canyon transit.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "know_rapid_deceleration_tactics",
+          "topic": "High-Angle Cable Braking Physics",
+          "summary": "Mastery of friction control techniques required to land heavy debt crates without shattering ampoules.",
+          "confidence": 94
+        }
+      ]
+    },
+    {
+      "display_name": "Mira Vance",
+      "role_name": "Breached Vow Grinder",
+      "activity": "Milling toxic defaulted pledge jars at The Silence Assembly Mortar Basin to stabilize cliff structures and adjust state_civic_trust.",
+      "home_base": "The Silence Assembly Mortar Basin",
+      "arc_goal": "Ensure all toxic vows adjudicated by inst_null_tribunal are rendered inert into civic mortar before sonic toxicity poisons the cliffside.",
+      "inventory": [
+        {
+          "name": "Cast-Iron Pestle of the Assembly",
+          "description": "Heavy ribbed pestle used to crush thick vow ampoules within the mortar basin.",
+          "quantity": 1
+        },
+        {
+          "name": "Veiled Acoustic Respirator",
+          "description": "Multi-layered gauze mask soaked in vinegar to filter resonant glass dust.",
+          "quantity": 1
+        },
+        {
+          "name": "Slaked Lime Hydration Flask",
+          "description": "Mineral solution added to powdered vow shards to create binding mortar paste.",
+          "quantity": 2
+        },
+        {
+          "name": "Lead-Lined Dust Shovel",
+          "description": "Curved spade for scraping pulverized pledge residue without causing sparking.",
+          "quantity": 1
+        },
+        {
+          "name": "Scribe Dissolution Trowel",
+          "description": "Notched masonry trowel used to apply resonant mortar to cracked cliff foundations.",
+          "quantity": 1
+        },
+        {
+          "name": "Acoustic Dampening Ear Plugs",
+          "description": "Wax and cotton plugs preventing inner-ear damage from dying promise shrieks.",
+          "quantity": 3
+        },
+        {
+          "name": "Residue Settling Pan",
+          "description": "Shallow bronze basin used to wash non-resonant gravel out of vow slurry.",
+          "quantity": 2
+        },
+        {
+          "name": "Covenant Nullification Wax Seal",
+          "description": "Official Assembly seal used to certify that a broken debt has been physically extinguished.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Mortar Basin Sluice Trough",
+          "asset_type": "Chemical Slurry Channel",
+          "description": "Stone sluice where crushed vow powders are mixed with lime and abyss water.",
+          "story_use": "Produces the binding mortar used to reinforce crumbling cliff terraces."
+        },
+        {
+          "asset_name": "Quarantine Drying Rack",
+          "asset_type": "Acoustic Curing Chamber",
+          "description": "Thick stone shelves where fresh vow mortar bricks cure in complete silence.",
+          "story_use": "Stores newly cast structural reinforcements before cliff installation."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_toxic_vow_composition",
+          "topic": "Chemical and Resonant Decay of Broken Oaths",
+          "summary": "Knows how to neutralize acoustic back-resonance when crushing hostile or malicious covenants.",
+          "confidence": 96
+        },
+        {
+          "knowledge_id": "know_mortar_cliff_adhesion",
+          "topic": "Cliff Structural Reinforcement Techniques",
+          "summary": "Deep understanding of how resonant mortar bonds to shale cliff faces to stop gorge erosion.",
+          "confidence": 91
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Excise Tariff Adjustment & Debt Impound Loop",
+      "summary": "Assayers weigh incoming promise capsules against registered balances, impounding over-weight vows and raising transit costs when strain spikes, directly driving state_transit_cost and altering state_promise_backlog.",
+      "roles": [
+        "Senior Balance Bailiff",
+        "Acoustic Tariff Assayer",
+        "Gantry Express Cable-Rider"
+      ],
+      "rooms": [
+        "Excise Weigh-Beam Registry",
+        "Acoustic Conduits Overlook"
+      ],
+      "pressure": "Impounded spoken capsules pile up, rapidly increasing Unsettled Promise Mass until couriers face total gridlock."
+    },
+    {
+      "label": "Gantry Rigging Strain Relief & Abyss Purge Loop",
+      "summary": "Riggers monitor cable tension under heavy debt traffic, dumping abandoned vow canisters into the depths or conducting emergency repairs, directly modifying state_bridge_strain and state_promise_backlog.",
+      "roles": [
+        "Gantry Line Marshal",
+        "Gantry Cable Rigging Overseer",
+        "Tension Pulley Mechanic"
+      ],
+      "rooms": [
+        "Gantry Cable Rigging Depot",
+        "Gantry Runners Bivouac"
+      ],
+      "pressure": "Pulley cables are fraying under physical promise weight, risking a catastrophic bridge snap if cargo is not cut."
+    },
+    {
+      "label": "Silence Assembly Dissolution & Mortar Compounding Loop",
+      "summary": "Scriveners and vow grinders adjudicate insolvent contracts, pulverizing broken covenants into civic mortar to reinforce cliff walls, relieving state_promise_backlog but depressing state_civic_trust.",
+      "roles": [
+        "Silence Mortar Scrivener",
+        "Resonant Mortar Compounder",
+        "Breached Vow Grinder"
+      ],
+      "rooms": [
+        "The Silence Assembly Mortar Basin",
+        "Undercleft Whisperer Exchange"
+      ],
+      "pressure": "Citizens refuse to vocalize new legal covenants as the grinding of private vows into masonry spreads fear of voice seizure."
+    }
+  ],
+  "player_entry_points": [
+    "Arrive as an audit-deputy assigned to inspect the overtaxed balance beams at the Excise Weigh-Beam Registry.",
+    "Descend into the Gantry Runners Bivouac as an out-of-work courier seeking lucrative defaulted promise routes.",
+    "Infiltrate the Undercleft Whisperer Exchange to negotiate low-density contracts for disenfranchised cliff clans.",
+    "Report to The Silence Assembly Mortar Basin as an apprentice tasked with handling hazardous breached vow powder."
+  ],
+  "conflict_hooks": [
+    "A massive multi-generation debt capsule has begun to crack open under sheer mass in the central registry, threatening to acoustically deafen nearby gantry lines.",
+    "The Acoustic Excise doubled transit surcharges overnight, prompting courier runners to threaten a total blockade of vow deliveries over the main gorge.",
+    "A black-market dialect developed in the Undercleft is completely evading acoustic weigh-scales, starving the civic wall mortar compounders of binding dust."
+  ],
+  "custom_actions": [
+    "AssaySpeechPledgeMass",
+    "ImpoundSpeechCapsule",
+    "ZiplineFreightRun",
+    "PulleyTensionRelief",
+    "SlurContractDialect",
+    "GrindBreachedVowMortar"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "Surreptitiously Siphon Weight from Impounded Capsule",
+      "initiating_role": "Undercleft Dialect Broker",
+      "target_role": "Acoustic Tariff Assayer",
+      "situation": "Attempting to lighten a family debt capsule resting in the weigh registry while the assayer is distracted by cable maintenance alarms.",
+      "proposed_effects": [
+        "status",
+        "create_item"
+      ],
+      "coordinator_checks": [
+        "Is the broker within arm's reach of the weigh-beam without breaking line-of-sight concealment?",
+        "Does the broker possess an unsealed resonance siphon canister to hold the extracted acoustic mass?",
+        "Is the assayer actively engaged in checking transit logs rather than inspecting the balance pans?"
+      ]
+    },
+    {
+      "action_name": "Emergency Rigging Cutoff on Overburdened Freight",
+      "initiating_role": "Gantry Cable Rigging Overseer",
+      "target_role": "Gantry Express Cable-Rider",
+      "situation": "Cutting loose an insolvent high-weight promise shipment hanging on a fraying central pulley line before structural collapse.",
+      "proposed_effects": [
+        "status",
+        "speech"
+      ],
+      "coordinator_checks": [
+        "Does the overseer have physical access to the primary shear levers in the depot?",
+        "Is the cable tension currently exceeding rated mechanical fatigue thresholds?",
+        "Has the cable-rider been given mandatory audio whistle warning to release harness clips?"
+      ]
+    },
+    {
+      "action_name": "Commingle Mortar Dust with Contraband Whisper Vow",
+      "initiating_role": "Breached Vow Grinder",
+      "target_role": "Silence Mortar Scrivener",
+      "situation": "Mixing crushed illegal unbonded debt syllables into civic wall plaster to hide breached covenants from the registry.",
+      "proposed_effects": [
+        "create_item",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Does the grinder hold uncertified promise fragments inside the mortar basin?",
+        "Is the scrivener's wax seal currently unapplied to the batch manifest?",
+        "Will the resulting compound alter structural resonance without triggering conduit sentry alarms?"
+      ]
+    },
+    {
+      "action_name": "Levy Arbitrary Resonance Surcharge on Smuggled Slur",
+      "initiating_role": "Senior Balance Bailiff",
+      "target_role": "Abyss Promise Dredger",
+      "situation": "Demanding immediate transfer of salvaged echo tokens as an ad-hoc tariff before permitting salvage ascent.",
+      "proposed_effects": [
+        "transfer",
+        "speech"
+      ],
+      "coordinator_checks": [
+        "Is the bailiff armed with an active tuning fork in direct confrontation on the registry landing?",
+        "Does the dredger hold uninspected speech-capsules recovered from abyss net lines?",
+        "Does the bailiff hold legal authority over the specific conduit gate being traversed?"
+      ]
+    }
+  ],
+  "social_rules": [
+    "No sworn vow may be whispered within earshot of an Excise balance beam without paying the ambient acoustic fee.",
+    "A promise-capsule dropped into the abyss cannot be redeemed or litigated once the third echo fades.",
+    "Grinding a covenant before the Silence Assembly delivers a final seal incurs immediate physical custody of the debtor's voice-token.",
+    "Rigging lines carry absolute right-of-way for overloaded debt runners over pedestrian cliff-dwellers."
+  ],
+  "item_themes": [
+    "Acoustic balance scales",
+    "Lead-sealed speech ampoules",
+    "Gantry harness rigs",
+    "Wax-dipped pledge ledgers",
+    "Tuning fork cudgels"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "item_resonator_cudgel",
+      "name": "Excise Tuning Cudgel",
+      "price": 180,
+      "mass": 4.2,
+      "description": "A heavy bronze rod with split tines, used by Bell-warden bailiffs to vibrate and shatter unregistered speech-capsules.",
+      "image_prompt": "Heavy bronze tuning fork mace with leather wrapped grip resting on a chalk ledge, cinematic lighting",
+      "category": "Weapons"
+    },
+    {
+      "item_id": "item_condensed_speech_ampoule",
+      "name": "Lead-Sealed Speech Ampoule",
+      "price": 45,
+      "mass": 1.8,
+      "description": "A thick blown-glass capsule filled with dense, luminescent vapor containing a recorded promissory oath.",
+      "image_prompt": "Glowing blue swirling smoke trapped inside a thick blown-glass ampoule sealed with heavy stamped lead, brass fittings",
+      "category": "Contracts"
+    },
+    {
+      "item_id": "item_acoustic_balance",
+      "name": "Gantry Acoustic Balance",
+      "price": 320,
+      "mass": 8.5,
+      "description": "A brass beam balance calibrated with harmonic counterweights to determine the tax liability of spoken debt.",
+      "image_prompt": "Ornate brass beam balance suspended by thin wires with acoustic dampeners and graduated weight disks",
+      "category": "Instruments"
+    },
+    {
+      "item_id": "item_gantry_harness_rig",
+      "name": "Zipline Runner Harness",
+      "price": 150,
+      "mass": 5.0,
+      "description": "Reinforced buffalo-hide rigging fitted with brass pulleys and quick-release carabiners for canyon transit.",
+      "image_prompt": "Worn brown leather climbing harness with gleaming brass pulley wheels and carabiners draped over a rope coil",
+      "category": "Gear"
+    },
+    {
+      "item_id": "item_wax_pledge_ledger",
+      "name": "Wax-Dipped Pledge Ledger",
+      "price": 60,
+      "mass": 3.1,
+      "description": "A heavy accordion-folded parchment book treated with paraffin, documenting unsettled debt transfers across spans.",
+      "image_prompt": "Thick accordion ledger bound in wax-dipped dark leather with brass corner clasps and inscribed ink columns",
+      "category": "Documentation"
+    },
+    {
+      "item_id": "item_harmonic_nullifier_paste",
+      "name": "Silence Mortar Paste",
+      "price": 25,
+      "mass": 6.0,
+      "description": "A gritty lime and chalk mixture infused with ground broken promise-capsules, used to stabilize crumbling cliff foundations.",
+      "image_prompt": "Bucket of white chalky mortar paste glowing faintly with crushed iridescent glass specks, wooden trowel nearby",
+      "category": "Materials"
+    },
+    {
+      "item_id": "item_whisper_flute_valve",
+      "name": "Sub-Vocal Whisper Valve",
+      "price": 95,
+      "mass": 0.4,
+      "description": "A copper mouthpiece favored by Undercleft households to compress verbal pledges into low-mass, untaxable syllables.",
+      "image_prompt": "Delicate copper acoustic mouthpiece with miniature baffles and velvet neck ribbon on white chalk background",
+      "category": "Tools"
+    },
+    {
+      "item_id": "item_counterweight_slug",
+      "name": "Pneumatic Counterweight Slug",
+      "price": 40,
+      "mass": 15.0,
+      "description": "A standardized cast-iron cylinder utilized in canyon gantry pulleys to balance swinging bridge loads.",
+      "image_prompt": "Heavy cast-iron cylinder with numbered calibration rings and a thick steel hoist ring",
+      "category": "Logistics"
+    },
+    {
+      "item_id": "item_bell_warden_whistle",
+      "name": "Harmonic Clearance Whistle",
+      "price": 85,
+      "mass": 0.3,
+      "description": "A tri-tone whistle issued by the Acoustic Excise to order immediate right-of-way on congested bridge lines.",
+      "image_prompt": "Three-piped brass whistle with deep engraving and a lanyard made of braided wire",
+      "category": "Credentials"
+    },
+    {
+      "item_id": "item_toxic_vow_jar",
+      "name": "Defaulted Vow Demijohn",
+      "price": 210,
+      "mass": 12.5,
+      "description": "An overloaded, vibrating glass carboy containing high-tension defaulted oaths slated for abyss disposal or mortar grinding.",
+      "image_prompt": "Bulbous dark glass demijohn covered in cracking sealing wax and iron bands, vibrating with an eerie amber glow",
+      "category": "Hazardous Goods"
+    },
+    {
+      "item_id": "item_cable_grease_tallow",
+      "name": "Pulley Line Tallow",
+      "price": 15,
+      "mass": 2.2,
+      "description": "Rendered fat treated with powdered graphite, essential for preventing friction burns on high-speed courier zip lines.",
+      "image_prompt": "Tin tub filled with dark grey graphite tallow paste with a smeared wooden applicator",
+      "category": "Maintenance"
+    },
+    {
+      "item_id": "item_scrivener_press_seal",
+      "name": "Tribunal Wax Seal Stamp",
+      "price": 130,
+      "mass": 1.1,
+      "description": "An iron stamp used by the Silence Assembly to formally nullify broken promises and authorize physical destruction.",
+      "image_prompt": "Heavy cast-iron signet stamp bearing the open-jaw symbol of the Silence Assembly, stained with black wax",
+      "category": "Instruments"
+    },
+    {
+      "item_id": "item_chalkboard_slate",
+      "name": "Bridge Courier Manifest Slate",
+      "price": 30,
+      "mass": 1.5,
+      "description": "A framed slate tablet marked with chalk tariffs and load allowances, required for clearing canyon gantry checkpoints.",
+      "image_prompt": "Dark slate board in a brass frame with chalk-written tally marks and gantry load charts",
+      "category": "Documentation"
+    },
+    {
+      "item_id": "item_abyss_grapple_hook",
+      "name": "Gantry Recovery Grapple",
+      "price": 110,
+      "mass": 3.8,
+      "description": "A four-pronged sprung steel anchor used by runners to retrieve dropped speech-jars from the abyss netting.",
+      "image_prompt": "Spring-loaded four-prong steel grappling hook connected to a high-tensile brass braided cable",
+      "category": "Gear"
+    },
+    {
+      "item_id": "item_resonating_tuning_fork",
+      "name": "Calibrated Pitch Standard",
+      "price": 70,
+      "mass": 0.6,
+      "description": "A silvered steel fork that emits the exact legal frequency used to verify the purity of spoken civic pledges.",
+      "image_prompt": "Gleaming steel tuning fork resting inside a velvet-lined rosewood presentation case",
+      "category": "Instruments"
+    },
+    {
+      "item_id": "item_insulating_muffler_wrap",
+      "name": "Acoustic Damping Swaddle",
+      "price": 35,
+      "mass": 0.9,
+      "description": "Heavy felt and lead-threaded blanket used to wrap vow-jars, preventing accidental acoustic resonance during transit.",
+      "image_prompt": "Thick grey felt wrap reinforced with woven lead wire and tied with leather straps",
+      "category": "Gear"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "wardrobe_policy_aethelcleft_v1",
+    "world_wardrobe_brief": "Vertiginous canyon bureaucratic wear combining heavy leather suspension rigging, brass acoustic gear, wax-sealed parchment accessories, and luminescent teal promise ampoules over chalk-dusted work clothes.",
+    "forbidden_aesthetics": [
+      "cyberpunk_neon_jackets",
+      "modern_sportswear",
+      "chivalric_plate_armor",
+      "floating_wizard_robes",
+      "trenchcoats_fedora_detective",
+      "high_tech_space_suits",
+      "flowery_pastoral_garb"
+    ],
+    "palette_families": [
+      {
+        "name": "Excise Official",
+        "dominant": "#2b333a",
+        "accent": "#c68b3c",
+        "trim": "#e3ded1",
+        "material": "waxed slate wool, brass trim, vellum bands"
+      },
+      {
+        "name": "Gantry Courier Rigging",
+        "dominant": "#4a3728",
+        "accent": "#76c0b3",
+        "trim": "#c68b3c",
+        "material": "buffalo hide, greased hemp webbing, brass clasps"
+      },
+      {
+        "name": "Silence Assembly Scrivener",
+        "dominant": "#e3ded1",
+        "accent": "#151b22",
+        "trim": "#76c0b3",
+        "material": "chalk-encrusted apron, leaded leather, coarse linen"
+      },
+      {
+        "name": "Undercleft Whisperer",
+        "dominant": "#151b22",
+        "accent": "#c68b3c",
+        "trim": "#2b333a",
+        "material": "muffled burlap, acoustic damping wool, copper chits"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "rule_acoustic_bailiff",
+        "role_keywords": [
+          "Bailiff",
+          "Assayer",
+          "Sentry",
+          "Excise"
+        ],
+        "attire": [
+          "Stiff slate-grey layered coat with broad vellum shoulder stoles",
+          "Cross-body brass harness with counterweight calipers",
+          "Tightly strapped leather gaiters dusted in chalk"
+        ],
+        "props": [
+          "Split-tine resonance tuning cudgel",
+          "Wax ledger satchel with dangling lead seal tokens",
+          "Tri-tone harmonic whistle around neck"
+        ],
+        "palette_notes": "Dark slate base with prominent polished brass clasps and cream parchment stoles.",
+        "silhouette_notes": "Sturdy broad-shouldered top-down profile with rigid rectangular stole lines.",
+        "avoid": [
+          "Flowing capes",
+          "Bare skin",
+          "Unstrapped loose fabric"
+        ]
+      },
+      {
+        "rule_id": "rule_gantry_runner",
+        "role_keywords": [
+          "Runner",
+          "Marshal",
+          "Overseer",
+          "Mechanic",
+          "Dredger",
+          "Cable-Rider"
+        ],
+        "attire": [
+          "Heavy oiled leather zip-harness with chest carabiners",
+          "Thick padded forearm guards with pulley tallow stains",
+          "Reinforced work breeches and cable-clamp climbing boots"
+        ],
+        "props": [
+          "Backpack rack holding glowing teal glass promise-jars",
+          "Overhead brass pulley rig with steel recovery grapple",
+          "Tension manifest slate tablet clipped to thigh"
+        ],
+        "palette_notes": "Earthy brown leathers and soot tones illuminated by glowing teal ampoules.",
+        "silhouette_notes": "Asymmetrical silhouette with bulky top-heavy jar racks and lateral cable hooks.",
+        "avoid": [
+          "Wide hats",
+          "Delicate silks",
+          "Loose trailing cords"
+        ]
+      },
+      {
+        "rule_id": "rule_silence_scrivener",
+        "role_keywords": [
+          "Silence",
+          "Scrivener",
+          "Mortar",
+          "Compounder",
+          "Grinder"
+        ],
+        "attire": [
+          "Thick white-stained chalk smock over leaden undertunic",
+          "Heavy rubberized grinding mittens bound at wrists",
+          "Acoustic neck baffle and felt-lined hood"
+        ],
+        "props": [
+          "Heavy stone pestle and bronze mortar jar clamp",
+          "Tribunal wax seal iron stamp on hip ring",
+          "Shattered vow ampoule canister dripping glowing paste"
+        ],
+        "palette_notes": "Pale off-white chalkstone dominant with dark charcoal undertones and faint teal residue.",
+        "silhouette_notes": "Rounded heavy torso with prominent apron bib and oversized gauntleted hands.",
+        "avoid": [
+          "Pristine clean fabric",
+          "Exposed bare ears",
+          "Metallic luxury jewelry"
+        ]
+      },
+      {
+        "rule_id": "rule_dialect_broker",
+        "role_keywords": [
+          "Broker",
+          "Whisperer",
+          "Undercleft"
+        ],
+        "attire": [
+          "Felted wool hooded cowl layered over muffled tunic",
+          "Multiple padded swaddle wraps strapped across ribs",
+          "Sound-dampened patchwork trousers tucked in soft hide wraps"
+        ],
+        "props": [
+          "Copper whisper valve mouthpiece hanging from neck cord",
+          "Concealed accordion parchment chit pouch",
+          "Acoustic damping swaddled vow-jar under arm"
+        ],
+        "palette_notes": "Deep charcoal and mute umber with small hints of warm copper trim.",
+        "silhouette_notes": "Compact, rounded silhouette with deep cowl obscuring head margins.",
+        "avoid": [
+          "Clinking metal chains",
+          "Bright reflective badges",
+          "Rigid tall hats"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "rule_canyon_citizen_default",
+      "role_keywords": [
+        "Citizen",
+        "Resident",
+        "Clerk",
+        "Trader"
+      ],
+      "attire": [
+        "Waxed grey hood and utilitarian belted tunic",
+        "Light suspender rig with basic brass carabiner",
+        "Sturdy chalk-resistant work boots"
+      ],
+      "props": [
+        "Small wax-sealed vow ampoule clipped to belt",
+        "Chalk slate memorandum board"
+      ],
+      "palette_notes": "Muted slate and cream with minimal brass accents.",
+      "silhouette_notes": "Compact chibi frame with defined belt line and single prominent hip item.",
+      "avoid": [
+        "Ornate royal vestments",
+        "Modern accessories",
+        "Exposed technology"
+      ]
+    },
+    "visual_consistency_rules": [
+      "Maintain strict 90-degree zenith top-down perspective with no 3/4 face or shoulder tilt.",
+      "Enforce single-pixel solid ink black perimeter outlines on all 64x64 sprites.",
+      "Ensure promise jars and ampoules have clear, bright teal (#76c0b3) core pixels for readability.",
+      "Keep gear oversized relative to body (1:2 head-to-torso chibi proportion) so harnesses and tools read cleanly.",
+      "All fabrics must display visible chalk dusting, grease staining, or wax treatment texture."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "canon_aethelcleft_v1",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degree_zenith",
+      "scale_rule": "32px_per_tile_orthographic_grid"
+    },
+    "palette": {
+      "dominant": "#e3ded1",
+      "secondary": "#2b333a",
+      "accent": "#c68b3c",
+      "shadow": "#151b22",
+      "highlight": "#76c0b3"
+    },
+    "materials": [
+      "scored_chalkstone",
+      "patinated_brass_tubing",
+      "tarred_hemp_rigging",
+      "translucent_blown_glass",
+      "wax_sealed_vellum"
+    ],
+    "lighting": "harsh_zenith_chalk_glare_with_deep_void_cast_shadows_and_teal_vow_luminescence",
+    "architecture": [
+      "cantilevered_chalk_ledges",
+      "brass_pneumatic_junction_boxes",
+      "tensioned_rope_slat_walkways",
+      "cliff_face_counterweight_wells"
+    ],
+    "terrain": {
+      "ground": "scraped_pale_chalk_quarry_tiles",
+      "path": "planked_cable_spans_and_brass_guide_tracks",
+      "edge": "sheer_abyss_dropoffs_with_iron_stanchions"
+    },
+    "sprite_language": {
+      "body_proportion": "compact_chibi_1_to_2_head_to_torso_with_oversized_gear",
+      "outline": "single_pixel_solid_ink_black",
+      "role_readability": "couriers_wear_brass_rigging_and_teal_jars_officials_wear_wide_vellum_stoles_citizens_wear_waxed_grey_hoods"
+    },
+    "world_prompt_prefix": "strict top-down 2D orthographic pixel-art map of Aethelcleft canyon civic registry, pale chalkstone floor, brass pneumatic tubes, suspended cable bridges, abyss dropoffs, glowing teal glass promise jars, zero perspective tilt, flat 90-degree zenith view",
+    "sprite_prompt_prefix": "strict top-down 2D pixel-art sprite, zenith 90-degree overhead view, hard dark outline, brass courier harnesses, wax-sealed ledgers, tuning forks, promise-jar backpacks, no 3/4 tilt",
+    "forbidden_visuals": [
+      "isometric_projection",
+      "3/4_perspective",
+      "photorealism",
+      "floating_island_dioramas",
+      "modern_asphalt",
+      "cyberpunk_neon_signage",
+      "generic_green_grass_meadows",
+      "ui_text_overlays",
+      "card_borders",
+      "drop_shadow_interface_elements"
+    ],
+    "canon_hash": "6847e6aa64caee72"
+  }
+}

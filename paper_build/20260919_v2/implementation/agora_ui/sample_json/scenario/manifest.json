@@ -1,0 +1,79 @@
+{
+  "scenario_meta": {
+    "world_id": "clockwork_rain_conservatory",
+    "world_name": "Clockwork Rain Conservatory",
+    "version": "1.0",
+    "description": "Create a playable Agora world called Clockwork Rain Conservatory. It is a city-sized greenhouse of brass gutters, singing irrigation organs, legal seed vaults, and mechanical rain engines. Citizens trade patent seeds, forged pollen licenses, bottled monsoon gears, heirloom vines, umbrella dueling tokens, rain debts, and weather sheet music. Make the cast strange but socially concrete: rain organists, seed barristers, gutter mechanics, vine debtors, glasshouse smugglers, orchid notaries, umbrella duelists, irrigation auditors, aristocratic gardeners, fungal saboteurs, and petitioners. Every main character must have at least 8 world-specific inventory items, no generic civic fallback. Rooms should be visually distinct and support live negotiation, evidence exchange, repair, blackmail, rituals, trade, and consequences.",
+    "simulation_objective": "Manage seed debts, navigate weather rituals, and engage in aristocratic sabotage within a glass-enclosed ecosystem.",
+    "visual_canon_hash": "0d68fc7333d804b7",
+    "player_entry_points": [
+      "A newly appointed apprentice arriving at the gates.",
+      "A disgraced lawyer seeking redemption in the clockwork courts.",
+      "A merchant delivering rare oils for the Great Gear."
+    ],
+    "creator_conflict_hooks": [
+      "The Great Gear has skipped a beat, causing a temporal paradox in the lower wards.",
+      "A rival conservatory has filed a lawsuit claiming ownership of the Rain-Dance ritual.",
+      "The Lead Chronometer has been found frozen in time, and the primary suspect is their successor."
+    ],
+    "interaction_study_protocol": "multiworld_open_actions_v1"
+  },
+  "engine_config": {
+    "world_mode": "Fixed",
+    "adjudicator_api": {
+      "provider": "Local",
+      "model": "",
+      "temperature": 0.0,
+      "flex_api_url": "http://127.0.0.1:8000/v1",
+      "server_script": ""
+    },
+    "agent_default_api": {
+      "provider": "Vertex_AI",
+      "model": "gemini-3.1-flash-lite-preview",
+      "temperature": 0.6,
+      "flex_api_url": "http://127.0.0.1:8000/v1",
+      "server_script": "vertex_flex_server.py"
+    },
+    "simulation_params": {
+      "max_timesteps": 32,
+      "parallel_execution": true,
+      "tick_rate_ms": 0,
+      "concurrency_limit": 24
+    }
+  },
+  "asset_bindings": {
+    "world_rules_path": "./world_rules.json",
+    "map_grid_path": "./map_grid.json",
+    "active_agents": [
+      "./Agents/clockwork_rain_conservatory_main_01.json",
+      "./Agents/clockwork_rain_conservatory_main_02.json",
+      "./Agents/clockwork_rain_conservatory_main_03.json",
+      "./Agents/clockwork_rain_conservatory_main_04.json",
+      "./Agents/clockwork_rain_conservatory_main_05.json",
+      "./Agents/clockwork_rain_conservatory_main_06.json",
+      "./Agents/clockwork_rain_conservatory_main_07.json",
+      "./Agents/clockwork_rain_conservatory_main_08.json",
+      "./Agents/clockwork_rain_conservatory_main_09.json",
+      "./Agents/clockwork_rain_conservatory_main_10.json",
+      "./Agents/clockwork_rain_conservatory_main_11.json",
+      "./Agents/clockwork_rain_conservatory_main_12.json",
+      "./Agents/clockwork_rain_conservatory_main_13.json",
+      "./Agents/clockwork_rain_conservatory_main_14.json",
+      "./Agents/clockwork_rain_conservatory_main_15.json",
+      "./Agents/clockwork_rain_conservatory_main_16.json",
+      "./Agents/clockwork_rain_conservatory_main_17.json",
+      "./Agents/clockwork_rain_conservatory_main_18.json",
+      "./Agents/clockwork_rain_conservatory_main_19.json",
+      "./Agents/clockwork_rain_conservatory_main_20.json",
+      "./Agents/clockwork_rain_conservatory_main_21.json",
+      "./Agents/clockwork_rain_conservatory_main_22.json",
+      "./Agents/clockwork_rain_conservatory_main_23.json",
+      "./Agents/clockwork_rain_conservatory_main_24.json"
+    ],
+    "relationship_tensor_path": "",
+    "localized_visual_state_path": "",
+    "intents_path": "./agent_intents.json",
+    "intent_batches_path": "./intent_batches",
+    "prompt_path": "../../data/templates/foundation/universal_adjudicator_prompt.jsonc"
+  }
+}

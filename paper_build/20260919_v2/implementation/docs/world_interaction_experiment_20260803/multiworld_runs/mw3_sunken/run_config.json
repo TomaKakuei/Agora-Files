@@ -1,0 +1,254 @@
+{
+  "run_id": "mw3_sunken",
+  "created_at": "2026-08-04T00:19:49",
+  "config_path": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_configs/sunken_satellite_monastery_01.json",
+  "scenario_dir": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_sunken/run_inputs/scenario",
+  "scenario_files": {
+    "manifest": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_sunken/run_inputs/scenario/manifest.json",
+    "world_rules": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_sunken/run_inputs/scenario/world_rules.json",
+    "map_grid": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_sunken/run_inputs/scenario/map_grid.json",
+    "agents_dir": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_sunken/run_inputs/scenario/Agents"
+  },
+  "agent_profile_cache_dir": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_sunken/agent_profile_api_cache",
+  "reused_agent_profile_cache": "",
+  "rounds": 2,
+  "activation_probability": 0.12,
+  "seed": 26080414,
+  "agent_profile_source": "compiled_world_profiles",
+  "disable_longlive": true,
+  "disable_image_generation": true,
+  "max_images_per_round": 10,
+  "image_generation": {
+    "enabled": false,
+    "backend": "flux_local_service",
+    "model": "gemini-3.1-flash-image-preview",
+    "max_images_per_round": 10,
+    "temperature": 0.35,
+    "thinking_budget": 0,
+    "max_output_tokens": 1024,
+    "response_modalities": [
+      "TEXT"
+    ],
+    "output_subdir": "image_jobs",
+    "conditions": [
+      "Still-image routes use Gemini text prompting when needed, then render through the FLUX local service."
+    ],
+    "prompt_policy": "Grounded harbor-trade illustration with visible cargo logic, weathered tools, route signals, and no visible text or watermark.",
+    "default_prompt_template": "{domain_label}. Create one polished still image of {image_subject} for {actor_name} and {target_name}. Emphasize harbor logistics, route pressure, dock wear, and civic trade signals. No visible text, no watermark.",
+    "endpoint": "http://127.0.0.1:8135",
+    "generate_character_portraits": true,
+    "item_image_mode": "important_only"
+  },
+  "inventory_generation": {
+    "enabled": false,
+    "stage": "initial_inventory_generation",
+    "preserve_existing_inventory": true,
+    "max_distinct_items_per_agent": 3,
+    "max_quantity_per_item": 3,
+    "allowed_item_ids": [
+      "SSM-001",
+      "SSM-002",
+      "SSM-003",
+      "SSM-004",
+      "SS0-005",
+      "SSM-006",
+      "SSM-007",
+      "SSM-008",
+      "SSM-009",
+      "SSM-010",
+      "SSM-011",
+      "SSM-012",
+      "SSM-013",
+      "SSM-014",
+      "SSM-015",
+      "dock_contract",
+      "tide_chart",
+      "signal_flag_roll",
+      "tea_tin"
+    ],
+    "policy": "Generate compact role-appropriate actionable inventory only from the item catalog. Use property_library for non-actionable treasures, titles, clues, personal tools, debts, or keepsakes. Do not create images here; image generation is a later system step when a route requests it.",
+    "reason": "Boutique character node already generated at least eight validated inventory items per agent."
+  },
+  "extra_world_functions": {
+    "enabled": true,
+    "stage": "extra_world_functions",
+    "activation_probability": 1.0,
+    "max_events_per_function": 2,
+    "max_events_per_round": 5,
+    "functions": [
+      {
+        "function_id": "the_data_tithe_progressor",
+        "enabled": true,
+        "activation_probability": 1.0,
+        "max_events": 2,
+        "purpose": "Create or advance event threads for the The Data Tithe loop so the world keeps generating concrete next steps in Outer Hull, Sanctum, Trading Bay.",
+        "event_policy": "Prefer compact progress events that deepen The Data Tithe: Players collect fragmented data from the outer hull, purify it in the sanctum, and sell it to visiting merchants. Use Data-Monk, Merchant as likely responders, keep the pressure on Oxygen levels and data degradation rates., and ensure at least one event gives players a readable way into the world such as A merchant vessel seeking to buy ancient encryption keys..",
+        "main_character_policy": "Abbot Kaelen-01 (High Signal-Bearer) should care when the event supports Calibrating the resonance frequencies of the Signal Altar; Salvage-Acolyte Nix (Scrap-Merchant and Scavenger) should care when the event supports Sorting through debris for viable circuit-boards; Sister Veda (Hydro-Ponic Warden) should care when the event supports Pruning the bioluminescent vines in the crypt; Observer Elara (Void-Gazer) should care when the event supports Mapping the movement of the distant pulsar; Exarch Thorne (Bandwidth Arbitrator) should care when the event supports Regulating the flow of sacred data streams; Quartermaster Jora (Relic Trafficker) should care when the event supports Appraising forbidden tech from the debris fields; Archivist Zephyr (Memory Weaver) should care when the event supports Transcribing the whispers of the Silent Observatory; Inquisitor Malakor (Signal Purifier) should care when the event supports Hunting for 'Static-Heretics' in the Refectory; Deacon Vane (Static-Exorcist) should care when the event supports Purging corrupted data-ghosts from the Bandwidth Exchange; Merchant-Priest Olo (Relic Broker) should care when the event supports Bartering ancient processor-cores for nutrient paste; Scribe Elos (Signal-Cartographer) should care when the event supports Drafting star-charts based on the Silent Observatory's data; Warden Krix (Airlock Sentinel) should care when the event supports Inspecting incoming salvage for biological contaminants; High-Frequency Lyra (Signal-Transducer) should care when the event supports Tuning the resonance of the Signal Altar to bypass Exarch Thorne's restrictions; Scrap-Lord Varick (Heavy Salvage Specialist) should care when the event supports Extracting a massive reactor core in Salvage Yard Gamma; Bio-Acolyte Sylas (Fungal-Geneticist) should care when the event supports Synthesizing a neural-link serum from the Hydro-Ponic Crypt's vines; Grand-Arbitrator Valerius (Law-Keeper of the Void) should care when the event supports Reviewing bandwidth allocation logs in the High Council Chamber; Master-Tuner Solon (Resonance Architect) should care when the event supports Harmonizing the structural vibrations of the Signal Altar to prevent hull-fatigue; Curator Hestia (Relic-Sanctifier) should care when the event supports Purifying salvaged hardware from Salvage Yard Gamma before it enters the archives; Trader Jax (Black-Market Provisioner) should care when the event supports Smuggling nutrient paste and forbidden tech between the Refectory and the Yard; Bio-Seer Mara (Neural-Botanist) should care when the event supports Cultivating the 'Memory-Moss' that grows on the hull-interior; Void-Stoker Ignis (Thermal-Regulator) should care when the event supports Calibrating the heat-sinks of the Signal Altar to prevent thermal-bleed into the archives; Scrap-Baroness Vex (Heavy-Salvage Broker) should care when the event supports Negotiating the sale of a derelict engine core with Merchant-Priest Olo; Static-Leper Kael (Data-Ghost Hunter) should care when the event supports Tracking a rogue signal-echo through the Bandwidth Exchange; Acolyte Mira (Hydro-Ponic Harvester) should care when the event supports Collecting bioluminescent nectar for the Monk's Refectory; Overseer Kaelith-9 (Airlock Logistics & Quarantine Specialist) should care when the event supports Scanning incoming salvage crates for 'Static-Blight' spores.",
+        "continuity_policy": "Use titles and status_tags to show next-phase progress for The Data Tithe, such as posted, blocked, negotiated, rerouted, verified, escalated, or resolved."
+      },
+      {
+        "function_id": "the_heresy_hunt_progressor",
+        "enabled": true,
+        "activation_probability": 1.0,
+        "max_events": 2,
+        "purpose": "Create or advance event threads for the The Heresy Hunt loop so the world keeps generating concrete next steps in Server Core, Archive.",
+        "event_policy": "Prefer compact progress events that deepen The Heresy Hunt: Players scan the local network for corrupted files and identify the 'heretics' responsible for the breach. Use High Indexer, Security Acolyte as likely responders, keep the pressure on The spreading corruption virus., and ensure at least one event gives players a readable way into the world such as A merchant vessel seeking to buy ancient encryption keys..",
+        "main_character_policy": "Abbot Kaelen-01 (High Signal-Bearer) should care when the event supports Calibrating the resonance frequencies of the Signal Altar; Salvage-Acolyte Nix (Scrap-Merchant and Scavenger) should care when the event supports Sorting through debris for viable circuit-boards; Sister Veda (Hydro-Ponic Warden) should care when the event supports Pruning the bioluminescent vines in the crypt; Observer Elara (Void-Gazer) should care when the event supports Mapping the movement of the distant pulsar; Exarch Thorne (Bandwidth Arbitrator) should care when the event supports Regulating the flow of sacred data streams; Quartermaster Jora (Relic Trafficker) should care when the event supports Appraising forbidden tech from the debris fields; Archivist Zephyr (Memory Weaver) should care when the event supports Transcribing the whispers of the Silent Observatory; Inquisitor Malakor (Signal Purifier) should care when the event supports Hunting for 'Static-Heretics' in the Refectory; Deacon Vane (Static-Exorcist) should care when the event supports Purging corrupted data-ghosts from the Bandwidth Exchange; Merchant-Priest Olo (Relic Broker) should care when the event supports Bartering ancient processor-cores for nutrient paste; Scribe Elos (Signal-Cartographer) should care when the event supports Drafting star-charts based on the Silent Observatory's data; Warden Krix (Airlock Sentinel) should care when the event supports Inspecting incoming salvage for biological contaminants; High-Frequency Lyra (Signal-Transducer) should care when the event supports Tuning the resonance of the Signal Altar to bypass Exarch Thorne's restrictions; Scrap-Lord Varick (Heavy Salvage Specialist) should care when the event supports Extracting a massive reactor core in Salvage Yard Gamma; Bio-Acolyte Sylas (Fungal-Geneticist) should care when the event supports Synthesizing a neural-link serum from the Hydro-Ponic Crypt's vines; Grand-Arbitrator Valerius (Law-Keeper of the Void) should care when the event supports Reviewing bandwidth allocation logs in the High Council Chamber; Master-Tuner Solon (Resonance Architect) should care when the event supports Harmonizing the structural vibrations of the Signal Altar to prevent hull-fatigue; Curator Hestia (Relic-Sanctifier) should care when the event supports Purifying salvaged hardware from Salvage Yard Gamma before it enters the archives; Trader Jax (Black-Market Provisioner) should care when the event supports Smuggling nutrient paste and forbidden tech between the Refectory and the Yard; Bio-Seer Mara (Neural-Botanist) should care when the event supports Cultivating the 'Memory-Moss' that grows on the hull-interior; Void-Stoker Ignis (Thermal-Regulator) should care when the event supports Calibrating the heat-sinks of the Signal Altar to prevent thermal-bleed into the archives; Scrap-Baroness Vex (Heavy-Salvage Broker) should care when the event supports Negotiating the sale of a derelict engine core with Merchant-Priest Olo; Static-Leper Kael (Data-Ghost Hunter) should care when the event supports Tracking a rogue signal-echo through the Bandwidth Exchange; Acolyte Mira (Hydro-Ponic Harvester) should care when the event supports Collecting bioluminescent nectar for the Monk's Refectory; Overseer Kaelith-9 (Airlock Logistics & Quarantine Specialist) should care when the event supports Scanning incoming salvage crates for 'Static-Blight' spores.",
+        "continuity_policy": "Use titles and status_tags to show next-phase progress for The Heresy Hunt, such as posted, blocked, negotiated, rerouted, verified, escalated, or resolved."
+      },
+      {
+        "function_id": "sunken_satellite_monastery_01_tension_generator",
+        "enabled": true,
+        "activation_probability": 0.88,
+        "max_events": 2,
+        "purpose": "Generate light-to-moderate persistent tension incidents that sharpen negotiation, routing, alliances, and local stakes without overriding agent autonomy.",
+        "event_policy": "Use the compiled conflict hooks as style anchors only when they fit current world memory: Two rival guilds claim ownership of the same 'Holy' sector of the satellite's memory.; A massive data-leak threatens to reveal the monastery's commercial tax evasion.; A theological schism emerges over whether AI-generated prayers are valid.. Prefer incidents that create follow-up routes, targetable bottlenecks, or contested interpretations instead of one-off flavor.",
+        "main_character_policy": "Abbot Kaelen-01 (High Signal-Bearer) should care when the event supports Calibrating the resonance frequencies of the Signal Altar; Salvage-Acolyte Nix (Scrap-Merchant and Scavenger) should care when the event supports Sorting through debris for viable circuit-boards; Sister Veda (Hydro-Ponic Warden) should care when the event supports Pruning the bioluminescent vines in the crypt; Observer Elara (Void-Gazer) should care when the event supports Mapping the movement of the distant pulsar; Exarch Thorne (Bandwidth Arbitrator) should care when the event supports Regulating the flow of sacred data streams; Quartermaster Jora (Relic Trafficker) should care when the event supports Appraising forbidden tech from the debris fields; Archivist Zephyr (Memory Weaver) should care when the event supports Transcribing the whispers of the Silent Observatory; Inquisitor Malakor (Signal Purifier) should care when the event supports Hunting for 'Static-Heretics' in the Refectory; Deacon Vane (Static-Exorcist) should care when the event supports Purging corrupted data-ghosts from the Bandwidth Exchange; Merchant-Priest Olo (Relic Broker) should care when the event supports Bartering ancient processor-cores for nutrient paste; Scribe Elos (Signal-Cartographer) should care when the event supports Drafting star-charts based on the Silent Observatory's data; Warden Krix (Airlock Sentinel) should care when the event supports Inspecting incoming salvage for biological contaminants; High-Frequency Lyra (Signal-Transducer) should care when the event supports Tuning the resonance of the Signal Altar to bypass Exarch Thorne's restrictions; Scrap-Lord Varick (Heavy Salvage Specialist) should care when the event supports Extracting a massive reactor core in Salvage Yard Gamma; Bio-Acolyte Sylas (Fungal-Geneticist) should care when the event supports Synthesizing a neural-link serum from the Hydro-Ponic Crypt's vines; Grand-Arbitrator Valerius (Law-Keeper of the Void) should care when the event supports Reviewing bandwidth allocation logs in the High Council Chamber; Master-Tuner Solon (Resonance Architect) should care when the event supports Harmonizing the structural vibrations of the Signal Altar to prevent hull-fatigue; Curator Hestia (Relic-Sanctifier) should care when the event supports Purifying salvaged hardware from Salvage Yard Gamma before it enters the archives; Trader Jax (Black-Market Provisioner) should care when the event supports Smuggling nutrient paste and forbidden tech between the Refectory and the Yard; Bio-Seer Mara (Neural-Botanist) should care when the event supports Cultivating the 'Memory-Moss' that grows on the hull-interior; Void-Stoker Ignis (Thermal-Regulator) should care when the event supports Calibrating the heat-sinks of the Signal Altar to prevent thermal-bleed into the archives; Scrap-Baroness Vex (Heavy-Salvage Broker) should care when the event supports Negotiating the sale of a derelict engine core with Merchant-Priest Olo; Static-Leper Kael (Data-Ghost Hunter) should care when the event supports Tracking a rogue signal-echo through the Bandwidth Exchange; Acolyte Mira (Hydro-Ponic Harvester) should care when the event supports Collecting bioluminescent nectar for the Monk's Refectory; Overseer Kaelith-9 (Airlock Logistics & Quarantine Specialist) should care when the event supports Scanning incoming salvage crates for 'Static-Blight' spores.",
+        "continuity_policy": "Let tension incidents branch or cool down over multiple rounds through status_tags such as delayed, inspected, contested, exposed, rerouted, softened, or settled."
+      },
+      {
+        "function_id": "sunken_satellite_monastery_01_player_entry_generator",
+        "enabled": true,
+        "activation_probability": 0.72,
+        "max_events": 1,
+        "purpose": "Generate newcomer-readable incidents that expose what the world is about and give human players an immediate way to participate.",
+        "event_policy": "Prefer events that make the world legible from the ground level: A merchant vessel seeking to buy ancient encryption keys.; A digital pilgrim looking for the original source-code of the Great AI.; A corporate spy disguised as a data-monk.. A good event should tell a player where to go, who to ask, or which pressure is already live.",
+        "main_character_policy": "Abbot Kaelen-01 (High Signal-Bearer) should care when the event supports Calibrating the resonance frequencies of the Signal Altar; Salvage-Acolyte Nix (Scrap-Merchant and Scavenger) should care when the event supports Sorting through debris for viable circuit-boards; Sister Veda (Hydro-Ponic Warden) should care when the event supports Pruning the bioluminescent vines in the crypt; Observer Elara (Void-Gazer) should care when the event supports Mapping the movement of the distant pulsar; Exarch Thorne (Bandwidth Arbitrator) should care when the event supports Regulating the flow of sacred data streams; Quartermaster Jora (Relic Trafficker) should care when the event supports Appraising forbidden tech from the debris fields; Archivist Zephyr (Memory Weaver) should care when the event supports Transcribing the whispers of the Silent Observatory; Inquisitor Malakor (Signal Purifier) should care when the event supports Hunting for 'Static-Heretics' in the Refectory; Deacon Vane (Static-Exorcist) should care when the event supports Purging corrupted data-ghosts from the Bandwidth Exchange; Merchant-Priest Olo (Relic Broker) should care when the event supports Bartering ancient processor-cores for nutrient paste; Scribe Elos (Signal-Cartographer) should care when the event supports Drafting star-charts based on the Silent Observatory's data; Warden Krix (Airlock Sentinel) should care when the event supports Inspecting incoming salvage for biological contaminants; High-Frequency Lyra (Signal-Transducer) should care when the event supports Tuning the resonance of the Signal Altar to bypass Exarch Thorne's restrictions; Scrap-Lord Varick (Heavy Salvage Specialist) should care when the event supports Extracting a massive reactor core in Salvage Yard Gamma; Bio-Acolyte Sylas (Fungal-Geneticist) should care when the event supports Synthesizing a neural-link serum from the Hydro-Ponic Crypt's vines; Grand-Arbitrator Valerius (Law-Keeper of the Void) should care when the event supports Reviewing bandwidth allocation logs in the High Council Chamber; Master-Tuner Solon (Resonance Architect) should care when the event supports Harmonizing the structural vibrations of the Signal Altar to prevent hull-fatigue; Curator Hestia (Relic-Sanctifier) should care when the event supports Purifying salvaged hardware from Salvage Yard Gamma before it enters the archives; Trader Jax (Black-Market Provisioner) should care when the event supports Smuggling nutrient paste and forbidden tech between the Refectory and the Yard; Bio-Seer Mara (Neural-Botanist) should care when the event supports Cultivating the 'Memory-Moss' that grows on the hull-interior; Void-Stoker Ignis (Thermal-Regulator) should care when the event supports Calibrating the heat-sinks of the Signal Altar to prevent thermal-bleed into the archives; Scrap-Baroness Vex (Heavy-Salvage Broker) should care when the event supports Negotiating the sale of a derelict engine core with Merchant-Priest Olo; Static-Leper Kael (Data-Ghost Hunter) should care when the event supports Tracking a rogue signal-echo through the Bandwidth Exchange; Acolyte Mira (Hydro-Ponic Harvester) should care when the event supports Collecting bioluminescent nectar for the Monk's Refectory; Overseer Kaelith-9 (Airlock Logistics & Quarantine Specialist) should care when the event supports Scanning incoming salvage crates for 'Static-Blight' spores.",
+        "continuity_policy": "Entry incidents should either resolve into a larger loop or hand off to an existing conflict, rumor, or coordination thread within 1-3 rounds."
+      }
+    ]
+  },
+  "always_activate_agent_ids": [
+    "sunken_satellite_monastery_01_main_01",
+    "sunken_satellite_monastery_01_main_02"
+  ],
+  "force_cinematic_agent_ids": [
+    "sunken_satellite_monastery_01_main_01",
+    "sunken_satellite_monastery_01_main_02",
+    "sunken_satellite_monastery_01_main_03",
+    "sunken_satellite_monastery_01_main_04",
+    "sunken_satellite_monastery_01_main_05",
+    "sunken_satellite_monastery_01_main_06",
+    "sunken_satellite_monastery_01_main_07",
+    "sunken_satellite_monastery_01_main_08",
+    "sunken_satellite_monastery_01_main_09",
+    "sunken_satellite_monastery_01_main_10",
+    "sunken_satellite_monastery_01_main_11",
+    "sunken_satellite_monastery_01_main_12",
+    "sunken_satellite_monastery_01_main_13",
+    "sunken_satellite_monastery_01_main_14",
+    "sunken_satellite_monastery_01_main_15",
+    "sunken_satellite_monastery_01_main_16",
+    "sunken_satellite_monastery_01_main_17",
+    "sunken_satellite_monastery_01_main_18",
+    "sunken_satellite_monastery_01_main_19",
+    "sunken_satellite_monastery_01_main_20",
+    "sunken_satellite_monastery_01_main_21",
+    "sunken_satellite_monastery_01_main_22",
+    "sunken_satellite_monastery_01_main_23",
+    "sunken_satellite_monastery_01_main_24",
+    "sunken_satellite_monastery_01_main_25"
+  ],
+  "story_filename": "story.jsonl",
+  "run_name": "sunken_satellite_monastery_01",
+  "vertex_api": {
+    "backend": "ai_studio",
+    "active_backend_name": "primary",
+    "api_key_env": "AGORA_AISTUDIO_API_KEY",
+    "endpoint_base": "https://generativelanguage.googleapis.com/v1beta",
+    "method": "generateContent",
+    "default_model": "gemini-2.5-flash",
+    "thinking_level": "low",
+    "thinking_budget": 512,
+    "max_output_tokens": 1024,
+    "temperature": 0.45,
+    "fallback": null,
+    "retry": {
+      "max_attempts": 8,
+      "initial_sleep_seconds": 5.0,
+      "max_sleep_seconds": 120.0,
+      "backoff_multiplier": 2.0,
+      "status_codes": [
+        408,
+        429,
+        500,
+        502,
+        503,
+        504
+      ]
+    },
+    "stages": {
+      "agent_profile_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 1024,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "interaction_routing": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 4096,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "relationship_adjustment": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 1024,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "video_prompt_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 4096,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "image_prompt_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 2048,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "story_report_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 20000,
+        "thinking_level": "low",
+        "thinking_budget": 512,
+        "temperature": 0.45
+      },
+      "main_character_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 10000,
+        "thinking_level": "low",
+        "thinking_budget": 2048,
+        "temperature": 0.55
+      },
+      "initial_inventory_generation": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 4096,
+        "thinking_level": "low",
+        "thinking_budget": 1024,
+        "temperature": 0.45
+      },
+      "extra_world_functions": {
+        "model": "gemini-2.5-flash",
+        "max_output_tokens": 10000,
+        "thinking_level": "low",
+        "thinking_budget": 2048,
+        "temperature": 0.5
+      }
+    }
+  },
+  "vertex_image_sdk": null,
+  "resume": {
+    "source_run_dir": "",
+    "completed_round": 0,
+    "start_round": 1,
+    "in_place": false
+  },
+  "compiled_orchestration_path": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_sunken/compiled_orchestration.json"
+}

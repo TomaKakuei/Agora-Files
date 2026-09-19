@@ -1,0 +1,960 @@
+{
+  "run_id": "20260803_233109_125109",
+  "scenario_meta": {
+    "world_id": "tidal_embassy_lost_languages",
+    "world_name": "Tidal Embassy of Lost Languages",
+    "version": "1.0",
+    "description": "A floating embassy rises and sinks with the tide while linguists, smugglers, ambassadors, and memory divers trade endangered languages as political assets. Build loops around translation rights, ritual protocols, archive access, forged idioms, cultural debts, and diplomatic scandals.",
+    "simulation_objective": "Facilitate a high-stakes social economy based on translation rights, cultural debt, and linguistic espionage.",
+    "visual_canon_hash": "09047f725c28ca4f",
+    "player_entry_points": [
+      "A disgraced scholar seeking to restore their family name.",
+      "A merchant whose trade permits are written in a language they cannot read.",
+      "A spy masquerading as a humble ink-mixer."
+    ],
+    "creator_conflict_hooks": [
+      "The discovery of a scroll that invalidates the current ruling dynasty's lineage.",
+      "A sudden flood in the lower archives threatening to erase the only record of a peace treaty."
+    ],
+    "experiment_condition": "full_memory",
+    "seed_event_protocol": "private_treaty_flood_alert_v1"
+  },
+  "resumed_from": {
+    "source_run_dir": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/runs/aistudio_smoke_full_v2",
+    "completed_round": 1,
+    "start_round": 2,
+    "in_place": false
+  },
+  "round_summaries": [
+    {
+      "round_index": 1,
+      "activated_agent_count": 8,
+      "intent_count": 8,
+      "story_event_count": 8,
+      "video_job_count": 0,
+      "image_job_count": 0,
+      "action_success_count": 7,
+      "action_result_count": 8,
+      "routes": {
+        "the_redaction_game_coordinate_1": 6,
+        "rescue_flooded_treaty": 1,
+        "the_dialect_duel_coordinate_2": 1
+      }
+    }
+  ],
+  "stories": [
+    {
+      "round_index": 1,
+      "actor_id": "tidal_embassy_lost_languages_main_01",
+      "actor_name": "Vaelen the Echo-Catcher",
+      "actor_room_id": "room_01_the_phonetic_sluice",
+      "actor_coordinate": {
+        "x": 7,
+        "y": 6,
+        "z": 0
+      },
+      "target_id": "human_interactor",
+      "target_name": "Human Interactor",
+      "target_room_id": "room_01_the_phonetic_sluice",
+      "target_coordinate": {
+        "x": 7,
+        "y": 6,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 0,
+      "route_id": "the_redaction_game_coordinate_1",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "The actor, a main character and Phonetic Sluice Technician, is directed to engage with 'The Redaction Game' and is in the same room as an urgent 'Proclamation Draft Discovered' event, for which this route is preferred.",
+      "shared_task_threads": [],
+      "actor_focus": "Filtering semantic residue from the incoming tide Use The Redaction Game to push visible consequences and keep the world responsive to playe",
+      "target_focus": "awaiting human instruction",
+      "shared_action_core": {
+        "shared_action_label": "Reviewing the Leaked Proclamation Draft",
+        "shared_action_goal": "To assess the critical redactions and potential vulnerabilities of the draft before it can be exploited.",
+        "action_beats": [
+          "Vaelen points to a section of the draft, its text shimmering with residual phonemes.",
+          "The Human Interactor leans in, examining the complex linguistic seals.",
+          "They exchange hushed words about the implications of the unredacted passages."
+        ],
+        "actor_role_in_action": "Guiding the assessment of the draft's linguistic integrity and vulnerabilities.",
+        "target_role_in_action": "Observing and providing input on the strategic implications of the leaked draft.",
+        "props_in_use": [
+          "Proclamation Draft",
+          "resonance_jar",
+          "sluice_glove"
+        ],
+        "location_focus": "The Phonetic Sluice, specifically near the point where the draft surfaced.",
+        "why_now": "An urgent proclamation draft with critical redactions has surfaced, requiring immediate attention to prevent exploitation.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Show Vaelen and the Human Interactor jointly examining the glowing, partially redacted proclamation draft, using sluice gloves to handle it and a resonance jar "
+      },
+      "shared_action_label": "Reviewing the Leaked Proclamation Draft",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Show Vaelen and the Human Interactor jointly examining the glowing, partially redacted proclamation draft, using sluice gloves to handle it and a resonance jar ",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_01",
+          "target_agent_id": "human_interactor",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Actor included target in an urgent, high-stakes task, demonstrating trust and shared purpose.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "human_interactor",
+          "target_agent_id": "tidal_embassy_lost_languages_main_01",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Target was trusted with sensitive information and actively contributed to a critical task, building rapport.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 1,
+      "actor_id": "tidal_embassy_lost_languages_main_09",
+      "actor_name": "Caspian the Sluice-Warden",
+      "actor_room_id": "room_01_the_phonetic_sluice",
+      "actor_coordinate": {
+        "x": 8,
+        "y": 6,
+        "z": 0
+      },
+      "target_id": "tidal_embassy_lost_languages_main_21",
+      "target_name": "Rook the Sluice-Scrapper",
+      "target_room_id": "room_01_the_phonetic_sluice",
+      "target_coordinate": {
+        "x": 9,
+        "y": 10,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 5,
+      "route_id": "the_redaction_game_coordinate_1",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Caspian and Rook are both main characters in the same room, and the 'Proclamation Draft Discovered' event directly involves their room and hooks both of them. Coordinating on this urgent quest chain is a logical and visible next step.",
+      "shared_task_threads": [],
+      "actor_focus": "Calibrating the resonance filters to prevent semantic drift in the Phonetic Sluice Use The Redaction Game to push visible consequences and k",
+      "target_focus": "Sifting through the Phonetic Sluice for discarded phonemes Use The Redaction Game to push visible consequences and keep the world responsive",
+      "shared_action_core": {
+        "shared_action_label": "Jointly assessing the Proclamation Draft's redactions",
+        "shared_action_goal": "To determine the extent of semantic damage and potential for exploitation before the next high tide.",
+        "action_beats": [
+          "Caspian uses resonance goggles to scan the draft's submerged text for linguistic anomalies.",
+          "Rook sifts nearby debris, searching for any detached phonetic fragments from the draft.",
+          "They exchange observations, comparing Caspian's readings with Rook's physical findings.",
+          "They agree on a preliminary plan to secure the draft or its critical sections."
+        ],
+        "actor_role_in_action": "Using specialized tools to analyze the draft's linguistic integrity.",
+        "target_role_in_action": "Collecting and identifying physical phonetic fragments related to the draft.",
+        "props_in_use": [
+          "resonance_goggles",
+          "tuning_fork_of_glottal_stops",
+          "serrated_sibilant_hook",
+          "jar_of_muffled_plosives"
+        ],
+        "location_focus": "The section of the Phonetic Sluice where the Proclamation Draft was discovered.",
+        "why_now": "The 'Proclamation Draft Discovered' event is urgent and directly impacts the integrity of language, a core concern for both agents.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Show Caspian and Rook actively collaborating to examine the submerged Proclamation Draft, using their distinct tools and skills to assess its condition and pote"
+      },
+      "shared_action_label": "Jointly assessing the Proclamation Draft's redactions",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Show Caspian and Rook actively collaborating to examine the submerged Proclamation Draft, using their distinct tools and skills to assess its condition and pote",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_09",
+          "target_agent_id": "tidal_embassy_lost_languages_main_21",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Coordinating on an urgent, shared task builds trust and camaraderie.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_21",
+          "target_agent_id": "tidal_embassy_lost_languages_main_09",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Collaborating on a critical mission strengthens mutual respect and trust.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 1,
+      "actor_id": "tidal_embassy_lost_languages_main_15",
+      "actor_name": "Jaxen the Sluice-Runner",
+      "actor_room_id": "room_01_the_phonetic_sluice",
+      "actor_coordinate": {
+        "x": 8,
+        "y": 12,
+        "z": 0
+      },
+      "target_id": "tidal_embassy_lost_languages_main_09",
+      "target_name": "Caspian the Sluice-Warden",
+      "target_room_id": "room_01_the_phonetic_sluice",
+      "target_coordinate": {
+        "x": 8,
+        "y": 6,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 6,
+      "route_id": "the_redaction_game_coordinate_1",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Both main characters are in the Phonetic Sluice where the 'Proclamation Draft Discovered' event is urgent and directly involves them, making coordination on the Redaction Game a priority.",
+      "shared_task_threads": [],
+      "actor_focus": "Delivering high-priority phonemes between the Sluice and the Council Use The Redaction Game to push visible consequences and keep the world ",
+      "target_focus": "Calibrating the resonance filters to prevent semantic drift in the Phonetic Sluice Use The Redaction Game to push visible consequences and k",
+      "shared_action_core": {
+        "shared_action_label": "Jointly inspecting the Proclamation Draft for redaction vulnerabilities",
+        "shared_action_goal": "To assess the leaked draft's integrity and plan next steps for the Redaction Game, given its urgency.",
+        "action_beats": [
+          "Jaxen points out a smudged section of the draft, indicating a potential weakness.",
+          "Caspian uses resonance goggles to scan the document for hidden linguistic alterations.",
+          "They exchange hushed words, debating the best approach to secure or alter the text.",
+          "Caspian marks a specific phonetic sequence that could expose the leak's source."
+        ],
+        "actor_role_in_action": "Phonetic Courier, identifying critical redaction flaws in the draft",
+        "target_role_in_action": "Hydraulic Linguist, using specialized tools to analyze linguistic vulnerabilities",
+        "props_in_use": [
+          "Proclamation Draft",
+          "resonance_goggles",
+          "pneumatic_phoneme_tube",
+          "tuning_fork_of_glottal_stops"
+        ],
+        "location_focus": "The damp stone floor near the sluice gates, where the draft was found",
+        "why_now": "The 'Proclamation Draft Discovered' event is urgent and located in their current room, requiring immediate attention to advance the Redaction Game.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Show Jaxen and Caspian leaning over the damp, partially redacted draft, with Caspian's goggles glowing faintly as he scans it. Jaxen gestures with a pneumatic t"
+      },
+      "shared_action_label": "Jointly inspecting the Proclamation Draft for redaction vulnerabilities",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Show Jaxen and Caspian leaning over the damp, partially redacted draft, with Caspian's goggles glowing faintly as he scans it. Jaxen gestures with a pneumatic t",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_15",
+          "target_agent_id": "tidal_embassy_lost_languages_main_09",
+          "trust_delta": 3,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Coordinating on an urgent, shared task builds trust and reinforces their working relationship.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_09",
+          "target_agent_id": "tidal_embassy_lost_languages_main_15",
+          "trust_delta": 3,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Working together effectively on a critical world event strengthens mutual trust and appreciation.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 1,
+      "actor_id": "tidal_embassy_lost_languages_main_17",
+      "actor_name": "Soren the Sluice-Diver",
+      "actor_room_id": "room_01_the_phonetic_sluice",
+      "actor_coordinate": {
+        "x": 9,
+        "y": 6,
+        "z": 0
+      },
+      "target_id": "tidal_embassy_lost_languages_main_09",
+      "target_name": "Caspian the Sluice-Warden",
+      "target_room_id": "room_01_the_phonetic_sluice",
+      "target_coordinate": {
+        "x": 8,
+        "y": 6,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 1,
+      "route_id": "the_redaction_game_coordinate_1",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Both main characters are in the Phonetic Sluice, and an urgent 'Proclamation Draft Discovered' event (rg_leak_01) is active in their room, directly hooking both of them. Coordinating on this urgent task is the most logical and impactful action.",
+      "shared_task_threads": [],
+      "actor_focus": "Diving into the Phonetic Sluice to recover heavy-metal consonants Use The Redaction Game to push visible consequences and keep the world res",
+      "target_focus": "Calibrating the resonance filters to prevent semantic drift in the Phonetic Sluice Use The Redaction Game to push visible consequences and k",
+      "shared_action_core": {
+        "shared_action_label": "Examining the surfaced Proclamation Draft",
+        "shared_action_goal": "To assess the redactions and strategize how to secure the sensitive document before it's exploited.",
+        "action_beats": [
+          "Soren carefully unfurls the damp, silt-crusted draft.",
+          "Caspian uses resonance goggles to scan for hidden phonetic alterations.",
+          "They exchange hushed observations about the critical redactions.",
+          "Soren points to a specific linguistic anomaly on the page."
+        ],
+        "actor_role_in_action": "Soren, as Sub-Phonetic Salvager, meticulously handles the physical draft and identifies linguistic anomalies.",
+        "target_role_in_action": "Caspian, as Hydraulic Linguist, uses specialized tools to analyze the document's phonetic integrity.",
+        "props_in_use": [
+          "silt_crusted_plosive",
+          "resonance_goggles",
+          "Proclamation Draft"
+        ],
+        "location_focus": "The edge of the Phonetic Sluice, near where the draft surfaced.",
+        "why_now": "The 'Proclamation Draft Discovered' event is urgent and directly impacts both their roles, requiring immediate collaborative assessment.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Show Soren and Caspian closely examining the waterlogged Proclamation Draft, with Soren pointing out a detail and Caspian using his resonance goggles to scan it"
+      },
+      "shared_action_label": "Examining the surfaced Proclamation Draft",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Show Soren and Caspian closely examining the waterlogged Proclamation Draft, with Soren pointing out a detail and Caspian using his resonance goggles to scan it",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_17",
+          "target_agent_id": "tidal_embassy_lost_languages_main_09",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Successfully coordinating on an urgent task builds trust and mutual respect.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_09",
+          "target_agent_id": "tidal_embassy_lost_languages_main_17",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Effective teamwork on a critical mission strengthens professional and personal ties.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 1,
+      "actor_id": "tidal_embassy_lost_languages_main_21",
+      "actor_name": "Rook the Sluice-Scrapper",
+      "actor_room_id": "room_01_the_phonetic_sluice",
+      "actor_coordinate": {
+        "x": 9,
+        "y": 10,
+        "z": 0
+      },
+      "target_id": "tidal_embassy_lost_languages_main_01",
+      "target_name": "Vaelen the Echo-Catcher",
+      "target_room_id": "room_01_the_phonetic_sluice",
+      "target_coordinate": {
+        "x": 7,
+        "y": 6,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 6,
+      "route_id": "the_redaction_game_coordinate_1",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Both main characters are in the same room and hooked to the urgent 'Proclamation Draft Discovered' event, which explicitly prefers this route to advance The Redaction Game.",
+      "shared_task_threads": [],
+      "actor_focus": "Sifting through the Phonetic Sluice for discarded phonemes Use The Redaction Game to push visible consequences and keep the world responsive",
+      "target_focus": "Filtering semantic residue from the incoming tide Use The Redaction Game to push visible consequences and keep the world responsive to playe",
+      "shared_action_core": {
+        "shared_action_label": "Jointly examining the Proclamation Draft",
+        "shared_action_goal": "To understand the critical redactions and potential for exploitation before the deadline.",
+        "action_beats": [
+          "Rook uses his dull diphthong scraper to carefully lift a fragment of the draft from the sluice.",
+          "Vaelen adjusts her sluice glove, preparing to handle the delicate, waterlogged document.",
+          "They lean in, deciphering the faded script and noting the redacted sections.",
+          "Rook points to a suspicious linguistic anomaly, Vaelen nods in agreement."
+        ],
+        "actor_role_in_action": "Carefully retrieving and analyzing linguistic fragments of the draft.",
+        "target_role_in_action": "Stabilizing the waterlogged draft and interpreting its semantic residue.",
+        "props_in_use": [
+          "dull_diphthong_scraper",
+          "sluice_glove",
+          "Proclamation Draft"
+        ],
+        "location_focus": "The Phonetic Sluice, specifically near the discovered draft.",
+        "why_now": "An urgent proclamation draft with critical redactions has surfaced, requiring immediate attention from both agents.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Rook and Vaelen are visibly collaborating to retrieve and examine the 'Proclamation Draft Discovered' in the Phonetic Sluice, showing their initial assessment o"
+      },
+      "shared_action_label": "Jointly examining the Proclamation Draft",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Rook and Vaelen are visibly collaborating to retrieve and examine the 'Proclamation Draft Discovered' in the Phonetic Sluice, showing their initial assessment o",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_21",
+          "target_agent_id": "tidal_embassy_lost_languages_main_01",
+          "trust_delta": 4,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Collaborating effectively on an urgent shared task builds trust and camaraderie.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_01",
+          "target_agent_id": "tidal_embassy_lost_languages_main_21",
+          "trust_delta": 4,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Mutual effort on a critical mission strengthens professional respect and connection.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 1,
+      "actor_id": "tidal_embassy_lost_languages_main_25",
+      "actor_name": "Thistle the Dialect-Poacher",
+      "actor_room_id": "room_03_the_syntax_exchange",
+      "actor_coordinate": {
+        "x": 18,
+        "y": 6,
+        "z": 0
+      },
+      "target_id": "tidal_embassy_lost_languages_main_11",
+      "target_name": "Master Pavo",
+      "target_room_id": "room_03_the_syntax_exchange",
+      "target_coordinate": {
+        "x": 16,
+        "y": 8,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 4,
+      "route_id": "the_redaction_game_coordinate_1",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Thistle, a Sub-Grammar Smuggler, and Master Pavo, a Syntax Arbitrator, are both main characters in the Syntax Exchange, where 'Censor's Watch Escalates' and 'The Lexical Gauntlet Posted' are active events. The Redaction Game is a direct threat to Thistle's illicit activities and Pavo's arbitration, ",
+      "shared_task_threads": [],
+      "actor_focus": "Illicitly harvesting regional accents from the Dialect Yard for the black market Use The Redaction Game to push visible consequences and kee",
+      "target_focus": "Mediating disputes between merchants over the definition of 'Value' Use The Redaction Game to push visible consequences and keep the world r",
+      "shared_action_core": {
+        "shared_action_label": "Jointly assessing the Censor's escalated surveillance in the Syntax Exchange",
+        "shared_action_goal": "To find a loophole or shared strategy to navigate the heightened scrutiny related to document alteration and illicit linguistic trade.",
+        "action_beats": [
+          "Thistle discreetly gestures towards a newly posted Censor's notice.",
+          "Master Pavo adjusts their spectacles, scrutinizing the official wording.",
+          "They exchange a knowing glance, a silent agreement forming.",
+          "Pavo subtly taps their gavel, indicating a potential weakness in the new regulations."
+        ],
+        "actor_role_in_action": "Observing and subtly probing the new Censor's regulations for vulnerabilities.",
+        "target_role_in_action": "Interpreting the official Censor's decree and considering its implications for the Syntax Exchange.",
+        "props_in_use": [
+          "official_seal_of_the_exchange",
+          "gavel_of_grammatical_authority",
+          "counterfeit_noun_stamp"
+        ],
+        "location_focus": "The central arbitration platform in the Syntax Exchange, near the Censor's posted notices.",
+        "why_now": "The 'Censor's Watch Escalates' event directly impacts both agents' activities and is urgent, requiring immediate, coordinated assessment.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Show Thistle and Pavo in the Syntax Exchange, subtly collaborating to understand and potentially subvert the Censor's new surveillance measures, highlighting th"
+      },
+      "shared_action_label": "Jointly assessing the Censor's escalated surveillance in the Syntax Exchange",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Show Thistle and Pavo in the Syntax Exchange, subtly collaborating to understand and potentially subvert the Censor's new surveillance measures, highlighting th",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_25",
+          "target_agent_id": "tidal_embassy_lost_languages_main_11",
+          "trust_delta": 5,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Thistle trusts Pavo's expertise in navigating official regulations, seeing them as a potential asset against the Censor.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_11",
+          "target_agent_id": "tidal_embassy_lost_languages_main_25",
+          "trust_delta": 4,
+          "affection_delta": 1,
+          "influence_fear_delta": 0,
+          "reason": "Pavo gains a measure of trust in Thistle's understanding of the illicit world, which is crucial for assessing the Censor's impact.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 1,
+      "actor_id": "tidal_embassy_lost_languages_main_02",
+      "actor_name": "Archivist Elara",
+      "actor_room_id": "room_02_archive_of_lost_vowels",
+      "actor_coordinate": {
+        "x": 29,
+        "y": 17,
+        "z": 0
+      },
+      "target_id": "tidal_embassy_lost_languages_main_19",
+      "target_name": "Elder Karys",
+      "target_room_id": "room_02_archive_of_lost_vowels",
+      "target_coordinate": {
+        "x": 30,
+        "y": 24,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 8,
+      "route_id": "rescue_flooded_treaty",
+      "kind": "custom",
+      "story_verb": "advanced the treaty rescue with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Archivist Elara and Elder Karys are coordinating to address the urgent archive leak, focusing on the threatened peace treaty.",
+      "shared_task_threads": [],
+      "actor_focus": "Cataloging the shifting grammar of the deep Use The Dialect Duel to push visible consequences and keep the world responsive to players.",
+      "target_focus": "Polishing the calcified 'O's in the Archive Use The Redaction Game to push visible consequences and keep the world responsive to players.",
+      "shared_action_core": {
+        "shared_action_label": "Securing the threatened peace treaty from rising water",
+        "shared_action_goal": "To prevent the only surviving peace treaty from being dissolved by the archive leak.",
+        "action_beats": [
+          "Elara points to the water level near the treaty's location.",
+          "Karys quickly retrieves a waterproof casing.",
+          "They jointly seal the treaty, lifting it to a higher shelf."
+        ],
+        "actor_role_in_action": "Directing the rescue and assessing the immediate threat to the treaty",
+        "target_role_in_action": "Providing the necessary tools and executing the physical preservation",
+        "props_in_use": [
+          "ink_stained_monocle",
+          "archive_key_ring",
+          "soft_chamois_cloth",
+          "waterproof casing (implied)"
+        ],
+        "location_focus": "The Vowel Stasis Pods in the Archive, specifically near the leak",
+        "why_now": "The 'Lower Archive Flood Threat' indicates the lower archive will flood soon, directly endangering the peace treaty.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Show Archivist Elara and Elder Karys actively working together to save the peace treaty from the encroaching water, highlighting their coordinated effort and th"
+      },
+      "shared_action_label": "Securing the threatened peace treaty from rising water",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Show Archivist Elara and Elder Karys actively working together to save the peace treaty from the encroaching water, highlighting their coordinated effort and th",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_02",
+          "target_agent_id": "tidal_embassy_lost_languages_main_19",
+          "trust_delta": 8,
+          "affection_delta": 5,
+          "influence_fear_delta": 0,
+          "reason": "Karys's quick and effective aid in a crisis builds Elara's trust and appreciation.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_19",
+          "target_agent_id": "tidal_embassy_lost_languages_main_02",
+          "trust_delta": 7,
+          "affection_delta": 4,
+          "influence_fear_delta": 0,
+          "reason": "Elara's clear direction and shared urgency strengthen Karys's trust and sense of camaraderie.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 1,
+      "actor_id": "tidal_embassy_lost_languages_main_03",
+      "actor_name": "Kaelen the Word-Broker",
+      "actor_room_id": "room_03_the_syntax_exchange",
+      "actor_coordinate": {
+        "x": 15,
+        "y": 8,
+        "z": 0
+      },
+      "target_id": "tidal_embassy_lost_languages_main_25",
+      "target_name": "Thistle the Dialect-Poacher",
+      "target_room_id": "room_03_the_syntax_exchange",
+      "target_coordinate": {
+        "x": 18,
+        "y": 6,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 5,
+      "route_id": "the_dialect_duel_coordinate_2",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Kaelen, a Syntax Merchant, can coordinate with Thistle, a Sub-Grammar Smuggler, to address the Lexical Gauntlet challenge, which aligns with Thistle's interest in dialects and Kaelen's trade. This advances a shared objective in their current room.",
+      "shared_task_threads": [],
+      "actor_focus": "Trading rare adjectives for stable nouns Use The Redaction Game to push visible consequences and keep the world responsive to players.",
+      "target_focus": "Illicitly harvesting regional accents from the Dialect Yard for the black market Use The Redaction Game to push visible consequences and kee",
+      "shared_action_core": {
+        "shared_action_label": "Strategizing for the Lexical Gauntlet",
+        "shared_action_goal": "To pool knowledge on rare idioms and potential sources to gain an advantage in the Dialect Duel and impress ambassadors.",
+        "action_beats": [
+          "Kaelen gestures to the posted gauntlet challenge, initiating the discussion.",
+          "Thistle leans in, sharing insights on forbidden syntax structures.",
+          "They exchange ideas on leveraging their unique linguistic resources.",
+          "They agree on a preliminary plan to scout for specific rare idioms."
+        ],
+        "actor_role_in_action": "Kaelen proposes a strategy to acquire rare adjectives for the duel, leveraging market knowledge.",
+        "target_role_in_action": "Thistle offers intel on obscure dialects and methods for illicitly obtaining linguistic components.",
+        "props_in_use": [
+          "gilded_ledger",
+          "muffled_diphthong_jar"
+        ],
+        "location_focus": "The bustling Syntax Exchange, near the posted challenge.",
+        "why_now": "The Lexical Gauntlet has just been posted in their current room, demanding a response to impress neutral ambassadors and shift public opinion.",
+        "json_action_alignment": "route_only",
+        "off_json_detail": "",
+        "main_character_recording_note": "Show Kaelen and Thistle in the Syntax Exchange, discussing the Lexical Gauntlet. Kaelen is pointing to the gauntlet posting, while Thistle is subtly indicating "
+      },
+      "shared_action_label": "Strategizing for the Lexical Gauntlet",
+      "shared_action_alignment": "route_only",
+      "main_character_recording_note": "Show Kaelen and Thistle in the Syntax Exchange, discussing the Lexical Gauntlet. Kaelen is pointing to the gauntlet posting, while Thistle is subtly indicating ",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_03",
+          "target_agent_id": "tidal_embassy_lost_languages_main_25",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Coordinating on a shared challenge increases trust and a sense of camaraderie.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "tidal_embassy_lost_languages_main_25",
+          "target_agent_id": "tidal_embassy_lost_languages_main_03",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Working together on the Dialect Duel fosters mutual respect and a stronger bond.",
+          "source": "vertex_api"
+        }
+      ]
+    }
+  ],
+  "route_counts": {
+    "the_redaction_game_coordinate_1": 6,
+    "rescue_flooded_treaty": 1,
+    "the_dialect_duel_coordinate_2": 1
+  },
+  "longlive_counts": {},
+  "image_counts": {},
+  "extra_world_events": [
+    {
+      "event_id": "rg_leak_01",
+      "title": "Proclamation Draft Discovered",
+      "description": "A preliminary draft of the Grand Proclamation, with critical redactions, has surfaced in the Phonetic Sluice. A disgraced scholar could exploit this to alter history or expose secrets before the deadline.",
+      "room_id": "room_01_the_phonetic_sluice",
+      "coordinate": {
+        "x": 6,
+        "y": 5,
+        "z": 0
+      },
+      "event_type": "quest_chain",
+      "status_tags": [
+        "posted",
+        "redaction_game",
+        "urgent"
+      ],
+      "preferred_routes": [
+        "the_redaction_game_coordinate_1",
+        "forge_linguistic_seal"
+      ],
+      "main_character_hooks": [
+        "tidal_embassy_lost_languages_main_01",
+        "tidal_embassy_lost_languages_main_09",
+        "tidal_embassy_lost_languages_main_15",
+        "tidal_embassy_lost_languages_main_17",
+        "tidal_embassy_lost_languages_main_21"
+      ],
+      "expires_after_rounds": 3,
+      "round_index": 1,
+      "function_id": "the_redaction_game_progressor",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "rg_censor_02",
+      "title": "Censor's Watch Escalates",
+      "description": "The Censor's office has tightened scrutiny in the Syntax Exchange, making document alteration riskier. An informant's methods could be revealed, or a scribe coerced to aid redaction.",
+      "room_id": "room_03_the_syntax_exchange",
+      "coordinate": {
+        "x": 14,
+        "y": 5,
+        "z": 0
+      },
+      "event_type": "hazard",
+      "status_tags": [
+        "blocked",
+        "redaction_game",
+        "escalated",
+        "surveillance"
+      ],
+      "preferred_routes": [
+        "the_redaction_game_coordinate_1",
+        "trade_supplies",
+        "ease_world_tension"
+      ],
+      "main_character_hooks": [
+        "tidal_embassy_lost_languages_main_03",
+        "tidal_embassy_lost_languages_main_07",
+        "tidal_embassy_lost_languages_main_11",
+        "tidal_embassy_lost_languages_main_22",
+        "tidal_embassy_lost_languages_main_25"
+      ],
+      "expires_after_rounds": 4,
+      "round_index": 1,
+      "function_id": "the_redaction_game_progressor",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "dd_gauntlet_01",
+      "title": "The Lexical Gauntlet Posted",
+      "description": "A challenge for a 'Dialect Duel' has been posted in the Syntax Exchange, demanding rare idioms to impress neutral ambassadors. Public opinion is shifting, demanding a champion.",
+      "room_id": "room_03_the_syntax_exchange",
+      "coordinate": {
+        "x": 14,
+        "y": 5,
+        "z": 0
+      },
+      "event_type": "quest_chain",
+      "status_tags": [
+        "posted",
+        "dialect_duel",
+        "social_combat",
+        "public_opinion"
+      ],
+      "preferred_routes": [
+        "the_dialect_duel_coordinate_2",
+        "trade_supplies"
+      ],
+      "main_character_hooks": [
+        "tidal_embassy_lost_languages_main_03",
+        "tidal_embassy_lost_languages_main_04",
+        "tidal_embassy_lost_languages_main_07",
+        "tidal_embassy_lost_languages_main_11",
+        "tidal_embassy_lost_languages_main_16",
+        "tidal_embassy_lost_languages_main_22"
+      ],
+      "expires_after_rounds": 3,
+      "round_index": 1,
+      "function_id": "the_dialect_duel_progressor",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "dd_ambassador_02",
+      "title": "Ambassador's Favor Sought",
+      "description": "Neutral Ambassador Lyra has expressed interest in a forgotten dialect from the Archive of Lost Vowels, potentially swaying the 'Dialect Duel'. A disgraced scholar might uncover it.",
+      "room_id": "room_05_council_of_the_last_speaker",
+      "coordinate": {
+        "x": 14,
+        "y": 15,
+        "z": 0
+      },
+      "event_type": "discovery",
+      "status_tags": [
+        "discovery",
+        "dialect_duel",
+        "ambassador_favor",
+        "unverified"
+      ],
+      "preferred_routes": [
+        "the_dialect_duel_coordinate_2",
+        "document_world_detail",
+        "translate_archaic_bribe"
+      ],
+      "main_character_hooks": [
+        "tidal_embassy_lost_languages_main_02",
+        "tidal_embassy_lost_languages_main_04",
+        "tidal_embassy_lost_languages_main_08",
+        "tidal_embassy_lost_languages_main_14",
+        "tidal_embassy_lost_languages_main_19",
+        "tidal_embassy_lost_languages_main_20"
+      ],
+      "expires_after_rounds": 4,
+      "round_index": 1,
+      "function_id": "the_dialect_duel_progressor",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "tg_leak_01",
+      "title": "Archive Leak Threatens Vowels",
+      "description": "A minor but persistent leak has been detected near the Vowel Stasis Pods in the Archive, threatening to dissolve stored phonetic sigils. Archivist Elara is concerned.",
+      "room_id": "room_02_archive_of_lost_vowels",
+      "coordinate": {
+        "x": 28,
+        "y": 15,
+        "z": 0
+      },
+      "event_type": "hazard",
+      "status_tags": [
+        "urgent",
+        "threatened",
+        "leak",
+        "contested"
+      ],
+      "preferred_routes": [
+        "rescue_flooded_treaty",
+        "document_world_detail",
+        "ease_world_tension"
+      ],
+      "main_character_hooks": [
+        "tidal_embassy_lost_languages_main_02",
+        "tidal_embassy_lost_languages_main_19",
+        "tidal_embassy_lost_languages_main_13",
+        "tidal_embassy_lost_languages_main_09"
+      ],
+      "expires_after_rounds": 3,
+      "round_index": 1,
+      "function_id": "tidal_embassy_lost_languages_tension_generator",
+      "source": "vertex_api"
+    }
+  ],
+  "target_legality": {
+    "invalid_count": 0,
+    "invalid": []
+  },
+  "orchestration": {
+    "version": "agora_c_1",
+    "mode": "json_declared_runtime",
+    "components": [
+      {
+        "component_id": "phase_trace",
+        "kind": "phase_trace"
+      }
+    ],
+    "policies": {
+      "activation_policy": {
+        "policy_id": "human_visible_decay_activation"
+      },
+      "target_selection_policy": {
+        "policy_id": "human_priority_target_selection"
+      },
+      "route_request_policy": {
+        "policy_id": "vertex_json_route_request"
+      },
+      "route_quota_policy": {
+        "policy_id": "quota_fallback"
+      },
+      "intent_builder_policy": {
+        "policy_id": "legacy_intent_builder"
+      },
+      "adjudication_policy": {
+        "policy_id": "local_universal_adjudicator"
+      },
+      "finalization_policy": {
+        "policy_id": "legacy_manifest_writer"
+      }
+    },
+    "phases": [
+      {
+        "phase_id": "bootstrap",
+        "steps": [
+          {
+            "operation": "initialize_runtime"
+          },
+          {
+            "operation": "materialize_or_resume_state"
+          },
+          {
+            "operation": "initialize_round_accumulators"
+          },
+          {
+            "operation": "write_compiled_runtime_plan"
+          }
+        ]
+      },
+      {
+        "phase_id": "round_loop",
+        "for_each": "round_indices",
+        "item_as": "round_index",
+        "steps": [
+          {
+            "operation": "prepare_round"
+          },
+          {
+            "operation": "sync_human_interactor"
+          },
+          {
+            "operation": "run_extra_world_functions"
+          },
+          {
+            "operation": "activate_agents"
+          },
+          {
+            "phase_id": "actor_loop",
+            "for_each": "activated_agents",
+            "item_as": "actor",
+            "steps": [
+              {
+                "operation": "select_target"
+              },
+              {
+                "operation": "prepare_actor_request"
+              },
+              {
+                "operation": "request_route",
+                "when": {
+                  "store_key": "current_actor_skipped",
+                  "equals": false
+                }
+              },
+              {
+                "operation": "apply_route_fallbacks",
+                "when": {
+                  "store_key": "current_actor_skipped",
+                  "equals": false
+                }
+              },
+              {
+                "operation": "build_actor_outputs",
+                "when": {
+                  "store_key": "current_actor_skipped",
+                  "equals": false
+                }
+              },
+              {
+                "operation": "record_actor_outputs",
+                "when": {
+                  "store_key": "current_actor_skipped",
+                  "equals": false
+                }
+              }
+            ]
+          },
+          {
+            "operation": "adjudicate_round"
+          },
+          {
+            "operation": "record_round_outputs"
+          }
+        ]
+      },
+      {
+        "phase_id": "finalize",
+        "steps": [
+          {
+            "operation": "write_final_outputs"
+          },
+          {
+            "operation": "build_optional_report"
+          },
+          {
+            "operation": "write_runtime_snapshot"
+          }
+        ]
+      }
+    ]
+  }
+}

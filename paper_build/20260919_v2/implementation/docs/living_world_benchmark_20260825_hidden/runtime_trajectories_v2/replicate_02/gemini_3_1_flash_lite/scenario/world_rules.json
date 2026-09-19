@@ -1,0 +1,853 @@
+{
+  "world_mode": "Fixed",
+  "topology": {
+    "grid_shape": {
+      "x": 14,
+      "y": 21,
+      "z": 1
+    },
+    "rooms": [
+      {
+        "room_id": "room_01_the_scales_of_oaths_chamber",
+        "name": "The Scales of Oaths Chamber",
+        "x": 6,
+        "y": 7,
+        "z": 0,
+        "width_tiles": 8,
+        "height_tiles": 8,
+        "doorways": [
+          {
+            "doorway_id": "room_01_the_scales_of_oaths_chamber_to_room_02_the_silent_runners_dispatch",
+            "position": {
+              "x": 6,
+              "y": 9,
+              "z": 0
+            },
+            "edge_dir": "left",
+            "connects_to_room_id": "room_02_the_silent_runners_dispatch",
+            "label": "passage to The Silent Runners Dispatch"
+          },
+          {
+            "doorway_id": "room_01_the_scales_of_oaths_chamber_to_room_04_the_promise_brokers_exchange",
+            "position": {
+              "x": 9,
+              "y": 7,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_04_the_promise_brokers_exchange",
+            "label": "passage to The Promise Brokers Exchange"
+          },
+          {
+            "doorway_id": "room_01_the_scales_of_oaths_chamber_to_room_05_the_voiceless_refusal_hall",
+            "position": {
+              "x": 8,
+              "y": 14,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_05_the_voiceless_refusal_hall",
+            "label": "passage to The Voiceless Refusal Hall"
+          }
+        ],
+        "visual": {
+          "biome": "Cliffside Administrative",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "heavy_vellum",
+            "ink_seals",
+            "limestone",
+            "notice_table"
+          ],
+          "ambient_palette": "focused_blue",
+          "visual_canon_hash": "f9bf16cd4dbd6a01",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_01_the_scales_of_oaths_chamber_oath_scale_apparatus",
+              "label": "Great Oath Scale",
+              "description": "Massive iron scale with glowing ink-seal weights",
+              "anchor": "center",
+              "width_tiles": 3,
+              "height_tiles": 3
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Verify and tax the physical weight of spoken promises; changes state_total_debt.",
+          "activity_tags": [
+            "weighing",
+            "taxation",
+            "bureaucracy"
+          ],
+          "player_entry_hook": "A new courier arriving at The Silent Runners Dispatch seeking their first route.",
+          "room_archetype": "checkpoint",
+          "layout_signal": "The Scales of Oaths Chamber | Verify and tax the physical weight of spoken promises; changes state_total_debt. | Cliffside Administrative | weighing | taxation | bureaucracy | heavy_vellum | ink_seals | limestone | notice_table"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "16-bit pixel art of worn, cracked limestone floor with dark ink stains and heavy iron floor-inlays",
+        "room_scene_prompt": "Top-down view of a bureaucratic weighing chamber, massive iron scales in center, piles of heavy vellum scrolls, ink-stained limestone floor, high-contrast chiaroscuro lighting, no text, no labels, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "verbalis-cliff-001",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90 degrees",
+            "scale_rule": "1 tile equals 1 meter, fixed orthographic zoom"
+          },
+          "palette": {
+            "dominant": "#2f2b28",
+            "secondary": "#d1c7b7",
+            "accent": "#4a6d7c",
+            "shadow": "#1a1816",
+            "highlight": "#e8e4d9"
+          },
+          "materials": [
+            "weathered limestone",
+            "oxidized copper",
+            "heavy vellum parchment",
+            "black iron ink-seals",
+            "rough-hewn basalt"
+          ],
+          "lighting": "High-contrast chiaroscuro, directional light from above, deep ambient occlusion in crevices",
+          "architecture": [
+            "vertical cliff-carved dwellings",
+            "suspended rope-and-plank bridges",
+            "narrow winding staircases",
+            "buttressed administrative towers"
+          ],
+          "terrain": {
+            "ground": "cracked stone cliff face",
+            "path": "worn wooden courier walkways",
+            "edge": "sheer vertical drop-off"
+          },
+          "sprite_language": {
+            "body_proportion": "elongated, stooped, burdened by heavy satchels",
+            "outline": "thick, ink-brushed, high-contrast black",
+            "role_readability": "silhouette-based, distinct gear shapes for couriers vs officials"
+          },
+          "world_prompt_prefix": "Verbalis cliffside metropolis, vertical stone architecture, ink-stained parchment aesthetic, bureaucratic fantasy, high-contrast lighting",
+          "sprite_prompt_prefix": "Verbalis citizen, ink-brushed style, top-down view, burdened posture, bureaucratic attire",
+          "forbidden_visuals": [
+            "visible text labels",
+            "title cards",
+            "photorealism",
+            "vibrant neon colors",
+            "organic foliage",
+            "rounded soft edges",
+            "disconnected room dioramas"
+          ],
+          "canon_hash": "f9bf16cd4dbd6a01"
+        }
+      },
+      {
+        "room_id": "room_02_the_silent_runners_dispatch",
+        "name": "The Silent Runners Dispatch",
+        "x": 0,
+        "y": 7,
+        "z": 0,
+        "width_tiles": 6,
+        "height_tiles": 6,
+        "doorways": [
+          {
+            "doorway_id": "room_01_the_scales_of_oaths_chamber_to_room_02_the_silent_runners_dispatch",
+            "position": {
+              "x": 5,
+              "y": 9,
+              "z": 0
+            },
+            "edge_dir": "right",
+            "connects_to_room_id": "room_01_the_scales_of_oaths_chamber",
+            "label": "passage to The Scales of Oaths Chamber"
+          },
+          {
+            "doorway_id": "room_02_the_silent_runners_dispatch_to_room_03_the_silence_keepers_barracks",
+            "position": {
+              "x": 3,
+              "y": 7,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_03_the_silence_keepers_barracks",
+            "label": "passage to The Silence Keepers Barracks"
+          },
+          {
+            "doorway_id": "room_02_the_silent_runners_dispatch_to_room_06_the_archive_of_unpaid_debts",
+            "position": {
+              "x": 3,
+              "y": 12,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_06_the_archive_of_unpaid_debts",
+            "label": "passage to The Archive of Unpaid Debts"
+          }
+        ],
+        "visual": {
+          "biome": "Cliffside Logistics",
+          "floor_tile": "stone_hall",
+          "wall_tile": "wood_beam_wall",
+          "decor_tags": [
+            "rope_bridges",
+            "satchels",
+            "basalt",
+            "notice_table"
+          ],
+          "ambient_palette": "dusty_brown",
+          "visual_canon_hash": "f9bf16cd4dbd6a01",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_02_the_silent_runners_dispatch_courier_satchel_rack",
+              "label": "Satchel Rack",
+              "description": "Wall-mounted rack overflowing with heavy, ink-sealed leather satchels",
+              "anchor": "north_mid",
+              "width_tiles": 3,
+              "height_tiles": 1
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Transport unpaid promises; receives debt volume from Scales of Oaths.",
+          "activity_tags": [
+            "logistics",
+            "courier_dispatch"
+          ],
+          "player_entry_hook": "A debtor entering The Voiceless Refusal Hall to challenge their seizure notice.",
+          "room_archetype": "logistics_yard",
+          "layout_signal": "The Silent Runners Dispatch | Transport unpaid promises; receives debt volume from Scales of Oaths. | Cliffside Logistics | logistics | courier_dispatch | rope_bridges | satchels | basalt | notice_table"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "16-bit pixel art of rough-hewn basalt stone floor with worn wooden courier path markings",
+        "room_scene_prompt": "Top-down view of a courier dispatch room, rows of heavy leather satchels, wooden courier walkways, dark basalt floor, high-contrast lighting, no text, no labels, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "verbalis-cliff-001",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90 degrees",
+            "scale_rule": "1 tile equals 1 meter, fixed orthographic zoom"
+          },
+          "palette": {
+            "dominant": "#2f2b28",
+            "secondary": "#d1c7b7",
+            "accent": "#4a6d7c",
+            "shadow": "#1a1816",
+            "highlight": "#e8e4d9"
+          },
+          "materials": [
+            "weathered limestone",
+            "oxidized copper",
+            "heavy vellum parchment",
+            "black iron ink-seals",
+            "rough-hewn basalt"
+          ],
+          "lighting": "High-contrast chiaroscuro, directional light from above, deep ambient occlusion in crevices",
+          "architecture": [
+            "vertical cliff-carved dwellings",
+            "suspended rope-and-plank bridges",
+            "narrow winding staircases",
+            "buttressed administrative towers"
+          ],
+          "terrain": {
+            "ground": "cracked stone cliff face",
+            "path": "worn wooden courier walkways",
+            "edge": "sheer vertical drop-off"
+          },
+          "sprite_language": {
+            "body_proportion": "elongated, stooped, burdened by heavy satchels",
+            "outline": "thick, ink-brushed, high-contrast black",
+            "role_readability": "silhouette-based, distinct gear shapes for couriers vs officials"
+          },
+          "world_prompt_prefix": "Verbalis cliffside metropolis, vertical stone architecture, ink-stained parchment aesthetic, bureaucratic fantasy, high-contrast lighting",
+          "sprite_prompt_prefix": "Verbalis citizen, ink-brushed style, top-down view, burdened posture, bureaucratic attire",
+          "forbidden_visuals": [
+            "visible text labels",
+            "title cards",
+            "photorealism",
+            "vibrant neon colors",
+            "organic foliage",
+            "rounded soft edges",
+            "disconnected room dioramas"
+          ],
+          "canon_hash": "f9bf16cd4dbd6a01"
+        }
+      },
+      {
+        "room_id": "room_03_the_silence_keepers_barracks",
+        "name": "The Silence Keepers Barracks",
+        "x": 1,
+        "y": 2,
+        "z": 0,
+        "width_tiles": 5,
+        "height_tiles": 5,
+        "doorways": [
+          {
+            "doorway_id": "room_02_the_silent_runners_dispatch_to_room_03_the_silence_keepers_barracks",
+            "position": {
+              "x": 3,
+              "y": 6,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_02_the_silent_runners_dispatch",
+            "label": "passage to The Silent Runners Dispatch"
+          },
+          {
+            "doorway_id": "room_03_the_silence_keepers_barracks_to_room_04_the_promise_brokers_exchange",
+            "position": {
+              "x": 5,
+              "y": 4,
+              "z": 0
+            },
+            "edge_dir": "right",
+            "connects_to_room_id": "room_04_the_promise_brokers_exchange",
+            "label": "passage to The Promise Brokers Exchange"
+          }
+        ],
+        "visual": {
+          "biome": "Cliffside Enforcement",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "silencing_collars",
+            "iron",
+            "limestone",
+            "notice_table"
+          ],
+          "ambient_palette": "low_lantern",
+          "visual_canon_hash": "f9bf16cd4dbd6a01",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_03_the_silence_keepers_barracks_collar_rack",
+              "label": "Collar Rack",
+              "description": "Iron rack displaying rows of glowing, magical silencing collars",
+              "anchor": "west_mid",
+              "width_tiles": 2,
+              "height_tiles": 3
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Seize assets; increases state_enforcement_intensity based on debt volume.",
+          "activity_tags": [
+            "enforcement",
+            "seizure"
+          ],
+          "player_entry_hook": "An alchemist apprentice finding a discarded, unsealed promise in the streets.",
+          "room_archetype": "checkpoint",
+          "layout_signal": "The Silence Keepers Barracks | Seize assets; increases state_enforcement_intensity based on debt volume. | Cliffside Enforcement | enforcement | seizure | silencing_collars | iron | limestone | notice_table"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "16-bit pixel art of cold, dark limestone floor with deep ambient occlusion shadows",
+        "room_scene_prompt": "Top-down view of an enforcement barracks, racks of magical silencing collars, cold limestone floor, high-contrast lighting, no text, no labels, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "verbalis-cliff-001",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90 degrees",
+            "scale_rule": "1 tile equals 1 meter, fixed orthographic zoom"
+          },
+          "palette": {
+            "dominant": "#2f2b28",
+            "secondary": "#d1c7b7",
+            "accent": "#4a6d7c",
+            "shadow": "#1a1816",
+            "highlight": "#e8e4d9"
+          },
+          "materials": [
+            "weathered limestone",
+            "oxidized copper",
+            "heavy vellum parchment",
+            "black iron ink-seals",
+            "rough-hewn basalt"
+          ],
+          "lighting": "High-contrast chiaroscuro, directional light from above, deep ambient occlusion in crevices",
+          "architecture": [
+            "vertical cliff-carved dwellings",
+            "suspended rope-and-plank bridges",
+            "narrow winding staircases",
+            "buttressed administrative towers"
+          ],
+          "terrain": {
+            "ground": "cracked stone cliff face",
+            "path": "worn wooden courier walkways",
+            "edge": "sheer vertical drop-off"
+          },
+          "sprite_language": {
+            "body_proportion": "elongated, stooped, burdened by heavy satchels",
+            "outline": "thick, ink-brushed, high-contrast black",
+            "role_readability": "silhouette-based, distinct gear shapes for couriers vs officials"
+          },
+          "world_prompt_prefix": "Verbalis cliffside metropolis, vertical stone architecture, ink-stained parchment aesthetic, bureaucratic fantasy, high-contrast lighting",
+          "sprite_prompt_prefix": "Verbalis citizen, ink-brushed style, top-down view, burdened posture, bureaucratic attire",
+          "forbidden_visuals": [
+            "visible text labels",
+            "title cards",
+            "photorealism",
+            "vibrant neon colors",
+            "organic foliage",
+            "rounded soft edges",
+            "disconnected room dioramas"
+          ],
+          "canon_hash": "f9bf16cd4dbd6a01"
+        }
+      },
+      {
+        "room_id": "room_04_the_promise_brokers_exchange",
+        "name": "The Promise Brokers Exchange",
+        "x": 6,
+        "y": 0,
+        "z": 0,
+        "width_tiles": 7,
+        "height_tiles": 7,
+        "doorways": [
+          {
+            "doorway_id": "room_01_the_scales_of_oaths_chamber_to_room_04_the_promise_brokers_exchange",
+            "position": {
+              "x": 9,
+              "y": 6,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_01_the_scales_of_oaths_chamber",
+            "label": "passage to The Scales of Oaths Chamber"
+          },
+          {
+            "doorway_id": "room_03_the_silence_keepers_barracks_to_room_04_the_promise_brokers_exchange",
+            "position": {
+              "x": 6,
+              "y": 4,
+              "z": 0
+            },
+            "edge_dir": "left",
+            "connects_to_room_id": "room_03_the_silence_keepers_barracks",
+            "label": "passage to The Silence Keepers Barracks"
+          }
+        ],
+        "visual": {
+          "biome": "Cliffside Market",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "vellum",
+            "copper",
+            "limestone",
+            "notice_table"
+          ],
+          "ambient_palette": "warm_lantern",
+          "visual_canon_hash": "f9bf16cd4dbd6a01",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_04_the_promise_brokers_exchange_broker_desk",
+              "label": "Broker Desk",
+              "description": "Heavy limestone desk covered in vellum scrolls and ink-seals",
+              "anchor": "center",
+              "width_tiles": 2,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Maximize promise volume; affects market trust index.",
+          "activity_tags": [
+            "trading",
+            "credit_negotiation"
+          ],
+          "player_entry_hook": "A recruit reporting for duty at The Silence Keepers Barracks.",
+          "room_archetype": "market_exchange",
+          "layout_signal": "The Promise Brokers Exchange | Maximize promise volume; affects market trust index. | Cliffside Market | trading | credit_negotiation | vellum | copper | limestone | notice_table"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "16-bit pixel art of polished limestone floor with oxidized copper trim",
+        "room_scene_prompt": "Top-down view of a promise exchange, desks piled with vellum contracts, oxidized copper accents, high-contrast lighting, no text, no labels, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "verbalis-cliff-001",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90 degrees",
+            "scale_rule": "1 tile equals 1 meter, fixed orthographic zoom"
+          },
+          "palette": {
+            "dominant": "#2f2b28",
+            "secondary": "#d1c7b7",
+            "accent": "#4a6d7c",
+            "shadow": "#1a1816",
+            "highlight": "#e8e4d9"
+          },
+          "materials": [
+            "weathered limestone",
+            "oxidized copper",
+            "heavy vellum parchment",
+            "black iron ink-seals",
+            "rough-hewn basalt"
+          ],
+          "lighting": "High-contrast chiaroscuro, directional light from above, deep ambient occlusion in crevices",
+          "architecture": [
+            "vertical cliff-carved dwellings",
+            "suspended rope-and-plank bridges",
+            "narrow winding staircases",
+            "buttressed administrative towers"
+          ],
+          "terrain": {
+            "ground": "cracked stone cliff face",
+            "path": "worn wooden courier walkways",
+            "edge": "sheer vertical drop-off"
+          },
+          "sprite_language": {
+            "body_proportion": "elongated, stooped, burdened by heavy satchels",
+            "outline": "thick, ink-brushed, high-contrast black",
+            "role_readability": "silhouette-based, distinct gear shapes for couriers vs officials"
+          },
+          "world_prompt_prefix": "Verbalis cliffside metropolis, vertical stone architecture, ink-stained parchment aesthetic, bureaucratic fantasy, high-contrast lighting",
+          "sprite_prompt_prefix": "Verbalis citizen, ink-brushed style, top-down view, burdened posture, bureaucratic attire",
+          "forbidden_visuals": [
+            "visible text labels",
+            "title cards",
+            "photorealism",
+            "vibrant neon colors",
+            "organic foliage",
+            "rounded soft edges",
+            "disconnected room dioramas"
+          ],
+          "canon_hash": "f9bf16cd4dbd6a01"
+        }
+      },
+      {
+        "room_id": "room_05_the_voiceless_refusal_hall",
+        "name": "The Voiceless Refusal Hall",
+        "x": 6,
+        "y": 15,
+        "z": 0,
+        "width_tiles": 6,
+        "height_tiles": 6,
+        "doorways": [
+          {
+            "doorway_id": "room_01_the_scales_of_oaths_chamber_to_room_05_the_voiceless_refusal_hall",
+            "position": {
+              "x": 8,
+              "y": 15,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_01_the_scales_of_oaths_chamber",
+            "label": "passage to The Scales of Oaths Chamber"
+          },
+          {
+            "doorway_id": "room_05_the_voiceless_refusal_hall_to_room_06_the_archive_of_unpaid_debts",
+            "position": {
+              "x": 6,
+              "y": 16,
+              "z": 0
+            },
+            "edge_dir": "left",
+            "connects_to_room_id": "room_06_the_archive_of_unpaid_debts",
+            "label": "passage to The Archive of Unpaid Debts"
+          }
+        ],
+        "visual": {
+          "biome": "Cliffside Residential",
+          "floor_tile": "stone_hall",
+          "wall_tile": "wood_beam_wall",
+          "decor_tags": [
+            "basalt",
+            "shadows",
+            "notice_table",
+            "round_table"
+          ],
+          "ambient_palette": "soft_mint",
+          "visual_canon_hash": "f9bf16cd4dbd6a01",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_05_the_voiceless_refusal_hall_protest_shrine",
+              "label": "Silence Shrine",
+              "description": "A small, dark basalt altar where citizens leave their empty satchels",
+              "anchor": "south_mid",
+              "width_tiles": 2,
+              "height_tiles": 1
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Collective refusal to speak; reduces promise volume.",
+          "activity_tags": [
+            "protest",
+            "silence"
+          ],
+          "player_entry_hook": "A new courier arriving at The Silent Runners Dispatch seeking their first route.",
+          "room_archetype": "commons",
+          "layout_signal": "The Voiceless Refusal Hall | Collective refusal to speak; reduces promise volume. | Cliffside Residential | protest | silence | basalt | shadows | notice_table | round_table"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "16-bit pixel art of rough, uneven basalt floor with dust and debris",
+        "room_scene_prompt": "Top-down view of a sparse, dark hall, silhouettes of citizens in burdened postures, rough basalt floor, high-contrast lighting, no text, no labels, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "verbalis-cliff-001",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90 degrees",
+            "scale_rule": "1 tile equals 1 meter, fixed orthographic zoom"
+          },
+          "palette": {
+            "dominant": "#2f2b28",
+            "secondary": "#d1c7b7",
+            "accent": "#4a6d7c",
+            "shadow": "#1a1816",
+            "highlight": "#e8e4d9"
+          },
+          "materials": [
+            "weathered limestone",
+            "oxidized copper",
+            "heavy vellum parchment",
+            "black iron ink-seals",
+            "rough-hewn basalt"
+          ],
+          "lighting": "High-contrast chiaroscuro, directional light from above, deep ambient occlusion in crevices",
+          "architecture": [
+            "vertical cliff-carved dwellings",
+            "suspended rope-and-plank bridges",
+            "narrow winding staircases",
+            "buttressed administrative towers"
+          ],
+          "terrain": {
+            "ground": "cracked stone cliff face",
+            "path": "worn wooden courier walkways",
+            "edge": "sheer vertical drop-off"
+          },
+          "sprite_language": {
+            "body_proportion": "elongated, stooped, burdened by heavy satchels",
+            "outline": "thick, ink-brushed, high-contrast black",
+            "role_readability": "silhouette-based, distinct gear shapes for couriers vs officials"
+          },
+          "world_prompt_prefix": "Verbalis cliffside metropolis, vertical stone architecture, ink-stained parchment aesthetic, bureaucratic fantasy, high-contrast lighting",
+          "sprite_prompt_prefix": "Verbalis citizen, ink-brushed style, top-down view, burdened posture, bureaucratic attire",
+          "forbidden_visuals": [
+            "visible text labels",
+            "title cards",
+            "photorealism",
+            "vibrant neon colors",
+            "organic foliage",
+            "rounded soft edges",
+            "disconnected room dioramas"
+          ],
+          "canon_hash": "f9bf16cd4dbd6a01"
+        }
+      },
+      {
+        "room_id": "room_06_the_archive_of_unpaid_debts",
+        "name": "The Archive of Unpaid Debts",
+        "x": 1,
+        "y": 13,
+        "z": 0,
+        "width_tiles": 5,
+        "height_tiles": 5,
+        "doorways": [
+          {
+            "doorway_id": "room_02_the_silent_runners_dispatch_to_room_06_the_archive_of_unpaid_debts",
+            "position": {
+              "x": 3,
+              "y": 13,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_02_the_silent_runners_dispatch",
+            "label": "passage to The Silent Runners Dispatch"
+          },
+          {
+            "doorway_id": "room_05_the_voiceless_refusal_hall_to_room_06_the_archive_of_unpaid_debts",
+            "position": {
+              "x": 5,
+              "y": 16,
+              "z": 0
+            },
+            "edge_dir": "right",
+            "connects_to_room_id": "room_05_the_voiceless_refusal_hall",
+            "label": "passage to The Voiceless Refusal Hall"
+          }
+        ],
+        "visual": {
+          "biome": "Cliffside Administrative",
+          "floor_tile": "library_wood",
+          "wall_tile": "library_shelf_wall",
+          "decor_tags": [
+            "vellum",
+            "black_iron",
+            "limestone",
+            "scroll_table"
+          ],
+          "ambient_palette": "ember_orange",
+          "visual_canon_hash": "f9bf16cd4dbd6a01",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_06_the_archive_of_unpaid_debts_scroll_stack",
+              "label": "Debt Archive",
+              "description": "Towering stack of heavy vellum scrolls bound in black iron",
+              "anchor": "north_east",
+              "width_tiles": 2,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Store records of defaulted promises; affects social stability.",
+          "activity_tags": [
+            "archiving",
+            "record_keeping"
+          ],
+          "player_entry_hook": "A debtor entering The Voiceless Refusal Hall to challenge their seizure notice.",
+          "room_archetype": "archive_ritual",
+          "layout_signal": "The Archive of Unpaid Debts | Store records of defaulted promises; affects social stability. | Cliffside Administrative | archiving | record_keeping | vellum | black_iron | limestone | scroll_table"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "16-bit pixel art of limestone floor covered in scattered, ink-stained vellum",
+        "room_scene_prompt": "Top-down view of a dense archive, floor-to-ceiling shelves of vellum scrolls, black iron ink-seals, high-contrast lighting, no text, no labels, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "verbalis-cliff-001",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90 degrees",
+            "scale_rule": "1 tile equals 1 meter, fixed orthographic zoom"
+          },
+          "palette": {
+            "dominant": "#2f2b28",
+            "secondary": "#d1c7b7",
+            "accent": "#4a6d7c",
+            "shadow": "#1a1816",
+            "highlight": "#e8e4d9"
+          },
+          "materials": [
+            "weathered limestone",
+            "oxidized copper",
+            "heavy vellum parchment",
+            "black iron ink-seals",
+            "rough-hewn basalt"
+          ],
+          "lighting": "High-contrast chiaroscuro, directional light from above, deep ambient occlusion in crevices",
+          "architecture": [
+            "vertical cliff-carved dwellings",
+            "suspended rope-and-plank bridges",
+            "narrow winding staircases",
+            "buttressed administrative towers"
+          ],
+          "terrain": {
+            "ground": "cracked stone cliff face",
+            "path": "worn wooden courier walkways",
+            "edge": "sheer vertical drop-off"
+          },
+          "sprite_language": {
+            "body_proportion": "elongated, stooped, burdened by heavy satchels",
+            "outline": "thick, ink-brushed, high-contrast black",
+            "role_readability": "silhouette-based, distinct gear shapes for couriers vs officials"
+          },
+          "world_prompt_prefix": "Verbalis cliffside metropolis, vertical stone architecture, ink-stained parchment aesthetic, bureaucratic fantasy, high-contrast lighting",
+          "sprite_prompt_prefix": "Verbalis citizen, ink-brushed style, top-down view, burdened posture, bureaucratic attire",
+          "forbidden_visuals": [
+            "visible text labels",
+            "title cards",
+            "photorealism",
+            "vibrant neon colors",
+            "organic foliage",
+            "rounded soft edges",
+            "disconnected room dioramas"
+          ],
+          "canon_hash": "f9bf16cd4dbd6a01"
+        }
+      }
+    ]
+  },
+  "movement": {
+    "max_steps_per_timestep": 2,
+    "capacity_per_coordinate": 3,
+    "line_of_sight_required": false,
+    "allow_diagonal": false
+  },
+  "item_rules": {
+    "mass_conservation": true,
+    "require_same_coordinate_for_transfer": true,
+    "combinations": []
+  },
+  "image_rules": {
+    "enabled": true,
+    "allowed_operations": [
+      "create"
+    ]
+  },
+  "custom_action_rules": {
+    "default_duration_steps": 2,
+    "max_range_steps": 10,
+    "allowed_actions": [
+      "weigh_promise",
+      "seal_contract",
+      "seize_assets",
+      "forge_ink",
+      "deliver_silently",
+      "negotiate_forgiveness",
+      "Chat",
+      "Inspect",
+      "Coordinate",
+      "Trade",
+      "Move",
+      "CinematicInteraction",
+      "Negotiate"
+    ],
+    "open_proposals_enabled": true,
+    "open_proposal_effects": [
+      "speech",
+      "transfer",
+      "create_item",
+      "status"
+    ]
+  },
+  "social_rules": [
+    "All promises must be weighed by the Scales of Oaths before transit.",
+    "Silence Keepers may seize any asset if the promise-weight exceeds the owner's credit.",
+    "Couriers are forbidden from speaking the contents of the promises they carry.",
+    "The Voiceless Refusal Hall is the only neutral ground for debt negotiation.",
+    "Gravity-Ink Alchemists must certify all seals on promise-contracts.",
+    "Generated gameplay loops should create follow-up choices instead of dead ends.",
+    "Player entry points should remain understandable through local conversation, movement, and inspection.",
+    "Conflict hook: The Scales of Oaths has suddenly increased the tax rate on all promises, causing a surge in defaults.",
+    "Conflict hook: A shipment of high-weight promises has gone missing, and the Silence Keepers are blaming the couriers.",
+    "Conflict hook: The Voiceless have begun a silent protest, refusing to speak any new promises, causing the market to freeze."
+  ],
+  "discovered_rules": []
+}

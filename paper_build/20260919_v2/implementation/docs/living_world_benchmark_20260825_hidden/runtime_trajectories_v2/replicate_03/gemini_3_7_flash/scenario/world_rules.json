@@ -1,0 +1,888 @@
+{
+  "world_mode": "Fixed",
+  "topology": {
+    "grid_shape": {
+      "x": 20,
+      "y": 18,
+      "z": 1
+    },
+    "rooms": [
+      {
+        "room_id": "room_01_excise_weigh_beam_registry",
+        "name": "Excise Weigh-Beam Registry",
+        "x": 6,
+        "y": 0,
+        "z": 0,
+        "width_tiles": 8,
+        "height_tiles": 6,
+        "doorways": [
+          {
+            "doorway_id": "room_01_excise_weigh_beam_registry_to_room_02_gantry_cable_rigging_depot",
+            "position": {
+              "x": 9,
+              "y": 5,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_02_gantry_cable_rigging_depot",
+            "label": "passage to Gantry Cable Rigging Depot"
+          },
+          {
+            "doorway_id": "room_01_excise_weigh_beam_registry_to_room_05_gantry_runners_bivouac",
+            "position": {
+              "x": 6,
+              "y": 3,
+              "z": 0
+            },
+            "edge_dir": "left",
+            "connects_to_room_id": "room_05_gantry_runners_bivouac",
+            "label": "passage to Gantry Runners Bivouac"
+          }
+        ],
+        "visual": {
+          "biome": "cantilevered_chalk_ledges",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "brass_counterweights",
+            "vellum_ledgers",
+            "tuning_forks",
+            "chalk_tables"
+          ],
+          "ambient_palette": "focused_blue",
+          "visual_canon_hash": "6847e6aa64caee72",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_01_excise_weigh_beam_registry_monumental_acoustic_balance",
+              "label": "Excise Toll Balance",
+              "description": "A massive brass balance scale equipped with harmonic tuning dampeners and heavy chalk counterweights.",
+              "anchor": "center",
+              "width_tiles": 3,
+              "height_tiles": 2
+            },
+            {
+              "component_id": "room_01_excise_weigh_beam_registry_impounded_vow_rack",
+              "label": "Impound Registry Rack",
+              "description": "Cast brass pigeonholes holding dense, humming teal glass jars of unpaid verbal promises.",
+              "anchor": "north_mid",
+              "width_tiles": 2,
+              "height_tiles": 1
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "The Acoustic Excise balances physical pledge-mass against civic ledgers; increasing state_transit_cost here drives Under-cleft households in the Low-Cleft Depot to trade unbonded speech.",
+          "activity_tags": [
+            "weighing_spoken_vows",
+            "stamping_vellum",
+            "impounding_debt_jars"
+          ],
+          "player_entry_hook": "Arrive as an audit-deputy assigned to inspect the overtaxed balance beams at the Excise Weigh-Beam Registry.",
+          "room_archetype": "checkpoint",
+          "layout_signal": "Excise Weigh-Beam Registry | The Acoustic Excise balances physical pledge-mass against civic ledgers; increasing state_transit_cost here drives Under-cleft households in the Low-Cleft Depot to trade unbonded speech. | cantilevered_chalk_ledges | weighing_spoken_vows | stamping_vellum | impounding_debt_jars | brass_counterweights | vellum_ledgers | tuning_forks | chalk_tables"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "strict top-down 2D orthographic crunchy 16-bit pixel art of pale scraped chalkstone quarry floor scored with etched brass measurement grids, seamless tileable pattern, zero perspective tilt, 90-degree zenith view",
+        "room_scene_prompt": "strict top-down 2D orthographic pixel-art map plate of the Excise Weigh-Beam Registry, pale chalkstone floor edge-to-edge, huge brass balance scales suspended by tarred ropes, shelves of heavy wax-sealed pledge cylinders, bailiffs with tuning forks, teal glow from vowel jars, dark cast shadows, no text, no labels, no watermark, flat 90-degree zenith view",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "canon_aethelcleft_v1",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90_degree_zenith",
+            "scale_rule": "32px_per_tile_orthographic_grid"
+          },
+          "palette": {
+            "dominant": "#e3ded1",
+            "secondary": "#2b333a",
+            "accent": "#c68b3c",
+            "shadow": "#151b22",
+            "highlight": "#76c0b3"
+          },
+          "materials": [
+            "scored_chalkstone",
+            "patinated_brass_tubing",
+            "tarred_hemp_rigging",
+            "translucent_blown_glass",
+            "wax_sealed_vellum"
+          ],
+          "lighting": "harsh_zenith_chalk_glare_with_deep_void_cast_shadows_and_teal_vow_luminescence",
+          "architecture": [
+            "cantilevered_chalk_ledges",
+            "brass_pneumatic_junction_boxes",
+            "tensioned_rope_slat_walkways",
+            "cliff_face_counterweight_wells"
+          ],
+          "terrain": {
+            "ground": "scraped_pale_chalk_quarry_tiles",
+            "path": "planked_cable_spans_and_brass_guide_tracks",
+            "edge": "sheer_abyss_dropoffs_with_iron_stanchions"
+          },
+          "sprite_language": {
+            "body_proportion": "compact_chibi_1_to_2_head_to_torso_with_oversized_gear",
+            "outline": "single_pixel_solid_ink_black",
+            "role_readability": "couriers_wear_brass_rigging_and_teal_jars_officials_wear_wide_vellum_stoles_citizens_wear_waxed_grey_hoods"
+          },
+          "world_prompt_prefix": "strict top-down 2D orthographic pixel-art map of Aethelcleft canyon civic registry, pale chalkstone floor, brass pneumatic tubes, suspended cable bridges, abyss dropoffs, glowing teal glass promise jars, zero perspective tilt, flat 90-degree zenith view",
+          "sprite_prompt_prefix": "strict top-down 2D pixel-art sprite, zenith 90-degree overhead view, hard dark outline, brass courier harnesses, wax-sealed ledgers, tuning forks, promise-jar backpacks, no 3/4 tilt",
+          "forbidden_visuals": [
+            "isometric_projection",
+            "3/4_perspective",
+            "photorealism",
+            "floating_island_dioramas",
+            "modern_asphalt",
+            "cyberpunk_neon_signage",
+            "generic_green_grass_meadows",
+            "ui_text_overlays",
+            "card_borders",
+            "drop_shadow_interface_elements"
+          ],
+          "canon_hash": "6847e6aa64caee72"
+        }
+      },
+      {
+        "room_id": "room_02_gantry_cable_rigging_depot",
+        "name": "Gantry Cable Rigging Depot",
+        "x": 6,
+        "y": 6,
+        "z": 0,
+        "width_tiles": 7,
+        "height_tiles": 7,
+        "doorways": [
+          {
+            "doorway_id": "room_01_excise_weigh_beam_registry_to_room_02_gantry_cable_rigging_depot",
+            "position": {
+              "x": 9,
+              "y": 6,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_01_excise_weigh_beam_registry",
+            "label": "passage to Excise Weigh-Beam Registry"
+          },
+          {
+            "doorway_id": "room_02_gantry_cable_rigging_depot_to_room_03_the_silence_assembly_mortar_basin",
+            "position": {
+              "x": 12,
+              "y": 8,
+              "z": 0
+            },
+            "edge_dir": "right",
+            "connects_to_room_id": "room_03_the_silence_assembly_mortar_basin",
+            "label": "passage to The Silence Assembly Mortar Basin"
+          },
+          {
+            "doorway_id": "room_02_gantry_cable_rigging_depot_to_room_04_undercleft_whisperer_exchange",
+            "position": {
+              "x": 6,
+              "y": 8,
+              "z": 0
+            },
+            "edge_dir": "left",
+            "connects_to_room_id": "room_04_undercleft_whisperer_exchange",
+            "label": "passage to Undercleft Whisperer Exchange"
+          },
+          {
+            "doorway_id": "room_02_gantry_cable_rigging_depot_to_room_06_acoustic_conduits_overlook",
+            "position": {
+              "x": 9,
+              "y": 12,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_06_acoustic_conduits_overlook",
+            "label": "passage to Acoustic Conduits Overlook"
+          }
+        ],
+        "visual": {
+          "biome": "tensioned_rope_slat_walkways",
+          "floor_tile": "stone_hall",
+          "wall_tile": "wood_beam_wall",
+          "decor_tags": [
+            "tarred_hemp_rigging",
+            "winches",
+            "brass_carabiners",
+            "leather_harnesses"
+          ],
+          "ambient_palette": "clear_day",
+          "visual_canon_hash": "6847e6aa64caee72",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_02_gantry_cable_rigging_depot_canyon_winch_drum",
+              "label": "Tension Cable Winch",
+              "description": "A heavy brass and cast-iron cable winch with spooled tarred rigging that pulls freight harnesses across the chasm.",
+              "anchor": "north_west",
+              "width_tiles": 2,
+              "height_tiles": 2
+            },
+            {
+              "component_id": "room_02_gantry_cable_rigging_depot_vow_hauling_pallet",
+              "label": "Staged Promise Pallet",
+              "description": "A reinforced iron pallet stacked with lead-sleeved jars of defaulted verbal oaths awaiting transport.",
+              "anchor": "south_east",
+              "width_tiles": 2,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Abyss Couriers stage and dispatch heavy floating promises across canyon bridges; rising state_promise_backlog here directly increases state_bridge_strain on the Gantry Cable Rigging Depot spans.",
+          "activity_tags": [
+            "staging_promise_cargo",
+            "greasing_pulleys",
+            "sorting_vow_capsules"
+          ],
+          "player_entry_hook": "Descend into the Gantry Runners Bivouac as an out-of-work courier seeking lucrative defaulted promise routes.",
+          "room_archetype": "logistics_yard",
+          "layout_signal": "Gantry Cable Rigging Depot | Abyss Couriers stage and dispatch heavy floating promises across canyon bridges; rising state_promise_backlog here directly increases state_bridge_strain on the Gantry Cable Rigging Depot spans. | tensioned_rope_slat_walkways | staging_promise_cargo | greasing_pulleys | sorting_vow_capsules | tarred_hemp_rigging | winches | brass_carabiners | leather_harnesses"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "strict top-down 2D orthographic crunchy 16-bit pixel art of tarred wood plank decking with brass guide rails and tension cable anchoring plates, flat 90-degree zenith view",
+        "room_scene_prompt": "strict top-down 2D orthographic pixel-art map plate of Gantry Cable Rigging Depot, planked cable deck floor touching all borders, winch drums, harness racks, courier backpacks with heavy glowing promise jars, coiled tarred hemp ropes, hard void cast shadows, no text, no labels, no border, flat 90-degree zenith view",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "canon_aethelcleft_v1",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90_degree_zenith",
+            "scale_rule": "32px_per_tile_orthographic_grid"
+          },
+          "palette": {
+            "dominant": "#e3ded1",
+            "secondary": "#2b333a",
+            "accent": "#c68b3c",
+            "shadow": "#151b22",
+            "highlight": "#76c0b3"
+          },
+          "materials": [
+            "scored_chalkstone",
+            "patinated_brass_tubing",
+            "tarred_hemp_rigging",
+            "translucent_blown_glass",
+            "wax_sealed_vellum"
+          ],
+          "lighting": "harsh_zenith_chalk_glare_with_deep_void_cast_shadows_and_teal_vow_luminescence",
+          "architecture": [
+            "cantilevered_chalk_ledges",
+            "brass_pneumatic_junction_boxes",
+            "tensioned_rope_slat_walkways",
+            "cliff_face_counterweight_wells"
+          ],
+          "terrain": {
+            "ground": "scraped_pale_chalk_quarry_tiles",
+            "path": "planked_cable_spans_and_brass_guide_tracks",
+            "edge": "sheer_abyss_dropoffs_with_iron_stanchions"
+          },
+          "sprite_language": {
+            "body_proportion": "compact_chibi_1_to_2_head_to_torso_with_oversized_gear",
+            "outline": "single_pixel_solid_ink_black",
+            "role_readability": "couriers_wear_brass_rigging_and_teal_jars_officials_wear_wide_vellum_stoles_citizens_wear_waxed_grey_hoods"
+          },
+          "world_prompt_prefix": "strict top-down 2D orthographic pixel-art map of Aethelcleft canyon civic registry, pale chalkstone floor, brass pneumatic tubes, suspended cable bridges, abyss dropoffs, glowing teal glass promise jars, zero perspective tilt, flat 90-degree zenith view",
+          "sprite_prompt_prefix": "strict top-down 2D pixel-art sprite, zenith 90-degree overhead view, hard dark outline, brass courier harnesses, wax-sealed ledgers, tuning forks, promise-jar backpacks, no 3/4 tilt",
+          "forbidden_visuals": [
+            "isometric_projection",
+            "3/4_perspective",
+            "photorealism",
+            "floating_island_dioramas",
+            "modern_asphalt",
+            "cyberpunk_neon_signage",
+            "generic_green_grass_meadows",
+            "ui_text_overlays",
+            "card_borders",
+            "drop_shadow_interface_elements"
+          ],
+          "canon_hash": "6847e6aa64caee72"
+        }
+      },
+      {
+        "room_id": "room_03_the_silence_assembly_mortar_basin",
+        "name": "The Silence Assembly Mortar Basin",
+        "x": 13,
+        "y": 6,
+        "z": 0,
+        "width_tiles": 7,
+        "height_tiles": 6,
+        "doorways": [
+          {
+            "doorway_id": "room_02_gantry_cable_rigging_depot_to_room_03_the_silence_assembly_mortar_basin",
+            "position": {
+              "x": 13,
+              "y": 8,
+              "z": 0
+            },
+            "edge_dir": "left",
+            "connects_to_room_id": "room_02_gantry_cable_rigging_depot",
+            "label": "passage to Gantry Cable Rigging Depot"
+          }
+        ],
+        "visual": {
+          "biome": "cliff_face_counterweight_wells",
+          "floor_tile": "library_wood",
+          "wall_tile": "library_shelf_wall",
+          "decor_tags": [
+            "stone_pestles",
+            "white_chalk_paste",
+            "presses",
+            "shattered_glass"
+          ],
+          "ambient_palette": "ember_orange",
+          "visual_canon_hash": "6847e6aa64caee72",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_03_the_silence_assembly_mortar_basin_pneumatic_vow_crusher",
+              "label": "Covenant Mortar Mill",
+              "description": "A brass pneumatic piston crushing crystalline broken promises into inert white sealing dust.",
+              "anchor": "center",
+              "width_tiles": 3,
+              "height_tiles": 3
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "The Silence Assembly pulverizes adjudicated breached vows into civic masonry paste to reinforce weakened cliff ledges.",
+          "activity_tags": [
+            "crushing_broken_vows",
+            "mixing_void_mortar",
+            "sealing_nullification_decrees"
+          ],
+          "player_entry_hook": "Infiltrate the Undercleft Whisperer Exchange to negotiate low-density contracts for disenfranchised cliff clans.",
+          "room_archetype": "archive_ritual",
+          "layout_signal": "The Silence Assembly Mortar Basin | The Silence Assembly pulverizes adjudicated breached vows into civic masonry paste to reinforce weakened cliff ledges. | cliff_face_counterweight_wells | crushing_broken_vows | mixing_void_mortar | sealing_nullification_decrees | stone_pestles | white_chalk_paste | presses | shattered_glass"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "strict top-down 2D orthographic crunchy 16-bit pixel art of white chalk slurry stained flagstones with brass drainage channels, flat 90-degree zenith view",
+        "room_scene_prompt": "strict top-down 2D orthographic pixel-art map plate of The Silence Assembly Mortar Basin, chalk-stained floor reaching all four edges, large stone crushing basins, pulverizer pistons, jars of drained white promise-dust, veiled scriveners with wax seals, no labels, no text, flat 90-degree zenith view",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "canon_aethelcleft_v1",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90_degree_zenith",
+            "scale_rule": "32px_per_tile_orthographic_grid"
+          },
+          "palette": {
+            "dominant": "#e3ded1",
+            "secondary": "#2b333a",
+            "accent": "#c68b3c",
+            "shadow": "#151b22",
+            "highlight": "#76c0b3"
+          },
+          "materials": [
+            "scored_chalkstone",
+            "patinated_brass_tubing",
+            "tarred_hemp_rigging",
+            "translucent_blown_glass",
+            "wax_sealed_vellum"
+          ],
+          "lighting": "harsh_zenith_chalk_glare_with_deep_void_cast_shadows_and_teal_vow_luminescence",
+          "architecture": [
+            "cantilevered_chalk_ledges",
+            "brass_pneumatic_junction_boxes",
+            "tensioned_rope_slat_walkways",
+            "cliff_face_counterweight_wells"
+          ],
+          "terrain": {
+            "ground": "scraped_pale_chalk_quarry_tiles",
+            "path": "planked_cable_spans_and_brass_guide_tracks",
+            "edge": "sheer_abyss_dropoffs_with_iron_stanchions"
+          },
+          "sprite_language": {
+            "body_proportion": "compact_chibi_1_to_2_head_to_torso_with_oversized_gear",
+            "outline": "single_pixel_solid_ink_black",
+            "role_readability": "couriers_wear_brass_rigging_and_teal_jars_officials_wear_wide_vellum_stoles_citizens_wear_waxed_grey_hoods"
+          },
+          "world_prompt_prefix": "strict top-down 2D orthographic pixel-art map of Aethelcleft canyon civic registry, pale chalkstone floor, brass pneumatic tubes, suspended cable bridges, abyss dropoffs, glowing teal glass promise jars, zero perspective tilt, flat 90-degree zenith view",
+          "sprite_prompt_prefix": "strict top-down 2D pixel-art sprite, zenith 90-degree overhead view, hard dark outline, brass courier harnesses, wax-sealed ledgers, tuning forks, promise-jar backpacks, no 3/4 tilt",
+          "forbidden_visuals": [
+            "isometric_projection",
+            "3/4_perspective",
+            "photorealism",
+            "floating_island_dioramas",
+            "modern_asphalt",
+            "cyberpunk_neon_signage",
+            "generic_green_grass_meadows",
+            "ui_text_overlays",
+            "card_borders",
+            "drop_shadow_interface_elements"
+          ],
+          "canon_hash": "6847e6aa64caee72"
+        }
+      },
+      {
+        "room_id": "room_04_undercleft_whisperer_exchange",
+        "name": "Undercleft Whisperer Exchange",
+        "x": 0,
+        "y": 6,
+        "z": 0,
+        "width_tiles": 6,
+        "height_tiles": 6,
+        "doorways": [
+          {
+            "doorway_id": "room_02_gantry_cable_rigging_depot_to_room_04_undercleft_whisperer_exchange",
+            "position": {
+              "x": 5,
+              "y": 8,
+              "z": 0
+            },
+            "edge_dir": "right",
+            "connects_to_room_id": "room_02_gantry_cable_rigging_depot",
+            "label": "passage to Gantry Cable Rigging Depot"
+          },
+          {
+            "doorway_id": "room_04_undercleft_whisperer_exchange_to_room_05_gantry_runners_bivouac",
+            "position": {
+              "x": 2,
+              "y": 6,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_05_gantry_runners_bivouac",
+            "label": "passage to Gantry Runners Bivouac"
+          }
+        ],
+        "visual": {
+          "biome": "cantilevered_chalk_ledges",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "burlap_screens",
+            "acoustic_dampening_wool",
+            "brass_speaking_horns",
+            "parchment_chits"
+          ],
+          "ambient_palette": "dusty_brown",
+          "visual_canon_hash": "6847e6aa64caee72",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_04_undercleft_whisperer_exchange_acoustic_dampened_counter",
+              "label": "Muffled Trade Booth",
+              "description": "A thick wool-lined wooden counter fitted with narrow brass speaking funnels to suppress vocal acoustic mass.",
+              "anchor": "south_mid",
+              "width_tiles": 3,
+              "height_tiles": 1
+            },
+            {
+              "component_id": "room_04_undercleft_whisperer_exchange_contraband_pledge_vault",
+              "label": "Concealed Promise Coffer",
+              "description": "A lead-shielded floor safe used to stash unregistered verbal promises away from Excise bailiffs.",
+              "anchor": "north_east",
+              "width_tiles": 1,
+              "height_tiles": 1
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Low-cleft households conduct hushed barter to minimize spoken weight taxes, circumventing Acoustic Excise tithes.",
+          "activity_tags": [
+            "whispered_barter",
+            "acoustic_damping",
+            "ledger_concealment"
+          ],
+          "player_entry_hook": "Report to The Silence Assembly Mortar Basin as an apprentice tasked with handling hazardous breached vow powder.",
+          "room_archetype": "market_exchange",
+          "layout_signal": "Undercleft Whisperer Exchange | Low-cleft households conduct hushed barter to minimize spoken weight taxes, circumventing Acoustic Excise tithes. | cantilevered_chalk_ledges | whispered_barter | acoustic_damping | ledger_concealment | burlap_screens | acoustic_dampening_wool | brass_speaking_horns | parchment_chits"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "strict top-down 2D orthographic crunchy 16-bit pixel art of rough scraped chalk quarry tiles lined with woven hemp runner mats, flat 90-degree zenith view",
+        "room_scene_prompt": "strict top-down 2D orthographic pixel-art map plate of Undercleft Whisperer Exchange, hemp-matted chalk flooring edge-to-edge, acoustic wool dividers, brass whispering conduits, small weight-dampened scale counters, shaded lanterns, no text, no captions, flat 90-degree zenith view",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "canon_aethelcleft_v1",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90_degree_zenith",
+            "scale_rule": "32px_per_tile_orthographic_grid"
+          },
+          "palette": {
+            "dominant": "#e3ded1",
+            "secondary": "#2b333a",
+            "accent": "#c68b3c",
+            "shadow": "#151b22",
+            "highlight": "#76c0b3"
+          },
+          "materials": [
+            "scored_chalkstone",
+            "patinated_brass_tubing",
+            "tarred_hemp_rigging",
+            "translucent_blown_glass",
+            "wax_sealed_vellum"
+          ],
+          "lighting": "harsh_zenith_chalk_glare_with_deep_void_cast_shadows_and_teal_vow_luminescence",
+          "architecture": [
+            "cantilevered_chalk_ledges",
+            "brass_pneumatic_junction_boxes",
+            "tensioned_rope_slat_walkways",
+            "cliff_face_counterweight_wells"
+          ],
+          "terrain": {
+            "ground": "scraped_pale_chalk_quarry_tiles",
+            "path": "planked_cable_spans_and_brass_guide_tracks",
+            "edge": "sheer_abyss_dropoffs_with_iron_stanchions"
+          },
+          "sprite_language": {
+            "body_proportion": "compact_chibi_1_to_2_head_to_torso_with_oversized_gear",
+            "outline": "single_pixel_solid_ink_black",
+            "role_readability": "couriers_wear_brass_rigging_and_teal_jars_officials_wear_wide_vellum_stoles_citizens_wear_waxed_grey_hoods"
+          },
+          "world_prompt_prefix": "strict top-down 2D orthographic pixel-art map of Aethelcleft canyon civic registry, pale chalkstone floor, brass pneumatic tubes, suspended cable bridges, abyss dropoffs, glowing teal glass promise jars, zero perspective tilt, flat 90-degree zenith view",
+          "sprite_prompt_prefix": "strict top-down 2D pixel-art sprite, zenith 90-degree overhead view, hard dark outline, brass courier harnesses, wax-sealed ledgers, tuning forks, promise-jar backpacks, no 3/4 tilt",
+          "forbidden_visuals": [
+            "isometric_projection",
+            "3/4_perspective",
+            "photorealism",
+            "floating_island_dioramas",
+            "modern_asphalt",
+            "cyberpunk_neon_signage",
+            "generic_green_grass_meadows",
+            "ui_text_overlays",
+            "card_borders",
+            "drop_shadow_interface_elements"
+          ],
+          "canon_hash": "6847e6aa64caee72"
+        }
+      },
+      {
+        "room_id": "room_05_gantry_runners_bivouac",
+        "name": "Gantry Runners Bivouac",
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "width_tiles": 6,
+        "height_tiles": 5,
+        "doorways": [
+          {
+            "doorway_id": "room_01_excise_weigh_beam_registry_to_room_05_gantry_runners_bivouac",
+            "position": {
+              "x": 5,
+              "y": 3,
+              "z": 0
+            },
+            "edge_dir": "right",
+            "connects_to_room_id": "room_01_excise_weigh_beam_registry",
+            "label": "passage to Excise Weigh-Beam Registry"
+          },
+          {
+            "doorway_id": "room_04_undercleft_whisperer_exchange_to_room_05_gantry_runners_bivouac",
+            "position": {
+              "x": 2,
+              "y": 5,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_04_undercleft_whisperer_exchange",
+            "label": "passage to Undercleft Whisperer Exchange"
+          }
+        ],
+        "visual": {
+          "biome": "tensioned_rope_slat_walkways",
+          "floor_tile": "tavern_planks",
+          "wall_tile": "tavern_wall",
+          "decor_tags": [
+            "hammocks",
+            "grease_tubs",
+            "harness_stands",
+            "chalk_route_boards"
+          ],
+          "ambient_palette": "warm_lantern",
+          "visual_canon_hash": "6847e6aa64caee72",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_05_gantry_runners_bivouac_rigging_repair_bench",
+              "label": "Courier Harness Bench",
+              "description": "A heavy wooden workbench scattered with leather needles, tension clips, brass buckles, and grease tubs.",
+              "anchor": "north_west",
+              "width_tiles": 2,
+              "height_tiles": 1
+            },
+            {
+              "component_id": "room_05_gantry_runners_bivouac_route_strain_chalkboard",
+              "label": "Bridge Strain Map Board",
+              "description": "A framed slate board detailing daily weight capacities and cable wear across the canyon spans.",
+              "anchor": "east_mid",
+              "width_tiles": 1,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Couriers rest, repair damaged harnesses, and study abyss bridge tension manifests between perilous freight runs.",
+          "activity_tags": [
+            "resting",
+            "patching_rigging",
+            "reviewing_bridge_tensions"
+          ],
+          "player_entry_hook": "Arrive as an audit-deputy assigned to inspect the overtaxed balance beams at the Excise Weigh-Beam Registry.",
+          "room_archetype": "rest_social",
+          "layout_signal": "Gantry Runners Bivouac | Couriers rest, repair damaged harnesses, and study abyss bridge tension manifests between perilous freight runs. | tensioned_rope_slat_walkways | resting | patching_rigging | reviewing_bridge_tensions | hammocks | grease_tubs | harness_stands | chalk_route_boards"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "strict top-down 2D orthographic crunchy 16-bit pixel art of rough cedar plank flooring pegged with brass rivets and tar seams, flat 90-degree zenith view",
+        "room_scene_prompt": "strict top-down 2D orthographic pixel-art map plate of Gantry Runners Bivouac, wooden plank floor filling entire footprint, suspended tarred hammocks, courier rigging packs resting against chalk walls, mugs on low tables, teal luminescence from bedside promise jars, no labels, no text, flat 90-degree zenith view",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "canon_aethelcleft_v1",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90_degree_zenith",
+            "scale_rule": "32px_per_tile_orthographic_grid"
+          },
+          "palette": {
+            "dominant": "#e3ded1",
+            "secondary": "#2b333a",
+            "accent": "#c68b3c",
+            "shadow": "#151b22",
+            "highlight": "#76c0b3"
+          },
+          "materials": [
+            "scored_chalkstone",
+            "patinated_brass_tubing",
+            "tarred_hemp_rigging",
+            "translucent_blown_glass",
+            "wax_sealed_vellum"
+          ],
+          "lighting": "harsh_zenith_chalk_glare_with_deep_void_cast_shadows_and_teal_vow_luminescence",
+          "architecture": [
+            "cantilevered_chalk_ledges",
+            "brass_pneumatic_junction_boxes",
+            "tensioned_rope_slat_walkways",
+            "cliff_face_counterweight_wells"
+          ],
+          "terrain": {
+            "ground": "scraped_pale_chalk_quarry_tiles",
+            "path": "planked_cable_spans_and_brass_guide_tracks",
+            "edge": "sheer_abyss_dropoffs_with_iron_stanchions"
+          },
+          "sprite_language": {
+            "body_proportion": "compact_chibi_1_to_2_head_to_torso_with_oversized_gear",
+            "outline": "single_pixel_solid_ink_black",
+            "role_readability": "couriers_wear_brass_rigging_and_teal_jars_officials_wear_wide_vellum_stoles_citizens_wear_waxed_grey_hoods"
+          },
+          "world_prompt_prefix": "strict top-down 2D orthographic pixel-art map of Aethelcleft canyon civic registry, pale chalkstone floor, brass pneumatic tubes, suspended cable bridges, abyss dropoffs, glowing teal glass promise jars, zero perspective tilt, flat 90-degree zenith view",
+          "sprite_prompt_prefix": "strict top-down 2D pixel-art sprite, zenith 90-degree overhead view, hard dark outline, brass courier harnesses, wax-sealed ledgers, tuning forks, promise-jar backpacks, no 3/4 tilt",
+          "forbidden_visuals": [
+            "isometric_projection",
+            "3/4_perspective",
+            "photorealism",
+            "floating_island_dioramas",
+            "modern_asphalt",
+            "cyberpunk_neon_signage",
+            "generic_green_grass_meadows",
+            "ui_text_overlays",
+            "card_borders",
+            "drop_shadow_interface_elements"
+          ],
+          "canon_hash": "6847e6aa64caee72"
+        }
+      },
+      {
+        "room_id": "room_06_acoustic_conduits_overlook",
+        "name": "Acoustic Conduits Overlook",
+        "x": 6,
+        "y": 13,
+        "z": 0,
+        "width_tiles": 7,
+        "height_tiles": 5,
+        "doorways": [
+          {
+            "doorway_id": "room_02_gantry_cable_rigging_depot_to_room_06_acoustic_conduits_overlook",
+            "position": {
+              "x": 9,
+              "y": 13,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_02_gantry_cable_rigging_depot",
+            "label": "passage to Gantry Cable Rigging Depot"
+          }
+        ],
+        "visual": {
+          "biome": "cliff_face_counterweight_wells",
+          "floor_tile": "library_wood",
+          "wall_tile": "library_shelf_wall",
+          "decor_tags": [
+            "brass_resonator_cones",
+            "spotlights",
+            "pulley_dials",
+            "chalk_parapets"
+          ],
+          "ambient_palette": "low_lantern",
+          "visual_canon_hash": "6847e6aa64caee72",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_06_acoustic_conduits_overlook_canyon_listening_horn",
+              "label": "Resonance Directional Horn",
+              "description": "A massive flared brass megaphone directed downward into the canyon abyss to detect heavy illicit utterances.",
+              "anchor": "south_mid",
+              "width_tiles": 3,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Excise lookouts monitor acoustic emissions and canyon wire resonance to identify unmetered public vows.",
+          "activity_tags": [
+            "sounding_canyon_depths",
+            "spotting_contraband_gliders",
+            "logging_resonant_peaks"
+          ],
+          "player_entry_hook": "Descend into the Gantry Runners Bivouac as an out-of-work courier seeking lucrative defaulted promise routes.",
+          "room_archetype": "lookout",
+          "layout_signal": "Acoustic Conduits Overlook | Excise lookouts monitor acoustic emissions and canyon wire resonance to identify unmetered public vows. | cliff_face_counterweight_wells | sounding_canyon_depths | spotting_contraband_gliders | logging_resonant_peaks | brass_resonator_cones | spotlights | pulley_dials | chalk_parapets"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "strict top-down 2D orthographic crunchy 16-bit pixel art of polished chalkstone slab floor with inlaid brass compass indices and wire track grooves, flat 90-degree zenith view",
+        "room_scene_prompt": "strict top-down 2D orthographic pixel-art map plate of Acoustic Conduits Overlook, pale stone tiles edge-to-edge, brass listening funnels mounted on iron stanchions looking out over the abyss edge, ledger desks, harsh zenith lighting, void shadows, no watermark, no text, flat 90-degree zenith view",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "canon_aethelcleft_v1",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90_degree_zenith",
+            "scale_rule": "32px_per_tile_orthographic_grid"
+          },
+          "palette": {
+            "dominant": "#e3ded1",
+            "secondary": "#2b333a",
+            "accent": "#c68b3c",
+            "shadow": "#151b22",
+            "highlight": "#76c0b3"
+          },
+          "materials": [
+            "scored_chalkstone",
+            "patinated_brass_tubing",
+            "tarred_hemp_rigging",
+            "translucent_blown_glass",
+            "wax_sealed_vellum"
+          ],
+          "lighting": "harsh_zenith_chalk_glare_with_deep_void_cast_shadows_and_teal_vow_luminescence",
+          "architecture": [
+            "cantilevered_chalk_ledges",
+            "brass_pneumatic_junction_boxes",
+            "tensioned_rope_slat_walkways",
+            "cliff_face_counterweight_wells"
+          ],
+          "terrain": {
+            "ground": "scraped_pale_chalk_quarry_tiles",
+            "path": "planked_cable_spans_and_brass_guide_tracks",
+            "edge": "sheer_abyss_dropoffs_with_iron_stanchions"
+          },
+          "sprite_language": {
+            "body_proportion": "compact_chibi_1_to_2_head_to_torso_with_oversized_gear",
+            "outline": "single_pixel_solid_ink_black",
+            "role_readability": "couriers_wear_brass_rigging_and_teal_jars_officials_wear_wide_vellum_stoles_citizens_wear_waxed_grey_hoods"
+          },
+          "world_prompt_prefix": "strict top-down 2D orthographic pixel-art map of Aethelcleft canyon civic registry, pale chalkstone floor, brass pneumatic tubes, suspended cable bridges, abyss dropoffs, glowing teal glass promise jars, zero perspective tilt, flat 90-degree zenith view",
+          "sprite_prompt_prefix": "strict top-down 2D pixel-art sprite, zenith 90-degree overhead view, hard dark outline, brass courier harnesses, wax-sealed ledgers, tuning forks, promise-jar backpacks, no 3/4 tilt",
+          "forbidden_visuals": [
+            "isometric_projection",
+            "3/4_perspective",
+            "photorealism",
+            "floating_island_dioramas",
+            "modern_asphalt",
+            "cyberpunk_neon_signage",
+            "generic_green_grass_meadows",
+            "ui_text_overlays",
+            "card_borders",
+            "drop_shadow_interface_elements"
+          ],
+          "canon_hash": "6847e6aa64caee72"
+        }
+      }
+    ]
+  },
+  "movement": {
+    "max_steps_per_timestep": 2,
+    "capacity_per_coordinate": 3,
+    "line_of_sight_required": false,
+    "allow_diagonal": false
+  },
+  "item_rules": {
+    "mass_conservation": true,
+    "require_same_coordinate_for_transfer": true,
+    "combinations": []
+  },
+  "image_rules": {
+    "enabled": true,
+    "allowed_operations": [
+      "create",
+      "edit"
+    ]
+  },
+  "custom_action_rules": {
+    "default_duration_steps": 2,
+    "max_range_steps": 10,
+    "allowed_actions": [
+      "AssaySpeechPledgeMass",
+      "ImpoundSpeechCapsule",
+      "ZiplineFreightRun",
+      "PulleyTensionRelief",
+      "SlurContractDialect",
+      "GrindBreachedVowMortar",
+      "Chat",
+      "Inspect",
+      "Coordinate",
+      "Trade",
+      "Move",
+      "CinematicInteraction",
+      "Repair",
+      "Negotiate",
+      "Mediate"
+    ],
+    "open_proposals_enabled": true,
+    "open_proposal_effects": [
+      "speech",
+      "transfer",
+      "create_item",
+      "status"
+    ]
+  },
+  "social_rules": [
+    "No sworn vow may be whispered within earshot of an Excise balance beam without paying the ambient acoustic fee.",
+    "A promise-capsule dropped into the abyss cannot be redeemed or litigated once the third echo fades.",
+    "Grinding a covenant before the Silence Assembly delivers a final seal incurs immediate physical custody of the debtor's voice-token.",
+    "Rigging lines carry absolute right-of-way for overloaded debt runners over pedestrian cliff-dwellers.",
+    "Generated gameplay loops should create follow-up choices instead of dead ends.",
+    "Player entry points should remain understandable through local conversation, movement, and inspection.",
+    "Conflict hook: A massive multi-generation debt capsule has begun to crack open under sheer mass in the central registry, threatening to acoustically deafen nearby gantry lines.",
+    "Conflict hook: The Acoustic Excise doubled transit surcharges overnight, prompting courier runners to threaten a total blockade of vow deliveries over the main gorge.",
+    "Conflict hook: A black-market dialect developed in the Undercleft is completely evading acoustic weigh-scales, starving the civic wall mortar compounders of binding dust."
+  ],
+  "discovered_rules": []
+}

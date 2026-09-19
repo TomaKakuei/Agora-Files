@@ -1,0 +1,1815 @@
+{
+  "world_name": "Oathsedge",
+  "world_id": "w_oathsedge_01",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "en-US",
+    "tone": "melancholic and bureaucratic",
+    "visual_direction": "steep vertical architecture, fog-shrouded cliffs, brass scales, and paper-laden couriers",
+    "currency_code": "OAT",
+    "currency_symbol": "§",
+    "currency_minor_unit": "syllable",
+    "currency_name": "Oath-Weight",
+    "domain_label": "cliffside_promise_economy",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "inst_weighers",
+        "name": "The Ministry of Weights and Promises",
+        "mandate": "Assess and tax the weight of all spoken promises.",
+        "decision_rule": "Tax rate increases exponentially with the emotional gravity of the promise.",
+        "enforced_by": "Silence Wardens",
+        "visible_output": "Brass scales placed at every street corner and public square."
+      },
+      {
+        "institution_id": "inst_couriers",
+        "name": "The Guild of Burdened Couriers",
+        "mandate": "Transport unpaid or defaulted promises between households.",
+        "decision_rule": "Prioritize delivery based on the physical weight of the transcribed promise.",
+        "enforced_by": "Guild Enforcers",
+        "visible_output": "Couriers carrying heavy, glowing ledgers and iron lockboxes."
+      },
+      {
+        "institution_id": "inst_archivists",
+        "name": "The Deep Archive",
+        "mandate": "Store broken promises and extract residual value.",
+        "decision_rule": "Promises are crushed into raw emotional energy when storage capacity reaches 90%.",
+        "enforced_by": "Archive Sentinels",
+        "visible_output": "Plumes of colored smoke rising from the cliff base."
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "sv_tax_rate",
+        "label": "Promise Tax Rate",
+        "initial_tension": "High",
+        "changed_by": [
+          "inst_weighers"
+        ],
+        "affects": [
+          "sv_unpaid_promises",
+          "sv_courier_workload"
+        ]
+      },
+      {
+        "state_id": "sv_unpaid_promises",
+        "label": "Volume of Unpaid Promises",
+        "initial_tension": "Moderate",
+        "changed_by": [
+          "Citizens",
+          "inst_weighers"
+        ],
+        "affects": [
+          "sv_courier_workload",
+          "sv_archive_capacity"
+        ]
+      },
+      {
+        "state_id": "sv_courier_workload",
+        "label": "Courier Burden Level",
+        "initial_tension": "High",
+        "changed_by": [
+          "inst_couriers",
+          "sv_unpaid_promises"
+        ],
+        "affects": [
+          "sv_public_trust"
+        ]
+      },
+      {
+        "state_id": "sv_archive_capacity",
+        "label": "Archive Storage Capacity",
+        "initial_tension": "Critical",
+        "changed_by": [
+          "inst_archivists",
+          "sv_unpaid_promises"
+        ],
+        "affects": [
+          "sv_tax_rate"
+        ]
+      },
+      {
+        "state_id": "sv_public_trust",
+        "label": "Public Trust in Spoken Word",
+        "initial_tension": "Low",
+        "changed_by": [
+          "sv_courier_workload",
+          "sv_tax_rate"
+        ],
+        "affects": [
+          "sv_unpaid_promises"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "sv_tax_rate",
+        "trigger": "Tax rate increases beyond affordable levels",
+        "target_state": "sv_unpaid_promises",
+        "effect": "Citizens default on promises, increasing the volume of unpaid promises",
+        "delay": "Immediate"
+      },
+      {
+        "source_state": "sv_unpaid_promises",
+        "trigger": "Volume of unpaid promises surges",
+        "target_state": "sv_courier_workload",
+        "effect": "Couriers are overwhelmed, slowing down all deliveries",
+        "delay": "Short"
+      },
+      {
+        "source_state": "sv_courier_workload",
+        "trigger": "Couriers fail to deliver promises on time",
+        "target_state": "sv_public_trust",
+        "effect": "Public trust in the spoken word collapses",
+        "delay": "Medium"
+      },
+      {
+        "source_state": "sv_archive_capacity",
+        "trigger": "Archive reaches maximum capacity",
+        "target_state": "sv_tax_rate",
+        "effect": "Ministry raises taxes to fund new storage facilities",
+        "delay": "Long"
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "sg_wealthy_merchants",
+        "name": "The Gilded Tongues",
+        "goal": "Keep tax rates low for commercial promises.",
+        "leverage": "Control over the city's food supply.",
+        "dependency": "Require couriers to enforce trade agreements."
+      },
+      {
+        "group_id": "sg_poor_citizens",
+        "name": "The Silent Majority",
+        "goal": "Abolish the tax on personal and emotional promises.",
+        "leverage": "Mass protests and refusal to speak.",
+        "dependency": "Rely on the Archive to forgive old debts."
+      },
+      {
+        "group_id": "sg_courier_union",
+        "name": "The Brotherhood of the Burden",
+        "goal": "Increase hazard pay and reduce maximum carry weights.",
+        "leverage": "Ability to strike and halt all promise transfers.",
+        "dependency": "Depend on the Ministry for their legal monopoly."
+      }
+    ]
+  },
+  "genre": "Fantasy / Bureaucratic Dystopia",
+  "premise": "A cliffside city taxes spoken promises by their weight, and couriers carry unpaid ones between households.",
+  "simulation_objective": "Balance the economic weight of promises against the physical burden of the couriers and the emotional toll on the citizens.",
+  "agent_count_target": 12,
+  "player_count_target": 50,
+  "wall_color_theme": "tarnished_brass_and_slate",
+  "economy_focus": "Resource management of spoken words, debt transfer, and taxation.",
+  "exploration_focus": "Navigating the vertical cliffside districts and uncovering hidden archives.",
+  "conflict_tone": "Tense, bureaucratic, and emotionally heavy.",
+  "visual_style": "Steampunk meets gothic verticality, with brass instruments, heavy ledgers, and perpetual fog.",
+  "rooms": [
+    {
+      "name": "Ministry Weighing Station Alpha",
+      "biome": "cliffside_bureaucracy",
+      "purpose": "Assess and tax the weight of spoken promises (sv_tax_rate).",
+      "decor_tags": [
+        "brass_scales",
+        "pneumatic_tubes",
+        "slate_desks",
+        "glowing_blue_ink"
+      ],
+      "activity_tags": [
+        "weighing",
+        "taxing",
+        "recording"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of wet slate cobblestones with tarnished brass grates and glowing blue ink stains, top-down orthographic",
+      "room_scene_prompt": "strict top-down orthographic 2D game art, bureaucratic dystopia cliffside city weighing station, wet slate floor, large tarnished brass scales, cramped bureaucratic kiosks, dense fog, harsh localized brass lantern spotlights, no visible text, no labels, no UI elements, edge-to-edge floor texture",
+      "width_tiles": 8,
+      "height_tiles": 8,
+      "ambient_palette": "focused_blue",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "grand_brass_scale",
+          "label": "Grand Brass Scale",
+          "description": "A massive, tarnished brass scale used to weigh the emotional gravity of transcribed promises.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Courier Dispatch Yard",
+      "biome": "cliffside_bureaucracy",
+      "purpose": "Organize and dispatch couriers carrying unpaid promises (sv_courier_workload).",
+      "decor_tags": [
+        "iron_lockboxes",
+        "heavy_ledgers",
+        "worn_stone_steps",
+        "brass_piping"
+      ],
+      "activity_tags": [
+        "dispatching",
+        "loading",
+        "resting"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of worn stone steps and cracked slate flooring with heavy scuff marks, top-down orthographic",
+      "room_scene_prompt": "strict top-down orthographic 2D game art, courier dispatch yard in a cliffside city, worn stone flooring, stacks of iron lockboxes and heavy glowing ledgers, brass piping, diffuse fog-filtered daylight, no visible text, no labels, no UI elements, edge-to-edge floor texture",
+      "width_tiles": 10,
+      "height_tiles": 12,
+      "ambient_palette": "dusty_brown",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "ledger_loading_dock",
+          "label": "Ledger Loading Dock",
+          "description": "A reinforced slate platform where heavy, glowing ledgers are loaded into iron lockboxes.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Deep Archive Entrance",
+      "biome": "abyssal_fog",
+      "purpose": "Store broken promises and extract residual value (sv_archive_capacity).",
+      "decor_tags": [
+        "colored_smoke",
+        "crushing_machinery",
+        "damp_slate",
+        "abyssal_fog"
+      ],
+      "activity_tags": [
+        "storing",
+        "crushing",
+        "extracting"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of damp slate flooring with deep cracks emitting colored smoke, top-down orthographic",
+      "room_scene_prompt": "strict top-down orthographic 2D game art, entrance to the deep archive, damp slate floor, massive iron crushing machinery, plumes of colored smoke, abyssal fog-filled chasms at the edges, no visible text, no labels, no UI elements, edge-to-edge floor texture",
+      "width_tiles": 12,
+      "height_tiles": 10,
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "promise_crusher",
+          "label": "Promise Crusher",
+          "description": "A towering wrought-iron machine that crushes broken promises into raw emotional energy, emitting colored smoke.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Gilded Tongues Exchange",
+      "biome": "cliffside_bureaucracy",
+      "purpose": "Wealthy merchants negotiate trade agreements and lobby for lower taxes.",
+      "decor_tags": [
+        "polished_brass",
+        "yellowed_parchment",
+        "iron_wrought_balconies",
+        "lanterns"
+      ],
+      "activity_tags": [
+        "negotiating",
+        "trading",
+        "lobbying"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of polished slate tiles with intricate brass inlays, top-down orthographic",
+      "room_scene_prompt": "strict top-down orthographic 2D game art, wealthy merchant exchange in a cliffside city, polished slate floor with brass inlays, iron-wrought balconies, stacks of yellowed parchment, harsh brass lantern spotlights, no visible text, no labels, no UI elements, edge-to-edge floor texture",
+      "width_tiles": 9,
+      "height_tiles": 9,
+      "ambient_palette": "warm_lantern",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "merchant_negotiation_table",
+          "label": "Negotiation Table",
+          "description": "A large slate table covered in yellowed parchment and small brass scales for commercial promises.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Silent Majority Plaza",
+      "biome": "cliffside_bureaucracy",
+      "purpose": "Poor citizens gather to protest the tax on personal promises (sv_public_trust).",
+      "decor_tags": [
+        "worn_cobblestones",
+        "makeshift_barricades",
+        "fog",
+        "damp_slate"
+      ],
+      "activity_tags": [
+        "protesting",
+        "gathering",
+        "whispering"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of rough, wet slate cobblestones with puddles and debris, top-down orthographic",
+      "room_scene_prompt": "strict top-down orthographic 2D game art, public plaza in a cliffside city, rough wet slate cobblestones, makeshift barricades of broken iron and slate, dense fog, diffuse daylight, no visible text, no labels, no UI elements, edge-to-edge floor texture",
+      "width_tiles": 14,
+      "height_tiles": 14,
+      "ambient_palette": "clear_day",
+      "archetype": "commons",
+      "scene_components": [
+        {
+          "component_id": "protest_barricade",
+          "label": "Protest Barricade",
+          "description": "A makeshift barricade constructed from broken iron lockboxes and shattered slate.",
+          "anchor": "south_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Courier Union Hall",
+      "biome": "cliffside_bureaucracy",
+      "purpose": "Couriers rest and organize strikes to demand better conditions.",
+      "decor_tags": [
+        "worn_benches",
+        "brass_lockers",
+        "dim_lighting",
+        "damp_slate"
+      ],
+      "activity_tags": [
+        "resting",
+        "organizing",
+        "striking"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of worn slate flooring with scuff marks and spilled glowing blue ink, top-down orthographic",
+      "room_scene_prompt": "strict top-down orthographic 2D game art, courier union hall in a cliffside city, worn slate floor, rows of tarnished brass lockers, worn wooden benches, dim diffuse lighting, no visible text, no labels, no UI elements, edge-to-edge floor texture",
+      "width_tiles": 8,
+      "height_tiles": 6,
+      "ambient_palette": "ember_orange",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "brass_lockers",
+          "label": "Brass Lockers",
+          "description": "A row of tarnished brass lockers where couriers store their heavy gear and personal items.",
+          "anchor": "north_west",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Thaddeus Flint",
+      "role_name": "Rogue Promise Broker",
+      "activity": "Smuggling unrecorded promises to bypass inst_weighers and lower sv_tax_rate.",
+      "home_base": "Silent Majority Plaza",
+      "arc_goal": "Establish a black market for emotional promises to empower sg_poor_citizens and reduce sv_unpaid_promises.",
+      "inventory": [
+        {
+          "name": "item_brass_scale_pocket",
+          "description": "A modified, untraceable pocket scale for weighing promises off the books.",
+          "quantity": 1
+        },
+        {
+          "name": "item_glowing_ink_vial",
+          "description": "Ink that fades after a promise is fulfilled, leaving no tax record.",
+          "quantity": 3
+        },
+        {
+          "name": "item_protest_gag",
+          "description": "A symbolic gag worn by the Silent Majority, modified to hide small scrolls.",
+          "quantity": 2
+        },
+        {
+          "name": "item_sealed_scroll_debt",
+          "description": "A heavy scroll containing a defaulted promise from a wealthy merchant.",
+          "quantity": 1
+        },
+        {
+          "name": "item_fog_lantern",
+          "description": "A lantern that emits thick fog to obscure illicit promise exchanges.",
+          "quantity": 1
+        },
+        {
+          "name": "item_emotional_residue_crystal",
+          "description": "A crystallized fragment of a broken promise, used as black market currency.",
+          "quantity": 5
+        },
+        {
+          "name": "item_silence_warden_badge",
+          "description": "A forged badge used to bypass Ministry checkpoints.",
+          "quantity": 1
+        },
+        {
+          "name": "item_promise_weight_calibration_weight",
+          "description": "A tampered weight used to trick official Ministry scales.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Ledger Stash",
+          "asset_type": "Container",
+          "description": "A hollowed-out stone in the plaza containing off-the-books promise ledgers.",
+          "story_use": "Used to store evidence of tax evasion."
+        },
+        {
+          "asset_name": "Smuggler's Cloak",
+          "asset_type": "Clothing",
+          "description": "A heavy cloak lined with lead to hide the glow of transcribed promises.",
+          "story_use": "Allows Thaddeus to move undetected by Silence Wardens."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_warden_patrols",
+          "topic": "Silence Warden Patrol Routes",
+          "summary": "Detailed knowledge of when and where the Wardens patrol the plaza.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_black_market_rates",
+          "topic": "Illicit Promise Exchange Rates",
+          "summary": "Current black market value of emotional residue crystals.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Elara Vance",
+      "role_name": "Archive Sentinel Defector",
+      "activity": "Sabotaging the Deep Archive to reduce sv_archive_capacity and expose inst_archivists.",
+      "home_base": "The Deep Archive Entrance",
+      "arc_goal": "Release stored emotional energy to collapse the Archive and force a reset of sv_tax_rate.",
+      "inventory": [
+        {
+          "name": "item_archive_sentinel_baton",
+          "description": "A heavy baton used to subdue unruly debtors, now used for sabotage.",
+          "quantity": 1
+        },
+        {
+          "name": "item_archive_smoke_filter",
+          "description": "A specialized mask to breathe through the toxic emotional smoke of the Archive.",
+          "quantity": 1
+        },
+        {
+          "name": "item_iron_lockbox_small",
+          "description": "A stolen lockbox containing highly volatile crushed promises.",
+          "quantity": 2
+        },
+        {
+          "name": "item_heavy_ledger_blank",
+          "description": "A blank ledger used to forge false storage records.",
+          "quantity": 1
+        },
+        {
+          "name": "item_emotional_residue_crystal",
+          "description": "Highly concentrated emotional energy siphoned from the crushers.",
+          "quantity": 4
+        },
+        {
+          "name": "item_glowing_ink_vial",
+          "description": "Ink used to mark structural weaknesses in the Archive walls.",
+          "quantity": 2
+        },
+        {
+          "name": "item_courier_hazard_pay_token",
+          "description": "A token stolen from a courier, used to bribe guards.",
+          "quantity": 3
+        },
+        {
+          "name": "item_promise_weight_calibration_weight",
+          "description": "A heavy weight used to jam the Archive's crushing mechanisms.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Sabotage Blueprints",
+          "asset_type": "Document",
+          "description": "Detailed schematics of the Deep Archive's ventilation and crushing systems.",
+          "story_use": "Used to plan the destruction of the Archive."
+        },
+        {
+          "asset_name": "Ventilation Override Key",
+          "asset_type": "Tool",
+          "description": "A master key that controls the flow of emotional smoke out of the Archive.",
+          "story_use": "Can be used to flood the Archive with toxic smoke."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_archive_weaknesses",
+          "topic": "Deep Archive Structural Flaws",
+          "summary": "Knowledge of the specific load-bearing pillars near the crushers.",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "k_sentinel_codes",
+          "topic": "Archive Sentinel Access Codes",
+          "summary": "Current access codes for the lower levels of the Archive.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Silas Thorne",
+      "role_name": "Ministry Auditor",
+      "activity": "Enforcing strict tax collection for inst_weighers to maximize sv_tax_rate.",
+      "home_base": "Ministry Weighing Station Alpha",
+      "arc_goal": "Crush the black market and ensure sg_wealthy_merchants pay their fair share, increasing sv_public_trust.",
+      "inventory": [
+        {
+          "name": "item_brass_scale_pocket",
+          "description": "An official, highly calibrated Ministry scale for spot-checking promises.",
+          "quantity": 1
+        },
+        {
+          "name": "item_heavy_ledger_blank",
+          "description": "An official ledger for recording tax infractions and unpaid promises.",
+          "quantity": 2
+        },
+        {
+          "name": "item_silence_warden_badge",
+          "description": "A badge of authority granting Silas the power to detain citizens.",
+          "quantity": 1
+        },
+        {
+          "name": "item_tax_exemption_certificate",
+          "description": "Confiscated forged certificates used by wealthy merchants.",
+          "quantity": 3
+        },
+        {
+          "name": "item_gilded_tongue_lozenge",
+          "description": "A lozenge that temporarily suppresses the emotional weight of a spoken word, confiscated as contraband.",
+          "quantity": 5
+        },
+        {
+          "name": "item_sealed_scroll_debt",
+          "description": "Official warrants for the arrest of high-profile tax evaders.",
+          "quantity": 2
+        },
+        {
+          "name": "item_promise_weight_calibration_weight",
+          "description": "A set of master weights used to calibrate all scales in the district.",
+          "quantity": 1
+        },
+        {
+          "name": "item_glowing_ink_vial",
+          "description": "Official Ministry ink that cannot be erased or altered.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Audit Records",
+          "asset_type": "Document",
+          "description": "Comprehensive records of all promises weighed at Station Alpha.",
+          "story_use": "Used to track discrepancies and identify tax evaders."
+        },
+        {
+          "asset_name": "Ministry Seal",
+          "asset_type": "Tool",
+          "description": "A heavy brass seal used to authenticate official tax documents.",
+          "story_use": "Required to authorize the collection of high-value debts."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_tax_loopholes",
+          "topic": "Merchant Tax Evasion Tactics",
+          "summary": "Detailed understanding of how the Gilded Tongues hide their commercial promises.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_ministry_law",
+          "topic": "Ministry Legal Code",
+          "summary": "Encyclopedic knowledge of the laws governing the weight of spoken promises.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen Voss",
+      "role_name": "Veteran Courier",
+      "activity": "Transporting heavy promises for inst_couriers while managing sv_courier_workload.",
+      "home_base": "Courier Union Hall",
+      "arc_goal": "Organize a strike among sg_courier_union to demand better conditions and halt the flow of sv_unpaid_promises.",
+      "inventory": [
+        {
+          "name": "item_iron_lockbox_small",
+          "description": "A reinforced lockbox for carrying volatile, unpaid emotional promises.",
+          "quantity": 1
+        },
+        {
+          "name": "item_courier_hazard_pay_token",
+          "description": "Tokens earned for delivering particularly heavy or dangerous promises.",
+          "quantity": 10
+        },
+        {
+          "name": "item_heavy_ledger_blank",
+          "description": "A delivery logbook, heavily worn and filled with signatures.",
+          "quantity": 1
+        },
+        {
+          "name": "item_fog_lantern",
+          "description": "A lantern used to navigate the smog-filled streets during night deliveries.",
+          "quantity": 1
+        },
+        {
+          "name": "item_archive_smoke_filter",
+          "description": "A worn mask used when delivering to the Deep Archive.",
+          "quantity": 1
+        },
+        {
+          "name": "item_sealed_scroll_debt",
+          "description": "A backlog of undelivered promises that Kaelen is hiding.",
+          "quantity": 3
+        },
+        {
+          "name": "item_gilded_tongue_lozenge",
+          "description": "Lozenges used to soothe a sore throat after arguing with angry recipients.",
+          "quantity": 2
+        },
+        {
+          "name": "item_protest_gag",
+          "description": "A gag kept in preparation for the upcoming courier strike.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Reinforced Harness",
+          "asset_type": "Equipment",
+          "description": "A custom-built leather and iron harness designed to distribute the weight of heavy ledgers.",
+          "story_use": "Allows Kaelen to carry more promises than a standard courier."
+        },
+        {
+          "asset_name": "Union Strike Manifesto",
+          "asset_type": "Document",
+          "description": "A hidden document outlining the demands and plans for the courier strike.",
+          "story_use": "Used to rally other couriers to the cause."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_city_shortcuts",
+          "topic": "Oathsedge Back Alleys",
+          "summary": "Knowledge of the fastest and safest routes through the city to avoid Wardens.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_courier_morale",
+          "topic": "Union Hall Sentiment",
+          "summary": "Understanding of which couriers are ready to strike and which are loyal to the Guild.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Vespera Quill",
+      "role_name": "Gilded Tongue Lobbyist",
+      "activity": "Negotiating tax exemptions for sg_wealthy_merchants to lower sv_tax_rate for commercial promises.",
+      "home_base": "Gilded Tongues Exchange",
+      "arc_goal": "Secure a permanent tax loophole for trade agreements, manipulating inst_weighers.",
+      "inventory": [
+        {
+          "name": "item_gilded_tongue_lozenge",
+          "description": "A sweet lozenge that temporarily coats the throat in gold dust, supposedly lightening the weight of words.",
+          "quantity": 12
+        },
+        {
+          "name": "item_tax_exemption_certificate",
+          "description": "A forged document granting immunity from promise taxes for one lunar cycle.",
+          "quantity": 3
+        },
+        {
+          "name": "item_brass_scale_pocket",
+          "description": "A miniature scale used to pre-weigh promises before speaking them aloud.",
+          "quantity": 1
+        },
+        {
+          "name": "item_glowing_ink_vial",
+          "description": "Ink that glows brighter the more sincere the written promise is.",
+          "quantity": 2
+        },
+        {
+          "name": "item_sealed_scroll_debt",
+          "description": "A heavy scroll containing the defaulted promises of a rival merchant.",
+          "quantity": 5
+        },
+        {
+          "name": "item_emotional_residue_crystal",
+          "description": "A crystallized fragment of a broken promise, used as a bribe.",
+          "quantity": 4
+        },
+        {
+          "name": "item_heavy_ledger_blank",
+          "description": "A blank ledger designed to absorb the weight of transcribed promises.",
+          "quantity": 1
+        },
+        {
+          "name": "item_promise_weight_calibration_weight",
+          "description": "A standard weight used to calibrate Ministry scales, often tampered with.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Golden Ledger",
+          "asset_type": "Document",
+          "description": "A master ledger containing the true weight of all merchant promises.",
+          "story_use": "Used to blackmail Ministry officials into lowering taxes."
+        },
+        {
+          "asset_name": "Private Weighing Room",
+          "asset_type": "Location",
+          "description": "A soundproof room where merchants practice speaking lightly.",
+          "story_use": "A safe haven for plotting against the Ministry."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_tax_loopholes",
+          "topic": "Ministry Tax Code",
+          "summary": "Detailed knowledge of obscure clauses that exempt certain types of promises from taxation.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_merchant_secrets",
+          "topic": "Gilded Tongues Gossip",
+          "summary": "Information on which merchants are secretly defaulting on their promises.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Orion Vance",
+      "role_name": "Silence Warden Captain",
+      "activity": "Enforcing the tax rate for inst_weighers and suppressing protests by sg_poor_citizens.",
+      "home_base": "Ministry Weighing Station Alpha",
+      "arc_goal": "Maintain sv_public_trust by ensuring all promises are weighed and taxed without exception.",
+      "inventory": [
+        {
+          "name": "item_silence_warden_badge",
+          "description": "A heavy brass badge that commands immediate silence from citizens.",
+          "quantity": 1
+        },
+        {
+          "name": "item_protest_gag",
+          "description": "A device used to physically prevent citizens from speaking untaxed promises.",
+          "quantity": 5
+        },
+        {
+          "name": "item_brass_scale_pocket",
+          "description": "A portable scale for on-the-spot promise assessments.",
+          "quantity": 1
+        },
+        {
+          "name": "item_archive_sentinel_baton",
+          "description": "A heavy baton used to subdue those who resist the Ministry's assessments.",
+          "quantity": 1
+        },
+        {
+          "name": "item_fog_lantern",
+          "description": "A lantern that cuts through the colored smoke of the Deep Archive.",
+          "quantity": 1
+        },
+        {
+          "name": "item_sealed_scroll_debt",
+          "description": "Confiscated scrolls of unpaid promises.",
+          "quantity": 3
+        },
+        {
+          "name": "item_emotional_residue_crystal",
+          "description": "Confiscated contraband from the Deep Archive.",
+          "quantity": 2
+        },
+        {
+          "name": "item_promise_weight_calibration_weight",
+          "description": "Used to ensure his portable scale is perfectly accurate.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Warden's Logbook",
+          "asset_type": "Document",
+          "description": "A detailed record of all citizens who have resisted the promise tax.",
+          "story_use": "Used to track down repeat offenders and dissidents."
+        },
+        {
+          "asset_name": "Confiscation Lockbox",
+          "asset_type": "Container",
+          "description": "A secure box for holding confiscated untaxed promises.",
+          "story_use": "Contains evidence that could ruin several prominent citizens."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_warden_tactics",
+          "topic": "Crowd Control",
+          "summary": "Expertise in dispersing protests and silencing dissenters.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_elara_whereabouts",
+          "topic": "Fugitive Tracking",
+          "summary": "Suspicions about where his sister, Elara Vance, might be hiding.",
+          "confidence": 60
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra Penhaligon",
+      "role_name": "Courier Union Organizer",
+      "activity": "Organizing strikes for sg_courier_union to protest sv_courier_workload.",
+      "home_base": "Courier Union Hall",
+      "arc_goal": "Force inst_couriers to increase hazard pay and reduce maximum carry weights.",
+      "inventory": [
+        {
+          "name": "item_courier_hazard_pay_token",
+          "description": "A token representing a courier's right to extra pay for dangerous deliveries.",
+          "quantity": 10
+        },
+        {
+          "name": "item_iron_lockbox_small",
+          "description": "A standard lockbox for transporting heavy promises, currently empty.",
+          "quantity": 2
+        },
+        {
+          "name": "item_heavy_ledger_blank",
+          "description": "A ledger used to track union membership and grievances.",
+          "quantity": 1
+        },
+        {
+          "name": "item_glowing_ink_vial",
+          "description": "Ink used to write strike demands that cannot be ignored.",
+          "quantity": 3
+        },
+        {
+          "name": "item_archive_smoke_filter",
+          "description": "A mask used to breathe when delivering near the Deep Archive.",
+          "quantity": 1
+        },
+        {
+          "name": "item_brass_scale_pocket",
+          "description": "Used to verify the weight of promises before couriers accept them.",
+          "quantity": 1
+        },
+        {
+          "name": "item_fog_lantern",
+          "description": "Essential for navigating the city during a strike-induced blackout.",
+          "quantity": 1
+        },
+        {
+          "name": "item_protest_gag",
+          "description": "A confiscated gag, kept as a symbol of Ministry oppression.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Strike Manifesto",
+          "asset_type": "Document",
+          "description": "A glowing document outlining the union's demands.",
+          "story_use": "Used to rally couriers and threaten the Ministry."
+        },
+        {
+          "asset_name": "Secret Union Stash",
+          "asset_type": "Container",
+          "description": "A hidden cache of hazard pay tokens and emergency supplies.",
+          "story_use": "Provides resources for couriers during a prolonged strike."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_courier_routes",
+          "topic": "City Navigation",
+          "summary": "Intimate knowledge of every alley and rooftop in Oathsedge.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_ministry_weaknesses",
+          "topic": "Ministry Logistics",
+          "summary": "Understanding of how a courier strike would cripple the Ministry's operations.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Cyrus Vance",
+      "role_name": "Silent Majority Agitator",
+      "activity": "Inciting protests among sg_poor_citizens to abolish the tax on emotional promises.",
+      "home_base": "Silent Majority Plaza",
+      "arc_goal": "Overwhelm sv_archive_capacity with unpaid emotional promises to force a system collapse.",
+      "inventory": [
+        {
+          "name": "item_protest_gag",
+          "description": "A modified gag worn voluntarily as a symbol of the Silent Majority.",
+          "quantity": 1
+        },
+        {
+          "name": "item_emotional_residue_crystal",
+          "description": "Crystals harvested from the Archive smoke, used to fuel emotional speeches.",
+          "quantity": 6
+        },
+        {
+          "name": "item_archive_smoke_filter",
+          "description": "A crude filter made of rags to survive the plaza's proximity to the Archive.",
+          "quantity": 2
+        },
+        {
+          "name": "item_sealed_scroll_debt",
+          "description": "Scrolls of his own unpaid promises, proudly displayed.",
+          "quantity": 10
+        },
+        {
+          "name": "item_glowing_ink_vial",
+          "description": "Used to paint anti-Ministry slogans on the plaza walls.",
+          "quantity": 4
+        },
+        {
+          "name": "item_brass_scale_pocket",
+          "description": "A broken scale, carried as a mockery of the Ministry.",
+          "quantity": 1
+        },
+        {
+          "name": "item_fog_lantern",
+          "description": "Used to signal other agitators through the Archive smoke.",
+          "quantity": 1
+        },
+        {
+          "name": "item_iron_lockbox_small",
+          "description": "A stolen lockbox used to store donations for the cause.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Soapbox",
+          "asset_type": "Object",
+          "description": "A reinforced crate used for delivering impassioned, untaxed speeches.",
+          "story_use": "The focal point of Silent Majority gatherings."
+        },
+        {
+          "asset_name": "Residue Bomb",
+          "asset_type": "Weapon",
+          "description": "A crude explosive made from concentrated emotional residue.",
+          "story_use": "Intended to breach the Deep Archive Entrance."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_mob_dynamics",
+          "topic": "Agitation",
+          "summary": "Expertise in whipping a crowd into a frenzy using emotional appeals.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_archive_vulnerabilities",
+          "topic": "Archive Security",
+          "summary": "Information gleaned from his sister Elara about weak points in the Archive's defenses.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Jorik Vance",
+      "role_name": "Archive Extraction Specialist",
+      "activity": "Crushing defaulted promises to extract emotional residue for inst_archivists, affecting sv_archive_capacity.",
+      "home_base": "The Deep Archive Entrance",
+      "arc_goal": "Maximize emotional residue extraction to prevent sv_archive_capacity from reaching critical mass, while secretly selling excess to sg_wealthy_merchants.",
+      "inventory": [
+        {
+          "name": "item_emotional_residue_crystal",
+          "description": "A glowing crystal containing the raw emotion of a broken promise.",
+          "quantity": 5
+        },
+        {
+          "name": "item_archive_smoke_filter",
+          "description": "A heavy mask used to filter out the toxic fumes of crushed promises.",
+          "quantity": 1
+        },
+        {
+          "name": "item_archive_sentinel_baton",
+          "description": "A standard issue baton for defense within the Deep Archive.",
+          "quantity": 1
+        },
+        {
+          "name": "item_promise_crusher_wrench",
+          "description": "A specialized tool for maintaining the crushing machinery.",
+          "quantity": 1
+        },
+        {
+          "name": "item_vial_of_regret",
+          "description": "A small vial containing the liquid byproduct of a particularly heavy broken promise.",
+          "quantity": 3
+        },
+        {
+          "name": "item_smuggler_pouch",
+          "description": "A lead-lined pouch used to hide emotional residue from Archive Sentinels.",
+          "quantity": 1
+        },
+        {
+          "name": "item_gilded_tongue_lozenge",
+          "description": "A lozenge that temporarily soothes the throat after inhaling Archive smoke.",
+          "quantity": 10
+        },
+        {
+          "name": "item_extraction_logbook",
+          "description": "A detailed log of all promises crushed and residue extracted.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Residue Extractor Alpha",
+          "asset_type": "Machinery",
+          "description": "A massive machine used to crush promises into raw emotional energy.",
+          "story_use": "Used to process defaulted promises and manage sv_archive_capacity."
+        },
+        {
+          "asset_name": "Hidden Stash",
+          "asset_type": "Storage",
+          "description": "A secret compartment near the Archive entrance for hiding smuggled residue.",
+          "story_use": "Used to store emotional residue before selling it to Vespera Quill."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_extraction_process",
+          "topic": "Promise Crushing",
+          "summary": "Detailed knowledge of how to operate the machinery that crushes promises into emotional residue.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_archive_security",
+          "topic": "Archive Patrol Routes",
+          "summary": "Knowledge of the patrol routes of Archive Sentinels, useful for smuggling.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Nia Thorne",
+      "role_name": "Ministry Calibration Engineer",
+      "activity": "Calibrating the brass scales across the city for inst_weighers, directly impacting sv_tax_rate.",
+      "home_base": "Ministry Weighing Station Alpha",
+      "arc_goal": "Ensure all scales are perfectly calibrated to maximize sv_tax_rate, while secretly adjusting scales in Silent Majority Plaza to lower the burden on sg_poor_citizens.",
+      "inventory": [
+        {
+          "name": "item_promise_weight_calibration_weight",
+          "description": "A standard weight used to calibrate the Ministry's brass scales.",
+          "quantity": 3
+        },
+        {
+          "name": "item_brass_scale_pocket",
+          "description": "A small, portable scale for on-the-go promise assessments.",
+          "quantity": 1
+        },
+        {
+          "name": "item_calibration_toolkit",
+          "description": "A set of fine tools for adjusting the delicate mechanisms of the brass scales.",
+          "quantity": 1
+        },
+        {
+          "name": "item_ministry_seal",
+          "description": "An official seal used to mark a scale as calibrated and accurate.",
+          "quantity": 1
+        },
+        {
+          "name": "item_tampered_weight",
+          "description": "A slightly lighter calibration weight used to secretly lower tax assessments.",
+          "quantity": 2
+        },
+        {
+          "name": "item_silence_warden_badge",
+          "description": "A forged badge used to bypass security checkpoints.",
+          "quantity": 1
+        },
+        {
+          "name": "item_heavy_ledger_blank",
+          "description": "A blank ledger for recording calibration data.",
+          "quantity": 1
+        },
+        {
+          "name": "item_glowing_ink_vial",
+          "description": "Special ink used for official Ministry documents.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Master Calibration Scale",
+          "asset_type": "Equipment",
+          "description": "The highly accurate scale used as the standard for all other scales in the city.",
+          "story_use": "Used to verify the accuracy of calibration weights and ensure the integrity of the tax system."
+        },
+        {
+          "asset_name": "Secret Workshop",
+          "asset_type": "Location",
+          "description": "A hidden room where Nia alters calibration weights.",
+          "story_use": "Used to create tampered weights to help the Silent Majority."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_scale_mechanics",
+          "topic": "Brass Scale Calibration",
+          "summary": "Expert knowledge of the intricate mechanisms of the Ministry's brass scales.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "k_tax_loopholes",
+          "topic": "Ministry Tax Code",
+          "summary": "Knowledge of obscure loopholes in the tax code that can be exploited.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Garrick Stone",
+      "role_name": "Courier Dispatch Master",
+      "activity": "Assigning delivery routes and managing sv_courier_workload for inst_couriers.",
+      "home_base": "Courier Dispatch Yard",
+      "arc_goal": "Balance the overwhelming sv_courier_workload to prevent a strike by sg_courier_union, while ensuring high-priority deliveries for sg_wealthy_merchants are met.",
+      "inventory": [
+        {
+          "name": "item_dispatch_ledger",
+          "description": "A massive ledger detailing all courier routes and assignments.",
+          "quantity": 1
+        },
+        {
+          "name": "item_courier_hazard_pay_token",
+          "description": "Tokens used to compensate couriers for particularly dangerous or heavy deliveries.",
+          "quantity": 50
+        },
+        {
+          "name": "item_route_map",
+          "description": "A detailed map of Oathsedge, marked with safe and dangerous routes.",
+          "quantity": 1
+        },
+        {
+          "name": "item_iron_lockbox_small",
+          "description": "A small lockbox used for secure, high-priority deliveries.",
+          "quantity": 5
+        },
+        {
+          "name": "item_sealed_scroll_debt",
+          "description": "A sealed scroll containing a heavy, unpaid promise.",
+          "quantity": 10
+        },
+        {
+          "name": "item_fog_lantern",
+          "description": "A lantern that cuts through the thick fog of the city, essential for night deliveries.",
+          "quantity": 2
+        },
+        {
+          "name": "item_guild_enforcer_whistle",
+          "description": "A whistle used to summon Guild Enforcers in case of trouble.",
+          "quantity": 1
+        },
+        {
+          "name": "item_stimulant_vial",
+          "description": "A strong stimulant used to keep exhausted couriers awake.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Dispatch Board",
+          "asset_type": "Information Board",
+          "description": "A large board displaying all current and pending courier assignments.",
+          "story_use": "Used to manage sv_courier_workload and prioritize deliveries."
+        },
+        {
+          "asset_name": "Secure Vault",
+          "asset_type": "Storage",
+          "description": "A heavily guarded vault where the most valuable and heavy promises are stored before delivery.",
+          "story_use": "Used to protect high-priority deliveries for the Gilded Tongues."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_city_routes",
+          "topic": "Oathsedge Geography",
+          "summary": "Comprehensive knowledge of all streets, alleys, and hidden paths in Oathsedge.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_courier_limits",
+          "topic": "Courier Endurance",
+          "summary": "Understanding of the physical and mental limits of couriers, crucial for managing workload.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Seraphina Vance",
+      "role_name": "Gilded Tongue Arbitrator",
+      "activity": "Resolving disputes over commercial promises for sg_wealthy_merchants, influencing sv_public_trust.",
+      "home_base": "Gilded Tongues Exchange",
+      "arc_goal": "Maintain sv_public_trust in commercial promises to ensure the smooth flow of trade, while minimizing the tax burden on sg_wealthy_merchants.",
+      "inventory": [
+        {
+          "name": "item_tax_exemption_certificate",
+          "description": "Official certificates granting tax exemptions for specific commercial promises.",
+          "quantity": 5
+        },
+        {
+          "name": "item_gilded_tongue_lozenge",
+          "description": "Lozenges that enhance the persuasiveness of the speaker.",
+          "quantity": 20
+        },
+        {
+          "name": "item_arbitration_gavel",
+          "description": "A small, ornate gavel used to finalize arbitration decisions.",
+          "quantity": 1
+        },
+        {
+          "name": "item_contract_scroll",
+          "description": "High-quality parchment used for drafting commercial agreements.",
+          "quantity": 10
+        },
+        {
+          "name": "item_glowing_ink_vial",
+          "description": "Ink that glows when a promise is legally binding.",
+          "quantity": 3
+        },
+        {
+          "name": "item_merchant_signet_ring",
+          "description": "A ring used to seal official documents and verify identity.",
+          "quantity": 1
+        },
+        {
+          "name": "item_bribe_pouch",
+          "description": "A pouch of coins used for 'expediting' Ministry processes.",
+          "quantity": 1
+        },
+        {
+          "name": "item_legal_codex",
+          "description": "A comprehensive book of Oathsedge commercial law.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Arbitration Chamber",
+          "asset_type": "Room",
+          "description": "A lavishly decorated room where commercial disputes are settled.",
+          "story_use": "Used to host negotiations and maintain sv_public_trust among merchants."
+        },
+        {
+          "asset_name": "Private Archive",
+          "asset_type": "Storage",
+          "description": "A secure room containing records of all past arbitrations and commercial agreements.",
+          "story_use": "Used to reference past precedents and ensure consistency in rulings."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_commercial_law",
+          "topic": "Oathsedge Trade Law",
+          "summary": "Expert knowledge of the laws governing commercial promises and trade agreements.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_merchant_secrets",
+          "topic": "Gilded Tongues Gossip",
+          "summary": "Intimate knowledge of the rivalries, debts, and secrets of the city's wealthy merchants.",
+          "confidence": 80
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Weight of Words",
+      "summary": "Auditors weigh promises, increasing taxes, which forces Couriers to handle more defaults.",
+      "roles": [
+        "Ministry Auditor",
+        "Veteran Courier"
+      ],
+      "rooms": [
+        "Ministry Weighing Station Alpha",
+        "Courier Dispatch Yard"
+      ],
+      "pressure": "Increases sv_tax_rate and sv_courier_workload."
+    },
+    {
+      "label": "The Breaking Point",
+      "summary": "Couriers struggle with the workload, leading to strikes and a drop in public trust.",
+      "roles": [
+        "Courier Union Organizer",
+        "Courier Dispatch Master"
+      ],
+      "rooms": [
+        "Courier Union Hall",
+        "Courier Dispatch Yard"
+      ],
+      "pressure": "Decreases sv_public_trust and increases sv_unpaid_promises."
+    },
+    {
+      "label": "The Archive's Hunger",
+      "summary": "Archivists extract energy from broken promises, but the capacity is reaching critical levels.",
+      "roles": [
+        "Archive Extraction Specialist",
+        "Archive Sentinel Defector"
+      ],
+      "rooms": [
+        "The Deep Archive Entrance"
+      ],
+      "pressure": "Increases sv_archive_capacity, threatening to trigger a tax hike."
+    }
+  ],
+  "player_entry_points": [
+    "You are a Courier whose ledger is glowing dangerously bright.",
+    "You are an Auditor who just discovered a massive discrepancy in the Gilded Tongues' taxes.",
+    "You are an Agitator planning to sabotage the scales in the plaza."
+  ],
+  "conflict_hooks": [
+    "The Ministry has just doubled the tax on emotional promises, pushing the Silent Majority to the brink.",
+    "The Deep Archive is at 99% capacity, and the colored smoke is beginning to mutate."
+  ],
+  "custom_actions": [
+    "Weigh a spoken promise",
+    "Transfer a defaulted promise",
+    "Extract emotional energy from a broken promise",
+    "Lobby for a commercial tax exemption",
+    "Agitate the Silent Majority",
+    "Calibrate the brass scales"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "Forgive a personal debt",
+      "initiating_role": "Rogue Promise Broker",
+      "target_role": "Silent Majority Agitator",
+      "situation": "A broker attempts to erase a heavy emotional promise from the ledger to gain favor.",
+      "proposed_effects": [
+        "status"
+      ],
+      "coordinator_checks": [
+        "Does the broker have access to the ledger?",
+        "Is the Agitator willing to accept the forgiveness?",
+        "Does this violate Ministry regulations?"
+      ]
+    },
+    {
+      "action_name": "Smuggle an unweighed promise",
+      "initiating_role": "Veteran Courier",
+      "target_role": "Archive Sentinel Defector",
+      "situation": "A courier tries to pass a heavy promise to a defector without paying the tax.",
+      "proposed_effects": [
+        "transfer"
+      ],
+      "coordinator_checks": [
+        "Are there Silence Wardens nearby?",
+        "Can the defector safely store the promise?",
+        "Is the promise physically small enough to hide?"
+      ]
+    },
+    {
+      "action_name": "Forge a commercial exemption",
+      "initiating_role": "Gilded Tongue Lobbyist",
+      "target_role": "Ministry Auditor",
+      "situation": "A lobbyist attempts to bribe an auditor into stamping a fake exemption.",
+      "proposed_effects": [
+        "create_item"
+      ],
+      "coordinator_checks": [
+        "Does the lobbyist have sufficient funds or leverage?",
+        "Is the auditor corruptible?",
+        "Do they have the necessary stamping equipment?"
+      ]
+    },
+    {
+      "action_name": "Incite a silent protest",
+      "initiating_role": "Silent Majority Agitator",
+      "target_role": "Silence Warden Captain",
+      "situation": "An agitator tries to rally citizens to stop speaking in front of a Warden Captain.",
+      "proposed_effects": [
+        "speech"
+      ],
+      "coordinator_checks": [
+        "Are there enough citizens present?",
+        "Will the Captain use force to break the silence?",
+        "Does the agitator have enough influence?"
+      ]
+    }
+  ],
+  "social_rules": [
+    "Never speak a promise you cannot afford to have weighed.",
+    "Couriers must be given right of way; their burdens are heavy enough.",
+    "Do not look directly at the colored smoke rising from the Deep Archive."
+  ],
+  "item_themes": [
+    "Brass scales",
+    "Heavy ledgers",
+    "Glowing ink",
+    "Iron lockboxes",
+    "Sealed scrolls"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "item_brass_scale_pocket",
+      "name": "Pocket Brass Scale",
+      "price": 150,
+      "mass": 0.5,
+      "description": "A portable brass scale used by citizens to estimate the tax weight of their words before speaking.",
+      "image_prompt": "A small, intricate brass scale with delicate counterweights, resting on a velvet cloth in a dimly lit steampunk setting.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "item_glowing_ink_vial",
+      "name": "Vial of Glowing Ink",
+      "price": 300,
+      "mass": 0.1,
+      "description": "Specialized ink used to transcribe promises. It glows brighter based on the emotional gravity of the words.",
+      "image_prompt": "A small glass vial filled with a luminescent, swirling blue ink, sitting on a heavy wooden desk next to a quill.",
+      "category": "Consumable"
+    },
+    {
+      "item_id": "item_iron_lockbox_small",
+      "name": "Courier's Iron Lockbox",
+      "price": 500,
+      "mass": 5.0,
+      "description": "A heavy iron lockbox used by the Guild of Burdened Couriers to transport defaulted promises safely.",
+      "image_prompt": "A sturdy, riveted iron lockbox with a complex brass locking mechanism, resting on cobblestones in thick fog.",
+      "category": "Container"
+    },
+    {
+      "item_id": "item_sealed_scroll_debt",
+      "name": "Sealed Debt Scroll",
+      "price": 50,
+      "mass": 0.2,
+      "description": "A transcribed promise that has defaulted, sealed with the wax crest of the Ministry.",
+      "image_prompt": "A rolled parchment scroll sealed with heavy crimson wax bearing a scale insignia, surrounded by a faint magical aura.",
+      "category": "Document"
+    },
+    {
+      "item_id": "item_archive_smoke_filter",
+      "name": "Archive Smoke Filter",
+      "price": 75,
+      "mass": 0.3,
+      "description": "A brass breathing mask filter used to safely navigate the colored smoke plumes near the Deep Archive.",
+      "image_prompt": "A steampunk-style brass respirator filter with fine mesh and leather straps, slightly tarnished.",
+      "category": "Apparel"
+    },
+    {
+      "item_id": "item_silence_warden_badge",
+      "name": "Silence Warden Badge",
+      "price": 1000,
+      "mass": 0.4,
+      "description": "A heavy brass badge worn by Silence Wardens, granting authority to assess and tax spoken words on the spot.",
+      "image_prompt": "A polished brass badge shaped like a pair of lips sewn shut, pinned to a dark leather coat.",
+      "category": "Credential"
+    },
+    {
+      "item_id": "item_heavy_ledger_blank",
+      "name": "Blank Heavy Ledger",
+      "price": 200,
+      "mass": 3.0,
+      "description": "A thick, leather-bound ledger with brass reinforced corners, used for recording commercial promises.",
+      "image_prompt": "A massive, thick book bound in dark leather with brass corner protectors and a heavy clasp.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "item_emotional_residue_crystal",
+      "name": "Emotional Residue Crystal",
+      "price": 800,
+      "mass": 0.1,
+      "description": "A crystallized shard of raw emotional energy extracted from crushed promises at the Deep Archive.",
+      "image_prompt": "A jagged, glowing purple crystal shard radiating a faint, melancholic light, held in a brass caliper.",
+      "category": "Resource"
+    },
+    {
+      "item_id": "item_courier_hazard_pay_token",
+      "name": "Courier Hazard Token",
+      "price": 100,
+      "mass": 0.05,
+      "description": "A stamped brass token issued by the Brotherhood of the Burden to track hazard pay for heavy deliveries.",
+      "image_prompt": "A small, octagonal brass coin stamped with the image of a bent back carrying a heavy box.",
+      "category": "Currency"
+    },
+    {
+      "item_id": "item_gilded_tongue_lozenge",
+      "name": "Gilded Lozenge",
+      "price": 25,
+      "mass": 0.01,
+      "description": "A soothing throat lozenge favored by wealthy merchants to keep their voices clear for important negotiations.",
+      "image_prompt": "A small, golden-colored hard candy wrapped in wax paper, resting on a silver tray.",
+      "category": "Consumable"
+    },
+    {
+      "item_id": "item_protest_gag",
+      "name": "Silent Majority Gag",
+      "price": 10,
+      "mass": 0.1,
+      "description": "A simple cloth gag worn by poor citizens during protests to symbolize their refusal to speak and be taxed.",
+      "image_prompt": "A strip of rough, dark grey cloth tied in a knot, slightly frayed at the edges.",
+      "category": "Apparel"
+    },
+    {
+      "item_id": "item_tax_exemption_certificate",
+      "name": "Commercial Tax Exemption",
+      "price": 5000,
+      "mass": 0.1,
+      "description": "A rare, highly sought-after certificate granting temporary tax relief for commercial promises.",
+      "image_prompt": "An ornate parchment document covered in complex bureaucratic stamps and glowing ink signatures.",
+      "category": "Document"
+    },
+    {
+      "item_id": "item_promise_weight_calibration_weight",
+      "name": "Calibration Weight",
+      "price": 50,
+      "mass": 1.0,
+      "description": "A standard 1kg brass weight used to calibrate public scales and ensure accurate taxation.",
+      "image_prompt": "A perfectly cylindrical brass weight with '1 KG' engraved on the top, polished to a high shine.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "item_archive_sentinel_baton",
+      "name": "Sentinel Baton",
+      "price": 400,
+      "mass": 1.5,
+      "description": "A heavy iron baton carried by Archive Sentinels to protect the Deep Archive from desperate debtors.",
+      "image_prompt": "A solid iron truncheon with a leather-wrapped grip and a brass pommel, looking well-used.",
+      "category": "Weapon"
+    },
+    {
+      "item_id": "item_fog_lantern",
+      "name": "Perpetual Fog Lantern",
+      "price": 120,
+      "mass": 0.8,
+      "description": "A specialized lantern that cuts through the perpetual fog of Oathsedge, essential for couriers working late.",
+      "image_prompt": "A tall, brass lantern emitting a piercing, focused beam of amber light through thick, swirling grey fog.",
+      "category": "Tool"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "w_oathsedge_01_wardrobe",
+    "world_wardrobe_brief": "Steampunk gothic bureaucratic dystopia. Heavy, layered clothing suited for damp, foggy cliffside environments. Attire emphasizes burden, bureaucracy, and tarnished brass accents.",
+    "forbidden_aesthetics": [
+      "neon cyberpunk",
+      "bright sunny colors",
+      "generic medieval fantasy",
+      "lightweight summer clothing",
+      "clean futuristic sci-fi",
+      "photorealistic textures"
+    ],
+    "palette_families": [
+      {
+        "name": "Ministry Bureaucrat",
+        "dominant": "#2c3539",
+        "accent": "#b5a642",
+        "trim": "#1a1a1a",
+        "material": "heavy wool and tarnished brass"
+      },
+      {
+        "name": "Burdened Courier",
+        "dominant": "#4a4a4a",
+        "accent": "#8c92ac",
+        "trim": "#333333",
+        "material": "worn leather and damp canvas"
+      },
+      {
+        "name": "Gilded Merchant",
+        "dominant": "#3b2f2f",
+        "accent": "#d4af37",
+        "trim": "#e6e6fa",
+        "material": "fine velvet and polished brass"
+      },
+      {
+        "name": "Archive Worker",
+        "dominant": "#1c1c1c",
+        "accent": "#4682b4",
+        "trim": "#555555",
+        "material": "rubberized canvas and iron"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "ministry_official",
+        "role_keywords": [
+          "Ministry",
+          "Warden",
+          "Auditor",
+          "Engineer"
+        ],
+        "attire": [
+          "heavy overcoat",
+          "brass-buttoned vest",
+          "stiff collar"
+        ],
+        "props": [
+          "brass scales",
+          "heavy ledger",
+          "brass mask"
+        ],
+        "palette_notes": "Dark slate grey with prominent tarnished brass accents.",
+        "silhouette_notes": "Rigid, authoritative, top-heavy with thick coats.",
+        "avoid": [
+          "casual wear",
+          "bright colors",
+          "light fabrics"
+        ]
+      },
+      {
+        "rule_id": "courier",
+        "role_keywords": [
+          "Courier",
+          "Dispatch"
+        ],
+        "attire": [
+          "reinforced leather harness",
+          "weatherproof canvas coat",
+          "sturdy boots"
+        ],
+        "props": [
+          "iron lockbox",
+          "oversized ledger",
+          "fog lantern"
+        ],
+        "palette_notes": "Muted greys and browns, stained with dampness.",
+        "silhouette_notes": "Hunched forward, burdened by heavy boxes or ledgers.",
+        "avoid": [
+          "clean clothes",
+          "delicate fabrics",
+          "unburdened posture"
+        ]
+      },
+      {
+        "rule_id": "merchant",
+        "role_keywords": [
+          "Gilded",
+          "Lobbyist",
+          "Broker",
+          "Arbitrator"
+        ],
+        "attire": [
+          "tailored coat",
+          "silk cravat",
+          "polished boots"
+        ],
+        "props": [
+          "yellowed parchment",
+          "gilded lozenge tin",
+          "ornate cane"
+        ],
+        "palette_notes": "Richer dark tones with polished gold/brass accents.",
+        "silhouette_notes": "Upright, slightly padded shoulders, wealthy but subdued.",
+        "avoid": [
+          "rags",
+          "heavy burdens",
+          "damp/dirty textures"
+        ]
+      },
+      {
+        "rule_id": "archive_staff",
+        "role_keywords": [
+          "Archive",
+          "Sentinel",
+          "Specialist"
+        ],
+        "attire": [
+          "rubberized apron",
+          "heavy gauntlets",
+          "brass breathing mask"
+        ],
+        "props": [
+          "smoke filter",
+          "iron baton",
+          "glowing ink vial"
+        ],
+        "palette_notes": "Pitch black and dark grey with glowing blue ink stains.",
+        "silhouette_notes": "Bulky, industrial, obscured face.",
+        "avoid": [
+          "formal wear",
+          "exposed skin",
+          "delicate props"
+        ]
+      },
+      {
+        "rule_id": "citizen_protester",
+        "role_keywords": [
+          "Silent",
+          "Majority",
+          "Agitator"
+        ],
+        "attire": [
+          "worn tunic",
+          "patched trousers",
+          "cloth gag"
+        ],
+        "props": [
+          "makeshift barricade debris",
+          "pocket brass scale"
+        ],
+        "palette_notes": "Drab, faded greys and browns.",
+        "silhouette_notes": "Thin, hunched, wearing layered rags.",
+        "avoid": [
+          "brass accents",
+          "clean clothes",
+          "expensive fabrics"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "default_citizen",
+      "role_keywords": [
+        "*"
+      ],
+      "attire": [
+        "damp wool coat",
+        "sturdy shoes",
+        "scarf"
+      ],
+      "props": [
+        "pocket brass scale"
+      ],
+      "palette_notes": "Dark slate and muted grey.",
+      "silhouette_notes": "Hunched against the fog, thick dark grey outline.",
+      "avoid": [
+        "bright colors",
+        "lightweight clothing",
+        "bareheaded"
+      ]
+    },
+    "visual_consistency_rules": [
+      "All characters must have a thick dark grey outline for readability against fog.",
+      "Silhouettes should generally appear hunched or burdened.",
+      "Brass accents should be visible but tarnished, except for wealthy roles.",
+      "Clothing should appear heavy, layered, and damp.",
+      "Props like ledgers and lockboxes should be oversized for 64x64 readability."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "w_oathsedge_01_canon",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90 degrees",
+      "scale_rule": "1 tile = 1 meter, characters occupy 1x1 tile"
+    },
+    "palette": {
+      "dominant": "#2c3539",
+      "secondary": "#8c92ac",
+      "accent": "#b5a642",
+      "shadow": "#1a1a1a",
+      "highlight": "#e6e6fa"
+    },
+    "materials": [
+      "tarnished brass",
+      "damp slate",
+      "yellowed parchment",
+      "wrought iron",
+      "glowing blue ink"
+    ],
+    "lighting": "diffuse, fog-filtered daylight with harsh, localized brass lantern spotlights",
+    "architecture": [
+      "steep vertical drops",
+      "narrow slate bridges",
+      "brass piping and pneumatic tubes",
+      "cramped bureaucratic kiosks",
+      "iron-wrought balconies"
+    ],
+    "terrain": {
+      "ground": "wet slate cobblestones",
+      "path": "worn stone steps and brass grates",
+      "edge": "abyssal fog-filled chasms"
+    },
+    "sprite_language": {
+      "body_proportion": "hunched, top-heavy with burdens",
+      "outline": "thick dark grey outline for readability against fog",
+      "role_readability": "couriers carry oversized ledgers/boxes, wardens wear brass masks"
+    },
+    "world_prompt_prefix": "strict top-down orthographic 2D game art, bureaucratic dystopia cliffside city, wet slate, tarnished brass scales, dense fog, steampunk gothic architecture",
+    "sprite_prompt_prefix": "strict top-down orthographic 2D game sprite, hunched figure, carrying heavy ledgers, brass accents, dark grey outline, flat lighting",
+    "forbidden_visuals": [
+      "visible text",
+      "labels",
+      "UI elements",
+      "isometric angles",
+      "perspective rendering",
+      "photorealism",
+      "bright sunny skies",
+      "generic medieval fantasy",
+      "neon cyberpunk"
+    ],
+    "canon_hash": "d22816f3d7cd3ac0"
+  }
+}

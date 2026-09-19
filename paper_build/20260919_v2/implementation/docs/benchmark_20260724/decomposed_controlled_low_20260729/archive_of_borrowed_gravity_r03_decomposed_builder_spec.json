@@ -1,0 +1,1667 @@
+{
+  "world_name": "Archive of Borrowed Gravity",
+  "world_id": "archive_borrowed_gravity_01",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "civic_social_world",
+    "profile_id": "civic_social_world",
+    "locale": "en-US",
+    "tone": "bureaucratic, spatial, clinical",
+    "visual_direction": "top-down pixel art, cobalt glass, bone-white ceramic, vermilion plumb lines, graphite shadows, brass hardware",
+    "currency_code": "CRD",
+    "currency_symbol": "cr",
+    "currency_minor_unit": "point",
+    "currency_name": "Vector Credits",
+    "domain_label": "municipal-gravity-archive",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "civic_archive_kit",
+      "frontend_affordance_id": "spatial_bureaucracy_ui",
+      "asset_prompt_kit_id": "gravity_rights_assets"
+    },
+    "policy_refs": {
+      "economy_policy_id": "civic_credit_v1",
+      "item_collection_id": "civic_social_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "civic_social_world_v1",
+      "property_policy_id": "civic_social_world_v1",
+      "knowledge_policy_id": "civic_social_world_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "Civic Archive / Spatial Bureaucracy",
+  "premise": "A municipal archive where gravity vectors are licensed as property, requiring citizens to trade down-directions to navigate vertical space.",
+  "simulation_objective": "Simulate a social economy where movement and access are dictated by the trade and arbitration of gravity rights.",
+  "agent_count_target": 12,
+  "player_count_target": 12,
+  "wall_color_theme": "cobalt_glass_and_brass",
+  "economy_focus": "Gravity-rights exchange and ballast mortgages",
+  "exploration_focus": "Navigating rooms with varying licensed physics and vector-locked zones",
+  "conflict_tone": "Legalistic disputes over counterfeit vectors and accidental spatial collisions",
+  "visual_style": "Cobalt glass and bone-white ceramic with vermilion plumb lines and brass measurement hardware",
+  "rooms": [
+    {
+      "name": "Vector Licensing Desk",
+      "biome": "bureaucratic_archive",
+      "purpose": "Registration of personal gravity vectors",
+      "decor_tags": [
+        "brass_scales",
+        "vermilion_cords",
+        "ceramic_tiles"
+      ],
+      "activity_tags": [
+        "stamping_documents",
+        "weighing_ballast"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of bone-white ceramic tiles with inlaid brass vector arrows pointing North",
+      "room_scene_prompt": "top-down pixel art view of a licensing office, bone-white ceramic floor, cobalt glass partitions, brass desks with vermilion plumb lines hanging from the ceiling, clinical lighting, no text, no margins, full edge-to-edge detail.",
+      "width_tiles": 8,
+      "height_tiles": 6,
+      "ambient_palette": "focused_blue",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "vector_scale",
+          "label": "Gravity Scale",
+          "description": "A large brass scale measuring the pull of a licensed vector against a standard weight.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Ballast Mortgage Vault",
+      "biome": "high_security_storage",
+      "purpose": "Storage of physical weights used as collateral",
+      "decor_tags": [
+        "graphite_blocks",
+        "steel_cages",
+        "blue_glow"
+      ],
+      "activity_tags": [
+        "stacking_weights",
+        "auditing_mass"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of dark graphite floor plates with recessed blue glowing cable-runs",
+      "room_scene_prompt": "top-down pixel art of a high-security vault, graphite flooring, brushed steel shelving units filled with heavy lead blocks, glowing blue vector-lines on the floor, no text, no margins, clinical aesthetic.",
+      "width_tiles": 10,
+      "height_tiles": 10,
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "mass_spectrometer",
+          "label": "Mass Auditor",
+          "description": "A clinical steel machine used to verify the density of mortgage ballast.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Plumb-Line Commons",
+      "biome": "social_hub",
+      "purpose": "Public gathering and gravity orientation",
+      "decor_tags": [
+        "vermilion_silk",
+        "brass_benches",
+        "ceramic_grid"
+      ],
+      "activity_tags": [
+        "socializing",
+        "reorienting"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of bone-white ceramic grid with a central cobalt glass mosaic",
+      "room_scene_prompt": "top-down pixel art of a public square, bone-white ceramic tiles, long brass benches, dozens of vermilion silk plumb lines hanging perfectly vertical, clinical fluorescent lighting, no text, no margins.",
+      "width_tiles": 12,
+      "height_tiles": 12,
+      "ambient_palette": "clear_day",
+      "archetype": "commons",
+      "scene_components": [
+        {
+          "component_id": "central_gyroscope",
+          "label": "Master Gyroscope",
+          "description": "A massive rotating brass and cobalt glass sphere indicating the archive's true down.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Vector Recalibration Workshop",
+      "biome": "technical_maintenance",
+      "purpose": "Repairing faulty gravity harnesses",
+      "decor_tags": [
+        "brass_tools",
+        "graphite_dust",
+        "blue_sparks"
+      ],
+      "activity_tags": [
+        "soldering",
+        "tuning_vectors"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of scuffed bone-white ceramic with graphite stains and brass shavings",
+      "room_scene_prompt": "top-down pixel art workshop, workbenches with brass hardware, cobalt glass canisters, vermilion wires, clinical lighting with orange sparks, no text, no margins.",
+      "width_tiles": 7,
+      "height_tiles": 9,
+      "ambient_palette": "ember_orange",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "tuning_fork_array",
+          "label": "Gravity Tuner",
+          "description": "A rack of oversized brass tuning forks used to calibrate vector frequencies.",
+          "anchor": "west_mid",
+          "width_tiles": 1,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Down-Direction Exchange",
+      "biome": "trading_floor",
+      "purpose": "Peer-to-peer trading of gravity rights",
+      "decor_tags": [
+        "ticker_tape",
+        "brass_railings",
+        "cobalt_screens"
+      ],
+      "activity_tags": [
+        "shouting_bids",
+        "signing_contracts"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of polished bone-white ceramic with cobalt glass walkways forming a cross pattern",
+      "room_scene_prompt": "top-down pixel art trading floor, brass railings separating pits, cobalt glass screens displaying blue vector-lines, vermilion sashes on traders, clinical lighting, no text, no margins.",
+      "width_tiles": 14,
+      "height_tiles": 8,
+      "ambient_palette": "warm_lantern",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "vector_ticker",
+          "label": "Vector Ticker",
+          "description": "A brass machine spitting out graphite strips of current gravity market prices.",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Archive Pit 07",
+      "biome": "deep_storage",
+      "purpose": "Long-term storage of expired gravity deeds",
+      "decor_tags": [
+        "circular_pit",
+        "brass_ladders",
+        "ceramic_stacks"
+      ],
+      "activity_tags": [
+        "filing",
+        "descending"
+      ],
+      "flux_floor_prompt": "top-down 16-bit pixel art of a circular ceramic pit with concentric brass rings",
+      "room_scene_prompt": "top-down pixel art of a circular archive room, bone-white ceramic walls lined with graphite files, a central deep pit with brass ladders, clinical overhead lighting, no text, no margins.",
+      "width_tiles": 9,
+      "height_tiles": 9,
+      "ambient_palette": "focused_blue",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "deed_hoist",
+          "label": "Deed Hoist",
+          "description": "A brass pulley system with vermilion cords for lowering documents into the pit.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Vaelen Thorne",
+      "role_name": "Lead Vector Adjuster",
+      "activity": "Recalibrating the local gravity constant for the Plumb-Line Commons",
+      "home_base": "Vector Recalibration Workshop",
+      "arc_goal": "To stabilize the drifting floorplates of the lower district before they invert.",
+      "inventory": [
+        {
+          "name": "AG-001: Brass Plumb-Bob",
+          "description": "A heavy, oscillating weight that glows when verticality is compromised.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-002: Vector Tuning Fork",
+          "description": "Vibrates at 9.8m/s² to harmonize local gravity fields.",
+          "quantity": 2
+        },
+        {
+          "name": "AG-003: Magnetic Sole-Clamps",
+          "description": "Industrial footwear for walking on walls during flux events.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-004: Inertia Dampening Fluid",
+          "description": "A viscous blue liquid used to coat joints against sudden G-force shifts.",
+          "quantity": 5
+        },
+        {
+          "name": "AG-005: Tether-Hook Launcher",
+          "description": "Pneumatic device for securing oneself to the bedrock.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-006: Gyroscopic Compass",
+          "description": "Points toward the Archive's true center regardless of orientation.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-007: Pressure-Sealed Logbook",
+          "description": "Contains handwritten notes on gravitational anomalies.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-008: Lead-Lined Goggles",
+          "description": "Protects eyes from the visual distortion of high-mass pockets.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Workshop Bench",
+          "asset_type": "Industrial Station",
+          "description": "A heavy iron table bolted to the core of the Archive.",
+          "story_use": "Used to repair damaged vector licenses and recalibrate tools."
+        },
+        {
+          "asset_name": "Vector License #001",
+          "asset_type": "Legal Document",
+          "description": "The original permit allowing for the manipulation of local gravity.",
+          "story_use": "Grants the holder authority to override public gravity settings."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Vector Drift Theory",
+          "summary": "The understanding of how gravity 'leaks' from the Archive over time.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Sub-Basement Navigation",
+          "summary": "Knowledge of the shifting corridors in Archive Pit 07.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Silas Vane",
+      "role_name": "Ballast Broker",
+      "activity": "Negotiating weight-debt contracts with desperate residents",
+      "home_base": "Ballast Mortgage Vault",
+      "arc_goal": "To acquire enough mass-credits to purchase a permanent 'Down' orientation.",
+      "inventory": [
+        {
+          "name": "AG-009: Mass-Credit Ledger",
+          "description": "A digital tablet tracking the weight-debts of the populace.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-010: Density-Check Caliper",
+          "description": "Measures the specific gravity of trade goods.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-011: Compressed Lead Slugs",
+          "description": "Standard currency used to balance physical scales.",
+          "quantity": 50
+        },
+        {
+          "name": "AG-012: Void-Glass Hourglass",
+          "description": "Sand falls upward, indicating a localized gravity reversal.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-013: Contractual Wax Seal",
+          "description": "Used to finalize weight-mortgage agreements.",
+          "quantity": 3
+        },
+        {
+          "name": "AG-014: Portable Counterweight",
+          "description": "A 5kg block used to stabilize the user in low-G zones.",
+          "quantity": 4
+        },
+        {
+          "name": "AG-015: Ink of Heavy Metals",
+          "description": "Special ink that makes documents physically heavier.",
+          "quantity": 10
+        },
+        {
+          "name": "AG-016: Magnifying Monocle",
+          "description": "Reveals micro-fractures in ballast stones.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-017: Friction-Grip Gloves",
+          "description": "Coated in a sticky resin for handling slick surfaces.",
+          "quantity": 2
+        },
+        {
+          "name": "AG-018: Emergency Buoyancy Flare",
+          "description": "Releases a gas that temporarily negates gravity for the user.",
+          "quantity": 3
+        },
+        {
+          "name": "AG-019: Debt-Collection Shackle",
+          "description": "A heavy cuff that tethers a debtor to a fixed point.",
+          "quantity": 5
+        },
+        {
+          "name": "AG-020: Polished Ore Sample",
+          "description": "A high-density mineral used as a bribe.",
+          "quantity": 12
+        },
+        {
+          "name": "AG-021: Miniature Pulleys",
+          "description": "Used for hoisting heavy ledgers in the Vault.",
+          "quantity": 6
+        },
+        {
+          "name": "AG-022: Scented Weight-Oil",
+          "description": "Used to lubricate the gears of the Great Scales.",
+          "quantity": 2
+        },
+        {
+          "name": "AG-023: Brass Signet Ring",
+          "description": "The mark of the Ballast Mortgage Guild.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Great Scales",
+          "asset_type": "Financial Instrument",
+          "description": "A massive weighing machine that determines credit-worthiness.",
+          "story_use": "Used to settle disputes over mass-debt."
+        },
+        {
+          "asset_name": "Vault Keycard",
+          "asset_type": "Access Device",
+          "description": "A heavy copper card that opens the Ballast Mortgage Vault.",
+          "story_use": "Provides access to the Archive's physical reserves."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Mass-Debt Law",
+          "summary": "The legal framework governing the borrowing of gravity.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Market Fluctuations",
+          "summary": "Predicting when the cost of 'Down' will rise.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Elara Krell",
+      "role_name": "Archive Scavenger",
+      "activity": "Searching for lost artifacts in the weightless zones",
+      "home_base": "Archive Pit 07",
+      "arc_goal": "To find the 'Primal Plumb' and restore natural gravity to the world.",
+      "inventory": [
+        {
+          "name": "AG-024: Grappling Harpoon",
+          "description": "A spring-loaded hook for traversing the Pit.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-025: Oxygen-Rich Resin",
+          "description": "Chewable gum that provides a burst of air in thin pockets.",
+          "quantity": 10
+        },
+        {
+          "name": "AG-026: Scrap-Metal Shield",
+          "description": "Protects against falling debris in the Down-Direction Exchange.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-027: Bioluminescent Moss",
+          "description": "Glows brighter when gravity is stable.",
+          "quantity": 5
+        },
+        {
+          "name": "AG-028: Sonic Pinger",
+          "description": "Maps the geometry of lightless, weightless voids.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-029: Reinforced Carabiners",
+          "description": "High-tension clips for safety lines.",
+          "quantity": 12
+        },
+        {
+          "name": "AG-030: Fragment of the Core",
+          "description": "A small, vibrating stone that hums near artifacts.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-031: Insulated Thermal Wrap",
+          "description": "Keeps the body warm in the cold drafts of the Pit.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Scavenger's Perch",
+          "asset_type": "Hideout",
+          "description": "A small, hidden platform suspended over Pit 07.",
+          "story_use": "A safe zone for resting and sorting loot."
+        },
+        {
+          "asset_name": "Salvage Rights Map",
+          "asset_type": "Cartographic Data",
+          "description": "A map showing unclaimed debris fields in the Archive.",
+          "story_use": "Used to navigate the most dangerous parts of the world."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Pit Navigation",
+          "summary": "Expertise in the non-Euclidean geometry of the lower pits.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Artifact Identification",
+          "summary": "Recognizing pre-collapse gravity tech.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen Voss",
+      "role_name": "Vector Clerk",
+      "activity": "Processing emergency gravity permits for the upper tiers",
+      "home_base": "Vector Licensing Desk",
+      "arc_goal": "To expose the corruption within the Vector Licensing Bureau.",
+      "inventory": [
+        {
+          "name": "AG-032: Official Bureau Stamp",
+          "description": "Used to authorize temporary gravity licenses.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-033: Inkwell of Permanence",
+          "description": "Special ink that cannot be erased by gravitational flux.",
+          "quantity": 2
+        },
+        {
+          "name": "AG-034: Stack of Blank Permits",
+          "description": "Valuable documents for granting 'Down' access.",
+          "quantity": 20
+        },
+        {
+          "name": "AG-035: Bureaucratic Cipher-Ring",
+          "description": "Decodes encrypted messages from the High Vector.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-036: Pocket Watch (Non-Linear)",
+          "description": "Tracks time relative to local mass-density.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-037: Wax-Sealed Directives",
+          "description": "Confidential orders from the Archive's overseers.",
+          "quantity": 3
+        },
+        {
+          "name": "AG-038: Fine-Tip Drafting Pen",
+          "description": "For precise notation on vector maps.",
+          "quantity": 5
+        },
+        {
+          "name": "AG-039: Identification Badge",
+          "description": "Grants entry to the Vector Licensing Desk.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Clerk's Desk",
+          "asset_type": "Workstation",
+          "description": "A mahogany desk with built-in gravity stabilizers.",
+          "story_use": "The primary location for processing legal documents."
+        },
+        {
+          "asset_name": "The Archive Index",
+          "asset_type": "Database",
+          "description": "A massive physical filing system of every gravity license ever issued.",
+          "story_use": "Used to research the history of the Archive's laws."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Bureaucratic Protocol",
+          "summary": "The complex rules of the Vector Licensing Bureau.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Forgery Detection",
+          "summary": "Identifying counterfeit gravity permits.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Orlaith Penhaligon",
+      "role_name": "Lead Plumb-Line Architect",
+      "activity": "Structural stabilization of the Commons",
+      "home_base": "The Plumb-Line Commons",
+      "arc_goal": "To prevent the collapse of the central spire by reclaiming stolen ballast",
+      "inventory": [
+        {
+          "name": "AG-016: Gyroscopic Leveler",
+          "description": "A brass-encased device that hums when the local vector shifts.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-017: Lead-Thread Spool",
+          "description": "Heavy-density wire used to anchor floating furniture.",
+          "quantity": 12
+        },
+        {
+          "name": "AG-018: Vector Chalk",
+          "description": "Luminescent chalk that marks gravity-safe zones.",
+          "quantity": 5
+        },
+        {
+          "name": "AG-019: Tension Caliper",
+          "description": "Measures the strain on the Plumb-Line's main cables.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-020: Magnetic Pitons",
+          "description": "Climbing spikes that adhere to the Archive's metallic skin.",
+          "quantity": 20
+        },
+        {
+          "name": "AG-021: Weighted Solder",
+          "description": "High-mass alloy for repairing structural joints.",
+          "quantity": 3
+        },
+        {
+          "name": "AG-022: Draftsman's Monocle",
+          "description": "Lens that reveals stress fractures in the gravity field.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-023: Anchor Bolt Kit",
+          "description": "Heavy-duty fasteners for high-drift environments.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Drafting Nook",
+          "asset_type": "Studio",
+          "description": "A small, high-gravity alcove overlooking the Commons.",
+          "story_use": "Where Orlaith plots the structural integrity of the district."
+        },
+        {
+          "asset_name": "Master Plumb-Line",
+          "asset_type": "Infrastructure",
+          "description": "The primary vertical cable stabilizing the sector.",
+          "story_use": "Orlaith's life work and the source of her authority."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Structural Vectoring",
+          "summary": "The science of keeping buildings grounded when gravity is a commodity.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Silas Vane's Debtors",
+          "summary": "A list of residents who have traded their home's ballast to Silas.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Merrick 'Heavy-Hand' Thorne",
+      "role_name": "Ballast Recovery Agent",
+      "activity": "Enforcing weight-debt collection",
+      "home_base": "Ballast Mortgage Vault",
+      "arc_goal": "To seize enough mass to buy his brother Vaelen out of his contract",
+      "inventory": [
+        {
+          "name": "AG-024: Kinetic Sledge",
+          "description": "A hammer that gains mass the faster it is swung.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-025: Void-Iron Shackles",
+          "description": "Restraints that increase in weight if the prisoner struggles.",
+          "quantity": 4
+        },
+        {
+          "name": "AG-026: Debt Ledger",
+          "description": "A heavy book bound in lead-hide containing Silas Vane's contracts.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-027: Gravity Snare",
+          "description": "A deployable trap that creates a localized 3G field.",
+          "quantity": 3
+        },
+        {
+          "name": "AG-028: Pressure Suit Patches",
+          "description": "Quick-seal adhesive for leaks in high-pressure zones.",
+          "quantity": 15
+        },
+        {
+          "name": "AG-029: Brass Knuckle-Weights",
+          "description": "Weighted rings for close-quarters enforcement.",
+          "quantity": 2
+        },
+        {
+          "name": "AG-030: Seizure Notice Seals",
+          "description": "Wax stamps used to mark property for ballast reclamation.",
+          "quantity": 50
+        },
+        {
+          "name": "AG-031: Liquid Lead Flask",
+          "description": "Emergency ballast for stabilizing a drifting suit.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Vault Antechamber",
+          "asset_type": "Office",
+          "description": "A reinforced room where debtors plead their cases.",
+          "story_use": "Merrick's primary location for intimidating clients."
+        },
+        {
+          "asset_name": "Recovery Skiff",
+          "asset_type": "Vehicle",
+          "description": "A low-profile craft designed for hauling heavy ballast.",
+          "story_use": "Used to transport seized goods to the Vault."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Debt Enforcement",
+          "summary": "Legal and physical methods for reclaiming borrowed gravity.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Vaelen's Secret Lab",
+          "summary": "The location where his brother performs illegal vector adjustments.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Tessa Valerius",
+      "role_name": "Black-Market Vector Merchant",
+      "activity": "Trading illicit gravity permits",
+      "home_base": "The Down-Direction Exchange",
+      "arc_goal": "To monopolize the flow of unlicensed gravity in the lower tiers",
+      "inventory": [
+        {
+          "name": "AG-032: Forged Vector Permit",
+          "description": "A high-quality counterfeit license for gravity usage.",
+          "quantity": 12
+        },
+        {
+          "name": "AG-033: Recalibrated Compass",
+          "description": "Points toward the strongest local gravity source.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-034: Gravity-Well Battery",
+          "description": "A portable cell containing 48 hours of localized 1G.",
+          "quantity": 8
+        },
+        {
+          "name": "AG-035: Shifting-Sand Hourglass",
+          "description": "A timer that flows upward in low-gravity zones.",
+          "quantity": 2
+        },
+        {
+          "name": "AG-036: Encrypted Comm-Bead",
+          "description": "For secure communication with Archive Scavengers.",
+          "quantity": 5
+        },
+        {
+          "name": "AG-037: Lead-Lined Satchel",
+          "description": "Prevents scanners from detecting high-mass items.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-038: Vector-Bleed Sensor",
+          "description": "Detects illegal gravity siphoning in the walls.",
+          "quantity": 3
+        },
+        {
+          "name": "AG-039: Bribery Chits",
+          "description": "Tokens redeemable for favors at the Vector Licensing Desk.",
+          "quantity": 25
+        },
+        {
+          "name": "AG-040: Stabilizer Pins",
+          "description": "Small needles that ground personal items to the floor.",
+          "quantity": 100
+        },
+        {
+          "name": "AG-041: Compressed Air Canister",
+          "description": "Used for propulsion in zero-G emergencies.",
+          "quantity": 10
+        },
+        {
+          "name": "AG-042: Map of Pit 07",
+          "description": "A detailed chart of the most dangerous weightless zone.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-043: Counterweight Vest",
+          "description": "A garment with pockets for adjustable lead slugs.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-044: Magnetic Grapple",
+          "description": "A handheld launcher for securing lines to the ceiling.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-045: Siphoning Tube",
+          "description": "Used to drain gravity-fluid from public conduits.",
+          "quantity": 4
+        },
+        {
+          "name": "AG-046: False-Bottom Crate",
+          "description": "For smuggling ballast past Kaelen Voss's desk.",
+          "quantity": 6
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hidden Stall",
+          "asset_type": "Shop",
+          "description": "A shop tucked behind a shifting bulkhead in the Exchange.",
+          "story_use": "Tessa's base for illegal gravity transactions."
+        },
+        {
+          "asset_name": "Vector Siphon",
+          "asset_type": "Machinery",
+          "description": "An illegal tap into the main gravity grid.",
+          "story_use": "The source of Tessa's black-market gravity batteries."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Smuggling Routes",
+          "summary": "Paths through the Archive that bypass Vector Licensing checkpoints.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Kaelen Voss's Habits",
+          "summary": "The specific times when the Vector Clerk leaves his desk unattended.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Bastian 'The Mole' Finch",
+      "role_name": "Archive Salvage Specialist",
+      "activity": "Extracting data from Pit 07",
+      "home_base": "Archive Pit 07",
+      "arc_goal": "To find the 'Original Vector' blueprints hidden in the deep pits",
+      "inventory": [
+        {
+          "name": "AG-047: Data-Spike",
+          "description": "A heavy needle used to extract logs from ancient terminals.",
+          "quantity": 3
+        },
+        {
+          "name": "AG-048: Zero-G Flare",
+          "description": "A light source that hangs motionless in the air.",
+          "quantity": 10
+        },
+        {
+          "name": "AG-049: Tether-Harpoon",
+          "description": "A wrist-mounted launcher for navigating the Pit.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-050: Inertia-Dampening Boots",
+          "description": "Footwear that prevents bouncing off walls in zero-G.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-051: Scrap-Metal Shield",
+          "description": "Protects against falling debris when gravity fluctuates.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-052: Oxygen Rebreather",
+          "description": "Essential for the thin atmosphere of the lower pits.",
+          "quantity": 2
+        },
+        {
+          "name": "AG-053: Sonic Resonator",
+          "description": "Used to shake loose items stuck in the Archive's walls.",
+          "quantity": 1
+        },
+        {
+          "name": "AG-054: Fragmented Log-Disc",
+          "description": "A damaged data storage unit from the pre-collapse era.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Salvage Rig",
+          "asset_type": "Workshop",
+          "description": "A suspended platform in Pit 07 filled with junk.",
+          "story_use": "Bastian's home and laboratory for analyzing finds."
+        },
+        {
+          "asset_name": "The Deep-Link Terminal",
+          "asset_type": "Computer",
+          "description": "An ancient console that still has a flicker of power.",
+          "story_use": "Bastian's primary source of historical Archive data."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Pit Navigation",
+          "summary": "The shifting geography of the weightless Archive Pits.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Elara Krell's Cache",
+          "summary": "The location where a rival scavenger hides her best finds.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Caspian Vane",
+      "role_name": "Ballast Auditor",
+      "activity": "Auditing the weight-debt ledgers of Silas Vane for discrepancies",
+      "home_base": "Ballast Mortgage Vault",
+      "arc_goal": "To expose his brother Silas's illegal weight-skimming operation",
+      "inventory": [
+        {
+          "name": "AG-016 Void-Scale",
+          "description": "A handheld device that measures the mass of an object relative to zero-G",
+          "quantity": 1
+        },
+        {
+          "name": "AG-017 Lead-Ink Quill",
+          "description": "A writing tool that functions only in high-pressure gravity zones",
+          "quantity": 2
+        },
+        {
+          "name": "AG-018 Foreclosure Seals",
+          "description": "Adhesive strips used to lock down rooms with unstable gravity",
+          "quantity": 12
+        },
+        {
+          "name": "AG-019 Density Ledger",
+          "description": "A thick book containing the current weight-debts of the lower tiers",
+          "quantity": 1
+        },
+        {
+          "name": "AG-020 Brass Plumb-Bob",
+          "description": "A physical reference for the true vertical in the Commons",
+          "quantity": 3
+        },
+        {
+          "name": "AG-021 Vector-Lock Handcuffs",
+          "description": "Restraints that anchor the wearer to a fixed spatial coordinate",
+          "quantity": 2
+        },
+        {
+          "name": "AG-022 Audit Stamp",
+          "description": "A heavy stamp used to certify ballast contracts",
+          "quantity": 1
+        },
+        {
+          "name": "AG-023 Compressed Air Canister",
+          "description": "Emergency propulsion for accidental drift",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Vault Access Keycard",
+          "asset_type": "Security Clearance",
+          "description": "High-level access to the Ballast Mortgage Vault's inner sanctum",
+          "story_use": "Allows the player to bypass security checkpoints in the Vault"
+        },
+        {
+          "asset_name": "The Auditor's Desk",
+          "asset_type": "Workstation",
+          "description": "A heavy, bolted-down desk in the Vault's mezzanine",
+          "story_use": "Used to decrypt stolen ballast ledgers"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Ballast Fraud Detection",
+          "summary": "Techniques for identifying when weight-debt has been artificially inflated",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Vane Family History",
+          "summary": "The complex and bitter rivalry between the Vane siblings",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra 'The Tether' Solari",
+      "role_name": "Vector Safety Inspector",
+      "activity": "Inspecting the structural integrity of the Plumb-Line Commons",
+      "home_base": "The Plumb-Line Commons",
+      "arc_goal": "To prevent the imminent collapse of the Commons' central spire",
+      "inventory": [
+        {
+          "name": "AG-024 Tension Gauge",
+          "description": "Measures the stress on the cables holding the Commons together",
+          "quantity": 1
+        },
+        {
+          "name": "AG-025 Magnetic Pitons",
+          "description": "Climbing spikes that adhere to any metallic surface",
+          "quantity": 20
+        },
+        {
+          "name": "AG-026 High-Tensile Wire",
+          "description": "Reinforced cable used for emergency structural bracing",
+          "quantity": 5
+        },
+        {
+          "name": "AG-027 Vector Flare",
+          "description": "A light source that illuminates gravity-warped paths",
+          "quantity": 10
+        },
+        {
+          "name": "AG-028 G-Diffuser Mask",
+          "description": "Protects the wearer from sudden atmospheric pressure changes",
+          "quantity": 1
+        },
+        {
+          "name": "AG-029 Structural Blueprints",
+          "description": "Detailed maps of the Commons' support systems",
+          "quantity": 3
+        },
+        {
+          "name": "AG-030 Calibration Tuning Fork",
+          "description": "Used to resonate with the Plumb-Line's frequency",
+          "quantity": 1
+        },
+        {
+          "name": "AG-031 Safety Harness",
+          "description": "A multi-point harness with integrated vector-locks",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Maintenance Catwalks",
+          "asset_type": "Infrastructure",
+          "description": "A network of hidden paths above the Plumb-Line Commons",
+          "story_use": "Provides stealthy movement across the central hub"
+        },
+        {
+          "asset_name": "The Inspector's Toolkit",
+          "asset_type": "Equipment Set",
+          "description": "A specialized kit for repairing gravity-stressed joints",
+          "story_use": "Required for the 'Stabilize the Spire' questline"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Plumb-Line Resonance",
+          "summary": "Understanding how sound waves affect gravity stability in the Commons",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Orlaith's Design Flaws",
+          "summary": "Confidential knowledge of the architect's shortcuts",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Jaxen 'The Scrapper' Thorne",
+      "role_name": "Archive Salvage Broker",
+      "activity": "Trading recovered tech from Pit 07 at the Down-Direction Exchange",
+      "home_base": "The Down-Direction Exchange",
+      "arc_goal": "To acquire enough Vector Licenses to buy his way into the Upper Tiers",
+      "inventory": [
+        {
+          "name": "AG-032 Scavenged Vector Core",
+          "description": "A flickering power source recovered from the deep pits",
+          "quantity": 2
+        },
+        {
+          "name": "AG-033 Rust-Eater Acid",
+          "description": "A chemical used to dissolve ancient archive locks",
+          "quantity": 5
+        },
+        {
+          "name": "AG-034 Data-Shard Fragments",
+          "description": "Broken pieces of pre-collapse information storage",
+          "quantity": 15
+        },
+        {
+          "name": "AG-035 Gravity-Null Pouch",
+          "description": "A small bag that negates the weight of its contents",
+          "quantity": 3
+        },
+        {
+          "name": "AG-036 Patchwork G-Suit",
+          "description": "A heavily repaired suit for surviving high-G zones",
+          "quantity": 1
+        },
+        {
+          "name": "AG-037 Salvage Hook",
+          "description": "A long-reaching tool for grabbing items in weightless voids",
+          "quantity": 1
+        },
+        {
+          "name": "AG-038 Exchange Tokens",
+          "description": "The unofficial currency of the Down-Direction Exchange",
+          "quantity": 50
+        },
+        {
+          "name": "AG-039 Encrypted Archive Map",
+          "description": "A partial map of Pit 07 provided by Bastian Finch",
+          "quantity": 1
+        },
+        {
+          "name": "AG-040 Inertia Dampener",
+          "description": "A small device that slows down fast-moving objects",
+          "quantity": 4
+        },
+        {
+          "name": "AG-041 Scrap Metal Scraps",
+          "description": "Raw materials for repairing vector equipment",
+          "quantity": 25
+        },
+        {
+          "name": "AG-042 Thermal Solder",
+          "description": "Used for quick field repairs on salvage",
+          "quantity": 8
+        },
+        {
+          "name": "AG-043 Signal Jammer",
+          "description": "Disrupts local vector-clerk tracking signals",
+          "quantity": 2
+        },
+        {
+          "name": "AG-044 Counterweight Pellets",
+          "description": "Small, dense beads used to balance uneven loads",
+          "quantity": 100
+        },
+        {
+          "name": "AG-045 Archive Key-Mold",
+          "description": "An impression of a lock from the deep archives",
+          "quantity": 1
+        },
+        {
+          "name": "AG-046 Smuggler's Flask",
+          "description": "Contains a liquid that temporarily stabilizes inner-ear vertigo",
+          "quantity": 6
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Exchange Stall #4",
+          "asset_type": "Commercial Space",
+          "description": "A small, fortified booth in the Down-Direction Exchange",
+          "story_use": "Acts as a shop for the player to sell archive artifacts"
+        },
+        {
+          "asset_name": "Salvage Skiff",
+          "asset_type": "Vehicle",
+          "description": "A small, gravity-defying platform for hauling heavy scrap",
+          "story_use": "Enables transport of large items from Pit 07"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Pit 07 Navigation",
+          "summary": "Safe routes through the shifting gravity of the deep archives",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Black Market Valuation",
+          "summary": "Knowing the true price of artifacts on the surface",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Elias Vance",
+      "role_name": "Vector Recalibration Tech",
+      "activity": "Repairing damaged vector-regulators for the Licensing Desk",
+      "home_base": "Vector Recalibration Workshop",
+      "arc_goal": "To sabotage the Vector Licensing Desk's control over the lower tiers",
+      "inventory": [
+        {
+          "name": "AG-047 Precision Screwdriver Set",
+          "description": "Tools for fine-tuning vector-regulator internals",
+          "quantity": 1
+        },
+        {
+          "name": "AG-048 Flux Capacitor Fluid",
+          "description": "Essential coolant for high-output gravity engines",
+          "quantity": 10
+        },
+        {
+          "name": "AG-049 Recalibration Chip",
+          "description": "A programmable chip used to override factory gravity settings",
+          "quantity": 5
+        },
+        {
+          "name": "AG-050 Soldering Iron",
+          "description": "A portable tool for circuit repair in zero-G",
+          "quantity": 1
+        },
+        {
+          "name": "AG-051 Vector-Regulator Shell",
+          "description": "The outer casing for a standard gravity-control unit",
+          "quantity": 3
+        },
+        {
+          "name": "AG-052 Diagnostic Tablet",
+          "description": "Displays real-time gravity fluctuations in the area",
+          "quantity": 1
+        },
+        {
+          "name": "AG-053 Copper Wiring Spool",
+          "description": "High-conductivity wire for vector-grid repairs",
+          "quantity": 2
+        },
+        {
+          "name": "AG-054 Insulated Gloves",
+          "description": "Protects against the electrical discharge of failing regulators",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Workbench",
+          "asset_type": "Crafting Station",
+          "description": "A specialized table for modifying vector-regulators",
+          "story_use": "Allows the player to upgrade their gravity-manipulation gear"
+        },
+        {
+          "asset_name": "Workshop Backroom",
+          "asset_type": "Safehouse",
+          "description": "A hidden room behind the workshop used for planning sabotage",
+          "story_use": "A secure location to meet with anti-licensing rebels"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Vector Sabotage",
+          "summary": "How to subtly disable gravity regulators without triggering alarms",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Licensing Desk Protocols",
+          "summary": "The bureaucratic procedures of the Vector Licensing Desk",
+          "confidence": 80
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Vector Arbitration",
+      "summary": "Players collect flight data, present evidence of spatial priority, and negotiate settlements for collisions.",
+      "roles": [
+        "Arbitrator",
+        "Claimant",
+        "Defendant"
+      ],
+      "rooms": [
+        "The High Court of Kinematics",
+        "Data Recovery Vault"
+      ],
+      "pressure": "Impending mass-anchoring for the losing party."
+    },
+    {
+      "label": "Counterfeit Hunting",
+      "summary": "Players scan the environment for illegal gravity signatures and track them back to the source.",
+      "roles": [
+        "Vector Inspector",
+        "Smuggler",
+        "Informant"
+      ],
+      "rooms": [
+        "The Low-Orbit Bazaar",
+        "Signature Analysis Lab"
+      ],
+      "pressure": "The counterfeit vectors are destabilizing the local sector's sector's structural integrity."
+    }
+  ],
+  "player_entry_points": [
+    "A junior clerk discovering a discrepancy in the local gravity logs.",
+    "A freelance pilot accused of clipping a high-priority trade lane.",
+    "A vector-smith looking to sell a patented movement pattern."
+  ],
+  "conflict_hooks": [
+    "A massive spatial collision has occurred, and both parties claim the other's vector was forged.",
+    "The Central Ledger has been corrupted, leading to overlapping claims on the same physical space."
+  ],
+  "custom_actions": [
+    "Audit Vector: Inspect a nearby entity's movement path for legal compliance.",
+    "Recalibrate Mass: Adjust personal gravity to avoid or initiate spatial contact.",
+    "File Injunction: Temporarily freeze a target's movement pending a legal review."
+  ],
+  "social_rules": [
+    "All spatial vectors must be registered with the Central Ledger before execution.",
+    "Accidental collisions require immediate submission of flight logs for arbitration.",
+    "Counterfeit gravity signatures are punishable by permanent mass-anchoring."
+  ],
+  "item_themes": [
+    "gravity_vectors",
+    "ballast_weights",
+    "plumb_line_meters",
+    "vector_deeds",
+    "spatial_stamps"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "AG-001",
+      "name": "Standard Cobalt Plumb-Bob",
+      "price": 150,
+      "mass": 2.5,
+      "description": "A heavy cobalt glass weight used to establish a local vertical axis in shifting gravity zones.",
+      "image_prompt": "A teardrop-shaped cobalt glass plumb-bob with brass fittings hanging from a red silk cord, white ceramic background.",
+      "category": "plumb_line_meters"
+    },
+    {
+      "item_id": "AG-002",
+      "name": "Lesser Vector Deed (9.8m/s)",
+      "price": 1200,
+      "mass": 0.1,
+      "description": "A ceramic tablet granting the holder rights to standard downward acceleration within the Central Archive.",
+      "image_prompt": "A bone-white ceramic tablet engraved with vermilion geometric patterns and brass seals.",
+      "category": "vector_deeds"
+    },
+    {
+      "item_id": "AG-003",
+      "name": "Lead-Core Ballast Suture",
+      "price": 45,
+      "mass": 5.0,
+      "description": "A dense weight designed to be sewn into robes to prevent drifting during bureaucratic buoyancy events.",
+      "image_prompt": "Small rectangular lead weights wrapped in white linen with vermilion stitching.",
+      "category": "ballast_weights"
+    },
+    {
+      "item_id": "AG-004",
+      "name": "Bureaucrat's Leveling Monocle",
+      "price": 850,
+      "mass": 0.2,
+      "description": "A brass-rimmed lens that highlights unstable gravity vectors in a faint violet hue.",
+      "image_prompt": "A brass monocle with a cobalt-tinted glass lens and fine measurement etchings.",
+      "category": "plumb_line_meters"
+    },
+    {
+      "item_id": "AG-005",
+      "name": "Void-Stamping Press",
+      "price": 300,
+      "mass": 1.2,
+      "description": "A heavy brass tool used to impress spatial coordinates onto official ballast mortgages.",
+      "image_prompt": "A mechanical brass hand-press with a bone-white ceramic handle and vermilion ink stains.",
+      "category": "spatial_stamps"
+    },
+    {
+      "item_id": "AG-006",
+      "name": "Inverted Gravity Anchor",
+      "price": 2200,
+      "mass": 15.0,
+      "description": "A specialized ceramic canister that generates a localized upward pull for ceiling-based filing.",
+      "image_prompt": "A cylindrical bone-white ceramic canister with glowing cobalt filigree and brass valves.",
+      "category": "gravity_vectors"
+    },
+    {
+      "item_id": "AG-007",
+      "name": "Archivist's Plumb-Line Reel",
+      "price": 210,
+      "mass": 0.8,
+      "description": "A spring-loaded brass reel containing fifty meters of vermilion-dyed silk line.",
+      "image_prompt": "A circular brass reel with a red silk cord extending from a narrow slot, cobalt glass accents.",
+      "category": "plumb_line_meters"
+    },
+    {
+      "item_id": "AG-008",
+      "name": "Mortgage Default Weight",
+      "price": 500,
+      "mass": 50.0,
+      "description": "A massive block of raw cobalt glass used to pin down the assets of those who fail their gravity payments.",
+      "image_prompt": "A large, rough-hewn cube of translucent cobalt glass with a brass identification plate.",
+      "category": "ballast_weights"
+    },
+    {
+      "item_id": "AG-009",
+      "name": "Vector-Shift Inkwell",
+      "price": 125,
+      "mass": 0.4,
+      "description": "Ink that flows toward the nearest high-mass object, used for signing spatial contracts.",
+      "image_prompt": "A bone-white ceramic inkwell containing shimmering vermilion liquid that climbs the inner walls.",
+      "category": "spatial_stamps"
+    },
+    {
+      "item_id": "AG-010",
+      "name": "Lateral Drift Compensator",
+      "price": 950,
+      "mass": 3.5,
+      "description": "A brass gyroscope that maintains a steady horizontal plane regardless of local spatial warping.",
+      "image_prompt": "A complex brass gyroscope with cobalt glass spheres spinning within a ceramic frame.",
+      "category": "gravity_vectors"
+    },
+    {
+      "item_id": "AG-011",
+      "name": "Ceramic Notary Seal",
+      "price": 180,
+      "mass": 0.3,
+      "description": "A personalized stamp used to certify the validity of a ballast mortgage.",
+      "image_prompt": "A tall bone-white ceramic stamp with a brass base engraved with complex geometric sigils.",
+      "category": "spatial_stamps"
+    },
+    {
+      "item_id": "AG-012",
+      "name": "Frictionless Ballast Sled",
+      "price": 1500,
+      "mass": 12.0,
+      "description": "A cobalt glass platform that glides along gravity vectors for transporting heavy archives.",
+      "image_prompt": "A sleek, flat cobalt glass sled with brass runners and vermilion trim.",
+      "category": "ballast_weights"
+    },
+    {
+      "item_id": "AG-013",
+      "name": "Atmospheric Pressure Gauge",
+      "price": 340,
+      "mass": 0.6,
+      "description": "Measures the density of the Archive's air to calculate necessary ballast adjustments.",
+      "image_prompt": "A round brass gauge with a bone-white face and a thin vermilion needle.",
+      "category": "plumb_line_meters"
+    },
+    {
+      "item_id": "AG-014",
+      "name": "Grand Vector Deed (Omni-Directional)",
+      "price": 8000,
+      "mass": 0.5,
+      "description": "A rare, multi-layered ceramic plate allowing the user to define their own 'down' within the Archive.",
+      "image_prompt": "A complex stack of rotating ceramic discs with brass gears and cobalt glass inserts.",
+      "category": "vector_deeds"
+    },
+    {
+      "item_id": "AG-015",
+      "name": "Plumb-Line Chalk",
+      "price": 15,
+      "mass": 0.1,
+      "description": "Vermilion chalk used to mark temporary gravity boundaries on stone floors.",
+      "image_prompt": "A stick of vibrant vermilion chalk resting on a bone-white ceramic tray.",
+      "category": "spatial_stamps"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "archive-borrowed-gravity-01-wardrobe",
+    "world_wardrobe_brief": "Bureaucratic attire for a world of shifting gravity. Clothing is weighted with ceramic and brass to maintain orientation, featuring vermilion silk tethers and cobalt glass accents to signify spatial status.",
+    "forbidden_aesthetics": [
+      "organic fabrics",
+      "loose flowing capes",
+      "nature motifs",
+      "neon colors",
+      "rugged leather",
+      "steampunk gears",
+      "cybernetic implants"
+    ],
+    "palette_families": [
+      {
+        "name": "Bureaucratic Standard",
+        "dominant": "#f5f5f0",
+        "accent": "#0047ab",
+        "trim": "#d4af37",
+        "material": "bone-white ceramic"
+      },
+      {
+        "name": "Vector Enforcement",
+        "dominant": "#1c1c1c",
+        "accent": "#e34234",
+        "trim": "#d4af37",
+        "material": "graphite and brass"
+      },
+      {
+        "name": "Technical Maintenance",
+        "dominant": "#0047ab",
+        "accent": "#f5f5f0",
+        "trim": "#1c1c1c",
+        "material": "cobalt glass and steel"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "vector-adjuster",
+        "role_keywords": [
+          "Adjuster",
+          "Architect",
+          "Inspector"
+        ],
+        "attire": [
+          "stiff ceramic-plated tunics",
+          "vermilion sashes",
+          "brass-toed boots"
+        ],
+        "props": [
+          "plumb-line reels",
+          "leveling monocles"
+        ],
+        "palette_notes": "High contrast bone-white with prominent vermilion lines.",
+        "silhouette_notes": "Top-heavy with wide shoulders for gear mounting.",
+        "avoid": [
+          "unweighted fabric"
+        ]
+      },
+      {
+        "rule_id": "ballast-broker",
+        "role_keywords": [
+          "Broker",
+          "Auditor",
+          "Clerk"
+        ],
+        "attire": [
+          "layered silk robes",
+          "weighted hem-lines",
+          "brass collar badges"
+        ],
+        "props": [
+          "ceramic deeds",
+          "notary seals"
+        ],
+        "palette_notes": "Dominant bone-white with cobalt blue accents.",
+        "silhouette_notes": "Rectangular and rigid to imply stability.",
+        "avoid": [
+          "asymmetry"
+        ]
+      },
+      {
+        "rule_id": "salvage-specialist",
+        "role_keywords": [
+          "Scavenger",
+          "Salvage",
+          "Scrapper"
+        ],
+        "attire": [
+          "fitted jumpsuits",
+          "magnetic brass harnesses",
+          "cobalt glass goggles"
+        ],
+        "props": [
+          "gravity anchors",
+          "ballast sutures"
+        ],
+        "palette_notes": "Darker graphite tones with blue highlights.",
+        "silhouette_notes": "Slim and streamlined for tight spaces.",
+        "avoid": [
+          "bulky robes"
+        ]
+      },
+      {
+        "rule_id": "enforcement-agent",
+        "role_keywords": [
+          "Recovery Agent",
+          "Enforcer"
+        ],
+        "attire": [
+          "heavy graphite breastplates",
+          "brass gauntlets",
+          "vermilion capes"
+        ],
+        "props": [
+          "default weights",
+          "stamping presses"
+        ],
+        "palette_notes": "Shadow-heavy with aggressive red accents.",
+        "silhouette_notes": "Broad and imposing with sharp edges.",
+        "avoid": [
+          "delicate glass"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "citizen-default",
+      "role_keywords": [
+        "resident",
+        "citizen"
+      ],
+      "attire": [
+        "simple ceramic-buttoned vests",
+        "weighted trousers"
+      ],
+      "props": [
+        "standard plumb-bobs"
+      ],
+      "palette_notes": "Neutral bone-white and grey.",
+      "silhouette_notes": "Standard humanoid with visible waist weights.",
+      "avoid": [
+        "extravagant brass"
+      ]
+    },
+    "visual_consistency_rules": [
+      "1px graphite outline for all sprites",
+      "Vermilion elements must be vertical lines",
+      "Brass elements must be single-pixel highlights",
+      "No transparency; use solid cobalt for glass"
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "archive-borrowed-gravity-01",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90 degrees vertical",
+      "scale_rule": "32px per meter grid-aligned"
+    },
+    "palette": {
+      "dominant": "#f5f5f0",
+      "secondary": "#0047ab",
+      "accent": "#e34234",
+      "shadow": "#1c1c1c",
+      "highlight": "#d4af37"
+    },
+    "materials": [
+      "bone-white ceramic",
+      "cobalt glass",
+      "polished brass",
+      "graphite",
+      "vermilion silk cord",
+      "brushed steel"
+    ],
+    "lighting": "Clinical overhead fluorescent with sharp graphite shadows and glowing blue vector-lines",
+    "architecture": [
+      "modular ceramic tiles",
+      "brass floor-inlays",
+      "glass partitions",
+      "recessed cable-runs",
+      "circular archive pits"
+    ],
+    "terrain": {
+      "ground": "bone-white ceramic grid",
+      "path": "cobalt glass walkways",
+      "edge": "brass containment lips"
+    },
+    "sprite_language": {
+      "body_proportion": "chibi 1:2 head-to-body",
+      "outline": "1px graphite stroke",
+      "role_readability": "color-coded brass badges and vermilion sashes"
+    },
+    "world_prompt_prefix": "top-down pixel art, bone-white ceramic floor, cobalt glass walls, brass hardware, vermilion plumb lines, clinical lighting, 16-bit aesthetic",
+    "sprite_prompt_prefix": "top-down pixel art sprite, 1px outline, bureaucratic uniform, brass accessories, clinical aesthetic",
+    "forbidden_visuals": [
+      "photorealism",
+      "isometric perspective",
+      "organic foliage",
+      "text labels",
+      "UI overlays",
+      "3D models",
+      "blurred edges",
+      "natural dirt"
+    ],
+    "canon_hash": "c6196560f10ac25b"
+  }
+}

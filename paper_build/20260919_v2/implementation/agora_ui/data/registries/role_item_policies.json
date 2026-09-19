@@ -1,0 +1,38 @@
+{
+  "grounded_antique_market_v1": {
+    "keyword_rules": [
+      {"match_any": ["trade", "broker", "seller", "dealer", "stall"], "items": ["consignment_note", "buyer_card", "packing_cloth"]},
+      {"match_any": ["apprais", "inspect", "verify", "judge"], "items": ["appraisal_slip", "loupe", "uv_flashlight"]},
+      {"match_any": ["archive", "record", "history"], "items": ["stall_ledger_copy", "old_photo_bundle"]}
+    ],
+    "fallback": ["consignment_note", "appraisal_slip", "tea_flask"]
+  },
+  "coastal_trade_city_v1": {
+    "keyword_rules": [
+      {"match_any": ["trade", "broker", "cargo", "dock"], "items": ["dock_contract", "cargo_tag", "broker_token"]},
+      {"match_any": ["route", "pilot", "signal", "navigation"], "items": ["tide_chart", "signal_flag_roll", "brass_compass"]},
+      {"match_any": ["repair", "maker", "workshop"], "items": ["repair_parts_crate", "rope_bundle"]},
+      {"match_any": ["archive", "record"], "items": ["route_ledger", "dock_contract"]}
+    ],
+    "fallback": ["dock_contract", "tide_chart", "tea_tin"]
+  },
+  "civic_social_world_v1": {
+    "keyword_rules": [
+      {"match_any": ["coord", "organ", "manager", "lead"], "items": ["task_ledger", "access_badge", "meeting_notice"]},
+      {"match_any": ["trade", "broker"], "items": ["task_ledger", "access_badge"]},
+      {"match_any": ["repair", "maker"], "items": ["tool_roll", "stamped_pass"]},
+      {"match_any": ["archive", "record"], "items": ["task_ledger", "archive_key"]}
+    ],
+    "fallback": ["task_ledger", "meeting_notice", "tea_coupon"]
+  },
+  "fantasy_guild_world_v1": {
+    "keyword_rules": [
+      {"match_any": ["heal", "medic", "recovery"], "items": ["healing_potion", "guild_badge", "trail_rations"]},
+      {"match_any": ["mage", "wizard", "arcane", "spell"], "items": ["mana_crystal", "quest_contract", "adventurer_pack"]},
+      {"match_any": ["quarter", "supply", "trader", "logistics"], "items": ["repair_kit", "vault_claim", "quest_contract"]},
+      {"match_any": ["frontline", "adventurer", "ranger", "scout", "patrol"], "items": ["trail_rations", "adventurer_pack", "guild_badge"]},
+      {"match_any": ["coordinator", "cadre", "leader"], "items": ["quest_contract", "guild_badge", "vault_claim"]}
+    ],
+    "fallback": ["quest_contract", "guild_badge", "trail_rations"]
+  }
+}

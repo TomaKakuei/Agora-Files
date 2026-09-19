@@ -1,0 +1,1147 @@
+{
+  "world_mode": "Fixed",
+  "topology": {
+    "grid_shape": {
+      "x": 40,
+      "y": 32,
+      "z": 1
+    },
+    "rooms": [
+      {
+        "room_id": "room_01_weighhouse_speaking_hall",
+        "name": "Weighhouse Speaking Hall",
+        "x": 14,
+        "y": 11,
+        "z": 0,
+        "width_tiles": 15,
+        "height_tiles": 11,
+        "doorways": [
+          {
+            "doorway_id": "room_01_weighhouse_speaking_hall_to_room_02_courier_intake_vault",
+            "position": {
+              "x": 20,
+              "y": 21,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_02_courier_intake_vault",
+            "label": "passage to Courier Intake Vault"
+          },
+          {
+            "doorway_id": "room_01_weighhouse_speaking_hall_to_room_03_chain_gate_bondhouse",
+            "position": {
+              "x": 28,
+              "y": 14,
+              "z": 0
+            },
+            "edge_dir": "right",
+            "connects_to_room_id": "room_03_chain_gate_bondhouse",
+            "label": "passage to Chain-Gate Bondhouse"
+          },
+          {
+            "doorway_id": "room_01_weighhouse_speaking_hall_to_room_04_court_of_echoes_chamber",
+            "position": {
+              "x": 20,
+              "y": 11,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_04_court_of_echoes_chamber",
+            "label": "passage to Court of Echoes Chamber"
+          },
+          {
+            "doorway_id": "room_01_weighhouse_speaking_hall_to_room_05_bridgehead_vow_exchange",
+            "position": {
+              "x": 14,
+              "y": 15,
+              "z": 0
+            },
+            "edge_dir": "left",
+            "connects_to_room_id": "room_05_bridgehead_vow_exchange",
+            "label": "passage to Bridgehead Vow Exchange"
+          }
+        ],
+        "visual": {
+          "biome": "cliffside civic terrace",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "carved sandstone",
+            "aged brass",
+            "echo-glass",
+            "sealed paper",
+            "drainage grooves"
+          ],
+          "ambient_palette": "warm_lantern",
+          "visual_canon_hash": "6f4ee6da3dd9517f",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_01_weighhouse_speaking_hall_certified_echo_scale",
+              "label": "Echo Scale",
+              "description": "A round aged-brass scale plinth with a chalk echo-glass basin and two witness speaking posts.",
+              "anchor": "center",
+              "width_tiles": 3,
+              "height_tiles": 3
+            },
+            {
+              "component_id": "room_01_weighhouse_speaking_hall_vow_slip_press",
+              "label": "Slip Press",
+              "description": "A brass lever press that seals tiny paper tax slips with wax and bond marks.",
+              "anchor": "east_mid",
+              "width_tiles": 2,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "The Weighhouse certifies spoken promises and collects tax. Rising unpaid_vowweight is recorded here; overloaded vows are then sent to the Courier Intake Vault.",
+          "activity_tags": [
+            "vow weighing",
+            "tax assessment",
+            "witnessing",
+            "slip stamping"
+          ],
+          "player_entry_hook": "Carry a late promise bundle whose seal was damaged in a wind crossing.",
+          "room_archetype": "checkpoint",
+          "layout_signal": "Weighhouse Speaking Hall | The Weighhouse certifies spoken promises and collects tax. Rising unpaid_vowweight is recorded here; overloaded vows are then sent to the Courier Intake Vault. | cliffside civic terrace | vow weighing | tax assessment | witnessing | slip stamping | carved sandstone | aged brass | echo-glass | sealed paper | drainage grooves"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, windworn sandstone civic hall tiles edge to edge, circular brass speaking-scale inlay at center, fine carved drainage grooves, scattered pale dust, faint chalk echo-glass glints, deep blue-gray seams, bounded Vowfall palette, no objects, no text.",
+        "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Weighhouse Speaking Hall, a roofless carved-sandstone civic tax hall with brass speaking scales, circular echo well, witness rails, sealed-paper slip niches and tube-routing walls. Warm brass glints, pale echo glow, deep blue-gray shadows, usable tiled floor and thin sandstone walls reach all four image edges. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, no blank background around the room.",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "vowfall_cliff_city_v1",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree orthographic",
+            "scale_rule": "Tile-aligned; doors, bridges, sprites, and props share fixed grid scale."
+          },
+          "palette": {
+            "dominant": "#b86f45",
+            "secondary": "#263b4a",
+            "accent": "#c99a32",
+            "shadow": "#392b32",
+            "highlight": "#dde0be"
+          },
+          "materials": [
+            "windworn sandstone",
+            "aged brass",
+            "dark rope",
+            "waxed canvas",
+            "sealed paper",
+            "tarnished iron",
+            "chalk echo-glass"
+          ],
+          "lighting": "Warm brass glints and pale echo glow on deep blue-gray cast shadows; no directional perspective shading.",
+          "architecture": [
+            "Stacked carved-sandstone terraces with cutaway roofless rooms.",
+            "Narrow suspended bridges with rope rails, chain gates, and brass bond seals.",
+            "Circular echo wells, speaking-scale plinths, and tube-routing walls.",
+            "Household balconies edged with frayed pledge ribbons and canvas awnings.",
+            "Vertical stairs, winch lifts, retaining arches, and cliff-cut cisterns."
+          ],
+          "terrain": {
+            "ground": "Terraced sandstone tiles with carved drainage grooves and sparse pale dust.",
+            "path": "Brass-edged stone walkways, rope bridges, and stair runs.",
+            "edge": "Sheer shadowed cliff cuts, chipped parapets, and iron railings."
+          },
+          "sprite_language": {
+            "body_proportion": "Compact 2.5-head figures with broad capes, satchels, and readable overhead silhouettes.",
+            "outline": "Single dark #392B32 pixel-outline with selective #DDE0BE echo highlights.",
+            "role_readability": "Couriers carry ribboned bundles; clerks carry brass scales or slips; wardens show chain keys; households show shawls or baskets."
+          },
+          "world_prompt_prefix": "Strict orthographic top-down pixel world of Vowfall: windworn sandstone cliff terraces, aged brass civic instruments, rope bridges, sealed courier tubes, frayed pledge ribbons, bounded five-color palette.",
+          "sprite_prompt_prefix": "Strict top-down Vowfall pixel sprite, compact outlined figure, dark plum outline, sandstone and blue-gray clothing, brass civic prop, role-readability silhouette.",
+          "forbidden_visuals": [
+            "visible labels",
+            "title text",
+            "poster layouts",
+            "card layouts",
+            "disconnected room dioramas",
+            "photorealism",
+            "isometric view",
+            "perspective camera",
+            "generic medieval castles",
+            "generic fantasy forests",
+            "neon cyberpunk",
+            "beige procedural terrain",
+            "real-world landmark aesthetics",
+            "modern vehicles",
+            "guns",
+            "anime portrait proportions"
+          ],
+          "canon_hash": "6f4ee6da3dd9517f"
+        }
+      },
+      {
+        "room_id": "room_02_courier_intake_vault",
+        "name": "Courier Intake Vault",
+        "x": 14,
+        "y": 22,
+        "z": 0,
+        "width_tiles": 13,
+        "height_tiles": 10,
+        "doorways": [
+          {
+            "doorway_id": "room_01_weighhouse_speaking_hall_to_room_02_courier_intake_vault",
+            "position": {
+              "x": 20,
+              "y": 22,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_01_weighhouse_speaking_hall",
+            "label": "passage to Weighhouse Speaking Hall"
+          },
+          {
+            "doorway_id": "room_02_courier_intake_vault_to_room_07_wind_rope_repair_loft",
+            "position": {
+              "x": 14,
+              "y": 24,
+              "z": 0
+            },
+            "edge_dir": "left",
+            "connects_to_room_id": "room_07_wind_rope_repair_loft",
+            "label": "passage to Wind-Rope Repair Loft"
+          }
+        ],
+        "visual": {
+          "biome": "cliff-cut courier depot",
+          "floor_tile": "stone_hall",
+          "wall_tile": "wood_beam_wall",
+          "decor_tags": [
+            "waxed canvas",
+            "dark rope",
+            "sealed paper",
+            "tarnished iron",
+            "brass seals"
+          ],
+          "ambient_palette": "focused_blue",
+          "visual_canon_hash": "6f4ee6da3dd9517f",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_02_courier_intake_vault_custody_seal_drum",
+              "label": "Custody Seal Drum",
+              "description": "A waist-high brass drum that stamps a bundle's transfer seal beneath a hanging rope guide.",
+              "anchor": "north_mid",
+              "width_tiles": 2,
+              "height_tiles": 2
+            },
+            {
+              "component_id": "room_02_courier_intake_vault_vow_bundle_sorter",
+              "label": "Bundle Sorter",
+              "description": "A canvas-and-brass chute rack holding ribboned promise bundles by route urgency.",
+              "anchor": "south_west",
+              "width_tiles": 3,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Licensed couriers take custody of unpaid promise bundles and prioritize mature routes. Strained courier_route_capacity here causes late bundles to undermine Echo Court evidence.",
+          "activity_tags": [
+            "bundle custody",
+            "route sorting",
+            "satchel sealing",
+            "courier dispatch"
+          ],
+          "player_entry_hook": "Petition to reweigh a family vow that now threatens bridge access.",
+          "room_archetype": "logistics_yard",
+          "layout_signal": "Courier Intake Vault | Licensed couriers take custody of unpaid promise bundles and prioritize mature routes. Strained courier_route_capacity here causes late bundles to undermine Echo Court evidence. | cliff-cut courier depot | bundle custody | route sorting | satchel sealing | courier dispatch | waxed canvas | dark rope | sealed paper | tarnished iron | brass seals"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, darkened sandstone depot floor edge to edge, worn rope lanes, brass route studs, wax drips, paper-seal fragments, iron drain grates, pale dust and blue-gray shadow seams, Vowfall five-color palette, no objects, no text.",
+        "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Courier Intake Vault, a compact cliff-cut depot where licensed couriers receive ribboned unpaid-vow bundles. Show waxed-canvas sorting lanes, dark rope pulley runs, brass custody seal bench, sealed courier tubes, iron hooks and stacked satchels. Sandstone floor and thin walls reach all four image edges, dense readable tile-scale layout. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, and no blank background around the room.",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "vowfall_cliff_city_v1",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree orthographic",
+            "scale_rule": "Tile-aligned; doors, bridges, sprites, and props share fixed grid scale."
+          },
+          "palette": {
+            "dominant": "#b86f45",
+            "secondary": "#263b4a",
+            "accent": "#c99a32",
+            "shadow": "#392b32",
+            "highlight": "#dde0be"
+          },
+          "materials": [
+            "windworn sandstone",
+            "aged brass",
+            "dark rope",
+            "waxed canvas",
+            "sealed paper",
+            "tarnished iron",
+            "chalk echo-glass"
+          ],
+          "lighting": "Warm brass glints and pale echo glow on deep blue-gray cast shadows; no directional perspective shading.",
+          "architecture": [
+            "Stacked carved-sandstone terraces with cutaway roofless rooms.",
+            "Narrow suspended bridges with rope rails, chain gates, and brass bond seals.",
+            "Circular echo wells, speaking-scale plinths, and tube-routing walls.",
+            "Household balconies edged with frayed pledge ribbons and canvas awnings.",
+            "Vertical stairs, winch lifts, retaining arches, and cliff-cut cisterns."
+          ],
+          "terrain": {
+            "ground": "Terraced sandstone tiles with carved drainage grooves and sparse pale dust.",
+            "path": "Brass-edged stone walkways, rope bridges, and stair runs.",
+            "edge": "Sheer shadowed cliff cuts, chipped parapets, and iron railings."
+          },
+          "sprite_language": {
+            "body_proportion": "Compact 2.5-head figures with broad capes, satchels, and readable overhead silhouettes.",
+            "outline": "Single dark #392B32 pixel-outline with selective #DDE0BE echo highlights.",
+            "role_readability": "Couriers carry ribboned bundles; clerks carry brass scales or slips; wardens show chain keys; households show shawls or baskets."
+          },
+          "world_prompt_prefix": "Strict orthographic top-down pixel world of Vowfall: windworn sandstone cliff terraces, aged brass civic instruments, rope bridges, sealed courier tubes, frayed pledge ribbons, bounded five-color palette.",
+          "sprite_prompt_prefix": "Strict top-down Vowfall pixel sprite, compact outlined figure, dark plum outline, sandstone and blue-gray clothing, brass civic prop, role-readability silhouette.",
+          "forbidden_visuals": [
+            "visible labels",
+            "title text",
+            "poster layouts",
+            "card layouts",
+            "disconnected room dioramas",
+            "photorealism",
+            "isometric view",
+            "perspective camera",
+            "generic medieval castles",
+            "generic fantasy forests",
+            "neon cyberpunk",
+            "beige procedural terrain",
+            "real-world landmark aesthetics",
+            "modern vehicles",
+            "guns",
+            "anime portrait proportions"
+          ],
+          "canon_hash": "6f4ee6da3dd9517f"
+        }
+      },
+      {
+        "room_id": "room_03_chain_gate_bondhouse",
+        "name": "Chain-Gate Bondhouse",
+        "x": 29,
+        "y": 11,
+        "z": 0,
+        "width_tiles": 11,
+        "height_tiles": 7,
+        "doorways": [
+          {
+            "doorway_id": "room_01_weighhouse_speaking_hall_to_room_03_chain_gate_bondhouse",
+            "position": {
+              "x": 29,
+              "y": 14,
+              "z": 0
+            },
+            "edge_dir": "left",
+            "connects_to_room_id": "room_01_weighhouse_speaking_hall",
+            "label": "passage to Weighhouse Speaking Hall"
+          }
+        ],
+        "visual": {
+          "biome": "suspended bridge threshold",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "tarnished iron",
+            "aged brass",
+            "dark rope",
+            "sandstone",
+            "pledge ribbons"
+          ],
+          "ambient_palette": "low_lantern",
+          "visual_canon_hash": "6f4ee6da3dd9517f",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_03_chain_gate_bondhouse_bond_chain_gate",
+              "label": "Bond Chain Gate",
+              "description": "A tarnished iron chain lattice on brass rollers, drawn across the bridge when a household bond fails.",
+              "anchor": "east_mid",
+              "width_tiles": 3,
+              "height_tiles": 2
+            },
+            {
+              "component_id": "room_03_chain_gate_bondhouse_safety_bond_plinth",
+              "label": "Safety Bond Plinth",
+              "description": "A round sandstone plinth fitted with brass balance pins and a clipped passage-tag ring.",
+              "anchor": "west_mid",
+              "width_tiles": 2,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Bridge wardens review household safety bonds and chain crossings for delinquent vowweight. Reduced bridge_access here cuts merchant trade at the Bridgehead Exchange afterward.",
+          "activity_tags": [
+            "bond review",
+            "passage inspection",
+            "gate chaining",
+            "wind signaling"
+          ],
+          "player_entry_hook": "Work a repair shift to earn bridge credit before a bond review.",
+          "room_archetype": "checkpoint",
+          "layout_signal": "Chain-Gate Bondhouse | Bridge wardens review household safety bonds and chain crossings for delinquent vowweight. Reduced bridge_access here cuts merchant trade at the Bridgehead Exchange afterward. | suspended bridge threshold | bond review | passage inspection | gate chaining | wind signaling | tarnished iron | aged brass | dark rope | sandstone | pledge ribbons"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, narrow brass-edged sandstone bridge threshold edge to edge, iron chain sockets, rope-rail shadow bands, worn wind-scoured slabs, clipped pledge-ribbon fibers, pale dust, deep cliff-shadow accents, no objects, no text.",
+        "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Chain-Gate Bondhouse, a bridge warden checkpoint built into a sandstone retaining arch. Show a heavy iron chain gate, aged brass safety-bond plinth, rope rails, wind-signal crank and passage-token slots; the bridge approach continues naturally through opposite edges. Floor, walls and bridge paving reach all four image edges. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, and no blank background around the room.",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "vowfall_cliff_city_v1",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree orthographic",
+            "scale_rule": "Tile-aligned; doors, bridges, sprites, and props share fixed grid scale."
+          },
+          "palette": {
+            "dominant": "#b86f45",
+            "secondary": "#263b4a",
+            "accent": "#c99a32",
+            "shadow": "#392b32",
+            "highlight": "#dde0be"
+          },
+          "materials": [
+            "windworn sandstone",
+            "aged brass",
+            "dark rope",
+            "waxed canvas",
+            "sealed paper",
+            "tarnished iron",
+            "chalk echo-glass"
+          ],
+          "lighting": "Warm brass glints and pale echo glow on deep blue-gray cast shadows; no directional perspective shading.",
+          "architecture": [
+            "Stacked carved-sandstone terraces with cutaway roofless rooms.",
+            "Narrow suspended bridges with rope rails, chain gates, and brass bond seals.",
+            "Circular echo wells, speaking-scale plinths, and tube-routing walls.",
+            "Household balconies edged with frayed pledge ribbons and canvas awnings.",
+            "Vertical stairs, winch lifts, retaining arches, and cliff-cut cisterns."
+          ],
+          "terrain": {
+            "ground": "Terraced sandstone tiles with carved drainage grooves and sparse pale dust.",
+            "path": "Brass-edged stone walkways, rope bridges, and stair runs.",
+            "edge": "Sheer shadowed cliff cuts, chipped parapets, and iron railings."
+          },
+          "sprite_language": {
+            "body_proportion": "Compact 2.5-head figures with broad capes, satchels, and readable overhead silhouettes.",
+            "outline": "Single dark #392B32 pixel-outline with selective #DDE0BE echo highlights.",
+            "role_readability": "Couriers carry ribboned bundles; clerks carry brass scales or slips; wardens show chain keys; households show shawls or baskets."
+          },
+          "world_prompt_prefix": "Strict orthographic top-down pixel world of Vowfall: windworn sandstone cliff terraces, aged brass civic instruments, rope bridges, sealed courier tubes, frayed pledge ribbons, bounded five-color palette.",
+          "sprite_prompt_prefix": "Strict top-down Vowfall pixel sprite, compact outlined figure, dark plum outline, sandstone and blue-gray clothing, brass civic prop, role-readability silhouette.",
+          "forbidden_visuals": [
+            "visible labels",
+            "title text",
+            "poster layouts",
+            "card layouts",
+            "disconnected room dioramas",
+            "photorealism",
+            "isometric view",
+            "perspective camera",
+            "generic medieval castles",
+            "generic fantasy forests",
+            "neon cyberpunk",
+            "beige procedural terrain",
+            "real-world landmark aesthetics",
+            "modern vehicles",
+            "guns",
+            "anime portrait proportions"
+          ],
+          "canon_hash": "6f4ee6da3dd9517f"
+        }
+      },
+      {
+        "room_id": "room_04_court_of_echoes_chamber",
+        "name": "Court of Echoes Chamber",
+        "x": 14,
+        "y": 0,
+        "z": 0,
+        "width_tiles": 14,
+        "height_tiles": 11,
+        "doorways": [
+          {
+            "doorway_id": "room_01_weighhouse_speaking_hall_to_room_04_court_of_echoes_chamber",
+            "position": {
+              "x": 20,
+              "y": 10,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_01_weighhouse_speaking_hall",
+            "label": "passage to Weighhouse Speaking Hall"
+          },
+          {
+            "doorway_id": "room_04_court_of_echoes_chamber_to_room_06_upper_ledge_relief_alcove",
+            "position": {
+              "x": 14,
+              "y": 6,
+              "z": 0
+            },
+            "edge_dir": "left",
+            "connects_to_room_id": "room_06_upper_ledge_relief_alcove",
+            "label": "passage to Upper-Ledge Relief Alcove"
+          }
+        ],
+        "visual": {
+          "biome": "high terrace tribunal",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "chalk echo-glass",
+            "sealed paper",
+            "aged brass",
+            "carved sandstone",
+            "tarnished iron"
+          ],
+          "ambient_palette": "soft_mint",
+          "visual_canon_hash": "6f4ee6da3dd9517f",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_04_court_of_echoes_chamber_triple_echo_well",
+              "label": "Triple Echo Well",
+              "description": "A circular chalk echo-glass basin split into three luminous listening arcs for magistrates.",
+              "anchor": "center",
+              "width_tiles": 3,
+              "height_tiles": 3
+            },
+            {
+              "component_id": "room_04_court_of_echoes_chamber_void_mark_press",
+              "label": "Void Mark Press",
+              "description": "A squat brass-and-iron press used to punch a public void mark into a disputed vow slip.",
+              "anchor": "south_east",
+              "width_tiles": 2,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Three magistrates judge forged, coerced, amended, or void promises. Accurate rulings improve echo_credibility, which lowers delayed settlement pressure at the Weighhouse.",
+          "activity_tags": [
+            "echo comparison",
+            "witness testimony",
+            "void ruling",
+            "restitution order"
+          ],
+          "player_entry_hook": "Protect or challenge a witness tied to a suspected forged echo.",
+          "room_archetype": "council",
+          "layout_signal": "Court of Echoes Chamber | Three magistrates judge forged, coerced, amended, or void promises. Accurate rulings improve echo_credibility, which lowers delayed settlement pressure at the Weighhouse. | high terrace tribunal | echo comparison | witness testimony | void ruling | restitution order | chalk echo-glass | sealed paper | aged brass | carved sandstone | tarnished iron"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, formal sandstone tribunal floor edge to edge, three-part circular chalk echo-glass mosaic, brass semicircle inlays, narrow dark grout, pale dust, soft mint reflection flecks, Vowfall palette, no objects, no text.",
+        "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Court of Echoes Chamber, a roofless sandstone tribunal with a three-seat magistrate crescent around a glowing chalk echo-glass well. Include witness standing marks, bailiff chain rail, sealed-paper evidence niches and brass void-stamp tray. Floor texture and thin walls extend to all four image edges for direct map pasting. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, and no blank background around the room.",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "vowfall_cliff_city_v1",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree orthographic",
+            "scale_rule": "Tile-aligned; doors, bridges, sprites, and props share fixed grid scale."
+          },
+          "palette": {
+            "dominant": "#b86f45",
+            "secondary": "#263b4a",
+            "accent": "#c99a32",
+            "shadow": "#392b32",
+            "highlight": "#dde0be"
+          },
+          "materials": [
+            "windworn sandstone",
+            "aged brass",
+            "dark rope",
+            "waxed canvas",
+            "sealed paper",
+            "tarnished iron",
+            "chalk echo-glass"
+          ],
+          "lighting": "Warm brass glints and pale echo glow on deep blue-gray cast shadows; no directional perspective shading.",
+          "architecture": [
+            "Stacked carved-sandstone terraces with cutaway roofless rooms.",
+            "Narrow suspended bridges with rope rails, chain gates, and brass bond seals.",
+            "Circular echo wells, speaking-scale plinths, and tube-routing walls.",
+            "Household balconies edged with frayed pledge ribbons and canvas awnings.",
+            "Vertical stairs, winch lifts, retaining arches, and cliff-cut cisterns."
+          ],
+          "terrain": {
+            "ground": "Terraced sandstone tiles with carved drainage grooves and sparse pale dust.",
+            "path": "Brass-edged stone walkways, rope bridges, and stair runs.",
+            "edge": "Sheer shadowed cliff cuts, chipped parapets, and iron railings."
+          },
+          "sprite_language": {
+            "body_proportion": "Compact 2.5-head figures with broad capes, satchels, and readable overhead silhouettes.",
+            "outline": "Single dark #392B32 pixel-outline with selective #DDE0BE echo highlights.",
+            "role_readability": "Couriers carry ribboned bundles; clerks carry brass scales or slips; wardens show chain keys; households show shawls or baskets."
+          },
+          "world_prompt_prefix": "Strict orthographic top-down pixel world of Vowfall: windworn sandstone cliff terraces, aged brass civic instruments, rope bridges, sealed courier tubes, frayed pledge ribbons, bounded five-color palette.",
+          "sprite_prompt_prefix": "Strict top-down Vowfall pixel sprite, compact outlined figure, dark plum outline, sandstone and blue-gray clothing, brass civic prop, role-readability silhouette.",
+          "forbidden_visuals": [
+            "visible labels",
+            "title text",
+            "poster layouts",
+            "card layouts",
+            "disconnected room dioramas",
+            "photorealism",
+            "isometric view",
+            "perspective camera",
+            "generic medieval castles",
+            "generic fantasy forests",
+            "neon cyberpunk",
+            "beige procedural terrain",
+            "real-world landmark aesthetics",
+            "modern vehicles",
+            "guns",
+            "anime portrait proportions"
+          ],
+          "canon_hash": "6f4ee6da3dd9517f"
+        }
+      },
+      {
+        "room_id": "room_05_bridgehead_vow_exchange",
+        "name": "Bridgehead Vow Exchange",
+        "x": 0,
+        "y": 11,
+        "z": 0,
+        "width_tiles": 14,
+        "height_tiles": 9,
+        "doorways": [
+          {
+            "doorway_id": "room_01_weighhouse_speaking_hall_to_room_05_bridgehead_vow_exchange",
+            "position": {
+              "x": 13,
+              "y": 15,
+              "z": 0
+            },
+            "edge_dir": "right",
+            "connects_to_room_id": "room_01_weighhouse_speaking_hall",
+            "label": "passage to Weighhouse Speaking Hall"
+          },
+          {
+            "doorway_id": "room_05_bridgehead_vow_exchange_to_room_06_upper_ledge_relief_alcove",
+            "position": {
+              "x": 7,
+              "y": 11,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_06_upper_ledge_relief_alcove",
+            "label": "passage to Upper-Ledge Relief Alcove"
+          },
+          {
+            "doorway_id": "room_05_bridgehead_vow_exchange_to_room_07_wind_rope_repair_loft",
+            "position": {
+              "x": 7,
+              "y": 19,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_07_wind_rope_repair_loft",
+            "label": "passage to Wind-Rope Repair Loft"
+          }
+        ],
+        "visual": {
+          "biome": "merchant terrace market",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "canvas awnings",
+            "aged brass",
+            "sealed paper",
+            "sandstone",
+            "dark rope"
+          ],
+          "ambient_palette": "clear_day",
+          "visual_canon_hash": "6f4ee6da3dd9517f",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_05_bridgehead_vow_exchange_vow_credit_abacus",
+              "label": "Vow Credit Abacus",
+              "description": "A broad brass rail abacus with sliding seal beads used to discount certified vow slips.",
+              "anchor": "center",
+              "width_tiles": 3,
+              "height_tiles": 2
+            },
+            {
+              "component_id": "room_05_bridgehead_vow_exchange_bridge_repair_funnel",
+              "label": "Repair Fund Funnel",
+              "description": "A chained brass funnel receiving coin and pledge seals for bridge rope and plank repairs.",
+              "anchor": "north_east",
+              "width_tiles": 2,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Terrace merchants convert stamped vow slips into goods, credit, and bridge-repair funds. Open bridge_access brings trade here, improving household_liquidity on the upper ledges.",
+          "activity_tags": [
+            "vow credit exchange",
+            "merchant bargaining",
+            "repair funding",
+            "goods trade"
+          ],
+          "player_entry_hook": "Carry a late promise bundle whose seal was damaged in a wind crossing.",
+          "room_archetype": "market_exchange",
+          "layout_signal": "Bridgehead Vow Exchange | Terrace merchants convert stamped vow slips into goods, credit, and bridge-repair funds. Open bridge_access brings trade here, improving household_liquidity on the upper ledges. | merchant terrace market | vow credit exchange | merchant bargaining | repair funding | goods trade | canvas awnings | aged brass | sealed paper | sandstone | dark rope"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, busy terraced sandstone market paving edge to edge, brass-edged lane strips, circular exchange inlays, canvas-awning shadow blocks, rope tie points, scattered wax flecks and pale dust, bounded Vowfall palette, no objects, no text.",
+        "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Bridgehead Vow Exchange, a compact terrace trade room beside a bridge approach. Show brass vow-credit counters, canvas awnings, goods baskets, repair-contribution funnel, sealed slips and rope-tied merchant stalls, all roofless and tile-readable. Sandstone paving and walls reach all four image edges. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, and no blank background around the room.",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "vowfall_cliff_city_v1",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree orthographic",
+            "scale_rule": "Tile-aligned; doors, bridges, sprites, and props share fixed grid scale."
+          },
+          "palette": {
+            "dominant": "#b86f45",
+            "secondary": "#263b4a",
+            "accent": "#c99a32",
+            "shadow": "#392b32",
+            "highlight": "#dde0be"
+          },
+          "materials": [
+            "windworn sandstone",
+            "aged brass",
+            "dark rope",
+            "waxed canvas",
+            "sealed paper",
+            "tarnished iron",
+            "chalk echo-glass"
+          ],
+          "lighting": "Warm brass glints and pale echo glow on deep blue-gray cast shadows; no directional perspective shading.",
+          "architecture": [
+            "Stacked carved-sandstone terraces with cutaway roofless rooms.",
+            "Narrow suspended bridges with rope rails, chain gates, and brass bond seals.",
+            "Circular echo wells, speaking-scale plinths, and tube-routing walls.",
+            "Household balconies edged with frayed pledge ribbons and canvas awnings.",
+            "Vertical stairs, winch lifts, retaining arches, and cliff-cut cisterns."
+          ],
+          "terrain": {
+            "ground": "Terraced sandstone tiles with carved drainage grooves and sparse pale dust.",
+            "path": "Brass-edged stone walkways, rope bridges, and stair runs.",
+            "edge": "Sheer shadowed cliff cuts, chipped parapets, and iron railings."
+          },
+          "sprite_language": {
+            "body_proportion": "Compact 2.5-head figures with broad capes, satchels, and readable overhead silhouettes.",
+            "outline": "Single dark #392B32 pixel-outline with selective #DDE0BE echo highlights.",
+            "role_readability": "Couriers carry ribboned bundles; clerks carry brass scales or slips; wardens show chain keys; households show shawls or baskets."
+          },
+          "world_prompt_prefix": "Strict orthographic top-down pixel world of Vowfall: windworn sandstone cliff terraces, aged brass civic instruments, rope bridges, sealed courier tubes, frayed pledge ribbons, bounded five-color palette.",
+          "sprite_prompt_prefix": "Strict top-down Vowfall pixel sprite, compact outlined figure, dark plum outline, sandstone and blue-gray clothing, brass civic prop, role-readability silhouette.",
+          "forbidden_visuals": [
+            "visible labels",
+            "title text",
+            "poster layouts",
+            "card layouts",
+            "disconnected room dioramas",
+            "photorealism",
+            "isometric view",
+            "perspective camera",
+            "generic medieval castles",
+            "generic fantasy forests",
+            "neon cyberpunk",
+            "beige procedural terrain",
+            "real-world landmark aesthetics",
+            "modern vehicles",
+            "guns",
+            "anime portrait proportions"
+          ],
+          "canon_hash": "6f4ee6da3dd9517f"
+        }
+      },
+      {
+        "room_id": "room_06_upper_ledge_relief_alcove",
+        "name": "Upper-Ledge Relief Alcove",
+        "x": 2,
+        "y": 2,
+        "z": 0,
+        "width_tiles": 12,
+        "height_tiles": 9,
+        "doorways": [
+          {
+            "doorway_id": "room_04_court_of_echoes_chamber_to_room_06_upper_ledge_relief_alcove",
+            "position": {
+              "x": 13,
+              "y": 6,
+              "z": 0
+            },
+            "edge_dir": "right",
+            "connects_to_room_id": "room_04_court_of_echoes_chamber",
+            "label": "passage to Court of Echoes Chamber"
+          },
+          {
+            "doorway_id": "room_05_bridgehead_vow_exchange_to_room_06_upper_ledge_relief_alcove",
+            "position": {
+              "x": 7,
+              "y": 10,
+              "z": 0
+            },
+            "edge_dir": "bottom",
+            "connects_to_room_id": "room_05_bridgehead_vow_exchange",
+            "label": "passage to Bridgehead Vow Exchange"
+          }
+        ],
+        "visual": {
+          "biome": "residential cliff terrace",
+          "floor_tile": "stone_hall",
+          "wall_tile": "wood_beam_wall",
+          "decor_tags": [
+            "frayed pledge ribbons",
+            "waxed canvas",
+            "sandstone",
+            "household baskets",
+            "sealed paper"
+          ],
+          "ambient_palette": "warm_lantern",
+          "visual_canon_hash": "6f4ee6da3dd9517f",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_06_upper_ledge_relief_alcove_shared_vowweight_basin",
+              "label": "Shared Vow Basin",
+              "description": "A shallow brass-rimmed sandstone basin where households place sealed promise tokens for pooled payment.",
+              "anchor": "center",
+              "width_tiles": 3,
+              "height_tiles": 2
+            },
+            {
+              "component_id": "room_06_upper_ledge_relief_alcove_pledge_ribbon_line",
+              "label": "Pledge Ribbon Line",
+              "description": "A dark rope line hung with frayed household pledge ribbons and small wax-sealed transfers.",
+              "anchor": "north_mid",
+              "width_tiles": 3,
+              "height_tiles": 1
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Upper-Ledge households pool food, labor pledges, and tax relief petitions. Low household_liquidity is made visible here; missed payments return as greater unpaid_vowweight at the Weighhouse.",
+          "activity_tags": [
+            "household pooling",
+            "tax relief",
+            "petition witnessing",
+            "promise transfer"
+          ],
+          "player_entry_hook": "Petition to reweigh a family vow that now threatens bridge access.",
+          "room_archetype": "commons",
+          "layout_signal": "Upper-Ledge Relief Alcove | Upper-Ledge households pool food, labor pledges, and tax relief petitions. Low household_liquidity is made visible here; missed payments return as greater unpaid_vowweight at the Weighhouse. | residential cliff terrace | household pooling | tax relief | petition witnessing | promise transfer | frayed pledge ribbons | waxed canvas | sandstone | household baskets | sealed paper"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, intimate residential sandstone terrace floor edge to edge, hand-worn tiles, frayed ribbon shadows, canvas awning shade, small drainage grooves, pale dust, brass peg rings and blue-gray seam shadows, no objects, no text.",
+        "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Upper-Ledge Relief Alcove, a roofless household mutual-aid courtyard cut into the cliff. Show pledge-ribbon lines, a shared vowweight basin, food baskets, waxed canvas shade, petition alcoves and a narrow stair exit. Materials are windworn sandstone, dark rope and aged brass. Floor and walls reach all four image edges. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, and no blank background around the room.",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "vowfall_cliff_city_v1",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree orthographic",
+            "scale_rule": "Tile-aligned; doors, bridges, sprites, and props share fixed grid scale."
+          },
+          "palette": {
+            "dominant": "#b86f45",
+            "secondary": "#263b4a",
+            "accent": "#c99a32",
+            "shadow": "#392b32",
+            "highlight": "#dde0be"
+          },
+          "materials": [
+            "windworn sandstone",
+            "aged brass",
+            "dark rope",
+            "waxed canvas",
+            "sealed paper",
+            "tarnished iron",
+            "chalk echo-glass"
+          ],
+          "lighting": "Warm brass glints and pale echo glow on deep blue-gray cast shadows; no directional perspective shading.",
+          "architecture": [
+            "Stacked carved-sandstone terraces with cutaway roofless rooms.",
+            "Narrow suspended bridges with rope rails, chain gates, and brass bond seals.",
+            "Circular echo wells, speaking-scale plinths, and tube-routing walls.",
+            "Household balconies edged with frayed pledge ribbons and canvas awnings.",
+            "Vertical stairs, winch lifts, retaining arches, and cliff-cut cisterns."
+          ],
+          "terrain": {
+            "ground": "Terraced sandstone tiles with carved drainage grooves and sparse pale dust.",
+            "path": "Brass-edged stone walkways, rope bridges, and stair runs.",
+            "edge": "Sheer shadowed cliff cuts, chipped parapets, and iron railings."
+          },
+          "sprite_language": {
+            "body_proportion": "Compact 2.5-head figures with broad capes, satchels, and readable overhead silhouettes.",
+            "outline": "Single dark #392B32 pixel-outline with selective #DDE0BE echo highlights.",
+            "role_readability": "Couriers carry ribboned bundles; clerks carry brass scales or slips; wardens show chain keys; households show shawls or baskets."
+          },
+          "world_prompt_prefix": "Strict orthographic top-down pixel world of Vowfall: windworn sandstone cliff terraces, aged brass civic instruments, rope bridges, sealed courier tubes, frayed pledge ribbons, bounded five-color palette.",
+          "sprite_prompt_prefix": "Strict top-down Vowfall pixel sprite, compact outlined figure, dark plum outline, sandstone and blue-gray clothing, brass civic prop, role-readability silhouette.",
+          "forbidden_visuals": [
+            "visible labels",
+            "title text",
+            "poster layouts",
+            "card layouts",
+            "disconnected room dioramas",
+            "photorealism",
+            "isometric view",
+            "perspective camera",
+            "generic medieval castles",
+            "generic fantasy forests",
+            "neon cyberpunk",
+            "beige procedural terrain",
+            "real-world landmark aesthetics",
+            "modern vehicles",
+            "guns",
+            "anime portrait proportions"
+          ],
+          "canon_hash": "6f4ee6da3dd9517f"
+        }
+      },
+      {
+        "room_id": "room_07_wind_rope_repair_loft",
+        "name": "Wind-Rope Repair Loft",
+        "x": 2,
+        "y": 20,
+        "z": 0,
+        "width_tiles": 12,
+        "height_tiles": 8,
+        "doorways": [
+          {
+            "doorway_id": "room_02_courier_intake_vault_to_room_07_wind_rope_repair_loft",
+            "position": {
+              "x": 13,
+              "y": 24,
+              "z": 0
+            },
+            "edge_dir": "right",
+            "connects_to_room_id": "room_02_courier_intake_vault",
+            "label": "passage to Courier Intake Vault"
+          },
+          {
+            "doorway_id": "room_05_bridgehead_vow_exchange_to_room_07_wind_rope_repair_loft",
+            "position": {
+              "x": 7,
+              "y": 20,
+              "z": 0
+            },
+            "edge_dir": "top",
+            "connects_to_room_id": "room_05_bridgehead_vow_exchange",
+            "label": "passage to Bridgehead Vow Exchange"
+          }
+        ],
+        "visual": {
+          "biome": "bridge maintenance terrace",
+          "floor_tile": "library_wood",
+          "wall_tile": "wood_beam_wall",
+          "decor_tags": [
+            "dark rope",
+            "tarnished iron",
+            "aged brass",
+            "waxed canvas",
+            "sandstone"
+          ],
+          "ambient_palette": "ember_orange",
+          "visual_canon_hash": "6f4ee6da3dd9517f",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_07_wind_rope_repair_loft_bridge_winch_rig",
+              "label": "Bridge Winch Rig",
+              "description": "A tarnished iron winch with brass gear housing and thick dark rope leading toward the bridge edge.",
+              "anchor": "east_mid",
+              "width_tiles": 3,
+              "height_tiles": 3
+            },
+            {
+              "component_id": "room_07_wind_rope_repair_loft_courier_tube_cradle",
+              "label": "Tube Repair Cradle",
+              "description": "A brass-jawed stand holding a sealed courier tube while its cracked fittings are replaced.",
+              "anchor": "south_west",
+              "width_tiles": 2,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "footprint_tiles": [],
+        "metadata": {
+          "purpose": "Warden crews and merchant-funded riggers repair route ropes, tube lines, and bridge fittings, increasing courier_route_capacity and restoring bridge access.",
+          "activity_tags": [
+            "rope splicing",
+            "winch repair",
+            "tube maintenance",
+            "bridge inspection"
+          ],
+          "player_entry_hook": "Work a repair shift to earn bridge credit before a bond review.",
+          "room_archetype": "workshop",
+          "layout_signal": "Wind-Rope Repair Loft | Warden crews and merchant-funded riggers repair route ropes, tube lines, and bridge fittings, increasing courier_route_capacity and restoring bridge access. | bridge maintenance terrace | rope splicing | winch repair | tube maintenance | bridge inspection | dark rope | tarnished iron | aged brass | waxed canvas | sandstone"
+        },
+        "spawn_points": [],
+        "flux_floor_prompt": "Crunchy strict top-down 2D pixel art floor texture, rugged sandstone maintenance terrace edge to edge, rope-burn marks, iron anchor plates, brass bolt circles, waxed canvas patches, windblown pale dust and deep blue-gray crevice shadows, no objects, no text.",
+        "room_scene_prompt": "Strict orthographic top-down pixel-art map-embedded rectangular room plate for Wind-Rope Repair Loft, a cliffside bridge repair workspace with a sandstone floor, iron anchor sockets, rope-splicing rack, brass winch and sealed-tube repair cradle. Canvas windbreaks and retaining walls frame a dense practical layout; bridge hardware meets image edges naturally. No visible text, no labels, no captions, no room-name title, no watermark, no white or beige empty margins, and no blank background around the room.",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "vowfall_cliff_city_v1",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree orthographic",
+            "scale_rule": "Tile-aligned; doors, bridges, sprites, and props share fixed grid scale."
+          },
+          "palette": {
+            "dominant": "#b86f45",
+            "secondary": "#263b4a",
+            "accent": "#c99a32",
+            "shadow": "#392b32",
+            "highlight": "#dde0be"
+          },
+          "materials": [
+            "windworn sandstone",
+            "aged brass",
+            "dark rope",
+            "waxed canvas",
+            "sealed paper",
+            "tarnished iron",
+            "chalk echo-glass"
+          ],
+          "lighting": "Warm brass glints and pale echo glow on deep blue-gray cast shadows; no directional perspective shading.",
+          "architecture": [
+            "Stacked carved-sandstone terraces with cutaway roofless rooms.",
+            "Narrow suspended bridges with rope rails, chain gates, and brass bond seals.",
+            "Circular echo wells, speaking-scale plinths, and tube-routing walls.",
+            "Household balconies edged with frayed pledge ribbons and canvas awnings.",
+            "Vertical stairs, winch lifts, retaining arches, and cliff-cut cisterns."
+          ],
+          "terrain": {
+            "ground": "Terraced sandstone tiles with carved drainage grooves and sparse pale dust.",
+            "path": "Brass-edged stone walkways, rope bridges, and stair runs.",
+            "edge": "Sheer shadowed cliff cuts, chipped parapets, and iron railings."
+          },
+          "sprite_language": {
+            "body_proportion": "Compact 2.5-head figures with broad capes, satchels, and readable overhead silhouettes.",
+            "outline": "Single dark #392B32 pixel-outline with selective #DDE0BE echo highlights.",
+            "role_readability": "Couriers carry ribboned bundles; clerks carry brass scales or slips; wardens show chain keys; households show shawls or baskets."
+          },
+          "world_prompt_prefix": "Strict orthographic top-down pixel world of Vowfall: windworn sandstone cliff terraces, aged brass civic instruments, rope bridges, sealed courier tubes, frayed pledge ribbons, bounded five-color palette.",
+          "sprite_prompt_prefix": "Strict top-down Vowfall pixel sprite, compact outlined figure, dark plum outline, sandstone and blue-gray clothing, brass civic prop, role-readability silhouette.",
+          "forbidden_visuals": [
+            "visible labels",
+            "title text",
+            "poster layouts",
+            "card layouts",
+            "disconnected room dioramas",
+            "photorealism",
+            "isometric view",
+            "perspective camera",
+            "generic medieval castles",
+            "generic fantasy forests",
+            "neon cyberpunk",
+            "beige procedural terrain",
+            "real-world landmark aesthetics",
+            "modern vehicles",
+            "guns",
+            "anime portrait proportions"
+          ],
+          "canon_hash": "6f4ee6da3dd9517f"
+        }
+      }
+    ]
+  },
+  "movement": {
+    "max_steps_per_timestep": 2,
+    "capacity_per_coordinate": 3,
+    "line_of_sight_required": false,
+    "allow_diagonal": false
+  },
+  "item_rules": {
+    "mass_conservation": true,
+    "require_same_coordinate_for_transfer": true,
+    "combinations": []
+  },
+  "image_rules": {
+    "enabled": true,
+    "allowed_operations": [
+      "create"
+    ]
+  },
+  "custom_action_rules": {
+    "default_duration_steps": 2,
+    "max_range_steps": 10,
+    "allowed_actions": [
+      "Reweigh a vow",
+      "Seal a promise bundle",
+      "Tender a safety bond",
+      "Splice a wind-rope",
+      "Quarantine an echo",
+      "Assign burden custody",
+      "Chime a maturity deadline",
+      "Cooper a meal-vow",
+      "Counterstamp bridge credit",
+      "Shelter a witness",
+      "Salvage a promise-cord",
+      "Notarize a burden swap",
+      "Chat",
+      "Inspect",
+      "Coordinate",
+      "Trade",
+      "CinematicInteraction",
+      "Negotiate"
+    ],
+    "open_proposals_enabled": true,
+    "open_proposal_effects": [
+      "speech",
+      "transfer",
+      "create_item",
+      "status"
+    ]
+  },
+  "social_rules": [
+    "Every witnessed promise accrues weight-tax until fulfilled, transferred, voided, or paid.",
+    "A stamped vow slip is presumptive evidence, but its wording may be publicly reweighed.",
+    "Bridge passage may be restricted when a household exceeds its posted safety bond.",
+    "Recorded echoes require consent or lawful court custody to be used as testimony.",
+    "Couriers must preserve sealed custody chains; a broken seal creates a rebuttable presumption of tampering.",
+    "Witnesses may seek shelter before testifying, and retaliation against sheltered witnesses taints their testimony.",
+    "Debt transfers require a named accepting bearer and a witnessed burden limit.",
+    "Collective bridge repairs can support a petition to revise a closure ruling.",
+    "Generated gameplay loops should create follow-up choices instead of dead ends.",
+    "Player entry points should remain understandable through local conversation, movement, and inspection.",
+    "Conflict hook: A courier consortium offers fast delivery only to households that sign exclusive custody terms, forcing upper-ledge families to choose between mobility and control of their promises.",
+    "Conflict hook: Forged echoes implicate a bridge-repair fund in coercive vows; exposing the forgery may freeze credit and chain an already fragile crossing."
+  ],
+  "discovered_rules": []
+}

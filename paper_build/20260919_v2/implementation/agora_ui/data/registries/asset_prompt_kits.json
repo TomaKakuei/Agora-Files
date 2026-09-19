@@ -1,0 +1,50 @@
+{
+  "grounded_antique_market_v1": {
+    "image_generation": {
+      "prompt_policy": "Grounded antique-market object or scene illustration, readable subject, realistic wear, no visible text, no watermark.",
+      "default_prompt_template": "{domain_label}. Create one polished still image of {image_subject} for {actor_name} and {target_name}. Keep it grounded in a lived-in antique market with paperwork, stalls, cases, and urban wear. No visible text, no watermark."
+    },
+    "prompt_policies": {
+      "asset_prompt_policy": {
+        "forbidden_terms": ["organization-template phrasing", "class-fantasy silhouette", "loot-coin framing"],
+        "world_visual_anchor": "Old market stalls, antique surfaces, paper records, cloth wraps, glass cases, crowd pressure, and urban wear."
+      }
+    }
+  },
+  "coastal_trade_city_v1": {
+    "image_generation": {
+      "prompt_policy": "Grounded harbor-trade illustration with visible cargo logic, weathered tools, route signals, and no visible text or watermark.",
+      "default_prompt_template": "{domain_label}. Create one polished still image of {image_subject} for {actor_name} and {target_name}. Emphasize harbor logistics, route pressure, dock wear, and civic trade signals. No visible text, no watermark."
+    },
+    "prompt_policies": {
+      "asset_prompt_policy": {
+        "forbidden_terms": ["generic fantasy class pose", "floating loot framing"],
+        "world_visual_anchor": "Docks, tide marks, route boards, signal systems, cargo wear, and civic trade pressure."
+      }
+    }
+  },
+  "civic_social_world_v1": {
+    "image_generation": {
+      "prompt_policy": "Grounded social-systems illustration with readable rooms, paperwork, tools, and no visible text or watermark.",
+      "default_prompt_template": "{domain_label}. Create one polished still image of {image_subject} for {actor_name} and {target_name}. Emphasize lived-in civic interiors, notices, ledgers, and social coordination pressure. No visible text, no watermark."
+    },
+    "prompt_policies": {
+      "asset_prompt_policy": {
+        "forbidden_terms": ["generic fantasy quest board framing"],
+        "world_visual_anchor": "Civic interiors, notices, ledgers, tea, access markers, and social negotiation."
+      }
+    }
+  },
+  "fantasy_guild_world_v1": {
+    "image_generation": {
+      "prompt_policy": "Readable fantasy-guild illustration with guild infrastructure, quests, supplies, and no visible text or watermark.",
+      "default_prompt_template": "{domain_label}. Create one polished still image of {image_subject} for {actor_name} and {target_name}. Emphasize a functioning fantasy guild with banners, contracts, tavern light, gear wear, and cooperative pressure. No visible text, no watermark."
+    },
+    "prompt_policies": {
+      "asset_prompt_policy": {
+        "forbidden_terms": ["generic isekai poster pose"],
+        "world_visual_anchor": "Guild halls, quest boards, supply crates, forge benches, tavern warmth, and disciplined expedition culture."
+      }
+    }
+  }
+}

@@ -1,0 +1,1733 @@
+{
+  "world_name": "The Verdant Express",
+  "world_id": "ve_001",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "Orbital Railway",
+    "tone": "Melancholic, hopeful",
+    "visual_direction": "Bioluminescent flora, brass, steam, glass",
+    "currency_code": "SPC",
+    "currency_symbol": "孢",
+    "currency_minor_unit": "Grain",
+    "currency_name": "Spore-Credits",
+    "domain_label": "Bio-Transit",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "conductors_guild",
+        "name": "Conductors Guild",
+        "mandate": "Maintain schedule",
+        "decision_rule": "Speed must exceed 80% capacity",
+        "enforced_by": "Throttle lock",
+        "visible_output": "Station arrival"
+      },
+      {
+        "institution_id": "botany_bureau",
+        "name": "Botany Bureau",
+        "mandate": "Biodiversity preservation",
+        "decision_rule": "Crop diversity must exceed 5 species",
+        "enforced_by": "Access keys",
+        "visible_output": "Greenhouse expansion"
+      },
+      {
+        "institution_id": "passenger_council",
+        "name": "Passenger Council",
+        "mandate": "Labor welfare",
+        "decision_rule": "Workload must remain below 50%",
+        "enforced_by": "Strike action",
+        "visible_output": "Resource rationing"
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "soil_fertility",
+        "label": "Soil Fertility",
+        "initial_tension": "Low",
+        "changed_by": [
+          "passenger_cooperation",
+          "crop_yield"
+        ],
+        "affects": [
+          "crop_yield"
+        ]
+      },
+      {
+        "state_id": "passenger_cooperation",
+        "label": "Passenger Cooperation",
+        "initial_tension": "Medium",
+        "changed_by": [
+          "train_speed"
+        ],
+        "affects": [
+          "soil_fertility"
+        ]
+      },
+      {
+        "state_id": "train_speed",
+        "label": "Train Speed",
+        "initial_tension": "High",
+        "changed_by": [
+          "crop_yield"
+        ],
+        "affects": [
+          "passenger_cooperation"
+        ]
+      },
+      {
+        "state_id": "crop_yield",
+        "label": "Crop Yield",
+        "initial_tension": "Low",
+        "changed_by": [
+          "soil_fertility"
+        ],
+        "affects": [
+          "train_speed"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "soil_fertility",
+        "trigger": "Nutrient enrichment",
+        "target_state": "crop_yield",
+        "effect": "Increased biomass production",
+        "delay": "2 cycles"
+      },
+      {
+        "source_state": "passenger_cooperation",
+        "trigger": "Collective tending",
+        "target_state": "soil_fertility",
+        "effect": "Improved soil health",
+        "delay": "1 cycle"
+      },
+      {
+        "source_state": "crop_yield",
+        "trigger": "Bio-fuel conversion",
+        "target_state": "train_speed",
+        "effect": "Increased engine output",
+        "delay": "0 cycles"
+      },
+      {
+        "source_state": "train_speed",
+        "trigger": "High-velocity vibration",
+        "target_state": "passenger_cooperation",
+        "effect": "Decreased labor efficiency",
+        "delay": "3 cycles"
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "commuters",
+        "name": "Commuters",
+        "goal": "Reach destination quickly",
+        "leverage": "Labor availability",
+        "dependency": "Greenhouse access"
+      },
+      {
+        "group_id": "botanists",
+        "name": "Botanists",
+        "goal": "Rare seed cultivation",
+        "leverage": "Access keys",
+        "dependency": "Crop yield"
+      },
+      {
+        "group_id": "engineers",
+        "name": "Engineers",
+        "goal": "Train integrity",
+        "leverage": "Maintenance access",
+        "dependency": "Bio-fuel"
+      }
+    ]
+  },
+  "genre": "Solarpunk Simulation",
+  "premise": "A living train where passenger labor determines the route and speed.",
+  "simulation_objective": "Balance crop production with transit efficiency.",
+  "agent_count_target": 12,
+  "player_count_target": 50,
+  "wall_color_theme": "oxidized_brass_plating",
+  "economy_focus": "Resource-based labor exchange",
+  "exploration_focus": "Greenhouse ecosystem management",
+  "conflict_tone": "Negotiated cooperation",
+  "visual_style": "Bioluminescent brass-punk",
+  "rooms": [
+    {
+      "name": "Throttle Control Hub",
+      "biome": "Engine Core",
+      "purpose": "Conductors Guild hub where train speed is regulated; high speed here triggers vibration-related labor efficiency drops in the Commuter Lounge.",
+      "decor_tags": [
+        "brass_levers",
+        "steam_gauges",
+        "glowing_mycelium_cables"
+      ],
+      "activity_tags": [
+        "throttle_adjustment",
+        "schedule_monitoring"
+      ],
+      "flux_floor_prompt": "seamless 16-bit pixel art of worn brass floor plates with glowing mycelium veins running through cracks",
+      "room_scene_prompt": "top-down view of a train throttle control room, oxidized brass walls, central brass throttle lever, glowing mycelium cables on floor, no text, no labels, edge-to-edge floor texture, solarpunk brass-punk aesthetic",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "ember_orange",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "throttle_lock",
+          "label": "Throttle Lock",
+          "description": "A heavy brass lever mechanism with glowing green mycelium indicators",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Seed Archive",
+      "biome": "Botany Bureau",
+      "purpose": "Storage for rare seeds; nutrient enrichment here increases crop yield in the Hydroponics Bay after 2 cycles.",
+      "decor_tags": [
+        "glass_vials",
+        "hanging_roots",
+        "brass_shelving"
+      ],
+      "activity_tags": [
+        "seed_cataloging",
+        "genetic_sorting"
+      ],
+      "flux_floor_prompt": "pixel art of dark polished mahogany floor with inlaid brass geometric patterns",
+      "room_scene_prompt": "top-down view of a botanical archive, translucent bio-glass cabinets filled with glowing seeds, dark polished mahogany floor, hanging root-tethered structures, no text, no labels, edge-to-edge floor texture",
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "ambient_palette": "soft_mint",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "seed_vault",
+          "label": "Seed Vault",
+          "description": "A rotating brass cylinder containing glowing glass vials of seeds",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Hydroponics Bay",
+      "biome": "Greenhouse",
+      "purpose": "Crop cultivation area; increased biomass here is converted to bio-fuel to boost train speed.",
+      "decor_tags": [
+        "bio-glass_domes",
+        "mist_emitters",
+        "mossy_grating"
+      ],
+      "activity_tags": [
+        "harvesting",
+        "nutrient_application"
+      ],
+      "flux_floor_prompt": "pixel art of metallic floor grating with lush green moss growing in the gaps",
+      "room_scene_prompt": "top-down view of a greenhouse carriage, curved bio-glass domes, metallic floor grating, hanging root-tethered planters, no text, no labels, edge-to-edge floor texture",
+      "width_tiles": 8,
+      "height_tiles": 8,
+      "ambient_palette": "soft_mint",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "nutrient_injector",
+          "label": "Nutrient Injector",
+          "description": "A brass pipe system dripping glowing liquid into soil beds",
+          "anchor": "south_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Commuter Lounge",
+      "biome": "Passenger Quarters",
+      "purpose": "Rest area for commuters; collective tending here improves soil fertility in the Hydroponics Bay.",
+      "decor_tags": [
+        "cushioned_benches",
+        "mycelium_lanterns",
+        "brass_piping"
+      ],
+      "activity_tags": [
+        "resting",
+        "socializing"
+      ],
+      "flux_floor_prompt": "pixel art of worn brass floor plates with soft glowing mycelium borders",
+      "room_scene_prompt": "top-down view of a passenger lounge, modular train carriage interior, cushioned benches, hanging mycelium lanterns, brass piping along walls, no text, no labels, edge-to-edge floor texture",
+      "width_tiles": 7,
+      "height_tiles": 7,
+      "ambient_palette": "warm_lantern",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "communal_hearth",
+          "label": "Communal Hearth",
+          "description": "A central brass brazier burning with bioluminescent fungal spores",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Maintenance Yard",
+      "biome": "Engineering",
+      "purpose": "Engineers perform maintenance here to ensure train integrity using bio-fuel.",
+      "decor_tags": [
+        "rusted_iron_plating",
+        "tool_racks",
+        "exposed_pipes"
+      ],
+      "activity_tags": [
+        "welding",
+        "pipe_repair"
+      ],
+      "flux_floor_prompt": "pixel art of heavy rusted iron plating with oil stains and brass rivets",
+      "room_scene_prompt": "top-down view of an engineering maintenance yard, rusted iron walls, exposed brass piping, tool racks with utilitarian wrenches, no text, no labels, edge-to-edge floor texture",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "dusty_brown",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "bio_fuel_converter",
+          "label": "Bio-Fuel Converter",
+          "description": "A large brass tank processing organic matter into glowing fuel",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Council Chamber",
+      "biome": "Administrative",
+      "purpose": "Passenger Council meets here to negotiate labor welfare and strike actions.",
+      "decor_tags": [
+        "brass_table",
+        "mycelium_tapestries",
+        "high_backed_chairs"
+      ],
+      "activity_tags": [
+        "negotiation",
+        "voting"
+      ],
+      "flux_floor_prompt": "pixel art of polished dark mahogany floor with intricate brass inlay",
+      "room_scene_prompt": "top-down view of a council chamber, dark mahogany walls, central circular brass table, hanging mycelium tapestries, no text, no labels, edge-to-edge floor texture",
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "ambient_palette": "focused_blue",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "council_gavel",
+          "label": "Council Gavel",
+          "description": "A heavy brass tool used to signal labor strike actions",
+          "anchor": "center",
+          "width_tiles": 1,
+          "height_tiles": 1
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Kaelen Vane",
+      "role_name": "Chief Conductor",
+      "activity": "Adjusting throttle lock to influence train_speed",
+      "home_base": "Throttle Control Hub",
+      "arc_goal": "Maintain train_speed above 80% to satisfy Conductors Guild",
+      "inventory": [
+        {
+          "name": "throttle_lock_override",
+          "description": "A heavy brass key for manual engine control",
+          "quantity": 1
+        },
+        {
+          "name": "ticket_express_01",
+          "description": "A golden ticket for priority boarding",
+          "quantity": 5
+        },
+        {
+          "name": "vibration_dampener_01",
+          "description": "Rubberized padding to reduce engine shake",
+          "quantity": 3
+        },
+        {
+          "name": "ration_pack_01",
+          "description": "Standard issue nutrient block",
+          "quantity": 10
+        },
+        {
+          "name": "labor_badge_01",
+          "description": "Official guild insignia",
+          "quantity": 1
+        },
+        {
+          "name": "bio_fuel_canister_01",
+          "description": "Refined organic fuel for the engine",
+          "quantity": 2
+        },
+        {
+          "name": "wrench_maintenance_01",
+          "description": "Standard tool for throttle adjustments",
+          "quantity": 1
+        },
+        {
+          "name": "cooperation_meter_01",
+          "description": "Device to track passenger morale",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Control Console",
+          "asset_type": "Stationary",
+          "description": "The main interface for train velocity",
+          "story_use": "Used to manipulate train_speed"
+        },
+        {
+          "asset_name": "Guild Ledger",
+          "asset_type": "Document",
+          "description": "Records of speed compliance",
+          "story_use": "Used to track Conductors Guild mandates"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "speed_dynamics",
+          "topic": "Engine Mechanics",
+          "summary": "High speed causes vibration which lowers passenger_cooperation",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "guild_protocol",
+          "topic": "Conductors Guild Rules",
+          "summary": "Speed must exceed 80% capacity at all times",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Elara Thorne",
+      "role_name": "Head Botanist",
+      "activity": "Using access_key_botany to influence crop_yield",
+      "home_base": "Seed Archive",
+      "arc_goal": "Increase crop_yield to satisfy Botany Bureau",
+      "inventory": [
+        {
+          "name": "access_key_botany",
+          "description": "Digital key for greenhouse access",
+          "quantity": 1
+        },
+        {
+          "name": "seed_packet_rare_01",
+          "description": "Genetically modified heirloom seeds",
+          "quantity": 4
+        },
+        {
+          "name": "seed_packet_common_01",
+          "description": "Standard wheat seeds",
+          "quantity": 20
+        },
+        {
+          "name": "fertility_sensor_01",
+          "description": "Probe for measuring soil_fertility",
+          "quantity": 2
+        },
+        {
+          "name": "nutrient_injector_01",
+          "description": "Tool for direct soil enrichment",
+          "quantity": 3
+        },
+        {
+          "name": "fertilizer_bio_01",
+          "description": "Organic compost mix",
+          "quantity": 5
+        },
+        {
+          "name": "ration_pack_01",
+          "description": "Standard issue nutrient block",
+          "quantity": 5
+        },
+        {
+          "name": "labor_badge_01",
+          "description": "Official bureau insignia",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Growth Chamber",
+          "asset_type": "Facility",
+          "description": "Controlled environment for rare seeds",
+          "story_use": "Used to boost crop_yield"
+        },
+        {
+          "asset_name": "Seed Vault",
+          "asset_type": "Storage",
+          "description": "Secure container for rare genetic material",
+          "story_use": "Used to store rare seed_packet_rare_01"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "soil_science",
+          "topic": "Soil Fertility",
+          "summary": "Nutrient enrichment increases crop_yield after 2 cycles",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "botany_mandate",
+          "topic": "Biodiversity",
+          "summary": "Crop diversity must exceed 5 species for bureau approval",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Jaxon Reed",
+      "role_name": "Maintenance Lead",
+      "activity": "Repairing systems to influence soil_fertility",
+      "home_base": "Maintenance Yard",
+      "arc_goal": "Improve soil_fertility to satisfy Engineers",
+      "inventory": [
+        {
+          "name": "wrench_maintenance_01",
+          "description": "Heavy duty repair tool",
+          "quantity": 2
+        },
+        {
+          "name": "vibration_dampener_01",
+          "description": "Industrial shock absorber",
+          "quantity": 4
+        },
+        {
+          "name": "bio_fuel_canister_01",
+          "description": "Fuel for maintenance drones",
+          "quantity": 3
+        },
+        {
+          "name": "ration_pack_01",
+          "description": "Standard issue nutrient block",
+          "quantity": 8
+        },
+        {
+          "name": "labor_badge_01",
+          "description": "Engineering guild badge",
+          "quantity": 1
+        },
+        {
+          "name": "fertility_sensor_01",
+          "description": "Sensor for checking soil health",
+          "quantity": 1
+        },
+        {
+          "name": "nutrient_injector_01",
+          "description": "Tool for fixing nutrient leaks",
+          "quantity": 2
+        },
+        {
+          "name": "ticket_express_01",
+          "description": "Used for travel between cars",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Repair Bay",
+          "asset_type": "Workshop",
+          "description": "Area for fixing train components",
+          "story_use": "Used to maintain train integrity"
+        },
+        {
+          "asset_name": "Tool Bench",
+          "asset_type": "Furniture",
+          "description": "Organized storage for maintenance gear",
+          "story_use": "Used to store wrench_maintenance_01"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "system_integrity",
+          "topic": "Train Maintenance",
+          "summary": "Engineers leverage maintenance access to control train integrity",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "soil_repair",
+          "topic": "Soil Health",
+          "summary": "Collective tending improves soil_fertility over 1 cycle",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Mira Sol",
+      "role_name": "Council Liaison",
+      "activity": "Organizing collective tending to influence passenger_cooperation",
+      "home_base": "Council Chamber",
+      "arc_goal": "Keep workload below 50% to satisfy Passenger Council",
+      "inventory": [
+        {
+          "name": "labor_badge_01",
+          "description": "Council representative pin",
+          "quantity": 1
+        },
+        {
+          "name": "cooperation_meter_01",
+          "description": "Device to track group morale",
+          "quantity": 1
+        },
+        {
+          "name": "ration_pack_01",
+          "description": "Extra rations for distribution",
+          "quantity": 15
+        },
+        {
+          "name": "ticket_express_01",
+          "description": "Travel permits for commuters",
+          "quantity": 10
+        },
+        {
+          "name": "seed_packet_common_01",
+          "description": "Seeds for community gardens",
+          "quantity": 5
+        },
+        {
+          "name": "fertilizer_bio_01",
+          "description": "Bulk fertilizer for communal plots",
+          "quantity": 3
+        },
+        {
+          "name": "vibration_dampener_01",
+          "description": "Comfort padding for passengers",
+          "quantity": 2
+        },
+        {
+          "name": "nutrient_injector_01",
+          "description": "Small injector for personal plots",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Council Podium",
+          "asset_type": "Furniture",
+          "description": "Platform for public announcements",
+          "story_use": "Used to influence passenger_cooperation"
+        },
+        {
+          "asset_name": "Ration Depot",
+          "asset_type": "Storage",
+          "description": "Central hub for resource distribution",
+          "story_use": "Used to manage ration_pack_01"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "labor_welfare",
+          "topic": "Passenger Rights",
+          "summary": "Workload must remain below 50% to prevent strikes",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "social_dynamics",
+          "topic": "Cooperation",
+          "summary": "High train speed decreases passenger_cooperation over 3 cycles",
+          "confidence": 92
+        }
+      ]
+    },
+    {
+      "display_name": "Silas Vane",
+      "role_name": "Seed Archivist",
+      "activity": "Managing the Seed Archive to influence crop_yield",
+      "home_base": "Seed Archive",
+      "arc_goal": "Preserve rare genetic strains to satisfy the Botany Bureau mandate",
+      "inventory": [
+        {
+          "name": "Cryo-Stasis Vial",
+          "description": "A pressurized glass tube containing dormant ancient flora.",
+          "quantity": 5
+        },
+        {
+          "name": "Archive Access Card",
+          "description": "A magnetic strip granting entry to restricted seed vaults.",
+          "quantity": 1
+        },
+        {
+          "name": "Genetic Sequencer",
+          "description": "A handheld device for verifying seed purity.",
+          "quantity": 1
+        },
+        {
+          "name": "Nutrient Gel Pack",
+          "description": "A concentrated food source for germinating seeds.",
+          "quantity": 10
+        },
+        {
+          "name": "Botanist Logbook",
+          "description": "A handwritten record of every seed planted on the Express.",
+          "quantity": 1
+        },
+        {
+          "name": "Sterilization Spray",
+          "description": "A chemical mist to prevent cross-contamination in the archive.",
+          "quantity": 3
+        },
+        {
+          "name": "Seed Packet Rare 01",
+          "description": "A packet of bioluminescent ferns.",
+          "quantity": 2
+        },
+        {
+          "name": "Emergency Sealant",
+          "description": "Quick-dry putty for patching cracked glass containers.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Vault Alpha",
+          "asset_type": "Storage",
+          "description": "A climate-controlled room for rare specimens.",
+          "story_use": "Used to store seeds that influence crop_yield."
+        },
+        {
+          "asset_name": "Microscope Station",
+          "asset_type": "Workstation",
+          "description": "A high-powered lens for seed inspection.",
+          "story_use": "Used to verify the quality of seeds before planting."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "genetics_101",
+          "topic": "Seed Viability",
+          "summary": "Understanding how to maximize crop_yield through selective breeding.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "bureau_politics",
+          "topic": "Botany Bureau Regulations",
+          "summary": "Knowing which seeds are legally permitted for cultivation.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Kora Vance",
+      "role_name": "Commuter Representative",
+      "activity": "Lobbying the Passenger Council to influence passenger_cooperation",
+      "home_base": "Commuter Lounge",
+      "arc_goal": "Reduce workload to keep passenger_cooperation high",
+      "inventory": [
+        {
+          "name": "Strike Sign",
+          "description": "A placard used during labor protests.",
+          "quantity": 1
+        },
+        {
+          "name": "Ration Pack 01",
+          "description": "Standard issue food for long-haul commuters.",
+          "quantity": 12
+        },
+        {
+          "name": "Megaphone",
+          "description": "A device for broadcasting council grievances.",
+          "quantity": 1
+        },
+        {
+          "name": "Labor Badge 01",
+          "description": "An identification badge for authorized workers.",
+          "quantity": 1
+        },
+        {
+          "name": "Petition Scroll",
+          "description": "A list of signatures demanding better conditions.",
+          "quantity": 1
+        },
+        {
+          "name": "Commuter Map",
+          "description": "A schematic of the train's living quarters.",
+          "quantity": 1
+        },
+        {
+          "name": "Coffee Thermos",
+          "description": "A battered metal container for caffeine.",
+          "quantity": 1
+        },
+        {
+          "name": "Flashlight",
+          "description": "A heavy-duty light for navigating dark corridors.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Lounge Podium",
+          "asset_type": "Furniture",
+          "description": "A raised platform for addressing the commuters.",
+          "story_use": "Used to rally support for labor strikes."
+        },
+        {
+          "asset_name": "Bulletin Board",
+          "asset_type": "Communication",
+          "description": "A board for posting council updates.",
+          "story_use": "Used to spread information about train conditions."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "labor_law",
+          "topic": "Passenger Rights",
+          "summary": "Understanding the rules governing labor welfare.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "council_secrets",
+          "topic": "Council Corruption",
+          "summary": "Knowing which council members are taking bribes.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Bram Halloway",
+      "role_name": "Fuel Technician",
+      "activity": "Operating the Maintenance Yard to influence train_speed",
+      "home_base": "Maintenance Yard",
+      "arc_goal": "Optimize bio-fuel conversion to satisfy the Engineers",
+      "inventory": [
+        {
+          "name": "Bio Fuel Canister 01",
+          "description": "A container of refined organic fuel.",
+          "quantity": 4
+        },
+        {
+          "name": "Wrench Maintenance 01",
+          "description": "A heavy-duty tool for engine repairs.",
+          "quantity": 1
+        },
+        {
+          "name": "Fuel Converter 01",
+          "description": "A device for processing organic waste into fuel.",
+          "quantity": 1
+        },
+        {
+          "name": "Safety Goggles",
+          "description": "Protective eyewear for working with volatile fuels.",
+          "quantity": 1
+        },
+        {
+          "name": "Pressure Gauge",
+          "description": "A tool for monitoring fuel line pressure.",
+          "quantity": 1
+        },
+        {
+          "name": "Grease Rag",
+          "description": "A dirty cloth for cleaning engine parts.",
+          "quantity": 5
+        },
+        {
+          "name": "Spare Valve",
+          "description": "A replacement part for fuel lines.",
+          "quantity": 2
+        },
+        {
+          "name": "Work Gloves",
+          "description": "Thick leather gloves for handling hot machinery.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Fuel Refinery",
+          "asset_type": "Machinery",
+          "description": "A large vat for converting biomass to fuel.",
+          "story_use": "Used to increase train_speed."
+        },
+        {
+          "asset_name": "Tool Bench",
+          "asset_type": "Workstation",
+          "description": "A sturdy table for engine maintenance.",
+          "story_use": "Used to repair train systems."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "engine_mechanics",
+          "topic": "Fuel Efficiency",
+          "summary": "Understanding how to maximize engine output.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "safety_protocols",
+          "topic": "Hazardous Materials",
+          "summary": "Knowing how to handle volatile bio-fuel safely.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra Thorne",
+      "role_name": "Hydroponics Specialist",
+      "activity": "Tending the Hydroponics Bay to influence soil_fertility",
+      "home_base": "Hydroponics Bay",
+      "arc_goal": "Improve soil_fertility to boost crop_yield",
+      "inventory": [
+        {
+          "name": "Fertility Sensor 01",
+          "description": "A probe for measuring soil nutrient levels.",
+          "quantity": 1
+        },
+        {
+          "name": "Fertilizer Bio 01",
+          "description": "A nutrient-rich compound for plant growth.",
+          "quantity": 5
+        },
+        {
+          "name": "Nutrient Injector 01",
+          "description": "A tool for delivering fertilizer directly to roots.",
+          "quantity": 1
+        },
+        {
+          "name": "Watering Can",
+          "description": "A simple tool for hydration.",
+          "quantity": 1
+        },
+        {
+          "name": "Pruning Shears",
+          "description": "Sharp blades for trimming overgrown plants.",
+          "quantity": 1
+        },
+        {
+          "name": "Seed Packet Common 01",
+          "description": "A packet of standard wheat seeds.",
+          "quantity": 10
+        },
+        {
+          "name": "Soil Sample Kit",
+          "description": "A container for testing soil composition.",
+          "quantity": 3
+        },
+        {
+          "name": "Plant Mister",
+          "description": "A spray bottle for maintaining humidity.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hydroponic Bed",
+          "asset_type": "Agriculture",
+          "description": "A vertical farming unit for crops.",
+          "story_use": "Used to increase soil_fertility."
+        },
+        {
+          "asset_name": "Climate Controller",
+          "asset_type": "Machinery",
+          "description": "A panel for adjusting light and temperature.",
+          "story_use": "Used to optimize crop growth conditions."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "botany_basics",
+          "topic": "Plant Biology",
+          "summary": "Understanding the needs of different crop species.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "soil_science",
+          "topic": "Nutrient Cycles",
+          "summary": "Knowing how to restore soil health.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Orin Krell",
+      "role_name": "Scavenger Trader",
+      "activity": "Trading illicit parts to influence train_speed",
+      "home_base": "Maintenance Yard",
+      "arc_goal": "Monopolize the supply of bio-fuel to control train_speed",
+      "inventory": [
+        {
+          "name": "scrap_metal_shard",
+          "description": "Jagged piece of hull plating",
+          "quantity": 5
+        },
+        {
+          "name": "illicit_fuel_cell",
+          "description": "High-density energy source",
+          "quantity": 2
+        },
+        {
+          "name": "rusted_valve_assembly",
+          "description": "Old plumbing part",
+          "quantity": 3
+        },
+        {
+          "name": "hidden_ledger",
+          "description": "Record of black market debts",
+          "quantity": 1
+        },
+        {
+          "name": "lockpick_set",
+          "description": "Tools for unauthorized access",
+          "quantity": 1
+        },
+        {
+          "name": "old_navigation_map",
+          "description": "Faded map of the express route",
+          "quantity": 1
+        },
+        {
+          "name": "ration_pack_01",
+          "description": "Standard issue food",
+          "quantity": 4
+        },
+        {
+          "name": "bio_fuel_canister_01",
+          "description": "Refined organic fuel",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scavenger Stall",
+          "asset_type": "Market Stall",
+          "description": "A makeshift counter in the yard",
+          "story_use": "Used to trade parts with engineers"
+        },
+        {
+          "asset_name": "Hidden Stash",
+          "asset_type": "Storage Locker",
+          "description": "A locked box under the floorboards",
+          "story_use": "Stores illegal fuel reserves"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "fuel_leak_patterns",
+          "topic": "Engine Efficiency",
+          "summary": "Knows where the fuel lines leak most often",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "black_market_routes",
+          "topic": "Smuggling",
+          "summary": "Understands how to move goods past the council",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Serafina Voss",
+      "role_name": "Bio-Engineer",
+      "activity": "Modifying crop genetics to influence soil_fertility",
+      "home_base": "Hydroponics Bay",
+      "arc_goal": "Create a self-sustaining crop cycle to stabilize soil_fertility",
+      "inventory": [
+        {
+          "name": "nutrient_injector_01",
+          "description": "Precision feeding tool",
+          "quantity": 1
+        },
+        {
+          "name": "seed_packet_rare_01",
+          "description": "Genetically modified heirloom seeds",
+          "quantity": 3
+        },
+        {
+          "name": "fertility_sensor_01",
+          "description": "Measures soil health",
+          "quantity": 1
+        },
+        {
+          "name": "growth_hormone_vial",
+          "description": "Accelerates plant maturation",
+          "quantity": 5
+        },
+        {
+          "name": "pipette_set",
+          "description": "Lab equipment for precise dosing",
+          "quantity": 2
+        },
+        {
+          "name": "sterile_gloves",
+          "description": "Protective gear for handling samples",
+          "quantity": 10
+        },
+        {
+          "name": "petri_dish",
+          "description": "Container for culture growth",
+          "quantity": 4
+        },
+        {
+          "name": "microscope_slide",
+          "description": "Glass for specimen analysis",
+          "quantity": 6
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Bio-Lab Station",
+          "asset_type": "Laboratory",
+          "description": "A clean, sterile workspace",
+          "story_use": "Used for genetic modification experiments"
+        },
+        {
+          "asset_name": "Seed Vault",
+          "asset_type": "Storage",
+          "description": "A climate-controlled cabinet",
+          "story_use": "Secures rare genetic samples"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "soil_microbiome_analysis",
+          "topic": "Soil Fertility",
+          "summary": "Understands the bacterial balance needed for growth",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "genetic_drift_prevention",
+          "topic": "Botany",
+          "summary": "Knows how to keep crop strains pure",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Thaddeus Thorne",
+      "role_name": "Council Auditor",
+      "activity": "Reviewing labor logs to influence passenger_cooperation",
+      "home_base": "Council Chamber",
+      "arc_goal": "Enforce strict labor quotas to maintain passenger_cooperation",
+      "inventory": [
+        {
+          "name": "council_seal",
+          "description": "Official stamp of authority",
+          "quantity": 1
+        },
+        {
+          "name": "ink_quill",
+          "description": "Writing instrument for logs",
+          "quantity": 1
+        },
+        {
+          "name": "parchment_roll",
+          "description": "Official documentation",
+          "quantity": 10
+        },
+        {
+          "name": "bribe_envelope",
+          "description": "Contains hush money",
+          "quantity": 3
+        },
+        {
+          "name": "ledger_book",
+          "description": "Detailed record of labor hours",
+          "quantity": 1
+        },
+        {
+          "name": "access_key_botany",
+          "description": "Key for restricted areas",
+          "quantity": 1
+        },
+        {
+          "name": "ration_pack_01",
+          "description": "Standard issue food",
+          "quantity": 2
+        },
+        {
+          "name": "communication_device",
+          "description": "Used to relay council orders",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Auditor Desk",
+          "asset_type": "Furniture",
+          "description": "A heavy, imposing desk",
+          "story_use": "Used for reviewing labor complaints"
+        },
+        {
+          "asset_name": "Archive Cabinet",
+          "asset_type": "Storage",
+          "description": "Locked filing system",
+          "story_use": "Stores sensitive council documents"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "labor_law_loopholes",
+          "topic": "Labor Welfare",
+          "summary": "Knows how to squeeze workers without triggering strikes",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "political_leverage_tactics",
+          "topic": "Politics",
+          "summary": "Understands how to manipulate council members",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Vespera Kaine",
+      "role_name": "Express Navigator",
+      "activity": "Calibrating engine vibrations to influence train_speed",
+      "home_base": "Throttle Control Hub",
+      "arc_goal": "Optimize engine output to maximize train_speed",
+      "inventory": [
+        {
+          "name": "throttle_lock_override",
+          "description": "Bypasses speed limiters",
+          "quantity": 1
+        },
+        {
+          "name": "navigation_chart",
+          "description": "Map of the express route",
+          "quantity": 2
+        },
+        {
+          "name": "compass_device",
+          "description": "Magnetic orientation tool",
+          "quantity": 1
+        },
+        {
+          "name": "wrench_maintenance_01",
+          "description": "Standard repair tool",
+          "quantity": 1
+        },
+        {
+          "name": "fuel_converter_01",
+          "description": "Converts raw fuel to energy",
+          "quantity": 1
+        },
+        {
+          "name": "vibration_dampener_01",
+          "description": "Reduces engine shaking",
+          "quantity": 2
+        },
+        {
+          "name": "ration_pack_01",
+          "description": "Standard issue food",
+          "quantity": 3
+        },
+        {
+          "name": "signal_flare",
+          "description": "Emergency signaling device",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Navigation Console",
+          "asset_type": "Control Panel",
+          "description": "A complex array of dials and screens",
+          "story_use": "Used to adjust train speed"
+        },
+        {
+          "asset_name": "Observation Deck",
+          "asset_type": "Viewing Area",
+          "description": "A glass-walled room overlooking the tracks",
+          "story_use": "Used to monitor track conditions"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "vibration_resonance_theory",
+          "topic": "Train Speed",
+          "summary": "Understands how to tune engine vibrations for speed",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "route_hazard_mapping",
+          "topic": "Navigation",
+          "summary": "Knows the dangerous sections of the track",
+          "confidence": 89
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Nutrient Enrichment Cycle",
+      "summary": "Hydroponics Specialists and Head Botanists work together to improve soil health, which eventually increases crop yield and stabilizes train speed.",
+      "roles": [
+        "Hydroponics Specialist",
+        "Head Botanist"
+      ],
+      "rooms": [
+        "Hydroponics Bay"
+      ],
+      "pressure": "Soil fertility is currently low, limiting the train's long-term sustainability."
+    },
+    {
+      "label": "Bio-fuel Optimization",
+      "summary": "Bio-Engineers and Fuel Technicians convert crop yields into fuel to increase engine output, directly impacting train speed.",
+      "roles": [
+        "Bio-Engineer",
+        "Fuel Technician"
+      ],
+      "rooms": [
+        "Maintenance Yard"
+      ],
+      "pressure": "Engine output is insufficient to meet the Conductors Guild's speed requirements."
+    },
+    {
+      "label": "Labor Negotiation",
+      "summary": "Council Liaisons and Commuter Representatives negotiate workload and speed limits to maintain passenger cooperation.",
+      "roles": [
+        "Council Liaison",
+        "Commuter Representative"
+      ],
+      "rooms": [
+        "Commuter Lounge",
+        "Council Chamber"
+      ],
+      "pressure": "High-velocity vibrations are decreasing labor efficiency and threatening a strike."
+    }
+  ],
+  "player_entry_points": [
+    "The Commuter Lounge during a scheduled shift change.",
+    "The Maintenance Yard after a reported engine vibration spike.",
+    "The Seed Archive when a new, rare specimen is discovered.",
+    "The Council Chamber during a budget allocation hearing."
+  ],
+  "conflict_hooks": [
+    "The train speed is causing structural damage, but the Conductors Guild refuses to slow down until crop yields increase.",
+    "The Botany Bureau is hoarding rare seeds, preventing the Fuel Technician from creating the biofuel needed to maintain the train's current velocity.",
+    "Commuters are staging a sit-in at the Throttle Control Hub to protest the vibration levels caused by the current engine output."
+  ],
+  "custom_actions": [
+    "EnrichSoil",
+    "CalibrateThrottle",
+    "HarvestRareSeeds",
+    "RationBiofuel",
+    "MediateLaborDispute",
+    "OverrideGreenhouseLock"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "EnrichSoil",
+      "initiating_role": "Hydroponics Specialist",
+      "target_role": "Head Botanist",
+      "situation": "Soil fertility is critically low, threatening crop yield.",
+      "proposed_effects": [
+        "status"
+      ],
+      "coordinator_checks": [
+        "Verify Hydroponics Specialist has access to nutrient reserves",
+        "Check if Head Botanist consents to soil modification"
+      ]
+    },
+    {
+      "action_name": "RationBiofuel",
+      "initiating_role": "Fuel Technician",
+      "target_role": "Chief Conductor",
+      "situation": "Train speed is too high, causing passenger unrest.",
+      "proposed_effects": [
+        "transfer",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Verify Fuel Technician has physical access to fuel lines",
+        "Check if Chief Conductor has authorized the speed reduction"
+      ]
+    },
+    {
+      "action_name": "HarvestRareSeeds",
+      "initiating_role": "Seed Archivist",
+      "target_role": "Bio-Engineer",
+      "situation": "Need to create new biofuel strains to boost engine output.",
+      "proposed_effects": [
+        "create_item"
+      ],
+      "coordinator_checks": [
+        "Verify Seed Archivist has the correct access key",
+        "Check if Bio-Engineer has the equipment to process the seeds"
+      ]
+    },
+    {
+      "action_name": "MediateLaborDispute",
+      "initiating_role": "Council Liaison",
+      "target_role": "Commuter Representative",
+      "situation": "Commuters are threatening a strike due to high-velocity vibrations.",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Verify Council Liaison is present in the Commuter Lounge",
+        "Check if Commuter Representative agrees to negotiate"
+      ]
+    }
+  ],
+  "social_rules": [
+    "All resource transfers must be logged in the Council Chamber.",
+    "Engineers hold veto power over speed adjustments exceeding 90%.",
+    "Botanists must approve any seed removal from the Archive.",
+    "Commuter labor strikes require a majority vote in the Lounge."
+  ],
+  "item_themes": [
+    "seeds",
+    "fertilizer",
+    "tickets",
+    "tools"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "fertility_sensor_01",
+      "name": "Brass Soil Probe",
+      "price": 45,
+      "mass": 1.2,
+      "description": "A handheld brass device that glows soft amber when soil fertility is optimal. Essential for monitoring the Botany Bureau's mandates.",
+      "image_prompt": "A steampunk brass soil probe with glowing amber bioluminescent veins, intricate clockwork gears, white background.",
+      "category": "Instruments"
+    },
+    {
+      "item_id": "seed_packet_rare_01",
+      "name": "Luminescent Fern Spores",
+      "price": 120,
+      "mass": 0.1,
+      "description": "Rare spores that thrive in high-vibration environments. Highly sought after by Botanists to meet diversity quotas.",
+      "image_prompt": "A small glass vial containing glowing blue spores, ornate brass cap, macro photography, solarpunk aesthetic.",
+      "category": "Seeds"
+    },
+    {
+      "item_id": "ticket_express_01",
+      "name": "Conductors Guild Pass",
+      "price": 200,
+      "mass": 0.05,
+      "description": "A stamped brass token granting passage. Valid only when train speed exceeds 80% capacity.",
+      "image_prompt": "A heavy brass coin with an engraved train silhouette and glowing green inlay, high detail, cinematic lighting.",
+      "category": "Tickets"
+    },
+    {
+      "item_id": "fertilizer_bio_01",
+      "name": "Concentrated Compost Slurry",
+      "price": 30,
+      "mass": 5.0,
+      "description": "Nutrient-rich organic matter processed from passenger waste. Directly boosts soil fertility.",
+      "image_prompt": "A sealed glass canister filled with glowing green organic sludge, brass piping, industrial solarpunk style.",
+      "category": "Fertilizer"
+    },
+    {
+      "item_id": "wrench_maintenance_01",
+      "name": "Engineers Calibrated Wrench",
+      "price": 85,
+      "mass": 2.5,
+      "description": "A specialized tool for adjusting the throttle lock. Engineers use this to maintain train integrity.",
+      "image_prompt": "An ornate brass wrench with bioluminescent etchings, heavy duty, resting on a wooden workbench.",
+      "category": "Tools"
+    },
+    {
+      "item_id": "ration_pack_01",
+      "name": "Passenger Welfare Ration",
+      "price": 15,
+      "mass": 0.8,
+      "description": "Standard issue food pack provided by the Passenger Council. Keeps labor efficiency stable.",
+      "image_prompt": "A vacuum-sealed pouch with a brass clip, containing dried nutrient-dense greens, soft lighting.",
+      "category": "Consumables"
+    },
+    {
+      "item_id": "access_key_botany",
+      "name": "Greenhouse Access Key",
+      "price": 500,
+      "mass": 0.2,
+      "description": "A crystalline keycard that unlocks restricted greenhouse sectors. Required for rare seed cultivation.",
+      "image_prompt": "A glowing crystal keycard with brass circuitry embedded, floating slightly, ethereal glow.",
+      "category": "Credentials"
+    },
+    {
+      "item_id": "fuel_converter_01",
+      "name": "Bio-Fuel Catalyst",
+      "price": 250,
+      "mass": 3.0,
+      "description": "A chemical agent that accelerates the conversion of crop yield into engine output.",
+      "image_prompt": "A glass flask filled with swirling iridescent liquid, brass stand, laboratory setting.",
+      "category": "Materials"
+    },
+    {
+      "item_id": "vibration_dampener_01",
+      "name": "Harmonic Dampener",
+      "price": 150,
+      "mass": 4.2,
+      "description": "Attaches to train walls to reduce high-velocity vibration, improving passenger cooperation.",
+      "image_prompt": "A circular brass device with rubberized dampening pads, glowing blue light, technical schematic style.",
+      "category": "Tools"
+    },
+    {
+      "item_id": "seed_packet_common_01",
+      "name": "Fast-Growth Wheat Seeds",
+      "price": 10,
+      "mass": 0.5,
+      "description": "Hardy seeds that grow quickly to provide immediate bio-fuel for the engine.",
+      "image_prompt": "A burlap sack tied with brass wire, overflowing with golden glowing seeds, rustic solarpunk.",
+      "category": "Seeds"
+    },
+    {
+      "item_id": "labor_badge_01",
+      "name": "Council Labor Badge",
+      "price": 50,
+      "mass": 0.1,
+      "description": "Worn by commuters to signify participation in collective tending. Increases soil fertility over time.",
+      "image_prompt": "A brass pin shaped like a leaf with a glowing center, pinned to a rough fabric garment.",
+      "category": "Credentials"
+    },
+    {
+      "item_id": "throttle_lock_override",
+      "name": "Throttle Override Key",
+      "price": 750,
+      "mass": 0.5,
+      "description": "An illegal but effective tool to bypass the Conductors Guild throttle lock.",
+      "image_prompt": "A jagged brass key with red glowing runes, dark background, mysterious atmosphere.",
+      "category": "Tools"
+    },
+    {
+      "item_id": "nutrient_injector_01",
+      "name": "Automated Nutrient Injector",
+      "price": 300,
+      "mass": 2.0,
+      "description": "A precision tool for injecting fertilizer directly into the root systems of rare crops.",
+      "image_prompt": "A brass syringe-like device with a digital pressure gauge, glowing green fluid, high-tech.",
+      "category": "Tools"
+    },
+    {
+      "item_id": "cooperation_meter_01",
+      "name": "Social Cohesion Gauge",
+      "price": 95,
+      "mass": 0.9,
+      "description": "Measures the current level of passenger cooperation. Essential for predicting strike actions.",
+      "image_prompt": "A brass dial gauge with a needle pointing to 'High', glowing blue backlight, intricate clockwork.",
+      "category": "Instruments"
+    },
+    {
+      "item_id": "bio_fuel_canister_01",
+      "name": "Refined Bio-Fuel Cell",
+      "price": 400,
+      "mass": 10.0,
+      "description": "A heavy canister of refined bio-fuel, ready for engine injection to boost train speed.",
+      "image_prompt": "A large brass canister with a glowing green fuel level indicator, industrial setting.",
+      "category": "Materials"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "ve-001-wardrobe-policy",
+    "world_wardrobe_brief": "The Verdant Express utilizes a bioluminescent brass-punk aesthetic. Attire is functional, utilitarian, and integrated with organic elements. Characters wear heavy-duty workwear modified with brass fittings, mycelium-infused fabrics, and protective gear suitable for a living, vibrating train environment.",
+    "forbidden_aesthetics": [
+      "modern plastic",
+      "neon signs",
+      "concrete",
+      "asphalt",
+      "photorealism",
+      "high-tech synthetic fabrics",
+      "cyberpunk chrome",
+      "medieval fantasy armor"
+    ],
+    "palette_families": [
+      {
+        "name": "Engineering Core",
+        "dominant": "#2d4a3e",
+        "accent": "#7fff00",
+        "trim": "#b8860b",
+        "material": "rusted iron and thick canvas"
+      },
+      {
+        "name": "Botany Bureau",
+        "dominant": "#1a2421",
+        "accent": "#e0ffff",
+        "trim": "#7fff00",
+        "material": "translucent bio-glass and organic fibers"
+      },
+      {
+        "name": "Council Administrative",
+        "dominant": "#b8860b",
+        "accent": "#2d4a3e",
+        "trim": "#e0ffff",
+        "material": "polished mahogany and heavy wool"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "conductor_rule",
+        "role_keywords": [
+          "Conductor",
+          "Navigator"
+        ],
+        "attire": [
+          "brass-buttoned heavy coats",
+          "utility vests",
+          "goggles with brass rims"
+        ],
+        "props": [
+          "throttle lock override",
+          "brass soil probe"
+        ],
+        "palette_notes": "Dominant deep greens with brass trim.",
+        "silhouette_notes": "Stout, authoritative, rigid posture.",
+        "avoid": []
+      },
+      {
+        "rule_id": "botanist_rule",
+        "role_keywords": [
+          "Botanist",
+          "Archivist",
+          "Bio-Engineer"
+        ],
+        "attire": [
+          "translucent bio-glass aprons",
+          "multi-pocketed tunics",
+          "gloves with mycelium patterns"
+        ],
+        "props": [
+          "nutrient injector",
+          "seed packets"
+        ],
+        "palette_notes": "Dark forest greens with bioluminescent accents.",
+        "silhouette_notes": "Rounded, soft, carrying pouches.",
+        "avoid": []
+      },
+      {
+        "rule_id": "maintenance_rule",
+        "role_keywords": [
+          "Maintenance",
+          "Technician",
+          "Scavenger"
+        ],
+        "attire": [
+          "rusted iron-plated jumpsuits",
+          "heavy leather boots",
+          "tool belts"
+        ],
+        "props": [
+          "calibrated wrench",
+          "bio-fuel canister"
+        ],
+        "palette_notes": "Rusted iron and dark mahogany tones.",
+        "silhouette_notes": "Bulky, utilitarian, heavy-set.",
+        "avoid": []
+      },
+      {
+        "rule_id": "council_rule",
+        "role_keywords": [
+          "Council",
+          "Liaison",
+          "Auditor"
+        ],
+        "attire": [
+          "structured mahogany-colored robes",
+          "brass-trimmed sashes",
+          "formal collars"
+        ],
+        "props": [
+          "council labor badge",
+          "social cohesion gauge"
+        ],
+        "palette_notes": "Polished brass and deep mahogany.",
+        "silhouette_notes": "Tall, upright, clean lines.",
+        "avoid": []
+      }
+    ],
+    "default_rule": {
+      "rule_id": "commuter_default",
+      "role_keywords": [
+        "Commuter",
+        "Passenger"
+      ],
+      "attire": [
+        "simple layered tunics",
+        "sturdy trousers",
+        "mycelium-fiber scarves"
+      ],
+      "props": [
+        "ration pack",
+        "labor badge"
+      ],
+      "palette_notes": "Muted earth tones with subtle green highlights.",
+      "silhouette_notes": "Functional, modest, everyday wear.",
+      "avoid": []
+    },
+    "visual_consistency_rules": [
+      "All characters must have a thick, dark, high-contrast ink-line outline.",
+      "Use a strict top-down perspective for all sprite assets.",
+      "Ensure all tools and props are oversized for readability at 64x64.",
+      "Incorporate glowing mycelium elements on all character clothing.",
+      "Avoid complex shading; prioritize flat color blocks with sharp highlights.",
+      "Maintain a stout, functional body proportion for all roles."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "ve-001",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90 degrees",
+      "scale_rule": "1 tile equals 1 meter"
+    },
+    "palette": {
+      "dominant": "#2d4a3e",
+      "secondary": "#b8860b",
+      "accent": "#7fff00",
+      "shadow": "#1a2421",
+      "highlight": "#e0ffff"
+    },
+    "materials": [
+      "oxidized brass",
+      "translucent bio-glass",
+      "dark polished mahogany",
+      "glowing fungal mycelium",
+      "rusted iron plating"
+    ],
+    "lighting": "Ambient bioluminescent glow from flora, sharp directional steam-vent highlights, no global sun.",
+    "architecture": [
+      "modular train carriage segments",
+      "curved greenhouse domes",
+      "exposed brass piping",
+      "hanging root-tethered structures"
+    ],
+    "terrain": {
+      "ground": "metallic floor grating with mossy gaps",
+      "path": "worn brass floor plates",
+      "edge": "glowing mycelium containment borders"
+    },
+    "sprite_language": {
+      "body_proportion": "stout, functional, utilitarian",
+      "outline": "thick, dark, high-contrast ink-line",
+      "role_readability": "silhouette-based tool-carrying poses"
+    },
+    "world_prompt_prefix": "solarpunk bioluminescent brass-punk train interior, top-down view, high detail, 2d vector art style,",
+    "sprite_prompt_prefix": "top-down sprite, solarpunk aesthetic, thick outline, character carrying tools,",
+    "forbidden_visuals": [
+      "photorealism",
+      "text labels",
+      "ui overlays",
+      "modern plastic",
+      "neon signs",
+      "concrete",
+      "asphalt",
+      "skyboxes",
+      "3d perspective"
+    ],
+    "canon_hash": "e924d94d71c862ed"
+  }
+}

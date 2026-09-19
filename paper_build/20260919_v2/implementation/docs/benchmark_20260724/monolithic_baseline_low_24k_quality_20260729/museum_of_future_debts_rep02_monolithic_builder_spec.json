@@ -1,0 +1,1564 @@
+{
+  "world_name": "Museum of Future Debts",
+  "world_id": "future_debt_museum_01",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "grounded_antique_market",
+    "profile_id": "grounded_antique_market",
+    "locale": "The Probability Vaults",
+    "tone": "Clinical, speculative, and heavy with impending obligation",
+    "visual_direction": "Black basalt, frosted glass, oxidized silver, signal red accents, pale mint lighting",
+    "currency_code": "CNY",
+    "currency_symbol": "¥",
+    "currency_minor_unit": "fen",
+    "currency_name": "Causal Credit",
+    "domain_label": "Museum of Future Debts",
+    "starting_wallet_minor": {
+      "min": 5000,
+      "max": 15000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "grounded_antique_market_v1",
+      "frontend_affordance_id": "grounded_antique_market_v1",
+      "asset_prompt_kit_id": "grounded_antique_market_v1"
+    },
+    "policy_refs": {
+      "economy_policy_id": "cny_market_v1",
+      "item_collection_id": "antique_market_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "grounded_antique_market_v1",
+      "property_policy_id": "grounded_antique_market_v1",
+      "knowledge_policy_id": "grounded_antique_market_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "counterfactual museum, obligation auction, probability politics",
+  "premise": "A museum exhibiting debts that have not yet occurred, where curators stabilize alternate histories and visitors can manifest obligations into reality.",
+  "simulation_objective": "Manipulate the provenance of future liabilities to shift political power and economic solvency.",
+  "agent_count_target": 12,
+  "player_count_target": 4,
+  "economy_focus": "Causal consequence trading and liability provenance swapping.",
+  "exploration_focus": "Uncovering the specific triggers of un-incurred national and guild debts.",
+  "conflict_tone": "Bureaucratic, cold, and high-stakes.",
+  "visual_style": "Top-down pixel art with heavy basalt textures, glowing mint glass, and sharp signal red indicators.",
+  "rooms": [
+    {
+      "name": "The Hall of Unborn Deficits",
+      "biome": "Museum Gallery",
+      "purpose": "Exhibition of future national bankruptcies.",
+      "decor_tags": [
+        "basalt",
+        "glass",
+        "silver"
+      ],
+      "activity_tags": [
+        "inspecting",
+        "bidding"
+      ],
+      "archetype": "market_exchange",
+      "ambient_palette": "soft_mint",
+      "width_tiles": 40,
+      "height_tiles": 40,
+      "floor_tile": "stone_checker",
+      "wall_tile": "glass_case_wall",
+      "flux_floor_prompt": "Polished black basalt tiles with glowing mint grout lines.",
+      "room_scene_prompt": "A vast gallery of floating frosted glass cubes containing shimmering silver tallies.",
+      "scene_components": [
+        {
+          "component_id": "monolith_of_default",
+          "label": "The Default Monolith",
+          "description": "A 3-tile high pillar of oxidized silver representing a future guild collapse.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Actuary's Pit",
+      "biome": "Office",
+      "purpose": "Pricing of alternate history probabilities.",
+      "archetype": "workshop",
+      "ambient_palette": "low_lantern",
+      "width_tiles": 30,
+      "height_tiles": 30,
+      "floor_tile": "stone_slabs",
+      "wall_tile": "storage_wall",
+      "decor_tags": [
+        "ceramic",
+        "tally",
+        "red"
+      ],
+      "flux_floor_prompt": "Rough stone slabs with red signal paint markings.",
+      "room_scene_prompt": "A sunken pit filled with white ceramic tally forms and humming probability engines.",
+      "scene_components": [
+        {
+          "component_id": "probability_engine",
+          "label": "Causal Loom",
+          "description": "A machine of spinning silver rings calculating debt maturity.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Provenance Vault",
+      "biome": "Security",
+      "purpose": "Storage of liability ownership records.",
+      "archetype": "archive_ritual",
+      "ambient_palette": "focused_blue",
+      "width_tiles": 25,
+      "height_tiles": 45,
+      "floor_tile": "forge_slate",
+      "wall_tile": "library_shelf_wall",
+      "decor_tags": [
+        "security",
+        "vault",
+        "basalt"
+      ],
+      "flux_floor_prompt": "Dark slate tiles with etched circuit patterns.",
+      "room_scene_prompt": "High shelves of basalt containing frosted glass canisters of debt-smoke.",
+      "scene_components": [
+        {
+          "component_id": "vault_door",
+          "label": "The Causal Gate",
+          "description": "A massive circular door of oxidized silver and red glass.",
+          "anchor": "south_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Manifestation Plaza",
+      "biome": "Public Space",
+      "purpose": "Where visitors make exhibits become real.",
+      "archetype": "commons",
+      "ambient_palette": "clear_day",
+      "width_tiles": 50,
+      "height_tiles": 50,
+      "floor_tile": "yard_pavers",
+      "wall_tile": "yard_fence",
+      "decor_tags": [
+        "open",
+        "monumental",
+        "mint"
+      ],
+      "flux_floor_prompt": "White ceramic pavers with mint-colored light strips.",
+      "room_scene_prompt": "An open plaza where a central fountain of liquid silver flows upward.",
+      "scene_components": [
+        {
+          "component_id": "manifest_fountain",
+          "label": "The Upward Fountain",
+          "description": "A gravity-defying stream of silver representing realized debt.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Liability Exchange",
+      "biome": "Market",
+      "purpose": "Trading of future obligations between agents.",
+      "archetype": "market_exchange",
+      "ambient_palette": "warm_lantern",
+      "width_tiles": 45,
+      "height_tiles": 35,
+      "floor_tile": "red_brick",
+      "wall_tile": "stall_canvas_wall",
+      "decor_tags": [
+        "trade",
+        "stalls",
+        "silver"
+      ],
+      "flux_floor_prompt": "Red brick floor with silver inlay patterns.",
+      "room_scene_prompt": "A bustling market of frosted glass stalls where agents whisper over tallies.",
+      "scene_components": [
+        {
+          "component_id": "exchange_board",
+          "label": "The Debt Ticker",
+          "description": "A wall-mounted display of shifting red and mint light bars.",
+          "anchor": "north_east",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Curator's Sanctum",
+      "biome": "Office",
+      "purpose": "Stabilization of the museum's timeline.",
+      "archetype": "council",
+      "ambient_palette": "ember_orange",
+      "width_tiles": 30,
+      "height_tiles": 30,
+      "floor_tile": "library_planks",
+      "wall_tile": "wood_beam_wall",
+      "decor_tags": [
+        "private",
+        "warm",
+        "basalt"
+      ],
+      "flux_floor_prompt": "Dark wood planks with basalt borders.",
+      "room_scene_prompt": "A quiet office with a large basalt desk and a view of the probability looms.",
+      "scene_components": [
+        {
+          "component_id": "curator_desk",
+          "label": "The Anchor Desk",
+          "description": "A heavy basalt desk with a single glowing red button.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [
+    {
+      "role_name": "Curator",
+      "count": 2,
+      "core_values": [
+        "Stability",
+        "Historical Accuracy",
+        "Preservation"
+      ],
+      "activity": "Stabilizing possible obligations in the galleries.",
+      "starting_item_ids": [
+        "stabilization_rod",
+        "curator_seal"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Gallery Wing A",
+          "asset_type": "Real Estate",
+          "description": "A wing of the museum dedicated to future wars.",
+          "story_use": "The curator can lock this wing to prevent trading."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "timeline_alpha",
+          "topic": "Timeline Alpha",
+          "summary": "The most likely future where the Merchant Guild collapses.",
+          "confidence": 95
+        }
+      ]
+    }
+  ],
+  "main_characters": [
+    {
+      "display_name": "High Curator Vael",
+      "role_name": "Curator",
+      "activity": "Overseeing the Hall of Unborn Deficits.",
+      "home_base": "The Curator's Sanctum",
+      "arc_goal": "To prevent the 'Great Default' from manifesting in the real world.",
+      "inventory": [
+        {
+          "name": "Silver Stabilization Rod",
+          "description": "A rod that freezes a debt exhibit in time.",
+          "quantity": 1
+        },
+        {
+          "name": "Basalt Signet",
+          "description": "A ring used to seal vault doors.",
+          "quantity": 1
+        },
+        {
+          "name": "Mint Light Lens",
+          "description": "Allows the wearer to see probability threads.",
+          "quantity": 2
+        },
+        {
+          "name": "Ceramic Tally: War Debt",
+          "description": "A record of a war that hasn't happened yet.",
+          "quantity": 5
+        },
+        {
+          "name": "Oxidized Silver Polish",
+          "description": "Keeps the exhibits looking pristine.",
+          "quantity": 3
+        },
+        {
+          "name": "Frosted Glass Shard",
+          "description": "A fragment of a broken future.",
+          "quantity": 10
+        },
+        {
+          "name": "Signal Red Ink",
+          "description": "Used for marking high-risk liabilities.",
+          "quantity": 1
+        },
+        {
+          "name": "Causal Anchor Bolt",
+          "description": "Physically pins a probability to the floor.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Sanctum Key",
+          "asset_type": "Access",
+          "description": "Master key to the museum's private offices.",
+          "story_use": "Vael uses this to hide sensitive future data."
+        },
+        {
+          "asset_name": "Timeline Archive",
+          "asset_type": "Information",
+          "description": "A collection of discarded futures.",
+          "story_use": "Vael consults this to find leverage over other agents."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "vael_debt_secret",
+          "topic": "Vael's Personal Debt",
+          "summary": "Vael owes a future favor to the Shadow Broker.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "manifestation_trigger",
+          "topic": "Manifestation",
+          "summary": "The exact sequence of bids needed to make a debt real.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Broker Kaelen",
+      "role_name": "Liability Trader",
+      "activity": "Trading debts in the Liability Exchange.",
+      "home_base": "The Liability Exchange",
+      "arc_goal": "To offload his family's future bankruptcy onto a rival.",
+      "inventory": [
+        {
+          "name": "Frosted Glass Ledger",
+          "description": "A tablet tracking current debt prices.",
+          "quantity": 1
+        },
+        {
+          "name": "Silver Tally: Family Ruin",
+          "description": "The debt Kaelen is trying to sell.",
+          "quantity": 1
+        },
+        {
+          "name": "Red Signal Flare",
+          "description": "Used to signal a market crash.",
+          "quantity": 3
+        },
+        {
+          "name": "Mint Scented Oil",
+          "description": "Calms the nerves during high-stakes trades.",
+          "quantity": 5
+        },
+        {
+          "name": "Basalt Paperweight",
+          "description": "Heavy and imposing.",
+          "quantity": 2
+        },
+        {
+          "name": "Ceramic Tally: Minor Default",
+          "description": "Small debts used for bartering.",
+          "quantity": 15
+        },
+        {
+          "name": "Oxidized Silver Chain",
+          "description": "A symbol of his profession.",
+          "quantity": 1
+        },
+        {
+          "name": "Probability Die",
+          "description": "A six-sided die that always lands on 'maybe'.",
+          "quantity": 1
+        },
+        {
+          "name": "Trade Permit",
+          "description": "Official museum document.",
+          "quantity": 1
+        },
+        {
+          "name": "Inkwell of Red",
+          "description": "For signing contracts.",
+          "quantity": 1
+        },
+        {
+          "name": "Glass Stylus",
+          "description": "Writes on ceramic tallies.",
+          "quantity": 2
+        },
+        {
+          "name": "Pocket Watch",
+          "description": "Ticks in reverse.",
+          "quantity": 1
+        },
+        {
+          "name": "Debt Voucher",
+          "description": "Good for one future liability.",
+          "quantity": 10
+        },
+        {
+          "name": "Silver Coin",
+          "description": "Standard currency for small bribes.",
+          "quantity": 50
+        },
+        {
+          "name": "Sealing Wax",
+          "description": "Red wax for official tallies.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Exchange Stall 4",
+          "asset_type": "Commercial",
+          "description": "A prime location in the Liability Exchange.",
+          "story_use": "Kaelen uses this to attract high-value clients."
+        },
+        {
+          "asset_name": "Debt Provenance Log",
+          "asset_type": "Information",
+          "description": "A list of who owned which debt and when.",
+          "story_use": "Kaelen uses this to blackmail rivals."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kaelen_rivalry",
+          "topic": "Rivalry with Elara",
+          "summary": "Elara knows Kaelen's debt is forged.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "market_exploit",
+          "topic": "Market Glitch",
+          "summary": "A way to double-sell a single future liability.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Actuary Thorne",
+      "role_name": "Probability Analyst",
+      "activity": "Calculating risks in the Actuary's Pit.",
+      "home_base": "The Actuary's Pit",
+      "arc_goal": "To find a mathematical proof that the museum is causing the debts it exhibits.",
+      "inventory": [
+        {
+          "name": "Silver Slide Rule",
+          "description": "Used for complex causal calculations.",
+          "quantity": 1
+        },
+        {
+          "name": "Ceramic Tally: Statistical Error",
+          "description": "A debt that shouldn't exist.",
+          "quantity": 1
+        },
+        {
+          "name": "Mint Light Lantern",
+          "description": "Illuminates hidden variables.",
+          "quantity": 1
+        },
+        {
+          "name": "Basalt Abacus",
+          "description": "For counting large future sums.",
+          "quantity": 1
+        },
+        {
+          "name": "Red Signal Chalk",
+          "description": "For marking anomalies on the floor.",
+          "quantity": 10
+        },
+        {
+          "name": "Frosted Glass Compass",
+          "description": "Points toward the most likely future.",
+          "quantity": 1
+        },
+        {
+          "name": "Oxidized Silver Tweezers",
+          "description": "For handling delicate tally shards.",
+          "quantity": 1
+        },
+        {
+          "name": "Causal Logbook",
+          "description": "Thorne's personal observations.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Pit Workshop",
+          "asset_type": "Industrial",
+          "description": "A private corner of the Actuary's Pit.",
+          "story_use": "Thorne conducts secret experiments here."
+        },
+        {
+          "asset_name": "Probability Dataset",
+          "asset_type": "Information",
+          "description": "Raw data from the Causal Loom.",
+          "story_use": "Thorne uses this to predict market shifts."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "thorne_discovery",
+          "topic": "The Feedback Loop",
+          "summary": "The museum's existence increases the probability of the debts it shows.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "vael_secret",
+          "topic": "Vael's Oversight",
+          "summary": "Vael is ignoring a major timeline divergence.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Thief Elara",
+      "role_name": "Provenance Eraser",
+      "activity": "Infiltrating the Provenance Vault.",
+      "home_base": "The Provenance Vault",
+      "arc_goal": "To steal the record of her own future crimes.",
+      "inventory": [
+        {
+          "name": "Silver Lockpick",
+          "description": "Designed for frosted glass locks.",
+          "quantity": 1
+        },
+        {
+          "name": "Basalt Dust",
+          "description": "Used to reveal mint-light lasers.",
+          "quantity": 5
+        },
+        {
+          "name": "Frosted Glass Cloak",
+          "description": "Makes the wearer nearly invisible in the galleries.",
+          "quantity": 1
+        },
+        {
+          "name": "Red Signal Jammer",
+          "description": "Disables museum alarms temporarily.",
+          "quantity": 2
+        },
+        {
+          "name": "Ceramic Tally: Blank",
+          "description": "A tally with its history erased.",
+          "quantity": 3
+        },
+        {
+          "name": "Oxidized Silver Wire",
+          "description": "For bypassing electrical circuits.",
+          "quantity": 10
+        },
+        {
+          "name": "Mint Scented Smoke Bomb",
+          "description": "Creates a distracting cloud.",
+          "quantity": 3
+        },
+        {
+          "name": "Causal Compass",
+          "description": "Stolen from Thorne; points to high-value targets.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Crawlspace",
+          "asset_type": "Real Estate",
+          "description": "A network of tunnels behind the basalt walls.",
+          "story_use": "Elara uses this to move between rooms unseen."
+        },
+        {
+          "asset_name": "Stolen Provenance List",
+          "asset_type": "Information",
+          "description": "A list of every agent's future liabilities.",
+          "story_use": "Elara uses this to plan her next heist."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "elara_debt",
+          "topic": "The Grand Theft",
+          "summary": "Elara is destined to steal the Manifestation Fountain.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "vault_weakness",
+          "topic": "Vault Security",
+          "summary": "The south-mid anchor is a blind spot for the guards.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Visitor Aris",
+      "role_name": "Wealthy Patron",
+      "activity": "Wandering the Manifestation Plaza.",
+      "home_base": "The Manifestation Plaza",
+      "arc_goal": "To manifest a debt that will destroy his business rival.",
+      "inventory": [
+        {
+          "name": "Silver Cane",
+          "description": "A status symbol made of oxidized silver.",
+          "quantity": 1
+        },
+        {
+          "name": "Frosted Glass Monocle",
+          "description": "Enhances the visual clarity of exhibits.",
+          "quantity": 1
+        },
+        {
+          "name": "Basalt Calling Card",
+          "description": "Aris's contact information.",
+          "quantity": 20
+        },
+        {
+          "name": "Red Signal Rose",
+          "description": "A rare flower that glows red.",
+          "quantity": 1
+        },
+        {
+          "name": "Ceramic Tally: Investment",
+          "description": "A debt Aris actually wants to incur.",
+          "quantity": 2
+        },
+        {
+          "name": "Mint Scented Handkerchief",
+          "description": "For the museum's dry air.",
+          "quantity": 5
+        },
+        {
+          "name": "Oxidized Silver Flask",
+          "description": "Contains expensive probability-wine.",
+          "quantity": 1
+        },
+        {
+          "name": "Museum Map",
+          "description": "A guide to the galleries.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Patron's Lounge",
+          "asset_type": "Access",
+          "description": "A private area in the Manifestation Plaza.",
+          "story_use": "Aris hosts secret meetings here."
+        },
+        {
+          "asset_name": "Corporate Portfolio",
+          "asset_type": "Information",
+          "description": "Details of Aris's real-world holdings.",
+          "story_use": "Aris uses this to back his museum bids."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "aris_rival",
+          "topic": "Rivalry with Kaelen",
+          "summary": "Aris wants to buy Kaelen's family debt to use it against him.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "museum_funding",
+          "topic": "Museum Funding",
+          "summary": "The museum is funded by the very debts it creates.",
+          "confidence": 60
+        }
+      ]
+    },
+    {
+      "display_name": "Guard Jax",
+      "role_name": "Security Officer",
+      "activity": "Patrolling the Hall of Unborn Deficits.",
+      "home_base": "The Hall of Unborn Deficits",
+      "arc_goal": "To find the thief who stole his lucky silver tally.",
+      "inventory": [
+        {
+          "name": "Basalt Baton",
+          "description": "A heavy weapon for subduing unruly visitors.",
+          "quantity": 1
+        },
+        {
+          "name": "Silver Handcuffs",
+          "description": "For securing causal criminals.",
+          "quantity": 2
+        },
+        {
+          "name": "Red Signal Whistle",
+          "description": "Calls for backup.",
+          "quantity": 1
+        },
+        {
+          "name": "Mint Light Flashlight",
+          "description": "Reveals hidden agents.",
+          "quantity": 1
+        },
+        {
+          "name": "Ceramic Tally: Citation",
+          "description": "For recording museum rule violations.",
+          "quantity": 10
+        },
+        {
+          "name": "Oxidized Silver Badge",
+          "description": "Jax's official identification.",
+          "quantity": 1
+        },
+        {
+          "name": "Frosted Glass Shield",
+          "description": "Protects against probability bursts.",
+          "quantity": 1
+        },
+        {
+          "name": "Security Log",
+          "description": "A record of daily patrols.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guard Post 1",
+          "asset_type": "Infrastructure",
+          "description": "A small station in the Hall of Unborn Deficits.",
+          "story_use": "Jax monitors the security cameras from here."
+        },
+        {
+          "asset_name": "Evidence Locker",
+          "asset_type": "Storage",
+          "description": "Contains items confiscated from visitors.",
+          "story_use": "Jax searches this for clues about Elara."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "jax_suspicion",
+          "topic": "Elara's Identity",
+          "summary": "Jax suspects the 'Provenance Eraser' is actually Elara.",
+          "confidence": 75
+        },
+        {
+          "knowledge_id": "vault_code",
+          "topic": "Vault Access",
+          "summary": "The daily code for the Provenance Vault.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Archivist Miri",
+      "role_name": "Record Keeper",
+      "activity": "Organizing the Provenance Vault.",
+      "home_base": "The Provenance Vault",
+      "arc_goal": "To preserve the 'True Timeline' at all costs.",
+      "inventory": [
+        {
+          "name": "Silver Quill",
+          "description": "Writes in permanent causal ink.",
+          "quantity": 1
+        },
+        {
+          "name": "Frosted Glass Inkwell",
+          "description": "Contains mint-colored ink.",
+          "quantity": 1
+        },
+        {
+          "name": "Basalt Scroll Case",
+          "description": "Protects sensitive records.",
+          "quantity": 3
+        },
+        {
+          "name": "Red Signal Ribbon",
+          "description": "Used to mark restricted files.",
+          "quantity": 5
+        },
+        {
+          "name": "Ceramic Tally: Birth Record",
+          "description": "A record of a future person's first debt.",
+          "quantity": 1
+        },
+        {
+          "name": "Oxidized Silver Paperclips",
+          "description": "For organizing tallies.",
+          "quantity": 50
+        },
+        {
+          "name": "Mint Scented Eraser",
+          "description": "Removes minor causal errors.",
+          "quantity": 2
+        },
+        {
+          "name": "Archive Key",
+          "description": "Access to the lower levels of the vault.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Deep Archive",
+          "asset_type": "Information",
+          "description": "Records of debts that were successfully erased.",
+          "story_use": "Miri uses this to restore lost histories."
+        },
+        {
+          "asset_name": "Archivist's Desk",
+          "asset_type": "Furniture",
+          "description": "A desk made of solid basalt.",
+          "story_use": "Miri hides her personal diary here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "miri_secret",
+          "topic": "The Erasure",
+          "summary": "Miri once erased a debt for Vael.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "timeline_stability",
+          "topic": "Timeline Health",
+          "summary": "The current timeline is 12% unstable.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Actuary Lorn",
+      "role_name": "Risk Assessor",
+      "activity": "Debating Thorne in the Actuary's Pit.",
+      "home_base": "The Actuary's Pit",
+      "arc_goal": "To prove Thorne's 'Feedback Loop' theory is a hoax.",
+      "inventory": [
+        {
+          "name": "Silver Calculator",
+          "description": "A mechanical device for probability.",
+          "quantity": 1
+        },
+        {
+          "name": "Basalt Tablet",
+          "description": "Contains Lorn's counter-arguments.",
+          "quantity": 1
+        },
+        {
+          "name": "Red Signal Pen",
+          "description": "For correcting Thorne's math.",
+          "quantity": 5
+        },
+        {
+          "name": "Mint Light Spectacles",
+          "description": "Reduces eye strain from glowing glass.",
+          "quantity": 1
+        },
+        {
+          "name": "Ceramic Tally: Safe Future",
+          "description": "A debt with zero probability.",
+          "quantity": 1
+        },
+        {
+          "name": "Oxidized Silver Compass",
+          "description": "Points toward logical consistency.",
+          "quantity": 1
+        },
+        {
+          "name": "Frosted Glass Paperweight",
+          "description": "Keeps tallies from blowing away.",
+          "quantity": 2
+        },
+        {
+          "name": "Actuary's Seal",
+          "description": "Validates risk assessments.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Lorn's Library",
+          "asset_type": "Information",
+          "description": "A collection of classical economic texts.",
+          "story_use": "Lorn uses this to debunk new theories."
+        },
+        {
+          "asset_name": "Pit Station B",
+          "asset_type": "Infrastructure",
+          "description": "Lorn's workspace in the pit.",
+          "story_use": "Lorn monitors Thorne's activity from here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "lorn_rivalry",
+          "topic": "Rivalry with Thorne",
+          "summary": "Lorn believes Thorne is mentally unstable.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "vael_support",
+          "topic": "Vael's Favor",
+          "summary": "Vael prefers Lorn's conservative estimates.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Trader Silas",
+      "role_name": "Debt Speculator",
+      "activity": "Buying low-probability debts in the Exchange.",
+      "home_base": "The Liability Exchange",
+      "arc_goal": "To corner the market on 'Impossible Debts'.",
+      "inventory": [
+        {
+          "name": "Silver Ledger",
+          "description": "Tracks Silas's vast portfolio.",
+          "quantity": 1
+        },
+        {
+          "name": "Frosted Glass Case",
+          "description": "For displaying high-value tallies.",
+          "quantity": 1
+        },
+        {
+          "name": "Basalt Coin Purse",
+          "description": "Contains a large amount of currency.",
+          "quantity": 1
+        },
+        {
+          "name": "Red Signal Ring",
+          "description": "A sign of Silas's wealth.",
+          "quantity": 1
+        },
+        {
+          "name": "Ceramic Tally: Moon Debt",
+          "description": "A debt for a colony that doesn't exist.",
+          "quantity": 1
+        },
+        {
+          "name": "Oxidized Silver Watch",
+          "description": "Always shows the time in the future.",
+          "quantity": 1
+        },
+        {
+          "name": "Mint Scented Cologne",
+          "description": "Smells like success and probability.",
+          "quantity": 1
+        },
+        {
+          "name": "Trade Contract",
+          "description": "A blank form for new deals.",
+          "quantity": 20
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Speculator's Vault",
+          "asset_type": "Storage",
+          "description": "A private safe in the Exchange.",
+          "story_use": "Silas stores his most valuable tallies here."
+        },
+        {
+          "asset_name": "Market Influence",
+          "asset_type": "Social",
+          "description": "Silas's ability to move prices.",
+          "story_use": "Silas can trigger a sell-off of specific debts."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "silas_plan",
+          "topic": "The Corner",
+          "summary": "Silas is buying up all debts related to the Guild of Weavers.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "kaelen_debt",
+          "topic": "Kaelen's Secret",
+          "summary": "Silas knows Kaelen's family debt is actually a forgery.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Curator Nyx",
+      "role_name": "Assistant Curator",
+      "activity": "Cleaning the Manifestation Plaza.",
+      "home_base": "The Manifestation Plaza",
+      "arc_goal": "To become the High Curator by sabotaging Vael.",
+      "inventory": [
+        {
+          "name": "Silver Broom",
+          "description": "For sweeping up causal dust.",
+          "quantity": 1
+        },
+        {
+          "name": "Frosted Glass Spray",
+          "description": "Cleans the exhibit cases.",
+          "quantity": 5
+        },
+        {
+          "name": "Basalt Dustpan",
+          "description": "Heavy and durable.",
+          "quantity": 1
+        },
+        {
+          "name": "Red Signal Tag",
+          "description": "For marking broken exhibits.",
+          "quantity": 10
+        },
+        {
+          "name": "Ceramic Tally: Trash",
+          "description": "Discarded debt fragments.",
+          "quantity": 100
+        },
+        {
+          "name": "Oxidized Silver Keyring",
+          "description": "Holds keys to the maintenance closets.",
+          "quantity": 1
+        },
+        {
+          "name": "Mint Scented Soap",
+          "description": "For washing hands after handling debt.",
+          "quantity": 2
+        },
+        {
+          "name": "Maintenance Log",
+          "description": "A record of Nyx's daily tasks.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Maintenance Closet",
+          "asset_type": "Storage",
+          "description": "A small room filled with cleaning supplies.",
+          "story_use": "Nyx hides stolen artifacts here."
+        },
+        {
+          "asset_name": "Sabotage Kit",
+          "asset_type": "Tool",
+          "description": "Tools for subtly damaging exhibits.",
+          "story_use": "Nyx uses this to make Vael look incompetent."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "nyx_ambition",
+          "topic": "The Coup",
+          "summary": "Nyx is planning to release a 'Debt Plague'.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "vael_weakness",
+          "topic": "Vael's Routine",
+          "summary": "Vael leaves his office every day at 4 PM.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Broker Zara",
+      "role_name": "Information Broker",
+      "activity": "Whispering in the Curator's Sanctum.",
+      "home_base": "The Curator's Sanctum",
+      "arc_goal": "To sell the museum's secrets to the highest bidder.",
+      "inventory": [
+        {
+          "name": "Silver Earring",
+          "description": "A recording device.",
+          "quantity": 2
+        },
+        {
+          "name": "Frosted Glass Vial",
+          "description": "Contains a sample of future-smoke.",
+          "quantity": 1
+        },
+        {
+          "name": "Basalt Notebook",
+          "description": "Encrypted records of secrets.",
+          "quantity": 1
+        },
+        {
+          "name": "Red Signal Lipstick",
+          "description": "Contains a hidden poison.",
+          "quantity": 1
+        },
+        {
+          "name": "Ceramic Tally: Blackmail",
+          "description": "Evidence of a future scandal.",
+          "quantity": 1
+        },
+        {
+          "name": "Oxidized Silver Dagger",
+          "description": "For self-defense.",
+          "quantity": 1
+        },
+        {
+          "name": "Mint Scented Perfume",
+          "description": "Masks the smell of fear.",
+          "quantity": 1
+        },
+        {
+          "name": "Contact List",
+          "description": "Names of Zara's buyers.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Zara's Network",
+          "asset_type": "Social",
+          "description": "A group of informants throughout the museum.",
+          "story_use": "Zara can gather information from any room."
+        },
+        {
+          "asset_name": "Safe House",
+          "asset_type": "Real Estate",
+          "description": "A secret apartment outside the museum.",
+          "story_use": "Zara flees here when things get too dangerous."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "zara_secret",
+          "topic": "The High Curator's Debt",
+          "summary": "Vael owes Zara for covering up a timeline breach.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "buyer_identity",
+          "topic": "The Shadow Buyer",
+          "summary": "The person buying the most secrets is Aris.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Actuary Finn",
+      "role_name": "Data Entry Clerk",
+      "activity": "Filing tallies in the Actuary's Pit.",
+      "home_base": "The Actuary's Pit",
+      "arc_goal": "To find a way to pay off his own very real debt.",
+      "inventory": [
+        {
+          "name": "Silver Stapler",
+          "description": "For binding ceramic tallies.",
+          "quantity": 1
+        },
+        {
+          "name": "Frosted Glass Ruler",
+          "description": "For measuring causal drift.",
+          "quantity": 1
+        },
+        {
+          "name": "Basalt Inkwell",
+          "description": "Contains standard black ink.",
+          "quantity": 1
+        },
+        {
+          "name": "Red Signal Stamp",
+          "description": "Marks tallies as 'Overdue'.",
+          "quantity": 1
+        },
+        {
+          "name": "Ceramic Tally: Personal Debt",
+          "description": "Finn's own mountain of debt.",
+          "quantity": 1
+        },
+        {
+          "name": "Oxidized Silver Paper",
+          "description": "For official memos.",
+          "quantity": 100
+        },
+        {
+          "name": "Mint Scented Tea",
+          "description": "Keeps Finn awake during long shifts.",
+          "quantity": 10
+        },
+        {
+          "name": "Filing Cabinet Key",
+          "description": "Access to the pit's records.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Filing Station 9",
+          "asset_type": "Infrastructure",
+          "description": "Finn's cramped desk in the pit.",
+          "story_use": "Finn finds interesting tallies while filing."
+        },
+        {
+          "asset_name": "Debt Repayment Plan",
+          "asset_type": "Financial",
+          "description": "A document outlining Finn's path to solvency.",
+          "story_use": "Finn is desperate to complete this plan."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "finn_discovery",
+          "topic": "The Error",
+          "summary": "Finn found a tally that says he will become the High Curator.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "thorne_habit",
+          "topic": "Thorne's Secret",
+          "summary": "Thorne talks to the Causal Loom when he thinks no one is listening.",
+          "confidence": 100
+        }
+      ]
+    }
+  ],
+  "social_rules": [
+    "Debt ownership determines social standing; those with 'Impossible' debts are revered.",
+    "Speaking of the 'Present' is considered vulgar; only the 'Future' matters.",
+    "Direct physical contact is forbidden; all interactions must be mediated by silver or glass.",
+    "Bidding on a debt you cannot afford is a capital crime."
+  ],
+  "item_themes": [
+    "Causal Liability",
+    "Frosted Probability",
+    "Oxidized Obligation",
+    "Signal Red Risk"
+  ],
+  "custom_actions": [
+    "Stabilize Exhibit",
+    "Manifest Liability",
+    "Swap Provenance",
+    "Calculate Probability"
+  ],
+  "player_entry_points": [
+    "The Manifestation Plaza as a 'New Debtor'",
+    "The Hall of Unborn Deficits as a 'Junior Curator'",
+    "The Liability Exchange as a 'Speculative Visitor'"
+  ],
+  "conflict_hooks": [
+    "A high-value future debt has been stolen from the Hall of Unborn Deficits.",
+    "The Causal Loom is predicting a total museum collapse in 48 hours.",
+    "Two rival guilds are bidding to manifest the same national bankruptcy."
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Causal Trade",
+      "summary": "Players acquire low-probability debts, use the Actuary's Pit to increase their likelihood, and sell them for a profit in the Exchange.",
+      "roles": [
+        "Liability Trader",
+        "Probability Analyst"
+      ],
+      "rooms": [
+        "The Liability Exchange",
+        "The Actuary's Pit"
+      ],
+      "pressure": "Market volatility and curator intervention."
+    },
+    {
+      "label": "The Provenance Heist",
+      "summary": "Players infiltrate the Vault to alter the ownership of future liabilities, shifting blame from one agent to another.",
+      "roles": [
+        "Provenance Eraser",
+        "Security Officer"
+      ],
+      "rooms": [
+        "The Provenance Vault",
+        "The Curator's Sanctum"
+      ],
+      "pressure": "Increasing security and causal drift."
+    }
+  ],
+  "item_catalog": [
+    {
+      "item_id": "stabilization_rod",
+      "name": "Silver Stabilization Rod",
+      "price": 5000,
+      "mass": 2.5,
+      "description": "A rod of oxidized silver that freezes a probability exhibit.",
+      "image_prompt": "A sleek rod of oxidized silver with a glowing mint tip.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "curator_seal",
+      "name": "Basalt Curator Seal",
+      "price": 10000,
+      "mass": 0.5,
+      "description": "An official seal used to authorize debt manifestations.",
+      "image_prompt": "A heavy basalt signet ring with a red signal gem.",
+      "category": "Access"
+    },
+    {
+      "item_id": "tally_war",
+      "name": "Ceramic Tally: Future War",
+      "price": 25000,
+      "mass": 0.1,
+      "description": "A record of a war that has a 40% chance of occurring.",
+      "image_prompt": "A white ceramic shard with etched silver lines.",
+      "category": "Debt"
+    },
+    {
+      "item_id": "tally_famine",
+      "name": "Ceramic Tally: Future Famine",
+      "price": 15000,
+      "mass": 0.1,
+      "description": "A record of a famine with a 15% chance of occurring.",
+      "image_prompt": "A white ceramic shard with etched red lines.",
+      "category": "Debt"
+    },
+    {
+      "item_id": "glass_ledger",
+      "name": "Frosted Glass Ledger",
+      "price": 2000,
+      "mass": 1.2,
+      "description": "A tablet for tracking shifting causal prices.",
+      "image_prompt": "A rectangular slab of frosted glass with mint-light text.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "causal_compass",
+      "name": "Frosted Glass Compass",
+      "price": 8000,
+      "mass": 0.3,
+      "description": "A compass that points toward the most probable future.",
+      "image_prompt": "A circular glass device with a spinning silver needle.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "silver_polish",
+      "name": "Oxidized Silver Polish",
+      "price": 100,
+      "mass": 0.2,
+      "description": "Keeps silver items from losing their causal resonance.",
+      "image_prompt": "A small tin of dark grey paste.",
+      "category": "Consumable"
+    },
+    {
+      "item_id": "red_ink",
+      "name": "Signal Red Ink",
+      "price": 500,
+      "mass": 0.1,
+      "description": "Ink used to mark high-risk liabilities.",
+      "image_prompt": "A small glass bottle filled with glowing red liquid.",
+      "category": "Consumable"
+    },
+    {
+      "item_id": "basalt_baton",
+      "name": "Basalt Security Baton",
+      "price": 1500,
+      "mass": 3.0,
+      "description": "A heavy baton used by museum security.",
+      "image_prompt": "A thick rod of polished black basalt.",
+      "category": "Weapon"
+    },
+    {
+      "item_id": "mint_lantern",
+      "name": "Mint Light Lantern",
+      "price": 1200,
+      "mass": 1.0,
+      "description": "A lantern that emits a soft mint-colored glow.",
+      "image_prompt": "A silver lantern with frosted glass panes.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "debt_voucher",
+      "name": "Causal Debt Voucher",
+      "price": 500,
+      "mass": 0.01,
+      "description": "A voucher for a minor future liability.",
+      "image_prompt": "A small slip of white ceramic paper.",
+      "category": "Currency"
+    },
+    {
+      "item_id": "silver_lockpick",
+      "name": "Silver Lockpick Set",
+      "price": 3000,
+      "mass": 0.2,
+      "description": "Tools for opening frosted glass locks.",
+      "image_prompt": "A set of thin silver wires in a basalt case.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "probability_die",
+      "name": "Causal Probability Die",
+      "price": 1000,
+      "mass": 0.05,
+      "description": "A die used to settle minor causal disputes.",
+      "image_prompt": "A six-sided die made of oxidized silver.",
+      "category": "Toy"
+    },
+    {
+      "item_id": "mint_tea",
+      "name": "Mint Scented Tea",
+      "price": 50,
+      "mass": 0.05,
+      "description": "A calming tea favored by actuaries.",
+      "image_prompt": "A small bag of dried mint leaves.",
+      "category": "Consumable"
+    },
+    {
+      "item_id": "basalt_paperweight",
+      "name": "Basalt Paperweight",
+      "price": 200,
+      "mass": 2.0,
+      "description": "A heavy block of basalt to keep tallies in place.",
+      "image_prompt": "A smooth, rectangular block of black stone.",
+      "category": "Furniture"
+    }
+  ],
+  "visual_canon": {
+    "canon_id": "future_debt_v1",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees",
+      "scale_rule": "1_unit_per_32_pixels"
+    },
+    "palette": {
+      "dominant": "#1a1a1a",
+      "secondary": "#e0e0e0",
+      "accent": "#ff0000",
+      "shadow": "#0d0d0d",
+      "highlight": "#aaffaa"
+    },
+    "materials": [
+      "Black Basalt",
+      "Frosted Glass",
+      "Oxidized Silver",
+      "White Ceramic"
+    ],
+    "lighting": "Pale mint ambient glow with sharp signal red highlights.",
+    "architecture": [
+      "Brutalist basalt pillars",
+      "Floating glass displays",
+      "Sunken pits",
+      "Circular vaults"
+    ],
+    "terrain": {
+      "ground": "Polished basalt tiles",
+      "path": "White ceramic walkways",
+      "edge": "Oxidized silver railings"
+    },
+    "sprite_language": {
+      "body_proportion": "Realistic 8-head height",
+      "outline": "1-pixel dark grey",
+      "role_readability": "High via color-coded accessories"
+    },
+    "world_prompt_prefix": "Top-down pixel art, brutalist museum, basalt and glass, mint lighting, signal red accents.",
+    "sprite_prompt_prefix": "Top-down pixel art character, museum professional, silver and basalt attire.",
+    "forbidden_visuals": [
+      "Beijing references",
+      "Signs",
+      "Captions",
+      "Readable letters",
+      "Logos",
+      "Text baked into art"
+    ]
+  },
+  "agent_visual_policy": {
+    "policy_id": "museum_staff_v1",
+    "world_wardrobe_brief": "Uniforms are made of heavy grey fabrics with silver trim and basalt accessories.",
+    "forbidden_aesthetics": [
+      "Bright colors",
+      "Casual wear",
+      "Organic shapes"
+    ],
+    "palette_families": [
+      {
+        "name": "Curator Class",
+        "dominant": "#2c2c2c",
+        "accent": "#aaffaa",
+        "trim": "#c0c0c0",
+        "material": "Heavy Wool"
+      },
+      {
+        "name": "Actuary Class",
+        "dominant": "#3d3d3d",
+        "accent": "#ff0000",
+        "trim": "#808080",
+        "material": "Stiff Linen"
+      },
+      {
+        "name": "Patron Class",
+        "dominant": "#1a1a1a",
+        "accent": "#ffffff",
+        "trim": "#e0e0e0",
+        "material": "Silk and Silver"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "curator_style",
+        "role_keywords": [
+          "Curator",
+          "Archivist"
+        ],
+        "attire": [
+          "Long grey robes",
+          "Silver sashes"
+        ],
+        "props": [
+          "Silver rods",
+          "Basalt signets"
+        ],
+        "palette_notes": "Heavy use of mint highlights.",
+        "silhouette_notes": "Long, flowing vertical lines."
+      },
+      {
+        "rule_id": "actuary_style",
+        "role_keywords": [
+          "Actuary",
+          "Analyst"
+        ],
+        "attire": [
+          "Short jackets",
+          "Many pockets"
+        ],
+        "props": [
+          "Glass ledgers",
+          "Silver pens"
+        ],
+        "palette_notes": "Red accents on sleeves and collars.",
+        "silhouette_notes": "Sharp, angular shoulders."
+      },
+      {
+        "rule_id": "security_style",
+        "role_keywords": [
+          "Guard",
+          "Security"
+        ],
+        "attire": [
+          "Basalt-plated vests",
+          "Heavy boots"
+        ],
+        "props": [
+          "Basalt batons",
+          "Red whistles"
+        ],
+        "palette_notes": "Darkest grey with silver badges.",
+        "silhouette_notes": "Broad, imposing frame."
+      }
+    ],
+    "default_rule": {
+      "rule_id": "visitor_style",
+      "role_keywords": [
+        "Visitor",
+        "Patron"
+      ],
+      "attire": [
+        "Tailored suits",
+        "Capes"
+      ],
+      "props": [
+        "Silver canes",
+        "Glass monocles"
+      ],
+      "palette_notes": "High contrast black and white.",
+      "silhouette_notes": "Elegant and slim."
+    },
+    "visual_consistency_rules": [
+      "All characters must have at least one oxidized silver accessory.",
+      "No character may wear more than one primary color.",
+      "All light-emitting props must be mint or red."
+    ]
+  }
+}

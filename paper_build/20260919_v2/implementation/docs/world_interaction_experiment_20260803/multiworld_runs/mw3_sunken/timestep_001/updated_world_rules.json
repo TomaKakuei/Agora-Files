@@ -1,0 +1,1158 @@
+{
+  "world_mode": "Fixed",
+  "topology": {
+    "grid_shape": {
+      "x": 32,
+      "y": 34,
+      "z": 1
+    },
+    "rooms": [
+      {
+        "room_id": "room_01_airlock_alpha_9",
+        "name": "Airlock Alpha-9",
+        "x": 4,
+        "y": 24,
+        "z": 0,
+        "width_tiles": 6,
+        "height_tiles": 6,
+        "footprint_tiles": [],
+        "doorways": [
+          {
+            "doorway_id": "room_01_airlock_alpha_9_to_room_02_the_signal_altar",
+            "position": {
+              "x": 6,
+              "y": 24,
+              "z": 0
+            },
+            "connects_to_room_id": "room_02_the_signal_altar",
+            "label": "passage to The Signal Altar",
+            "edge_dir": "top"
+          },
+          {
+            "doorway_id": "room_01_airlock_alpha_9_to_room_03_bandwidth_exchange",
+            "position": {
+              "x": 9,
+              "y": 27,
+              "z": 0
+            },
+            "connects_to_room_id": "room_03_bandwidth_exchange",
+            "label": "passage to Bandwidth Exchange",
+            "edge_dir": "right"
+          }
+        ],
+        "spawn_points": [],
+        "visual": {
+          "biome": "pressurized_industrial",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "gaskets",
+            "pressure_gauges",
+            "rubber_mats",
+            "notice_table"
+          ],
+          "ambient_palette": "focused_blue",
+          "visual_canon_hash": "83b57c479065cfac",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_01_airlock_alpha_9_scrub_station_01",
+              "label": "Suit Scrubbing Rig",
+              "description": "A mechanical frame with high-pressure nozzles for cleaning silt from diving suits.",
+              "anchor": "north_mid",
+              "width_tiles": 2,
+              "height_tiles": 1
+            }
+          ]
+        },
+        "metadata": {
+          "purpose": "Decompression and suit maintenance",
+          "activity_tags": [
+            "suit_scrubbing",
+            "depressurization"
+          ],
+          "player_entry_hook": "A merchant vessel seeking to buy ancient encryption keys.",
+          "room_archetype": "checkpoint",
+          "layout_signal": "Airlock Alpha-9 | Decompression and suit maintenance | pressurized_industrial | suit_scrubbing | depressurization | gaskets | pressure_gauges | rubber_mats | notice_table"
+        },
+        "footprint_area": 0,
+        "capacity_estimate": 0,
+        "occupancy_density": 0.0,
+        "pressure_band": "",
+        "image_url": "",
+        "flux_floor_prompt": "top-down pixel art of heavy industrial rubberized floor tiles with yellow hazard stripes and drainage grates, 32px grid",
+        "room_scene_prompt": "top-down orthographic view of a circular airlock chamber, reinforced polymer glass walls, mechanical scrubbing arms, pressurized rubber gaskets, no text, no labels, pixel art style, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "sunken-satellite-monastery-01",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree vertical",
+            "scale_rule": "32px per meter, pixel-perfect grid alignment"
+          },
+          "palette": {
+            "dominant": "#0a141a",
+            "secondary": "#2d3e40",
+            "accent": "#00ffcc",
+            "shadow": "#05080a",
+            "highlight": "#e0f2f1"
+          },
+          "materials": [
+            "corroded-titanium",
+            "bioluminescent-algae",
+            "reinforced-polymer-glass",
+            "oxidized-copper-wiring",
+            "pressurized-rubber-gaskets"
+          ],
+          "lighting": "low-ambient abyssal blue with high-contrast cyan point-lights from circuitry and bioluminescence",
+          "architecture": [
+            "hexagonal-pressure-domes",
+            "exposed-conduit-ribbing",
+            "gothic-arched-server-racks",
+            "circular-airlocks"
+          ],
+          "terrain": {
+            "ground": "dark-silt-over-rusted-hull-plating",
+            "path": "glowing-fiber-optic-floor-strips",
+            "edge": "jagged-carbon-fiber-wreckage-walls"
+          },
+          "sprite_language": {
+            "body_proportion": "bulky-top-heavy-diving-suits",
+            "outline": "1px-solid-dark-teal",
+            "role_readability": "color-coded-helmet-visors-and-shoulder-insignia"
+          },
+          "world_prompt_prefix": "top-down orthographic view, sunken satellite monastery, rusted industrial gothic, deep sea abyss, bioluminescent cyan highlights, pixel art style",
+          "sprite_prompt_prefix": "top-down sprite, pressurized diving suit, cyber-gothic monastic robes, mechanical salvage tools, glowing visor",
+          "forbidden_visuals": [
+            "isometric-perspective",
+            "natural-sunlight",
+            "photorealism",
+            "text-labels",
+            "ui-overlays-in-render",
+            "generic-fantasy-stone",
+            "wood-textures"
+          ],
+          "canon_hash": "83b57c479065cfac"
+        }
+      },
+      {
+        "room_id": "room_02_the_signal_altar",
+        "name": "The Signal Altar",
+        "x": 0,
+        "y": 12,
+        "z": 0,
+        "width_tiles": 10,
+        "height_tiles": 12,
+        "footprint_tiles": [],
+        "doorways": [
+          {
+            "doorway_id": "room_01_airlock_alpha_9_to_room_02_the_signal_altar",
+            "position": {
+              "x": 6,
+              "y": 23,
+              "z": 0
+            },
+            "connects_to_room_id": "room_01_airlock_alpha_9",
+            "label": "passage to Airlock Alpha-9",
+            "edge_dir": "bottom"
+          },
+          {
+            "doorway_id": "room_02_the_signal_altar_to_room_04_hydro_ponic_crypt",
+            "position": {
+              "x": 5,
+              "y": 12,
+              "z": 0
+            },
+            "connects_to_room_id": "room_04_hydro_ponic_crypt",
+            "label": "passage to Hydro-Ponic Crypt",
+            "edge_dir": "top"
+          },
+          {
+            "doorway_id": "room_02_the_signal_altar_to_room_05_salvage_yard_gamma",
+            "position": {
+              "x": 9,
+              "y": 17,
+              "z": 0
+            },
+            "connects_to_room_id": "room_05_salvage_yard_gamma",
+            "label": "passage to Salvage Yard Gamma",
+            "edge_dir": "right"
+          }
+        ],
+        "spawn_points": [],
+        "visual": {
+          "biome": "cyber_monastic",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "server_racks",
+            "fiber_optics",
+            "incense_burners",
+            "scroll_table"
+          ],
+          "ambient_palette": "low_lantern",
+          "visual_canon_hash": "83b57c479065cfac",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_02_the_signal_altar_satellite_core",
+              "label": "Crashed Core Fragment",
+              "description": "A massive titanium sphere leaking data-cables and cyan light.",
+              "anchor": "center",
+              "width_tiles": 3,
+              "height_tiles": 3
+            }
+          ]
+        },
+        "metadata": {
+          "purpose": "Data-relic decryption and worship",
+          "activity_tags": [
+            "ritual_decryption",
+            "prayer"
+          ],
+          "player_entry_hook": "A digital pilgrim looking for the original source-code of the Great AI.",
+          "room_archetype": "archive_ritual",
+          "layout_signal": "The Signal Altar | Data-relic decryption and worship | cyber_monastic | ritual_decryption | prayer | server_racks | fiber_optics | incense_burners | scroll_table"
+        },
+        "footprint_area": 0,
+        "capacity_estimate": 0,
+        "occupancy_density": 0.0,
+        "pressure_band": "",
+        "image_url": "",
+        "flux_floor_prompt": "top-down pixel art of dark rusted hull plating with glowing cyan fiber-optic circuits embedded in the metal, 32px grid",
+        "room_scene_prompt": "top-down orthographic view of a gothic server cathedral, arched server racks, central satellite core pulsing with light, bioluminescent algae candles, no text, no labels, pixel art style, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "sunken-satellite-monastery-01",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree vertical",
+            "scale_rule": "32px per meter, pixel-perfect grid alignment"
+          },
+          "palette": {
+            "dominant": "#0a141a",
+            "secondary": "#2d3e40",
+            "accent": "#00ffcc",
+            "shadow": "#05080a",
+            "highlight": "#e0f2f1"
+          },
+          "materials": [
+            "corroded-titanium",
+            "bioluminescent-algae",
+            "reinforced-polymer-glass",
+            "oxidized-copper-wiring",
+            "pressurized-rubber-gaskets"
+          ],
+          "lighting": "low-ambient abyssal blue with high-contrast cyan point-lights from circuitry and bioluminescence",
+          "architecture": [
+            "hexagonal-pressure-domes",
+            "exposed-conduit-ribbing",
+            "gothic-arched-server-racks",
+            "circular-airlocks"
+          ],
+          "terrain": {
+            "ground": "dark-silt-over-rusted-hull-plating",
+            "path": "glowing-fiber-optic-floor-strips",
+            "edge": "jagged-carbon-fiber-wreckage-walls"
+          },
+          "sprite_language": {
+            "body_proportion": "bulky-top-heavy-diving-suits",
+            "outline": "1px-solid-dark-teal",
+            "role_readability": "color-coded-helmet-visors-and-shoulder-insignia"
+          },
+          "world_prompt_prefix": "top-down orthographic view, sunken satellite monastery, rusted industrial gothic, deep sea abyss, bioluminescent cyan highlights, pixel art style",
+          "sprite_prompt_prefix": "top-down sprite, pressurized diving suit, cyber-gothic monastic robes, mechanical salvage tools, glowing visor",
+          "forbidden_visuals": [
+            "isometric-perspective",
+            "natural-sunlight",
+            "photorealism",
+            "text-labels",
+            "ui-overlays-in-render",
+            "generic-fantasy-stone",
+            "wood-textures"
+          ],
+          "canon_hash": "83b57c479065cfac"
+        }
+      },
+      {
+        "room_id": "room_03_bandwidth_exchange",
+        "name": "Bandwidth Exchange",
+        "x": 10,
+        "y": 26,
+        "z": 0,
+        "width_tiles": 12,
+        "height_tiles": 8,
+        "footprint_tiles": [],
+        "doorways": [
+          {
+            "doorway_id": "room_01_airlock_alpha_9_to_room_03_bandwidth_exchange",
+            "position": {
+              "x": 10,
+              "y": 27,
+              "z": 0
+            },
+            "connects_to_room_id": "room_01_airlock_alpha_9",
+            "label": "passage to Airlock Alpha-9",
+            "edge_dir": "left"
+          },
+          {
+            "doorway_id": "room_03_bandwidth_exchange_to_room_05_salvage_yard_gamma",
+            "position": {
+              "x": 15,
+              "y": 26,
+              "z": 0
+            },
+            "connects_to_room_id": "room_05_salvage_yard_gamma",
+            "label": "passage to Salvage Yard Gamma",
+            "edge_dir": "top"
+          }
+        ],
+        "spawn_points": [],
+        "visual": {
+          "biome": "underwater_market",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "monitors",
+            "trading_stalls",
+            "cables",
+            "notice_table"
+          ],
+          "ambient_palette": "focused_blue",
+          "visual_canon_hash": "83b57c479065cfac",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_03_bandwidth_exchange_bandwidth_terminal",
+              "label": "The Great Uplink",
+              "description": "A heavy terminal where traders plug in data-relics to verify signal strength.",
+              "anchor": "east_mid",
+              "width_tiles": 2,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "metadata": {
+          "purpose": "Trading data packets for oxygen and food",
+          "activity_tags": [
+            "bartering",
+            "data_transfer"
+          ],
+          "player_entry_hook": "A corporate spy disguised as a data-monk.",
+          "room_archetype": "market_exchange",
+          "layout_signal": "Bandwidth Exchange | Trading data packets for oxygen and food | underwater_market | bartering | data_transfer | monitors | trading_stalls | cables | notice_table"
+        },
+        "footprint_area": 0,
+        "capacity_estimate": 0,
+        "occupancy_density": 0.0,
+        "pressure_band": "",
+        "image_url": "",
+        "flux_floor_prompt": "top-down pixel art of scuffed titanium plates with glowing orange data-conduits running underneath, 32px grid",
+        "room_scene_prompt": "top-down orthographic view of a data market, stalls made of salvaged satellite panels, flickering CRT monitors, bundles of oxidized copper wiring, no text, no labels, pixel art style, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "sunken-satellite-monastery-01",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree vertical",
+            "scale_rule": "32px per meter, pixel-perfect grid alignment"
+          },
+          "palette": {
+            "dominant": "#0a141a",
+            "secondary": "#2d3e40",
+            "accent": "#00ffcc",
+            "shadow": "#05080a",
+            "highlight": "#e0f2f1"
+          },
+          "materials": [
+            "corroded-titanium",
+            "bioluminescent-algae",
+            "reinforced-polymer-glass",
+            "oxidized-copper-wiring",
+            "pressurized-rubber-gaskets"
+          ],
+          "lighting": "low-ambient abyssal blue with high-contrast cyan point-lights from circuitry and bioluminescence",
+          "architecture": [
+            "hexagonal-pressure-domes",
+            "exposed-conduit-ribbing",
+            "gothic-arched-server-racks",
+            "circular-airlocks"
+          ],
+          "terrain": {
+            "ground": "dark-silt-over-rusted-hull-plating",
+            "path": "glowing-fiber-optic-floor-strips",
+            "edge": "jagged-carbon-fiber-wreckage-walls"
+          },
+          "sprite_language": {
+            "body_proportion": "bulky-top-heavy-diving-suits",
+            "outline": "1px-solid-dark-teal",
+            "role_readability": "color-coded-helmet-visors-and-shoulder-insignia"
+          },
+          "world_prompt_prefix": "top-down orthographic view, sunken satellite monastery, rusted industrial gothic, deep sea abyss, bioluminescent cyan highlights, pixel art style",
+          "sprite_prompt_prefix": "top-down sprite, pressurized diving suit, cyber-gothic monastic robes, mechanical salvage tools, glowing visor",
+          "forbidden_visuals": [
+            "isometric-perspective",
+            "natural-sunlight",
+            "photorealism",
+            "text-labels",
+            "ui-overlays-in-render",
+            "generic-fantasy-stone",
+            "wood-textures"
+          ],
+          "canon_hash": "83b57c479065cfac"
+        }
+      },
+      {
+        "room_id": "room_04_hydro_ponic_crypt",
+        "name": "Hydro-Ponic Crypt",
+        "x": 2,
+        "y": 2,
+        "z": 0,
+        "width_tiles": 8,
+        "height_tiles": 10,
+        "footprint_tiles": [],
+        "doorways": [
+          {
+            "doorway_id": "room_02_the_signal_altar_to_room_04_hydro_ponic_crypt",
+            "position": {
+              "x": 5,
+              "y": 11,
+              "z": 0
+            },
+            "connects_to_room_id": "room_02_the_signal_altar",
+            "label": "passage to The Signal Altar",
+            "edge_dir": "bottom"
+          },
+          {
+            "doorway_id": "room_04_hydro_ponic_crypt_to_room_08_the_high_council_chamber",
+            "position": {
+              "x": 9,
+              "y": 6,
+              "z": 0
+            },
+            "connects_to_room_id": "room_08_the_high_council_chamber",
+            "label": "passage to The High Council Chamber",
+            "edge_dir": "right"
+          }
+        ],
+        "spawn_points": [],
+        "visual": {
+          "biome": "bioluminescent_garden",
+          "floor_tile": "storage_stone",
+          "wall_tile": "storage_wall",
+          "decor_tags": [
+            "vats",
+            "algae",
+            "pipes",
+            "supply_crates"
+          ],
+          "ambient_palette": "soft_mint",
+          "visual_canon_hash": "83b57c479065cfac",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_04_hydro_ponic_crypt_algae_vat_alpha",
+              "label": "Oxygenator Vat",
+              "description": "A large polymer-glass cylinder filled with swirling bioluminescent algae.",
+              "anchor": "west_mid",
+              "width_tiles": 2,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "metadata": {
+          "purpose": "Growing algae for oxygen and nutrients",
+          "activity_tags": [
+            "harvesting",
+            "oxygen_scrubbing"
+          ],
+          "player_entry_hook": "A merchant vessel seeking to buy ancient encryption keys.",
+          "room_archetype": "workshop",
+          "layout_signal": "Hydro-Ponic Crypt | Growing algae for oxygen and nutrients | bioluminescent_garden | harvesting | oxygen_scrubbing | vats | algae | pipes | supply_crates"
+        },
+        "footprint_area": 0,
+        "capacity_estimate": 0,
+        "occupancy_density": 0.0,
+        "pressure_band": "",
+        "image_url": "",
+        "flux_floor_prompt": "top-down pixel art of wet dark-silt flooring with patches of glowing green bioluminescent moss, 32px grid",
+        "room_scene_prompt": "top-down orthographic view of an algae farm, glass vats filled with glowing green liquid, exposed conduit ribbing, bubbling oxygenators, no text, no labels, pixel art style, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "sunken-satellite-monastery-01",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree vertical",
+            "scale_rule": "32px per meter, pixel-perfect grid alignment"
+          },
+          "palette": {
+            "dominant": "#0a141a",
+            "secondary": "#2d3e40",
+            "accent": "#00ffcc",
+            "shadow": "#05080a",
+            "highlight": "#e0f2f1"
+          },
+          "materials": [
+            "corroded-titanium",
+            "bioluminescent-algae",
+            "reinforced-polymer-glass",
+            "oxidized-copper-wiring",
+            "pressurized-rubber-gaskets"
+          ],
+          "lighting": "low-ambient abyssal blue with high-contrast cyan point-lights from circuitry and bioluminescence",
+          "architecture": [
+            "hexagonal-pressure-domes",
+            "exposed-conduit-ribbing",
+            "gothic-arched-server-racks",
+            "circular-airlocks"
+          ],
+          "terrain": {
+            "ground": "dark-silt-over-rusted-hull-plating",
+            "path": "glowing-fiber-optic-floor-strips",
+            "edge": "jagged-carbon-fiber-wreckage-walls"
+          },
+          "sprite_language": {
+            "body_proportion": "bulky-top-heavy-diving-suits",
+            "outline": "1px-solid-dark-teal",
+            "role_readability": "color-coded-helmet-visors-and-shoulder-insignia"
+          },
+          "world_prompt_prefix": "top-down orthographic view, sunken satellite monastery, rusted industrial gothic, deep sea abyss, bioluminescent cyan highlights, pixel art style",
+          "sprite_prompt_prefix": "top-down sprite, pressurized diving suit, cyber-gothic monastic robes, mechanical salvage tools, glowing visor",
+          "forbidden_visuals": [
+            "isometric-perspective",
+            "natural-sunlight",
+            "photorealism",
+            "text-labels",
+            "ui-overlays-in-render",
+            "generic-fantasy-stone",
+            "wood-textures"
+          ],
+          "canon_hash": "83b57c479065cfac"
+        }
+      },
+      {
+        "room_id": "room_05_salvage_yard_gamma",
+        "name": "Salvage Yard Gamma",
+        "x": 10,
+        "y": 12,
+        "z": 0,
+        "width_tiles": 14,
+        "height_tiles": 14,
+        "footprint_tiles": [],
+        "doorways": [
+          {
+            "doorway_id": "room_02_the_signal_altar_to_room_05_salvage_yard_gamma",
+            "position": {
+              "x": 10,
+              "y": 17,
+              "z": 0
+            },
+            "connects_to_room_id": "room_02_the_signal_altar",
+            "label": "passage to The Signal Altar",
+            "edge_dir": "left"
+          },
+          {
+            "doorway_id": "room_03_bandwidth_exchange_to_room_05_salvage_yard_gamma",
+            "position": {
+              "x": 15,
+              "y": 25,
+              "z": 0
+            },
+            "connects_to_room_id": "room_03_bandwidth_exchange",
+            "label": "passage to Bandwidth Exchange",
+            "edge_dir": "bottom"
+          },
+          {
+            "doorway_id": "room_05_salvage_yard_gamma_to_room_06_the_silent_observatory",
+            "position": {
+              "x": 23,
+              "y": 14,
+              "z": 0
+            },
+            "connects_to_room_id": "room_06_the_silent_observatory",
+            "label": "passage to The Silent Observatory",
+            "edge_dir": "right"
+          },
+          {
+            "doorway_id": "room_05_salvage_yard_gamma_to_room_08_the_high_council_chamber",
+            "position": {
+              "x": 15,
+              "y": 12,
+              "z": 0
+            },
+            "connects_to_room_id": "room_08_the_high_council_chamber",
+            "label": "passage to The High Council Chamber",
+            "edge_dir": "top"
+          }
+        ],
+        "spawn_points": [],
+        "visual": {
+          "biome": "industrial_wreckage",
+          "floor_tile": "storage_stone",
+          "wall_tile": "storage_wall",
+          "decor_tags": [
+            "scrap",
+            "cranes",
+            "magnets",
+            "supply_crates"
+          ],
+          "ambient_palette": "dusty_brown",
+          "visual_canon_hash": "83b57c479065cfac",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_05_salvage_yard_gamma_magnetic_crane",
+              "label": "Debris Lifter",
+              "description": "A ceiling-mounted magnetic crane for moving heavy satellite panels.",
+              "anchor": "north_east",
+              "width_tiles": 3,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "metadata": {
+          "purpose": "Sorting satellite debris",
+          "activity_tags": [
+            "sorting",
+            "dismantling"
+          ],
+          "player_entry_hook": "A digital pilgrim looking for the original source-code of the Great AI.",
+          "room_archetype": "logistics_yard",
+          "layout_signal": "Salvage Yard Gamma | Sorting satellite debris | industrial_wreckage | sorting | dismantling | scrap | cranes | magnets | supply_crates"
+        },
+        "footprint_area": 0,
+        "capacity_estimate": 0,
+        "occupancy_density": 0.0,
+        "pressure_band": "",
+        "image_url": "",
+        "flux_floor_prompt": "top-down pixel art of heavily rusted hull plating covered in dark silt and metal shavings, 32px grid",
+        "room_scene_prompt": "top-down orthographic view of a salvage yard, piles of corroded titanium, mechanical sorting claws, jagged carbon fiber wreckage, no text, no labels, pixel art style, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "sunken-satellite-monastery-01",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree vertical",
+            "scale_rule": "32px per meter, pixel-perfect grid alignment"
+          },
+          "palette": {
+            "dominant": "#0a141a",
+            "secondary": "#2d3e40",
+            "accent": "#00ffcc",
+            "shadow": "#05080a",
+            "highlight": "#e0f2f1"
+          },
+          "materials": [
+            "corroded-titanium",
+            "bioluminescent-algae",
+            "reinforced-polymer-glass",
+            "oxidized-copper-wiring",
+            "pressurized-rubber-gaskets"
+          ],
+          "lighting": "low-ambient abyssal blue with high-contrast cyan point-lights from circuitry and bioluminescence",
+          "architecture": [
+            "hexagonal-pressure-domes",
+            "exposed-conduit-ribbing",
+            "gothic-arched-server-racks",
+            "circular-airlocks"
+          ],
+          "terrain": {
+            "ground": "dark-silt-over-rusted-hull-plating",
+            "path": "glowing-fiber-optic-floor-strips",
+            "edge": "jagged-carbon-fiber-wreckage-walls"
+          },
+          "sprite_language": {
+            "body_proportion": "bulky-top-heavy-diving-suits",
+            "outline": "1px-solid-dark-teal",
+            "role_readability": "color-coded-helmet-visors-and-shoulder-insignia"
+          },
+          "world_prompt_prefix": "top-down orthographic view, sunken satellite monastery, rusted industrial gothic, deep sea abyss, bioluminescent cyan highlights, pixel art style",
+          "sprite_prompt_prefix": "top-down sprite, pressurized diving suit, cyber-gothic monastic robes, mechanical salvage tools, glowing visor",
+          "forbidden_visuals": [
+            "isometric-perspective",
+            "natural-sunlight",
+            "photorealism",
+            "text-labels",
+            "ui-overlays-in-render",
+            "generic-fantasy-stone",
+            "wood-textures"
+          ],
+          "canon_hash": "83b57c479065cfac"
+        }
+      },
+      {
+        "room_id": "room_06_the_silent_observatory",
+        "name": "The Silent Observatory",
+        "x": 24,
+        "y": 12,
+        "z": 0,
+        "width_tiles": 6,
+        "height_tiles": 6,
+        "footprint_tiles": [],
+        "doorways": [
+          {
+            "doorway_id": "room_05_salvage_yard_gamma_to_room_06_the_silent_observatory",
+            "position": {
+              "x": 24,
+              "y": 14,
+              "z": 0
+            },
+            "connects_to_room_id": "room_05_salvage_yard_gamma",
+            "label": "passage to Salvage Yard Gamma",
+            "edge_dir": "left"
+          },
+          {
+            "doorway_id": "room_06_the_silent_observatory_to_room_07_monk_s_refectory",
+            "position": {
+              "x": 26,
+              "y": 12,
+              "z": 0
+            },
+            "connects_to_room_id": "room_07_monk_s_refectory",
+            "label": "passage to Monk's Refectory",
+            "edge_dir": "top"
+          }
+        ],
+        "spawn_points": [],
+        "visual": {
+          "biome": "abyssal_viewpoint",
+          "floor_tile": "yard_pavers",
+          "wall_tile": "wood_beam_wall",
+          "decor_tags": [
+            "telescopes",
+            "glass_domes",
+            "charts",
+            "region_map"
+          ],
+          "ambient_palette": "low_lantern",
+          "visual_canon_hash": "83b57c479065cfac",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_06_the_silent_observatory_sonar_array",
+              "label": "Abyssal Sonar",
+              "description": "A rotating holographic display showing the surrounding sea-floor topography.",
+              "anchor": "center",
+              "width_tiles": 2,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "metadata": {
+          "purpose": "Monitoring the sea floor and signal interference",
+          "activity_tags": [
+            "scanning",
+            "watching"
+          ],
+          "player_entry_hook": "A corporate spy disguised as a data-monk.",
+          "room_archetype": "lookout",
+          "layout_signal": "The Silent Observatory | Monitoring the sea floor and signal interference | abyssal_viewpoint | scanning | watching | telescopes | glass_domes | charts | region_map"
+        },
+        "footprint_area": 0,
+        "capacity_estimate": 0,
+        "occupancy_density": 0.0,
+        "pressure_band": "",
+        "image_url": "",
+        "flux_floor_prompt": "top-down pixel art of polished black polymer flooring reflecting faint cyan lights, 32px grid",
+        "room_scene_prompt": "top-down orthographic view of a small observation dome, massive reinforced glass floor looking into the abyss, sonar consoles, no text, no labels, pixel art style, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "sunken-satellite-monastery-01",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree vertical",
+            "scale_rule": "32px per meter, pixel-perfect grid alignment"
+          },
+          "palette": {
+            "dominant": "#0a141a",
+            "secondary": "#2d3e40",
+            "accent": "#00ffcc",
+            "shadow": "#05080a",
+            "highlight": "#e0f2f1"
+          },
+          "materials": [
+            "corroded-titanium",
+            "bioluminescent-algae",
+            "reinforced-polymer-glass",
+            "oxidized-copper-wiring",
+            "pressurized-rubber-gaskets"
+          ],
+          "lighting": "low-ambient abyssal blue with high-contrast cyan point-lights from circuitry and bioluminescence",
+          "architecture": [
+            "hexagonal-pressure-domes",
+            "exposed-conduit-ribbing",
+            "gothic-arched-server-racks",
+            "circular-airlocks"
+          ],
+          "terrain": {
+            "ground": "dark-silt-over-rusted-hull-plating",
+            "path": "glowing-fiber-optic-floor-strips",
+            "edge": "jagged-carbon-fiber-wreckage-walls"
+          },
+          "sprite_language": {
+            "body_proportion": "bulky-top-heavy-diving-suits",
+            "outline": "1px-solid-dark-teal",
+            "role_readability": "color-coded-helmet-visors-and-shoulder-insignia"
+          },
+          "world_prompt_prefix": "top-down orthographic view, sunken satellite monastery, rusted industrial gothic, deep sea abyss, bioluminescent cyan highlights, pixel art style",
+          "sprite_prompt_prefix": "top-down sprite, pressurized diving suit, cyber-gothic monastic robes, mechanical salvage tools, glowing visor",
+          "forbidden_visuals": [
+            "isometric-perspective",
+            "natural-sunlight",
+            "photorealism",
+            "text-labels",
+            "ui-overlays-in-render",
+            "generic-fantasy-stone",
+            "wood-textures"
+          ],
+          "canon_hash": "83b57c479065cfac"
+        }
+      },
+      {
+        "room_id": "room_07_monk_s_refectory",
+        "name": "Monk's Refectory",
+        "x": 22,
+        "y": 6,
+        "z": 0,
+        "width_tiles": 10,
+        "height_tiles": 6,
+        "footprint_tiles": [],
+        "doorways": [
+          {
+            "doorway_id": "room_06_the_silent_observatory_to_room_07_monk_s_refectory",
+            "position": {
+              "x": 26,
+              "y": 11,
+              "z": 0
+            },
+            "connects_to_room_id": "room_06_the_silent_observatory",
+            "label": "passage to The Silent Observatory",
+            "edge_dir": "bottom"
+          },
+          {
+            "doorway_id": "room_07_monk_s_refectory_to_room_08_the_high_council_chamber",
+            "position": {
+              "x": 22,
+              "y": 8,
+              "z": 0
+            },
+            "connects_to_room_id": "room_08_the_high_council_chamber",
+            "label": "passage to The High Council Chamber",
+            "edge_dir": "left"
+          }
+        ],
+        "spawn_points": [],
+        "visual": {
+          "biome": "cyber_monastic",
+          "floor_tile": "yard_pavers",
+          "wall_tile": "wood_beam_wall",
+          "decor_tags": [
+            "benches",
+            "dispensers",
+            "tapestries",
+            "round_table"
+          ],
+          "ambient_palette": "warm_lantern",
+          "visual_canon_hash": "83b57c479065cfac",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_07_monk_s_refectory_nutrient_dispenser",
+              "label": "The Algae Tap",
+              "description": "A copper-piped machine that dispenses flavored nutrient slurries.",
+              "anchor": "west_mid",
+              "width_tiles": 2,
+              "height_tiles": 1
+            }
+          ]
+        },
+        "metadata": {
+          "purpose": "Socializing and nutrient consumption",
+          "activity_tags": [
+            "eating",
+            "communing"
+          ],
+          "player_entry_hook": "A merchant vessel seeking to buy ancient encryption keys.",
+          "room_archetype": "rest_social",
+          "layout_signal": "Monk's Refectory | Socializing and nutrient consumption | cyber_monastic | eating | communing | benches | dispensers | tapestries | round_table"
+        },
+        "footprint_area": 0,
+        "capacity_estimate": 0,
+        "occupancy_density": 0.0,
+        "pressure_band": "",
+        "image_url": "",
+        "flux_floor_prompt": "top-down pixel art of dark-teal ceramic tiles with copper inlay patterns, 32px grid",
+        "room_scene_prompt": "top-down orthographic view of a monastic dining hall, long metal tables, nutrient paste dispensers, cyber-gothic tapestries on walls, no text, no labels, pixel art style, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "sunken-satellite-monastery-01",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree vertical",
+            "scale_rule": "32px per meter, pixel-perfect grid alignment"
+          },
+          "palette": {
+            "dominant": "#0a141a",
+            "secondary": "#2d3e40",
+            "accent": "#00ffcc",
+            "shadow": "#05080a",
+            "highlight": "#e0f2f1"
+          },
+          "materials": [
+            "corroded-titanium",
+            "bioluminescent-algae",
+            "reinforced-polymer-glass",
+            "oxidized-copper-wiring",
+            "pressurized-rubber-gaskets"
+          ],
+          "lighting": "low-ambient abyssal blue with high-contrast cyan point-lights from circuitry and bioluminescence",
+          "architecture": [
+            "hexagonal-pressure-domes",
+            "exposed-conduit-ribbing",
+            "gothic-arched-server-racks",
+            "circular-airlocks"
+          ],
+          "terrain": {
+            "ground": "dark-silt-over-rusted-hull-plating",
+            "path": "glowing-fiber-optic-floor-strips",
+            "edge": "jagged-carbon-fiber-wreckage-walls"
+          },
+          "sprite_language": {
+            "body_proportion": "bulky-top-heavy-diving-suits",
+            "outline": "1px-solid-dark-teal",
+            "role_readability": "color-coded-helmet-visors-and-shoulder-insignia"
+          },
+          "world_prompt_prefix": "top-down orthographic view, sunken satellite monastery, rusted industrial gothic, deep sea abyss, bioluminescent cyan highlights, pixel art style",
+          "sprite_prompt_prefix": "top-down sprite, pressurized diving suit, cyber-gothic monastic robes, mechanical salvage tools, glowing visor",
+          "forbidden_visuals": [
+            "isometric-perspective",
+            "natural-sunlight",
+            "photorealism",
+            "text-labels",
+            "ui-overlays-in-render",
+            "generic-fantasy-stone",
+            "wood-textures"
+          ],
+          "canon_hash": "83b57c479065cfac"
+        }
+      },
+      {
+        "room_id": "room_08_the_high_council_chamber",
+        "name": "The High Council Chamber",
+        "x": 10,
+        "y": 0,
+        "z": 0,
+        "width_tiles": 12,
+        "height_tiles": 12,
+        "footprint_tiles": [],
+        "doorways": [
+          {
+            "doorway_id": "room_04_hydro_ponic_crypt_to_room_08_the_high_council_chamber",
+            "position": {
+              "x": 10,
+              "y": 6,
+              "z": 0
+            },
+            "connects_to_room_id": "room_04_hydro_ponic_crypt",
+            "label": "passage to Hydro-Ponic Crypt",
+            "edge_dir": "left"
+          },
+          {
+            "doorway_id": "room_05_salvage_yard_gamma_to_room_08_the_high_council_chamber",
+            "position": {
+              "x": 15,
+              "y": 11,
+              "z": 0
+            },
+            "connects_to_room_id": "room_05_salvage_yard_gamma",
+            "label": "passage to Salvage Yard Gamma",
+            "edge_dir": "bottom"
+          },
+          {
+            "doorway_id": "room_07_monk_s_refectory_to_room_08_the_high_council_chamber",
+            "position": {
+              "x": 21,
+              "y": 8,
+              "z": 0
+            },
+            "connects_to_room_id": "room_07_monk_s_refectory",
+            "label": "passage to Monk's Refectory",
+            "edge_dir": "right"
+          }
+        ],
+        "spawn_points": [],
+        "visual": {
+          "biome": "cyber_monastic",
+          "floor_tile": "stone_hall",
+          "wall_tile": "board_trim_wall",
+          "decor_tags": [
+            "thrones",
+            "holograms",
+            "banners",
+            "round_table"
+          ],
+          "ambient_palette": "focused_blue",
+          "visual_canon_hash": "83b57c479065cfac",
+          "showcase_shelf": false,
+          "showcase_item_colors": [],
+          "reflection_glares": false,
+          "scene_components": [
+            {
+              "component_id": "room_08_the_high_council_chamber_council_throne",
+              "label": "Archivist Throne",
+              "description": "A bulky chair integrated with data-cables and life-support systems.",
+              "anchor": "north_mid",
+              "width_tiles": 2,
+              "height_tiles": 2
+            }
+          ]
+        },
+        "metadata": {
+          "purpose": "Governance and signal strategy",
+          "activity_tags": [
+            "debating",
+            "ruling"
+          ],
+          "player_entry_hook": "A digital pilgrim looking for the original source-code of the Great AI.",
+          "room_archetype": "council",
+          "layout_signal": "The High Council Chamber | Governance and signal strategy | cyber_monastic | debating | ruling | thrones | holograms | banners | round_table"
+        },
+        "footprint_area": 0,
+        "capacity_estimate": 0,
+        "occupancy_density": 0.0,
+        "pressure_band": "",
+        "image_url": "",
+        "flux_floor_prompt": "top-down pixel art of ornate hexagonal titanium tiles with glowing cyan borders, 32px grid",
+        "room_scene_prompt": "top-down orthographic view of a hexagonal council chamber, a ring of high-backed server-thrones, central holographic map of the satellite, no text, no labels, pixel art style, edge-to-edge floor texture",
+        "visual_canon": {
+          "canon_version": "world_visual_canon_v1",
+          "generated_by": "world_builder.nodes.visual_canon",
+          "model_stage": "world_visual_canon_generation",
+          "canon_id": "sunken-satellite-monastery-01",
+          "camera": {
+            "projection": "strict_top_down",
+            "pitch": "90-degree vertical",
+            "scale_rule": "32px per meter, pixel-perfect grid alignment"
+          },
+          "palette": {
+            "dominant": "#0a141a",
+            "secondary": "#2d3e40",
+            "accent": "#00ffcc",
+            "shadow": "#05080a",
+            "highlight": "#e0f2f1"
+          },
+          "materials": [
+            "corroded-titanium",
+            "bioluminescent-algae",
+            "reinforced-polymer-glass",
+            "oxidized-copper-wiring",
+            "pressurized-rubber-gaskets"
+          ],
+          "lighting": "low-ambient abyssal blue with high-contrast cyan point-lights from circuitry and bioluminescence",
+          "architecture": [
+            "hexagonal-pressure-domes",
+            "exposed-conduit-ribbing",
+            "gothic-arched-server-racks",
+            "circular-airlocks"
+          ],
+          "terrain": {
+            "ground": "dark-silt-over-rusted-hull-plating",
+            "path": "glowing-fiber-optic-floor-strips",
+            "edge": "jagged-carbon-fiber-wreckage-walls"
+          },
+          "sprite_language": {
+            "body_proportion": "bulky-top-heavy-diving-suits",
+            "outline": "1px-solid-dark-teal",
+            "role_readability": "color-coded-helmet-visors-and-shoulder-insignia"
+          },
+          "world_prompt_prefix": "top-down orthographic view, sunken satellite monastery, rusted industrial gothic, deep sea abyss, bioluminescent cyan highlights, pixel art style",
+          "sprite_prompt_prefix": "top-down sprite, pressurized diving suit, cyber-gothic monastic robes, mechanical salvage tools, glowing visor",
+          "forbidden_visuals": [
+            "isometric-perspective",
+            "natural-sunlight",
+            "photorealism",
+            "text-labels",
+            "ui-overlays-in-render",
+            "generic-fantasy-stone",
+            "wood-textures"
+          ],
+          "canon_hash": "83b57c479065cfac"
+        }
+      }
+    ]
+  },
+  "movement": {
+    "max_steps_per_timestep": 2,
+    "capacity_per_coordinate": 3,
+    "line_of_sight_required": false,
+    "allow_diagonal": false
+  },
+  "item_rules": {
+    "mass_conservation": true,
+    "require_same_coordinate_for_transfer": true,
+    "combinations": []
+  },
+  "image_rules": {
+    "enabled": true,
+    "allowed_operations": [
+      "create",
+      "edit"
+    ]
+  },
+  "custom_action_rules": {
+    "default_duration_steps": 2,
+    "max_range_steps": 10,
+    "allowed_actions": [
+      "Sanctify Data-Stream",
+      "Purge Corrupt Packet",
+      "Negotiate Bandwidth Tithe",
+      "Audit Theological Log",
+      "Chat",
+      "Inspect",
+      "Coordinate",
+      "Trade",
+      "Move",
+      "CinematicInteraction"
+    ]
+  },
+  "social_rules": [
+    "Data-purity is the highest virtue; corrupted files are considered spiritual sins.",
+    "Commercial transactions must be sanctified by a High Indexer.",
+    "Direct physical contact is forbidden; all interaction occurs via haptic-link.",
+    "The oldest server racks are sacred ground and require silence.",
+    "Generated gameplay loops should create follow-up choices instead of dead ends.",
+    "Player entry points should remain understandable through local conversation, movement, and inspection.",
+    "Conflict hook: Two rival guilds claim ownership of the same 'Holy' sector of the satellite's memory.",
+    "Conflict hook: A massive data-leak threatens to reveal the monastery's commercial tax evasion.",
+    "Conflict hook: A theological schism emerges over whether AI-generated prayers are valid."
+  ],
+  "discovered_rules": []
+}

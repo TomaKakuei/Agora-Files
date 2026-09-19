@@ -1,0 +1,1591 @@
+{
+  "world_name": "Intertidal Embassy for Extinct Rivers",
+  "world_id": "intertidal_embassy_01",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "coastal_trade_city",
+    "profile_id": "coastal_trade_city",
+    "locale": "en-US",
+    "tone": "melancholic, bureaucratic, aquatic, high-stakes",
+    "visual_direction": "verdigris copper, salt-white stone, indigo water, coral-red accents",
+    "currency_code": "HBR",
+    "currency_symbol": "⚓",
+    "currency_minor_unit": "mark",
+    "currency_name": "Harbor Chit",
+    "domain_label": "embassy",
+    "starting_wallet_minor": {
+      "min": 500,
+      "max": 2500
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "coastal_trade_city_v1",
+      "frontend_affordance_id": "coastal_trade_city_v1",
+      "asset_prompt_kit_id": "coastal_trade_city_v1"
+    },
+    "policy_refs": {
+      "economy_policy_id": "harbor_chit_v1",
+      "item_collection_id": "harbor_trade_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "coastal_trade_city_v1",
+      "property_policy_id": "coastal_trade_city_v1",
+      "knowledge_policy_id": "coastal_trade_city_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "tidal diplomatic habitat, sediment memory, ecological treaty economy",
+  "premise": "An intertidal embassy reconstructs extinct rivers from sediment memories to negotiate their legal personhood and water rights.",
+  "simulation_objective": "Negotiate the legal restoration of the 'Ochre Flow' river by trading sediment evidence and managing tidal shifts.",
+  "agent_count_target": 12,
+  "player_count_target": 4,
+  "economy_focus": "Trading authenticated silt, flood testimony, and watershed debt chits.",
+  "exploration_focus": "Navigating rooms that change accessibility based on the tide level and river mood.",
+  "visual_style": "Top-down pixel art with verdigris copper, salt-white stone, and indigo water.",
+  "rooms": [
+    {
+      "name": "The Silt Archive",
+      "biome": "coastal_interior",
+      "purpose": "Storage and authentication of river sediment.",
+      "decor_tags": [
+        "copper_vials",
+        "wet_stone",
+        "shelves"
+      ],
+      "activity_tags": [
+        "research",
+        "trading"
+      ],
+      "archetype": "archive_ritual",
+      "ambient_palette": "low_lantern",
+      "width_tiles": 40,
+      "height_tiles": 30,
+      "floor_tile": "stone_slabs",
+      "wall_tile": "storage_wall",
+      "flux_floor_prompt": "Damp stone floor with thin channels of indigo water.",
+      "room_scene_prompt": "A vast hall of verdigris copper shelves holding glowing vials of river silt.",
+      "scene_components": [
+        {
+          "component_id": "silt_centrifuge",
+          "label": "Memory Centrifuge",
+          "description": "A copper device that spins silt to extract historical echoes.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The High Tide Chamber",
+      "biome": "intertidal_hall",
+      "purpose": "Diplomatic negotiations and treaty signing.",
+      "decor_tags": [
+        "coral_seals",
+        "indigo_drapes",
+        "stone_table"
+      ],
+      "activity_tags": [
+        "diplomacy",
+        "legal"
+      ],
+      "archetype": "council",
+      "ambient_palette": "focused_blue",
+      "width_tiles": 50,
+      "height_tiles": 40,
+      "floor_tile": "stone_checker",
+      "wall_tile": "red_pillar_wall",
+      "flux_floor_prompt": "Polished stone submerged under two inches of clear seawater.",
+      "room_scene_prompt": "A grand circular hall where delegates stand on raised stone platforms above the tide.",
+      "scene_components": [
+        {
+          "component_id": "treaty_altar",
+          "label": "Coral Treaty Altar",
+          "description": "A block of white stone for pressing coral-red wax seals.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Salt Gardener's Grotto",
+      "biome": "aquatic_garden",
+      "purpose": "Cultivation of memory-retaining kelp.",
+      "decor_tags": [
+        "kelp_vines",
+        "salt_crust",
+        "tide_pools"
+      ],
+      "activity_tags": [
+        "farming",
+        "harvesting"
+      ],
+      "archetype": "workshop",
+      "ambient_palette": "soft_mint",
+      "width_tiles": 35,
+      "height_tiles": 35,
+      "floor_tile": "yard_pavers",
+      "wall_tile": "yard_fence",
+      "flux_floor_prompt": "Sandy floor with bioluminescent tide pools.",
+      "room_scene_prompt": "A humid grotto filled with hanging salt-crusted vines and dark green kelp.",
+      "scene_components": [
+        {
+          "component_id": "desalination_vat",
+          "label": "Brine Purifier",
+          "description": "A copper vat that crystallizes river memories into salt.",
+          "anchor": "south_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Smuggler's Inlet",
+      "biome": "coastal_cave",
+      "purpose": "Illicit trade of unauthenticated sediment.",
+      "decor_tags": [
+        "crates",
+        "nets",
+        "dark_corners"
+      ],
+      "activity_tags": [
+        "black_market",
+        "hiding"
+      ],
+      "archetype": "market_exchange",
+      "ambient_palette": "dusty_brown",
+      "width_tiles": 45,
+      "height_tiles": 30,
+      "floor_tile": "stone_slabs",
+      "wall_tile": "stall_canvas_wall",
+      "flux_floor_prompt": "Rough-hewn rock floor slick with algae.",
+      "room_scene_prompt": "A hidden cove where small boats dock to exchange contraband silt.",
+      "scene_components": [
+        {
+          "component_id": "clandestine_scale",
+          "label": "Silt Balance",
+          "description": "A rusted scale used to weigh the density of river ghosts.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Hydrology Lab",
+      "biome": "laboratory",
+      "purpose": "Mapping the flow of extinct watersheds.",
+      "decor_tags": [
+        "glass_tubes",
+        "blueprints",
+        "copper_pipes"
+      ],
+      "activity_tags": [
+        "analysis",
+        "mapping"
+      ],
+      "archetype": "training",
+      "ambient_palette": "clear_day",
+      "width_tiles": 30,
+      "height_tiles": 30,
+      "floor_tile": "clean_tile",
+      "wall_tile": "glass_case_wall",
+      "flux_floor_prompt": "White tile floor with embedded copper circuitry.",
+      "room_scene_prompt": "A bright room filled with glass tanks simulating river currents.",
+      "scene_components": [
+        {
+          "component_id": "flow_projector",
+          "label": "Watershed Hologram",
+          "description": "A light-based map showing the ghost-path of the Ochre Flow.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Echo Commons",
+      "biome": "social_hub",
+      "purpose": "Public gathering and testimony sharing.",
+      "decor_tags": [
+        "benches",
+        "fountains",
+        "banners"
+      ],
+      "activity_tags": [
+        "socializing",
+        "listening"
+      ],
+      "archetype": "commons",
+      "ambient_palette": "warm_lantern",
+      "width_tiles": 60,
+      "height_tiles": 40,
+      "floor_tile": "wood_planks",
+      "wall_tile": "wood_beam_wall",
+      "flux_floor_prompt": "Weathered wood planks that creak with the tide.",
+      "room_scene_prompt": "A large open deck where citizens gather to hear the sounds of the reconstructed river.",
+      "scene_components": [
+        {
+          "component_id": "echo_fountain",
+          "label": "Resonance Basin",
+          "description": "A fountain that plays the sound of rushing water from the past.",
+          "anchor": "south_mid",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    }
+  ],
+  "role_groups": [
+    {
+      "role_name": "Silt Authenticator",
+      "count": 2,
+      "core_values": [
+        "Accuracy",
+        "Preservation"
+      ],
+      "activity": "Verifying the origin of sediment samples.",
+      "starting_item_ids": [
+        "magnifying_lens",
+        "silt_vial_empty"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Archive Desk",
+          "asset_type": "furniture",
+          "description": "A heavy copper desk for microscopic analysis.",
+          "story_use": "Used to issue certificates of authenticity."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "silt_fingerprints",
+          "topic": "Sedimentology",
+          "summary": "How to distinguish between glacial and volcanic river silt.",
+          "confidence": 95
+        }
+      ]
+    }
+  ],
+  "main_characters": [
+    {
+      "display_name": "Archivist Elara",
+      "role_name": "Lead Authenticator",
+      "activity": "Cataloging the Ochre Flow's delta deposits.",
+      "home_base": "The Silt Archive",
+      "arc_goal": "To prove the Ochre Flow was diverted illegally by the upstream cartel.",
+      "inventory": [
+        {
+          "name": "Ochre Silt Sample",
+          "description": "A vial of orange-tinted sand from the extinct delta.",
+          "quantity": 5
+        },
+        {
+          "name": "Verdigris Calipers",
+          "description": "Precision tool for measuring grain size.",
+          "quantity": 1
+        },
+        {
+          "name": "Authentication Seal",
+          "description": "A heavy stamp for marking legal sediment.",
+          "quantity": 1
+        },
+        {
+          "name": "Salt-Crusted Ledger",
+          "description": "Records of every sample entering the embassy.",
+          "quantity": 1
+        },
+        {
+          "name": "Indigo Inkwell",
+          "description": "Waterproof ink for diplomatic documents.",
+          "quantity": 2
+        },
+        {
+          "name": "Magnifying Lens",
+          "description": "A lens made of polished sea glass.",
+          "quantity": 1
+        },
+        {
+          "name": "Copper Tweezers",
+          "description": "For picking out micro-fossils from silt.",
+          "quantity": 1
+        },
+        {
+          "name": "Dried Kelp Snack",
+          "description": "Salty and nutritious.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Master Catalog",
+          "asset_type": "document",
+          "description": "The definitive list of extinct river signatures.",
+          "story_use": "Required to cross-reference new evidence."
+        },
+        {
+          "asset_name": "Archive Vault Key",
+          "asset_type": "access",
+          "description": "Grants entry to the high-security silt storage.",
+          "story_use": "Protects the most valuable river memories."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "ochre_flow_history",
+          "topic": "River History",
+          "summary": "The Ochre Flow dried up 50 years ago after a sudden tectonic shift.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "smuggler_routes",
+          "topic": "Security",
+          "summary": "Smugglers use the low tide to bypass the main gates.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Broker Kaelen",
+      "role_name": "Silt Merchant",
+      "activity": "Trading river rights and sediment futures.",
+      "home_base": "The Smuggler's Inlet",
+      "arc_goal": "To corner the market on Ochre Flow sediment before it is legalized.",
+      "inventory": [
+        {
+          "name": "Black Market Silt",
+          "description": "Unlabeled sediment of high quality.",
+          "quantity": 20
+        },
+        {
+          "name": "Debt Bond: Watershed",
+          "description": "A legal claim to future water flow.",
+          "quantity": 5
+        },
+        {
+          "name": "Counterfeit Seal",
+          "description": "A convincing fake of the Embassy's coral seal.",
+          "quantity": 1
+        },
+        {
+          "name": "Copper Coin Pouch",
+          "description": "Heavy with harbor chits.",
+          "quantity": 1
+        },
+        {
+          "name": "Smuggler's Compass",
+          "description": "Points to the nearest high-tide exit.",
+          "quantity": 1
+        },
+        {
+          "name": "Bribe Envelope",
+          "description": "Filled with high-value chits.",
+          "quantity": 3
+        },
+        {
+          "name": "Hidden Dagger",
+          "description": "A small blade made of obsidian.",
+          "quantity": 1
+        },
+        {
+          "name": "Trade Manifesto",
+          "description": "A list of desired river memories.",
+          "quantity": 1
+        },
+        {
+          "name": "Salt-White Stone",
+          "description": "A raw material for carving seals.",
+          "quantity": 10
+        },
+        {
+          "name": "Indigo Dye",
+          "description": "Used to tint fake silt samples.",
+          "quantity": 4
+        },
+        {
+          "name": "Waterproof Tarp",
+          "description": "To keep goods dry during transport.",
+          "quantity": 2
+        },
+        {
+          "name": "Signal Whistle",
+          "description": "Mimics the sound of a sea gull.",
+          "quantity": 1
+        },
+        {
+          "name": "Pocket Watch",
+          "description": "Tracks the tide cycles precisely.",
+          "quantity": 1
+        },
+        {
+          "name": "Luxury Kelp Cigar",
+          "description": "Smells of ozone and salt.",
+          "quantity": 5
+        },
+        {
+          "name": "Forged ID",
+          "description": "Identifies Kaelen as a legitimate hydrologist.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Inlet Stall",
+          "asset_type": "property",
+          "description": "A small, damp stall in the Smuggler's Inlet.",
+          "story_use": "A front for illegal silt trading."
+        },
+        {
+          "asset_name": "Cargo Skiff",
+          "asset_type": "vehicle",
+          "description": "A low-profile boat for moving silt at night.",
+          "story_use": "Used to transport large quantities of sediment."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "elara_debt",
+          "topic": "Blackmail",
+          "summary": "Archivist Elara owes money to the Salt Gardeners.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "silt_valuation",
+          "topic": "Economy",
+          "summary": "Ochre silt is worth triple if it contains gold flecks.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Gardener Thistle",
+      "role_name": "Salt Gardener",
+      "activity": "Tending to the memory-kelp beds.",
+      "home_base": "Salt Gardener's Grotto",
+      "arc_goal": "To grow a kelp strain that can survive in the Ochre Flow's high acidity.",
+      "inventory": [
+        {
+          "name": "Memory Kelp Spores",
+          "description": "Tiny seeds that glow when near fresh water.",
+          "quantity": 50
+        },
+        {
+          "name": "Pruning Shears",
+          "description": "Copper shears for harvesting kelp.",
+          "quantity": 1
+        },
+        {
+          "name": "Brine Fertilizer",
+          "description": "Concentrated salt solution.",
+          "quantity": 10
+        },
+        {
+          "name": "Woven Kelp Basket",
+          "description": "Strong and flexible.",
+          "quantity": 3
+        },
+        {
+          "name": "Tide Chart",
+          "description": "A hand-drawn map of local currents.",
+          "quantity": 1
+        },
+        {
+          "name": "Fresh Water Flask",
+          "description": "A rare and precious commodity.",
+          "quantity": 1
+        },
+        {
+          "name": "Mud Boots",
+          "description": "Thick rubber boots for the grotto.",
+          "quantity": 1
+        },
+        {
+          "name": "Glowing Moss",
+          "description": "Used for light in the dark grotto.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Kelp Bed Alpha",
+          "asset_type": "property",
+          "description": "The most productive kelp bed in the grotto.",
+          "story_use": "Produces the highest quality memory kelp."
+        },
+        {
+          "asset_name": "Gardener's Shed",
+          "asset_type": "building",
+          "description": "A small shack for storing tools and seeds.",
+          "story_use": "A quiet place for private meetings."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kelp_mutation",
+          "topic": "Botany",
+          "summary": "Kelp turns red when exposed to toxic runoff.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "kaelen_supply",
+          "topic": "Business",
+          "summary": "Kaelen buys kelp to wrap his illegal silt packages.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Hydrologist Mira",
+      "role_name": "Watershed Mapper",
+      "activity": "Simulating the Ochre Flow's restoration.",
+      "home_base": "Hydrology Lab",
+      "arc_goal": "To find the exact point where the river was diverted.",
+      "inventory": [
+        {
+          "name": "Topographic Map",
+          "description": "A detailed map of the extinct watershed.",
+          "quantity": 1
+        },
+        {
+          "name": "Flow Meter",
+          "description": "Measures the speed of simulated currents.",
+          "quantity": 1
+        },
+        {
+          "name": "Glass Test Tube",
+          "description": "For holding water samples.",
+          "quantity": 12
+        },
+        {
+          "name": "Copper Piping",
+          "description": "Spare parts for the lab's tanks.",
+          "quantity": 5
+        },
+        {
+          "name": "Blue Chalk",
+          "description": "For marking flow paths on the floor.",
+          "quantity": 10
+        },
+        {
+          "name": "Calculated Data Sheet",
+          "description": "Results of the latest flow simulation.",
+          "quantity": 3
+        },
+        {
+          "name": "Stale Hardtack",
+          "description": "Simple food for long lab shifts.",
+          "quantity": 5
+        },
+        {
+          "name": "Protective Goggles",
+          "description": "Prevents salt spray from hitting the eyes.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Simulation Tank 4",
+          "asset_type": "equipment",
+          "description": "A large glass tank for modeling deltas.",
+          "story_use": "Used to visualize the Ochre Flow's return."
+        },
+        {
+          "asset_name": "Lab Access Card",
+          "asset_type": "access",
+          "description": "Allows entry to the Hydrology Lab after hours.",
+          "story_use": "Essential for secret research."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "diversion_point",
+          "topic": "Hydrology",
+          "summary": "The river was diverted at the 'Iron Bend' canyon.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "thistle_help",
+          "topic": "Collaboration",
+          "summary": "Thistle's kelp can help stabilize new riverbanks.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Delegate Valerius",
+      "role_name": "River Advocate",
+      "activity": "Arguing for the Ochre Flow's legal personhood.",
+      "home_base": "The High Tide Chamber",
+      "arc_goal": "To pass the 'Watershed Sovereignty Act'.",
+      "inventory": [
+        {
+          "name": "Treaty Scroll",
+          "description": "A draft of the legal personhood agreement.",
+          "quantity": 1
+        },
+        {
+          "name": "Coral-Red Wax",
+          "description": "Used for official embassy seals.",
+          "quantity": 5
+        },
+        {
+          "name": "Silver Signet Ring",
+          "description": "Used to press the Valerius family crest.",
+          "quantity": 1
+        },
+        {
+          "name": "Formal Robes",
+          "description": "Indigo silk with verdigris embroidery.",
+          "quantity": 1
+        },
+        {
+          "name": "Speech Notes",
+          "description": "Arguments for river rights.",
+          "quantity": 3
+        },
+        {
+          "name": "Diplomatic Pass",
+          "description": "Allows entry to all embassy rooms.",
+          "quantity": 1
+        },
+        {
+          "name": "Scented Handkerchief",
+          "description": "To mask the smell of low-tide rot.",
+          "quantity": 2
+        },
+        {
+          "name": "Small Gold Bell",
+          "description": "Used to call for order in the chamber.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Delegate's Podium",
+          "asset_type": "furniture",
+          "description": "A raised platform in the High Tide Chamber.",
+          "story_use": "The place where Valerius makes his speeches."
+        },
+        {
+          "asset_name": "Private Balcony",
+          "asset_type": "property",
+          "description": "Overlooks the Echo Commons.",
+          "story_use": "Used for private negotiations."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "legal_precedent",
+          "topic": "Law",
+          "summary": "The 'Blue Stream' was granted personhood ten years ago.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "mira_evidence",
+          "topic": "Evidence",
+          "summary": "Mira's maps are the key to winning the legal case.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Diver Jax",
+      "role_name": "Memory Diver",
+      "activity": "Retrieving deep-sea sediment from the old river mouth.",
+      "home_base": "The Echo Commons",
+      "arc_goal": "To find the 'Heart Silt' of the Ochre Flow.",
+      "inventory": [
+        {
+          "name": "Diving Helmet",
+          "description": "A heavy copper helmet with a glass visor.",
+          "quantity": 1
+        },
+        {
+          "name": "Air Hose",
+          "description": "Reinforced leather hose for breathing.",
+          "quantity": 1
+        },
+        {
+          "name": "Lead Weights",
+          "description": "To keep the diver on the sea floor.",
+          "quantity": 4
+        },
+        {
+          "name": "Underwater Torch",
+          "description": "Burns with a chemical green flame.",
+          "quantity": 2
+        },
+        {
+          "name": "Silt Collection Bag",
+          "description": "Mesh bag for holding samples.",
+          "quantity": 5
+        },
+        {
+          "name": "Barnacle Scraper",
+          "description": "For cleaning artifacts found underwater.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Flare",
+          "description": "Signals for help from the surface.",
+          "quantity": 3
+        },
+        {
+          "name": "Dried Fish",
+          "description": "Tough but filling.",
+          "quantity": 8
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Diving Platform",
+          "asset_type": "structure",
+          "description": "A wooden pier extending into the deep water.",
+          "story_use": "The starting point for Jax's dives."
+        },
+        {
+          "asset_name": "Air Pump",
+          "asset_type": "machinery",
+          "description": "A hand-cranked pump for the diving suit.",
+          "story_use": "Requires an assistant to operate."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "deep_currents",
+          "topic": "Navigation",
+          "summary": "The currents at the delta are unpredictable at midnight.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "elara_request",
+          "topic": "Contract",
+          "summary": "Elara has promised a bonus for silt from the deepest trench.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Scribe Silas",
+      "role_name": "Treaty Scribe",
+      "activity": "Recording the oral testimonies of the river.",
+      "home_base": "The Echo Commons",
+      "arc_goal": "To compile the 'Book of Lost Flows'.",
+      "inventory": [
+        {
+          "name": "Vellum Roll",
+          "description": "High-quality writing surface.",
+          "quantity": 10
+        },
+        {
+          "name": "Quill Pen",
+          "description": "Made from a sea-bird's feather.",
+          "quantity": 5
+        },
+        {
+          "name": "Ink Powder",
+          "description": "Needs to be mixed with water.",
+          "quantity": 3
+        },
+        {
+          "name": "Portable Desk",
+          "description": "A small wooden board for writing on the go.",
+          "quantity": 1
+        },
+        {
+          "name": "Wax Tablet",
+          "description": "For temporary notes.",
+          "quantity": 2
+        },
+        {
+          "name": "Stylus",
+          "description": "Copper tool for the wax tablet.",
+          "quantity": 1
+        },
+        {
+          "name": "Reading Glasses",
+          "description": "Helps with fine script.",
+          "quantity": 1
+        },
+        {
+          "name": "Candle Stub",
+          "description": "For working in the evening.",
+          "quantity": 6
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scribe's Nook",
+          "asset_type": "furniture",
+          "description": "A quiet corner in the Commons.",
+          "story_use": "Where Silas interviews citizens."
+        },
+        {
+          "asset_name": "Archive Access",
+          "asset_type": "access",
+          "description": "Permission to read historical treaties.",
+          "story_use": "Used for research."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "oral_tradition",
+          "topic": "History",
+          "summary": "The river was said to sing during the spring thaw.",
+          "confidence": 80
+        },
+        {
+          "knowledge_id": "valerius_secret",
+          "topic": "Gossip",
+          "summary": "Valerius is actually from the upstream city.",
+          "confidence": 60
+        }
+      ]
+    },
+    {
+      "display_name": "Guard Captain Torin",
+      "role_name": "Embassy Security",
+      "activity": "Patrolling the intertidal zones.",
+      "home_base": "The High Tide Chamber",
+      "arc_goal": "To stop the flow of illegal silt into the embassy.",
+      "inventory": [
+        {
+          "name": "Copper Halberd",
+          "description": "A ceremonial but sharp polearm.",
+          "quantity": 1
+        },
+        {
+          "name": "Whistle of Authority",
+          "description": "Piercing sound to stop suspects.",
+          "quantity": 1
+        },
+        {
+          "name": "Iron Shackles",
+          "description": "For detaining smugglers.",
+          "quantity": 2
+        },
+        {
+          "name": "Lantern",
+          "description": "Oil-burning with a copper frame.",
+          "quantity": 1
+        },
+        {
+          "name": "Duty Roster",
+          "description": "List of guard rotations.",
+          "quantity": 1
+        },
+        {
+          "name": "Heavy Cloak",
+          "description": "Waterproofed with fish oil.",
+          "quantity": 1
+        },
+        {
+          "name": "Whetstone",
+          "description": "For sharpening the halberd.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Shield",
+          "description": "Emblazoned with the embassy anchor.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guard Post",
+          "asset_type": "building",
+          "description": "A small stone tower near the entrance.",
+          "story_use": "The central hub for security operations."
+        },
+        {
+          "asset_name": "Evidence Locker",
+          "asset_type": "storage",
+          "description": "Where confiscated goods are kept.",
+          "story_use": "Contains many plot-relevant items."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kaelen_alias",
+          "topic": "Intelligence",
+          "summary": "Kaelen is known in other cities as 'The Eel'.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "tide_vulnerability",
+          "topic": "Security",
+          "summary": "The south wall is climbable during the lowest tide.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Technician Pip",
+      "role_name": "Centrifuge Operator",
+      "activity": "Maintaining the memory extraction machines.",
+      "home_base": "The Silt Archive",
+      "arc_goal": "To repair the ancient 'Great Centrifuge'.",
+      "inventory": [
+        {
+          "name": "Wrench Set",
+          "description": "Various sizes for copper bolts.",
+          "quantity": 1
+        },
+        {
+          "name": "Oil Can",
+          "description": "Lubricant for spinning parts.",
+          "quantity": 2
+        },
+        {
+          "name": "Spare Gears",
+          "description": "Small brass wheels.",
+          "quantity": 10
+        },
+        {
+          "name": "Cleaning Rag",
+          "description": "Greasy and stained.",
+          "quantity": 5
+        },
+        {
+          "name": "Technical Manual",
+          "description": "Diagrams of the centrifuge.",
+          "quantity": 1
+        },
+        {
+          "name": "Copper Wire",
+          "description": "For electrical repairs.",
+          "quantity": 15
+        },
+        {
+          "name": "Solder Iron",
+          "description": "Heated by a small coal brazier.",
+          "quantity": 1
+        },
+        {
+          "name": "Measuring Tape",
+          "description": "Flexible leather with copper markings.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Workshop Bench",
+          "asset_type": "furniture",
+          "description": "A cluttered table in the Archive.",
+          "story_use": "Where Pip fixes broken equipment."
+        },
+        {
+          "asset_name": "Tool Chest",
+          "asset_type": "storage",
+          "description": "A heavy iron box for tools.",
+          "story_use": "Contains Pip's life's work."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "centrifuge_quirk",
+          "topic": "Engineering",
+          "summary": "The machine works better when the tide is coming in.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "jax_equipment",
+          "topic": "Maintenance",
+          "summary": "Jax's diving helmet has a slow leak.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Witness Oryn",
+      "role_name": "Flood Survivor",
+      "activity": "Providing oral history of the last great flood.",
+      "home_base": "The Echo Commons",
+      "arc_goal": "To ensure the river's destructive power is remembered, not just its beauty.",
+      "inventory": [
+        {
+          "name": "Old Photograph",
+          "description": "Faded image of the river before it dried.",
+          "quantity": 1
+        },
+        {
+          "name": "River Stone",
+          "description": "A smooth stone Oryn kept as a memento.",
+          "quantity": 1
+        },
+        {
+          "name": "Walking Stick",
+          "description": "Carved from driftwood.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Pouch of Silt",
+          "description": "Oryn's personal sample from his childhood home.",
+          "quantity": 1
+        },
+        {
+          "name": "Hand-knit Scarf",
+          "description": "Warm and scratchy.",
+          "quantity": 1
+        },
+        {
+          "name": "Tin Cup",
+          "description": "For drinking tea in the Commons.",
+          "quantity": 1
+        },
+        {
+          "name": "Dried Berries",
+          "description": "A small snack.",
+          "quantity": 5
+        },
+        {
+          "name": "Old Map",
+          "description": "Shows the river's path through Oryn's village.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Commons Bench",
+          "asset_type": "furniture",
+          "description": "Oryn's favorite spot to sit.",
+          "story_use": "Where he tells his stories."
+        },
+        {
+          "asset_name": "Small Apartment",
+          "asset_type": "property",
+          "description": "A modest room near the embassy.",
+          "story_use": "Filled with river memorabilia."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "flood_warning",
+          "topic": "History",
+          "summary": "The river always turned grey before a flood.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "silas_accuracy",
+          "topic": "Observation",
+          "summary": "Silas often exaggerates the stories he writes down.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Smuggler Rin",
+      "role_name": "Silt Runner",
+      "activity": "Transporting goods between the Inlet and the Archive.",
+      "home_base": "The Smuggler's Inlet",
+      "arc_goal": "To pay off her debt to Kaelen and leave the embassy.",
+      "inventory": [
+        {
+          "name": "Hidden Compartment Box",
+          "description": "Looks like a normal crate.",
+          "quantity": 2
+        },
+        {
+          "name": "Grappling Hook",
+          "description": "Small and quiet.",
+          "quantity": 1
+        },
+        {
+          "name": "Dark Clothing",
+          "description": "Helps blend into the shadows.",
+          "quantity": 1
+        },
+        {
+          "name": "Lockpick Set",
+          "description": "For bypassing simple latches.",
+          "quantity": 1
+        },
+        {
+          "name": "Bribe Coins",
+          "description": "A few harbor chits for guards.",
+          "quantity": 10
+        },
+        {
+          "name": "Waterproof Bag",
+          "description": "Keeps silt dry during swims.",
+          "quantity": 3
+        },
+        {
+          "name": "Small Mirror",
+          "description": "For looking around corners.",
+          "quantity": 1
+        },
+        {
+          "name": "Energy Bar",
+          "description": "Quick nutrition for a run.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Secret Tunnel Access",
+          "asset_type": "access",
+          "description": "Knowledge of a hidden path to the Archive.",
+          "story_use": "Allows Rin to move undetected."
+        },
+        {
+          "asset_name": "Hidden Cache",
+          "asset_type": "storage",
+          "description": "A loose stone in the wall for hiding items.",
+          "story_use": "Where Rin keeps her stolen goods."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "torin_routine",
+          "topic": "Security",
+          "summary": "Torin takes a break at the third bell.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "pip_distraction",
+          "topic": "Strategy",
+          "summary": "Pip can be distracted by asking about the centrifuge.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Analyst Zora",
+      "role_name": "Debt Auditor",
+      "activity": "Tracking the financial obligations of the watershed.",
+      "home_base": "Hydrology Lab",
+      "arc_goal": "To reconcile the embassy's accounts before the audit.",
+      "inventory": [
+        {
+          "name": "Abacus",
+          "description": "Copper beads on silver wires.",
+          "quantity": 1
+        },
+        {
+          "name": "Ledger of Debts",
+          "description": "A massive book of financial records.",
+          "quantity": 1
+        },
+        {
+          "name": "Audit Stamp",
+          "description": "Marks accounts as 'Verified'.",
+          "quantity": 1
+        },
+        {
+          "name": "Red Ink",
+          "description": "For marking deficits.",
+          "quantity": 2
+        },
+        {
+          "name": "Financial Decree",
+          "description": "A new rule regarding silt taxes.",
+          "quantity": 5
+        },
+        {
+          "name": "Magnifying Glass",
+          "description": "For reading fine print on bonds.",
+          "quantity": 1
+        },
+        {
+          "name": "Paperweights",
+          "description": "Heavy lead balls.",
+          "quantity": 4
+        },
+        {
+          "name": "Tea Leaves",
+          "description": "For staying awake during audits.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Auditor's Office",
+          "asset_type": "building",
+          "description": "A secure room in the Hydrology Lab.",
+          "story_use": "Where the most sensitive records are kept."
+        },
+        {
+          "asset_name": "Safe Deposit Box",
+          "asset_type": "storage",
+          "description": "A locked box in the embassy vault.",
+          "story_use": "Contains Zora's personal savings."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kaelen_laundering",
+          "topic": "Finance",
+          "summary": "Kaelen is using silt trades to hide his debt.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "valerius_funding",
+          "topic": "Politics",
+          "summary": "Valerius's campaign is funded by the upstream cartel.",
+          "confidence": 85
+        }
+      ]
+    }
+  ],
+  "social_rules": [
+    "No silt may be removed from the Archive without a signed certificate.",
+    "The High Tide Chamber is off-limits to non-delegates during the flood bell.",
+    "All oral testimonies must be witnessed by at least one Scribe.",
+    "Trading in the Smuggler's Inlet is punishable by exile to the drylands."
+  ],
+  "item_themes": [
+    "Sediment and Silt",
+    "Copper and Verdigris",
+    "Hydrological Tools",
+    "Diplomatic Seals",
+    "Tidal Navigation"
+  ],
+  "custom_actions": [
+    "Authenticate Silt",
+    "Sign Treaty Seal",
+    "Extract Memory Echo",
+    "Bribe Guard",
+    "Simulate River Flow"
+  ],
+  "player_entry_points": [
+    "Arriving as a junior hydrologist on a supply boat.",
+    "Entering as a legal clerk for Delegate Valerius.",
+    "Sneaking in through the Smuggler's Inlet as a memory diver."
+  ],
+  "conflict_hooks": [
+    "A high-quality silt sample has been stolen from the Archive.",
+    "The tide is rising faster than predicted, threatening to flood the Silt Archive.",
+    "A witness provides testimony that contradicts the official hydrological map."
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Evidence Gathering",
+      "summary": "Players collect silt samples, authenticate them in the lab, and present them as evidence in the High Tide Chamber.",
+      "roles": [
+        "Silt Authenticator",
+        "Memory Diver",
+        "River Advocate"
+      ],
+      "rooms": [
+        "The Silt Archive",
+        "Hydrology Lab",
+        "The High Tide Chamber"
+      ],
+      "pressure": "The legal deadline for the treaty is approaching."
+    },
+    {
+      "label": "Black Market Trade",
+      "summary": "Players acquire illegal silt from the Inlet, bypass guards, and sell it to desperate archivists or collectors.",
+      "roles": [
+        "Silt Merchant",
+        "Silt Runner",
+        "Embassy Security"
+      ],
+      "rooms": [
+        "The Smuggler's Inlet",
+        "The Echo Commons",
+        "The Silt Archive"
+      ],
+      "pressure": "The Guard Captain is increasing patrols during low tide."
+    }
+  ],
+  "item_catalog": [
+    {
+      "item_id": "ochre_silt_vial",
+      "name": "Ochre Flow Silt",
+      "price": 500,
+      "mass": 0.5,
+      "description": "Authenticated sediment from the extinct Ochre Flow.",
+      "image_prompt": "A small glass vial filled with glowing orange sand, copper cap.",
+      "category": "evidence"
+    },
+    {
+      "item_id": "coral_treaty_seal",
+      "name": "Coral-Red Treaty Seal",
+      "price": 1000,
+      "mass": 0.2,
+      "description": "A wax seal used to finalize diplomatic agreements.",
+      "image_prompt": "A bright red wax seal with an embossed anchor and river wave.",
+      "category": "legal"
+    },
+    {
+      "item_id": "verdigris_calipers",
+      "name": "Verdigris Calipers",
+      "price": 250,
+      "mass": 0.3,
+      "description": "Precision tool for measuring sediment grains.",
+      "image_prompt": "Green-tinted copper calipers with fine markings.",
+      "category": "tool"
+    },
+    {
+      "item_id": "memory_kelp_strand",
+      "name": "Memory Kelp",
+      "price": 150,
+      "mass": 0.1,
+      "description": "Kelp that vibrates when near historical river sites.",
+      "image_prompt": "A long, dark green strand of kelp with glowing blue veins.",
+      "category": "resource"
+    },
+    {
+      "item_id": "harbor_chit_bundle",
+      "name": "Bundle of Harbor Chits",
+      "price": 100,
+      "mass": 1.0,
+      "description": "The local currency of the Intertidal Embassy.",
+      "image_prompt": "A stack of copper coins with a hole in the center.",
+      "category": "currency"
+    },
+    {
+      "item_id": "watershed_map_scroll",
+      "name": "Watershed Map",
+      "price": 400,
+      "mass": 0.4,
+      "description": "A detailed map of extinct river paths.",
+      "image_prompt": "A weathered scroll showing blue lines on a tan background.",
+      "category": "document"
+    },
+    {
+      "item_id": "diving_helmet_copper",
+      "name": "Copper Diving Helmet",
+      "price": 2000,
+      "mass": 15.0,
+      "description": "Heavy gear for exploring the submerged delta.",
+      "image_prompt": "A round copper helmet with a large circular glass window.",
+      "category": "equipment"
+    },
+    {
+      "item_id": "silt_centrifuge_key",
+      "name": "Centrifuge Key",
+      "price": 300,
+      "mass": 0.1,
+      "description": "A specialized tool for starting the memory extractor.",
+      "image_prompt": "A complex copper key with multiple teeth.",
+      "category": "tool"
+    },
+    {
+      "item_id": "flood_testimony_wax",
+      "name": "Testimony Cylinder",
+      "price": 600,
+      "mass": 0.8,
+      "description": "A wax cylinder containing the recorded sound of a flood.",
+      "image_prompt": "A dark wax tube with visible grooves.",
+      "category": "evidence"
+    },
+    {
+      "item_id": "salt_white_stone_seal",
+      "name": "Blank Stone Seal",
+      "price": 200,
+      "mass": 0.5,
+      "description": "A piece of salt-white stone ready for carving.",
+      "image_prompt": "A smooth, rectangular block of white stone.",
+      "category": "resource"
+    },
+    {
+      "item_id": "indigo_ink_pot",
+      "name": "Indigo Ink",
+      "price": 100,
+      "mass": 0.2,
+      "description": "Waterproof ink for official records.",
+      "image_prompt": "A small ceramic pot filled with deep blue ink.",
+      "category": "resource"
+    },
+    {
+      "item_id": "smuggler_lantern",
+      "name": "Shuttered Lantern",
+      "price": 350,
+      "mass": 1.2,
+      "description": "A lantern that can hide its light quickly.",
+      "image_prompt": "A dark metal lantern with a sliding copper door.",
+      "category": "equipment"
+    },
+    {
+      "item_id": "river_ghost_vial",
+      "name": "River Ghost Sample",
+      "price": 1500,
+      "mass": 0.5,
+      "description": "Extremely rare silt that contains visual echoes.",
+      "image_prompt": "A vial where the sand seems to move on its own.",
+      "category": "evidence"
+    },
+    {
+      "item_id": "brine_purifier_tablet",
+      "name": "Purifier Tablet",
+      "price": 50,
+      "mass": 0.05,
+      "description": "Cleans salt from water for lab use.",
+      "image_prompt": "A small white pill that fizzes in water.",
+      "category": "resource"
+    },
+    {
+      "item_id": "embassy_guard_badge",
+      "name": "Security Badge",
+      "price": 500,
+      "mass": 0.1,
+      "description": "Grants access to restricted intertidal zones.",
+      "image_prompt": "A copper badge in the shape of a stylized wave.",
+      "category": "access"
+    }
+  ],
+  "visual_canon": {
+    "canon_id": "intertidal_pixel_v1",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees",
+      "scale_rule": "1_unit_per_meter"
+    },
+    "palette": {
+      "dominant": "verdigris_copper",
+      "secondary": "salt_white",
+      "accent": "coral_red",
+      "shadow": "dark_kelp_green",
+      "highlight": "indigo_water"
+    },
+    "materials": [
+      "oxidized copper",
+      "weathered limestone",
+      "polished sea glass",
+      "woven kelp fiber"
+    ],
+    "lighting": "Dappled sunlight through water, flickering copper lanterns, bioluminescent algae.",
+    "architecture": [
+      "circular stone halls",
+      "raised copper walkways",
+      "open-air tidal pools",
+      "thick stone buttresses"
+    ],
+    "terrain": {
+      "ground": "wet stone slabs and sandy tide pools",
+      "path": "copper grating and wooden piers",
+      "edge": "steep salt-crusted cliffs"
+    },
+    "sprite_language": {
+      "body_proportion": "6_head_tall_chibi",
+      "outline": "1px_dark_green",
+      "role_readability": "high_contrast_accessories"
+    },
+    "world_prompt_prefix": "Top-down pixel art, intertidal embassy, verdigris and salt-white, aquatic atmosphere.",
+    "sprite_prompt_prefix": "Top-down pixel art character, embassy resident, wearing copper and indigo.",
+    "forbidden_visuals": [
+      "modern technology",
+      "generic fantasy dragons",
+      "readable text",
+      "bright neon colors",
+      "dry desert landscapes"
+    ]
+  },
+  "agent_visual_policy": {
+    "policy_id": "embassy_wardrobe_v1",
+    "world_wardrobe_brief": "Characters wear layered, waterproof clothing in indigo and copper tones, often with salt-white accents and coral-red accessories.",
+    "forbidden_aesthetics": [
+      "steampunk gears",
+      "high-tech armor",
+      "bright floral patterns"
+    ],
+    "palette_families": [
+      {
+        "name": "Bureaucrat",
+        "dominant": "indigo",
+        "accent": "coral_red",
+        "trim": "salt_white",
+        "material": "silk"
+      },
+      {
+        "name": "Laborer",
+        "dominant": "dark_kelp_green",
+        "accent": "verdigris",
+        "trim": "brown",
+        "material": "canvas"
+      },
+      {
+        "name": "Scholar",
+        "dominant": "salt_white",
+        "accent": "indigo",
+        "trim": "copper",
+        "material": "linen"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "authenticator_style",
+        "role_keywords": [
+          "authenticator",
+          "scribe",
+          "analyst"
+        ],
+        "attire": [
+          "long linen robes",
+          "copper spectacles",
+          "ink-stained gloves"
+        ],
+        "props": [
+          "magnifying glass",
+          "ledger"
+        ],
+        "palette_notes": "Mostly salt-white with indigo trim.",
+        "silhouette_notes": "Slim and vertical."
+      },
+      {
+        "rule_id": "maritime_style",
+        "role_keywords": [
+          "diver",
+          "gardener",
+          "runner"
+        ],
+        "attire": [
+          "heavy rubberized boots",
+          "woven kelp vests",
+          "copper belts"
+        ],
+        "props": [
+          "diving helmet",
+          "shears"
+        ],
+        "palette_notes": "Dark greens and muddy browns.",
+        "silhouette_notes": "Bulky and practical."
+      },
+      {
+        "rule_id": "official_style",
+        "role_keywords": [
+          "delegate",
+          "captain"
+        ],
+        "attire": [
+          "high-collared indigo coats",
+          "coral-red sashes",
+          "copper medals"
+        ],
+        "props": [
+          "signet ring",
+          "halberd"
+        ],
+        "palette_notes": "Deep indigo with bright coral accents.",
+        "silhouette_notes": "Broad shoulders and imposing."
+      }
+    ],
+    "default_rule": {
+      "rule_id": "citizen_default",
+      "role_keywords": [
+        "witness",
+        "resident"
+      ],
+      "attire": [
+        "simple tunics",
+        "waterproof capes"
+      ],
+      "props": [
+        "walking stick"
+      ],
+      "palette_notes": "Muted blues and greys.",
+      "silhouette_notes": "Standard human proportions."
+    },
+    "visual_consistency_rules": [
+      "All characters must have at least one copper accessory.",
+      "Footwear must appear waterproof or salt-resistant.",
+      "No character may wear pure black; use dark kelp green for shadows."
+    ]
+  }
+}

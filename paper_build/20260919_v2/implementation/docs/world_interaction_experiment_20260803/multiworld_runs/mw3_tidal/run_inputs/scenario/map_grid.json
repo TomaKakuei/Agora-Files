@@ -1,0 +1,1205 @@
+{
+  "grid_shape": {
+    "x": 40,
+    "y": 37,
+    "z": 1
+  },
+  "map_visual": {
+    "projection": "orthographic_grid",
+    "style": "pixel_art",
+    "tile_width": 32,
+    "tile_height": 32,
+    "room_width_tiles": 6,
+    "room_height_tiles": 4,
+    "agent_sprite_size": 40,
+    "origin": {
+      "x": 0,
+      "y": 0
+    },
+    "layers": [
+      "floor",
+      "objects",
+      "agents",
+      "effects",
+      "ui"
+    ],
+    "camera": {
+      "start_room_id": "room_01_the_phonetic_sluice",
+      "zoom": 2.0,
+      "follow_main_character": "tidal_embassy_lost_languages_main_01"
+    },
+    "tileset": {
+      "key": "tidal_embassy_lost_languages_pixel_tiles",
+      "image_path": "",
+      "tile_margin": 0,
+      "tile_spacing": 0
+    },
+    "theme_label": "Ethereal coastal architecture with shifting water levels and glowing script",
+    "visual_canon_hash": "09047f725c28ca4f"
+  },
+  "rooms": [
+    {
+      "room_id": "room_01_the_phonetic_sluice",
+      "name": "The Phonetic Sluice",
+      "x": 6,
+      "y": 5,
+      "z": 0,
+      "width_tiles": 8,
+      "height_tiles": 10,
+      "doorways": [
+        {
+          "doorway_id": "room_01_the_phonetic_sluice_to_room_03_the_syntax_exchange",
+          "position": {
+            "x": 13,
+            "y": 9,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_03_the_syntax_exchange",
+          "label": "passage to The Syntax Exchange"
+        },
+        {
+          "doorway_id": "room_01_the_phonetic_sluice_to_room_04_the_ink_stained_grotto",
+          "position": {
+            "x": 6,
+            "y": 10,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_04_the_ink_stained_grotto",
+          "label": "passage to The Ink-Stained Grotto"
+        },
+        {
+          "doorway_id": "room_01_the_phonetic_sluice_to_room_08_the_dialect_yard",
+          "position": {
+            "x": 9,
+            "y": 14,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_08_the_dialect_yard",
+          "label": "passage to The Dialect Yard"
+        }
+      ],
+      "visual": {
+        "biome": "coastal_embassy",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "brass_pipes",
+          "water_curtains",
+          "glowing_runes",
+          "notice_table"
+        ],
+        "ambient_palette": "soft_mint",
+        "visual_canon_hash": "09047f725c28ca4f",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_01_the_phonetic_sluice_lexical_scrubber",
+            "label": "Lexical Scrubber",
+            "description": "A brass archway emitting blue mist to purify spoken intent.",
+            "anchor": "north_mid",
+            "width_tiles": 3,
+            "height_tiles": 1
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Entryway and decontamination of foreign dialects",
+        "activity_tags": [
+          "cleansing",
+          "registration"
+        ],
+        "player_entry_hook": "A disgraced scholar seeking to restore their family name.",
+        "room_archetype": "checkpoint",
+        "layout_signal": "The Phonetic Sluice | Entryway and decontamination of foreign dialects | coastal_embassy | cleansing | registration | brass_pipes | water_curtains | glowing_runes | notice_table"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down pixel art of dark teal tide pools with brass inlay walkways, shimmering water ripples, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a brass-walled entry chamber, water flowing through floor channels, bioluminescent runes on the walls, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "tidal-embassy-lost-languages",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "32px_per_meter_fixed_grid"
+        },
+        "palette": {
+          "dominant": "#1a2f38",
+          "secondary": "#d4af37",
+          "accent": "#00f5ff",
+          "shadow": "#0d161a",
+          "highlight": "#fdf5e6"
+        },
+        "materials": [
+          "oxidized_brass",
+          "bioluminescent_ink",
+          "polished_mother_of_pearl",
+          "weathered_teak",
+          "translucent_sea_glass"
+        ],
+        "lighting": "diffuse_underwater_caustics_with_point_source_glow_from_runes",
+        "architecture": [
+          "art_nouveau_curves",
+          "floating_circular_platforms",
+          "submerged_domes",
+          "ribbed_vaulting"
+        ],
+        "terrain": {
+          "ground": "dark_teal_tide_pools",
+          "path": "brass_inlay_walkways",
+          "edge": "frothing_white_surf_boundaries"
+        },
+        "sprite_language": {
+          "body_proportion": "elongated_9_head_elegant",
+          "outline": "thin_colored_ink_stroke",
+          "role_readability": "glowing_sigils_on_garments"
+        },
+        "world_prompt_prefix": "top-down_orthographic_view, art_nouveau_coastal_embassy, bioluminescent_runes, brass_and_pearl_surfaces, melancholic_atmosphere",
+        "sprite_prompt_prefix": "top-down_sprite, elegant_diplomat, flowing_silks, glowing_ink_tattoos, orthographic_projection",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_overlays_in_render",
+          "generic_stone_dungeons",
+          "cyberpunk_neon_signs"
+        ],
+        "canon_hash": "09047f725c28ca4f"
+      }
+    },
+    {
+      "room_id": "room_02_archive_of_lost_vowels",
+      "name": "Archive of Lost Vowels",
+      "x": 28,
+      "y": 15,
+      "z": 0,
+      "width_tiles": 12,
+      "height_tiles": 12,
+      "doorways": [
+        {
+          "doorway_id": "room_02_archive_of_lost_vowels_to_room_05_council_of_the_last_speaker",
+          "position": {
+            "x": 28,
+            "y": 20,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_05_council_of_the_last_speaker",
+          "label": "passage to Council of the Last Speaker"
+        }
+      ],
+      "visual": {
+        "biome": "submerged_library",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "mother_of_pearl_shelves",
+          "glass_vials",
+          "soft_glow",
+          "scroll_table"
+        ],
+        "ambient_palette": "focused_blue",
+        "visual_canon_hash": "09047f725c28ca4f",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_02_archive_of_lost_vowels_vowel_stasis_pod",
+            "label": "Vowel Stasis Pod",
+            "description": "A glass cylinder containing a floating, glowing phonetic sigil.",
+            "anchor": "center",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Storage of extinct phonetic sounds",
+        "activity_tags": [],
+        "player_entry_hook": "A merchant whose trade permits are written in a language they cannot read.",
+        "room_archetype": "archive_ritual",
+        "layout_signal": "Archive of Lost Vowels | Storage of extinct phonetic sounds | submerged_library | mother_of_pearl_shelves | glass_vials | soft_glow | scroll_table"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down pixel art of polished mother-of-pearl tiles with thin brass grout, iridescent sheen, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a circular library, shelves filled with glowing sea-glass vials, central ritual circle, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "tidal-embassy-lost-languages",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "32px_per_meter_fixed_grid"
+        },
+        "palette": {
+          "dominant": "#1a2f38",
+          "secondary": "#d4af37",
+          "accent": "#00f5ff",
+          "shadow": "#0d161a",
+          "highlight": "#fdf5e6"
+        },
+        "materials": [
+          "oxidized_brass",
+          "bioluminescent_ink",
+          "polished_mother_of_pearl",
+          "weathered_teak",
+          "translucent_sea_glass"
+        ],
+        "lighting": "diffuse_underwater_caustics_with_point_source_glow_from_runes",
+        "architecture": [
+          "art_nouveau_curves",
+          "floating_circular_platforms",
+          "submerged_domes",
+          "ribbed_vaulting"
+        ],
+        "terrain": {
+          "ground": "dark_teal_tide_pools",
+          "path": "brass_inlay_walkways",
+          "edge": "frothing_white_surf_boundaries"
+        },
+        "sprite_language": {
+          "body_proportion": "elongated_9_head_elegant",
+          "outline": "thin_colored_ink_stroke",
+          "role_readability": "glowing_sigils_on_garments"
+        },
+        "world_prompt_prefix": "top-down_orthographic_view, art_nouveau_coastal_embassy, bioluminescent_runes, brass_and_pearl_surfaces, melancholic_atmosphere",
+        "sprite_prompt_prefix": "top-down_sprite, elegant_diplomat, flowing_silks, glowing_ink_tattoos, orthographic_projection",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_overlays_in_render",
+          "generic_stone_dungeons",
+          "cyberpunk_neon_signs"
+        ],
+        "canon_hash": "09047f725c28ca4f"
+      }
+    },
+    {
+      "room_id": "room_03_the_syntax_exchange",
+      "name": "The Syntax Exchange",
+      "x": 14,
+      "y": 5,
+      "z": 0,
+      "width_tiles": 15,
+      "height_tiles": 10,
+      "doorways": [
+        {
+          "doorway_id": "room_01_the_phonetic_sluice_to_room_03_the_syntax_exchange",
+          "position": {
+            "x": 14,
+            "y": 9,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_01_the_phonetic_sluice",
+          "label": "passage to The Phonetic Sluice"
+        },
+        {
+          "doorway_id": "room_03_the_syntax_exchange_to_room_05_council_of_the_last_speaker",
+          "position": {
+            "x": 20,
+            "y": 14,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_05_council_of_the_last_speaker",
+          "label": "passage to Council of the Last Speaker"
+        },
+        {
+          "doorway_id": "room_03_the_syntax_exchange_to_room_06_the_tide_watch_tower",
+          "position": {
+            "x": 16,
+            "y": 5,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_06_the_tide_watch_tower",
+          "label": "passage to The Tide-Watch Tower"
+        }
+      ],
+      "visual": {
+        "biome": "underwater_market",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "teak_counters",
+          "brass_scales",
+          "ink_wells",
+          "notice_table"
+        ],
+        "ambient_palette": "warm_lantern",
+        "visual_canon_hash": "09047f725c28ca4f",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_03_the_syntax_exchange_grammar_scales",
+            "label": "Grammar Scales",
+            "description": "Ornate brass scales used to weigh the complexity of a sentence.",
+            "anchor": "east_mid",
+            "width_tiles": 2,
+            "height_tiles": 1
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Trading grammar structures for leverage",
+        "activity_tags": [],
+        "player_entry_hook": "A spy masquerading as a humble ink-mixer.",
+        "room_archetype": "market_exchange",
+        "layout_signal": "The Syntax Exchange | Trading grammar structures for leverage | underwater_market | teak_counters | brass_scales | ink_wells | notice_table"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down pixel art of weathered teak planks with inlaid brass linguistic symbols, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a busy market hall, brass-topped counters, diplomats in silks, glowing ink jars, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "tidal-embassy-lost-languages",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "32px_per_meter_fixed_grid"
+        },
+        "palette": {
+          "dominant": "#1a2f38",
+          "secondary": "#d4af37",
+          "accent": "#00f5ff",
+          "shadow": "#0d161a",
+          "highlight": "#fdf5e6"
+        },
+        "materials": [
+          "oxidized_brass",
+          "bioluminescent_ink",
+          "polished_mother_of_pearl",
+          "weathered_teak",
+          "translucent_sea_glass"
+        ],
+        "lighting": "diffuse_underwater_caustics_with_point_source_glow_from_runes",
+        "architecture": [
+          "art_nouveau_curves",
+          "floating_circular_platforms",
+          "submerged_domes",
+          "ribbed_vaulting"
+        ],
+        "terrain": {
+          "ground": "dark_teal_tide_pools",
+          "path": "brass_inlay_walkways",
+          "edge": "frothing_white_surf_boundaries"
+        },
+        "sprite_language": {
+          "body_proportion": "elongated_9_head_elegant",
+          "outline": "thin_colored_ink_stroke",
+          "role_readability": "glowing_sigils_on_garments"
+        },
+        "world_prompt_prefix": "top-down_orthographic_view, art_nouveau_coastal_embassy, bioluminescent_runes, brass_and_pearl_surfaces, melancholic_atmosphere",
+        "sprite_prompt_prefix": "top-down_sprite, elegant_diplomat, flowing_silks, glowing_ink_tattoos, orthographic_projection",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_overlays_in_render",
+          "generic_stone_dungeons",
+          "cyberpunk_neon_signs"
+        ],
+        "canon_hash": "09047f725c28ca4f"
+      }
+    },
+    {
+      "room_id": "room_04_the_ink_stained_grotto",
+      "name": "The Ink-Stained Grotto",
+      "x": 0,
+      "y": 7,
+      "z": 0,
+      "width_tiles": 6,
+      "height_tiles": 8,
+      "doorways": [
+        {
+          "doorway_id": "room_01_the_phonetic_sluice_to_room_04_the_ink_stained_grotto",
+          "position": {
+            "x": 5,
+            "y": 10,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_01_the_phonetic_sluice",
+          "label": "passage to The Phonetic Sluice"
+        },
+        {
+          "doorway_id": "room_04_the_ink_stained_grotto_to_room_08_the_dialect_yard",
+          "position": {
+            "x": 3,
+            "y": 14,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_08_the_dialect_yard",
+          "label": "passage to The Dialect Yard"
+        }
+      ],
+      "visual": {
+        "biome": "bioluminescent_workshop",
+        "floor_tile": "storage_stone",
+        "wall_tile": "storage_wall",
+        "decor_tags": [
+          "vats",
+          "tubing",
+          "glowing_residue",
+          "supply_crates"
+        ],
+        "ambient_palette": "ember_orange",
+        "visual_canon_hash": "09047f725c28ca4f",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_04_the_ink_stained_grotto_ink_distiller",
+            "label": "Ink Distiller",
+            "description": "A complex brass machine condensing spoken words into liquid ink.",
+            "anchor": "west_mid",
+            "width_tiles": 2,
+            "height_tiles": 3
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Manufacturing of diplomatic ink",
+        "activity_tags": [],
+        "player_entry_hook": "A disgraced scholar seeking to restore their family name.",
+        "room_archetype": "workshop",
+        "layout_signal": "The Ink-Stained Grotto | Manufacturing of diplomatic ink | bioluminescent_workshop | vats | tubing | glowing_residue | supply_crates"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down pixel art of dark stone stained with neon cyan bioluminescent ink spills, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a workshop with bubbling vats of glowing ink, brass pipes, and glass stirrers, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "tidal-embassy-lost-languages",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "32px_per_meter_fixed_grid"
+        },
+        "palette": {
+          "dominant": "#1a2f38",
+          "secondary": "#d4af37",
+          "accent": "#00f5ff",
+          "shadow": "#0d161a",
+          "highlight": "#fdf5e6"
+        },
+        "materials": [
+          "oxidized_brass",
+          "bioluminescent_ink",
+          "polished_mother_of_pearl",
+          "weathered_teak",
+          "translucent_sea_glass"
+        ],
+        "lighting": "diffuse_underwater_caustics_with_point_source_glow_from_runes",
+        "architecture": [
+          "art_nouveau_curves",
+          "floating_circular_platforms",
+          "submerged_domes",
+          "ribbed_vaulting"
+        ],
+        "terrain": {
+          "ground": "dark_teal_tide_pools",
+          "path": "brass_inlay_walkways",
+          "edge": "frothing_white_surf_boundaries"
+        },
+        "sprite_language": {
+          "body_proportion": "elongated_9_head_elegant",
+          "outline": "thin_colored_ink_stroke",
+          "role_readability": "glowing_sigils_on_garments"
+        },
+        "world_prompt_prefix": "top-down_orthographic_view, art_nouveau_coastal_embassy, bioluminescent_runes, brass_and_pearl_surfaces, melancholic_atmosphere",
+        "sprite_prompt_prefix": "top-down_sprite, elegant_diplomat, flowing_silks, glowing_ink_tattoos, orthographic_projection",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_overlays_in_render",
+          "generic_stone_dungeons",
+          "cyberpunk_neon_signs"
+        ],
+        "canon_hash": "09047f725c28ca4f"
+      }
+    },
+    {
+      "room_id": "room_05_council_of_the_last_speaker",
+      "name": "Council of the Last Speaker",
+      "x": 14,
+      "y": 15,
+      "z": 0,
+      "width_tiles": 14,
+      "height_tiles": 14,
+      "doorways": [
+        {
+          "doorway_id": "room_02_archive_of_lost_vowels_to_room_05_council_of_the_last_speaker",
+          "position": {
+            "x": 27,
+            "y": 20,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_02_archive_of_lost_vowels",
+          "label": "passage to Archive of Lost Vowels"
+        },
+        {
+          "doorway_id": "room_03_the_syntax_exchange_to_room_05_council_of_the_last_speaker",
+          "position": {
+            "x": 20,
+            "y": 15,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_03_the_syntax_exchange",
+          "label": "passage to The Syntax Exchange"
+        },
+        {
+          "doorway_id": "room_05_council_of_the_last_speaker_to_room_07_the_silent_lounge",
+          "position": {
+            "x": 18,
+            "y": 28,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_07_the_silent_lounge",
+          "label": "passage to The Silent Lounge"
+        },
+        {
+          "doorway_id": "room_05_council_of_the_last_speaker_to_room_08_the_dialect_yard",
+          "position": {
+            "x": 14,
+            "y": 21,
+            "z": 0
+          },
+          "edge_dir": "left",
+          "connects_to_room_id": "room_08_the_dialect_yard",
+          "label": "passage to The Dialect Yard"
+        }
+      ],
+      "visual": {
+        "biome": "high_embassy",
+        "floor_tile": "stone_hall",
+        "wall_tile": "board_trim_wall",
+        "decor_tags": [
+          "ribbed_vaulting",
+          "silk_banners",
+          "pearl_throne",
+          "round_table"
+        ],
+        "ambient_palette": "low_lantern",
+        "visual_canon_hash": "09047f725c28ca4f",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_05_council_of_the_last_speaker_negotiation_sphere",
+            "label": "Negotiation Sphere",
+            "description": "A floating sea-glass orb that pulses when a lie is spoken.",
+            "anchor": "center",
+            "width_tiles": 3,
+            "height_tiles": 3
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "High-level political negotiations",
+        "activity_tags": [],
+        "player_entry_hook": "A merchant whose trade permits are written in a language they cannot read.",
+        "room_archetype": "council",
+        "layout_signal": "Council of the Last Speaker | High-level political negotiations | high_embassy | ribbed_vaulting | silk_banners | pearl_throne | round_table"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down pixel art of a massive circular brass seal embedded in pearl flooring, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a grand council chamber, circular seating, central floating platform, art nouveau curves, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "tidal-embassy-lost-languages",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "32px_per_meter_fixed_grid"
+        },
+        "palette": {
+          "dominant": "#1a2f38",
+          "secondary": "#d4af37",
+          "accent": "#00f5ff",
+          "shadow": "#0d161a",
+          "highlight": "#fdf5e6"
+        },
+        "materials": [
+          "oxidized_brass",
+          "bioluminescent_ink",
+          "polished_mother_of_pearl",
+          "weathered_teak",
+          "translucent_sea_glass"
+        ],
+        "lighting": "diffuse_underwater_caustics_with_point_source_glow_from_runes",
+        "architecture": [
+          "art_nouveau_curves",
+          "floating_circular_platforms",
+          "submerged_domes",
+          "ribbed_vaulting"
+        ],
+        "terrain": {
+          "ground": "dark_teal_tide_pools",
+          "path": "brass_inlay_walkways",
+          "edge": "frothing_white_surf_boundaries"
+        },
+        "sprite_language": {
+          "body_proportion": "elongated_9_head_elegant",
+          "outline": "thin_colored_ink_stroke",
+          "role_readability": "glowing_sigils_on_garments"
+        },
+        "world_prompt_prefix": "top-down_orthographic_view, art_nouveau_coastal_embassy, bioluminescent_runes, brass_and_pearl_surfaces, melancholic_atmosphere",
+        "sprite_prompt_prefix": "top-down_sprite, elegant_diplomat, flowing_silks, glowing_ink_tattoos, orthographic_projection",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_overlays_in_render",
+          "generic_stone_dungeons",
+          "cyberpunk_neon_signs"
+        ],
+        "canon_hash": "09047f725c28ca4f"
+      }
+    },
+    {
+      "room_id": "room_06_the_tide_watch_tower",
+      "name": "The Tide-Watch Tower",
+      "x": 14,
+      "y": 0,
+      "z": 0,
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "doorways": [
+        {
+          "doorway_id": "room_03_the_syntax_exchange_to_room_06_the_tide_watch_tower",
+          "position": {
+            "x": 16,
+            "y": 4,
+            "z": 0
+          },
+          "edge_dir": "bottom",
+          "connects_to_room_id": "room_03_the_syntax_exchange",
+          "label": "passage to The Syntax Exchange"
+        }
+      ],
+      "visual": {
+        "biome": "coastal_lookout",
+        "floor_tile": "yard_pavers",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "telescopes",
+          "star_charts",
+          "brass_railings",
+          "region_map"
+        ],
+        "ambient_palette": "clear_day",
+        "visual_canon_hash": "09047f725c28ca4f",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_06_the_tide_watch_tower_tide_astrolabe",
+            "label": "Tide Astrolabe",
+            "description": "A rotating brass instrument tracking the lunar pull on the embassy.",
+            "anchor": "north_east",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Monitoring rising sea levels",
+        "activity_tags": [],
+        "player_entry_hook": "A spy masquerading as a humble ink-mixer.",
+        "room_archetype": "lookout",
+        "layout_signal": "The Tide-Watch Tower | Monitoring rising sea levels | coastal_lookout | telescopes | star_charts | brass_railings | region_map"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down pixel art of concentric brass rings on a sea-glass floor, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a small circular tower room, brass railings overlooking frothing white surf, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "tidal-embassy-lost-languages",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "32px_per_meter_fixed_grid"
+        },
+        "palette": {
+          "dominant": "#1a2f38",
+          "secondary": "#d4af37",
+          "accent": "#00f5ff",
+          "shadow": "#0d161a",
+          "highlight": "#fdf5e6"
+        },
+        "materials": [
+          "oxidized_brass",
+          "bioluminescent_ink",
+          "polished_mother_of_pearl",
+          "weathered_teak",
+          "translucent_sea_glass"
+        ],
+        "lighting": "diffuse_underwater_caustics_with_point_source_glow_from_runes",
+        "architecture": [
+          "art_nouveau_curves",
+          "floating_circular_platforms",
+          "submerged_domes",
+          "ribbed_vaulting"
+        ],
+        "terrain": {
+          "ground": "dark_teal_tide_pools",
+          "path": "brass_inlay_walkways",
+          "edge": "frothing_white_surf_boundaries"
+        },
+        "sprite_language": {
+          "body_proportion": "elongated_9_head_elegant",
+          "outline": "thin_colored_ink_stroke",
+          "role_readability": "glowing_sigils_on_garments"
+        },
+        "world_prompt_prefix": "top-down_orthographic_view, art_nouveau_coastal_embassy, bioluminescent_runes, brass_and_pearl_surfaces, melancholic_atmosphere",
+        "sprite_prompt_prefix": "top-down_sprite, elegant_diplomat, flowing_silks, glowing_ink_tattoos, orthographic_projection",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_overlays_in_render",
+          "generic_stone_dungeons",
+          "cyberpunk_neon_signs"
+        ],
+        "canon_hash": "09047f725c28ca4f"
+      }
+    },
+    {
+      "room_id": "room_07_the_silent_lounge",
+      "name": "The Silent Lounge",
+      "x": 14,
+      "y": 29,
+      "z": 0,
+      "width_tiles": 10,
+      "height_tiles": 8,
+      "doorways": [
+        {
+          "doorway_id": "room_05_council_of_the_last_speaker_to_room_07_the_silent_lounge",
+          "position": {
+            "x": 18,
+            "y": 29,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_05_council_of_the_last_speaker",
+          "label": "passage to Council of the Last Speaker"
+        }
+      ],
+      "visual": {
+        "biome": "social_commons",
+        "floor_tile": "yard_pavers",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "silk_divans",
+          "potted_kelp",
+          "soft_lighting",
+          "round_table"
+        ],
+        "ambient_palette": "soft_mint",
+        "visual_canon_hash": "09047f725c28ca4f",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_07_the_silent_lounge_kelp_fountain",
+            "label": "Kelp Fountain",
+            "description": "A gentle water feature where bioluminescent kelp sways.",
+            "anchor": "south_west",
+            "width_tiles": 2,
+            "height_tiles": 2
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Non-verbal relaxation for weary translators",
+        "activity_tags": [],
+        "player_entry_hook": "A disgraced scholar seeking to restore their family name.",
+        "room_archetype": "rest_social",
+        "layout_signal": "The Silent Lounge | Non-verbal relaxation for weary translators | social_commons | silk_divans | potted_kelp | soft_lighting | round_table"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down pixel art of plush teal carpets with gold silk embroidery patterns, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a lounge with curved silk sofas, low brass tables, and bioluminescent plants, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "tidal-embassy-lost-languages",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "32px_per_meter_fixed_grid"
+        },
+        "palette": {
+          "dominant": "#1a2f38",
+          "secondary": "#d4af37",
+          "accent": "#00f5ff",
+          "shadow": "#0d161a",
+          "highlight": "#fdf5e6"
+        },
+        "materials": [
+          "oxidized_brass",
+          "bioluminescent_ink",
+          "polished_mother_of_pearl",
+          "weathered_teak",
+          "translucent_sea_glass"
+        ],
+        "lighting": "diffuse_underwater_caustics_with_point_source_glow_from_runes",
+        "architecture": [
+          "art_nouveau_curves",
+          "floating_circular_platforms",
+          "submerged_domes",
+          "ribbed_vaulting"
+        ],
+        "terrain": {
+          "ground": "dark_teal_tide_pools",
+          "path": "brass_inlay_walkways",
+          "edge": "frothing_white_surf_boundaries"
+        },
+        "sprite_language": {
+          "body_proportion": "elongated_9_head_elegant",
+          "outline": "thin_colored_ink_stroke",
+          "role_readability": "glowing_sigils_on_garments"
+        },
+        "world_prompt_prefix": "top-down_orthographic_view, art_nouveau_coastal_embassy, bioluminescent_runes, brass_and_pearl_surfaces, melancholic_atmosphere",
+        "sprite_prompt_prefix": "top-down_sprite, elegant_diplomat, flowing_silks, glowing_ink_tattoos, orthographic_projection",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_overlays_in_render",
+          "generic_stone_dungeons",
+          "cyberpunk_neon_signs"
+        ],
+        "canon_hash": "09047f725c28ca4f"
+      }
+    },
+    {
+      "room_id": "room_08_the_dialect_yard",
+      "name": "The Dialect Yard",
+      "x": 2,
+      "y": 15,
+      "z": 0,
+      "width_tiles": 12,
+      "height_tiles": 16,
+      "doorways": [
+        {
+          "doorway_id": "room_01_the_phonetic_sluice_to_room_08_the_dialect_yard",
+          "position": {
+            "x": 9,
+            "y": 15,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_01_the_phonetic_sluice",
+          "label": "passage to The Phonetic Sluice"
+        },
+        {
+          "doorway_id": "room_04_the_ink_stained_grotto_to_room_08_the_dialect_yard",
+          "position": {
+            "x": 3,
+            "y": 15,
+            "z": 0
+          },
+          "edge_dir": "top",
+          "connects_to_room_id": "room_04_the_ink_stained_grotto",
+          "label": "passage to The Ink-Stained Grotto"
+        },
+        {
+          "doorway_id": "room_05_council_of_the_last_speaker_to_room_08_the_dialect_yard",
+          "position": {
+            "x": 13,
+            "y": 21,
+            "z": 0
+          },
+          "edge_dir": "right",
+          "connects_to_room_id": "room_05_council_of_the_last_speaker",
+          "label": "passage to Council of the Last Speaker"
+        }
+      ],
+      "visual": {
+        "biome": "logistics_exterior",
+        "floor_tile": "storage_stone",
+        "wall_tile": "storage_wall",
+        "decor_tags": [
+          "cranes",
+          "shipping_crates",
+          "brass_chains",
+          "supply_crates"
+        ],
+        "ambient_palette": "dusty_brown",
+        "visual_canon_hash": "09047f725c28ca4f",
+        "showcase_shelf": false,
+        "showcase_item_colors": [],
+        "reflection_glares": false,
+        "scene_components": [
+          {
+            "component_id": "room_08_the_dialect_yard_heavy_hoist",
+            "label": "Heavy Hoist",
+            "description": "A massive brass crane used to lift stone tablets from the tide.",
+            "anchor": "north_west",
+            "width_tiles": 3,
+            "height_tiles": 3
+          }
+        ]
+      },
+      "footprint_tiles": [],
+      "metadata": {
+        "purpose": "Loading and unloading of heavy linguistic artifacts",
+        "activity_tags": [],
+        "player_entry_hook": "A merchant whose trade permits are written in a language they cannot read.",
+        "room_archetype": "logistics_yard",
+        "layout_signal": "The Dialect Yard | Loading and unloading of heavy linguistic artifacts | logistics_exterior | cranes | shipping_crates | brass_chains | supply_crates"
+      },
+      "spawn_points": [],
+      "flux_floor_prompt": "top-down pixel art of heavy brass-reinforced concrete tiles with salt corrosion, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a loading dock, brass cranes, large mother-of-pearl crates, salt-crusted surfaces, no text, no labels, full bleed to edges",
+      "visual_canon": {
+        "canon_version": "world_visual_canon_v1",
+        "generated_by": "world_builder.nodes.visual_canon",
+        "model_stage": "world_visual_canon_generation",
+        "canon_id": "tidal-embassy-lost-languages",
+        "camera": {
+          "projection": "strict_top_down",
+          "pitch": "90_degrees_vertical",
+          "scale_rule": "32px_per_meter_fixed_grid"
+        },
+        "palette": {
+          "dominant": "#1a2f38",
+          "secondary": "#d4af37",
+          "accent": "#00f5ff",
+          "shadow": "#0d161a",
+          "highlight": "#fdf5e6"
+        },
+        "materials": [
+          "oxidized_brass",
+          "bioluminescent_ink",
+          "polished_mother_of_pearl",
+          "weathered_teak",
+          "translucent_sea_glass"
+        ],
+        "lighting": "diffuse_underwater_caustics_with_point_source_glow_from_runes",
+        "architecture": [
+          "art_nouveau_curves",
+          "floating_circular_platforms",
+          "submerged_domes",
+          "ribbed_vaulting"
+        ],
+        "terrain": {
+          "ground": "dark_teal_tide_pools",
+          "path": "brass_inlay_walkways",
+          "edge": "frothing_white_surf_boundaries"
+        },
+        "sprite_language": {
+          "body_proportion": "elongated_9_head_elegant",
+          "outline": "thin_colored_ink_stroke",
+          "role_readability": "glowing_sigils_on_garments"
+        },
+        "world_prompt_prefix": "top-down_orthographic_view, art_nouveau_coastal_embassy, bioluminescent_runes, brass_and_pearl_surfaces, melancholic_atmosphere",
+        "sprite_prompt_prefix": "top-down_sprite, elegant_diplomat, flowing_silks, glowing_ink_tattoos, orthographic_projection",
+        "forbidden_visuals": [
+          "isometric_perspective",
+          "photorealism",
+          "text_labels",
+          "ui_overlays_in_render",
+          "generic_stone_dungeons",
+          "cyberpunk_neon_signs"
+        ],
+        "canon_hash": "09047f725c28ca4f"
+      }
+    }
+  ],
+  "initial_positions": {
+    "tidal_embassy_lost_languages_main_01": {
+      "x": 7,
+      "y": 6,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_02": {
+      "x": 29,
+      "y": 17,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_03": {
+      "x": 15,
+      "y": 8,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_04": {
+      "x": 15,
+      "y": 19,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_05": {
+      "x": 1,
+      "y": 12,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_06": {
+      "x": 16,
+      "y": 3,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_07": {
+      "x": 15,
+      "y": 12,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_08": {
+      "x": 16,
+      "y": 31,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_09": {
+      "x": 8,
+      "y": 6,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_10": {
+      "x": 2,
+      "y": 11,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_11": {
+      "x": 16,
+      "y": 8,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_12": {
+      "x": 15,
+      "y": 3,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_13": {
+      "x": 3,
+      "y": 8,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_14": {
+      "x": 17,
+      "y": 31,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_15": {
+      "x": 8,
+      "y": 12,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_16": {
+      "x": 16,
+      "y": 13,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_17": {
+      "x": 9,
+      "y": 6,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_18": {
+      "x": 4,
+      "y": 19,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_19": {
+      "x": 30,
+      "y": 24,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_20": {
+      "x": 18,
+      "y": 31,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_21": {
+      "x": 9,
+      "y": 10,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_22": {
+      "x": 17,
+      "y": 11,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_23": {
+      "x": 16,
+      "y": 26,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_24": {
+      "x": 4,
+      "y": 13,
+      "z": 0
+    },
+    "tidal_embassy_lost_languages_main_25": {
+      "x": 18,
+      "y": 6,
+      "z": 0
+    }
+  },
+  "initial_room_ids": {
+    "tidal_embassy_lost_languages_main_01": "room_01_the_phonetic_sluice",
+    "tidal_embassy_lost_languages_main_02": "room_02_archive_of_lost_vowels",
+    "tidal_embassy_lost_languages_main_03": "room_03_the_syntax_exchange",
+    "tidal_embassy_lost_languages_main_04": "room_05_council_of_the_last_speaker",
+    "tidal_embassy_lost_languages_main_05": "room_04_the_ink_stained_grotto",
+    "tidal_embassy_lost_languages_main_06": "room_06_the_tide_watch_tower",
+    "tidal_embassy_lost_languages_main_07": "room_03_the_syntax_exchange",
+    "tidal_embassy_lost_languages_main_08": "room_07_the_silent_lounge",
+    "tidal_embassy_lost_languages_main_09": "room_01_the_phonetic_sluice",
+    "tidal_embassy_lost_languages_main_10": "room_04_the_ink_stained_grotto",
+    "tidal_embassy_lost_languages_main_11": "room_03_the_syntax_exchange",
+    "tidal_embassy_lost_languages_main_12": "room_06_the_tide_watch_tower",
+    "tidal_embassy_lost_languages_main_13": "room_04_the_ink_stained_grotto",
+    "tidal_embassy_lost_languages_main_14": "room_07_the_silent_lounge",
+    "tidal_embassy_lost_languages_main_15": "room_01_the_phonetic_sluice",
+    "tidal_embassy_lost_languages_main_16": "room_03_the_syntax_exchange",
+    "tidal_embassy_lost_languages_main_17": "room_01_the_phonetic_sluice",
+    "tidal_embassy_lost_languages_main_18": "room_08_the_dialect_yard",
+    "tidal_embassy_lost_languages_main_19": "room_02_archive_of_lost_vowels",
+    "tidal_embassy_lost_languages_main_20": "room_07_the_silent_lounge",
+    "tidal_embassy_lost_languages_main_21": "room_01_the_phonetic_sluice",
+    "tidal_embassy_lost_languages_main_22": "room_03_the_syntax_exchange",
+    "tidal_embassy_lost_languages_main_23": "room_05_council_of_the_last_speaker",
+    "tidal_embassy_lost_languages_main_24": "room_04_the_ink_stained_grotto",
+    "tidal_embassy_lost_languages_main_25": "room_03_the_syntax_exchange"
+  }
+}

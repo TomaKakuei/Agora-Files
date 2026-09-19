@@ -1,0 +1,52 @@
+{
+  "policy_id": "agora_matched_model_retry_policy_v1",
+  "frozen_at_utc": "2026-08-25T21:30:43Z",
+  "scope": "All model providers and model families",
+  "prompt_suite_sha256": "69d09402e2c57521a71eec4e9584d5f8f5edb8bdc2884dab3296c1bcd5f202b9",
+  "transport": {
+    "max_attempts_per_call_by_layer": {
+      "generated_world": 3,
+      "community_policy": 2,
+      "generated_world_runtime": 3
+    },
+    "same_budget_for_every_model_within_layer": true,
+    "same_model_required": true,
+    "quality_penalty": 0.0,
+    "exhausted_status": "infrastructure_inconclusive",
+    "qualifying_failures": [
+      "HTTP 408, 409, 429, 500, 502, 503, or 504",
+      "connection timeout",
+      "DNS or URL transport failure",
+      "malformed or truncated provider envelope before a model completion"
+    ]
+  },
+  "semantic_repair": {
+    "max_attempts_per_node_by_layer": {
+      "generated_world": 3,
+      "community_policy": 1,
+      "generated_world_runtime": 1
+    },
+    "same_schema_and_local_validator_required": true,
+    "per_repair_score_multiplier": 0.98,
+    "exhausted_case_score": 0.0,
+    "qualifying_failures": [
+      "completed response that violates the shared schema or local contract",
+      "invalid generated references, counts, or enumerated values",
+      "completed but unparsable model JSON",
+      "compiler critique that changes generated semantic content"
+    ]
+  },
+  "forbidden": [
+    "model substitution",
+    "model-specific prompt, schema, validator, weight, or retry-budget changes",
+    "editing a hidden item after observing a target-model result",
+    "deterministic semantic content fallback"
+  ],
+  "report_separately": [
+    "first-pass pass rate",
+    "transport attempts and final infrastructure status",
+    "semantic repair count and failed node",
+    "exact requested and response model identifiers"
+  ],
+  "registration_note": "This policy was frozen after the current Gemini and GPT world-generation calls had begun. It is a uniform retrospective rescoring rule for the 2026-08-25 suite and a prospective frozen rule for later community/runtime calls. A new hidden generation suite must commit this policy before any target-model call to support a preregistered claim."
+}

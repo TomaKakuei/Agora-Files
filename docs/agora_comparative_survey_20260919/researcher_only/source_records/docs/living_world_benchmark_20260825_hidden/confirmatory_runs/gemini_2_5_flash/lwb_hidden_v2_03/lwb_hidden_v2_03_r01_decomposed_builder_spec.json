@@ -1,0 +1,1962 @@
+{
+  "world_name": "Isle of Shifting Shores",
+  "world_id": "shifting_shores_001",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "en-US",
+    "tone": "Formal, Adaptive, Resourceful, Contested",
+    "visual_direction": "Coastal, Architectural, Found-Object Art, Dynamic Shoreline",
+    "currency_code": "SHELL",
+    "currency_symbol": "🐚",
+    "currency_minor_unit": "Pearl",
+    "currency_name": "Shells",
+    "domain_label": "Coastal Governance & Reclamation",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "COURTHOUSE",
+        "name": "Island Courthouse",
+        "mandate": "Uphold justice, manage confiscated assets, oversee public works related to legal outcomes.",
+        "decision_rule": "Judicial decree, public hearings for major projects.",
+        "enforced_by": "Bailiffs, public records, asset seizure.",
+        "visible_output": "Court rulings, public works permits, asset auction manifests, shoreline construction projects."
+      },
+      {
+        "institution_id": "RECLAMATION_GUILD",
+        "name": "Coastal Reclamation Guild",
+        "mandate": "Execute shoreline construction projects using approved materials and designs.",
+        "decision_rule": "Project bids, engineering assessments, guild master approval.",
+        "enforced_by": "Construction contracts, guild regulations, material supply chains.",
+        "visible_output": "New land formations, altered beach access points, material stockpiles."
+      },
+      {
+        "institution_id": "COMMUNITY_COUNCIL",
+        "name": "Island Community Council",
+        "mandate": "Represent neighborhood interests, provide feedback on public works, mediate local disputes.",
+        "decision_rule": "Majority vote of elected representatives, public petitions.",
+        "enforced_by": "Community protests, public opinion, lobbying the Courthouse.",
+        "visible_output": "Community reports, public forums, formal objections to projects."
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "SHORELINE_CONFIG",
+        "label": "Shoreline Configuration",
+        "initial_tension": "Medium: Existing shoreline is eroding in places, stable in others.",
+        "changed_by": [
+          "RECLAMATION_GUILD"
+        ],
+        "affects": [
+          "NEIGHBORHOOD_ACCESS",
+          "PUBLIC_SENTIMENT"
+        ]
+      },
+      {
+        "state_id": "NEIGHBORHOOD_ACCESS",
+        "label": "Neighborhood Sea Access",
+        "initial_tension": "High: Some neighborhoods have prime access, others are landlocked.",
+        "changed_by": [
+          "RECLAMATION_GUILD",
+          "COMMUNITY_COUNCIL"
+        ],
+        "affects": [
+          "PUBLIC_SENTIMENT",
+          "CONFISCATED_GOODS_VALUE"
+        ]
+      },
+      {
+        "state_id": "CONFISCATED_GOODS_INVENTORY",
+        "label": "Confiscated Goods Inventory",
+        "initial_tension": "Low: Steady supply of various objects from legal proceedings.",
+        "changed_by": [
+          "COURTHOUSE"
+        ],
+        "affects": [
+          "SHORELINE_CONFIG",
+          "CONFISCATED_GOODS_VALUE"
+        ]
+      },
+      {
+        "state_id": "PUBLIC_SENTIMENT",
+        "label": "Public Sentiment Towards Reclamation",
+        "initial_tension": "Medium: Divided opinions on fairness and effectiveness.",
+        "changed_by": [
+          "COURTHOUSE",
+          "RECLAMATION_GUILD",
+          "COMMUNITY_COUNCIL"
+        ],
+        "affects": [
+          "NEIGHBORHOOD_ACCESS"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "CONFISCATED_GOODS_INVENTORY",
+        "trigger": "COURTHOUSE allocates confiscated objects for reclamation.",
+        "target_state": "SHORELINE_CONFIG",
+        "effect": "New shoreline sections are built or reinforced.",
+        "delay": "Short"
+      },
+      {
+        "source_state": "SHORELINE_CONFIG",
+        "trigger": "RECLAMATION_GUILD completes a new shoreline section.",
+        "target_state": "NEIGHBORHOOD_ACCESS",
+        "effect": "Access points to the sea are altered for adjacent neighborhoods.",
+        "delay": "Instant"
+      },
+      {
+        "source_state": "NEIGHBORHOOD_ACCESS",
+        "trigger": "COMMUNITY_COUNCIL raises concerns about unequal sea access.",
+        "target_state": "PUBLIC_SENTIMENT",
+        "effect": "Public opinion shifts towards dissatisfaction or protest.",
+        "delay": "Short"
+      },
+      {
+        "source_state": "PUBLIC_SENTIMENT",
+        "trigger": "Public sentiment reaches critical dissatisfaction.",
+        "target_state": "SHORELINE_CONFIG",
+        "effect": "COURTHOUSE initiates a review of reclamation project priorities, potentially halting or redirecting construction.",
+        "delay": "Medium"
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "COASTAL_RESIDENTS",
+        "name": "Coastal Residents",
+        "goal": "Maintain or improve direct access to the sea and protect property values.",
+        "leverage": "Local elections, public protests, legal challenges.",
+        "dependency": "Dependent on the COURTHOUSE for fair rulings and RECLAMATION_GUILD for shoreline stability."
+      },
+      {
+        "group_id": "INLAND_MERCHANTS",
+        "name": "Inland Merchants",
+        "goal": "Gain new or improved sea access for trade and recreation, increasing business opportunities.",
+        "leverage": "Economic contributions, lobbying the COMMUNITY_COUNCIL, offering labor to RECLAMATION_GUILD.",
+        "dependency": "Dependent on RECLAMATION_GUILD for new access points and COURTHOUSE for project approval."
+      },
+      {
+        "group_id": "COURTHOUSE_OFFICIALS",
+        "name": "Courthouse Officials",
+        "goal": "Ensure justice is served, maintain public order, and efficiently manage confiscated assets for public benefit.",
+        "leverage": "Legal authority, control over public works funding and permits, enforcement power.",
+        "dependency": "Dependent on public trust and cooperation from RECLAMATION_GUILD for project execution."
+      }
+    ]
+  },
+  "genre": "Legal Drama, Urban Planning, Resource Management",
+  "premise": "An island courthouse rebuilds its shoreline from confiscated objects, changing which neighborhoods can reach the sea.",
+  "simulation_objective": "Navigate the complex interplay of legal mandates, community needs, and environmental adaptation to achieve a sustainable and equitable island future.",
+  "agent_count_target": 12,
+  "player_count_target": 50,
+  "wall_color_theme": "rough_concrete",
+  "economy_focus": "Resource reclamation, trade route development, property value fluctuations.",
+  "exploration_focus": "Discovering new coastal areas, mapping altered waterways, identifying hidden caches of confiscated goods.",
+  "conflict_tone": "Bureaucratic, socio-economic, environmental, with underlying tensions of fairness and access.",
+  "visual_style": "Gritty realism mixed with whimsical found-object architecture, dynamic coastal landscapes, and detailed legal settings.",
+  "rooms": [
+    {
+      "name": "Courthouse Registry",
+      "biome": "coastal_town",
+      "purpose": "To process legal documents and officially record confiscated goods, directly impacting the 'Confiscated Goods Inventory' state variable. Decisions here lead to objects being moved to the Confiscated Goods Yard.",
+      "decor_tags": [
+        "official",
+        "paperwork",
+        "storage",
+        "legal"
+      ],
+      "activity_tags": [
+        "record_keeping",
+        "filing",
+        "asset_tracking"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of worn, shell-strewn dirt floor with scattered official papers and ink stains, top-down isometric view, muted palette, weathered",
+      "room_scene_prompt": "Isle of Shifting Shores, strict top-down, orthographic, found-object architecture, weathered, coastal, gritty realism, muted palette, diffused daylight. A small, utilitarian Courthouse Registry room with rough concrete walls and a worn, shell-strewn dirt floor. A central, heavy wooden desk with stacks of legal documents and a large open ledger. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "clear_day",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "confiscation_ledger",
+          "label": "Confiscation Ledger",
+          "description": "A large, open ledger book on a heavy wooden desk, filled with records of confiscated items, indicating the 'Confiscated Goods Inventory' state variable is managed here.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Reclamation Guild Workshop",
+      "biome": "coastal_town",
+      "purpose": "Where confiscated objects are processed and prepared for shoreline construction, directly influencing the 'Shoreline Configuration' state variable. Materials prepared here are then used in the Shoreline Construction Site.",
+      "decor_tags": [
+        "tools",
+        "materials",
+        "repurposed",
+        "industrial"
+      ],
+      "activity_tags": [
+        "crafting",
+        "assembly",
+        "material_preparation"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of packed sand and gravel floor with scattered metal scraps and wood shavings, top-down isometric view, muted palette, weathered",
+      "room_scene_prompt": "Isle of Shifting Shores, strict top-down, orthographic, found-object architecture, weathered, coastal, gritty realism, muted palette, diffused daylight. A bustling Reclamation Guild Workshop with rough concrete walls and a packed sand and gravel floor. Workbenches made from repurposed materials are covered with tools, corroded metal pieces, and driftwood. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 8,
+      "height_tiles": 7,
+      "ambient_palette": "dusty_brown",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "material_processing_station",
+          "label": "Processing Station",
+          "description": "A workbench made from stacked, irregular forms of weathered wood and corroded metal, with various tools and partially processed confiscated objects, showing materials being prepared for shoreline construction.",
+          "anchor": "north_west",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Shoreline Construction Site",
+      "biome": "coast",
+      "purpose": "The active zone where new shoreline sections are built using reclaimed materials, directly changing the 'Shoreline Configuration' and subsequently 'Neighborhood Sea Access'.",
+      "decor_tags": [
+        "construction",
+        "outdoor",
+        "heavy_machinery",
+        "temporary"
+      ],
+      "activity_tags": [
+        "building",
+        "excavation",
+        "material_placement"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of muddy, churned dirt and wet sand with tire tracks and scattered construction debris, top-down isometric view, muted palette, coastal",
+      "room_scene_prompt": "Isle of Shifting Shores, strict top-down, orthographic, found-object architecture, weathered, coastal, gritty realism, muted palette, diffused daylight. An open-air Shoreline Construction Site with temporary barriers of woven rope and rough concrete foundations. The ground is muddy, churned dirt with piles of barnacle-encrusted stone and driftwood. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 10,
+      "height_tiles": 8,
+      "ambient_palette": "clear_day",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "reclamation_pile",
+          "label": "Reclamation Pile",
+          "description": "A large, irregular pile of diverse confiscated objects like sea-worn glass, corroded metal, and driftwood, ready to be integrated into the new shoreline.",
+          "anchor": "south_east",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Community Forum",
+      "biome": "coastal_town",
+      "purpose": "A gathering place for the Island Community Council and residents to discuss and voice opinions on public works, directly influencing 'Public Sentiment Towards Reclamation'. Discussions here can lead to formal objections at the Courthouse.",
+      "decor_tags": [
+        "public",
+        "gathering",
+        "simple",
+        "community"
+      ],
+      "activity_tags": [
+        "debate",
+        "meeting",
+        "petitioning"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of worn, shell-strewn dirt floor with a central area of packed sand, indicating a gathering space, top-down isometric view, muted palette",
+      "room_scene_prompt": "Isle of Shifting Shores, strict top-down, orthographic, found-object architecture, weathered, coastal, gritty realism, muted palette, diffused daylight. A simple, open-air Community Forum with low, rough concrete walls and a worn, shell-strewn dirt floor. Several repurposed wooden benches are arranged around a central, slightly raised platform. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 7,
+      "height_tiles": 7,
+      "ambient_palette": "warm_lantern",
+      "archetype": "commons",
+      "scene_components": [
+        {
+          "component_id": "speaker_platform",
+          "label": "Speaker Platform",
+          "description": "A small, raised platform constructed from stacked driftwood and rough concrete, serving as a focal point for community discussions and petitions.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Coastal Resident's Outlook",
+      "biome": "coast",
+      "purpose": "A vantage point for coastal residents to observe changes to the shoreline and assess their sea access, directly reflecting the 'Neighborhood Sea Access' state variable. Observations here contribute to 'Public Sentiment'.",
+      "decor_tags": [
+        "observation",
+        "scenic",
+        "weathered",
+        "personal"
+      ],
+      "activity_tags": [
+        "watching",
+        "contemplating",
+        "monitoring"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of packed sand and gravel floor with patches of sparse coastal grass, leading to a weathered wooden railing, top-down isometric view, muted palette",
+      "room_scene_prompt": "Isle of Shifting Shores, strict top-down, orthographic, found-object architecture, weathered, coastal, gritty realism, muted palette, diffused daylight. A small, elevated Coastal Resident's Outlook with a weathered wood railing and rough concrete base. The floor is packed sand and gravel, offering a clear view towards the sea (implied beyond the room's edge). No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "ambient_palette": "clear_day",
+      "archetype": "lookout",
+      "scene_components": [
+        {
+          "component_id": "observation_railing",
+          "label": "Observation Railing",
+          "description": "A sturdy railing made of weathered wood and woven rope, positioned at the edge of the room, providing a clear view of the changing shoreline.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Inland Merchant's Stall",
+      "biome": "coastal_town",
+      "purpose": "A trading post for inland merchants, where goods are exchanged. Its prosperity is directly tied to 'Neighborhood Sea Access' and 'Confiscated Goods Value'.",
+      "decor_tags": [
+        "trade",
+        "market",
+        "goods",
+        "temporary"
+      ],
+      "activity_tags": [
+        "selling",
+        "bartering",
+        "displaying"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of worn, shell-strewn dirt floor with footprints and scattered small trade items, top-down isometric view, muted palette",
+      "room_scene_prompt": "Isle of Shifting Shores, strict top-down, orthographic, found-object architecture, weathered, coastal, gritty realism, muted palette, diffused daylight. A bustling Inland Merchant's Stall with a simple, open-sided structure of weathered wood and woven rope. The floor is worn, shell-strewn dirt, and various goods are displayed on repurposed crates and tarps. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 6,
+      "height_tiles": 5,
+      "ambient_palette": "clear_day",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "trade_display",
+          "label": "Trade Display",
+          "description": "A collection of various goods, including salvaged tools, sea-worn glass trinkets, and woven baskets, arranged on a repurposed wooden crate for sale.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Confiscated Goods Yard",
+      "biome": "coastal_town",
+      "purpose": "The primary storage area for confiscated objects awaiting allocation by the Courthouse, directly representing the physical 'Confiscated Goods Inventory'. Items here are eventually moved to the Reclamation Guild Workshop.",
+      "decor_tags": [
+        "storage",
+        "outdoor",
+        "junk",
+        "reclamation"
+      ],
+      "activity_tags": [
+        "sorting",
+        "inventory",
+        "material_holding"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of packed sand and gravel floor with oil stains, scattered debris, and tire tracks, top-down isometric view, muted palette, industrial",
+      "room_scene_prompt": "Isle of Shifting Shores, strict top-down, orthographic, found-object architecture, weathered, coastal, gritty realism, muted palette, diffused daylight. A sprawling Confiscated Goods Yard with rough concrete walls and a packed sand and gravel floor. Large, irregular piles of diverse confiscated objects like corroded metal, broken sea-worn glass, and driftwood are scattered throughout. No visible text, no labels, no captions, no room-name title, no watermark, no white/beige empty margins, and no blank background around the room.",
+      "width_tiles": 9,
+      "height_tiles": 9,
+      "ambient_palette": "clear_day",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "object_stockpile",
+          "label": "Object Stockpile",
+          "description": "A massive, haphazard pile of various confiscated objects, including old fishing gear, broken machinery, and salvaged building materials, awaiting processing.",
+          "anchor": "south_west",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Elara \"The Tide-Watcher\"",
+      "role_name": "Coastal Resident Advocate",
+      "activity": "Monitoring SHORELINE_CONFIG changes and influencing COMMUNITY_COUNCIL decisions.",
+      "home_base": "Coastal Resident's Outlook",
+      "arc_goal": "To protect NEIGHBORHOOD_ACCESS for her community by influencing PUBLIC_SENTIMENT and challenging RECLAMATION_GUILD projects.",
+      "inventory": [
+        {
+          "name": "Tide-worn Journal",
+          "description": "A leather-bound journal filled with observations of tidal patterns and erosion rates over decades.",
+          "quantity": 1
+        },
+        {
+          "name": "Seagrass Seedling Pouch",
+          "description": "A small canvas pouch containing delicate seagrass seedlings, intended for replanting eroded areas.",
+          "quantity": 12
+        },
+        {
+          "name": "Fossilized Coral Charm",
+          "description": "A smooth, ancient coral piece, believed to bring luck and stability to the shore.",
+          "quantity": 1
+        },
+        {
+          "name": "Hand-drawn Shoreline Map",
+          "description": "A detailed map of the local coastline, marking historical access points and recent changes.",
+          "quantity": 1
+        },
+        {
+          "name": "Community Petition Scroll",
+          "description": "A rolled parchment with numerous signatures, protesting recent reclamation plans.",
+          "quantity": 1
+        },
+        {
+          "name": "Weathered Spyglass",
+          "description": "A brass spyglass, used for observing distant ships and changes in the sea.",
+          "quantity": 1
+        },
+        {
+          "name": "Driftwood Carving Kit",
+          "description": "Small tools for carving intricate designs into driftwood, a calming hobby.",
+          "quantity": 1
+        },
+        {
+          "name": "Salt-stained Binoculars",
+          "description": "Binoculars used for observing wildlife and construction activity along the shore.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Elara's Coastal Dwelling",
+          "asset_type": "Residential Property",
+          "description": "A small, sturdy home perched on a cliff overlooking the sea, with a direct path to the beach.",
+          "story_use": "Serves as Elara's base of operations and a symbol of coastal heritage threatened by development."
+        },
+        {
+          "asset_name": "Ancient Tide Pool",
+          "asset_type": "Natural Landmark",
+          "description": "A naturally formed tide pool known for its unique ecosystem and historical significance to the community.",
+          "story_use": "A focal point for Elara's advocacy, representing the natural beauty and access she seeks to preserve."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_TIDE_LORE",
+          "topic": "Local Tidal Patterns",
+          "summary": "Deep understanding of the island's complex tidal shifts, currents, and their impact on the shoreline, passed down through generations.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K_LEGAL_PRECEDENTS",
+          "topic": "Coastal Property Rights",
+          "summary": "Knowledge of historical legal cases and precedents regarding shoreline access and property boundaries on the Isle.",
+          "confidence": 7
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen \"The Builder\"",
+      "role_name": "Guild Master Engineer",
+      "activity": "Designing and executing projects that change SHORELINE_CONFIG and NEIGHBORHOOD_ACCESS.",
+      "home_base": "Reclamation Guild Workshop",
+      "arc_goal": "To efficiently complete RECLAMATION_GUILD projects, potentially using CONFISCATED_GOODS_INVENTORY, while managing PUBLIC_SENTIMENT.",
+      "inventory": [
+        {
+          "name": "Guild Master's Hammer",
+          "description": "A heavy, well-used hammer, a symbol of Kaelen's authority and practical skill.",
+          "quantity": 1
+        },
+        {
+          "name": "Reclamation Blueprint Tube",
+          "description": "A sealed tube containing detailed schematics for current and future shoreline expansion projects.",
+          "quantity": 1
+        },
+        {
+          "name": "Reinforced Work Gloves",
+          "description": "Thick, durable gloves, essential for handling rough materials and heavy tools.",
+          "quantity": 1
+        },
+        {
+          "name": "Surveyor's Transit",
+          "description": "A precise optical instrument used for measuring angles and elevations on construction sites.",
+          "quantity": 1
+        },
+        {
+          "name": "Material Sample Kit",
+          "description": "A small box containing various samples of approved and experimental reclamation materials.",
+          "quantity": 1
+        },
+        {
+          "name": "Guild Regulation Codex",
+          "description": "A bound book detailing all rules, safety protocols, and material standards of the Coastal Reclamation Guild.",
+          "quantity": 1
+        },
+        {
+          "name": "Waterproof Notebook",
+          "description": "A small, durable notebook for jotting down measurements and observations in any weather.",
+          "quantity": 1
+        },
+        {
+          "name": "Heavy-duty Measuring Tape",
+          "description": "A long, retractable steel tape measure, crucial for large-scale construction.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guild's Heavy Dredge",
+          "asset_type": "Construction Equipment",
+          "description": "A large, powerful dredging machine used to extract sand and sediment for shoreline expansion.",
+          "story_use": "Central to the Guild's ability to alter the SHORELINE_CONFIG, often a point of contention with environmentalists."
+        },
+        {
+          "asset_name": "Reclamation Material Stockpile",
+          "asset_type": "Resource Depot",
+          "description": "A vast yard filled with various materials like reclaimed timber, stone, and specialized concrete blocks.",
+          "story_use": "Provides the necessary resources for Guild projects, often sourced from CONFISCATED_GOODS_INVENTORY or local suppliers."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_SHORELINE_ENGINEERING",
+          "topic": "Coastal Engineering Principles",
+          "summary": "Expert knowledge of structural integrity, erosion control, and land reclamation techniques specific to island environments.",
+          "confidence": 10
+        },
+        {
+          "knowledge_id": "K_GUILD_PROTOCOLS",
+          "topic": "Reclamation Guild Regulations",
+          "summary": "Comprehensive understanding of all Guild operational procedures, safety standards, and project approval processes.",
+          "confidence": 9
+        }
+      ]
+    },
+    {
+      "display_name": "Judge Theron \"The Arbiter\"",
+      "role_name": "Courthouse Registry Clerk",
+      "activity": "Managing CONFISCATED_GOODS_INVENTORY and issuing permits that affect SHORELINE_CONFIG.",
+      "home_base": "Courthouse Registry",
+      "arc_goal": "To uphold the COURTHOUSE mandate, ensure fair distribution of CONFISCATED_GOODS_INVENTORY, and maintain public order by managing PUBLIC_SENTIMENT.",
+      "inventory": [
+        {
+          "name": "Official Courthouse Seal",
+          "description": "A heavy brass seal used to authenticate official documents and decrees.",
+          "quantity": 1
+        },
+        {
+          "name": "Registry Ledger",
+          "description": "A large, leather-bound book meticulously recording all confiscated goods and their allocations.",
+          "quantity": 1
+        },
+        {
+          "name": "Quill and Inkwell Set",
+          "description": "A traditional writing set, used for drafting official notices and judgments.",
+          "quantity": 1
+        },
+        {
+          "name": "Legal Precedent Scrolls",
+          "description": "A collection of ancient scrolls detailing historical legal rulings on property and land use.",
+          "quantity": 1
+        },
+        {
+          "name": "Gavel of Authority",
+          "description": "A polished wooden gavel, used to call order in court and signify official decisions.",
+          "quantity": 1
+        },
+        {
+          "name": "Public Hearing Minutes",
+          "description": "Transcripts from recent community forums and public hearings regarding shoreline projects.",
+          "quantity": 1
+        },
+        {
+          "name": "Confiscated Goods Manifest",
+          "description": "A detailed list of items currently held in the Confiscated Goods Yard, awaiting auction or allocation.",
+          "quantity": 1
+        },
+        {
+          "name": "Permit Application Forms",
+          "description": "A stack of blank forms for various public works and construction permits.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Courthouse Archives",
+          "asset_type": "Public Building Section",
+          "description": "A vast collection of legal documents, historical records, and property deeds stored within the Courthouse.",
+          "story_use": "Contains crucial information for legal disputes and historical context for land claims, managed by Theron."
+        },
+        {
+          "asset_name": "Confiscated Goods Yard",
+          "asset_type": "Storage Facility",
+          "description": "An outdoor yard where seized items, from small trinkets to large construction materials, are stored.",
+          "story_use": "The source of materials for some reclamation projects and a point of contention for those whose goods were seized."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_ISLAND_LAW",
+          "topic": "Isle of Shifting Shores Legal Code",
+          "summary": "Comprehensive understanding of all local laws, statutes, and judicial procedures governing the island.",
+          "confidence": 10
+        },
+        {
+          "knowledge_id": "K_ASSET_MANAGEMENT",
+          "topic": "Confiscated Asset Allocation",
+          "summary": "Knowledge of the protocols and ethical considerations for managing and distributing confiscated goods for public benefit.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Roric \"The Smuggler\"",
+      "role_name": "Inland Merchant & Contraband Dealer",
+      "activity": "Facilitating trade, both legitimate and illicit, which can indirectly affect CONFISCATED_GOODS_INVENTORY and NEIGHBORHOOD_ACCESS.",
+      "home_base": "Inland Merchant's Stall",
+      "arc_goal": "To expand his trade network and influence, gaining new or improved sea access for his goods, and avoiding the COURTHOUSE's scrutiny over his illicit dealings.",
+      "inventory": [
+        {
+          "name": "Concealed Compartment Box",
+          "description": "A seemingly ordinary wooden box with a hidden bottom, used for transporting small, valuable contraband.",
+          "quantity": 1
+        },
+        {
+          "name": "Forged Manifests",
+          "description": "A stack of official-looking documents with false information about cargo origins and contents.",
+          "quantity": 1
+        },
+        {
+          "name": "Gilded Spyglass",
+          "description": "A high-quality spyglass with ornate engravings, used for spotting approaching ships or patrols.",
+          "quantity": 1
+        },
+        {
+          "name": "Smuggler's Compass",
+          "description": "A compass with unusual markings, rumored to point towards hidden coves and safe passages.",
+          "quantity": 1
+        },
+        {
+          "name": "Rare Spice Pouch",
+          "description": "A small, fragrant pouch containing a highly sought-after spice, often traded illicitly.",
+          "quantity": 1
+        },
+        {
+          "name": "Lockpicking Tools",
+          "description": "A small set of delicate tools for opening various locks without a key.",
+          "quantity": 1
+        },
+        {
+          "name": "Disguise Kit",
+          "description": "A compact kit containing various items for altering one's appearance quickly.",
+          "quantity": 1
+        },
+        {
+          "name": "\"Off-the-Books\" Ledger",
+          "description": "A small, coded ledger detailing illicit transactions and contacts.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Roric's Hidden Dock",
+          "asset_type": "Secret Port",
+          "description": "A secluded, unmarked dock accessible only through treacherous channels, used for illicit cargo transfers.",
+          "story_use": "Crucial for Roric's smuggling operations, allowing him to bypass official ports and avoid the Courthouse."
+        },
+        {
+          "asset_name": "Inland Merchant's Stall",
+          "asset_type": "Market Stall",
+          "description": "A bustling, legitimate market stall in the inland town, serving as a front for Roric's wider network.",
+          "story_use": "Provides a public face for Roric's activities and a place to gather information and make contacts."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_HIDDEN_ROUTES",
+          "topic": "Secret Sea Passages",
+          "summary": "Extensive knowledge of uncharted channels, hidden coves, and safe routes around the Isle of Shifting Shores.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K_MARKET_DEMAND",
+          "topic": "Black Market Economics",
+          "summary": "Deep understanding of supply and demand for rare and illicit goods, and the best ways to profit from them.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra \"The Voice\"",
+      "role_name": "Community Council Representative",
+      "activity": "Organizing public petitions and forums to influence PUBLIC_SENTIMENT and NEIGHBORHOOD_ACCESS.",
+      "home_base": "Community Forum",
+      "arc_goal": "To ensure fair NEIGHBORHOOD_ACCESS for all residents by influencing the COMMUNITY_COUNCIL and challenging RECLAMATION_GUILD projects.",
+      "inventory": [
+        {
+          "name": "Signed Petition Scroll",
+          "description": "A long scroll filled with signatures demanding equitable sea access.",
+          "quantity": 1
+        },
+        {
+          "name": "Annotated Island Map",
+          "description": "A map marked with current and proposed shoreline changes and affected neighborhoods.",
+          "quantity": 1
+        },
+        {
+          "name": "Hand-Painted Protest Sign",
+          "description": "A sign reading 'Our Shores, Our Access!'",
+          "quantity": 1
+        },
+        {
+          "name": "Herbal Soothing Tea Leaves",
+          "description": "For calming nerves during heated council meetings.",
+          "quantity": 10
+        },
+        {
+          "name": "Council Meeting Minutes Book",
+          "description": "Detailed records of past Community Council discussions.",
+          "quantity": 1
+        },
+        {
+          "name": "Worn Megaphone",
+          "description": "Used for addressing crowds at public forums.",
+          "quantity": 1
+        },
+        {
+          "name": "Basket of Local Fruits",
+          "description": "A peace offering or snack for community gatherings.",
+          "quantity": 1
+        },
+        {
+          "name": "Hand-Carved Wooden Bird",
+          "description": "A small, symbolic gift from a grateful resident.",
+          "quantity": 1
+        },
+        {
+          "name": "Community Bylaws Pamphlet",
+          "description": "A well-thumbed guide to local regulations.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Whistle",
+          "description": "For alerting others to immediate concerns.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Community Bulletin Board",
+          "asset_type": "Information Hub",
+          "description": "A central board for posting notices, petitions, and community updates.",
+          "story_use": "Disseminating information and gathering public support."
+        },
+        {
+          "asset_name": "Public Forum Stage",
+          "asset_type": "Gathering Point",
+          "description": "A simple, elevated platform for speakers during community meetings.",
+          "story_use": "Facilitating public discourse and debate."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_LOCAL_GRIEVANCES",
+          "topic": "Unequal Access",
+          "summary": "Detailed accounts of specific neighborhoods losing sea access due to reclamation projects.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K_COUNCIL_PROCEDURES",
+          "topic": "Community Governance",
+          "summary": "Intricate knowledge of how to navigate and influence the Island Community Council's decision-making process.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Finn \"The Scavenger\"",
+      "role_name": "Confiscated Goods Auctioneer",
+      "activity": "Cataloging and preparing CONFISCATED_GOODS_INVENTORY for auction or repurposing, influencing their value and allocation.",
+      "home_base": "Confiscated Goods Yard",
+      "arc_goal": "To maximize the value of CONFISCATED_GOODS_INVENTORY for public benefit, potentially influencing SHORELINE_CONFIG through material allocation.",
+      "inventory": [
+        {
+          "name": "Auctioneer's Gavel",
+          "description": "A heavy, polished wooden gavel used to finalize sales.",
+          "quantity": 1
+        },
+        {
+          "name": "Inventory Ledger",
+          "description": "A thick book detailing all confiscated items, their origins, and estimated values.",
+          "quantity": 1
+        },
+        {
+          "name": "Magnifying Glass",
+          "description": "For inspecting the quality and authenticity of goods.",
+          "quantity": 1
+        },
+        {
+          "name": "Grease-Stained Work Gloves",
+          "description": "Well-worn gloves for handling various items.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Tool Kit",
+          "description": "Contains basic tools for minor repairs or disassembly.",
+          "quantity": 1
+        },
+        {
+          "name": "Pocket Watch",
+          "description": "A reliable timepiece for keeping auction schedules.",
+          "quantity": 1
+        },
+        {
+          "name": "Roll of Burlap Sacks",
+          "description": "For packaging and transporting smaller items.",
+          "quantity": 5
+        },
+        {
+          "name": "Bottle of Polishing Oil",
+          "description": "Used to restore the luster of metal or wood items.",
+          "quantity": 1
+        },
+        {
+          "name": "Chalk and Slate",
+          "description": "For quickly marking prices and lot numbers.",
+          "quantity": 1
+        },
+        {
+          "name": "Measuring Tape",
+          "description": "For accurately documenting item dimensions.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Auction Block",
+          "asset_type": "Sales Platform",
+          "description": "A sturdy wooden platform where confiscated goods are presented for bidding.",
+          "story_use": "Facilitating the sale and distribution of confiscated items."
+        },
+        {
+          "asset_name": "Salvage Sorting Bins",
+          "asset_type": "Storage/Processing",
+          "description": "Large bins used to categorize and store various materials from confiscated goods.",
+          "story_use": "Organizing materials for repurposing or disposal."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_ASSET_VALUATION",
+          "topic": "Confiscated Goods Value",
+          "summary": "Expert knowledge in assessing the market value and potential uses of diverse confiscated items.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K_COURTHOUSE_LOGISTICS",
+          "topic": "Asset Management",
+          "summary": "Understanding the logistical processes and legal frameworks for handling and distributing assets from the Courthouse.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Captain \"Barnacle\" Ben",
+      "role_name": "Retired Mariner & Coastal Observer",
+      "activity": "Observing and documenting changes to the SHORELINE_CONFIG and NEIGHBORHOOD_ACCESS, sharing insights with Coastal Residents.",
+      "home_base": "Coastal Resident's Outlook",
+      "arc_goal": "To protect the natural integrity of the SHORELINE_CONFIG and ensure traditional NEIGHBORHOOD_ACCESS for fishing and navigation, influencing PUBLIC_SENTIMENT.",
+      "inventory": [
+        {
+          "name": "Weather-Beaten Spyglass",
+          "description": "A brass spyglass, often used to scan the horizon and shoreline.",
+          "quantity": 1
+        },
+        {
+          "name": "Hand-Drawn Tide Charts",
+          "description": "Personal charts with annotations on local currents and erosion patterns.",
+          "quantity": 1
+        },
+        {
+          "name": "Old Fishing Net",
+          "description": "Repaired countless times, still used for small catches or demonstrations.",
+          "quantity": 1
+        },
+        {
+          "name": "Journal of Shoreline Observations",
+          "description": "A leather-bound journal filled with decades of notes on coastal changes.",
+          "quantity": 1
+        },
+        {
+          "name": "Pocket Compass",
+          "description": "A reliable, albeit old, compass for navigation.",
+          "quantity": 1
+        },
+        {
+          "name": "Bag of Dried Seaweed",
+          "description": "Used for medicinal purposes or as a simple snack.",
+          "quantity": 1
+        },
+        {
+          "name": "Carved Wooden Pipe",
+          "description": "A comfort item, often smoked while observing the sea.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Anchor Charm",
+          "description": "A lucky charm worn around his neck.",
+          "quantity": 1
+        },
+        {
+          "name": "Storm Lantern",
+          "description": "For navigating the outlook during bad weather.",
+          "quantity": 1
+        },
+        {
+          "name": "Binoculars",
+          "description": "For closer inspection of distant shoreline activities.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Coastal Observation Post",
+          "asset_type": "Lookout Point",
+          "description": "A small, elevated platform offering an unobstructed view of the coastline.",
+          "story_use": "Monitoring shoreline changes and maritime activity."
+        },
+        {
+          "asset_name": "Weather Vane & Anemometer",
+          "asset_type": "Environmental Sensor",
+          "description": "Instruments for tracking wind direction and speed, crucial for understanding coastal erosion.",
+          "story_use": "Gathering data on environmental factors affecting the shoreline."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_COASTAL_EROSION",
+          "topic": "Shoreline Dynamics",
+          "summary": "Extensive firsthand knowledge of the island's natural erosion and accretion patterns over decades.",
+          "confidence": 10
+        },
+        {
+          "knowledge_id": "K_MARITIME_HISTORY",
+          "topic": "Traditional Sea Access",
+          "summary": "Deep understanding of historical navigation routes and traditional access points along the coast.",
+          "confidence": 9
+        }
+      ]
+    },
+    {
+      "display_name": "Silas \"The Ledger\"",
+      "role_name": "Inland Merchant Guild Representative",
+      "activity": "Lobbying the COMMUNITY_COUNCIL and COURTHOUSE for improved NEIGHBORHOOD_ACCESS for inland trade, affecting PUBLIC_SENTIMENT.",
+      "home_base": "Inland Merchant's Stall",
+      "arc_goal": "To secure new or improved sea access for inland merchants, increasing business opportunities and influencing the RECLAMATION_GUILD's project priorities.",
+      "inventory": [
+        {
+          "name": "Merchant Guild Charter",
+          "description": "An official document outlining the rights and responsibilities of inland merchants.",
+          "quantity": 1
+        },
+        {
+          "name": "Trade Route Maps",
+          "description": "Maps detailing current and desired trade routes, highlighting access bottlenecks.",
+          "quantity": 1
+        },
+        {
+          "name": "Abacus",
+          "description": "A traditional counting tool for quick calculations.",
+          "quantity": 1
+        },
+        {
+          "name": "Inkwell and Quill Set",
+          "description": "For drafting formal letters and proposals.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Pouch of Gold Coins",
+          "description": "For minor transactions or securing favors.",
+          "quantity": 1
+        },
+        {
+          "name": "Polished Brass Scale",
+          "description": "For weighing goods accurately.",
+          "quantity": 1
+        },
+        {
+          "name": "Business Contact Book",
+          "description": "A ledger filled with names and details of various traders and officials.",
+          "quantity": 1
+        },
+        {
+          "name": "Sealed Letter of Intent",
+          "description": "A formal proposal for a new dock construction project.",
+          "quantity": 1
+        },
+        {
+          "name": "Merchant's Seal Ring",
+          "description": "Used to authenticate official documents.",
+          "quantity": 1
+        },
+        {
+          "name": "Sample of Exotic Spice",
+          "description": "A reminder of the goods he wishes to trade more easily.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Merchant Guild Office",
+          "asset_type": "Administrative Hub",
+          "description": "A small, organized office within the market for guild business and meetings.",
+          "story_use": "Coordinating merchant interests and drafting proposals."
+        },
+        {
+          "asset_name": "Trade Goods Display Stand",
+          "asset_type": "Commercial Showcase",
+          "description": "A prominent stand used to display samples of goods that could be traded with better sea access.",
+          "story_use": "Illustrating the economic benefits of improved access."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_TRADE_ECONOMICS",
+          "topic": "Market Dynamics",
+          "summary": "Comprehensive understanding of supply chains, market demands, and the economic impact of sea access on inland trade.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K_LOBBYING_TACTICS",
+          "topic": "Political Influence",
+          "summary": "Knowledge of effective strategies for lobbying institutions like the Community Council and Courthouse to achieve merchant goals.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Corvus \"The Line-Drawer\"",
+      "role_name": "Independent Cartographer & Surveyor",
+      "activity": "Documenting SHORELINE_CONFIG and NEIGHBORHOOD_ACCESS changes, providing data to RECLAMATION_GUILD or COMMUNITY_COUNCIL.",
+      "home_base": "Shoreline Construction Site",
+      "arc_goal": "To accurately map the Isle's evolving coast, influencing RECLAMATION_GUILD's project bids and COMMUNITY_COUNCIL's public sentiment.",
+      "inventory": [
+        {
+          "name": "Hydrographic Charting Kit",
+          "description": "A waterproof satchel containing specialized pens, rulers, and a portable drafting board for sea-level mapping.",
+          "quantity": 1
+        },
+        {
+          "name": "Depth Sounder (Manual)",
+          "description": "A weighted line with marked intervals, used to measure water depth near the shore.",
+          "quantity": 1
+        },
+        {
+          "name": "Tide-Marked Buoys",
+          "description": "Small, brightly colored buoys used to track tidal movements and current patterns.",
+          "quantity": 6
+        },
+        {
+          "name": "Surveyor's Chain",
+          "description": "A long, linked chain used for precise linear measurements on land.",
+          "quantity": 1
+        },
+        {
+          "name": "Weather-Resistant Notebook",
+          "description": "A durable notebook with waterproof pages for recording field observations.",
+          "quantity": 1
+        },
+        {
+          "name": "Coastal Flora Guide",
+          "description": "A small, illustrated book detailing native plants that stabilize or indicate erosion.",
+          "quantity": 1
+        },
+        {
+          "name": "Binoculars (High-Powered)",
+          "description": "For observing distant shoreline changes and construction progress.",
+          "quantity": 1
+        },
+        {
+          "name": "Portable Anemometer",
+          "description": "A handheld device for measuring wind speed and direction, crucial for wave pattern prediction.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Survey Skiff 'The Horizon'",
+          "asset_type": "Small Boat",
+          "description": "A sturdy, shallow-draft skiff equipped for coastal surveying and data collection.",
+          "story_use": "Allows Corvus to access remote shoreline areas and conduct hydrographic surveys, providing critical data for SHORELINE_CONFIG assessments."
+        },
+        {
+          "asset_name": "Coastal Observation Post",
+          "asset_type": "Structure",
+          "description": "A small, elevated platform built into a cliff overlooking a key section of the coast.",
+          "story_use": "Serves as a vantage point for long-term monitoring of erosion, deposition, and RECLAMATION_GUILD project impacts on SHORELINE_CONFIG."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_SHORELINE_EROSION_PATTERNS",
+          "topic": "Coastal Erosion Dynamics",
+          "summary": "Understands the natural and man-made factors contributing to shoreline erosion and accretion on the Isle.",
+          "confidence": 8
+        },
+        {
+          "knowledge_id": "K_GUILD_SURVEY_STANDARDS",
+          "topic": "Reclamation Guild Survey Protocols",
+          "summary": "Familiar with the specific surveying and mapping standards required by the RECLAMATION_GUILD for project approval.",
+          "confidence": 7
+        }
+      ]
+    },
+    {
+      "display_name": "Seraphina \"The Archivist\"",
+      "role_name": "Courthouse Registry Scribe",
+      "activity": "Maintaining and cross-referencing public records, property deeds, and court summons, influencing CONFISCATED_GOODS_INVENTORY and COURTHOUSE decisions.",
+      "home_base": "Courthouse Registry",
+      "arc_goal": "To uncover a hidden pattern in the COURTHOUSE's allocation of confiscated goods, potentially revealing corruption and shifting PUBLIC_SENTIMENT.",
+      "inventory": [
+        {
+          "name": "Inkwell & Quill Set (Fine)",
+          "description": "A well-maintained set for precise and formal record-keeping.",
+          "quantity": 1
+        },
+        {
+          "name": "Ledger of Confiscated Assets",
+          "description": "A large, bound book detailing items seized by the COURTHOUSE, with dates and origins.",
+          "quantity": 1
+        },
+        {
+          "name": "Cipher Wheel (Basic)",
+          "description": "A simple tool for decoding or encoding short messages, used for personal notes.",
+          "quantity": 1
+        },
+        {
+          "name": "Magnifying Glass (Brass-Framed)",
+          "description": "For examining faded documents and fine print in old records.",
+          "quantity": 1
+        },
+        {
+          "name": "Sealing Wax & Stamp",
+          "description": "Used to authenticate and secure official documents.",
+          "quantity": 1
+        },
+        {
+          "name": "Roll of Parchment Paper",
+          "description": "High-quality paper for drafting new official records or copies.",
+          "quantity": 5
+        },
+        {
+          "name": "Registry Key Ring",
+          "description": "A heavy ring holding keys to various locked archives and record cabinets.",
+          "quantity": 1
+        },
+        {
+          "name": "Annotated Legal Code",
+          "description": "A personal copy of the island's laws, with Seraphina's own marginalia and cross-references.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Private Archival Nook",
+          "asset_type": "Storage Space",
+          "description": "A small, secluded corner within the Courthouse Registry, filled with personal research and sensitive documents.",
+          "story_use": "Allows Seraphina to conduct discreet investigations into COURTHOUSE records and CONFISCATED_GOODS_INVENTORY without immediate oversight."
+        },
+        {
+          "asset_name": "Automated Document Sorter (Prototype)",
+          "asset_type": "Machine",
+          "description": "A complex, clockwork-driven device designed to rapidly categorize and file documents.",
+          "story_use": "Seraphina uses this to quickly process and cross-reference vast amounts of data, potentially revealing connections in CONFISCATED_GOODS_INVENTORY that others miss."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_COURTHOUSE_PROCEDURES",
+          "topic": "Judicial Record-Keeping Protocols",
+          "summary": "Intimate knowledge of all official procedures for documenting and storing legal and asset records within the COURTHOUSE.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "K_CONFISCATED_GOODS_HISTORY",
+          "topic": "Historical Asset Seizure Patterns",
+          "summary": "Awareness of past trends and unusual allocations of confiscated goods over several decades.",
+          "confidence": 7
+        }
+      ]
+    },
+    {
+      "display_name": "Gideon \"The Advocate\"",
+      "role_name": "Community Forum Organizer",
+      "activity": "Mobilizing public opinion and coordinating community actions, directly affecting PUBLIC_SENTIMENT and influencing COMMUNITY_COUNCIL decisions.",
+      "home_base": "Community Forum",
+      "arc_goal": "To unite disparate community factions to demand equitable NEIGHBORHOOD_ACCESS, forcing the COURTHOUSE to review reclamation project priorities.",
+      "inventory": [
+        {
+          "name": "Public Speaking Megaphone",
+          "description": "A sturdy, brass megaphone used to project voice during community gatherings.",
+          "quantity": 1
+        },
+        {
+          "name": "Petition Scroll (Unrolled)",
+          "description": "A long scroll for collecting signatures, currently filled with grievances about sea access.",
+          "quantity": 1
+        },
+        {
+          "name": "Community Grievance Box",
+          "description": "A locked wooden box where residents can anonymously submit complaints or suggestions.",
+          "quantity": 1
+        },
+        {
+          "name": "Map of Disputed Access Points",
+          "description": "A hand-drawn map highlighting areas where NEIGHBORHOOD_ACCESS is contentious or blocked.",
+          "quantity": 1
+        },
+        {
+          "name": "Flyer Printing Press (Small)",
+          "description": "A portable, hand-cranked press for quickly producing public announcements.",
+          "quantity": 1
+        },
+        {
+          "name": "List of Community Contacts",
+          "description": "A well-worn notebook containing names and details of key community members and their concerns.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency First-Aid Kit",
+          "description": "For minor injuries that might occur during protests or large gatherings.",
+          "quantity": 1
+        },
+        {
+          "name": "Coastal Resident's Almanac",
+          "description": "A compilation of local tides, fishing seasons, and historical events relevant to coastal life.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Community Bulletin Board",
+          "asset_type": "Information Hub",
+          "description": "A large, weather-protected board outside the Community Forum, used for posting notices and public appeals.",
+          "story_use": "Serves as a central point for Gideon to disseminate information and rally PUBLIC_SENTIMENT regarding NEIGHBORHOOD_ACCESS issues."
+        },
+        {
+          "asset_name": "Mobile Soapbox Platform",
+          "asset_type": "Portable Stage",
+          "description": "A collapsible wooden platform designed for impromptu public speeches in various locations.",
+          "story_use": "Allows Gideon to quickly set up and address crowds in different neighborhoods, directly influencing PUBLIC_SENTIMENT and gathering support for COMMUNITY_COUNCIL petitions."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_COMMUNITY_ORGANIZING_TACTICS",
+          "topic": "Effective Public Mobilization",
+          "summary": "Expertise in strategies for organizing protests, petitions, and public forums to achieve community goals.",
+          "confidence": 8
+        },
+        {
+          "knowledge_id": "K_LOCAL_GRIEVANCES",
+          "topic": "Neighborhood-Specific Complaints",
+          "summary": "Detailed understanding of the specific issues and frustrations of various neighborhoods regarding sea access and reclamation.",
+          "confidence": 9
+        }
+      ]
+    },
+    {
+      "display_name": "Zephyr \"The Salvager\"",
+      "role_name": "Reclamation Guild Material Scout",
+      "activity": "Sourcing and assessing materials for shoreline construction, directly impacting CONFISCATED_GOODS_INVENTORY and RECLAMATION_GUILD project efficiency.",
+      "home_base": "Reclamation Guild Workshop",
+      "arc_goal": "To discover a sustainable, alternative source of reclamation materials, reducing the RECLAMATION_GUILD's dependency on the COURTHOUSE's confiscated goods and improving SHORELINE_CONFIG stability.",
+      "inventory": [
+        {
+          "name": "Material Testing Kit",
+          "description": "A small kit with tools for assessing the strength, durability, and composition of various building materials.",
+          "quantity": 1
+        },
+        {
+          "name": "Blueprint Fragments (Partial)",
+          "description": "Scraps of old, discarded RECLAMATION_GUILD blueprints, sometimes containing useful design ideas.",
+          "quantity": 3
+        },
+        {
+          "name": "Heavy-Duty Work Gloves",
+          "description": "Durable gloves for handling rough and salvaged materials.",
+          "quantity": 1
+        },
+        {
+          "name": "Portable Winch",
+          "description": "A hand-cranked winch for moving heavy objects found during scouting.",
+          "quantity": 1
+        },
+        {
+          "name": "Geological Rock Samples",
+          "description": "A collection of different rock types found on the island, for comparison and study.",
+          "quantity": 5
+        },
+        {
+          "name": "Waterproof Satchel",
+          "description": "For carrying tools and samples through wet or muddy terrain.",
+          "quantity": 1
+        },
+        {
+          "name": "Reclamation Guild Handbook",
+          "description": "A guide detailing approved materials and construction techniques.",
+          "quantity": 1
+        },
+        {
+          "name": "Telescoping Grabber Tool",
+          "description": "For retrieving small items from hard-to-reach places.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Experimental Material Stockpile",
+          "asset_type": "Storage Area",
+          "description": "A section of the Reclamation Guild Workshop dedicated to storing and testing unconventional building materials.",
+          "story_use": "Allows Zephyr to experiment with new materials, potentially finding alternatives to CONFISCATED_GOODS_INVENTORY for RECLAMATION_GUILD projects."
+        },
+        {
+          "asset_name": "Submersible Drone (Scouting)",
+          "asset_type": "Vehicle",
+          "description": "A small, remote-controlled drone equipped with cameras for underwater material scouting.",
+          "story_use": "Enables Zephyr to explore submerged areas for natural or salvaged materials, expanding the RECLAMATION_GUILD's resource options beyond the COURTHOUSE."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K_MATERIAL_SCIENCE_BASICS",
+          "topic": "Structural Integrity of Materials",
+          "summary": "Understands the properties of various natural and man-made materials and their suitability for shoreline construction.",
+          "confidence": 7
+        },
+        {
+          "knowledge_id": "K_GUILD_MATERIAL_REQUIREMENTS",
+          "topic": "Reclamation Guild Material Specifications",
+          "summary": "Detailed knowledge of the RECLAMATION_GUILD's specific requirements and standards for all construction materials.",
+          "confidence": 8
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Reclamation Project Approval",
+      "summary": "Players influence the approval and execution of shoreline reclamation projects, balancing community needs with engineering feasibility and legal mandates. This loop directly changes the SHORELINE_CONFIG state variable.",
+      "roles": [
+        "Guild Master Engineer",
+        "Community Council Representative",
+        "Courthouse Registry Clerk"
+      ],
+      "rooms": [
+        "Reclamation Guild Workshop",
+        "Community Forum",
+        "Courthouse Registry"
+      ],
+      "pressure": "The need for shoreline stability and improved access versus limited resources and public dissent."
+    },
+    {
+      "label": "Access Equity Debate",
+      "summary": "Players engage in discussions and actions to alter neighborhood sea access, often in response to new reclamation projects or existing inequalities. This loop directly changes the NEIGHBORHOOD_ACCESS state variable and affects PUBLIC_SENTIMENT.",
+      "roles": [
+        "Coastal Resident Advocate",
+        "Inland Merchant Guild Representative",
+        "Community Forum Organizer"
+      ],
+      "rooms": [
+        "Community Forum",
+        "Coastal Resident's Outlook",
+        "Inland Merchant's Stall"
+      ],
+      "pressure": "Growing public dissatisfaction over unequal access and the economic implications for various groups."
+    },
+    {
+      "label": "Confiscated Goods Allocation",
+      "summary": "Players interact with the process of managing and allocating confiscated goods, influencing whether they are auctioned for funds or used directly in public works. This loop directly changes the CONFISCATED_GOODS_INVENTORY state variable and can trigger the causal link: 'COURTHOUSE allocates confiscated objects for reclamation.'",
+      "roles": [
+        "Confiscated Goods Auctioneer",
+        "Courthouse Registry Scribe",
+        "Reclamation Guild Material Scout"
+      ],
+      "rooms": [
+        "Confiscated Goods Yard",
+        "Courthouse Registry",
+        "Reclamation Guild Workshop"
+      ],
+      "pressure": "The demand for construction materials versus the need to generate revenue from auctions and maintain transparency."
+    },
+    {
+      "label": "Public Sentiment Management",
+      "summary": "Players attempt to sway public opinion regarding reclamation projects and access issues, either to gain support or to instigate opposition. This loop directly changes the PUBLIC_SENTIMENT state variable and can trigger the causal link: 'Public sentiment reaches critical dissatisfaction.'",
+      "roles": [
+        "Community Council Representative",
+        "Coastal Resident Advocate",
+        "Community Forum Organizer"
+      ],
+      "rooms": [
+        "Community Forum",
+        "Coastal Resident's Outlook"
+      ],
+      "pressure": "The urgency to either calm public unrest or mobilize community action before critical decisions are made."
+    }
+  ],
+  "player_entry_points": [
+    "A new shoreline reclamation project has been announced, sparking debate over its impact on sea access.",
+    "The Courthouse is holding a public auction of confiscated goods, some of which are valuable construction materials.",
+    "A community forum is scheduled to discuss recent changes to neighborhood sea access.",
+    "Reports of shoreline erosion are increasing, putting pressure on the Reclamation Guild."
+  ],
+  "conflict_hooks": [
+    "A new reclamation project is proposed that would significantly improve sea access for Inland Merchants but completely landlock a long-standing Coastal Resident neighborhood.",
+    "The Courthouse allocates a large batch of confiscated goods, including rare materials, to a reclamation project that is widely unpopular with the public, leading to accusations of corruption.",
+    "A critical section of the shoreline collapses due to poor construction or unexpected erosion, and the Reclamation Guild blames the quality of materials provided by the Courthouse, while Coastal Residents blame the Guild's engineering.",
+    "An Independent Cartographer & Surveyor discovers a discrepancy between official shoreline maps and the actual new land formations, suggesting unauthorized construction or misreporting."
+  ],
+  "custom_actions": [
+    "PetitionCouncil",
+    "SurveyShoreline",
+    "AuctionConfiscatedGoods",
+    "DraftReclamationPlan",
+    "ChallengeRuling",
+    "OrganizeForum",
+    "InspectMaterials",
+    "LobbyOfficial"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "OfferExclusiveAccess",
+      "initiating_role": "Inland Merchant & Contraband Dealer",
+      "target_role": "Guild Master Engineer",
+      "situation": "The Inland Merchant wants a specific, private access point built into a new reclamation project, bypassing public channels.",
+      "proposed_effects": [
+        "transfer",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Is the proposed access point legally permissible?",
+        "Does the Guild Master Engineer have the authority to grant exclusive access?",
+        "Are there any existing public plans for that section of the shoreline?",
+        "Is the offered 'favor' a bribe or a legitimate contribution?"
+      ]
+    },
+    {
+      "action_name": "PubliclyDenounceProject",
+      "initiating_role": "Coastal Resident Advocate",
+      "target_role": "Community Council Representative",
+      "situation": "A new reclamation project threatens to block a traditional fishing spot for coastal residents, and the Advocate wants the Council to intervene.",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Is the Coastal Resident Advocate a registered speaker at the forum?",
+        "Is the Community Council Representative present and able to respond?",
+        "Are there established rules for public denouncements?",
+        "What is the immediate impact on public sentiment?"
+      ]
+    },
+    {
+      "action_name": "ForgePermit",
+      "initiating_role": "Inland Merchant & Contraband Dealer",
+      "target_role": "Courthouse Registry Clerk",
+      "situation": "The Inland Merchant needs a permit for a non-standard material delivery to a construction site but cannot obtain it through official channels.",
+      "proposed_effects": [
+        "create_item",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Does the Inland Merchant have the necessary tools/skills for forgery?",
+        "Is the Courthouse Registry Clerk's attention diverted or can they be influenced?",
+        "What are the legal repercussions if discovered?",
+        "Is the forged item distinguishable from a genuine permit?"
+      ]
+    },
+    {
+      "action_name": "RedirectConfiscatedMaterials",
+      "initiating_role": "Reclamation Guild Material Scout",
+      "target_role": "Confiscated Goods Auctioneer",
+      "situation": "The Material Scout believes certain confiscated goods are more valuable for a critical reclamation project than for auction, and wants them diverted.",
+      "proposed_effects": [
+        "transfer",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Are the specified goods currently allocated for auction?",
+        "Does the Material Scout have a legitimate claim for the project?",
+        "Can the Confiscated Goods Auctioneer legally divert items without Courthouse approval?",
+        "What is the immediate impact on the Confiscated Goods Inventory?"
+      ]
+    }
+  ],
+  "social_rules": [
+    "Respect Courthouse rulings on land use and asset allocation.",
+    "Public forums are the primary venue for community feedback on public works.",
+    "Reclamation Guild projects must adhere to approved designs and material sourcing.",
+    "Confiscated goods are public assets, managed by the Courthouse for community benefit.",
+    "Unequal sea access is a sensitive topic; discussions should aim for equitable solutions."
+  ],
+  "item_themes": [
+    "Confiscated artifacts",
+    "Reclaimed building materials",
+    "Legal documents",
+    "Coastal flora and fauna",
+    "Navigation tools"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "SMUG_COMPASS",
+      "name": "Smuggler's Compass",
+      "price": 850,
+      "mass": 0.3,
+      "description": "A tarnished brass compass, rumored to point not north, but towards the nearest hidden cove. Confiscated from a notorious sea-runner.",
+      "image_prompt": "Tarnished brass compass with intricate, worn carvings, pointing towards a hidden cove on a map.",
+      "category": "Confiscated Artifact"
+    },
+    {
+      "item_id": "ILLICIT_DREDGE",
+      "name": "Illicit Dredge Permit",
+      "price": 1200,
+      "mass": 0.05,
+      "description": "A forged permit for unauthorized seabed dredging, bearing a suspiciously official-looking seal. Evidence of past illegal resource extraction.",
+      "image_prompt": "Aged, slightly crumpled legal document with a forged seal, titled 'Dredging Permit'.",
+      "category": "Legal Document"
+    },
+    {
+      "item_id": "GILDED_SPYGLASS",
+      "name": "Gilded Spyglass",
+      "price": 1500,
+      "mass": 0.7,
+      "description": "A beautifully crafted spyglass with a gold-leaf finish, once belonging to a wealthy, now-exiled land speculator.",
+      "image_prompt": "Ornate gilded spyglass, reflecting the sun on a dynamic coastal landscape.",
+      "category": "Confiscated Artifact"
+    },
+    {
+      "item_id": "RECLAIMED_TIMBER",
+      "name": "Reclaimed Pier Timber",
+      "price": 150,
+      "mass": 15.0,
+      "description": "Heavy, salt-weathered timber salvaged from a collapsed pier. Ideal for reinforcing new shoreline structures or whimsical architecture.",
+      "image_prompt": "Stack of heavy, salt-weathered timber beams salvaged from an old pier, on a gritty beach.",
+      "category": "Reclaimed Building Material"
+    },
+    {
+      "item_id": "SHORELINE_SURVEY",
+      "name": "Shoreline Configuration Report",
+      "price": 300,
+      "mass": 0.1,
+      "description": "A detailed report outlining current erosion rates and sediment distribution along a specific coastal section. Essential for reclamation planning.",
+      "image_prompt": "Technical survey document with maps and data charts, showing shoreline erosion.",
+      "category": "Legal Document"
+    },
+    {
+      "item_id": "SEAWEED_FERTILIZER",
+      "name": "Kelp Bloom Fertilizer",
+      "price": 45,
+      "mass": 2.5,
+      "description": "Rich, nutrient-dense fertilizer made from processed coastal kelp blooms. Boosts growth of resilient coastal flora.",
+      "image_prompt": "Bag of dark green, organic fertilizer made from kelp, next to thriving coastal plants.",
+      "category": "Coastal Flora and Fauna"
+    },
+    {
+      "item_id": "COURT_SUMMONS",
+      "name": "Official Court Summons",
+      "price": 50,
+      "mass": 0.02,
+      "description": "A formal legal document requiring appearance before the Island Courthouse. Ignoring it has severe consequences.",
+      "image_prompt": "Official-looking court summons document with a prominent seal and formal typography.",
+      "category": "Legal Document"
+    },
+    {
+      "item_id": "GUILD_MEMBERSHIP",
+      "name": "Reclamation Guild Membership Card",
+      "price": 750,
+      "mass": 0.01,
+      "description": "A laminated card signifying active membership in the Coastal Reclamation Guild, granting access to material supply chains and project bids.",
+      "image_prompt": "Laminated membership card with the Coastal Reclamation Guild logo and a unique ID number.",
+      "category": "Credential"
+    },
+    {
+      "item_id": "PROPERTY_DEED",
+      "name": "Coastal Property Deed",
+      "price": 2500,
+      "mass": 0.03,
+      "description": "A legal deed for a prime piece of coastal property, its value fluctuating wildly with changes in sea access and reclamation projects.",
+      "image_prompt": "Official property deed document with intricate borders and a legal seal, showing a coastal plot.",
+      "category": "Legal Document"
+    },
+    {
+      "item_id": "CRAB_TRAP_DESIGN",
+      "name": "Sustainable Crab Trap Blueprints",
+      "price": 180,
+      "mass": 0.08,
+      "description": "Detailed blueprints for building efficient, sustainable crab traps, designed to minimize bycatch and support local fishing.",
+      "image_prompt": "Technical blueprints for a sustainable crab trap, with measurements and material lists.",
+      "category": "Coastal Flora and Fauna"
+    },
+    {
+      "item_id": "PUBLIC_HEARING_MINUTES",
+      "name": "Community Council Minutes",
+      "price": 75,
+      "mass": 0.04,
+      "description": "Official record of a Community Council public hearing, detailing resident feedback and objections to a proposed reclamation project.",
+      "image_prompt": "Typed document showing meeting minutes, with signatures and a 'Community Council' header.",
+      "category": "Legal Document"
+    },
+    {
+      "item_id": "FOSSILIZED_CORAL",
+      "name": "Ancient Coral Fragment",
+      "price": 350,
+      "mass": 0.8,
+      "description": "A large, beautifully preserved fragment of fossilized coral, often used as a decorative element in found-object architecture.",
+      "image_prompt": "Large, intricate fragment of fossilized coral, displaying unique textures and colors.",
+      "category": "Confiscated Artifact"
+    },
+    {
+      "item_id": "TIDE_CHART_ANCIENT",
+      "name": "Hand-Drawn Tide Chart (Ancient)",
+      "price": 200,
+      "mass": 0.15,
+      "description": "A weathered, hand-drawn tide chart passed down through generations, surprisingly accurate for predicting local currents.",
+      "image_prompt": "Aged, parchment-like hand-drawn tide chart with intricate symbols and notes.",
+      "category": "Navigation Tool"
+    },
+    {
+      "item_id": "RECLAMATION_PERMIT",
+      "name": "Approved Reclamation Permit",
+      "price": 1000,
+      "mass": 0.06,
+      "description": "A Courthouse-issued permit authorizing specific shoreline reclamation work, detailing approved materials and scope.",
+      "image_prompt": "Official government permit document with a large 'APPROVED' stamp and Courthouse seal.",
+      "category": "Legal Document"
+    },
+    {
+      "item_id": "SEAGRASS_SEEDLING",
+      "name": "Eelgrass Seedling Bundle",
+      "price": 20,
+      "mass": 0.1,
+      "description": "A small bundle of resilient eelgrass seedlings, vital for stabilizing new shorelines and restoring marine habitats.",
+      "image_prompt": "Small bundle of vibrant green eelgrass seedlings, ready for planting.",
+      "category": "Coastal Flora and Fauna"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "shifting_shores_wardrobe_policy_001",
+    "world_wardrobe_brief": "Practical, durable attire reflecting a coastal community focused on resource reclamation and legal processes. Styles incorporate repurposed materials and show signs of wear, blending gritty realism with functional, found-object aesthetics.",
+    "forbidden_aesthetics": [
+      "generic fantasy",
+      "generic cyberpunk",
+      "high-fashion",
+      "pristine luxury",
+      "futuristic techwear",
+      "medieval garb",
+      "steampunk",
+      "victorian",
+      "neon punk",
+      "glamorous",
+      "unworn",
+      "cleanroom",
+      "formal ballgowns",
+      "tuxedos",
+      "unrelated real-world locations"
+    ],
+    "palette_families": [
+      {
+        "name": "Coastal Earth",
+        "dominant": "#a09b8d",
+        "accent": "#d46a6a",
+        "trim": "#3a3a3a",
+        "material": "weathered wood"
+      },
+      {
+        "name": "Sea-Worn",
+        "dominant": "#6b8e99",
+        "accent": "#e0e0e0",
+        "trim": "#3a3a3a",
+        "material": "sea-worn glass"
+      },
+      {
+        "name": "Reclaimed Metal",
+        "dominant": "#6b8e99",
+        "accent": "#a09b8d",
+        "trim": "#d46a6a",
+        "material": "corroded metal"
+      },
+      {
+        "name": "Driftwood & Rope",
+        "dominant": "#a09b8d",
+        "accent": "#6b8e99",
+        "trim": "#e0e0e0",
+        "material": "driftwood"
+      },
+      {
+        "name": "Concrete & Stone",
+        "dominant": "#a09b8d",
+        "accent": "#3a3a3a",
+        "trim": "#e0e0e0",
+        "material": "rough concrete"
+      },
+      {
+        "name": "Barnacle & Rust",
+        "dominant": "#6b8e99",
+        "accent": "#d46a6a",
+        "trim": "#3a3a3a",
+        "material": "barnacle-encrusted stone"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "rule_coastal_resident",
+        "role_keywords": [
+          "Coastal Resident Advocate",
+          "Retired Mariner & Coastal Observer"
+        ],
+        "attire": [
+          "weathered canvas jacket",
+          "durable trousers/skirt",
+          "worn boots",
+          "simple tunic/shirt",
+          "knit cap or wide-brimmed hat"
+        ],
+        "props": [
+          "spyglass",
+          "notebook",
+          "tide chart",
+          "fishing net fragment",
+          "binoculars"
+        ],
+        "palette_notes": "Dominantly Coastal Earth or Sea-Worn, with muted accents.",
+        "silhouette_notes": "Loose-fitting, practical, layered for coastal weather. Clear, distinct silhouette with visible tools.",
+        "avoid": []
+      },
+      {
+        "rule_id": "rule_guild_engineer",
+        "role_keywords": [
+          "Guild Master Engineer",
+          "Reclamation Guild Material Scout"
+        ],
+        "attire": [
+          "heavy-duty work overalls",
+          "reinforced gloves",
+          "tool belt",
+          "sturdy work boots",
+          "goggles (optional)",
+          "utility vest"
+        ],
+        "props": [
+          "measuring tape",
+          "wrench",
+          "blueprint scroll",
+          "material samples",
+          "clipboard",
+          "hammer"
+        ],
+        "palette_notes": "Dominantly Reclaimed Metal or Concrete & Stone, with strong accents.",
+        "silhouette_notes": "Robust, utilitarian, with visible pockets and tool loops. Stocky build, clear equipment.",
+        "avoid": []
+      },
+      {
+        "rule_id": "rule_courthouse_staff",
+        "role_keywords": [
+          "Courthouse Registry Clerk",
+          "Courthouse Registry Scribe"
+        ],
+        "attire": [
+          "neat, but worn, button-up shirt",
+          "vest or simple jacket",
+          "tailored trousers/skirt",
+          "polished but scuffed shoes",
+          "armbands (for scribes)"
+        ],
+        "props": [
+          "quill and inkpot",
+          "ledger book",
+          "official seal",
+          "stack of papers",
+          "reading glasses",
+          "pocket watch"
+        ],
+        "palette_notes": "Dominantly Coastal Earth, with subtle trim accents.",
+        "silhouette_notes": "Formal but practical, slightly stiff. Clear, organized silhouette, distinct paperwork.",
+        "avoid": []
+      },
+      {
+        "rule_id": "rule_merchant_dealer",
+        "role_keywords": [
+          "Inland Merchant & Contraband Dealer",
+          "Inland Merchant Guild Representative"
+        ],
+        "attire": [
+          "layered tunics",
+          "loose trousers",
+          "leather apron or vest",
+          "sturdy sandals or soft boots",
+          "scarf or headwrap"
+        ],
+        "props": [
+          "coin pouch",
+          "small scales",
+          "trade goods (e.g., small trinkets, spices)",
+          "ledger",
+          "hidden compartment bag"
+        ],
+        "palette_notes": "Dominantly Coastal Earth or Driftwood & Rope, with varied accents.",
+        "silhouette_notes": "Comfortable, slightly eclectic, with visible pouches and bags. Distinct items for trade.",
+        "avoid": []
+      },
+      {
+        "rule_id": "rule_community_organizer",
+        "role_keywords": [
+          "Community Council Representative",
+          "Community Forum Organizer"
+        ],
+        "attire": [
+          "simple, clean tunic or dress",
+          "practical skirt or trousers",
+          "comfortable shoes",
+          "woven shawl or wrap"
+        ],
+        "props": [
+          "petition scroll",
+          "megaphone (small)",
+          "community bulletin",
+          "notebook and pencil",
+          "basket for collected items"
+        ],
+        "palette_notes": "Dominantly Sea-Worn or Driftwood & Rope, with soft accents.",
+        "silhouette_notes": "Approachable, slightly flowing, with clear items for communication/organization.",
+        "avoid": []
+      },
+      {
+        "rule_id": "rule_salvager_auctioneer",
+        "role_keywords": [
+          "Confiscated Goods Auctioneer",
+          "Independent Cartographer & Surveyor"
+        ],
+        "attire": [
+          "patched work jacket",
+          "rugged trousers",
+          "heavy boots",
+          "fingerless gloves",
+          "wide belt with pouches"
+        ],
+        "props": [
+          "magnifying glass",
+          "surveying tools (e.g., compass, ruler)",
+          "catalog book",
+          "small hammer (for auction)",
+          "map scroll",
+          "lantern"
+        ],
+        "palette_notes": "Dominantly Reclaimed Metal or Barnacle & Rust, with gritty accents.",
+        "silhouette_notes": "Gritty, resourceful, with many visible tools and pockets. Distinct equipment for their trade.",
+        "avoid": []
+      }
+    ],
+    "default_rule": {
+      "rule_id": "default_coastal_dweller",
+      "role_keywords": [
+        "any_unspecified_role"
+      ],
+      "attire": [
+        "simple tunic or shirt",
+        "durable trousers or skirt",
+        "worn boots or sandals",
+        "light jacket or vest"
+      ],
+      "props": [
+        "small pouch",
+        "simple tool (e.g., fishing hook, small knife)",
+        "basket",
+        "water skin"
+      ],
+      "palette_notes": "Use muted tones from Coastal Earth or Sea-Worn palettes.",
+      "silhouette_notes": "Practical, unadorned, and slightly weathered. Clear, basic silhouette.",
+      "avoid": []
+    },
+    "visual_consistency_rules": [
+      "Stylized human, slightly stocky body proportion.",
+      "Thin, dark outline for all sprites.",
+      "Clear silhouette with distinct equipment for role readability.",
+      "Attire should appear weathered, patched, or repurposed.",
+      "No pristine or overly clean clothing.",
+      "Colors should adhere to the established palette families.",
+      "Avoid overly complex patterns; focus on texture and material indication.",
+      "All props should be clearly identifiable and relevant to the world's themes."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "shifting_shores_001",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "orthographic overhead",
+      "scale_rule": "tile-aligned scale"
+    },
+    "palette": {
+      "dominant": "#a09b8d",
+      "secondary": "#6b8e99",
+      "accent": "#d46a6a",
+      "shadow": "#3a3a3a",
+      "highlight": "#e0e0e0"
+    },
+    "materials": [
+      "weathered wood",
+      "corroded metal",
+      "rough concrete",
+      "sea-worn glass",
+      "driftwood",
+      "barnacle-encrusted stone",
+      "woven rope"
+    ],
+    "lighting": "diffused coastal daylight with soft, short shadows",
+    "architecture": [
+      "modular, repurposed structures",
+      "stacked, irregular forms",
+      "weather-beaten facades",
+      "exposed joinery and fasteners",
+      "functional, utilitarian design"
+    ],
+    "terrain": {
+      "ground": "packed sand and gravel",
+      "path": "worn, shell-strewn dirt",
+      "edge": "jagged rock formations, eroding cliffs"
+    },
+    "sprite_language": {
+      "body_proportion": "stylized human, slightly stocky",
+      "outline": "thin, dark outline",
+      "role_readability": "clear silhouette, distinct equipment"
+    },
+    "world_prompt_prefix": "Isle of Shifting Shores, strict top-down, orthographic, found-object architecture, weathered, coastal, gritty realism, muted palette, diffused daylight",
+    "sprite_prompt_prefix": "Isle of Shifting Shores character, strict top-down, orthographic, stylized human, thin outline, distinct equipment, weathered, coastal, gritty realism, muted palette",
+    "forbidden_visuals": [
+      "visible labels",
+      "title text",
+      "poster/card layouts",
+      "disconnected room dioramas",
+      "photorealism",
+      "generic fantasy",
+      "generic cyberpunk",
+      "generic beige terrain",
+      "unrelated real-world locations"
+    ],
+    "canon_hash": "6e52e263bb5ff0b9"
+  }
+}

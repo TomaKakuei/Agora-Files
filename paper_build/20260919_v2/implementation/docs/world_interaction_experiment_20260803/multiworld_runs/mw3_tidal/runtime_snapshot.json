@@ -1,0 +1,282 @@
+{
+  "run_id": "mw3_tidal",
+  "compiled_orchestration": {
+    "version": "agora_c_1",
+    "mode": "json_declared_runtime",
+    "components": [
+      {
+        "component_id": "phase_trace",
+        "kind": "phase_trace"
+      }
+    ],
+    "policies": {
+      "activation_policy": {
+        "policy_id": "human_visible_decay_activation"
+      },
+      "target_selection_policy": {
+        "policy_id": "human_priority_target_selection"
+      },
+      "route_request_policy": {
+        "policy_id": "vertex_json_route_request"
+      },
+      "route_quota_policy": {
+        "policy_id": "quota_fallback"
+      },
+      "intent_builder_policy": {
+        "policy_id": "legacy_intent_builder"
+      },
+      "adjudication_policy": {
+        "policy_id": "local_universal_adjudicator"
+      },
+      "finalization_policy": {
+        "policy_id": "legacy_manifest_writer"
+      }
+    },
+    "phases": [
+      {
+        "phase_id": "bootstrap",
+        "steps": [
+          {
+            "operation": "initialize_runtime"
+          },
+          {
+            "operation": "materialize_or_resume_state"
+          },
+          {
+            "operation": "initialize_round_accumulators"
+          },
+          {
+            "operation": "write_compiled_runtime_plan"
+          }
+        ]
+      },
+      {
+        "phase_id": "round_loop",
+        "for_each": "round_indices",
+        "item_as": "round_index",
+        "steps": [
+          {
+            "operation": "prepare_round"
+          },
+          {
+            "operation": "sync_human_interactor"
+          },
+          {
+            "operation": "run_extra_world_functions"
+          },
+          {
+            "operation": "activate_agents"
+          },
+          {
+            "phase_id": "actor_loop",
+            "for_each": "activated_agents",
+            "item_as": "actor",
+            "steps": [
+              {
+                "operation": "select_target"
+              },
+              {
+                "operation": "prepare_actor_request"
+              },
+              {
+                "operation": "request_route",
+                "when": {
+                  "store_key": "current_actor_skipped",
+                  "equals": false
+                }
+              },
+              {
+                "operation": "apply_route_fallbacks",
+                "when": {
+                  "store_key": "current_actor_skipped",
+                  "equals": false
+                }
+              },
+              {
+                "operation": "build_actor_outputs",
+                "when": {
+                  "store_key": "current_actor_skipped",
+                  "equals": false
+                }
+              },
+              {
+                "operation": "record_actor_outputs",
+                "when": {
+                  "store_key": "current_actor_skipped",
+                  "equals": false
+                }
+              }
+            ]
+          },
+          {
+            "operation": "adjudicate_round"
+          },
+          {
+            "operation": "record_round_outputs"
+          }
+        ]
+      },
+      {
+        "phase_id": "finalize",
+        "steps": [
+          {
+            "operation": "write_final_outputs"
+          },
+          {
+            "operation": "build_optional_report"
+          },
+          {
+            "operation": "write_runtime_snapshot"
+          }
+        ]
+      }
+    ]
+  },
+  "component_state": {
+    "phase_trace": {
+      "transitions": [
+        {
+          "phase_id": "bootstrap",
+          "event": "start"
+        },
+        {
+          "phase_id": "bootstrap",
+          "event": "end"
+        },
+        {
+          "phase_id": "round_loop",
+          "event": "start"
+        },
+        {
+          "phase_id": "round_loop",
+          "event": "end"
+        },
+        {
+          "phase_id": "finalize",
+          "event": "start"
+        }
+      ]
+    }
+  },
+  "event_bus": {
+    "events": [
+      {
+        "topic": "phase_start",
+        "payload": {
+          "phase_id": "bootstrap"
+        }
+      },
+      {
+        "topic": "runtime_initialized",
+        "payload": {
+          "run_id": "mw3_tidal",
+          "scenario_dir": "/home/yz_wang/yz_main/agora_2.0/docs/world_interaction_experiment_20260803/multiworld_runs/mw3_tidal/run_inputs/scenario",
+          "resume_start_round": 1,
+          "rounds": 2
+        }
+      },
+      {
+        "topic": "state_ready",
+        "payload": {
+          "agent_count": 25,
+          "resume_payload": false,
+          "agent_profile_source": "compiled_world_profiles"
+        }
+      },
+      {
+        "topic": "phase_end",
+        "payload": {
+          "phase_id": "bootstrap"
+        }
+      },
+      {
+        "topic": "phase_start",
+        "payload": {
+          "phase_id": "round_loop"
+        }
+      },
+      {
+        "topic": "round_start",
+        "payload": {
+          "round_index": 1
+        }
+      },
+      {
+        "topic": "human_sync",
+        "payload": {
+          "round_index": 1,
+          "active_event_count": 0,
+          "human_present": true
+        }
+      },
+      {
+        "topic": "activation",
+        "payload": {
+          "round_index": 1,
+          "activated_agent_count": 6
+        }
+      },
+      {
+        "topic": "round_complete",
+        "payload": {
+          "round_index": 1,
+          "intent_count": 6,
+          "story_event_count": 6
+        }
+      },
+      {
+        "topic": "round_start",
+        "payload": {
+          "round_index": 2
+        }
+      },
+      {
+        "topic": "human_sync",
+        "payload": {
+          "round_index": 2,
+          "active_event_count": 0,
+          "human_present": true
+        }
+      },
+      {
+        "topic": "activation",
+        "payload": {
+          "round_index": 2,
+          "activated_agent_count": 6
+        }
+      },
+      {
+        "topic": "round_complete",
+        "payload": {
+          "round_index": 2,
+          "intent_count": 7,
+          "story_event_count": 6
+        }
+      },
+      {
+        "topic": "phase_end",
+        "payload": {
+          "phase_id": "round_loop"
+        }
+      },
+      {
+        "topic": "phase_start",
+        "payload": {
+          "phase_id": "finalize"
+        }
+      }
+    ]
+  },
+  "store_summary": {
+    "rounds": 2,
+    "resume_start_round": 1,
+    "route_counts": {
+      "the_redaction_game_coordinate_1": 9,
+      "ease_world_tension": 1,
+      "proposed_discuss_censor_bribe_rumor": 1,
+      "trade_supplies": 1
+    },
+    "longlive_counts": {},
+    "image_counts": {}
+  }
+}

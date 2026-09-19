@@ -1,0 +1,1653 @@
+{
+  "world_name": "Cartographer Lung Exchange",
+  "world_id": "cartographer_lung_exchange_01",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "civic_social_world",
+    "profile_id": "civic_social_world",
+    "locale": "en-US",
+    "tone": "biopunk-political-industrial",
+    "visual_direction": "oxidized teal membranes, ivory ceramic hardware, saffron signal threads, charcoal shadows",
+    "currency_code": "CRD",
+    "currency_symbol": "cr",
+    "currency_minor_unit": "point",
+    "currency_name": "Atmospheric Credits",
+    "domain_label": "orbital-biopunk",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "biopunk_industrial_v1",
+      "frontend_affordance_id": "pressure_gauge_ui",
+      "asset_prompt_kit_id": "organic_machinery_pixel_art"
+    },
+    "policy_refs": {
+      "economy_policy_id": "civic_credit_v1",
+      "item_collection_id": "civic_social_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "civic_social_world_v1",
+      "property_policy_id": "civic_social_world_v1",
+      "knowledge_policy_id": "civic_social_world_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "biopunk orbital political economy",
+  "premise": "Inside a biomechanical lung orbiting a gas giant, breathable air is a traded commodity where exhalation tides physically shift institutional access.",
+  "simulation_objective": "Manage atmospheric scarcity and political alignment through breath futures and spatial reconfiguration.",
+  "agent_count_target": 12,
+  "player_count_target": 12,
+  "wall_color_theme": "ivory_ceramic_plating",
+  "economy_focus": "Breath futures, pressure-based resource allocation, and institutional contracts.",
+  "exploration_focus": "Dynamic room connectivity based on respiratory cycles and pressure differentials.",
+  "conflict_tone": "High-stakes diplomatic tension and systemic environmental pressure.",
+  "visual_style": "Top-down pixel art; teal membranes, ivory ceramics, saffron threads, charcoal shadows.",
+  "rooms": [
+    {
+      "name": "Alveoli Exchange Floor",
+      "biome": "respiratory_core",
+      "purpose": "Trading breath futures and pressure contracts.",
+      "decor_tags": [
+        "saffron_threads",
+        "pressure_gauges",
+        "teal_membranes"
+      ],
+      "activity_tags": [
+        "trading",
+        "shouting",
+        "monitoring"
+      ],
+      "flux_floor_prompt": "top-down pixel art of ivory ceramic floor tiles with inlaid saffron conductive threads forming a grid, 16-bit style, clean edges.",
+      "room_scene_prompt": "top-down pixel art view of a busy trading floor, ivory ceramic tiles, central circular pressure-monitoring console, saffron wiring running across the floor, teal membrane walls, no text, no labels, no margins, full bleed to edges.",
+      "width_tiles": 12,
+      "height_tiles": 10,
+      "ambient_palette": "focused_blue",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "central_pressure_ticker",
+          "label": "Pressure Ticker",
+          "description": "A large circular console displaying pulsing cyan bioluminescent pressure readings.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Bronchial Valve Checkpoint",
+      "biome": "transit_artery",
+      "purpose": "Regulating flow between high and low pressure sectors.",
+      "decor_tags": [
+        "industrial_steel",
+        "valves",
+        "cyan_lights"
+      ],
+      "activity_tags": [
+        "scanning",
+        "waiting",
+        "filtering"
+      ],
+      "flux_floor_prompt": "top-down pixel art of corrugated industrial steel flooring with teal bioluminescent safety stripes, 16-bit aesthetic.",
+      "room_scene_prompt": "top-down pixel art of a narrow security checkpoint, heavy ivory ceramic gates, corrugated steel floor, scanning stations with cyan lights, no text, no labels, no margins, full bleed to edges.",
+      "width_tiles": 6,
+      "height_tiles": 8,
+      "ambient_palette": "clear_day",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "respiratory_scanner",
+          "label": "Lung Capacity Scanner",
+          "description": "A vertical ivory archway that pulses cyan when a citizen passes through.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Exhalation Lounge",
+      "biome": "social_membrane",
+      "purpose": "A place for traders to recover and share stale air.",
+      "decor_tags": [
+        "teal_mats",
+        "soft_lighting",
+        "tubing"
+      ],
+      "activity_tags": [
+        "resting",
+        "whispering",
+        "inhaling"
+      ],
+      "flux_floor_prompt": "top-down pixel art of textured teal alveoli matting, soft organic texture, 16-bit style.",
+      "room_scene_prompt": "top-down pixel art of a dim social lounge, teal mat flooring, low ivory benches, translucent bronchial tubing hanging from the ceiling, no text, no labels, no margins, full bleed to edges.",
+      "width_tiles": 8,
+      "height_tiles": 6,
+      "ambient_palette": "soft_mint",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "communal_oxygen_bubbler",
+          "label": "Oxygen Bubbler",
+          "description": "A glass vat of oxygenated fluid with saffron threads providing warmth.",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Pneumatic Archive",
+      "biome": "data_lung",
+      "purpose": "Storing historical pressure logs and breath debt records.",
+      "decor_tags": [
+        "ivory_racks",
+        "saffron_cables",
+        "glass_tubes"
+      ],
+      "activity_tags": [
+        "filing",
+        "researching",
+        "auditing"
+      ],
+      "flux_floor_prompt": "top-down pixel art of polished ivory ceramic tiles with thin teal membrane seams, 16-bit style.",
+      "room_scene_prompt": "top-down pixel art of a quiet archive, tall ivory ceramic shelving units filled with glowing glass canisters, saffron cables connecting the racks, no text, no labels, no margins, full bleed to edges.",
+      "width_tiles": 10,
+      "height_tiles": 10,
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "debt_ledger_terminal",
+          "label": "Debt Ledger Terminal",
+          "description": "A heavy ceramic desk with a glowing cyan interface for tracking breath futures.",
+          "anchor": "south_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Valve Maintenance Bay",
+      "biome": "mechanical_pleura",
+      "purpose": "Repairing the biomechanical valves of the lung.",
+      "decor_tags": [
+        "tools",
+        "grease",
+        "steel_plates"
+      ],
+      "activity_tags": [
+        "welding",
+        "calibrating",
+        "clanging"
+      ],
+      "flux_floor_prompt": "top-down pixel art of scuffed corrugated steel with oil stains and saffron wire scraps, 16-bit style.",
+      "room_scene_prompt": "top-down pixel art of a mechanical workshop, steel floors, workbenches covered in ivory ceramic parts and saffron threads, large valve components in pieces, no text, no labels, no margins, full bleed to edges.",
+      "width_tiles": 7,
+      "height_tiles": 9,
+      "ambient_palette": "ember_orange",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "heavy_valve_press",
+          "label": "Pneumatic Press",
+          "description": "A massive industrial machine used to seal ceramic valve gaskets.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "High-Pressure Council Chamber",
+      "biome": "upper_lobe",
+      "purpose": "Institutional decision making for the entire exchange.",
+      "decor_tags": [
+        "gold_accents",
+        "teal_drapery",
+        "ivory_thrones"
+      ],
+      "activity_tags": [
+        "debating",
+        "ruling",
+        "signing"
+      ],
+      "flux_floor_prompt": "top-down pixel art of ornate ivory ceramic tiles with intricate saffron thread patterns, 16-bit luxury style.",
+      "room_scene_prompt": "top-down pixel art of a grand council chamber, ornate ivory floors, a semi-circle of high-backed ceramic chairs, teal membrane banners, pulsing cyan lighting, no text, no labels, no margins, full bleed to edges.",
+      "width_tiles": 14,
+      "height_tiles": 12,
+      "ambient_palette": "warm_lantern",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "the_great_bellows",
+          "label": "The Great Bellows",
+          "description": "A ceremonial biomechanical lung pump that symbolizes the authority of the council.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Vane 'The Filter' Kaelo",
+      "role_name": "Chief Valve Inspector",
+      "activity": "Calibrating pressure sensors",
+      "home_base": "Valve Maintenance Bay",
+      "arc_goal": "To expose the structural decay of the Lower Bronchials before a total collapse.",
+      "inventory": [
+        {
+          "name": "Soot-Stained Micrometer",
+          "description": "A precision tool used to measure the thickness of carbon buildup on valve flaps.",
+          "quantity": 1
+        },
+        {
+          "name": "Pneumatic Sealant Paste",
+          "description": "A viscous, blue substance that hardens instantly under high pressure.",
+          "quantity": 3
+        },
+        {
+          "name": "Vibration Tuning Fork",
+          "description": "Used to detect hairline fractures in the Alveoli walls by sound.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Oxygen Siphon",
+          "description": "A small bypass tube for drawing air directly from the main line.",
+          "quantity": 2
+        },
+        {
+          "name": "Inspector's Log-Cylinder",
+          "description": "A brass recording device containing encrypted maintenance logs.",
+          "quantity": 1
+        },
+        {
+          "name": "Gasket Scraper",
+          "description": "A curved blade designed to remove calcified deposits from seals.",
+          "quantity": 1
+        },
+        {
+          "name": "Pressure-Resistant Goggles",
+          "description": "Heavy eyewear with amber lenses to see through thick particulate mist.",
+          "quantity": 1
+        },
+        {
+          "name": "Valve Key Ring",
+          "description": "A heavy set of master keys for the Bronchial Checkpoint gates.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Silent Spanner",
+          "asset_type": "Workshop",
+          "description": "A private maintenance nook hidden behind the main turbines.",
+          "story_use": "A safe haven for illegal repairs and secret meetings."
+        },
+        {
+          "asset_name": "Pressure Gauge Alpha",
+          "asset_type": "Equipment",
+          "description": "A vintage, oversized analog gauge with high sentimental value.",
+          "story_use": "Used to detect subtle atmospheric shifts that digital sensors miss."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Valve Stress Patterns",
+          "summary": "Deep understanding of how pressure fluctuations predict structural failure.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Maintenance Bay Shortcuts",
+          "summary": "Knowledge of hidden crawlspaces and bypass vents within the bay.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Sylas Thorne",
+      "role_name": "Oxygen Arbitrator",
+      "activity": "Negotiating air quotas",
+      "home_base": "High-Pressure Council Chamber",
+      "arc_goal": "To consolidate control over the Alveoli Exchange Floor by manipulating air prices.",
+      "inventory": [
+        {
+          "name": "Gilded Air-Canister",
+          "description": "A decorative but functional canister containing premium, scented oxygen.",
+          "quantity": 1
+        },
+        {
+          "name": "Arbitration Ledger",
+          "description": "A thick book bound in synthetic lung-tissue containing debt records.",
+          "quantity": 1
+        },
+        {
+          "name": "Council Signet Ring",
+          "description": "A heavy ring used to wax-seal official air-allocation decrees.",
+          "quantity": 1
+        },
+        {
+          "name": "Miniature Pressure-Equalizer",
+          "description": "A pocket device that prevents ear-popping during rapid altitude shifts.",
+          "quantity": 1
+        },
+        {
+          "name": "Scented Filter-Mask",
+          "description": "A silk-lined mask infused with lavender to mask the smell of industrial soot.",
+          "quantity": 1
+        },
+        {
+          "name": "Voice-Amplifying Brooch",
+          "description": "A small device that ensures the wearer's voice carries over turbine noise.",
+          "quantity": 1
+        },
+        {
+          "name": "Quorum Ballot Stones",
+          "description": "Polished stones used for voting in the High-Pressure Council.",
+          "quantity": 5
+        },
+        {
+          "name": "Formal Air-Tribute Vouchers",
+          "description": "Paper slips representing guaranteed liters of breathable air.",
+          "quantity": 12
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gilded Vent",
+          "asset_type": "Office",
+          "description": "A luxurious office overlooking the Alveoli Exchange Floor.",
+          "story_use": "A vantage point for monitoring trade and intimidating rivals."
+        },
+        {
+          "asset_name": "Council Archive Access",
+          "asset_type": "Credential",
+          "description": "A high-level clearance pass for the Pneumatic Archive.",
+          "story_use": "Allows the retrieval of suppressed historical air-usage data."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Political Leverage",
+          "summary": "Detailed records of which Council members owe favors to the Exchange.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Air-Flow Economics",
+          "summary": "The complex science of how air supply affects the local currency value.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Elara 'Mist-Walker' Voss",
+      "role_name": "Particulate Scavenger",
+      "activity": "Sifting through exhaust sediment",
+      "home_base": "Pneumatic Archive",
+      "arc_goal": "To find the lost blueprints of the original Lung architecture.",
+      "inventory": [
+        {
+          "name": "Magnetic Sift-Tray",
+          "description": "A tray used to separate metallic dust from organic lung-soot.",
+          "quantity": 1
+        },
+        {
+          "name": "Archive Skeleton Key",
+          "description": "A makeshift tool designed to bypass ancient pneumatic locks.",
+          "quantity": 1
+        },
+        {
+          "name": "Luminescent Moss-Jar",
+          "description": "A jar of glowing flora used as a cold light source in dark vents.",
+          "quantity": 2
+        },
+        {
+          "name": "Telescoping Grab-Claw",
+          "description": "A tool for reaching items stuck in narrow ventilation shafts.",
+          "quantity": 1
+        },
+        {
+          "name": "Reinforced Respirator Filter",
+          "description": "A high-grade filter capable of blocking toxic archive dust.",
+          "quantity": 4
+        },
+        {
+          "name": "Scavenger's Satchel",
+          "description": "A multi-pocketed bag made from recycled industrial canvas.",
+          "quantity": 1
+        },
+        {
+          "name": "Blueprint Fragment",
+          "description": "A charred piece of parchment showing a section of the Alveoli.",
+          "quantity": 1
+        },
+        {
+          "name": "Static-Discharge Glove",
+          "description": "A glove that prevents static shocks when touching old machinery.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Crawl-Space Cache",
+          "asset_type": "Storage",
+          "description": "A hidden compartment inside the Pneumatic Archive walls.",
+          "story_use": "Used to store contraband blueprints and scavenged tech."
+        },
+        {
+          "asset_name": "Archive Map-Overlay",
+          "asset_type": "Data",
+          "description": "A mental map of the Archive's most dangerous 'dead zones'.",
+          "story_use": "Provides a tactical advantage when evading guards."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Ancient Architecture",
+          "summary": "Knowledge of the original design and forgotten passages of the Lung.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Scavenging Techniques",
+          "summary": "Expertise in identifying valuable components within industrial waste.",
+          "confidence": 82
+        }
+      ]
+    },
+    {
+      "display_name": "Bax the Breather",
+      "role_name": "Black-Market Air Merchant",
+      "activity": "Smuggling pure oxygen",
+      "home_base": "The Exhalation Lounge",
+      "arc_goal": "To monopolize the supply of 'Pure-O' outside of Council regulation.",
+      "inventory": [
+        {
+          "name": "Compressed Pure-O Tank",
+          "description": "A heavy cylinder containing 99% pure oxygen, highly illegal.",
+          "quantity": 5
+        },
+        {
+          "name": "Counterfeit Air-Chits",
+          "description": "Perfectly forged tokens for the Alveoli Exchange Floor.",
+          "quantity": 20
+        },
+        {
+          "name": "Hidden-Compartment Vest",
+          "description": "A garment designed to conceal small canisters and tools.",
+          "quantity": 1
+        },
+        {
+          "name": "Bribe-Pouch",
+          "description": "A small bag filled with rare minerals used as currency.",
+          "quantity": 1
+        },
+        {
+          "name": "Portable Pressure-Tester",
+          "description": "A handheld device to verify the purity of air samples.",
+          "quantity": 1
+        },
+        {
+          "name": "Exhalation Lounge VIP Pass",
+          "description": "A stolen pass granting access to the private backrooms.",
+          "quantity": 1
+        },
+        {
+          "name": "Quick-Release Valve Tool",
+          "description": "A wrench designed for rapid attachment to public air-taps.",
+          "quantity": 1
+        },
+        {
+          "name": "Smuggler's Signal Flare",
+          "description": "A chemical stick that burns bright green, used for signaling.",
+          "quantity": 3
+        },
+        {
+          "name": "Diluted Air-Mix",
+          "description": "Cheap, nitrogen-heavy air sold to the desperate.",
+          "quantity": 10
+        },
+        {
+          "name": "Encrypted Comm-Link",
+          "description": "A short-range radio for communicating with other smugglers.",
+          "quantity": 1
+        },
+        {
+          "name": "Weighted Dice",
+          "description": "Used for gambling in the Exhalation Lounge.",
+          "quantity": 2
+        },
+        {
+          "name": "Patch-Kit Adhesive",
+          "description": "A quick-fix glue for punctured air-hoses.",
+          "quantity": 5
+        },
+        {
+          "name": "Brass Knuckles",
+          "description": "Personal protection for deals gone wrong.",
+          "quantity": 1
+        },
+        {
+          "name": "Soot-Mask Filters",
+          "description": "Low-quality filters sold at a high markup.",
+          "quantity": 15
+        },
+        {
+          "name": "Merchant's Ledger",
+          "description": "A coded book of clients and their specific air-needs.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hidden Tap",
+          "asset_type": "Utility",
+          "description": "An illegal connection to the main oxygen line in the Lounge.",
+          "story_use": "Provides a constant, untraceable source of product for sale."
+        },
+        {
+          "asset_name": "Smuggler's Skiff",
+          "asset_type": "Vehicle",
+          "description": "A small, silent glider designed for navigating the Bronchial tubes.",
+          "story_use": "Used for rapid transport of goods between exchange floors."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Black Market Routes",
+          "summary": "Knowledge of the least-guarded paths through the Bronchial Checkpoints.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Chemical Air-Mixing",
+          "summary": "The ability to dilute pure oxygen with inert gases without detection.",
+          "confidence": 89
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen 'The Scribe' Voss",
+      "role_name": "Pneumatic Archivist",
+      "activity": "Transcribing pressure-drop logs onto vellum",
+      "home_base": "Pneumatic Archive",
+      "arc_goal": "To prove the Alveoli Exchange Floor is structurally failing before the Council ignores the data.",
+      "inventory": [
+        {
+          "name": "Brass Stylus",
+          "description": "A weighted tool for etching into pressure-sensitive wax.",
+          "quantity": 1
+        },
+        {
+          "name": "Vellum Scroll (Blank)",
+          "description": "Treated skin resistant to high humidity.",
+          "quantity": 12
+        },
+        {
+          "name": "Ink of the Deep Lung",
+          "description": "Bioluminescent fluid harvested from lower-lobe fungi.",
+          "quantity": 3
+        },
+        {
+          "name": "Pressure Gauge (Pocket)",
+          "description": "A handheld device for measuring local atmospheric stability.",
+          "quantity": 1
+        },
+        {
+          "name": "Archive Key-Ring",
+          "description": "Heavy iron keys to the restricted historical vaults.",
+          "quantity": 1
+        },
+        {
+          "name": "Magnifying Monocle",
+          "description": "A lens used to inspect micro-fractures in valve seals.",
+          "quantity": 1
+        },
+        {
+          "name": "Wax Sealant",
+          "description": "Used to waterproof sensitive documents.",
+          "quantity": 5
+        },
+        {
+          "name": "Emergency Flare",
+          "description": "A chemical stick that burns bright red in low-oxygen zones.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Silent Vault",
+          "asset_type": "Real Estate",
+          "description": "A soundproofed chamber within the Pneumatic Archive.",
+          "story_use": "Used for private research away from Council ears."
+        },
+        {
+          "asset_name": "Archive Ledger 402",
+          "asset_type": "Intellectual Property",
+          "description": "A forbidden record of the original lung construction.",
+          "story_use": "Contains the blueprints for the main Bronchial Valve."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "ARCH-01",
+          "topic": "Structural Weaknesses",
+          "summary": "Detailed knowledge of the stress points in the Bronchial Valve Checkpoint.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "ARCH-02",
+          "topic": "Council Secrets",
+          "summary": "Awareness of the High-Pressure Council's plan to ration air for the elite.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Marrow 'The Fixer' Jax",
+      "role_name": "Valve Maintenance Specialist",
+      "activity": "Welding a hairline fracture on a secondary intake pipe",
+      "home_base": "Valve Maintenance Bay",
+      "arc_goal": "To sabotage the Council's private air supply to force a redistribution of resources.",
+      "inventory": [
+        {
+          "name": "Pneumatic Wrench",
+          "description": "A heavy tool powered by the lung's own pressure.",
+          "quantity": 1
+        },
+        {
+          "name": "Copper Solder Spool",
+          "description": "High-grade conductive wire for valve repairs.",
+          "quantity": 4
+        },
+        {
+          "name": "Flux Paste",
+          "description": "Corrosive substance used to clean metal before welding.",
+          "quantity": 2
+        },
+        {
+          "name": "Gasket Scraper",
+          "description": "A flat blade for removing old, calcified seals.",
+          "quantity": 1
+        },
+        {
+          "name": "Welding Mask",
+          "description": "Tinted glass visor with a built-in respirator.",
+          "quantity": 1
+        },
+        {
+          "name": "Bolt Bag",
+          "description": "A collection of various sized brass fasteners.",
+          "quantity": 50
+        },
+        {
+          "name": "Lubricant Oil (Grade A)",
+          "description": "Synthetic oil that doesn't evaporate in high heat.",
+          "quantity": 3
+        },
+        {
+          "name": "Sabotage Wire",
+          "description": "Thin, nearly invisible wire used to trip valve sensors.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Maintenance Rig",
+          "asset_type": "Vehicle",
+          "description": "A motorized platform for traversing the exterior of the Bronchial pipes.",
+          "story_use": "Allows access to the lung's outer shell for repairs or escape."
+        },
+        {
+          "asset_name": "Workshop Bench 7",
+          "asset_type": "Equipment",
+          "description": "A customized workstation with illegal modifications.",
+          "story_use": "Used to craft tools that bypass Council security."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "MAINT-01",
+          "topic": "Valve Mechanics",
+          "summary": "Expertise in the inner workings of the Bronchial Valve Checkpoint.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "MAINT-02",
+          "topic": "Hidden Passages",
+          "summary": "Knowledge of the maintenance shafts connecting the Alveoli to the Council Chamber.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Zora 'The Breath' Vane",
+      "role_name": "Exhalation Lounge Proprietor",
+      "activity": "Mixing a 'Nitrogen Chaser' for a weary traveler",
+      "home_base": "The Exhalation Lounge",
+      "arc_goal": "To gather enough blackmail on the Council to secure a permanent air permit for her family.",
+      "inventory": [
+        {
+          "name": "Nitrogen Infuser",
+          "description": "A device for aerating drinks with pure nitrogen.",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Decanter",
+          "description": "A heavy glass vessel for storing rare oxygenated spirits.",
+          "quantity": 5
+        },
+        {
+          "name": "Scented Oxygen Canister",
+          "description": "Small vials of air infused with lavender or pine.",
+          "quantity": 20
+        },
+        {
+          "name": "Hidden Microphone",
+          "description": "A tiny device used to record conversations in the lounge booths.",
+          "quantity": 4
+        },
+        {
+          "name": "Lounge Ledger",
+          "description": "A book of debts and favors owed by the lung's elite.",
+          "quantity": 1
+        },
+        {
+          "name": "Polishing Cloth",
+          "description": "Silk cloth for keeping the brass bar gleaming.",
+          "quantity": 2
+        },
+        {
+          "name": "Ice Tongs",
+          "description": "Silver tongs for handling frozen CO2 cubes.",
+          "quantity": 1
+        },
+        {
+          "name": "Bribe Pouch",
+          "description": "A small bag filled with rare coins and trade tokens.",
+          "quantity": 1
+        },
+        {
+          "name": "Rare Spice (Lung-Root)",
+          "description": "A pungent root that enhances the flavor of recycled air.",
+          "quantity": 10
+        },
+        {
+          "name": "Cleaning Acid",
+          "description": "Strong chemical for removing carbon buildup from glassware.",
+          "quantity": 2
+        },
+        {
+          "name": "Decorative Fan",
+          "description": "A hand-fan used to circulate air in the VIP booths.",
+          "quantity": 3
+        },
+        {
+          "name": "Emergency Oxygen Mask",
+          "description": "A high-quality mask hidden under the bar.",
+          "quantity": 1
+        },
+        {
+          "name": "Trade Permit (Expired)",
+          "description": "A document that allows for the sale of atmospheric goods.",
+          "quantity": 1
+        },
+        {
+          "name": "Silver Shaker",
+          "description": "Used for mixing complex atmospheric cocktails.",
+          "quantity": 1
+        },
+        {
+          "name": "Bottle of 'Old Lung' Whiskey",
+          "description": "A rare, pre-collapse spirit.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Exhalation Lounge",
+          "asset_type": "Real Estate",
+          "description": "The premier social hub of the Lung Exchange.",
+          "story_use": "A neutral ground for negotiations and information gathering."
+        },
+        {
+          "asset_name": "The VIP Booth",
+          "asset_type": "Equipment",
+          "description": "A sound-dampened booth with its own independent air supply.",
+          "story_use": "Used for high-stakes meetings and secret deals."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "LOUNGE-01",
+          "topic": "Social Networks",
+          "summary": "Deep understanding of the alliances and rivalries between the lung's factions.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "LOUNGE-02",
+          "topic": "Atmospheric Mixology",
+          "summary": "The art of blending gases for recreational and medicinal use.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Councilor Thorne",
+      "role_name": "High-Pressure Council Member",
+      "activity": "Reviewing the air distribution quotas for the next cycle",
+      "home_base": "High-Pressure Council Chamber",
+      "arc_goal": "To maintain order and prevent a total atmospheric collapse, even if it means sacrificing the lower sectors.",
+      "inventory": [
+        {
+          "name": "Council Signet Ring",
+          "description": "A gold ring used to authorize official decrees.",
+          "quantity": 1
+        },
+        {
+          "name": "Personal Oxygen Tank (Gold-Plated)",
+          "description": "A luxury tank providing 24 hours of pure air.",
+          "quantity": 1
+        },
+        {
+          "name": "Gavel of Authority",
+          "description": "A heavy mallet used to call the Council to order.",
+          "quantity": 1
+        },
+        {
+          "name": "Encrypted Data Tablet",
+          "description": "Contains the real-time pressure readings of the entire lung.",
+          "quantity": 1
+        },
+        {
+          "name": "Formal Robes",
+          "description": "Heavy, ornate garments made from synthetic fibers.",
+          "quantity": 1
+        },
+        {
+          "name": "Security Remote",
+          "description": "A device that can lock down the Bronchial Valve Checkpoint.",
+          "quantity": 1
+        },
+        {
+          "name": "Medal of Service",
+          "description": "A decoration for his years of 'preserving' the lung.",
+          "quantity": 1
+        },
+        {
+          "name": "Small Dagger",
+          "description": "A concealed blade for personal protection.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Council Chamber",
+          "asset_type": "Real Estate",
+          "description": "The highest point in the lung, with the purest air.",
+          "story_use": "The seat of power where all major decisions are made."
+        },
+        {
+          "asset_name": "The Master Key",
+          "asset_type": "Intellectual Property",
+          "description": "The override codes for the entire pneumatic system.",
+          "story_use": "Can be used to vent air or seal off entire sections."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "COUNCIL-01",
+          "topic": "Atmospheric Governance",
+          "summary": "The complex laws and regulations governing air distribution.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "COUNCIL-02",
+          "topic": "Emergency Protocols",
+          "summary": "Knowledge of the 'Final Breath' protocol for total lung evacuation.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Orin 'The Gasket' Graves",
+      "role_name": "Lead Sealant Chemist",
+      "activity": "Synthesizing high-viscosity resin for the Bronchial Valve Checkpoint",
+      "home_base": "Valve Maintenance Bay",
+      "arc_goal": "To develop a permanent seal that prevents the Council's air-leaks from reaching the lower sectors.",
+      "inventory": [
+        {
+          "name": "Viscous Resin-X",
+          "description": "A glowing, amber-colored sealant used for emergency valve repairs.",
+          "quantity": 1
+        },
+        {
+          "name": "Pressure-Gauge Monocle",
+          "description": "A specialized eyepiece that displays real-time atmospheric pressure.",
+          "quantity": 1
+        },
+        {
+          "name": "Copper Soldering Iron",
+          "description": "A heavy-duty tool for fusing pneumatic pipes.",
+          "quantity": 1
+        },
+        {
+          "name": "Gasket Scrap-Bag",
+          "description": "A collection of rubberized offcuts for minor patching.",
+          "quantity": 1
+        },
+        {
+          "name": "Lung-Map Blueprint",
+          "description": "A detailed schematic of the Alveoli Exchange Floor's ventilation.",
+          "quantity": 1
+        },
+        {
+          "name": "Filter-Cleaning Solvent",
+          "description": "A pungent chemical used to dissolve particulate buildup.",
+          "quantity": 1
+        },
+        {
+          "name": "Brass Calipers",
+          "description": "Precision measuring tools for valve diameter verification.",
+          "quantity": 1
+        },
+        {
+          "name": "Marrow Jax's Spare Wrench",
+          "description": "A heavy tool borrowed from Marrow Jax and never returned.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Resin Vat",
+          "asset_type": "Industrial Equipment",
+          "description": "A massive, bubbling cauldron of synthetic sealant.",
+          "story_use": "Used to craft high-grade repairs for the Exchange's infrastructure."
+        },
+        {
+          "asset_name": "Graves' Workbench",
+          "asset_type": "Furniture",
+          "description": "A scarred metal table covered in chemical stains and blueprints.",
+          "story_use": "The primary location for synthesizing new pneumatic compounds."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Structural Weakpoints",
+          "summary": "Deep knowledge of the hairline fractures currently threatening the Bronchial Valve Checkpoint.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Marrow Jax's Debt",
+          "summary": "Awareness that Marrow Jax owes the maintenance bay three crates of welding rods.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra 'The Sniffer' Vance",
+      "role_name": "Contaminant Tracker",
+      "activity": "Tracking a trace of carbon monoxide near the Pneumatic Archive",
+      "home_base": "Pneumatic Archive",
+      "arc_goal": "To identify the source of the 'Black Breath' rot before it reaches the High-Pressure Council Chamber.",
+      "inventory": [
+        {
+          "name": "Olfactory Sensor-Rig",
+          "description": "A complex mask that amplifies the scent of specific gases.",
+          "quantity": 1
+        },
+        {
+          "name": "Sample Vials",
+          "description": "Glass tubes for capturing air samples from different sectors.",
+          "quantity": 12
+        },
+        {
+          "name": "Archive Access Key",
+          "description": "A heavy brass key used to enter the restricted Pneumatic Archive.",
+          "quantity": 1
+        },
+        {
+          "name": "Scribe's Inkwell",
+          "description": "A gift from Kaelen Voss, containing fast-drying archival ink.",
+          "quantity": 1
+        },
+        {
+          "name": "Charcoal Filter-Pads",
+          "description": "Replacement filters for high-toxicity zones.",
+          "quantity": 5
+        },
+        {
+          "name": "Pneumatic Piston-Spring",
+          "description": "A spare part found during a sweep of the archive floors.",
+          "quantity": 2
+        },
+        {
+          "name": "Voss's Field Notes",
+          "description": "A notebook containing Kaelen's observations on pressure drops.",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Flare",
+          "description": "A magnesium flare used to mark gas leaks for repair crews.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Sniffer's Den",
+          "asset_type": "Laboratory",
+          "description": "A small, airtight room filled with gas analysis equipment.",
+          "story_use": "A safe haven for analyzing dangerous air samples."
+        },
+        {
+          "asset_name": "Archive Ventilation Shaft",
+          "asset_type": "Infrastructure",
+          "description": "A secret passage Lyra uses to bypass the Scribe's checkpoints.",
+          "story_use": "Allows for stealthy movement between the Archive and the Exchange."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Gas Composition",
+          "summary": "Expertise in identifying the chemical makeup of the Exchange's atmosphere.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Kaelen's Secret Logs",
+          "summary": "Knowledge of hidden logs Kaelen Voss keeps regarding Council corruption.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Tiberius 'The Lung' Thorne",
+      "role_name": "High-Pressure Logistics Merchant",
+      "activity": "Brokering air-rights for the Exhalation Lounge",
+      "home_base": "The Exhalation Lounge",
+      "arc_goal": "To monopolize the distribution of 'Nitrogen Chasers' and squeeze Bax the Breather out of the market.",
+      "inventory": [
+        {
+          "name": "Oxygen Ledger",
+          "description": "A thick book detailing the air-debts of every major citizen.",
+          "quantity": 1
+        },
+        {
+          "name": "Golden Air-Canister",
+          "description": "A luxury canister containing 99% pure oxygen for elite clients.",
+          "quantity": 5
+        },
+        {
+          "name": "Council Seal",
+          "description": "A wax seal proving his connection to Councilor Thorne.",
+          "quantity": 1
+        },
+        {
+          "name": "Nitrogen Chaser Concentrate",
+          "description": "The secret ingredient for Zora's most popular drink.",
+          "quantity": 20
+        },
+        {
+          "name": "Pressure-Locked Safe",
+          "description": "A portable box that only opens at 1.5 atmospheres.",
+          "quantity": 1
+        },
+        {
+          "name": "Bax's Confiscated Goods",
+          "description": "A crate of low-grade oxygen filters seized from a rival.",
+          "quantity": 1
+        },
+        {
+          "name": "Trade Tokens",
+          "description": "Stamped metal coins used as currency in the Exhalation Lounge.",
+          "quantity": 50
+        },
+        {
+          "name": "Scented Oxygen Vials",
+          "description": "Small doses of air infused with lavender and pine.",
+          "quantity": 10
+        },
+        {
+          "name": "Logistics Map",
+          "description": "A map showing the flow of air from the Alveoli to the Council.",
+          "quantity": 1
+        },
+        {
+          "name": "Bribe Satchel",
+          "description": "A bag of rare minerals used to influence Valve Inspectors.",
+          "quantity": 1
+        },
+        {
+          "name": "Personal Respirator",
+          "description": "A gold-plated breathing mask for high-status social events.",
+          "quantity": 1
+        },
+        {
+          "name": "Contract Quill",
+          "description": "A pen that uses pressurized ink to write in any environment.",
+          "quantity": 2
+        },
+        {
+          "name": "Valve-Key Replica",
+          "description": "A counterfeit key for the secondary intake pipes.",
+          "quantity": 1
+        },
+        {
+          "name": "Luxury Filter-Cloth",
+          "description": "Fine silk used to filter air for the wealthy.",
+          "quantity": 10
+        },
+        {
+          "name": "Message Tube",
+          "description": "A pneumatic cylinder for sending urgent trade offers.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The VIP Booth",
+          "asset_type": "Real Estate",
+          "description": "A private, high-pressure booth in the Exhalation Lounge.",
+          "story_use": "The site of secret negotiations and high-stakes air-trading."
+        },
+        {
+          "asset_name": "Logistics Hub",
+          "asset_type": "Warehouse",
+          "description": "A secure storage area for air-canisters and trade goods.",
+          "story_use": "The center of Tiberius's commercial empire."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Market Fluctuations",
+          "summary": "Deep understanding of how pressure drops affect the price of oxygen.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Bax's Supply Routes",
+          "summary": "Knowledge of the secret tunnels Bax uses to smuggle air.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Cyrus 'The Bleeder' Vane",
+      "role_name": "Pressure-Relief Technician",
+      "activity": "Manually venting excess pressure in the Alveoli Exchange Floor",
+      "home_base": "Alveoli Exchange Floor",
+      "arc_goal": "To sabotage the Council's private air-supply to force a redistribution to the lower lungs.",
+      "inventory": [
+        {
+          "name": "Manual Vent-Crank",
+          "description": "A heavy iron tool used to open stubborn relief valves.",
+          "quantity": 1
+        },
+        {
+          "name": "Pressure-Suit Patch-Kit",
+          "description": "Essential supplies for fixing leaks in a technician's suit.",
+          "quantity": 3
+        },
+        {
+          "name": "Vane Family Signet",
+          "description": "A ring identifying him as a distant relative of Zora Vane.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Oxygen-Slug",
+          "description": "A one-time use chemical oxygen generator.",
+          "quantity": 2
+        },
+        {
+          "name": "Noise-Canceling Ear-Muffs",
+          "description": "Protection against the deafening roar of the Alveoli vents.",
+          "quantity": 1
+        },
+        {
+          "name": "Grease-Stained Rag",
+          "description": "A cloth used to wipe down machinery and grimy hands.",
+          "quantity": 1
+        },
+        {
+          "name": "Valve-Inspector's Badge",
+          "description": "A forged ID used to bypass Vane Kaelo's checkpoints.",
+          "quantity": 1
+        },
+        {
+          "name": "Heavy Work-Boots",
+          "description": "Magnetic boots for walking on vibrating metal floors.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Relief Valve 42",
+          "asset_type": "Infrastructure",
+          "description": "A massive, ancient valve that Cyrus maintains personally.",
+          "story_use": "A strategic point for controlling the air flow to the upper sectors."
+        },
+        {
+          "asset_name": "The Technician's Locker",
+          "asset_type": "Storage",
+          "description": "A dented metal locker containing Cyrus's personal effects.",
+          "story_use": "A place to hide contraband or tools away from the Filter's eyes."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Valve Overload Protocols",
+          "summary": "Knowledge of how to trigger a controlled pressure surge.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Vane Kaelo's Routine",
+          "summary": "Detailed observation of the Chief Valve Inspector's patrol timing.",
+          "confidence": 88
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Air Trade",
+      "summary": "Players collect atmospheric data to trade for oxygen canisters to sustain their faction.",
+      "roles": [
+        "Scout",
+        "Merchant"
+      ],
+      "rooms": [
+        "Atmospheric Lab",
+        "Market Plaza"
+      ],
+      "pressure": "Rapidly depleting personal oxygen tanks"
+    },
+    {
+      "label": "Territorial Mapping",
+      "summary": "Factions compete to map the shifting gas clouds to claim new habitable zones.",
+      "roles": [
+        "Cartographer",
+        "Guard"
+      ],
+      "rooms": [
+        "Navigation Deck",
+        "The Void Fringe"
+      ],
+      "pressure": "Encroaching toxic smog fronts"
+    }
+  ],
+  "player_entry_points": [
+    "A newly arrived refugee from the Depleted Zones",
+    "A disgraced cartographer seeking redemption",
+    "A corporate auditor investigating air leaks"
+  ],
+  "conflict_hooks": [
+    "The central Lung is failing and only one district can be fully pressurized",
+    "A hidden map reveals a secret oxygen cache beneath the Governor's palace"
+  ],
+  "custom_actions": [
+    "Siphon Surplus Oxygen",
+    "Forge Map Coordinates",
+    "Sabotage Air Filtration",
+    "Negotiate Breath Quotas"
+  ],
+  "social_rules": [
+    "Oxygen is the primary currency and must be shared according to the Lung Accord",
+    "Cartographic data is sacred and tampering with maps is a capital offense",
+    "All diplomatic disputes must be mediated within the Respirator Chambers"
+  ],
+  "item_themes": [
+    "respiratory_hardware",
+    "pressure_canisters",
+    "diplomatic_seals",
+    "biometric_keys"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "RH-001",
+      "name": "Alveolar Mesh Filter",
+      "price": 450,
+      "mass": 0.2,
+      "description": "A fine teal membrane used to scrub particulate from recycled orbital air. Essential for low-tier lung maintenance.",
+      "image_prompt": "Top-down pixel art, teal membrane mesh, ivory ceramic frame, charcoal shadows.",
+      "category": "respiratory_hardware"
+    },
+    {
+      "item_id": "PC-002",
+      "name": "Saffron Pressure Tank",
+      "price": 1200,
+      "mass": 4.5,
+      "description": "High-pressure canister wrapped in saffron threads. Contains three hours of high-purity oxygen for diplomatic summits.",
+      "image_prompt": "Top-down pixel art, saffron yellow canister, ivory valves, charcoal shadows.",
+      "category": "pressure_canisters"
+    },
+    {
+      "item_id": "DS-003",
+      "name": "Consulate Wax Seal",
+      "price": 85,
+      "mass": 0.05,
+      "description": "A biometric wax seal used to authenticate breath-debt contracts between orbital stations.",
+      "image_prompt": "Top-down pixel art, ivory ceramic seal, teal wax residue, saffron thread accents.",
+      "category": "diplomatic_seals"
+    },
+    {
+      "item_id": "BK-004",
+      "name": "Larynx Keycard",
+      "price": 300,
+      "mass": 0.1,
+      "description": "A biometric key that resonates with the user's vocal cords to unlock high-pressure vaults.",
+      "image_prompt": "Top-down pixel art, ivory ceramic card, teal circuitry, charcoal shadows.",
+      "category": "biometric_keys"
+    },
+    {
+      "item_id": "RH-005",
+      "name": "Bellows-Lung Extension",
+      "price": 2800,
+      "mass": 8.2,
+      "description": "External respiratory assist device. Increases lung capacity for long-duration spacewalks in thin atmospheres.",
+      "image_prompt": "Top-down pixel art, teal organic membranes, ivory ceramic casing, saffron wiring.",
+      "category": "respiratory_hardware"
+    },
+    {
+      "item_id": "PC-006",
+      "name": "Argon-Mix Buffer",
+      "price": 600,
+      "mass": 3.0,
+      "description": "A heavy charcoal canister used to stabilize pressure fluctuations in residential lung-pods.",
+      "image_prompt": "Top-down pixel art, charcoal grey tank, teal pressure gauge, ivory accents.",
+      "category": "pressure_canisters"
+    },
+    {
+      "item_id": "DS-007",
+      "name": "Treaty of the Deep Breath",
+      "price": 5000,
+      "mass": 0.5,
+      "description": "A rare parchment scroll detailing the oxygen rights of the lower orbital rings. Highly political.",
+      "image_prompt": "Top-down pixel art, saffron paper, teal ink, ivory ceramic scroll ends.",
+      "category": "diplomatic_seals"
+    },
+    {
+      "item_id": "BK-008",
+      "name": "Pulse-Lock Ring",
+      "price": 150,
+      "mass": 0.02,
+      "description": "A simple biometric ring that monitors heart rate to grant access to personal oxygen lockers.",
+      "image_prompt": "Top-down pixel art, ivory ceramic ring, teal glowing sensor, charcoal shadows.",
+      "category": "biometric_keys"
+    },
+    {
+      "item_id": "RH-009",
+      "name": "Cilia Scrubber",
+      "price": 950,
+      "mass": 1.1,
+      "description": "Microscopic ivory brushes that clean the interior of synthetic bronchial tubes.",
+      "image_prompt": "Top-down pixel art, ivory ceramic bristles, teal fluid, charcoal handle.",
+      "category": "respiratory_hardware"
+    },
+    {
+      "item_id": "PC-010",
+      "name": "Emergency Breath-Pod",
+      "price": 200,
+      "mass": 0.8,
+      "description": "Single-use ivory sphere containing a burst of pressurized air for decompression emergencies.",
+      "image_prompt": "Top-down pixel art, ivory ceramic sphere, saffron release valve, teal highlights.",
+      "category": "pressure_canisters"
+    },
+    {
+      "item_id": "DS-011",
+      "name": "Embassy Air-Bond",
+      "price": 1500,
+      "mass": 0.1,
+      "description": "A physical token representing a futures contract for ten thousand liters of pressurized air.",
+      "image_prompt": "Top-down pixel art, saffron thread tassel, ivory ceramic coin, teal engravings.",
+      "category": "diplomatic_seals"
+    },
+    {
+      "item_id": "BK-012",
+      "name": "Retinal Breath-Scanner",
+      "price": 2200,
+      "mass": 1.5,
+      "description": "Advanced biometric lock that requires both a retinal scan and a specific exhalation pattern.",
+      "image_prompt": "Top-down pixel art, teal glass lens, ivory ceramic housing, charcoal shadows.",
+      "category": "biometric_keys"
+    },
+    {
+      "item_id": "RH-013",
+      "name": "Vocal Cord Synthesizer",
+      "price": 3500,
+      "mass": 0.4,
+      "description": "Ivory and teal implant that allows for communication in high-pressure, high-density gas environments.",
+      "image_prompt": "Top-down pixel art, teal organic tissue, ivory ceramic nodes, saffron threads.",
+      "category": "respiratory_hardware"
+    },
+    {
+      "item_id": "PC-014",
+      "name": "Xenon-Infused Canister",
+      "price": 4000,
+      "mass": 6.0,
+      "description": "A heavy charcoal canister containing rare gases used for deep-sleep lung preservation.",
+      "image_prompt": "Top-down pixel art, charcoal canister, glowing teal stripes, ivory cap.",
+      "category": "pressure_canisters"
+    },
+    {
+      "item_id": "DS-015",
+      "name": "Sovereign Lung Stamp",
+      "price": 750,
+      "mass": 0.3,
+      "description": "A heavy ivory stamp used by the Cartographer to mark approved lung-exchange participants.",
+      "image_prompt": "Top-down pixel art, ivory ceramic handle, teal ink pad, saffron engravings.",
+      "category": "diplomatic_seals"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "cartographer-lung-exchange-01-wardrobe",
+    "world_wardrobe_brief": "Biopunk orbital attire focused on respiratory survival and pressure-based social hierarchy. Clothing integrates biomechanical membranes, ivory ceramic plating, and saffron conductive wiring to manage breath-debt and atmospheric filtration.",
+    "forbidden_aesthetics": [
+      "natural_foliage_patterns",
+      "generic_fantasy_leather",
+      "steampunk_brass_gears",
+      "modern_denim",
+      "loose_unsealed_fabrics",
+      "medieval_armor"
+    ],
+    "palette_families": [
+      {
+        "name": "Institutional_High_Pressure",
+        "dominant": "#1a4d4d",
+        "accent": "#eeb422",
+        "trim": "#f0efe2",
+        "material": "ivory_ceramic_plating"
+      },
+      {
+        "name": "Maintenance_Low_Pressure",
+        "dominant": "#121212",
+        "accent": "#a8dadc",
+        "trim": "#1a4d4d",
+        "material": "corrugated_industrial_steel"
+      },
+      {
+        "name": "Biomechanical_Organic",
+        "dominant": "#1a4d4d",
+        "accent": "#f0efe2",
+        "trim": "#eeb422",
+        "material": "oxidized_teal_membranes"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "council_arbitrator",
+        "role_keywords": [
+          "Councilor",
+          "Arbitrator",
+          "Logistics Merchant"
+        ],
+        "attire": [
+          "ivory ceramic chestplates",
+          "saffron silk robes",
+          "integrated neck-seal collars"
+        ],
+        "props": [
+          "saffron pressure tank",
+          "larynx keycard",
+          "embassy air-bond"
+        ],
+        "palette_notes": "High contrast ivory and saffron to denote wealth and air access.",
+        "silhouette_notes": "Stiff, upright, and imposing with high collars.",
+        "avoid": [
+          "exposed tubing",
+          "grease stains"
+        ]
+      },
+      {
+        "rule_id": "valve_technician",
+        "role_keywords": [
+          "Inspector",
+          "Specialist",
+          "Technician",
+          "Chemist"
+        ],
+        "attire": [
+          "teal membrane jumpsuits",
+          "charcoal utility harnesses",
+          "reinforced gauntlets"
+        ],
+        "props": [
+          "cilia scrubber",
+          "argon-mix buffer",
+          "welding torch"
+        ],
+        "palette_notes": "Dominant teal and charcoal with cyan bioluminescent accents.",
+        "silhouette_notes": "Bulky, tool-heavy, and practical.",
+        "avoid": [
+          "flowing robes",
+          "delicate jewelry"
+        ]
+      },
+      {
+        "rule_id": "scavenger_merchant",
+        "role_keywords": [
+          "Scavenger",
+          "Merchant",
+          "Proprietor",
+          "Tracker"
+        ],
+        "attire": [
+          "patched respiratory suits",
+          "external bellows-lung extensions",
+          "hooded membrane cloaks"
+        ],
+        "props": [
+          "alveolar mesh filter",
+          "emergency breath-pod",
+          "pulse-lock ring"
+        ],
+        "palette_notes": "Muted teals and heavy charcoal shadows.",
+        "silhouette_notes": "Asymmetrical, hunched, and layered.",
+        "avoid": [
+          "clean ivory surfaces"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "standard_resident",
+      "role_keywords": [
+        "citizen",
+        "traveler"
+      ],
+      "attire": [
+        "fitted pressure suits",
+        "basic breathing masks"
+      ],
+      "props": [
+        "personal oxygen locker key"
+      ],
+      "palette_notes": "Balanced teal and ivory.",
+      "silhouette_notes": "Slender, functional humanoid form.",
+      "avoid": [
+        "excessive saffron threads"
+      ]
+    },
+    "visual_consistency_rules": [
+      "1px charcoal outlines for all character sprites.",
+      "Breathing apparatus must be visible on every character.",
+      "Saffron threads must appear as 1-pixel wide highlight lines.",
+      "Strict top-down view; no side-profile features visible."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "cartographer-lung-exchange-01",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees_vertical",
+      "scale_rule": "32px_per_meter_grid_aligned"
+    },
+    "palette": {
+      "dominant": "#1a4d4d",
+      "secondary": "#f0efe2",
+      "accent": "#eeb422",
+      "shadow": "#121212",
+      "highlight": "#a8dadc"
+    },
+    "materials": [
+      "oxidized_teal_membranes",
+      "ivory_ceramic_plating",
+      "saffron_conductive_threads",
+      "translucent_bronchial_tubing",
+      "corrugated_industrial_steel"
+    ],
+    "lighting": "pulsing_cyan_bioluminescence_with_harsh_top_down_shadows",
+    "architecture": [
+      "spherical_pressure_chambers",
+      "ribbed_structural_supports",
+      "valve_gated_thresholds",
+      "suspended_catwalks"
+    ],
+    "terrain": {
+      "ground": "textured_teal_alveoli_matting",
+      "path": "ivory_ceramic_floor_tiles",
+      "edge": "exposed_charcoal_mechanical_void"
+    },
+    "sprite_language": {
+      "body_proportion": "7_head_tall_slender_humanoid",
+      "outline": "1px_selective_charcoal_internal_shading",
+      "role_readability": "color_coded_harness_and_breathing_apparatus"
+    },
+    "world_prompt_prefix": "top-down pixel art, biopunk orbital lung interior, teal membranes, ivory ceramic hardware, saffron threads, grid-aligned, 16-bit aesthetic",
+    "sprite_prompt_prefix": "top-down character sprite, biopunk respiratory suit, pixel art, strict vertical view, high contrast lighting",
+    "forbidden_visuals": [
+      "isometric_perspective",
+      "photorealism",
+      "text_labels",
+      "ui_overlays_in_render",
+      "natural_foliage",
+      "generic_fantasy_stone",
+      "diorama_borders"
+    ],
+    "canon_hash": "b238fe2b56a4bc32"
+  }
+}

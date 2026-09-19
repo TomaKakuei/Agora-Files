@@ -1,0 +1,1766 @@
+{
+  "world_name": "Aethel",
+  "world_id": "world_aethel_01",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "Cliffside vertical sprawl",
+    "tone": "melancholic and bureaucratic",
+    "visual_direction": "gothic stone staircases wrapped in parchment banners",
+    "currency_code": "WRD",
+    "currency_symbol": "ℵ",
+    "currency_minor_unit": "grains",
+    "currency_name": "Word-Weight",
+    "domain_label": "district",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "inst_scale",
+        "name": "The Grand Balance",
+        "mandate": "Weigh spoken promises and levy debt taxes",
+        "decision_rule": "Grams per syllable based on emotional gravity",
+        "enforced_by": "bailiffs with heavy counterweights",
+        "visible_output": "tax receipts written on lead foil"
+      },
+      {
+        "institution_id": "inst_courier",
+        "name": "The Unbound Guild",
+        "mandate": "Transport unpaid vows across vertical drops",
+        "decision_rule": "Auction routes to the lowest bidder",
+        "enforced_by": "cliffside archers",
+        "visible_output": "leather pouches stuffed with whispering notes"
+      },
+      {
+        "institution_id": "inst_audit",
+        "name": "The Silent Office",
+        "mandate": "Eradicate unfulfilled contracts before they rot",
+        "decision_rule": "Summary erasure of idle vows",
+        "enforced_by": "ink-blind inquisitors",
+        "visible_output": "blank walls where murals used to be"
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "debt_load",
+        "label": "Aggregate Vow Debt",
+        "initial_tension": "high",
+        "changed_by": [
+          "inst_scale",
+          "inst_courier"
+        ],
+        "affects": [
+          "default_rate"
+        ]
+      },
+      {
+        "state_id": "default_rate",
+        "label": "Broken Vow Frequency",
+        "initial_tension": "rising",
+        "changed_by": [
+          "debt_load"
+        ],
+        "affects": [
+          "silence_spread"
+        ]
+      },
+      {
+        "state_id": "silence_spread",
+        "label": "Mute Zones",
+        "initial_tension": "moderate",
+        "changed_by": [
+          "default_rate"
+        ],
+        "affects": [
+          "courier_speed"
+        ]
+      },
+      {
+        "state_id": "courier_speed",
+        "label": "Transit Latency",
+        "initial_tension": "low",
+        "changed_by": [
+          "silence_spread"
+        ],
+        "affects": [
+          "debt_load"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "debt_load",
+        "trigger": "heavy taxes applied to vows",
+        "target_state": "default_rate",
+        "effect": "citizens abandon their pledges",
+        "delay": "1 day"
+      },
+      {
+        "source_state": "default_rate",
+        "trigger": "broken contracts accumulate",
+        "target_state": "silence_spread",
+        "effect": "districts lose speech rights",
+        "delay": "3 days"
+      },
+      {
+        "source_state": "silence_spread",
+        "trigger": "mute zones expand",
+        "target_state": "courier_speed",
+        "effect": "routes become guarded and slow",
+        "delay": "2 days"
+      },
+      {
+        "source_state": "courier_speed",
+        "trigger": "transit latency increases",
+        "target_state": "debt_load",
+        "effect": "delayed vows accrue interest",
+        "delay": "5 days"
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "group_orators",
+        "name": "The Eloquent",
+        "goal": "Speak grand futures without paying",
+        "leverage": "cultural charisma",
+        "dependency": "courier networks"
+      },
+      {
+        "group_id": "group_porters",
+        "name": "Cliffside Porters",
+        "goal": "Higher wages for dangerous deliveries",
+        "leverage": "monopoly on vertical paths",
+        "dependency": "debt forgiveness laws"
+      },
+      {
+        "group_id": "group_weighers",
+        "name": "Scale Masters",
+        "goal": "Expand tax collection mandates",
+        "leverage": "state enforcement power",
+        "dependency": "accurate scales"
+      }
+    ]
+  },
+  "genre": "Bureaucratic Fantasy",
+  "premise": "A cliffside city taxes spoken promises by their weight, and couriers carry unpaid ones between households.",
+  "simulation_objective": "Manage linguistic debt and courier logistics without collapsing the city's credit.",
+  "agent_count_target": 12,
+  "player_count_target": 50,
+  "wall_color_theme": "gothic granite stone",
+  "economy_focus": "debt and credit",
+  "exploration_focus": "vertical city districts",
+  "conflict_tone": "tense and procedural",
+  "visual_style": "stone and parchment",
+  "rooms": [
+    {
+      "name": "The Grand Scale",
+      "biome": "cliffside terrace",
+      "purpose": "Weigh spoken promises and levy debt taxes. State variable debt_load increases here, which affects default_rate in the silent office.",
+      "decor_tags": [
+        "lead foil scales",
+        "counterweights",
+        "parchment ledgers"
+      ],
+      "activity_tags": [
+        "weighing vows",
+        "tax collection"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of cracked flagstone paving blocks with lead foil scraps",
+      "room_scene_prompt": "top-down pixel art of a bureaucratic weighing chamber with heavy lead scales and towering ledgers, gothic granite walls, overcast light, no text, no labels, edge-to-edge floor",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "dusty_brown",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "lead_scale",
+          "label": "Grand Scale",
+          "description": "Massive iron and lead balance for weighing spoken vows",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Unbound Guild Hall",
+      "biome": "hanging balcony",
+      "purpose": "Transport unpaid vows across vertical drops. State variable courier_speed is managed here, affecting transit latency.",
+      "decor_tags": [
+        "leather pouches",
+        "ropes",
+        "counterweight pulleys"
+      ],
+      "activity_tags": [
+        "sorting parcels",
+        "auctioning routes"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of worn dark stained oak wood floor planks",
+      "room_scene_prompt": "top-down pixel art of a courier guild hall with hanging balconies and leather pouches, dark oak wood, overcast light, no text, no labels, edge-to-edge floor",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "focused_blue",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "courier_pouch_rack",
+          "label": "Parcel Rack",
+          "description": "Rows of leather courier pouches stuffed with notes",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Silent Office",
+      "biome": "stacked tenement",
+      "purpose": "Eradicate unfulfilled contracts before they rot. State variable default_rate changes here, affecting silence_spread.",
+      "decor_tags": [
+        "blank walls",
+        "ink pots",
+        "quills"
+      ],
+      "activity_tags": [
+        "erasing vows",
+        "censorship"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of smooth dark slate flooring",
+      "room_scene_prompt": "top-down pixel art of an ink-blind inquisitor office with blank walls and heavy lead inkwells, gothic granite walls, overcast light, no text, no labels, edge-to-edge floor",
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "ink_basin",
+          "label": "Erasure Basin",
+          "description": "Large basin of dark ink for blotting out unfulfilled vows",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Porters Rest",
+      "biome": "cliffside stairwell",
+      "purpose": "Cliffside porters gather to demand higher wages for dangerous deliveries. State variable silence_spread is observed here.",
+      "decor_tags": [
+        "rusted chains",
+        "heavy coats",
+        "lanterns"
+      ],
+      "activity_tags": [
+        "resting",
+        "negotiating wages"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of worn stone steps covered in paper scraps",
+      "room_scene_prompt": "top-down pixel art of a porter shelter with rusted iron chains and layered coats, stone steps, overcast light, no text, no labels, edge-to-edge floor",
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "ambient_palette": "warm_lantern",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "hearth_brazier",
+          "label": "Iron Brazier",
+          "description": "Rusting iron brazier throwing short shadows",
+          "anchor": "south_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Orator Terrace",
+      "biome": "cantilevered ledge",
+      "purpose": "The Eloquent speak grand futures without paying. State variable transit_latency is affected by orator crowds.",
+      "decor_tags": [
+        "parchment banners",
+        "stone podiums",
+        "microphones"
+      ],
+      "activity_tags": [
+        "speechmaking",
+        "debating"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of cracked flagstone with scattered white paper scraps",
+      "room_scene_prompt": "top-down pixel art of an open orator ledge with aged parchment banners and stone podiums, vertical cliff drop edge, overcast light, no text, no labels, edge-to-edge floor",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "clear_day",
+      "archetype": "commons",
+      "scene_components": [
+        {
+          "component_id": "stone_podium",
+          "label": "Vow Podium",
+          "description": "Heavy granite lectern for grand speeches",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Audit Archive",
+      "biome": "deep tenement",
+      "purpose": "Store historical debt ledgers and default records. State variable debt_load archives old balances here.",
+      "decor_tags": [
+        "lead foil scrolls",
+        "iron shelves",
+        "dust"
+      ],
+      "activity_tags": [
+        "filing debts",
+        "auditing"
+      ],
+      "flux_floor_prompt": "crunchy 16-bit pixel art of dark stained oak floor boards with dust motes",
+      "room_scene_prompt": "top-down pixel art of an archive vault with heavy lead scroll racks and iron shelves, dark stained wood, overcast light, no text, no labels, edge-to-edge floor",
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "scroll_shelf",
+          "label": "Lead Scroll Rack",
+          "description": "Heavy iron shelves stacked with lead foil debt scrolls",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 3
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Vaelen Vance",
+      "role_name": "Chief Weighmaster",
+      "activity": "Enforce tax collection mandates for inst_scale to increase debt_load",
+      "home_base": "The Grand Scale",
+      "arc_goal": "Expand tax collection mandates across all districts to reduce default_rate",
+      "inventory": [
+        {
+          "name": "item_lead_token_1",
+          "description": "A heavy token stamped with the Grand Balance insignia.",
+          "quantity": 5
+        },
+        {
+          "name": "item_brass_scales_3",
+          "description": "Pocket balances for measuring emotional gravity in syllables.",
+          "quantity": 1
+        },
+        {
+          "name": "item_counterweight_5",
+          "description": "Dense iron weight used by bailiffs.",
+          "quantity": 3
+        },
+        {
+          "name": "item_audit_stamp_9",
+          "description": "Official ink stamp for verified debt receipts.",
+          "quantity": 1
+        },
+        {
+          "name": "item_interest_ledger_10",
+          "description": "A thick leather-bound book tracking accumulating vow debt.",
+          "quantity": 1
+        },
+        {
+          "name": "item_gilded_gag_11",
+          "description": "Ornamental restraint for overly eloquent debtors.",
+          "quantity": 2
+        },
+        {
+          "name": "item_lead_foil_12",
+          "description": "Thin sheets of lead used for writing tax receipts.",
+          "quantity": 10
+        },
+        {
+          "name": "item_debt_anchor_15",
+          "description": "Heavy metal spike used to ground unpaid contracts.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Weighing Dais",
+          "asset_type": "Chamber",
+          "description": "A towering platform of black stone equipped with massive scales.",
+          "story_use": "Used to judge the emotional weight of spoken promises."
+        },
+        {
+          "asset_name": "Ledger Vault",
+          "asset_type": "Storage",
+          "description": "A secure underground vault filled with lead tax receipts.",
+          "story_use": "Contains centuries of accumulated vow debts."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_scale_1",
+          "topic": "Syllable Weight",
+          "summary": "Understanding how emotional inflection alters the gram count of a vow.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "know_scale_2",
+          "topic": "Debtor Psychology",
+          "summary": "Recognizing the subtle tells of citizens planning to default.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra Vane",
+      "role_name": "Guild Master",
+      "activity": "Transport unpaid vows across vertical drops for inst_courier to influence courier_speed",
+      "home_base": "The Unbound Guild Hall",
+      "arc_goal": "Auction routes to the lowest bidder to reduce transit latency",
+      "inventory": [
+        {
+          "name": "item_whispering_pouch_2",
+          "description": "A leather pouch containing murmuring unpaid vows.",
+          "quantity": 4
+        },
+        {
+          "name": "item_climbing_spikes_7",
+          "description": "Steel spikes forged for vertical cliffside ascents.",
+          "quantity": 6
+        },
+        {
+          "name": "item_courier_whistle_14",
+          "description": "A bone whistle used to signal route clearings.",
+          "quantity": 2
+        },
+        {
+          "name": "item_acoustic_dampener_13",
+          "description": "Padded linen wraps to muffle sounds in mute zones.",
+          "quantity": 3
+        },
+        {
+          "name": "item_silence_tincture_8",
+          "description": "A bitter draught that temporarily prevents speech.",
+          "quantity": 2
+        },
+        {
+          "name": "item_parchment_roll_6",
+          "description": "Weatherproof vellum maps of vertical drop routes.",
+          "quantity": 5
+        },
+        {
+          "name": "item_lead_foil_12",
+          "description": "Used to wrap confidential messages against tampering.",
+          "quantity": 4
+        },
+        {
+          "name": "item_debt_anchor_15",
+          "description": "Anchoring hardware for cliffside zip-lines.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Spire Lookout",
+          "asset_type": "Tower",
+          "description": "A dizzying perch extending over the abyss of Aethel.",
+          "story_use": "Monitors courier flight paths and approaching storms."
+        },
+        {
+          "asset_name": "Auction Pit",
+          "asset_type": "Hall",
+          "description": "A tiered amphitheater where delivery routes are bid upon.",
+          "story_use": "Determines which couriers take on high-risk vows."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_courier_1",
+          "topic": "Vertical Currents",
+          "summary": "Mastery of updrafts and thermal columns along cliff faces.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "know_courier_2",
+          "topic": "Mute Zone Avoidance",
+          "summary": "Navigating around expanding areas of absolute silence.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Silas Vance",
+      "role_name": "Chief Inquisitor",
+      "activity": "Eradicate unfulfilled contracts for inst_audit to mitigate default_rate",
+      "home_base": "The Silent Office",
+      "arc_goal": "Expand summary erasure of idle vows to control silence_spread",
+      "inventory": [
+        {
+          "name": "item_ink_eraser_4",
+          "description": "A chemical sponge that wipes words entirely from existence.",
+          "quantity": 3
+        },
+        {
+          "name": "item_silence_tincture_8",
+          "description": "Concentrated quietness used during interrogations.",
+          "quantity": 4
+        },
+        {
+          "name": "item_audit_stamp_9",
+          "description": "A heavy stone seal marked with an empty circle.",
+          "quantity": 1
+        },
+        {
+          "name": "item_lead_token_1",
+          "description": "Tokens seized from erased debtors.",
+          "quantity": 8
+        },
+        {
+          "name": "item_gilded_gag_11",
+          "description": "Enforced muzzle for uncooperative speakers.",
+          "quantity": 5
+        },
+        {
+          "name": "item_parchment_roll_6",
+          "description": "Blank scrolls waiting to be stripped of text.",
+          "quantity": 10
+        },
+        {
+          "name": "item_acoustic_dampener_13",
+          "description": "Heavy felt panels lining interrogation cells.",
+          "quantity": 4
+        },
+        {
+          "name": "item_debt_anchor_15",
+          "description": "Spikes used to pin voided contracts to the wall.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Blank Room",
+          "asset_type": "Chamber",
+          "description": "A completely white, soundproofed chamber with no furniture.",
+          "story_use": "Where contracts and memories are permanently erased."
+        },
+        {
+          "asset_name": "Archive of Voids",
+          "asset_type": "Library",
+          "description": "Shelves filled with totally blank books and ledgers.",
+          "story_use": "Stores the history of erased vows."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_audit_1",
+          "topic": "Semantic Erasure",
+          "summary": "Techniques to sever the psychological attachment to broken promises.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "know_audit_2",
+          "topic": "Silence Propagation",
+          "summary": "Mapping how erased districts bleed quietness into neighbors.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen Voss",
+      "role_name": "Porter Captain",
+      "activity": "Demand higher wages for dangerous deliveries to influence group_porters dependency",
+      "home_base": "Porters Rest",
+      "arc_goal": "Push for debt forgiveness laws to relieve cliffside porters",
+      "inventory": [
+        {
+          "name": "item_climbing_spikes_7",
+          "description": "Titanium-reinforced spikes for sheer rock faces.",
+          "quantity": 10
+        },
+        {
+          "name": "item_courier_whistle_14",
+          "description": "High-pitched signal whistle for summoning rope teams.",
+          "quantity": 3
+        },
+        {
+          "name": "item_whispering_pouch_2",
+          "description": "Waterproof pouches carrying urgent vertical cargo.",
+          "quantity": 5
+        },
+        {
+          "name": "item_debt_anchor_15",
+          "description": "Deep-drive anchors for suspension bridges.",
+          "quantity": 4
+        },
+        {
+          "name": "item_lead_token_1",
+          "description": "Payment tokens earned from hazardous climbs.",
+          "quantity": 12
+        },
+        {
+          "name": "item_parchment_roll_6",
+          "description": "Hand-drawn elevation charts of the cliffs.",
+          "quantity": 3
+        },
+        {
+          "name": "item_silence_tincture_8",
+          "description": "Medicine to soothe raw throats caused by high-altitude winds.",
+          "quantity": 2
+        },
+        {
+          "name": "item_counterweight_5",
+          "description": "Counter-bales used in pulley systems.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Rope Barracks",
+          "asset_type": "Lodging",
+          "description": "A rugged stone shelter built into the cliff overhang.",
+          "story_use": "Resting area and equipment cache for vertical porters."
+        },
+        {
+          "asset_name": "Suspension Lift",
+          "asset_type": "Mechanism",
+          "description": "A massive pulley system spanning the deepest canyon.",
+          "story_use": "Transports heavy goods and porters across vertical drops."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_porter_1",
+          "topic": "Cliff Meteorology",
+          "summary": "Predicting sudden wind shears and rockfalls along the vertical paths.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "know_porter_2",
+          "topic": "Load Distribution",
+          "summary": "Balancing heavy vow pouches during treacherous climbs.",
+          "confidence": 89
+        }
+      ]
+    },
+    {
+      "display_name": "Thalia Voss",
+      "role_name": "Lead Counterweight Tuner",
+      "activity": "Calibrate brass scales for inst_scale to adjust debt_load",
+      "home_base": "The Grand Scale",
+      "arc_goal": "Lower tax burdens for group_porters",
+      "inventory": [
+        {
+          "name": "item_brass_scales_3",
+          "description": "Pocket scale for measuring syllable weight",
+          "quantity": 1
+        },
+        {
+          "name": "item_counterweight_5",
+          "description": "Dense lead block for calibrating heavy duties",
+          "quantity": 4
+        },
+        {
+          "name": "item_lead_token_1",
+          "description": "Token proving calibrated scale precision",
+          "quantity": 10
+        },
+        {
+          "name": "item_parchment_roll_6",
+          "description": "Roll of calibrated weight tables",
+          "quantity": 2
+        },
+        {
+          "name": "item_audit_stamp_9",
+          "description": "Official scale stamp",
+          "quantity": 1
+        },
+        {
+          "name": "item_interest_ledger_10",
+          "description": "Ledger of adjusted scale taxes",
+          "quantity": 1
+        },
+        {
+          "name": "item_lead_foil_12",
+          "description": "Sheet for writing scale tax receipts",
+          "quantity": 5
+        },
+        {
+          "name": "item_acoustic_dampener_13",
+          "description": "Device to mute ambient sounds during weighing",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Weighing Booth Alpha",
+          "asset_type": "Workshop",
+          "description": "A heavy stone booth fitted with enormous balance beams.",
+          "story_use": "Used to weigh civic promises and levy immediate tax receipts."
+        },
+        {
+          "asset_name": "Calibration Bench",
+          "asset_type": "Tool",
+          "description": "A brass-inlaid table covered in delicate balancing tools.",
+          "story_use": "Serves as the primary workspace for adjusting counterweights."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_scale_drift",
+          "topic": "Scale calibration drift",
+          "summary": "Heavy usage causes brass balances to drift toward heavier tax outputs.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "know_porter_weights",
+          "topic": "Porter cargo densities",
+          "summary": "Cliffside porter loads often contain hidden acoustic weights.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Mirella Dawn",
+      "role_name": "Chief Courier Dispatcher",
+      "activity": "Auction transport routes for inst_courier to influence courier_speed",
+      "home_base": "Porters Rest",
+      "arc_goal": "Secure safer vertical routes for group_porters",
+      "inventory": [
+        {
+          "name": "item_courier_whistle_14",
+          "description": "Bone whistle used to signal route clearings",
+          "quantity": 1
+        },
+        {
+          "name": "item_whispering_pouch_2",
+          "description": "Leather pouch stuffed with unpaid vows",
+          "quantity": 3
+        },
+        {
+          "name": "item_climbing_spikes_7",
+          "description": "Steel spikes for vertical ascents",
+          "quantity": 6
+        },
+        {
+          "name": "item_silence_tincture_8",
+          "description": "Draught to suppress vocal cords in mute zones",
+          "quantity": 2
+        },
+        {
+          "name": "item_debt_anchor_15",
+          "description": "Iron hook for securing heavy delivery lines",
+          "quantity": 2
+        },
+        {
+          "name": "item_lead_token_1",
+          "description": "Dispatch authorization token",
+          "quantity": 4
+        },
+        {
+          "name": "item_parchment_roll_6",
+          "description": "Route map roll",
+          "quantity": 5
+        },
+        {
+          "name": "item_acoustic_dampener_13",
+          "description": "Sound dampening pad for stealth deliveries",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Dispatcher Hub",
+          "asset_type": "Office",
+          "description": "A high-altitude room hung with route maps and signaling flags.",
+          "story_use": "Coordinates the auctioning and dispatch of vertical vow deliveries."
+        },
+        {
+          "asset_name": "Rope Hoist",
+          "asset_type": "Machinery",
+          "description": "A massive winch system overlooking the vertical cliffs.",
+          "story_use": "Used to lower heavy pouches of whispering notes across abysses."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_mute_routes",
+          "topic": "Expanding mute zones",
+          "summary": "Expanding mute zones force couriers to take dangerous detours.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "know_bid_tactics",
+          "topic": "Unbound Guild bidding",
+          "summary": "Low bidders frequently smuggle unweighed vows to avoid taxes.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Orson Reed",
+      "role_name": "Inquisitorial Scribe",
+      "activity": "Eradicate idle vows for inst_audit to mitigate default_rate",
+      "home_base": "Audit Archive",
+      "arc_goal": "Expand silence spread to eliminate unfulfilled contracts",
+      "inventory": [
+        {
+          "name": "item_ink_eraser_4",
+          "description": "Chemical block for scrubbing written promises",
+          "quantity": 2
+        },
+        {
+          "name": "item_audit_stamp_9",
+          "description": "Inquisitorial stamp of nullification",
+          "quantity": 1
+        },
+        {
+          "name": "item_interest_ledger_10",
+          "description": "Ledger of erased civic debts",
+          "quantity": 1
+        },
+        {
+          "name": "item_gilded_gag_11",
+          "description": "Ornate gag for silencing noisy debtors",
+          "quantity": 1
+        },
+        {
+          "name": "item_lead_foil_12",
+          "description": "Blank foil sheet for rewriting erased walls",
+          "quantity": 3
+        },
+        {
+          "name": "item_acoustic_dampener_13",
+          "description": "Device to isolate whispering targets",
+          "quantity": 2
+        },
+        {
+          "name": "item_parchment_roll_6",
+          "description": "Roll of eradication warrants",
+          "quantity": 4
+        },
+        {
+          "name": "item_silence_tincture_8",
+          "description": "Suppressant tincture for intrusive speakers",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Scrubbing Desk",
+          "asset_type": "Furniture",
+          "description": "A obsidian desk stained with persistent ink and eraser shavings.",
+          "story_use": "Used to methodically erase unfulfilled contracts from public records."
+        },
+        {
+          "asset_name": "Vault of Blanks",
+          "asset_type": "Archive",
+          "description": "A secure vault holding rolls of blank lead foil and erasure acid.",
+          "story_use": "Stores materials used by ink-blind inquisitors to purge broken vows."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_erasure_methods",
+          "topic": "Summary erasure techniques",
+          "summary": "Chemical erasers can instantly dissolve the legal weight of spoken vows.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "know_debt_clusters",
+          "topic": "Vow default hotspots",
+          "summary": "Unpaid vows tend to cluster heavily around Orator Terrace.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Cora Vance",
+      "role_name": "Terrace Orator",
+      "activity": "Speak grand futures without paying for group_orators",
+      "home_base": "Orator Terrace",
+      "arc_goal": "Defend cultural charisma against inst_scale mandates",
+      "inventory": [
+        {
+          "name": "item_parchment_roll_6",
+          "description": "Speech scroll filled with grand promises",
+          "quantity": 5
+        },
+        {
+          "name": "item_lead_token_1",
+          "description": "Tokens donated by mesmerized listeners",
+          "quantity": 8
+        },
+        {
+          "name": "item_whispering_pouch_2",
+          "description": "Pouch for collecting confidential vows",
+          "quantity": 2
+        },
+        {
+          "name": "item_acoustic_dampener_13",
+          "description": "Resonance stone to project voice across terraces",
+          "quantity": 1
+        },
+        {
+          "name": "item_gilded_gag_11",
+          "description": "Prop gag used in dramatic performances",
+          "quantity": 1
+        },
+        {
+          "name": "item_silence_tincture_8",
+          "description": "Voice clearing tonic",
+          "quantity": 2
+        },
+        {
+          "name": "item_interest_ledger_10",
+          "description": "Personal book of uncollected speech fees",
+          "quantity": 1
+        },
+        {
+          "name": "item_lead_foil_12",
+          "description": "Foil sheet for drafting unpayable pledges",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Grand Balcony",
+          "asset_type": "Stage",
+          "description": "A sweeping stone platform overlooking the entire city districts.",
+          "story_use": "Serves as the main stage for delivering grand, unpayable futures."
+        },
+        {
+          "asset_name": "Rhetoric Studio",
+          "asset_type": "Workshop",
+          "description": "An acoustic chamber lined with sound-focusing drapes.",
+          "story_use": "Used to rehearse emotional gravity and maximize syllable resonance."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "know_crowd_sway",
+          "topic": "Emotional gravity manipulation",
+          "summary": "High emotional gravity reduces perceived syllable weight during speeches.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "know_scale_loopholes",
+          "topic": "Tax evasion rhetoric",
+          "summary": "Certain sentence structures bypass the grammar rules of scale masters.",
+          "confidence": 86
+        }
+      ]
+    },
+    {
+      "display_name": "Balthazar Thorne",
+      "role_name": "Lead Acoustic Dampener",
+      "activity": "Calibrate acoustic dampeners for inst_scale to adjust debt_load",
+      "home_base": "The Grand Scale",
+      "arc_goal": "Reduce debt_load by damping the emotional gravity of speeches",
+      "inventory": [
+        {
+          "name": "item_acoustic_dampener_13",
+          "description": "Device to muffle speech gravity",
+          "quantity": 3
+        },
+        {
+          "name": "item_lead_foil_12",
+          "description": "Foil to wrap spoken vows",
+          "quantity": 5
+        },
+        {
+          "name": "item_brass_scales_3",
+          "description": "Small pocket scale",
+          "quantity": 1
+        },
+        {
+          "name": "item_counterweight_5",
+          "description": "Calibration weight",
+          "quantity": 2
+        },
+        {
+          "name": "item_parchment_roll_6",
+          "description": "Roll of tax receipts",
+          "quantity": 4
+        },
+        {
+          "name": "item_lead_token_1",
+          "description": "Lead payment token",
+          "quantity": 10
+        },
+        {
+          "name": "item_whispering_pouch_2",
+          "description": "Pouch for quiet notes",
+          "quantity": 2
+        },
+        {
+          "name": "item_gilded_gag_11",
+          "description": "Enforcement gag",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Dampener Workshop",
+          "asset_type": "facility",
+          "description": "Room filled with lead sheets and tuning forks",
+          "story_use": "Adjusting scale sensitivity"
+        },
+        {
+          "asset_name": "Acoustic Vault",
+          "asset_type": "storage",
+          "description": "Soundproof room for heavy vows",
+          "story_use": "Storing unweighed words"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn_01",
+          "topic": "Speech Density",
+          "summary": "How vocal resonance affects lead weight",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "kn_02",
+          "topic": "Vow Frequencies",
+          "summary": "Identifying unpaid futures by tone",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Evelyn Cross",
+      "role_name": "Vertical Route Scout",
+      "activity": "Auction transport routes for inst_courier to influence courier_speed",
+      "home_base": "Porters Rest",
+      "arc_goal": "Increase courier_speed across vertical drops",
+      "inventory": [
+        {
+          "name": "item_climbing_spikes_7",
+          "description": "Spikes for vertical climbing",
+          "quantity": 6
+        },
+        {
+          "name": "item_courier_whistle_14",
+          "description": "Whistle for route signals",
+          "quantity": 2
+        },
+        {
+          "name": "item_whispering_pouch_2",
+          "description": "Leather pouch for notes",
+          "quantity": 3
+        },
+        {
+          "name": "item_lead_token_1",
+          "description": "Token for safe passage",
+          "quantity": 8
+        },
+        {
+          "name": "item_parchment_roll_6",
+          "description": "Map of cliffside paths",
+          "quantity": 2
+        },
+        {
+          "name": "item_silence_tincture_8",
+          "description": "Tincture to quiet breathing",
+          "quantity": 4
+        },
+        {
+          "name": "item_debt_anchor_15",
+          "description": "Anchor for cliffside resting",
+          "quantity": 1
+        },
+        {
+          "name": "item_audit_stamp_9",
+          "description": "Stamp for route approval",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scout Lookout",
+          "asset_type": "tower",
+          "description": "High vantage point overlooking vertical paths",
+          "story_use": "Monitoring courier movement"
+        },
+        {
+          "asset_name": "Route Archive",
+          "asset_type": "library",
+          "description": "Maps of unstable cliff routes",
+          "story_use": "Planning safe deliveries"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn_03",
+          "topic": "Cliff Wind Patterns",
+          "summary": "Predicting updrafts for faster courier delivery",
+          "confidence": 88
+        },
+        {
+          "knowledge_id": "kn_04",
+          "topic": "Archers Blind Spots",
+          "summary": "Safe zones avoiding guild enforcers",
+          "confidence": 92
+        }
+      ]
+    },
+    {
+      "display_name": "Ignatius Cole",
+      "role_name": "Inquisitorial Auditor",
+      "activity": "Eradicate unfulfilled contracts for inst_audit to mitigate default_rate",
+      "home_base": "Audit Archive",
+      "arc_goal": "Mitigate default_rate through summary erasure",
+      "inventory": [
+        {
+          "name": "item_ink_eraser_4",
+          "description": "Chemical eraser for contracts",
+          "quantity": 5
+        },
+        {
+          "name": "item_audit_stamp_9",
+          "description": "Stamp of final erasure",
+          "quantity": 2
+        },
+        {
+          "name": "item_lead_token_1",
+          "description": "Inquisitorial token",
+          "quantity": 4
+        },
+        {
+          "name": "item_parchment_roll_6",
+          "description": "Blank erasure parchment",
+          "quantity": 10
+        },
+        {
+          "name": "item_silence_tincture_8",
+          "description": "Tincture to enforce quiet",
+          "quantity": 3
+        },
+        {
+          "name": "item_gilded_gag_11",
+          "description": "Gag for noisy debtors",
+          "quantity": 2
+        },
+        {
+          "name": "item_interest_ledger_10",
+          "description": "Ledger of overdue vows",
+          "quantity": 1
+        },
+        {
+          "name": "item_lead_foil_12",
+          "description": "Foil for sealed verdicts",
+          "quantity": 6
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Erasure Chamber",
+          "asset_type": "office",
+          "description": "Dark room with chemical vats for dissolving vows",
+          "story_use": "Removing idle contracts"
+        },
+        {
+          "asset_name": "Archive Cellar",
+          "asset_type": "storage",
+          "description": "Rows of blank walls and empty ledgers",
+          "story_use": "Storing erased cases"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn_05",
+          "topic": "Contract Decay",
+          "summary": "Identifying vows on the verge of defaulting",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "kn_06",
+          "topic": "Ink Chemistry",
+          "summary": "Dissolving ink without damaging parchment structure",
+          "confidence": 87
+        }
+      ]
+    },
+    {
+      "display_name": "Sylvia Vance",
+      "role_name": "Terrace Orator",
+      "activity": "Speak grand futures without paying for group_orators",
+      "home_base": "Orator Terrace",
+      "arc_goal": "Expand cultural charisma while avoiding scale taxes",
+      "inventory": [
+        {
+          "name": "item_whispering_pouch_2",
+          "description": "Pouch for hidden promises",
+          "quantity": 4
+        },
+        {
+          "name": "item_lead_token_1",
+          "description": "Token for terrace entry",
+          "quantity": 5
+        },
+        {
+          "name": "item_parchment_roll_6",
+          "description": "Speech scripts and future vows",
+          "quantity": 8
+        },
+        {
+          "name": "item_courier_whistle_14",
+          "description": "Whistle to summon listeners",
+          "quantity": 1
+        },
+        {
+          "name": "item_silence_tincture_8",
+          "description": "Throat tincture for endurance",
+          "quantity": 3
+        },
+        {
+          "name": "item_gilded_gag_11",
+          "description": "Orator display gag",
+          "quantity": 1
+        },
+        {
+          "name": "item_lead_foil_12",
+          "description": "Foil for hidden debts",
+          "quantity": 2
+        },
+        {
+          "name": "item_interest_ledger_10",
+          "description": "Ledger of promised futures",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Grand Podium",
+          "asset_type": "stage",
+          "description": "Elevated marble platform overlooking the plaza",
+          "story_use": "Delivering unpaid grand speeches"
+        },
+        {
+          "asset_name": "Orator Salon",
+          "asset_type": "lounge",
+          "description": "Meeting room for eloquent debtors",
+          "story_use": "Planning future rhetoric"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "kn_07",
+          "topic": "Rhetorical Gravity",
+          "summary": "Minimizing emotional weight to trick scale masters",
+          "confidence": 91
+        },
+        {
+          "knowledge_id": "kn_08",
+          "topic": "Audience Manipulation",
+          "summary": "Distracting bailiffs during grand speeches",
+          "confidence": 89
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Tax Collection Dispute",
+      "summary": "Weighing spoken promises and levying heavy debt taxes on reluctant orators",
+      "roles": [
+        "Chief Weighmaster",
+        "Terrace Orator"
+      ],
+      "rooms": [
+        "The Grand Scale",
+        "Orator Terrace"
+      ],
+      "pressure": "debt_load"
+    },
+    {
+      "label": "Route Auction and Transit",
+      "summary": "Auctioning vertical transport routes to the lowest bidder under threat of cliffside archers",
+      "roles": [
+        "Chief Courier Dispatcher",
+        "Porter Captain"
+      ],
+      "rooms": [
+        "The Unbound Guild Hall",
+        "Porters Rest"
+      ],
+      "pressure": "courier_speed"
+    },
+    {
+      "label": "Contract Eradication",
+      "summary": "Summary erasure of idle vows and unfulfilled contracts in the silent archives",
+      "roles": [
+        "Chief Inquisitor",
+        "Inquisitorial Auditor"
+      ],
+      "rooms": [
+        "The Silent Office",
+        "Audit Archive"
+      ],
+      "pressure": "default_rate"
+    }
+  ],
+  "player_entry_points": [
+    "Arrive at The Grand Scale to contest a lead tax receipt",
+    "Inspect whispering notes at The Unbound Guild Hall before dispatch"
+  ],
+  "conflict_hooks": [
+    "Escalating syllable taxes cause mass abandonment of pledges and rising default rates",
+    "Expanding mute zones delay courier transit and accrue massive debt interest"
+  ],
+  "custom_actions": [
+    "Weigh Syllables",
+    "Levy Lead Tax",
+    "Auction Vertical Route",
+    "Erase Broken Contract",
+    "Tune Acoustic Dampener",
+    "Dispatch Whispering Note"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "Weigh Syllables",
+      "initiating_role": "Chief Weighmaster",
+      "target_role": "Terrace Orator",
+      "situation": "Orator attempts to speak a grand future without paying the syllable tax",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Check proximity to The Grand Scale",
+        "Verify Orator possesses sufficient lead foil",
+        "Confirm Chief Weighmaster authorization"
+      ]
+    },
+    {
+      "action_name": "Auction Vertical Route",
+      "initiating_role": "Chief Courier Dispatcher",
+      "target_role": "Porter Captain",
+      "situation": "Dispatching a new batch of whispering notes down the cliffside",
+      "proposed_effects": [
+        "transfer",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Check route congestion in Porters Rest",
+        "Verify Porter Captain bid submission",
+        "Confirm Guild Master oversight"
+      ]
+    },
+    {
+      "action_name": "Erase Broken Contract",
+      "initiating_role": "Chief Inquisitor",
+      "target_role": "Guild Master",
+      "situation": "Targeting an unfulfilled vow for summary erasure in the archive",
+      "proposed_effects": [
+        "status"
+      ],
+      "coordinator_checks": [
+        "Verify contract expiration date in Audit Archive",
+        "Confirm ink-blind inquisitor availability",
+        "Check absence of active stay of execution"
+      ]
+    },
+    {
+      "action_name": "Tune Acoustic Dampener",
+      "initiating_role": "Lead Acoustic Dampener",
+      "target_role": "Terrace Orator",
+      "situation": "Suppressing unauthorized speeches near the mute zones",
+      "proposed_effects": [
+        "status"
+      ],
+      "coordinator_checks": [
+        "Check dampener calibration in Orator Terrace",
+        "Verify noise level threshold",
+        "Confirm Inquisitorial Auditor approval"
+      ]
+    }
+  ],
+  "social_rules": [
+    "All spoken promises must be weighed in grams of lead foil before they can be filed",
+    "Unpaid vows accrue interest daily and are subject to summary erasure by the Silent Office"
+  ],
+  "item_themes": [
+    "lead tokens",
+    "whispering pouches",
+    "scales"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "item_lead_token_1",
+      "name": "Standard Vow Token",
+      "price": 10,
+      "mass": 0.5,
+      "description": "A heavy disk of raw lead stamped with the seal of the Grand Balance, used to prepay syllable taxes.",
+      "image_prompt": "A heavy stamped lead token resting on a dusty stone desk, macro photography, parchment aesthetic.",
+      "category": "Currency"
+    },
+    {
+      "item_id": "item_whispering_pouch_2",
+      "name": "Unbound Courier Pouch",
+      "price": 45,
+      "mass": 0.2,
+      "description": "A treated leather bag designed to muffle restless notes so they do not accrue transit interest.",
+      "image_prompt": "A dark leather pouch tied with waxed cord, faint glowing runes visible near the seams.",
+      "category": "Storage"
+    },
+    {
+      "item_id": "item_brass_scales_3",
+      "name": "Pocket Syllable Scale",
+      "price": 120,
+      "mass": 1.2,
+      "description": "Precision balance used by citizens to weigh spoken promises before registering them with bailiffs.",
+      "image_prompt": "An intricate brass weighing scale with tiny weights on a wooden counter, parchment background.",
+      "category": "Instrument"
+    },
+    {
+      "item_id": "item_ink_eraser_4",
+      "name": "Silent Office Eraser",
+      "price": 85,
+      "mass": 0.1,
+      "description": "A dense block of treated pumice used by ink-blind inquisitors to scrub unfulfilled contracts from walls.",
+      "image_prompt": "A dark gray pumice block showing faint traces of erased text, stone surface.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "item_counterweight_5",
+      "name": "Bailiff Iron Counterweight",
+      "price": 30,
+      "mass": 3.0,
+      "description": "A dense iron block carried by debt enforcers to accurately measure heavy emotional gravity.",
+      "image_prompt": "A heavy blackened iron weight with a rusted handle, stark lighting.",
+      "category": "Enforcement"
+    },
+    {
+      "item_id": "item_parchment_roll_6",
+      "name": "Blank Vow Scroll",
+      "price": 5,
+      "mass": 0.1,
+      "description": "Unblemished sheepskin parchment waiting to be inscribed with dangerous future promises.",
+      "image_prompt": "A rolled sheet of yellowed parchment tied with a simple string.",
+      "category": "Material"
+    },
+    {
+      "item_id": "item_climbing_spikes_7",
+      "name": "Cliffside Porter Spikes",
+      "price": 60,
+      "mass": 1.8,
+      "description": "Forged steel spikes designed for scaling the sheer vertical drops of the Unbound Guild routes.",
+      "image_prompt": "Pair of sharp steel climbing spikes with leather straps on stone flags.",
+      "category": "Gear"
+    },
+    {
+      "item_id": "item_silence_tincture_8",
+      "name": "Mute Zone Tincture",
+      "price": 95,
+      "mass": 0.3,
+      "description": "A bitter draught brewed to temporarily numb vocal cords, protecting the drinker from spontaneous debt accrual.",
+      "image_prompt": "A small glass vial filled with dark blue liquid, cork stopper.",
+      "category": "Consumable"
+    },
+    {
+      "item_id": "item_audit_stamp_9",
+      "name": "Inquisitor Seal Stamp",
+      "price": 150,
+      "mass": 0.9,
+      "description": "Carved stone stamp used to mark invalid contracts for summary erasure.",
+      "image_prompt": "A heavy stone stamp featuring an unblinking eye motif, dusty desk setting.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "item_interest_ledger_10",
+      "name": "Default Rate Ledger",
+      "price": 200,
+      "mass": 2.5,
+      "description": "A massive bound book tracking the rising frequency of broken vows across the districts.",
+      "image_prompt": "A thick leather-bound book with cracked spine and handwritten columns of numbers.",
+      "category": "Document"
+    },
+    {
+      "item_id": "item_gilded_gag_11",
+      "name": "Eloquent Orator Muzzle",
+      "price": 300,
+      "mass": 0.4,
+      "description": "Ornate decorative muzzle worn by high-status debtors who refuse to stop speaking grand futures.",
+      "image_prompt": "A fine filigree gold mask covering the mouth area, elegant yet oppressive.",
+      "category": "Accessory"
+    },
+    {
+      "item_id": "item_lead_foil_12",
+      "name": "Tax Receipt Foil",
+      "price": 15,
+      "mass": 0.2,
+      "description": "Thin sheets of pliable lead used by Grand Balance bailiffs to issue permanent debt receipts.",
+      "image_prompt": "Sheets of thin gray metal foil stacked neatly on rough stone.",
+      "category": "Material"
+    },
+    {
+      "item_id": "item_acoustic_dampener_13",
+      "name": "Zone Dampening Stone",
+      "price": 110,
+      "mass": 4.0,
+      "description": "Porous basalt block that absorbs ambient speech, slowing the spread of mute zones.",
+      "image_prompt": "A pitted porous dark stone block casting deep shadows.",
+      "category": "Artifact"
+    },
+    {
+      "item_id": "item_courier_whistle_14",
+      "name": "Cliff-Signal Whistle",
+      "price": 25,
+      "mass": 0.1,
+      "description": "Bone whistle used by porters to coordinate safe passages across vertical drops.",
+      "image_prompt": "A small carved bone whistle with a leather lanyard.",
+      "category": "Tool"
+    },
+    {
+      "item_id": "item_debt_anchor_15",
+      "name": "Heavy Obligation Anchor",
+      "price": 500,
+      "mass": 15.0,
+      "description": "A massive granite stone chained to persistent defaulters to prevent them from fleeing vertical routes.",
+      "image_prompt": "A large rough-hewn stone block attached to a thick iron chain.",
+      "category": "Enforcement"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "world_aethel_01_policy",
+    "world_wardrobe_brief": "Bureaucratic fantasy citizens wearing heavy layered coats, dark gothic wool, and lead foil accessories designed for vertical cliffside living and weighing spoken promises.",
+    "forbidden_aesthetics": [
+      "modern streetwear",
+      "bright neon clothing",
+      "bright tropical colors",
+      "scifi pressure suits",
+      "medieval knight armor",
+      "photorealistic clothing"
+    ],
+    "palette_families": [
+      {
+        "name": "Bureaucrats Slate",
+        "dominant": "#2d3033",
+        "accent": "#d4af37",
+        "trim": "#7a7265",
+        "material": "gothic granite stone"
+      },
+      {
+        "name": "Ledger Parchment",
+        "dominant": "#7a7265",
+        "accent": "#e6e2d3",
+        "trim": "#2d3033",
+        "material": "aged parchment banners"
+      },
+      {
+        "name": "Lead Foil Heavy",
+        "dominant": "#141517",
+        "accent": "#d4af37",
+        "trim": "#7a7265",
+        "material": "heavy lead foil"
+      },
+      {
+        "name": "Iron Chain Rust",
+        "dominant": "#2d3033",
+        "accent": "#7a7265",
+        "trim": "#141517",
+        "material": "rusted iron chains"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "rule_weighmaster",
+        "role_keywords": [
+          "Weighmaster",
+          "Tuner",
+          "Dampener",
+          "Balance"
+        ],
+        "attire": [
+          "heavy lead-weighted coats",
+          "structured bailiff robes"
+        ],
+        "props": [
+          "brass scales",
+          "iron counterweights"
+        ],
+        "palette_notes": "Dark slate dominant with heavy gold accent",
+        "silhouette_notes": "Stout and broad-shouldered with massive coat skirts",
+        "avoid": [
+          "light fabrics",
+          "bright colors"
+        ]
+      },
+      {
+        "rule_id": "rule_courier",
+        "role_keywords": [
+          "Courier",
+          "Dispatcher",
+          "Scout"
+        ],
+        "attire": [
+          "weathered leather courier jackets",
+          "climbing harnesses"
+        ],
+        "props": [
+          "unbound courier pouches",
+          "climbing spikes"
+        ],
+        "palette_notes": "Aged parchment and worn leather tones",
+        "silhouette_notes": "Agile yet layered for vertical drops",
+        "avoid": [
+          "long trailing robes",
+          "heavy armor"
+        ]
+      },
+      {
+        "rule_id": "rule_inquisitor",
+        "role_keywords": [
+          "Inquisitor",
+          "Scribe",
+          "Auditor"
+        ],
+        "attire": [
+          "ink-stained dark tunics",
+          "pumice scrub aprons"
+        ],
+        "props": [
+          "ink pots",
+          "quills",
+          "audit stamps"
+        ],
+        "palette_notes": "Deep charcoal with minimal gold trim",
+        "silhouette_notes": "Strict upright vertical silhouette",
+        "avoid": [
+          "loose casual wear",
+          "vibrant colors"
+        ]
+      },
+      {
+        "rule_id": "rule_porter",
+        "role_keywords": [
+          "Porter",
+          "Captain"
+        ],
+        "attire": [
+          "rough canvas work coats",
+          "reinforced chain vests"
+        ],
+        "props": [
+          "cliff-signal whistles",
+          "heavy chains"
+        ],
+        "palette_notes": "Rust and dark slate",
+        "silhouette_notes": "Heavy rugged utilitarian build",
+        "avoid": [
+          "delicate silk",
+          "refined court attire"
+        ]
+      },
+      {
+        "rule_id": "rule_orator",
+        "role_keywords": [
+          "Orator",
+          "Debater"
+        ],
+        "attire": [
+          "exaggerated tiered velvet coats",
+          "tall stiff collars"
+        ],
+        "props": [
+          "gilded gags",
+          "parchment banners"
+        ],
+        "palette_notes": "Parchment and muted gold accents",
+        "silhouette_notes": "Pompous oversized upper body silhouette",
+        "avoid": [
+          "plain work clothes",
+          "rags"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "rule_default_citizen",
+      "role_keywords": [
+        "citizen",
+        "default"
+      ],
+      "attire": [
+        "layered woolen coats",
+        "simple tunics"
+      ],
+      "props": [
+        "lead token",
+        "blank scroll"
+      ],
+      "palette_notes": "Standard slate and parchment tones",
+      "silhouette_notes": "Stout and utilitarian",
+      "avoid": [
+        "brightly colored garments",
+        "modern clothes"
+      ]
+    },
+    "visual_consistency_rules": [
+      "Strict 64x64 pixel art top-down sprite readability",
+      "Thick dark slate silhouette outlines on all characters",
+      "Consistent heavy layered coat proportions",
+      "Prominent display of ledger books or pouches on all roles"
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "world_aethel_01",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "0 degrees",
+      "scale_rule": "16 pixels per meter tile grid"
+    },
+    "palette": {
+      "dominant": "#2d3033",
+      "secondary": "#7a7265",
+      "accent": "#d4af37",
+      "shadow": "#141517",
+      "highlight": "#e6e2d3"
+    },
+    "materials": [
+      "gothic granite stone",
+      "aged parchment banners",
+      "heavy lead foil",
+      "rusted iron chains",
+      "dark stained oak wood"
+    ],
+    "lighting": "overcast diffuse daylight casting sharp short vertical shadows from vertical cliffs",
+    "architecture": [
+      "cantilevered cliffside staircases",
+      "tall bureaucratic archways",
+      "hanging balconies with counterweights",
+      "narrow vertically stacked tenements"
+    ],
+    "terrain": {
+      "ground": "cracked flagstone paving blocks",
+      "path": "worn stone steps covered in scattered white paper scraps",
+      "edge": "sheer vertical cliff drop with iron safety railings"
+    },
+    "sprite_language": {
+      "body_proportion": "stout and utilitarian with heavy layered coats",
+      "outline": "thick dark slate silhouette edges",
+      "role_readability": "distinguished by oversized tax ledgers and leather courier pouches"
+    },
+    "world_prompt_prefix": "Strict top-down pixel art of Aethel, vertical cliffside gothic architecture, parchment banners, lead tokens, overcast light",
+    "sprite_prompt_prefix": "Top-down 2D sprite of a bureaucratic citizen with heavy ledger, melancholic bureaucrat style",
+    "forbidden_visuals": [
+      "visible labels",
+      "title text",
+      "poster layouts",
+      "photorealism",
+      "bright tropical colors",
+      "modern technology"
+    ],
+    "canon_hash": "aecbcdfcbf5adf23"
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "generated_at": "2026-08-25T03:18:05.616171+00:00",
+  "treatment": "production_specialist_decomposition_without_art",
+  "model": "gemini-3.1-pro-preview",
+  "temperature": 0.2,
+  "thinking_level": "low",
+  "thinking_budget": 1024,
+  "max_output_tokens": 32768,
+  "replicates": 1,
+  "case_set": "livingworldbench:lwb_hidden_v2_03",
+  "manifest_path": "",
+  "monolithic_summary_path": "/home/yz_wang/yz_main/agora_2.0/docs/benchmark_20260724/monolithic_baseline_fair_20260729/monolithic_baseline_summary.json",
+  "protocol": {
+    "same_original_briefs": true,
+    "generator_semantic_input": "sentence_only",
+    "input_case_count": 1,
+    "same_model_across_all_specialist_nodes": true,
+    "same_model_as_monolithic": false,
+    "same_temperature_as_monolithic": true,
+    "same_thinking_level_as_monolithic": false,
+    "same_per_call_output_cap_as_monolithic": false,
+    "monolithic_output_cap": 8192,
+    "same_merged_contract_evaluator": true,
+    "same_deterministic_compiler": true,
+    "strict_no_content_fallback": true,
+    "art_browser_publish_excluded": true,
+    "provider_usage_metadata_recorded": true,
+    "thinking_control": "thinking_level"
+  },
+  "summary": {
+    "world_count": 1,
+    "trial_count": 1,
+    "complete_successes": 1,
+    "complete_success_rate": 1.0,
+    "complete_success_wilson_95": [
+      0.2065,
+      1.0
+    ],
+    "worlds_with_majority_success": 1,
+    "first_pass_complete_successes": 0,
+    "first_pass_complete_success_rate": 0.0,
+    "worlds_with_majority_first_pass_success": 0,
+    "per_world": [
+      {
+        "world_name": "lwb_hidden_v2_03",
+        "successes": 1,
+        "first_pass_successes": 0,
+        "trials": 1,
+        "success_rate": 1.0,
+        "first_pass_success_rate": 0.0,
+        "wilson_95": [
+          0.2065,
+          1.0
+        ]
+      }
+    ],
+    "mean_elapsed_seconds": 265.616,
+    "median_elapsed_seconds": 265.616,
+    "provider_attempt_count": 14,
+    "retry_or_failure_attempt_count": 0,
+    "usage_metadata_attempt_count": 14,
+    "usage_metadata_coverage": 1.0,
+    "localized_node_retry_event_count": 2,
+    "localized_node_retry_failed_node_counts": {
+      "roles": 2
+    },
+    "localized_node_retry_preserved_cache_key_count": 10,
+    "token_totals": {
+      "candidatesTokenCount": 26164,
+      "promptTokenCount": 50088,
+      "thoughtsTokenCount": 830,
+      "totalTokenCount": 77082
+    },
+    "mean_total_tokens_per_trial": 77082.0,
+    "paired_monolithic": {
+      "paired_trial_count": 0,
+      "decomposed_only_successes": 0,
+      "monolithic_only_successes": 0,
+      "discordant_trial_count": 0,
+      "trial_level_one_sided_exact_p": 1.0,
+      "first_pass_decomposed_only_successes": 0,
+      "first_pass_monolithic_only_successes": 0,
+      "first_pass_discordant_trial_count": 0,
+      "first_pass_trial_level_one_sided_exact_p": 1.0,
+      "first_pass_world_majority_decomposed_only": 0,
+      "first_pass_world_majority_monolithic_only": 0,
+      "first_pass_world_discordant_count": 0,
+      "first_pass_world_level_one_sided_sign_test_p": 1.0,
+      "warning": "Repeated trials within a world are not independent premise clusters; the world-majority analysis remains primary.",
+      "pairs": []
+    }
+  },
+  "worlds": [
+    {
+      "trial_id": "lwb_hidden_v2_03_r01",
+      "world_name": "lwb_hidden_v2_03",
+      "draft_id": "",
+      "source_revision_dir": "",
+      "replicate": 1,
+      "request": {
+        "world_name": "",
+        "genre": "",
+        "player_count_target": 4,
+        "agent_count_target": 12,
+        "focus": "",
+        "seed": 26082401,
+        "brief": "An island courthouse rebuilds its shoreline from confiscated objects, changing which neighborhoods can reach the sea."
+      },
+      "elapsed_seconds": 265.616,
+      "generation_ok": true,
+      "complete_success": true,
+      "error": "",
+      "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/living_world_benchmark_20260825_hidden/confirmatory_runs/gemini_3_1_pro_preview/lwb_hidden_v2_03/lwb_hidden_v2_03_r01_decomposed_builder_spec.json",
+      "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/living_world_benchmark_20260825_hidden/confirmatory_runs/gemini_3_1_pro_preview/lwb_hidden_v2_03/lwb_hidden_v2_03_r01_decomposed_world_config.json",
+      "merged_contract_probe": {
+        "merged_contract_ok": true,
+        "error_codes": [],
+        "error": ""
+      },
+      "compile_probe": {
+        "compile_ok": true,
+        "compiler_status": "ok",
+        "runtime_agent_count": 12,
+        "compiled_room_count": 6,
+        "world_id": "w_tides_verdict_01"
+      },
+      "metrics": {
+        "rooms": 6,
+        "item_catalog_items": 15,
+        "main_characters": 12,
+        "gameplay_loops": 3,
+        "player_entry_points": 3,
+        "conflict_hooks": 2,
+        "inventory_items": 96,
+        "fallback_inventory_items": 0,
+        "agents_with_inventory": 12,
+        "agents_with_properties": 12,
+        "agents_with_knowledge": 12,
+        "world_coherence_proxy": 1.0,
+        "agent_specificity_proxy": 1.0,
+        "inventory_usefulness_proxy": 1.0,
+        "scale_coverage_proxy": 1.0,
+        "catalog_coverage_proxy": 0.9375,
+        "quality_proxy": 0.9875
+      },
+      "package_validation_status": "",
+      "compiler_critique_applied": false,
+      "compiler_critique_should_repair": false,
+      "generation_node_retries": [
+        {
+          "attempt": 1,
+          "failed_node": "roles",
+          "failed_node_attempt": 1,
+          "error": "ValueError: Roles node failed at batch 2: Finn the Rat used invalid relationship types ['bribe'].",
+          "invalidated_cache_keys": [
+            "hooks",
+            "roles",
+            "wardrobe"
+          ],
+          "preserved_cache_keys": [
+            "items",
+            "materials",
+            "planner",
+            "rooms",
+            "visual_canon"
+          ]
+        },
+        {
+          "attempt": 2,
+          "failed_node": "roles",
+          "failed_node_attempt": 2,
+          "error": "ValueError: Roles node failed at batch 1: Judge Silas has invalid relationship targets ['Captain Thorne'].",
+          "invalidated_cache_keys": [
+            "hooks",
+            "roles",
+            "wardrobe"
+          ],
+          "preserved_cache_keys": [
+            "items",
+            "materials",
+            "planner",
+            "rooms",
+            "visual_canon"
+          ]
+        }
+      ],
+      "telemetry": {
+        "path": "/home/yz_wang/yz_main/agora_2.0/docs/living_world_benchmark_20260825_hidden/confirmatory_runs/gemini_3_1_pro_preview/lwb_hidden_v2_03/lwb_hidden_v2_03_r01_vertex_calls.jsonl",
+        "provider_attempt_count": 14,
+        "successful_attempt_count": 14,
+        "retry_or_failure_attempt_count": 0,
+        "usage_metadata_attempt_count": 14,
+        "usage_metadata_coverage": 1.0,
+        "status_counts": {
+          "ok": 14
+        },
+        "stage_attempt_counts": {
+          "agent_wardrobe_policy_generation": 1,
+          "main_character_generation": 6,
+          "world_creator_generation": 5,
+          "world_creator_text_generation": 1,
+          "world_visual_canon_generation": 1
+        },
+        "model_attempt_counts": {
+          "gemini-3.1-pro-preview": 14
+        },
+        "provider_elapsed_seconds_sum": 259.1884,
+        "token_totals": {
+          "candidatesTokenCount": 26164,
+          "promptTokenCount": 50088,
+          "thoughtsTokenCount": 830,
+          "totalTokenCount": 77082
+        }
+      }
+    }
+  ]
+}

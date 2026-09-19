@@ -1,0 +1,4593 @@
+{
+  "generated_at": "2026-04-27T19:02:53.183383+00:00",
+  "world": {
+    "world_id": "rpg_guild_100_mainchars_atwill_longlive",
+    "world_name": "RPG Guild Main Character At-Will LongLive Test",
+    "description": "A Japanese fantasy RPG guild with 100 regular members and three always-active protagonists. This run removes predefined video task routes and forces protagonist activities to use freeform model-selected LongLive cinematic interactions.",
+    "simulation_objective": "Run 103 agents for 25 rounds at activation 0.15. The three protagonists activate every round and each protagonist activity must open LongLive; other activated agents may also use freeform at-will LongLive, with a 10-video-per-round cap. No predefined video task routes are available.",
+    "domain_label": "Japanese fantasy RPG guild"
+  },
+  "map": {
+    "grid_shape": {
+      "x": 5,
+      "y": 2,
+      "z": 1
+    },
+    "map_visual": {
+      "projection": "orthographic_grid",
+      "style": "pixel_art",
+      "tile_width": 32,
+      "tile_height": 32,
+      "room_width_tiles": 6,
+      "room_height_tiles": 4,
+      "agent_sprite_size": 24,
+      "origin": {
+        "x": 0,
+        "y": 0
+      },
+      "layers": [
+        "floor",
+        "objects",
+        "agents",
+        "effects",
+        "ui"
+      ],
+      "camera": {
+        "start_room_id": "guild_hall",
+        "zoom": 2.0,
+        "follow_main_character": "guild_main_hero"
+      },
+      "tileset": {
+        "key": "fantasy_guild_pixel_tiles",
+        "image_path": "",
+        "tile_margin": 0,
+        "tile_spacing": 0
+      }
+    },
+    "rooms": [
+      {
+        "room_id": "guild_hall",
+        "name": "Guild Hall",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "visual": {
+          "biome": "guild_interior",
+          "floor_tile": "stone_hall",
+          "wall_tile": "wood_beam_wall",
+          "decor_tags": [
+            "notice_table",
+            "guild_banner"
+          ],
+          "ambient_palette": "warm_lantern"
+        },
+        "occupant_count": 11,
+        "occupant_ids": [
+          "guild_001",
+          "guild_011",
+          "guild_021",
+          "guild_031",
+          "guild_041",
+          "guild_051",
+          "guild_061",
+          "guild_071",
+          "guild_081",
+          "guild_091",
+          "guild_main_cadre"
+        ],
+        "image_url": "./generated/images/rooms/guild_hall_465f3d2c8ff5a2b3.png",
+        "macro_prompt": "Create one clean illustrative environment image for a macro world viewer. Setting: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Room: Guild Hall. Biome: guild_interior. Floor material token: stone_hall. Wall material token: wood_beam_wall. Decor: notice_table, guild_banner. Ambient palette: warm_lantern. No people in frame. No visible text. No watermark. Wide scene card composition, polished anime environment art."
+      },
+      {
+        "room_id": "quest_board",
+        "name": "Quest Board",
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "visual": {
+          "biome": "guild_interior",
+          "floor_tile": "worn_planks",
+          "wall_tile": "paper_notice_wall",
+          "decor_tags": [
+            "quest_board",
+            "sealed_requests"
+          ],
+          "ambient_palette": "gold_paper"
+        },
+        "occupant_count": 11,
+        "occupant_ids": [
+          "guild_002",
+          "guild_012",
+          "guild_022",
+          "guild_032",
+          "guild_042",
+          "guild_052",
+          "guild_062",
+          "guild_072",
+          "guild_082",
+          "guild_092",
+          "guild_main_hero"
+        ],
+        "image_url": "./generated/images/rooms/quest_board_fc17aa4d938adbd8.png",
+        "macro_prompt": "Create one clean illustrative environment image for a macro world viewer. Setting: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Room: Quest Board. Biome: guild_interior. Floor material token: worn_planks. Wall material token: paper_notice_wall. Decor: quest_board, sealed_requests. Ambient palette: gold_paper. No people in frame. No visible text. No watermark. Wide scene card composition, polished anime environment art."
+      },
+      {
+        "room_id": "tavern_corner",
+        "name": "Tavern Corner",
+        "x": 2,
+        "y": 0,
+        "z": 0,
+        "visual": {
+          "biome": "tavern",
+          "floor_tile": "dark_planks",
+          "wall_tile": "barrel_wall",
+          "decor_tags": [
+            "round_table",
+            "mug_shelf"
+          ],
+          "ambient_palette": "amber_tavern"
+        },
+        "occupant_count": 11,
+        "occupant_ids": [
+          "guild_003",
+          "guild_013",
+          "guild_023",
+          "guild_033",
+          "guild_043",
+          "guild_053",
+          "guild_063",
+          "guild_073",
+          "guild_083",
+          "guild_093",
+          "guild_main_princess"
+        ],
+        "image_url": "./generated/images/rooms/tavern_corner_d3182d9caac654ed.png",
+        "macro_prompt": "Create one clean illustrative environment image for a macro world viewer. Setting: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Room: Tavern Corner. Biome: tavern. Floor material token: dark_planks. Wall material token: barrel_wall. Decor: round_table, mug_shelf. Ambient palette: amber_tavern. No people in frame. No visible text. No watermark. Wide scene card composition, polished anime environment art."
+      },
+      {
+        "room_id": "warehouse",
+        "name": "Supply Warehouse",
+        "x": 3,
+        "y": 0,
+        "z": 0,
+        "visual": {
+          "biome": "storage",
+          "floor_tile": "packed_dirt",
+          "wall_tile": "crate_stack",
+          "decor_tags": [
+            "supply_crates",
+            "rope_coils"
+          ],
+          "ambient_palette": "dusty_brown"
+        },
+        "occupant_count": 10,
+        "occupant_ids": [
+          "guild_004",
+          "guild_014",
+          "guild_024",
+          "guild_034",
+          "guild_044",
+          "guild_054",
+          "guild_064",
+          "guild_074",
+          "guild_084",
+          "guild_094"
+        ],
+        "image_url": "./generated/images/rooms/warehouse_5c937a7f01517989.png",
+        "macro_prompt": "Create one clean illustrative environment image for a macro world viewer. Setting: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Room: Supply Warehouse. Biome: storage. Floor material token: packed_dirt. Wall material token: crate_stack. Decor: supply_crates, rope_coils. Ambient palette: dusty_brown. No people in frame. No visible text. No watermark. Wide scene card composition, polished anime environment art."
+      },
+      {
+        "room_id": "forge",
+        "name": "Forge Workshop",
+        "x": 4,
+        "y": 0,
+        "z": 0,
+        "visual": {
+          "biome": "forge",
+          "floor_tile": "charred_stone",
+          "wall_tile": "iron_tool_wall",
+          "decor_tags": [
+            "anvil",
+            "glowing_furnace"
+          ],
+          "ambient_palette": "ember_orange"
+        },
+        "occupant_count": 10,
+        "occupant_ids": [
+          "guild_005",
+          "guild_015",
+          "guild_025",
+          "guild_035",
+          "guild_045",
+          "guild_055",
+          "guild_065",
+          "guild_075",
+          "guild_085",
+          "guild_095"
+        ],
+        "image_url": "./generated/images/rooms/forge_2afc0a5464951fbc.png",
+        "macro_prompt": "Create one clean illustrative environment image for a macro world viewer. Setting: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Room: Forge Workshop. Biome: forge. Floor material token: charred_stone. Wall material token: iron_tool_wall. Decor: anvil, glowing_furnace. Ambient palette: ember_orange. No people in frame. No visible text. No watermark. Wide scene card composition, polished anime environment art."
+      },
+      {
+        "room_id": "infirmary",
+        "name": "Infirmary",
+        "x": 0,
+        "y": 1,
+        "z": 0,
+        "visual": {
+          "biome": "healing_room",
+          "floor_tile": "clean_stone",
+          "wall_tile": "curtain_wall",
+          "decor_tags": [
+            "medicine_shelf",
+            "rest_bed"
+          ],
+          "ambient_palette": "soft_mint"
+        },
+        "occupant_count": 10,
+        "occupant_ids": [
+          "guild_006",
+          "guild_016",
+          "guild_026",
+          "guild_036",
+          "guild_046",
+          "guild_056",
+          "guild_066",
+          "guild_076",
+          "guild_086",
+          "guild_096"
+        ],
+        "image_url": "./generated/images/rooms/infirmary_fdd1b1866003f237.png",
+        "macro_prompt": "Create one clean illustrative environment image for a macro world viewer. Setting: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Room: Infirmary. Biome: healing_room. Floor material token: clean_stone. Wall material token: curtain_wall. Decor: medicine_shelf, rest_bed. Ambient palette: soft_mint. No people in frame. No visible text. No watermark. Wide scene card composition, polished anime environment art."
+      },
+      {
+        "room_id": "training_yard",
+        "name": "Training Yard",
+        "x": 1,
+        "y": 1,
+        "z": 0,
+        "visual": {
+          "biome": "training_yard",
+          "floor_tile": "packed_sand",
+          "wall_tile": "fence_edge",
+          "decor_tags": [
+            "practice_dummy",
+            "weapon_rack"
+          ],
+          "ambient_palette": "clear_day"
+        },
+        "occupant_count": 10,
+        "occupant_ids": [
+          "guild_007",
+          "guild_017",
+          "guild_027",
+          "guild_037",
+          "guild_047",
+          "guild_057",
+          "guild_067",
+          "guild_077",
+          "guild_087",
+          "guild_097"
+        ],
+        "image_url": "./generated/images/rooms/training_yard_f8327dc8d2be202f.png",
+        "macro_prompt": "Create one clean illustrative environment image for a macro world viewer. Setting: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Room: Training Yard. Biome: training_yard. Floor material token: packed_sand. Wall material token: fence_edge. Decor: practice_dummy, weapon_rack. Ambient palette: clear_day. No people in frame. No visible text. No watermark. Wide scene card composition, polished anime environment art."
+      },
+      {
+        "room_id": "arcane_library",
+        "name": "Arcane Library",
+        "x": 2,
+        "y": 1,
+        "z": 0,
+        "visual": {
+          "biome": "library",
+          "floor_tile": "blue_carpet",
+          "wall_tile": "bookcase_wall",
+          "decor_tags": [
+            "floating_runes",
+            "scroll_table"
+          ],
+          "ambient_palette": "violet_arcane"
+        },
+        "occupant_count": 10,
+        "occupant_ids": [
+          "guild_008",
+          "guild_018",
+          "guild_028",
+          "guild_038",
+          "guild_048",
+          "guild_058",
+          "guild_068",
+          "guild_078",
+          "guild_088",
+          "guild_098"
+        ],
+        "image_url": "./generated/images/rooms/arcane_library_c7bb7d04dcf0f538.png",
+        "macro_prompt": "Create one clean illustrative environment image for a macro world viewer. Setting: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Room: Arcane Library. Biome: library. Floor material token: blue_carpet. Wall material token: bookcase_wall. Decor: floating_runes, scroll_table. Ambient palette: violet_arcane. No people in frame. No visible text. No watermark. Wide scene card composition, polished anime environment art."
+      },
+      {
+        "room_id": "strategy_table",
+        "name": "Strategy Table",
+        "x": 3,
+        "y": 1,
+        "z": 0,
+        "visual": {
+          "biome": "war_room",
+          "floor_tile": "polished_stone",
+          "wall_tile": "map_wall",
+          "decor_tags": [
+            "strategy_table",
+            "region_map"
+          ],
+          "ambient_palette": "focused_blue"
+        },
+        "occupant_count": 10,
+        "occupant_ids": [
+          "guild_009",
+          "guild_019",
+          "guild_029",
+          "guild_039",
+          "guild_049",
+          "guild_059",
+          "guild_069",
+          "guild_079",
+          "guild_089",
+          "guild_099"
+        ],
+        "image_url": "./generated/images/rooms/strategy_table_730bdfd84ac6f9b7.png",
+        "macro_prompt": "Create one clean illustrative environment image for a macro world viewer. Setting: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Room: Strategy Table. Biome: war_room. Floor material token: polished_stone. Wall material token: map_wall. Decor: strategy_table, region_map. Ambient palette: focused_blue. No people in frame. No visible text. No watermark. Wide scene card composition, polished anime environment art."
+      },
+      {
+        "room_id": "dormitory",
+        "name": "Dormitory",
+        "x": 4,
+        "y": 1,
+        "z": 0,
+        "visual": {
+          "biome": "rest_area",
+          "floor_tile": "quiet_planks",
+          "wall_tile": "linen_wall",
+          "decor_tags": [
+            "bunk_beds",
+            "travel_packs"
+          ],
+          "ambient_palette": "low_lantern"
+        },
+        "occupant_count": 10,
+        "occupant_ids": [
+          "guild_010",
+          "guild_020",
+          "guild_030",
+          "guild_040",
+          "guild_050",
+          "guild_060",
+          "guild_070",
+          "guild_080",
+          "guild_090",
+          "guild_100"
+        ],
+        "image_url": "./generated/images/rooms/dormitory_b458a48268e5094b.png",
+        "macro_prompt": "Create one clean illustrative environment image for a macro world viewer. Setting: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Room: Dormitory. Biome: rest_area. Floor material token: quiet_planks. Wall material token: linen_wall. Decor: bunk_beds, travel_packs. Ambient palette: low_lantern. No people in frame. No visible text. No watermark. Wide scene card composition, polished anime environment art."
+      }
+    ]
+  },
+  "agents": [
+    {
+      "agent_id": "guild_001",
+      "display_name": "Kaelen Vane",
+      "room_id": "guild_hall",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "notice_table",
+          "guild_banner"
+        ],
+        "ambient_palette": "warm_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_002",
+      "display_name": "Mika Ashbell",
+      "room_id": "quest_board",
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "worn_planks",
+        "wall_tile": "paper_notice_wall",
+        "decor_tags": [
+          "quest_board",
+          "sealed_requests"
+        ],
+        "ambient_palette": "gold_paper"
+      },
+      "status_effect_names": [
+        "party_plan_aligned"
+      ],
+      "image_url": "./generated/images/agents/guild_002_d8aa36763e935f4b.png"
+    },
+    {
+      "agent_id": "guild_003",
+      "display_name": "Ren Ashbell",
+      "room_id": "tavern_corner",
+      "coordinates": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "tavern",
+        "floor_tile": "dark_planks",
+        "wall_tile": "barrel_wall",
+        "decor_tags": [
+          "round_table",
+          "mug_shelf"
+        ],
+        "ambient_palette": "amber_tavern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_004",
+      "display_name": "Sora Ashbell",
+      "room_id": "warehouse",
+      "coordinates": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "storage",
+        "floor_tile": "packed_dirt",
+        "wall_tile": "crate_stack",
+        "decor_tags": [
+          "supply_crates",
+          "rope_coils"
+        ],
+        "ambient_palette": "dusty_brown"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_005",
+      "display_name": "Elara Vane",
+      "room_id": "forge",
+      "coordinates": {
+        "x": 4,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "forge",
+        "floor_tile": "charred_stone",
+        "wall_tile": "iron_tool_wall",
+        "decor_tags": [
+          "anvil",
+          "glowing_furnace"
+        ],
+        "ambient_palette": "ember_orange"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_006",
+      "display_name": "Toma Ashbell",
+      "room_id": "infirmary",
+      "coordinates": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "healing_room",
+        "floor_tile": "clean_stone",
+        "wall_tile": "curtain_wall",
+        "decor_tags": [
+          "medicine_shelf",
+          "rest_bed"
+        ],
+        "ambient_palette": "soft_mint"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_007",
+      "display_name": "Kiri Ashbell",
+      "room_id": "training_yard",
+      "coordinates": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "training_yard",
+        "floor_tile": "packed_sand",
+        "wall_tile": "fence_edge",
+        "decor_tags": [
+          "practice_dummy",
+          "weapon_rack"
+        ],
+        "ambient_palette": "clear_day"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_008",
+      "display_name": "Natsu Ashbell",
+      "room_id": "arcane_library",
+      "coordinates": {
+        "x": 2,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "library",
+        "floor_tile": "blue_carpet",
+        "wall_tile": "bookcase_wall",
+        "decor_tags": [
+          "floating_runes",
+          "scroll_table"
+        ],
+        "ambient_palette": "violet_arcane"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_009",
+      "display_name": "Eri Ashbell",
+      "room_id": "strategy_table",
+      "coordinates": {
+        "x": 3,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "An androgynous young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "war_room",
+        "floor_tile": "polished_stone",
+        "wall_tile": "map_wall",
+        "decor_tags": [
+          "strategy_table",
+          "region_map"
+        ],
+        "ambient_palette": "focused_blue"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_010",
+      "display_name": "Emi Serene",
+      "room_id": "dormitory",
+      "coordinates": {
+        "x": 4,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "rest_area",
+        "floor_tile": "quiet_planks",
+        "wall_tile": "linen_wall",
+        "decor_tags": [
+          "bunk_beds",
+          "travel_packs"
+        ],
+        "ambient_palette": "low_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_011",
+      "display_name": "Ari Moonvale",
+      "room_id": "guild_hall",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "notice_table",
+          "guild_banner"
+        ],
+        "ambient_palette": "warm_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_012",
+      "display_name": "Mika Moonvale",
+      "room_id": "quest_board",
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "worn_planks",
+        "wall_tile": "paper_notice_wall",
+        "decor_tags": [
+          "quest_board",
+          "sealed_requests"
+        ],
+        "ambient_palette": "gold_paper"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_013",
+      "display_name": "Ren Moonvale",
+      "room_id": "tavern_corner",
+      "coordinates": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "tavern",
+        "floor_tile": "dark_planks",
+        "wall_tile": "barrel_wall",
+        "decor_tags": [
+          "round_table",
+          "mug_shelf"
+        ],
+        "ambient_palette": "amber_tavern"
+      },
+      "status_effect_names": [
+        "party_plan_aligned"
+      ],
+      "image_url": "./generated/images/agents/guild_013_60a7060363bbbddd.png"
+    },
+    {
+      "agent_id": "guild_014",
+      "display_name": "Sora Moonvale",
+      "room_id": "warehouse",
+      "coordinates": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Ranger",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine ranger with a green half-cape, compact bow case, light boots, alert eyes, leaf-shaped brooch, warm Japanese fantasy guild aesthetic.",
+      "room_visual": {
+        "biome": "storage",
+        "floor_tile": "packed_dirt",
+        "wall_tile": "crate_stack",
+        "decor_tags": [
+          "supply_crates",
+          "rope_coils"
+        ],
+        "ambient_palette": "dusty_brown"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_015",
+      "display_name": "Yuna Moonvale",
+      "room_id": "forge",
+      "coordinates": {
+        "x": 4,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Ranger",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous ranger with a green half-cape, compact bow case, light boots, alert eyes, leaf-shaped brooch, warm Japanese fantasy guild aesthetic.",
+      "room_visual": {
+        "biome": "forge",
+        "floor_tile": "charred_stone",
+        "wall_tile": "iron_tool_wall",
+        "decor_tags": [
+          "anvil",
+          "glowing_furnace"
+        ],
+        "ambient_palette": "ember_orange"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_016",
+      "display_name": "Toma Moonvale",
+      "room_id": "infirmary",
+      "coordinates": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Ranger",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine ranger with a green half-cape, compact bow case, light boots, alert eyes, leaf-shaped brooch, warm Japanese fantasy guild aesthetic.",
+      "room_visual": {
+        "biome": "healing_room",
+        "floor_tile": "clean_stone",
+        "wall_tile": "curtain_wall",
+        "decor_tags": [
+          "medicine_shelf",
+          "rest_bed"
+        ],
+        "ambient_palette": "soft_mint"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_017",
+      "display_name": "Kiri Moonvale",
+      "room_id": "training_yard",
+      "coordinates": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Ranger",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine ranger with a green half-cape, compact bow case, light boots, alert eyes, leaf-shaped brooch, warm Japanese fantasy guild aesthetic.",
+      "room_visual": {
+        "biome": "training_yard",
+        "floor_tile": "packed_sand",
+        "wall_tile": "fence_edge",
+        "decor_tags": [
+          "practice_dummy",
+          "weapon_rack"
+        ],
+        "ambient_palette": "clear_day"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_018",
+      "display_name": "Natsu Moonvale",
+      "room_id": "arcane_library",
+      "coordinates": {
+        "x": 2,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Ranger",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous ranger with a green half-cape, compact bow case, light boots, alert eyes, leaf-shaped brooch, warm Japanese fantasy guild aesthetic.",
+      "room_visual": {
+        "biome": "library",
+        "floor_tile": "blue_carpet",
+        "wall_tile": "bookcase_wall",
+        "decor_tags": [
+          "floating_runes",
+          "scroll_table"
+        ],
+        "ambient_palette": "violet_arcane"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_019",
+      "display_name": "Eri Moonvale",
+      "room_id": "strategy_table",
+      "coordinates": {
+        "x": 3,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Ranger",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine ranger with a green half-cape, compact bow case, light boots, alert eyes, leaf-shaped brooch, warm Japanese fantasy guild aesthetic.",
+      "room_visual": {
+        "biome": "war_room",
+        "floor_tile": "polished_stone",
+        "wall_tile": "map_wall",
+        "decor_tags": [
+          "strategy_table",
+          "region_map"
+        ],
+        "ambient_palette": "focused_blue"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_020",
+      "display_name": "Elara Vane",
+      "room_id": "dormitory",
+      "coordinates": {
+        "x": 4,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Ranger",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+      "room_visual": {
+        "biome": "rest_area",
+        "floor_tile": "quiet_planks",
+        "wall_tile": "linen_wall",
+        "decor_tags": [
+          "bunk_beds",
+          "travel_packs"
+        ],
+        "ambient_palette": "low_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_021",
+      "display_name": "Ari Ironleaf",
+      "room_id": "guild_hall",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Ranger",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous ranger with a green half-cape, compact bow case, light boots, alert eyes, leaf-shaped brooch, warm Japanese fantasy guild aesthetic.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "notice_table",
+          "guild_banner"
+        ],
+        "ambient_palette": "warm_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_022",
+      "display_name": "Mika Ironleaf",
+      "room_id": "quest_board",
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Ranger",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine ranger with a green half-cape, compact bow case, light boots, alert eyes, leaf-shaped brooch, warm Japanese fantasy guild aesthetic.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "worn_planks",
+        "wall_tile": "paper_notice_wall",
+        "decor_tags": [
+          "quest_board",
+          "sealed_requests"
+        ],
+        "ambient_palette": "gold_paper"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_023",
+      "display_name": "Ren Ironleaf",
+      "room_id": "tavern_corner",
+      "coordinates": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Ranger",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine ranger with a green half-cape, compact bow case, light boots, alert eyes, leaf-shaped brooch, warm Japanese fantasy guild aesthetic.",
+      "room_visual": {
+        "biome": "tavern",
+        "floor_tile": "dark_planks",
+        "wall_tile": "barrel_wall",
+        "decor_tags": [
+          "round_table",
+          "mug_shelf"
+        ],
+        "ambient_palette": "amber_tavern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_024",
+      "display_name": "Sora Ironleaf",
+      "room_id": "warehouse",
+      "coordinates": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Ranger",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous ranger with a green half-cape, compact bow case, light boots, alert eyes, leaf-shaped brooch, warm Japanese fantasy guild aesthetic.",
+      "room_visual": {
+        "biome": "storage",
+        "floor_tile": "packed_dirt",
+        "wall_tile": "crate_stack",
+        "decor_tags": [
+          "supply_crates",
+          "rope_coils"
+        ],
+        "ambient_palette": "dusty_brown"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_025",
+      "display_name": "Yuna Ironleaf",
+      "room_id": "forge",
+      "coordinates": {
+        "x": 4,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Ranger",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine ranger with a green half-cape, compact bow case, light boots, alert eyes, leaf-shaped brooch, warm Japanese fantasy guild aesthetic.",
+      "room_visual": {
+        "biome": "forge",
+        "floor_tile": "charred_stone",
+        "wall_tile": "iron_tool_wall",
+        "decor_tags": [
+          "anvil",
+          "glowing_furnace"
+        ],
+        "ambient_palette": "ember_orange"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_026",
+      "display_name": "Toma Ironleaf",
+      "room_id": "infirmary",
+      "coordinates": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Healer",
+      "activity_directive": "",
+      "appearance_prompt": "An androgynous guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "healing_room",
+        "floor_tile": "clean_stone",
+        "wall_tile": "curtain_wall",
+        "decor_tags": [
+          "medicine_shelf",
+          "rest_bed"
+        ],
+        "ambient_palette": "soft_mint"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_027",
+      "display_name": "Kiri Ironleaf",
+      "room_id": "training_yard",
+      "coordinates": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Healer",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "training_yard",
+        "floor_tile": "packed_sand",
+        "wall_tile": "fence_edge",
+        "decor_tags": [
+          "practice_dummy",
+          "weapon_rack"
+        ],
+        "ambient_palette": "clear_day"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_028",
+      "display_name": "Natsu Ironleaf",
+      "room_id": "arcane_library",
+      "coordinates": {
+        "x": 2,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Healer",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "library",
+        "floor_tile": "blue_carpet",
+        "wall_tile": "bookcase_wall",
+        "decor_tags": [
+          "floating_runes",
+          "scroll_table"
+        ],
+        "ambient_palette": "violet_arcane"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_029",
+      "display_name": "Eri Ironleaf",
+      "room_id": "strategy_table",
+      "coordinates": {
+        "x": 3,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Healer",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "war_room",
+        "floor_tile": "polished_stone",
+        "wall_tile": "map_wall",
+        "decor_tags": [
+          "strategy_table",
+          "region_map"
+        ],
+        "ambient_palette": "focused_blue"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_030",
+      "display_name": "Haru Ironleaf",
+      "room_id": "dormitory",
+      "coordinates": {
+        "x": 4,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Healer",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "rest_area",
+        "floor_tile": "quiet_planks",
+        "wall_tile": "linen_wall",
+        "decor_tags": [
+          "bunk_beds",
+          "travel_packs"
+        ],
+        "ambient_palette": "low_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_031",
+      "display_name": "Ari Starling",
+      "room_id": "guild_hall",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Healer",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "notice_table",
+          "guild_banner"
+        ],
+        "ambient_palette": "warm_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_032",
+      "display_name": "Mika Starling",
+      "room_id": "quest_board",
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Healer",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "worn_planks",
+        "wall_tile": "paper_notice_wall",
+        "decor_tags": [
+          "quest_board",
+          "sealed_requests"
+        ],
+        "ambient_palette": "gold_paper"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_033",
+      "display_name": "Ren Starling",
+      "room_id": "tavern_corner",
+      "coordinates": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Healer",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "tavern",
+        "floor_tile": "dark_planks",
+        "wall_tile": "barrel_wall",
+        "decor_tags": [
+          "round_table",
+          "mug_shelf"
+        ],
+        "ambient_palette": "amber_tavern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_034",
+      "display_name": "Sora Starling",
+      "room_id": "warehouse",
+      "coordinates": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Healer",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "storage",
+        "floor_tile": "packed_dirt",
+        "wall_tile": "crate_stack",
+        "decor_tags": [
+          "supply_crates",
+          "rope_coils"
+        ],
+        "ambient_palette": "dusty_brown"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_035",
+      "display_name": "Yuna Starling",
+      "room_id": "forge",
+      "coordinates": {
+        "x": 4,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Healer",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "forge",
+        "floor_tile": "charred_stone",
+        "wall_tile": "iron_tool_wall",
+        "decor_tags": [
+          "anvil",
+          "glowing_furnace"
+        ],
+        "ambient_palette": "ember_orange"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_036",
+      "display_name": "Toma Starling",
+      "room_id": "infirmary",
+      "coordinates": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Healer",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "healing_room",
+        "floor_tile": "clean_stone",
+        "wall_tile": "curtain_wall",
+        "decor_tags": [
+          "medicine_shelf",
+          "rest_bed"
+        ],
+        "ambient_palette": "soft_mint"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_037",
+      "display_name": "Kiri Starling",
+      "room_id": "training_yard",
+      "coordinates": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Healer",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild healer in cream and mint robes, satchel of small vials, calm posture, soft lamplight colors, clean anime RPG silhouette.",
+      "room_visual": {
+        "biome": "training_yard",
+        "floor_tile": "packed_sand",
+        "wall_tile": "fence_edge",
+        "decor_tags": [
+          "practice_dummy",
+          "weapon_rack"
+        ],
+        "ambient_palette": "clear_day"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_038",
+      "display_name": "Natsu Starling",
+      "room_id": "arcane_library",
+      "coordinates": {
+        "x": 2,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Mage",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+      "room_visual": {
+        "biome": "library",
+        "floor_tile": "blue_carpet",
+        "wall_tile": "bookcase_wall",
+        "decor_tags": [
+          "floating_runes",
+          "scroll_table"
+        ],
+        "ambient_palette": "violet_arcane"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_039",
+      "display_name": "Eri Starling",
+      "room_id": "strategy_table",
+      "coordinates": {
+        "x": 3,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Mage",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+      "room_visual": {
+        "biome": "war_room",
+        "floor_tile": "polished_stone",
+        "wall_tile": "map_wall",
+        "decor_tags": [
+          "strategy_table",
+          "region_map"
+        ],
+        "ambient_palette": "focused_blue"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_040",
+      "display_name": "Haru Starling",
+      "room_id": "dormitory",
+      "coordinates": {
+        "x": 4,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Mage",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+      "room_visual": {
+        "biome": "rest_area",
+        "floor_tile": "quiet_planks",
+        "wall_tile": "linen_wall",
+        "decor_tags": [
+          "bunk_beds",
+          "travel_packs"
+        ],
+        "ambient_palette": "low_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_041",
+      "display_name": "Ari Dawncrest",
+      "room_id": "guild_hall",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Mage",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "notice_table",
+          "guild_banner"
+        ],
+        "ambient_palette": "warm_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_042",
+      "display_name": "Mika Dawncrest",
+      "room_id": "quest_board",
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Mage",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "worn_planks",
+        "wall_tile": "paper_notice_wall",
+        "decor_tags": [
+          "quest_board",
+          "sealed_requests"
+        ],
+        "ambient_palette": "gold_paper"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_043",
+      "display_name": "Ren Dawncrest",
+      "room_id": "tavern_corner",
+      "coordinates": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Mage",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+      "room_visual": {
+        "biome": "tavern",
+        "floor_tile": "dark_planks",
+        "wall_tile": "barrel_wall",
+        "decor_tags": [
+          "round_table",
+          "mug_shelf"
+        ],
+        "ambient_palette": "amber_tavern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_044",
+      "display_name": "Sora Dawncrest",
+      "room_id": "warehouse",
+      "coordinates": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Mage",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+      "room_visual": {
+        "biome": "storage",
+        "floor_tile": "packed_dirt",
+        "wall_tile": "crate_stack",
+        "decor_tags": [
+          "supply_crates",
+          "rope_coils"
+        ],
+        "ambient_palette": "dusty_brown"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_045",
+      "display_name": "Yuna Dawncrest",
+      "room_id": "forge",
+      "coordinates": {
+        "x": 4,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Mage",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+      "room_visual": {
+        "biome": "forge",
+        "floor_tile": "charred_stone",
+        "wall_tile": "iron_tool_wall",
+        "decor_tags": [
+          "anvil",
+          "glowing_furnace"
+        ],
+        "ambient_palette": "ember_orange"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_046",
+      "display_name": "Toma Dawncrest",
+      "room_id": "infirmary",
+      "coordinates": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Mage",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+      "room_visual": {
+        "biome": "healing_room",
+        "floor_tile": "clean_stone",
+        "wall_tile": "curtain_wall",
+        "decor_tags": [
+          "medicine_shelf",
+          "rest_bed"
+        ],
+        "ambient_palette": "soft_mint"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_047",
+      "display_name": "Kiri Dawncrest",
+      "room_id": "training_yard",
+      "coordinates": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Mage",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+      "room_visual": {
+        "biome": "training_yard",
+        "floor_tile": "packed_sand",
+        "wall_tile": "fence_edge",
+        "decor_tags": [
+          "practice_dummy",
+          "weapon_rack"
+        ],
+        "ambient_palette": "clear_day"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_048",
+      "display_name": "Natsu Dawncrest",
+      "room_id": "arcane_library",
+      "coordinates": {
+        "x": 2,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Mage",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+      "room_visual": {
+        "biome": "library",
+        "floor_tile": "blue_carpet",
+        "wall_tile": "bookcase_wall",
+        "decor_tags": [
+          "floating_runes",
+          "scroll_table"
+        ],
+        "ambient_palette": "violet_arcane"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_049",
+      "display_name": "Eri Dawncrest",
+      "room_id": "strategy_table",
+      "coordinates": {
+        "x": 3,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Mage",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous mage with layered blue robes, small floating spell tags, neat gloves, focused expression, moonlit Japanese fantasy RPG palette.",
+      "room_visual": {
+        "biome": "war_room",
+        "floor_tile": "polished_stone",
+        "wall_tile": "map_wall",
+        "decor_tags": [
+          "strategy_table",
+          "region_map"
+        ],
+        "ambient_palette": "focused_blue"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_050",
+      "display_name": "Kaelen Ironheart",
+      "room_id": "dormitory",
+      "coordinates": {
+        "x": 4,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Mage",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "rest_area",
+        "floor_tile": "quiet_planks",
+        "wall_tile": "linen_wall",
+        "decor_tags": [
+          "bunk_beds",
+          "travel_packs"
+        ],
+        "ambient_palette": "low_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_051",
+      "display_name": "Ari Mistfell",
+      "room_id": "guild_hall",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Crafter",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy fantasy workshop look.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "notice_table",
+          "guild_banner"
+        ],
+        "ambient_palette": "warm_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_052",
+      "display_name": "Mika Mistfell",
+      "room_id": "quest_board",
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Crafter",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy Japanese fantasy workshop look.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "worn_planks",
+        "wall_tile": "paper_notice_wall",
+        "decor_tags": [
+          "quest_board",
+          "sealed_requests"
+        ],
+        "ambient_palette": "gold_paper"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_053",
+      "display_name": "Ren Mistfell",
+      "room_id": "tavern_corner",
+      "coordinates": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Crafter",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy fantasy workshop look.",
+      "room_visual": {
+        "biome": "tavern",
+        "floor_tile": "dark_planks",
+        "wall_tile": "barrel_wall",
+        "decor_tags": [
+          "round_table",
+          "mug_shelf"
+        ],
+        "ambient_palette": "amber_tavern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_054",
+      "display_name": "Sora Mistfell",
+      "room_id": "warehouse",
+      "coordinates": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Crafter",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy fantasy workshop look.",
+      "room_visual": {
+        "biome": "storage",
+        "floor_tile": "packed_dirt",
+        "wall_tile": "crate_stack",
+        "decor_tags": [
+          "supply_crates",
+          "rope_coils"
+        ],
+        "ambient_palette": "dusty_brown"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_055",
+      "display_name": "Kaelen Forgeheart",
+      "room_id": "forge",
+      "coordinates": {
+        "x": 4,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Crafter",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy Japanese fantasy workshop look, high quality anime style.",
+      "room_visual": {
+        "biome": "forge",
+        "floor_tile": "charred_stone",
+        "wall_tile": "iron_tool_wall",
+        "decor_tags": [
+          "anvil",
+          "glowing_furnace"
+        ],
+        "ambient_palette": "ember_orange"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_056",
+      "display_name": "Toma Mistfell",
+      "room_id": "infirmary",
+      "coordinates": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Crafter",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy fantasy workshop look.",
+      "room_visual": {
+        "biome": "healing_room",
+        "floor_tile": "clean_stone",
+        "wall_tile": "curtain_wall",
+        "decor_tags": [
+          "medicine_shelf",
+          "rest_bed"
+        ],
+        "ambient_palette": "soft_mint"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_057",
+      "display_name": "Kiri Mistfell",
+      "room_id": "training_yard",
+      "coordinates": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Crafter",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy fantasy workshop look, Japanese anime art style.",
+      "room_visual": {
+        "biome": "training_yard",
+        "floor_tile": "packed_sand",
+        "wall_tile": "fence_edge",
+        "decor_tags": [
+          "practice_dummy",
+          "weapon_rack"
+        ],
+        "ambient_palette": "clear_day"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_058",
+      "display_name": "Natsu Mistfell",
+      "room_id": "arcane_library",
+      "coordinates": {
+        "x": 2,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Crafter",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy fantasy workshop look.",
+      "room_visual": {
+        "biome": "library",
+        "floor_tile": "blue_carpet",
+        "wall_tile": "bookcase_wall",
+        "decor_tags": [
+          "floating_runes",
+          "scroll_table"
+        ],
+        "ambient_palette": "violet_arcane"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_059",
+      "display_name": "Eri Mistfell",
+      "room_id": "strategy_table",
+      "coordinates": {
+        "x": 3,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Crafter",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy fantasy workshop look.",
+      "room_visual": {
+        "biome": "war_room",
+        "floor_tile": "polished_stone",
+        "wall_tile": "map_wall",
+        "decor_tags": [
+          "strategy_table",
+          "region_map"
+        ],
+        "ambient_palette": "focused_blue"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_060",
+      "display_name": "Haru Mistfell",
+      "room_id": "dormitory",
+      "coordinates": {
+        "x": 4,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Crafter",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy fantasy workshop look.",
+      "room_visual": {
+        "biome": "rest_area",
+        "floor_tile": "quiet_planks",
+        "wall_tile": "linen_wall",
+        "decor_tags": [
+          "bunk_beds",
+          "travel_packs"
+        ],
+        "ambient_palette": "low_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_061",
+      "display_name": "Ari Brightford",
+      "room_id": "guild_hall",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Crafter",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy fantasy workshop look.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "notice_table",
+          "guild_banner"
+        ],
+        "ambient_palette": "warm_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_062",
+      "display_name": "Mika Brightford",
+      "room_id": "quest_board",
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Crafter",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy fantasy workshop look, Japanese anime style.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "worn_planks",
+        "wall_tile": "paper_notice_wall",
+        "decor_tags": [
+          "quest_board",
+          "sealed_requests"
+        ],
+        "ambient_palette": "gold_paper"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_063",
+      "display_name": "Ren Brightford",
+      "room_id": "tavern_corner",
+      "coordinates": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Crafter",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous guild crafter wearing a rolled-sleeve apron, brass tool belt, ash marks on gloves, friendly workbench posture, cozy fantasy workshop look, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "tavern",
+        "floor_tile": "dark_planks",
+        "wall_tile": "barrel_wall",
+        "decor_tags": [
+          "round_table",
+          "mug_shelf"
+        ],
+        "ambient_palette": "amber_tavern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_064",
+      "display_name": "Sora Brightford",
+      "room_id": "warehouse",
+      "coordinates": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Quartermaster Trader",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine quartermaster trader in a neat vest and guild sash, coin pouch, ledger tablet, welcoming smile, bright market-stall RPG styling.",
+      "room_visual": {
+        "biome": "storage",
+        "floor_tile": "packed_dirt",
+        "wall_tile": "crate_stack",
+        "decor_tags": [
+          "supply_crates",
+          "rope_coils"
+        ],
+        "ambient_palette": "dusty_brown"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_065",
+      "display_name": "Yuna Brightford",
+      "room_id": "forge",
+      "coordinates": {
+        "x": 4,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Quartermaster Trader",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine quartermaster trader in a neat vest and guild sash, coin pouch, ledger tablet, welcoming smile, bright market-stall RPG styling.",
+      "room_visual": {
+        "biome": "forge",
+        "floor_tile": "charred_stone",
+        "wall_tile": "iron_tool_wall",
+        "decor_tags": [
+          "anvil",
+          "glowing_furnace"
+        ],
+        "ambient_palette": "ember_orange"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_066",
+      "display_name": "Toma Brightford",
+      "room_id": "infirmary",
+      "coordinates": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Quartermaster Trader",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous quartermaster trader in a neat vest and guild sash, coin pouch, ledger tablet, welcoming smile, bright market-stall RPG styling.",
+      "room_visual": {
+        "biome": "healing_room",
+        "floor_tile": "clean_stone",
+        "wall_tile": "curtain_wall",
+        "decor_tags": [
+          "medicine_shelf",
+          "rest_bed"
+        ],
+        "ambient_palette": "soft_mint"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_067",
+      "display_name": "Kiri Brightford",
+      "room_id": "training_yard",
+      "coordinates": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Quartermaster Trader",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine quartermaster trader in a neat vest and guild sash, coin pouch, ledger tablet, welcoming smile, bright market-stall RPG styling, anime fantasy aesthetic.",
+      "room_visual": {
+        "biome": "training_yard",
+        "floor_tile": "packed_sand",
+        "wall_tile": "fence_edge",
+        "decor_tags": [
+          "practice_dummy",
+          "weapon_rack"
+        ],
+        "ambient_palette": "clear_day"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_068",
+      "display_name": "Natsu Brightford",
+      "room_id": "arcane_library",
+      "coordinates": {
+        "x": 2,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Quartermaster Trader",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine quartermaster trader in a neat vest and guild sash, coin pouch, ledger tablet, welcoming smile, bright market-stall RPG styling.",
+      "room_visual": {
+        "biome": "library",
+        "floor_tile": "blue_carpet",
+        "wall_tile": "bookcase_wall",
+        "decor_tags": [
+          "floating_runes",
+          "scroll_table"
+        ],
+        "ambient_palette": "violet_arcane"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_069",
+      "display_name": "Eri Brightford",
+      "room_id": "strategy_table",
+      "coordinates": {
+        "x": 3,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Quartermaster Trader",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous quartermaster trader in a neat vest and guild sash, coin pouch, ledger tablet, welcoming smile, bright market-stall RPG styling.",
+      "room_visual": {
+        "biome": "war_room",
+        "floor_tile": "polished_stone",
+        "wall_tile": "map_wall",
+        "decor_tags": [
+          "strategy_table",
+          "region_map"
+        ],
+        "ambient_palette": "focused_blue"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_070",
+      "display_name": "Haru Brightford",
+      "room_id": "dormitory",
+      "coordinates": {
+        "x": 4,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Quartermaster Trader",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine quartermaster trader in a neat vest and guild sash, coin pouch, ledger tablet, welcoming smile, bright market-stall RPG styling.",
+      "room_visual": {
+        "biome": "rest_area",
+        "floor_tile": "quiet_planks",
+        "wall_tile": "linen_wall",
+        "decor_tags": [
+          "bunk_beds",
+          "travel_packs"
+        ],
+        "ambient_palette": "low_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_071",
+      "display_name": "Ari Oakspire",
+      "room_id": "guild_hall",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Quartermaster Trader",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine quartermaster trader in a neat vest and guild sash, coin pouch, ledger tablet, welcoming smile, bright market-stall RPG styling.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "notice_table",
+          "guild_banner"
+        ],
+        "ambient_palette": "warm_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_072",
+      "display_name": "Mika Oakspire",
+      "room_id": "quest_board",
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Quartermaster Trader",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous quartermaster trader in a neat vest and guild sash, coin pouch, ledger tablet, welcoming smile, bright market-stall RPG styling.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "worn_planks",
+        "wall_tile": "paper_notice_wall",
+        "decor_tags": [
+          "quest_board",
+          "sealed_requests"
+        ],
+        "ambient_palette": "gold_paper"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_073",
+      "display_name": "Ren Oakspire",
+      "room_id": "tavern_corner",
+      "coordinates": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Quartermaster Trader",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine quartermaster trader in a neat vest and guild sash, coin pouch, ledger tablet, welcoming smile, bright market-stall RPG styling.",
+      "room_visual": {
+        "biome": "tavern",
+        "floor_tile": "dark_planks",
+        "wall_tile": "barrel_wall",
+        "decor_tags": [
+          "round_table",
+          "mug_shelf"
+        ],
+        "ambient_palette": "amber_tavern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_074",
+      "display_name": "Kaelen Thorne",
+      "room_id": "warehouse",
+      "coordinates": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Quartermaster Trader",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine quartermaster trader in a neat vest and guild sash, coin pouch, ledger tablet, welcoming smile, bright market-stall RPG styling.",
+      "room_visual": {
+        "biome": "storage",
+        "floor_tile": "packed_dirt",
+        "wall_tile": "crate_stack",
+        "decor_tags": [
+          "supply_crates",
+          "rope_coils"
+        ],
+        "ambient_palette": "dusty_brown"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_075",
+      "display_name": "Yuna Oakspire",
+      "room_id": "forge",
+      "coordinates": {
+        "x": 4,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Quartermaster Trader",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous quartermaster trader in a neat vest and guild sash, coin pouch, ledger tablet, welcoming smile, bright market-stall RPG styling.",
+      "room_visual": {
+        "biome": "forge",
+        "floor_tile": "charred_stone",
+        "wall_tile": "iron_tool_wall",
+        "decor_tags": [
+          "anvil",
+          "glowing_furnace"
+        ],
+        "ambient_palette": "ember_orange"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_076",
+      "display_name": "Toma Oakspire",
+      "room_id": "infirmary",
+      "coordinates": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Scout",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous scout in a cropped travel jacket, messenger straps, wind-tossed hair, quick balanced stance, cheerful Japanese fantasy RPG design.",
+      "room_visual": {
+        "biome": "healing_room",
+        "floor_tile": "clean_stone",
+        "wall_tile": "curtain_wall",
+        "decor_tags": [
+          "medicine_shelf",
+          "rest_bed"
+        ],
+        "ambient_palette": "soft_mint"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_077",
+      "display_name": "Kiri Oakspire",
+      "room_id": "training_yard",
+      "coordinates": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Scout",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine scout in a cropped travel jacket, messenger straps, wind-tossed hair, quick balanced stance, cheerful Japanese fantasy RPG design.",
+      "room_visual": {
+        "biome": "training_yard",
+        "floor_tile": "packed_sand",
+        "wall_tile": "fence_edge",
+        "decor_tags": [
+          "practice_dummy",
+          "weapon_rack"
+        ],
+        "ambient_palette": "clear_day"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_078",
+      "display_name": "Natsu Oakspire 078",
+      "room_id": "arcane_library",
+      "coordinates": {
+        "x": 2,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Scout",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine scout in a cropped travel jacket, messenger straps, wind-tossed hair, quick balanced stance, cheerful Japanese fantasy RPG design.",
+      "room_visual": {
+        "biome": "library",
+        "floor_tile": "blue_carpet",
+        "wall_tile": "bookcase_wall",
+        "decor_tags": [
+          "floating_runes",
+          "scroll_table"
+        ],
+        "ambient_palette": "violet_arcane"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_079",
+      "display_name": "Eri Oakspire",
+      "room_id": "strategy_table",
+      "coordinates": {
+        "x": 3,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Scout",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous scout in a cropped travel jacket, messenger straps, wind-tossed hair, quick balanced stance, cheerful Japanese fantasy RPG design.",
+      "room_visual": {
+        "biome": "war_room",
+        "floor_tile": "polished_stone",
+        "wall_tile": "map_wall",
+        "decor_tags": [
+          "strategy_table",
+          "region_map"
+        ],
+        "ambient_palette": "focused_blue"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_080",
+      "display_name": "Haru Oakspire",
+      "room_id": "dormitory",
+      "coordinates": {
+        "x": 4,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Scout",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine scout in a cropped travel jacket, messenger straps, wind-tossed hair, quick balanced stance, cheerful Japanese fantasy RPG design.",
+      "room_visual": {
+        "biome": "rest_area",
+        "floor_tile": "quiet_planks",
+        "wall_tile": "linen_wall",
+        "decor_tags": [
+          "bunk_beds",
+          "travel_packs"
+        ],
+        "ambient_palette": "low_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_081",
+      "display_name": "Ari Emberlane",
+      "room_id": "guild_hall",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Scout",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine scout in a cropped travel jacket, messenger straps, wind-tossed hair, quick balanced stance, cheerful Japanese fantasy RPG design.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "notice_table",
+          "guild_banner"
+        ],
+        "ambient_palette": "warm_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_082",
+      "display_name": "Mika Emberlane",
+      "room_id": "quest_board",
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Scout",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous scout in a cropped travel jacket, messenger straps, wind-tossed hair, quick balanced stance, cheerful Japanese fantasy RPG design.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "worn_planks",
+        "wall_tile": "paper_notice_wall",
+        "decor_tags": [
+          "quest_board",
+          "sealed_requests"
+        ],
+        "ambient_palette": "gold_paper"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_083",
+      "display_name": "Ren Emberlane",
+      "room_id": "tavern_corner",
+      "coordinates": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Scout",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine scout in a cropped travel jacket, messenger straps, wind-tossed hair, quick balanced stance, cheerful Japanese fantasy RPG design.",
+      "room_visual": {
+        "biome": "tavern",
+        "floor_tile": "dark_planks",
+        "wall_tile": "barrel_wall",
+        "decor_tags": [
+          "round_table",
+          "mug_shelf"
+        ],
+        "ambient_palette": "amber_tavern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_084",
+      "display_name": "Sora Emberlane",
+      "room_id": "warehouse",
+      "coordinates": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Scout",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine scout in a cropped travel jacket, messenger straps, wind-tossed hair, quick balanced stance, cheerful Japanese fantasy RPG design.",
+      "room_visual": {
+        "biome": "storage",
+        "floor_tile": "packed_dirt",
+        "wall_tile": "crate_stack",
+        "decor_tags": [
+          "supply_crates",
+          "rope_coils"
+        ],
+        "ambient_palette": "dusty_brown"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_085",
+      "display_name": "Yuna Emberlane",
+      "room_id": "forge",
+      "coordinates": {
+        "x": 4,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Scout",
+      "activity_directive": "",
+      "appearance_prompt": "An androgynous scout in a cropped travel jacket, messenger straps, wind-tossed hair, quick balanced stance, cheerful Japanese fantasy RPG design.",
+      "room_visual": {
+        "biome": "forge",
+        "floor_tile": "charred_stone",
+        "wall_tile": "iron_tool_wall",
+        "decor_tags": [
+          "anvil",
+          "glowing_furnace"
+        ],
+        "ambient_palette": "ember_orange"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_086",
+      "display_name": "Toma Emberlane",
+      "room_id": "infirmary",
+      "coordinates": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Scout",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine scout in a cropped travel jacket, messenger straps, wind-tossed hair, quick balanced stance, cheerful Japanese fantasy RPG design.",
+      "room_visual": {
+        "biome": "healing_room",
+        "floor_tile": "clean_stone",
+        "wall_tile": "curtain_wall",
+        "decor_tags": [
+          "medicine_shelf",
+          "rest_bed"
+        ],
+        "ambient_palette": "soft_mint"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_087",
+      "display_name": "Kiri Emberlane",
+      "room_id": "training_yard",
+      "coordinates": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Scout",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine scout in a cropped travel jacket, messenger straps, wind-tossed hair, quick balanced stance, cheerful Japanese fantasy RPG design.",
+      "room_visual": {
+        "biome": "training_yard",
+        "floor_tile": "packed_sand",
+        "wall_tile": "fence_edge",
+        "decor_tags": [
+          "practice_dummy",
+          "weapon_rack"
+        ],
+        "ambient_palette": "clear_day"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_088",
+      "display_name": "Natsu Emberlane",
+      "room_id": "arcane_library",
+      "coordinates": {
+        "x": 2,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.",
+      "room_visual": {
+        "biome": "library",
+        "floor_tile": "blue_carpet",
+        "wall_tile": "bookcase_wall",
+        "decor_tags": [
+          "floating_runes",
+          "scroll_table"
+        ],
+        "ambient_palette": "violet_arcane"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_089",
+      "display_name": "Eri Emberlane",
+      "room_id": "strategy_table",
+      "coordinates": {
+        "x": 3,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "A androgynous guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.",
+      "room_visual": {
+        "biome": "war_room",
+        "floor_tile": "polished_stone",
+        "wall_tile": "map_wall",
+        "decor_tags": [
+          "strategy_table",
+          "region_map"
+        ],
+        "ambient_palette": "focused_blue"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_090",
+      "display_name": "Haru Emberlane",
+      "room_id": "dormitory",
+      "coordinates": {
+        "x": 4,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.",
+      "room_visual": {
+        "biome": "rest_area",
+        "floor_tile": "quiet_planks",
+        "wall_tile": "linen_wall",
+        "decor_tags": [
+          "bunk_beds",
+          "travel_packs"
+        ],
+        "ambient_palette": "low_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_091",
+      "display_name": "Ari Silverbrook",
+      "room_id": "guild_hall",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "notice_table",
+          "guild_banner"
+        ],
+        "ambient_palette": "warm_lantern"
+      },
+      "status_effect_names": [
+        "quest_route_checked"
+      ],
+      "image_url": "./generated/images/agents/guild_091_45914a82f8838b74.png"
+    },
+    {
+      "agent_id": "guild_092",
+      "display_name": "Mika Silverbrook",
+      "room_id": "quest_board",
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "An androgynous guild coordinator in a formal cloak, holding a quest stamp and ribboned notebook, composed posture, polished anime RPG guild official aesthetic, soft lighting.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "worn_planks",
+        "wall_tile": "paper_notice_wall",
+        "decor_tags": [
+          "quest_board",
+          "sealed_requests"
+        ],
+        "ambient_palette": "gold_paper"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_093",
+      "display_name": "Ren Silverbrook",
+      "room_id": "tavern_corner",
+      "coordinates": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.",
+      "room_visual": {
+        "biome": "tavern",
+        "floor_tile": "dark_planks",
+        "wall_tile": "barrel_wall",
+        "decor_tags": [
+          "round_table",
+          "mug_shelf"
+        ],
+        "ambient_palette": "amber_tavern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_094",
+      "display_name": "Sora Silverbrook",
+      "room_id": "warehouse",
+      "coordinates": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.",
+      "room_visual": {
+        "biome": "storage",
+        "floor_tile": "packed_dirt",
+        "wall_tile": "crate_stack",
+        "decor_tags": [
+          "supply_crates",
+          "rope_coils"
+        ],
+        "ambient_palette": "dusty_brown"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_095",
+      "display_name": "Renjiro, Guild Coordinator",
+      "room_id": "forge",
+      "coordinates": {
+        "x": 4,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine guild coordinator in a formal dark blue cloak, holding a ribboned notebook and a brass quest stamp, standing in a composed posture, polished anime RPG guild official aesthetic.",
+      "room_visual": {
+        "biome": "forge",
+        "floor_tile": "charred_stone",
+        "wall_tile": "iron_tool_wall",
+        "decor_tags": [
+          "anvil",
+          "glowing_furnace"
+        ],
+        "ambient_palette": "ember_orange"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_096",
+      "display_name": "Toma Silverbrook",
+      "room_id": "infirmary",
+      "coordinates": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.",
+      "room_visual": {
+        "biome": "healing_room",
+        "floor_tile": "clean_stone",
+        "wall_tile": "curtain_wall",
+        "decor_tags": [
+          "medicine_shelf",
+          "rest_bed"
+        ],
+        "ambient_palette": "soft_mint"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_097",
+      "display_name": "Kiri Silverbrook",
+      "room_id": "training_yard",
+      "coordinates": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.",
+      "room_visual": {
+        "biome": "training_yard",
+        "floor_tile": "packed_sand",
+        "wall_tile": "fence_edge",
+        "decor_tags": [
+          "practice_dummy",
+          "weapon_rack"
+        ],
+        "ambient_palette": "clear_day"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_098",
+      "display_name": "Natsu Silverbrook",
+      "room_id": "arcane_library",
+      "coordinates": {
+        "x": 2,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "Androgynous guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.",
+      "room_visual": {
+        "biome": "library",
+        "floor_tile": "blue_carpet",
+        "wall_tile": "bookcase_wall",
+        "decor_tags": [
+          "floating_runes",
+          "scroll_table"
+        ],
+        "ambient_palette": "violet_arcane"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_099",
+      "display_name": "Eri Silverbrook",
+      "room_id": "strategy_table",
+      "coordinates": {
+        "x": 3,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.",
+      "room_visual": {
+        "biome": "war_room",
+        "floor_tile": "polished_stone",
+        "wall_tile": "map_wall",
+        "decor_tags": [
+          "strategy_table",
+          "region_map"
+        ],
+        "ambient_palette": "focused_blue"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_100",
+      "display_name": "Haru Silverbrook",
+      "room_id": "dormitory",
+      "coordinates": {
+        "x": 4,
+        "y": 1,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.",
+      "room_visual": {
+        "biome": "rest_area",
+        "floor_tile": "quiet_planks",
+        "wall_tile": "linen_wall",
+        "decor_tags": [
+          "bunk_beds",
+          "travel_packs"
+        ],
+        "ambient_palette": "low_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": ""
+    },
+    {
+      "agent_id": "guild_main_hero",
+      "display_name": "Renji Dawnblade",
+      "room_id": "quest_board",
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": true,
+      "role_name": "Hero Adventurer",
+      "activity_directive": "Every round, actively seek, accept, advance, or close a guild quest. Prefer interactions that create concrete task progress, recruit helpers, exchange quest items, inspect maps, coordinate parties, or report results.",
+      "appearance_prompt": "A masculine hero adventurer in a crimson guild cloak and reinforced leather armor, hand resting on a broadsword hilt. Confident, dynamic stance, wind-tossed hair, bright Japanese fantasy RPG anime aesthetic, cinematic lighting, highly detailed.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "worn_planks",
+        "wall_tile": "paper_notice_wall",
+        "decor_tags": [
+          "quest_board",
+          "sealed_requests"
+        ],
+        "ambient_palette": "gold_paper"
+      },
+      "status_effect_names": [],
+      "image_url": "./generated/images/agents/guild_main_hero_d6513df82c02052f.png"
+    },
+    {
+      "agent_id": "guild_main_princess",
+      "display_name": "Celestia Vale",
+      "room_id": "tavern_corner",
+      "coordinates": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": true,
+      "role_name": "Fallen Princess Explorer",
+      "activity_directive": "Every round, freely explore the guild, ask questions, observe conflicts, form opinions, discover small mysteries, and interact with whoever reveals a new part of the world.",
+      "appearance_prompt": "A feminine fallen princess in a modest but high-quality travel dress, slightly worn hem, carrying a quest map, observant eyes, graceful posture, warm tavern lighting, Japanese fantasy RPG character design, anime style.",
+      "room_visual": {
+        "biome": "tavern",
+        "floor_tile": "dark_planks",
+        "wall_tile": "barrel_wall",
+        "decor_tags": [
+          "round_table",
+          "mug_shelf"
+        ],
+        "ambient_palette": "amber_tavern"
+      },
+      "status_effect_names": [],
+      "image_url": "./generated/images/agents/guild_main_princess_98b3b8303971e184.png"
+    },
+    {
+      "agent_id": "guild_main_cadre",
+      "display_name": "Mira Ledgerfall",
+      "room_id": "guild_hall",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": true,
+      "role_name": "Senior Guild Cadre",
+      "activity_directive": "Every round, actively help guild members: assign resources, resolve bottlenecks, mediate disputes, support novices, connect specialists, and turn scattered events into organized guild response.",
+      "appearance_prompt": "An androgynous senior guild cadre in a tailored navy cloak with gold trim, holding a ribboned ledger. Confident posture, sharp amber eyes, silver hair tied back. Bright, polished Japanese fantasy anime RPG aesthetic, bustling guild hall background.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "notice_table",
+          "guild_banner"
+        ],
+        "ambient_palette": "warm_lantern"
+      },
+      "status_effect_names": [],
+      "image_url": "./generated/images/agents/guild_main_cadre_5611e16c5bc9ff63.png"
+    }
+  ],
+  "featured_agents": [
+    {
+      "agent_id": "guild_main_hero",
+      "display_name": "Renji Dawnblade",
+      "room_id": "quest_board",
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": true,
+      "role_name": "Hero Adventurer",
+      "activity_directive": "Every round, actively seek, accept, advance, or close a guild quest. Prefer interactions that create concrete task progress, recruit helpers, exchange quest items, inspect maps, coordinate parties, or report results.",
+      "appearance_prompt": "A masculine hero adventurer in a crimson guild cloak and reinforced leather armor, hand resting on a broadsword hilt. Confident, dynamic stance, wind-tossed hair, bright Japanese fantasy RPG anime aesthetic, cinematic lighting, highly detailed.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "worn_planks",
+        "wall_tile": "paper_notice_wall",
+        "decor_tags": [
+          "quest_board",
+          "sealed_requests"
+        ],
+        "ambient_palette": "gold_paper"
+      },
+      "image_url": "./generated/images/agents/guild_main_hero_d6513df82c02052f.png",
+      "macro_prompt": "Create one clean character portrait for a macro world viewer. World: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Character: Renji Dawnblade. Role: Hero Adventurer. Appearance: A masculine hero adventurer in a crimson guild cloak and reinforced leather armor, hand resting on a broadsword hilt. Confident, dynamic stance, wind-tossed hair, bright Japanese fantasy RPG anime aesthetic, cinematic lighting, highly detailed.. Current room mood: Quest Board, biome guild_interior, palette gold_paper. Portrait framing from waist up, readable silhouette, direct game-codex illustration, no visible text, no watermark.",
+      "status_effect_names": [],
+      "current_room_name": "Quest Board"
+    },
+    {
+      "agent_id": "guild_main_princess",
+      "display_name": "Celestia Vale",
+      "room_id": "tavern_corner",
+      "coordinates": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": true,
+      "role_name": "Fallen Princess Explorer",
+      "activity_directive": "Every round, freely explore the guild, ask questions, observe conflicts, form opinions, discover small mysteries, and interact with whoever reveals a new part of the world.",
+      "appearance_prompt": "A feminine fallen princess in a modest but high-quality travel dress, slightly worn hem, carrying a quest map, observant eyes, graceful posture, warm tavern lighting, Japanese fantasy RPG character design, anime style.",
+      "room_visual": {
+        "biome": "tavern",
+        "floor_tile": "dark_planks",
+        "wall_tile": "barrel_wall",
+        "decor_tags": [
+          "round_table",
+          "mug_shelf"
+        ],
+        "ambient_palette": "amber_tavern"
+      },
+      "image_url": "./generated/images/agents/guild_main_princess_98b3b8303971e184.png",
+      "macro_prompt": "Create one clean character portrait for a macro world viewer. World: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Character: Celestia Vale. Role: Fallen Princess Explorer. Appearance: A feminine fallen princess in a modest but high-quality travel dress, slightly worn hem, carrying a quest map, observant eyes, graceful posture, warm tavern lighting, Japanese fantasy RPG character design, anime style.. Current room mood: Tavern Corner, biome tavern, palette amber_tavern. Portrait framing from waist up, readable silhouette, direct game-codex illustration, no visible text, no watermark.",
+      "status_effect_names": [],
+      "current_room_name": "Tavern Corner"
+    },
+    {
+      "agent_id": "guild_main_cadre",
+      "display_name": "Mira Ledgerfall",
+      "room_id": "guild_hall",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": true,
+      "role_name": "Senior Guild Cadre",
+      "activity_directive": "Every round, actively help guild members: assign resources, resolve bottlenecks, mediate disputes, support novices, connect specialists, and turn scattered events into organized guild response.",
+      "appearance_prompt": "An androgynous senior guild cadre in a tailored navy cloak with gold trim, holding a ribboned ledger. Confident posture, sharp amber eyes, silver hair tied back. Bright, polished Japanese fantasy anime RPG aesthetic, bustling guild hall background.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "notice_table",
+          "guild_banner"
+        ],
+        "ambient_palette": "warm_lantern"
+      },
+      "image_url": "./generated/images/agents/guild_main_cadre_5611e16c5bc9ff63.png",
+      "macro_prompt": "Create one clean character portrait for a macro world viewer. World: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Character: Mira Ledgerfall. Role: Senior Guild Cadre. Appearance: An androgynous senior guild cadre in a tailored navy cloak with gold trim, holding a ribboned ledger. Confident posture, sharp amber eyes, silver hair tied back. Bright, polished Japanese fantasy anime RPG aesthetic, bustling guild hall background.. Current room mood: Guild Hall, biome guild_interior, palette warm_lantern. Portrait framing from waist up, readable silhouette, direct game-codex illustration, no visible text, no watermark.",
+      "status_effect_names": [],
+      "current_room_name": "Guild Hall"
+    },
+    {
+      "agent_id": "guild_002",
+      "display_name": "Mika Ashbell",
+      "room_id": "quest_board",
+      "coordinates": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "worn_planks",
+        "wall_tile": "paper_notice_wall",
+        "decor_tags": [
+          "quest_board",
+          "sealed_requests"
+        ],
+        "ambient_palette": "gold_paper"
+      },
+      "image_url": "./generated/images/agents/guild_002_d8aa36763e935f4b.png",
+      "macro_prompt": "Create one clean character portrait for a macro world viewer. World: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Character: Mika Ashbell. Role: Frontline Adventurer. Appearance: A feminine young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.. Current room mood: Quest Board, biome guild_interior, palette gold_paper. Portrait framing from waist up, readable silhouette, direct game-codex illustration, no visible text, no watermark.",
+      "status_effect_names": [
+        "party_plan_aligned"
+      ],
+      "current_room_name": "Quest Board"
+    },
+    {
+      "agent_id": "guild_013",
+      "display_name": "Ren Moonvale",
+      "room_id": "tavern_corner",
+      "coordinates": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Frontline Adventurer",
+      "activity_directive": "",
+      "appearance_prompt": "A masculine young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.",
+      "room_visual": {
+        "biome": "tavern",
+        "floor_tile": "dark_planks",
+        "wall_tile": "barrel_wall",
+        "decor_tags": [
+          "round_table",
+          "mug_shelf"
+        ],
+        "ambient_palette": "amber_tavern"
+      },
+      "image_url": "./generated/images/agents/guild_013_60a7060363bbbddd.png",
+      "macro_prompt": "Create one clean character portrait for a macro world viewer. World: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Character: Ren Moonvale. Role: Frontline Adventurer. Appearance: A masculine young adult frontline adventurer in a short guild cloak, reinforced leather armor, bright scarf, confident stance, visible training scratches, Japanese fantasy RPG character design.. Current room mood: Tavern Corner, biome tavern, palette amber_tavern. Portrait framing from waist up, readable silhouette, direct game-codex illustration, no visible text, no watermark.",
+      "status_effect_names": [
+        "party_plan_aligned"
+      ],
+      "current_room_name": "Tavern Corner"
+    },
+    {
+      "agent_id": "guild_091",
+      "display_name": "Ari Silverbrook",
+      "room_id": "guild_hall",
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "main_character": false,
+      "role_name": "Guild Coordinator",
+      "activity_directive": "",
+      "appearance_prompt": "A feminine guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.",
+      "room_visual": {
+        "biome": "guild_interior",
+        "floor_tile": "stone_hall",
+        "wall_tile": "wood_beam_wall",
+        "decor_tags": [
+          "notice_table",
+          "guild_banner"
+        ],
+        "ambient_palette": "warm_lantern"
+      },
+      "image_url": "./generated/images/agents/guild_091_45914a82f8838b74.png",
+      "macro_prompt": "Create one clean character portrait for a macro world viewer. World: RPG Guild Main Character At-Will LongLive Test. Theme: Japanese fantasy RPG guild. Character: Ari Silverbrook. Role: Guild Coordinator. Appearance: A feminine guild coordinator with a formal cloak, quest stamp, ribboned notebook, composed posture, polished anime RPG guild official look.. Current room mood: Guild Hall, biome guild_interior, palette warm_lantern. Portrait framing from waist up, readable silhouette, direct game-codex illustration, no visible text, no watermark.",
+      "status_effect_names": [
+        "quest_route_checked"
+      ],
+      "current_room_name": "Guild Hall"
+    }
+  ],
+  "relationship_graph": {
+    "nodes": [
+      {
+        "id": "guild_001",
+        "label": "Kaelen Vane",
+        "group": "agent",
+        "room_id": "guild_hall",
+        "title": "Kaelen Vane | Frontline Adventurer"
+      },
+      {
+        "id": "guild_002",
+        "label": "Mika Ashbell",
+        "group": "agent",
+        "room_id": "quest_board",
+        "title": "Mika Ashbell | Frontline Adventurer"
+      },
+      {
+        "id": "guild_003",
+        "label": "Ren Ashbell",
+        "group": "agent",
+        "room_id": "tavern_corner",
+        "title": "Ren Ashbell | Frontline Adventurer"
+      },
+      {
+        "id": "guild_004",
+        "label": "Sora Ashbell",
+        "group": "agent",
+        "room_id": "warehouse",
+        "title": "Sora Ashbell | Frontline Adventurer"
+      },
+      {
+        "id": "guild_005",
+        "label": "Elara Vane",
+        "group": "agent",
+        "room_id": "forge",
+        "title": "Elara Vane | Frontline Adventurer"
+      },
+      {
+        "id": "guild_006",
+        "label": "Toma Ashbell",
+        "group": "agent",
+        "room_id": "infirmary",
+        "title": "Toma Ashbell | Frontline Adventurer"
+      },
+      {
+        "id": "guild_007",
+        "label": "Kiri Ashbell",
+        "group": "agent",
+        "room_id": "training_yard",
+        "title": "Kiri Ashbell | Frontline Adventurer"
+      },
+      {
+        "id": "guild_008",
+        "label": "Natsu Ashbell",
+        "group": "agent",
+        "room_id": "arcane_library",
+        "title": "Natsu Ashbell | Frontline Adventurer"
+      },
+      {
+        "id": "guild_009",
+        "label": "Eri Ashbell",
+        "group": "agent",
+        "room_id": "strategy_table",
+        "title": "Eri Ashbell | Frontline Adventurer"
+      },
+      {
+        "id": "guild_010",
+        "label": "Emi Serene",
+        "group": "agent",
+        "room_id": "dormitory",
+        "title": "Emi Serene | Frontline Adventurer"
+      },
+      {
+        "id": "guild_011",
+        "label": "Ari Moonvale",
+        "group": "agent",
+        "room_id": "guild_hall",
+        "title": "Ari Moonvale | Frontline Adventurer"
+      },
+      {
+        "id": "guild_012",
+        "label": "Mika Moonvale",
+        "group": "agent",
+        "room_id": "quest_board",
+        "title": "Mika Moonvale | Frontline Adventurer"
+      },
+      {
+        "id": "guild_013",
+        "label": "Ren Moonvale",
+        "group": "agent",
+        "room_id": "tavern_corner",
+        "title": "Ren Moonvale | Frontline Adventurer"
+      },
+      {
+        "id": "guild_014",
+        "label": "Sora Moonvale",
+        "group": "agent",
+        "room_id": "warehouse",
+        "title": "Sora Moonvale | Ranger"
+      },
+      {
+        "id": "guild_015",
+        "label": "Yuna Moonvale",
+        "group": "agent",
+        "room_id": "forge",
+        "title": "Yuna Moonvale | Ranger"
+      },
+      {
+        "id": "guild_016",
+        "label": "Toma Moonvale",
+        "group": "agent",
+        "room_id": "infirmary",
+        "title": "Toma Moonvale | Ranger"
+      },
+      {
+        "id": "guild_017",
+        "label": "Kiri Moonvale",
+        "group": "agent",
+        "room_id": "training_yard",
+        "title": "Kiri Moonvale | Ranger"
+      },
+      {
+        "id": "guild_018",
+        "label": "Natsu Moonvale",
+        "group": "agent",
+        "room_id": "arcane_library",
+        "title": "Natsu Moonvale | Ranger"
+      },
+      {
+        "id": "guild_019",
+        "label": "Eri Moonvale",
+        "group": "agent",
+        "room_id": "strategy_table",
+        "title": "Eri Moonvale | Ranger"
+      },
+      {
+        "id": "guild_020",
+        "label": "Elara Vane",
+        "group": "agent",
+        "room_id": "dormitory",
+        "title": "Elara Vane | Ranger"
+      },
+      {
+        "id": "guild_021",
+        "label": "Ari Ironleaf",
+        "group": "agent",
+        "room_id": "guild_hall",
+        "title": "Ari Ironleaf | Ranger"
+      },
+      {
+        "id": "guild_022",
+        "label": "Mika Ironleaf",
+        "group": "agent",
+        "room_id": "quest_board",
+        "title": "Mika Ironleaf | Ranger"
+      },
+      {
+        "id": "guild_023",
+        "label": "Ren Ironleaf",
+        "group": "agent",
+        "room_id": "tavern_corner",
+        "title": "Ren Ironleaf | Ranger"
+      },
+      {
+        "id": "guild_024",
+        "label": "Sora Ironleaf",
+        "group": "agent",
+        "room_id": "warehouse",
+        "title": "Sora Ironleaf | Ranger"
+      },
+      {
+        "id": "guild_025",
+        "label": "Yuna Ironleaf",
+        "group": "agent",
+        "room_id": "forge",
+        "title": "Yuna Ironleaf | Ranger"
+      },
+      {
+        "id": "guild_026",
+        "label": "Toma Ironleaf",
+        "group": "agent",
+        "room_id": "infirmary",
+        "title": "Toma Ironleaf | Healer"
+      },
+      {
+        "id": "guild_027",
+        "label": "Kiri Ironleaf",
+        "group": "agent",
+        "room_id": "training_yard",
+        "title": "Kiri Ironleaf | Healer"
+      },
+      {
+        "id": "guild_028",
+        "label": "Natsu Ironleaf",
+        "group": "agent",
+        "room_id": "arcane_library",
+        "title": "Natsu Ironleaf | Healer"
+      },
+      {
+        "id": "guild_029",
+        "label": "Eri Ironleaf",
+        "group": "agent",
+        "room_id": "strategy_table",
+        "title": "Eri Ironleaf | Healer"
+      },
+      {
+        "id": "guild_030",
+        "label": "Haru Ironleaf",
+        "group": "agent",
+        "room_id": "dormitory",
+        "title": "Haru Ironleaf | Healer"
+      },
+      {
+        "id": "guild_031",
+        "label": "Ari Starling",
+        "group": "agent",
+        "room_id": "guild_hall",
+        "title": "Ari Starling | Healer"
+      },
+      {
+        "id": "guild_032",
+        "label": "Mika Starling",
+        "group": "agent",
+        "room_id": "quest_board",
+        "title": "Mika Starling | Healer"
+      },
+      {
+        "id": "guild_033",
+        "label": "Ren Starling",
+        "group": "agent",
+        "room_id": "tavern_corner",
+        "title": "Ren Starling | Healer"
+      },
+      {
+        "id": "guild_034",
+        "label": "Sora Starling",
+        "group": "agent",
+        "room_id": "warehouse",
+        "title": "Sora Starling | Healer"
+      },
+      {
+        "id": "guild_035",
+        "label": "Yuna Starling",
+        "group": "agent",
+        "room_id": "forge",
+        "title": "Yuna Starling | Healer"
+      },
+      {
+        "id": "guild_036",
+        "label": "Toma Starling",
+        "group": "agent",
+        "room_id": "infirmary",
+        "title": "Toma Starling | Healer"
+      },
+      {
+        "id": "guild_037",
+        "label": "Kiri Starling",
+        "group": "agent",
+        "room_id": "training_yard",
+        "title": "Kiri Starling | Healer"
+      },
+      {
+        "id": "guild_038",
+        "label": "Natsu Starling",
+        "group": "agent",
+        "room_id": "arcane_library",
+        "title": "Natsu Starling | Mage"
+      },
+      {
+        "id": "guild_039",
+        "label": "Eri Starling",
+        "group": "agent",
+        "room_id": "strategy_table",
+        "title": "Eri Starling | Mage"
+      },
+      {
+        "id": "guild_040",
+        "label": "Haru Starling",
+        "group": "agent",
+        "room_id": "dormitory",
+        "title": "Haru Starling | Mage"
+      },
+      {
+        "id": "guild_041",
+        "label": "Ari Dawncrest",
+        "group": "agent",
+        "room_id": "guild_hall",
+        "title": "Ari Dawncrest | Mage"
+      },
+      {
+        "id": "guild_042",
+        "label": "Mika Dawncrest",
+        "group": "agent",
+        "room_id": "quest_board",
+        "title": "Mika Dawncrest | Mage"
+      },
+      {
+        "id": "guild_043",
+        "label": "Ren Dawncrest",
+        "group": "agent",
+        "room_id": "tavern_corner",
+        "title": "Ren Dawncrest | Mage"
+      },
+      {
+        "id": "guild_044",
+        "label": "Sora Dawncrest",
+        "group": "agent",
+        "room_id": "warehouse",
+        "title": "Sora Dawncrest | Mage"
+      },
+      {
+        "id": "guild_045",
+        "label": "Yuna Dawncrest",
+        "group": "agent",
+        "room_id": "forge",
+        "title": "Yuna Dawncrest | Mage"
+      },
+      {
+        "id": "guild_046",
+        "label": "Toma Dawncrest",
+        "group": "agent",
+        "room_id": "infirmary",
+        "title": "Toma Dawncrest | Mage"
+      },
+      {
+        "id": "guild_047",
+        "label": "Kiri Dawncrest",
+        "group": "agent",
+        "room_id": "training_yard",
+        "title": "Kiri Dawncrest | Mage"
+      },
+      {
+        "id": "guild_048",
+        "label": "Natsu Dawncrest",
+        "group": "agent",
+        "room_id": "arcane_library",
+        "title": "Natsu Dawncrest | Mage"
+      },
+      {
+        "id": "guild_049",
+        "label": "Eri Dawncrest",
+        "group": "agent",
+        "room_id": "strategy_table",
+        "title": "Eri Dawncrest | Mage"
+      },
+      {
+        "id": "guild_050",
+        "label": "Kaelen Ironheart",
+        "group": "agent",
+        "room_id": "dormitory",
+        "title": "Kaelen Ironheart | Mage"
+      },
+      {
+        "id": "guild_051",
+        "label": "Ari Mistfell",
+        "group": "agent",
+        "room_id": "guild_hall",
+        "title": "Ari Mistfell | Crafter"
+      },
+      {
+        "id": "guild_052",
+        "label": "Mika Mistfell",
+        "group": "agent",
+        "room_id": "quest_board",
+        "title": "Mika Mistfell | Crafter"
+      },
+      {
+        "id": "guild_053",
+        "label": "Ren Mistfell",
+        "group": "agent",
+        "room_id": "tavern_corner",
+        "title": "Ren Mistfell | Crafter"
+      },
+      {
+        "id": "guild_054",
+        "label": "Sora Mistfell",
+        "group": "agent",
+        "room_id": "warehouse",
+        "title": "Sora Mistfell | Crafter"
+      },
+      {
+        "id": "guild_055",
+        "label": "Kaelen Forgeheart",
+        "group": "agent",
+        "room_id": "forge",
+        "title": "Kaelen Forgeheart | Crafter"
+      },
+      {
+        "id": "guild_056",
+        "label": "Toma Mistfell",
+        "group": "agent",
+        "room_id": "infirmary",
+        "title": "Toma Mistfell | Crafter"
+      },
+      {
+        "id": "guild_057",
+        "label": "Kiri Mistfell",
+        "group": "agent",
+        "room_id": "training_yard",
+        "title": "Kiri Mistfell | Crafter"
+      },
+      {
+        "id": "guild_058",
+        "label": "Natsu Mistfell",
+        "group": "agent",
+        "room_id": "arcane_library",
+        "title": "Natsu Mistfell | Crafter"
+      },
+      {
+        "id": "guild_059",
+        "label": "Eri Mistfell",
+        "group": "agent",
+        "room_id": "strategy_table",
+        "title": "Eri Mistfell | Crafter"
+      },
+      {
+        "id": "guild_060",
+        "label": "Haru Mistfell",
+        "group": "agent",
+        "room_id": "dormitory",
+        "title": "Haru Mistfell | Crafter"
+      },
+      {
+        "id": "guild_061",
+        "label": "Ari Brightford",
+        "group": "agent",
+        "room_id": "guild_hall",
+        "title": "Ari Brightford | Crafter"
+      },
+      {
+        "id": "guild_062",
+        "label": "Mika Brightford",
+        "group": "agent",
+        "room_id": "quest_board",
+        "title": "Mika Brightford | Crafter"
+      },
+      {
+        "id": "guild_063",
+        "label": "Ren Brightford",
+        "group": "agent",
+        "room_id": "tavern_corner",
+        "title": "Ren Brightford | Crafter"
+      },
+      {
+        "id": "guild_064",
+        "label": "Sora Brightford",
+        "group": "agent",
+        "room_id": "warehouse",
+        "title": "Sora Brightford | Quartermaster Trader"
+      },
+      {
+        "id": "guild_065",
+        "label": "Yuna Brightford",
+        "group": "agent",
+        "room_id": "forge",
+        "title": "Yuna Brightford | Quartermaster Trader"
+      },
+      {
+        "id": "guild_066",
+        "label": "Toma Brightford",
+        "group": "agent",
+        "room_id": "infirmary",
+        "title": "Toma Brightford | Quartermaster Trader"
+      },
+      {
+        "id": "guild_067",
+        "label": "Kiri Brightford",
+        "group": "agent",
+        "room_id": "training_yard",
+        "title": "Kiri Brightford | Quartermaster Trader"
+      },
+      {
+        "id": "guild_068",
+        "label": "Natsu Brightford",
+        "group": "agent",
+        "room_id": "arcane_library",
+        "title": "Natsu Brightford | Quartermaster Trader"
+      },
+      {
+        "id": "guild_069",
+        "label": "Eri Brightford",
+        "group": "agent",
+        "room_id": "strategy_table",
+        "title": "Eri Brightford | Quartermaster Trader"
+      },
+      {
+        "id": "guild_070",
+        "label": "Haru Brightford",
+        "group": "agent",
+        "room_id": "dormitory",
+        "title": "Haru Brightford | Quartermaster Trader"
+      },
+      {
+        "id": "guild_071",
+        "label": "Ari Oakspire",
+        "group": "agent",
+        "room_id": "guild_hall",
+        "title": "Ari Oakspire | Quartermaster Trader"
+      },
+      {
+        "id": "guild_072",
+        "label": "Mika Oakspire",
+        "group": "agent",
+        "room_id": "quest_board",
+        "title": "Mika Oakspire | Quartermaster Trader"
+      },
+      {
+        "id": "guild_073",
+        "label": "Ren Oakspire",
+        "group": "agent",
+        "room_id": "tavern_corner",
+        "title": "Ren Oakspire | Quartermaster Trader"
+      },
+      {
+        "id": "guild_074",
+        "label": "Kaelen Thorne",
+        "group": "agent",
+        "room_id": "warehouse",
+        "title": "Kaelen Thorne | Quartermaster Trader"
+      },
+      {
+        "id": "guild_075",
+        "label": "Yuna Oakspire",
+        "group": "agent",
+        "room_id": "forge",
+        "title": "Yuna Oakspire | Quartermaster Trader"
+      },
+      {
+        "id": "guild_076",
+        "label": "Toma Oakspire",
+        "group": "agent",
+        "room_id": "infirmary",
+        "title": "Toma Oakspire | Scout"
+      },
+      {
+        "id": "guild_077",
+        "label": "Kiri Oakspire",
+        "group": "agent",
+        "room_id": "training_yard",
+        "title": "Kiri Oakspire | Scout"
+      },
+      {
+        "id": "guild_078",
+        "label": "Natsu Oakspire 078",
+        "group": "agent",
+        "room_id": "arcane_library",
+        "title": "Natsu Oakspire 078 | Scout"
+      },
+      {
+        "id": "guild_079",
+        "label": "Eri Oakspire",
+        "group": "agent",
+        "room_id": "strategy_table",
+        "title": "Eri Oakspire | Scout"
+      },
+      {
+        "id": "guild_080",
+        "label": "Haru Oakspire",
+        "group": "agent",
+        "room_id": "dormitory",
+        "title": "Haru Oakspire | Scout"
+      },
+      {
+        "id": "guild_081",
+        "label": "Ari Emberlane",
+        "group": "agent",
+        "room_id": "guild_hall",
+        "title": "Ari Emberlane | Scout"
+      },
+      {
+        "id": "guild_082",
+        "label": "Mika Emberlane",
+        "group": "agent",
+        "room_id": "quest_board",
+        "title": "Mika Emberlane | Scout"
+      },
+      {
+        "id": "guild_083",
+        "label": "Ren Emberlane",
+        "group": "agent",
+        "room_id": "tavern_corner",
+        "title": "Ren Emberlane | Scout"
+      },
+      {
+        "id": "guild_084",
+        "label": "Sora Emberlane",
+        "group": "agent",
+        "room_id": "warehouse",
+        "title": "Sora Emberlane | Scout"
+      },
+      {
+        "id": "guild_085",
+        "label": "Yuna Emberlane",
+        "group": "agent",
+        "room_id": "forge",
+        "title": "Yuna Emberlane | Scout"
+      },
+      {
+        "id": "guild_086",
+        "label": "Toma Emberlane",
+        "group": "agent",
+        "room_id": "infirmary",
+        "title": "Toma Emberlane | Scout"
+      },
+      {
+        "id": "guild_087",
+        "label": "Kiri Emberlane",
+        "group": "agent",
+        "room_id": "training_yard",
+        "title": "Kiri Emberlane | Scout"
+      },
+      {
+        "id": "guild_088",
+        "label": "Natsu Emberlane",
+        "group": "agent",
+        "room_id": "arcane_library",
+        "title": "Natsu Emberlane | Guild Coordinator"
+      },
+      {
+        "id": "guild_089",
+        "label": "Eri Emberlane",
+        "group": "agent",
+        "room_id": "strategy_table",
+        "title": "Eri Emberlane | Guild Coordinator"
+      },
+      {
+        "id": "guild_090",
+        "label": "Haru Emberlane",
+        "group": "agent",
+        "room_id": "dormitory",
+        "title": "Haru Emberlane | Guild Coordinator"
+      },
+      {
+        "id": "guild_091",
+        "label": "Ari Silverbrook",
+        "group": "agent",
+        "room_id": "guild_hall",
+        "title": "Ari Silverbrook | Guild Coordinator"
+      },
+      {
+        "id": "guild_092",
+        "label": "Mika Silverbrook",
+        "group": "agent",
+        "room_id": "quest_board",
+        "title": "Mika Silverbrook | Guild Coordinator"
+      },
+      {
+        "id": "guild_093",
+        "label": "Ren Silverbrook",
+        "group": "agent",
+        "room_id": "tavern_corner",
+        "title": "Ren Silverbrook | Guild Coordinator"
+      },
+      {
+        "id": "guild_094",
+        "label": "Sora Silverbrook",
+        "group": "agent",
+        "room_id": "warehouse",
+        "title": "Sora Silverbrook | Guild Coordinator"
+      },
+      {
+        "id": "guild_095",
+        "label": "Renjiro, Guild Coordinator",
+        "group": "agent",
+        "room_id": "forge",
+        "title": "Renjiro, Guild Coordinator | Guild Coordinator"
+      },
+      {
+        "id": "guild_096",
+        "label": "Toma Silverbrook",
+        "group": "agent",
+        "room_id": "infirmary",
+        "title": "Toma Silverbrook | Guild Coordinator"
+      },
+      {
+        "id": "guild_097",
+        "label": "Kiri Silverbrook",
+        "group": "agent",
+        "room_id": "training_yard",
+        "title": "Kiri Silverbrook | Guild Coordinator"
+      },
+      {
+        "id": "guild_098",
+        "label": "Natsu Silverbrook",
+        "group": "agent",
+        "room_id": "arcane_library",
+        "title": "Natsu Silverbrook | Guild Coordinator"
+      },
+      {
+        "id": "guild_099",
+        "label": "Eri Silverbrook",
+        "group": "agent",
+        "room_id": "strategy_table",
+        "title": "Eri Silverbrook | Guild Coordinator"
+      },
+      {
+        "id": "guild_100",
+        "label": "Haru Silverbrook",
+        "group": "agent",
+        "room_id": "dormitory",
+        "title": "Haru Silverbrook | Guild Coordinator"
+      },
+      {
+        "id": "guild_main_hero",
+        "label": "Renji Dawnblade",
+        "group": "main",
+        "room_id": "quest_board",
+        "title": "Renji Dawnblade | Hero Adventurer"
+      },
+      {
+        "id": "guild_main_princess",
+        "label": "Celestia Vale",
+        "group": "main",
+        "room_id": "tavern_corner",
+        "title": "Celestia Vale | Fallen Princess Explorer"
+      },
+      {
+        "id": "guild_main_cadre",
+        "label": "Mira Ledgerfall",
+        "group": "main",
+        "room_id": "guild_hall",
+        "title": "Mira Ledgerfall | Senior Guild Cadre"
+      }
+    ],
+    "edges": [
+      {
+        "from": "guild_002",
+        "to": "guild_main_hero",
+        "trust": 55,
+        "affection": 52,
+        "influence_fear": 0,
+        "weight": 107,
+        "label": "T 55 | A 52 | F 0"
+      },
+      {
+        "from": "guild_013",
+        "to": "guild_main_princess",
+        "trust": 55,
+        "affection": 52,
+        "influence_fear": 0,
+        "weight": 107,
+        "label": "T 55 | A 52 | F 0"
+      },
+      {
+        "from": "guild_091",
+        "to": "guild_main_cadre",
+        "trust": 55,
+        "affection": 52,
+        "influence_fear": 0,
+        "weight": 107,
+        "label": "T 55 | A 52 | F 0"
+      }
+    ]
+  },
+  "stories": [
+    {
+      "round_index": 1,
+      "actor_id": "guild_main_hero",
+      "actor_name": "Renji Dawnblade",
+      "actor_room_id": "quest_board",
+      "actor_coordinate": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "target_id": "guild_002",
+      "target_name": "Mika Ashbell",
+      "target_room_id": "quest_board",
+      "target_coordinate": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 0,
+      "route_id": "coordinate_party",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "The urgent goblin raid commission requires immediate party coordination between the hero and the frontline adventurer.",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "guild_main_hero",
+          "target_agent_id": "guild_002",
+          "trust_delta": 5,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Aligned tactics for the goblin raid.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "guild_002",
+          "target_agent_id": "guild_main_hero",
+          "trust_delta": 5,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Gained confidence in the hero's leadership.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 1,
+      "actor_id": "guild_main_princess",
+      "actor_name": "Celestia Vale",
+      "actor_room_id": "tavern_corner",
+      "actor_coordinate": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "target_id": "guild_013",
+      "target_name": "Ren Moonvale",
+      "target_room_id": "tavern_corner",
+      "target_coordinate": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 0,
+      "route_id": "coordinate_party",
+      "kind": "custom",
+      "story_verb": "coordinated with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Discussing the rumors of the Goblin King to prepare for a potential party formation.",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "guild_main_princess",
+          "target_agent_id": "guild_013",
+          "trust_delta": 5,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Shared strategic planning regarding the goblin threat.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "guild_013",
+          "target_agent_id": "guild_main_princess",
+          "trust_delta": 5,
+          "affection_delta": 3,
+          "influence_fear_delta": 0,
+          "reason": "Valued the proactive coordination and insight.",
+          "source": "vertex_api"
+        }
+      ]
+    },
+    {
+      "round_index": 1,
+      "actor_id": "guild_main_cadre",
+      "actor_name": "Mira Ledgerfall",
+      "actor_room_id": "guild_hall",
+      "actor_coordinate": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "target_id": "guild_091",
+      "target_name": "Ari Silverbrook",
+      "target_room_id": "guild_hall",
+      "target_coordinate": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "same_room": true,
+      "distance": 0,
+      "route_id": "inspect_quest_map",
+      "kind": "custom",
+      "story_verb": "checked a quest map with",
+      "longlive_status": "",
+      "image_status": "",
+      "selection_reason": "Mira and Ari need to align on the urgent Goblin Raid commission posted at the quest board.",
+      "relationship_adjustments": [
+        {
+          "source_agent_id": "guild_main_cadre",
+          "target_agent_id": "guild_091",
+          "trust_delta": 5,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Shared focus on urgent mission.",
+          "source": "vertex_api"
+        },
+        {
+          "source_agent_id": "guild_091",
+          "target_agent_id": "guild_main_cadre",
+          "trust_delta": 5,
+          "affection_delta": 2,
+          "influence_fear_delta": 0,
+          "reason": "Collaborative planning on raid.",
+          "source": "vertex_api"
+        }
+      ]
+    }
+  ],
+  "round_summary": {
+    "round_index": 1,
+    "activated_agent_count": 3,
+    "intent_count": 3,
+    "story_event_count": 3,
+    "video_job_count": 0,
+    "image_job_count": 0,
+    "action_success_count": 3,
+    "action_result_count": 3,
+    "routes": {
+      "coordinate_party": 2,
+      "inspect_quest_map": 1
+    }
+  },
+  "extra_world_events": [
+    {
+      "event_id": "evt_goblin_raid_posted",
+      "title": "Goblin Raid Commission Posted",
+      "description": "A frantic merchant just posted a bounty for a goblin raid on the eastern trade route. Requires immediate party coordination.",
+      "room_id": "quest_board",
+      "coordinate": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "event_type": "quest_chain",
+      "status_tags": [
+        "posted",
+        "urgent"
+      ],
+      "preferred_routes": [
+        "inspect_quest_map",
+        "quest_invite",
+        "model_cinematic_interaction"
+      ],
+      "main_character_hooks": [
+        "guild_main_hero",
+        "guild_main_cadre"
+      ],
+      "expires_after_rounds": 3,
+      "round_index": 1,
+      "function_id": "guild_task_chain_generator",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "evt_strange_artifact_scout",
+      "title": "Unidentified Artifact Recovered",
+      "description": "Scouts returned with a glowing, rune-covered stone from the ruins. It is sitting on the strategy table waiting for identification.",
+      "room_id": "strategy_table",
+      "coordinate": {
+        "x": 3,
+        "y": 1,
+        "z": 0
+      },
+      "event_type": "discovery",
+      "status_tags": [
+        "unidentified",
+        "scouted"
+      ],
+      "preferred_routes": [
+        "research_spellwork",
+        "scout_report",
+        "model_cinematic_interaction"
+      ],
+      "main_character_hooks": [
+        "guild_main_princess",
+        "guild_main_cadre"
+      ],
+      "expires_after_rounds": 4,
+      "round_index": 1,
+      "function_id": "guild_task_chain_generator",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "evt_spilled_potions",
+      "title": "Spilled Potion Crate",
+      "description": "A clumsy rookie dropped a crate of minor healing potions, creating a slippery, sweet-smelling mess in the warehouse that needs cleaning.",
+      "room_id": "warehouse",
+      "coordinate": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "event_type": "hazard",
+      "status_tags": [
+        "messy",
+        "resource_loss"
+      ],
+      "preferred_routes": [
+        "trade_supplies",
+        "model_cinematic_interaction"
+      ],
+      "main_character_hooks": [
+        "guild_main_cadre"
+      ],
+      "expires_after_rounds": 2,
+      "round_index": 1,
+      "function_id": "guild_random_event_generator",
+      "source": "vertex_api"
+    },
+    {
+      "event_id": "evt_tavern_rumor_goblin_king",
+      "title": "Rumors of a Goblin King",
+      "description": "A loud scout in the tavern corner claims the recent goblin raid is being led by a massive, mutated Goblin King, sparking nervous chatter.",
+      "room_id": "tavern_corner",
+      "coordinate": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "event_type": "rumor",
+      "status_tags": [
+        "unverified",
+        "gossip"
+      ],
+      "preferred_routes": [
+        "chat_at_guild",
+        "coordinate_party",
+        "model_cinematic_interaction"
+      ],
+      "main_character_hooks": [
+        "guild_main_princess",
+        "guild_main_hero"
+      ],
+      "expires_after_rounds": 3,
+      "round_index": 1,
+      "function_id": "guild_random_event_generator",
+      "source": "vertex_api"
+    }
+  ],
+  "action_results": [
+    {
+      "intent_id": "r001_0001_guild_main_hero_Coordinate",
+      "agent_id": "guild_main_hero",
+      "call": "Custom",
+      "status": "success",
+      "context": "Action_Succeeded",
+      "reason": "custom action applied status effect"
+    },
+    {
+      "intent_id": "r001_0002_guild_main_princess_Coordinate",
+      "agent_id": "guild_main_princess",
+      "call": "Custom",
+      "status": "success",
+      "context": "Action_Succeeded",
+      "reason": "custom action applied status effect"
+    },
+    {
+      "intent_id": "r001_0003_guild_main_cadre_Inspect",
+      "agent_id": "guild_main_cadre",
+      "call": "Custom",
+      "status": "success",
+      "context": "Action_Succeeded",
+      "reason": "custom action applied status effect"
+    }
+  ],
+  "api_story_summary": {
+    "run_id": "20260426_213617_035143",
+    "scenario_meta": {
+      "world_id": "rpg_guild_100_mainchars_atwill_longlive",
+      "world_name": "RPG Guild Main Character At-Will LongLive Test",
+      "version": "1.0",
+      "description": "A Japanese fantasy RPG guild with 100 regular members and three always-active protagonists. This run removes predefined video task routes and forces protagonist activities to use freeform model-selected LongLive cinematic interactions.",
+      "simulation_objective": "Run 103 agents for 25 rounds at activation 0.15. The three protagonists activate every round and each protagonist activity must open LongLive; other activated agents may also use freeform at-will LongLive, with a 10-video-per-round cap. No predefined video task routes are available."
+    },
+    "resumed_from": {
+      "run_dir": "",
+      "completed_round": 0
+    },
+    "round_summaries": [
+      {
+        "round_index": 1,
+        "activated_agent_count": 3,
+        "intent_count": 3,
+        "story_event_count": 3,
+        "video_job_count": 0,
+        "image_job_count": 0,
+        "action_success_count": 3,
+        "action_result_count": 3,
+        "routes": {
+          "coordinate_party": 2,
+          "inspect_quest_map": 1
+        }
+      }
+    ],
+    "stories": [
+      {
+        "round_index": 1,
+        "actor_id": "guild_main_hero",
+        "actor_name": "Renji Dawnblade",
+        "actor_room_id": "quest_board",
+        "actor_coordinate": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "target_id": "guild_002",
+        "target_name": "Mika Ashbell",
+        "target_room_id": "quest_board",
+        "target_coordinate": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "same_room": true,
+        "distance": 0,
+        "route_id": "coordinate_party",
+        "kind": "custom",
+        "story_verb": "coordinated with",
+        "longlive_status": "",
+        "image_status": "",
+        "selection_reason": "The urgent goblin raid commission requires immediate party coordination between the hero and the frontline adventurer.",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "guild_main_hero",
+            "target_agent_id": "guild_002",
+            "trust_delta": 5,
+            "affection_delta": 2,
+            "influence_fear_delta": 0,
+            "reason": "Aligned tactics for the goblin raid.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "guild_002",
+            "target_agent_id": "guild_main_hero",
+            "trust_delta": 5,
+            "affection_delta": 2,
+            "influence_fear_delta": 0,
+            "reason": "Gained confidence in the hero's leadership.",
+            "source": "vertex_api"
+          }
+        ]
+      },
+      {
+        "round_index": 1,
+        "actor_id": "guild_main_princess",
+        "actor_name": "Celestia Vale",
+        "actor_room_id": "tavern_corner",
+        "actor_coordinate": {
+          "x": 2,
+          "y": 0,
+          "z": 0
+        },
+        "target_id": "guild_013",
+        "target_name": "Ren Moonvale",
+        "target_room_id": "tavern_corner",
+        "target_coordinate": {
+          "x": 2,
+          "y": 0,
+          "z": 0
+        },
+        "same_room": true,
+        "distance": 0,
+        "route_id": "coordinate_party",
+        "kind": "custom",
+        "story_verb": "coordinated with",
+        "longlive_status": "",
+        "image_status": "",
+        "selection_reason": "Discussing the rumors of the Goblin King to prepare for a potential party formation.",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "guild_main_princess",
+            "target_agent_id": "guild_013",
+            "trust_delta": 5,
+            "affection_delta": 2,
+            "influence_fear_delta": 0,
+            "reason": "Shared strategic planning regarding the goblin threat.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "guild_013",
+            "target_agent_id": "guild_main_princess",
+            "trust_delta": 5,
+            "affection_delta": 3,
+            "influence_fear_delta": 0,
+            "reason": "Valued the proactive coordination and insight.",
+            "source": "vertex_api"
+          }
+        ]
+      },
+      {
+        "round_index": 1,
+        "actor_id": "guild_main_cadre",
+        "actor_name": "Mira Ledgerfall",
+        "actor_room_id": "guild_hall",
+        "actor_coordinate": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "target_id": "guild_091",
+        "target_name": "Ari Silverbrook",
+        "target_room_id": "guild_hall",
+        "target_coordinate": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "same_room": true,
+        "distance": 0,
+        "route_id": "inspect_quest_map",
+        "kind": "custom",
+        "story_verb": "checked a quest map with",
+        "longlive_status": "",
+        "image_status": "",
+        "selection_reason": "Mira and Ari need to align on the urgent Goblin Raid commission posted at the quest board.",
+        "relationship_adjustments": [
+          {
+            "source_agent_id": "guild_main_cadre",
+            "target_agent_id": "guild_091",
+            "trust_delta": 5,
+            "affection_delta": 2,
+            "influence_fear_delta": 0,
+            "reason": "Shared focus on urgent mission.",
+            "source": "vertex_api"
+          },
+          {
+            "source_agent_id": "guild_091",
+            "target_agent_id": "guild_main_cadre",
+            "trust_delta": 5,
+            "affection_delta": 2,
+            "influence_fear_delta": 0,
+            "reason": "Collaborative planning on raid.",
+            "source": "vertex_api"
+          }
+        ]
+      }
+    ],
+    "route_counts": {
+      "coordinate_party": 2,
+      "inspect_quest_map": 1
+    },
+    "longlive_counts": {},
+    "image_counts": {},
+    "extra_world_events": [
+      {
+        "event_id": "evt_goblin_raid_posted",
+        "title": "Goblin Raid Commission Posted",
+        "description": "A frantic merchant just posted a bounty for a goblin raid on the eastern trade route. Requires immediate party coordination.",
+        "room_id": "quest_board",
+        "coordinate": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "event_type": "quest_chain",
+        "status_tags": [
+          "posted",
+          "urgent"
+        ],
+        "preferred_routes": [
+          "inspect_quest_map",
+          "quest_invite",
+          "model_cinematic_interaction"
+        ],
+        "main_character_hooks": [
+          "guild_main_hero",
+          "guild_main_cadre"
+        ],
+        "expires_after_rounds": 3,
+        "round_index": 1,
+        "function_id": "guild_task_chain_generator",
+        "source": "vertex_api"
+      },
+      {
+        "event_id": "evt_strange_artifact_scout",
+        "title": "Unidentified Artifact Recovered",
+        "description": "Scouts returned with a glowing, rune-covered stone from the ruins. It is sitting on the strategy table waiting for identification.",
+        "room_id": "strategy_table",
+        "coordinate": {
+          "x": 3,
+          "y": 1,
+          "z": 0
+        },
+        "event_type": "discovery",
+        "status_tags": [
+          "unidentified",
+          "scouted"
+        ],
+        "preferred_routes": [
+          "research_spellwork",
+          "scout_report",
+          "model_cinematic_interaction"
+        ],
+        "main_character_hooks": [
+          "guild_main_princess",
+          "guild_main_cadre"
+        ],
+        "expires_after_rounds": 4,
+        "round_index": 1,
+        "function_id": "guild_task_chain_generator",
+        "source": "vertex_api"
+      },
+      {
+        "event_id": "evt_spilled_potions",
+        "title": "Spilled Potion Crate",
+        "description": "A clumsy rookie dropped a crate of minor healing potions, creating a slippery, sweet-smelling mess in the warehouse that needs cleaning.",
+        "room_id": "warehouse",
+        "coordinate": {
+          "x": 3,
+          "y": 0,
+          "z": 0
+        },
+        "event_type": "hazard",
+        "status_tags": [
+          "messy",
+          "resource_loss"
+        ],
+        "preferred_routes": [
+          "trade_supplies",
+          "model_cinematic_interaction"
+        ],
+        "main_character_hooks": [
+          "guild_main_cadre"
+        ],
+        "expires_after_rounds": 2,
+        "round_index": 1,
+        "function_id": "guild_random_event_generator",
+        "source": "vertex_api"
+      },
+      {
+        "event_id": "evt_tavern_rumor_goblin_king",
+        "title": "Rumors of a Goblin King",
+        "description": "A loud scout in the tavern corner claims the recent goblin raid is being led by a massive, mutated Goblin King, sparking nervous chatter.",
+        "room_id": "tavern_corner",
+        "coordinate": {
+          "x": 2,
+          "y": 0,
+          "z": 0
+        },
+        "event_type": "rumor",
+        "status_tags": [
+          "unverified",
+          "gossip"
+        ],
+        "preferred_routes": [
+          "chat_at_guild",
+          "coordinate_party",
+          "model_cinematic_interaction"
+        ],
+        "main_character_hooks": [
+          "guild_main_princess",
+          "guild_main_hero"
+        ],
+        "expires_after_rounds": 3,
+        "round_index": 1,
+        "function_id": "guild_random_event_generator",
+        "source": "vertex_api"
+      }
+    ],
+    "target_legality": {
+      "invalid_count": 0,
+      "invalid": []
+    }
+  },
+  "longlive_jobs": [],
+  "image_jobs": [],
+  "run": {
+    "run_dir": "/home/yz_wang/yz_main/Agora_UI_Run/output/debug_run/20260426_213617_035143",
+    "has_real_run": true
+  }
+}
