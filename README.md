@@ -5,9 +5,9 @@ Latest evidence revision: [Agora — 2026-09-19 v2](docs/agora_one_sentence_one_
 The [paper release](docs/agora_one_sentence_one_living_world_20260919_v2/) contains the 29-reference manuscript, 12 reproducible figures, and an audit of 24 archived generation trials and 21 archived 24-round execution traces.
 Download the [complete paper ZIP](docs/agora_one_sentence_one_living_world_20260919_v2.zip).
 
-Latest [11-person printable survey and Excel package](docs/agora_comparative_survey_11p_20260921/README_ZH.md): Q01–Q11, each with 4 model and 2 architecture comparisons, available as editable Word and matching PDF. Download the [11 distribution packets](docs/agora_comparative_survey_11p_20260921/Agora_11人_分发问卷.zip) and the [blank results workbook](docs/agora_comparative_survey_11p_20260921/Agora_11人_结果录入.xlsx). Give each participant only their assigned packet; the workbook contains researcher-only decoding information.
+Latest [English visual survey and Excel package](docs/agora_visual_survey_11p_20260921/README.md), updated September 22: V01–V11, **7 pages and 18 choices per person**, with real maps/characters and world-structure diagrams. Each packet has 4 image and 2 structure comparisons. Download the [11 visual survey packets](docs/agora_visual_survey_11p_20260921/Visual_Survey_11_Participants.zip) and [blank English results workbook](docs/agora_visual_survey_11p_20260921/Results_Entry.xlsx). PDFs have clickable forms; Word copies are editable. Give each person only their own packet; keep the workbook with the researcher.
 
-The earlier [HTML survey and source corpus](docs/agora_comparative_survey_20260919/README_ZH.md) remain available for provenance. Its S/P assignment codes and JSON analysis are separate from the new Q01–Q11 paper version.
+The earlier [HTML survey and source corpus](docs/agora_comparative_survey_20260919/README_ZH.md) remain available for provenance. The text-heavy Q01–Q11 version is superseded for this task. Do not mix old Q/S/P responses with the new visual V-code study.
 
 Selected paper-building materials: [paper_build/20260919_v2](paper_build/20260919_v2/README_ZH.md), about 80 MiB of manuscript sources, figure inputs, implementation code, and raw experiment records with a SHA-256 manifest.
 

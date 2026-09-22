@@ -1,0 +1,1700 @@
+{
+  "world_name": "Intertidal Embassy for Extinct Rivers",
+  "world_id": "intertidal_embassy_extinct_rivers",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "coastal_trade_city",
+    "profile_id": "coastal_trade_city",
+    "locale": "en-US",
+    "tone": "melancholic, diplomatic, tidal, ecological",
+    "visual_direction": "top-down pixel art, verdigris copper, salt-white stone, indigo water, coral-red seals, kelp-green shadows",
+    "currency_code": "HBR",
+    "currency_symbol": "hc",
+    "currency_minor_unit": "mark",
+    "currency_name": "Authenticated Silt",
+    "domain_label": "embassy.intertidal.river-memory",
+    "starting_wallet_minor": {
+      "min": 2400,
+      "max": 11000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "intertidal_pixel_kit",
+      "frontend_affordance_id": "tidal_state_ui",
+      "asset_prompt_kit_id": "sediment_memory_assets"
+    },
+    "policy_refs": {
+      "economy_policy_id": "harbor_chit_v1",
+      "item_collection_id": "harbor_trade_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "coastal_trade_city_v1",
+      "property_policy_id": "coastal_trade_city_v1",
+      "knowledge_policy_id": "coastal_trade_city_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "tidal diplomatic habitat",
+  "premise": "An intertidal embassy reconstructs extinct rivers from sediment memories to negotiate their legal personhood.",
+  "simulation_objective": "Simulate the negotiation of flow rights and watershed debts influenced by tidal cycles and river moods.",
+  "agent_count_target": 12,
+  "player_count_target": 12,
+  "wall_color_theme": "verdigris_copper",
+  "economy_focus": "Trade of flow rights, flood testimony, and authenticated silt.",
+  "exploration_focus": "Multimodal environmental states and sediment memory reconstruction.",
+  "conflict_tone": "Bureaucratic tension, ecological urgency, and smuggling of illicit memories.",
+  "visual_style": "Verdigris copper and salt-white stone with indigo water and coral-red accents.",
+  "rooms": [
+    {
+      "name": "Silt Authentication Booth",
+      "biome": "intertidal_embassy",
+      "purpose": "Verifying the geological memory of river sediment.",
+      "decor_tags": [
+        "microscopes",
+        "glass_vials",
+        "copper_scales"
+      ],
+      "activity_tags": [
+        "weighing",
+        "inspecting",
+        "stamping"
+      ],
+      "flux_floor_prompt": "top-down pixel art, 16-bit, salt-crusted limestone tiles with thin veins of wet silt, seamless texture.",
+      "room_scene_prompt": "top-down pixel art of a small silt authentication booth, verdigris copper counters, glass jars of sediment, copper scales, salt-white walls, no labels, no margins, edge-to-edge floor.",
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "ambient_palette": "soft_mint",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "sediment_analyzer",
+          "label": "Sediment Analyzer",
+          "description": "A copper-piped device with a glowing indigo resin lens for reading silt memories.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Flow Rights Registry",
+      "biome": "intertidal_embassy",
+      "purpose": "Legal documentation of extinct river volumes.",
+      "decor_tags": [
+        "scrolls",
+        "ink_wells",
+        "teak_desks"
+      ],
+      "activity_tags": [
+        "writing",
+        "filing",
+        "notarizing"
+      ],
+      "flux_floor_prompt": "top-down pixel art, 16-bit, weathered teak planks with verdigris copper inlay patterns, seamless texture.",
+      "room_scene_prompt": "top-down pixel art of a legal registry room, rows of teak desks, stacks of indigo-inked scrolls, copper filing cabinets, warm lantern light, no text, no margins, edge-to-edge floor.",
+      "width_tiles": 8,
+      "height_tiles": 6,
+      "ambient_palette": "focused_blue",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "river_seal_press",
+          "label": "River Seal Press",
+          "description": "A heavy coral-red mechanical press used to authenticate flow-right documents.",
+          "anchor": "center",
+          "width_tiles": 1,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Flood Testimony Chamber",
+      "biome": "intertidal_embassy",
+      "purpose": "Recording the oral histories of seasonal floods.",
+      "decor_tags": [
+        "acoustic_panels",
+        "copper_microphones",
+        "cushions"
+      ],
+      "activity_tags": [
+        "speaking",
+        "recording",
+        "listening"
+      ],
+      "flux_floor_prompt": "top-down pixel art, 16-bit, circular patterns of salt-stone and dark silt deposits, seamless texture.",
+      "room_scene_prompt": "top-down pixel art of a circular testimony chamber, tiered stone seating, central copper recording apparatus, indigo resin accents, dim lighting, no labels, no margins, edge-to-edge floor.",
+      "width_tiles": 10,
+      "height_tiles": 10,
+      "ambient_palette": "low_lantern",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "echo_basin",
+          "label": "Echo Basin",
+          "description": "A translucent indigo resin basin that ripples when flood memories are spoken.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Sluice Gate Maintenance Hub",
+      "biome": "intertidal_embassy",
+      "purpose": "Managing the physical flow of reconstructed water.",
+      "decor_tags": [
+        "wrenches",
+        "pipes",
+        "pressure_gauges"
+      ],
+      "activity_tags": [
+        "repairing",
+        "pumping",
+        "monitoring"
+      ],
+      "flux_floor_prompt": "top-down pixel art, 16-bit, raised copper grates over dark indigo water channels, seamless texture.",
+      "room_scene_prompt": "top-down pixel art of a maintenance workshop, heavy copper piping networks, steam vents, tool racks with verdigris finish, orange glow, no text, no margins, edge-to-edge floor.",
+      "width_tiles": 7,
+      "height_tiles": 9,
+      "ambient_palette": "ember_orange",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "pressure_manifold",
+          "label": "Pressure Manifold",
+          "description": "A complex array of copper valves and coral-red handles for controlling tide pressure.",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Sediment Basin Terrace",
+      "biome": "intertidal_embassy",
+      "purpose": "Settling silt for memory extraction.",
+      "decor_tags": [
+        "basins",
+        "filters",
+        "algae"
+      ],
+      "activity_tags": [
+        "filtering",
+        "waiting",
+        "observing"
+      ],
+      "flux_floor_prompt": "top-down pixel art, 16-bit, terraced limestone basins filled with shallow indigo water and silt, seamless texture.",
+      "room_scene_prompt": "top-down pixel art of a terraced sediment yard, stone basins at different heights, kelp fringes, copper drainage pipes, soft green light, no labels, no margins, edge-to-edge floor.",
+      "width_tiles": 12,
+      "height_tiles": 8,
+      "ambient_palette": "clear_day",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "silt_dredge",
+          "label": "Silt Dredge",
+          "description": "A mechanical copper claw used to harvest settled sediment from the basins.",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Tidal Watchtower",
+      "biome": "intertidal_embassy",
+      "purpose": "Monitoring the incoming tide for legal compliance.",
+      "decor_tags": [
+        "telescopes",
+        "charts",
+        "signal_flags"
+      ],
+      "activity_tags": [
+        "watching",
+        "signaling",
+        "charting"
+      ],
+      "flux_floor_prompt": "top-down pixel art, 16-bit, polished salt-stone tiles with a central copper compass rose, seamless texture.",
+      "room_scene_prompt": "top-down pixel art of a high watchtower interior, large copper telescopes, nautical charts on teak tables, bright diffuse light, no text, no margins, edge-to-edge floor.",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "warm_lantern",
+      "archetype": "lookout",
+      "scene_components": [
+        {
+          "component_id": "tide_chronometer",
+          "label": "Tide Chronometer",
+          "description": "A tall clockwork device tracking the lunar cycle with indigo resin gears.",
+          "anchor": "north_east",
+          "width_tiles": 1,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Vespera Silt-Tongue",
+      "role_name": "Chief Silt Authenticator",
+      "activity": "Analyzing mineral signatures of the dried-up Lethe tributary",
+      "home_base": "Silt Authentication Booth",
+      "arc_goal": "To prove the existence of a subterranean flow that could restore the valley's fertility",
+      "inventory": [
+        {
+          "name": "IEER-001: Calcified River-Heart",
+          "description": "A pulsing geode found in the dry bed of the Oros",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-002: Silt-Sifter's Monocle",
+          "description": "Lens tuned to detect microscopic aquatic fossils",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-003: Jar of Ghost-Water",
+          "description": "Vapor captured from a high-altitude mirage",
+          "quantity": 3
+        },
+        {
+          "name": "IEER-004: Desiccation Scroll",
+          "description": "Ancient records of the first great drought",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-005: Mineral Tuning Fork",
+          "description": "Vibrates when near dormant aquifers",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-006: Fossilized Reed Pen",
+          "description": "Used for signing official flow-rights documents",
+          "quantity": 2
+        },
+        {
+          "name": "IEER-007: Salt-Crusted Compass",
+          "description": "Points toward the nearest source of salinity",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-008: River-Bed Topography Map",
+          "description": "A 3D relief map of extinct waterways",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Silt-Vault",
+          "asset_type": "Laboratory",
+          "description": "A pressurized chamber for analyzing ancient sediment",
+          "story_use": "Used to verify the authenticity of river-bed claims"
+        },
+        {
+          "asset_name": "Hydro-Archive",
+          "asset_type": "Library",
+          "description": "A collection of sound recordings of flowing water",
+          "story_use": "Reference for identifying the 'voice' of lost rivers"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SILT-01",
+          "topic": "Sedimentary Forensics",
+          "summary": "The ability to date a river's death by its mineral layers",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-SILT-02",
+          "topic": "Aquifer Divination",
+          "summary": "Techniques for locating water trapped in deep limestone",
+          "confidence": 82
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen the Current-Broker",
+      "role_name": "Flow Rights Merchant",
+      "activity": "Negotiating moisture allocations with the highland clans",
+      "home_base": "Flow Rights Registry",
+      "arc_goal": "To monopolize the remaining vapor-harvesting rights before the monsoon season",
+      "inventory": [
+        {
+          "name": "IEER-009: Vapor-Bond Ledger",
+          "description": "A heavy book bound in sharkskin containing water debts",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-010: Brass Flow-Meter",
+          "description": "Measures the exact volume of liquid traded",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-011: Canteen of Triple-Filtered Dew",
+          "description": "The highest grade of potable water available",
+          "quantity": 5
+        },
+        {
+          "name": "IEER-012: Rain-Calling Incense",
+          "description": "Aromatic herbs rumored to trigger localized showers",
+          "quantity": 12
+        },
+        {
+          "name": "IEER-013: Hydrological Seal",
+          "description": "A wax stamp used to finalize water contracts",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-014: Desalinization Tablets",
+          "description": "Chemical wafers that purify brackish water",
+          "quantity": 20
+        },
+        {
+          "name": "IEER-015: Copper Pipe Fittings",
+          "description": "Essential components for repairing private sluices",
+          "quantity": 15
+        },
+        {
+          "name": "IEER-016: Moisture-Trap Netting",
+          "description": "Fine mesh used to collect fog at night",
+          "quantity": 10
+        },
+        {
+          "name": "IEER-017: Blue-Gold Coins",
+          "description": "Currency backed by the Embassy's water reserves",
+          "quantity": 50
+        },
+        {
+          "name": "IEER-018: Pressure Gauge",
+          "description": "Handheld device for checking pipe integrity",
+          "quantity": 2
+        },
+        {
+          "name": "IEER-019: Sluice Key",
+          "description": "A heavy iron key for the main irrigation gates",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-020: Drought-Resistant Seeds",
+          "description": "Genetically modified grains that require zero irrigation",
+          "quantity": 100
+        },
+        {
+          "name": "IEER-021: Water-Thief's Hook",
+          "description": "A tool for tapping into main lines undetected",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-022: Coded Ledger Cipher",
+          "description": "A key to decode the secret accounts of the Embassy",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-023: Sample Vials",
+          "description": "Small glass tubes for water quality testing",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Dew-Collector Array",
+          "asset_type": "Infrastructure",
+          "description": "A series of towers designed to harvest atmospheric moisture",
+          "story_use": "The primary source of the Broker's wealth and influence"
+        },
+        {
+          "asset_name": "Registry Office",
+          "asset_type": "Real Estate",
+          "description": "A fortified office within the Embassy",
+          "story_use": "Where all legal water trades are recorded and taxed"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-FLOW-01",
+          "topic": "Market Speculation",
+          "summary": "Predicting the price of water based on cloud patterns",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K-FLOW-02",
+          "topic": "Hydraulic Law",
+          "summary": "The complex legal framework governing extinct riverbeds",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Elder Thalassa",
+      "role_name": "Flood Witness",
+      "activity": "Reciting the oral history of the Great Inundation",
+      "home_base": "Flood Testimony Chamber",
+      "arc_goal": "To ensure the younger generation respects the power of the water they have never seen",
+      "inventory": [
+        {
+          "name": "IEER-024: Shell-Inlaid Staff",
+          "description": "A walking stick carved from a giant nautilus",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-025: Dried Kelp Wraps",
+          "description": "Ancient preserved food from the coastal era",
+          "quantity": 10
+        },
+        {
+          "name": "IEER-026: Whale-Bone Whistle",
+          "description": "Produces a frequency that mimics a river's roar",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-027: Jar of Sea-Salt",
+          "description": "A sacred relic from the time before the retreat",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-028: Driftwood Carving",
+          "description": "A small figurine of a river dolphin",
+          "quantity": 3
+        },
+        {
+          "name": "IEER-029: Memory Stone",
+          "description": "A smooth river pebble that retains heat",
+          "quantity": 5
+        },
+        {
+          "name": "IEER-030: Blue Dye Pigment",
+          "description": "Used for ritual markings during testimony",
+          "quantity": 4
+        },
+        {
+          "name": "IEER-031: Tattered Sailcloth",
+          "description": "A fragment of a ship that once sailed the Oros",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Echo-Altar",
+          "asset_type": "Shrine",
+          "description": "A stone dais that amplifies the sound of whispers",
+          "story_use": "Used for delivering testimonies to the Embassy council"
+        },
+        {
+          "asset_name": "Ancestral Canoe",
+          "asset_type": "Vehicle",
+          "description": "A wooden vessel kept in dry dock for centuries",
+          "story_use": "A symbol of hope for the return of the rivers"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-FLOOD-01",
+          "topic": "Oral Hydrology",
+          "summary": "The history of river paths passed down through song",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "K-FLOOD-02",
+          "topic": "Tidal Rhythms",
+          "summary": "Understanding the moon's influence on non-existent tides",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Rigger Jax",
+      "role_name": "Sluice Gate Technician",
+      "activity": "Greasing the rusted gears of the main floodgate",
+      "home_base": "Sluice Gate Maintenance Hub",
+      "arc_goal": "To repair the ancient mechanism before the predicted 'Ghost Flood' arrives",
+      "inventory": [
+        {
+          "name": "IEER-032: Heavy Wrench",
+          "description": "A massive tool for turning stubborn bolts",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-033: Can of Fish-Oil Lubricant",
+          "description": "Organic grease used for heavy machinery",
+          "quantity": 3
+        },
+        {
+          "name": "IEER-034: Brass Pressure Valve",
+          "description": "A replacement part for the steam-driven gates",
+          "quantity": 2
+        },
+        {
+          "name": "IEER-035: Leather Tool Belt",
+          "description": "Sturdy belt with various loops and pouches",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-036: Welding Goggles",
+          "description": "Protects eyes from the sparks of the forge",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-037: Scrap Iron Shards",
+          "description": "Raw material for emergency repairs",
+          "quantity": 15
+        },
+        {
+          "name": "IEER-038: Blueprint of the Sluice",
+          "description": "A fading schematic of the Embassy's plumbing",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-039: Signal Flare",
+          "description": "Used to alert the Watchtower of a breach",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Maintenance Forge",
+          "asset_type": "Workshop",
+          "description": "A high-heat furnace for casting replacement gears",
+          "story_use": "The site where Jax fabricates parts for the Embassy"
+        },
+        {
+          "asset_name": "The Gear-Room",
+          "asset_type": "Industrial Zone",
+          "description": "The heart of the Sluice Gate mechanism",
+          "story_use": "A dangerous area filled with moving parts and steam"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-MECH-01",
+          "topic": "Hydraulic Engineering",
+          "summary": "The physics of moving large volumes of water and silt",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-MECH-02",
+          "topic": "Rust Prevention",
+          "summary": "Chemical treatments for metal in high-salinity environments",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Caspian Dredge-Lord",
+      "role_name": "Sediment Reclamation Tycoon",
+      "activity": "Appraising mineral-rich silt deposits for illegal trade",
+      "home_base": "Sediment Basin Terrace",
+      "arc_goal": "To monopolize the remaining mineral wealth of the Lethe tributary before Vespera Silt-Tongue can certify it as sacred.",
+      "inventory": [
+        {
+          "name": "IEER-001: Gilded Silt-Sieve",
+          "description": "A mesh of fine gold wire used to separate rare earth minerals from common mud.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-002: Compressed Mud-Brick",
+          "description": "A dense block of dried riverbed containing trace amounts of silver.",
+          "quantity": 20
+        },
+        {
+          "name": "IEER-003: Basin Lease Scroll",
+          "description": "A forged document claiming ownership of the southern terrace.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-004: Desiccant Vials",
+          "description": "Chemical salts used to rapidly dry wet sediment for transport.",
+          "quantity": 15
+        },
+        {
+          "name": "IEER-005: Brass Calipers",
+          "description": "Precision tools for measuring the grain size of alluvial deposits.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-006: Smuggler's Ledger",
+          "description": "A coded book detailing under-the-table deals with Kaelen the Current-Broker.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-007: Polished River-Glass",
+          "description": "Smooth shards of glass used as currency among the basin workers.",
+          "quantity": 50
+        },
+        {
+          "name": "IEER-008: Heavy-Duty Silt-Sack",
+          "description": "Reinforced canvas bags designed to hold 50kg of wet earth.",
+          "quantity": 10
+        },
+        {
+          "name": "IEER-009: Magnetic Separator",
+          "description": "A handheld magnet for pulling iron filings from the silt.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-010: Hydration Rations",
+          "description": "Concentrated water gel for long shifts in the dry basins.",
+          "quantity": 12
+        },
+        {
+          "name": "IEER-011: Bribe-Grade Salt",
+          "description": "High-purity salt used to pay off the Sluice Gate guards.",
+          "quantity": 5
+        },
+        {
+          "name": "IEER-012: Fossilized Scale",
+          "description": "A rare scale from an extinct river-beast, highly valuable to collectors.",
+          "quantity": 3
+        },
+        {
+          "name": "IEER-013: Basin Worker's Badge",
+          "description": "A stolen identification tag for accessing restricted zones.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-014: Mercury Flask",
+          "description": "Used in the extraction of gold from riverbed ore.",
+          "quantity": 2
+        },
+        {
+          "name": "IEER-015: Signal Flare",
+          "description": "A chemical torch for alerting transport barges at night.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Dredge-King's Hoist",
+          "asset_type": "Industrial Crane",
+          "description": "A massive, rusted steam-crane used to lift heavy sediment crates.",
+          "story_use": "Used to bypass official checkpoints by lifting goods directly to the terrace."
+        },
+        {
+          "asset_name": "Basin Vault 4",
+          "asset_type": "Storage Facility",
+          "description": "A reinforced concrete bunker hidden beneath the silt layers.",
+          "story_use": "The primary storage for Caspian's illegal mineral stockpile."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-SED-01",
+          "topic": "Silt Stratigraphy",
+          "summary": "Deep understanding of which sediment layers contain the highest mineral concentrations.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-SED-02",
+          "topic": "Embassy Corruption",
+          "summary": "Detailed knowledge of which officials in the Flow Rights Registry can be bought.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra the Tide-Watcher",
+      "role_name": "Hydrological Forecaster",
+      "activity": "Monitoring the phantom resonance of the dried-up tides",
+      "home_base": "Tidal Watchtower",
+      "arc_goal": "To prove that the Great Inundation is returning by tracking the 'ghost-waves' Elder Thalassa describes.",
+      "inventory": [
+        {
+          "name": "IEER-016: Resonance Tuning Fork",
+          "description": "A silver fork that vibrates when it detects subterranean water movement.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-017: Lunar Tide-Chart",
+          "description": "A complex map predicting tides for a river that no longer exists.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-018: Ghost-Water Sample",
+          "description": "A sealed vial containing air that supposedly holds the 'memory' of water.",
+          "quantity": 3
+        },
+        {
+          "name": "IEER-019: Brass Astrolabe",
+          "description": "An ancient navigation tool used to align the watchtower with celestial bodies.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-020: Signal Mirror",
+          "description": "A polished bronze plate for communicating with the Sluice Gate Maintenance Hub.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-021: Ink-Stained Parchment",
+          "description": "Daily logs of phantom tide heights and atmospheric pressure.",
+          "quantity": 30
+        },
+        {
+          "name": "IEER-022: Dried Sea-Kelp",
+          "description": "A ritual herb burned to sharpen the senses during the midnight watch.",
+          "quantity": 10
+        },
+        {
+          "name": "IEER-023: Telescope Lens",
+          "description": "A cracked but functional lens for spotting dust-storms on the horizon.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Zenith Lens",
+          "asset_type": "Observatory Equipment",
+          "description": "A massive crystal array that focuses moonlight onto the dry riverbed.",
+          "story_use": "Reveals hidden mineral veins and moisture pockets invisible to the naked eye."
+        },
+        {
+          "asset_name": "Watchman's Perch",
+          "asset_type": "Living Quarters",
+          "description": "A cramped, wind-swept room at the top of the Tidal Watchtower.",
+          "story_use": "A secure location for private research away from Embassy spies."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-TID-01",
+          "topic": "Phantom Resonance",
+          "summary": "The science of detecting the acoustic signature of underground aquifers.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "K-TID-02",
+          "topic": "Celestial Navigation",
+          "summary": "Using stars to track the shifting geography of the drying delta.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Scribe Elara",
+      "role_name": "Testimony Notary",
+      "activity": "Transcribing the dying words of the Flood Witnesses",
+      "home_base": "Flood Testimony Chamber",
+      "arc_goal": "To preserve the oral history of Elder Thalassa before the Embassy censors it for political gain.",
+      "inventory": [
+        {
+          "name": "IEER-024: Ever-Flowing Inkwell",
+          "description": "A self-refilling inkwell containing a mixture of soot and river-water.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-025: Vellum Scroll-Case",
+          "description": "A waterproof tube for protecting sensitive historical transcripts.",
+          "quantity": 5
+        },
+        {
+          "name": "IEER-026: Bone Stylus",
+          "description": "A writing implement carved from the rib of a river-dolphin.",
+          "quantity": 2
+        },
+        {
+          "name": "IEER-027: Wax Seal Kit",
+          "description": "The official seal of the Embassy, used to validate testimonies.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-028: Memory-Enhancing Tea",
+          "description": "A bitter herbal brew given to witnesses to help them recall details.",
+          "quantity": 20
+        },
+        {
+          "name": "IEER-029: Transcription Desk-Lamp",
+          "description": "A small oil lamp with a green glass shade to reduce eye strain.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-030: Shorthand Dictionary",
+          "description": "A guide to the archaic dialects used by the river-clans.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-031: Coded Cipher-Key",
+          "description": "A tool for encrypting transcripts that contain sensitive political secrets.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Archive Annex",
+          "asset_type": "Library",
+          "description": "A hidden sub-basement filled with banned river histories.",
+          "story_use": "Where Elara hides the 'true' testimonies from the Embassy censors."
+        },
+        {
+          "asset_name": "Notary's Podium",
+          "asset_type": "Furniture",
+          "description": "An elevated desk in the Testimony Chamber that grants a clear view of the witness.",
+          "story_use": "Used to observe the body language of witnesses for signs of coercion."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-HIS-01",
+          "topic": "Oral Traditions",
+          "summary": "Expertise in the linguistic patterns and metaphors of the extinct river cultures.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-HIS-02",
+          "topic": "Embassy Protocol",
+          "summary": "Deep knowledge of the bureaucratic hurdles required to file a legal testimony.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Mender Silas",
+      "role_name": "Hydraulic Salvager",
+      "activity": "Scavenging the Sluice Gates for usable components",
+      "home_base": "Sluice Gate Maintenance Hub",
+      "arc_goal": "To repair the secondary floodgate in secret, providing an emergency escape route for the basin workers.",
+      "inventory": [
+        {
+          "name": "IEER-032: Pneumatic Wrench",
+          "description": "A heavy tool powered by compressed air for loosening rusted bolts.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-033: Copper Gasket",
+          "description": "A vital seal for preventing pressure leaks in hydraulic pipes.",
+          "quantity": 12
+        },
+        {
+          "name": "IEER-034: Jar of Gear-Grease",
+          "description": "A thick, foul-smelling lubricant stolen from Rigger Jax's supply.",
+          "quantity": 3
+        },
+        {
+          "name": "IEER-035: Pressure Gauge",
+          "description": "A brass dial used to measure the structural integrity of the gates.",
+          "quantity": 2
+        },
+        {
+          "name": "IEER-036: Scrap Iron Plate",
+          "description": "Raw material for patching holes in the rusted sluice mechanisms.",
+          "quantity": 8
+        },
+        {
+          "name": "IEER-037: Welding Torch",
+          "description": "A portable chemical torch for fusing metal in the dark tunnels.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-038: Master Key-Ring",
+          "description": "A collection of keys for the various maintenance hatches in the hub.",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-039: Safety Harness",
+          "description": "A worn leather strap for working on the exterior of the high gates.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Pipe-Crawl",
+          "asset_type": "Secret Passage",
+          "description": "A network of narrow maintenance tunnels connecting the Hub to the Silt Booth.",
+          "story_use": "Allows Silas to move through the Embassy undetected by security."
+        },
+        {
+          "asset_name": "Workshop Bench 7",
+          "asset_type": "Workstation",
+          "description": "A cluttered workbench filled with disassembled hydraulic valves.",
+          "story_use": "The site where Silas is illegally reconstructing the gate controller."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-ENG-01",
+          "topic": "Hydraulic Engineering",
+          "summary": "Practical knowledge of the Embassy's ancient and failing water-control systems.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "K-ENG-02",
+          "topic": "Structural Weaknesses",
+          "summary": "Identification of the specific points where the Embassy walls are prone to collapse.",
+          "confidence": 89
+        }
+      ]
+    },
+    {
+      "display_name": "Orin the Salt-Eater",
+      "role_name": "Desiccation Pathologist",
+      "activity": "Sampling crystalline crusts for signs of parasitic brine",
+      "home_base": "Silt Authentication Booth",
+      "arc_goal": "To prove the Lethe tributary was poisoned by the Highland Clans before it dried.",
+      "inventory": [
+        {
+          "name": "IEER-016",
+          "description": "Vial of concentrated brine-rot",
+          "quantity": 3
+        },
+        {
+          "name": "IEER-017",
+          "description": "Bone-handled scraping trowel",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-018",
+          "description": "Magnifying lens with cracked obsidian frame",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-019",
+          "description": "Leather pouch of desiccant salts",
+          "quantity": 5
+        },
+        {
+          "name": "IEER-020",
+          "description": "Map of subterranean aquifers",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-021",
+          "description": "Phial of blue-tinted neutralizing agent",
+          "quantity": 2
+        },
+        {
+          "name": "IEER-022",
+          "description": "Tattered field journal of mineral signatures",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-023",
+          "description": "Brass calipers for measuring salt-bloom",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Desiccation Lab",
+          "asset_type": "Mobile Research Station",
+          "description": "A converted silt-sled packed with chemical reagents.",
+          "story_use": "Used to analyze soil samples for illegal pollutants."
+        },
+        {
+          "asset_name": "Salt-Eater's Seal",
+          "asset_type": "Official Credential",
+          "description": "A heavy lead coin granting access to restricted dry-beds.",
+          "story_use": "Allows Orin to bypass Silt Authentication checkpoints."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-001",
+          "topic": "Mineral Toxicity",
+          "summary": "Expertise in identifying chemical markers of industrial sabotage in dry riverbeds.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "K-002",
+          "topic": "Highland Clan Politics",
+          "summary": "Deep understanding of the resource-sharing treaties between the clans.",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Valerius the Flow-Hoarder",
+      "role_name": "Black Market Hydrologist",
+      "activity": "Smuggling bottled vapor through the maintenance tunnels",
+      "home_base": "Sluice Gate Maintenance Hub",
+      "arc_goal": "To monopolize the remaining moisture reserves before the next Great Inundation.",
+      "inventory": [
+        {
+          "name": "IEER-024",
+          "description": "Pressurized glass canister of 'Pure Lethe' vapor",
+          "quantity": 15
+        },
+        {
+          "name": "IEER-025",
+          "description": "Forged Flow Rights certificate",
+          "quantity": 4
+        },
+        {
+          "name": "IEER-026",
+          "description": "Siphon hose with copper mesh filter",
+          "quantity": 2
+        },
+        {
+          "name": "IEER-027",
+          "description": "Weighted lead slugs for bribing guards",
+          "quantity": 20
+        },
+        {
+          "name": "IEER-028",
+          "description": "Coded ledger of moisture debts",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-029",
+          "description": "Telescopic pressure gauge",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-030",
+          "description": "Vial of scented oil to mask dampness",
+          "quantity": 3
+        },
+        {
+          "name": "IEER-031",
+          "description": "Master key for Sluice Gate locks",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-032",
+          "description": "Collapsible canvas water-skin",
+          "quantity": 6
+        },
+        {
+          "name": "IEER-033",
+          "description": "Small pouch of silver-nitrate flakes",
+          "quantity": 10
+        },
+        {
+          "name": "IEER-034",
+          "description": "Hydraulic pressure regulator valve",
+          "quantity": 2
+        },
+        {
+          "name": "IEER-035",
+          "description": "Map of hidden maintenance shafts",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-036",
+          "description": "Pair of rubberized grip gloves",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-037",
+          "description": "Signal whistle carved from driftwood",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-038",
+          "description": "Bottle of cheap fermented silt-wine",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Vapor Vault",
+          "asset_type": "Hidden Storage",
+          "description": "A concealed chamber behind the Sluice Gate gears.",
+          "story_use": "Storage for illegal water reserves and forged documents."
+        },
+        {
+          "asset_name": "Hoarder's Network",
+          "asset_type": "Informant Ring",
+          "description": "A group of bribed technicians and couriers.",
+          "story_use": "Provides early warning of Flow Rights Registry audits."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-003",
+          "topic": "Sluice Gate Mechanics",
+          "summary": "Intimate knowledge of the bypass valves and structural weaknesses.",
+          "confidence": 88
+        },
+        {
+          "knowledge_id": "K-004",
+          "topic": "Smuggling Routes",
+          "summary": "Knowledge of the unmapped tunnels beneath the Sediment Basin.",
+          "confidence": 92
+        }
+      ]
+    },
+    {
+      "display_name": "Mistress Hesper",
+      "role_name": "Registry Archivist",
+      "activity": "Auditing the Flow Rights Registry for discrepancies",
+      "home_base": "Flow Rights Registry",
+      "arc_goal": "To expose Kaelen's fraudulent moisture allocations.",
+      "inventory": [
+        {
+          "name": "IEER-039",
+          "description": "Heavy iron stylus for wax tablets",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-040",
+          "description": "Box of blue sealing wax",
+          "quantity": 5
+        },
+        {
+          "name": "IEER-041",
+          "description": "Official Registry signet ring",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-042",
+          "description": "Scroll of the 4th Intertidal Decree",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-043",
+          "description": "Magnifying monocle with gold chain",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-044",
+          "description": "Bottle of permanent indigo ink",
+          "quantity": 2
+        },
+        {
+          "name": "IEER-045",
+          "description": "Bundle of dried reed pens",
+          "quantity": 10
+        },
+        {
+          "name": "IEER-046",
+          "description": "Small bell for summoning scribes",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Great Ledger",
+          "asset_type": "Historical Record",
+          "description": "The definitive record of all water rights since the first drought.",
+          "story_use": "Used to verify or invalidate claims of moisture ownership."
+        },
+        {
+          "asset_name": "Archivist's Sanctum",
+          "asset_type": "Private Office",
+          "description": "A soundproof room within the Registry.",
+          "story_use": "A secure location for sensitive interrogations and audits."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-005",
+          "topic": "Bureaucratic Law",
+          "summary": "Mastery of the complex legal codes governing the Embassy.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "K-006",
+          "topic": "Genealogy of the Flood Witnesses",
+          "summary": "Knowledge of the bloodlines entitled to ancestral water rights.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Gully the Silt-Diver",
+      "role_name": "Relic Scavenger",
+      "activity": "Searching for artifacts in the Sediment Basin Terrace",
+      "home_base": "Sediment Basin Terrace",
+      "arc_goal": "To find the 'Heart of the River' artifact before Caspian Dredge-Lord.",
+      "inventory": [
+        {
+          "name": "IEER-047",
+          "description": "Long-handled silt-rake",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-048",
+          "description": "Mesh sieve for fine sediment",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-049",
+          "description": "Small pouch of fossilized river-shells",
+          "quantity": 12
+        },
+        {
+          "name": "IEER-050",
+          "description": "Rusted navigation compass",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-051",
+          "description": "Leather headlamp with glow-worm jar",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-052",
+          "description": "Chisel for prying artifacts from clay",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-053",
+          "description": "Bundle of sturdy hemp rope",
+          "quantity": 1
+        },
+        {
+          "name": "IEER-054",
+          "description": "Dried fish-skin pouch for valuables",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Silt-Skiff",
+          "asset_type": "Transport",
+          "description": "A flat-bottomed boat modified for sliding over dry mud.",
+          "story_use": "Allows rapid travel across the treacherous Sediment Basin."
+        },
+        {
+          "asset_name": "Scavenger's Cache",
+          "asset_type": "Hidden Stash",
+          "description": "A buried crate containing 'unsorted' artifacts.",
+          "story_use": "A source of rare items and emergency currency."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "K-007",
+          "topic": "Sediment Stratigraphy",
+          "summary": "Ability to date artifacts based on the layer of silt they are found in.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "K-008",
+          "topic": "Riverbed Folklore",
+          "summary": "Knowledge of myths regarding the 'Heart of the River' and its location.",
+          "confidence": 75
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "Memory Smuggling",
+      "summary": "Acquire illicit river memories, bypass bureaucratic checkpoints, and sell to the highest bidder in the Under-Tide.",
+      "roles": [
+        "Smuggler",
+        "Corrupt Official"
+      ],
+      "rooms": [
+        "The Silt Vaults",
+        "The Intertidal Gate"
+      ],
+      "pressure": "Rising water levels and increasing security patrols."
+    },
+    {
+      "label": "Ecological Restoration",
+      "summary": "Collect sediment samples, navigate the red tape of the Embassy, and attempt to revive a dead stream.",
+      "roles": [
+        "Hydrologist",
+        "Archivist"
+      ],
+      "rooms": [
+        "The Dry Basin",
+        "The Records Hall"
+      ],
+      "pressure": "The rapid evaporation of the last remaining samples."
+    }
+  ],
+  "player_entry_points": [
+    "A disgraced hydrologist seeking a lost tributary.",
+    "A memory-smuggler hiding a vial of the Great Flood.",
+    "A bureaucratic auditor sent to close the embassy."
+  ],
+  "conflict_hooks": [
+    "The Embassy's main reservoir is leaking memories into the local groundwater.",
+    "A rival faction claims the rights to a river that hasn't existed for a millennium.",
+    "The High Archivist has been replaced by a sentient silt-clot."
+  ],
+  "custom_actions": [
+    "Siphon Memory: Extract a liquid recollection from a dry riverbed.",
+    "Forge Permit: Create a counterfeit clearance for restricted tidal zones.",
+    "Calibrate Hydrometer: Measure the emotional salinity of a ghost-stream."
+  ],
+  "social_rules": [
+    "All water samples must be declared at the Intertidal Gate.",
+    "Direct eye contact with the Memory-Eaters is strictly prohibited.",
+    "Bureaucratic delays are considered sacred acts of preservation.",
+    "No unauthorized dredging of the silt-beds."
+  ],
+  "item_themes": [
+    "sediment",
+    "treaty seals",
+    "hydrological data",
+    "salt-crusted relics",
+    "river-of-flow"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "IEER-001",
+      "name": "Vial of Authenticated Silt",
+      "price": 450,
+      "mass": 0.5,
+      "description": "Certified sediment from the dry bed of the Lethe, used as a legal anchor for land claims.",
+      "image_prompt": "A small glass vial containing layered grey and gold silt, sealed with verdigris copper, resting on salt-white stone.",
+      "category": "Trade Goods"
+    },
+    {
+      "item_id": "IEER-002",
+      "name": "Indigo Flow-Right Token",
+      "price": 1200,
+      "mass": 0.1,
+      "description": "A bioluminescent indigo glass coin granting the bearer twelve hours of upstream navigation rights.",
+      "image_prompt": "A glowing indigo glass coin with embossed river wave patterns, held by a copper clip.",
+      "category": "Currency"
+    },
+    {
+      "item_id": "IEER-003",
+      "name": "Salt-Crusted Treaty Seal",
+      "price": 850,
+      "mass": 1.2,
+      "description": "A heavy stone cylinder used to emboss diplomatic agreements into wet clay, encrusted with ancient brine.",
+      "image_prompt": "A cylindrical stone seal with intricate carvings, partially covered in white salt crystals and verdigris patina.",
+      "category": "Diplomatic Tools"
+    },
+    {
+      "item_id": "IEER-004",
+      "name": "Hydrological Data Scroll",
+      "price": 320,
+      "mass": 0.3,
+      "description": "Vellum treated with coral-red ink detailing the seasonal ebb and flow of the ghost tides.",
+      "image_prompt": "A rolled vellum scroll with red ink diagrams of water currents, tied with a blue silk cord.",
+      "category": "Information"
+    },
+    {
+      "item_id": "IEER-005",
+      "name": "Verdigris Compass",
+      "price": 1500,
+      "mass": 0.8,
+      "description": "A copper navigational tool that points toward the nearest source of non-saline water.",
+      "image_prompt": "An ornate copper compass with heavy green oxidation, featuring a needle made of polished coral.",
+      "category": "Navigation"
+    },
+    {
+      "item_id": "IEER-006",
+      "name": "Flood Testimony Jar",
+      "price": 2100,
+      "mass": 2.5,
+      "description": "An acoustic vessel that plays back the roar of a historic flood when uncorked.",
+      "image_prompt": "A wide-bellied ceramic jar with a copper stopper, decorated with indigo wave motifs.",
+      "category": "Relics"
+    },
+    {
+      "item_id": "IEER-007",
+      "name": "Coral-Red Inkwell",
+      "price": 150,
+      "mass": 0.4,
+      "description": "Pigment harvested from the deep-sea polyps of the embassy's foundation, used for official signatures.",
+      "image_prompt": "A small square inkwell made of salt-white stone containing vibrant red ink.",
+      "category": "Stationery"
+    },
+    {
+      "item_id": "IEER-008",
+      "name": "Silt-Sifter Goggles",
+      "price": 600,
+      "mass": 0.6,
+      "description": "Protective eyewear designed to see through the dense particulate clouds of the intertidal zones.",
+      "image_prompt": "Brass-rimmed goggles with indigo-tinted lenses and a salt-stained leather strap.",
+      "category": "Equipment"
+    },
+    {
+      "item_id": "IEER-009",
+      "name": "Desalination Pouch",
+      "price": 200,
+      "mass": 0.2,
+      "description": "A porous bag filled with chemically treated charcoal that turns brine into potable water.",
+      "image_prompt": "A simple canvas pouch with copper grommets and white crystalline residue on the exterior.",
+      "category": "Survival"
+    },
+    {
+      "item_id": "IEER-010",
+      "name": "Ambassador's Tide-Clock",
+      "price": 3500,
+      "mass": 4.0,
+      "description": "A complex water-clock that tracks the lunar influence on the embassy's submerged levels.",
+      "image_prompt": "A tall, elegant clock made of verdigris copper and glass tubes filled with indigo liquid.",
+      "category": "Diplomatic Tools"
+    },
+    {
+      "item_id": "IEER-011",
+      "name": "Petrified River-Reed",
+      "price": 95,
+      "mass": 0.7,
+      "description": "A fossilized plant from a river that ceased to flow centuries ago, polished to a high sheen.",
+      "image_prompt": "A long, slender fossilized reed with a pearlescent finish, resting on a bed of salt.",
+      "category": "Curios"
+    },
+    {
+      "item_id": "IEER-012",
+      "name": "Brine-Resistant Signet",
+      "price": 1100,
+      "mass": 0.05,
+      "description": "A ring made of high-purity copper that does not corrode in the embassy's harsh atmosphere.",
+      "image_prompt": "A heavy copper signet ring with a coral-red gemstone engraved with a river delta.",
+      "category": "Apparel"
+    },
+    {
+      "item_id": "IEER-013",
+      "name": "Sediment Core Sample",
+      "price": 550,
+      "mass": 3.5,
+      "description": "A vertical slice of the seabed showing the geological history of the embassy's location.",
+      "image_prompt": "A long acrylic tube containing layers of multicolored sand, silt, and crushed shells.",
+      "category": "Trade Goods"
+    },
+    {
+      "item_id": "IEER-014",
+      "name": "Hydro-Acoustic Tuning Fork",
+      "price": 400,
+      "mass": 0.3,
+      "description": "Used to calibrate the sonar sensors of the embassy's lower diplomatic chambers.",
+      "image_prompt": "A long, two-pronged fork made of polished silver-copper alloy, vibrating slightly.",
+      "category": "Tools"
+    },
+    {
+      "item_id": "IEER-015",
+      "name": "Ceremonial Silt-Shovel",
+      "price": 1800,
+      "mass": 5.0,
+      "description": "A heavy copper spade used by dignitaries to break ground on new tidal reclamation projects.",
+      "image_prompt": "A decorative shovel with a verdigris blade and a handle carved from white coral."
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "intertidal-embassy-wardrobe-v1",
+    "world_wardrobe_brief": "Diplomatic and industrial attire blending salt-crusted formality with tidal utility. Garments feature verdigris copper plating, heavy salt-white fabrics, and coral-red ceremonial accents to signify rank in the negotiation of extinct river rights.",
+    "forbidden_aesthetics": [
+      "cyberpunk_neon",
+      "generic_fantasy_wood",
+      "modern_plastic",
+      "space_suits",
+      "bright_primary_colors",
+      "denim",
+      "digital_displays"
+    ],
+    "palette_families": [
+      {
+        "name": "Diplomatic_Salt",
+        "dominant": "#e8e8e1",
+        "accent": "#ff4d4d",
+        "trim": "#435e55",
+        "material": "salt_crusted_limestone_silk"
+      },
+      {
+        "name": "Hydraulic_Verdigris",
+        "dominant": "#435e55",
+        "accent": "#7eb0a1",
+        "trim": "#1a1f2c",
+        "material": "weathered_copper"
+      },
+      {
+        "name": "Silt_Memory",
+        "dominant": "#1a1f2c",
+        "accent": "#435e55",
+        "trim": "#e8e8e1",
+        "material": "wet_silt_leather"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "authenticator_rule",
+        "role_keywords": [
+          "authenticator",
+          "pathologist",
+          "notary"
+        ],
+        "attire": [
+          "heavy_salt_white_aprons",
+          "copper_spectacles",
+          "silt_stained_gloves"
+        ],
+        "props": [
+          "magnifying_lens",
+          "sediment_vials",
+          "stamping_seal"
+        ],
+        "palette_notes": "Dominant salt-white with verdigris stains.",
+        "silhouette_notes": "Stiff, rectangular aprons and high collars.",
+        "avoid": [
+          "loose_flowing_robes"
+        ]
+      },
+      {
+        "rule_id": "merchant_rule",
+        "role_keywords": [
+          "merchant",
+          "broker",
+          "tycoon"
+        ],
+        "attire": [
+          "layered_teak_silk_robes",
+          "coral_red_sashes",
+          "copper_coin_chains"
+        ],
+        "props": [
+          "ledger_scrolls",
+          "indigo_tokens",
+          "abacus"
+        ],
+        "palette_notes": "High contrast coral-red on dark indigo.",
+        "silhouette_notes": "Bulky, layered silhouettes indicating wealth.",
+        "avoid": [
+          "industrial_gear"
+        ]
+      },
+      {
+        "rule_id": "technician_rule",
+        "role_keywords": [
+          "technician",
+          "rigger",
+          "salvager",
+          "mender"
+        ],
+        "attire": [
+          "verdigris_copper_plating",
+          "heavy_leather_waders",
+          "utility_belts"
+        ],
+        "props": [
+          "wrench",
+          "pressure_gauge",
+          "copper_piping"
+        ],
+        "palette_notes": "Dominant verdigris and dark shadows.",
+        "silhouette_notes": "Asymmetrical with heavy tool attachments.",
+        "avoid": [
+          "delicate_fabrics"
+        ]
+      },
+      {
+        "rule_id": "witness_rule",
+        "role_keywords": [
+          "witness",
+          "elder",
+          "archivist"
+        ],
+        "attire": [
+          "tattered_indigo_shrouds",
+          "kelp_fringe_capes",
+          "bone_jewelry"
+        ],
+        "props": [
+          "testimony_jar",
+          "petrified_reeds",
+          "tuning_fork"
+        ],
+        "palette_notes": "Muted indigo and salt-white highlights.",
+        "silhouette_notes": "Flowing, organic, and slightly frayed.",
+        "avoid": [
+          "rigid_armor"
+        ]
+      },
+      {
+        "rule_id": "watcher_rule",
+        "role_keywords": [
+          "watcher",
+          "forecaster",
+          "scavenger"
+        ],
+        "attire": [
+          "hooded_oilskin_cloaks",
+          "silt_sifter_goggles",
+          "high_boots"
+        ],
+        "props": [
+          "telescope",
+          "signal_flags",
+          "compass"
+        ],
+        "palette_notes": "Dark teal and verdigris for camouflage.",
+        "silhouette_notes": "Streamlined for movement and wind resistance.",
+        "avoid": [
+          "oversized_headwear"
+        ]
+      }
+    ],
+    "default_rule": {
+      "rule_id": "embassy_standard",
+      "role_keywords": [
+        "citizen",
+        "visitor"
+      ],
+      "attire": [
+        "salt_white_tunics",
+        "copper_badges"
+      ],
+      "props": [
+        "water_pouch"
+      ],
+      "palette_notes": "Neutral salt-white with minor verdigris trim.",
+      "silhouette_notes": "Simple 6-head chibi functional proportions.",
+      "avoid": [
+        "modern_clothing"
+      ]
+    },
+    "visual_consistency_rules": [
+      "All sprites must use 1px selective dark indigo outlines.",
+      "Coral-red is reserved for high-status seals or critical tools.",
+      "Metallic elements must show verdigris (green-teal) oxidation.",
+      "Footwear must appear heavy/waterproof (boots or waders).",
+      "Maintain 32x32 grid alignment for all held props."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "intertidal-embassy-extinct-rivers",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees_vertical",
+      "scale_rule": "32px_per_meter_pixel_perfect"
+    },
+    "palette": {
+      "dominant": "#435e55",
+      "secondary": "#e8e8e1",
+      "accent": "#ff4d4d",
+      "shadow": "#1a1f2c",
+      "highlight": "#7eb0a1"
+    },
+    "materials": [
+      "verdigris_copper",
+      "salt_crusted_limestone",
+      "wet_silt",
+      "translucent_indigo_resin",
+      "calcified_coral",
+      "weathered_teak"
+    ],
+    "lighting": "diffuse_tidal_glow_with_caustic_reflections",
+    "architecture": [
+      "circular_embassy_chambers",
+      "sluice_gate_corridors",
+      "terraced_sediment_basins",
+      "copper_piping_networks"
+    ],
+    "terrain": {
+      "ground": "tiled_salt_stone_and_silt_deposits",
+      "path": "raised_copper_grates",
+      "edge": "indigo_water_channels_with_kelp_fringe"
+    },
+    "sprite_language": {
+      "body_proportion": "6_head_chibi_functional",
+      "outline": "1px_selective_dark_indigo",
+      "role_readability": "oversized_coral_red_seals_and_copper_badges"
+    },
+    "world_prompt_prefix": "top-down pixel art, 16-bit, verdigris and salt-white, intertidal embassy, orthographic, grid-aligned",
+    "sprite_prompt_prefix": "top-down pixel art sprite, 16-bit, diplomatic attire, coral-red accents, orthographic",
+    "forbidden_visuals": [
+      "isometric_projection",
+      "photorealism",
+      "text_labels",
+      "ui_overlays_in_render",
+      "generic_fantasy_wood",
+      "cyberpunk_neon",
+      "diorama_borders"
+    ],
+    "canon_hash": "a29b88e3549f24d4"
+  }
+}

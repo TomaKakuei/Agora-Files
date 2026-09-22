@@ -1,0 +1,1738 @@
+{
+  "world_name": "Verbalis",
+  "world_id": "verbalis_cliff_001",
+  "world_seed": {
+    "seed_version": "world_seed_v3_open",
+    "locale": "High-altitude cliffside metropolis",
+    "tone": "Melancholic, bureaucratic, precise",
+    "visual_direction": "Vertical stone architecture, hanging bridges, ink-stained parchment aesthetics",
+    "currency_code": "VOW",
+    "currency_symbol": "⚖",
+    "currency_minor_unit": "syllable",
+    "currency_name": "Promise-Weight",
+    "domain_label": "linguistic-debt-market",
+    "starting_wallet_minor": {
+      "min": 1800,
+      "max": 9000
+    }
+  },
+  "world_dynamics": {
+    "institutions": [
+      {
+        "institution_id": "inst_weighing_house",
+        "name": "The Scales of Oaths",
+        "mandate": "Verify and tax the physical weight of spoken promises",
+        "decision_rule": "Tax rate increases with the complexity of the promise",
+        "enforced_by": "Gravity-sensitive ink seals",
+        "visible_output": "Public ledger of debt-weight"
+      },
+      {
+        "institution_id": "inst_courier_guild",
+        "name": "The Silent Runners",
+        "mandate": "Transport unpaid promises between households",
+        "decision_rule": "Prioritize high-weight promises for faster delivery",
+        "enforced_by": "Contractual silence oaths",
+        "visible_output": "Courier routes and delivery logs"
+      },
+      {
+        "institution_id": "inst_debt_enforcers",
+        "name": "The Silence Keepers",
+        "mandate": "Seize assets from those who default on promise-weight",
+        "decision_rule": "Seize property proportional to unpaid weight",
+        "enforced_by": "Magical silencing collars",
+        "visible_output": "Empty homes and silenced citizens"
+      }
+    ],
+    "state_variables": [
+      {
+        "state_id": "state_total_debt",
+        "label": "Aggregate Unpaid Promise Weight",
+        "initial_tension": "High",
+        "changed_by": [
+          "The Scales of Oaths",
+          "The Silent Runners"
+        ],
+        "affects": [
+          "state_social_stability"
+        ]
+      },
+      {
+        "state_id": "state_social_stability",
+        "label": "City Social Stability",
+        "initial_tension": "Medium",
+        "changed_by": [
+          "state_total_debt",
+          "state_enforcement_intensity"
+        ],
+        "affects": [
+          "state_market_trust"
+        ]
+      },
+      {
+        "state_id": "state_enforcement_intensity",
+        "label": "Debt Enforcement Intensity",
+        "initial_tension": "Low",
+        "changed_by": [
+          "state_total_debt"
+        ],
+        "affects": [
+          "state_social_stability"
+        ]
+      },
+      {
+        "state_id": "state_market_trust",
+        "label": "Market Trust Index",
+        "initial_tension": "High",
+        "changed_by": [
+          "state_social_stability"
+        ],
+        "affects": [
+          "state_total_debt"
+        ]
+      }
+    ],
+    "causal_links": [
+      {
+        "source_state": "state_total_debt",
+        "trigger": "Rising debt volume",
+        "target_state": "state_enforcement_intensity",
+        "effect": "The Silence Keepers increase patrols",
+        "delay": "1 week"
+      },
+      {
+        "source_state": "state_enforcement_intensity",
+        "trigger": "Aggressive seizures",
+        "target_state": "state_social_stability",
+        "effect": "Public unrest and fear",
+        "delay": "3 days"
+      },
+      {
+        "source_state": "state_social_stability",
+        "trigger": "Widespread fear",
+        "target_state": "state_market_trust",
+        "effect": "Citizens stop making promises",
+        "delay": "2 days"
+      },
+      {
+        "source_state": "state_market_trust",
+        "trigger": "Reduced promise volume",
+        "target_state": "state_total_debt",
+        "effect": "Debt accumulation slows down",
+        "delay": "1 week"
+      }
+    ],
+    "stakeholder_groups": [
+      {
+        "group_id": "group_merchants",
+        "name": "The Promise Brokers",
+        "goal": "Maximize volume of high-weight promises",
+        "leverage": "Control of credit lines",
+        "dependency": "The Silent Runners for delivery"
+      },
+      {
+        "group_id": "group_couriers",
+        "name": "The Silent Runners",
+        "goal": "Increase transit fees",
+        "leverage": "Monopoly on physical promise transport",
+        "dependency": "The Scales of Oaths for verification"
+      },
+      {
+        "group_id": "group_debtors",
+        "name": "The Voiceless",
+        "goal": "Debt forgiveness",
+        "leverage": "Collective refusal to speak",
+        "dependency": "The Promise Brokers for basic goods"
+      }
+    ]
+  },
+  "genre": "Bureaucratic Fantasy",
+  "premise": "In a city where promises have physical weight, debt is a tangible burden that must be transported by couriers.",
+  "simulation_objective": "Balance the city's linguistic economy without triggering a total collapse of trust.",
+  "agent_count_target": 12,
+  "player_count_target": 50,
+  "wall_color_theme": "weathered_limestone_and_black_iron",
+  "economy_focus": "Debt-based logistics and linguistic taxation",
+  "exploration_focus": "Navigating the vertical city and courier routes",
+  "conflict_tone": "Tense, systemic, and high-stakes",
+  "visual_style": "Verticality, ink-stained, stone-heavy, claustrophobic",
+  "rooms": [
+    {
+      "name": "The Scales of Oaths Chamber",
+      "biome": "Cliffside Administrative",
+      "purpose": "Verify and tax the physical weight of spoken promises; changes state_total_debt.",
+      "decor_tags": [
+        "heavy_vellum",
+        "ink_seals",
+        "limestone"
+      ],
+      "activity_tags": [
+        "weighing",
+        "taxation",
+        "bureaucracy"
+      ],
+      "flux_floor_prompt": "16-bit pixel art of worn, cracked limestone floor with dark ink stains and heavy iron floor-inlays",
+      "room_scene_prompt": "Top-down view of a bureaucratic weighing chamber, massive iron scales in center, piles of heavy vellum scrolls, ink-stained limestone floor, high-contrast chiaroscuro lighting, no text, no labels, edge-to-edge floor texture",
+      "width_tiles": 8,
+      "height_tiles": 8,
+      "ambient_palette": "focused_blue",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "oath_scale_apparatus",
+          "label": "Great Oath Scale",
+          "description": "Massive iron scale with glowing ink-seal weights",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Silent Runners Dispatch",
+      "biome": "Cliffside Logistics",
+      "purpose": "Transport unpaid promises; receives debt volume from Scales of Oaths.",
+      "decor_tags": [
+        "rope_bridges",
+        "satchels",
+        "basalt"
+      ],
+      "activity_tags": [
+        "logistics",
+        "courier_dispatch"
+      ],
+      "flux_floor_prompt": "16-bit pixel art of rough-hewn basalt stone floor with worn wooden courier path markings",
+      "room_scene_prompt": "Top-down view of a courier dispatch room, rows of heavy leather satchels, wooden courier walkways, dark basalt floor, high-contrast lighting, no text, no labels, edge-to-edge floor texture",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "dusty_brown",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "courier_satchel_rack",
+          "label": "Satchel Rack",
+          "description": "Wall-mounted rack overflowing with heavy, ink-sealed leather satchels",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Silence Keepers Barracks",
+      "biome": "Cliffside Enforcement",
+      "purpose": "Seize assets; increases state_enforcement_intensity based on debt volume.",
+      "decor_tags": [
+        "silencing_collars",
+        "iron",
+        "limestone"
+      ],
+      "activity_tags": [
+        "enforcement",
+        "seizure"
+      ],
+      "flux_floor_prompt": "16-bit pixel art of cold, dark limestone floor with deep ambient occlusion shadows",
+      "room_scene_prompt": "Top-down view of an enforcement barracks, racks of magical silencing collars, cold limestone floor, high-contrast lighting, no text, no labels, edge-to-edge floor texture",
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "ambient_palette": "low_lantern",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "collar_rack",
+          "label": "Collar Rack",
+          "description": "Iron rack displaying rows of glowing, magical silencing collars",
+          "anchor": "west_mid",
+          "width_tiles": 2,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "The Promise Brokers Exchange",
+      "biome": "Cliffside Market",
+      "purpose": "Maximize promise volume; affects market trust index.",
+      "decor_tags": [
+        "vellum",
+        "copper",
+        "limestone"
+      ],
+      "activity_tags": [
+        "trading",
+        "credit_negotiation"
+      ],
+      "flux_floor_prompt": "16-bit pixel art of polished limestone floor with oxidized copper trim",
+      "room_scene_prompt": "Top-down view of a promise exchange, desks piled with vellum contracts, oxidized copper accents, high-contrast lighting, no text, no labels, edge-to-edge floor texture",
+      "width_tiles": 7,
+      "height_tiles": 7,
+      "ambient_palette": "warm_lantern",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "broker_desk",
+          "label": "Broker Desk",
+          "description": "Heavy limestone desk covered in vellum scrolls and ink-seals",
+          "anchor": "center",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Voiceless Refusal Hall",
+      "biome": "Cliffside Residential",
+      "purpose": "Collective refusal to speak; reduces promise volume.",
+      "decor_tags": [
+        "basalt",
+        "shadows"
+      ],
+      "activity_tags": [
+        "protest",
+        "silence"
+      ],
+      "flux_floor_prompt": "16-bit pixel art of rough, uneven basalt floor with dust and debris",
+      "room_scene_prompt": "Top-down view of a sparse, dark hall, silhouettes of citizens in burdened postures, rough basalt floor, high-contrast lighting, no text, no labels, edge-to-edge floor texture",
+      "width_tiles": 6,
+      "height_tiles": 6,
+      "ambient_palette": "soft_mint",
+      "archetype": "commons",
+      "scene_components": [
+        {
+          "component_id": "protest_shrine",
+          "label": "Silence Shrine",
+          "description": "A small, dark basalt altar where citizens leave their empty satchels",
+          "anchor": "south_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Archive of Unpaid Debts",
+      "biome": "Cliffside Administrative",
+      "purpose": "Store records of defaulted promises; affects social stability.",
+      "decor_tags": [
+        "vellum",
+        "black_iron",
+        "limestone"
+      ],
+      "activity_tags": [
+        "archiving",
+        "record_keeping"
+      ],
+      "flux_floor_prompt": "16-bit pixel art of limestone floor covered in scattered, ink-stained vellum",
+      "room_scene_prompt": "Top-down view of a dense archive, floor-to-ceiling shelves of vellum scrolls, black iron ink-seals, high-contrast lighting, no text, no labels, edge-to-edge floor texture",
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "ambient_palette": "ember_orange",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "scroll_stack",
+          "label": "Debt Archive",
+          "description": "Towering stack of heavy vellum scrolls bound in black iron",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Kaelen the Weigher",
+      "role_name": "Senior Auditor of Oaths",
+      "activity": "Adjusting the Scales of Oaths to influence state_total_debt",
+      "home_base": "The Scales of Oaths Chamber",
+      "arc_goal": "Reduce the complexity of promises to lower state_enforcement_intensity",
+      "inventory": [
+        {
+          "name": "Brass Promise-Scale",
+          "description": "A calibrated instrument for measuring the weight of spoken intent.",
+          "quantity": 1
+        },
+        {
+          "name": "Gravity-Sensitive Ink",
+          "description": "Viscous black fluid that hardens when a lie is detected.",
+          "quantity": 5
+        },
+        {
+          "name": "Ledger of Heavy Vows",
+          "description": "A massive tome recording the heaviest debts in Verbalis.",
+          "quantity": 1
+        },
+        {
+          "name": "Auditor's Seal",
+          "description": "A heavy stamp used to finalize debt-weight assessments.",
+          "quantity": 1
+        },
+        {
+          "name": "Calibration Weights",
+          "description": "Small lead cubes used to balance the Scales.",
+          "quantity": 12
+        },
+        {
+          "name": "Silent Quill",
+          "description": "A writing tool that absorbs sound while recording.",
+          "quantity": 3
+        },
+        {
+          "name": "Verification Lens",
+          "description": "A monocle that reveals the shimmer of magical oaths.",
+          "quantity": 1
+        },
+        {
+          "name": "Debt-Weight Charts",
+          "description": "Reference scrolls for calculating tax rates.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Great Balance",
+          "asset_type": "Institutional Tool",
+          "description": "The central mechanism for weighing city-wide promises.",
+          "story_use": "Used to manipulate the state_total_debt variable."
+        },
+        {
+          "asset_name": "Auditor's Desk",
+          "asset_type": "Furniture",
+          "description": "A heavy oak desk reinforced with iron.",
+          "story_use": "A place to store sensitive debt records."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_001",
+          "topic": "Promise Weight Theory",
+          "summary": "Understanding how linguistic complexity correlates to physical weight.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_002",
+          "topic": "Ink Alchemy",
+          "summary": "The chemical composition of gravity-sensitive seals.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Vesper the Runner",
+      "role_name": "Lead Courier",
+      "activity": "Transporting high-weight promises to influence state_market_trust",
+      "home_base": "The Silent Runners Dispatch",
+      "arc_goal": "Increase transit fees to manipulate group_couriers leverage",
+      "inventory": [
+        {
+          "name": "Leather Satchel",
+          "description": "Reinforced bag for carrying heavy promise-scrolls.",
+          "quantity": 1
+        },
+        {
+          "name": "Silence Oath Amulet",
+          "description": "A charm that prevents the wearer from speaking during transit.",
+          "quantity": 1
+        },
+        {
+          "name": "Courier Route Map",
+          "description": "A detailed map of the city's most efficient delivery paths.",
+          "quantity": 1
+        },
+        {
+          "name": "Speed-Enhancing Salve",
+          "description": "A balm that numbs the legs for long-distance running.",
+          "quantity": 2
+        },
+        {
+          "name": "Wax Seal Kit",
+          "description": "Tools for securing promise-scrolls against tampering.",
+          "quantity": 1
+        },
+        {
+          "name": "Runner's Boots",
+          "description": "Lightweight footwear designed for silent movement.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Flare",
+          "description": "A signal device for when a courier is intercepted.",
+          "quantity": 3
+        },
+        {
+          "name": "Delivery Logbook",
+          "description": "A record of all transported promises and their weights.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Dispatch Hub",
+          "asset_type": "Building",
+          "description": "The central station for all courier operations.",
+          "story_use": "Used to control the flow of promises in the city."
+        },
+        {
+          "asset_name": "Runner's Cloak",
+          "asset_type": "Clothing",
+          "description": "A hooded garment that dampens sound.",
+          "story_use": "Essential for stealthy promise delivery."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_003",
+          "topic": "Urban Navigation",
+          "summary": "Mastery of the city's hidden alleys and shortcuts.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_004",
+          "topic": "Contractual Silence",
+          "summary": "The legal implications of breaking a runner's oath.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Mora the Voiceless",
+      "role_name": "Community Advocate",
+      "activity": "Organizing collective silence to influence state_social_stability",
+      "home_base": "The Voiceless Refusal Hall",
+      "arc_goal": "Achieve debt forgiveness for the group_debtors",
+      "inventory": [
+        {
+          "name": "Sign Language Manual",
+          "description": "A guide for communicating without speaking.",
+          "quantity": 1
+        },
+        {
+          "name": "Refusal Banner",
+          "description": "A cloth sign used in silent protests.",
+          "quantity": 1
+        },
+        {
+          "name": "Community Ration Card",
+          "description": "A token for accessing basic goods from brokers.",
+          "quantity": 5
+        },
+        {
+          "name": "Mask of Silence",
+          "description": "A decorative face covering worn by the Voiceless.",
+          "quantity": 1
+        },
+        {
+          "name": "Charcoal Chalk",
+          "description": "Used for writing messages on walls.",
+          "quantity": 10
+        },
+        {
+          "name": "Solidarity Ribbon",
+          "description": "A symbol of unity among the debtors.",
+          "quantity": 20
+        },
+        {
+          "name": "Hidden Stash Map",
+          "description": "A map showing locations of shared resources.",
+          "quantity": 1
+        },
+        {
+          "name": "Petition Scroll",
+          "description": "A document demanding debt forgiveness.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Refusal Hall",
+          "asset_type": "Building",
+          "description": "A meeting place for those who refuse to speak.",
+          "story_use": "Used to organize collective action against the state."
+        },
+        {
+          "asset_name": "The Silent Bell",
+          "asset_type": "Artifact",
+          "description": "A bell that makes no sound when struck.",
+          "story_use": "A symbol of the Voiceless movement."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_005",
+          "topic": "Silent Communication",
+          "summary": "Advanced techniques for conveying complex ideas without words.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_006",
+          "topic": "Debt Law",
+          "summary": "Loopholes in the city's debt enforcement policies.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Silas the Enforcer",
+      "role_name": "Silence Keeper",
+      "activity": "Seizing assets to influence state_enforcement_intensity",
+      "home_base": "The Silence Keepers Barracks",
+      "arc_goal": "Increase enforcement to stabilize state_social_stability",
+      "inventory": [
+        {
+          "name": "Silencing Collar",
+          "description": "A magical device that prevents speech.",
+          "quantity": 2
+        },
+        {
+          "name": "Seizure Warrant",
+          "description": "A legal document authorizing property confiscation.",
+          "quantity": 5
+        },
+        {
+          "name": "Enforcer's Baton",
+          "description": "A heavy weapon for subduing unruly citizens.",
+          "quantity": 1
+        },
+        {
+          "name": "Restraint Shackles",
+          "description": "Iron cuffs for detaining debtors.",
+          "quantity": 3
+        },
+        {
+          "name": "Patrol Lantern",
+          "description": "A light source that reveals hidden magical signatures.",
+          "quantity": 1
+        },
+        {
+          "name": "Armor Plate",
+          "description": "Reinforced chest piece for protection.",
+          "quantity": 1
+        },
+        {
+          "name": "Evidence Bag",
+          "description": "A pouch for storing seized assets.",
+          "quantity": 4
+        },
+        {
+          "name": "Reporting Tablet",
+          "description": "A device for logging enforcement actions.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Barracks",
+          "asset_type": "Building",
+          "description": "The headquarters for the Silence Keepers.",
+          "story_use": "Used to coordinate patrols and seizures."
+        },
+        {
+          "asset_name": "The Iron Gate",
+          "asset_type": "Structure",
+          "description": "A massive gate that restricts movement.",
+          "story_use": "Used to control access to the city districts."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_007",
+          "topic": "Enforcement Tactics",
+          "summary": "Strategies for effective asset seizure and crowd control.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_008",
+          "topic": "Magical Restraints",
+          "summary": "The mechanics of silencing collars and shackles.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Elara the Ink-Stained",
+      "role_name": "Gravity-Ink Alchemist",
+      "activity": "Refining the density of ink used by The Scales of Oaths to manipulate state_total_debt",
+      "home_base": "The Scales of Oaths Chamber",
+      "arc_goal": "Sabotage the accuracy of debt-weight calculations to lower state_enforcement_intensity",
+      "inventory": [
+        {
+          "name": "Vial of Lead-Infused Ink",
+          "description": "Dense pigment that artificially inflates the weight of spoken oaths.",
+          "quantity": 5
+        },
+        {
+          "name": "Calibrated Quill",
+          "description": "A writing tool designed to measure the exact pressure of a signature.",
+          "quantity": 1
+        },
+        {
+          "name": "Lead-Lined Ledger",
+          "description": "A heavy book used to hide sensitive debt records from inspectors.",
+          "quantity": 1
+        },
+        {
+          "name": "Gravity-Sensitive Blotter",
+          "description": "Absorbs excess ink to prevent accidental weight fluctuations.",
+          "quantity": 3
+        },
+        {
+          "name": "Etching Acid",
+          "description": "Used to dissolve ink seals on official documents.",
+          "quantity": 2
+        },
+        {
+          "name": "Stabilizing Salts",
+          "description": "Chemicals that keep the ink from reacting to ambient gravity shifts.",
+          "quantity": 10
+        },
+        {
+          "name": "Micro-Scale",
+          "description": "A portable device for weighing small promise-tokens.",
+          "quantity": 1
+        },
+        {
+          "name": "Sealing Wax (Void-Black)",
+          "description": "Wax that absorbs light and sound, used for confidential debt transfers.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Alchemical Ink Lab",
+          "asset_type": "Workshop",
+          "description": "A cramped room filled with bubbling vats of heavy pigments.",
+          "story_use": "Crafting illegal ink to alter debt records."
+        },
+        {
+          "asset_name": "Gravity-Well Storage",
+          "asset_type": "Vault",
+          "description": "A reinforced container that keeps volatile ink stable.",
+          "story_use": "Storing dangerous materials for high-stakes forgery."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_ink_density",
+          "topic": "Ink Chemistry",
+          "summary": "Understanding how specific mineral additives affect the weight of written promises.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_scale_weakness",
+          "topic": "Scale Calibration",
+          "summary": "Identifying the mechanical blind spots in the Scales of Oaths.",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Jorin the Silent",
+      "role_name": "Courier Scout",
+      "activity": "Mapping blind spots in the city to assist The Silent Runners in bypassing state_enforcement_intensity",
+      "home_base": "The Silent Runners Dispatch",
+      "arc_goal": "Establish a secret route for The Voiceless to transport goods without triggering state_total_debt",
+      "inventory": [
+        {
+          "name": "Sound-Dampening Cloak",
+          "description": "Woven from fibers that absorb footsteps and whispers.",
+          "quantity": 1
+        },
+        {
+          "name": "Navigation Compass (Magnetic)",
+          "description": "Points toward the nearest concentration of high-weight debt.",
+          "quantity": 1
+        },
+        {
+          "name": "Courier's Satchel",
+          "description": "Reinforced leather bag designed to carry heavy promise-scrolls.",
+          "quantity": 2
+        },
+        {
+          "name": "Grappling Hook",
+          "description": "Used for scaling the walls of the city to avoid patrols.",
+          "quantity": 1
+        },
+        {
+          "name": "Flash-Powder Pouch",
+          "description": "Creates a blinding light to escape Silence Keepers.",
+          "quantity": 5
+        },
+        {
+          "name": "Map of Hidden Alleys",
+          "description": "A hand-drawn guide to the city's least-patrolled routes.",
+          "quantity": 1
+        },
+        {
+          "name": "Lockpick Set",
+          "description": "Specialized tools for opening debt-sealed doors.",
+          "quantity": 1
+        },
+        {
+          "name": "Rations (Dried Moss)",
+          "description": "Lightweight food for long, silent stakeouts.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scout's Perch",
+          "asset_type": "Observation Post",
+          "description": "A hidden rooftop nook overlooking the main courier routes.",
+          "story_use": "Monitoring patrol patterns of the Silence Keepers."
+        },
+        {
+          "asset_name": "Safehouse Cache",
+          "asset_type": "Storage",
+          "description": "A small, concealed compartment in the city walls.",
+          "story_use": "Hiding supplies for the Voiceless movement."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_patrol_routes",
+          "topic": "Patrol Patterns",
+          "summary": "Detailed knowledge of when and where the Silence Keepers patrol.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "k_courier_ciphers",
+          "topic": "Courier Codes",
+          "summary": "Understanding the secret signals used by the Silent Runners.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Thalric the Broker",
+      "role_name": "Debt Arbitrator",
+      "activity": "Manipulating market trust by adjusting interest rates for The Promise Brokers",
+      "home_base": "The Promise Brokers Exchange",
+      "arc_goal": "Increase state_market_trust by consolidating small debts into single, high-weight promises",
+      "inventory": [
+        {
+          "name": "Gold-Plated Abacus",
+          "description": "Used for calculating complex interest rates on promises.",
+          "quantity": 1
+        },
+        {
+          "name": "Contract Seal",
+          "description": "A heavy stamp used to finalize debt agreements.",
+          "quantity": 1
+        },
+        {
+          "name": "Inkwell of Prosperity",
+          "description": "Contains ink that glows when a profitable deal is signed.",
+          "quantity": 2
+        },
+        {
+          "name": "Debt-Weight Ledger",
+          "description": "A record of all active promises currently under his management.",
+          "quantity": 1
+        },
+        {
+          "name": "Silk Handkerchief",
+          "description": "Used to wipe away sweat during high-pressure negotiations.",
+          "quantity": 3
+        },
+        {
+          "name": "Negotiation Token",
+          "description": "A small coin that grants entry to the Exchange floor.",
+          "quantity": 5
+        },
+        {
+          "name": "Fine Quill",
+          "description": "Made from the feather of a rare bird, for signing major contracts.",
+          "quantity": 2
+        },
+        {
+          "name": "Wax Seal Heater",
+          "description": "A portable device to melt wax for sealing contracts on the go.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Broker's Office",
+          "asset_type": "Office",
+          "description": "A luxurious room filled with mahogany furniture and debt records.",
+          "story_use": "Conducting high-stakes negotiations with merchants."
+        },
+        {
+          "asset_name": "Private Vault",
+          "asset_type": "Vault",
+          "description": "A secure room for storing the most valuable promise-contracts.",
+          "story_use": "Protecting assets from seizure by the Silence Keepers."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_market_trends",
+          "topic": "Market Analysis",
+          "summary": "Predicting shifts in market trust based on debt volume.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_contract_law",
+          "topic": "Legal Loopholes",
+          "summary": "Finding ways to restructure debt to avoid immediate seizure.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Lyra the Refuser",
+      "role_name": "Silence Keeper Defector",
+      "activity": "Disrupting the enforcement of debt by sabotaging equipment in The Silence Keepers Barracks",
+      "home_base": "The Voiceless Refusal Hall",
+      "arc_goal": "Lower state_enforcement_intensity by destroying the silencing collars used on debtors",
+      "inventory": [
+        {
+          "name": "Broken Silencing Collar",
+          "description": "A piece of evidence showing the cruelty of the Silence Keepers.",
+          "quantity": 1
+        },
+        {
+          "name": "Lock-Breaking Tool",
+          "description": "Specifically designed to open the collars of the Voiceless.",
+          "quantity": 1
+        },
+        {
+          "name": "Disguise Kit",
+          "description": "Includes robes and masks to blend in with the Silence Keepers.",
+          "quantity": 1
+        },
+        {
+          "name": "Map of Barracks",
+          "description": "A detailed layout of the Silence Keepers' headquarters.",
+          "quantity": 1
+        },
+        {
+          "name": "Smoke Bomb",
+          "description": "Creates a distraction for quick escapes.",
+          "quantity": 3
+        },
+        {
+          "name": "Hidden Dagger",
+          "description": "A small blade for self-defense in tight situations.",
+          "quantity": 1
+        },
+        {
+          "name": "Communication Cipher",
+          "description": "A codebook for sending messages to other defectors.",
+          "quantity": 1
+        },
+        {
+          "name": "Healing Salve",
+          "description": "For treating injuries sustained during sabotage missions.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Defector's Workshop",
+          "asset_type": "Workshop",
+          "description": "A hidden basement where she repairs and modifies stolen equipment.",
+          "story_use": "Disabling silencing collars."
+        },
+        {
+          "asset_name": "Safehouse",
+          "asset_type": "Residence",
+          "description": "A small, fortified room in the Voiceless Refusal Hall.",
+          "story_use": "Providing shelter for those fleeing the Silence Keepers."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_collar_mechanics",
+          "topic": "Collar Engineering",
+          "summary": "Understanding the magical and mechanical workings of silencing collars.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "k_barracks_security",
+          "topic": "Security Protocols",
+          "summary": "Knowing the security measures used by the Silence Keepers.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelo the Ledger-Burner",
+      "role_name": "Archive Saboteur",
+      "activity": "Infiltrating The Archive of Unpaid Debts to delete records, directly reducing state_total_debt.",
+      "home_base": "The Archive of Unpaid Debts",
+      "arc_goal": "To erase the debt history of The Voiceless, forcing a collapse in state_enforcement_intensity.",
+      "inventory": [
+        {
+          "name": "Acidic Ink-Solvent",
+          "description": "A caustic liquid designed to dissolve gravity-sensitive ink seals.",
+          "quantity": 5
+        },
+        {
+          "name": "Smudged Ledger Page",
+          "description": "A fragment of a debt record that has been partially erased.",
+          "quantity": 1
+        },
+        {
+          "name": "Lockpick of Silence",
+          "description": "A tool that dampens the sound of metal-on-metal contact.",
+          "quantity": 2
+        },
+        {
+          "name": "Charred Parchment Scrap",
+          "description": "Evidence of a destroyed promise, useless for enforcement.",
+          "quantity": 12
+        },
+        {
+          "name": "Dark Hooded Cloak",
+          "description": "Woven with fibers that absorb ambient light in the Archive.",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of False Ink",
+          "description": "Used to forge entries that appear valid but carry zero weight.",
+          "quantity": 3
+        },
+        {
+          "name": "Silent Runners Pass",
+          "description": "A stolen credential allowing access to restricted courier routes.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Smoke Pellet",
+          "description": "Creates a thick, sound-dampening fog for quick escapes.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Archive Vault",
+          "asset_type": "Secure Storage",
+          "description": "A heavily guarded room containing the physical debt records of the city.",
+          "story_use": "The primary location for Kaelo to execute sabotage missions."
+        },
+        {
+          "asset_name": "Gravity-Ink Neutralizer",
+          "asset_type": "Tool",
+          "description": "A device that emits a frequency to temporarily disable ink seals.",
+          "story_use": "Used to bypass security measures in The Scales of Oaths."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_archive_layout",
+          "topic": "Archive Security",
+          "summary": "Detailed map of guard rotations and blind spots in the Archive.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "k_ink_chemistry",
+          "topic": "Gravity-Ink",
+          "summary": "Understanding the chemical composition of the ink used by The Scales of Oaths.",
+          "confidence": 8
+        }
+      ]
+    },
+    {
+      "display_name": "Bram the Promise-Broker",
+      "role_name": "Credit Arbitrator",
+      "activity": "Managing high-weight promise trades at The Promise Brokers Exchange to influence state_market_trust.",
+      "home_base": "The Promise Brokers Exchange",
+      "arc_goal": "To inflate the value of promises to maximize profit, inadvertently increasing state_total_debt.",
+      "inventory": [
+        {
+          "name": "Golden Promise Scale",
+          "description": "A portable device for measuring the weight of small verbal contracts.",
+          "quantity": 1
+        },
+        {
+          "name": "Broker's Ledger",
+          "description": "A record of all active high-weight promises and their interest rates.",
+          "quantity": 1
+        },
+        {
+          "name": "Sealed Contract Scroll",
+          "description": "A high-value promise waiting for a buyer.",
+          "quantity": 10
+        },
+        {
+          "name": "Ink-Stained Quill",
+          "description": "Used to sign new, complex promises that carry heavy debt.",
+          "quantity": 3
+        },
+        {
+          "name": "Market Trust Token",
+          "description": "A currency used to trade promises between brokers.",
+          "quantity": 50
+        },
+        {
+          "name": "Debt-Weight Calculator",
+          "description": "An abacus designed to calculate interest on promise-weight.",
+          "quantity": 1
+        },
+        {
+          "name": "Velvet Pouch",
+          "description": "Used to carry sensitive, high-weight promise scrolls.",
+          "quantity": 2
+        },
+        {
+          "name": "Broker's Seal",
+          "description": "A stamp used to validate new promises in the market.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Exchange Floor",
+          "asset_type": "Marketplace",
+          "description": "The central hub for trading promises and credit lines.",
+          "story_use": "The location where Bram manipulates market trust."
+        },
+        {
+          "asset_name": "Credit Line Ledger",
+          "asset_type": "Financial Record",
+          "description": "A master list of all outstanding debts owed to the brokers.",
+          "story_use": "Used to exert leverage over debtors."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_market_trends",
+          "topic": "Market Dynamics",
+          "summary": "Predictive models for how promise volume affects market trust.",
+          "confidence": 9
+        },
+        {
+          "knowledge_id": "k_broker_secrets",
+          "topic": "Insider Trading",
+          "summary": "Knowledge of which promises are likely to default.",
+          "confidence": 7
+        }
+      ]
+    },
+    {
+      "display_name": "Hana the Silent-Runner",
+      "role_name": "Courier Dispatcher",
+      "activity": "Managing routes at The Silent Runners Dispatch to ensure high-weight promises reach their destination, affecting state_total_debt.",
+      "home_base": "The Silent Runners Dispatch",
+      "arc_goal": "To optimize delivery routes to increase transit fees, putting pressure on state_market_trust.",
+      "inventory": [
+        {
+          "name": "Courier Satchel",
+          "description": "A reinforced bag designed to carry heavy, gravity-sensitive promises.",
+          "quantity": 1
+        },
+        {
+          "name": "Route Map",
+          "description": "A detailed map of the city's courier routes and checkpoints.",
+          "quantity": 1
+        },
+        {
+          "name": "Silence Oath Seal",
+          "description": "A wax seal used to verify the courier's silence during transit.",
+          "quantity": 20
+        },
+        {
+          "name": "Sturdy Boots",
+          "description": "Worn by runners to navigate the city's rooftops and alleys.",
+          "quantity": 2
+        },
+        {
+          "name": "Transit Fee Ledger",
+          "description": "A record of all delivery fees collected by the guild.",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Whistle",
+          "description": "Used to communicate with other runners without breaking silence.",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Ration",
+          "description": "Dried food for long delivery shifts.",
+          "quantity": 5
+        },
+        {
+          "name": "Courier Badge",
+          "description": "Identifies the bearer as a member of The Silent Runners.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Dispatch Hub",
+          "asset_type": "Logistics Center",
+          "description": "The central office for coordinating courier deliveries.",
+          "story_use": "The location where Hana manages the flow of promises."
+        },
+        {
+          "asset_name": "Priority Delivery Route",
+          "asset_type": "Logistics Route",
+          "description": "A high-speed route for urgent, high-weight promises.",
+          "story_use": "Used to manipulate the speed of debt accumulation."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_route_optimization",
+          "topic": "Logistics",
+          "summary": "Techniques for minimizing delivery time and maximizing fees.",
+          "confidence": 8
+        },
+        {
+          "knowledge_id": "k_city_blindspots",
+          "topic": "Navigation",
+          "summary": "Knowledge of areas in the city where enforcement is weak.",
+          "confidence": 9
+        }
+      ]
+    },
+    {
+      "display_name": "Runa the Oath-Breaker",
+      "role_name": "Barracks Infiltrator",
+      "activity": "Sabotaging equipment in The Silence Keepers Barracks to reduce state_enforcement_intensity.",
+      "home_base": "The Silence Keepers Barracks",
+      "arc_goal": "To disable the silencing collars of the Enforcers, empowering The Voiceless to speak again.",
+      "inventory": [
+        {
+          "name": "Collaring Tool",
+          "description": "A specialized wrench for loosening the magical silencing collars.",
+          "quantity": 1
+        },
+        {
+          "name": "Barracks Key",
+          "description": "A stolen key providing access to the armory.",
+          "quantity": 1
+        },
+        {
+          "name": "Disguise Cloak",
+          "description": "A Silence Keeper uniform used for infiltration.",
+          "quantity": 1
+        },
+        {
+          "name": "Flash Powder",
+          "description": "Used to create a distraction during escapes.",
+          "quantity": 3
+        },
+        {
+          "name": "Lockpick Set",
+          "description": "Standard tools for bypassing barracks security.",
+          "quantity": 1
+        },
+        {
+          "name": "Map of Barracks",
+          "description": "A hand-drawn map of the barracks' layout and guard patrols.",
+          "quantity": 1
+        },
+        {
+          "name": "Healing Salve",
+          "description": "Used to treat injuries sustained during sabotage missions.",
+          "quantity": 2
+        },
+        {
+          "name": "Silent Whistle",
+          "description": "Used to signal allies without alerting guards.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Armory",
+          "asset_type": "Storage",
+          "description": "A secure room containing the silencing collars.",
+          "story_use": "The primary target for Runa's sabotage efforts."
+        },
+        {
+          "asset_name": "Collaring Mechanism",
+          "asset_type": "Magical Device",
+          "description": "The device that powers the silencing collars.",
+          "story_use": "Used to disable the collars and free the citizens."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "k_barracks_security",
+          "topic": "Security",
+          "summary": "Detailed knowledge of guard schedules and security protocols.",
+          "confidence": 8
+        },
+        {
+          "knowledge_id": "k_collar_mechanics",
+          "topic": "Magic",
+          "summary": "Understanding how the silencing collars are powered and disabled.",
+          "confidence": 9
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Debt Collection Cycle",
+      "summary": "Silence Keepers track and seize assets from debtors to reduce aggregate debt.",
+      "roles": [
+        "Silence Keeper",
+        "Debt Arbitrator"
+      ],
+      "rooms": [
+        "The Silence Keepers Barracks",
+        "The Archive of Unpaid Debts"
+      ],
+      "pressure": "Increases state_enforcement_intensity, which eventually triggers public unrest."
+    },
+    {
+      "label": "The Promise Verification Flow",
+      "summary": "Auditors and Alchemists process new promises, impacting the total debt volume.",
+      "roles": [
+        "Senior Auditor of Oaths",
+        "Gravity-Ink Alchemist"
+      ],
+      "rooms": [
+        "The Scales of Oaths Chamber"
+      ],
+      "pressure": "Directly changes state_total_debt, influencing the market trust index."
+    },
+    {
+      "label": "The Courier Transit Network",
+      "summary": "Couriers move promises between brokers, risking interception by saboteurs.",
+      "roles": [
+        "Lead Courier",
+        "Courier Scout",
+        "Archive Saboteur"
+      ],
+      "rooms": [
+        "The Silent Runners Dispatch",
+        "The Promise Brokers Exchange"
+      ],
+      "pressure": "Affects the speed of debt accumulation and the stability of market trust."
+    }
+  ],
+  "player_entry_points": [
+    "A new courier arriving at The Silent Runners Dispatch seeking their first route.",
+    "A debtor entering The Voiceless Refusal Hall to challenge their seizure notice.",
+    "An alchemist apprentice finding a discarded, unsealed promise in the streets.",
+    "A recruit reporting for duty at The Silence Keepers Barracks."
+  ],
+  "conflict_hooks": [
+    "The Scales of Oaths has suddenly increased the tax rate on all promises, causing a surge in defaults.",
+    "A shipment of high-weight promises has gone missing, and the Silence Keepers are blaming the couriers.",
+    "The Voiceless have begun a silent protest, refusing to speak any new promises, causing the market to freeze."
+  ],
+  "custom_actions": [
+    "weigh_promise",
+    "seal_contract",
+    "seize_assets",
+    "forge_ink",
+    "deliver_silently",
+    "negotiate_forgiveness"
+  ],
+  "open_action_examples": [
+    {
+      "action_name": "weigh_promise",
+      "initiating_role": "Senior Auditor of Oaths",
+      "target_role": "Lead Courier",
+      "situation": "A high-weight promise is presented for transit without proper certification.",
+      "proposed_effects": [
+        "status"
+      ],
+      "coordinator_checks": [
+        "Verify the promise weight against current city debt limits",
+        "Check if the Lead Courier has the required transit permit",
+        "Ensure the promise is physically present in The Scales of Oaths Chamber"
+      ]
+    },
+    {
+      "action_name": "seize_assets",
+      "initiating_role": "Silence Keeper",
+      "target_role": "Community Advocate",
+      "situation": "A debtor has defaulted on a promise, and the Silence Keeper is enforcing the seizure.",
+      "proposed_effects": [
+        "transfer",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Confirm the debt-weight exceeds the debtor's credit threshold",
+        "Check for proximity in The Silence Keepers Barracks or debtor's home",
+        "Verify the Silence Keeper has authorization from the Debt Arbitrator"
+      ]
+    },
+    {
+      "action_name": "forge_ink",
+      "initiating_role": "Gravity-Ink Alchemist",
+      "target_role": "Archive Saboteur",
+      "situation": "The alchemist is creating a fake seal to bypass the Scales of Oaths.",
+      "proposed_effects": [
+        "create_item"
+      ],
+      "coordinator_checks": [
+        "Check if the alchemist possesses the necessary rare reagents",
+        "Verify the Archive Saboteur is providing a secure location",
+        "Ensure the action is hidden from the Senior Auditor of Oaths"
+      ]
+    },
+    {
+      "action_name": "negotiate_forgiveness",
+      "initiating_role": "Community Advocate",
+      "target_role": "Debt Arbitrator",
+      "situation": "The advocate is pleading for a reduction in debt-weight for a group of citizens.",
+      "proposed_effects": [
+        "speech",
+        "status"
+      ],
+      "coordinator_checks": [
+        "Verify the meeting is taking place in The Voiceless Refusal Hall",
+        "Check the current city social stability index",
+        "Ensure the Debt Arbitrator has the authority to modify the ledger"
+      ]
+    }
+  ],
+  "social_rules": [
+    "All promises must be weighed by the Scales of Oaths before transit.",
+    "Silence Keepers may seize any asset if the promise-weight exceeds the owner's credit.",
+    "Couriers are forbidden from speaking the contents of the promises they carry.",
+    "The Voiceless Refusal Hall is the only neutral ground for debt negotiation.",
+    "Gravity-Ink Alchemists must certify all seals on promise-contracts."
+  ],
+  "item_themes": [
+    "Sealed scrolls",
+    "Gravity-scales",
+    "Silencing collars",
+    "Courier satchels"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "v_001",
+      "name": "Gravity-Sensitive Inkwell",
+      "price": 450,
+      "mass": 1.2,
+      "description": "A heavy stone inkwell that darkens in color as the weight of the promise being written increases. Essential for Scales of Oaths clerks.",
+      "image_prompt": "A heavy, dark stone inkwell on a desk, ink swirling with gravity-defying patterns, bureaucratic office background.",
+      "category": "Measurement"
+    },
+    {
+      "item_id": "v_002",
+      "name": "Standardized Silence Collar",
+      "price": 1200,
+      "mass": 0.8,
+      "description": "A cold iron collar that tightens when the wearer attempts to speak a promise they cannot afford to back. Used by Silence Keepers.",
+      "image_prompt": "A rusted iron collar with intricate, etched runes, resting on a velvet cushion, dim lighting.",
+      "category": "Enforcement"
+    },
+    {
+      "item_id": "v_003",
+      "name": "Courier's Lead-Lined Satchel",
+      "price": 300,
+      "mass": 2.5,
+      "description": "A reinforced satchel designed to carry high-weight promises without the ink seals leaking through the fabric.",
+      "image_prompt": "A worn leather satchel with heavy metal buckles and lead-lined interior, hanging on a stone hook.",
+      "category": "Logistics"
+    },
+    {
+      "item_id": "v_004",
+      "name": "Oath-Weight Ledger",
+      "price": 150,
+      "mass": 4.0,
+      "description": "A massive, stone-bound book used to record the aggregate debt weight of a household. Requires two hands to lift.",
+      "image_prompt": "A thick, heavy book bound in grey stone, pages filled with dense, cramped calligraphy, sitting on a wooden lectern.",
+      "category": "Documentation"
+    },
+    {
+      "item_id": "v_005",
+      "name": "Promise-Broker's Quill",
+      "price": 85,
+      "mass": 0.1,
+      "description": "A quill carved from the bone of a silent bird, optimized for writing complex, high-interest contracts.",
+      "image_prompt": "A sharp, white quill resting next to a scroll, sharp focus on the nib, ink-stained table.",
+      "category": "Tools"
+    },
+    {
+      "item_id": "v_006",
+      "name": "Debt-Forgiveness Petition",
+      "price": 50,
+      "mass": 0.05,
+      "description": "A blank, official form that must be stamped by the Scales of Oaths to initiate a debt review.",
+      "image_prompt": "A crisp, yellowed parchment with official wax seals and empty signature lines, bureaucratic stamp in the corner.",
+      "category": "Documentation"
+    },
+    {
+      "item_id": "v_007",
+      "name": "Silence Keeper's Badge",
+      "price": 200,
+      "mass": 0.3,
+      "description": "A heavy iron badge shaped like a closed mouth, granting the bearer authority to seize assets.",
+      "image_prompt": "A circular iron badge with a relief of a sealed mouth, polished edges, dark background.",
+      "category": "Credential"
+    },
+    {
+      "item_id": "v_008",
+      "name": "Compressed Promise Tablet",
+      "price": 600,
+      "mass": 5.5,
+      "description": "A dense stone tablet containing a high-value promise that has been magically compressed to save space.",
+      "image_prompt": "A small, heavy stone tablet with glowing, etched runes, emitting a faint, dark aura.",
+      "category": "Currency"
+    },
+    {
+      "item_id": "v_009",
+      "name": "Courier's Transit Permit",
+      "price": 75,
+      "mass": 0.02,
+      "description": "A small, wax-sealed slip of paper allowing a runner to bypass standard inspection at the city gates.",
+      "image_prompt": "A small, folded paper with a prominent red wax seal, held by a gloved hand.",
+      "category": "Credential"
+    },
+    {
+      "item_id": "v_010",
+      "name": "Market Trust Index Gauge",
+      "price": 950,
+      "mass": 1.8,
+      "description": "A brass instrument that measures the current level of market trust in the city, indicated by a swinging needle.",
+      "image_prompt": "A brass and glass gauge with a needle pointing toward 'Low Trust', intricate gears visible inside.",
+      "category": "Measurement"
+    },
+    {
+      "item_id": "v_011",
+      "name": "Void-Ink Refill",
+      "price": 120,
+      "mass": 0.5,
+      "description": "A vial of ink that absorbs light, used to write promises that are meant to be 'forgotten' by the Scales.",
+      "image_prompt": "A glass vial filled with pitch-black, swirling liquid, casting no reflection.",
+      "category": "Consumable"
+    },
+    {
+      "item_id": "v_012",
+      "name": "Debtor's Shackles",
+      "price": 350,
+      "mass": 3.2,
+      "description": "Heavy iron shackles used to restrain those who have defaulted on their promise-weight.",
+      "image_prompt": "A pair of rusted iron shackles connected by a thick chain, lying on a cold stone floor.",
+      "category": "Enforcement"
+    },
+    {
+      "item_id": "v_013",
+      "name": "Silent Runner's Boots",
+      "price": 500,
+      "mass": 1.5,
+      "description": "Boots with soles made of sound-dampening moss, allowing couriers to move through the city without alerting debtors.",
+      "image_prompt": "Leather boots with thick, mossy soles, worn and dusty, standing on a stone ledge.",
+      "category": "Apparel"
+    },
+    {
+      "item_id": "v_014",
+      "name": "Oath-Weight Scale",
+      "price": 2500,
+      "mass": 15.0,
+      "description": "A portable, highly sensitive scale used by brokers to estimate the weight of a promise before formal registration.",
+      "image_prompt": "A delicate, ornate brass scale with two pans, one holding a scroll, the other a heavy stone weight.",
+      "category": "Measurement"
+    },
+    {
+      "item_id": "v_015",
+      "name": "Bureaucratic Red Tape",
+      "price": 10,
+      "mass": 0.1,
+      "description": "A spool of crimson ribbon used to bind official documents; notoriously difficult to untie.",
+      "image_prompt": "A spool of bright red ribbon, tangled and messy, sitting on a desk covered in paperwork.",
+      "category": "Tools"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "verbalis-wardrobe-policy-001",
+    "world_wardrobe_brief": "Bureaucratic fantasy in a vertical cliffside city. Attire reflects weight, debt, and ink-stained administration. Silhouettes are stooped and burdened. Materials are heavy, industrial, and archaic.",
+    "forbidden_aesthetics": [
+      "vibrant neon colors",
+      "modern synthetic fabrics",
+      "high-tech sci-fi gear",
+      "organic foliage",
+      "rounded soft edges",
+      "photorealism",
+      "visible text labels",
+      "fantasy adventurer armor"
+    ],
+    "palette_families": [
+      {
+        "name": "Administrative",
+        "dominant": "#2f2b28",
+        "accent": "#4a6d7c",
+        "trim": "#d1c7b7",
+        "material": "heavy vellum and black iron"
+      },
+      {
+        "name": "Courier",
+        "dominant": "#1a1816",
+        "accent": "#e8e4d9",
+        "trim": "#4a6d7c",
+        "material": "weathered leather and moss-soled boots"
+      },
+      {
+        "name": "Enforcement",
+        "dominant": "#2f2b28",
+        "accent": "#1a1816",
+        "trim": "#4a6d7c",
+        "material": "oxidized copper and cold iron"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "role_auditor",
+        "role_keywords": [
+          "auditor",
+          "weigher",
+          "alchemist"
+        ],
+        "attire": [
+          "high-collared robes",
+          "ink-stained aprons",
+          "heavy spectacles"
+        ],
+        "props": [
+          "gravity-sensitive inkwell",
+          "oath-weight ledger"
+        ],
+        "palette_notes": "Dark dominant tones with pale vellum accents.",
+        "silhouette_notes": "Rigid, rectangular, and imposing.",
+        "avoid": []
+      },
+      {
+        "rule_id": "role_courier",
+        "role_keywords": [
+          "courier",
+          "runner",
+          "scout"
+        ],
+        "attire": [
+          "reinforced tunics",
+          "strapped satchels",
+          "sound-dampening boots"
+        ],
+        "props": [
+          "lead-lined satchel",
+          "transit permit"
+        ],
+        "palette_notes": "Dark, muted tones for stealth.",
+        "silhouette_notes": "Stooped, asymmetrical due to heavy bags.",
+        "avoid": []
+      },
+      {
+        "rule_id": "role_enforcer",
+        "role_keywords": [
+          "enforcer",
+          "keeper",
+          "barracks"
+        ],
+        "attire": [
+          "iron-plated tunics",
+          "heavy cloaks",
+          "silencing collars"
+        ],
+        "props": [
+          "iron badge",
+          "debtor shackles"
+        ],
+        "palette_notes": "Cold iron and dark stone colors.",
+        "silhouette_notes": "Broad, armored, and intimidating.",
+        "avoid": []
+      },
+      {
+        "rule_id": "role_broker",
+        "role_keywords": [
+          "broker",
+          "arbitrator"
+        ],
+        "attire": [
+          "layered vests",
+          "multiple pockets",
+          "quill holsters"
+        ],
+        "props": [
+          "promise-broker's quill",
+          "market trust gauge"
+        ],
+        "palette_notes": "Deep browns and copper highlights.",
+        "silhouette_notes": "Cluttered, busy, and layered.",
+        "avoid": []
+      }
+    ],
+    "default_rule": {
+      "rule_id": "default_citizen",
+      "role_keywords": [
+        "citizen",
+        "resident"
+      ],
+      "attire": [
+        "simple tunics",
+        "rough-hewn cloaks",
+        "sturdy boots"
+      ],
+      "props": [
+        "small stone tablet"
+      ],
+      "palette_notes": "Neutral stone and earth tones.",
+      "silhouette_notes": "Simple, slightly hunched posture.",
+      "avoid": []
+    },
+    "visual_consistency_rules": [
+      "Use thick, ink-brushed black outlines for all sprites.",
+      "Maintain strict top-down orthographic perspective.",
+      "Ensure all characters appear slightly stooped or burdened.",
+      "Limit color palette to the defined family colors.",
+      "Avoid fine details; prioritize silhouette readability.",
+      "Apply deep ambient occlusion shadows to all character bases."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "verbalis-cliff-001",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90 degrees",
+      "scale_rule": "1 tile equals 1 meter, fixed orthographic zoom"
+    },
+    "palette": {
+      "dominant": "#2f2b28",
+      "secondary": "#d1c7b7",
+      "accent": "#4a6d7c",
+      "shadow": "#1a1816",
+      "highlight": "#e8e4d9"
+    },
+    "materials": [
+      "weathered limestone",
+      "oxidized copper",
+      "heavy vellum parchment",
+      "black iron ink-seals",
+      "rough-hewn basalt"
+    ],
+    "lighting": "High-contrast chiaroscuro, directional light from above, deep ambient occlusion in crevices",
+    "architecture": [
+      "vertical cliff-carved dwellings",
+      "suspended rope-and-plank bridges",
+      "narrow winding staircases",
+      "buttressed administrative towers"
+    ],
+    "terrain": {
+      "ground": "cracked stone cliff face",
+      "path": "worn wooden courier walkways",
+      "edge": "sheer vertical drop-off"
+    },
+    "sprite_language": {
+      "body_proportion": "elongated, stooped, burdened by heavy satchels",
+      "outline": "thick, ink-brushed, high-contrast black",
+      "role_readability": "silhouette-based, distinct gear shapes for couriers vs officials"
+    },
+    "world_prompt_prefix": "Verbalis cliffside metropolis, vertical stone architecture, ink-stained parchment aesthetic, bureaucratic fantasy, high-contrast lighting",
+    "sprite_prompt_prefix": "Verbalis citizen, ink-brushed style, top-down view, burdened posture, bureaucratic attire",
+    "forbidden_visuals": [
+      "visible text labels",
+      "title cards",
+      "photorealism",
+      "vibrant neon colors",
+      "organic foliage",
+      "rounded soft edges",
+      "disconnected room dioramas"
+    ],
+    "canon_hash": "f9bf16cd4dbd6a01"
+  }
+}

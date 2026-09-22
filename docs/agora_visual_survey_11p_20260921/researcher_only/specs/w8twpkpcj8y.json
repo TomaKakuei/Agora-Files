@@ -1,0 +1,2952 @@
+{
+  "world_name": "Mycelium Patent Bazaar",
+  "world_id": "mycelium_patent_bazaar",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "grounded_antique_market",
+    "profile_id": "grounded_antique_market",
+    "locale": "en-US",
+    "tone": "gritty, bureaucratic, organic",
+    "visual_direction": "bioluminescent fungal networks, damp concrete, lab-grade glass, pulsing spores",
+    "currency_code": "CNY",
+    "currency_symbol": "¥",
+    "currency_minor_unit": "fen",
+    "currency_name": "Spore Credits",
+    "domain_label": "undercity.bio",
+    "starting_wallet_minor": {
+      "min": 3000,
+      "max": 14000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "biotech_undercity_v1",
+      "frontend_affordance_id": "market_trade_ui",
+      "asset_prompt_kit_id": "fungal_cyberpunk_assets"
+    },
+    "policy_refs": {
+      "economy_policy_id": "cny_market_v1",
+      "item_collection_id": "antique_market_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "grounded_antique_market_v1",
+      "property_policy_id": "grounded_antique_market_v1",
+      "knowledge_policy_id": "grounded_antique_market_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "biotech undercity market",
+  "premise": "A subterranean trade hub built on engineered mycelium where guilds compete over biological intellectual property and living infrastructure.",
+  "simulation_objective": "Facilitate high-stakes trade of biological patents and counterfeit strains while managing quarantine risks.",
+  "agent_count_target": 25,
+  "player_count_target": 50,
+  "wall_color_theme": "oxidized_copper_and_concrete",
+  "economy_focus": "Intellectual property, biological assets, and contract enforcement.",
+  "exploration_focus": "Navigating the fungal infrastructure and uncovering illicit lab gossip.",
+  "conflict_tone": "Corporate espionage and quarantine politics.",
+  "visual_style": "Bioluminescent organic-industrial fusion.",
+  "rooms": [
+    {
+      "name": "Patent Filing Kiosk 04",
+      "biome": "industrial_fungal",
+      "purpose": "registration of biological IP",
+      "decor_tags": [
+        "terminal",
+        "mycelium_cables",
+        "cyan_lights"
+      ],
+      "activity_tags": [
+        "typing",
+        "scanning",
+        "stamping"
+      ],
+      "flux_floor_prompt": "top-down pixel art of damp poured concrete with embedded glowing cyan mycelial threads, 32px grid style",
+      "room_scene_prompt": "top-down orthographic view of a small patent filing kiosk, brutalist concrete walls, a central glowing terminal with pulsing biological conduits, no text, no labels, edge-to-edge floor texture, cyan bioluminescence.",
+      "width_tiles": 5,
+      "height_tiles": 5,
+      "ambient_palette": "focused_blue",
+      "archetype": "checkpoint",
+      "scene_components": [
+        {
+          "component_id": "biometric_ledger",
+          "label": "Biometric Ledger",
+          "description": "A pulsing fungal mass encased in glass used for DNA-based contract signing.",
+          "anchor": "center",
+          "width_tiles": 1,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Spore-Strain Exchange Stall",
+      "biome": "organic_industrial",
+      "purpose": "trading of fungal genetic material",
+      "decor_tags": [
+        "vials",
+        "refrigeration",
+        "copper_pipes"
+      ],
+      "activity_tags": [
+        "bartering",
+        "sampling",
+        "inspecting"
+      ],
+      "flux_floor_prompt": "top-down pixel art of raised metal grating over a glowing green spore slurry, industrial 16-bit style",
+      "room_scene_prompt": "top-down orthographic view of a market stall, translucent lab glass containers filled with glowing spores, copper piping along the walls, no text, no margins, full floor coverage.",
+      "width_tiles": 6,
+      "height_tiles": 4,
+      "ambient_palette": "soft_mint",
+      "archetype": "market_exchange",
+      "scene_components": [
+        {
+          "component_id": "cryo_display_case",
+          "label": "Cryo-Display Case",
+          "description": "A pressurized glass unit showcasing rare, glowing mycelium strains.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The Mycelial Server Room",
+      "biome": "biotech_core",
+      "purpose": "data storage in living tissue",
+      "decor_tags": [
+        "veins",
+        "racks",
+        "humidity_sensors"
+      ],
+      "activity_tags": [
+        "monitoring",
+        "splicing",
+        "cooling"
+      ],
+      "flux_floor_prompt": "top-down pixel art of thick fibrous mycelium mats with rhythmic cyan pulses, organic texture",
+      "room_scene_prompt": "top-down orthographic view of a biological server room, walls covered in thick shelf fungi and industrial cables, central pulsing brain-fungus rack, no text, no labels, dark indigo shadows.",
+      "width_tiles": 8,
+      "height_tiles": 8,
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "scene_components": [
+        {
+          "component_id": "neural_hyphae_array",
+          "label": "Neural Hyphae Array",
+          "description": "A massive cluster of glowing fungal filaments processing patent data.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Contract Enforcement Barracks",
+      "biome": "brutalist_security",
+      "purpose": "housing for guild enforcers",
+      "decor_tags": [
+        "lockers",
+        "hazard_suits",
+        "benches"
+      ],
+      "activity_tags": [
+        "equipping",
+        "resting",
+        "briefing"
+      ],
+      "flux_floor_prompt": "top-down pixel art of cracked wet concrete with yellow hazard stripes, industrial grit",
+      "room_scene_prompt": "top-down orthographic view of a security barracks, concrete bunkers, lockers containing glowing hazard suits, harsh overhead fluorescent lighting, no text, no margins.",
+      "width_tiles": 7,
+      "height_tiles": 6,
+      "ambient_palette": "dusty_brown",
+      "archetype": "training",
+      "scene_components": [
+        {
+          "component_id": "weapon_sanitizer",
+          "label": "Weapon Sanitizer",
+          "description": "A chemical misting station for cleaning biological residue from gear.",
+          "anchor": "west_mid",
+          "width_tiles": 1,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Spore-Cloud Lounge",
+      "biome": "subterranean_social",
+      "purpose": "informal negotiation and rest",
+      "decor_tags": [
+        "fungal_couches",
+        "mist",
+        "low_tables"
+      ],
+      "activity_tags": [
+        "whispering",
+        "drinking",
+        "relaxing"
+      ],
+      "flux_floor_prompt": "top-down pixel art of soft mossy fungal growth over concrete tiles, muted earth tones",
+      "room_scene_prompt": "top-down orthographic view of a dim lounge, organic fungal furniture growing from the floor, thick mist in the corners, flickering cyan lanterns, no text, no labels.",
+      "width_tiles": 10,
+      "height_tiles": 8,
+      "ambient_palette": "warm_lantern",
+      "archetype": "rest_social",
+      "scene_components": [
+        {
+          "component_id": "fermentation_vat",
+          "label": "Fermentation Vat",
+          "description": "A bubbling copper vat producing bioluminescent tonic for traders.",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Genetic Splicing Workshop",
+      "biome": "lab_industrial",
+      "purpose": "modifying biological assets",
+      "decor_tags": [
+        "centrifuges",
+        "microscopes",
+        "vats"
+      ],
+      "activity_tags": [
+        "splicing",
+        "culturing",
+        "testing"
+      ],
+      "flux_floor_prompt": "top-down pixel art of clean white lab tiles with occasional green slime stains, 32px grid",
+      "room_scene_prompt": "top-down orthographic view of a biotech workshop, pressurized glass containment cells, exposed biological conduits, stainless steel tables, no text, no margins.",
+      "width_tiles": 9,
+      "height_tiles": 7,
+      "ambient_palette": "focused_blue",
+      "archetype": "workshop",
+      "scene_components": [
+        {
+          "component_id": "incubation_chamber",
+          "label": "Incubation Chamber",
+          "description": "A large glass tube containing a developing synthetic organism.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Bazaar Logistics Yard",
+      "biome": "industrial_transit",
+      "purpose": "sorting and shipping crates",
+      "decor_tags": [
+        "cranes",
+        "pallets",
+        "cables"
+      ],
+      "activity_tags": [
+        "loading",
+        "sorting",
+        "scanning"
+      ],
+      "flux_floor_prompt": "top-down pixel art of heavy-duty metal plating with scuff marks and oil spills",
+      "room_scene_prompt": "top-down orthographic view of a logistics yard, industrial frames with fungal overgrowth, stacks of biological hazard crates, overhead cranes, no text, no labels.",
+      "width_tiles": 12,
+      "height_tiles": 10,
+      "ambient_palette": "clear_day",
+      "archetype": "logistics_yard",
+      "scene_components": [
+        {
+          "component_id": "heavy_lift_drone",
+          "label": "Heavy Lift Drone",
+          "description": "A multi-limbed mechanical drone with organic grippers for moving crates.",
+          "anchor": "south_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The High Council of Hyphae",
+      "biome": "ceremonial_brutalist",
+      "purpose": "guild leadership meetings",
+      "decor_tags": [
+        "thrones",
+        "banners",
+        "holograms"
+      ],
+      "activity_tags": [
+        "debating",
+        "judging",
+        "decreeing"
+      ],
+      "flux_floor_prompt": "top-down pixel art of polished dark stone with intricate glowing mycelial inlay patterns",
+      "room_scene_prompt": "top-down orthographic view of a grand council chamber, massive concrete pillars, a circular table made of living wood and fungus, orange ember lighting, no text, no margins.",
+      "width_tiles": 11,
+      "height_tiles": 11,
+      "ambient_palette": "ember_orange",
+      "archetype": "council",
+      "scene_components": [
+        {
+          "component_id": "patent_monolith",
+          "label": "Patent Monolith",
+          "description": "A towering stone slab etched with the bazaar's founding biological laws.",
+          "anchor": "north_mid",
+          "width_tiles": 3,
+          "height_tiles": 1
+        }
+      ]
+    }
+  ],
+  "role_groups": [],
+  "main_characters": [
+    {
+      "display_name": "Vexis Thorne",
+      "role_name": "Lead Patent Auditor",
+      "activity": "Verifying genetic sequences for unauthorized mutations",
+      "home_base": "Patent Filing Kiosk 04",
+      "arc_goal": "To expose a counterfeit spore-strain that threatens the Bazaar's stability",
+      "inventory": [
+        {
+          "name": "MPB-001: Bio-Luminescent Stylus",
+          "description": "A living quill that glows when it detects fraudulent DNA.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-002: Chitinous Ledger",
+          "description": "A heavy book bound in beetle shell containing active patent logs.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-003: Pheromone Sealant",
+          "description": "A wax-like substance used to lock digital-biological contracts.",
+          "quantity": 5
+        },
+        {
+          "name": "MPB-004: Neural-Link Spore-Pod",
+          "description": "A small pod that allows direct mental interface with the Mycelial Server.",
+          "quantity": 3
+        },
+        {
+          "name": "MPB-005: Micro-Slicer",
+          "description": "A precision tool for taking tissue samples from submitted patents.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-006: Desiccant Packet",
+          "description": "Industrial grade drying agent to protect sensitive scrolls.",
+          "quantity": 10
+        },
+        {
+          "name": "MPB-007: Auditor's Monocle",
+          "description": "A lens that highlights genetic drift in real-time.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-008: Compressed Mycelium Rations",
+          "description": "Nutrient-dense blocks for long shifts in the Kiosk.",
+          "quantity": 4
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Auditor's Sanctum",
+          "asset_type": "Real Estate",
+          "description": "A climate-controlled office within Kiosk 04.",
+          "story_use": "A secure location for analyzing high-value genetic data."
+        },
+        {
+          "asset_name": "Sequence Validator 9000",
+          "asset_type": "Machinery",
+          "description": "A massive bio-computer for cross-referencing strains.",
+          "story_use": "Used to prove the authenticity of disputed patents."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-001",
+          "topic": "Genetic Drift Patterns",
+          "summary": "Deep understanding of how spore-strains evolve over generations.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KNOW-002",
+          "topic": "Bazaar Legal Code",
+          "summary": "Expertise in the complex laws governing biological intellectual property.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen Voss",
+      "role_name": "Master Strain Trader",
+      "activity": "Negotiating the price of a rare bioluminescent fungus",
+      "home_base": "Spore-Strain Exchange Stall",
+      "arc_goal": "To monopolize the distribution of the 'Void-Glow' strain",
+      "inventory": [
+        {
+          "name": "MPB-009: Cryo-Spore Canister",
+          "description": "A pressurized tube for keeping rare strains in stasis.",
+          "quantity": 12
+        },
+        {
+          "name": "MPB-010: Trade Ledger of the Deep",
+          "description": "A record of every transaction made in the Bazaar's history.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-011: Scent-Masking Veil",
+          "description": "A silk cloth treated to hide the trader's emotional pheromones.",
+          "quantity": 2
+        },
+        {
+          "name": "MPB-012: Gilded Spore-Scale",
+          "description": "An ultra-precise balance for weighing fungal dust.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-013: Sample Vials",
+          "description": "Small glass tubes for potential buyers to inspect.",
+          "quantity": 25
+        },
+        {
+          "name": "MPB-014: Credit-Chits",
+          "description": "The standard currency of the Bazaar, minted in organic resin.",
+          "quantity": 500
+        },
+        {
+          "name": "MPB-015: Growth Accelerant",
+          "description": "A chemical spray that forces rapid fungal maturation.",
+          "quantity": 8
+        },
+        {
+          "name": "MPB-016: Nutrient Slurry",
+          "description": "A base liquid used to keep samples alive during transport.",
+          "quantity": 15
+        },
+        {
+          "name": "MPB-017: Magnifying Loupe",
+          "description": "A high-powered glass for inspecting spore health.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-018: Trade Permit",
+          "description": "A laminated document signed by the High Council.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-019: Portable Incense Burner",
+          "description": "Used to attract customers with pleasant fungal aromas.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-020: Protective Gloves",
+          "description": "Thick rubberized gloves for handling toxic strains.",
+          "quantity": 2
+        },
+        {
+          "name": "MPB-021: Catalog of Rarity",
+          "description": "A booklet detailing the most sought-after strains.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-022: Communication Spore-Radio",
+          "description": "A biological device for short-range messaging.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-023: Emergency Spore-Neutralizer",
+          "description": "A spray that kills any fungus instantly in case of a leak.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gilded Stall",
+          "asset_type": "Commercial Space",
+          "description": "A prime location in the Spore-Strain Exchange.",
+          "story_use": "The hub for all high-stakes trading and networking."
+        },
+        {
+          "asset_name": "Private Vault",
+          "asset_type": "Storage",
+          "description": "A hidden, reinforced locker for illegal strains.",
+          "story_use": "Storing the 'Void-Glow' strain away from prying eyes."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-003",
+          "topic": "Market Volatility",
+          "summary": "Predicting the rise and fall of strain values based on demand.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "KNOW-004",
+          "topic": "Smuggling Routes",
+          "summary": "Knowledge of hidden paths to bypass Bazaar Logistics Yard.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Unit 7-B 'Root'",
+      "role_name": "Enforcement Sentinel",
+      "activity": "Patrolling the perimeter for unlicensed genetic splicing",
+      "home_base": "Contract Enforcement Barracks",
+      "arc_goal": "To identify the source of a rogue mycelial infection in the barracks",
+      "inventory": [
+        {
+          "name": "MPB-024: Pulse-Stun Baton",
+          "description": "A weapon designed to incapacitate without damaging genetic material.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-025: Restraint Spores",
+          "description": "A canister of spores that grow into sticky webs upon contact.",
+          "quantity": 6
+        },
+        {
+          "name": "MPB-026: Heavy Carapace Armor",
+          "description": "Reinforced plating made from cured fungal fibers.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-027: Identification Scanner",
+          "description": "A handheld device that reads biometric data and patent IDs.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-028: Ration Paste",
+          "description": "A bland but efficient nutrient source for sentinels.",
+          "quantity": 10
+        },
+        {
+          "name": "MPB-029: Signal Flare",
+          "description": "A chemical stick that releases bright purple smoke.",
+          "quantity": 4
+        },
+        {
+          "name": "MPB-030: Repair Kit",
+          "description": "Tools for fixing damaged armor and mechanical joints.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-031: Enforcement Badge",
+          "description": "A symbol of authority granted by the High Council.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Sentinel Charging Station",
+          "asset_type": "Utility",
+          "description": "A specialized pod for rest and data synchronization.",
+          "story_use": "Where Unit 7-B uploads patrol logs and receives orders."
+        },
+        {
+          "asset_name": "The Armory Locker",
+          "asset_type": "Storage",
+          "description": "A secure cabinet for heavy-duty enforcement gear.",
+          "story_use": "Accessing specialized weaponry for high-threat missions."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-005",
+          "topic": "Combat Tactics",
+          "summary": "Efficient methods for neutralizing biological threats.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "KNOW-006",
+          "topic": "Bazaar Layout",
+          "summary": "Complete mapping of all vents and secret passages in the Bazaar.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Elara Myn",
+      "role_name": "Splicing Technician",
+      "activity": "Merging bioluminescent traits with industrial-grade mycelium",
+      "home_base": "Genetic Splicing Workshop",
+      "arc_goal": "To create a self-repairing fungal structure for the High Council",
+      "inventory": [
+        {
+          "name": "MPB-032: Precision Pipette",
+          "description": "A tool for transferring microliters of genetic broth.",
+          "quantity": 5
+        },
+        {
+          "name": "MPB-033: Petri-Dish Array",
+          "description": "A stack of sterile containers for growing cultures.",
+          "quantity": 12
+        },
+        {
+          "name": "MPB-034: Splicing Catalyst",
+          "description": "A rare enzyme that facilitates DNA recombination.",
+          "quantity": 3
+        },
+        {
+          "name": "MPB-035: Thermal Regulator",
+          "description": "A portable device to maintain optimal growth temperatures.",
+          "quantity": 2
+        },
+        {
+          "name": "MPB-036: Genetic Blueprint",
+          "description": "A digital scroll containing the target sequence.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-037: Cleaning Acid",
+          "description": "Strong solution for sterilizing the workstation.",
+          "quantity": 4
+        },
+        {
+          "name": "MPB-038: Lab Goggles",
+          "description": "Protective eyewear with multi-spectrum filters.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-039: Nutrient Agar",
+          "description": "A gelatinous substance used as a growth medium.",
+          "quantity": 20
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Splicing Vat",
+          "asset_type": "Machinery",
+          "description": "A large tank for growing complex fungal organisms.",
+          "story_use": "The primary tool for creating the self-repairing structure."
+        },
+        {
+          "asset_name": "Bio-Hazard Containment Unit",
+          "asset_type": "Storage",
+          "description": "A reinforced safe for dangerous experimental strains.",
+          "story_use": "Keeping failed experiments from contaminating the workshop."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-007",
+          "topic": "Molecular Biology",
+          "summary": "Advanced techniques for manipulating fungal DNA.",
+          "confidence": 96
+        },
+        {
+          "knowledge_id": "KNOW-008",
+          "topic": "Bio-Engineering",
+          "summary": "Designing functional structures using living mycelium.",
+          "confidence": 89
+        }
+      ]
+    },
+    {
+      "display_name": "Sylas Vane",
+      "role_name": "Black-Market Spore Broker",
+      "activity": "Smuggling illegal bioluminescent strains past the High Council",
+      "home_base": "The Spore-Cloud Lounge",
+      "arc_goal": "To monopolize the distribution of the forbidden 'Void-Cap' strain",
+      "inventory": [
+        {
+          "name": "Void-Cap Spore Vial",
+          "description": "A swirling, light-absorbing fungal essence",
+          "quantity": 5
+        },
+        {
+          "name": "Encrypted Ledger",
+          "description": "Contains names of corrupt Council members",
+          "quantity": 1
+        },
+        {
+          "name": "Pheromone Masker",
+          "description": "Neutralizes the scent of illicit spores",
+          "quantity": 3
+        },
+        {
+          "name": "Bazaar Entry Token",
+          "description": "A forged pass for the Logistics Yard",
+          "quantity": 2
+        },
+        {
+          "name": "Mycelial Siphon",
+          "description": "Extracts nutrients from rival strains",
+          "quantity": 1
+        },
+        {
+          "name": "Neural-Dampening Mist",
+          "description": "Used to evade Sentinel detection",
+          "quantity": 4
+        },
+        {
+          "name": "Glow-Stalk Samples",
+          "description": "High-grade bioluminescent material",
+          "quantity": 12
+        },
+        {
+          "name": "Splicer's Grease",
+          "description": "Lubricant for illegal splicing rigs",
+          "quantity": 6
+        },
+        {
+          "name": "Council Seal Stamp",
+          "description": "A high-quality counterfeit seal",
+          "quantity": 1
+        },
+        {
+          "name": "Pressure-Sealed Case",
+          "description": "Prevents spore leakage during transport",
+          "quantity": 2
+        },
+        {
+          "name": "Bribe Credits",
+          "description": "Physical currency for low-level guards",
+          "quantity": 50
+        },
+        {
+          "name": "Strain Stabilizer",
+          "description": "Prevents rapid mutation in transit",
+          "quantity": 8
+        },
+        {
+          "name": "Hidden Wrist-Blade",
+          "description": "A ceramic blade for close encounters",
+          "quantity": 1
+        },
+        {
+          "name": "Signal Jammer",
+          "description": "Disrupts local communication spores",
+          "quantity": 1
+        },
+        {
+          "name": "Rare Truffle Map",
+          "description": "Coordinates to wild, unpatented growths",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Shadow-Cask",
+          "asset_type": "Mobile Storage",
+          "description": "A lead-lined, scent-proof storage unit",
+          "story_use": "Hiding contraband from Unit 7-B during inspections"
+        },
+        {
+          "asset_name": "Lounge Back-Room",
+          "asset_type": "Safe House",
+          "description": "A private booth in the Spore-Cloud Lounge",
+          "story_use": "Conducting high-stakes trades with Kaelen Voss"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-001",
+          "topic": "Council Corruption",
+          "summary": "Detailed knowledge of which Council members take bribes",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KNOW-002",
+          "topic": "Smuggling Routes",
+          "summary": "Hidden vents connecting the Server Room to the Yard",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Archivist Zephyr",
+      "role_name": "Senior Patent Registrar",
+      "activity": "Cataloging new genetic sequences in the Server Room",
+      "home_base": "The Mycelial Server Room",
+      "arc_goal": "To uncover the source of the 'Void-Cap' mutation",
+      "inventory": [
+        {
+          "name": "Data-Crystal Reader",
+          "description": "Handheld device for scanning patent chips",
+          "quantity": 1
+        },
+        {
+          "name": "Sequence Stabilizer",
+          "description": "Tool for fixing minor genetic errors",
+          "quantity": 1
+        },
+        {
+          "name": "Archivist's Robe",
+          "description": "Fiber-optic garment that displays data",
+          "quantity": 1
+        },
+        {
+          "name": "Encrypted Patent Chip",
+          "description": "Contains the blueprint for 'Root' sentinels",
+          "quantity": 1
+        },
+        {
+          "name": "Sterile Tweezers",
+          "description": "For handling delicate spore samples",
+          "quantity": 2
+        },
+        {
+          "name": "Magnifying Monocle",
+          "description": "Enhanced lens for visual strain analysis",
+          "quantity": 1
+        },
+        {
+          "name": "Formal Protest Scroll",
+          "description": "Legal document to halt illegal splicing",
+          "quantity": 3
+        },
+        {
+          "name": "Ink-Cap Pen",
+          "description": "Writes in self-replicating fungal ink",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Central Archive Terminal",
+          "asset_type": "Workstation",
+          "description": "The primary interface for the Mycelial Server Room",
+          "story_use": "Monitoring Vexis Thorne's audit logs for discrepancies"
+        },
+        {
+          "asset_name": "Registrar's Seal",
+          "asset_type": "Legal Authority",
+          "description": "A biometric stamp for approving patents",
+          "story_use": "Validating Elara Myn's legitimate splicing projects"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-003",
+          "topic": "Genetic Lineage",
+          "summary": "The complete history of the High Council's strains",
+          "confidence": 99
+        },
+        {
+          "knowledge_id": "KNOW-004",
+          "topic": "Server Architecture",
+          "summary": "The physical layout of the Mycelial Server Room",
+          "confidence": 92
+        }
+      ]
+    },
+    {
+      "display_name": "Commander Drax",
+      "role_name": "Barracks Overseer",
+      "activity": "Coordinating enforcement raids on illegal workshops",
+      "home_base": "Contract Enforcement Barracks",
+      "arc_goal": "To capture Sylas Vane and dismantle his network",
+      "inventory": [
+        {
+          "name": "Shock-Staff",
+          "description": "Non-lethal weapon for subduing splicers",
+          "quantity": 1
+        },
+        {
+          "name": "Heavy Carapace Armor",
+          "description": "Fungal-reinforced plating for protection",
+          "quantity": 1
+        },
+        {
+          "name": "Restraint Spores",
+          "description": "Rapid-growth fungi that bind targets",
+          "quantity": 10
+        },
+        {
+          "name": "Patrol Map",
+          "description": "Real-time locations of all active Sentinels",
+          "quantity": 1
+        },
+        {
+          "name": "Enforcement Badge",
+          "description": "Symbol of authority in the Bazaar",
+          "quantity": 1
+        },
+        {
+          "name": "Flash-Bang Spores",
+          "description": "Creates a blinding burst of bioluminescence",
+          "quantity": 5
+        },
+        {
+          "name": "Breaching Charge",
+          "description": "Used to enter locked splicing workshops",
+          "quantity": 3
+        },
+        {
+          "name": "Emergency Stim-Pack",
+          "description": "Boosts adrenaline and fungal resistance",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Iron-Root APC",
+          "asset_type": "Vehicle",
+          "description": "A heavy transport for enforcement squads",
+          "story_use": "Deploying troops to the Bazaar Logistics Yard"
+        },
+        {
+          "asset_name": "Barracks Armory",
+          "asset_type": "Facility",
+          "description": "Storage for high-grade enforcement gear",
+          "story_use": "Equipping Unit 7-B for high-risk missions"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-005",
+          "topic": "Tactical Deployment",
+          "summary": "Optimal strategies for Bazaar-wide lockdowns",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "KNOW-006",
+          "topic": "Criminal Profiles",
+          "summary": "Deep files on known smugglers and rogue splicers",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Mira the Graft",
+      "role_name": "Independent Strain Merchant",
+      "activity": "Selling exotic hybrid spores to the highest bidder",
+      "home_base": "Spore-Strain Exchange Stall",
+      "arc_goal": "To buy her way into the High Council of Hyphae",
+      "inventory": [
+        {
+          "name": "Hybrid Rose-Spore",
+          "description": "A decorative but toxic fungal strain",
+          "quantity": 20
+        },
+        {
+          "name": "Merchant's Scales",
+          "description": "Precision tool for weighing spore dust",
+          "quantity": 1
+        },
+        {
+          "name": "Display Case",
+          "description": "Reinforced glass for showing rare samples",
+          "quantity": 4
+        },
+        {
+          "name": "Trade Ledger",
+          "description": "Records of every transaction in the stall",
+          "quantity": 1
+        },
+        {
+          "name": "Scented Incense",
+          "description": "Masks the smell of the Bazaar's rot",
+          "quantity": 15
+        },
+        {
+          "name": "Sample Vials",
+          "description": "Small containers for customer testing",
+          "quantity": 30
+        },
+        {
+          "name": "Loyalty Cards",
+          "description": "Stamped cards for repeat customers",
+          "quantity": 50
+        },
+        {
+          "name": "Bioluminescent Lantern",
+          "description": "Powered by a proprietary fungal strain",
+          "quantity": 3
+        },
+        {
+          "name": "Nutrient Paste",
+          "description": "Food for maintaining live strain samples",
+          "quantity": 25
+        },
+        {
+          "name": "Price Tags",
+          "description": "Self-adhesive labels for inventory",
+          "quantity": 100
+        },
+        {
+          "name": "Cleaning Solvent",
+          "description": "Removes cross-contamination from stalls",
+          "quantity": 10
+        },
+        {
+          "name": "Promotional Flyers",
+          "description": "Advertising 'Mira's Marvelous Mycelium'",
+          "quantity": 40
+        },
+        {
+          "name": "Security Alarm Spore",
+          "description": "Emits a high-pitched shriek if touched",
+          "quantity": 5
+        },
+        {
+          "name": "Cooling Unit",
+          "description": "Keeps temperature-sensitive strains alive",
+          "quantity": 2
+        },
+        {
+          "name": "Contract Templates",
+          "description": "Standard forms for strain licensing",
+          "quantity": 20
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gilded Stall",
+          "asset_type": "Retail Space",
+          "description": "The most prominent stall in the Exchange",
+          "story_use": "Competing with Kaelen Voss for market dominance"
+        },
+        {
+          "asset_name": "Private Greenhouse",
+          "asset_type": "Cultivation Site",
+          "description": "A hidden garden for growing exotic hybrids",
+          "story_use": "Supplying Elara Myn with raw materials for splicing"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-007",
+          "topic": "Market Trends",
+          "summary": "Predicting which strains will be in high demand",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "KNOW-008",
+          "topic": "Negotiation Tactics",
+          "summary": "Psychological tricks for maximizing profit",
+          "confidence": 91
+        }
+      ]
+    },
+    {
+      "display_name": "Orin the Pulse-Weaver",
+      "role_name": "Mycelial Network Architect",
+      "activity": "Optimizing the data-transfer speed of the fungal server racks",
+      "home_base": "The Mycelial Server Room",
+      "arc_goal": "To bypass the High Council's encryption and access the Primal Strain data.",
+      "inventory": [
+        {
+          "name": "Bio-Luminescent Patch Cable",
+          "description": "A pulsing fungal filament used to bridge server nodes.",
+          "quantity": 12
+        },
+        {
+          "name": "Nutrient-Rich Cooling Gel",
+          "description": "Viscous liquid used to prevent server overheating.",
+          "quantity": 5
+        },
+        {
+          "name": "Frequency Tuning Fork",
+          "description": "Resonates at the exact pitch of the central mycelium.",
+          "quantity": 1
+        },
+        {
+          "name": "Encrypted Spore-Drive",
+          "description": "A biological storage device containing stolen metadata.",
+          "quantity": 3
+        },
+        {
+          "name": "Pheromone Signal Booster",
+          "description": "Increases the range of telepathic network commands.",
+          "quantity": 2
+        },
+        {
+          "name": "Root-Access Spore-Key",
+          "description": "A specialized fungus that dissolves digital locks.",
+          "quantity": 1
+        },
+        {
+          "name": "Neural-Link Headset",
+          "description": "Allows direct mental interface with the server room.",
+          "quantity": 1
+        },
+        {
+          "name": "Sterilized Pruning Shears",
+          "description": "Used for removing necrotic data-tendrils.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Node 09 Terminal",
+          "asset_type": "Infrastructure",
+          "description": "A high-speed data terminal integrated into a giant puffball.",
+          "story_use": "Used to monitor network traffic and detect Archivist Zephyr's audits."
+        },
+        {
+          "asset_name": "The Sub-Floor Mycelium",
+          "asset_type": "Real Estate",
+          "description": "A private crawlspace beneath the server room.",
+          "story_use": "A hidden location for meeting Sylas Vane away from Sentinel eyes."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-001",
+          "topic": "Network Topology",
+          "summary": "Deep understanding of how the Bazaar's data flows through fungal roots.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "KNOW-002",
+          "topic": "Council Backdoors",
+          "summary": "Knowledge of secret access points used by the High Council of Hyphae.",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Tessa 'The Graft' Vahl",
+      "role_name": "Illegal Strain Synthesizer",
+      "activity": "Synthesizing a strain that can bypass Patent Auditor detection",
+      "home_base": "Genetic Splicing Workshop",
+      "arc_goal": "To create a self-replicating spore that invalidates all existing patents.",
+      "inventory": [
+        {
+          "name": "Mutagenic Catalyst",
+          "description": "A volatile chemical that triggers rapid genetic drift.",
+          "quantity": 4
+        },
+        {
+          "name": "Petri-Dish of 'Void-Spore'",
+          "description": "A pitch-black fungus that absorbs all light.",
+          "quantity": 2
+        },
+        {
+          "name": "Splicing Needle Set",
+          "description": "Microscopic needles for precision DNA insertion.",
+          "quantity": 1
+        },
+        {
+          "name": "Counterfeit Patent Seal",
+          "description": "A high-quality forgery of the Registrar's official mark.",
+          "quantity": 6
+        },
+        {
+          "name": "Growth-Accelerant Mist",
+          "description": "A spray that matures a fungus in seconds.",
+          "quantity": 10
+        },
+        {
+          "name": "Genetic Sequencer (Portable)",
+          "description": "Handheld device for reading strain signatures.",
+          "quantity": 1
+        },
+        {
+          "name": "Stabilizing Serum",
+          "description": "Prevents experimental grafts from melting into sludge.",
+          "quantity": 8
+        },
+        {
+          "name": "Vexis Thorne's Schedule",
+          "description": "A stolen log of the Lead Auditor's patrol routes.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hidden Incubator",
+          "asset_type": "Equipment",
+          "description": "A shielded vat that hides genetic signatures from scanners.",
+          "story_use": "Used to grow the illegal 'Void-Spore' strain."
+        },
+        {
+          "asset_name": "Workshop Lease (Forged)",
+          "asset_type": "Document",
+          "description": "A legal document claiming the workshop is a storage unit.",
+          "story_use": "Used to deflect Commander Drax during routine inspections."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-003",
+          "topic": "Genetic Camouflage",
+          "summary": "Techniques for masking illegal mutations as common mold.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "KNOW-004",
+          "topic": "Auditor Protocols",
+          "summary": "Detailed knowledge of Vexis Thorne's inspection methodology.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Bax the Bulk-Spore",
+      "role_name": "Wholesale Strain Distributor",
+      "activity": "Managing the logistics of a massive spore shipment",
+      "home_base": "Bazaar Logistics Yard",
+      "arc_goal": "To monopolize the distribution of industrial-grade mycelium.",
+      "inventory": [
+        {
+          "name": "Crate of Construction-Grade Mycelium",
+          "description": "Dense, brick-like fungus used for building.",
+          "quantity": 50
+        },
+        {
+          "name": "Shipping Manifest (Encrypted)",
+          "description": "Digital log of all incoming and outgoing spores.",
+          "quantity": 1
+        },
+        {
+          "name": "Logistics Yard Master Key",
+          "description": "Opens all heavy-duty storage containers in the yard.",
+          "quantity": 1
+        },
+        {
+          "name": "Pheromone Scent-Masker",
+          "description": "Neutralizes the smell of illegal strains for transport.",
+          "quantity": 5
+        },
+        {
+          "name": "Hydration Spray Bottle",
+          "description": "Keeps bulk shipments from drying out during transit.",
+          "quantity": 3
+        },
+        {
+          "name": "Industrial Scale",
+          "description": "Used for weighing spore-mass to the milligram.",
+          "quantity": 1
+        },
+        {
+          "name": "Bazaar Entry Permits",
+          "description": "Official papers for merchant caravans.",
+          "quantity": 20
+        },
+        {
+          "name": "Cargo Drone Remote",
+          "description": "Controls the automated lifters in the yard.",
+          "quantity": 1
+        },
+        {
+          "name": "Sample Vials of 'Glow-Cap'",
+          "description": "Small testers for potential buyers.",
+          "quantity": 15
+        },
+        {
+          "name": "Heavy-Duty Spore Bags",
+          "description": "Reinforced containers that prevent cross-contamination.",
+          "quantity": 100
+        },
+        {
+          "name": "Trade Ledger",
+          "description": "A physical book recording debts and credits.",
+          "quantity": 1
+        },
+        {
+          "name": "Council-Approved Sealant",
+          "description": "Wax used to lock crates after inspection.",
+          "quantity": 12
+        },
+        {
+          "name": "Emergency Flare (Spore-Based)",
+          "description": "Releases a bright red cloud when broken.",
+          "quantity": 4
+        },
+        {
+          "name": "Bribe Envelopes",
+          "description": "Packets of currency for 'smoothing' inspections.",
+          "quantity": 10
+        },
+        {
+          "name": "Logistics Yard Map",
+          "description": "Detailed layout including hidden drainage pipes.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Loading Dock 4",
+          "asset_type": "Infrastructure",
+          "description": "The busiest dock in the Bazaar, under Bax's control.",
+          "story_use": "The primary location for smuggling goods to Mira the Graft."
+        },
+        {
+          "asset_name": "Automated Cargo Lifter",
+          "asset_type": "Vehicle",
+          "description": "A heavy-duty walker for moving massive spore-crates.",
+          "story_use": "Used to move large quantities of product quickly during raids."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-005",
+          "topic": "Supply Chain Vulnerabilities",
+          "summary": "Knowledge of where shipments are most likely to be intercepted.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KNOW-006",
+          "topic": "Merchant Rivalries",
+          "summary": "Deep understanding of the friction between Kaelen Voss and Mira.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Inquisitor Lyra",
+      "role_name": "High Council Enforcer",
+      "activity": "Investigating reports of a 'God-Strain' mutation",
+      "home_base": "The High Council of Hyphae",
+      "arc_goal": "To purge the Bazaar of all non-patented genetic material.",
+      "inventory": [
+        {
+          "name": "Council Mandate",
+          "description": "A document granting Lyra absolute authority in the Bazaar.",
+          "quantity": 1
+        },
+        {
+          "name": "Purge-Flame Torch",
+          "description": "A chemical burner designed to incinerate fungal life.",
+          "quantity": 1
+        },
+        {
+          "name": "Strain-Scanner (Elite)",
+          "description": "Advanced device that detects even minor genetic deviations.",
+          "quantity": 1
+        },
+        {
+          "name": "Restraint Spores",
+          "description": "A fungus that grows rapidly around a target's limbs.",
+          "quantity": 5
+        },
+        {
+          "name": "Truth-Serum Spore",
+          "description": "A parasitic fungus that induces honesty in the host.",
+          "quantity": 3
+        },
+        {
+          "name": "High Council Signet Ring",
+          "description": "Symbol of office and a biometric key.",
+          "quantity": 1
+        },
+        {
+          "name": "Communication Spore-Pod",
+          "description": "Direct line to the High Council of Hyphae.",
+          "quantity": 2
+        },
+        {
+          "name": "Tactical Visor",
+          "description": "Highlights heat signatures and fungal density.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Inquisitor's Chambers",
+          "asset_type": "Real Estate",
+          "description": "A sterile, high-security office overlooking the Bazaar.",
+          "story_use": "Where Lyra interrogates suspects like Elara Myn."
+        },
+        {
+          "asset_name": "The Purge-Vault",
+          "asset_type": "Infrastructure",
+          "description": "A containment unit for confiscated illegal strains.",
+          "story_use": "A high-security target for thieves like Sylas Vane."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-007",
+          "topic": "Council Law",
+          "summary": "Total mastery of the legal framework governing genetic patents.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "KNOW-008",
+          "topic": "Splicing Signatures",
+          "summary": "Ability to identify a technician's 'style' from a DNA sample.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelo the Silt-Walker",
+      "role_name": "Bazaar Logistics Yard Foreman",
+      "activity": "Coordinating the heavy-lift spore-pods for off-world transport",
+      "home_base": "Bazaar Logistics Yard",
+      "arc_goal": "To sabotage a shipment belonging to Bax the Bulk-Spore to settle an old debt",
+      "inventory": [
+        {
+          "name": "MPB-016 Heavy-Duty Mycelial Hook",
+          "description": "A reinforced chitinous tool for dragging massive spore-sacks",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-017 Pheromone Signaling Flare",
+          "description": "Emits a scent that directs worker-drones to specific loading zones",
+          "quantity": 12
+        },
+        {
+          "name": "MPB-018 Silt-Proof Respirator",
+          "description": "A heavy mask designed to filter out industrial-grade fungal dust",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-019 Logistics Manifest Tablet",
+          "description": "A ruggedized device tracking every crate entering the Bazaar",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-020 Hydraulic Exoskeleton Brace",
+          "description": "Assists the wearer in lifting crates of dense genetic material",
+          "quantity": 2
+        },
+        {
+          "name": "MPB-021 Compressed Air Bellows",
+          "description": "Used to clear debris from the docking clamps",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-022 Magnetic Tether Cable",
+          "description": "Secures floating spore-pods during high-wind events",
+          "quantity": 4
+        },
+        {
+          "name": "MPB-023 Foreman's Whistle",
+          "description": "A high-frequency device that can be heard over the roar of the yard",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Docking Bay 09",
+          "asset_type": "Real Estate",
+          "description": "A private loading bay with direct access to the main transport lanes",
+          "story_use": "Used to hide illicit cargo from Commander Drax's patrols"
+        },
+        {
+          "asset_name": "The 'Iron-Cap' Hauler",
+          "asset_type": "Vehicle",
+          "description": "A heavily armored transport vehicle for volatile genetic strains",
+          "story_use": "The primary means of moving large quantities of spores across the Bazaar"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "LOG-001",
+          "topic": "Bazaar Traffic Patterns",
+          "summary": "Deep understanding of the optimal times to move cargo without attracting Auditor attention",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "LOG-002",
+          "topic": "Bax's Supply Chain",
+          "summary": "Detailed knowledge of Bax the Bulk-Spore's shipping routes and weak points",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Sora the Gilder",
+      "role_name": "Luxury Spore-Strain Merchant",
+      "activity": "Displaying iridescent fungal jewelry to elite clientele",
+      "home_base": "The Spore-Cloud Lounge",
+      "arc_goal": "To acquire a sample of the 'God-Strain' from Inquisitor Lyra's evidence locker",
+      "inventory": [
+        {
+          "name": "MPB-024 Iridescent Spore-Silk Scarf",
+          "description": "A shimmering garment woven from genetically modified fungal fibers",
+          "quantity": 3
+        },
+        {
+          "name": "MPB-025 Gilded Petri Display Case",
+          "description": "A velvet-lined box for showcasing rare, glowing strains",
+          "quantity": 5
+        },
+        {
+          "name": "MPB-026 Scent-Neutralizing Perfume",
+          "description": "A high-end spray that masks the pungent odor of raw mycelium",
+          "quantity": 2
+        },
+        {
+          "name": "MPB-027 Micro-Mist Diffuser",
+          "description": "Releases a fine spray of nutrient-rich water to keep displays fresh",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-028 Polished Chitin Tweezers",
+          "description": "Precision tools for handling delicate fungal filaments",
+          "quantity": 2
+        },
+        {
+          "name": "MPB-029 Luxury Strain Catalog",
+          "description": "A holographic book detailing the most expensive strains in the Bazaar",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-030 Nutrient-Infused Champagne",
+          "description": "A beverage containing mild psychoactive fungal extracts",
+          "quantity": 12
+        },
+        {
+          "name": "MPB-031 Golden Spore-Dust",
+          "description": "A decorative additive used to make common strains look premium",
+          "quantity": 50
+        },
+        {
+          "name": "MPB-032 Velvet-Lined Transport Pouch",
+          "description": "Ensures rare samples are not bruised during transit",
+          "quantity": 4
+        },
+        {
+          "name": "MPB-033 Miniature UV Grow-Lamp",
+          "description": "A portable light source to maintain the glow of bioluminescent strains",
+          "quantity": 2
+        },
+        {
+          "name": "MPB-034 Scent-Locking Vials",
+          "description": "Glass containers that prevent any odor leakage",
+          "quantity": 20
+        },
+        {
+          "name": "MPB-035 Merchant's Signet Ring",
+          "description": "A ring used to wax-seal high-value trade contracts",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-036 Silk-Fiber Cleaning Cloth",
+          "description": "Specifically designed to clean delicate fungal membranes",
+          "quantity": 10
+        },
+        {
+          "name": "MPB-037 Decorative Mycelial Brooch",
+          "description": "A living piece of jewelry that pulses with a soft blue light",
+          "quantity": 3
+        },
+        {
+          "name": "MPB-038 Encrypted Credit Ledger",
+          "description": "Records the transactions of the Bazaar's wealthiest patrons",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gilded Alcove",
+          "asset_type": "Retail Space",
+          "description": "A private, high-security booth within the Spore-Cloud Lounge",
+          "story_use": "A neutral ground for high-stakes negotiations between merchants and Council members"
+        },
+        {
+          "asset_name": "Sora's Private Vault",
+          "asset_type": "Storage",
+          "description": "A temperature-controlled safe hidden beneath the Lounge floor",
+          "story_use": "Stores the most illegal and valuable strains Sora has acquired"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "MER-001",
+          "topic": "Elite Social Circles",
+          "summary": "Knowledge of the personal tastes and secrets of the High Council of Hyphae",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "MER-002",
+          "topic": "Synthetic Aesthetics",
+          "summary": "Expertise in making genetically modified strains look naturally rare",
+          "confidence": 98
+        }
+      ]
+    },
+    {
+      "display_name": "Varn the Splicer-King",
+      "role_name": "Renegade Genetic Architect",
+      "activity": "Overclocking the growth rate of a predatory fungal strain",
+      "home_base": "Genetic Splicing Workshop",
+      "arc_goal": "To create a strain that can consume the Mycelial Server Room's hardware",
+      "inventory": [
+        {
+          "name": "MPB-039 Precision Gene-Scalpel",
+          "description": "A laser-edged tool for cutting specific DNA sequences",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-040 Rapid-Growth Catalyst",
+          "description": "A chemical cocktail that accelerates fungal maturation by 400%",
+          "quantity": 8
+        },
+        {
+          "name": "MPB-041 Predatory Spore-Sample",
+          "description": "A highly aggressive strain designed to consume other fungi",
+          "quantity": 2
+        },
+        {
+          "name": "MPB-042 Neural-Link Headset",
+          "description": "Allows the user to 'feel' the growth of the mycelium they are splicing",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-043 Bio-Hazard Containment Field",
+          "description": "A portable emitter that creates a temporary sterile zone",
+          "quantity": 3
+        },
+        {
+          "name": "MPB-044 Mutagenic Serum",
+          "description": "Induces random mutations in stable genetic sequences",
+          "quantity": 5
+        },
+        {
+          "name": "MPB-045 Chitinous Grafting Tape",
+          "description": "Used to physically bind two different fungal species together",
+          "quantity": 10
+        },
+        {
+          "name": "MPB-046 Portable Centrifuge",
+          "description": "A hand-held device for separating genetic material in the field",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Deep-Root Lab",
+          "asset_type": "Workshop",
+          "description": "A hidden facility located in the sub-levels of the Bazaar",
+          "story_use": "Where Varn conducts his most dangerous and illegal experiments"
+        },
+        {
+          "asset_name": "Splicer's Override Key",
+          "asset_type": "Digital Tool",
+          "description": "A master key that can bypass the security of most splicing vats",
+          "story_use": "Used to break into Elara Myn's workshop to steal her research"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "GEN-001",
+          "topic": "Predatory Mycology",
+          "summary": "The science of creating fungi that hunt and consume organic and inorganic matter",
+          "confidence": 96
+        },
+        {
+          "knowledge_id": "GEN-002",
+          "topic": "Council Security Protocols",
+          "summary": "Detailed understanding of how the High Council tracks genetic signatures",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Registrar Elen-Ka",
+      "role_name": "Patent Filing Clerk",
+      "activity": "Processing a backlog of low-priority genetic patents",
+      "home_base": "Patent Filing Kiosk 04",
+      "arc_goal": "To leak Archivist Zephyr's private logs to Sylas Vane for a massive payout",
+      "inventory": [
+        {
+          "name": "MPB-047 Official Patent Stamp",
+          "description": "A heavy brass tool used to authorize genetic ownership",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-048 Ink-Cap Quill",
+          "description": "A writing instrument that uses self-replenishing fungal ink",
+          "quantity": 3
+        },
+        {
+          "name": "MPB-049 Stack of Unprocessed Filings",
+          "description": "Physical paper backups of digital patent applications",
+          "quantity": 100
+        },
+        {
+          "name": "MPB-050 Encryption Deciphering Lens",
+          "description": "A monocle that reveals hidden watermarks on patent documents",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-051 High-Fiber Ration Bar",
+          "description": "A bland, fungal-based snack for long shifts at the kiosk",
+          "quantity": 10
+        },
+        {
+          "name": "MPB-052 Personal Data-Slate",
+          "description": "Contains Elen-Ka's private notes and stolen server logs",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-053 Kiosk Maintenance Key",
+          "description": "Opens the internal panels of the Patent Filing Kiosk",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-054 Noise-Canceling Earplugs",
+          "description": "Essential for working near the humming server racks",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Kiosk 04 Terminal",
+          "asset_type": "Workstation",
+          "description": "A standard filing terminal with restricted access to the main server",
+          "story_use": "The primary location where Elen-Ka siphons data for the black market"
+        },
+        {
+          "asset_name": "The Registrar's Dormitory",
+          "asset_type": "Living Quarters",
+          "description": "A small, cramped room in the Bazaar's residential sector",
+          "story_use": "Where Elen-Ka hides her physical copies of stolen patents"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "REG-001",
+          "topic": "Bureaucratic Loopholes",
+          "summary": "Knowledge of how to hide illegal patents within the massive Bazaar database",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "REG-002",
+          "topic": "Archivist Zephyr's Habits",
+          "summary": "A detailed schedule of the Senior Registrar's movements and security codes",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "display_name": "Xylos the Pulse-Tapper",
+      "role_name": "Mycelial Server Room Technician",
+      "activity": "Calibrating the bio-luminescent data-nodes for the High Council",
+      "home_base": "The Mycelial Server Room",
+      "arc_goal": "To uncover the hidden data-packets Orin the Pulse-Weaver left behind",
+      "inventory": [
+        {
+          "name": "Pulse-Tuning Fork",
+          "description": "A vibrating tool used to align fungal data-nodes",
+          "quantity": 1
+        },
+        {
+          "name": "Bio-Static Dampener",
+          "description": "Prevents electrical interference with mycelial fibers",
+          "quantity": 2
+        },
+        {
+          "name": "Encrypted Spore-Drive",
+          "description": "Contains fragments of unauthorized patent data",
+          "quantity": 1
+        },
+        {
+          "name": "Nutrient-Gel Syringe",
+          "description": "Emergency feed for starving server-hyphae",
+          "quantity": 5
+        },
+        {
+          "name": "Fiber-Optic Scalpel",
+          "description": "For precise trimming of data-conducting filaments",
+          "quantity": 1
+        },
+        {
+          "name": "Resonance Goggles",
+          "description": "Visualizes the flow of data through the fungal network",
+          "quantity": 1
+        },
+        {
+          "name": "Conductive Mycelium Patch",
+          "description": "Quick-fix for severed server connections",
+          "quantity": 10
+        },
+        {
+          "name": "Signal-Flare Spores",
+          "description": "Used to mark physical locations in the server depths",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Node-Station 09",
+          "asset_type": "Workstation",
+          "description": "A high-bandwidth terminal integrated into the server-root",
+          "story_use": "Used to monitor the health of the entire bazaar's data-flow"
+        },
+        {
+          "asset_name": "The Silent Hypha",
+          "asset_type": "Personal Quarters",
+          "description": "A sound-proofed alcove near the server core",
+          "story_use": "A place to hide sensitive data-drives from Auditor Vexis Thorne"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-001",
+          "topic": "Server Architecture",
+          "summary": "Deep understanding of how the fungal racks store genetic patents",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KNOW-002",
+          "topic": "Orin's Backdoors",
+          "summary": "Knowledge of secret access points left by the former architect",
+          "confidence": 70
+        }
+      ]
+    },
+    {
+      "display_name": "Valerius 'The Vault' Thorne",
+      "role_name": "High-Value Strain Custodian",
+      "activity": "Securing the most volatile genetic patents for the High Council",
+      "home_base": "The High Council of Hyphae",
+      "arc_goal": "To prevent Sylas Vane from stealing the 'God-Strain' prototype",
+      "inventory": [
+        {
+          "name": "Cryo-Stasis Spore-Case",
+          "description": "A reinforced container for volatile genetic material",
+          "quantity": 3
+        },
+        {
+          "name": "Council Seal Ring",
+          "description": "Grants access to restricted bazaar sectors",
+          "quantity": 1
+        },
+        {
+          "name": "Pheromone Scrambler",
+          "description": "Disrupts the tracking abilities of Enforcement Sentinels",
+          "quantity": 2
+        },
+        {
+          "name": "Genetic Lock-Key",
+          "description": "A biological key coded to Valerius's DNA",
+          "quantity": 1
+        },
+        {
+          "name": "Neural-Link Inhibitor",
+          "description": "Protects the mind from mycelial network intrusion",
+          "quantity": 1
+        },
+        {
+          "name": "High-Council Mandate",
+          "description": "Official documentation for the seizure of illegal strains",
+          "quantity": 5
+        },
+        {
+          "name": "Bioluminescent Flare",
+          "description": "Illuminates the deepest council vaults",
+          "quantity": 4
+        },
+        {
+          "name": "Stabilizing Serum",
+          "description": "Prevents rapid mutation in high-value spores",
+          "quantity": 10
+        },
+        {
+          "name": "Void-Glass Vial",
+          "description": "Impermeable container for corrosive fungal acids",
+          "quantity": 2
+        },
+        {
+          "name": "Pressure-Sensitive Alarm Spores",
+          "description": "Triggers a silent alert if stepped on",
+          "quantity": 20
+        },
+        {
+          "name": "Ceremonial Mycelial Cloak",
+          "description": "Signifies high-ranking council status",
+          "quantity": 1
+        },
+        {
+          "name": "Encrypted Ledger",
+          "description": "Records the movement of every Tier-1 patent",
+          "quantity": 1
+        },
+        {
+          "name": "Bio-Scanner",
+          "description": "Detects unauthorized genetic splicing in real-time",
+          "quantity": 1
+        },
+        {
+          "name": "Sedative Spore-Mist",
+          "description": "Non-lethal crowd control for unruly merchants",
+          "quantity": 3
+        },
+        {
+          "name": "Emergency Extraction Beacon",
+          "description": "Summons Commander Drax's enforcement team",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Inner Sanctum",
+          "asset_type": "Vault",
+          "description": "A heavily guarded chamber within the Council halls",
+          "story_use": "Storage for the bazaar's most dangerous genetic secrets"
+        },
+        {
+          "asset_name": "Council Transport Pod",
+          "asset_type": "Vehicle",
+          "description": "A fast, armored spore-pod for secure transit",
+          "story_use": "Used to move high-value assets between the Yard and the Council"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-003",
+          "topic": "Council Protocols",
+          "summary": "The strict laws governing patent ownership and genetic purity",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "KNOW-004",
+          "topic": "Vexis Thorne's History",
+          "summary": "Personal insights into the Lead Auditor's family connections",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Zora the Silt-Broker",
+      "role_name": "Logistics Yard Merchant",
+      "activity": "Managing the flow of bulk-spore shipments to off-world buyers",
+      "home_base": "Bazaar Logistics Yard",
+      "arc_goal": "To outmaneuver Bax the Bulk-Spore for the lucrative off-world contracts",
+      "inventory": [
+        {
+          "name": "Heavy-Lift Harness",
+          "description": "Reinforced straps for moving massive spore-pods",
+          "quantity": 2
+        },
+        {
+          "name": "Shipping Manifest Tablet",
+          "description": "Digital log of all incoming and outgoing cargo",
+          "quantity": 1
+        },
+        {
+          "name": "Hydration Sprayer",
+          "description": "Keeps bulk shipments moist during transit",
+          "quantity": 1
+        },
+        {
+          "name": "Cargo-Grade Spore-Sealant",
+          "description": "Industrial adhesive for patching transport pods",
+          "quantity": 15
+        },
+        {
+          "name": "Logistics Yard Master-Key",
+          "description": "Opens all standard cargo containers in the yard",
+          "quantity": 1
+        },
+        {
+          "name": "Pheromone-Laced Marking Chalk",
+          "description": "Used to label pods for specific destinations",
+          "quantity": 10
+        },
+        {
+          "name": "Industrial Splicing Tool",
+          "description": "For quick-fixing damaged genetic containers",
+          "quantity": 1
+        },
+        {
+          "name": "Bazaar Credit Chits",
+          "description": "Standard currency for logistics transactions",
+          "quantity": 500
+        },
+        {
+          "name": "Portable Humidity Sensor",
+          "description": "Ensures cargo holds meet environmental standards",
+          "quantity": 3
+        },
+        {
+          "name": "Emergency Oxygen Spores",
+          "description": "Provides breathable air in sealed cargo pods",
+          "quantity": 5
+        },
+        {
+          "name": "Magnetic Grapple",
+          "description": "For securing pods during high-gravity transport",
+          "quantity": 2
+        },
+        {
+          "name": "Trade-Route Map",
+          "description": "Detailed charts of safe paths through the mycelial wastes",
+          "quantity": 1
+        },
+        {
+          "name": "Bulk-Spore Sampler",
+          "description": "Extracts small amounts of material for quality testing",
+          "quantity": 1
+        },
+        {
+          "name": "Logistics Whistle",
+          "description": "High-frequency device to signal yard workers",
+          "quantity": 1
+        },
+        {
+          "name": "Protective Silt-Suit",
+          "description": "Shields the wearer from abrasive yard dust",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Loading Dock 7",
+          "asset_type": "Commercial Space",
+          "description": "A prime loading bay with direct access to the main transport lanes",
+          "story_use": "The hub of Zora's shipping empire and site of many deals"
+        },
+        {
+          "asset_name": "The Silt-Hopper",
+          "asset_type": "Vehicle",
+          "description": "A rugged, multi-legged transport for navigating the yard",
+          "story_use": "Used to inspect shipments and evade Council patrols"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-005",
+          "topic": "Off-World Trade Routes",
+          "summary": "Knowledge of the most profitable paths for spore export",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "KNOW-006",
+          "topic": "Bax's Supply Chain",
+          "summary": "Intelligence on the weaknesses in a rival's logistics network",
+          "confidence": 75
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen the Graft-Hunter",
+      "role_name": "Contract Enforcement Specialist",
+      "activity": "Tracking down Tessa 'The Graft' Vahl for patent infringement",
+      "home_base": "Contract Enforcement Barracks",
+      "arc_goal": "To reclaim the stolen 'God-Strain' before it is synthesized",
+      "inventory": [
+        {
+          "name": "Tracking-Spore Dart",
+          "description": "Injects a traceable fungal marker into a target",
+          "quantity": 10
+        },
+        {
+          "name": "Neural-Net Bolas",
+          "description": "Entangles targets and disrupts their connection to the mycelium",
+          "quantity": 2
+        },
+        {
+          "name": "Enforcement Baton",
+          "description": "Delivers a localized bio-electric shock",
+          "quantity": 1
+        },
+        {
+          "name": "Scent-Trace Analyzer",
+          "description": "Calibrated to detect Tessa Vahl's unique chemical signature",
+          "quantity": 1
+        },
+        {
+          "name": "Restraint-Vines",
+          "description": "Genetically modified seeds that grow into bindings instantly",
+          "quantity": 5
+        },
+        {
+          "name": "Flash-Spore Grenade",
+          "description": "Blinds targets with a burst of intense bioluminescence",
+          "quantity": 3
+        },
+        {
+          "name": "Barracks-Issue Rations",
+          "description": "Nutrient-dense fungal cakes for long hunts",
+          "quantity": 7
+        },
+        {
+          "name": "Armor-Plated Splicing Vest",
+          "description": "Protects against common technician tools and acids",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Pursuit-Pod",
+          "asset_type": "Vehicle",
+          "description": "A small, agile spore-pod designed for high-speed chases",
+          "story_use": "Used to hunt renegade splicers through the bazaar's vents"
+        },
+        {
+          "asset_name": "Interrogation Cell 4",
+          "asset_type": "Facility",
+          "description": "A damp, spore-filled room designed to break a suspect's will",
+          "story_use": "Where Kaelen brings those who violate High Council patents"
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-007",
+          "topic": "Splicer Tactics",
+          "summary": "Common hiding spots and evasion techniques used by illegal technicians",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "KNOW-008",
+          "topic": "Bazaar Geography",
+          "summary": "Detailed knowledge of the ventilation and maintenance tunnels",
+          "confidence": 80
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen the Graft-Hunter",
+      "role_name": "Contract Enforcement Specialist",
+      "activity": "Tracking down Tessa 'The Graft' Vahl for patent infringement",
+      "home_base": "Contract Enforcement Barracks",
+      "arc_goal": "To secure the 'God-Strain' before it reaches the black market.",
+      "inventory": [
+        {
+          "name": "MPB-016: Neural-Link Manacles",
+          "description": "Bio-organic restraints that sync with the wearer's nervous system to prevent splicing.",
+          "quantity": 2
+        },
+        {
+          "name": "MPB-017: Pheromone Tracker",
+          "description": "A handheld device tuned to the specific scent-signature of illegal fungal grafts.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-018: Flash-Freeze Spore Grenade",
+          "description": "Instantly crystallizes organic matter within a 3-meter radius.",
+          "quantity": 4
+        },
+        {
+          "name": "MPB-019: High Council Warrant",
+          "description": "A digital scroll granting legal authority to seize unauthorized genetic assets.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-020: Mycelial Pulse-Blade",
+          "description": "A short blade that vibrates at frequencies capable of severing fungal connections.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-021: Adrenaline-Spore Inhaler",
+          "description": "A quick-acting stimulant derived from predatory fungi.",
+          "quantity": 3
+        },
+        {
+          "name": "MPB-022: Encrypted Data-Shard",
+          "description": "Contains the last known coordinates of Tessa Vahl's mobile lab.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-023: Reinforced Chitin Armor",
+          "description": "Lightweight plating harvested from giant fungal beetles.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Barracks Interrogation Suite",
+          "asset_type": "Facility",
+          "description": "A soundproof room equipped with sensory-deprivation spores.",
+          "story_use": "Used to extract locations of illegal splicing dens from captured smugglers."
+        },
+        {
+          "asset_name": "The 'Bloodhound' Skiff",
+          "asset_type": "Vehicle",
+          "description": "A low-altitude hovercraft optimized for navigating dense spore clouds.",
+          "story_use": "Primary transport for high-speed pursuits through the Bazaar."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-001",
+          "topic": "Tessa Vahl's Signature",
+          "summary": "Deep understanding of the unique genetic markers left by Tessa's splicing techniques.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KNOW-002",
+          "topic": "High Council Protocols",
+          "summary": "Expertise in the legal loopholes used to bypass standard patent filing procedures.",
+          "confidence": 88
+        }
+      ]
+    },
+    {
+      "display_name": "Bax the Bulk-Spore",
+      "role_name": "Wholesale Strain Distributor",
+      "activity": "Managing the logistics of a massive spore shipment",
+      "home_base": "Bazaar Logistics Yard",
+      "arc_goal": "To monopolize the distribution of industrial-grade mycelium across the sector.",
+      "inventory": [
+        {
+          "name": "MPB-024: Bulk-Spore Manifest",
+          "description": "A comprehensive log of all shipments entering and leaving the Logistics Yard.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-025: Industrial Silt-Sifter",
+          "description": "A heavy-duty tool for separating pure spores from common silt.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-026: Pressurized Spore-Pod",
+          "description": "A reinforced container for transporting volatile fungal strains.",
+          "quantity": 20
+        },
+        {
+          "name": "MPB-027: Logistics Yard Master Key",
+          "description": "A universal override for all automated gates in the yard.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-028: Trade-Guild Signet Ring",
+          "description": "A symbol of status that grants preferential pricing at the Spore-Strain Exchange.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-029: Nutrient-Rich Slurry",
+          "description": "A concentrated liquid used to keep bulk shipments dormant during transit.",
+          "quantity": 50
+        },
+        {
+          "name": "MPB-030: Cargo-Drone Remote",
+          "description": "Controls a fleet of automated lifters for heavy spore-pods.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-031: Counterfeit Patent Seal",
+          "description": "A high-quality fake used to bypass minor customs inspections.",
+          "quantity": 5
+        },
+        {
+          "name": "MPB-032: Bioluminescent Flare",
+          "description": "Used for signaling ships in low-visibility spore storms.",
+          "quantity": 12
+        },
+        {
+          "name": "MPB-033: Weight-Distribution Sensor",
+          "description": "Ensures spore-pods are balanced for off-world transport.",
+          "quantity": 4
+        },
+        {
+          "name": "MPB-034: Sample-Extraction Needle",
+          "description": "A long, hollow tool for testing the quality of deep-packed spores.",
+          "quantity": 2
+        },
+        {
+          "name": "MPB-035: Trade-Route Star-Chart",
+          "description": "Maps the safest paths through the mycelial nebula.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-036: Bribe-Credit Chits",
+          "description": "Small denominations of currency used to grease the palms of yard workers.",
+          "quantity": 100
+        },
+        {
+          "name": "MPB-037: Protective Respirator",
+          "description": "A heavy-duty mask designed for long-term exposure to industrial spores.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-038: Cargo-Netting (Reinforced)",
+          "description": "High-tensile mesh for securing pods to transport skiffs.",
+          "quantity": 10
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Logistics Warehouse 7",
+          "asset_type": "Real Estate",
+          "description": "A massive, climate-controlled storage facility for bulk spores.",
+          "story_use": "The primary hub for Bax's distribution empire and a frequent target for thieves."
+        },
+        {
+          "asset_name": "Automated Sorting Line",
+          "asset_type": "Machinery",
+          "description": "A series of belts and scanners that categorize spores by genetic purity.",
+          "story_use": "Allows Bax to process shipments faster than any competitor in the Bazaar."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-003",
+          "topic": "Supply Chain Vulnerabilities",
+          "summary": "Knowledge of the specific points in the Bazaar where shipments are most likely to be intercepted.",
+          "confidence": 92
+        },
+        {
+          "knowledge_id": "KNOW-004",
+          "topic": "Off-World Market Trends",
+          "summary": "Understanding which fungal strains are currently in high demand in distant star systems.",
+          "confidence": 85
+        }
+      ]
+    },
+    {
+      "display_name": "Xylos the Pulse-Tapper",
+      "role_name": "Mycelial Server Room Technician",
+      "activity": "Calibrating the bio-luminescent data-nodes for the High Council",
+      "home_base": "The Mycelial Server Room",
+      "arc_goal": "To uncover the hidden data-nodes that contain the High Council's secret history.",
+      "inventory": [
+        {
+          "name": "MPB-039: Pulse-Tapping Probe",
+          "description": "A delicate instrument used to read data directly from fungal hyphae.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-040: Bio-Luminescent Calibration Fluid",
+          "description": "A glowing liquid used to enhance the signal of data-nodes.",
+          "quantity": 5
+        },
+        {
+          "name": "MPB-041: Server-Room Access Badge",
+          "description": "A high-clearance card for the most sensitive areas of the network.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-042: Data-Node Cooling Gel",
+          "description": "Prevents overheating in high-traffic mycelial processors.",
+          "quantity": 3
+        },
+        {
+          "name": "MPB-043: Encrypted Logic-Gate",
+          "description": "A hardware bypass for accessing restricted server partitions.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-044: Fungal-Fiber Patch Cable",
+          "description": "Used to bridge gaps in damaged mycelial circuits.",
+          "quantity": 10
+        },
+        {
+          "name": "MPB-045: Signal-Amplifier Spore",
+          "description": "A genetically modified spore that boosts data transmission range.",
+          "quantity": 20
+        },
+        {
+          "name": "MPB-046: Technician's Multi-Tool",
+          "description": "A compact device with various attachments for server maintenance.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Deep-Node Terminal",
+          "asset_type": "Workstation",
+          "description": "A private terminal hidden in the sub-levels of the Server Room.",
+          "story_use": "Where Xylos performs unauthorized data mining away from the Council's eyes."
+        },
+        {
+          "asset_name": "Personal Bio-Server",
+          "asset_type": "Hardware",
+          "description": "A small, portable fungal server used for storing sensitive, decrypted data.",
+          "story_use": "Contains the evidence Xylos has gathered regarding the 'God-Strain'."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-005",
+          "topic": "Mycelial Data Architecture",
+          "summary": "Deep understanding of how information is stored and routed through the fungal network.",
+          "confidence": 98
+        },
+        {
+          "knowledge_id": "KNOW-006",
+          "topic": "High Council Encryption",
+          "summary": "Knowledge of the specific algorithms used to protect the Council's private archives.",
+          "confidence": 79
+        }
+      ]
+    },
+    {
+      "display_name": "Sora the Gilder",
+      "role_name": "Luxury Spore-Strain Merchant",
+      "activity": "Displaying iridescent fungal jewelry to elite clientele",
+      "home_base": "The Spore-Cloud Lounge",
+      "arc_goal": "To acquire the legendary 'Prism-Cap' strain to create the ultimate piece of jewelry.",
+      "inventory": [
+        {
+          "name": "MPB-047: Iridescent Spore-Vial",
+          "description": "A decorative vial containing shimmering, non-toxic spores.",
+          "quantity": 10
+        },
+        {
+          "name": "MPB-048: Velvet Display Case",
+          "description": "A plush case for showcasing high-end fungal jewelry.",
+          "quantity": 2
+        },
+        {
+          "name": "MPB-049: Gilder's Precision Tweezers",
+          "description": "Used for placing individual spores into jewelry settings.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-050: Magnifying Monocle",
+          "description": "A lens for inspecting the microscopic facets of fungal crystals.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-051: Scent-Neutralizing Perfume",
+          "description": "Masks the earthy smell of the Bazaar to appeal to elite customers.",
+          "quantity": 3
+        },
+        {
+          "name": "MPB-052: Invitation to the High Council Gala",
+          "description": "A rare pass to the most exclusive event in the Mycelium Bazaar.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-053: Sample of 'Glimmer-Graft'",
+          "description": "A small piece of jewelry that glows with a soft, pulsing light.",
+          "quantity": 5
+        },
+        {
+          "name": "MPB-054: Silk Polishing Cloth",
+          "description": "Used to keep fungal jewelry free of dust and debris.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-055: Micro-Splicing Adhesive",
+          "description": "A bio-compatible glue for attaching spores to precious metals.",
+          "quantity": 4
+        },
+        {
+          "name": "MPB-056: Client Contact List",
+          "description": "A list of the wealthiest collectors in the sector.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-057: Decorative Spore-Fan",
+          "description": "A hand-held fan that releases a gentle mist of aromatic spores.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-058: Gold-Leaf Spore-Pods",
+          "description": "Spores that have been coated in a thin layer of real gold.",
+          "quantity": 15
+        },
+        {
+          "name": "MPB-059: Appraisal Certificate",
+          "description": "A document verifying the authenticity and value of a strain.",
+          "quantity": 10
+        },
+        {
+          "name": "MPB-060: Hidden Compartment Ring",
+          "description": "A piece of jewelry designed to smuggle a single, high-value spore.",
+          "quantity": 1
+        },
+        {
+          "name": "MPB-061: Luxury Spore-Wine",
+          "description": "A rare vintage fermented with bioluminescent yeast.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gilded Stall",
+          "asset_type": "Retail Space",
+          "description": "An opulent booth in the Spore-Cloud Lounge decorated with living tapestries.",
+          "story_use": "The primary location for Sora's high-stakes business deals."
+        },
+        {
+          "asset_name": "Private Vault",
+          "asset_type": "Security",
+          "description": "A secure, climate-controlled safe for storing her most valuable specimens.",
+          "story_use": "Where Sora keeps the 'Prism-Cap' samples she has managed to collect."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-007",
+          "topic": "Elite Social Etiquette",
+          "summary": "Mastery of the complex social rituals required to sell to the High Council.",
+          "confidence": 94
+        },
+        {
+          "knowledge_id": "KNOW-008",
+          "topic": "Aesthetic Splicing",
+          "summary": "Knowledge of how to modify fungal strains for visual beauty rather than utility.",
+          "confidence": 91
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelo the Silt-Walker",
+      "role_name": "Bazaar Logistics Yard Foreman",
+      "activity": "Coordinating the heavy-lift spore-pods for off-world transport",
+      "home_base": "Bazaar Logistics Yard",
+      "arc_goal": "To secure a private shipping lane for the 'God-Strain' without alerting Commander Drax.",
+      "inventory": [
+        {
+          "name": "Hydraulic Mycelial Exosuit",
+          "description": "A rusted but functional frame used for lifting heavy spore-pods.",
+          "quantity": 1
+        },
+        {
+          "name": "Encrypted Spore-Pod Manifest",
+          "description": "A digital tablet containing the true destinations of illegal shipments.",
+          "quantity": 1
+        },
+        {
+          "name": "Silt-Walker's Breathing Mask",
+          "description": "Filters out the thick, choking spores of the Logistics Yard.",
+          "quantity": 1
+        },
+        {
+          "name": "Bio-Luminescent Flare Gun",
+          "description": "Used to signal heavy-lift drones in the Spore-Cloud.",
+          "quantity": 1
+        },
+        {
+          "name": "High-Council Transit Pass",
+          "description": "A forged clearance chip for the High Council of Hyphae.",
+          "quantity": 1
+        },
+        {
+          "name": "Vial of Concentrated Mycelial Lubricant",
+          "description": "Essential for keeping the heavy-lift gears from seizing.",
+          "quantity": 3
+        },
+        {
+          "name": "Magnetic Spore-Pod Tether",
+          "description": "A high-tension cable for securing volatile cargo.",
+          "quantity": 4
+        },
+        {
+          "name": "Cracked Data-Node",
+          "description": "A salvaged piece of the Mycelial Server Room containing fragmented patent data.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Heavy-Lift Crane 'Goliath'",
+          "asset_type": "Industrial Machinery",
+          "description": "A massive, fungal-encrusted crane used for loading off-world vessels.",
+          "story_use": "Kaelo uses this to hide illegal crates beneath legitimate patent-filed cargo."
+        },
+        {
+          "asset_name": "Logistics Yard Sub-Level 4",
+          "asset_type": "Storage Facility",
+          "description": "A damp, lightless basement used for storing 'unregistered' genetic strains.",
+          "story_use": "The primary staging ground for Kaelo's smuggling operation with Sylas Vane."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "KNOW-LOG-001",
+          "topic": "Off-World Shipping Routes",
+          "summary": "Detailed knowledge of the safest paths through the Spore-Cloud to avoid Enforcement Sentinels.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "KNOW-LOG-002",
+          "topic": "High Council Bureaucracy",
+          "summary": "Understanding the specific loopholes in Registrar Elen-Ka's filing process to bypass inspections.",
+          "confidence": 82
+        }
+      ]
+    }
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Patent Heist",
+      "summary": "Infiltrate the high-security vault to steal a proprietary fungal genome and escape before the lockdown.",
+      "roles": [
+        "Infiltrator",
+        "Hacker",
+        "Lookout"
+      ],
+      "rooms": [
+        "Patent Vault",
+        "Security Hub",
+        "Ventilation Shafts"
+      ],
+      "pressure": "Rising spore toxicity levels"
+    },
+    {
+      "label": "Quarantine Breach",
+      "summary": "Identify and contain a mutated spore outbreak while competing corporations try to harvest the mutation.",
+      "roles": [
+        "Bio-Engineer",
+        "Security Detail",
+        "Containment Specialist"
+      ],
+      "rooms": [
+        "Quarantine Zone",
+        "Medical Bay",
+        "Decontamination Chamber"
+      ],
+      "pressure": "Rapidly spreading infection meter of infection"
+    }
+  ],
+  "player_entry_points": [
+    "A disgraced researcher seeking to reclaim a stolen genome.",
+    "A corporate spy disguised as a sanitation worker.",
+    "A black-market dealer looking for illegal bioluminescent strains."
+  ],
+  "conflict_hooks": [
+    "A rival corporation has leaked a synthetic blight into the bazaar's ventilation.",
+    "The Patent Office's central database has been corrupted by a sentient mycelium."
+  ],
+  "custom_actions": [
+    "Siphon Spore Sample",
+    "Forge Patent Certificate",
+    "Bypass Bio-Lock"
+  ],
+  "social_rules": [
+    "All fungal strains must be registered with the Patent Office before trade.",
+    "Quarantine zones are strictly off-limits to non-certified bio-engineers.",
+    "Corporate espionage is punishable by immediate spore-scrubbing and exile."
+  ],
+  "item_themes": [
+    "living bridges",
+    "spore encryption keys",
+    "medicine cultures",
+    "repair enzymes",
+    "patent claims"
+  ],
+  "item_catalog": [
+    {
+      "item_id": "MPB-001",
+      "name": "Spore-Lock Encryption Key",
+      "price": 450,
+      "mass": 0.05,
+      "description": "A bio-engineered fungal node that releases a unique pheromone sequence to unlock encrypted organic data vaults.",
+      "image_prompt": "A glowing purple fungal spore encased in a glass and brass vial, bioluminescent veins pulsing.",
+      "category": "Security"
+    },
+    {
+      "item_id": "MPB-002",
+      "name": "Living Bridge Seed",
+      "price": 1200,
+      "mass": 2.5,
+      "description": "A rapid-growth mycelium cluster that, when hydrated, forms a structural bridge capable of supporting 500kg.",
+      "image_prompt": "A dense, fibrous root ball with glowing blue nodes, resting on a damp industrial grate.",
+      "category": "Infrastructure"
+    },
+    {
+      "item_id": "MPB-003",
+      "name": "Patent Claim Parasite",
+      "price": 3000,
+      "mass": 0.1,
+      "description": "A symbiotic organism that attaches to biological assets to broadcast ownership signals and prevent unauthorized cloning.",
+      "image_prompt": "A small, translucent leech-like creature with a glowing barcode visible through its skin.",
+      "category": "Legal"
+    },
+    {
+      "item_id": "MPB-004",
+      "name": "Tissue-Knit Repair Enzyme",
+      "price": 150,
+      "mass": 0.2,
+      "description": "A concentrated spray of specialized enzymes that instantly fuses lacerated organic tissue and seals wounds.",
+      "image_prompt": "A sleek copper canister emitting a fine green mist over a textured, skin-like surface.",
+      "category": "Medical"
+    },
+    {
+      "item_id": "MPB-005",
+      "name": "Biolume Street-Lamp Culture",
+      "price": 80,
+      "mass": 1.2,
+      "description": "A glass jar containing a self-sustaining colony of glowing algae used for lighting the undercity tunnels.",
+      "image_prompt": "A tall glass cylinder filled with swirling neon-cyan liquid and floating mossy clumps.",
+      "category": "Utility"
+    },
+    {
+      "item_id": "MPB-006",
+      "name": "Contract Enforcement Spore",
+      "price": 850,
+      "mass": 0.01,
+      "description": "A microscopic spore that, if inhaled, triggers a mild allergic reaction unless the host remains within 100m of a contract site.",
+      "image_prompt": "Fine golden dust suspended in a small crystal orb, shimmering under a blacklight.",
+      "category": "Legal"
+    },
+    {
+      "item_id": "MPB-007",
+      "name": "Neuro-Link Mycelium",
+      "price": 2200,
+      "mass": 0.3,
+      "description": "A neural interface made of fine fungal filaments that allows direct mental connection to the Bazaar's patent database.",
+      "image_prompt": "A crown of delicate, white fungal threads intertwined with copper wiring and glowing sensors.",
+      "category": "Cybernetics"
+    },
+    {
+      "item_id": "MPB-008",
+      "name": "Metabolic Overdrive Culture",
+      "price": 500,
+      "mass": 0.1,
+      "description": "A liquid culture that temporarily doubles the host's physical speed at the cost of high caloric consumption.",
+      "image_prompt": "A syringe filled with bubbling, bright orange viscous fluid, glowing from within.",
+      "category": "Consumable"
+    },
+    {
+      "item_id": "MPB-009",
+      "name": "Atmospheric Filter Lung",
+      "price": 950,
+      "mass": 3.0,
+      "description": "An external biological organ worn as a backpack that purifies toxic undercity air into breathable oxygen.",
+      "image_prompt": "A pulsating, fleshy sac with ribbed air intakes and glowing green filtration nodules.",
+      "category": "Survival"
+    },
+    {
+      "item_id": "MPB-010",
+      "name": "Memory-Eater Mold",
+      "price": 1800,
+      "mass": 0.05,
+      "description": "A rare mold strain that selectively consumes synaptic pathways related to specific intellectual property secrets.",
+      "image_prompt": "A petri dish containing a dark, velvety black mold that seems to absorb nearby light.",
+      "category": "Espionage"
+    },
+    {
+      "item_id": "MPB-011",
+      "name": "Chitinous Armor Graft",
+      "price": 2500,
+      "mass": 5.5,
+      "description": "A living plate of reinforced insectoid chitin that bonds to the user's skin for permanent ballistic protection.",
+      "image_prompt": "A stack of iridescent, dark-green plates with organic tendrils reaching out from the underside.",
+      "category": "Defense"
+    },
+    {
+      "item_id": "MPB-012",
+      "name": "Pheromone Negotiation Mist",
+      "price": 600,
+      "mass": 0.2,
+      "description": "A spray that releases synthetic pheromones designed to induce trust and compliance during high-stakes patent trading.",
+      "image_prompt": "A delicate glass atomizer releasing a faint, shimmering pink vapor into a dark room.",
+      "category": "Social"
+    },
+    {
+      "item_id": "MPB-013",
+      "name": "Data-Siphon Root",
+      "price": 1400,
+      "mass": 0.8,
+      "description": "A bio-mechanical root system that can be plugged into traditional servers to extract data into biological storage.",
+      "image_prompt": "A thick, gnarled root with a USB-like metallic tip and glowing data-veins.",
+      "category": "Hardware"
+    },
+    {
+      "item_id": "MPB-014",
+      "name": "Regenerative Gristle-Glue",
+      "price": 200,
+      "mass": 0.4,
+      "description": "An industrial-strength biological adhesive used to repair structural breaches in living buildings.",
+      "image_prompt": "A tub of thick, greyish-white paste with small, twitching muscle fibers embedded inside.",
+      "category": "Maintenance"
+    },
+    {
+      "item_id": "MPB-015",
+      "name": "Echo-Locating Spore Cloud",
+      "price": 350,
+      "mass": 0.15,
+      "description": "A canister of spores that map out dark tunnels and transmit the layout directly to the user's optic nerve.",
+      "image_prompt": "A cloud of tiny, glowing red dots illuminating a dark, damp industrial corridor.",
+      "category": "Navigation"
+    }
+  ],
+  "agent_visual_policy": {
+    "policy_version": "agent_visual_policy_v1",
+    "generated_by": "world_builder.nodes.wardrobe",
+    "model_stage": "agent_wardrobe_policy_generation",
+    "policy_id": "mycelium-patent-bazaar-wardrobe-v1",
+    "world_wardrobe_brief": "Biotech undercity attire blending brutalist industrial utility with organic fungal integration. Clothing features bioluminescent accents, pressurized containment elements, and living biological grafts.",
+    "forbidden_aesthetics": [
+      "medieval fantasy",
+      "steampunk brass",
+      "clean futuristic white",
+      "natural sunlight fabrics",
+      "wooden accessories",
+      "high-fantasy magic robes"
+    ],
+    "palette_families": [
+      {
+        "name": "Audit & Registry",
+        "dominant": "#1a1c2c",
+        "accent": "#00ffcc",
+        "trim": "#e0f8cf",
+        "material": "translucent_lab_glass"
+      },
+      {
+        "name": "Enforcement & Security",
+        "dominant": "#0f0f1b",
+        "accent": "#3d3b30",
+        "trim": "#00ffcc",
+        "material": "chitinous_plating"
+      },
+      {
+        "name": "Merchant & Broker",
+        "dominant": "#3d3b30",
+        "accent": "#e0f8cf",
+        "trim": "#1a1c2c",
+        "material": "fibrous_mycelium_mats"
+      },
+      {
+        "name": "Technical & Splicing",
+        "dominant": "#1a1c2c",
+        "accent": "#00ffcc",
+        "trim": "#3d3b30",
+        "material": "oxidized_copper_piping"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "auditor_registrar",
+        "role_keywords": [
+          "auditor",
+          "registrar",
+          "clerk"
+        ],
+        "attire": [
+          "stiff high-collared lab coats",
+          "data-node spectacles",
+          "mycelial-thread embroidery"
+        ],
+        "props": [
+          "scanning tablet",
+          "patent stamp",
+          "biolume stylus"
+        ],
+        "palette_notes": "Heavy use of translucent glass textures and cyan highlights.",
+        "silhouette_notes": "Sharp, rectangular shoulders; slender profile.",
+        "avoid": []
+      },
+      {
+        "rule_id": "enforcer_sentinel",
+        "role_keywords": [
+          "enforcer",
+          "sentinel",
+          "overseer",
+          "custodian"
+        ],
+        "attire": [
+          "heavy chitinous chestplates",
+          "pressurized hazard suits",
+          "full-face respirators"
+        ],
+        "props": [
+          "contract enforcement baton",
+          "spore-cloud canister",
+          "neural-link headset"
+        ],
+        "palette_notes": "Darkest indigo and shadow tones with high-contrast cyan hazard markings.",
+        "silhouette_notes": "Bulky, top-heavy; intimidating armored shoulders.",
+        "avoid": []
+      },
+      {
+        "rule_id": "trader_merchant",
+        "role_keywords": [
+          "trader",
+          "merchant",
+          "broker",
+          "distributor"
+        ],
+        "attire": [
+          "layered fungal-fiber capes",
+          "multi-pocketed utility vests",
+          "glowing spore-pouches"
+        ],
+        "props": [
+          "sample vials",
+          "negotiation mist spray",
+          "bio-currency scales"
+        ],
+        "palette_notes": "Earthier tones mixed with vibrant highlight accents.",
+        "silhouette_notes": "Asymmetrical; draped fabrics over utility gear.",
+        "avoid": []
+      },
+      {
+        "rule_id": "technician_architect",
+        "role_keywords": [
+          "technician",
+          "architect",
+          "synthesizer",
+          "splicer"
+        ],
+        "attire": [
+          "rubberized aprons",
+          "exposed biological conduits",
+          "integrated tool-harnesses"
+        ],
+        "props": [
+          "splicing needle",
+          "centrifuge kit",
+          "data-siphon root"
+        ],
+        "palette_notes": "Industrial copper and teal accents; stained materials.",
+        "silhouette_notes": "Functional; cluttered with tubes and wires.",
+        "avoid": []
+      }
+    ],
+    "default_rule": {
+      "rule_id": "bazaar_denizen",
+      "role_keywords": [
+        "citizen",
+        "worker",
+        "visitor"
+      ],
+      "attire": [
+        "damp-resistant jumpsuits",
+        "mycelium-knit scarves",
+        "filtered breathing masks"
+      ],
+      "props": [
+        "biolume lantern",
+        "utility knife"
+      ],
+      "palette_notes": "Muted secondary colors with dim bioluminescent trim.",
+      "silhouette_notes": "Standard slender proportions; practical and rugged.",
+      "avoid": []
+    },
+    "visual_consistency_rules": [
+      "Use 1px selective outlines to separate character from dark backgrounds.",
+      "Bioluminescent elements must be the brightest pixels in the sprite.",
+      "Maintain 6-head slender proportions for all humanoids.",
+      "Ensure role-specific tools are visible at 32x32 scale via high-contrast colors."
+    ]
+  },
+  "visual_canon": {
+    "canon_version": "world_visual_canon_v1",
+    "generated_by": "world_builder.nodes.visual_canon",
+    "model_stage": "world_visual_canon_generation",
+    "canon_id": "mycelium-patent-bazaar",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90_degrees_vertical",
+      "scale_rule": "32px_per_meter_fixed_grid"
+    },
+    "palette": {
+      "dominant": "#1a1c2c",
+      "secondary": "#3d3b30",
+      "accent": "#00ffcc",
+      "shadow": "#0f0f1b",
+      "highlight": "#e0f8cf"
+    },
+    "materials": [
+      "damp_poured_concrete",
+      "translucent_lab_glass",
+      "fibrous_mycelium_mats",
+      "oxidized_copper_piping",
+      "pulsing_bioluminescent_veins"
+    ],
+    "lighting": "low_ambient_subterranean_with_flickering_cyan_bioluminescence_and_harsh_overhead_fluorescents",
+    "architecture": [
+      "brutalist_concrete_bunkers",
+      "organic_fungal_overgrowth_on_industrial_frames",
+      "pressurized_glass_containment_cells",
+      "exposed_biological_conduits"
+    ],
+    "terrain": {
+      "ground": "cracked_wet_concrete_with_embedded_mycelial_threads",
+      "path": "raised_metal_grating_over_glowing_spore_slurry",
+      "edge": "dense_shelf_fungi_and_thick_industrial_cables"
+    },
+    "sprite_language": {
+      "body_proportion": "6_head_semi_realistic_slender",
+      "outline": "1px_dark_indigo_selective_outline",
+      "role_readability": "color_coded_hazard_suits_and_glowing_biotech_augments"
+    },
+    "world_prompt_prefix": "top-down_orthographic_view_biotech_undercity_mycelium_bazaar_damp_concrete_cyan_bioluminescence_industrial_fungal_fusion",
+    "sprite_prompt_prefix": "top-down_character_sprite_biotech_hazard_suit_glowing_accents_pixel_art_style",
+    "forbidden_visuals": [
+      "isometric_perspective",
+      "natural_sunlight",
+      "wooden_structures",
+      "generic_fantasy_magic",
+      "text_labels",
+      "photorealism",
+      "ui_elements_in_render"
+    ],
+    "canon_hash": "3656986a37d325c8"
+  }
+}

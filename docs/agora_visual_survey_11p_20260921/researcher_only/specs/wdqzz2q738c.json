@@ -1,0 +1,2980 @@
+{
+  "world_name": "Sunken Satellite Monastery",
+  "world_id": "ssm_01",
+  "world_seed": {
+    "seed_version": "world_seed_v2",
+    "preset_id": "coastal_trade_city",
+    "profile_id": "coastal_trade_city",
+    "locale": "en-US",
+    "tone": "melancholic, industrial, spiritual",
+    "visual_direction": "bioluminescent tech-monasticism",
+    "currency_code": "HBR",
+    "currency_symbol": "⚓",
+    "currency_minor_unit": "mark",
+    "currency_name": "Harbor Chits",
+    "domain_label": "The Deep Signal",
+    "starting_wallet_minor": {
+      "min": 500,
+      "max": 5000
+    },
+    "kit_refs": {
+      "pixel_component_kit_id": "coastal_trade_city_v1",
+      "frontend_affordance_id": "coastal_trade_city_v1",
+      "asset_prompt_kit_id": "coastal_trade_city_v1"
+    },
+    "policy_refs": {
+      "economy_policy_id": "harbor_chit_v1",
+      "item_collection_id": "harbor_trade_items_v1",
+      "inventory_layer_policy_id": "split_four_layer_v1",
+      "role_item_policy_id": "coastal_trade_city_v1",
+      "property_policy_id": "coastal_trade_city_v1",
+      "knowledge_policy_id": "coastal_trade_city_v1",
+      "inventory_layers": [
+        "wallet",
+        "inventory",
+        "property_library",
+        "knowledge_assets"
+      ]
+    }
+  },
+  "genre": "post-orbital ocean monastery, salvage ethics, signal economy",
+  "premise": "A monastery built around a crashed communications satellite sits below a stormy sea dome where bandwidth is a holy relic.",
+  "simulation_objective": "Simulate a high-stakes economy of signal salvage and pressure-suit maintenance.",
+  "agent_count_target": 25,
+  "player_count_target": 4,
+  "economy_focus": "Bandwidth vouchers and pressure-resistant salvage components.",
+  "exploration_focus": "Submerged satellite arrays and pressurized trade corridors.",
+  "conflict_tone": "Commercial rivalry and theological disputes over signal purity.",
+  "visual_style": "Deep sea industrial with glowing fiber-optic vestments.",
+  "rooms": [
+    {
+      "name": "The Satellite Core",
+      "biome": "underwater_monastery",
+      "purpose": "Central worship and signal processing.",
+      "decor_tags": [
+        "fiber-optics",
+        "rusted-titanium",
+        "altars"
+      ],
+      "activity_tags": [
+        "praying",
+        "decoding",
+        "trading"
+      ],
+      "flux_floor_prompt": "metallic plating with glowing blue fiber optic lines",
+      "room_scene_prompt": "A massive satellite dish serves as a floor, surrounded by monks in pressure suits.",
+      "floor_tile": "stone_checker",
+      "wall_tile": "red_pillar_wall",
+      "ambient_palette": "focused_blue",
+      "archetype": "archive_ritual",
+      "width_tiles": 40,
+      "height_tiles": 40,
+      "scene_components": [
+        {
+          "component_id": "signal_altar",
+          "label": "The Main Array",
+          "description": "A humming satellite transmitter used for bandwidth distribution.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    },
+    {
+      "name": "Pressure Lock Bazaar",
+      "biome": "industrial_dock",
+      "purpose": "Trading salvage and oxygen.",
+      "decor_tags": [
+        "pipes",
+        "valves",
+        "stalls"
+      ],
+      "activity_tags": [
+        "haggling",
+        "repairing",
+        "shouting"
+      ],
+      "flux_floor_prompt": "wet industrial steel grating",
+      "room_scene_prompt": "A crowded market filled with the hiss of steam and the smell of brine.",
+      "floor_tile": "stone_slabs",
+      "wall_tile": "stall_canvas_wall",
+      "ambient_palette": "warm_lantern",
+      "archetype": "market_exchange",
+      "width_tiles": 50,
+      "height_tiles": 30,
+      "scene_components": [
+        {
+          "component_id": "oxygen_kiosk",
+          "label": "O2 Refill Station",
+          "description": "A heavy brass machine dispensing pressurized air.",
+          "anchor": "north_east",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Hydro-Garden",
+      "biome": "greenhouse",
+      "purpose": "Food production and meditation.",
+      "decor_tags": [
+        "kelp",
+        "algae-tanks",
+        "glass"
+      ],
+      "activity_tags": [
+        "harvesting",
+        "contemplating"
+      ],
+      "flux_floor_prompt": "moss-covered stone paths",
+      "room_scene_prompt": "Lush green kelp towers inside glass tubes, lit by bioluminescent fungi.",
+      "floor_tile": "yard_pavers",
+      "wall_tile": "glass_case_wall",
+      "ambient_palette": "soft_mint",
+      "archetype": "commons",
+      "width_tiles": 30,
+      "height_tiles": 30,
+      "scene_components": [
+        {
+          "component_id": "kelp_vat",
+          "label": "Nutrient Vat",
+          "description": "A bubbling tank of edible protein paste.",
+          "anchor": "south_west",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "Salvage Workshop",
+      "biome": "industrial",
+      "purpose": "Repairing deep-sea gear.",
+      "decor_tags": [
+        "tools",
+        "welding-sparks",
+        "scrap"
+      ],
+      "activity_tags": [
+        "welding",
+        "stripping",
+        "testing"
+      ],
+      "flux_floor_prompt": "oil-stained slate tiles",
+      "room_scene_prompt": "The sound of metal on metal echoes as engineers strip satellite debris.",
+      "floor_tile": "forge_slate",
+      "wall_tile": "forge_wall",
+      "ambient_palette": "ember_orange",
+      "archetype": "workshop",
+      "width_tiles": 35,
+      "height_tiles": 25,
+      "scene_components": [
+        {
+          "component_id": "plasma_cutter",
+          "label": "Heavy Plasma Bench",
+          "description": "A reinforced table for cutting through satellite hulls.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Signal Archive",
+      "biome": "library",
+      "purpose": "Storing decrypted data.",
+      "decor_tags": [
+        "tapes",
+        "servers",
+        "scrolls"
+      ],
+      "activity_tags": [
+        "reading",
+        "transcribing",
+        "whispering"
+      ],
+      "flux_floor_prompt": "polished dark wood planks",
+      "room_scene_prompt": "Rows of humming servers draped in prayer beads and silk ribbons.",
+      "floor_tile": "library_planks",
+      "wall_tile": "library_shelf_wall",
+      "ambient_palette": "low_lantern",
+      "archetype": "archive_ritual",
+      "width_tiles": 25,
+      "height_tiles": 40,
+      "scene_components": [
+        {
+          "component_id": "data_vault",
+          "label": "The Black Box",
+          "description": "A lead-lined safe containing the original satellite flight data.",
+          "anchor": "north_mid",
+          "width_tiles": 2,
+          "height_tiles": 2
+        }
+      ]
+    },
+    {
+      "name": "The Abyss Lookout",
+      "biome": "observation_deck",
+      "purpose": "Monitoring the sea dome.",
+      "decor_tags": [
+        "telescopes",
+        "monitors",
+        "glass"
+      ],
+      "activity_tags": [
+        "watching",
+        "charting",
+        "fearing"
+      ],
+      "flux_floor_prompt": "clean white ceramic tiles",
+      "room_scene_prompt": "A panoramic view of the dark, crushing ocean outside the dome.",
+      "floor_tile": "clean_tile",
+      "wall_tile": "quiet_lane_wall",
+      "ambient_palette": "clear_day",
+      "archetype": "lookout",
+      "width_tiles": 30,
+      "height_tiles": 20,
+      "scene_components": [
+        {
+          "component_id": "sonar_array",
+          "label": "Sonar Console",
+          "description": "A screen showing the movement of leviathans outside.",
+          "anchor": "east_mid",
+          "width_tiles": 2,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "Monk Dormitories",
+      "biome": "living_quarters",
+      "purpose": "Rest and private prayer.",
+      "decor_tags": [
+        "bunks",
+        "incense",
+        "lockers"
+      ],
+      "activity_tags": [
+        "sleeping",
+        "chanting"
+      ],
+      "flux_floor_prompt": "simple wooden planks",
+      "room_scene_prompt": "Small, cramped cells carved into the station's bulkhead.",
+      "floor_tile": "dorm_planks",
+      "wall_tile": "dorm_wall",
+      "ambient_palette": "dusty_brown",
+      "archetype": "rest_social",
+      "width_tiles": 40,
+      "height_tiles": 30,
+      "scene_components": [
+        {
+          "component_id": "prayer_mat",
+          "label": "Meditation Pad",
+          "description": "A woven mat with integrated haptic feedback for prayer.",
+          "anchor": "south_mid",
+          "width_tiles": 1,
+          "height_tiles": 1
+        }
+      ]
+    },
+    {
+      "name": "The High Council Chamber",
+      "biome": "government",
+      "purpose": "Political decision making.",
+      "decor_tags": [
+        "banners",
+        "thrones",
+        "maps"
+      ],
+      "activity_tags": [
+        "debating",
+        "ruling"
+      ],
+      "flux_floor_prompt": "ornate inlaid stone patterns",
+      "room_scene_prompt": "A circular room where the leaders of the monastery decide the fate of the signal.",
+      "floor_tile": "war_room_inlay",
+      "wall_tile": "war_room_wall",
+      "ambient_palette": "focused_blue",
+      "archetype": "council",
+      "width_tiles": 25,
+      "height_tiles": 25,
+      "scene_components": [
+        {
+          "component_id": "council_table",
+          "label": "The Round Table",
+          "description": "A table made from a repurposed satellite heat shield.",
+          "anchor": "center",
+          "width_tiles": 3,
+          "height_tiles": 3
+        }
+      ]
+    }
+  ],
+  "role_groups": [
+    {
+      "role_name": "Signal Monk",
+      "count": 5,
+      "core_values": [
+        "Signal Purity",
+        "Patience",
+        "Asceticism"
+      ],
+      "activity": "Transcribing satellite pings into holy scripture.",
+      "starting_item_ids": [
+        "fiber_optic_rosary",
+        "bandwidth_voucher_low"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Meditation Cell",
+          "asset_type": "room",
+          "description": "A small pressurized room for prayer.",
+          "story_use": "Used to hide secret data logs."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "satellite_orbit_math",
+          "topic": "Astrogation",
+          "summary": "The precise timing of the satellite's original descent.",
+          "confidence": 90
+        }
+      ]
+    },
+    {
+      "role_name": "Salvage Diver",
+      "count": 8,
+      "core_values": [
+        "Bravery",
+        "Profit",
+        "Reliability"
+      ],
+      "activity": "Venturing outside the dome to recover titanium scrap.",
+      "starting_item_ids": [
+        "pressure_patch_kit",
+        "rusted_titanium_bolt"
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Salvage Skiff",
+          "asset_type": "vehicle",
+          "description": "A small, dented submersible.",
+          "story_use": "Transporting illegal signal jammers."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "abyss_currents",
+          "topic": "Oceanography",
+          "summary": "Where the strongest currents pull debris.",
+          "confidence": 85
+        }
+      ]
+    }
+  ],
+  "main_characters": [
+    {
+      "display_name": "Abbot Oros",
+      "role_name": "Monastery Leader",
+      "activity": "Managing the distribution of holy bandwidth.",
+      "home_base": "The High Council Chamber",
+      "arc_goal": "To restore the satellite's primary uplink to the stars.",
+      "inventory": [
+        {
+          "item_id": "master_keycard",
+          "name": "The Golden Keycard",
+          "description": "Access to all satellite systems.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bandwidth_voucher_high",
+          "name": "High-Bandwidth Voucher",
+          "description": "1GB of holy data.",
+          "quantity": 5
+        },
+        {
+          "item_id": "incense_stick",
+          "name": "Ozone Incense",
+          "description": "Smells like a short circuit.",
+          "quantity": 20
+        },
+        {
+          "item_id": "prayer_beads",
+          "name": "Fiber-Optic Beads",
+          "description": "They glow when signal is detected.",
+          "quantity": 1
+        },
+        {
+          "item_id": "holy_water",
+          "name": "Deionized Cooling Fluid",
+          "description": "Used to bless the servers.",
+          "quantity": 3
+        },
+        {
+          "item_id": "scripture_tablet",
+          "name": "The First Log",
+          "description": "A tablet containing the pilot's final words.",
+          "quantity": 1
+        },
+        {
+          "item_id": "seal_ring",
+          "name": "Abbot's Seal",
+          "description": "Used to stamp official trade edicts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "emergency_flare",
+          "name": "Red Signal Flare",
+          "description": "For emergencies in the abyss.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The High Altar",
+          "asset_type": "shrine",
+          "description": "The central node of the monastery.",
+          "story_use": "Oros uses this to monitor all communications."
+        },
+        {
+          "asset_name": "Private Archive",
+          "asset_type": "library",
+          "description": "A collection of pre-fall history.",
+          "story_use": "Contains proof that the satellite was a weapon."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "uplink_codes",
+          "topic": "Security",
+          "summary": "The codes to bypass the satellite's firewall.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "oros_debt",
+          "topic": "Finance",
+          "summary": "Oros owes the Signal Pirates for his position.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Silas the Rust-Eater",
+      "role_name": "Master Salvager",
+      "activity": "Selling high-grade titanium to the monks.",
+      "home_base": "Pressure Lock Bazaar",
+      "arc_goal": "To buy his way out of the dome and to the surface.",
+      "inventory": [
+        {
+          "item_id": "titanium_scrap",
+          "name": "Grade-A Titanium",
+          "description": "Pure satellite hull plating.",
+          "quantity": 50
+        },
+        {
+          "item_id": "plasma_torch",
+          "name": "Industrial Plasma Torch",
+          "description": "Cuts through anything but the dome.",
+          "quantity": 1
+        },
+        {
+          "item_id": "oxygen_tank",
+          "name": "High-Capacity O2 Tank",
+          "description": "4 hours of breathing time.",
+          "quantity": 3
+        },
+        {
+          "item_id": "harbor_chit",
+          "name": "Harbor Chits",
+          "description": "Standard currency.",
+          "quantity": 1500
+        },
+        {
+          "item_id": "salvage_hook",
+          "name": "Magnetic Salvage Hook",
+          "description": "For grabbing floating debris.",
+          "quantity": 2
+        },
+        {
+          "item_id": "welding_mask",
+          "name": "Scratched Welding Mask",
+          "description": "Smells of sweat and burnt metal.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pressure_gauge",
+          "name": "Analog Pressure Gauge",
+          "description": "More reliable than the digital ones.",
+          "quantity": 1
+        },
+        {
+          "item_id": "lucky_coin",
+          "name": "Bent Surface Coin",
+          "description": "A relic from the world above.",
+          "quantity": 1
+        },
+        {
+          "item_id": "repair_putty",
+          "name": "Hull Repair Putty",
+          "description": "Quick fix for leaks.",
+          "quantity": 10
+        },
+        {
+          "item_id": "wrench_set",
+          "name": "Titanium Wrench Set",
+          "description": "Non-corrosive tools.",
+          "quantity": 1
+        },
+        {
+          "item_id": "signal_jammer",
+          "name": "Pocket Jammer",
+          "description": "Hides your location from the monks.",
+          "quantity": 1
+        },
+        {
+          "item_id": "brine_whiskey",
+          "name": "Brine Whiskey",
+          "description": "Strong enough to clean a turbine.",
+          "quantity": 2
+        },
+        {
+          "item_id": "thermal_gloves",
+          "name": "Insulated Gloves",
+          "description": "Protects against the deep cold.",
+          "quantity": 1
+        },
+        {
+          "item_id": "sonar_pinger",
+          "name": "Handheld Sonar",
+          "description": "Detects large predators.",
+          "quantity": 1
+        },
+        {
+          "item_id": "scrap_manifest",
+          "name": "Salvage Manifest",
+          "description": "A list of items Silas owes to Oros.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Stall 42",
+          "asset_type": "shop",
+          "description": "The best salvage shop in the bazaar.",
+          "story_use": "Silas hides stolen monastery tech here."
+        },
+        {
+          "asset_name": "The Rusty Anchor",
+          "asset_type": "warehouse",
+          "description": "A storage unit for heavy scrap.",
+          "story_use": "Used as a meeting point for the Signal Pirates."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "dome_weakpoint",
+          "topic": "Engineering",
+          "summary": "A hairline fracture in the south sector.",
+          "confidence": 70
+        },
+        {
+          "knowledge_id": "oros_secret",
+          "topic": "Blackmail",
+          "summary": "Silas knows Oros is selling bandwidth to the surface.",
+          "confidence": 95
+        }
+      ]
+    },
+    {
+      "display_name": "Vera the Broker",
+      "role_name": "Bandwidth Trader",
+      "activity": "Arbitrating disputes over signal allocation.",
+      "home_base": "The Satellite Core",
+      "arc_goal": "To monopolize the signal economy.",
+      "inventory": [
+        {
+          "item_id": "bandwidth_ledger",
+          "name": "The Great Ledger",
+          "description": "Records of every byte traded.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bandwidth_voucher_mid",
+          "name": "Mid-Bandwidth Voucher",
+          "description": "500MB of data.",
+          "quantity": 12
+        },
+        {
+          "item_id": "encryption_key",
+          "name": "Vera's Private Key",
+          "description": "Used to sign trade contracts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "harbor_chit",
+          "name": "Harbor Chits",
+          "description": "Standard currency.",
+          "quantity": 3000
+        },
+        {
+          "item_id": "stylus",
+          "name": "Electronic Stylus",
+          "description": "For signing digital scrolls.",
+          "quantity": 2
+        },
+        {
+          "item_id": "data_crystal",
+          "name": "Empty Data Crystal",
+          "description": "Storage for raw signal.",
+          "quantity": 5
+        },
+        {
+          "item_id": "perfume",
+          "name": "Synthetic Jasmine",
+          "description": "A rare luxury in the dome.",
+          "quantity": 1
+        },
+        {
+          "item_id": "decoder_ring",
+          "name": "Monastery Decoder",
+          "description": "Translates holy pings into text.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Trading Booth",
+          "asset_type": "office",
+          "description": "A soundproof booth in the core.",
+          "story_use": "Vera records private conversations here."
+        },
+        {
+          "asset_name": "Data Server",
+          "asset_type": "hardware",
+          "description": "A private server rack.",
+          "story_use": "Stores Vera's illegal data backups."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "market_crash",
+          "topic": "Economics",
+          "summary": "The signal will fail in three days.",
+          "confidence": 80
+        },
+        {
+          "knowledge_id": "vera_debt",
+          "topic": "Finance",
+          "summary": "Silas owes Vera 5000 chits.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Kaelen the Mute",
+      "role_name": "Signal Pirate",
+      "activity": "Siphoning bandwidth from the main array.",
+      "home_base": "The Abyss Lookout",
+      "arc_goal": "To broadcast a message to the surface.",
+      "inventory": [
+        {
+          "item_id": "siphon_tool",
+          "name": "Signal Siphon",
+          "description": "Illegal device for stealing data.",
+          "quantity": 1
+        },
+        {
+          "item_id": "stealth_cloak",
+          "name": "Refractive Cloak",
+          "description": "Makes the wearer hard to see.",
+          "quantity": 1
+        },
+        {
+          "item_id": "data_spike",
+          "name": "Virus Spike",
+          "description": "For crashing monastery security.",
+          "quantity": 3
+        },
+        {
+          "item_id": "nutrient_bar",
+          "name": "Compressed Algae Bar",
+          "description": "Tastes like dirt.",
+          "quantity": 10
+        },
+        {
+          "item_id": "wire_cutters",
+          "name": "Insulated Cutters",
+          "description": "For bypassing alarms.",
+          "quantity": 1
+        },
+        {
+          "item_id": "flash_drive",
+          "name": "Encrypted Drive",
+          "description": "Contains the 'Message'.",
+          "quantity": 1
+        },
+        {
+          "item_id": "lockpick",
+          "name": "Electronic Lockpick",
+          "description": "Opens most doors in the dome.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bandage",
+          "name": "Med-Patch",
+          "description": "Heals minor cuts.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Hidden Relay",
+          "asset_type": "hardware",
+          "description": "A small transmitter hidden in the vents.",
+          "story_use": "Kaelen uses this to bypass the Abbot's filters."
+        },
+        {
+          "asset_name": "Secret Crawlspace",
+          "asset_type": "room",
+          "description": "A tiny room behind the dorms.",
+          "story_use": "Kaelen's base of operations."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "pirate_network",
+          "topic": "Social",
+          "summary": "The locations of all other pirates.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "kaelen_origin",
+          "topic": "History",
+          "summary": "Kaelen is actually a surface spy.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Sister Elara",
+      "role_name": "Hydro-Gardener",
+      "activity": "Trading fresh kelp for oxygen vouchers.",
+      "home_base": "The Hydro-Garden",
+      "arc_goal": "To grow a plant that can survive on the surface.",
+      "inventory": [
+        {
+          "item_id": "kelp_seeds",
+          "name": "Gen-3 Kelp Seeds",
+          "description": "Fast-growing and nutritious.",
+          "quantity": 100
+        },
+        {
+          "item_id": "fertilizer",
+          "name": "Nitrate Pellets",
+          "description": "Essential for algae growth.",
+          "quantity": 20
+        },
+        {
+          "item_id": "pruning_shears",
+          "name": "Ceramic Shears",
+          "description": "Won't rust in the humidity.",
+          "quantity": 1
+        },
+        {
+          "item_id": "water_tester",
+          "name": "PH Meter",
+          "description": "Checks the acidity of the vats.",
+          "quantity": 1
+        },
+        {
+          "item_id": "kelp_wrap",
+          "name": "Dried Kelp Wrap",
+          "description": "A common snack.",
+          "quantity": 15
+        },
+        {
+          "item_id": "mist_bottle",
+          "name": "Nutrient Mister",
+          "description": "For delicate seedlings.",
+          "quantity": 1
+        },
+        {
+          "item_id": "sun_lamp",
+          "name": "UV Bulb",
+          "description": "Simulates sunlight.",
+          "quantity": 2
+        },
+        {
+          "item_id": "garden_gloves",
+          "name": "Rubberized Gloves",
+          "description": "Keeps the slime off.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Vat Alpha",
+          "asset_type": "farm",
+          "description": "The most productive kelp tank.",
+          "story_use": "Elara hides a rare surface flower here."
+        },
+        {
+          "asset_name": "Seed Vault",
+          "asset_type": "storage",
+          "description": "A climate-controlled box.",
+          "story_use": "Contains the only non-GMO seeds left."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "botany_secrets",
+          "topic": "Science",
+          "summary": "How to synthesize oxygen from kelp.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "elara_loyalty",
+          "topic": "Social",
+          "summary": "Elara is secretly helping Kaelen.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Torin the Welder",
+      "role_name": "Maintenance Engineer",
+      "activity": "Fixing leaks in exchange for bandwidth.",
+      "home_base": "Salvage Workshop",
+      "arc_goal": "To build a suit that can withstand the deepest trench.",
+      "inventory": [
+        {
+          "item_id": "welding_rods",
+          "name": "Flux-Core Rods",
+          "description": "For underwater welding.",
+          "quantity": 30
+        },
+        {
+          "item_id": "rivet_gun",
+          "name": "Pneumatic Riveter",
+          "description": "Loud and effective.",
+          "quantity": 1
+        },
+        {
+          "item_id": "steel_plate",
+          "name": "Reinforced Steel",
+          "description": "For patching the dome.",
+          "quantity": 5
+        },
+        {
+          "item_id": "ear_plugs",
+          "name": "Industrial Earplugs",
+          "description": "Necessary in the workshop.",
+          "quantity": 2
+        },
+        {
+          "item_id": "grease_rag",
+          "name": "Oily Rag",
+          "description": "For cleaning tools.",
+          "quantity": 5
+        },
+        {
+          "item_id": "blueprint",
+          "name": "Suit Blueprints",
+          "description": "Plans for the 'Abyss Walker'.",
+          "quantity": 1
+        },
+        {
+          "item_id": "multimeter",
+          "name": "Circuit Tester",
+          "description": "Finds shorts in the wiring.",
+          "quantity": 1
+        },
+        {
+          "item_id": "coffee_mug",
+          "name": "Metal Mug",
+          "description": "Filled with bitter chicory.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Workbench 3",
+          "asset_type": "workshop",
+          "description": "Torin's personal workspace.",
+          "story_use": "Where the Abyss Walker is being built."
+        },
+        {
+          "asset_name": "Tool Locker",
+          "asset_type": "storage",
+          "description": "A heavy iron locker.",
+          "story_use": "Contains Torin's illegal plasma cutter."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "structural_integrity",
+          "topic": "Engineering",
+          "summary": "The dome will collapse if the core stops.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "torin_debt",
+          "topic": "Finance",
+          "summary": "Torin owes Silas for the titanium.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Elder Maros",
+      "role_name": "Archivist",
+      "activity": "Cataloging the satellite's data fragments.",
+      "home_base": "The Signal Archive",
+      "arc_goal": "To find the 'Final Command' sent to the satellite.",
+      "inventory": [
+        {
+          "item_id": "magnifying_glass",
+          "name": "Digital Loupe",
+          "description": "For inspecting micro-circuits.",
+          "quantity": 1
+        },
+        {
+          "item_id": "data_tape",
+          "name": "Magnetic Tape",
+          "description": "Ancient storage medium.",
+          "quantity": 10
+        },
+        {
+          "item_id": "white_gloves",
+          "name": "Cotton Gloves",
+          "description": "For handling delicate relics.",
+          "quantity": 5
+        },
+        {
+          "item_id": "ink_well",
+          "name": "Conductive Ink",
+          "description": "For repairing circuit paths.",
+          "quantity": 1
+        },
+        {
+          "item_id": "parchment",
+          "name": "Synthetic Parchment",
+          "description": "Waterproof paper.",
+          "quantity": 20
+        },
+        {
+          "item_id": "reading_glasses",
+          "name": "Thick Glasses",
+          "description": "He's nearly blind.",
+          "quantity": 1
+        },
+        {
+          "item_id": "tea_tin",
+          "name": "Dried Mint",
+          "description": "For making soothing tea.",
+          "quantity": 1
+        },
+        {
+          "item_id": "archive_key",
+          "name": "Skeleton Key",
+          "description": "Opens all the filing cabinets.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Deep Shelf",
+          "asset_type": "library",
+          "description": "The most restricted section of the archive.",
+          "story_use": "Contains the satellite's weapon specs."
+        },
+        {
+          "asset_name": "Reading Desk",
+          "asset_type": "furniture",
+          "description": "A heavy oak desk.",
+          "story_use": "Maros hides his personal diary here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "pre_fall_history",
+          "topic": "History",
+          "summary": "The world was destroyed by a signal.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "maros_fear",
+          "topic": "Social",
+          "summary": "Maros is terrified of the Abbot.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Jax the Runner",
+      "role_name": "Courier",
+      "activity": "Delivering physical data drives between rooms.",
+      "home_base": "Pressure Lock Bazaar",
+      "arc_goal": "To find a way to run faster through the flooded sectors.",
+      "inventory": [
+        {
+          "item_id": "messenger_bag",
+          "name": "Waterproof Bag",
+          "description": "Keeps the data dry.",
+          "quantity": 1
+        },
+        {
+          "item_id": "running_shoes",
+          "name": "Magnetic Boots",
+          "description": "For running on walls.",
+          "quantity": 1
+        },
+        {
+          "item_id": "stopwatch",
+          "name": "Precision Timer",
+          "description": "Jax is always on the clock.",
+          "quantity": 1
+        },
+        {
+          "item_id": "energy_drink",
+          "name": "Caffeine Shot",
+          "description": "Pure jitters.",
+          "quantity": 5
+        },
+        {
+          "item_id": "map_pda",
+          "name": "Station Map",
+          "description": "Shows all the shortcuts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "whistle",
+          "name": "Signal Whistle",
+          "description": "To clear the way.",
+          "quantity": 1
+        },
+        {
+          "item_id": "id_badge",
+          "name": "Courier Pass",
+          "description": "Allows access to most corridors.",
+          "quantity": 1
+        },
+        {
+          "item_id": "spare_socks",
+          "name": "Dry Socks",
+          "description": "The most valuable item in a flooded station.",
+          "quantity": 3
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Charging Station",
+          "asset_type": "hardware",
+          "description": "Where Jax recharges his boots.",
+          "story_use": "Jax uses this to tap into the power grid."
+        },
+        {
+          "asset_name": "Locker 12",
+          "asset_type": "storage",
+          "description": "A small locker in the bazaar.",
+          "story_use": "A drop-off point for illegal goods."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "shortcut_routes",
+          "topic": "Geography",
+          "summary": "The vents are faster than the halls.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "jax_witness",
+          "topic": "Social",
+          "summary": "Jax saw Oros meeting with a Pirate.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Dr. Aris",
+      "role_name": "Station Medic",
+      "activity": "Treating pressure sickness and rust-lung.",
+      "home_base": "Monk Dormitories",
+      "arc_goal": "To find a cure for the 'Signal Fever'.",
+      "inventory": [
+        {
+          "item_id": "med_kit",
+          "name": "Advanced Med-Kit",
+          "description": "Contains sutures and stims.",
+          "quantity": 1
+        },
+        {
+          "item_id": "antibiotics",
+          "name": "Broad-Spectrum Pills",
+          "description": "Fights station infections.",
+          "quantity": 20
+        },
+        {
+          "item_id": "oxygen_mask",
+          "name": "Nebulizer",
+          "description": "For treating rust-lung.",
+          "quantity": 1
+        },
+        {
+          "item_id": "scalpel",
+          "name": "Laser Scalpel",
+          "description": "Precise and sterile.",
+          "quantity": 2
+        },
+        {
+          "item_id": "sedative",
+          "name": "Sleep-Inducing Gas",
+          "description": "For rowdy patients.",
+          "quantity": 5
+        },
+        {
+          "item_id": "stethoscope",
+          "name": "Electronic Stethoscope",
+          "description": "Can hear leaks through walls.",
+          "quantity": 1
+        },
+        {
+          "item_id": "medical_log",
+          "name": "Patient Records",
+          "description": "Full of station secrets.",
+          "quantity": 1
+        },
+        {
+          "item_id": "alcohol_swabs",
+          "name": "Sterile Swabs",
+          "description": "For cleaning wounds.",
+          "quantity": 50
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Sick Bay",
+          "asset_type": "clinic",
+          "description": "A clean room in a dirty station.",
+          "story_use": "Where the most sensitive secrets are whispered."
+        },
+        {
+          "asset_name": "Medicine Cabinet",
+          "asset_type": "storage",
+          "description": "A locked steel cabinet.",
+          "story_use": "Contains the station's only supply of real morphine."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "signal_fever_cause",
+          "topic": "Medicine",
+          "summary": "The fever is caused by the satellite's radiation.",
+          "confidence": 85
+        },
+        {
+          "knowledge_id": "aris_debt",
+          "topic": "Finance",
+          "summary": "Aris owes Vera for medical supplies.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Milo the Cook",
+      "role_name": "Chef",
+      "activity": "Turning kelp into something edible.",
+      "home_base": "The Hydro-Garden",
+      "arc_goal": "To cook a real fish from the ocean outside.",
+      "inventory": [
+        {
+          "item_id": "chef_knife",
+          "name": "Heavy Cleaver",
+          "description": "Good for kelp and self-defense.",
+          "quantity": 1
+        },
+        {
+          "item_id": "spices",
+          "name": "Synthetic Salt",
+          "description": "Makes the kelp bearable.",
+          "quantity": 10
+        },
+        {
+          "item_id": "frying_pan",
+          "name": "Cast Iron Pan",
+          "description": "A family heirloom.",
+          "quantity": 1
+        },
+        {
+          "item_id": "apron",
+          "name": "Stained Apron",
+          "description": "Smells like old soup.",
+          "quantity": 1
+        },
+        {
+          "item_id": "soup_ladle",
+          "name": "Large Ladle",
+          "description": "For serving the masses.",
+          "quantity": 1
+        },
+        {
+          "item_id": "recipe_book",
+          "name": "100 Ways to Cook Kelp",
+          "description": "A very short book.",
+          "quantity": 1
+        },
+        {
+          "item_id": "lighter",
+          "name": "Plasma Lighter",
+          "description": "For the stove.",
+          "quantity": 1
+        },
+        {
+          "item_id": "yeast",
+          "name": "Bread Yeast",
+          "description": "Extremely rare and valuable.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Galley",
+          "asset_type": "kitchen",
+          "description": "The heart of the station's social life.",
+          "story_use": "Where all the gossip starts."
+        },
+        {
+          "asset_name": "Pantry",
+          "asset_type": "storage",
+          "description": "A cold room for food storage.",
+          "story_use": "Milo hides a stash of real surface chocolate here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "station_gossip",
+          "topic": "Social",
+          "summary": "Who is sleeping with whom.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "milo_debt",
+          "topic": "Finance",
+          "summary": "Milo owes Elara for fresh produce.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Captain Harl",
+      "role_name": "Security Chief",
+      "activity": "Enforcing the Abbot's bandwidth laws.",
+      "home_base": "The High Council Chamber",
+      "arc_goal": "To maintain order at any cost.",
+      "inventory": [
+        {
+          "item_id": "stun_baton",
+          "name": "Electric Baton",
+          "description": "For subduing heretics.",
+          "quantity": 1
+        },
+        {
+          "item_id": "handcuffs",
+          "name": "Magnetic Cuffs",
+          "description": "Hard to break.",
+          "quantity": 5
+        },
+        {
+          "item_id": "riot_shield",
+          "name": "Polycarbonate Shield",
+          "description": "Clear and strong.",
+          "quantity": 1
+        },
+        {
+          "item_id": "radio",
+          "name": "Security Radio",
+          "description": "Encrypted channel.",
+          "quantity": 1
+        },
+        {
+          "item_id": "flashlight",
+          "name": "Heavy Flashlight",
+          "description": "Can be used as a club.",
+          "quantity": 1
+        },
+        {
+          "item_id": "pepper_spray",
+          "name": "Ozone Spray",
+          "description": "Blinds and chokes.",
+          "quantity": 3
+        },
+        {
+          "item_id": "uniform",
+          "name": "Armored Vest",
+          "description": "Protects against knives.",
+          "quantity": 1
+        },
+        {
+          "item_id": "incident_report",
+          "name": "Black Book",
+          "description": "A list of everyone's crimes.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Brig",
+          "asset_type": "prison",
+          "description": "A cold, damp cell block.",
+          "story_use": "Where Harl keeps his 'special' prisoners."
+        },
+        {
+          "asset_name": "Security Hub",
+          "asset_type": "office",
+          "description": "Monitors all station cameras.",
+          "story_use": "Harl uses this to spy on the Abbot."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "security_codes",
+          "topic": "Security",
+          "summary": "The master codes for all doors.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "harl_ambition",
+          "topic": "Social",
+          "summary": "Harl wants to replace Oros.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Lila the Weaver",
+      "role_name": "Vestment Maker",
+      "activity": "Weaving fiber-optics into monk robes.",
+      "home_base": "The Satellite Core",
+      "arc_goal": "To create a robe that can receive signals directly.",
+      "inventory": [
+        {
+          "item_id": "loom",
+          "name": "Hand Loom",
+          "description": "For weaving delicate fibers.",
+          "quantity": 1
+        },
+        {
+          "item_id": "fiber_spool",
+          "name": "Optical Fiber",
+          "description": "Glows in different colors.",
+          "quantity": 10
+        },
+        {
+          "item_id": "silk_thread",
+          "name": "Synthetic Silk",
+          "description": "Strong and soft.",
+          "quantity": 5
+        },
+        {
+          "item_id": "needles",
+          "name": "Silver Needles",
+          "description": "For fine embroidery.",
+          "quantity": 10
+        },
+        {
+          "item_id": "dye_vat",
+          "name": "Indigo Dye",
+          "description": "Made from deep-sea squid.",
+          "quantity": 1
+        },
+        {
+          "item_id": "measuring_tape",
+          "name": "Tailor's Tape",
+          "description": "For perfect fits.",
+          "quantity": 1
+        },
+        {
+          "item_id": "scissors",
+          "name": "Precision Snips",
+          "description": "Very sharp.",
+          "quantity": 1
+        },
+        {
+          "item_id": "thimble",
+          "name": "Gold Thimble",
+          "description": "A gift from a former Abbot.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Weaving Room",
+          "asset_type": "workshop",
+          "description": "Filled with colorful threads.",
+          "story_use": "Where the monastery's wealth is displayed."
+        },
+        {
+          "asset_name": "Display Case",
+          "asset_type": "furniture",
+          "description": "Shows off Lila's best work.",
+          "story_use": "Lila hides a stolen signal drive in a mannequin."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "robe_circuits",
+          "topic": "Engineering",
+          "summary": "The robes are actually antennas.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "lila_debt",
+          "topic": "Finance",
+          "summary": "Lila owes Torin for loom repairs.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Finn the Diver",
+      "role_name": "Salvage Apprentice",
+      "activity": "Cleaning the outside of the dome.",
+      "home_base": "The Abyss Lookout",
+      "arc_goal": "To prove himself to Silas.",
+      "inventory": [
+        {
+          "item_id": "scrub_brush",
+          "name": "Wire Brush",
+          "description": "For removing barnacles.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bucket",
+          "name": "Plastic Bucket",
+          "description": "For collecting scrap.",
+          "quantity": 1
+        },
+        {
+          "item_id": "diving_fins",
+          "name": "Power Fins",
+          "description": "Helps with swimming.",
+          "quantity": 1
+        },
+        {
+          "item_id": "snorkel",
+          "name": "Emergency Rebreather",
+          "description": "10 minutes of air.",
+          "quantity": 1
+        },
+        {
+          "item_id": "sea_shell",
+          "name": "Glowing Shell",
+          "description": "A souvenir from the abyss.",
+          "quantity": 5
+        },
+        {
+          "item_id": "knife",
+          "name": "Diving Knife",
+          "description": "For cutting nets.",
+          "quantity": 1
+        },
+        {
+          "item_id": "weight_belt",
+          "name": "Lead Belt",
+          "description": "Keeps him from floating up.",
+          "quantity": 1
+        },
+        {
+          "item_id": "patch_tape",
+          "name": "Duct Tape",
+          "description": "Fixes everything.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Diving Locker",
+          "asset_type": "storage",
+          "description": "Smells like wet rubber.",
+          "story_use": "Finn hides his 'treasures' here."
+        },
+        {
+          "asset_name": "The Outer Ledge",
+          "asset_type": "location",
+          "description": "A dangerous spot outside the dome.",
+          "story_use": "Where Finn found the secret entrance."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "barnacle_growth",
+          "topic": "Biology",
+          "summary": "They grow faster near the heat vents.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "finn_secret",
+          "topic": "Social",
+          "summary": "Finn found a way to talk to the leviathans.",
+          "confidence": 60
+        }
+      ]
+    },
+    {
+      "display_name": "Bram the Smith",
+      "role_name": "Metalworker",
+      "activity": "Melting down satellite scrap into chits.",
+      "home_base": "Salvage Workshop",
+      "arc_goal": "To create a metal that never rusts.",
+      "inventory": [
+        {
+          "item_id": "hammer",
+          "name": "Sledgehammer",
+          "description": "For breaking big scrap.",
+          "quantity": 1
+        },
+        {
+          "item_id": "tongs",
+          "name": "Long Tongs",
+          "description": "For the forge.",
+          "quantity": 1
+        },
+        {
+          "item_id": "crucible",
+          "name": "Ceramic Crucible",
+          "description": "Withstands extreme heat.",
+          "quantity": 2
+        },
+        {
+          "item_id": "chit_mold",
+          "name": "Currency Mold",
+          "description": "For minting harbor chits.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bellows",
+          "name": "Electric Bellows",
+          "description": "Keeps the fire hot.",
+          "quantity": 1
+        },
+        {
+          "item_id": "safety_goggles",
+          "name": "Dark Goggles",
+          "description": "Protects against the glare.",
+          "quantity": 1
+        },
+        {
+          "item_id": "metal_ingot",
+          "name": "Titanium Ingot",
+          "description": "Ready for forging.",
+          "quantity": 10
+        },
+        {
+          "item_id": "coal_bag",
+          "name": "Synthetic Coal",
+          "description": "High-energy fuel.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Great Forge",
+          "asset_type": "workshop",
+          "description": "The hottest place in the dome.",
+          "story_use": "Where the station's money is made."
+        },
+        {
+          "asset_name": "Ingot Stack",
+          "asset_type": "storage",
+          "description": "A pile of heavy metal.",
+          "story_use": "Bram hides a gold bar from the surface here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "alloy_recipes",
+          "topic": "Science",
+          "summary": "How to make satellite-grade titanium.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "bram_debt",
+          "topic": "Finance",
+          "summary": "Bram owes Harl for protection.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Sela the Scribe",
+      "role_name": "Data Entry",
+      "activity": "Copying signal logs into the archive.",
+      "home_base": "The Signal Archive",
+      "arc_goal": "To write a poem that captures the sound of the signal.",
+      "inventory": [
+        {
+          "item_id": "ink_pen",
+          "name": "Fountain Pen",
+          "description": "A rare luxury.",
+          "quantity": 1
+        },
+        {
+          "item_id": "ink_bottle",
+          "name": "Black Ink",
+          "description": "Permanent and waterproof.",
+          "quantity": 3
+        },
+        {
+          "item_id": "blotter",
+          "name": "Ink Blotter",
+          "description": "Keeps the pages clean.",
+          "quantity": 1
+        },
+        {
+          "item_id": "paper_weight",
+          "name": "Glass Orb",
+          "description": "Contains a tiny model of the satellite.",
+          "quantity": 1
+        },
+        {
+          "item_id": "journal",
+          "name": "Personal Journal",
+          "description": "Full of poems and secrets.",
+          "quantity": 1
+        },
+        {
+          "item_id": "candle",
+          "name": "Beeswax Candle",
+          "description": "For working late.",
+          "quantity": 10
+        },
+        {
+          "item_id": "ruler",
+          "name": "Brass Ruler",
+          "description": "For straight lines.",
+          "quantity": 1
+        },
+        {
+          "item_id": "eraser",
+          "name": "Rubber Eraser",
+          "description": "Hardly ever used.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Scribe's Desk",
+          "asset_type": "furniture",
+          "description": "A quiet corner of the archive.",
+          "story_use": "Where Sela writes her forbidden poems."
+        },
+        {
+          "asset_name": "Ink Shelf",
+          "asset_type": "storage",
+          "description": "A collection of rare dyes.",
+          "story_use": "Sela hides a love letter from Jax here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "signal_patterns",
+          "topic": "Science",
+          "summary": "The signal repeats every 42 minutes.",
+          "confidence": 95
+        },
+        {
+          "knowledge_id": "sela_debt",
+          "topic": "Finance",
+          "summary": "Sela owes Maros for paper.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Rook the Smuggler",
+      "role_name": "Black Market Dealer",
+      "activity": "Selling surface relics and illegal tech.",
+      "home_base": "Pressure Lock Bazaar",
+      "arc_goal": "To find the ultimate relic: a working cell phone.",
+      "inventory": [
+        {
+          "item_id": "surface_relic",
+          "name": "Plastic Toy",
+          "description": "A colorful relic from the past.",
+          "quantity": 1
+        },
+        {
+          "item_id": "illegal_tech",
+          "name": "Signal Booster",
+          "description": "Increases bandwidth illegally.",
+          "quantity": 2
+        },
+        {
+          "item_id": "harbor_chit",
+          "name": "Harbor Chits",
+          "description": "Standard currency.",
+          "quantity": 5000
+        },
+        {
+          "item_id": "fake_id",
+          "name": "Forged Pass",
+          "description": "Looks real enough.",
+          "quantity": 3
+        },
+        {
+          "item_id": "hidden_pouch",
+          "name": "Smuggler's Pouch",
+          "description": "Hard to find during a search.",
+          "quantity": 1
+        },
+        {
+          "item_id": "smoke_bomb",
+          "name": "Ink Cloud",
+          "description": "For quick escapes.",
+          "quantity": 5
+        },
+        {
+          "item_id": "lock_breaker",
+          "name": "Sonic Pick",
+          "description": "Opens mechanical locks.",
+          "quantity": 1
+        },
+        {
+          "item_id": "luxury_item",
+          "name": "Real Coffee",
+          "description": "Worth its weight in gold.",
+          "quantity": 1
+        },
+        {
+          "item_id": "relic_map",
+          "name": "Treasure Map",
+          "description": "Shows where the satellite debris fell.",
+          "quantity": 1
+        },
+        {
+          "item_id": "contraband_list",
+          "name": "The Menu",
+          "description": "A list of things Rook can get you.",
+          "quantity": 1
+        },
+        {
+          "item_id": "signal_tracker",
+          "name": "Relic Finder",
+          "description": "Beeps near old electronics.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bribe_money",
+          "name": "Bag of Chits",
+          "description": "For the guards.",
+          "quantity": 1000
+        },
+        {
+          "item_id": "poison_dart",
+          "name": "Sleep Dart",
+          "description": "For emergencies.",
+          "quantity": 5
+        },
+        {
+          "item_id": "disguise_kit",
+          "name": "Face Paint",
+          "description": "Changes your appearance.",
+          "quantity": 1
+        },
+        {
+          "item_id": "encrypted_comm",
+          "name": "Burner Phone",
+          "description": "For one-time use.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hidden Vault",
+          "asset_type": "storage",
+          "description": "A room that doesn't exist on the maps.",
+          "story_use": "Where Rook keeps the real treasures."
+        },
+        {
+          "asset_name": "Bazaar Stall",
+          "asset_type": "shop",
+          "description": "A front for Rook's real business.",
+          "story_use": "Sells 'repaired' radios."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "smuggling_routes",
+          "topic": "Geography",
+          "summary": "How to get in and out of the dome.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "rook_debt",
+          "topic": "Finance",
+          "summary": "Rook owes the Abbot a lot of money.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Gale the Pilot",
+      "role_name": "Submersible Pilot",
+      "activity": "Transporting VIPs and heavy cargo.",
+      "home_base": "The Abyss Lookout",
+      "arc_goal": "To find the satellite's missing engine block.",
+      "inventory": [
+        {
+          "item_id": "pilot_helmet",
+          "name": "Flight Helmet",
+          "description": "With integrated HUD.",
+          "quantity": 1
+        },
+        {
+          "item_id": "flight_suit",
+          "name": "Pressure Suit",
+          "description": "Reinforced for deep dives.",
+          "quantity": 1
+        },
+        {
+          "item_id": "joystick",
+          "name": "Control Handle",
+          "description": "From his favorite sub.",
+          "quantity": 1
+        },
+        {
+          "item_id": "fuel_cell",
+          "name": "Hydrogen Cell",
+          "description": "Powers the submersibles.",
+          "quantity": 2
+        },
+        {
+          "item_id": "navigation_chart",
+          "name": "Sea Map",
+          "description": "Shows the underwater terrain.",
+          "quantity": 1
+        },
+        {
+          "item_id": "emergency_rations",
+          "name": "Survival Paste",
+          "description": "Lasts for weeks.",
+          "quantity": 5
+        },
+        {
+          "item_id": "flare_gun",
+          "name": "Signal Pistol",
+          "description": "For being found.",
+          "quantity": 1
+        },
+        {
+          "item_id": "compass",
+          "name": "Gyro-Compass",
+          "description": "Works even near the satellite.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Hangar",
+          "asset_type": "garage",
+          "description": "Where the subs are kept.",
+          "story_use": "Gale's second home."
+        },
+        {
+          "asset_name": "Submersible 'Seeker'",
+          "asset_type": "vehicle",
+          "description": "The fastest sub in the fleet.",
+          "story_use": "Gale uses this for his secret missions."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "sub_mechanics",
+          "topic": "Engineering",
+          "summary": "How to fix a sub with a paperclip.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "gale_debt",
+          "topic": "Finance",
+          "summary": "Gale owes Rook for a new engine.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Nora the Chemist",
+      "role_name": "Fuel Maker",
+      "activity": "Refining hydrogen from seawater.",
+      "home_base": "Salvage Workshop",
+      "arc_goal": "To create a fuel that can reach the surface in one go.",
+      "inventory": [
+        {
+          "item_id": "test_tube",
+          "name": "Glass Tube",
+          "description": "For chemical reactions.",
+          "quantity": 10
+        },
+        {
+          "item_id": "beaker",
+          "name": "Graduated Beaker",
+          "description": "For measuring liquids.",
+          "quantity": 5
+        },
+        {
+          "item_id": "catalyst",
+          "name": "Platinum Mesh",
+          "description": "Essential for electrolysis.",
+          "quantity": 1
+        },
+        {
+          "item_id": "acid_bottle",
+          "name": "Sulfuric Acid",
+          "description": "Handle with care.",
+          "quantity": 2
+        },
+        {
+          "item_id": "rubber_tubing",
+          "name": "Flexible Pipe",
+          "description": "For moving gases.",
+          "quantity": 10
+        },
+        {
+          "item_id": "litmus_paper",
+          "name": "PH Strips",
+          "description": "Checks for purity.",
+          "quantity": 50
+        },
+        {
+          "item_id": "gas_mask",
+          "name": "Chemical Mask",
+          "description": "Protects against fumes.",
+          "quantity": 1
+        },
+        {
+          "item_id": "lab_coat",
+          "name": "White Coat",
+          "description": "Surprisingly clean.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Lab",
+          "asset_type": "workshop",
+          "description": "Smells like ozone and vinegar.",
+          "story_use": "Where the station's power is born."
+        },
+        {
+          "asset_name": "Fuel Tank",
+          "asset_type": "storage",
+          "description": "A massive pressurized cylinder.",
+          "story_use": "Nora hides a secret stash of pure oxygen here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "chemistry_secrets",
+          "topic": "Science",
+          "summary": "How to make explosives from kelp.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "nora_debt",
+          "topic": "Finance",
+          "summary": "Nora owes Torin for lab equipment.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Pike the Guard",
+      "role_name": "Bazaar Security",
+      "activity": "Taking bribes to look the other way.",
+      "home_base": "Pressure Lock Bazaar",
+      "arc_goal": "To retire to the Hydro-Garden.",
+      "inventory": [
+        {
+          "item_id": "club",
+          "name": "Wooden Bat",
+          "description": "Simple and effective.",
+          "quantity": 1
+        },
+        {
+          "item_id": "whistle",
+          "name": "Guard Whistle",
+          "description": "Loud enough to wake the dead.",
+          "quantity": 1
+        },
+        {
+          "item_id": "deck_of_cards",
+          "name": "Greasy Cards",
+          "description": "For gambling on duty.",
+          "quantity": 1
+        },
+        {
+          "item_id": "flask",
+          "name": "Metal Flask",
+          "description": "Filled with cheap booze.",
+          "quantity": 1
+        },
+        {
+          "item_id": "sandwich",
+          "name": "Kelp Sandwich",
+          "description": "Soggy and sad.",
+          "quantity": 1
+        },
+        {
+          "item_id": "bribe_chit",
+          "name": "Marked Chits",
+          "description": "Evidence of his corruption.",
+          "quantity": 100
+        },
+        {
+          "item_id": "key_ring",
+          "name": "Bazaar Keys",
+          "description": "Opens the market stalls.",
+          "quantity": 1
+        },
+        {
+          "item_id": "poncho",
+          "name": "Rain Poncho",
+          "description": "For the leaky sectors.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Guard Post",
+          "asset_type": "office",
+          "description": "A small desk near the entrance.",
+          "story_use": "Where Pike collects his 'taxes'."
+        },
+        {
+          "asset_name": "Secret Stash",
+          "asset_type": "storage",
+          "description": "A loose floorboard.",
+          "story_use": "Pike hides his gambling winnings here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "bazaar_secrets",
+          "topic": "Social",
+          "summary": "Who is selling the illegal tech.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "pike_debt",
+          "topic": "Finance",
+          "summary": "Pike owes Rook for his gambling debts.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Mira the Singer",
+      "role_name": "Entertainer",
+      "activity": "Singing songs of the surface in the galley.",
+      "home_base": "Monk Dormitories",
+      "arc_goal": "To hear a real bird sing.",
+      "inventory": [
+        {
+          "item_id": "microphone",
+          "name": "Old Mic",
+          "description": "Crackly but functional.",
+          "quantity": 1
+        },
+        {
+          "item_id": "amplifier",
+          "name": "Portable Amp",
+          "description": "Battery-powered.",
+          "quantity": 1
+        },
+        {
+          "item_id": "songbook",
+          "name": "Lyrics of the Sun",
+          "description": "A collection of surface songs.",
+          "quantity": 1
+        },
+        {
+          "item_id": "scarf",
+          "name": "Silk Scarf",
+          "description": "Bright red and beautiful.",
+          "quantity": 1
+        },
+        {
+          "item_id": "makeup",
+          "name": "Face Glitter",
+          "description": "Made from crushed shells.",
+          "quantity": 1
+        },
+        {
+          "item_id": "harmonica",
+          "name": "Silver Harmonica",
+          "description": "A gift from her father.",
+          "quantity": 1
+        },
+        {
+          "item_id": "flower",
+          "name": "Plastic Rose",
+          "description": "The only flower she's ever seen.",
+          "quantity": 1
+        },
+        {
+          "item_id": "tips_jar",
+          "name": "Chit Jar",
+          "description": "Usually empty.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Stage",
+          "asset_type": "furniture",
+          "description": "A wooden crate in the galley.",
+          "story_use": "Where Mira performs her magic."
+        },
+        {
+          "asset_name": "Music Box",
+          "asset_type": "furniture",
+          "description": "Plays a tinny version of 'Blue Skies'.",
+          "story_use": "Mira's most prized possession."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "surface_legends",
+          "topic": "History",
+          "summary": "Stories of the world before the flood.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "mira_debt",
+          "topic": "Finance",
+          "summary": "Mira owes Milo for food.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Oleg the Strong",
+      "role_name": "Heavy Lifter",
+      "activity": "Moving satellite parts for the monks.",
+      "home_base": "Salvage Workshop",
+      "arc_goal": "To lift the satellite's main dish by himself.",
+      "inventory": [
+        {
+          "item_id": "lifting_belt",
+          "name": "Power Belt",
+          "description": "Hydraulic assist for lifting.",
+          "quantity": 1
+        },
+        {
+          "item_id": "gloves",
+          "name": "Work Gloves",
+          "description": "Tattered and worn.",
+          "quantity": 1
+        },
+        {
+          "item_id": "protein_shake",
+          "name": "Algae Shake",
+          "description": "For muscle growth.",
+          "quantity": 5
+        },
+        {
+          "item_id": "towel",
+          "name": "Sweat Towel",
+          "description": "Always damp.",
+          "quantity": 1
+        },
+        {
+          "item_id": "wrench",
+          "name": "Huge Wrench",
+          "description": "For the biggest bolts.",
+          "quantity": 1
+        },
+        {
+          "item_id": "chain",
+          "name": "Steel Chain",
+          "description": "For towing scrap.",
+          "quantity": 1
+        },
+        {
+          "item_id": "boots",
+          "name": "Steel-Toed Boots",
+          "description": "Protects his feet.",
+          "quantity": 1
+        },
+        {
+          "item_id": "snack",
+          "name": "Dried Fish",
+          "description": "A rare treat.",
+          "quantity": 2
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Gym",
+          "asset_type": "room",
+          "description": "A room full of heavy weights.",
+          "story_use": "Where Oleg trains."
+        },
+        {
+          "asset_name": "Bunk",
+          "asset_type": "furniture",
+          "description": "A reinforced bed.",
+          "story_use": "Oleg hides his collection of surface comics here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "lifting_techniques",
+          "topic": "Science",
+          "summary": "How to use leverage to move mountains.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "oleg_debt",
+          "topic": "Finance",
+          "summary": "Oleg owes Aris for a back injury.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Vane the Scout",
+      "role_name": "Deep Sea Explorer",
+      "activity": "Mapping the ocean floor around the dome.",
+      "home_base": "The Abyss Lookout",
+      "arc_goal": "To find the 'City of Glass' rumored to be nearby.",
+      "inventory": [
+        {
+          "item_id": "sonar_buoy",
+          "name": "Deployable Sonar",
+          "description": "Maps the area.",
+          "quantity": 3
+        },
+        {
+          "item_id": "camera",
+          "name": "Deep-Sea Camera",
+          "description": "Takes photos in the dark.",
+          "quantity": 1
+        },
+        {
+          "item_id": "sample_bag",
+          "name": "Specimen Bag",
+          "description": "For strange rocks.",
+          "quantity": 10
+        },
+        {
+          "item_id": "compass",
+          "name": "Magnetic Compass",
+          "description": "Unreliable but better than nothing.",
+          "quantity": 1
+        },
+        {
+          "item_id": "glow_stick",
+          "name": "Chemical Light",
+          "description": "Lasts for 12 hours.",
+          "quantity": 20
+        },
+        {
+          "item_id": "notebook",
+          "name": "Field Notes",
+          "description": "Full of sketches of monsters.",
+          "quantity": 1
+        },
+        {
+          "item_id": "rations",
+          "name": "Tube Food",
+          "description": "Easy to eat in a suit.",
+          "quantity": 10
+        },
+        {
+          "item_id": "knife",
+          "name": "Survival Knife",
+          "description": "For any situation.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Map Room",
+          "asset_type": "office",
+          "description": "Filled with charts of the abyss.",
+          "story_use": "Where Vane plans his expeditions."
+        },
+        {
+          "asset_name": "Explorer's Kit",
+          "asset_type": "storage",
+          "description": "A waterproof trunk.",
+          "story_use": "Vane hides a piece of the 'City of Glass' here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "abyss_monsters",
+          "topic": "Biology",
+          "summary": "What lives in the dark.",
+          "confidence": 90
+        },
+        {
+          "knowledge_id": "vane_debt",
+          "topic": "Finance",
+          "summary": "Vane owes Gale for sub rentals.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Tess the Merchant",
+      "role_name": "General Store Owner",
+      "activity": "Selling everyday items to the station residents.",
+      "home_base": "Pressure Lock Bazaar",
+      "arc_goal": "To own every stall in the bazaar.",
+      "inventory": [
+        {
+          "item_id": "soap",
+          "name": "Lye Soap",
+          "description": "Smells like chemicals.",
+          "quantity": 50
+        },
+        {
+          "item_id": "thread",
+          "name": "Sewing Thread",
+          "description": "For fixing clothes.",
+          "quantity": 100
+        },
+        {
+          "item_id": "buttons",
+          "name": "Plastic Buttons",
+          "description": "Various colors.",
+          "quantity": 200
+        },
+        {
+          "item_id": "matches",
+          "name": "Waterproof Matches",
+          "description": "Hard to light.",
+          "quantity": 50
+        },
+        {
+          "item_id": "salt",
+          "name": "Sea Salt",
+          "description": "For seasoning.",
+          "quantity": 100
+        },
+        {
+          "item_id": "oil",
+          "name": "Lamp Oil",
+          "description": "For the poor.",
+          "quantity": 20
+        },
+        {
+          "item_id": "candles",
+          "name": "Tallow Candles",
+          "description": "Smelly but cheap.",
+          "quantity": 100
+        },
+        {
+          "item_id": "nails",
+          "name": "Iron Nails",
+          "description": "For building things.",
+          "quantity": 500
+        },
+        {
+          "item_id": "hammer",
+          "name": "Small Hammer",
+          "description": "For home repairs.",
+          "quantity": 10
+        },
+        {
+          "item_id": "screws",
+          "name": "Steel Screws",
+          "description": "Assorted sizes.",
+          "quantity": 1000
+        },
+        {
+          "item_id": "tape",
+          "name": "Packing Tape",
+          "description": "For sealing boxes.",
+          "quantity": 20
+        },
+        {
+          "item_id": "string",
+          "name": "Hemp String",
+          "description": "Strong and natural.",
+          "quantity": 50
+        },
+        {
+          "item_id": "buckets",
+          "name": "Metal Buckets",
+          "description": "For carrying water.",
+          "quantity": 10
+        },
+        {
+          "item_id": "mops",
+          "name": "Floor Mops",
+          "description": "For the leaks.",
+          "quantity": 5
+        },
+        {
+          "item_id": "brooms",
+          "name": "Straw Brooms",
+          "description": "For the dust.",
+          "quantity": 5
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Tess's Treasures",
+          "asset_type": "shop",
+          "description": "The most organized shop in the dome.",
+          "story_use": "Where everyone goes for their basics."
+        },
+        {
+          "asset_name": "Back Room",
+          "asset_type": "storage",
+          "description": "A cluttered storage space.",
+          "story_use": "Tess hides her real wealth here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "supply_chains",
+          "topic": "Economics",
+          "summary": "Where everything comes from.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "tess_debt",
+          "topic": "Finance",
+          "summary": "Tess is the only one who doesn't owe anyone.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Zane the Tech",
+      "role_name": "Computer Repair",
+      "activity": "Fixing broken tablets and data drives.",
+      "home_base": "The Satellite Core",
+      "arc_goal": "To build a computer that can think for itself.",
+      "inventory": [
+        {
+          "item_id": "soldering_iron",
+          "name": "Precision Solder",
+          "description": "For tiny circuits.",
+          "quantity": 1
+        },
+        {
+          "item_id": "solder_wire",
+          "name": "Lead-Free Solder",
+          "description": "Safe for the dome.",
+          "quantity": 5
+        },
+        {
+          "item_id": "chips",
+          "name": "Micro-Chips",
+          "description": "Salvaged from the satellite.",
+          "quantity": 50
+        },
+        {
+          "item_id": "capacitors",
+          "name": "Power Caps",
+          "description": "For storing energy.",
+          "quantity": 100
+        },
+        {
+          "item_id": "resistors",
+          "name": "Small Resistors",
+          "description": "Assorted values.",
+          "quantity": 500
+        },
+        {
+          "item_id": "pliers",
+          "name": "Needle-Nose Pliers",
+          "description": "For small parts.",
+          "quantity": 2
+        },
+        {
+          "item_id": "tweezers",
+          "name": "Anti-Static Tweezers",
+          "description": "For delicate work.",
+          "quantity": 5
+        },
+        {
+          "item_id": "cleaning_fluid",
+          "name": "Isopropyl Alcohol",
+          "description": "For cleaning boards.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "The Tech Bench",
+          "asset_type": "workshop",
+          "description": "Covered in wires and parts.",
+          "story_use": "Where the station's tech is reborn."
+        },
+        {
+          "asset_name": "Parts Bin",
+          "asset_type": "storage",
+          "description": "A box of 'useless' junk.",
+          "story_use": "Zane hides a working AI chip here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "coding_languages",
+          "topic": "Science",
+          "summary": "How to talk to the satellite.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "zane_debt",
+          "topic": "Finance",
+          "summary": "Zane owes Vera for data access.",
+          "confidence": 100
+        }
+      ]
+    },
+    {
+      "display_name": "Beryl the Elder",
+      "role_name": "Monastery Elder",
+      "activity": "Advising the Abbot on spiritual matters.",
+      "home_base": "The High Council Chamber",
+      "arc_goal": "To ensure the monastery survives another generation.",
+      "inventory": [
+        {
+          "item_id": "staff",
+          "name": "Walking Staff",
+          "description": "Made from a satellite strut.",
+          "quantity": 1
+        },
+        {
+          "item_id": "robes",
+          "name": "Elder's Robes",
+          "description": "Heavy and ornate.",
+          "quantity": 1
+        },
+        {
+          "item_id": "beads",
+          "name": "Prayer Beads",
+          "description": "Made from sea glass.",
+          "quantity": 1
+        },
+        {
+          "item_id": "scroll",
+          "name": "Ancient Scroll",
+          "description": "The monastery's founding charter.",
+          "quantity": 1
+        },
+        {
+          "item_id": "spectacles",
+          "name": "Gold Spectacles",
+          "description": "For reading the fine print.",
+          "quantity": 1
+        },
+        {
+          "item_id": "snuff_box",
+          "name": "Silver Snuff Box",
+          "description": "Filled with dried kelp.",
+          "quantity": 1
+        },
+        {
+          "item_id": "handkerchief",
+          "name": "Silk Hanky",
+          "description": "Always clean.",
+          "quantity": 1
+        },
+        {
+          "item_id": "medallion",
+          "name": "Council Medallion",
+          "description": "A symbol of authority.",
+          "quantity": 1
+        }
+      ],
+      "property_templates": [
+        {
+          "asset_name": "Elder's Quarters",
+          "asset_type": "room",
+          "description": "The most comfortable room in the dome.",
+          "story_use": "Where the real power lies."
+        },
+        {
+          "asset_name": "Private Garden",
+          "asset_type": "farm",
+          "description": "A small tank of rare kelp.",
+          "story_use": "Beryl hides the Abbot's secrets here."
+        }
+      ],
+      "knowledge_templates": [
+        {
+          "knowledge_id": "monastery_history",
+          "topic": "History",
+          "summary": "The truth about the satellite's fall.",
+          "confidence": 100
+        },
+        {
+          "knowledge_id": "beryl_debt",
+          "topic": "Finance",
+          "summary": "Beryl owes no one, but everyone owes her.",
+          "confidence": 100
+        }
+      ]
+    }
+  ],
+  "social_rules": [
+    "Bandwidth is sacred; siphoning is a crime punishable by air-rationing.",
+    "Pressure suits must be inspected weekly by a certified engineer.",
+    "All salvage from the satellite belongs to the Abbot, minus a 20% finder's fee.",
+    "Silence must be observed during the 'Great Ping' at midnight."
+  ],
+  "item_themes": [
+    "Fiber-optics",
+    "Rusted Titanium",
+    "Bioluminescence",
+    "Pressurized Containers"
+  ],
+  "custom_actions": [
+    "Siphon Bandwidth",
+    "Patch Pressure Leak",
+    "Decode Holy Ping",
+    "Offer Salvage"
+  ],
+  "player_entry_points": [
+    "Arriving as a new pilgrim on a supply sub.",
+    "Waking up in the med-bay after a salvage accident.",
+    "Being hired as a freelance security consultant."
+  ],
+  "conflict_hooks": [
+    "The main satellite array is failing, and only illegal salvage can fix it.",
+    "A Signal Pirate has stolen the Abbot's master keycard.",
+    "The sea dome has developed a crack that the monks are hiding."
+  ],
+  "gameplay_loops": [
+    {
+      "label": "The Salvage Cycle",
+      "summary": "Divers recover scrap, trade it for chits, and buy better gear to dive deeper.",
+      "roles": [
+        "Salvage Diver",
+        "Master Salvager",
+        "Metalworker"
+      ],
+      "rooms": [
+        "Pressure Lock Bazaar",
+        "Salvage Workshop"
+      ],
+      "pressure": "Oxygen levels and suit integrity."
+    },
+    {
+      "label": "The Signal Economy",
+      "summary": "Monks decode data, brokers trade bandwidth, and pirates try to steal it.",
+      "roles": [
+        "Signal Monk",
+        "Bandwidth Trader",
+        "Signal Pirate"
+      ],
+      "rooms": [
+        "The Satellite Core",
+        "The Signal Archive"
+      ],
+      "pressure": "Bandwidth scarcity and Abbot's oversight."
+    }
+  ],
+  "item_catalog": [
+    {
+      "item_id": "fiber_optic_rosary",
+      "name": "Fiber-Optic Rosary",
+      "price": 500,
+      "mass": 0.2,
+      "description": "A string of beads that pulse with the station's data flow.",
+      "image_prompt": "A rosary made of glowing blue fiber optic cables and titanium beads.",
+      "category": "Religious"
+    },
+    {
+      "item_id": "bandwidth_voucher_low",
+      "name": "Low-Bandwidth Voucher",
+      "price": 100,
+      "mass": 0.01,
+      "description": "A paper slip representing 10MB of data access.",
+      "image_prompt": "A small, holographic paper slip with a barcode.",
+      "category": "Currency"
+    },
+    {
+      "item_id": "pressure_patch_kit",
+      "name": "Pressure Patch Kit",
+      "price": 250,
+      "mass": 1.5,
+      "description": "Emergency adhesive for sealing suit breaches.",
+      "image_prompt": "A heavy metal tin containing grey industrial putty and silver tape.",
+      "category": "Tools"
+    },
+    {
+      "item_id": "rusted_titanium_bolt",
+      "name": "Rusted Titanium Bolt",
+      "price": 50,
+      "mass": 0.5,
+      "description": "A heavy bolt salvaged from the satellite hull.",
+      "image_prompt": "A large, corroded metal bolt with a hexagonal head.",
+      "category": "Salvage"
+    },
+    {
+      "item_id": "oxygen_canister",
+      "name": "Portable Oxygen Canister",
+      "price": 300,
+      "mass": 2.0,
+      "description": "A small tank providing 30 minutes of emergency air.",
+      "image_prompt": "A bright yellow pressurized cylinder with a breathing mask attached.",
+      "category": "Survival"
+    },
+    {
+      "item_id": "data_crystal_fragment",
+      "name": "Data Crystal Fragment",
+      "price": 1000,
+      "mass": 0.1,
+      "description": "A shard of the satellite's memory core, potentially containing secrets.",
+      "image_prompt": "A jagged, translucent purple crystal that glows faintly.",
+      "category": "Relic"
+    },
+    {
+      "item_id": "brine_shrimp_paste",
+      "name": "Brine Shrimp Paste",
+      "price": 20,
+      "mass": 0.5,
+      "description": "A salty, nutritious, and deeply unpleasant food source.",
+      "image_prompt": "A grey plastic tube filled with pinkish sludge.",
+      "category": "Food"
+    },
+    {
+      "item_id": "sonar_pinger",
+      "name": "Handheld Sonar Pinger",
+      "price": 450,
+      "mass": 0.8,
+      "description": "A device used to detect large objects in the water.",
+      "image_prompt": "A rugged black device with a small green radar screen.",
+      "category": "Tools"
+    },
+    {
+      "item_id": "monk_robes_basic",
+      "name": "Basic Monk Robes",
+      "price": 150,
+      "mass": 1.0,
+      "description": "Simple grey robes with reinforced seams for station life.",
+      "image_prompt": "Heavy grey fabric robes with industrial stitching.",
+      "category": "Clothing"
+    },
+    {
+      "item_id": "welding_goggles",
+      "name": "Industrial Welding Goggles",
+      "price": 120,
+      "mass": 0.3,
+      "description": "Protects eyes from plasma arcs and bioluminescent flares.",
+      "image_prompt": "Dark-tinted circular goggles with a leather strap.",
+      "category": "Tools"
+    },
+    {
+      "item_id": "signal_jammer_pocket",
+      "name": "Pocket Signal Jammer",
+      "price": 2000,
+      "mass": 0.4,
+      "description": "Illegal device that creates a 5-meter dead zone for data tracking.",
+      "image_prompt": "A small metal box with three antennas and a red light.",
+      "category": "Illegal"
+    },
+    {
+      "item_id": "kelp_fiber_rope",
+      "name": "Kelp Fiber Rope",
+      "price": 40,
+      "mass": 1.2,
+      "description": "Strong, water-resistant rope made from processed sea plants.",
+      "image_prompt": "A coil of thick, dark green braided rope.",
+      "category": "Tools"
+    },
+    {
+      "item_id": "titanium_wrench",
+      "name": "Titanium Wrench",
+      "price": 350,
+      "mass": 0.7,
+      "description": "A lightweight, non-corrosive tool for heavy machinery.",
+      "image_prompt": "A sleek, silver-colored adjustable wrench.",
+      "category": "Tools"
+    },
+    {
+      "item_id": "holographic_icon",
+      "name": "Holographic Icon",
+      "price": 800,
+      "mass": 0.3,
+      "description": "A small projector showing a looping image of the satellite in orbit.",
+      "image_prompt": "A small brass base projecting a flickering blue satellite image.",
+      "category": "Religious"
+    },
+    {
+      "item_id": "emergency_flare_blue",
+      "name": "Blue Underwater Flare",
+      "price": 75,
+      "mass": 0.4,
+      "description": "Burns with a bright blue light that can be seen for miles underwater.",
+      "image_prompt": "A thick plastic tube with a pull-string igniter.",
+      "category": "Survival"
+    }
+  ],
+  "visual_canon": {
+    "canon_id": "sunken_monastery_v1",
+    "camera": {
+      "projection": "strict_top_down",
+      "pitch": "90 degrees",
+      "scale_rule": "1 unit = 1 meter"
+    },
+    "palette": {
+      "dominant": "#1a2b3c",
+      "secondary": "#4a5a6a",
+      "accent": "#00f2ff",
+      "shadow": "#0a0f14",
+      "highlight": "#ffffff"
+    },
+    "materials": [
+      "Rusted Titanium",
+      "Wet Concrete",
+      "Glowing Fiber-Optics",
+      "Reinforced Glass"
+    ],
+    "lighting": "Dim ambient blue light with harsh orange sparks and glowing neon accents.",
+    "architecture": [
+      "Brutalist industrial",
+      "Repurposed satellite components",
+      "Cramped pressurized corridors"
+    ],
+    "terrain": {
+      "ground": "Metallic plating and wet stone",
+      "path": "Glowing fiber-optic conduits",
+      "edge": "Heavy bulkhead walls"
+    },
+    "sprite_language": {
+      "body_proportion": "Realistic but bulky due to suits",
+      "outline": "Sharp industrial edges",
+      "role_readability": "Color-coded glowing accents (Blue for Monks, Orange for Salvagers)"
+    },
+    "world_prompt_prefix": "Top-down view of a sunken industrial monastery, deep sea atmosphere, bioluminescent cables, rusted metal.",
+    "sprite_prompt_prefix": "Top-down character sprite, wearing a pressurized suit with glowing accents.",
+    "forbidden_visuals": [
+      "Sunlight",
+      "Trees",
+      "Open sky",
+      "Clean futuristic surfaces"
+    ]
+  },
+  "agent_visual_policy": {
+    "policy_id": "monastic_industrial_v1",
+    "world_wardrobe_brief": "Characters wear heavy, practical suits modified with religious or industrial symbols.",
+    "forbidden_aesthetics": [
+      "Casual modern clothing",
+      "Bright floral patterns",
+      "Exposed skin"
+    ],
+    "palette_families": [
+      {
+        "name": "Signal Order",
+        "dominant": "#1a2b3c",
+        "accent": "#00f2ff",
+        "trim": "#ffffff",
+        "material": "Silk and Fiber-Optic"
+      },
+      {
+        "name": "Salvage Union",
+        "dominant": "#3d2b1f",
+        "accent": "#ff8c00",
+        "trim": "#4a4a4a",
+        "material": "Heavy Canvas and Steel"
+      },
+      {
+        "name": "Station Civilian",
+        "dominant": "#2f4f4f",
+        "accent": "#7fff00",
+        "trim": "#000000",
+        "material": "Recycled Plastic"
+      }
+    ],
+    "role_style_rules": [
+      {
+        "rule_id": "monk_style",
+        "role_keywords": [
+          "Monk",
+          "Abbot",
+          "Elder"
+        ],
+        "attire": [
+          "Hooded robes over pressure suits",
+          "Fiber-optic stoles"
+        ],
+        "props": [
+          "Data tablets",
+          "Rosaries"
+        ],
+        "palette_notes": "Deep blues and glowing cyans.",
+        "silhouette_notes": "Flowing fabric over bulky metal."
+      },
+      {
+        "rule_id": "salvager_style",
+        "role_keywords": [
+          "Salvager",
+          "Diver",
+          "Welder"
+        ],
+        "attire": [
+          "Reinforced exoskeletons",
+          "Heavy tool belts"
+        ],
+        "props": [
+          "Plasma torches",
+          "Oxygen tanks"
+        ],
+        "palette_notes": "Rust browns and industrial oranges.",
+        "silhouette_notes": "Hard edges and mechanical limbs."
+      },
+      {
+        "rule_id": "pirate_style",
+        "role_keywords": [
+          "Pirate",
+          "Smuggler"
+        ],
+        "attire": [
+          "Dark refractive cloaks",
+          "Modified security gear"
+        ],
+        "props": [
+          "Signal siphons",
+          "Hidden blades"
+        ],
+        "palette_notes": "Charcoal greys and muted purples.",
+        "silhouette_notes": "Slimmer profiles for vent crawling."
+      }
+    ],
+    "default_rule": {
+      "rule_id": "default_civilian",
+      "role_keywords": [
+        "Resident",
+        "Worker"
+      ],
+      "attire": [
+        "Utility jumpsuits",
+        "Breathing masks"
+      ],
+      "props": [
+        "ID badges",
+        "Small tools"
+      ],
+      "palette_notes": "Muted greys and greens.",
+      "silhouette_notes": "Functional and compact.",
+      "avoid": [
+        "Bright colors",
+        "Large capes"
+      ]
+    },
+    "visual_consistency_rules": [
+      "All characters must have a visible breathing apparatus.",
+      "All characters must have at least one glowing element.",
+      "Footwear must be heavy industrial boots."
+    ]
+  }
+}
