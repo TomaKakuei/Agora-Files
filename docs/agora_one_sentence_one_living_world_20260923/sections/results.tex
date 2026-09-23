@@ -1,0 +1,232 @@
+\section{World Construction Results}
+\label{sec:construction}
+
+\subsection{Paired Protocol and Completion}
+The generation comparison uses Gemini 3 Flash Preview at temperature 0.2 and
+low thinking level for both methods. Five primary premises have three
+repetitions each; five held-out briefs have one each, giving 20 trials per
+method. The held-out set and evaluator were frozen before held-out generation.
+The requests include multi-sentence design constraints; this is not a strict
+one-sentence-input test (Appendix~\ref{app:extended}). The analysis unit is the
+shared brief: primary-world binary outcomes use a majority
+over the three repetitions, while held-out outcomes use the single trial.
+
+The single-pass baseline receives a 24,576-token output cap, three times the
+8,192-token cap of one specialized stage. This provides a strong single-call
+allowance, but does not equalize total computation across methods. The
+compositional pipeline makes multiple calls and can use local retries. We
+therefore report first-pass and eventual completion separately, retaining
+failed outputs. The comparison evaluates the two complete generation
+procedures; it does not isolate decomposition at equal total token budget.
+This joint reporting of reliability and cost follows the evaluation concerns
+in \citet{agentsmatter}.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\columnwidth}{@{}Yrr@{}}
+\toprule
+World-level result & Compositional & Single-pass \\
+\midrule
+First-pass completion & 9/10 & 5/10 \\
+Eventual completion & 10/10 & 7/10 \\
+\midrule
+Primary mean tokens/trial & 48,527 & 22,250 \\
+Held-out mean tokens/trial & 77,556 & 38,922 \\
+Primary median latency (s) & 101.2 & 55.8 \\
+Held-out median latency (s) & 161.1 & 86.1 \\
+\bottomrule
+\end{tabularx}
+\caption{Completion is aggregated at the premise level; cost and latency are
+trial-level summaries within each split. The primary split has 15 trials per
+method and the held-out split has five.}
+\label{tab:quality}
+\end{table}
+
+Compositional generation completes 10/10 worlds versus 7/10 for the baseline;
+first-pass completion is 9/10 versus 5/10 (Table~\ref{tab:quality}). The paired
+eventual outcomes contain three compositional-only successes and no reverse
+discordances; the one-sided exact paired test gives $p=0.125$. For first-pass
+completion there are five compositional-only and one baseline-only successes
+($p=0.1094$). These small samples support a descriptive improvement, not a
+statistically established general advantage. Median generation is
+approximately 1.8--1.9 times faster for the single-pass method, which uses
+about half as many tokens.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/world_quality_results.pdf}
+\caption{\paneltitle{Construction evidence at its measured resolution.}
+(A) Paired premise-level completion; the primary split uses majority outcomes.
+(B) Per-trial token use by split; Table~\ref{tab:quality} reports latency.
+(C) Differences in
+structural and lexical quality proxies, including the metric favoring the
+baseline. (D) Local-repair resource ratios for five cases. All values come
+from frozen records; no new model trials were run for this revision.}
+\label{fig:quality-results}
+\end{figure*}
+
+\subsection{Quality Proxies, Validation, and Repair}
+The six frozen quality measures show a mixed profile. Compositional outputs
+have higher mean merchant-inventory validity, premise-item recall, role
+uniqueness, room-canon adherence, and wardrobe-canon term coverage. The
+single-pass baseline has higher premise-agent recall (0.5593 versus 0.4632).
+The wardrobe proxy favors composition in nine of ten worlds (one-sided sign
+test $p=0.0107$, unadjusted across the six measures). These are structural or
+lexical proxies; a higher score does not establish aesthetic preference or
+better play. We show all six in Figure~\ref{fig:quality-results}, including
+the unfavorable comparison.
+
+The seeded-fault suite mutates copies of five completed artifacts and invokes
+the production \emph{deterministic validators}, without language-model or
+image-generation calls. It detects and attributes all 58 injected faults,
+with no flags in 58 corresponding clean checks. Faults cover missing semantic
+records, inventories, provenance mismatches, and image/assembly contracts.
+The clean checks reuse artifacts across categories, so they are not 58
+independent worlds. This result concerns the specified fault suite; it is not
+58 successful aesthetic judgments or evidence of universal defect detection.
+
+For five injected role--inventory inconsistencies, localized refinement
+restores all five cases while preserving five unaffected intermediate stages.
+Mean model-call and token reductions relative to the full-rebuild reference
+are 48.0\% and 39.9\%. These observations support repair locality on the seeded
+failure type. A wider sample of naturally occurring defects is needed to
+estimate its general benefit.
+
+\subsection{Visual and Human-Evaluation Evidence}
+The five demonstration worlds connect generated maps, characters, objects,
+and persistent interaction. The Tidal Embassy trace includes rejected room
+images, local refinement, directional character atlases, and a 25-character
+interactive trial with movement, messaging, item use, trade, and a
+model-mediated reply (Appendix~\ref{app:tidal}). This is implementation and
+case evidence, not a blinded comparison of visual quality.
+
+The completed visual questionnaire evaluates preserved maps, character
+samples, and standardized world-structure diagrams. Section~\ref{sec:human-results}
+reports the returned judgments separately from runtime reliability and play
+experience. The paired structure results do not show a preference advantage
+for the full system.
+
+\input{sections/human_results}
+
+\section{Interaction Across Five Generated Worlds}
+\label{sec:interaction}
+
+\subsection{Protocol and Metric Definitions}
+The five held-out worlds are Aurora Court of Migrating Cities, Clockwork Rain
+Conservatory, Mycelium Patent Bazaar, Sunken Satellite Monastery, and Tidal
+Embassy of Lost Languages. Each contains 24--25 main characters and 11--12
+discoverable actions spanning five interaction families. At least five
+activities per world derive from its premise.
+
+Each accepted run uses Gemini 2.5 Flash for two rounds, activation probability
+0.12, and a fixed world-specific seed (26080411--26080415). Agent-profile
+generation is not repeated during these runs. Image and video generation are
+disabled, and all five runs pass the world-identity audit. The runtime settings
+are shared, but the seeds and world contents differ: this is a descriptive
+multiworld study, not a paired intervention isolating premise effects.
+
+An \emph{event} is a recorded interaction. An observed participant is any
+actor or target ID, including the human interactor where present. A dyad is an
+unordered pair of distinct actor and target IDs. If $n_{ij}$ is its event
+count, the repeat fraction is
+\begin{equation}
+\rho=\frac{\sum_{\{i,j\}}\max(n_{ij}-1,0)}{N_{\mathrm{events}}}.
+\end{equation}
+Action entropy is $H=-\sum_a p(a)\log_2p(a)$ over logged route identifiers.
+An open event has a \texttt{proposed\_} route; an explicit world-action event
+has a \texttt{world\_action\_} route. Other routes can still encode
+premise-specific activities. Thus these categories identify execution
+pathways, not an exhaustive semantic classification of world relevance.
+
+Action-result success is computed separately from round summaries:
+\begin{equation}
+s=\frac{\sum_{w,t}n^{\mathrm{success}}_{w,t}}
+{\sum_{w,t}n^{\mathrm{results}}_{w,t}}=\frac{49}{56}=87.5\%.
+\end{equation}
+An event can include multiple effects or attempts. Neither 53 events nor
+37 dyads is the denominator of this rate. Appendix~\ref{app:repro} records the
+per-world numerators and denominators.
+
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabularx}{\textwidth}{@{}Yrrrrrrrr@{}}
+\toprule
+World & Events & IDs & Dyads & Repeat & $H$ (bits) & Open & World route & Human-targeted \\
+\midrule
+Aurora Court & 9 & 12 & 7 & 22.2\% & 1.447 & 1 & 1 & 2 \\
+Clockwork Conservatory & 12 & 8 & 6 & 50.0\% & 3.252 & 7 & 0 & 0 \\
+Mycelium Bazaar & 9 & 12 & 7 & 22.2\% & 1.392 & 0 & 0 & 4 \\
+Sunken Monastery & 11 & 13 & 9 & 18.2\% & 1.823 & 1 & 8 & 3 \\
+Tidal Embassy & 12 & 8 & 8 & 33.3\% & 1.208 & 1 & 0 & 4 \\
+\midrule
+\textbf{Total} & \textbf{53} & -- & \textbf{37} & -- & -- & \textbf{10} & \textbf{9} & \textbf{13} \\
+\bottomrule
+\end{tabularx}
+\caption{Two-round interaction records. IDs count observed participants,
+including the human where applicable. Open and world-route counts follow
+logged route prefixes; other routes may also be premise-specific. Dyads are
+unique within each world.}
+\label{tab:multiworld}
+\end{table*}
+
+\subsection{Action Pathways and Consequences}
+The runs produce 53 events, 37 within-world unique dyads, ten approved open
+proposals, and nine explicit world-action events (Table~\ref{tab:multiworld}).
+Sunken Monastery uses eight explicit world actions, including purging corrupt
+packets and negotiating bandwidth tithes. Clockwork instead produces seven
+open-proposal events out of twelve. This contrast shows two available
+execution pathways in use, without proving that one causes better behavior.
+
+In Clockwork, a jammed weather-sheet press becomes a local investigation.
+Marius confronts Valerius about the failure; Seraphina asks about etching;
+Valerius discusses sheet authenticity. In round two, the same participants
+revisit sabotage, inspect a brass folio, and redirect suspicion. Six actions
+form this three-character sequence; a seventh open proposal concerns the
+market impact of the jam. The approved effects update directed relationships
+while the press failure remains part of shared context. The complete episode
+diagram is retained in Appendix~\ref{app:cases}.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/multiworld_interactions.pdf}
+\caption{\paneltitle{Interaction profiles under common runtime settings.}
+(A) Logged action pathways. (B) Unique dyads and events targeting the human
+interactor. (C) Sums of model-mediated relationship changes. The five worlds
+have one short run each; bars are descriptive totals, not population estimates.}
+\label{fig:multiworld-dashboard}
+\end{figure*}
+
+The resulting state changes differ across worlds. Clockwork accumulates $+3$
+net trust and $+21$ influence/fear, whereas Aurora and Tidal accumulate $+70$
+and $+88$ trust with zero net influence/fear. These are simulated state
+variables produced through the model-mediated interaction machinery. They
+show that the traces have persistent consequences, but they are not
+independent psychological measurements or evidence that the premise alone
+caused the differences.
+
+\subsection{Human Reachability and Failed Attempts}
+Thirteen events target the human interactor across four worlds; Clockwork
+has none. The logs establish that agents can select the player as a partner
+within the shared world. They do not establish how often a human replied,
+whether cooperation succeeded, or whether participants enjoyed the encounters.
+Those questions require participant-level outcome measures.
+
+Seven of the 56 adjudicated action results are unsuccessful. Retaining these
+attempts in the history permits later revision, but this study does not measure
+whether failure feedback improves subsequent success. The evidence supports
+the availability of an outcome-sensitive interaction loop, consistent with
+the broader importance of environment feedback in language agents
+\cite{react,reflexion,voyager}.
+
+\input{sections/extended_results}
+
+\section{Historical Context}
+Three earlier runs add 1,052 events across an adventuring guild, a black-market
+auction, and a storm-struck cruise. Between 23.4\% and 36.5\% of events revisit
+an existing dyad, while the largest connected components contain only 11--13
+participants. These records motivate studying communication across local
+clusters, but configurations differ and spatial scheduling can produce the
+observed structure. Full tables and trajectories appear in
+Appendix~\ref{sec:pilot}; they are not pooled with the later scripted harness.

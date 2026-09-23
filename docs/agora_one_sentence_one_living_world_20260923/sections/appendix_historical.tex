@@ -1,0 +1,58 @@
+\section{Exploratory Historical Trajectories}
+\label{sec:pilot}
+We separately analyze three prior runs configured around approximately
+100 agents: an adventuring guild (25 rounds), an underground black-market
+auction (20), and a storm-struck luxury cruise (20). They predate the current
+hypotheses and differ in configuration and social context. We reconstruct
+undirected actor--target networks, route entropy, and sums of directed
+relationship changes using the same metric definitions.
+
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabularx}{\textwidth}{@{}lrrrrrrY@{}}
+\toprule
+World & Rounds & Events & IDs & Dyads & Repeat & Largest comp. & Dominant state changes \\
+\midrule
+Guild & 25 & 444 & 103 & 282 & 36.5\% & 11 & Trust $+3473$; affection $+1745$ \\
+Black market & 20 & 299 & 99 & 229 & 23.4\% & 13 & Influence/fear $+1194$ \\
+Storm cruise & 20 & 309 & 100 & 235 & 23.9\% & 13 & Trust $+2576$; affection $+961$ \\
+\bottomrule
+\end{tabularx}
+\caption{Exploratory statistics from 1,052 historical events. IDs are distinct
+logged actor/target identifiers, not a fixed population denominator; the guild
+record contains 103. Relationship totals are simulated state changes.}
+\label{tab:pilot}
+\end{table*}
+
+Between 23.4\% and 36.5\% of events revisit an existing dyad, while each world
+contains 229--282 unique dyads (Table~\ref{tab:pilot}). Route entropies are
+2.889, 2.619, and 2.524 bits for guild, black market, and cruise, respectively.
+Because the repertoires differ, these values describe each trace's variety;
+they are not directly comparable measures of social intelligence.
+
+The largest components contain only 11--13 participants despite many
+observed IDs. Figure~\ref{fig:pilot-dynamics} shows dyads continuing to
+accumulate after component sizes stabilize. This is consistent with additional
+ties forming predominantly within local clusters. Spatial encounter and
+activation policies can generate such structure, so its social interpretation
+must remain conditional on those mechanisms.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/pilot_social_dynamics.pdf}
+\caption{\paneltitle{Longer traces distinguish activity from connectivity.}
+Unique dyads continue to accumulate, while the largest observed components
+plateau early. These historical runs motivate testing transmission across
+local clusters; they do not identify its causal mechanism.}
+\label{fig:pilot-dynamics}
+\end{figure*}
+
+In the black market, influence/fear ($+1194$) exceeds trust ($+179$) and
+affection ($+9$); the guild and cruise instead accumulate mostly trust and
+affection. The pattern is compatible with each scenario's institutions, but
+prompts, action definitions, schedules, and run histories are confounded.
+It motivates a controlled question rather than answering one. In particular,
+warning diffusion and collective rescue need separate outcomes: receiving
+information need not produce action \cite{centola}. Appendix~\ref{app:intervention}
+specifies a paired memory intervention to examine that distinction.

@@ -1,0 +1,84 @@
+\section{Reproducibility and Evidence Audit}
+\label{app:repro}
+
+\paragraph{Generation settings and aggregation.}
+The frozen protocol uses \texttt{gemini-3-flash-preview}, temperature 0.2,
+and low thinking level. Specialized stages have an 8,192-token output cap;
+the monolithic call has a 24,576-token cap. Five primary premises have three
+repetitions each and five held-out premises have one each. A primary premise
+passes a binary completion endpoint when a majority of its repetitions pass;
+the five held-out premises use their single observed outcome. Costs summarize
+all trials within each split. Failed outputs are retained. Quality-evaluator
+definitions and the held-out set were frozen before held-out generation.
+
+The manuscript's construction figures read the frozen file
+\texttt{paper\_evidence\_summary\_20260729.json}. The six quality proxies are
+merchant-inventory pass rate, premise-item recall, premise-agent recall, role
+uniqueness, room visual-canon adherence, and wardrobe-canon term coverage.
+They are reported as proxies and are not substituted for human judgments.
+The seeded validator report is included alongside these summaries.
+
+\paragraph{Accepted interaction runs.}
+The accepted records are \texttt{mw3\_aurora}, \texttt{mw3\_clockwork},
+\texttt{mw3\_mycelium}, \texttt{mw3\_sunken}, and \texttt{mw3\_tidal}, collected
+on August 4, 2026. They use Gemini 2.5 Flash through AI Studio, two rounds,
+activation probability 0.12, and seeds 26080411--26080415 in that order.
+Compiled profiles are reused, and image/video generation is disabled. The
+archived run configuration does not by itself establish an immutable provider
+model snapshot; decoding details absent from that record are not inferred.
+
+Earlier \texttt{mw\_} attempts are excluded because a shared mutable scenario
+directory caused cross-world contamination. Earlier \texttt{mw2\_} attempts
+made no model progress because DNS was unavailable. The accepted runs place
+mutable scenario state in separate directories and pass the world-identity
+audit. These exclusions concern execution validity and are distinct from
+excluding an unfavorable behavioral outcome.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+World & Successes & Results & Rate \\
+\midrule
+Aurora & 9 & 9 & 100.0\% \\
+Clockwork & 11 & 13 & 84.6\% \\
+Mycelium & 8 & 10 & 80.0\% \\
+Sunken & 11 & 11 & 100.0\% \\
+Tidal & 10 & 13 & 76.9\% \\
+\midrule
+Total & 49 & 56 & 87.5\% \\
+\bottomrule
+\end{tabular}
+\caption{Audited action-result counts, summed directly from the accepted
+story bundles' round summaries. The 61-result denominator in the previous
+manuscript was a transcription error.}
+\label{tab:result-audit}
+\end{table}
+
+\paragraph{Success-count correction.}
+Table~\ref{tab:result-audit} distinguishes action results from story events.
+The frozen metrics already reported 0.875; summing the raw round summaries
+recovers 49 successes from 56 results. This revision corrects the prose
+denominator without changing the recorded success rate or event count.
+The accompanying audit file includes the source paths, SHA-256 hashes, and
+extracted round counts so that this correction is traceable.
+
+\paragraph{Historical analysis.}
+The pilot records are the guild run of April 22, 2026, the black-market run of
+April 19, and the cruise run of April 18. They are analyzed independently of
+the August interaction runs and the planned intervention. Observed-ID counts
+are 103, 99, and 100, respectively; these are counts of recorded actor/target
+identifiers, not a claim that all runs had an identical realized population.
+
+\paragraph{Artifact scope.}
+The release contains the paper sources, BibTeX database, figure programs,
+frozen figure inputs, evidence-audit summaries, and the English visual survey
+returns with their fixed allocation, extracted choices, completed Excel
+workbook, and descriptive-analysis script. The bundled inputs reproduce the figures and reported
+summary arithmetic; full runtime replication additionally requires the
+original implementation, configuration, model access, and raw execution
+records. The expanded release reanalyzes existing August 25 generation and execution
+records. This revision incorporates eleven returned survey files, ten eligible
+for analysis. No new model call or paired memory-intervention result is
+claimed. The figure and table inputs retain the response exclusions and every
+Not sure choice, so the published summaries can be regenerated.

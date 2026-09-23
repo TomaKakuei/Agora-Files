@@ -1,0 +1,104 @@
+{
+  "trial_id": "lwb_hidden_v2_01_r01",
+  "world_name": "lwb_hidden_v2_01",
+  "draft_id": "",
+  "source_revision_dir": "",
+  "replicate": 1,
+  "request": {
+    "world_name": "",
+    "genre": "",
+    "player_count_target": 4,
+    "agent_count_target": 12,
+    "focus": "",
+    "seed": 26082401,
+    "brief": "A cliffside city taxes spoken promises by their weight, and couriers carry unpaid ones between households."
+  },
+  "elapsed_seconds": 310.1922,
+  "generation_ok": true,
+  "complete_success": true,
+  "error": "",
+  "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/living_world_benchmark_20260825_hidden/confirmatory_runs/gpt_5_6_terra/lwb_hidden_v2_01/lwb_hidden_v2_01_r01_decomposed_builder_spec.json",
+  "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/living_world_benchmark_20260825_hidden/confirmatory_runs/gpt_5_6_terra/lwb_hidden_v2_01/lwb_hidden_v2_01_r01_decomposed_world_config.json",
+  "merged_contract_probe": {
+    "merged_contract_ok": true,
+    "error_codes": [],
+    "error": ""
+  },
+  "compile_probe": {
+    "compile_ok": true,
+    "compiler_status": "ok",
+    "runtime_agent_count": 12,
+    "compiled_room_count": 7,
+    "world_id": "vowfall_cliff_city"
+  },
+  "metrics": {
+    "rooms": 7,
+    "item_catalog_items": 20,
+    "main_characters": 12,
+    "gameplay_loops": 4,
+    "player_entry_points": 4,
+    "conflict_hooks": 4,
+    "inventory_items": 96,
+    "fallback_inventory_items": 0,
+    "agents_with_inventory": 12,
+    "agents_with_properties": 12,
+    "agents_with_knowledge": 12,
+    "world_coherence_proxy": 1.0,
+    "agent_specificity_proxy": 1.0,
+    "inventory_usefulness_proxy": 1.0,
+    "scale_coverage_proxy": 1.0,
+    "catalog_coverage_proxy": 1.0,
+    "quality_proxy": 1.0
+  },
+  "package_validation_status": "",
+  "compiler_critique_applied": false,
+  "compiler_critique_should_repair": false,
+  "generation_node_retries": [
+    {
+      "attempt": 1,
+      "failed_node": "visual_canon",
+      "failed_node_attempt": 1,
+      "error": "ValueError: Visual canon palette.dominant must be a six-digit hex color, got '#B86F45 sandstone'.",
+      "invalidated_cache_keys": [
+        "hooks",
+        "items",
+        "materials",
+        "roles",
+        "rooms",
+        "visual_canon",
+        "wardrobe"
+      ],
+      "preserved_cache_keys": [
+        "planner"
+      ]
+    }
+  ],
+  "telemetry": {
+    "path": "/home/yz_wang/yz_main/agora_2.0/docs/living_world_benchmark_20260825_hidden/confirmatory_runs/gpt_5_6_terra/lwb_hidden_v2_01/lwb_hidden_v2_01_r01_openai_calls.jsonl",
+    "provider_attempt_count": 12,
+    "successful_attempt_count": 12,
+    "retry_or_failure_attempt_count": 0,
+    "usage_metadata_attempt_count": 12,
+    "usage_metadata_coverage": 1.0,
+    "status_counts": {
+      "ok": 12
+    },
+    "stage_attempt_counts": {
+      "agent_wardrobe_policy_generation": 1,
+      "main_character_generation": 3,
+      "world_creator_generation": 5,
+      "world_creator_text_generation": 1,
+      "world_visual_canon_generation": 2
+    },
+    "model_attempt_counts": {
+      "gpt-5.6-terra": 12
+    },
+    "provider_elapsed_seconds_sum": 302.8776,
+    "token_totals": {
+      "input_tokens": 46752,
+      "output_tokens": 20473,
+      "reasoning_tokens": 782,
+      "total_tokens": 67225
+    }
+  }
+}

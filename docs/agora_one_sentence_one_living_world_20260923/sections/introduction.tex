@@ -1,0 +1,182 @@
+\section{Introduction}
+\label{sec:intro}
+
+A generated social world needs persistent consequences. In a floating embassy
+where endangered languages are political assets, inhabitants must be able to
+access archives, trade translation rights, and respond when a flood threatens
+the only surviving treaty. These activities require explicit places,
+possessions, information, and rules behind the rendered scene.
+
+Several research lines address parts of this problem. Procedural content
+generation studies representations and criteria for functional game content
+\cite{togelius2011,pcgml}. Word2World and DreamGarden extend language-based
+authoring to playable games and development plans \cite{word2world,dreamgarden}.
+Generative Agents demonstrates how local memory and encounters can produce
+community activities in an authored town \cite{park2023}, while Concordia
+grounds language-described actions through a Game Master \cite{vezhnevets2023}.
+These advances motivate a joint design question: how can one short premise
+specify both a world and the conditions under which a society can act within it?
+
+We present \agora, a system that compiles a one-sentence premise into a
+persistent, visually grounded environment for humans and language agents.
+Its representation connects rooms, roles, institutions, possessions, private
+knowledge, visual assets, and action opportunities. A generated repertoire
+makes the world's activities discoverable; an open-proposal channel lets an
+actor express a more specific intention. A World Coordinator interprets each
+proposal against shared constraints before its effects enter the world state.
+For example, proposing a treaty exchange does not by itself transfer ownership:
+the resources, participants, and required acceptance must support the change.
+
+The research object is a state trajectory
+\begin{equation}
+\tau=(S_0,q_1,d_1,S_1,\ldots,q_T,d_T,S_T),
+\end{equation}
+where $q_t$ is an intended action and $d_t$ is the coordinator decision.
+This representation distinguishes an intention, an enacted effect, and a
+later response. It also makes explicit which observations concern software
+execution, simulated social behavior, or human experience.
+
+Our contributions are threefold:
+\begin{enumerate}
+\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+\item A compositional language-to-world pipeline connecting semantic, visual,
+spatial, and mutable social state, with dependency-directed local refinement.
+\item A shared action interface for humans and agents that combines generated
+opportunities with coordinator-governed proposals and persistent consequences.
+\item Audited evidence from ten paired world briefs, a separate 24-cell
+one-sentence generation corpus, five locally observed interaction runs, and
+21 scripted execution trajectories, plus ten eligible visual-survey returns
+covering image and structure preferences. The results distinguish construction
+reliability, human artifact preference, and enacted consequences.
+\end{enumerate}
+
+The completed studies characterize an authoring and experimentation platform.
+A paired memory-intervention design remains prospective
+(Appendix~\ref{app:intervention}); behavioral fidelity and causal social effects
+require further evidence.
+
+\section{Related Work and Research Position}
+\label{sec:related}
+
+\subsection{From Generated Content to Executable Worlds}
+Procedural content generation distinguishes what is represented, how it is
+generated, and how its fitness is evaluated \cite{togelius2011}. PCGML further
+connects learned content models with repair and critique \cite{pcgml}. This
+lineage matters for \agora: decomposing a world and repairing a faulty part are
+established design ideas. Our use of them ties a repair to explicit dependencies
+among role, inventory, geometry, media, and runtime state.
+
+Word2World converts stories into playable tile-based games and evaluates its
+generation stages \cite{word2world}. DreamGarden recursively decomposes a user
+prompt into plans executed by specialized modules, with user feedback during
+Unreal Engine development \cite{dreamgarden}. Both are close precedents for
+prompt-driven, staged authoring. \agora emphasizes a reusable social-state
+representation: the generated institutions and objects become inputs to
+ownership, knowledge access, and action adjudication during play. We make no
+claim that prompt-based world generation or hierarchical planning is new.
+
+Environment generation also serves embodied-agent training. ProcTHOR samples
+diverse interactive houses \cite{procthor}; Holodeck uses language and spatial
+constraints to produce 3D scenes from prompts \cite{holodeck}. Genie instead
+learns action-controllable visual dynamics from video \cite{genie}. These
+approaches provide distinct substrates for interaction. \agora uses explicit
+entity identities and state transitions in a rendered 2D environment, making
+social and material changes directly inspectable. Visual generation and
+symbolic persistence address complementary aspects of world construction.
+
+\subsection{Grounded Dialogue and Shared Play}
+TextWorld provides generated text games with explicit state tracking and
+controllable task difficulty \cite{textworld}. ScienceWorld evaluates whether
+agents can carry out scientific procedures in an interactive environment
+\cite{scienceworld}. Both motivate evaluating executed consequences rather
+than the plausibility of a textual plan.
+
+LIGHT is a particularly relevant predecessor: humans and models inhabit a
+fantasy environment, combining dialogue with actions grounded in local objects
+and characters \cite{light}. Thus shared human--agent play and situated dialogue
+are not unique to \agora. Our focus is generating the surrounding social and
+material setting from a premise, then coupling visible activities and novel
+proposals to the same persistent state. Human-directed events in our logs
+establish reachability of the player, while experience and collaboration
+quality require a participant study.
+
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabularx}{\textwidth}{@{}L{0.17\textwidth}YYY@{}}
+\toprule
+Research line & Representative substrate & Action or generation mechanism & Relation to \agora \\
+\midrule
+Word2World; DreamGarden \cite{word2world,dreamgarden} & Generated game content and environments & Story expansion; hierarchical development plans & Precedents for language-driven, staged authoring \\
+ProcTHOR; Holodeck \cite{procthor,holodeck} & Procedural or language-conditioned 3D scenes & Interactive objects and spatial constraints & Physical environment diversity and grounding \\
+Genie \cite{genie} & Learned visual dynamics & Latent, frame-level control & Complementary representation of world dynamics \\
+LIGHT; SOTOPIA \cite{light,zhou2024} & Grounded fantasy play; social scenarios & Dialogue, actions, and social goals & Shared interaction and social evaluation \\
+Generative Agents; Concordia \cite{park2023,vezhnevets2023} & Persistent communities; grounded simulations & Memory and planning; Game Master adjudication & Direct precedents for memory and action grounding \\
+AgentSociety; LMAgent \cite{agentsociety,lmagent} & Societal and e-commerce environments & Large populations and domain-specific interactions & Scale and behavioral evaluation beyond this study \\
+\textbf{\agora} & \textbf{Premise-generated 2D social worlds} & \textbf{Typed shared state; repertoire and open proposals} & \textbf{Connects world authoring to inspectable social trajectories} \\
+\bottomrule
+\end{tabularx}
+\caption{Research positioning by representation and mechanism. Entries describe
+the cited systems' emphasis, not an exhaustive feature audit or a performance
+ranking. We do not treat unreported capabilities as absent.}
+\label{tab:related}
+\end{table*}
+
+\subsection{Persistent Communities and Social Simulation}
+Generative Agents combines observations, retrieval, reflection, and planning
+in a town of 25 agents, illustrating how remembered encounters can support
+coordinated activities \cite{park2023}. Concordia provides a flexible simulation
+framework in which agents describe intentions and a Game Master grounds their
+effects \cite{vezhnevets2023}. The World Coordinator follows this separation of
+intention and environment response; \agora connects it to premise-generated
+identities, inventories, rules, and rendered spaces.
+
+AgentSociety studies large populations and interventions in a societal
+environment \cite{agentsociety}; LMAgent combines multimodal shopping behavior
+with large-scale social interaction \cite{lmagent}. Avalon studies cooperation
+and confrontation under explicit game rules \cite{avalon}. These systems show
+why trajectories and institutions matter beyond isolated dialogue quality.
+Our smaller studies address authoring diversity and trace inspectability,
+without claiming comparable scale or empirical correspondence to society.
+
+\subsection{Action, Feedback, and Feasibility}
+ReAct interleaves reasoning and environment actions \cite{react}; Reflexion
+stores verbal feedback for subsequent attempts \cite{reflexion}; Voyager
+accumulates executable skills through environment feedback and verification
+\cite{voyager}. These methods motivate the observation--intention--outcome
+cycle. SayCan explicitly connects language-level usefulness to skill
+feasibility \cite{saycan}. \agora applies the analogous distinction to social
+and material effects: an intention can be intelligible while its requested
+transfer, construction, or status change is infeasible. Its action interface
+adds partner acceptance, ownership, and world-specific rules to that decision.
+This is a system design connection, not a claim of algorithmic equivalence or
+an empirical comparison with those agents.
+
+\subsection{Evaluation and Validity}
+SOTOPIA evaluates interaction through multiple social goals and criteria
+\cite{zhou2024}. Subsequent work shows that an omniscient simulation can appear
+more successful than an information-asymmetric interaction \cite{misleading}.
+This motivates our explicit observation boundary and private knowledge, but
+does not by itself validate their implementation. SOTOPIA-$\pi$ also reports evaluator overestimation of agents trained for
+social interaction \cite{sotopiapi}. Together with broader LLM-judge biases
+\cite{judge}, this motivates keeping structural checks, state-derived metrics,
+and the present human artifact judgments separate.
+
+AgentBoard motivates inspecting intermediate progress rather than relying on
+final success alone \cite{agentboard}. We similarly report executed changes
+separately from plausible intentions, but do not claim that our mutation
+counts measure validated task progress. AI Agents That Matter emphasizes
+cost, holdouts, and reproducibility \cite{agentsmatter}; this informs our
+separation of unequal-budget architecture comparisons from model coverage
+audits and our explicit treatment of retrospective evidence.
+
+The ODD protocol emphasizes explicit entities, scheduling, initialization, and
+model rationale for reproducible agent-based modeling \cite{odd}. We adopt
+these reporting priorities in Appendix~\ref{app:repro}. Human-grounded agent
+simulation, such as models built from interviews and surveys and evaluated
+against the people they represent \cite{park1000}, sets a different evidentiary standard from fictional
+world coherence. Finally, work on complex contagion distinguishes information
+transmission from socially reinforced adoption \cite{centola}. Accordingly,
+the prospective intervention measures both warning diffusion and material
+treaty rescue; neither network density nor fluent conversation substitutes
+for coordinated action.

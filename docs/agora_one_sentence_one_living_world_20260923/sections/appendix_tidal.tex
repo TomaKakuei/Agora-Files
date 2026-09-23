@@ -1,0 +1,184 @@
+\section{Tidal Embassy: A Generation and Play Trace}
+\label{app:tidal}
+
+
+We now follow \emph{Tidal Embassy of Lost Languages} from premise to play. Its
+one-sentence premise describes a
+floating embassy where linguists, smugglers, ambassadors, and memory divers
+trade endangered languages as political assets. The example preserves
+intermediate images and refinement attempts, allowing each generative stage to
+be connected to the final playable world.
+
+\paragraph{Step 1: Premise analysis and planning.}
+The planning stage identifies the nouns that become state---embassy,
+languages, translation rights, archives, smugglers, diplomats, and tides---and
+the verbs that imply gameplay---trade, translate, forge, authenticate, rescue,
+and reveal. It then proposes an institutional loop: access to archives produces
+linguistic objects; translators and forgers can
+translate or forge them; diplomats exchange rights and debts; customs officers
+can inspect transfers; flood events threaten stored knowledge. The resulting
+world plan connects entities, conflicts, resource cycles, and open questions.
+
+Planning establishes what must exist and why it matters. Later stages determine
+spatial layout, visual appearance, and resource quantities. Missing activity
+loops are refined before visual generation; for example, translation rights
+must have a source, a use, and a means of transfer.
+
+\paragraph{Step 2: Semantic structure.}
+Semantic generation expands the plan into rooms, roles, items, institutions,
+knowledge, and conflict hooks with stable identities. In this world,
+the graph contains eight rooms, including the Phoneme Exchange, Mnemonic
+Garden, Embassy Customs and Quarantine, and Ballast Hold; 25 named main
+characters; and 20 distinct items. Explicit relations connect each character to
+a home, each possession to an owner, and each action to relevant role,
+knowledge, location, or resource conditions.
+
+The generation process also preserves asymmetry. Shen Mo is a Phonetic
+Smuggler and Lexical Restorationist based in the Cartographer's Nook. His
+inventory includes a translation ear-cuff, archive key, forged exchange ledger,
+dive helmet, ritual ink, and a fragment of the Unspoken Treaty. His private
+knowledge includes phonetic decay patterns and ventilation shafts linking
+Customs to the Mnemonic Garden. Another character receives different property,
+authority, and information. This uneven allocation is what later makes
+persuasion, trade, secrecy, and coalition formation possible.
+
+\paragraph{Step 3: Visual direction and cross-modal identity.}
+The visual direction converts semantic identity into a shared canon:
+Art Nouveau diplomatic architecture, floating platforms, brass infrastructure,
+bioluminescent language media, water intrusion, and a melancholic ritual tone.
+It also emits per-entity appearance anchors. Room prompts inherit the canon but
+add function-specific materials; character prompts inherit world palette and
+wardrobe rules but retain role silhouettes; props receive icons whose shapes
+communicate their use. Shared style and entity-specific appearance jointly keep
+rooms, inhabitants, and objects recognizable as parts of the same world.
+
+The visual direction guides each image independently while maintaining common
+architecture, materials, palette, and role silhouettes. A visual inconsistency
+can therefore be refined locally while the semantic identity of the world
+remains stable.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/tidal_embassy_visual_elements.pdf}
+\caption{Generated visual elements from Tidal Embassy. The composed map contains
+eight generated floors (A--D show the map and three constituent rooms); E--G
+show the directional character atlases; H is a generated object. Shared
+visual motifs connect spatial, character, and object identity.}
+\label{fig:tidal-visual-elements}
+\end{figure*}
+
+\paragraph{Step 4: Evolving world state.}
+This stage determines what can change after the images are produced.
+It creates wallets, inventories, property libraries, knowledge assets, directed
+relationships, task threads, room occupancy, and world-event status. It also
+defines invariants. Item quantities remain nonnegative; physical transfers
+conserve quantity; private knowledge has an owner and an acquisition event; a
+character occupies one reachable coordinate; relationship changes are directed.
+The generated repertoire and open-proposal forms are linked to the same world state.
+
+The evolving state connects generated descriptions through observable causes
+and consequences. The treaty fragment in Shen Mo's inventory can later be inspected,
+given away, stolen through an allowed rule, or used as an input to another
+action. When ownership changes, the next observation shows the new owner.
+
+\paragraph{Step 5: Integrated world representation.}
+The integrated representation connects semantic, visual, spatial, and evolving
+state. It supports cross-domain questions:
+Does every home room exist? Does every main character have a visual asset and a
+walkable placement? Is an item used by an action defined and obtainable? Does a
+private fact mention an existing institution? Does a room's purpose agree with
+its objects and activities? These dependencies guide local refinement.
+
+If a character image is inconsistent, roles, rooms, and items remain fixed. If
+an item relation is missing, only the connected content is regenerated. Figure
+\ref{fig:tidal-repair} illustrates this process: two room images are refined
+while the rest of Tidal Embassy remains unchanged.
+
+\paragraph{Step 6: Visual generation.}
+FLUX generates the map source, individual room floors, characters, and local
+objects from the shared visual direction. Character images are arranged into
+directional movement atlases, and room images are placed within the planned
+regions and connected by traversable corridors. Figure
+\ref{fig:tidal-visual-elements} shows the composed map alongside three source floors,
+three character atlases, and an object.
+
+Functional visibility connects visual quality to use: room imagery must cover
+its playable area, characters must remain recognizable while moving, and
+furniture must preserve navigable paths.
+
+\paragraph{Step 7: Visual and spatial evaluation.}
+The evaluation examines semantic completeness, visual identity, traversable
+geometry, foreground coverage, directional character consistency, readable
+room composition, and visibility during play. The Diplomat's Lounge required
+three real generation attempts. Attempt 1 was classified as a poster card with
+an edge blank-background ratio of 0.56. Attempt 2 removed the card appearance
+but retained a blank-margin failure with a maximum blank-row ratio of 0.73.
+Only the third, edge-to-edge playable floor was accepted.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/localized_visual_refinement.pdf}
+\caption{Localized visual refinement for the Diplomat's Lounge. The first image
+has a large poster-like margin; the second retains an extensive blank boundary;
+the third fills the playable floor while preserving the room's identity. Other
+rooms, characters, and world state remain unchanged.}
+\label{fig:tidal-repair}
+\end{figure*}
+
+In \agora, visual quality combines coherent identity, readable composition, and
+fitness for navigation and interaction. Preserved refinement attempts make the
+progression from attractive illustration to usable world space observable.
+
+\paragraph{Step 8: Persistent play.}
+The generated world begins from a fixed initial state and evolves independently
+for each session. Humans and AI agents encounter the same rooms, inhabitants,
+objects, actions, and consequences. Separate world identities keep concurrent
+multiworld experiments isolated.
+
+Figure~\ref{fig:embodied-character} connects character generation to embodied play.
+A crop of the interaction capture shows the selected agent. A complementary
+world view shows neighboring agents among generated furniture and room surfaces,
+while the directional atlas records appearance across locomotion. The interactive trial covers
+movement, messaging, item use, trade, continued play, and a model-mediated reply.
+
+The 25-character set uses one canonical visual identity per inhabitant.
+Front locomotion and side views preserve the same hair, clothing, body type,
+and palette, so an inhabitant remains recognizable while moving. Native
+$64\times64$ frames retain facial, clothing, and limb detail in the stored atlases.
+
+Character evaluation covers single-person composition, silhouette readability,
+palette contrast, directional identity, absence of text and detached effects,
+and visibility against the room surface. Contact-sheet review additionally
+examines the complete cast together, revealing cross-view identity changes and
+visual outliers that are difficult to judge one frame at a time.
+
+Successive review passes identified characters with problematic props,
+enclosing effects, orientation, text, detached sparkles, or insufficient
+contrast. These counts reflect different review stages rather than disjoint
+character sets.
+Localized regeneration produced a final set of 25 coherent, readable character
+atlases, all visible during the interactive trial.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.91\textwidth]{figures/embodied_character_interaction.pdf}
+\caption{Character identity in Tidal Embassy. (A) A crop of the interaction capture shows the selected character,
+marked by an amber ring. (B) A complementary
+world view situates agents among generated room surfaces and furniture. (C) The
+directional atlas preserves clothing, palette, and silhouette across
+movement. The interactive trial includes movement, messaging, item use, and
+trade.}
+\label{fig:embodied-character}
+\end{figure*}
+
+\paragraph{Step 9: Interaction-informed refinement.}
+During play, agents and humans observe bounded state and choose either a
+world-specific action or an open proposal. The World Coordinator evaluates
+effects and enacts successful transitions, as detailed in Section~\ref{sec:method}. Interaction traces
+also provide feedback upstream. An action that is never selected may be poorly
+named or irrelevant; an unreachable character suggests placement repair; an
+important object that never enters an exchange suggests a missing action;
+frequent open proposals around one intention suggest a useful addition to the
+visible repertoire. Observed life inside the world can therefore guide the next
+round of world refinement.
+

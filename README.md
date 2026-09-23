@@ -1,9 +1,9 @@
 # Agora-Files
 File Collaboration Space for Project Agora
 
-Latest evidence revision: [Agora — 2026-09-19 v2](docs/agora_one_sentence_one_living_world_20260919_v2/agora_one_sentence_one_living_world_20260919.pdf).
-The [paper release](docs/agora_one_sentence_one_living_world_20260919_v2/) contains the 29-reference manuscript, 12 reproducible figures, and an audit of 24 archived generation trials and 21 archived 24-round execution traces.
-Download the [complete paper ZIP](docs/agora_one_sentence_one_living_world_20260919_v2.zip).
+Latest paper: [Agora — September 23, 2026, with returned human evaluation](docs/agora_one_sentence_one_living_world_20260923/agora_one_sentence_one_living_world_20260923.pdf).
+Download the [complete paper and evidence ZIP](docs/agora_one_sentence_one_living_world_20260923.zip) and [completed results Excel](docs/agora_one_sentence_one_living_world_20260923/human_evaluation/Results_Completed.xlsx).
+The [revised manuscript](docs/agora_one_sentence_one_living_world_20260923/README.md) contains 29 references, 14 figures, the existing generation/execution audits, and the returned visual survey: **11 returns, 10 eligible, 40 image and 20 structure comparisons**. V04 remains pending missing cover confirmations. Full Agora's equal-request structure preferences are **40.0%, 32.5%, and 37.5%**; these exploratory results do not show a structure-preference advantage. [Checks](docs/agora_one_sentence_one_living_world_20260923/VALIDATION.md).
 
 Latest [English visual survey and Excel package](docs/agora_visual_survey_11p_20260921/README.md), updated September 22: V01–V11, **7 pages and 18 choices per person**, with real maps/characters and world-structure diagrams. Each packet has 4 image and 2 structure comparisons. Download the [11 visual survey packets](docs/agora_visual_survey_11p_20260921/Visual_Survey_11_Participants.zip) and [blank English results workbook](docs/agora_visual_survey_11p_20260921/Results_Entry.xlsx). PDFs have clickable forms; Word copies are editable. Give each person only their own packet; keep the workbook with the researcher.
 

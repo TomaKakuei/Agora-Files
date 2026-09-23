@@ -1,0 +1,42 @@
+% Standalone preprint style; no conference template is implied.
+\usepackage[letterpaper,top=0.62in,bottom=0.68in,left=0.68in,right=0.68in,columnsep=0.25in]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{Arial}{\setsansfont{Arial}}{\setsansfont{TeX Gyre Heros}}
+\usepackage{booktabs,graphicx,amsmath,amssymb,tabularx,array,xcolor,xspace}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\definecolor{agorateal}{HTML}{176B70}
+\definecolor{agoraink}{HTML}{20343E}
+\definecolor{agoragray}{HTML}{596971}
+\hypersetup{colorlinks=true,linkcolor=agorateal,citecolor=agorateal,urlcolor=agorateal,
+  pdftitle={Agora: One Sentence, One Living World},pdfauthor={Boxun Xu, Yueze Wang, Peng Li}}
+\newcommand{\agora}{Agora\xspace}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\systemvision}{\emph{One Sentence, One Living World}}
+\newcommand{\paneltitle}[1]{\textbf{#1}}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\floatsep}{10pt plus 2pt minus 2pt}
+\setlength{\dblfloatsep}{10pt plus 2pt minus 2pt}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.8}
+\renewcommand{\dblfloatpagefraction}{0.8}
+\setcounter{topnumber}{3}
+\setcounter{dbltopnumber}{3}
+\setlength{\emergencystretch}{1.2em}
+\setlength{\bibsep}{1.8pt plus .5pt}
+\renewcommand{\bibfont}{\fontsize{8}{9}\selectfont}
+\renewcommand{\arraystretch}{1.14}
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}{-2.0ex plus -.5ex minus -.2ex}{.8ex plus .2ex}{\normalfont\large\bfseries\color{agoraink}}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}{-1.6ex plus -.4ex minus -.2ex}{.6ex plus .2ex}{\normalfont\normalsize\bfseries}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}{1.1ex plus .3ex minus .2ex}{-.7em}{\normalfont\normalsize\bfseries}}
+\long\def\@makecaption#1#2{\vskip 6pt\begingroup\small\noindent\textbf{#1.} #2\par\endgroup\vskip 2pt}
+\makeatother
+\raggedbottom

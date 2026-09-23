@@ -1,0 +1,51 @@
+# Returned visual survey: completed analysis
+
+The input is the original `Survey DONE.zip` uploaded to the repository by the organizer, preserved here as `Survey_DONE.zip`. The archive contains exactly Survey_V01.pdf through Survey_V11.pdf. `dataset.json` is the frozen V-code allocation from the September 22 visual instrument. Original instrument: [English visual study](../../agora_visual_survey_11p_20260921/README.md).
+
+## Results
+
+- 11 returned PDFs; 198 valid choices present.
+- 10 returns eligible for the released primary analysis; 180 included choices.
+- V04's cover confirmations are unfilled. The organizer reports an accidental omission. The file is retained and its choices are transcribed, but it is not counted until participant confirmation is supplied.
+- Recruitment: online volunteers, unpaid, as reported by the organizer. A probability-sampling method is not documented. Ethics approval/exemption and measured completion times were not supplied.
+- Image arm: 40 comparisons, all 21 pairs on one scene; four pairs with one rater, sixteen with two, one with four.
+- Structure arm: 20 comparisons on ten requests; two requests with one rater, seven with two, one with four.
+
+| Structure item | Agora wins | Baseline wins | Same | Not sure | Equal-request Agora score |
+|---|---:|---:|---:|---:|---:|
+| Explore preference | 7 | 13 | 0 | 0 | 40.0% |
+| World clarity | 8 | 11 | 1 | 0 | 32.5% |
+| Place–scene fit | 7 | 12 | 0 | 1 | 37.5% |
+
+Scores first average within each request, then average all ten requests equally. Same is half a vote; Not sure is excluded from the preference denominator and remains visible. Pooled scores are different (35.0%, 42.5%, 36.8%) and are not the primary estimator. The favorable completion comparison and the unfavorable structure preferences are both retained in the paper.
+
+## Files
+
+- `Results_Completed.xlsx`: all actual returns entered, formulas recalculated, eligibility gating active. V04 cover cells remain empty. `Results_Template.xlsx` is the unchanged blank template.
+- `participants.csv`: eligibility and missing-cover status.
+- `responses_long.csv`: all 198 original choices, source decoding, and inclusion flags.
+- `extracted_fields.json`: exact normalized PDF values; `Off` preserves unselected checkboxes.
+- `pair_results.csv`: all 93 pair-by-item summaries (21 image + 10 structure pairs, three items each).
+- `summary.json`: counts, separate structure estimators, side-choice diagnostics, and an explicitly exploratory common-request leave-one-person-out diagnostic. The latter is not an interval and is not used as the manuscript's primary result.
+- `analysis_check.json`, `stimulus_check.json`: checks of calculation and original stimulus preservation.
+- `analyze_returns.py`, `verify_analysis.py`: reproducible extraction, analysis, plotting, and workbook comparison.
+
+## Reproduce
+
+Install `pypdf`, `openpyxl`, `numpy`, and `matplotlib` in a Python 3.9+ environment. LibreOffice is needed to refresh the workbook's cached formulas. Run from the paper directory:
+
+```bash
+python human_evaluation/analyze_returns.py
+mkdir -p /tmp/agora_recalculated
+libreoffice -env:UserInstallation=file:///tmp/agora_recalc_profile --headless \
+  --convert-to xlsx --outdir /tmp/agora_recalculated human_evaluation/Results_Completed.xlsx
+python human_evaluation/verify_analysis.py --workbook /tmp/agora_recalculated/Results_Completed.xlsx
+cp /tmp/agora_recalculated/Results_Completed.xlsx human_evaluation/Results_Completed.xlsx
+bash build.sh
+```
+
+Re-extraction regenerates a workbook with formulas but no cached calculated values; the LibreOffice step is necessary before checking or distributing it. Source PDFs are never edited. The parser checks parent field values against every visible selected widget state. The returned PDF editor duplicated identical `/FT /Btn` dictionary entries; these notices are isolated, and all other PDF parser diagnostics fail extraction.
+
+## Interpretation limits
+
+Ten code-labelled returns do not provide a representative sample or a stable model ranking. Codes, not verified identities, are all that the response archive supplies. Shared respondents, shared artifacts, and repeated questions create dependence. No item-level significance tests or population confidence intervals are claimed. The visual arm uses one prompt and a shared image generator. The structure diagrams show containment and selected counts, not full topology, social behavior, or actual gameplay. Source model strings are archived identifiers, not independent verification of provider products or immutable model versions.

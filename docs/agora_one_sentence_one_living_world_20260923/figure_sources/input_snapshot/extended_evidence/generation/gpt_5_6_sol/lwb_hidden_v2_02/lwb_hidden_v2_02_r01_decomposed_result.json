@@ -1,0 +1,104 @@
+{
+  "trial_id": "lwb_hidden_v2_02_r01",
+  "world_name": "lwb_hidden_v2_02",
+  "draft_id": "",
+  "source_revision_dir": "",
+  "replicate": 1,
+  "request": {
+    "world_name": "",
+    "genre": "",
+    "player_count_target": 4,
+    "agent_count_target": 12,
+    "focus": "",
+    "seed": 26082401,
+    "brief": "A railway greenhouse grants platform access according to which crops passengers agree to tend during the journey."
+  },
+  "elapsed_seconds": 656.7167,
+  "generation_ok": true,
+  "complete_success": true,
+  "error": "",
+  "builder_spec_path": "/home/yz_wang/yz_main/agora_2.0/docs/living_world_benchmark_20260825_hidden/confirmatory_runs/gpt_5_6_sol/lwb_hidden_v2_02/lwb_hidden_v2_02_r01_decomposed_builder_spec.json",
+  "world_config_path": "/home/yz_wang/yz_main/agora_2.0/docs/living_world_benchmark_20260825_hidden/confirmatory_runs/gpt_5_6_sol/lwb_hidden_v2_02/lwb_hidden_v2_02_r01_decomposed_world_config.json",
+  "merged_contract_probe": {
+    "merged_contract_ok": true,
+    "error_codes": [],
+    "error": ""
+  },
+  "compile_probe": {
+    "compile_ok": true,
+    "compiler_status": "ok",
+    "runtime_agent_count": 12,
+    "compiled_room_count": 10,
+    "world_id": "verdant_line"
+  },
+  "metrics": {
+    "rooms": 10,
+    "item_catalog_items": 30,
+    "main_characters": 12,
+    "gameplay_loops": 5,
+    "player_entry_points": 4,
+    "conflict_hooks": 4,
+    "inventory_items": 96,
+    "fallback_inventory_items": 0,
+    "agents_with_inventory": 12,
+    "agents_with_properties": 12,
+    "agents_with_knowledge": 12,
+    "world_coherence_proxy": 1.0,
+    "agent_specificity_proxy": 1.0,
+    "inventory_usefulness_proxy": 1.0,
+    "scale_coverage_proxy": 1.0,
+    "catalog_coverage_proxy": 1.0,
+    "quality_proxy": 1.0
+  },
+  "package_validation_status": "",
+  "compiler_critique_applied": false,
+  "compiler_critique_should_repair": false,
+  "generation_node_retries": [
+    {
+      "attempt": 1,
+      "failed_node": "roles",
+      "failed_node_attempt": 1,
+      "error": "ValueError: Roles node failed at batch 2: generated 5 characters, required exactly 4.",
+      "invalidated_cache_keys": [
+        "hooks",
+        "roles",
+        "wardrobe"
+      ],
+      "preserved_cache_keys": [
+        "items",
+        "materials",
+        "planner",
+        "rooms",
+        "visual_canon"
+      ]
+    }
+  ],
+  "telemetry": {
+    "path": "/home/yz_wang/yz_main/agora_2.0/docs/living_world_benchmark_20260825_hidden/confirmatory_runs/gpt_5_6_sol/lwb_hidden_v2_02/lwb_hidden_v2_02_r01_openai_calls.jsonl",
+    "provider_attempt_count": 13,
+    "successful_attempt_count": 13,
+    "retry_or_failure_attempt_count": 0,
+    "usage_metadata_attempt_count": 13,
+    "usage_metadata_coverage": 1.0,
+    "status_counts": {
+      "ok": 13
+    },
+    "stage_attempt_counts": {
+      "agent_wardrobe_policy_generation": 1,
+      "main_character_generation": 5,
+      "world_creator_generation": 5,
+      "world_creator_text_generation": 1,
+      "world_visual_canon_generation": 1
+    },
+    "model_attempt_counts": {
+      "gpt-5.6-sol": 13
+    },
+    "provider_elapsed_seconds_sum": 649.0996,
+    "token_totals": {
+      "input_tokens": 64452,
+      "output_tokens": 31646,
+      "reasoning_tokens": 1587,
+      "total_tokens": 96098
+    }
+  }
+}
