@@ -11,7 +11,7 @@
 \vspace{9pt}
 {\normalsize Boxun Xu\qquad Yueze Wang\qquad Peng Li}\par
 \vspace{3pt}
-{\small\color{agoragray}Research preprint\quad\textbullet\quad Human-evaluation revision, September 23, 2026}\par
+{\small\color{agoragray}Research preprint\quad\textbullet\quad Model-comparison revision, September 23, 2026}\par
 \end{center}
 \vspace{3pt}
 \begin{minipage}{\textwidth}
@@ -22,14 +22,16 @@ material, and social state. We present \agora, a system that compiles a short
 premise into a persistent rendered environment with roles, institutions,
 possessions, and private knowledge. Humans and language agents use generated
 action opportunities or propose context-specific actions, whose effects a
-World Coordinator adjudicates against shared state. Across ten paired world
-briefs, compositional generation completes 10/10 worlds versus 7/10 for a
-single-pass baseline, at higher token and latency cost. A visual artifact
-survey yields ten eligible returns and sixty paired comparisons. On ten
-matched structure requests, full Agora receives 40.0\% equal-request
-exploration preference, showing that completion gains do not establish
-preference gains. A separate image arm compares seven configurations on one
-premise, with sparse, criterion-specific judgments. Five two-round interaction
+World Coordinator adjudicates against shared state. A masked model-comparison
+survey yields ten eligible returns, forty image comparisons, and judgments
+on all 21 pairs among seven language-model configurations using a shared
+pipeline and premise. Preferences differ by criterion: Gemini 2.5 Flash
+receives 8/10 exploration preferences, while GPT-5.6 Terra and Sol receive
+11/13 and 9/11 map-readability preferences, respectively. These sparse
+fixed-artifact judgments do not establish a general model ranking. An internal
+generation control records higher completion for the staged procedure at
+higher cost; its structure judgments are reported separately and do not
+benchmark Agora against independent systems. Five two-round interaction
 runs produce 53 events and 49/56 successful action results. In a retrospective
 audit of 21 scripted 24-round trajectories, 1,365/1,512 actions execute
 successfully, but only 398 successes change inventory or location. Together,

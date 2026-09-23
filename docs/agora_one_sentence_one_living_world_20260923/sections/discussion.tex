@@ -8,8 +8,10 @@ language-driven game construction \cite{word2world,dreamgarden}, shared
 human--agent play \cite{light}, and Game Master adjudication
 \cite{vezhnevets2023}. The contribution is their integration around a
 premise-conditioned world representation and inspectable trajectories.
-The comparison here is against a single-pass generation baseline, not those
-full systems; no cross-system superiority is established.
+The model comparison varies language-model configurations within Agora. The
+generation controls vary its internal authoring procedure. Neither compares
+Agora against those independent systems; no cross-system superiority is
+established.
 
 \paragraph{Discoverability and expressiveness are separate design needs.}
 A generated repertoire explains what inhabitants can do in a new setting.
@@ -20,19 +22,19 @@ with equivalent world and agent states, is needed to estimate that effect.
 Likewise, interface access does not establish useful or enjoyable human
 collaboration.
 
-\paragraph{Construction evidence has limited scope.}
-Ten shared briefs provide a small sample, and composition receives more total
-computation. The returned structure judgments favor the baseline in aggregate:
-Agora's equal-request scores are below 50\% on all three items. Completion
-and lexical proxies therefore cannot substitute for human preference. This
-result motivates testing whether simpler or more selective presentation and
-authoring improve clarity and interest; it does not identify complexity as
-the cause. Budget-matched comparisons, uncurated premises, and naturally
-occurring failures are needed to separate architecture benefits from cost.
+\paragraph{Internal procedure controls have limited scope.}
+Ten shared briefs compare staged and single-pass generation under the same
+representation, with different total computation and retry opportunities.
+The observed completion gains characterize that implementation comparison,
+not the value of Agora's shared representation or its superiority to an
+external system. The supplementary diagram judgments favor single-pass
+outputs in aggregate and remain reported in full. Both favorable and
+unfavorable control outcomes have this same restricted scope.
 
 \paragraph{The visual study is narrow and exploratory.}
-Ten eligible coded returns evaluate forty image pairs and twenty structure
-pairs; one of eleven returns lacks cover confirmations. The image arm covers
+Ten eligible coded returns supply forty model-image comparisons; a separate
+arm supplies twenty internal structure controls. One of eleven returns lacks
+cover confirmations. The image arm covers
 one scene, with one to four ratings per exact pair, and the structure arm
 shows containment diagrams rather than a complete interactive world. The
 source identities are masked, but the artifacts share a generation pipeline
@@ -70,9 +72,10 @@ under unequal information. Fictional roles do not validate demographic models.
 \section{Conclusion}
 \agora turns a short premise into a rendered social environment whose
 inhabitants can act on persistent shared state. The completed studies show
-a reliability--cost tradeoff in generation, human structure preferences that
-do not favor the full pipeline, use of explicit world actions and open
-proposals, and a gap between successful execution and material consequences
+criterion-specific visual preferences across seven model configurations,
+a reliability--cost tradeoff in an internal generation control, use of
+explicit world actions and open proposals, and a gap between successful
+execution and material consequences
 in a separate 21-trajectory audit.
 The central result is an inspectable connection between world authoring and
 consequential interaction. Broader human evaluation and controlled

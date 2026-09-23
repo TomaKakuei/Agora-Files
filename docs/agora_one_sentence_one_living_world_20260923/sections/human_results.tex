@@ -1,78 +1,57 @@
-\section{Human Judgments of Images and World Structure}
+\section{Human Model Comparisons Within Agora}
 \label{sec:human-results}
 
-\subsection{Instrument and Included Responses}
-We collected the English visual instrument V01--V11: four image comparisons
-and two structure comparisons per respondent, with three short choices per
-comparison. The image arm uses preserved maps and two character samples from
-seven recorded model configurations on the same promise-city premise. The
-structure arm compares full Agora with single-pass generation on ten matched
-requests, displaying every authored room, assigned-resident counts, and scene
-components in a common containment diagram. These diagrams show world
-organization, not movement paths. Source identities are hidden behind A/B
-labels; allocation and orientation were fixed before the returns were read.
+\subsection{Comparison Target and Included Responses}
+The human model comparison holds the Agora pipeline and promise-city premise
+fixed while varying the recorded language-model configuration. Participants
+see a preserved map and the same sampling of two character images per side,
+under masked A/B labels. The image generator is shared. Thus the measured
+objects are the resulting visual world artifacts under each configuration,
+not stand-alone LLM image generation and not competing world-authoring systems.
 
-All eleven PDFs contain eighteen valid choices. Ten also confirm adulthood,
-English comprehension, voluntary participation, and no prior development or
-detailed-result exposure. V04 leaves all cover confirmations blank and is
-excluded pending confirmation, following the released eligibility rule. The
-analysis therefore uses ten coded returns, forty image comparisons and twenty
-structure comparisons (180 item responses). All 21 image pairs and ten
-structure requests retain coverage. This is an exploratory evaluation of fixed
-artifacts, not a representative population study. Appendix~\ref{app:human}
-documents the questions, exclusions, decoding, and reporting gaps.
+Ten of eleven returned English visual packets meet the released eligibility
+rule. V04 contains all eighteen choices but lacks cover confirmations and
+remains pending. The ten eligible returns supply forty image comparisons,
+covering all 21 pairs among seven configurations, and 120 item responses.
+Four pairs have one rater, sixteen have two, and one has four. Each comparison
+asks which world the respondent would rather explore, which map is easier
+to read, and which characters better fit their world. These criteria remain
+separate; they are not components of a validated overall-quality scale.
+The protocol and complete pairwise counts appear in Appendix~\ref{app:human}.
 
-\subsection{Structure Preference Does Not Follow Completion}
-For each item, a preference for Agora scores 1, a tie 0.5, and a baseline
-preference 0; ``Not sure'' is excluded from that item's preference denominator
-and reported separately. We average within each request and then equally
-across all ten requests, as specified in the released workbook. This prevents
-the request receiving four ratings from dominating the overall estimate.
+\subsection{Observed Votes by Model Configuration}
+Table~\ref{tab:human-model-summary} adds a descriptive view of the model
+comparisons. For each configuration and question, we pool its observed wins
+and half-weighted ties and divide by its judgeable comparisons. Not sure
+choices are excluded from that denominator and remain in the full counts.
+This roll-up was added after responses were available to make the pairwise
+results readable; it is not a preregistered ranking. Opponent weights differ
+because the allocation and one cover exclusion leave unequal pair coverage.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering\small
-\setlength{\tabcolsep}{3.2pt}
-\input{sections/generated/human_structure_summary}
-\caption{Structure judgments from ten eligible returns. Full and Base denote Agora
-and the single-pass baseline, irrespective of randomized A/B labels; ? = Not
-sure. Counts pool twenty comparisons per item. Score is Agora's
-\emph{equal-request} mean, not a pooled vote fraction.
-No population superiority is inferred from these small counts.}
-\label{tab:human-structure}
-\end{table}
+\setlength{\tabcolsep}{5pt}
+\input{sections/generated/human_model_summary}
+\caption{Observed model-comparison votes on the single promise-city scene.
+Each cell is (wins + half ties) / judgeable comparisons, followed by its
+percentage. Not sure is excluded; half-integer numerators indicate a tie.
+Rows retain recorded model identifiers in fixed order. Models have unequal
+opponent weights, so these descriptive scores are not a balanced tournament,
+a general capability ranking, or independent samples across rows.}
+\label{tab:human-model-summary}
+\end{table*}
 
-Respondents select the baseline in thirteen of twenty exploration choices,
-versus seven for Agora. Agora's equal-request preference is 40.0\% for
-exploration, 32.5\% for world clarity, and 37.5\% for place--scene fit
-(Table~\ref{tab:human-structure}). These observations do not support a human
-preference advantage for the full pipeline on the displayed structures,
-despite its higher completion rate in the construction study. The pipeline's
-additional generation cost therefore cannot be justified by a claimed
-preference gain from this study.
+Gemini 2.5 Flash receives eight of ten exploration preferences (80.0\%)
+and seven of nine judgeable character-fit preferences (77.8\%). GPT-5.6
+Terra receives nine of thirteen exploration preferences (69.2\%) and eleven
+of thirteen map-readability preferences (84.6\%); GPT-5.6 Sol receives nine
+of eleven readability preferences (81.8\%). The contrast within Sol is
+substantial: only four of eleven comparisons favor it for exploration.
+Gemini 3.1 Flash Lite receives six of ten exploration preferences but no
+readability wins and one readability tie (0.5/10). These are observations
+about fixed artifacts, not statistically established model superiority.
 
-The pattern varies by request (Figure~\ref{fig:human-structure}). Both Tidal
-raters prefer Agora for exploration. All four Clockwork raters prefer the
-baseline for exploration while choosing Agora for clarity. Understandability
-and desire to explore are thus distinguishable judgments in these returns;
-we do not sum them into a single quality score. One or two raters on most
-requests cannot identify why a design was preferred, and the diagram omits
-institutions, social behavior, and actual play. Equal-compute generation and
-interactive evaluation remain separate open tests.
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/human_structure_preferences.pdf}
-\caption{\paneltitle{World structure: preferences vary by request and item.}
-Each point is the fraction favoring full Agora for one request and question,
-with a half vote for a tie. The analysis includes 20 comparisons: seven
-requests have two raters, two have one, and Clockwork has four. For Tidal
-scene fit, one of two raters selects Not sure. These are descriptive fixed-
-artifact scores; the dashed line marks equal preference, not a significance
-threshold.}
-\label{fig:human-structure}
-\end{figure*}
-
-\subsection{Image Preference Is Item-Specific}
+\subsection{Criterion-Specific Pairwise Outcomes}
 Figure~\ref{fig:human-images} reports all exact model pairs for exploration,
 map readability, and character--world fit. Each model name denotes the
 recorded world-generation configuration; the pipeline uses a shared image
@@ -101,3 +80,14 @@ premise and the image pipeline; labels abbreviate archived backend identifiers.
 Exact counts, including abstentions, are in Appendix~\ref{app:human}.}
 \label{fig:human-images}
 \end{figure*}
+
+\paragraph{Separate internal control and unmeasured structure quality.}
+The questionnaire also collected twenty comparisons between two generation
+procedures inside Agora. Their full results remain in
+Appendix~\ref{app:internal-generation}; the observed diagram preferences favor
+the single-pass procedure in aggregate. Both conditions share Agora's
+representation, so these controls do not compare Agora with an independent
+system. They also do not measure structural differences \emph{between the
+seven model configurations}. Human model comparisons here cover maps and
+characters; cross-model world-structure preference and actual play experience
+were not measured.
