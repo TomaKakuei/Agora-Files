@@ -1,0 +1,48 @@
+\documentclass[10pt,twocolumn]{article}
+\input{paper_style}
+\externaldocument[main-][nocite]{agora_one_sentence_one_living_world_20260923}
+\hypersetup{pdftitle={Agora: One Sentence, One Living World — Supplementary Material}}
+\begin{document}
+\twocolumn[{
+\begin{center}
+{\color{agorateal}\sffamily\bfseries\fontsize{24}{27}\selectfont AGORA}\par
+\vspace{4pt}
+{\bfseries\fontsize{20}{23}\selectfont Supplementary Material}\par
+\vspace{5pt}
+{\large One Sentence, One Living World}\par
+\vspace{6pt}
+{\normalsize Boxun Xu\qquad Yueze Wang\qquad Peng Li}\par
+\vspace{3pt}
+{\small\color{agoragray}Research preprint\quad\textbullet\quad September 23, 2026}\par
+\end{center}
+\begin{minipage}{\textwidth}
+\small
+This supplement accompanies \emph{Agora: One Sentence, One Living World}.
+It contains reproducibility details, complete construction and execution audits,
+planner-input and action-space diagnostics, historical records, the returned
+visual-survey protocol and counts, internal
+procedure controls, a prospective memory-intervention design, and case studies.
+The intervention is planned work; it is not counted as a completed result.
+Sections, figures, tables, equations, and pages use an S prefix. References to
+the main paper are explicitly identified; bibliography numbers are local to
+each document.
+\end{minipage}
+\vspace{12pt}
+}]
+\appendix
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\thepage}{S\arabic{page}}
+\input{supplement/repro}
+\input{supplement/extended}
+\input{supplement/ablation}
+\input{supplement/historical}
+\input{supplement/human}
+\input{supplement/intervention}
+\input{supplement/cases}
+\input{supplement/tidal}
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\end{document}

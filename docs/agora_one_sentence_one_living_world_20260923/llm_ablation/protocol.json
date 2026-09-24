@@ -1,0 +1,349 @@
+{
+  "study": "paired_centralized_planner_ablation_v1",
+  "frozen_at_utc": "2026-09-23T23:15:44.303325+00:00",
+  "models": [
+    "gemini-2.5-flash"
+  ],
+  "conditions": [
+    "full",
+    "no_event_history",
+    "catalog_only"
+  ],
+  "worlds": [
+    {
+      "world": "clockwork_rain_conservatory",
+      "name": "Clockwork Rain Conservatory",
+      "source_sha256": "b50aa7fa37406189a875d1230accb748392be064a959cb3c5981c986cd2a77ee",
+      "initial_state_hash": "7e1f09cc2f1fb115698a9a1fbed41658e19ee47a1a85d1a8d89592f8a6f4939f",
+      "agents": 25
+    },
+    {
+      "world": "tidal_embassy_lost_languages",
+      "name": "Tidal Embassy of Lost Languages",
+      "source_sha256": "40ea723c6458de36be01368fa6d649eaab895de84401eacc4c6b98b8df13ad43",
+      "initial_state_hash": "183adf028cd82f02c062b075db57138f55070d41e2990f82e78e34059b9b8d28",
+      "agents": 26
+    }
+  ],
+  "repeats": [
+    1,
+    2,
+    3
+  ],
+  "jobs": [
+    {
+      "world": "clockwork_rain_conservatory",
+      "model": "gemini-2.5-flash",
+      "repeat": 1,
+      "condition": "catalog_only"
+    },
+    {
+      "world": "tidal_embassy_lost_languages",
+      "model": "gemini-2.5-flash",
+      "repeat": 3,
+      "condition": "full"
+    },
+    {
+      "world": "tidal_embassy_lost_languages",
+      "model": "gemini-2.5-flash",
+      "repeat": 2,
+      "condition": "catalog_only"
+    },
+    {
+      "world": "tidal_embassy_lost_languages",
+      "model": "gemini-2.5-flash",
+      "repeat": 1,
+      "condition": "no_event_history"
+    },
+    {
+      "world": "tidal_embassy_lost_languages",
+      "model": "gemini-2.5-flash",
+      "repeat": 3,
+      "condition": "catalog_only"
+    },
+    {
+      "world": "clockwork_rain_conservatory",
+      "model": "gemini-2.5-flash",
+      "repeat": 1,
+      "condition": "no_event_history"
+    },
+    {
+      "world": "clockwork_rain_conservatory",
+      "model": "gemini-2.5-flash",
+      "repeat": 2,
+      "condition": "no_event_history"
+    },
+    {
+      "world": "clockwork_rain_conservatory",
+      "model": "gemini-2.5-flash",
+      "repeat": 3,
+      "condition": "catalog_only"
+    },
+    {
+      "world": "clockwork_rain_conservatory",
+      "model": "gemini-2.5-flash",
+      "repeat": 1,
+      "condition": "full"
+    },
+    {
+      "world": "tidal_embassy_lost_languages",
+      "model": "gemini-2.5-flash",
+      "repeat": 2,
+      "condition": "no_event_history"
+    },
+    {
+      "world": "tidal_embassy_lost_languages",
+      "model": "gemini-2.5-flash",
+      "repeat": 3,
+      "condition": "no_event_history"
+    },
+    {
+      "world": "clockwork_rain_conservatory",
+      "model": "gemini-2.5-flash",
+      "repeat": 3,
+      "condition": "full"
+    },
+    {
+      "world": "clockwork_rain_conservatory",
+      "model": "gemini-2.5-flash",
+      "repeat": 2,
+      "condition": "full"
+    },
+    {
+      "world": "tidal_embassy_lost_languages",
+      "model": "gemini-2.5-flash",
+      "repeat": 2,
+      "condition": "full"
+    },
+    {
+      "world": "clockwork_rain_conservatory",
+      "model": "gemini-2.5-flash",
+      "repeat": 2,
+      "condition": "catalog_only"
+    },
+    {
+      "world": "tidal_embassy_lost_languages",
+      "model": "gemini-2.5-flash",
+      "repeat": 1,
+      "condition": "full"
+    },
+    {
+      "world": "clockwork_rain_conservatory",
+      "model": "gemini-2.5-flash",
+      "repeat": 3,
+      "condition": "no_event_history"
+    },
+    {
+      "world": "tidal_embassy_lost_languages",
+      "model": "gemini-2.5-flash",
+      "repeat": 1,
+      "condition": "catalog_only"
+    }
+  ],
+  "rounds": 24,
+  "actions_per_round": 3,
+  "checkpoints": [
+    1,
+    5,
+    9,
+    13,
+    17,
+    21
+  ],
+  "planned_trajectories": 18,
+  "planned_calls": 108,
+  "planned_action_slots": 1296,
+  "generation": {
+    "backend": "ai_studio",
+    "api_key_env": "AGORA_AISTUDIO_API_KEY",
+    "endpoint_base": "https://generativelanguage.googleapis.com/v1beta",
+    "model": "gemini-2.5-flash",
+    "temperature": 0.45,
+    "max_output_tokens": 6144,
+    "thinking_level": "low",
+    "thinking_budget": 0,
+    "timeout_seconds": 90,
+    "retry": {
+      "max_attempts": 2,
+      "initial_sleep_seconds": 2,
+      "max_sleep_seconds": 5,
+      "backoff_multiplier": 2,
+      "status_codes": [
+        408,
+        429,
+        500,
+        502,
+        503,
+        504
+      ]
+    }
+  },
+  "estimands": [
+    "successful_actions / 72 planned action slots",
+    "inventory-or-location-changing successes / 72 planned action slots"
+  ],
+  "secondary": [
+    "success / attempted action",
+    "material changes / success",
+    "approved proposals",
+    "failed state changes",
+    "API errors",
+    "token use"
+  ],
+  "analysis": "Paired differences within each world-model-repeat block; report every world/model and repeat, with descriptive aggregation, no significance or population-generalization claim.",
+  "pilot": "Two blocks on one world per model/condition, stored separately and excluded; protocol finalized after implementation validation.",
+  "scope": "Centralized four-round block planner; neither decentralized episodic-memory causality nor human gameplay. Catalog-only removes expressivity, so inventory effects can be mechanically constrained.",
+  "pairing": "Identical initial states, model settings, rounds, task introductions and shock rules. No API sampling seed; repeat indices are stochastic replicates, not independent worlds. Adaptive shock recipients depend on the diverged state.",
+  "input_hashes": {
+    "inputs/clockwork_rain_conservatory.json": "8a1c1a29f6e7931cae97a009e2e2034bd929709a4ed55ce38491962cadac32fb",
+    "inputs/clockwork_rain_conservatory_initial_state.json": "86891855852bb1607a702eea5fa58521706cdd5e9046769538cd2f062e31f0e4",
+    "inputs/clockwork_rain_conservatory_rules.json": "4214792596522a67af79de9116a5c1a24c3db6588e0f427013b7deccf27383c8",
+    "inputs/tidal_embassy_lost_languages.json": "ef881461244d87940bbb3597eee480892abd7d027d0dad20aa2cb89cb121e342",
+    "inputs/tidal_embassy_lost_languages_initial_state.json": "8c94219e763d4ae9a2f32a75861c2a4da9b9dd668df0059f53dfcbab24b947b9",
+    "inputs/tidal_embassy_lost_languages_rules.json": "35096906ecb2fa6ace19cb0f6d260f377bef85cd1bdcb00fad6029cc16c2602e"
+  },
+  "implementation_hashes": {
+    "run_ablation.py": "b042d4d9241b0e2f2d3e5d5cf26340afc0116417a1caf6d2f02b5ba285d42a7f",
+    "runtime_snapshot/agora_ui/__init__.py": "a7b3a9ecd229a1766b68de53eb69865f4d6ab21f44080d6bbb442dffc825c4ef",
+    "runtime_snapshot/agora_ui/adjudicator_schemas.py": "e1329bb16c5054062480ab60851e1d5e293e1e71c6b914080ddd8b08e0584efd",
+    "runtime_snapshot/agora_ui/agent_factory.py": "ae85638e758991211ab0316605ce3aaea4ffdd0e08dee69fa05fbad354a452dd",
+    "runtime_snapshot/agora_ui/backfill_image_jobs.py": "ebeb1316edc112ee98ca6a0b5e1190db5ff1be35dc910e6e173e024f7a6c661b",
+    "runtime_snapshot/agora_ui/boundary_schemas.py": "41ee99b37fb1ea67659f9babc0e8f60eb1d598b4644adc3aff2295b96144fa65",
+    "runtime_snapshot/agora_ui/build_interaction_report.py": "21dd8763b508650813c0f6620a6b72861e2e98821c19c6be0c063878259f0664",
+    "runtime_snapshot/agora_ui/data/registries/agent_visual_kits.json": "11b63d8da1f9c796c7724731546b2759886587329d150c1294356ac1ea5ea587",
+    "runtime_snapshot/agora_ui/data/registries/asset_prompt_kits.json": "5734a28708aaaab90a5de39824a6e70f1a186717738520a6e6860a19cf217393",
+    "runtime_snapshot/agora_ui/data/registries/component_kits.json": "7c2f37f444014561bcfd28948f5bc1e54b2e6efbdb34e446ece1223c088b8acd",
+    "runtime_snapshot/agora_ui/data/registries/economy_policies.json": "97a20888b52b15d30878b7c0e098b3caba8c83129775899f58b481f652014dfe",
+    "runtime_snapshot/agora_ui/data/registries/frontend_affordances.json": "0a8b3def52b4a5f0ae9127048cdc51c4f10aeb5df03e9acf66d3ff91a2e50fe4",
+    "runtime_snapshot/agora_ui/data/registries/inventory_layer_policies.json": "6e3e25f92ce6e3ddb8ca0b4597f4076c951b89894d1ef2179b89f062adb3a063",
+    "runtime_snapshot/agora_ui/data/registries/item_collections.json": "f1a49c41c139a15762ee9ce8d777b3ce9c541fd852067b106292e457c952ea9d",
+    "runtime_snapshot/agora_ui/data/registries/knowledge_policies.json": "a6b61d75869e967c35ab729455c946e4402fe31f4d4115525c7c96dae248330f",
+    "runtime_snapshot/agora_ui/data/registries/property_policies.json": "256073972866a9a444dd9f94853a13e3b45eab170ff8f5ff221447850b32c415",
+    "runtime_snapshot/agora_ui/data/registries/role_item_policies.json": "a088d163a90f8ccc7f96a9bdba3e9b87126c93497acefc6d42796ca42f262226",
+    "runtime_snapshot/agora_ui/data/registries/taxonomy.json": "ecc2a8d172e79e59106076f06fb0ba910a8f5de662e0d7429013c5101cb6eb0c",
+    "runtime_snapshot/agora_ui/data/registries/world_presets.json": "41d9a6592a4288823adb302c2a534fdfc010a6bec48d408c12c44d9b2f893bd4",
+    "runtime_snapshot/agora_ui/extra_world_functions.py": "70b138cd16e84bf5e168fc2801960389486f3066ab365ab570297fafde5fe872",
+    "runtime_snapshot/agora_ui/flex_api.py": "e9190bf96bfc6d94dbf81240f1d8acbfaa94104ce2002b5cfa340ba43dbea265",
+    "runtime_snapshot/agora_ui/flex_client.py": "0449099d2269dafc708be94b8b88a97fb55cab7d569f9536204b7154fce1a851",
+    "runtime_snapshot/agora_ui/flex_providers.py": "395c46e9c6da18fc71cd3c8f7f6af70aadf98daea5e9c4d9cdbeaf35b6177d51",
+    "runtime_snapshot/agora_ui/flux_asset_service.py": "56a8ecda44353ffe3070c8a0667401a1813acc280dd3d449bc5762232851d4b3",
+    "runtime_snapshot/agora_ui/foundation_schemas.py": "b666f33b33caa04f8b7a5ce25e0ef54a63b2bfb0e00f3cb3c9b99273cc472ce8",
+    "runtime_snapshot/agora_ui/gemini_flex_server.py": "6df8b18ee2f225a3c65275b7ca2c4c9e772c3c12877ffe6c9fa3917207bc24c1",
+    "runtime_snapshot/agora_ui/generic_flex_server.py": "1cc2729f206ac43b1d7f99f29b6e1229d364ddeaf98da8d8f608f478127c17fe",
+    "runtime_snapshot/agora_ui/gpt_flex_server.py": "4e7bbc488b3343d8dbbb08612be7fd17a36c7c7a26615a1af7689f2e23846951",
+    "runtime_snapshot/agora_ui/jsonc_utils.py": "7809fbdb6d81c57f8ef8e4cf723393cd52ac139c83b0afa8fd478a803d9d5e28",
+    "runtime_snapshot/agora_ui/live_world/__init__.py": "ab14482c2e61f51f041a56c90f1c9c87d700f12be9e92759a0da1896c220390f",
+    "runtime_snapshot/agora_ui/live_world/agents.py": "2fc1049090a53df04d974e3a7bc10493565e5ca29f5c1f92240f52866dfe928c",
+    "runtime_snapshot/agora_ui/live_world/core.py": "0b3996edd6f643f7e44ce3a2e524ef157025087f54e1cb83acc3897fe5995e9a",
+    "runtime_snapshot/agora_ui/live_world/geometry.py": "e2cb2d02965f1925be1baaf3c175b525c264839af9dd4861a33b04603a532fc6",
+    "runtime_snapshot/agora_ui/live_world/mixin_agent.py": "21ebb33df3bf80c5e2a4bd162a5bdaf16f8511e696908070eef2c87fb8712e20",
+    "runtime_snapshot/agora_ui/live_world/mixin_core.py": "519e6967a78b0aab1034d92e92c7b882a91637af5d4c5a458689c8c8880a3088",
+    "runtime_snapshot/agora_ui/live_world/mixin_core_ai.py": "8ad2eb994090c4b55448e549d4ff824aac906926980480561351a10017bcc119",
+    "runtime_snapshot/agora_ui/live_world/mixin_core_base.py": "08d789c3960c8eece97845fe56b9c6f3005c22e88c39405c685fea1a02a80346",
+    "runtime_snapshot/agora_ui/live_world/mixin_core_database.py": "23cb54d9cc39ba237ed89fd03f88e6245d5e864cfa977a0e56a2ba2a7ec4cf50",
+    "runtime_snapshot/agora_ui/live_world/mixin_core_session.py": "074d2639a18dbff873607904d8df7d3ce012f995564a671a8d09ad9d0f41af16",
+    "runtime_snapshot/agora_ui/live_world/mixin_core_snapshot.py": "995c006e47b24a22f57976658123d05c1e869066261c2c03f84b1018ef22f349",
+    "runtime_snapshot/agora_ui/live_world/mixin_economy.py": "71f529d1b9d0f48162ae3d52e916cdb85ea16bbda23dd0d4bfce17030aa8cb23",
+    "runtime_snapshot/agora_ui/live_world/mixin_event.py": "fa516ef0ba8700aa76d151f18562d1e771916f2e5e7b44ecd6e5ac6607231199",
+    "runtime_snapshot/agora_ui/live_world/mixin_movement.py": "06f92dda914906d63d693c7f4287f7041508bbc79a9feb3c27496cb472be35cc",
+    "runtime_snapshot/agora_ui/live_world/mixin_realtime.py": "8c01d6e7d05b8f1526236994fbe94c5c15e950c3918ea2434310c7b9d2598157",
+    "runtime_snapshot/agora_ui/live_world/schemas.py": "db5ce285ad71d296d593a4ca5a16f716e16e9be1c72ed0b8d05393b24aeba8da",
+    "runtime_snapshot/agora_ui/live_world/store.py": "59e21c32e637b1b290c0028dc9f3428102d5b28fb386dc7e069d42fa55984722",
+    "runtime_snapshot/agora_ui/live_world/utils.py": "526bb810a4c938d7982281560eda26e2fc2ee0e741a4d797666965f1e87eb3dd",
+    "runtime_snapshot/agora_ui/openai_responses_client.py": "c19ee2fdae0b6a84235ae8bf2cb8e9384bf36faecfa3d1dc384da622f0ba5753",
+    "runtime_snapshot/agora_ui/package_db.py": "ad5e88eb3c843008b9aa7f9b2d0c1e2b5b56794e785f87583dfa88d6e20eca7b",
+    "runtime_snapshot/agora_ui/package_schemas.py": "441f274e6e751619be269532da94e9be3586dbdef30bfd7b3c3b5852896e9785",
+    "runtime_snapshot/agora_ui/run_agent_profile_workflow.py": "a2f3d24abe1680fc408ddbd8d0762747e5992b8e1ddfb361752fd5cdd209d20d",
+    "runtime_snapshot/agora_ui/run_interaction_simulation/__init__.py": "79aa211a4ec543ff4bfe00dfa83e4c3df51eb13ddb4d6e95eb861ca99f283537",
+    "runtime_snapshot/agora_ui/run_interaction_simulation/__main__.py": "5655e27119349c5c9bc7a7986cc6cd06b47cae7501c65e7f80962c136d35dcd3",
+    "runtime_snapshot/agora_ui/run_interaction_simulation/agents_state.py": "67b86c79200e6064e4d62d908cb8b9ef67bd3f1169fe55a392539f3f4781a5eb",
+    "runtime_snapshot/agora_ui/run_interaction_simulation/config.py": "d23bd5aa62005883ef257c13ffeefe69be0c6e3f90e15afa37235aa74fd5c7a4",
+    "runtime_snapshot/agora_ui/run_interaction_simulation/core.py": "95ee542459685f29d092c605cb6f7529207e2449840596520d16a11685bd624b",
+    "runtime_snapshot/agora_ui/run_interaction_simulation/grid.py": "b5e33d098984b6c6fc3c71492602b911e5dc40ec95ada9a1b57e2b78e84fb435",
+    "runtime_snapshot/agora_ui/run_interaction_simulation/intent_builders.py": "1969cc3af1c8ab52e2f07a76cdd32a35bd7668538f2f5de78c08c261a42f118a",
+    "runtime_snapshot/agora_ui/run_interaction_simulation/intent_schemas.py": "e008e14928e6aeaad5d445d81b41375909b3daa9e9551faa02b1de8e15d41d91",
+    "runtime_snapshot/agora_ui/run_interaction_simulation/intents.py": "8e4a4ba9780f42cdd9c05a34791555854608134ed492133478b39f7d43859108",
+    "runtime_snapshot/agora_ui/run_interaction_simulation/memory.py": "7984efc44f2c63a4658db5bc7d7ebc12ee592476e22eb56ae3218c541d3e4e9f",
+    "runtime_snapshot/agora_ui/run_interaction_simulation/memory_compression.py": "d268cd2a17ba9b11a1748e6b1a242af3a1f46f142899d629db4691f79f5a5315",
+    "runtime_snapshot/agora_ui/run_interaction_simulation/prompts.py": "82c5b673b9c090ed476990aa5ddebd5ee2f9cc1bf296f028c95d30c94c7b1c59",
+    "runtime_snapshot/agora_ui/run_interaction_simulation/utils.py": "7a2dc14f22b88252a02cb63aaa6e9c8fad4b26d6c5cd0223845fea9d5d8749bd",
+    "runtime_snapshot/agora_ui/run_scenario_launcher.py": "dd68bc4a3af6a37eb5ccf07e84b23888fe18a9ef3fbdb24e4ba01e36d75176ca",
+    "runtime_snapshot/agora_ui/run_world_rule_debug.py": "3000248236357facd99b81e1e9b3f02ed4c6c8d475612b4ae2968d668b23f623",
+    "runtime_snapshot/agora_ui/runtime/__init__.py": "46c5dc86d9b34f6366444c1285cac6f587bd6430760a00dd7032b7e16512e76c",
+    "runtime_snapshot/agora_ui/runtime/defaults.py": "5e69e3890c5339e6157eefcacbf86ab4d8fbe7ef6a4c6931fd5e2567bce8a150",
+    "runtime_snapshot/agora_ui/runtime/engine.py": "91f1c22c1b4a3011948f82e1d1f1cf5c15c5419ccb10687188577ac13d35148e",
+    "runtime_snapshot/agora_ui/runtime/operations.py": "e4971ab24a716fe304dbc865ef55480a3b9a0cd4996a62958b93876ee50309df",
+    "runtime_snapshot/agora_ui/scenario_schemas.py": "7074355a9a5ce7c36c770649877035e987f2dd0153c3d34a11d321015aa8544a",
+    "runtime_snapshot/agora_ui/universal_adjudicator/__init__.py": "d5454588bce8d0b36f76d35d2e29a8dad2a60e1a8bb366cfc5d962a3e9d0d85c",
+    "runtime_snapshot/agora_ui/universal_adjudicator/core.py": "393eedd8f5d41a4def170d0ea5376a42a8da4c793f3accd3f9965dab18a30b74",
+    "runtime_snapshot/agora_ui/universal_adjudicator/geometry.py": "d71a78d4bcb6e58664e120e629959ec5bf6f943a08f5c26149d97057d8ae60f7",
+    "runtime_snapshot/agora_ui/universal_adjudicator/handlers_custom.py": "7e834f1888555b41fc75f561668b69f69eba78fbf573ce1216cdeb7c4b43124d",
+    "runtime_snapshot/agora_ui/universal_adjudicator/handlers_images.py": "a15d83423cc243a2b6bcda2354c55915d84711d77f744c66ccbd921f60dc1568",
+    "runtime_snapshot/agora_ui/universal_adjudicator/handlers_items.py": "aedd1a548d16fd2a65b432e625b4f90b31dea0fbdd49e7e2468f6971f90adb58",
+    "runtime_snapshot/agora_ui/universal_adjudicator/handlers_movement.py": "094757385c1d9a38b13546da74d02e48d11ed0bd6f78d3c2522045c0da103f77",
+    "runtime_snapshot/agora_ui/universal_adjudicator/utils.py": "bb8c17d755dc093cfe69b42bff3bfff6d30363a414c4a84bc725b6896e5c3665",
+    "runtime_snapshot/agora_ui/vertex_flex_server.py": "08bddd8665506c6e4e6683198fb5d0846e0ed52687fe02ff1d4cf4dbb689cb71",
+    "runtime_snapshot/agora_ui/vertex_image_client.py": "398b791c31ec6864220399ed0433383b4f315416b76af70bed8bb9f2c30d4a39",
+    "runtime_snapshot/agora_ui/vertex_json_client.py": "c1345e0166c9472095522a35363367c170e7c367504e621a4e284553a9f178e5",
+    "runtime_snapshot/agora_ui/world_builder/__init__.py": "250500e9a9fa0f9ba825210c99f8ad7501b97a9181e3ea83c9d9862a7a880a42",
+    "runtime_snapshot/agora_ui/world_builder/__main__.py": "72afff49d0a3fe84cb367910f3296513dc4d637131d5599dc9afe0bfcbaf17e6",
+    "runtime_snapshot/agora_ui/world_builder/art.py": "63fbcca5797f9b625a8d9d89cf3716a548345f33515f3b58ecebd740d24fc9e1",
+    "runtime_snapshot/agora_ui/world_builder/builder.py": "ddb6fd212b69997bebf0d5c15837eb24b65c95978c7144f0e3c467b155753167",
+    "runtime_snapshot/agora_ui/world_builder/core.py": "6a54ec63fdc0734b09e8d0d2f66e01ddd75910d018d5c5e05da21adfaff26ea4",
+    "runtime_snapshot/agora_ui/world_builder/critique_loop.py": "34158331f8e97e5bb67163bc500772a33a005b3b60fb7b33ecf436a20226c038",
+    "runtime_snapshot/agora_ui/world_builder/generation.py": "d7f946a6da4f88a5745b90a6890bc237cde75c453289b029ab1f8d14d207c353",
+    "runtime_snapshot/agora_ui/world_builder/generation_prompts.py": "da58a6b4321768ed3c59ca73f9cb665c7c776a52cf7dbc6d46997da634bcc8ef",
+    "runtime_snapshot/agora_ui/world_builder/generation_schemas.py": "0fc3e5bc254c8f1de21ac9d9fa73e4d8560ffda0e8987b7b9530d7c8e24d2805",
+    "runtime_snapshot/agora_ui/world_builder/io_utils.py": "768b7644b6c7d8efa1255260ebc034db61c736dbb02935fcfcb8e488ed340b98",
+    "runtime_snapshot/agora_ui/world_builder/manifest.py": "a3964d15d40c8926e1e740c45dd7a94b713b5b2c90bededff5720021a23a4a65",
+    "runtime_snapshot/agora_ui/world_builder/nodes/__init__.py": "156ff748297cf28ed73554b7c256009a3bdc660ad6e86a17bea8a12872063378",
+    "runtime_snapshot/agora_ui/world_builder/nodes/hooks.py": "7a36c2523a961c44fcba05b18c60b51489d43199032fbdf003b27ae254c597a7",
+    "runtime_snapshot/agora_ui/world_builder/nodes/items.py": "1835ab77f4563507033ac2ec60a831c1d2edc12d50c32c6679938127de4ac51d",
+    "runtime_snapshot/agora_ui/world_builder/nodes/layout.py": "e366394485e450d6794e32a1fb1c3d0fc27f08dd1ac9aa6d957e37d0162c0985",
+    "runtime_snapshot/agora_ui/world_builder/nodes/materials.py": "92746336ebb64063786bc513069ed19e20354122dfeafe46390b71859a2f3d2b",
+    "runtime_snapshot/agora_ui/world_builder/nodes/planner.py": "42f2d238a02ff629b10e8b379d6cb1dee9afdb153d3a3aa3f885c98e9153a9e0",
+    "runtime_snapshot/agora_ui/world_builder/nodes/roles.py": "ccc6cfbfbe5c81c9e165810c8418e924ade05eccaa4bca751dec34042eb59f5e",
+    "runtime_snapshot/agora_ui/world_builder/nodes/rooms.py": "72801fba1e6deb47ddf4df86e84a8d4e4c0e34feecc905906d8db47f50330ce0",
+    "runtime_snapshot/agora_ui/world_builder/nodes/visual_canon.py": "9f4db7e6a6fcffdb9214315ebb9b9f5a3895c4ecda2c6a051cebe87837c2bc43",
+    "runtime_snapshot/agora_ui/world_builder/nodes/wardrobe.py": "46861bd617edd25cda2bc9813437278ec1da37c90658b3a1f3b6f6d076dc3bfc",
+    "runtime_snapshot/agora_ui/world_builder/validation.py": "d96921c5ed64624a072552adf8021e8b0b940b6b83bb408e44e0f136b793fe97",
+    "runtime_snapshot/agora_ui/world_coordinator.py": "e80e2a6d86d9eb669ca6e4ed4ec8b65ef1b338e5bae7ab16ba7d7e3f0a7d7485",
+    "runtime_snapshot/agora_ui/world_definition.py": "0190fb15fd7d417fd649b490cce29c82c3ccf74d50b5d7e16abb530412e0f5e1",
+    "runtime_snapshot/agora_ui/world_pipeline.py": "59f2fc73748ea3f05448854c9c6ee41de033b7e9991f35310d804310d1d8cb0b",
+    "runtime_snapshot/agora_ui/world_rule_debug/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime_snapshot/agora_ui/world_rule_debug/compiler.py": "ed04af06c3a1dd9068385b345e00b3e58d548af3791feaad0fdc68e372b9921b",
+    "runtime_snapshot/agora_ui/world_rule_debug/core.py": "be6fe06734f16a9b03843bcd33bdd7a9db65e6b8dd6478dfad2ee3c7066bb3bd",
+    "runtime_snapshot/agora_ui/world_rule_debug/decision.py": "83d505568600eef7cb484f9f64f480fef5ea6a64daa869bef1cdab1c0b1fb883",
+    "runtime_snapshot/agora_ui/world_rule_debug/pathing.py": "cb5a3aaf7e5c10a6edaab0fa0a7dd324d2ecfd55d4c7365d72810df132fab23f",
+    "runtime_snapshot/agora_ui/world_rule_debug/simulation.py": "f97c096d1ba404ffd1acf73c7dc29958e650e0fe198178cdf3ce7d84999535c2",
+    "runtime_snapshot/asset_pipeline/__init__.py": "2b69ba8fd328441fe173629b47c47536ce7e3fd7c08040e4dd9e6dae740c0aef",
+    "runtime_snapshot/asset_pipeline/agent_assets/__init__.py": "0a23832734e5c6e308ac6750db30f99ad1e3f67f197e6595c5185ed1ab45ba2e",
+    "runtime_snapshot/asset_pipeline/agent_assets/clients.py": "66c7f7c34572ac873297a5c9a68612cc474f0c48cdda330f62c4773d8a0e5444",
+    "runtime_snapshot/asset_pipeline/agent_assets/compositor.py": "2aaee7df24079e1cc6a067541f522b4634c4576e9502632d94a89a287512660b",
+    "runtime_snapshot/asset_pipeline/agent_assets/core.py": "9c537dc8e08cc3c88bb87ee4516bf315a149c44106b3cff75e1e48d83f8d78c5",
+    "runtime_snapshot/asset_pipeline/agent_assets/core_fix.py": "bdd70615ddc4fb2fb8220612de2c54ab956218c37949cdfab804419ca27ae48d",
+    "runtime_snapshot/asset_pipeline/agent_assets/image_processing.py": "968cd5bfcb5ae4c1304eb67633138e8da8c14522658e07b45a290bfc6dee7431",
+    "runtime_snapshot/asset_pipeline/agent_assets/prompts.py": "14710aa5ff36000a6cb51e246ea8aab09107a27dcb663ac246b69f0a05926099",
+    "runtime_snapshot/asset_pipeline/agent_assets/schemas.py": "6231c9482412964ca59cb805894b2d54865a69710e0c7cb4cac2a7c8cf528ede",
+    "runtime_snapshot/asset_pipeline/build_live_ready_feed.py": "2d1fa13604e4653bd2ebdb8794eaf17f25dab1620ac84d2840d301365955290c",
+    "runtime_snapshot/asset_pipeline/generate_agent_assets.py": "085773e7eb8096fe0990ce881312440a635fec1bd7e4fe0a0e37c3127af85467",
+    "runtime_snapshot/asset_pipeline/generate_guild_asset_set.py": "e87e43bc17fc50b7f69aec68dcb2f28e93bdb9d062ed36a9cffc13f3707d9390",
+    "runtime_snapshot/asset_pipeline/generate_world_asset_set.py": "a6e3707a0920d71739e5f41a41e079b1b986a2f58aad1805aa718f4a39d038c5",
+    "runtime_snapshot/asset_pipeline/generate_world_asset_set_full.py": "099dc76382b58ac572e885db4347c62abe413f0f3547c78c404f6a30c2d4679b",
+    "runtime_snapshot/asset_pipeline/map_rendering/__init__.py": "095278a05ecc1a55db053029b71b7dcbfb5bf26372ea2250a75e3bf30a289105",
+    "runtime_snapshot/asset_pipeline/map_rendering/compositor.py": "4e4cec41a4170ab9a2d2a661703f94fc23a0047b0964ba3981bf3ea7a82a9c4a",
+    "runtime_snapshot/asset_pipeline/map_rendering/constants.py": "bb61441d108c3cf78058fbe514fa6e87038986c389240c66ba8f07a3277e5337",
+    "runtime_snapshot/asset_pipeline/map_rendering/core.py": "e34360f99a9e504072e8b205686fbf59b4ba698484df23448b8f4dfb698e7f2a",
+    "runtime_snapshot/asset_pipeline/map_rendering/flux_floor_generator.py": "d844b037dbf0eba5f4aaa92553702f4e402f27a893fa969f2f1cefb428d3c186",
+    "runtime_snapshot/asset_pipeline/map_rendering/tiles_floor.py": "804e999581de976e4bc2e583547534907b96d16865581bb532209e1ab3bf4eee",
+    "runtime_snapshot/asset_pipeline/map_rendering/tiles_wall.py": "6407b8463bcee20d3933810bfba24747e7d8f40def9c52393f164d69fcb13f08",
+    "runtime_snapshot/asset_pipeline/process_sprite.py": "82e07cbd88a9a5f1a999c7f1cf9d59865741472f25ee8dc8e851870573fc70e5",
+    "runtime_snapshot/asset_pipeline/repair_world_asset_revision.py": "56273d2013c3457bb6dc95abf3c583eb6f3807ddb178b238b982f74deecec71f",
+    "runtime_snapshot/asset_pipeline/retry_failed_world_assets.py": "a4a4c0f3ed35b14884f16aed1bc6dde68e6070d7a1e4c5a952cc73e1302b3b89",
+    "runtime_snapshot/asset_pipeline/sprite_qa.py": "ca9984b8420454f07c0c11591633251ea7ce9714960e7efc28d24f8e5e3ff017",
+    "runtime_snapshot/asset_pipeline/sprite_qa_programmatic.py": "311329c07a9c2c34d82b9d8f504ce077462a0fe3658086d5f45e78180c179ab0",
+    "runtime_snapshot/asset_pipeline/sprite_qa_utils.py": "be32cf59a194be02ec32e37b7123d0e14a13420b9b85e8a49b416246e986a78a",
+    "runtime_snapshot/asset_pipeline/sprite_qa_vision.py": "a27b9c4ea31b7036ebbff48f35ea5ddb2f58b23c2496620d9ce405a72e085d39",
+    "runtime_snapshot/scripts/agora_generated_world_runtime_benchmark.py": "e3dbcfda3dfc8c70043f2c0c275695ca9baf53d2662577251f64c1f863a717d6"
+  }
+}

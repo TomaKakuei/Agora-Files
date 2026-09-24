@@ -1,4 +1,4 @@
-\section{Cross-Model Construction and Scripted Execution}
+\section{Persistent State and Execution Evidence}
 \label{sec:extended}
 
 \subsection{A Separate One-Sentence Corpus}
@@ -13,7 +13,7 @@ and available models changed, so their scores are not pooled.
 Seventeen of 24 trials yield complete artifacts, with nine first-pass
 completions. Five models complete all three prompts; Gemini 3.5 Flash Lite
 and GPT-5.6 Terra each complete only the first, and GPT-5.6 Luna completes none.
-Table~\ref{tab:extended-audit} retains every failure. These are recorded API
+Supplementary Table~\ref{supp-tab:extended-audit} retains every failure. These are recorded API
 identifiers, not guarantees of immutable provider snapshots. One generation
 per model--prompt cell supports a coverage diagnosis, not a stable model ranking.
 Although the archive calls the suite hidden/confirmatory, it lacks a
@@ -69,4 +69,19 @@ $(\Delta\mathrm{trust},\Delta\mathrm{affection},\Delta\mathrm{fear})=(4,2,0)$.
 The custom-action handler supplies exactly this default for non-aggressive
 actions. Thus rising relationship values in this harness largely reflect
 execution rules rather than independently demonstrated social development.
-Appendix~\ref{app:extended} provides the full audit and replication boundaries.
+Supplementary Section~\ref{supp-app:extended} provides the full audit and replication boundaries.
+
+\subsection{From a Proposal to a Later Observation}
+A retained Clockwork trajectory makes the state-transition mechanism concrete.
+At round 11, Thistle Thorne proposes giving one Corrosive Inkwell to Elara
+Moss. The structured effect names the existing item, source, recipient, and
+quantity. The coordinator checks ownership, co-location, and effect bounds,
+then records a transfer. In the next planning observation at round 13, the
+item appears in Elara's inventory and is absent from Thistle's. A separate
+scripted attempt to transfer an unowned item is rejected with identical
+before/after state hashes. This traces the connection from a generated
+possession through a proposed action to a persistent consequence and a later
+observation; the transfer alone does not establish completion of its stated
+goal. Supplementary Section~\ref{supp-app:ablation} identifies the source records
+and reports all 18 planner-diagnostic trajectories, including the full
+input-history and action-space ablation tables.

@@ -1,0 +1,159 @@
+\section{Planner Input and Action-Space Diagnostics}
+\label{app:ablation}
+
+\paragraph{Question and experimental unit.}
+This compact ablation study documents behavior under changes to recent event
+context and open-proposal access in the centralized execution harness described
+in main-paper Section~\ref{main-sec:extended}. Its counters characterize the
+implemented planner and handlers; the main paper's mechanism claim concerns
+how generated state constrains actions and retains their effects. Aggregate
+execution counts are not a measure of the mechanism's novelty or overall value. It uses the existing Clockwork Rain
+Conservatory and Tidal Embassy worlds. Each world has one frozen initial agent
+state and one fixed set of rules, reused across three configurations and three
+stochastic repeats. Gemini 2.5 Flash is the only planning model. The resulting
+18 trajectories are distinct from the earlier cross-model audit and its
+model-specific generated worlds.
+
+\paragraph{Conditions.}
+Full supplies the current state, generated action catalog, current tasks,
+current scripted intervention, and the 24 most recent logged events.
+No event history sets only that last event list to empty. Current locations,
+inventories, status summaries, tasks, and the current intervention remain
+available. This is an input-history ablation, not removal of all historical
+information or a test of decentralized episodic memory. Catalog only keeps
+state, tasks, and history but removes the proposal option from the prompt and
+JSON schema; the execution boundary also rejects proposals. Catalog actions
+and adjacent-room movement remain available. As implemented in this harness,
+catalog actions update statuses and relationships; they do not transfer or
+create inventory. Its inventory limitation is therefore partly structural.
+
+The earlier prospective Tidal configuration is not used as the manipulation:
+its zero-valued memory limits are clamped to at least one by the legacy helper,
+and it also changes task/cohort limits. Directly masking the planner's event
+list avoids treating those settings as a clean memory ablation. Tests verify
+that all other supplied fields remain identical when constructing full and
+history-masked prompts from the same state.
+
+\paragraph{Common computation and scheduling.}
+Every trajectory has 24 rounds and six planning calls, at rounds 1, 5, 9, 13,
+17, and 21. Each call requests 12 actions, three for each of four rounds.
+An AI character may act at most once in each round; the scripted human is a
+target. Calls use temperature 0.45, disabled thinking, a 6,144-token output
+cap, and a 90-second timeout. At most two API attempts, including retries for invalid JSON, are allowed.
+There is no alternate-model fallback. All conditions have the same call and
+output limits; removing input history reduces input tokens, so total token
+use is not equalized. Repeats are new stochastic API calls, not claims of a
+provider-controlled random seed.
+
+The schedule includes the existing human request, rejected unowned transfer,
+resource shock, cross-room request, and human follow-up. Intervention rounds
+and rules are shared; their recipient can depend on the state reached within
+each trajectory. Current request records remain visible in every condition.
+No actual participant is interacting during this evaluation. A fixed local
+randomization orders the 18 run jobs, with up to four trajectories processed
+concurrently. There is no adaptive stopping based on condition performance.
+
+\paragraph{Protocol and retained outputs.}
+The implementation was checked using three separate two-block pilot runs on
+Clockwork. These six pilot calls are excluded. The study protocol, all input
+states, and the runtime source snapshot were then hashed before the 108 formal
+planning calls. This is a local pre-execution specification, not an external
+preregistration. Model identifiers describe the requested API configuration;
+an immutable provider snapshot is not claimed.
+
+Every block preserves the supplied prompt payload and hash, JSON schema,
+returned plan, call telemetry, executed events, and resulting state. Failures
+are retained. The source snapshot contains the actual coordinator and action
+handlers used by the experiment. The replay verifier reconstructs interventions
+and re-executes every recorded action, checks the resulting state and event
+hashes, and independently recomputes the reported counts without further LLM
+calls.
+
+\paragraph{Metrics and interpretation.}
+The primary denominators are the 72 scheduled action slots per trajectory,
+including slots lost to a planning failure. We report successful executions
+and successful actions that change inventory or location. The latter requires
+an actual difference in the sorted per-agent inventory/location snapshot;
+relationship changes, status updates, and descriptions of intended effects
+alone do not count. Inventory and movement counts are shown separately.
+A location change does not by itself establish useful task progress. We also
+retain proposal counts, complete-block counts, failed-state changes, and
+provider-reported token usage. No weighted overall-quality score is formed.
+
+Comparisons are paired within world, model, and repeat index. Repeats share
+the same two worlds, and actions within a trajectory are dependent. We report
+raw counts and descriptive differences, without treating the 1,296 action
+slots as independent samples or claiming a population effect. The study does
+not establish decentralized social coordination, human enjoyment, or a
+universal benefit from longer history.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\input{llm_ablation/generated/main_table}
+\caption{Aggregate planner diagnostics on two fixed worlds. Each row has
+432 scheduled action slots across six trajectories. Success counts executed
+actions; Material counts actual inventory or location changes among successes;
+Inventory is its inventory-changing subset. Status and relationship changes
+alone do not count as material.}
+\label{tab:ablations}
+\end{table}
+
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\input{llm_ablation/generated/detail_table}
+\caption{All 18 formal trajectories. Each trajectory has 72 planned action
+slots. Material counts successful actions with actual inventory or location
+changes; Inventory and Move separate these consequences. Proposals counts
+successfully executed proposals. Repeats share a frozen world and are not
+independent world samples. Pilot runs are excluded.}
+\label{tab:ablation-detail}
+\end{table*}
+
+\paragraph{Observed execution and cost.}
+Table~\ref{tab:ablations} retains aggregate counts for every condition.
+Full, No event history, and Catalog only execute 349, 352, and 375 of their
+432 scheduled actions, respectively. Their inventory/location-changing
+successes number 196, 177, and 193; inventory-changing subsets number 14,
+24, and zero. The catalog-only material changes are all moves, consistent
+with its restricted handlers. These totals do not establish a benefit from
+supplied event history or measure successful completion of the scripted tasks.
+
+All 108 formal planning blocks returned valid 12-action plans. One truncated
+response required a second attempt, giving 109 API attempts. The 1,296 planned
+slots produced 1,076 successful actions and 220 failures; every failure leaves
+the recorded state unchanged. Of 566 inventory/location-changing successes,
+528 are moves and 38 change inventory. Full executes 30 of 57 proposals;
+No event history executes 93 of 138. These counts do not measure task utility.
+
+Provider telemetry records 1,821,701 input tokens and 201,841 output tokens
+across formal attempts, including the truncated attempt. Mean total tokens per
+trajectory are 137,731 for Full, 74,598 for No event history, and 124,928 for
+Catalog only. Cache-token counts are retained separately as a subset of input
+usage, not added again. The six technical-pilot calls are outside these totals.
+
+Relative to Full, the mean paired execution difference is $+0.7$ percentage
+points for No event history, with repeat differences from $-15.3$ to $+18.1$;
+its material-change difference is $-4.4$ points, ranging from $-23.6$ to $+11.1$.
+Catalog only has a mean execution difference of $+6.0$ points (range $-6.9$ to
+$+18.1$) and a material-change difference of $-0.7$ points (range $-8.3$ to
+$+12.5$). These are descriptive ranges over six paired repeats on two worlds,
+not confidence intervals. The variation and handler constraints limit the interpretation to these
+recorded trajectories and effect types.
+
+\paragraph{Trace provenance for the main-paper example.}
+The example in main-paper Section~\ref{main-sec:extended} comes from the
+Clockwork Full trajectory, repeat 1, event \texttt{model\_r09\_slot09}
+(actual round 11). It is the first inventory-changing success in the first
+lexicographically ordered Full trajectory with such an event, selected after
+collection to illustrate the mechanism. In \texttt{block\_09.json}, Thistle
+holds one Corrosive Inkwell and Elara holds none. The event records an approved
+transfer of that item; \texttt{block\_13.json} reverses those holdings in the
+supplied planner observation. The target-response field is unknown: this
+outbound gift illustrates transfer checks, not independently observed
+recipient acceptance. The same trajectory's scripted event
+\texttt{coordinator\_rejection\_r09} rejects a transfer of an unowned item
+without changing state. These records are included under
+\texttt{llm\_ablation/runs/}; the illustrative selection adds no model calls
+and does not replace the complete counts above.

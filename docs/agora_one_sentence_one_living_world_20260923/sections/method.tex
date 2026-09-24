@@ -57,7 +57,7 @@ characters, and 20 item types. Diplomats, smugglers, and memory divers receive
 different possessions and private knowledge. The setting exposes activities
 such as translating an archaic bribe, forging a linguistic seal, and rescuing
 a flooded treaty. These relations create reasons to move, exchange, withhold
-information, and seek cooperation. Appendix~\ref{app:tidal} follows the full
+information, and seek cooperation. Supplementary Section~\ref{supp-app:tidal} follows the full
 generation trace, including failed room images and localized visual repair.
 
 \subsection{Bounded Observation and Situated Intention}
@@ -140,8 +140,11 @@ attempts provide history for later decisions.}
 
 \section{Evaluation Design}
 \label{sec:evaluation}
-We separate generated worlds, interaction events, action results, and
-participant judgments as different units of evidence. A world can pass structural checks without producing
+We evaluate three links in the proposed mechanism: generated entities must
+satisfy shared representation contracts; inhabitants must be able to use both
+discoverable actions and contextual proposals; approved effects must persist
+while invalid effects are blocked. We separate generated worlds, interaction
+events, action results, and participant judgments as different units of evidence. A world can pass structural checks without producing
 engaging play. An event can contain several effects or attempts, so the
 number of logged events need not equal the number of adjudicated results.
 Longer trajectories describe the simulated population, while human judgments
@@ -160,23 +163,23 @@ Multiworld interaction & 5 worlds; 2 rounds each; 53 events & Action pathways, d
 Cross-model audit & 24 generations; 21 scripted 24-round runs & Completion, executed effects, rejected actions & Retrospective coverage and execution stress test \\
 Historical pilot & 3 prior runs; 1,052 events & Repeated ties and relational trajectories & Exploratory, confounded across worlds \\
 Human model comparison & 10 eligible returns; 40 image comparisons; 7 configurations & Exploration, map readability, character fit & Fixed pipeline and premise; sparse artifact preferences \\
-Internal procedure control & 20 structure comparisons; 10 requests & Same-system generation variants; full counts in appendix & Unequal budgets; no external-system comparison \\
-Memory intervention & Planned 3 seed pairs, 32 rounds & Protocol only; no paired results here & Prospective within-world mechanism test \\
+Internal procedure control & 20 structure comparisons; 10 requests & Same-system generation variants; full counts in supplement & Unequal budgets; no external-system comparison \\
+Supplementary planner diagnostics & 18 trajectories; 2 fixed worlds; 3 configurations & Input masking, available effects, and state replay & One centralized planner; implementation-specific counters \\
 \bottomrule
 \end{tabularx}
-\caption{Evaluation scope and evidence status. Completed observations are
-separated from evaluation materials and planned experiments.}
+\caption{Evaluation scope and evidence status. The studies distinguish construction, artifact preference, and
+executed consequences; evidence from different protocols is not pooled.}
 \label{tab:evidence}
 \end{table*}
 
-The studies address four questions: \textbf{RQ1}, how reliably can a premise
-produce a complete world and at what cost; \textbf{RQ2}, which generated and
-open action pathways are actually used; \textbf{RQ3}, whether humans are
-reachable through the common interaction interface; and \textbf{RQ4}, what
-repeated social structure appears in longer historical trajectories.
-A fifth question asks whether high execution success coincides with material
-state changes under a longer, scripted policy harness. A sixth asks how the visual artifacts from seven model configurations
-are judged under a shared pipeline and premise. Supplementary structure
-controls vary the generation procedure within the same system and do not
-answer that cross-model question.
-Table~\ref{tab:evidence} states the scope of each answer.
+The evaluation addresses three mechanism questions: \textbf{RQ1}, how do
+shared contracts and local repair connect generated components into an
+executable world; \textbf{RQ2}, how are generated action opportunities and
+contextual proposals exercised in that world; and \textbf{RQ3}, how do
+coordinator decisions become persistent state changes, and what happens to
+invalid effects? Construction checks address RQ1, the five-world interaction
+study addresses RQ2, and execution audits with replayable traces address RQ3.
+The completed visual study characterizes the resulting artifacts. Internal
+generation controls and supplementary planner ablations report operating
+conditions and implementation boundaries. Table~\ref{tab:evidence} states the
+unit and interpretation of each study.

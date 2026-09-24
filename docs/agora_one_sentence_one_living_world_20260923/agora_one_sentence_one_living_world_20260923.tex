@@ -1,5 +1,6 @@
 \documentclass[10pt,twocolumn]{article}
 \input{paper_style}
+\externaldocument[supp-][nocite]{agora_one_sentence_one_living_world_20260923_supplement}
 \begin{document}
 \twocolumn[{
 \begin{center}
@@ -11,34 +12,34 @@
 \vspace{9pt}
 {\normalsize Boxun Xu\qquad Yueze Wang\qquad Peng Li}\par
 \vspace{3pt}
-{\small\color{agoragray}Research preprint\quad\textbullet\quad Model-comparison revision, September 23, 2026}\par
+{\small\color{agoragray}Research preprint\quad\textbullet\quad World generation and interaction mechanisms, September 23, 2026}\par
 \end{center}
 \vspace{3pt}
 \begin{minipage}{\textwidth}
 \small
 \noindent\textbf{Abstract.}
-Generating a social world requires inhabitants to change shared spatial,
-material, and social state. We present \agora, a system that compiles a short
-premise into a persistent rendered environment with roles, institutions,
-possessions, and private knowledge. Humans and language agents use generated
-action opportunities or propose context-specific actions, whose effects a
-World Coordinator adjudicates against shared state. A masked model-comparison
-survey yields ten eligible returns, forty image comparisons, and judgments
-on all 21 pairs among seven language-model configurations using a shared
-pipeline and premise. Preferences differ by criterion: Gemini 2.5 Flash
-receives 8/10 exploration preferences, while GPT-5.6 Terra and Sol receive
-11/13 and 9/11 map-readability preferences, respectively. These sparse
-fixed-artifact judgments do not establish a general model ranking. An internal
-generation control records higher completion for the staged procedure at
-higher cost; its structure judgments are reported separately and do not
-benchmark Agora against independent systems. Five two-round interaction
-runs produce 53 events and 49/56 successful action results. In a retrospective
-audit of 21 scripted 24-round trajectories, 1,365/1,512 actions execute
-successfully, but only 398 successes change inventory or location. Together,
-these findings distinguish construction reliability, artifact preference,
-and enacted consequences. We release inspectable world artifacts, returned
-survey analysis, and reproducible evidence; behavioral fidelity and useful
-human collaboration remain unestablished.
+A generated social world needs a connection between its description and
+what its inhabitants can actually change. We present \agora, a mechanism
+for compiling a short premise into a persistent rendered environment for
+human--AI interaction. A shared world representation binds roles, places,
+possessions, knowledge, and visual assets to stable entity identities;
+dependency-directed validation and repair keep these components consistent.
+A generated action repertoire makes situated activities discoverable, while
+an open-proposal channel expresses intentions beyond that repertoire. The
+World Coordinator checks structured effects against the generated state
+before committing changes that become available to subsequent actors.
+The central contribution is this coupling of world construction, situated
+action, and persistent consequences. We examine its operation through
+construction checks, execution traces, and an existing visual study with
+ten eligible respondents. Validators detect all 58 seeded faults; five
+local repairs preserve unaffected generation stages. Five generated worlds
+exercise both action pathways. Longer scripted traces expose committed
+inventory and location changes, rejected effects, and the distinction between
+an executed action and useful task progress. Supplementary planner-input and
+action-space ablations document implementation behavior with replayable
+records. These studies establish the implemented connection from generated
+world structure to checkable state transitions; human collaboration and
+behavioral fidelity remain separate evaluation questions.
 \end{minipage}
 \vspace{10pt}
 \begin{minipage}{\textwidth}
@@ -56,13 +57,4 @@ human collaboration remain unestablished.
 \input{sections/discussion}
 \bibliographystyle{unsrtnat}
 \bibliography{references}
-\clearpage
-\appendix
-\input{sections/appendix_repro}
-\input{sections/appendix_extended}
-\input{sections/appendix_historical}
-\input{sections/appendix_human}
-\input{sections/appendix_intervention}
-\input{sections/appendix_cases}
-\input{sections/appendix_tidal}
 \end{document}
